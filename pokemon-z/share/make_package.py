@@ -79,7 +79,7 @@ def main():
     for fname in ("prompt.md", "glossary.md", "voices.md", "speaker-aliases.json"):
         shutil.copy2(TRANSLATE / fname, kit / fname)
     shutil.copy2(HERE / "빌드.py", tbl / "빌드.py")
-    shutil.copy2(HERE.resolve().parents[1] / "vendor" / "fanlib" / "rubywrite.py",
+    shutil.copy2(HERE.resolve().parents[0] / "vendor" / "fanlib" / "rubywrite.py",
                  tbl / "rubywrite.py")
     shutil.copy2(HERE / "수정법.txt", tbl / "수정법.txt")
 
