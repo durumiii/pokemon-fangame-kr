@@ -35,6 +35,6 @@
 {"id": "405:14:34", "es": "¡Se diría que causar el mal sale gratis cuando eres alguien relevante!", "old": "지위가 높은 사람이라면 악행을 저질러도 아무 대가가 없는 모양이군요!", "new": "높은 신분이라면 악행을 저질러도 아무 대가가 없는 모양이잖아!", "ok": true, "why": null}
 {"id": "405:9:35", "es": "Has perdido el reto Nuzlocke, has fallado a todos los Pokémon que te han acompañado durante la aventura.", "old": "너는 누즈록 챌린지에서 패배했다. 모험을 함께한 모든 포켓몬을 저버린 것이다.", "new": "너는 누즈록 챌린지에서 패배했다. 모험을 함께한 모든 포켓몬을 저버린 것이다.", "ok": true, "why": null}
 {"id": "405:9:36", "es": "Puedes seguir jugando de forma normal, pero recuerda que has fracasado.", "old": "일반 모드로 계속 플레이할 수는 있지만, 네가 실패했다는 사실은 변하지 않는다.", "new": "일반 모드로 계속 플레이할 수는 있지만, 네가 실패했다는 사실은 변하지 않는다.", "ok": true, "why": null}
-{"id": "405:4:37", "es": "¡Hola, Aspirante! ¿Qué necesitas?", "old": "안녕, 후보생! 도움이 필요한가요?", "new": null, "ok": false, "why": "검증:마크업: \\PN"}
+{"id": "405:4:37", "es": "¡Hola, Aspirante! ¿Qué necesitas?", "old": "안녕, 후보생! 도움이 필요한가요?", "new": "안녕, 후보생! 뭐가 필요해?", "ok": true, "why": null}
 {"id": "405:4:38", "es": "¿Qué Pokémon debería recordar un movimiento?", "old": "어떤 포켓몬에게 기술을 떠올리게 할까요?", "new": "어떤 포켓몬에게 기술을 떠올리게 할까?", "ok": true, "why": null}
 {"id": "405:4:39", "es": "Vale, ¡vuelve cuando lo necesites!", "old": "좋아요, 필요할 때 언제든 다시 오세요!", "new": "좋아, 필요할 때 언제든 다시 와!", "ok": true, "why": null}

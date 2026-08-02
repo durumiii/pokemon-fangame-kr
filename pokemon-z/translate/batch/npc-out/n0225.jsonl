@@ -1,10 +1,10 @@
-{"id": "216:4:0", "es": "¡Te mostraremos una fuerza que supera cualquiera que hayas conocido!", "old": "자네가 이제껏 경험해보지 못한 강력한 힘을 보여주겠네!", "new": null, "ok": false, "why": "누락"}
-{"id": "216:4:1", "es": "Por haberme ayudado a descubrir mi auténtica fuerza y valía...", "old": "내 진정한 힘과 가치를 깨달을 수 있게 도와주었으니...", "new": null, "ok": false, "why": "누락"}
-{"id": "216:4:2", "es": "Ha combatido dos veces seguidas contra \\PN. Es normal.", "old": "\\PN와(과) 연속으로 두 번이나 배틀을 치렀으니 당연한 일이지.", "new": null, "ok": false, "why": "누락"}
-{"id": "216:4:3", "es": "La Revolución ha ganado. Querrán capturar al rey <b>Áster</b> como recompensa.", "old": "혁명군이 승리했어. 전리품으로 <b>아스테르</b> 왕을 사로잡고 싶어 하겠지.", "new": null, "ok": false, "why": "누락"}
-{"id": "216:4:4", "es": "Hay un pasadizo oculto en el salón del trono.", "old": "왕좌의 방에 비밀 통로가 있어.", "new": null, "ok": false, "why": "누락"}
-{"id": "216:4:5", "es": "Desapareceremos y trataremos de vivir en paz. Ocultos. ¿<i>D'accord</i>?", "old": "우리는 자취를 감추고 평화롭게 살아가려고 해. 숨어서 말이야. <i>D'accord</i>?", "new": null, "ok": false, "why": "누락"}
-{"id": "216:4:6", "es": "Prometimos que no sufrirían ningún daño, ¿lo recordáis?", "old": "어떤 해도 입히지 않겠다고 약속했었잖아요, 기억하지 못하십니까?", "new": null, "ok": false, "why": "누락"}
-{"id": "216:4:7", "es": "\\PN y yo iremos en tu busca.", "old": "\\PN와(과) 내가 너를 찾아갈게.", "new": null, "ok": false, "why": "누락"}
-{"id": "216:4:8", "es": "Soy conocido y querido entre el pueblo llano. A mí me escucharán.", "old": "나는 평민들 사이에서 이름이 알려져 있고 신망이 두텁다. 내 말은 들어줄 것이다.", "new": null, "ok": false, "why": "누락"}
-{"id": "216:4:9", "es": "Pero después de eso necesitaré vuestra ayuda.", "old": "하지만 그 일 이후에는 너희의 도움이 필요하다.", "new": null, "ok": false, "why": "누락"}
+{"id": "216:4:0", "es": "¡Te mostraremos una fuerza que supera cualquiera que hayas conocido!", "old": "자네가 이제껏 경험해보지 못한 강력한 힘을 보여주겠네!", "new": "자네가 이제껏 경험해보지 못한 강력한 힘을 보여주겠네!", "ok": true, "why": null}
+{"id": "216:4:1", "es": "Por haberme ayudado a descubrir mi auténtica fuerza y valía...", "old": "내 진정한 힘과 가치를 깨달을 수 있게 도와주었으니...", "new": "내 진정한 힘과 가치를 깨달을 수 있게 도와주었으니...", "ok": true, "why": null}
+{"id": "216:4:2", "es": "Ha combatido dos veces seguidas contra \\PN. Es normal.", "old": "\\PN와(과) 연속으로 두 번이나 배틀을 치렀으니 당연한 일이지.", "new": "\\PN와(과) 연속으로 두 번이나 배틀을 치렀으니 당연한 일이지.", "ok": true, "why": null}
+{"id": "216:4:3", "es": "La Revolución ha ganado. Querrán capturar al rey <b>Áster</b> como recompensa.", "old": "혁명군이 승리했어. 전리품으로 <b>아스테르</b> 왕을 사로잡고 싶어 하겠지.", "new": "혁명군이 승리했어. 전리품으로 <b>아스테르</b> 왕을 사로잡고 싶어 하겠지.", "ok": true, "why": null}
+{"id": "216:4:4", "es": "Hay un pasadizo oculto en el salón del trono.", "old": "왕좌의 방에 비밀 통로가 있어.", "new": "왕좌의 방에 비밀 통로가 있어.", "ok": true, "why": null}
+{"id": "216:4:5", "es": "Desapareceremos y trataremos de vivir en paz. Ocultos. ¿<i>D'accord</i>?", "old": "우리는 자취를 감추고 평화롭게 살아가려고 해. 숨어서 말이야. <i>D'accord</i>?", "new": "우리는 자취를 감추고 평화롭게 살아가려고 해. 숨어서 말이야. <i>D'accord</i>?", "ok": true, "why": null}
+{"id": "216:4:6", "es": "Prometimos que no sufrirían ningún daño, ¿lo recordáis?", "old": "어떤 해도 입히지 않겠다고 약속했었잖아요, 기억하지 못하십니까?", "new": "해를 입히지 않겠다고 약속했잖아, 기억나?", "ok": true, "why": null}
+{"id": "216:4:7", "es": "\\PN y yo iremos en tu busca.", "old": "\\PN와(과) 내가 너를 찾아갈게.", "new": "\\PN와(과) 내가 너를 찾아갈게.", "ok": true, "why": null}
+{"id": "216:4:8", "es": "Soy conocido y querido entre el pueblo llano. A mí me escucharán.", "old": "나는 평민들 사이에서 이름이 알려져 있고 신망이 두텁다. 내 말은 들어줄 것이다.", "new": "나는 평민들 사이에서 이름이 알려져 있고 신망이 두텁다. 내 말은 들어줄 것이다.", "ok": true, "why": null}
+{"id": "216:4:9", "es": "Pero después de eso necesitaré vuestra ayuda.", "old": "하지만 그 일 이후에는 너희의 도움이 필요하다.", "new": "하지만 그 일 이후에는 너희의 도움이 필요하다.", "ok": true, "why": null}

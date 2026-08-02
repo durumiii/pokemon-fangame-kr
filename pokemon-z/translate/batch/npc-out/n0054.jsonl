@@ -1,20 +1,20 @@
-{"id": "48:5:0", "es": "¡Ah, estás aquí! Mi marido te está buscando.", "old": "아, 여기 계셨군요! 저희 남편이 당신을 찾고 있어요.", "new": null, "ok": false, "why": "누락"}
-{"id": "48:5:1", "es": "Soy la encargada de la Guardería, ¿quieres dejar algún Pokemon con nosotros?", "old": "저는 키우미집 담당자랍니다. 저희에게 포켓몬을 맡기시겠어요?", "new": null, "ok": false, "why": "누락"}
-{"id": "48:5:2", "es": "No puedes quedarte sin Pokemon.", "old": "포켓몬을 전부 맡길 수는 없어요.", "new": null, "ok": false, "why": "누락"}
-{"id": "48:5:3", "es": "¿Cuál quieres dejar?", "old": "어느 포켓몬을 맡기시겠어요?", "new": null, "ok": false, "why": "누락"}
-{"id": "48:5:4", "es": "Bien, vuelve cuando lo necesites.", "old": "네, 필요하실 때 언제든 다시 오세요.", "new": null, "ok": false, "why": "누락"}
-{"id": "48:5:5", "es": "Genial, cuidaremos bien de \\v[3], vuelve más tarde.", "old": "좋아요, \\v[3]를 잘 보살펴 드릴 테니 나중에 다시 오세요.", "new": null, "ok": false, "why": "누락"}
-{"id": "48:5:6", "es": "Podemos encargarnos de otro Pokemon, ¿te gustaría dejar alguno más?", "old": "포켓몬을 한 마리 더 맡아드릴 수 있는데, 더 맡기시겠어요?", "new": null, "ok": false, "why": "누락"}
-{"id": "48:5:7", "es": "¿Cuál quieres dejarnos?", "old": "어느 포켓몬을 맡기시겠어요?", "new": null, "ok": false, "why": "누락"}
-{"id": "48:5:8", "es": "¡Ah, eres tú! Tu Pokemon está en buenas manos.", "old": "아, 오셨군요! 맡기신 포켓몬은 잘 있어요.", "new": null, "ok": false, "why": "누락"}
-{"id": "48:5:9", "es": "Además, \\v[3] ha subido \\v[4] niveles.", "old": "그리고 \\v[3]의 레벨이 \\v[4]만큼 올랐답니다.", "new": null, "ok": false, "why": "누락"}
-{"id": "48:5:10", "es": "¿Quieres a tu Pokemon de vuelta?", "old": "포켓몬을 데려가시겠어요?", "new": null, "ok": false, "why": "누락"}
-{"id": "48:5:11", "es": "Si quieres a \\v[3] de vuelta, tendrás que pagar $\\v[4].", "old": "\\v[3]를 데려가시려면 $\\v[4]를 지불하셔야 해요.", "new": null, "ok": false, "why": "누락"}
-{"id": "48:5:12", "es": "Bien, aquí tienes a tu Pokemon de vuelta.", "old": "네, 여기 맡기셨던 포켓몬이에요.", "new": null, "ok": false, "why": "누락"}
-{"id": "48:5:13", "es": "\\PN saca \\v[3] de la Guardería.", "old": "\\PN(은)는 키우미집에서 \\v[3](을)를 찾았다.", "new": null, "ok": false, "why": "누락"}
-{"id": "48:6:14", "es": "¿Sabías que si llevas a un Pokemon con la habilidad Cuerpo Llama o Escudo Magma en el equipo, los huevos tardarán la mitad en abrirse?", "old": "파티에 '불꽃몸'이나 '마그마의무장' 특성을 가진 포켓몬이 있으면 알이 부화하는 시간이 절반으로 줄어든다는 걸 알고 계셨나요?", "new": null, "ok": false, "why": "누락"}
-{"id": "48:6:15", "es": "Yo por eso no me despego de mi Slugma, aunque en verano no veas cómo sudo.", "old": "그래서 전 제 마그마그를 항상 데리고 다니는데, 여름에는 땀이 엄청나요.", "new": null, "ok": false, "why": "누락"}
-{"id": "48:8:16", "es": "Una vez vi a un Machamp poner huevos. Fue una experiencia bastante perturbadora.", "old": "한번은 괴력몬이 알을 낳는 걸 본 적이 있어요. 꽤 충격적인 경험이었죠.", "new": null, "ok": false, "why": "누락"}
-{"id": "48:4:17", "es": "¿Te interesa criar Pokémon? Entonces necesitarás esto.", "old": "포켓몬을 키우는 데 관심이 있으신가요? 그렇다면 이게 필요하실 거예요.", "new": null, "ok": false, "why": "누락"}
-{"id": "48:4:18", "es": "Con la <b>Incubadora</b>, podrás almacenar Huevos Pokémon de forma segura sin usar huecos de tu equipo.", "old": "<b>부화기</b>가 있으면 파티 자리를 차지하지 않고도 포켓몬 알을 안전하게 보관할 수 있어요.", "new": null, "ok": false, "why": "누락"}
-{"id": "48:4:19", "es": "Ahora, ¡a caminar mucho para hacerlos eclosionar!", "old": "자, 이제 알을 부화시키러 많이 걸어보세요!", "new": null, "ok": false, "why": "누락"}
+{"id": "48:5:0", "es": "¡Ah, estás aquí! Mi marido te está buscando.", "old": "아, 여기 계셨군요! 저희 남편이 당신을 찾고 있어요.", "new": "아, 여기 있었구나! 우리 영감이 너를 찾고 있단다.", "ok": true, "why": null}
+{"id": "48:5:1", "es": "Soy la encargada de la Guardería, ¿quieres dejar algún Pokemon con nosotros?", "old": "저는 키우미집 담당자랍니다. 저희에게 포켓몬을 맡기시겠어요?", "new": "나는 키우미집 담당이란다. 포켓몬을 맡기고 싶니?", "ok": true, "why": null}
+{"id": "48:5:2", "es": "No puedes quedarte sin Pokemon.", "old": "포켓몬을 전부 맡길 수는 없어요.", "new": "포켓몬을 전부 맡길 수는 없단다.", "ok": true, "why": null}
+{"id": "48:5:3", "es": "¿Cuál quieres dejar?", "old": "어느 포켓몬을 맡기시겠어요?", "new": "어느 포켓몬을 맡기겠니?", "ok": true, "why": null}
+{"id": "48:5:4", "es": "Bien, vuelve cuando lo necesites.", "old": "네, 필요하실 때 언제든 다시 오세요.", "new": "그래, 필요할 때 언제든 다시 오려무나.", "ok": true, "why": null}
+{"id": "48:5:5", "es": "Genial, cuidaremos bien de \\v[3], vuelve más tarde.", "old": "좋아요, \\v[3]를 잘 보살펴 드릴 테니 나중에 다시 오세요.", "new": "좋다, \\v[3]를 잘 보살펴 줄 테니 나중에 오렴.", "ok": true, "why": null}
+{"id": "48:5:6", "es": "Podemos encargarnos de otro Pokemon, ¿te gustaría dejar alguno más?", "old": "포켓몬을 한 마리 더 맡아드릴 수 있는데, 더 맡기시겠어요?", "new": "포켓몬을 한 마리 더 맡아줄 수 있는데, 더 맡기겠니?", "ok": true, "why": null}
+{"id": "48:5:7", "es": "¿Cuál quieres dejarnos?", "old": "어느 포켓몬을 맡기시겠어요?", "new": "어느 포켓몬을 맡기겠니?", "ok": true, "why": null}
+{"id": "48:5:8", "es": "¡Ah, eres tú! Tu Pokemon está en buenas manos.", "old": "아, 오셨군요! 맡기신 포켓몬은 잘 있어요.", "new": "아, 왔구나! 맡긴 포켓몬은 잘 있단다.", "ok": true, "why": null}
+{"id": "48:5:9", "es": "Además, \\v[3] ha subido \\v[4] niveles.", "old": "그리고 \\v[3]의 레벨이 \\v[4]만큼 올랐답니다.", "new": "그 사이에 \\v[3]의 레벨이 \\v[4]만큼 올랐단다.", "ok": true, "why": null}
+{"id": "48:5:10", "es": "¿Quieres a tu Pokemon de vuelta?", "old": "포켓몬을 데려가시겠어요?", "new": "포켓몬을 찾아가겠니?", "ok": true, "why": null}
+{"id": "48:5:11", "es": "Si quieres a \\v[3] de vuelta, tendrás que pagar $\\v[4].", "old": "\\v[3]를 데려가시려면 $\\v[4]를 지불하셔야 해요.", "new": "\\v[3]를 데려가려면 $\\v[4]가 필요하단다.", "ok": true, "why": null}
+{"id": "48:5:12", "es": "Bien, aquí tienes a tu Pokemon de vuelta.", "old": "네, 여기 맡기셨던 포켓몬이에요.", "new": " 그래, 여기 맡겼던 포켓몬이란다.", "ok": true, "why": null}
+{"id": "48:5:13", "es": "\\PN saca \\v[3] de la Guardería.", "old": "\\PN(은)는 키우미집에서 \\v[3](을)를 찾았다.", "new": "\\PN(은)는 키우미집에서 \\v[3](을)를 찾았다.", "ok": true, "why": null}
+{"id": "48:6:14", "es": "¿Sabías que si llevas a un Pokemon con la habilidad Cuerpo Llama o Escudo Magma en el equipo, los huevos tardarán la mitad en abrirse?", "old": "파티에 '불꽃몸'이나 '마그마의무장' 특성을 가진 포켓몬이 있으면 알이 부화하는 시간이 절반으로 줄어든다는 걸 알고 계셨나요?", "new": "파티에 '불꽃몸'이나 '마그마의무장' 특성을 가진 포켓몬이 있으면 알이 부화하는 시간이 절반으로 줄어든다는 거 알고 있어?", "ok": true, "why": null}
+{"id": "48:6:15", "es": "Yo por eso no me despego de mi Slugma, aunque en verano no veas cómo sudo.", "old": "그래서 전 제 마그마그를 항상 데리고 다니는데, 여름에는 땀이 엄청나요.", "new": "그래서 난 항상 마그마그를 데리고 다니는데, 여름엔 아주 땀범벅이 된다니까.", "ok": true, "why": null}
+{"id": "48:8:16", "es": "Una vez vi a un Machamp poner huevos. Fue una experiencia bastante perturbadora.", "old": "한번은 괴력몬이 알을 낳는 걸 본 적이 있어요. 꽤 충격적인 경험이었죠.", "new": "나 전에 괴력몬이 알 낳는 걸 본 적 있거든? 진짜 충격적인 경험이었어.", "ok": true, "why": null}
+{"id": "48:4:17", "es": "¿Te interesa criar Pokémon? Entonces necesitarás esto.", "old": "포켓몬을 키우는 데 관심이 있으신가요? 그렇다면 이게 필요하실 거예요.", "new": "포켓몬 키우는 데 관심 있어? 그럼 이게 필요할 거야.", "ok": true, "why": null}
+{"id": "48:4:18", "es": "Con la <b>Incubadora</b>, podrás almacenar Huevos Pokémon de forma segura sin usar huecos de tu equipo.", "old": "<b>부화기</b>가 있으면 파티 자리를 차지하지 않고도 포켓몬 알을 안전하게 보관할 수 있어요.", "new": "<b>부화기</b>가 있으면 지닌 포켓몬 자리를 안 쓰고도 포켓몬 알을 안전하게 보관할 수 있어.", "ok": true, "why": null}
+{"id": "48:4:19", "es": "Ahora, ¡a caminar mucho para hacerlos eclosionar!", "old": "자, 이제 알을 부화시키러 많이 걸어보세요!", "new": "자, 이제 알을 부화시키게 많이 걸어봐!", "ok": true, "why": null}

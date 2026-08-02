@@ -9,7 +9,7 @@
 {"id": "360:20:8", "es": "Creo que está a punto de ocurrir algo terrible.", "old": "곧 끔찍한 일이 일어날 것만 같아요.", "new": "곧 끔찍한 일이 일어날 것만 같다.", "ok": true, "why": null}
 {"id": "360:37:9", "es": "El <b>Circo Sanguino</b> estuvo cerrado durante años debido a unos misteriosos incidentes que acabaron con la vida de varios espectadores.", "old": "<b>상기노 서커스</b>는 관객 여럿의 목숨을 앗아간 의문의 사건들 때문에 수년 동안 문을 닫았었지.", "new": "<b>상기노 서커스</b>는 관객 여럿의 목숨을 앗아간 의문의 사건들 때문에 수년 동안 문을 닫았었지.", "ok": true, "why": null}
 {"id": "360:37:10", "es": "Parece que ahora han vuelto con fuerzas renovadas y nuevos espectáculos. Aunque al gobierno de <b>Kalos</b> no parece hacerle demasiada gracia.", "old": "새로워진 기세와 새 쇼로 돌아온 모양이에요. <b>칼로스</b> 정부는 그리 탐탁지 않아 하는 것 같지만요.", "new": "새로워진 기세와 새 쇼로 돌아온 모양이야. <b>칼로스</b> 정부는 그리 탐탁지 않아 하는 것 같지만 말이지.", "ok": true, "why": null}
-{"id": "360:4:11", "es": "¡Hola, Aspirante! ¿Qué necesitas?", "old": "안녕하세요, 후보생님! 무엇을 도와드릴까요?", "new": null, "ok": false, "why": "검증:마크업: \\PN"}
+{"id": "360:4:11", "es": "¡Hola, Aspirante! ¿Qué necesitas?", "old": "안녕하세요, 후보생님! 무엇을 도와드릴까요?", "new": "흠... 그렇군... 안녕, 후보생. 무얼 찾아온 것인가.", "ok": true, "why": null}
 {"id": "360:4:12", "es": "¿Qué Pokémon debería recordar un movimiento?", "old": "어떤 포켓몬에게 기술을 떠올리게 할까요?", "new": "어떤 포켓몬에게 기술을 떠올리게 할 것인가?", "ok": true, "why": null}
 {"id": "360:4:13", "es": "Vale, ¡vuelve cuando lo necesites!", "old": "좋아요, 필요할 때 언제든 다시 와요!", "new": "좋다, 필요할 때 언제든 다시 오거라!", "ok": true, "why": null}
 {"id": "360:4:14", "es": "Eso es un huevo, pedazo de inútil.", "old": "그건 알이야, 이 바보야.", "new": "그건 알이잖아, 이 쓸모없는 녀석 같으니.", "ok": true, "why": null}

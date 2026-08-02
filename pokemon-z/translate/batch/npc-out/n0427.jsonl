@@ -28,7 +28,7 @@
 {"id": "429:25:27", "es": "¡Vuelve cuando quieras!", "old": "언제든 다시 찾아주세요!", "new": "언제든 다시 찾아와라!", "ok": true, "why": null}
 {"id": "429:9:28", "es": "Has perdido el reto Nuzlocke, has fallado a todos los Pokémon que te han acompañado durante la aventura.", "old": "너는 너즐록 챌린지에서 패배했고, 모험을 함께해 온 모든 포켓몬을 실망시켰다.", "new": "너는 너즐록 챌린지에서 패배했고, 모험을 함께해 온 모든 포켓몬을 실망시켰다.", "ok": true, "why": null}
 {"id": "429:9:29", "es": "Puedes seguir jugando de forma normal, pero recuerda que has fracasado.", "old": "평소처럼 게임을 계속할 수는 있지만, 네가 실패했다는 사실을 잊지 마라.", "new": "평소처럼 게임을 계속할 수는 있지만, 네가 실패했다는 사실을 잊지 마라.", "ok": true, "why": null}
-{"id": "429:4:30", "es": "¡Hola, Aspirante! ¿Qué necesitas?", "old": "안녕하세요, 후보생님! 무엇을 도와드릴까요?", "new": null, "ok": false, "why": "검증:마크업: \\PN"}
+{"id": "429:4:30", "es": "¡Hola, Aspirante! ¿Qué necesitas?", "old": "안녕하세요, 후보생님! 무엇을 도와드릴까요?", "new": "안녕, 후보생! 뭐가 필요해?", "ok": true, "why": null}
 {"id": "429:4:31", "es": "¿Qué Pokémon debería recordar un movimiento?", "old": "어떤 포켓몬에게 기술을 떠올리게 할까요?", "new": "어떤 포켓몬에게 기술을 떠올리게 할까?", "ok": true, "why": null}
 {"id": "429:4:32", "es": "Vale, ¡vuelve cuando lo necesites!", "old": "좋습니다, 필요할 때 언제든 다시 오세요!", "new": "좋아, 필요할 때 언제든 다시 와!", "ok": true, "why": null}
 {"id": "429:4:33", "es": "Eso es un huevo, pedazo de inútil.", "old": "그건 알이잖아, 이 얼간아.", "new": "그건 알이잖아, 이 멍청아.", "ok": true, "why": null}
