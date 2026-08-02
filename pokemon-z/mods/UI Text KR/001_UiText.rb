@@ -29,7 +29,41 @@ module UiTextKR
     # textpos 리터럴(첫 화면만 한글이고 둘째 화면이 누락돼 있었다)
     ["C: Combinar", "C: 조합"],
     ["Arriba/Abajo: Cantidad", "위/아래: 수량"],
-    ["X: Salir", "X: 나가기"]
+    ["X: Salir", "X: 나가기"],
+    # 불러오기 화면(141_PScreen_Load) — 슬롯 라벨 영문 하드코딩.
+    # "Partida "는 sprintf("Partida %d") 접두 부분매치(→ 저장 1, 저장 2 …).
+    # 번역 정본에 "Partida " 포함 한국어 값 0건 확인(2026-08-02) — gsub 오폭 없음.
+    ["Normal Save", "일반 저장"],
+    ["Autosave", "자동 저장"],
+    [" Auto Save", " (자동 저장)"],
+    ["Partida ", "저장 "],
+    # 인물 안내(231_Guia Personajes) 인포그래픽 라벨 — names.json 음차 준수.
+    # AZ·F3은 keep 명단이라 그대로. Hombre del Saco는 대사 정본 「자루 든 남자」.
+    ["Áster Zéphir (AZ)", "아스테르 제피르 (AZ)"],
+    ["Hombre del Saco", "자루 든 남자"],
+    ["Olivier", "올리비에"],
+    ["Crisanto", "크리산토"],
+    ["Melia", "멜리아"],
+    ["Merlot", "메를로"],
+    ["Canola", "카놀라"],
+    ["Mirra", "미라"],
+    ["Núbila", "누빌라"],
+    ["Hisopo", "히소포"],
+    ["Lanto", "란토"],
+    ["Alca", "알카"],
+    ["Wolfram", "볼프람"],
+    ["Zafra", "사프라"],
+    ["Loto", "로토"],
+    ["Genos", "게노스"],
+    ["Belladona", "벨라도나"],
+    ["Malvo", "말보"],
+    ["Aure", "아우레"],
+    ["Rosaleda", "로살레다"],
+    ["Ferrofaz", "페로파스"],
+    ["Pinot", "피노"],
+    ["Hibis", "히비스"],
+    ["Anturia", "안투리아"],
+    ["Cendera", "센데라"]
   ]
 
   def self.fix(text)

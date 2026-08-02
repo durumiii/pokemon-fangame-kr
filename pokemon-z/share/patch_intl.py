@@ -51,6 +51,27 @@ EDITS = [
      '_INTL("¿Qué habilidad quieres para {1}?",pokemon.name)'),
 ]
 
+# 부적(Amuleto) 18종 — pbAmuleto(116_PItem_ItemEffects)가 번역된 아이템 이름을
+# 스페인어 원문과 문자열 비교해 인카운터 스위치(280~297)를 켠다. 이름이
+# 한글화되면 영원히 거짓이 되는 기능 버그라, 이름 비교를 상수 비교로 수술한다.
+_AMULETOS = [
+    ("Amuleto Bicho", "AMULETOBICHO"), ("Amuleto Siniestro", "AMULETOSINIESTRO"),
+    ("Amuleto Dragón", "AMULETODRAGON"), ("Amuleto Eléctrico", "AMULETOELECTRICO"),
+    ("Amuleto Hada", "AMULETOHADA"), ("Amuleto Lucha", "AMULETOLUCHA"),
+    ("Amuleto Fuego", "AMULETOFUEGO"), ("Amuleto Volador", "AMULETOVOLADOR"),
+    ("Amuleto Fantasma", "AMULETOFANTASMA"), ("Amuleto Planta", "AMULETOPLANTA"),
+    ("Amuleto Tierra", "AMULETOTIERRA"), ("Amuleto Hielo", "AMULETOHIELO"),
+    ("Amuleto Normal", "AMULETONORMAL"), ("Amuleto Veneno", "AMULETOVENENO"),
+    ("Amuleto Psíquico", "AMULETOPSIQUICO"), ("Amuleto Roca", "AMULETOROCA"),
+    ("Amuleto Acero", "AMULETOACERO"), ("Amuleto Agua", "AMULETOAGUA"),
+]
+EDITS += [
+    ("PItem_ItemEffects",
+     f'PBItems.getName(item) == "{name}"',
+     f'isConst?(item,PBItems,:{const})')
+    for name, const in _AMULETOS
+]
+
 
 def patch_file(path: Path) -> None:
     secs = load(open(path, "rb"))
