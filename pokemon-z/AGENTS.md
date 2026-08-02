@@ -79,6 +79,7 @@ gsub 오폭)를 통과시킨다. 재배포 전 --strict.
 | ③ 하드코딩 화면 문자열 | mods/UI Text KR 치환표 | modstore 재주입 |
 | ④ 런타임 가변 문자열(보간) | share/patch_intl.py EDITS | 소스 수술(멱등) |
 | ⑤ 로직-문자열 결합(기능 버그) | 〃 | 〃 (예: 부적 18종) |
+| ⑥ 그림에 구운 글자 (PNG 베이크) | Graphics/Pictures (.orig 짝 = 한글화본) | PIL 재렌더 — 텍스트 층 전수 미스면 이 층 의심 (예: 「눌륵」 모드 화면) |
 
 값 판정은 셋뿐: **(A) 본가에 있다 → 판정하지 않고 조회한다**
 (`translate/canon/canon.jsonl`, PKHeX 산 4,800여 항목 — verify가 전수 대조.
