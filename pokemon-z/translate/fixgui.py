@@ -115,7 +115,9 @@ PAGE = """<!doctype html><html lang=ko><head><meta charset=utf-8>
  </div>
  <span id=dirty></span>
  <button onclick=build() id=buildbtn>빌드 → 게임 반영</button>
+ <button class=ghost onclick=refSearch()>참고</button>
  <button class=ghost onclick=notes()>메모</button>
+ <button class=ghost onclick=histView()>이력</button>
 </header>
 <main>
  <div class=meta id=meta>검색어를 입력하세요. 저장 <kbd>Ctrl+Enter</kbd> · 검색 <kbd>Enter</kbd></div>
@@ -154,10 +156,12 @@ function more(){
      onkeydown="if(event.ctrlKey&&event.key==='Enter')save(${i},'${h.file}',${h.line})">${esc(h.v)}</textarea>
    <div class=rowbar>
     <button class=primary onclick=save(${i},'${h.file}',${h.line})>저장</button>
+    <button class=ghost onclick=showOrig(${i})>원본</button>
     <input class=memoin id=m${i} placeholder="메모 — 나중에 배치로 손볼 내용">
     <button onclick=memo(${i})>메모</button>
     <span class=st id=st${i}></span>
    </div>
+   <div class=es id=orig${i} style="display:none"></div>
   </div>`}).join('');
  SHOWN=Math.min(SHOWN+STEP,HITS.length);
  const btn=$('morebtn');if(btn)btn.remove();
@@ -195,12 +199,59 @@ async function notes(){
   <div class="card notecard ${n.done?'done':''}">
    <span class=chip>${i+1}</span> 「${esc(n.query)}」
    <div class=es>${esc(n.note)}</div>
-   ${n.done?'':`<button onclick=doneNote(${i+1})>완료 처리</button>`}
+   <div class=rowbar>
+    <button onclick=gotoNote(${JSON.stringify(n.query).replace(/"/g,'&quot;')})>대상 찾아가기</button>
+    <button onclick=doneNote(${i+1},${n.done?'false':'true'})>${n.done?'완료 취소':'완료 처리'}</button>
+    <button class=ghost onclick=delNote(${i+1})>삭제</button>
+   </div>
   </div>`).join('')||'<div class=empty>메모가 없습니다.</div>';
 }
-async function doneNote(i){
- await fetch('/done',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({i})});
+function gotoNote(q){$('q').value=q;search()}
+async function doneNote(i,done){
+ await fetch('/done',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({i,done})});
  notes();
+}
+async function delNote(i){
+ await fetch('/notedel',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({i})});
+ notes();
+}
+function showOrig(i){
+ const el=$('orig'+i);const ta=$('v'+i);
+ if(el.style.display==='none'){
+  el.innerHTML='저장 전 원본: '+esc(ta.dataset.orig)+' &nbsp;<button class=ghost onclick="restoreOrig('+i+')">이 값으로 되돌리기</button>';
+  el.style.display='block';
+ }else el.style.display='none';
+}
+function restoreOrig(i){$('v'+i).value=$('v'+i).dataset.orig;toast('되돌렸어요 — 저장을 눌러야 반영됩니다')}
+async function histView(){
+ const r=await fetch('/history');const js=await r.json();
+ $('meta').textContent=`저장 이력 — 최근 ${js.log.length}건`;
+ $('out').innerHTML=js.log.map((h,i)=>`
+  <div class=card>
+   <span class=chip>${esc(h.file)}:${h.line}</span>
+   <div class=es>구: ${esc(h.old)}</div>
+   <div>신: ${esc(h.new)}</div>
+   <div class=rowbar><button onclick='revertHist(${JSON.stringify(h).replace(/'/g,"\\'")})'>구판으로 되돌리기</button></div>
+  </div>`).join('')||'<div class=empty>저장 이력이 없습니다.</div>';
+}
+async function revertHist(h){
+ const r=await fetch('/save',{method:'POST',headers:{'Content-Type':'application/json'},
+   body:JSON.stringify({file:h.file,line:h.line,v:h.old})});
+ const js=await r.json();
+ if(js.ok){dirty(1);toast('되돌림 저장됨 — 빌드하면 게임에 반영돼요');histView()}
+ else toast('실패: '+js.err,4000);
+}
+async function refSearch(){
+ const q=$('q').value.trim(); if(!q){toast('검색창에 찾을 용어를 입력하세요');return}
+ $('meta').textContent='참고 자료 검색 중... (첫 실행은 코퍼스 로드로 수십 초)';
+ const r=await fetch('/ref?q='+encodeURIComponent(q)); const js=await r.json();
+ $('meta').textContent=`참고 — 「${q}」`;
+ const sec=(t,rows)=>rows.length?`<div class=card><b>${t}</b>${rows}</div>`:'';
+ $('out').innerHTML=
+  sec('용어집 (glossary.md)', js.glossary.map(l=>`<div class=es>${esc(l)}</div>`).join(''))+
+  sec('본가 정식명 (canon)', js.canon.map(c=>`<div class=es>${esc(c.es||'')} · ${esc(c.en||'')} → <b>${esc(c.ko||'')}</b> <span class=chip>${esc(c.domain||'')}</span></div>`).join(''))+
+  sec('공식 문장 코퍼스 (참고용 — 자동 적용 금지)', js.messages.map(m=>`<div class=es>[${esc(m.src||'')}·${esc(m.file||'')}] ${esc(m.es||'')}<br>→ ${esc(m.ko||'')}</div>`).join(''))
+  ||'<div class=empty>참고 자료에 매칭이 없습니다.</div>';
 }
 async function doBrowse(){
  const by=$('browseby').value; if(!by)return;
@@ -245,6 +296,9 @@ def search(q, only_file=""):
     return hits, False
 
 
+FIXLOG = HERE / "fixlog.jsonl"
+
+
 def save_row(file, line, new_v):
     p = KO / file
     if not p.is_file() or p.parent != KO:
@@ -253,10 +307,45 @@ def save_row(file, line, new_v):
     d = json.loads(lines[line - 1])
     if "v" not in d:
         return "이 행에는 v가 없음"
+    old = d["v"]
+    if old == new_v:
+        return None
     d["v"] = new_v
     lines[line - 1] = json.dumps(d, ensure_ascii=False)
     p.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    with open(FIXLOG, "a", encoding="utf-8") as f:
+        f.write(json.dumps({"file": file, "line": line, "es": d.get("k", ""),
+                            "old": old, "new": new_v}, ensure_ascii=False) + "\n")
     return None
+
+
+def history(limit=100):
+    if not FIXLOG.exists():
+        return []
+    rows = [json.loads(l) for l in FIXLOG.read_text(encoding="utf-8").splitlines() if l]
+    return rows[::-1][:limit]
+
+
+_ref = None  # 참고 자료 지연 로드
+
+
+def ref_search(q):
+    global _ref
+    if _ref is None:
+        import gzip
+        _ref = {"gloss": (HERE / "glossary.md").read_text(encoding="utf-8").splitlines(),
+                "canon": [], "msgs": []}
+        cp = HERE / "canon" / "canon.jsonl"
+        if cp.exists():
+            _ref["canon"] = [json.loads(l) for l in cp.read_text(encoding="utf-8").splitlines() if l]
+        mp = HERE / "canon" / "messages.jsonl.gz"
+        if mp.exists():
+            _ref["msgs"] = [json.loads(l) for l in gzip.open(mp, "rt", encoding="utf-8")]
+    gl = [ln for ln in _ref["gloss"] if q in ln][:20]
+    ca = [r for r in _ref["canon"]
+          if any(q in str(r.get(k, "")) for k in ("es", "ko", "en"))][:20]
+    ms = [r for r in _ref["msgs"] if q in r.get("es", "") or q in r.get("ko", "")][:20]
+    return {"glossary": gl, "canon": ca, "messages": ms}
 
 
 def maps_rows():
@@ -375,6 +464,11 @@ class H(BaseHTTPRequestHandler):
             qs = urllib.parse.parse_qs(u.query)
             self._json({"hits": listing(qs.get("by", ["map"])[0],
                                         qs.get("key", [""])[0])})
+        elif u.path == "/history":
+            self._json({"log": history()})
+        elif u.path == "/ref":
+            q = urllib.parse.parse_qs(u.query).get("q", [""])[0]
+            self._json(ref_search(q))
         else:
             self._json({"err": "?"}, 404)
 
@@ -392,7 +486,13 @@ class H(BaseHTTPRequestHandler):
         elif self.path == "/done":
             b = self._body()
             notes = load_notes()
-            notes[int(b["i"]) - 1]["done"] = True
+            notes[int(b["i"]) - 1]["done"] = bool(b.get("done", True))
+            save_notes(notes)
+            self._json({"ok": True})
+        elif self.path == "/notedel":
+            b = self._body()
+            notes = load_notes()
+            del notes[int(b["i"]) - 1]
             save_notes(notes)
             self._json({"ok": True})
         elif self.path == "/build":

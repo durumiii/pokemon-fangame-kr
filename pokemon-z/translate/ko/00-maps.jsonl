@@ -91,22 +91,22 @@
 {"k": "No", "v": "아니요"}
 {"map": 2, "n": 64}
 {"k": "Los Gogoat han sido el medio de transporte principal de <b>Kalos</b> durante milenios.", "v": "고고트는 수천 년 동안 <b>칼로스</b>의 주요 교통수단이었습니다."}
-{"k": "<b>???:</b> ¿Oigo pasos en la nieve? ¿Hay alguien ahí?", "v": "<b>???:</b> 눈 위에서 발소리가 들리는 것 같은데? 거기 누구 있느냐?"}
+{"k": "<b>???:</b> ¿Oigo pasos en la nieve? ¿Hay alguien ahí?", "v": "<b>???:</b> 눈 위에서 발소리가 들리는 것 같은데? 거기 누구 있어요?"}
 {"k": "¡Necesito ayuda, por favor!", "v": "도와주세요, 제발!"}
 {"k": "¡Seas quien seas, por favor, usa una de las Pokéball que he dejado caer!", "v": "누구든 좋으니 제발 제가 떨어뜨린 몬스터볼 중 하나를 사용해 주세요!"}
 {"k": "No es seguro acercarse a la hierba alta si aún no tienes Pokémon contigo.", "v": "아직 포켓몬이 없다면 키 큰 풀숲에 다가가는 건 위험합니다."}
 {"k": "¿Has alejado a esa maléfica criatura? ¡<i>Merci</i>!", "v": "그 사악한 생물을 쫓아내 주셨나요? <i>Merci</i>!"}
 {"k": "Aunque... no soy capaz de moverme. ¿Me echas una mano, mi misterioso benefactor?", "v": "하지만… 도저히 움직일 수가 없네요. 저를 좀 도와주실 수 있나요, 정체모를 은인님?"}
-{"k": "<b>???:</b> ¡Menos mal! A fe mía que no lo hubiera contado de no ser por ti.", "v": "<b>???:</b> 정말 다행이야! 너 아니었으면 목숨을 건지지 못했을 거야."}
-{"k": "Estos Bidoof kalosianos suelen enterrar a sus víctimas en nieve.", "v": "이 칼로스의 비버니들은 주로 희생자를 눈 속에 묻어버리곤 합니다."}
-{"k": "Ni siquiera es una táctica de supervivencia. Lo hacen por diversión, según he leído.", "v": "생존을 위한 행동도 아닙니다. 제가 읽은 바에 따르면 그저 재미로 그런다고 합니다."}
+{"k": "<b>???:</b> ¡Menos mal! A fe mía que no lo hubiera contado de no ser por ti.", "v": "<b>???:</b> 정말 다행이야! 당신 아니었으면 목숨을 건지지 못했을 거예요."}
+{"k": "Estos Bidoof kalosianos suelen enterrar a sus víctimas en nieve.", "v": "이 칼로스의 비버니들은 희생자를 눈 속에 묻어버리곤 하거든요."}
+{"k": "Ni siquiera es una táctica de supervivencia. Lo hacen por diversión, según he leído.", "v": "생존을 위한 행동도 아니고, 제가 읽은 바에 따르면 그저 재미로 그런다던걸요."}
 {"k": "Me presento, me llamo <b>Crisanto</b>.", "v": "제 소개를 하지요, 제 이름은 <b>크리산토</b>입니다."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] Y tú... ¡sin duda tienes que ser uno de los compañeros junto a los que emprenderé mi viaje Pokémon!", "v": "\\c[3]<b>크리산토:</b>\\c[0] 그리고 너... 분명 나와 함께 포켓몬 여행을 떠날 동료 중 한 명이겠구나!"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] Y tú... ¡sin duda tienes que ser una de las compañeras junto a las que emprenderé mi viaje Pokémon!", "v": "\\c[3]<b>크리산토:</b>\\c[0] 그리고 너... 분명 나와 함께 포켓몬 여행을 떠날 동료 중 한 명이겠구나!"}
-{"k": "Y además me has salvado la vida, ¡qué honor más grande el poder conocerte en unas circunstancias tan poéticas!", "v": "게다가 제 목숨까지 구해주시다니, 이렇게 시적인 상황에서 만나게 되어 정말 큰 영광입니다!"}
-{"k": "Con un primer paso así, ¿qué nos deparará el destino? ¡Esto será digno de escribirse en unas crónicas!", "v": "첫걸음부터 이러니 앞으로 우리에게 어떤 운명이 기다리고 있을까요? 이건 분명 역사에 기록될 만합니다!"}
+{"k": "Y además me has salvado la vida, ¡qué honor más grande el poder conocerte en unas circunstancias tan poéticas!", "v": "게다가 내 목숨까지 구해주었지. 이렇게 시적인 상황에서 마주치다니, 이 얼마나 큰 영광인지!"}
+{"k": "Con un primer paso así, ¿qué nos deparará el destino? ¡Esto será digno de escribirse en unas crónicas!", "v": "이런 첫걸음을 내디뎠으니, 앞으로 어떤 운명이 우리를 기다리고 있을까? 분명 연대기에 기록될 만한 일들이겠지!"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡<i>Oh, mon dieu</i>! ¡Qué falta de educación por mi parte!", "v": "\\c[3]<b>크리산토:</b>\\c[0] <i>Oh, mon dieu</i>! 내가 정말 결례를 범했구나!"}
-{"k": "¿Por qué habrías de creerme cuando digo que soy tu compañero? Bien podría ser un forajido aguardando tras su trampa.", "v": "제가 동료라는 말을 왜 그냥 믿으시나요? 함정을 파고 기다리던 무법자일 수도 있는데 말입니다."}
+{"k": "¿Por qué habrías de creerme cuando digo que soy tu compañero? Bien podría ser un forajido aguardando tras su trampa.", "v": "내가 네 동료라고 말한들, 왜 나를 믿겠어? 어쩌면 함정을 파 놓고 기다리는 무법자일지도 모르잖아."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] He aquí la carta que recibí de la <b>Profesora Olivier</b>, como la que tendrás tú también en posesión.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 여기 <b>올리비에 교수님</b>께 받은 편지가 있어. 너도 가지고 있겠지."}
 {"k": "¡Espero que sea suficiente para acreditar mi identidad! No quisiera empezar con mal pie contigo.", "v": "이걸로 제 신원이 증명되면 좋겠네요! 당신과 시작부터 관계가 틀어지는 건 원치 않거든요."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡Ay! ¡El viento se lleva la carta!", "v": "\\c[3]<b>크리산토:</b>\\c[0] 아이쿠! 바람에 편지가 날아가 버리네!"}
@@ -211,7 +211,7 @@
 {"k": "<b>Conductor:</b> ¡Je, je, je! ¿Pero qué dices? ¡Si esto lo hago yo todos los días!", "v": "<b>마부:</b> 헤헤헤! 무슨 소릴 하는 거야? 난 매일 하는 일이라고!"}
 {"k": "Anda, guarda tus monedas a buen recaudo, que las vas a necesitar. <b>Kalos</b> no atraviesa sus mejores momentos...", "v": "자, 그 동전들은 잘 챙겨 둬. 쓸 데가 있을 테니까. <b>칼로스</b>는 지금 사정이 썩 좋지 않거든..."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] Está bien. En ese caso, ¿buscamos ya el laboratorio, \\PN? Así no haremos esperar más a la profesora.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 알겠습니다. 그럼 이제 연구소를 찾아볼까, \\PN? 박사님을 더 기다리시게 할 수는 없으니까."}
-{"k": "<b>Conductor:</b> Sigo sin entender qué le ha picado a <b>Olivier</b> para querer contratar aprendices. Pensaba que esa mujer había dejado la docencia.", "v": "<b>마부:</b> <b>올리비에</b> 박사가 왜 갑자기 조수를 두려는 건지 도무지 모르겠어. 가르치는 일은 진작에 접은 줄 알았는데."}
+{"k": "<b>Conductor:</b> Sigo sin entender qué le ha picado a <b>Olivier</b> para querer contratar aprendices. Pensaba que esa mujer había dejado la docencia.", "v": "<b>마부:</b> <b>올리비에</b> 박사가 왜 갑자기 수습생을 두려는 건지 도무지 모르겠어. 가르치는 일은 진작에 접은 줄 알았는데."}
 {"k": "Os deseo suerte a los dos. Veréis que el laboratorio no tiene mucha pérdida.", "v": "두 사람 모두에게 행운이 있길 바라네. 연구소는 찾기 쉬울 거야."}
 {"k": "¿Eres de <b>Paldea</b>? ¿No estuvimos en guerra con vosotros hace unas décadas?", "v": "너 <b>팔데아</b>에서 왔어? 수십 년 전에 우리가 너희와 전쟁을 치르지 않았나?"}
 {"k": "Ya después de tantos conflictos, a una le cuesta recordarlos todos.", "v": "싸움이 워낙 많았어야지, 이제는 일일이 기억하기도 힘들구나."}
@@ -251,7 +251,7 @@
 {"k": "Usas una Llave Mercúrica para romper el sello de la puerta.", "v": "수은열쇠를 사용해 문에 걸린 봉인을 해제했다."}
 {"k": "Has perdido el reto Nuzlocke, has fallado a todos los Pokémon que te han acompañado durante la aventura.", "v": "너는 너즐록 챌린지에서 패배했고, 모험을 함께해 온 모든 포켓몬을 저버렸다."}
 {"k": "Puedes seguir jugando de forma normal, pero recuerda que has fracasado.", "v": "일반 모드로 계속 플레이할 수는 있지만, 실패했다는 사실을 잊지 마라."}
-{"k": "<b>Conductor:</b> Sigo sin entender qué le ha picado a <b>Olivier</b> para querer contratar aprendices, si esa mujer tiene un mal genio...", "v": "<b>마부:</b> 그 여자는 성질도 고약한데, 대체 <b>올리비에</b>가 왜 견습생을 고용하려는 건지 여전히 이해가 안 가는군..."}
+{"k": "<b>Conductor:</b> Sigo sin entender qué le ha picado a <b>Olivier</b> para querer contratar aprendices, si esa mujer tiene un mal genio...", "v": "<b>마부:</b> 그 여자는 성질도 고약한데, 대체 <b>올리비에</b>가 왜 수습생을 고용하려는 건지 여전히 이해가 안 가는군..."}
 {"k": "<b>Conductor:</b> ¿Vas a <b>Ciudad Batik</b>? Con gusto te llevaría, pero tengo asuntos importantes que atender.", "v": "<b>마부:</b> <b>기남시티</b>에 가시나요? 기꺼이 태워 드리고 싶지만, 중요한 일이 있어서요."}
 {"k": "Tendrás que cruzar los <b>Pirineos de Kalos</b> por tu propio pie. ¡Buena suerte!", "v": "<b>칼로스 피레네</b>를 직접 걸어서 건너셔야 할 겁니다. 행운을 빕니다!"}
 {"k": "Sí", "v": "네"}
@@ -268,8 +268,8 @@
 {"k": "Aquí solo hay basura.", "v": "여기엔 쓰레기밖에 없다."}
 {"k": "Si bajas a la playa del pueblo, verás los restos de una antigua torre de guardia.", "v": "마을 해변으로 내려가면 옛 감시탑 유적이 보일 거다."}
 {"k": "La puerta está sellada con una extraña tecnología de <b>Ciudad Yantra</b>, ¿es que hay algo peligroso dentro?", "v": "문이 <b>사라시티</b>의 기이한 기술로 봉인되어 있는데, 안에 위험한 거라도 있는 건가?"}
-{"k": "¿Eres uno de los aprendices nuevos de <b>Olivier</b>? Nos dijeron que llegarían dos jóvenes al pueblo.", "v": "자네가 <b>올리비에</b>의 신입 후보생인가? 마을에 젊은이 둘이 올 거라고 들었다네."}
-{"k": "¿Eres una de las aprendices nuevas de <b>Olivier</b>? Nos dijeron que llegarían dos jóvenes al pueblo.", "v": "자네가 <b>올리비에</b>의 신입 후보생인가? 마을에 젊은이 둘이 올 거라고 들었다네."}
+{"k": "¿Eres uno de los aprendices nuevos de <b>Olivier</b>? Nos dijeron que llegarían dos jóvenes al pueblo.", "v": "자네가 <b>올리비에</b>의 신입 수습생인가? 마을에 젊은이 둘이 올 거라고 들었다네."}
+{"k": "¿Eres una de las aprendices nuevas de <b>Olivier</b>? Nos dijeron que llegarían dos jóvenes al pueblo.", "v": "자네가 <b>올리비에</b>의 신입 수습생인가? 마을에 젊은이 둘이 올 거라고 들었다네."}
 {"k": "Pues te daré un pequeño incentivo para que te esfuerces todo lo posible.", "v": "열심히 해 보라고 내가 작은 선물을 하나 줌세."}
 {"k": "Si logras capturar 5 Pokémon, ven a verme.", "v": "포켓몬을 5마리 잡게 되면 나한테 찾아오게나."}
 {"k": "¡Oh! Veo que te has aplicado bastante.", "v": "오! 꽤 열심히 했구나."}
@@ -2557,8 +2557,8 @@
 {"k": "<b>Olivier:</b> \\PN, conseguiste graduarte en la Academia Pokémon de tu región con unos resultados, a todas luces, notables.", "v": "<b>올리비에:</b> \\PN, 넌 네 지방의 포켓몬 아카데미를 누가 봐도 뛰어난 성적으로 졸업했지."}
 {"k": "Creo que tienes el potencial suficiente para formar parte de mi grupo de aprendices y ayudarme en todo lo posible en mis investigaciones.", "v": "너라면 내 수습생 그룹에 들어와 내 연구를 다방면으로 도울 만한 충분한 잠재력이 있다고 본단다."}
 {"k": "Te reunirás con otros 2 compañeros que también han sido admitidos en el programa.", "v": "마찬가지로 이번 프로그램에 합격한 다른 동료 2명과 만나게 될 거야."}
-{"k": "Juntos emprenderéis un emocionante viaje que transformará vuestras vidas.", "v": "너희는 함께 너희의 삶을 바꿔 놓을 흥분되는 여정을 떠나게 될 거란다."}
-{"k": "Supongo que todo esto te puede resultar bastante edificante.", "v": "이 모든 게 너한테 꽤 유익한 경험이 될 거라 생각하는구나."}
+{"k": "Juntos emprenderéis un emocionante viaje que transformará vuestras vidas.", "v": "너희는 함께 너희의 삶을 바꿔 놓을 흥미진진한 여정을 떠나게 되겠지."}
+{"k": "Supongo que todo esto te puede resultar bastante edificante.", "v": "이 모든 게 너한테 꽤 유익한 경험이 될 거라 생각한단다."}
 {"map": 66, "n": 25}
 {"k": "Has perdido el reto Nuzlocke, has fallado a todos los Pokémon que te han acompañado durante la aventura.", "v": "너는 너즐록 챌린지에서 패배했고, 모험을 함께해 온 모든 포켓몬을 실망시켰다."}
 {"k": "Puedes seguir jugando de forma normal, pero recuerda que has fracasado.", "v": "일반 모드로 계속 플레이할 수는 있지만, 실패했다는 사실을 잊지 마라."}
