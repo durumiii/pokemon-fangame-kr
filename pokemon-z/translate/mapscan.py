@@ -40,7 +40,7 @@ def norm(s):
 
 
 def page_messages(page):
-    """한 이벤트 페이지의 표시 문자열들. 101+401 병합, 102 선택지는 개별."""
+    """한 이벤트 페이지의 (유형, 문자열) 목록. 101+401 병합, 102 선택지는 개별."""
     out = []
     buf = None
     for cmd in page.attributes["@list"]:
@@ -48,18 +48,18 @@ def page_messages(page):
         code, params = ca["@code"], ca["@parameters"]
         if code == 101:
             if buf is not None:
-                out.append(buf)
+                out.append(("text", buf))
             buf = b2s(params[0])
         elif code == 401 and buf is not None:
             buf += "\n" + b2s(params[0])
         else:
             if buf is not None:
-                out.append(buf)
+                out.append(("text", buf))
                 buf = None
             if code == 102:
-                out.extend(b2s(c) for c in params[0])
+                out.extend(("choice", b2s(c)) for c in params[0])
     if buf is not None:
-        out.append(buf)
+        out.append(("text", buf))
     return out
 
 
@@ -74,11 +74,11 @@ def scan_maps(game_dir):
             continue
         ca = ce.attributes
         fake_page = type("P", (), {"attributes": {"@list": ca["@list"]}})()
-        for text in page_messages(fake_page):
+        for kind, text in page_messages(fake_page):
             rows.append({
                 "map": 0, "map_name": "(common)", "event": ca["@id"],
                 "event_name": b2s(ca["@name"]), "page": 0,
-                "sprite": "", "x": -1, "y": -1, "text": text,
+                "sprite": "", "x": -1, "y": -1, "kind": kind, "text": text,
             })
     for p in sorted(data.glob("Map[0-9][0-9][0-9].rxdata")):
         mid = int(p.stem[3:])
@@ -88,7 +88,7 @@ def scan_maps(game_dir):
             for pi, page in enumerate(ea["@pages"]):
                 g = page.attributes["@graphic"].attributes
                 sprite = b2s(g["@character_name"])
-                for text in page_messages(page):
+                for kind, text in page_messages(page):
                     rows.append({
                         "map": mid,
                         "map_name": map_names.get(mid, ""),
@@ -97,7 +97,7 @@ def scan_maps(game_dir):
                         "page": pi,
                         "sprite": sprite,
                         "x": ea["@x"], "y": ea["@y"],
-                        "text": text,
+                        "kind": kind, "text": text,
                     })
     return rows
 
@@ -143,7 +143,8 @@ def main():
                 row.update({
                     "map_name": h["map_name"], "event": h["event"],
                     "event_name": h["event_name"], "sprite": h["sprite"],
-                    "x": h["x"], "y": h["y"], "n_hits": len(hits),
+                    "x": h["x"], "y": h["y"], "kind": h["kind"],
+                    "n_hits": len(hits),
                 })
                 joined.append(row)
             else:
