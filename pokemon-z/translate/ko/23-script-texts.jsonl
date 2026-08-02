@@ -2966,8 +2966,8 @@
 {"k": "Nombre del EO de {1}", "v": "{1}의 OT 이름"}
 {"k": "Establecer el género del EO.", "v": "오리지널 트레이너의 성별을 설정한다."}
 {"k": "Setear el nuevo ID (máx. 65535).", "v": "새 ID를 설정한다 (최대 65535)."}
-{"k": "{1} tiene el apodo {2}.", "v": "{1}의 닉네임은 {2}이다."}
-{"k": "{1} no tiene apodo.", "v": "{1}\\j[은,는] 닉네임이 없다."}
+{"k": "{1} tiene el apodo {2}.", "v": "{1}의 별명은 {2}이다."}
+{"k": "{1} no tiene apodo.", "v": "{1}\\j[은,는] 별명이 없다."}
 {"k": "Renombrar", "v": "이름 바꾸기"}
 {"k": "Borrar nombre", "v": "이름 지우기"}
 {"k": "Apodo de {1}", "v": "{1}의 별명"}
@@ -3359,7 +3359,7 @@
 {"k": "¡No puedes dejar a tu último Pokémon!", "v": "마지막 포켓몬은 맡길 수 없다!"}
 {"k": "¿A qué PC quieres acceder?", "v": "어느 PC에 접속하시겠습니까?"}
 {"k": "\\se[]¡{1} ha salido del huevo!\\wt[80]", "v": "\\se[]알에서 {1}\\j[이,가] 태어났다!\\wt[80]"}
-{"k": "¿Quieres darle un apodo al {1} recién nacido?", "v": "태어난 {1}에게 닉네임을 붙이겠습니까?"}
+{"k": "¿Quieres darle un apodo al {1} recién nacido?", "v": "태어난 {1}에게 별명을 붙이겠습니까?"}
 {"k": "¿Y ésto?\u0001", "v": "이건 뭐지?\u0001"}
 {"k": "¡{1} ha salido del huevo!", "v": "알에서 {1}\\j[이,가] 태어났다!"}
 {"k": "{1:s}\nID: {2:05d} EO: {3:s}\\wtnp[0]", "v": "{1:s}\nID: {2:05d} 어버이: {3:s}\\wtnp[0]"}
@@ -3524,7 +3524,7 @@
 {"k": "Todos los dispositivos de grabación están ocupados. No se puede grabar en este momento.", "v": "모든 녹음 장치가 사용 중입니다. 지금은 녹음할 수 없습니다."}
 {"k": "Se encontró dispositivo de grabación no soportado. No es posible la grabación.", "v": "지원되지 않는 녹음 장치가 발견되었습니다. 녹음할 수 없습니다."}
 {"k": "Fallo en la grabación: {1}", "v": "저장 실패: {1}"}
-{"k": "¿Quieres ponerle un apodo a {1}?", "v": "{1}에게 닉네임을 붙이시겠습니까?"}
+{"k": "¿Quieres ponerle un apodo a {1}?", "v": "{1}에게 별명을 붙이시겠습니까?"}
 {"k": "¡No hay espacio para el Pokémon!\u0001", "v": "포켓몬을 넣을 공간이 없다!\u0001"}
 {"k": "¡Las Cajas de la PC están llenas y no aceptan ni un Pokémon más!", "v": "PC 박스가 가득 차서 포켓몬을 더 맡길 수 없다!"}
 {"k": "La caja \"{1}\" de la PC de {2} está llena.\u0001", "v": "{2}의 PC 박스 \"{1}\"\\j[이,가] 가득 찼다.\u0001"}
@@ -5025,7 +5025,7 @@
 {"k": "{1} ha abierto la puerta de su corazón!", "v": "{1}\\j[이,가] 마음의 문을 열었다!"}
 {"k": "¡{1} ha recuperado el movimiento\n{2}!", "v": "{1}\\j[이,가] 기술 \n{2}\\j[을,를] 되찾았다!"}
 {"k": "¡{1} ha recuperado {2} Puntos de Experiencia!", "v": "{1}\\j[은,는] {2} 경험치를 얻었다!"}
-{"k": "¿Quieres darle un apodo a {1}?", "v": "{1}에게 닉네임을 붙여 주겠습니까?"}
+{"k": "¿Quieres darle un apodo a {1}?", "v": "{1}에게 별명을 붙여 주겠습니까?"}
 {"k": "¡Hay un Pokemon que podría habrír la puerta de su corazón!", "v": "마음의 문을 열 수 있을 것 같은 포켓몬이 있다!"}
 {"k": "No tienen ningún Pokemon que pueda ser purificado.", "v": "정화할 수 있는 포켓몬이 없다."}
 {"k": "¡{1} te adora!\nLa puerta de su corazón se ha abierto un poco.", "v": "{1}\\j[이,가] 당신을 아주 따른다!\n마음의 문이 조금 열렸다."}
@@ -5353,7 +5353,7 @@
 {"k": "Nuevo juego", "v": "새로 시작"}
 {"k": "Elige un Pokémon y confirma.", "v": "포켓몬을 선택하고 결정하세요."}
 {"k": "Este Pokémon no es tuyo.\nSu nombre es lo único que le queda de su antiguo Entrenador.", "v": "이 포켓몬은 네 것이 아니다.\n이름만이 예전 트레이너에게서 남은 전부다."}
-{"k": "Elige el apodo que más te guste.", "v": "마음에 드는 닉네임을 고르세요."}
+{"k": "Elige el apodo que más te guste.", "v": "마음에 드는 별명을 고르세요."}
 {"k": "¿Apodo de {1}?", "v": "{1}의 별명은?"}
 {"k": "Un script está fallando, el juego se va a reiniciar. Vuelve a descargar el juego si este error se repite.", "v": "스크립트 오류로 게임을 다시 시작합니다. 이 오류가 반복되면 게임을 다시 받으세요."}
 {"k": "\\se[]Se ha guardado la partida.\\se[save]\\wtnp[30]", "v": "\\se[]게임을 저장했습니다.\\se[save]\\wtnp[30]"}
@@ -5753,7 +5753,7 @@
 {"k": "¡No me puedo creer que haya conocido a alguien tan fuerte! ¿Y dices que vienes del este? ¿Cómo conociste a tus Pokémon? ¡Quiero saber más!", "v": "이렇게 강한 사람을 만나다니 믿기지 않아! 동쪽에서 왔다고? 포켓몬들과는 어떻게 만난 거야? 더 알고 싶어!"}
 {"k": "Los grandes maestros poseen un vínculo muy fuerte con sus compañeros Pokémon. Pero lo tuyo es incluso más poderoso. ¿Podría ser...?", "v": "위대한 마스터들은 동료 포켓몬과 아주 강한 유대를 맺지. 그런데 네 유대는 그보다도 강하군. 설마...?"}
 {"k": "¡No! ¡Esto no se pierde hasta que me quede sin Pokémon! ¡Cambiaremos el viento a nuestro favor, por Makonawa!", "v": "안 돼! 내 포켓몬이 다 쓰러지기 전까지 진 게 아니야! Makonawa를 위해서라도 바람을 우리 쪽으로 돌리겠어!"}
-{"k": "¿Quieres ponerle un mote a {1}?", "v": "{1}에게 닉네임을 붙이겠습니까?"}
+{"k": "¿Quieres ponerle un mote a {1}?", "v": "{1}에게 별명을 붙이겠습니까?"}
 {"k": "¡Las Cajas del PC están llenas y no aceptan ni un Pokémon más!", "v": "PC 박스가 가득 차서 포켓몬을 더 받을 수 없다!"}
 {"k": "La caja \"{1}\" del PC de alguien PC está llena.\u0001", "v": "누군가의 PC 박스 \"{1}\"\\j[이,가] 가득 찼다.\u0001"}
 {"k": "{1} fue transferido al PC de {2}.\u0001", "v": "{1}\\j[을,를] {2}의 PC로 보냈다.\u0001"}
@@ -6504,7 +6504,7 @@
 {"k": "\\se[]¿Cómo?\n¡{1} está evolucionando!\\^", "v": "\\se[]어라?\r\n{1}의 모습이...!\\^"}
 {"k": "¿Qué?\n¡{1} ha dejado de evolucionar!", "v": "어라?\r\n{1}의 진화가 멈췄다!"}
 {"k": "\\se[]¡Enhorabuena! ¡Tu {1} ha evolucionado en {2}!\\wt[80]", "v": "\\se[]축하합니다! 당신의 {1}\\j[은,는] {2}\\j[으로,로] 진화했습니다!\\wt[80]"}
-{"k": "¿Quieres ponerle un mote al recién nacido {1}?", "v": "막 태어난 {1}에게 닉네임을 붙이시겠습니까?"}
+{"k": "¿Quieres ponerle un mote al recién nacido {1}?", "v": "막 태어난 {1}에게 별명을 붙이시겠습니까?"}
 {"k": "¿Mote de {1}?", "v": "{1}의 별명은?"}
 {"k": "¡Los efectos de la {1} deshabilita el uso de movimientos de estado!", "v": "{1}의 효과로 변화 기술을 쓸 수 없게 되었다!"}
 {"k": "¡K.O de un golpe!", "v": "일격필살!"}

@@ -76,6 +76,7 @@ canon에 없는 영역의 보조로만).
 | Alquimia Pokémon | 포켓몬 연금술(사) | | pokécuartos/pokéfrancos | 포켓프랑 |
 | Legislador | 입법관 (2026-08-02 판정) | | Capitán/Capitana | **대장**(군 계열: 메를로·크리산토·센데라·근위대) / **선장**(배·해적: 로토) — 2026-08-02 재판정, 실기 소견 근거 |
 | Pokémon Sombrío/Shadow | 그림자 포켓몬 (GO 공식) | | Pokochos | 포핀 |
+| apodo/mote | 별명 (닉네임 아님 — 2026-08-03 사용자 판정) | | | |
 | Hall de la Fama | 명예의 전당 | | Alfa/Nido Alfa | 알파/알파 둥지 (이 게임 고유) |
 | Regente | 섭정 | | Orden Yantra | 얀트라 교단 |
 | Poketour | 포켓투어 | | Rancho | 목장 |
