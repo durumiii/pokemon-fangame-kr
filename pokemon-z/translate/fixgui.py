@@ -17,7 +17,7 @@ import json
 import subprocess
 import sys
 import urllib.parse
-from http.server import BaseHTTPRequestHandler, HTTPServer
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 HERE = Path(__file__).parent
@@ -214,8 +214,8 @@ class H(BaseHTTPRequestHandler):
 
 def main():
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8787
-    print(f"http://localhost:{port}  (중지: Ctrl+C)")
-    HTTPServer(("127.0.0.1", port), H).serve_forever()
+    print(f"http://localhost:{port}  (중지: Ctrl+C)", flush=True)
+    ThreadingHTTPServer(("127.0.0.1", port), H).serve_forever()
 
 
 if __name__ == "__main__":
