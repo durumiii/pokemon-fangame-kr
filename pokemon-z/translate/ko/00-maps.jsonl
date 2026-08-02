@@ -922,7 +922,7 @@
 {"k": "¡Oye, tú! ¿Nos echas una mano?", "v": "이봐, 너! 우리 좀 도와줄래?"}
 {"k": "Tenemos que echarle el guante a unos cuantos malhechores escurridizos, pero también andamos escasos de personal.", "v": "교활한 악당 몇 명을 잡아야 하는데, 인력이 부족하거든."}
 {"k": "¿Te apuntas a una misión justiciera? Recibirás una recompensa.", "v": "정의를 위한 임무에 참여하겠나? 보상을 주겠다."}
-{"k": "¡<i>Fantastique</i>! Pues mira, nos han llegado reportes de una peligrosa Bruja que se esconde en la parte más profunda de la <b>Cueva Grisalla</b>.", "v": "¡<i>Fantastique</i>! 자, <b>그리사야 동굴</b> 가장 깊은 곳에 위험한 마녀가 숨어 있다는 보고가 들어왔어."}
+{"k": "¡<i>Fantastique</i>! Pues mira, nos han llegado reportes de una peligrosa Bruja que se esconde en la parte más profunda de la <b>Cueva Grisalla</b>.", "v": "<i>Fantastique</i>! 자, <b>그리사야 동굴</b> 가장 깊은 곳에 위험한 마녀가 숨어 있다는 보고가 들어왔어."}
 {"k": "¿Puedes encargarte tú?", "v": "네가 맡아 줄 수 있겠어?"}
 {"k": "¡Claro! Es necesario tener algo de sangre fría para perseguir malhechores.", "v": "물론이죠! 악당들을 쫓으려면 얼마간 냉철함이 필요하답니다."}
 {"k": "¡Bien hecho! Esa bruja nos estaba dando más de un dolor de cabeza.", "v": "잘했어! 그 마녀 때문에 골치가 아팠거든."}
@@ -933,7 +933,7 @@
 {"k": "El siguiente malhechor es muy peligroso, ¡acepta el trabajo solo si eres muy fuerte!", "v": "다음 악당은 매우 위험하니, 아주 강한 분만 이 일을 맡아 주세요!"}
 {"k": "Dicen que han visto a un vampiro en las <b>Catacumbas Septentrionales</b> bajo <b>Pueblo Profano</b>.", "v": "<b>프로파노마을</b> 지하의 <b>북부 카타콤</b>에서 뱀파이어를 보았다는 말이 있습니다."}
 {"k": "De ser así, hay que capturarlo inmediatamente.", "v": "사실이라면 즉시 체포해야 합니다."}
-{"k": "¡<i>C'est incroyable</i>! Has logrado capturar a ese peligroso vampiro.", "v": "¡<i>C'est incroyable</i>! 그 위험한 뱀파이어를 붙잡다니."}
+{"k": "¡<i>C'est incroyable</i>! Has logrado capturar a ese peligroso vampiro.", "v": "<i>C'est incroyable</i>! 그 위험한 뱀파이어를 붙잡다니."}
 {"k": "Sin duda una hazaña así debe tener una recompensa a la altura.", "v": "의심할 여지 없이 이런 위업에는 그에 걸맞은 보상이 따라야지요."}
 {"k": "Por favor, acepta a este Pokémon defensor de la justicia.", "v": "부디 이 정의의 수호자 포켓몬을 받아 주세요."}
 {"k": "El siguiente malhechor es un malvado alquimista del <b>Team Azoth</b> que se ha refugiado en las ruinas de <b>Viejo Vánitas</b>.", "v": "다음 악당은 <b>옛 바니타스</b> 폐허에 숨어든 <b>팀 아조스</b>의 사악한 연금술사다."}
@@ -2403,7 +2403,7 @@
 {"k": "En este <b>Tablón de Misiones</b> encontrarás algunos encargos pendientes con los que te hayas topado en tu aventura.", "v": "이 <b>의뢰 게시판</b>에서는 모험 도중 마주쳤던 미완료 의뢰들을 확인할 수 있습니다."}
 {"k": "Mmm, ¡el precio de las Pokéball es inasumible incluso para alguien como yo!", "v": "음, 몬스터볼 가격은 나 같은 사람에게도 감당할 수 없을 정도네요!"}
 {"k": "Creo que trataré de fabricar mis propias Pokéball.", "v": "직접 몬스터볼을 만들어 볼까 합니다."}
-{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "¡<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영합니다. 의료의 기적을 일으키는 곳이죠. 포켓몬들을 치료하시겠습니까?"}
+{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영합니다. 의료의 기적을 일으키는 곳이죠. 포켓몬들을 치료하시겠습니까?"}
 {"k": "Esto llevará un rato.", "v": "잠시 시간이 걸립니다."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "치료 완료! 필요할 때 언제든 다시 찾아주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 이용해 주세요."}
@@ -6144,8 +6144,8 @@
 {"k": "Es la línea de transporte que utilizas para transportarte en el aire entre ciudad y ciudad.", "v": "도시와 도시 사이를 하늘로 이동할 때 이용하는 교통편이죠."}
 {"k": "¡Observa! Estos son unos pasos orientales que me enseñaron a hacer las Hermanas Kimono de <b>Johto</b>.", "v": "보세요! <b>성도</b>의 기모노 자매들에게 배운 동방의 춤사위랍니다."}
 {"k": "Bien, ¡ahora tú!", "v": "자, 이제 네 차례야!"}
-{"k": "¡<i>Tres bien</i>! Toma, una crêpe.", "v": "¡<i>Tres bien</i>! 자, 크레페 하나 줄게."}
-{"k": "¡<i>Tres bien</i>! Se te da bien la danza.", "v": "¡<i>Tres bien</i>! 춤을 아주 잘 추는구나."}
+{"k": "¡<i>Tres bien</i>! Toma, una crêpe.", "v": "<i>Tres bien</i>! 자, 크레페 하나 줄게."}
+{"k": "¡<i>Tres bien</i>! Se te da bien la danza.", "v": "<i>Tres bien</i>! 춤을 아주 잘 추는구나."}
 {"k": "Me encanta Aromatisse, ¿lo cambiarías por mi Slurpuff?", "v": "난 프레프티르가 정말 좋은데, 내 나루림과 교환하지 않을래?"}
 {"k": "¡Bien, veo que tienes un Slurpuff! ¡Hagamos el intercambio!", "v": "좋아요, 나루림을 가지고 계시네요! 그럼 교환해요!"}
 {"k": "¡Gracias! ¡Qué bonito es mi nuevo y flamante Aromatisse!", "v": "고마워요! 제 새로 생긴 멋진 프레프티르가 정말 예쁘네요!"}
@@ -8776,7 +8776,7 @@
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] Los Pokémon expulsaron de mi tierra a todos aquellos esclavistas que, por cierto, tengo entendido que servían a grandes señores de <b>Kalos</b>.", "v": "\\c[6]<b>미라:</b>\\c[0] 포켓몬들은 내 땅에서 그 노예주들을 전부 쫓아냈다. 듣자하니 그자들은 <b>칼로스</b>의 대영주들을 섬기던 자들이었다더군."}
 {"map": 269, "n": 23}
 {"k": "¿Quieres usar la Montura Gogoat?", "v": "고고트라이드를 사용하시겠습니까?"}
-{"k": "¡Bonjour! ¿Tú también has venido a recolectar setas en estos páramos pantanosos?", "v": "¡Bonjour! 너도 이 황량한 습지대에 버섯을 따러 온 거야?"}
+{"k": "¡Bonjour! ¿Tú también has venido a recolectar setas en estos páramos pantanosos?", "v": "Bonjour! 너도 이 황량한 습지대에 버섯을 따러 온 거야?"}
 {"k": "¡Oh, la, la! ¡Oh, la, la!", "v": "오, 라, 라! 오, 라, 라!"}
 {"k": "Dicen que en estas tierras pantanosas y otoñales, la magia y la brujería es más fuerte que en cualquier otro lugar de la región.", "v": "이 가을빛 황량한 습지에서는 지역 내 다른 어느 곳보다 마법과 주술의 힘이 강하다고 해요."}
 {"k": "¿Vas a Ciudad Romantis? ¿La casa de mi aquelarre de brujas? Je, je, je... ¡Tendrás que pasar por mis hechizos primero!", "v": "로만티스시티에 가는 거야? 우리 마녀 집회의 집 말이지? 헤헤헤... 우선 내 주술을 통과해야 할걸!"}
