@@ -8,6 +8,6 @@ if defined?(UiTextKR)
     ["[D] Brújula", "[RB] 나침반"],
     ["A Curar", "X 회복"],
     ["S Viajar", "LB 이동"],
-    ["D Brújula", "RB 나침반"],
+    ["D Brújula", "RB 나침반"]
   )
 end
