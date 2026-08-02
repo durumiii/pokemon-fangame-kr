@@ -186,7 +186,8 @@ Haiku 4.5 / 저가 게이트웨이 모델)로 돌려 나란히 놓고 사용자�
     versión exótica=다른 지방의 모습(리전폼은 비공식 약칭 — 공식 어법 「(지방명)의 모습」),
     랭크 변화 문구 공식 체계(1랭크 올라갔다/떨어졌다 · 2랭크 크게 · 3랭크+ 매우 크게 —
     상승 계열 6행이 「올랐다」로 어긋나 있던 것 교정, 사용자 전사 근거). 전부 용어집 고정.
-14. **공유 패키지 — 조립 체계 완성(2026-08-02, 배포일 미정).** `mod/z/share/make_package.py`
+14. **공유 패키지 — 조립 체계 완성, v4 첫 공개(2026-08-02 저녁,
+    https://github.com/durumiii/pokemon-fangame-kr/releases/tag/v4).** `mod/z/share/make_package.py`
     한 방이면 배포판이 선다 — 원 패치 에셋 182 + 최신 dat + Josa Select·UI Text KR 주입
     Scripts.rxdata + 번역표(정본 24파일) + 독립 빌더(rubywrite 동봉, pip rubymarshal만 요구)
     + 번역 도구(prompt·glossary·voices·aliases — 남이 장면 재번역할 때의 일관성 재료).
