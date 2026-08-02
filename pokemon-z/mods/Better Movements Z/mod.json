@@ -1,0 +1,24 @@
+{
+  "name": "Better Movements Z",
+  "game": "Pokemon Z Fangame",
+  "description": "걷고 뛰는 감각을 손보는 모드예요. Wishing Star의 Better Movements와 같은 의도를 구형 엔진(Essentials v16)에 다시 구현한 것입니다.\n\n한 칸을 건너는 속도를 걷기·달리기·자전거 모두 약 23% 당겼고, 방향키를 톡 눌렀을 때 제자리 회전에서 실제 이동으로 넘어가는 문턱을 2프레임에서 1프레임으로 줄였어요. 값은 000_Config.rb 한 곳에 모여 있습니다.\n\nNPC와 이벤트 이동은 건드리지 않아요. 동행 포켓몬은 게임이 플레이어 속도를 복사해 가므로 함께 빨라집니다.\n\n설치는 파일 복사가 아니라 주입입니다 — poke-essentials의 mod/z/inject.py가 한글패치판 Scripts.rxdata에 섹션으로 덧붙여요.",
+  "engine": "essentials-v16",
+  "install": "inject",
+  "created_at": "2026-08-01",
+  "scripts": [
+    {
+      "file": "000_Config.rb",
+      "script_name": "000_Config.rb"
+    },
+    {
+      "file": "001_Movement.rb",
+      "script_name": "001_Movement.rb"
+    }
+  ],
+  "expects": {
+    "Game_Character": "424a03a6fa96893da453c8ca9ae85a0b",
+    "Game_Player": "0f974764652d1e5f6a680de720e9c465",
+    "Walk_Run": "30478cf05a0bb9ae8cb5f5303ef063eb",
+    "Following": "f282c5247cf96ae6d1885f02360a5fab"
+  }
+}

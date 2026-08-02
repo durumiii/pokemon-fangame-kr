@@ -1,0 +1,35 @@
+{"id": "s23:6116", "es": "Nadie volverá a cuestionar la fuerza de Giovanni, el entrenador más fuerte del mundo.", "ko": "세계 최강의 트레이너 비주기의 힘을 그 누구도 다시는 의심하지 못하리라.", "hits": ["2: cuestionar la fuerza는 힘에 의문을 제기한다는 뜻인데, 「의심하지 못하리라」는 의심할 수 없다는 뜻으로 의미가 달라짐."]}
+{"id": "s23:6127", "es": "¡Increíble!\n¡No tenía idea que existierán tantas especies distintas!", "ko": "굉장해!\n이렇게 많은 종류가 있을 줄은 몰랐어!", "hits": ["2: distintas의 「서로 다른」이라는 의미가 「많은 종류」에서 누락됨."]}
+{"id": "s23:6162", "es": "¡Qué privilegio poder ver tu colección de raros Pokémon! ¡Sigamos!", "ko": "당신의 희귀한 포켓몬 수집품을 보다니 영광이군요! 계속합시다!", "hits": ["2. ‘colección de raros Pokémon’은 희귀한 포켓몬의 컬렉션이라는 뜻인데, ‘희귀한 포켓몬 수집품’은 포켓몬 관련 수집 물품이라는 다른 의미가 된다."]}
+{"id": "s23:6200", "es": "#{$Trainer.party[0].name} está debilitado.\nApenas puede tenerse en pie...", "ko": "#{$Trainer.party[0].name}\\j[은,는] 기력이 다했다.\n간신히 서 있다...", "hits": ["5: 'debilitado'는 포켓몬 시리즈 정식 용어로 '기절'이지만 '기력이 다했다'로 번역됨."]}
+{"id": "s23:6203", "es": "Esa luz que desprenden tus Pokémon es cautivadora. ¿Me permites tomar una muestra?", "ko": "당신의 포켓몬이 뿜어내는 그 빛은 참으로 매혹적이군요. 표본을 조금 채취해도 되겠습니까?", "hits": ["1. 원문에 없는 ‘참으로’와 ‘조금’을 추가함."]}
+{"id": "s23:6232", "es": "{Se activó Retirada de {1}!", "ko": "{{1}의 회수가 발동했다!", "hits": ["4·5: ko에 여는 중괄호가 하나 더 있어 문법/플레이스홀더 표기가 깨졌고, 포켓몬 기술 Retirada의 정식 한국어 명칭인 ‘껍질에숨기’가 ‘회수’로 잘못 번역되었다."]}
+{"id": "s23:6282", "es": "El nivel de {1} no ha subido. Consigue más medallas", "ko": "{1}의 레벨이 오르지 않았다. 메달을 더 모아라", "hits": ["5: 포켓몬 시리즈 정식 명칭인 '배지(Badges)'를 '메달'로 번역함."]}
+{"id": "s23:6331", "es": "No se pueden meter mas puas", "ko": "더 이상 압정을 깔 수 없다", "hits": ["5: 포켓몬 정식 기술명 Spikes는 「압정뿌리기」이므로 「압정」은 정식 명칭과 어긋난다."]}
+{"id": "s23:6332", "es": "¡Regia Presencia impidió el ataque!", "ko": "여왕의위엄이 공격을 막았다!", "hits": ["5: 특성 'Queenly Majesty'의 한국 정식 명칭은 '퀸리 마제스티'이나, '여왕의위엄'으로 번역됨."]}
+{"id": "s23:6352", "es": "¡Tengo por mío todo cuanto abarca cielo y mar! ¡Este combate también será mío, cariño!", "ko": "하늘과 바다에 닿는 모든 것이 내 것이다! 이 승부도 내 것이 되겠지, 얘야!", "hits": ["2: cielo y mar가 아우르는 모든 것을 뜻하는데, 「하늘과 바다에 닿는 모든 것」으로 관계가 왜곡됨."]}
+{"id": "s23:6356", "es": "¡Aaaah! ¡No voy a perder ahora que tengo a mis Pokémon superpoderosos!", "ko": "으아아! 초강력 포켓몬이 있는데 질 수는 없지!", "hits": ["2. ahora(이제)와 mis(내)의 의미가 번역에서 드러나지 않는다."]}
+{"id": "s23:6361", "es": "¿Has pensado bien en lo que haces? ¡El siguiente golpe va a doler mucho!", "ko": "지금 뭘 하는지 잘 생각했나? 다음 공격은 꽤 아플 거다!", "hits": ["2. mucho(많이, 매우)를 「꽤」로 옮겨 강도가 약해졌다."]}
+{"id": "s23:6381", "es": "¡{1} empieza a sangrar por la {2}!", "ko": "{1}\\j[이,가] {2} 때문에 출혈을 일으켰다!", "hits": ["2. empieza a sangrar는 ‘출혈을 시작한다/피를 흘리기 시작한다’는 뜻인데, 「출혈을 일으켰다」는 원인 행위로 왜곡되었다."]}
+{"id": "s23:6443", "es": "Pasos para la eclosión: {1} ({2} ciclos)", "ko": "부화까지 걸음 수: {1} ({2}사이클)", "hits": ["4: '{2}사이클' 사이에 공백 누락."]}
+{"id": "s23:6467", "es": "{1} al nivel {2} y ATK > DEF.", "ko": "레벨 {2} 이상 및 공격 > 방어 시 {1}.", "hits": ["1: 원문은 레벨 {2}일 때라는 뜻인데, 번역에서 「이상」을 추가했다."]}
+{"id": "s23:6468", "es": "{1} al nivel {2} y ATK = DEF.", "ko": "레벨 {2} 이상 및 공격 = 방어 시 {1}.", "hits": ["1: 원문은 레벨 {2}일 때라는 뜻인데, 번역에서 「이상」을 추가했다."]}
+{"id": "s23:6469", "es": "{1} al nivel {2} y DEF < ATK.", "ko": "레벨 {2} 이상 및 방어 < 공격 시 {1}.", "hits": ["1: 원문은 레벨 {2}일 때라는 뜻인데, 번역에서 「이상」을 추가했다."]}
+{"id": "s23:6471", "es": "{1} al nivel {2} con un espacio libre.", "ko": "레벨 {2} 이상 및 엔트리에 빈자리가 있을 때 {1}.", "hits": ["1: 원문은 레벨 {2}일 때라는 뜻인데, 번역에서 「이상」을 추가했다."]}
+{"id": "s23:6489", "es": "{1} al nivel {2} con un tipo siniestro en el equipo.", "ko": "레벨 {2} 이상 및 팀에 악타입이 있을 때 {1}.", "hits": ["1: 원문은 레벨 {2}일 때라는 뜻인데, 번역에서 「이상」을 추가했다."]}
+{"id": "s23:6491", "es": "{1} amistad y mov. de tipo {2}.", "ko": "친밀도가 높고 {2}타입 기술을 배운 상태일 때 {1}.", "hits": ["1: 원문에 없는 「높고」와 「배운 상태」라는 뉘앙스를 추가했다."]}
+{"id": "s23:6503", "es": "¿Crees que esos burdos ataques mellarán el hielo de mis Pokémon? ¡Te aplastaremos!", "ko": "그런 어설픈 공격으로 내 포켓몬의 얼음에 금이라도 낼 수 있을 것 같으냐? 짓뭉개 주마!", "hits": ["3: 'Te aplastaremos'(우리가 짓뭉개겠다, 1인칭 복수)를 '짓뭉개 주마'(1인칭 단수)로 번역해 수가 유지되지 않음."]}
+{"id": "s23:6508", "es": "¿Quieres ponerle un mote al recién nacido {1}?", "ko": "막 태어난 {1}에게 닉네임을 붙이시겠습니까?", "hits": ["5: 포켓몬 시리즈의 정식 용어는 「닉네임」이 아니라 「별명」이다."]}
+{"id": "s23:6523", "es": "Descubre al hombre tocado.", "ko": "미친 사내의 정체를 밝혀라.", "hits": ["2. 「hombre tocado」는 ‘기이한/정신이 온전치 않은 사내’ 정도인데 「미친 사내」로 의미가 강하게 왜곡됨."]}
+{"id": "s23:6567", "es": "¡Has presenciado la grandeza del nuevo Missile!", "ko": "새로워진 Missile의 위대함을 목격했다!", "hits": ["1·2: ‘nuevo’는 단순히 ‘새로운’이라는 뜻인데 ‘새로워진’은 개선·변화의 뉘앙스를 더한다."]}
+{"id": "s23:6577", "es": "Consigue surfear sobre un Stunfisk.", "ko": "메더를 타고 파도타기를 하라.", "hits": ["2: consigue surfear(파도타기에 성공해라)의 성공·달성 의미가 단순한 명령형 ‘파도타기를 하라’로 약화되었다."]}
+{"id": "s23:6607", "es": "Vence a la Maestra de Espadas.", "ko": "검의 달인을 쓰러뜨려라.", "hits": ["3: Maestra(여성 검의 달인)의 여성 지시가 한국어에서 드러나지 않는다."]}
+{"id": "s23:6612", "es": "Vence a la Chef en Ciernes.", "ko": "풋내기 요리사를 쓰러뜨려라.", "hits": ["3: la Chef는 여성 요리사를 가리키지만 ‘요리사’로 성별 정보가 빠졌다."]}
+{"id": "s23:6620", "es": "Vence al Esclavista de Mentes.", "ko": "마음을 옭아매는 자를 쓰러뜨려라.", "hits": ["2: Esclavista de Mentes(정신을 노예로 삼는 자)가 ‘마음을 옭아매는 자’로 완화·변형되어 노예화의 의미가 누락되었다."]}
+{"id": "s23:6662", "es": "Vence a la Maravilla Mecánica.", "ko": "기계 장치의 경이를 쓰러뜨려라.", "hits": ["2: Mecánica는 ‘기계적인’이라는 뜻인데 「기계 장치의」로 옮겨 수식 관계와 의미가 달라졌다."]}
+{"id": "s23:6707", "es": "¡Esto ya estaba calculado! ¡Ahora verás florecer mi plan maestro!", "ko": "이것도 다 계산된 것이다! 이제 내 위대한 계획이 결실을 맺는 모습을 보아라!", "hits": ["2. plan maestro의 ‘마스터 플랜’ 뉘앙스가 「위대한 계획」으로 바뀜."]}
+{"id": "s23:6723", "es": "Capturado: {1}\\nNivel: {2}\\nBalls: {3}", "ko": "잡은 수: {1}\\n레벨: {2}\\n볼: {3}", "hits": ["2. Capturado는 ‘포획됨’ 또는 ‘잡음’인데 「잡은 수」로 수량 의미가 추가됨."]}
+{"id": "s23:6745", "es": "\\\\se[accesspc]Acceso al Sistema de Almacenamiento de Pokémon concedido.", "ko": "\\\\se[accesspc]포켓몬 보관 시스템에 접속했습니다.", "hits": ["2. concedido는 ‘허가되었다’는 뜻인데 「접속했습니다」로 허가의 의미가 누락됨."]}
+{"id": "s23:6802", "es": "{1}... Y quieres {2}. Te costará ${3}. ¿De acuerdo?", "ko": "{1}... 그리고 {2}\\j[이군요,군요].\r\n${3}입니다. 괜찮으신가요?", "hits": ["2. 「quieres」(원한다)가 누락되어, 「{2}이군요」로 의미가 바뀌었다."]}
+{"id": "s23:709", "es": "A sticky web has been laid out beneath the opposing team's feet!", "ko": "상대 파티 발밑에 끈적끈적네트가 깔렸다!", "hits": ["5: Sticky Web의 한국 정식 명칭은 '끈적거미집'인데 '끈적끈적네트'로 번역됨."]}
+{"id": "s23:810", "es": "Party 2 has more than {1} Pokémon.", "ko": "파티 2에 포켓몬이 {1}마리를 넘습니다.", "hits": ["4. ‘파티 2에 포켓몬이 {1}마리를 넘습니다’는 주술 관계가 어색하다. ‘파티 2의 포켓몬 수가 {1}마리를 넘습니다’ 등이 자연스럽다."]}

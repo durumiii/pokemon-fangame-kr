@@ -1,0 +1,40 @@
+{"id": "s23:3375", "es": "¡Tu {1} está en la Cámara de Purificación listo para ser purificado!", "ko": "당신의 {1}\\j[이,가] 정화의 방에서 정화될 준비를 마쳤다!", "hits": ["5: 'Cámara de Purificación'의 한국어 정식 명칭은 '정화 챔버'이나 '정화의 방'으로 번역됨"]}
+{"id": "s23:3377", "es": "\\se[accesspc]Acceso a la Cámara de Purificación concedido.", "ko": "\\se[accesspc]정화의 방 접속이 허가됐다.", "hits": ["5: 'Cámara de Purificación'의 한국어 정식 명칭은 '정화 챔버'이나 '정화의 방'으로 번역됨"]}
+{"id": "s23:3402", "es": "¿{1}? Buena elección.\n¿Cuántas unidades quieres?", "ko": "{1}? 좋은 선택이야.\r\n몇 개 필요해?", "hits": ["2. 원문의 ‘quieres’는 ‘원하다’인데, 번역은 ‘필요하다’로 바뀌었다."]}
+{"id": "s23:3484", "es": "El número de rondas es 0 o menos.", "ko": "라운드 수가 0 이하다.", "hits": ["4: ‘0 이하다’는 문법적으로 부자연스럽고, ‘0 이하이다’ 또는 ‘0 이하입니다’가 자연스럽습니다."]}
+{"id": "s23:3527", "es": "¿Quieres ponerle un apodo a {1}?", "ko": "{1}에게 닉네임을 붙이시겠습니까?", "hits": ["5: 포켓몬 공식 명칭에서는 ‘닉네임’보다 ‘별명’을 사용합니다."]}
+{"id": "s23:3626", "es": "Pokégear quitado.", "ko": "포켓기어를 회수했다.", "hits": ["2. quitado는 제거·회수되지 않은 상태로 만든다는 뜻인데, 「회수했다」는 되찾았다는 의미로 바뀌었습니다."]}
+{"id": "s23:3629", "es": "No hay entrenadores en el Celular.", "ko": "휴대전화에 등록된 트레이너가 없다.", "hits": ["1. 원문에 없는 「등록된」이 추가되었습니다."]}
+{"id": "s23:3655", "es": "El huevo ha sido regalado al criador Pokémon.", "ko": "알을 포켓몬 브리더에게 건넸다.", "hits": ["2. regalado는 선물로 주었다는 뜻인데, 「건넸다」는 단순히 전달했다는 의미로 선물의 뉘앙스가 누락되었습니다."]}
+{"id": "s23:3689", "es": "Campo entrecomillado inválido (en: {1})", "ko": "잘못된 큰따옴표 필드 (위치: {1})", "hits": ["2. entrecomillado는 따옴표로 묶인 필드라는 뜻인데, 번역은 ‘큰따옴표 필드’로 옮겨 원문에 없는 따옴표 종류를 특정했다."]}
+{"id": "s23:3742", "es": "¿Es el género masculino, femenino o mixto?", "ko": "성별은 수컷, 암컷, 아니면 혼성인가?", "hits": ["2. entrenador의 성별을 묻는 문맥에서 «masculino, femenino»은 「남성, 여성」에 해당하는데, ko의 「수컷, 암컷」은 동물의 성을 가리켜 의미가 왜곡되었다."]}
+{"id": "s23:3828", "es": "Gráficos del jugador al correr.", "ko": "플레이어의 대시 그래픽.", "hits": ["2·5: «correr»(달리다)를 ‘대시’로 옮겨 원문의 달리기 동작이 달라졌으며, 포켓몬 공식 용어에 맞는 역어도 아님."]}
+{"id": "s23:3868", "es": "El ancho del mapa en cuadros del Mapa de Pueblos y una cadena indicando los cuadros que son parte del mapa.", "ko": "마을 맵에서 이 맵의 가로 칸 수와, 어느 칸이 이 맵에 속하는지 나타내는 문자열.", "hits": ["5번: Mapa de Pueblos는 포켓몬 정식 명칭인 「타운맵」에 해당하는데 「마을 맵」으로 옮겼습니다."]}
+{"id": "s23:3886", "es": "DEL: Borrar un mapa del plano", "ko": "DEL: 화면에서 맵 삭제\r\n", "hits": ["2번: plano는 맵 배치도·플랜을 뜻하는데 「화면에서」로 옮겨져 삭제 대상이 달라졌습니다."]}
+{"id": "s23:3892", "es": "Teclas de fechas/arrastrar plano: Mueve al plano alrededor", "ko": "방향키 또는 드래그: 화면을 이동합니다", "hits": ["2: 원문의 plano(맵)를 화면으로 옮겨 의미가 달라졌습니다."]}
+{"id": "s23:3927", "es": "Presionar para usar un Objeto Clave registrado.", "ko": "누르면 등록한 중요한 도구를 씁니다.", "hits": ["2, 5: Objeto Clave는 정식 명칭상 중요한 물건인데, 중요한 도구로 번역되었습니다."]}
+{"id": "s23:4029", "es": "¡El Campo de Niebla evita que {1} sea congelado!", "ko": "미스트필드가 {1}의 얼음 상태를 막았다!", "hits": ["5: 'congelado'는 공식 명칭 '동결'이어야 하나 '얼음 상태'로 번역됨"]}
+{"id": "s23:4030", "es": "¡{2} de {1} evita quedarse congelado!", "ko": "{1}의 {2}\\j[이,가] 얼음 상태를 막았다!", "hits": ["5: 'congelado'는 공식 명칭 '동결'이어야 하나 '얼음 상태'로 번역됨"]}
+{"id": "s23:4062", "es": "¡{1} se ha protegido con Neblina!", "ko": "{1}\\j[은,는] 하얀안개로 몸을 지켰다!", "hits": ["5. 포켓몬 정식 기술명 Neblina는 \"하얀안개\"가 아니라 \"흰안개\"임."]}
+{"id": "s23:408", "es": "When the flame touched the powder on the Pokémon, it exploded!", "ko": "불꽃이 포켓몬에 묻은 가루에 닿아 폭발했다!", "hits": ["2: 폭발한 주체는 가루인데, 번역문은 불꽃이 폭발한 것처럼 읽힘."]}
+{"id": "s23:4080", "es": "¡{1} se ha protegido de {3} de {2} con Neblina!", "ko": "{1}\\j[은,는] 하얀안개로 {2}의 {3}\\j[으로,로]부터 몸을 지켰다!", "hits": ["5. 포켓몬 정식 기술명 Neblina는 \"하얀안개\"가 아니라 \"흰안개\"임."]}
+{"id": "s23:4109", "es": "¡Tu equipo se rodeó de un velo misterioso!", "ko": "우리 편 파티가 신비한 장막에 둘러싸였다!", "hits": ["2. \"Tu equipo\"(너의 파티)가 \"우리 편 파티\"로 바뀌어 인칭과 지시 대상이 왜곡됨."]}
+{"id": "s23:4123", "es": "¡Se eliminaron todos los cambios de estado!", "ko": "모든 능력 변화가 사라졌다!", "hits": ["2. 원문의 \"cambios de estado\"(상태 변화)가 \"능력 변화\"(능력치 변화)로 바뀌어 의미가 왜곡됨."]}
+{"id": "s23:4124", "es": "¡{1} intercambió todos los cambios de Ataque y Ataque Especial con el objetivo!", "ko": "{1}\\j[이,가] 상대와 공격·특수공격 변화를 모두 맞바꿨다!", "hits": ["2: 원문의 'objetivo'는 공격 대상 전반을 뜻하지만, 번역의 '상대'는 상대편으로 의미를 한정한다."]}
+{"id": "s23:4170", "es": "¡{1} espera a que su rival haga algún movimiento!", "ko": "{1}\\j[은,는] 상대가 움직이기를 기다린다!", "hits": ["2: Pokémon 문맥의 movimiento는 기술을 뜻하는데 「움직이기」로 옮겨 기술이라는 내용이 왜곡되었다."]}
+{"id": "s23:4181", "es": "¡{1} se rodeó de una luz gélida!", "ko": "{1}\\j[은,는] 서늘한 빛으로 몸을 둘렀다!", "hits": ["2: gélida는 얼음처럼 차갑다는 뜻인데 「서늘한」으로 옮겨 차가움의 의미가 약화되었다."]}
+{"id": "s23:4213", "es": "¡Todos los Pokémon que oyeron la canción se debilitarán dentro de tres turnos!", "ko": "노래를 들은 모든 포켓몬은 세 턴 뒤에 쓰러진다!", "hits": ["2: dentro de tres turnos는 세 턴 이내라는 뜻인데 「세 턴 뒤에」로 정확히 세 턴 후라는 의미로 바뀌었다."]}
+{"id": "s23:4215", "es": "¡{1} quiere provocar Rabia a su rival!", "ko": "{1}\\j[은,는] 상대를 분노하게 하려 한다!", "hits": ["2·5: Rabia는 기술명인데 일반적인 「분노하게」로 풀어 기술명이 누락되었다."]}
+{"id": "s23:4433", "es": "¡Escudo Tatami ha neutralizado {1}!", "ko": "다다미가르기가 {1}\\j[을,를] 무력화했다!", "hits": ["5: Escudo Tatami의 정식 기술명은 ‘다다미깔기’인데 ‘다다미가르기’로 번역했다."]}
+{"id": "s23:4473", "es": "¡{1} despertó con el Alboroto!", "ko": "{1}\\j[이,가] 소란 때문에 잠에서 깼다!", "hits": ["5·Alboroto의 정식 기술명은 ‘소란피기’인데 ‘소란’으로 번역됨."]}
+{"id": "s23:4508", "es": "¡El ruego vehemente de {1} alcanza a {2}!", "ko": "{1}의 간절한 외침이 {2}에게 닿았다!", "hits": ["2: ruego는 간절한 부탁·호소라는 뜻인데 「외침」으로 옮겨 의미가 왜곡되었다."]}
+{"id": "s23:4569", "es": "El sol sigue realmente abrasador...", "ko": "햇살이 여전히 타는 듯하다...", "hits": ["2: 'realmente abrasador'(정말로 타는 듯이)의 'realmente'가 누락되고 'abrasador'도 '타는 듯하다'로 약화됨."]}
+{"id": "s23:4593", "es": "¡{1} ha sido dañado por la fuerte luz del sol sobre su {2}!", "ko": "¡{2}에 내리쬔 강한 햇빛에 {1}\\j[이,가] 데미지를 입었다!", "hits": ["4: '내리쬔'은 비문/오타, '내리쬐는'이 맞음."]}
+{"id": "s23:4617", "es": "¡{2} decidió aprovechar la oportunidad que le dió {1}!", "ko": "{2}\\j[이,가] {1}\\j[이,가] 만든 기회를 놓치지 않았다!", "hits": ["2번: decidió aprovechar(기회를 활용하기로 했다)가 「기회를 놓치지 않았다」로 바뀌어 원문의 결정·활용 의미가 왜곡됨."]}
+{"id": "s23:4641", "es": "¡{2} de {1} evita que bajen las características!", "ko": "{1}의 {2}\\j[이,가] 능력 하락을 막았다!", "hits": ["2·5: características는 포켓몬의 능력치를 뜻하는데, 「능력 하락」으로 옮겨 능력치라는 의미와 정식 용어가 부정확하다."]}
+{"id": "s23:4658", "es": "El ancho del bitmap ({1}) no es un múltiplo del contador de frame ({2}) [Bitmap={3}]", "ko": "비트맵 너비({1})가 프레임 수({2})의 배수가 아닙니다 [Bitmap={3}]", "hits": ["2. es의 contador de frame(프레임 카운터)가 ko에서 프레임 수로 바뀌어 의미가 달라졌습니다."]}
+{"id": "s23:4692", "es": "¡Conjuro de tu equipo dejó de hacer efecto!", "ko": "파티의 주문 효과가 사라졌다!", "hits": ["5: Conjuro는 한국 정식 명칭 '행운의주문'인데 '주문'으로 축약되어 정식 명칭과 어긋남."]}
+{"id": "s23:4698", "es": "¡{1} sufre por el mal sueño!", "ko": "{1}\\j[은,는] 악몽에 시달리고 있다!", "hits": ["1·2. mal sueño는 「나쁜 꿈」에 가까운데 「악몽」으로 의미가 강해짐."]}
+{"id": "s23:4714", "es": "¡Pero {1} no se pudo dormir!", "ko": "하지만 {1}\\j[은,는] 잠들지 않았다!", "hits": ["2. no se pudo dormir의 「잠들 수 없었다」라는 불가능의 의미가 「잠들지 않았다」로 바뀜."]}
+{"id": "s23:4733", "es": "\\se[ItemGet]¡{1} ha encontrado unos \\c[1]{2}\\c[0]!\\wtnp[30]", "ko": "\\se[ItemGet]{1}\\j[이,가] \\c[1]{2}\\c[0]\\j[을,를] 발견했다!\\wtnp[30]", "hits": ["2·3. unos가 나타내는 복수·일부 수량의 의미가 번역에서 드러나지 않음."]}
+{"id": "s23:4743", "es": "\\se[ItemGet]¡Ha obtenido unos \\c[1]{1}\\c[0]!\\wtnp[30]", "ko": "\\se[ItemGet]\\c[1]{1}\\c[0]\\j[을,를] 손에 넣었다!\\wtnp[30]", "hits": ["2·3. unos가 나타내는 복수·일부 수량의 의미가 번역에서 누락됨."]}

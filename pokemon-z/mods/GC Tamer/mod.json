@@ -1,0 +1,15 @@
+{
+  "name": "GC Tamer",
+  "game": "Pokemon Z Fangame",
+  "description": "걷는 동안 12초마다 오던 약 85ms 멈칫(루비 GC)을 길들이는 실험 모드예요.\n\n프로파일러 조사(2026-08-02)에서 걷기 멈칫의 정체가 루비 1.8 가비지 컬렉션으로 좁혀졌어요 — 크기가 83~90ms에 몰려 있고, 그 순간 돌던 단계를 가리지 않고 얹히며, 어느 맵에서나 주기적이에요. 이 빌드의 루비에는 GC 카운터가 없어서 개입 실험이 곧 최종 판정이에요.\n\n평소에는 GC.disable로 눌러 두고, 맵 경계 이동(어차피 0.58초 얼어 있는 자리)·장면 전환 때 몰아서 돌려요. 전환이 90초 넘게 없으면 안전판으로 한 번 강제로 돌아요. 수동 GC는 profiler.log에 한 줄씩 남아 프로파일러 데이터와 대조돼요.\n\n끄려면 000_Config.rb의 ENABLED를 false로 바꾸고 주입기를 다시 돌리면 됩니다.",
+  "engine": "essentials-v16",
+  "install": "inject",
+  "created_at": "2026-08-02",
+  "scripts": [
+    { "file": "000_Config.rb", "script_name": "000_Config.rb" },
+    { "file": "001_GcTamer.rb", "script_name": "001_GcTamer.rb" }
+  ],
+  "expects": {
+    "Scene_Map": "5f096a70d09f26bc6d227edc8b0be6bc"
+  }
+}

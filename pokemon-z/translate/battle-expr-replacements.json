@@ -1,0 +1,688 @@
+[
+{
+"i": 4003,
+"es": "{1} ya está envenenado.",
+"old": "{1}\\j[은,는] 이미 독 상태다.",
+"new": "{1}\\j[은,는] 이미 독에 걸렸다.",
+"src": "§1 이미 걸려 있음 (WS core[24] `{1} is already asleep!` 외)"
+},
+{
+"i": 4012,
+"es": "¡{1} ha sido gravemente envenenado!",
+"old": "{1}\\j[은,는] 맹독에 걸렸다!",
+"new": "{1}의 몸에 맹독이 퍼졌다!",
+"src": "§1 맹독 걸림 (WS core[24] `{1} was badly poisoned!`)"
+},
+{
+"i": 4013,
+"es": "¡{1} ha sido envenenado!",
+"old": "{1}\\j[은,는] 독에 걸렸다!",
+"new": "{1}의 몸에 독이 퍼졌다!",
+"src": "§1 독 걸림 (WS core[24] `{1} was poisoned!`)"
+},
+{
+"i": 6335,
+"es": "¡{1} fue envenenado!",
+"old": "{1}\\j[은,는] 독에 걸렸다!",
+"new": "{1}의 몸에 독이 퍼졌다!",
+"src": "§1 독 걸림 (WS core[24] `{1} was poisoned!`)"
+},
+{
+"i": 4034,
+"es": "¡El veneno resta PS a {1}!",
+"old": "독 때문에 {1}의 HP가 줄었다!",
+"new": "{1}\\j[은,는] 독에 의한 데미지를 입었다!",
+"src": "§1 독 피해 (WS core[24] `{1} was hurt by poison!`)"
+},
+{
+"i": 4105,
+"es": "¡{1} se curó del envenenamiento!",
+"old": "{1}의 독이 나았다!",
+"new": "{1}의 독이 말끔히 해독되었다.",
+"src": "§1 독 해제 (WS core[24] `{1} was cured of its poisoning.`)"
+},
+{
+"i": 4015,
+"es": "{1} ya tiene una quemadura.",
+"old": "{1}\\j[은,는] 이미 화상 상태다.",
+"new": "{1}\\j[은,는] 이미 화상에 걸렸다.",
+"src": "§1 이미 걸려 있음"
+},
+{
+"i": 4020,
+"es": "¡{1} ha sido quemado!",
+"old": "{1}\\j[은,는] 화상을 입었다!",
+"new": "{1}\\j[은,는] 화상에 걸렸다!",
+"src": "§1 화상 걸림 현행 (WS core[24] `{1} was burned!`)"
+},
+{
+"i": 4035,
+"es": "¡{1} se resiente de la quemadura!",
+"old": "{1}\\j[은,는] 화상으로 괴로워한다!",
+"new": "{1}\\j[은,는] 화상에 의한 데미지를 입었다!",
+"src": "§1 화상 피해 (WS core[24] `{1} was hurt by its burn!`)"
+},
+{
+"i": 4022,
+"es": "¡{1} ya está paralizado!",
+"old": "{1}\\j[은,는] 이미 마비 상태다!",
+"new": "{1}\\j[은,는] 이미 마비됐다!",
+"src": "§1 이미 걸려 있음"
+},
+{
+"i": 4026,
+"es": "¡{1} está paralizado! ¡Quizás no pueda moverse!",
+"old": "{1}\\j[은,는] 마비됐다! 움직이지 못할지도 모른다!",
+"new": "{1}\\j[은,는] 마비되어 기술이 나오기 어려워졌다!",
+"src": "§1 마비 걸림 (WS core[24] `{1} is paralyzed! It may be unable to move!`)"
+},
+{
+"i": 4036,
+"es": "¡{1} está paralizado! ¡No se puede mover!",
+"old": "{1}\\j[은,는] 마비돼서 움직일 수 없다!",
+"new": "{1}\\j[은,는] 몸이 저려서 움직일 수 없다!",
+"src": "§1 마비로 행동 불가 (WS core[24] `{1} is paralyzed! It can't move!`)"
+},
+{
+"i": 4028,
+"es": "¡{1} ya está congelado!",
+"old": "{1}\\j[은,는] 이미 얼어 있다!",
+"new": "{1}\\j[은,는] 이미 얼음 상태다!",
+"src": "§1 이미 걸려 있음"
+},
+{
+"i": 4032,
+"es": "¡{1} se ha congelado!",
+"old": "{1}\\j[은,는] 얼어붙었다!",
+"new": "{1}\\j[은,는] 꽁꽁 얼어붙었다!",
+"src": "§1 얼음 (WS core[24] `{1} was frozen solid!`)"
+},
+{
+"i": 4037,
+"es": "¡{1} está congelado!",
+"old": "{1}\\j[은,는] 얼어붙었다!",
+"new": "{1}\\j[은,는] 얼어버려서 움직일 수 없다!",
+"src": "§1 얼어서 행동 불가 (WS core[24] `{1} is frozen solid!`)"
+},
+{
+"i": 4040,
+"es": "¡{1} se descongeló!",
+"old": "{1}\\j[은,는] 얼음이 풀렸다!",
+"new": "{1}의 얼음이 녹았다!",
+"src": "§1 해동 (WS core[24] `{1} thawed out!`)"
+},
+{
+"i": 4033,
+"es": "{1} está dormido como un tronco.",
+"old": "{1}\\j[은,는] 세상모르고 자고 있다.",
+"new": "{1}\\j[은,는] 쿨쿨 잠들어 있다.",
+"src": "§1 잠든 상태 유지 (WS core[24] `{1} is fast asleep.`)"
+},
+{
+"i": 4038,
+"es": "¡{1} se despertó!",
+"old": "{1}\\j[은,는] 잠에서 깼다!",
+"new": "{1}\\j[은,는] 잠에서 깨어났다!",
+"src": "§1 깨어남 (WS core[24] `{1} woke up!`)"
+},
+{
+"i": 4044,
+"es": "¡{1} está confuso!",
+"old": "{1}\\j[은,는] 혼란에 빠졌다!",
+"new": "{1}\\j[은,는] 혼란에 빠져 있다!",
+"src": "§1 혼란 상태 (battle_message.c:119) — 4043 혼란 걸림과 구분"
+},
+{
+"i": 4424,
+"es": "¡Está tan confuso que se hirió a sí mismo!",
+"old": "혼란해서 자신을 공격했다!",
+"new": "영문도 모르고 자신을 공격했다!",
+"src": "§1 혼란 자해 (WS core[24] `It hurt itself in its confusion!`)"
+},
+{
+"i": 4198,
+"es": "¡{1} quedó confuso por la fatiga!",
+"old": "{1}\\j[은,는] 피로로 혼란에 빠졌다!",
+"new": "{1}\\j[은,는] 몹시 지쳐서 혼란에 빠졌다!",
+"src": "§1 피로 혼란 (WS core[24] `{1} became confused due to fatigue!`)"
+},
+{
+"i": 4047,
+"es": "¡{1} se ha enamorado!",
+"old": "{1}\\j[은,는] 사랑에 빠졌다!",
+"new": "{1}\\j[은,는] 헤롱헤롱해졌다!",
+"src": "§1 헤롱헤롱 (WS core[24] `{1} fell in love!`)"
+},
+{
+"i": 4454,
+"es": "¡{1} retrocedió y no se pudo mover!",
+"old": "{1}\\j[은,는] 풀이 죽어 움직이지 못했다!",
+"new": "{1}\\j[은,는] 풀이 죽어 기술을 쓸 수 없다!",
+"src": "§1 풀죽음 현행 (WS core[24] `{1} flinched and couldn't move!`)"
+},
+{
+"i": 4673,
+"es": "¡{1} está inmerso en una Pesadilla!",
+"old": "{1}\\j[은,는] 악몽에 빠져 있다!",
+"new": "{1}\\j[은,는] 악몽을 꾸고 있다!",
+"src": "§1 악몽 (WS core[24] `{1} is locked in a nightmare!`)"
+},
+{
+"i": 4245,
+"es": "¡Se acerca una tormenta de arena!",
+"old": "모래바람이 다가온다!",
+"new": "모래바람이 불기 시작했다!",
+"src": "§2 모래바람 시작 (WS core[24] `A sandstorm brewed!`)"
+},
+{
+"i": 4566,
+"es": "La tormenta de arena arrecia...",
+"old": "모래바람이 거세진다...",
+"new": "모래바람이 불고 있다...",
+"src": "§2 모래바람 지속 현행 (WS core[24] `A sandstorm is raging.`)"
+},
+{
+"i": 4579,
+"es": "La tormenta de arena amainó.",
+"old": "모래바람이 멎었다.",
+"new": "모래바람이 가라앉았다.",
+"src": "§2 모래바람 종료 (WS core[24] `The sandstorm subsided.`)"
+},
+{
+"i": 4580,
+"es": "¡La tormenta de arena zarandea a {1}!",
+"old": "모래바람이 {1}\\j[을,를] 덮쳤다!",
+"new": "{1}\\j[은,는] 모래바람에 데미지를 입었다!",
+"src": "§2 모래바람 피해 현행 (WS core[24] `{1} is buffeted by the sandstorm!`)"
+},
+{
+"i": 4246,
+"es": "¡Ha empezado a granizar!",
+"old": "우박이 내리기 시작했다!",
+"new": "싸라기눈이 내리기 시작했다!",
+"src": "§2 싸라기눈 시작 (WS core[24] `It started to hail!`)"
+},
+{
+"i": 4581,
+"es": "Ha dejado de granizar.",
+"old": "우박이 그쳤다.",
+"new": "싸라기눈이 그쳤다.",
+"src": "§2 싸라기눈 종료 (WS core[24] `The hail stopped.`)"
+},
+{
+"i": 4582,
+"es": "¡El granizo zarandea a {1}!",
+"old": "우박이 {1}\\j[을,를] 덮쳤다!",
+"new": "{1}\\j[은,는] 싸라기눈에 데미지를 입었다!",
+"src": "§2 싸라기눈 피해 현행 (WS core[24] `{1} is buffeted by the hail!`)"
+},
+{
+"i": 4323,
+"es": "¡{2} de {1} provocó granizo!",
+"old": "{1}의 {2}\\j[이,가] 우박을 내리게 했다!",
+"new": "{1}의 {2}\\j[이,가] 싸라기눈을 내리게 했다!",
+"src": "§2 표기 통일 — Hail=싸라기눈 (표현집 「표기 통일이 필요한 것 둘」)"
+},
+{
+"i": 4576,
+"es": "Se ha ido el sol.",
+"old": "해가 졌다.",
+"new": "햇살이 원래대로 돌아왔다.",
+"src": "§2 쾌청 종료 (WS core[24] `The sunlight faded.` 계열)"
+},
+{
+"i": 4467,
+"es": "¡El ataque de tipo Fuego desapareció en medio del diluvio!",
+"old": "불꽃타입 공격이 폭우 속에서 사라졌다!",
+"new": "불꽃타입 공격이 폭우 속에서 꺼지고 말았다!",
+"src": "§2 날씨로 기술 무효 (WS core[24] `The Fire-type attack fizzled out in the heavy rain!`)"
+},
+{
+"i": 4468,
+"es": "¡El ataque de tipo Agua se evaporó por la fuerza del sol abrazador!",
+"old": "타는 듯한 햇살에 물타입 공격이 증발했다!",
+"new": "물타입 공격이 큰가뭄 속에서 증발하고 말았다!",
+"src": "§2 날씨로 기술 무효"
+},
+{
+"i": 4534,
+"es": "¡{1} ha sido herido por las púas!",
+"old": "{1}\\j[은,는] 압정에 상처를 입었다!",
+"new": "{1}\\j[은,는] 압정뿌리기의 데미지를 입었다!",
+"src": "§2 압정뿌리기 피해 (WS core[24] `{1} is hurt by the spikes!`)"
+},
+{
+"i": 4537,
+"es": "¡{1} ha sido gravemente envenenado por las Púas Tóxicas!",
+"old": "{1}\\j[은,는] 독압정에 맹독이 올랐다!",
+"new": "{1}\\j[은,는] 독압정에 찔려 맹독에 걸렸다!",
+"src": "§2 독압정"
+},
+{
+"i": 4538,
+"es": "¡{1} ha sido envenenado por las Púas Tóxicas!",
+"old": "{1}\\j[은,는] 독압정에 독이 올랐다!",
+"new": "{1}\\j[은,는] 독압정에 찔려 독에 걸렸다!",
+"src": "§2 독압정 (WS core[24] `{1} was poisoned by the poison spikes!`)"
+},
+{
+"i": 4088,
+"es": "¡Es un golpe crítico en {1}!",
+"old": "{1}에게 급소에 맞았다!",
+"new": "{1}의 급소에 맞았다!",
+"src": "§3 급소(대상 명시) (WS core[24] `A critical hit on {1}!`)"
+},
+{
+"i": 4090,
+"es": "¡Es super efectivo en {1}!",
+"old": "{1}에게 효과가 굉장하다!",
+"new": "{1}에게 효과가 굉장했다!",
+"src": "§3 효과 굉장(대상 명시) (WS core[24] `It's super effective on {1}!`)"
+},
+{
+"i": 4091,
+"es": "¡Es super efectivo!",
+"old": "효과가 굉장하다!",
+"new": "효과가 굉장했다!",
+"src": "§3 효과 굉장 (WS core[24] `It's super effective!`)"
+},
+{
+"i": 4093,
+"es": "No es muy efectivo...",
+"old": "효과가 별로인 듯하다...",
+"new": "효과는 별로인 듯하다...",
+"src": "§3 효과 별로 현행 (갈리는 자리 — 효과「는」)"
+},
+{
+"i": 4493,
+"es": "¡Pero no tuvo efecto!",
+"old": "하지만 효과가 없었다!",
+"new": "그러나 효과가 없었다!",
+"src": "§3 효과 없음 (WS core[24] `But it had no effect!`)"
+},
+{
+"i": 4147,
+"es": "¡{1} no se vió afectado!",
+"old": "{1}(에게)는 효과가 없었다!",
+"new": "{1}에게는 효과가 없었다!",
+"src": "§3 효과 없음(대상 명시) — 「(에게)는」 병기 제거"
+},
+{
+"i": 3995,
+"es": "¡Pero ha fallado!",
+"old": "하지만 빗나갔다!",
+"new": "하지만 실패했다!",
+"src": "§4 실패 현행 (WS core[24] `But it failed!`)"
+},
+{
+"i": 4004,
+"es": "¡Pero falló!",
+"old": "하지만 빗나갔다!",
+"new": "하지만 실패했다!",
+"src": "§4 실패 현행"
+},
+{
+"i": 4103,
+"es": "¡Pero falló debido a {2} de {1}!",
+"old": "하지만 {1}의 {2} 때문에 빗나갔다!",
+"new": "하지만 {1}의 {2} 때문에 실패했다!",
+"src": "§4 실패 — fallar=실패(빗나감 아님)"
+},
+{
+"i": 4094,
+"es": "¡{1} aguantó el golpe!",
+"old": "{1}\\j[은,는] 공격을 버텨냈다!",
+"new": "{1}\\j[은,는] 공격을 버텼다!",
+"src": "§4 버팀 (WS core[24] `{1} endured the hit!`)"
+},
+{
+"i": 4095,
+"es": "¡{1} resistió con Robustez!",
+"old": "{1}\\j[은,는] 옹골참으로 버텼다!",
+"new": "{1}\\j[은,는] 옹골참으로 공격을 버텼다!",
+"src": "§4 옹골참 (WS core[24] `{1} hung on with Sturdy!`)"
+},
+{
+"i": 4451,
+"es": "¡{1} necesita recuperarse de su ataque!",
+"old": "{1}\\j[은,는] 공격의 반동을 회복해야 한다!",
+"new": "{1}\\j[은,는] 반동 때문에 움직일 수 없다!",
+"src": "§4 반동으로 행동 불가 (WS core[24] `{1} must recharge!`)"
+},
+{
+"i": 4427,
+"es": "¡{1} está con pereza!",
+"old": "{1}\\j[은,는] 게으름을 피우고 있다!",
+"new": "{1}\\j[은,는] 게으름피우고 있다.",
+"src": "§4 게으름 현행 (WS core[24] `{1} is loafing around!`)"
+},
+{
+"i": 4452,
+"es": "¡{1} está vagueando!",
+"old": "{1}\\j[은,는] 게으름을 피우고 있다!",
+"new": "{1}\\j[은,는] 게으름피우고 있다.",
+"src": "§4 게으름 현행"
+},
+{
+"i": 4466,
+"es": "¡Pero no le quedan PP al movimiento!",
+"old": "하지만 기술의 PP가 남아 있지 않다!",
+"new": "그러나 기술을 사용할 PP가 남아있지 않다!",
+"src": "§4 PP 없음 (WS core[24] `But there was no PP left for the move!`)"
+},
+{
+"i": 4304,
+"es": "¡{1} no puede usar {2} por la mofa!",
+"old": "도발 때문에 {1}\\j[은,는] {2}\\j[을,를] 쓸 수 없다!",
+"new": "{1}\\j[은,는] 도발당해서 {2}\\j[을,를] 쓸 수 없다!",
+"src": "§4 도발 (WS core[24] `{1} can't use {2} after the taunt!`)"
+},
+{
+"i": 4445,
+"es": "¡{1} no puede usar {2} debido a la Mofa!",
+"old": "도발 때문에 {1}\\j[은,는] {2}\\j[을,를] 쓸 수 없다!",
+"new": "{1}\\j[은,는] 도발당해서 {2}\\j[을,를] 쓸 수 없다!",
+"src": "§4 도발"
+},
+{
+"i": 4425,
+"es": "¡{1} ignoró las órdenes!",
+"old": "{1}\\j[은,는] 지시를 무시했다!",
+"new": "{1}\\j[은,는] 명령을 듣지 않는다!",
+"src": "§4 명령 불복종 (WS core[24] `{1} won't obey!`)"
+},
+{
+"i": 4098,
+"es": "¡{1} ha usado\n{2}!",
+"old": "{1}\\j[은,는]\r\n{2}\\j[을,를] 썼다!",
+"new": "{1}의\r\n{2}!",
+"src": "§4 기술 사용 (WS core[24] `{1} used {2}!` — 줄바꿈 포함)"
+},
+{
+"i": 4465,
+"es": "¡{1} usó\n{2}!",
+"old": "{1}\\j[은,는]\r\n{2}\\j[을,를] 썼다!",
+"new": "{1}의\r\n{2}!",
+"src": "§4 기술 사용"
+},
+{
+"i": 4051,
+"es": "¡{2} de {1} no subirá más!",
+"old": "{1}의 {2}\\j[은,는] 더 이상 오르지 않는다!",
+"new": "{1}의 {2}\\j[은,는] 더 이상 올라가지 않는다!",
+"src": "§5 더 못 올림 (WS core[24] `{1}'s {2} won't go any higher!`)"
+},
+{
+"i": 4069,
+"es": "¡{2} de {1} no bajará más!",
+"old": "{1}의 {2}\\j[은,는] 더 이상 떨어지지 않는다!",
+"new": "{1}의 {2}\\j[은,는] 더 이상 내려가지 않는다!",
+"src": "§5 더 못 내림 (WS core[24] `{1}'s stats won't go any lower!`)"
+},
+{
+"i": 4113,
+"es": "¡Las características de {1} no subirán más!",
+"old": "{1}의 능력은 더 이상 오르지 않는다!",
+"new": "{1}의 능력은 더 이상 올라가지 않는다!",
+"src": "§5 더 못 올림"
+},
+{
+"i": 4118,
+"es": "¡Las características de {1} no bajarán más!",
+"old": "{1}의 능력은 더 이상 떨어지지 않는다!",
+"new": "{1}의 능력치는 더 이상 내려가지 않는다!",
+"src": "§5 더 못 내림"
+},
+{
+"i": 4055,
+"es": "¡{2} de {1} subió drásticamente!",
+"old": "{1}의 {2}\\j[이,가] 급격히 올랐다!",
+"new": "{1}의 {2}\\j[이,가] 매우 크게 올랐다!",
+"src": "§5 매우 크게 상승 (WS core[24] `{1}'s {2} rose drastically!`)"
+},
+{
+"i": 4057,
+"es": "¡{2} de {1} subió drásticamente su {3}!",
+"old": "{1}의 {2}\\j[이,가] {3}\\j[을,를] 급격히 올렸다!",
+"new": "{1}의 {2}\\j[이,가] {3}\\j[을,를] 매우 크게 올렸다!",
+"src": "§5 매우 크게 상승"
+},
+{
+"i": 4061,
+"es": "¡{2} de {1} subió drásticamente {4} de {3}!",
+"old": "{1}의 {2}\\j[이,가] {3}의 {4}\\j[을,를] 급격히 올렸다!",
+"new": "{1}의 {2}\\j[이,가] {3}의 {4}\\j[을,를] 매우 크게 올렸다!",
+"src": "§5 매우 크게 상승"
+},
+{
+"i": 4072,
+"es": "¡{2} de {1} bajó severamente!",
+"old": "{1}의 {2}\\j[이,가] 크게 떨어졌다!",
+"new": "{1}의 {2}\\j[이,가] 매우 크게 떨어졌다!",
+"src": "§5 매우 크게 하락 (WS core[24] `{1}'s {2} severely fell!`)"
+},
+{
+"i": 4075,
+"es": "¡{2} de {1} bajó severamente su {3}!",
+"old": "{1}의 {2}\\j[이,가] {3}\\j[을,를] 크게 떨어뜨렸다!",
+"new": "{1}의 {2}\\j[이,가] {3}\\j[을,를] 매우 크게 떨어뜨렸다!",
+"src": "§5 매우 크게 하락"
+},
+{
+"i": 4078,
+"es": "¡{2} de {1} bajó severamente {4} de {3}!",
+"old": "{1}의 {2}\\j[이,가] {3}의 {4}\\j[을,를] 크게 떨어뜨렸다!",
+"new": "{1}의 {2}\\j[이,가] {3}의 {4}\\j[을,를] 매우 크게 떨어뜨렸다!",
+"src": "§5 매우 크게 하락"
+},
+{
+"i": 4122,
+"es": "¡Los cambios de características de {1} fueron eliminados!",
+"old": "{1}의 능력 변화가 사라졌다!",
+"new": "{1}의 능력 변화가 초기화됐다!",
+"src": "§5 초기화 (WS core[24] `{1}'s stat changes were removed!`)"
+},
+{
+"i": 4642,
+"es": "¡Se han invertido las estadísticas de {1}!",
+"old": "{1}의 능력 변화가 뒤집혔다!",
+"new": "{1}의 능력 변화가 반전되었다!",
+"src": "§5 반전 (WS core[24] `{1}'s stats were reversed!`)"
+},
+{
+"i": 3984,
+"es": "¡Apareció un {1} salvaje!",
+"old": "야생 {1}\\j[이,가] 나타났다!",
+"new": "앗! 야생의 {1}\\j[이,가] 튀어나왔다!",
+"src": "§6 야생 등장 현행 (WS core[24] `Oh! A wild {1} appeared!`)"
+},
+{
+"i": 4485,
+"es": "¡{1}, es suficiente! ¡Regresa!",
+"old": "{1}, 이제 됐어! 돌아와!",
+"new": "{1}, 그 정도면 됐어! 돌아와!",
+"src": "§6 회수 (WS core[24] `{1}, that's enough! Come back!`)"
+},
+{
+"i": 4605,
+"es": "¡{1} ha obtenido ${2}\npor la victoria!",
+"old": "{1}\\j[은,는] 승리로\r\n${2}\\j[을,를] 얻었다!",
+"new": "{1}\\j[은,는] 상금으로 ${2} 만큼 받았다!",
+"src": "§6 상금 (WS core[24] `You got ${1} for winning!`)"
+},
+{
+"i": 3988,
+"es": "¡Has huido sin problemas!",
+"old": "무사히 도망쳤다!",
+"new": "성공적으로 도망쳤다!",
+"src": "§6 도망 성공 현행 (WS core[24] `You got away safely!`)"
+},
+{
+"i": 4504,
+"es": "¡Escapaste sin problemas!",
+"old": "무사히 도망쳤다!",
+"new": "성공적으로 도망쳤다!",
+"src": "§6 도망 성공 현행"
+},
+{
+"i": 4501,
+"es": "¡No! ¡No se puede escapar de una batalla contra un entrenador!",
+"old": "안 돼! 트레이너 배틀에서는 도망칠 수 없다!",
+"new": "안돼! 트레이너와의 승부 중에 등을 돌릴 순 없어!",
+"src": "§6 트레이너전 도망 불가 현행"
+},
+{
+"i": 4288,
+"es": "¡El Entrenador ha bloqueado la Poké Ball!\n¡No seas un ladrón!",
+"old": "트레이너가 몬스터볼을 막았다!\n남의 포켓몬을 훔치면 안 되지!",
+"new": "트레이너가 몬스터볼을 막았다!\n남의 것에 손 대면 도둑!",
+"src": "§7 트레이너 포켓몬에 볼 (WS core[24] `The Trainer blocked your Poké Ball! Don't be a thief!`)"
+},
+{
+"i": 4289,
+"es": "¡Oh no! ¡El Pokémon salió con facilidad!",
+"old": "이런! 포켓몬이 쉽게 빠져나왔다!",
+"new": "안돼! 포켓몬이 볼에서 나와버렸다!",
+"src": "§7 볼에서 나옴 (battle_message.c:473)"
+},
+{
+"i": 4290,
+"es": "Aww... ¡Parecía que ya estaba capturado!",
+"old": "아깝다... 다 잡은 줄 알았는데!",
+"new": "아아! 잡은 줄 알았는데!",
+"src": "§7 흔들림 1 현행 (WS core[24] `Aww! It appeared to be caught!`)"
+},
+{
+"i": 4291,
+"es": "¡Aargh! ¡Casi lo tenía!",
+"old": "으악! 거의 다 됐었는데!",
+"new": "아쉽다! 조금만 더하면 잡을 수 있었는데!",
+"src": "§7 흔들림 2 (WS core[24] `Aargh! Almost had it!`)"
+},
+{
+"i": 4292,
+"es": "¡Viejo! ¡Estuvo demasiado cerca!",
+"old": "이런! 정말 아슬아슬했다!",
+"new": "아깝다! 조금만 더하면 됐는데!",
+"src": "§7 흔들림 3 (battle_message.c:476)"
+},
+{
+"i": 4293,
+"es": "¡Si! ¡{1} ha sido capturado!",
+"old": "좋아! {1}\\j[을,를] 잡았다!",
+"new": "신난다! {1}\\j[을,를] 잡았다!",
+"src": "§7 포획 성공 현행 (WS core[24] `Gotcha! {1} was caught!`)"
+},
+{
+"i": 5708,
+"es": "¡Sí! ¡{1} ha sido capturado!",
+"old": "좋아! {1}\\j[을,를] 잡았다!",
+"new": "신난다! {1}\\j[을,를] 잡았다!",
+"src": "§7 포획 성공 현행"
+},
+{
+"i": 4294,
+"es": "Se agregaron los datos de {1} en la Pokédex.",
+"old": "{1}의 데이터를 도감에 등록했다.",
+"new": "{1}의 데이터가 포켓몬도감에 등록됩니다.",
+"src": "§7 도감 등록 (WS core[24] `{1}'s data was added to the Pokédex.`)"
+},
+{
+"i": 4517,
+"es": "¡{1} ha ganado {2} Puntos de Experiencia!",
+"old": "{1}\\j[은,는] 경험치 {2}\\j[을,를] 얻었다!",
+"new": "{1}\\j[은,는] {2} 경험치를 얻었다!",
+"src": "§8 경험치 획득 (WS core[24] `{1} got {2} Exp. Points!`)"
+},
+{
+"i": 5027,
+"es": "¡{1} ha recuperado {2} Puntos de Experiencia!",
+"old": "{1}\\j[은,는] 경험치 {2}\\j[을,를] 얻었다!",
+"new": "{1}\\j[은,는] {2} 경험치를 얻었다!",
+"src": "§8 경험치 획득"
+},
+{
+"i": 5651,
+"es": "¡El resto del equipo también gana experiencia!",
+"old": "파티의 나머지도 경험치를 얻었다!",
+"new": "다른 포켓몬들도 경험치를 얻었다!",
+"src": "§8 나머지 파티 (WS core[24] `Your other Pokémon also gained Exp. Points!`)"
+},
+{
+"i": 4527,
+"es": "¡{1} ha olvidado cómo utilizar {2}!",
+"old": "{1}\\j[은,는] {2} 쓰는 법을 잊었다!",
+"new": "{1}\\j[은,는] {2}\\j[을,를] 깨끗이 잊었다!",
+"src": "§8 기술 망각 (WS core[24] `{1} forgot how to use {2}. And...`)"
+},
+{
+"i": 4497,
+"es": "Los PS de {1} fueron restaurados.",
+"old": "{1}의 HP를 회복했다.",
+"new": "{1}의 HP가 회복됐다.",
+"src": "§9 HP 회복 (WS core[24] `{1}'s HP was restored.`)"
+},
+{
+"i": 4601,
+"es": "Los PS de {1} han sido recuperados.",
+"old": "{1}의 HP를 회복했다.",
+"new": "{1}의 HP가 회복됐다.",
+"src": "§9 HP 회복"
+},
+{
+"i": 4629,
+"es": "¡La energía de {1} ha sido absorbida!",
+"old": "{1}의 에너지가 흡수됐다!",
+"new": "{1}\\j[으로,로]부터 에너지를 흡수했다!",
+"src": "§9 기력 흡수 (WS core[24] `{1} had its energy drained!`)"
+},
+{
+"i": 4462,
+"es": "¡{1} se llevó al atacante consigo!",
+"old": "{1}\\j[이,가] 공격한 상대를 함께 끌고 갔다!",
+"new": "{1}\\j[은,는] 상대를 길동무로 삼았다!",
+"src": "§9 길동무 (WS core[24] `{1} took its attacker down with it!`)"
+},
+{
+"i": 4416,
+"es": "¡{1} ha sido herido por {2}!",
+"old": "{1}\\j[은,는] {2}에게 상처를 입었다!",
+"new": "{1}\\j[은,는] {2} 때문에 데미지를 입었다!",
+"src": "§9 도구/특성으로 피해 (WS core[24] `{1} is hurt by its {2}!`)"
+},
+{
+"i": 6336,
+"es": "¡Pero falló",
+"old": "하지만 빗나갔다",
+"new": "하지만 실패했다",
+"src": "§ 기술 실패 — 3995·4004와 같은 문장의 조각"
+},
+{
+"i": 4310,
+"es": "{1} rival",
+"old": "{1} rival",
+"new": "상대 {1}",
+"src": "상대 접두 — 공식 「상대 ○○」 (사용자 실기 제보 2026-08-02)"
+},
+{
+"i": 4311,
+"es": "{1} salvaje",
+"old": "{1} salvaje",
+"new": "야생 {1}",
+"src": "야생 접두 — 공식 「야생 ○○」"
+},
+{
+"i": 4312,
+"es": "{1} aliado",
+"old": "{1} aliado",
+"new": "아군 {1}",
+"src": "아군 접두 (더블배틀 파트너)"
+},
+{
+"i": 4298,
+"es": "El {1} rival",
+"old": "상대의 {1}",
+"new": "상대 {1}",
+"src": "상대 접두 문두형 — 「상대의」가 아니라 「상대」로 통일"
+}
+]

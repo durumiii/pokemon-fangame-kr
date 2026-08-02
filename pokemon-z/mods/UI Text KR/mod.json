@@ -1,0 +1,15 @@
+{
+  "name": "UI Text KR",
+  "game": "Pokemon Z Fangame",
+  "description": "번역 테이블을 안 지나는 하드코딩 화면 문자열을 한국어로 바꾸는 모드예요. 일시정지 메뉴의 단축키 라벨([A] 회복 · [S] 이동 · [D] 나침반), 야생 포켓몬 출현 안내판, 배지 이름 12종이 대상입니다.\n\n스크립트 안에 스페인어가 박혀 있어 korean.dat로는 못 고치는 자리들이라, 텍스트가 화면에 그려지는 진입점에 교체표를 겁니다. 새로 발견되는 하드코딩 문자열은 001_UiText.rb의 표에 한 줄 더하면 됩니다.\n\n설치는 파일 복사가 아니라 주입입니다 — poke-essentials의 mod/z/inject.py가 한글패치판 Scripts.rxdata에 섹션으로 덧붙여요.",
+  "engine": "essentials-v16",
+  "install": "inject",
+  "created_at": "2026-08-02",
+  "scripts": [
+    { "file": "001_UiText.rb", "script_name": "001_UiText.rb" }
+  ],
+  "expects": {
+    "SpriteWindow": "dd49c0623e5fc170534c44aa6c198e23",
+    "DrawText": "b6e3111c62e7c43b528fa60894e9acb6"
+  }
+}

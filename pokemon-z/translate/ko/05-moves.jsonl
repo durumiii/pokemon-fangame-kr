@@ -1,0 +1,733 @@
+{"i": 0, "v": ""}
+{"i": 1, "v": "메가혼", "es": "Megacuerno"}
+{"i": 2, "v": "공격지령", "es": "Al Ataque"}
+{"i": 3, "v": "벌레의야단법석", "es": "Zumbido"}
+{"i": 4, "v": "시저크로스", "es": "Tijera X"}
+{"i": 5, "v": "시그널빔", "es": "Rayo Señal"}
+{"i": 6, "v": "유턴", "es": "Ida y Vuelta"}
+{"i": 7, "v": "하드롤러", "es": "Rodillo Púas"}
+{"i": 8, "v": "벌레먹기", "es": "Picadura"}
+{"i": 9, "v": "은빛바람", "es": "Viento Plata"}
+{"i": 10, "v": "벌레의저항", "es": "Estoicismo"}
+{"i": 11, "v": "더블니들", "es": "Dobleataque"}
+{"i": 12, "v": "연속자르기", "es": "Cortefuria"}
+{"i": 13, "v": "흡혈", "es": "Chupavidas"}
+{"i": 14, "v": "바늘미사일", "es": "Pin Misil"}
+{"i": 15, "v": "방어지령", "es": "A Defender"}
+{"i": 16, "v": "회복지령", "es": "Auxilio"}
+{"i": 17, "v": "나비춤", "es": "Danza Aleteo"}
+{"i": 18, "v": "분노가루", "es": "Polvo Ira"}
+{"i": 19, "v": "거미집", "es": "Telaraña"}
+{"i": 20, "v": "실뿜기", "es": "Disp. Demora"}
+{"i": 21, "v": "반딧불", "es": "Luminicola"}
+{"i": 22, "v": "속임수", "es": "Juego Sucio"}
+{"i": 23, "v": "나이트버스트", "es": "Pulso Noche"}
+{"i": 24, "v": "깨물어부수기", "es": "Triturar"}
+{"i": 25, "v": "악의파동", "es": "Pulso Umbrío"}
+{"i": 26, "v": "기습", "es": "Golpe Bajo"}
+{"i": 27, "v": "깜짝베기", "es": "Tajo Umbrio"}
+{"i": 28, "v": "물기", "es": "Mordisco"}
+{"i": 29, "v": "속여때리기", "es": "Finta"}
+{"i": 30, "v": "바크아웃", "es": "Alarido"}
+{"i": 31, "v": "승부굳히기", "es": "Buena Baza"}
+{"i": 32, "v": "보복", "es": "Vendetta"}
+{"i": 33, "v": "따라가때리기", "es": "Persecución"}
+{"i": 34, "v": "도둑질", "es": "Ladrón"}
+{"i": 35, "v": "탁쳐서떨구기", "es": "Desarme"}
+{"i": 36, "v": "집단구타", "es": "Paliza"}
+{"i": 37, "v": "저주불꽃", "es": "Maldignición"}
+{"i": 38, "v": "혼내기", "es": "Castigo"}
+{"i": 39, "v": "다크홀", "es": "Brecha Negra"}
+{"i": 40, "v": "금제", "es": "Embargo"}
+{"i": 41, "v": "거짓울음", "es": "Llanto Falso"}
+{"i": 42, "v": "부추기기", "es": "Camelo"}
+{"i": 43, "v": "손톱갈기", "es": "Afilagarras"}
+{"i": 44, "v": "추억의선물", "es": "Legado"}
+{"i": 45, "v": "나쁜음모", "es": "Maquinación"}
+{"i": 46, "v": "순서미루기", "es": "Último Lugar"}
+{"i": 47, "v": "가로채기", "es": "Robo"}
+{"i": 48, "v": "바꿔치기", "es": "Trapicheo"}
+{"i": 49, "v": "도발", "es": "Mofa"}
+{"i": 50, "v": "트집", "es": "Tormento"}
+{"i": 51, "v": "시간의포효", "es": "Distorción"}
+{"i": 52, "v": "용성군", "es": "Cometa Draco"}
+{"i": 53, "v": "역린", "es": "Enfado"}
+{"i": 54, "v": "드래곤다이브", "es": "Carga Dragón"}
+{"i": 55, "v": "공간절단", "es": "Corte Vacío"}
+{"i": 56, "v": "용의파동", "es": "Pulso Dragón"}
+{"i": 57, "v": "드래곤클로", "es": "Garra Dragón"}
+{"i": 58, "v": "드래곤테일", "es": "Cola Dragón"}
+{"i": 59, "v": "용의숨결", "es": "Dragoaliento"}
+{"i": 60, "v": "더블촙", "es": "Golpe Bis"}
+{"i": 61, "v": "회오리", "es": "Ciclón"}
+{"i": 62, "v": "용의분노", "es": "Furia Dragón"}
+{"i": 63, "v": "용의춤", "es": "Danza Dragón"}
+{"i": 64, "v": "뇌격", "es": "At. Fulgor"}
+{"i": 65, "v": "번개", "es": "Trueno"}
+{"i": 66, "v": "볼트태클", "es": "Placaje Eléc."}
+{"i": 67, "v": "전자포", "es": "Electrocañón"}
+{"i": 68, "v": "크로스썬더", "es": "Rayo Fusión"}
+{"i": 69, "v": "10만볼트", "es": "Rayo"}
+{"i": 70, "v": "와일드볼트", "es": "Voltio Cruel"}
+{"i": 71, "v": "방전", "es": "Chispazo"}
+{"i": 72, "v": "번개펀치", "es": "Puño Trueno"}
+{"i": 73, "v": "볼트체인지", "es": "Voltiocambio"}
+{"i": 74, "v": "스파크", "es": "Chispa"}
+{"i": 75, "v": "번개엄니", "es": "Colm. Rayo"}
+{"i": 76, "v": "전격파", "es": "Onda Voltio"}
+{"i": 77, "v": "일렉트릭네트", "es": "Electrotela"}
+{"i": 78, "v": "차지빔", "es": "Rayo Carga"}
+{"i": 79, "v": "전기쇼크", "es": "Impactrueno"}
+{"i": 80, "v": "일렉트릭볼", "es": "Bola Voltio"}
+{"i": 81, "v": "충전", "es": "Carga"}
+{"i": 82, "v": "전자부유", "es": "Levitón"}
+{"i": 83, "v": "전기자석파", "es": "Onda Trueno"}
+{"i": 84, "v": "힘껏펀치", "es": "Puño Certero"}
+{"i": 85, "v": "무릎차기", "es": "Pat. S. Alta"}
+{"i": 86, "v": "인파이트", "es": "A Bocajarro"}
+{"i": 87, "v": "기합구슬", "es": "Onda Certera"}
+{"i": 88, "v": "엄청난힘", "es": "Fuerza Bruta"}
+{"i": 89, "v": "크로스촙", "es": "Tajo Cruzado"}
+{"i": 90, "v": "폭발펀치", "es": "Puñodinámico"}
+{"i": 91, "v": "암해머", "es": "Machada"}
+{"i": 92, "v": "점프킥", "es": "Patada Salto"}
+{"i": 93, "v": "파동탄", "es": "Esfera Aural"}
+{"i": 94, "v": "성스러운칼", "es": "Espadasanta"}
+{"i": 95, "v": "신비의칼", "es": "Sablemístico"}
+{"i": 96, "v": "스카이어퍼", "es": "Gancho Alto"}
+{"i": 97, "v": "지옥의바퀴", "es": "Sumisión"}
+{"i": 98, "v": "깨트리기", "es": "Demolición"}
+{"i": 99, "v": "드레인펀치", "es": "Puño Drenaje"}
+{"i": 100, "v": "받아던지기", "es": "Llave Vital"}
+{"i": 101, "v": "배대뒤치기", "es": "Llave Giro"}
+{"i": 102, "v": "발경", "es": "Palmeo"}
+{"i": 103, "v": "로킥", "es": "Puntapié"}
+{"i": 104, "v": "리벤지", "es": "Desquite"}
+{"i": 105, "v": "돌려차기", "es": "Patada Giro"}
+{"i": 106, "v": "잠깨움뺨치기", "es": "Espabila"}
+{"i": 107, "v": "태권당수", "es": "Golpe Karate"}
+{"i": 108, "v": "마하펀치", "es": "Ultrapuño"}
+{"i": 109, "v": "바위깨기", "es": "Golpe Roca"}
+{"i": 110, "v": "업어후리기", "es": "Llave Corsé"}
+{"i": 111, "v": "진공파", "es": "Onda Vacío"}
+{"i": 112, "v": "두번차기", "es": "Doble Patada"}
+{"i": 113, "v": "손바닥치기", "es": "Empujón"}
+{"i": 114, "v": "트리플킥", "es": "Triplepatada"}
+{"i": 115, "v": "카운터", "es": "Contrataque"}
+{"i": 116, "v": "목숨걸기", "es": "Sacrificio"}
+{"i": 117, "v": "안다리걸기", "es": "Patada Baja"}
+{"i": 118, "v": "기사회생", "es": "Inversión"}
+{"i": 119, "v": "지구던지기", "es": "Mov. Sísmico"}
+{"i": 120, "v": "벌크업", "es": "Corpulencia"}
+{"i": 121, "v": "판별", "es": "Detección"}
+{"i": 122, "v": "패스트가드", "es": "Anticipo"}
+{"i": 123, "v": "V제너레이트", "es": "V de Fuego"}
+{"i": 124, "v": "블라스트번", "es": "Anillo Ígneo"}
+{"i": 125, "v": "분화", "es": "Estallido"}
+{"i": 126, "v": "오버히트", "es": "Sofoco"}
+{"i": 127, "v": "푸른불꽃", "es": "Llama Azul"}
+{"i": 128, "v": "불대문자", "es": "Llamarada"}
+{"i": 129, "v": "플레어드라이브", "es": "Envite Ígneo"}
+{"i": 130, "v": "마그마스톰", "es": "Lluvia Ígnea"}
+{"i": 131, "v": "크로스플레임", "es": "Llama Fusión"}
+{"i": 132, "v": "열풍", "es": "Onda Ígnea"}
+{"i": 133, "v": "연옥", "es": "Infierno"}
+{"i": 134, "v": "성스러운불꽃", "es": "Fuegosagrado"}
+{"i": 135, "v": "화염탄", "es": "Bomba Ígnea"}
+{"i": 136, "v": "화염방사", "es": "Lanzallamas"}
+{"i": 137, "v": "블레이즈킥", "es": "Patada Ígnea"}
+{"i": 138, "v": "불꽃춤", "es": "Danza Llama"}
+{"i": 139, "v": "분연", "es": "Humareda"}
+{"i": 140, "v": "불꽃펀치", "es": "Puño Fuego"}
+{"i": 141, "v": "불꽃튀기기", "es": "Pirotecnia"}
+{"i": 142, "v": "불꽃엄니", "es": "Colm. Ígneo"}
+{"i": 143, "v": "화염바퀴", "es": "Rueda Fuego"}
+{"i": 144, "v": "불꽃의맹세", "es": "Voto Fuego"}
+{"i": 145, "v": "니트로차지", "es": "Nitrocarga"}
+{"i": 146, "v": "불꽃세례", "es": "Ascuas"}
+{"i": 147, "v": "회오리불꽃", "es": "Giro Fuego"}
+{"i": 148, "v": "불태우기", "es": "Calcinación"}
+{"i": 149, "v": "히트스탬프", "es": "Golpe Calor"}
+{"i": 150, "v": "쾌청", "es": "Día Soleado"}
+{"i": 151, "v": "도깨비불", "es": "Fuego Fatuo"}
+{"i": 152, "v": "불새", "es": "Ataque Aéreo"}
+{"i": 153, "v": "브레이브버드", "es": "Pájaro Osado"}
+{"i": 154, "v": "폭풍", "es": "Vendaval"}
+{"i": 155, "v": "에어로블라스트", "es": "Aerochorro"}
+{"i": 156, "v": "공중날기", "es": "Vuelo"}
+{"i": 157, "v": "뛰어오르기", "es": "Bote"}
+{"i": 158, "v": "회전부리", "es": "Pico Taladro"}
+{"i": 159, "v": "에어슬래시", "es": "Tajo Aéreo"}
+{"i": 160, "v": "제비반환", "es": "Golpe Aéreo"}
+{"i": 161, "v": "수다", "es": "Cháchara"}
+{"i": 162, "v": "쪼아대기", "es": "Picoteo"}
+{"i": 163, "v": "더블윙", "es": "Ala Bis"}
+{"i": 164, "v": "날개치기", "es": "Ataque Ala"}
+{"i": 165, "v": "애크러뱃", "es": "Acróbata"}
+{"i": 166, "v": "에어커터", "es": "Aire Afilado"}
+{"i": 167, "v": "바람일으키기", "es": "Tornado"}
+{"i": 168, "v": "쪼기", "es": "Picotazo"}
+{"i": 169, "v": "안개제거", "es": "Despejar"}
+{"i": 170, "v": "깃털댄스", "es": "Danza Pluma"}
+{"i": 171, "v": "따라하기", "es": "Mov. Espejo"}
+{"i": 172, "v": "날개쉬기", "es": "Respiro"}
+{"i": 173, "v": "순풍", "es": "Viento Afín"}
+{"i": 174, "v": "섀도다이브", "es": "Golpe Umbrío"}
+{"i": 175, "v": "섀도볼", "es": "Bola Sombra"}
+{"i": 176, "v": "섀도클로", "es": "Garra Umbría"}
+{"i": 177, "v": "괴상한바람", "es": "Vien. Aciago"}
+{"i": 178, "v": "섀도펀치", "es": "Puño Sombra"}
+{"i": 179, "v": "병상첨병", "es": "Infortunio"}
+{"i": 180, "v": "야습", "es": "Sombra Vil"}
+{"i": 181, "v": "놀래키기", "es": "Impresionar"}
+{"i": 182, "v": "핥기", "es": "Lengüetazo"}
+{"i": 183, "v": "나이트헤드", "es": "Tinieblas"}
+{"i": 184, "v": "이상한빛", "es": "Rayo Confuso"}
+{"i": 185, "v": "저주", "es": "Maldición"}
+{"i": 186, "v": "길동무", "es": "Mismodestino"}
+{"i": 187, "v": "원념", "es": "Rabia"}
+{"i": 188, "v": "악몽", "es": "Pesadilla"}
+{"i": 189, "v": "원한", "es": "Rencor"}
+{"i": 190, "v": "하드플랜트", "es": "Planta Feroz"}
+{"i": 191, "v": "리프스톰", "es": "Lluevehojas"}
+{"i": 192, "v": "꽃잎댄스", "es": "Danza Pétalo"}
+{"i": 193, "v": "파워휩", "es": "Latigazo"}
+{"i": 194, "v": "시드플레어", "es": "Fulgor Semilla"}
+{"i": 195, "v": "솔라빔", "es": "Rayo Solar"}
+{"i": 196, "v": "우드해머", "es": "Mazazo"}
+{"i": 197, "v": "리프블레이드", "es": "Hoja Aguda"}
+{"i": 198, "v": "에너지볼", "es": "Energibola"}
+{"i": 199, "v": "씨폭탄", "es": "Bomba Germen"}
+{"i": 200, "v": "기가드레인", "es": "Gigadrenado"}
+{"i": 201, "v": "우드혼", "es": "Astadrenaje"}
+{"i": 202, "v": "그래스믹서", "es": "Ciclón Hojas"}
+{"i": 203, "v": "매지컬리프", "es": "Hoja Mágica"}
+{"i": 204, "v": "바늘팔", "es": "Brazo Pincho"}
+{"i": 205, "v": "잎날가르기", "es": "Hoja Afilada"}
+{"i": 206, "v": "풀의맹세", "es": "Voto Planta"}
+{"i": 207, "v": "메가드레인", "es": "Megaagotar"}
+{"i": 208, "v": "덩굴채찍", "es": "Látigo Cepa"}
+{"i": 209, "v": "씨기관총", "es": "Semilladora"}
+{"i": 210, "v": "흡수", "es": "Absorber"}
+{"i": 211, "v": "풀묶기", "es": "Hierba Lazo"}
+{"i": 212, "v": "아로마테라피", "es": "Aromaterapia"}
+{"i": 213, "v": "코튼가드", "es": "Rizo Algodón"}
+{"i": 214, "v": "목화포자", "es": "Esporagodón"}
+{"i": 215, "v": "풀피리", "es": "Silbato"}
+{"i": 216, "v": "뿌리박기", "es": "Arraigo"}
+{"i": 217, "v": "씨뿌리기", "es": "Drenadoras"}
+{"i": 218, "v": "수면가루", "es": "Somnífero"}
+{"i": 219, "v": "버섯포자", "es": "Espora"}
+{"i": 220, "v": "저리가루", "es": "Paralizador"}
+{"i": 221, "v": "광합성", "es": "Síntesis"}
+{"i": 222, "v": "고민씨", "es": "Abatidoras"}
+{"i": 223, "v": "지진", "es": "Terremoto"}
+{"i": 224, "v": "대지의힘", "es": "Tierra Viva"}
+{"i": 225, "v": "구멍파기", "es": "Excavar"}
+{"i": 226, "v": "드릴라이너", "es": "Taladradora"}
+{"i": 227, "v": "뼈베기", "es": "Hueso Cortante"}
+{"i": 228, "v": "진흙폭탄", "es": "Bomba Fango"}
+{"i": 229, "v": "땅고르기", "es": "Terratemblor"}
+{"i": 230, "v": "머드샷", "es": "Disp. Lodo"}
+{"i": 231, "v": "뼈다귀부메랑", "es": "Huesomerang"}
+{"i": 232, "v": "모래지옥", "es": "Bucle Arena"}
+{"i": 233, "v": "본러시", "es": "Ataque Óseo"}
+{"i": 234, "v": "진흙뿌리기", "es": "Bofetón Lodo"}
+{"i": 235, "v": "땅가르기", "es": "Fisura"}
+{"i": 236, "v": "매그니튜드", "es": "Magnitud"}
+{"i": 237, "v": "흙놀이", "es": "Chapoteolodo"}
+{"i": 238, "v": "모래뿌리기", "es": "Ataque Arena"}
+{"i": 239, "v": "압정뿌리기", "es": "Púas"}
+{"i": 240, "v": "프리즈볼트", "es": "Rayo Gélido"}
+{"i": 241, "v": "콜드플레어", "es": "Llama Gélida"}
+{"i": 242, "v": "눈보라", "es": "Ventisca"}
+{"i": 243, "v": "냉동빔", "es": "Rayo Hielo"}
+{"i": 244, "v": "고드름떨구기", "es": "Chuzos"}
+{"i": 245, "v": "냉동펀치", "es": "Puño Hielo"}
+{"i": 246, "v": "오로라빔", "es": "Rayo Aurora"}
+{"i": 247, "v": "얼어붙은세계", "es": "Mundo Gélido"}
+{"i": 248, "v": "얼음엄니", "es": "Colm. Hielo"}
+{"i": 249, "v": "눈사태", "es": "Alud"}
+{"i": 250, "v": "얼어붙은바람", "es": "Viento Hielo"}
+{"i": 251, "v": "얼음숨결", "es": "Vaho Gélido"}
+{"i": 252, "v": "얼음뭉치", "es": "Esquirla Helada"}
+{"i": 253, "v": "눈싸라기", "es": "Nieve Polvo"}
+{"i": 254, "v": "아이스볼", "es": "Bola Hielo"}
+{"i": 255, "v": "고드름침", "es": "Carámbano"}
+{"i": 256, "v": "절대영도", "es": "Frío Polar"}
+{"i": 257, "v": "싸라기눈", "es": "Granizo"}
+{"i": 258, "v": "흑안개", "es": "Niebla"}
+{"i": 259, "v": "흰안개", "es": "Neblina"}
+{"i": 260, "v": "대폭발", "es": "Explosión"}
+{"i": 261, "v": "자폭", "es": "Autodestru."}
+{"i": 262, "v": "기가임팩트", "es": "Giga Impacto"}
+{"i": 263, "v": "파괴광선", "es": "Hiperrayo"}
+{"i": 264, "v": "비장의무기", "es": "Última Baza"}
+{"i": 265, "v": "이판사판태클", "es": "Doble Filo"}
+{"i": 266, "v": "아프로브레이크", "es": "Ariete"}
+{"i": 267, "v": "메가톤킥", "es": "Megapatada"}
+{"i": 268, "v": "난동부리기", "es": "Saña"}
+{"i": 269, "v": "알폭탄", "es": "Bomba Huevo"}
+{"i": 270, "v": "심판의뭉치", "es": "Sentencia"}
+{"i": 271, "v": "로켓박치기", "es": "Cabezazo"}
+{"i": 272, "v": "하이퍼보이스", "es": "Vozarrón"}
+{"i": 273, "v": "록클라임", "es": "Treparrocas"}
+{"i": 274, "v": "돌진", "es": "Derribo"}
+{"i": 275, "v": "소란피기", "es": "Alboroto"}
+{"i": 276, "v": "누르기", "es": "Golpe Cuerpo"}
+{"i": 277, "v": "테크노버스터", "es": "Tecno Shock"}
+{"i": 278, "v": "신속", "es": "Vel. Extrema"}
+{"i": 279, "v": "필살앞니", "es": "Hip.Colmillo"}
+{"i": 280, "v": "메가톤펀치", "es": "Megapuño"}
+{"i": 281, "v": "칼바람", "es": "Viento Cortante"}
+{"i": 282, "v": "힘껏치기", "es": "Atizar"}
+{"i": 283, "v": "괴력", "es": "Fuerza"}
+{"i": 284, "v": "트라이어택", "es": "Triataque"}
+{"i": 285, "v": "브레이크클로", "es": "Garra Brutal"}
+{"i": 286, "v": "옛노래", "es": "Cantoarcaico"}
+{"i": 287, "v": "야금야금", "es": "Guardia Baja"}
+{"i": 288, "v": "잼잼펀치", "es": "Puño Mareo"}
+{"i": 289, "v": "객기", "es": "Imagen"}
+{"i": 290, "v": "박치기", "es": "Golpe Cabeza"}
+{"i": 291, "v": "원수갚기", "es": "Represalia"}
+{"i": 292, "v": "비밀의힘", "es": "Daño Secreto"}
+{"i": 293, "v": "베어가르기", "es": "Cuchillada"}
+{"i": 294, "v": "뿔찌르기", "es": "Cornada"}
+{"i": 295, "v": "짓밟기", "es": "Pisotón"}
+{"i": 296, "v": "탐내기", "es": "Antojo"}
+{"i": 297, "v": "돌림노래", "es": "Canon"}
+{"i": 298, "v": "정신차리기", "es": "Estímulo"}
+{"i": 299, "v": "스피드스타", "es": "Meteoros"}
+{"i": 300, "v": "찝기", "es": "Agarre"}
+{"i": 301, "v": "풀베기", "es": "Corte"}
+{"i": 302, "v": "발버둥", "es": "Combate"}
+{"i": 303, "v": "몸통박치기", "es": "Placaje"}
+{"i": 304, "v": "웨더볼", "es": "Meteorobola"}
+{"i": 305, "v": "에코보이스", "es": "Eco Voz"}
+{"i": 306, "v": "속이기", "es": "Sorpresa"}
+{"i": 307, "v": "칼등치기", "es": "Falsotortazo"}
+{"i": 308, "v": "고양이돈받기", "es": "Día de Pago"}
+{"i": 309, "v": "막치기", "es": "Destructor"}
+{"i": 310, "v": "전광석화", "es": "At. Rápido"}
+{"i": 311, "v": "할퀴기", "es": "Arañazo"}
+{"i": 312, "v": "코골기", "es": "Ronquido"}
+{"i": 313, "v": "더블어택", "es": "Doble Golpe"}
+{"i": 314, "v": "페인트", "es": "Amago"}
+{"i": 315, "v": "스위프뺨치기", "es": "Plumerazo"}
+{"i": 316, "v": "분노", "es": "Furia"}
+{"i": 317, "v": "고속스핀", "es": "Giro Rápido"}
+{"i": 318, "v": "가시대포", "es": "Clavo Cañón"}
+{"i": 319, "v": "연속펀치", "es": "Puño Cometa"}
+{"i": 320, "v": "마구할퀴기", "es": "Golpes Furia"}
+{"i": 321, "v": "구슬난사", "es": "Presa"}
+{"i": 322, "v": "조이기", "es": "Atadura"}
+{"i": 323, "v": "연속뺨치기", "es": "Doblebofetón"}
+{"i": 324, "v": "마구찌르기", "es": "Ataque Furia"}
+{"i": 325, "v": "연속조이기", "es": "Repetición"}
+{"i": 326, "v": "휘감기", "es": "Restricción"}
+{"i": 327, "v": "참기", "es": "Venganza"}
+{"i": 328, "v": "묵사발", "es": "Agarrón"}
+{"i": 329, "v": "죽기살기", "es": "Esfuerzo"}
+{"i": 330, "v": "바둥바둥", "es": "Azote"}
+{"i": 331, "v": "화풀이", "es": "Frustración"}
+{"i": 332, "v": "가위자르기", "es": "Guillotina"}
+{"i": 333, "v": "잠재파워", "es": "Poder Oculto"}
+{"i": 334, "v": "뿔드릴", "es": "Perforador"}
+{"i": 335, "v": "자연의은혜", "es": "Don Natural"}
+{"i": 336, "v": "프레젠트", "es": "Presente"}
+{"i": 337, "v": "은혜갚기", "es": "Retribución"}
+{"i": 338, "v": "소닉붐", "es": "Bomba Sónica"}
+{"i": 339, "v": "토해내기", "es": "Escupir"}
+{"i": 340, "v": "분노의앞니", "es": "Superdiente"}
+{"i": 341, "v": "마지막수단", "es": "As Oculto"}
+{"i": 342, "v": "쥐어짜기", "es": "Estrujón"}
+{"i": 343, "v": "경혈찌르기", "es": "Acupresión"}
+{"i": 344, "v": "당신먼저", "es": "Cede Paso"}
+{"i": 345, "v": "조수", "es": "Ayuda"}
+{"i": 346, "v": "헤롱헤롱", "es": "Atracción"}
+{"i": 347, "v": "배턴터치", "es": "Relevo"}
+{"i": 348, "v": "배북", "es": "Tambor"}
+{"i": 349, "v": "기프트패스", "es": "Ofrenda"}
+{"i": 350, "v": "블록", "es": "Bloqueo"}
+{"i": 351, "v": "보호색", "es": "Camuflaje"}
+{"i": 352, "v": "유혹", "es": "Seducción"}
+{"i": 353, "v": "애교부리기", "es": "Encanto"}
+{"i": 354, "v": "텍스처", "es": "Conversión"}
+{"i": 355, "v": "텍스처2", "es": "Conversión2"}
+{"i": 356, "v": "썬더다이브", "es": "Plancha Voltaica"}
+{"i": 357, "v": "웅크리기", "es": "Rizo Defensa"}
+{"i": 358, "v": "사슬묶기", "es": "Anulación"}
+{"i": 359, "v": "그림자분신", "es": "Doble Equipo"}
+{"i": 360, "v": "앙코르", "es": "Otra Vez"}
+{"i": 361, "v": "버티기", "es": "Aguante"}
+{"i": 362, "v": "동료만들기", "es": "Danza Amiga"}
+{"i": 363, "v": "플래시", "es": "Destello"}
+{"i": 364, "v": "기충전", "es": "Foco Energía"}
+{"i": 365, "v": "날따름", "es": "Señuelo"}
+{"i": 366, "v": "꿰뚫어보기", "es": "Profecía"}
+{"i": 367, "v": "뱀눈초리", "es": "Deslumbrar"}
+{"i": 368, "v": "울음소리", "es": "Gruñido"}
+{"i": 369, "v": "성장", "es": "Desarrollo"}
+{"i": 370, "v": "단단해지기", "es": "Fortaleza"}
+{"i": 371, "v": "치료방울", "es": "Cascabel Cura"}
+{"i": 372, "v": "도우미", "es": "Refuerzo"}
+{"i": 373, "v": "멀리짖기", "es": "Aullido"}
+{"i": 374, "v": "째려보기", "es": "Malicioso"}
+{"i": 375, "v": "록온", "es": "Fijar Blanco"}
+{"i": 376, "v": "악마의키스", "es": "Beso Amoroso"}
+{"i": 377, "v": "주술", "es": "Conjuro"}
+{"i": 378, "v": "선취", "es": "Yo Primero"}
+{"i": 379, "v": "검은눈빛", "es": "Mal de Ojo"}
+{"i": 380, "v": "손가락흔들기", "es": "Metrónomo"}
+{"i": 381, "v": "우유마시기", "es": "Batido"}
+{"i": 382, "v": "흉내내기", "es": "Mimético"}
+{"i": 383, "v": "마음의눈", "es": "Telépata"}
+{"i": 384, "v": "작아지기", "es": "Reducción"}
+{"i": 385, "v": "달빛", "es": "Luz Lunar"}
+{"i": 386, "v": "아침햇살", "es": "Sol Matinal"}
+{"i": 387, "v": "자연의힘", "es": "Adaptación"}
+{"i": 388, "v": "냄새구별", "es": "Rastreo"}
+{"i": 389, "v": "아픔나누기", "es": "Divide Dolor"}
+{"i": 390, "v": "멸망의노래", "es": "Canto Mortal"}
+{"i": 391, "v": "방어", "es": "Protección"}
+{"i": 392, "v": "자기암시", "es": "Autosugestión"}
+{"i": 393, "v": "HP회복", "es": "Recuperación"}
+{"i": 394, "v": "리사이클", "es": "Reciclaje"}
+{"i": 395, "v": "미러타입", "es": "Clonatipo"}
+{"i": 396, "v": "리프레시", "es": "Alivio"}
+{"i": 397, "v": "울부짖기", "es": "Rugido"}
+{"i": 398, "v": "신비의부적", "es": "Velo Sagrado"}
+{"i": 399, "v": "겁나는얼굴", "es": "Cara Susto"}
+{"i": 400, "v": "싫은소리", "es": "Chirrido"}
+{"i": 401, "v": "각지기", "es": "Afilar"}
+{"i": 402, "v": "껍질깨기", "es": "Rompecoraza"}
+{"i": 403, "v": "심플빔", "es": "Onda Simple"}
+{"i": 404, "v": "노래하기", "es": "Canto"}
+{"i": 405, "v": "스케치", "es": "Esquema"}
+{"i": 406, "v": "게으름피우기", "es": "Relajo"}
+{"i": 407, "v": "잠꼬대", "es": "Sonámbulo"}
+{"i": 408, "v": "연막", "es": "Pantallahumo"}
+{"i": 409, "v": "알낳기", "es": "Ovocuración"}
+{"i": 410, "v": "튀어오르기", "es": "Salpicadura"}
+{"i": 411, "v": "비축하기", "es": "Reserva"}
+{"i": 412, "v": "대타출동", "es": "Sustituto"}
+{"i": 413, "v": "초음파", "es": "Supersónico"}
+{"i": 414, "v": "뽐내기", "es": "Contoneo"}
+{"i": 415, "v": "꿀꺽", "es": "Tragar"}
+{"i": 416, "v": "천사의키스", "es": "Beso Dulce"}
+{"i": 417, "v": "달콤한향기", "es": "Dulce Aroma"}
+{"i": 418, "v": "칼춤", "es": "Danza Espada"}
+{"i": 419, "v": "꼬리흔들기", "es": "Látigo"}
+{"i": 420, "v": "흔들흔들댄스", "es": "Danza Caos"}
+{"i": 421, "v": "간지르기", "es": "Cosquillas"}
+{"i": 422, "v": "변신", "es": "Transform."}
+{"i": 423, "v": "날려버리기", "es": "Remolino"}
+{"i": 424, "v": "희망사항", "es": "Deseo"}
+{"i": 425, "v": "분발", "es": "Avivar"}
+{"i": 426, "v": "하품", "es": "Bostezo"}
+{"i": 427, "v": "더스트슈트", "es": "Lanza Mugre"}
+{"i": 428, "v": "오물웨이브", "es": "Onda Tóxica"}
+{"i": 429, "v": "오물폭탄", "es": "Bomba Lodo"}
+{"i": 430, "v": "독찌르기", "es": "Puya Nociva"}
+{"i": 431, "v": "크로스포이즌", "es": "Veneno X"}
+{"i": 432, "v": "오물공격", "es": "Residuos"}
+{"i": 433, "v": "베놈쇼크", "es": "Cargatóxica"}
+{"i": 434, "v": "클리어스모그", "es": "Nieblaclara"}
+{"i": 435, "v": "맹독엄니", "es": "Colmillo Ven"}
+{"i": 436, "v": "포이즌테일", "es": "Cola Veneno"}
+{"i": 437, "v": "용해액", "es": "Ácido"}
+{"i": 438, "v": "애시드봄", "es": "Bomba Ácida"}
+{"i": 439, "v": "스모그", "es": "Polución"}
+{"i": 440, "v": "독침", "es": "Picotazo Ven"}
+{"i": 441, "v": "녹기", "es": "Armad. Ácida"}
+{"i": 442, "v": "똬리틀기", "es": "Enrosque"}
+{"i": 443, "v": "위액", "es": "Bilis"}
+{"i": 444, "v": "독가스", "es": "Gas Venenoso"}
+{"i": 445, "v": "독가루", "es": "Polvo Veneno"}
+{"i": 446, "v": "맹독", "es": "Tóxico"}
+{"i": 447, "v": "독압정", "es": "Púas Tóxicas"}
+{"i": 448, "v": "사이코부스트", "es": "Psicoataque"}
+{"i": 449, "v": "꿈먹기", "es": "Come Sueños"}
+{"i": 450, "v": "미래예지", "es": "Premonición"}
+{"i": 451, "v": "사이코브레이크", "es": "Onda Mental"}
+{"i": 452, "v": "사이코키네시스", "es": "Psíquico"}
+{"i": 453, "v": "신통력", "es": "Paranormal"}
+{"i": 454, "v": "사이코쇼크", "es": "Psicocarga"}
+{"i": 455, "v": "사념의박치기", "es": "Cabezazo Zen"}
+{"i": 456, "v": "러스터퍼지", "es": "Resplandor"}
+{"i": 457, "v": "미스트볼", "es": "Bola Neblina"}
+{"i": 458, "v": "사이코커터", "es": "Psico-corte"}
+{"i": 459, "v": "싱크로노이즈", "es": "Sincrorruido"}
+{"i": 460, "v": "환상빔", "es": "Psicorrayo"}
+{"i": 461, "v": "하트스탬프", "es": "Arrumaco"}
+{"i": 462, "v": "염동력", "es": "Confusión"}
+{"i": 463, "v": "미러코트", "es": "Manto Espejo"}
+{"i": 464, "v": "사이코웨이브", "es": "Psicoonda"}
+{"i": 465, "v": "어시스트파워", "es": "Poderreserva"}
+{"i": 466, "v": "고속이동", "es": "Agilidad"}
+{"i": 467, "v": "사이드체인지", "es": "Cambio Banda"}
+{"i": 468, "v": "망각술", "es": "Amnesia"}
+{"i": 469, "v": "배리어", "es": "Barrera"}
+{"i": 470, "v": "명상", "es": "Paz Mental"}
+{"i": 471, "v": "코스믹파워", "es": "Masa Cósmica"}
+{"i": 472, "v": "중력", "es": "Gravedad"}
+{"i": 473, "v": "가드셰어", "es": "Isoguardia"}
+{"i": 474, "v": "가드스왑", "es": "Cambia Def."}
+{"i": 475, "v": "회복봉인", "es": "Anticura"}
+{"i": 476, "v": "치유파동", "es": "Pulso Cura"}
+{"i": 477, "v": "치유소원", "es": "Deseo Cura"}
+{"i": 478, "v": "하트스왑", "es": "Cambiaalmas"}
+{"i": 479, "v": "최면술", "es": "Hipnosis"}
+{"i": 480, "v": "봉인", "es": "Sellar"}
+{"i": 481, "v": "숟가락휘기", "es": "Kinético"}
+{"i": 482, "v": "빛의장막", "es": "Pantalla Luz"}
+{"i": 483, "v": "초승달춤", "es": "Danza Lunar"}
+{"i": 484, "v": "매직코트", "es": "Capa Mágica"}
+{"i": 485, "v": "매직룸", "es": "Zona Mágica"}
+{"i": 486, "v": "요가포즈", "es": "Meditación"}
+{"i": 487, "v": "미라클아이", "es": "Gran Ojo"}
+{"i": 488, "v": "파워셰어", "es": "Isofuerza"}
+{"i": 489, "v": "파워스왑", "es": "Cambia Fue."}
+{"i": 490, "v": "파워트릭", "es": "Truco Fuerza"}
+{"i": 491, "v": "사이코시프트", "es": "Psico-cambio"}
+{"i": 492, "v": "리플렉터", "es": "Reflejo"}
+{"i": 493, "v": "잠자기", "es": "Descanso"}
+{"i": 494, "v": "역할", "es": "Imitación"}
+{"i": 495, "v": "스킬스왑", "es": "Intercambio"}
+{"i": 496, "v": "텔레키네시스", "es": "Telequinesis"}
+{"i": 497, "v": "순간이동", "es": "Teletransp."}
+{"i": 498, "v": "트릭", "es": "Truco"}
+{"i": 499, "v": "트릭룸", "es": "Espacio Raro"}
+{"i": 500, "v": "원더룸", "es": "Zona Extraña"}
+{"i": 501, "v": "양날박치기", "es": "Testarazo"}
+{"i": 502, "v": "암석포", "es": "Romperrocas"}
+{"i": 503, "v": "스톤에지", "es": "Roca Afilada"}
+{"i": 504, "v": "스톤샤워", "es": "Avalancha"}
+{"i": 505, "v": "파워젬", "es": "Joya de Luz"}
+{"i": 506, "v": "원시의힘", "es": "Poder Pasado"}
+{"i": 507, "v": "돌떨구기", "es": "Lanzarrocas"}
+{"i": 508, "v": "암석봉인", "es": "Tumba Rocas"}
+{"i": 509, "v": "떨어뜨리기", "es": "Antiaéreo"}
+{"i": 510, "v": "구르기", "es": "Rodar"}
+{"i": 511, "v": "록블라스트", "es": "Pedrada"}
+{"i": 512, "v": "록커트", "es": "Pulimento"}
+{"i": 513, "v": "모래바람", "es": "Torm. Arena"}
+{"i": 514, "v": "스텔스록", "es": "Trampa Rocas"}
+{"i": 515, "v": "와이드가드", "es": "Vastaguardia"}
+{"i": 516, "v": "파멸의소원", "es": "Deseo Oculto"}
+{"i": 517, "v": "아이언테일", "es": "Cola Férrea"}
+{"i": 518, "v": "코멧펀치", "es": "Puño Meteoro"}
+{"i": 519, "v": "러스터캐논", "es": "Foco Respl."}
+{"i": 520, "v": "아이언헤드", "es": "Cabezahierro"}
+{"i": 521, "v": "강철날개", "es": "Ala de Acero"}
+{"i": 522, "v": "미러샷", "es": "Disp. Espejo"}
+{"i": 523, "v": "마그넷봄", "es": "Bomba Imán"}
+{"i": 524, "v": "기어소서", "es": "Rueda Doble"}
+{"i": 525, "v": "메탈클로", "es": "Garra Metal"}
+{"i": 526, "v": "불릿펀치", "es": "Puño Bala"}
+{"i": 527, "v": "자이로볼", "es": "Giro Bola"}
+{"i": 528, "v": "헤비봄버", "es": "Cuerpopesado"}
+{"i": 529, "v": "메탈버스트", "es": "Repr. Metal"}
+{"i": 530, "v": "바디퍼지", "es": "Aligerar"}
+{"i": 531, "v": "철벽", "es": "Def. Férrea"}
+{"i": 532, "v": "금속음", "es": "Eco Metálico"}
+{"i": 533, "v": "기어체인지", "es": "Cambiomarcha"}
+{"i": 534, "v": "하이드로캐논", "es": "Hidrocañón"}
+{"i": 535, "v": "해수스파우팅", "es": "Salpicar"}
+{"i": 536, "v": "하이드로펌프", "es": "Hidrobomba"}
+{"i": 537, "v": "탁류", "es": "Agua Lodosa"}
+{"i": 538, "v": "파도타기", "es": "Surf"}
+{"i": 539, "v": "아쿠아테일", "es": "Acua Cola"}
+{"i": 540, "v": "집게해머", "es": "Martillazo"}
+{"i": 541, "v": "다이빙", "es": "Buceo"}
+{"i": 542, "v": "열탕", "es": "Escaldar"}
+{"i": 543, "v": "폭포오르기", "es": "Cascada"}
+{"i": 544, "v": "셸블레이드", "es": "Concha Filo"}
+{"i": 545, "v": "소금물", "es": "Salmuera"}
+{"i": 546, "v": "거품광선", "es": "Rayo Burbuja"}
+{"i": 547, "v": "대포무노포", "es": "Pulpocañón"}
+{"i": 548, "v": "물의파동", "es": "Hidropulso"}
+{"i": 549, "v": "물의맹세", "es": "Voto Agua"}
+{"i": 550, "v": "아쿠아제트", "es": "Aqua Jet"}
+{"i": 551, "v": "물대포", "es": "Pistola Agua"}
+{"i": 552, "v": "껍질끼우기", "es": "Tenaza"}
+{"i": 553, "v": "바다회오리", "es": "Torbellino"}
+{"i": 554, "v": "거품", "es": "Burbuja"}
+{"i": 555, "v": "아쿠아링", "es": "Acua Aro"}
+{"i": 556, "v": "비바라기", "es": "Danza Lluvia"}
+{"i": 557, "v": "물붓기", "es": "Empapar"}
+{"i": 558, "v": "물놀이", "es": "Hidrochorro"}
+{"i": 559, "v": "껍질에숨기", "es": "Refugio"}
+{"i": 560, "v": "트림", "es": "Eructo"}
+{"i": 561, "v": "폭음파", "es": "Estruendo"}
+{"i": 562, "v": "매지컬샤인", "es": "Brillo Mágico"}
+{"i": 563, "v": "차밍보이스", "es": "Voz Cautivadora"}
+{"i": 564, "v": "드레인키스", "es": "Beso Drenaje"}
+{"i": 565, "v": "요정의바람", "es": "Viento Feérico"}
+{"i": 566, "v": "마지막일침", "es": "Aguijón Letal"}
+{"i": 567, "v": "플라잉프레스", "es": "Plancha Voladora"}
+{"i": 568, "v": "프리즈드라이", "es": "Liofilización"}
+{"i": 569, "v": "암석액스", "es": "Hachazo pétreo"}
+{"i": 570, "v": "문포스", "es": "Fuerza Lunar"}
+{"i": 571, "v": "매지컬플레임", "es": "Llama Embrujada"}
+{"i": 572, "v": "볼부비부비", "es": "Moflete Estático"}
+{"i": 573, "v": "데스윙", "es": "Ala Mortífera"}
+{"i": 574, "v": "파라볼라차지", "es": "Carga Parábola"}
+{"i": 575, "v": "꽃보라", "es": "Tormenta Floral"}
+{"i": 576, "v": "고스트다이브", "es": "Fuerza Fantasma"}
+{"i": 577, "v": "치근거리기", "es": "Carantoña"}
+{"i": 578, "v": "그로우펀치", "es": "Puño Incremento"}
+{"i": 579, "v": "물수리검", "es": "Shuriken de Agua"}
+{"i": 580, "v": "다이아스톰", "es": "Torm. Diamantes"}
+{"i": 581, "v": "스팀버스트", "es": "Chorro Vapor"}
+{"i": 582, "v": "사우전드웨이브", "es": "Mil Temblores"}
+{"i": 583, "v": "파멸의빛", "es": "Luz de Ruina"}
+{"i": 584, "v": "화룡점정", "es": "Ascenso Draco"}
+{"i": 585, "v": "근원의파동", "es": "Pulso Origen"}
+{"i": 586, "v": "드래곤해머", "es": "Martillo Dragón"}
+{"i": 587, "v": "섀도본", "es": "Hueso Sombrío"}
+{"i": 588, "v": "트로피컬킥", "es": "Patada Tropical"}
+{"i": 589, "v": "그림자꿰매기", "es": "Puntada Sombría"}
+{"i": 590, "v": "솔라블레이드", "es": "Cuchilla Solar"}
+{"i": 591, "v": "모래모으기", "es": "Recogearena"}
+{"i": 592, "v": "아이스해머", "es": "Martillo Hielo"}
+{"i": 593, "v": "불꽃채찍", "es": "Látigo Ígneo"}
+{"i": 594, "v": "사과산", "es": "Ácido Málico"}
+{"i": 595, "v": "원더스팀", "es": "Cautivapor"}
+{"i": 596, "v": "소울크래시", "es": "Choque Anímico"}
+{"i": 597, "v": "사죄의찌르기", "es": "Irreverencia"}
+{"i": 598, "v": "오버드라이브", "es": "Amplificador"}
+{"i": 599, "v": "집게덫", "es": "Cepo"}
+{"i": 600, "v": "드래곤애로", "es": "Dracoflechas"}
+{"i": 601, "v": ""}
+{"i": 602, "v": "바디프레스", "es": "Plancha Corporal"}
+{"i": 603, "v": "엄습하는일격", "es": "Golpe Rastrero"}
+{"i": 604, "v": "메테오빔", "es": "Rayo Meteórico"}
+{"i": 605, "v": "폴터가이스트", "es": "Poltergeist"}
+{"i": 606, "v": "스케일샷", "es": "Ráfaga Escamas"}
+{"i": 607, "v": "눈물그렁그렁", "es": "Ojos Llorosos"}
+{"i": 608, "v": "사이코필드", "es": "Campo Psíquico"}
+{"i": 609, "v": "미스트필드", "es": "Campo de Niebla"}
+{"i": 610, "v": "일렉트릭필드", "es": "Campo Eléctrico"}
+{"i": 611, "v": "그래스필드", "es": "Campo de Hierba"}
+{"i": 612, "v": "아쿠아브레이크", "es": "Hidroariete"}
+{"i": 613, "v": "퀵턴", "es": "Viraje"}
+{"i": 614, "v": "만나자마자", "es": "Escaramuza"}
+{"i": 615, "v": "스마트혼", "es": "Cuerno Certero"}
+{"i": 616, "v": "열사의대지", "es": "Arenas Ardientes"}
+{"i": 617, "v": "10만마력", "es": "Fuerza Equina"}
+{"i": 618, "v": "꽃가루경단", "es": "Bola de Polen"}
+{"i": 619, "v": "사이코팽", "es": "Psicocolmillo"}
+{"i": 620, "v": "트리플악셀", "es": "Triple Áxel"}
+{"i": 621, "v": "DD래리어트", "es": "Lariat Oscuro"}
+{"i": 622, "v": "액셀록", "es": "Roca Veloz"}
+{"i": 623, "v": "덤벼들기", "es": "Plancha"}
+{"i": 624, "v": "그래스슬라이더", "es": "Fitoimpulso"}
+{"i": 625, "v": "라이징볼트", "es": "Alto Voltaje"}
+{"i": 626, "v": "와이드포스", "es": "Vasta Fuerza"}
+{"i": 627, "v": "미스트버스트", "es": "Bruma Explosiva"}
+{"i": 628, "v": "찬물끼얹기", "es": "Agua Fría"}
+{"i": 629, "v": "제트펀치", "es": "Puño Jet"}
+{"i": 630, "v": "아쿠아커터", "es": "Tajo Acuático"}
+{"i": 631, "v": "달려들기", "es": "Brinco"}
+{"i": 632, "v": "아이스스피너", "es": "Pirueta Helada"}
+{"i": 633, "v": "레이징불", "es": "Furia Taurina"}
+{"i": 634, "v": "하이퍼드릴", "es": "Hipertaladro"}
+{"i": 635, "v": "개척하기", "es": "Abrecaminos"}
+{"i": 636, "v": "앙갚음", "es": "Resarcimiento"}
+{"i": 637, "v": "끈적끈적네트", "es": "Red Viscosa"}
+{"i": 638, "v": "노려맞히기", "es": "Disparo Certero"}
+{"i": 639, "v": "루미나콜리전", "es": "Fotocolisión"}
+{"i": 640, "v": "휠스핀", "es": "Quemarrueda"}
+{"i": 641, "v": "원념의칼", "es": "Espada Lamento"}
+{"i": 642, "v": "아머캐논", "es": "Cañón Armadura"}
+{"i": 643, "v": "영원한사랑", "es": "Amor Póstumo"}
+{"i": 644, "v": "소금절이", "es": "Salazón"}
+{"i": 645, "v": "활강", "es": "Deslizamiento"}
+{"i": 646, "v": "강철철퇴", "es": "Ferromaza"}
+{"i": 647, "v": "강철검", "es": "Ferroespada"}
+{"i": 648, "v": "독가시찌르기", "es": "Punzadatóxica"}
+{"i": 649, "v": "정신붕괴", "es": "Carga Mental"}
+{"i": 650, "v": "와인분사", "es": "Vinisurtido"}
+{"i": 651, "v": "비단검", "es": "Espada Sedosa"}
+{"i": 652, "v": "쇠퇴의빛", "es": "Luz Decadente"}
+{"i": 653, "v": "강철감옥", "es": "Ferroprisión"}
+{"i": 654, "v": "얼음깨기", "es": "Rompehielos"}
+{"i": 655, "v": "바위단검", "es": "Petrodaga"}
+{"i": 656, "v": "삼연격", "es": "Triplegolpe"}
+{"i": 657, "v": "달콤한만찬", "es": "Dulce Festín"}
+{"i": 658, "v": "충전공격", "es": "Cargagresión"}
+{"i": 659, "v": "벌레잡이엄니", "es": "Atrapabicho"}
+{"i": 660, "v": "트릭플라워", "es": "Truco Floral"}
+{"i": 661, "v": "플레어송", "es": "Canto Ardiente"}
+{"i": 662, "v": "아쿠아스텝", "es": "Danza Acuática"}
+{"i": 663, "v": "들이받기", "es": "Arremetida"}
+{"i": 664, "v": "화염볼", "es": "Balón Ígneo"}
+{"i": 665, "v": "드럼어택", "es": "Batería Asalto"}
+{"i": 666, "v": "플뢰르캐논", "es": "Cañón Floral"}
+{"i": 667, "v": "기어오르기", "es": "Chulería"}
+{"i": 668, "v": "웨이브태클", "es": "Envite Acuático"}
+{"i": 669, "v": "대격분", "es": "Erupción de Ira"}
+{"i": 670, "v": "엉겨붙기", "es": "Acoso"}
+{"i": 671, "v": "오라윙", "es": "Ala Aural"}
+{"i": 672, "v": "G의힘", "es": "Fuerza G"}
+{"i": 673, "v": "트윈빔", "es": "Láser Doble"}
+{"i": 674, "v": "천추지한", "es": "Rencor Reprimido"}
+{"i": 675, "v": "트리플다이브", "es": "Triple Inmersión"}
+{"i": 676, "v": "와이드브레이커", "es": "Vasto Impacto"}
+{"i": 677, "v": "고드름치기", "es": "Golpecarámbano"}
+{"i": 678, "v": "찌리리따끔따끔", "es": "Electropunzada"}
+{"i": 679, "v": "핼러윈", "es": "Halloween"}
+{"i": 680, "v": "숲의저주", "es": "Condena Silvana"}
+{"i": 681, "v": "니들가드", "es": "Barrera Espinosa"}
+{"i": 682, "v": "막말내뱉기", "es": "Última Palabra"}
+{"i": 683, "v": "베놈트랩", "es": "Trampa Venenosa"}
+{"i": 684, "v": "괴전파", "es": "Onda Anómala"}
+{"i": 685, "v": "비밀이야기", "es": "Confidencia"}
+{"i": 686, "v": "부르짖기", "es": "Rugido de Guerra"}
+{"i": 687, "v": "불사르기", "es": "Llama Final"}
+{"i": 688, "v": "전격부리", "es": "Electropico"}
+{"i": 689, "v": "아가미물기", "es": "Branquibocado"}
+{"i": 690, "v": "철제광선", "es": "Metaláser"}
+{"i": 691, "v": "클로로블라스트", "es": "Clorofiláser"}
+{"i": 692, "v": "전광쌍격", "es": "Electropalmas"}
+{"i": 693, "v": "힘흡수", "es": "Absorbefuerza"}
+{"i": 694, "v": "거대해머", "es": "Martillo Colosal"}
+{"i": 695, "v": "킹실드", "es": "Escudo Real"}
+{"i": 696, "v": "토치카", "es": "Búnker"}
+{"i": 697, "v": "배리어러시", "es": "Asalto Barrera"}
+{"i": 698, "v": "가시발사", "es": "Disparo Espina"}
+{"i": 699, "v": "화염검", "es": "Sable Ardiente"}
+{"i": 700, "v": "알장난", "es": "Truco Huevo"}
+{"i": 701, "v": "사우전드애로", "es": "Mil Flechas"}
+{"i": 702, "v": "바다회오리", "es": "Tromba Marina"}
+{"i": 703, "v": "바게트강타", "es": "Baguetazo"}
+{"i": 704, "v": "마법가루", "es": "Polvo Mágico"}
+{"i": 705, "v": "비검천중파", "es": "Tajo Metralla"}
+{"i": 706, "v": "가시난사", "es": "Ráfaga Púas"}
+{"i": 707, "v": "번개창", "es": "Lanza Relámpago"}
+{"i": 708, "v": "마법사의저주", "es": "Condena de Mago"}
+{"i": 709, "v": "독실", "es": "Hilo Venenoso"}
+{"i": 710, "v": "오로라베일", "es": "Velo Aurora"}
+{"i": 711, "v": "물고버티기", "es": "Presa Maxilar"}
+{"i": 712, "v": "3연화살", "es": "Triple Flecha"}
+{"i": 713, "v": "독침천발", "es": "Mil Púas Tóxicas"}
+{"i": 714, "v": "백귀야행", "es": "Marcha Espectral"}
+{"i": 715, "v": "킬러스핀", "es": "Giro Mortífero"}
+{"i": 716, "v": "페이탈클로", "es": "Garra Nociva"}
+{"i": 717, "v": "골드러시", "es": "Fiebre Dorada"}
+{"i": 718, "v": "일렉트로빔", "es": "Electrorrayo"}
+{"i": 719, "v": "변덕레이저", "es": "Láser Veleidoso"}
+{"i": 720, "v": "질풍신뢰", "es": "Relámpago Súbito"}
+{"i": 721, "v": "타키온커터", "es": "Tajo Taquión"}
+{"i": 722, "v": "도각참", "es": "Genufendiente"}
+{"i": 723, "v": "수류연타", "es": "Azote Torrencial"}
+{"i": 724, "v": "암흑강타", "es": "Golpe Oscuro"}
+{"i": 725, "v": "바위망치", "es": "Petromazazo"}
+{"i": 726, "v": "무한의빛", "es": "Luz Infinita"}
+{"i": 727, "v": "일식", "es": "Eclipse"}
+{"i": 728, "v": "신비의칼", "es": "Sable Místico"}
+{"i": 729, "v": "포이즌액셀", "es": "Ponzochoque"}
+{"i": 730, "v": "부서진마음", "es": "Corazón Roto"}
+{"i": 731, "v": "파괴의빛", "es": "Luz Devastadora"}
+{"i": 732, "v": "더블펀처", "es": "Ferropuño Doble"}

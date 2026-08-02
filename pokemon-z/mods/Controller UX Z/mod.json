@@ -1,0 +1,24 @@
+{
+  "name": "Controller UX Z",
+  "game": "Pokemon Z Fangame",
+  "description": "컨트롤러로 놀 때의 빈틈을 메우는 모드예요. 설계는 poke-essentials의 docs/design/z-controller-ux.md(M-22)에 있어요.\n\n넷을 해요. ① 마우스 커서를 자동으로 숨겨요 — 마우스를 움직이면 나타나고 2초 쉬면 사라져요(이 게임의 마우스 UI는 죽은 코드라 잃는 게 없어요). ② 이름 입력 화면에서 패드 확인 버튼(A)으로 완료, 취소 버튼(B)으로 취소가 돼요 — 원래는 키보드 엔터만 받았어요. 타이핑 중인 프레임에는 무시해서 이름에 들어가는 글쇠와 충돌하지 않아요. ③ 등록한 소중한 물건을 필드에서 패드 X버튼으로 써요 — 원래 F5는 패드가 못 닿는 자리였어요. ④ 도움말 화면의 키보드 키 그림 다섯 장을 Xbox 배치 버튼 그림으로 바꿔요.\n\n일시정지 메뉴의 단축키 표기([X] 회복 · [LB] 이동 · [RB] 나침반)는 UI Text KR 모드가 맡아요.\n\n스크립트는 주입, 그림은 파일 교체예요 — poke-essentials의 mod/z/inject.py 또는 라이브러리 모드 관리자로 설치해요.",
+  "engine": "essentials-v16",
+  "install": "inject",
+  "created_at": "2026-08-02",
+  "scripts": [
+    { "file": "001_Cursor.rb", "script_name": "001_Cursor.rb" },
+    { "file": "002_TextEntryPad.rb", "script_name": "002_TextEntryPad.rb" },
+    { "file": "003_KeyItemPad.rb", "script_name": "003_KeyItemPad.rb" }
+  ],
+  "assets": [
+    { "file": "Graphics/Pictures/helpArrowKeys.png", "install_to": "Graphics/Pictures/helpArrowKeys.png", "replaces_crc": 1170200926 },
+    { "file": "Graphics/Pictures/helpCkey.png", "install_to": "Graphics/Pictures/helpCkey.png", "replaces_crc": 1279305480 },
+    { "file": "Graphics/Pictures/helpXkey.png", "install_to": "Graphics/Pictures/helpXkey.png", "replaces_crc": 480639110 },
+    { "file": "Graphics/Pictures/helpZkey.png", "install_to": "Graphics/Pictures/helpZkey.png", "replaces_crc": 1096498970 },
+    { "file": "Graphics/Pictures/helpF5key.png", "install_to": "Graphics/Pictures/helpF5key.png", "replaces_crc": 648367897 }
+  ],
+  "expects": {
+    "TextEntry": "43095b0c2760565384ce8c5aaa3df9d2",
+    "Scene_Map": "5f096a70d09f26bc6d227edc8b0be6bc"
+  }
+}

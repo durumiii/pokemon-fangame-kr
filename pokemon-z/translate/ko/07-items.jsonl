@@ -1,0 +1,949 @@
+{"i": 0, "v": ""}
+{"i": 1, "v": "소형리펠꽃", "es": "Flor Rep. Pequeña"}
+{"i": 2, "v": "리펠꽃", "es": "Flor Repelente"}
+{"i": 3, "v": "대형리펠꽃", "es": "Flor Rep. Grande"}
+{"i": 4, "v": "검정비드로", "es": "Flauta Negra"}
+{"i": 5, "v": "하양비드로", "es": "Flauta Blanca"}
+{"i": 6, "v": "달콤한꿀", "es": "Miel"}
+{"i": 7, "v": "동굴탈출로프", "es": "Cuerda Huida"}
+{"i": 8, "v": "빨강조각", "es": "Parte Roja"}
+{"i": 9, "v": "노랑조각", "es": "Parte Amarilla"}
+{"i": 10, "v": "파랑조각", "es": "Parte Azul"}
+{"i": 11, "v": "초록조각", "es": "Parte Verde"}
+{"i": 12, "v": "불꽃의돌", "es": "Piedra Fuego"}
+{"i": 13, "v": "천둥의돌", "es": "Piedra Trueno"}
+{"i": 14, "v": "물의돌", "es": "Piedra Agua"}
+{"i": 15, "v": "리프의돌", "es": "Piedra Hoja"}
+{"i": 16, "v": "달의돌", "es": "Piedra Lunar"}
+{"i": 17, "v": "태양의돌", "es": "Piedra Solar"}
+{"i": 18, "v": "어둠의돌", "es": "Piedra Noche"}
+{"i": 19, "v": "각성의돌", "es": "Piedra Alba"}
+{"i": 20, "v": "빛의돌", "es": "Piedra Día"}
+{"i": 21, "v": "빨간규토리", "es": "Bonguri Roja"}
+{"i": 22, "v": "노랑규토리", "es": "Bonguri Amarilla"}
+{"i": 23, "v": "파란규토리", "es": "Bonguri Azul"}
+{"i": 24, "v": "초록규토리", "es": "Bonguri Verde"}
+{"i": 25, "v": "담홍규토리", "es": "Bonguri Rosa"}
+{"i": 26, "v": "하얀규토리", "es": "Bonguri Blanca"}
+{"i": 27, "v": "검은규토리", "es": "Bonguri Negra"}
+{"i": 28, "v": "조개화석", "es": "Fósil Helix"}
+{"i": 29, "v": "껍질화석", "es": "Fósil Domo"}
+{"i": 30, "v": "비밀의호박", "es": "Ámbar Viejo"}
+{"i": 31, "v": "뿌리화석", "es": "Fósil Raíz"}
+{"i": 32, "v": "발톱화석", "es": "Fósil Garra"}
+{"i": 33, "v": "두개의화석", "es": "Fósil Cráneo"}
+{"i": 34, "v": "방패의화석", "es": "Fósil Coraza"}
+{"i": 35, "v": "덮개화석", "es": "Fósil Tapa"}
+{"i": 36, "v": "깃털화석", "es": "Fósil Pluma"}
+{"i": 37, "v": "고운깃털", "es": "Pluma Bella"}
+{"i": 38, "v": "작은버섯", "es": "Mini Seta"}
+{"i": 39, "v": "큰버섯", "es": "Seta Grande"}
+{"i": 40, "v": "향기버섯", "es": "Seta Aroma"}
+{"i": 41, "v": "진주", "es": "Perla"}
+{"i": 42, "v": "큰진주", "es": "Perla Grande"}
+{"i": 43, "v": "경단진주", "es": "Sarta Perlas"}
+{"i": 44, "v": "별의모래", "es": "Polvoestelar"}
+{"i": 45, "v": "별의조각", "es": "Trozo Estrella"}
+{"i": 46, "v": "혜성조각", "es": "Fragmento Cometa"}
+{"i": 47, "v": "금구슬", "es": "Pepita"}
+{"i": 48, "v": "큰금구슬", "es": "Maxipepita"}
+{"i": 49, "v": "하트비늘", "es": "Escama Corazón"}
+{"i": 50, "v": "맛있는꼬리", "es": "Cola Slowpoke"}
+{"i": 51, "v": "귀중한뼈", "es": "Hueso Raro"}
+{"i": 52, "v": "고대의동화", "es": "Real Cobre"}
+{"i": 53, "v": "고대의은화", "es": "Real Plata"}
+{"i": 54, "v": "고대의금화", "es": "Real Oro"}
+{"i": 55, "v": "고대의항아리", "es": "Ánfora"}
+{"i": 56, "v": "고대의팔찌", "es": "Brazal"}
+{"i": 57, "v": "고대의석상", "es": "Efigie Antigua"}
+{"i": 58, "v": "고대의왕관", "es": "Corona Antigua"}
+{"i": 59, "v": "비료", "es": "Fertilizante"}
+{"i": 60, "v": "축축이비료", "es": "Abono Lento"}
+{"i": 61, "v": "오래오래비료", "es": "Abono Fijador"}
+{"i": 62, "v": "끈적끈적비료", "es": "Abono Brote"}
+{"i": 63, "v": "여울소금", "es": "Sal Cardumen"}
+{"i": 64, "v": "여울조개껍질", "es": "Concha Cardumen"}
+{"i": 65, "v": "쐐기돌", "es": "Piedra Espíritu"}
+{"i": 66, "v": "풍선", "es": "Globo Helio"}
+{"i": 67, "v": "반짝가루", "es": "Polvo Brillo"}
+{"i": 68, "v": "진화의휘석", "es": "Mineral Evolutivo"}
+{"i": 69, "v": "가벼운돌", "es": "Piedra Pómez"}
+{"i": 70, "v": "빨간실", "es": "Lazo Destino"}
+{"i": 71, "v": "울퉁불퉁멧", "es": "Casco Dentado"}
+{"i": 72, "v": "탈출버튼", "es": "Botón Escape"}
+{"i": 73, "v": "레드카드", "es": "Tarjeta Roja"}
+{"i": 74, "v": "아름다운허물", "es": "Muda Concha"}
+{"i": 75, "v": "연막탄", "es": "Bola Humo"}
+{"i": 76, "v": "행복의알", "es": "Huevo Suerte"}
+{"i": 77, "v": "학습장치", "es": "Repartir Exp"}
+{"i": 78, "v": "부적금화", "es": "Moneda Amuleto"}
+{"i": 79, "v": "평온의방울", "es": "Cascabel Alivio"}
+{"i": 80, "v": "순결의부적", "es": "Amuleto"}
+{"i": 81, "v": "구애머리띠", "es": "Cinta Elección"}
+{"i": 82, "v": "구애안경", "es": "Gafas Elección"}
+{"i": 83, "v": "구애스카프", "es": "Pañuelo Elección"}
+{"i": 84, "v": "뜨거운바위", "es": "Roca Calor"}
+{"i": 85, "v": "축축한바위", "es": "Roca Lluvia"}
+{"i": 86, "v": "보송보송바위", "es": "Roca Suave"}
+{"i": 87, "v": "차가운바위", "es": "Roca Helada"}
+{"i": 88, "v": "빛의점토", "es": "Refleluz"}
+{"i": 89, "v": "끈기갈고리손톱", "es": "Garra Garfio"}
+{"i": 90, "v": "조임밴드", "es": "Banda Atadura"}
+{"i": 91, "v": "큰뿌리", "es": "Raíz Grande"}
+{"i": 92, "v": "검은오물", "es": "Lodo Negro"}
+{"i": 93, "v": "먹다남은음식", "es": "Restos"}
+{"i": 94, "v": "조개껍질방울", "es": "Cascabel Concha"}
+{"i": 95, "v": "멘탈허브", "es": "Hierba Mental"}
+{"i": 96, "v": "하양허브", "es": "Hierba Blanca"}
+{"i": 97, "v": "파워풀허브", "es": "Hierba Única"}
+{"i": 98, "v": "구근", "es": "Tubérculo"}
+{"i": 99, "v": "충전지", "es": "Pila"}
+{"i": 100, "v": "생명의구슬", "es": "Vidasfera"}
+{"i": 101, "v": "달인의띠", "es": "Cinta Experto"}
+{"i": 102, "v": "메트로놈", "es": "Metrónomo"}
+{"i": 103, "v": "힘의머리띠", "es": "Cinta Fuerte"}
+{"i": 104, "v": "박식안경", "es": "Gafas Especiales"}
+{"i": 105, "v": "예리한손톱", "es": "Garra Afilada"}
+{"i": 106, "v": "초점렌즈", "es": "Periscopio"}
+{"i": 107, "v": "광각렌즈", "es": "Lupa"}
+{"i": 108, "v": "포커스렌즈", "es": "Telescopio"}
+{"i": 109, "v": "왕의징표석", "es": "Roca del Rey"}
+{"i": 110, "v": "예리한이빨", "es": "Colmillo Agudo"}
+{"i": 111, "v": "느림보꼬리", "es": "Cola Plúmbea"}
+{"i": 112, "v": "선제공격손톱", "es": "Garra Rápida"}
+{"i": 113, "v": "기합의머리띠", "es": "Cinta Focus"}
+{"i": 114, "v": "기합의띠", "es": "Banda Focus"}
+{"i": 115, "v": "화염구슬", "es": "Llamasfera"}
+{"i": 116, "v": "맹독구슬", "es": "Toxisfera"}
+{"i": 117, "v": "끈적끈적바늘", "es": "Toxiestrella"}
+{"i": 118, "v": "검은철구", "es": "Bola Férrea"}
+{"i": 119, "v": "겨냥표적", "es": "Blanco"}
+{"i": 120, "v": "교정깁스", "es": "Brazal Firme"}
+{"i": 121, "v": "파워웨이트", "es": "Pesa Recia"}
+{"i": 122, "v": "파워리스트", "es": "Brazal Recio"}
+{"i": 123, "v": "파워벨트", "es": "Cinto Recio"}
+{"i": 124, "v": "파워렌즈", "es": "Lente Recia"}
+{"i": 125, "v": "파워밴드", "es": "Banda Recia"}
+{"i": 126, "v": "파워앵클릿", "es": "Franja Recia"}
+{"i": 127, "v": "무사태평향로", "es": "Incienso Suave"}
+{"i": 128, "v": "만복향로", "es": "Incienso Lento"}
+{"i": 129, "v": "행운의향로", "es": "Incienso Duplo"}
+{"i": 130, "v": "순결의향로", "es": "Incienso Puro"}
+{"i": 131, "v": "바닷물향로", "es": "Incienso Marino"}
+{"i": 132, "v": "잔물결향로", "es": "Incienso Aqua"}
+{"i": 133, "v": "꽃향로", "es": "Incienso Floral"}
+{"i": 134, "v": "괴상한향로", "es": "Incienso Raro"}
+{"i": 135, "v": "암석향로", "es": "Incienso Roca"}
+{"i": 136, "v": "목탄", "es": "Carbón"}
+{"i": 137, "v": "신비의물방울", "es": "Agua Mística"}
+{"i": 138, "v": "자석", "es": "Imán"}
+{"i": 139, "v": "기적의씨", "es": "Semilla Milagro"}
+{"i": 140, "v": "녹지않는얼음", "es": "Antiderretir"}
+{"i": 141, "v": "검은띠", "es": "Cinturón Negro"}
+{"i": 142, "v": "독바늘", "es": "Flecha Venenosa"}
+{"i": 143, "v": "부드러운모래", "es": "Arena Fina"}
+{"i": 144, "v": "예리한부리", "es": "Pico Afilado"}
+{"i": 145, "v": "휘어진스푼", "es": "Cuchara Torcida"}
+{"i": 146, "v": "은빛가루", "es": "Polvo Plata"}
+{"i": 147, "v": "딱딱한돌", "es": "Piedra Dura"}
+{"i": 148, "v": "저주의부적", "es": "Hechizo"}
+{"i": 149, "v": "용의이빨", "es": "Colmillo Dragón"}
+{"i": 150, "v": "검은안경", "es": "Gafas de Sol"}
+{"i": 151, "v": "금속코트", "es": "Revestim. Metálico"}
+{"i": 152, "v": "실크스카프", "es": "Pañuelo Seda"}
+{"i": 153, "v": "불구슬플레이트", "es": "Tabla Llama"}
+{"i": 154, "v": "물방울플레이트", "es": "Tabla Linfa"}
+{"i": 155, "v": "우레플레이트", "es": "Tabla Trueno"}
+{"i": 156, "v": "초록플레이트", "es": "Tabla Pradal"}
+{"i": 157, "v": "고드름플레이트", "es": "Tabla Helada"}
+{"i": 158, "v": "주먹플레이트", "es": "Tabla Fuerte"}
+{"i": 159, "v": "맹독플레이트", "es": "Tabla Tóxica"}
+{"i": 160, "v": "대지플레이트", "es": "Tabla Terrax"}
+{"i": 161, "v": "푸른하늘플레이트", "es": "Tabla Cielo"}
+{"i": 162, "v": "이상한플레이트", "es": "Tabla Mental"}
+{"i": 163, "v": "비단벌레플레이트", "es": "Tabla Bicho"}
+{"i": 164, "v": "암석플레이트", "es": "Tabla Pétrea"}
+{"i": 165, "v": "원령플레이트", "es": "Tabla Terror"}
+{"i": 166, "v": "용의플레이트", "es": "Tabla Draco"}
+{"i": 167, "v": "공포플레이트", "es": "Tabla Oscura"}
+{"i": 168, "v": "강철플레이트", "es": "Tabla Acero"}
+{"i": 169, "v": "불꽃주얼", "es": "Gema Fuego"}
+{"i": 170, "v": "물주얼", "es": "Gema Agua"}
+{"i": 171, "v": "전기주얼", "es": "Gema Eléctrica"}
+{"i": 172, "v": "풀주얼", "es": "Gema Planta"}
+{"i": 173, "v": "얼음주얼", "es": "Gema Hielo"}
+{"i": 174, "v": "격투주얼", "es": "Gema Lucha"}
+{"i": 175, "v": "독주얼", "es": "Gema Veneno"}
+{"i": 176, "v": "땅주얼", "es": "Gema Tierra"}
+{"i": 177, "v": "비행주얼", "es": "Gema Voladora"}
+{"i": 178, "v": "에스퍼주얼", "es": "Gema Psíquica"}
+{"i": 179, "v": "벌레주얼", "es": "Gema Bicho"}
+{"i": 180, "v": "바위주얼", "es": "Gema Roca"}
+{"i": 181, "v": "고스트주얼", "es": "Gema Fantasma"}
+{"i": 182, "v": "드래곤주얼", "es": "Gema Dragón"}
+{"i": 183, "v": "악주얼", "es": "Gema Siniestra"}
+{"i": 184, "v": "강철주얼", "es": "Gema Acero"}
+{"i": 185, "v": "노말주얼", "es": "Gema Normal"}
+{"i": 186, "v": "전기구슬", "es": "Bolaluminosa"}
+{"i": 187, "v": "럭키펀치", "es": "Puño Suerte"}
+{"i": 188, "v": "금속파우더", "es": "Polvo Metálico"}
+{"i": 189, "v": "스피드파우더", "es": "Polvo Veloz"}
+{"i": 190, "v": "굵은뼈", "es": "Hueso Grueso"}
+{"i": 191, "v": "대파", "es": "Palo"}
+{"i": 192, "v": "마음의물방울", "es": "Rocío Bondad"}
+{"i": 193, "v": "심해의이빨", "es": "Diente Marino"}
+{"i": 194, "v": "심해의비늘", "es": "Escama Marina"}
+{"i": 195, "v": "금강옥", "es": "Diamansfera"}
+{"i": 196, "v": "백옥", "es": "Lustresfera"}
+{"i": 197, "v": "백금옥", "es": "Griseosfera"}
+{"i": 198, "v": "아쿠아카세트", "es": "HidroROM"}
+{"i": 199, "v": "번개카세트", "es": "FulgoROM"}
+{"i": 200, "v": "블레이즈카세트", "es": "PiroROM"}
+{"i": 201, "v": "프리즈카세트", "es": "CrioROM"}
+{"i": 202, "v": "변함없는돌", "es": "Piedra Eterna"}
+{"i": 203, "v": "용의비늘", "es": "Escamadragón"}
+{"i": 204, "v": "업그레이드", "es": "Mejora"}
+{"i": 205, "v": "괴상한패치", "es": "Disco Extraño"}
+{"i": 206, "v": "프로텍터", "es": "Protector"}
+{"i": 207, "v": "에레키부스터", "es": "Electrizador"}
+{"i": 208, "v": "마그마부스터", "es": "Magmatizador"}
+{"i": 209, "v": "영계의천", "es": "Tela Terrible"}
+{"i": 210, "v": "고운비늘", "es": "Escama Bella"}
+{"i": 211, "v": "동글동글돌", "es": "Piedra Oval"}
+{"i": 212, "v": "빨강밴드", "es": "Pañuelo Rojo"}
+{"i": 213, "v": "파랑밴드", "es": "Pañuelo Azul"}
+{"i": 214, "v": "분홍밴드", "es": "Pañuelo Rosa"}
+{"i": 215, "v": "초록밴드", "es": "Pañuelo Verde"}
+{"i": 216, "v": "노랑밴드", "es": "Pañuelo Amarillo"}
+{"i": 217, "v": "상처약", "es": "Poción"}
+{"i": 218, "v": "좋은상처약", "es": "Superpoción"}
+{"i": 219, "v": "고급상처약", "es": "Hiperpoción"}
+{"i": 220, "v": "풀회복약", "es": "Poción Máxima"}
+{"i": 221, "v": "회복약", "es": "Restaura Todo"}
+{"i": 222, "v": "성스러운분말", "es": "Ceniza Sagrada"}
+{"i": 223, "v": "잠깨는약", "es": "Despertar"}
+{"i": 224, "v": "해독제", "es": "Antídoto"}
+{"i": 225, "v": "화상치료제", "es": "Antiquemadura"}
+{"i": 226, "v": "마비치료제", "es": "Antiparalizante"}
+{"i": 227, "v": "얼음상태치료제", "es": "Antihielo"}
+{"i": 228, "v": "만병통치제", "es": "Cura Total"}
+{"i": 229, "v": "사라사블레", "es": "Galleta Yantra"}
+{"i": 230, "v": "미르갈레트", "es": "Crepe Luminalia"}
+{"i": 231, "v": "구름아이스", "es": "Porcehelado"}
+{"i": 232, "v": "기력의조각", "es": "Revivir"}
+{"i": 233, "v": "기력의덩어리", "es": "Revivir Máximo"}
+{"i": 234, "v": "나무열매쥬스", "es": "Zumo de Baya"}
+{"i": 235, "v": "분노의호두과자", "es": "Caramelo Furia"}
+{"i": 236, "v": "하트스위트", "es": "Corazón Dulce"}
+{"i": 237, "v": "맛있는물", "es": "Agua Fresca"}
+{"i": 238, "v": "미네랄사이다", "es": "Refresco"}
+{"i": 239, "v": "후르츠밀크", "es": "Limonada"}
+{"i": 240, "v": "튼튼밀크", "es": "Leche Pokémon"}
+{"i": 241, "v": "힘의가루", "es": "Polvoenergía"}
+{"i": 242, "v": "힘의뿌리", "es": "Raíz Energía"}
+{"i": 243, "v": "만능가루", "es": "Polvo Curación"}
+{"i": 244, "v": "부활초", "es": "Hierba Revivir"}
+{"i": 245, "v": "PP에이드", "es": "Éter"}
+{"i": 246, "v": "PP회복", "es": "Éter Máximo"}
+{"i": 247, "v": "PP에이더", "es": "Elixir"}
+{"i": 248, "v": "PP맥스", "es": "Elixir Máximo"}
+{"i": 249, "v": "포인트업", "es": "Más PP"}
+{"i": 250, "v": "포인트맥스", "es": "PP Máximos"}
+{"i": 251, "v": "체력분말", "es": "Polvo Más PS"}
+{"i": 252, "v": "공격분말", "es": "Polvo Proteína"}
+{"i": 253, "v": "방어분말", "es": "Polvo Hierro"}
+{"i": 254, "v": "특공분말", "es": "Polvo Calcio"}
+{"i": 255, "v": "특방분말", "es": "Polvo Zinc"}
+{"i": 256, "v": "스피드분말", "es": "Polvo Carburante"}
+{"i": 257, "v": "체력깃털", "es": "Pluma Vigor"}
+{"i": 258, "v": "근력깃털", "es": "Pluma Músculo"}
+{"i": 259, "v": "저항력깃털", "es": "Pluma Aguante"}
+{"i": 260, "v": "지력깃털", "es": "Pluma Intelecto"}
+{"i": 261, "v": "정신력깃털", "es": "Pluma Mente"}
+{"i": 262, "v": "순발력깃털", "es": "Pluma Ímpetu"}
+{"i": 263, "v": "이상한사탕", "es": "Caramelo Raro"}
+{"i": 264, "v": "마스터볼", "es": "Master Ball"}
+{"i": 265, "v": "하이퍼볼", "es": "Ultra Ball"}
+{"i": 266, "v": "슈퍼볼", "es": "Super Ball"}
+{"i": 267, "v": "몬스터볼", "es": "Poké Ball"}
+{"i": 268, "v": "사파리볼", "es": "Safari Ball"}
+{"i": 269, "v": "컴퍼티션볼", "es": "Compet Ball"}
+{"i": 270, "v": "네트볼", "es": "Malla Ball"}
+{"i": 271, "v": "다이브볼", "es": "Buceo Ball"}
+{"i": 272, "v": "네스트볼", "es": "Nido Ball"}
+{"i": 273, "v": "리피트볼", "es": "Acopio Ball"}
+{"i": 274, "v": "타이머볼", "es": "Turno Ball"}
+{"i": 275, "v": "럭셔리볼", "es": "Lujo Ball"}
+{"i": 276, "v": "프리미어볼", "es": "Honor Ball"}
+{"i": 277, "v": "다크볼", "es": "Ocaso Ball"}
+{"i": 278, "v": "힐볼", "es": "Sana Ball"}
+{"i": 279, "v": "퀵볼", "es": "Veloz Ball"}
+{"i": 280, "v": "프레셔스볼", "es": "Gloria Ball"}
+{"i": 281, "v": "스피드볼", "es": "Rapid Ball"}
+{"i": 282, "v": "레벨볼", "es": "Nivel Ball"}
+{"i": 283, "v": "루어볼", "es": "Cebo Ball"}
+{"i": 284, "v": "헤비볼", "es": "Peso Ball"}
+{"i": 285, "v": "러브러브볼", "es": "Amor Ball"}
+{"i": 286, "v": "프렌드볼", "es": "Amigo Ball"}
+{"i": 287, "v": "문볼", "es": "Luna Ball"}
+{"i": 288, "v": "기술머신01", "es": "MT01"}
+{"i": 289, "v": "기술머신02", "es": "MT02"}
+{"i": 290, "v": "기술머신03", "es": "MT03"}
+{"i": 291, "v": "기술머신04", "es": "MT04"}
+{"i": 292, "v": "기술머신05", "es": "MT05"}
+{"i": 293, "v": "기술머신06", "es": "MT06"}
+{"i": 294, "v": "기술머신07", "es": "MT07"}
+{"i": 295, "v": "기술머신08", "es": "MT08"}
+{"i": 296, "v": "기술머신09", "es": "MT09"}
+{"i": 297, "v": "기술머신10", "es": "MT10"}
+{"i": 298, "v": "기술머신11", "es": "MT11"}
+{"i": 299, "v": "기술머신12", "es": "MT12"}
+{"i": 300, "v": "기술머신13", "es": "MT13"}
+{"i": 301, "v": "기술머신14", "es": "MT14"}
+{"i": 302, "v": "기술머신15", "es": "MT15"}
+{"i": 303, "v": "기술머신16", "es": "MT16"}
+{"i": 304, "v": "기술머신17", "es": "MT17"}
+{"i": 305, "v": "기술머신18", "es": "MT18"}
+{"i": 306, "v": "기술머신19", "es": "MT19"}
+{"i": 307, "v": "기술머신20", "es": "MT20"}
+{"i": 308, "v": "기술머신21", "es": "MT21"}
+{"i": 309, "v": "기술머신22", "es": "MT22"}
+{"i": 310, "v": "기술머신23", "es": "MT23"}
+{"i": 311, "v": "기술머신24", "es": "MT24"}
+{"i": 312, "v": "기술머신25", "es": "MT25"}
+{"i": 313, "v": "기술머신26", "es": "MT26"}
+{"i": 314, "v": "기술머신27", "es": "MT27"}
+{"i": 315, "v": "기술머신28", "es": "MT28"}
+{"i": 316, "v": "기술머신29", "es": "MT29"}
+{"i": 317, "v": "기술머신30", "es": "MT30"}
+{"i": 318, "v": "기술머신31", "es": "MT31"}
+{"i": 319, "v": "기술머신32", "es": "MT32"}
+{"i": 320, "v": "기술머신33", "es": "MT33"}
+{"i": 321, "v": "기술머신34", "es": "MT34"}
+{"i": 322, "v": "기술머신35", "es": "MT35"}
+{"i": 323, "v": "기술머신36", "es": "MT36"}
+{"i": 324, "v": "기술머신37", "es": "MT37"}
+{"i": 325, "v": "기술머신38", "es": "MT38"}
+{"i": 326, "v": "기술머신39", "es": "MT39"}
+{"i": 327, "v": "기술머신40", "es": "MT40"}
+{"i": 328, "v": "기술머신41", "es": "MT41"}
+{"i": 329, "v": "기술머신42", "es": "MT42"}
+{"i": 330, "v": "기술머신43", "es": "MT43"}
+{"i": 331, "v": "기술머신44", "es": "MT44"}
+{"i": 332, "v": "매운라면", "es": "Ramen Picante"}
+{"i": 333, "v": "기술머신46", "es": "MT46"}
+{"i": 334, "v": "매운라면", "es": "Ramen Picante"}
+{"i": 335, "v": "기술머신48", "es": "MT48"}
+{"i": 336, "v": "기술머신49", "es": "MT49"}
+{"i": 337, "v": "기술머신50", "es": "MT50"}
+{"i": 338, "v": "기술머신51", "es": "MT51"}
+{"i": 339, "v": "기술머신52", "es": "MT52"}
+{"i": 340, "v": "기술머신53", "es": "MT53"}
+{"i": 341, "v": "기술머신54", "es": "MT54"}
+{"i": 342, "v": "기술머신55", "es": "MT55"}
+{"i": 343, "v": "기술머신56", "es": "MT56"}
+{"i": 344, "v": "기술머신57", "es": "MT57"}
+{"i": 345, "v": "기술머신58", "es": "MT58"}
+{"i": 346, "v": "기술머신59", "es": "MT59"}
+{"i": 347, "v": "기술머신60", "es": "MT60"}
+{"i": 348, "v": "기술머신61", "es": "MT61"}
+{"i": 349, "v": "기술머신62", "es": "MT62"}
+{"i": 350, "v": "기술머신63", "es": "MT63"}
+{"i": 351, "v": "기술머신64", "es": "MT64"}
+{"i": 352, "v": "기술머신65", "es": "MT65"}
+{"i": 353, "v": "기술머신66", "es": "MT66"}
+{"i": 354, "v": "기술머신67", "es": "MT67"}
+{"i": 355, "v": "기술머신68", "es": "MT68"}
+{"i": 356, "v": "기술머신69", "es": "MT69"}
+{"i": 357, "v": "기술머신70", "es": "MT70"}
+{"i": 358, "v": "기술머신71", "es": "MT71"}
+{"i": 359, "v": "기술머신72", "es": "MT72"}
+{"i": 360, "v": "기술머신73", "es": "MT73"}
+{"i": 361, "v": "기술머신74", "es": "MT74"}
+{"i": 362, "v": "기술머신75", "es": "MT75"}
+{"i": 363, "v": "기술머신76", "es": "MT76"}
+{"i": 364, "v": "기술머신77", "es": "MT77"}
+{"i": 365, "v": "기술머신78", "es": "MT78"}
+{"i": 366, "v": "기술머신79", "es": "MT79"}
+{"i": 367, "v": "기술머신80", "es": "MT80"}
+{"i": 368, "v": "기술머신81", "es": "MT81"}
+{"i": 369, "v": "기술머신82", "es": "MT82"}
+{"i": 370, "v": "기술머신83", "es": "MT83"}
+{"i": 371, "v": "기술머신84", "es": "MT84"}
+{"i": 372, "v": "기술머신85", "es": "MT85"}
+{"i": 373, "v": "기술머신86", "es": "MT86"}
+{"i": 374, "v": "기술머신87", "es": "MT87"}
+{"i": 375, "v": "기술머신88", "es": "MT88"}
+{"i": 376, "v": "기술머신89", "es": "MT89"}
+{"i": 377, "v": "기술머신90", "es": "MT90"}
+{"i": 378, "v": "기술머신91", "es": "MT91"}
+{"i": 379, "v": "기술머신92", "es": "MT92"}
+{"i": 380, "v": "기술머신93", "es": "MT93"}
+{"i": 381, "v": "기술머신94", "es": "MT94"}
+{"i": 382, "v": "기술머신95", "es": "MT95"}
+{"i": 383, "v": "비전머신01", "es": "MO01"}
+{"i": 384, "v": "비전머신02", "es": "MO02"}
+{"i": 385, "v": "비전머신03", "es": "MO03"}
+{"i": 386, "v": "비전머신04", "es": "HM04"}
+{"i": 387, "v": "비전머신05", "es": "MO05"}
+{"i": 388, "v": "비전머신06", "es": "MO06"}
+{"i": 389, "v": "버치열매", "es": "Baya Zreza"}
+{"i": 390, "v": "유루열매", "es": "Baya Atania"}
+{"i": 391, "v": "복슝열매", "es": "Baya Meloc"}
+{"i": 392, "v": "복분열매", "es": "Baya Safre"}
+{"i": 393, "v": "배리열매", "es": "Baya Perasi"}
+{"i": 394, "v": "과사열매", "es": "Baya Zanama"}
+{"i": 395, "v": "오랭열매", "es": "Baya Aranja"}
+{"i": 396, "v": "시몬열매", "es": "Baya Caquic"}
+{"i": 397, "v": "리샘열매", "es": "Baya Ziuela"}
+{"i": 398, "v": "자뭉열매", "es": "Baya Zidra"}
+{"i": 399, "v": "무화열매", "es": "Baya Higog"}
+{"i": 400, "v": "위키열매", "es": "Baya Wiki"}
+{"i": 401, "v": "마고열매", "es": "Baya Ango"}
+{"i": 402, "v": "아바열매", "es": "Baya Guaya"}
+{"i": 403, "v": "파야열매", "es": "Baya Pabaya"}
+{"i": 404, "v": "라즈열매", "es": "Baya Frambu"}
+{"i": 405, "v": "블리열매", "es": "Baya Oram"}
+{"i": 406, "v": "나나열매", "es": "Baya Latano"}
+{"i": 407, "v": "서배열매", "es": "Baya Peragu"}
+{"i": 408, "v": "파인열매", "es": "Baya Pinia"}
+{"i": 409, "v": "유석열매", "es": "Baya Grana"}
+{"i": 410, "v": "시마열매", "es": "Baya Algama"}
+{"i": 411, "v": "파비열매", "es": "Baya Ispero"}
+{"i": 412, "v": "로매열매", "es": "Baya Meluce"}
+{"i": 413, "v": "또뽀열매", "es": "Baya Uvav"}
+{"i": 414, "v": "토망열매", "es": "Baya Tamate"}
+{"i": 415, "v": "수숙열매", "es": "Baya Mais"}
+{"i": 416, "v": "고스티열매", "es": "Baya Aostan"}
+{"i": 417, "v": "라부탐열매", "es": "Baya Rautan"}
+{"i": 418, "v": "노멜열매", "es": "Baya Monli"}
+{"i": 419, "v": "메호키열매", "es": "Baya Wikano"}
+{"i": 420, "v": "자야열매", "es": "Baya Plama"}
+{"i": 421, "v": "슈박열매", "es": "Baya Sambia"}
+{"i": 422, "v": "두리열매", "es": "Baya Rudion"}
+{"i": 423, "v": "루베열매", "es": "Baya Andano"}
+{"i": 424, "v": "오카열매", "es": "Baya Caoca"}
+{"i": 425, "v": "꼬시개열매", "es": "Baya Pasio"}
+{"i": 426, "v": "초나열매", "es": "Baya Gualot"}
+{"i": 427, "v": "린드열매", "es": "Baya Tamar"}
+{"i": 428, "v": "플카열매", "es": "Baya Rimoya"}
+{"i": 429, "v": "로플열매", "es": "Baya Pomaro"}
+{"i": 430, "v": "으름열매", "es": "Baya Kebia"}
+{"i": 431, "v": "슈캐열매", "es": "Baya Acardo"}
+{"i": 432, "v": "바코열매", "es": "Baya Kouba"}
+{"i": 433, "v": "야파열매", "es": "Baya Payapa"}
+{"i": 434, "v": "리체열매", "es": "Baya Yecana"}
+{"i": 435, "v": "루미열매", "es": "Baya Alcho"}
+{"i": 436, "v": "수불열매", "es": "Baya Drasi"}
+{"i": 437, "v": "하반열매", "es": "Baya Anjiro"}
+{"i": 438, "v": "마코열매", "es": "Baya Dillo"}
+{"i": 439, "v": "바리비열매", "es": "Baya Baribá"}
+{"i": 440, "v": "카리열매", "es": "Baya Chilan"}
+{"i": 441, "v": "치리열매", "es": "Baya Lichi"}
+{"i": 442, "v": "용아열매", "es": "Baya Gonlan"}
+{"i": 443, "v": "캄라열매", "es": "Baya Aslac"}
+{"i": 444, "v": "야타비열매", "es": "Baya Yapati"}
+{"i": 445, "v": "규살열매", "es": "Baya Aricoc"}
+{"i": 446, "v": "랑사열매", "es": "Baya Zonlan"}
+{"i": 447, "v": "스타열매", "es": "Baya Arabol"}
+{"i": 448, "v": "의문열매", "es": "Baya Enigma"}
+{"i": 449, "v": "미클열매", "es": "Baya Lagro"}
+{"i": 450, "v": "애슈열매", "es": "Baya Chiri"}
+{"i": 451, "v": "자보열매", "es": "Baya Jaboca"}
+{"i": 452, "v": "애터열매", "es": "Baya Magua"}
+{"i": 453, "v": "풀무늬편지", "es": "Carta Hierba"}
+{"i": 454, "v": "불꽃무늬편지", "es": "Carta Fuego"}
+{"i": 455, "v": "거품무늬편지", "es": "Carta Pompas"}
+{"i": 456, "v": "꽃무늬편지", "es": "Carta Flores"}
+{"i": 457, "v": "광산무늬편지", "es": "Carta Mina"}
+{"i": 458, "v": "강철무늬편지", "es": "Carta Acero"}
+{"i": 459, "v": "하트무늬편지", "es": "Carta Corazón"}
+{"i": 460, "v": "눈무늬편지", "es": "Carta Nieve"}
+{"i": 461, "v": "은하무늬편지", "es": "Carta Sideral"}
+{"i": 462, "v": "항공무늬편지", "es": "Carta Áerea"}
+{"i": 463, "v": "무지개무늬편지", "es": "Carta Mosaico"}
+{"i": 464, "v": "벽돌무늬편지", "es": "Carta Pared"}
+{"i": 465, "v": "플러스파워", "es": "Ataque X"}
+{"i": 466, "v": "플러스파워", "es": "Ataque X"}
+{"i": 467, "v": "플러스파워3", "es": "Ataque X 3"}
+{"i": 468, "v": "플러스파워6", "es": "Ataque X 6"}
+{"i": 469, "v": "디펜드업", "es": "Defensa X"}
+{"i": 470, "v": "디펜드업", "es": "Defensa X"}
+{"i": 471, "v": "디펜드업3", "es": "Defensa X 3"}
+{"i": 472, "v": "디펜드업6", "es": "Defensa X 6"}
+{"i": 473, "v": "스페셜업", "es": "Especial X"}
+{"i": 474, "v": "스페셜업", "es": "Especial X"}
+{"i": 475, "v": "스페셜업3", "es": "Especial X 3"}
+{"i": 476, "v": "스페셜업6", "es": "Especial X 6"}
+{"i": 477, "v": "스페셜가드", "es": "Defensa Especial X"}
+{"i": 478, "v": "스페셜가드", "es": "Defensa Especial X"}
+{"i": 479, "v": "스페셜가드3", "es": "Defensa Especial X 3"}
+{"i": 480, "v": "스페셜가드6", "es": "Defensa Especial X 6"}
+{"i": 481, "v": "스피드업", "es": "Velocidad X"}
+{"i": 482, "v": "스피드업", "es": "Velocidad X"}
+{"i": 483, "v": "스피드업3", "es": "Velocidad X 3"}
+{"i": 484, "v": "스피드업6", "es": "Velocidad X 6"}
+{"i": 485, "v": "잘-맞히기", "es": "Precisión X"}
+{"i": 486, "v": "잘-맞히기", "es": "Precisión X"}
+{"i": 487, "v": "잘-맞히기3", "es": "Precisión X 3"}
+{"i": 488, "v": "잘-맞히기6", "es": "Precisión X 6"}
+{"i": 489, "v": "크리티컬커터", "es": "Directo"}
+{"i": 490, "v": "크리티컬커터", "es": "Directo"}
+{"i": 491, "v": "크리티컬커터3", "es": "Directo 3"}
+{"i": 492, "v": "이펙트가드", "es": "Protección Especial"}
+{"i": 493, "v": "플랫콜", "es": "Quitaestado"}
+{"i": 494, "v": "스킬콜", "es": "Habilitador"}
+{"i": 495, "v": "아이템콜", "es": "Activaobjeto"}
+{"i": 496, "v": "아이템드롭", "es": "Tiraobjeto"}
+{"i": 497, "v": "파랑비드로", "es": "Flauta Azul"}
+{"i": 498, "v": "노랑비드로", "es": "Flauta Amarilla"}
+{"i": 499, "v": "빨강비드로", "es": "Flauta Roja"}
+{"i": 500, "v": "삐삐인형", "es": "Poké Muñeco"}
+{"i": 501, "v": "에나비꼬리", "es": "Cola Skitty"}
+{"i": 502, "v": "포켓풀", "es": "Pokéseñuelo"}
+{"i": 503, "v": "고고트라이드", "es": "Montura Gogoat"}
+{"i": 504, "v": "낚싯대", "es": "Caña de Pescar"}
+{"i": 505, "v": "좋은낚싯대", "es": "Caña Buena"}
+{"i": 506, "v": "대단한낚싯대", "es": "Supercaña"}
+{"i": 507, "v": "아이템탐지기", "es": "Buscaobjetos"}
+{"i": 508, "v": "다우징머신", "es": "Zahorí"}
+{"i": 509, "v": "포켓트레", "es": "Poké Radar"}
+{"i": 510, "v": "타운맵", "es": "Mapa"}
+{"i": 511, "v": "포켓몬피리", "es": "Poké Flauta"}
+{"i": 512, "v": "동전케이스", "es": "Monedero"}
+{"i": 513, "v": "보물주머니", "es": "Saca Botín"}
+{"i": 514, "v": "실프탐지기", "es": "Detector Silph"}
+{"i": 515, "v": "데봉스코프", "es": "Detector Devon"}
+{"i": 516, "v": "꼬부기물뿌리개", "es": "Regadera"}
+{"i": 517, "v": "고라파덕물뿌리개", "es": "Psydugadera"}
+{"i": 518, "v": "고래왕자물뿌리개", "es": "Cubo Wailmer"}
+{"i": 519, "v": "그라시데아꽃", "es": "Gracídea"}
+{"i": 520, "v": "우주항신분증", "es": "Carné Espacial"}
+{"i": 521, "v": "낡은지도", "es": "Mapa Viejo"}
+{"i": 522, "v": "유전자쐐기", "es": "Punta ADN"}
+{"i": 523, "v": "반사거울", "es": "Espejo Reflector"}
+{"i": 524, "v": "둥근부적", "es": "Amuleto Oval"}
+{"i": 525, "v": "빛나는부적", "es": "Amuleto Iris"}
+{"i": 526, "v": "포켓약병", "es": "Pokévial"}
+{"i": 527, "v": "승선티켓", "es": "Ticket Barco"}
+{"i": 528, "v": "부화기", "es": "Incubadora"}
+{"i": 529, "v": "자전거교환권", "es": "Bono Bici"}
+{"i": 530, "v": "요정의천", "es": "Tela Silvana"}
+{"i": 531, "v": "학습장치", "es": "Repartir Exp"}
+{"i": 532, "v": "조명기", "es": "Iluminador"}
+{"i": 533, "v": "바람깃털", "es": "Pluma Eólica"}
+{"i": 534, "v": "벌목도구", "es": "Talador"}
+{"i": 535, "v": "성스러운분말", "es": "Cenizas Sagradas"}
+{"i": 536, "v": "실프스코프", "es": "Visor Silph"}
+{"i": 537, "v": "공방열쇠", "es": "Llave del Taller"}
+{"i": 538, "v": "영수증", "es": "Resguardo"}
+{"i": 539, "v": "등반장비", "es": "Equipo de Escalada"}
+{"i": 540, "v": "특별한포켓인형", "es": "Pokémuñeco Especial"}
+{"i": 541, "v": "돌격조끼", "es": "Chaleco Asalto"}
+{"i": 542, "v": "체력왕관", "es": "Chapa Vigor"}
+{"i": 543, "v": "공격왕관", "es": "Chapa Fuerte"}
+{"i": 544, "v": "방어왕관", "es": "Chapa Robusta"}
+{"i": 545, "v": "특공왕관", "es": "Chapa Sabia"}
+{"i": 546, "v": "특방왕관", "es": "Chapa Espíritu"}
+{"i": 547, "v": "스피드왕관", "es": "Chapa Ímpetu"}
+{"i": 548, "v": "약혼반지", "es": "Anillo de Compromiso"}
+{"i": 549, "v": "비밀의차", "es": "Té Secreto"}
+{"i": 550, "v": "자기카드1", "es": "Tarjeta Magnética 1"}
+{"i": 551, "v": "자기카드2", "es": "Tarjeta Magnética 2"}
+{"i": 552, "v": "예배당열쇠", "es": "Llave Capilla"}
+{"i": 553, "v": "치료약초", "es": "Hierbas Curativas"}
+{"i": 554, "v": "석화치료제", "es": "Remedio Despetrificante"}
+{"i": 555, "v": "향기로운장미", "es": "Rosa Aromática"}
+{"i": 556, "v": "황금출입증", "es": "Pase Dorado"}
+{"i": 557, "v": "자물쇠따개", "es": "Ganzúa Cerrajería"}
+{"i": 558, "v": "자기카드", "es": "Tarjeta Magnética"}
+{"i": 559, "v": "황금비늘", "es": "Escama Dorada"}
+{"i": 560, "v": "다이너마이트", "es": "Dinamita"}
+{"i": 561, "v": "고고고글", "es": "Gafas Aislantes"}
+{"i": 562, "v": "황금사과", "es": "Manzana Dorada"}
+{"i": 563, "v": "황금물질", "es": "Sustancia Dorada"}
+{"i": 564, "v": "영화관입장권", "es": "Pase Cine"}
+{"i": 565, "v": "반짝이는물약", "es": "Poción Brillante"}
+{"i": 566, "v": "퓨즈", "es": "Fusible"}
+{"i": 567, "v": "워글나이트", "es": "Braviarita"}
+{"i": 568, "v": "조작설명서", "es": "Guía Controles"}
+{"i": 569, "v": "Jara의편지", "es": "Carta de Jara"}
+{"i": 570, "v": "매운라면", "es": "Ramen Picante"}
+{"i": 571, "v": ""}
+{"i": 572, "v": ""}
+{"i": 573, "v": ""}
+{"i": 574, "v": ""}
+{"i": 575, "v": ""}
+{"i": 576, "v": ""}
+{"i": 577, "v": ""}
+{"i": 578, "v": ""}
+{"i": 579, "v": ""}
+{"i": 580, "v": ""}
+{"i": 581, "v": ""}
+{"i": 582, "v": ""}
+{"i": 583, "v": ""}
+{"i": 584, "v": ""}
+{"i": 585, "v": ""}
+{"i": 586, "v": ""}
+{"i": 587, "v": ""}
+{"i": 588, "v": ""}
+{"i": 589, "v": ""}
+{"i": 590, "v": ""}
+{"i": 591, "v": ""}
+{"i": 592, "v": ""}
+{"i": 593, "v": ""}
+{"i": 594, "v": ""}
+{"i": 595, "v": ""}
+{"i": 596, "v": ""}
+{"i": 597, "v": ""}
+{"i": 598, "v": ""}
+{"i": 599, "v": ""}
+{"i": 600, "v": ""}
+{"i": 601, "v": ""}
+{"i": 602, "v": ""}
+{"i": 603, "v": ""}
+{"i": 604, "v": ""}
+{"i": 605, "v": ""}
+{"i": 606, "v": ""}
+{"i": 607, "v": ""}
+{"i": 608, "v": ""}
+{"i": 609, "v": ""}
+{"i": 610, "v": ""}
+{"i": 611, "v": ""}
+{"i": 612, "v": ""}
+{"i": 613, "v": "찢어진사진", "es": "Foto rota"}
+{"i": 614, "v": "Gatling사진", "es": "Foto Gatling"}
+{"i": 615, "v": "킹크랩나이트", "es": "Kinglerita"}
+{"i": 616, "v": "버터플나이트", "es": "Butterfreeita"}
+{"i": 617, "v": "괴력몬나이트", "es": "Machampita"}
+{"i": 618, "v": "라프라스나이트", "es": "Laprasita"}
+{"i": 619, "v": "더스트나나이트", "es": "Garbodorita"}
+{"i": 620, "v": "아머까오나이트", "es": "Corvinightita"}
+{"i": 621, "v": "이올브나이트", "es": "Orbeetleita"}
+{"i": 622, "v": "갈가부기나이트", "es": "Drednawita"}
+{"i": 623, "v": "석탄산나이트", "es": "Coalossalita"}
+{"i": 624, "v": "애프룡・단지래플・과미드라나이트", "es": "Megapiedra Manzánida"}
+{"i": 625, "v": "사다이사나이트", "es": "Sandacondita"}
+{"i": 626, "v": "스트린더나이트", "es": "Toxtricitita"}
+{"i": 627, "v": "다태우지네나이트", "es": "Centiskorchita"}
+{"i": 628, "v": "브리무음나이트", "es": "Hatterenita"}
+{"i": 629, "v": "오롱털나이트", "es": "Grimmsnarlita"}
+{"i": 630, "v": "마휘핑나이트", "es": "Alcremita"}
+{"i": 631, "v": "대왕끼리동나이트", "es": "Copperajita"}
+{"i": 632, "v": "두랄루돈나이트", "es": "Duraludonita"}
+{"i": 633, "v": "후디나이트", "es": "Alakazamita"}
+{"i": 634, "v": "팬텀나이트", "es": "Gengarita"}
+{"i": 635, "v": "캥카나이트", "es": "Kangaskhanita"}
+{"i": 636, "v": "쁘사이저나이트", "es": "Pinsirita"}
+{"i": 637, "v": "갸라도스나이트", "es": "Gyaradosita"}
+{"i": 638, "v": "프테라나이트", "es": "Aerodactylita"}
+{"i": 639, "v": "전룡나이트", "es": "Ampharosita"}
+{"i": 640, "v": "핫삼나이트", "es": "Scizorita"}
+{"i": 641, "v": "헤라크로스나이트", "es": "Heracrossita"}
+{"i": 642, "v": "헬가나이트", "es": "Houndoomita"}
+{"i": 643, "v": "가디안나이트", "es": "Gardevoirita"}
+{"i": 644, "v": "보스로라나이트", "es": "Aggronita"}
+{"i": 645, "v": "요가램나이트", "es": "Medichamita"}
+{"i": 646, "v": "썬더볼트나이트", "es": "Manectrita"}
+{"i": 647, "v": "앱솔나이트", "es": "Absolita"}
+{"i": 648, "v": "루카리오나이트", "es": "Lucarita"}
+{"i": 649, "v": "독침붕나이트", "es": "Beedrillita"}
+{"i": 650, "v": "피죤투나이트", "es": "Pidgeotita"}
+{"i": 651, "v": "야도란나이트", "es": "Slowbrita"}
+{"i": 652, "v": "강철톤나이트", "es": "Steelixita"}
+{"i": 653, "v": "깜까미나이트", "es": "Sableyita"}
+{"i": 654, "v": "샤크니아나이트", "es": "Sharpedita"}
+{"i": 655, "v": "폭타나이트", "es": "Cameruptita"}
+{"i": 656, "v": "파비코리나이트", "es": "Altarita"}
+{"i": 657, "v": "얼음귀신나이트", "es": "Glalieita"}
+{"i": 658, "v": "엘레이드나이트", "es": "Galladita"}
+{"i": 659, "v": "메가진화", "es": "Megaevolución"}
+{"i": 660, "v": "포켓라이더", "es": "Pokérider"}
+{"i": 661, "v": "세비퍼나이트", "es": "Seviperita"}
+{"i": 662, "v": "가스테슬라나이트", "es": "Gasteslita"}
+{"i": 663, "v": "루나예나이트", "es": "Lunayita"}
+{"i": 664, "v": "나르발로르나이트", "es": "Narvalorita"}
+{"i": 665, "v": "지우개굴닌자나이트", "es": "Greninjita Ash"}
+{"i": 666, "v": "진실의렌즈", "es": "Lente de la Verdad"}
+{"i": 667, "v": "기술머신96", "es": "MT96"}
+{"i": 668, "v": "기술머신97", "es": "MT97"}
+{"i": 669, "v": "기술머신98", "es": "MT98"}
+{"i": 670, "v": "기술머신99", "es": "MT99"}
+{"i": 671, "v": "기술머신100", "es": "MT100"}
+{"i": 672, "v": "번치코나이트", "es": "Blazikenita"}
+{"i": 673, "v": "피카츄나이트", "es": "Pikachuita"}
+{"i": 674, "v": "특제포켓몬푸드", "es": "Supercomida Pokémon"}
+{"i": 675, "v": "정제포켓에센스", "es": "Pokésencia Refinada"}
+{"i": 676, "v": "이상해꽃나이트", "es": "Venusaurita"}
+{"i": 677, "v": "리자몽나이트Y", "es": "Charizardita Y"}
+{"i": 678, "v": "거북왕나이트", "es": "Blastoisita"}
+{"i": 679, "v": "기술머신101", "es": "MT101"}
+{"i": 680, "v": "기술머신102", "es": "MT102"}
+{"i": 681, "v": "기술머신103", "es": "MT103"}
+{"i": 682, "v": "성급민트", "es": "Menta Activa"}
+{"i": 683, "v": "의젓민트", "es": "Menta Afable"}
+{"i": 684, "v": "장난꾸러기민트", "es": "Menta Agitada"}
+{"i": 685, "v": "명랑민트", "es": "Menta Alegre"}
+{"i": 686, "v": "덜렁민트", "es": "Menta Alocada"}
+{"i": 687, "v": "얌전민트", "es": "Menta Amable"}
+{"i": 688, "v": "용감민트", "es": "Menta Audaz"}
+{"i": 689, "v": "신중민트", "es": "Menta Cauta"}
+{"i": 690, "v": "고집민트", "es": "Menta Firme"}
+{"i": 691, "v": "촐랑민트", "es": "Menta Floja"}
+{"i": 692, "v": "건방민트", "es": "Menta Grosera"}
+{"i": 693, "v": "외로움민트", "es": "Menta Huraña"}
+{"i": 694, "v": "천진난만민트", "es": "Menta Ingenua"}
+{"i": 695, "v": "냉정민트", "es": "Menta Mansa"}
+{"i": 696, "v": "겁쟁이민트", "es": "Menta Miedosa"}
+{"i": 697, "v": "조심민트", "es": "Menta Modesta"}
+{"i": 698, "v": "대담민트", "es": "Menta Osada"}
+{"i": 699, "v": "개구쟁이민트", "es": "Menta Pícara"}
+{"i": 700, "v": "무사태평민트", "es": "Menta Plácida"}
+{"i": 701, "v": "차분민트", "es": "Menta Serena"}
+{"i": 702, "v": "성실민트", "es": "Menta Seria"}
+{"i": 703, "v": "파도타기라이드", "es": "Montura Surf"}
+{"i": 704, "v": "마기라스나이트", "es": "Tyranita"}
+{"i": 705, "v": "나무킹나이트", "es": "Sceptilita"}
+{"i": 706, "v": "대짱이나이트", "es": "Swampertita"}
+{"i": 707, "v": "극비열쇠", "es": "Llave Supersecreta"}
+{"i": 708, "v": "리자몽나이트X", "es": "Charizardita X"}
+{"i": 709, "v": "황금종", "es": "Campana Dorada"}
+{"i": 710, "v": "은종", "es": "Campana Plateada"}
+{"i": 711, "v": ""}
+{"i": 712, "v": "기술머신104", "es": "MT104"}
+{"i": 713, "v": "기술머신105", "es": "MT105"}
+{"i": 714, "v": "기술머신106", "es": "MT106"}
+{"i": 715, "v": "기술머신107", "es": "MT107"}
+{"i": 716, "v": "기술머신108", "es": "MT108"}
+{"i": 717, "v": "포켓나침반", "es": "Pokébrújula"}
+{"i": 718, "v": "정령플레이트", "es": "Tabla Duende"}
+{"i": 719, "v": "노말플레이트", "es": "Tabla Neutra"}
+{"i": 720, "v": "프리즘수정", "es": "Cristal Prisma"}
+{"i": 721, "v": "약점보험", "es": "Seguro Debilidad"}
+{"i": 722, "v": "트럭열쇠", "es": "Llave Camión"}
+{"i": 723, "v": "프리즘공물", "es": "Ofrenda Prismática"}
+{"i": 724, "v": "보만다나이트", "es": "Salamencita"}
+{"i": 725, "v": "메타그로스나이트", "es": "Metagrossita"}
+{"i": 726, "v": "한카리아스나이트", "es": "Garchompita"}
+{"i": 727, "v": "프리져의 깃털", "es": "Pluma de Articuno"}
+{"i": 728, "v": "썬더의 깃털", "es": "Pluma de Zapdos"}
+{"i": 729, "v": "파이어의 깃털", "es": "Pluma de Moltres"}
+{"i": 730, "v": "급소방지", "es": "Anticrítico"}
+{"i": 731, "v": "상장", "es": "Diploma"}
+{"i": 732, "v": "고운털", "es": "Pelaje Fino"}
+{"i": 733, "v": "아침이슬", "es": "Rocío Matinal"}
+{"i": 734, "v": "부드러운깃털", "es": "Pluma Suave"}
+{"i": 735, "v": "기묘한광석", "es": "Mineral Extraño"}
+{"i": 736, "v": "마른모래", "es": "Grava Seca"}
+{"i": 737, "v": "반짝이는가루", "es": "Polvo Brillante"}
+{"i": 738, "v": "타오르는불씨", "es": "Brasa Candente"}
+{"i": 739, "v": "생명의물", "es": "Agua Vital"}
+{"i": 740, "v": "향기이끼", "es": "Musgo Aromático"}
+{"i": 741, "v": "포켓독소", "es": "Pokétoxina"}
+{"i": 742, "v": "차가운파편", "es": "Esquirlas Frías"}
+{"i": 743, "v": "탄력섬유", "es": "Fibra Elástica"}
+{"i": 744, "v": "꿈의액체", "es": "Fluido Onírico"}
+{"i": 745, "v": "엑토플라즘", "es": "Ectoplasma"}
+{"i": 746, "v": "그림자추출액", "es": "Extracto Sombrío"}
+{"i": 747, "v": "쇳가루", "es": "Virutas Férreas"}
+{"i": 748, "v": "단단한비늘", "es": "Escama Dura"}
+{"i": 749, "v": "달콤한설탕", "es": "Azúcar Meloso"}
+{"i": 750, "v": "수정병", "es": "Frasco Cristalino"}
+{"i": 751, "v": "목재", "es": "Madera"}
+{"i": 752, "v": "조약돌", "es": "Guijarro"}
+{"i": 753, "v": "철덩이", "es": "Trozo de Hierro"}
+{"i": 754, "v": "뼛가루", "es": "Polvo de Hueso"}
+{"i": 755, "v": "이국의향신료", "es": "Especias Exóticas"}
+{"i": 756, "v": "폭발가루", "es": "Polvo Explosivo"}
+{"i": 757, "v": "약한손도끼", "es": "Hachuela Endeble"}
+{"i": 758, "v": "수은열쇠", "es": "Llave Mercúrica"}
+{"i": 759, "v": "포켓목표", "es": "PokéObjetivo"}
+{"i": 760, "v": "어두운와인", "es": "Vino Sombrío"}
+{"i": 761, "v": "Isidora의손수건", "es": "Pañuelo de Isidora"}
+{"i": 762, "v": "은화", "es": "Moneda Plata"}
+{"i": 763, "v": "금화", "es": "Moneda Oro"}
+{"i": 764, "v": "귀족가발", "es": "Peluca Regia"}
+{"i": 765, "v": "전기콘덴서", "es": "Condensador Eléctrico"}
+{"i": 766, "v": "초진화광물", "es": "Supermin. Evolutivo"}
+{"i": 767, "v": "와인책", "es": "Libro sobre Vino"}
+{"i": 768, "v": "공작책", "es": "Libro sobre Bricolaje"}
+{"i": 769, "v": "포켓몬책", "es": "Libro sobre Pokémon"}
+{"i": 770, "v": "트러플", "es": "Trufa"}
+{"i": 771, "v": "사과조림", "es": "Compota de Manzana"}
+{"i": 772, "v": "정제크림", "es": "Crema Refinada"}
+{"i": 773, "v": "올리브오일", "es": "Aceite de Oliva"}
+{"i": 774, "v": "이벨타르 조각상", "es": "Efigie de Yveltal"}
+{"i": 775, "v": "제르네아스 조각상", "es": "Efigie de Xerneas"}
+{"i": 776, "v": "벌레부적", "es": "Amuleto Bicho"}
+{"i": 777, "v": "악부적", "es": "Amuleto Siniestro"}
+{"i": 778, "v": "드래곤부적", "es": "Amuleto Dragón"}
+{"i": 779, "v": "전기부적", "es": "Amuleto Eléctrico"}
+{"i": 780, "v": "페어리부적", "es": "Amuleto Hada"}
+{"i": 781, "v": "격투부적", "es": "Amuleto Lucha"}
+{"i": 782, "v": "불꽃부적", "es": "Amuleto Fuego"}
+{"i": 783, "v": "비행부적", "es": "Amuleto Volador"}
+{"i": 784, "v": "고스트부적", "es": "Amuleto Fantasma"}
+{"i": 785, "v": "풀부적", "es": "Amuleto Planta"}
+{"i": 786, "v": "땅부적", "es": "Amuleto Tierra"}
+{"i": 787, "v": "얼음부적", "es": "Amuleto Hielo"}
+{"i": 788, "v": "노말부적", "es": "Amuleto Normal"}
+{"i": 789, "v": "독부적", "es": "Amuleto Veneno"}
+{"i": 790, "v": "에스퍼부적", "es": "Amuleto Psíquico"}
+{"i": 791, "v": "바위부적", "es": "Amuleto Roca"}
+{"i": 792, "v": "강철부적", "es": "Amuleto Acero"}
+{"i": 793, "v": "물부적", "es": "Amuleto Agua"}
+{"i": 794, "v": "기술머신47", "es": "MT47"}
+{"i": 795, "v": "체력주사", "es": "Inyección PS"}
+{"i": 796, "v": "공격주사", "es": "Inyección Proteína"}
+{"i": 797, "v": "방어주사", "es": "Inyección Hierro"}
+{"i": 798, "v": "특공주사", "es": "Inyección Calcio"}
+{"i": 799, "v": "특방주사", "es": "Inyección Zinc"}
+{"i": 800, "v": "스피드주사", "es": "Inyección Carburante"}
+{"i": 801, "v": "이어롭나이트", "es": "Lopunnyta"}
+{"i": 802, "v": "옛 바니타스열쇠", "es": "Llave Viejo Vánitas"}
+{"i": 803, "v": "빛나는왕관", "es": "Chapa Radiante"}
+{"i": 804, "v": "루미날리아열쇠", "es": "Llave Luminalia"}
+{"i": 805, "v": "망치", "es": "Martillo"}
+{"i": 806, "v": "딱딱한빵", "es": "Pan Duro"}
+{"i": 807, "v": "에스퍼볼", "es": "Esper Ball"}
+{"i": 808, "v": "녹슨검", "es": "Espada Deslustrada"}
+{"i": 809, "v": "수상한소지품", "es": "Pertenencias Sospechosas"}
+{"i": 810, "v": "수면가루", "es": "Polvo de Sueño"}
+{"i": 811, "v": "은밀한망토", "es": "Capa Furtiva"}
+{"i": 812, "v": "복싱글러브", "es": "Guante de Boxeo"}
+{"i": 813, "v": "순수한부적", "es": "Amuleto Puro"}
+{"i": 814, "v": "턱뼈골격", "es": "Armazón de Fauces"}
+{"i": 815, "v": "지가르데 조각상", "es": "Efigie de Zygarde"}
+{"i": 816, "v": "플라제스나이트", "es": "Florgesita"}
+{"i": 817, "v": "무덤열쇠", "es": "Llave Tumba"}
+{"i": 818, "v": "마법물뿌리개", "es": "Regadera Mágica"}
+{"i": 819, "v": "말보의부적", "es": "Talismán de Malvo"}
+{"i": 820, "v": "궁전열쇠", "es": "Llave del Palacio"}
+{"i": 821, "v": "궁극병기설계도", "es": "Proyecto Arma Definitiva"}
+{"i": 822, "v": "수제몬스터볼", "es": "Poké Ball Casera"}
+{"i": 823, "v": "수제슈퍼볼", "es": "Super Ball Casera"}
+{"i": 824, "v": "수제하이퍼볼", "es": "Ultra Ball Casera"}
+{"i": 825, "v": "폴리곤라이드", "es": "Montura Porygon"}
+{"i": 826, "v": "윈디라이드", "es": "Montura Arcanine"}
+{"i": 827, "v": "펜드라라이드", "es": "Montura Scolipede"}
+{"i": 828, "v": "둥실라이드라이드", "es": "Montura Drifblim"}
+{"i": 829, "v": "맘모꾸리라이드", "es": "Montura Mamoswine"}
+{"i": 830, "v": "보만다라이드", "es": "Montura Salamence"}
+{"i": 831, "v": "아르세우스라이드", "es": "Montura Arceus"}
+{"i": 832, "v": "붕대", "es": "Vendaje"}
+{"i": 833, "v": "매운라면", "es": "Ramen Picante"}
+{"i": 834, "v": "가시구슬", "es": "Punzasfera"}
+{"i": 835, "v": "가시너클", "es": "Nudillo Púas"}
+{"i": 836, "v": "레쿠쟈나이트", "es": "Rayquazita"}
+{"i": 837, "v": "행운의둥근돌", "es": "Piedra redonda de la Suerte"}
+{"i": 838, "v": "잘익은멜록열매", "es": "Baya Meloc Jugosa"}
+{"i": 839, "v": "사랑을담은몬스터볼", "es": "Pokéball hecha con amor"}
+{"i": 840, "v": "F3의머리", "es": "Cabeza de F3"}
+{"i": 841, "v": "작업복", "es": "Prendas de Obrero"}
+{"i": 842, "v": "객실열쇠", "es": "Llave de Habitación"}
+{"i": 843, "v": "탑열쇠", "es": "Llave Torre"}
+{"i": 844, "v": "핸드캐논", "es": "Cañón de Mano"}
+{"i": 845, "v": "기술머신45", "es": "MT45"}
+{"i": 846, "v": "굴레의항아리", "es": "Vasija Castigo"}
+{"i": 847, "v": "깃든불꽃의돌", "es": "Piedra Fuego Imbuida"}
+{"i": 848, "v": "깃든물의돌", "es": "Piedra Agua Imbuida"}
+{"i": 849, "v": "깃든리프의돌", "es": "Piedra Hoja Imbuida"}
+{"i": 850, "v": "깃든천둥의돌", "es": "Piedra Trueno Imbuida"}
+{"i": 851, "v": "깃든달의돌", "es": "Piedra Lunar Imbuida"}
+{"i": 852, "v": "깃든태양의돌", "es": "Piedra Solar Imbuida"}
+{"i": 853, "v": "깃든각성의돌", "es": "Piedra Alba Imbuida"}
+{"i": 854, "v": "깃든빛의돌", "es": "Piedra Día Imbuida"}
+{"i": 855, "v": "깃든어둠의돌", "es": "Piedra Noche Imbuida"}
+{"i": 856, "v": "인물설명서", "es": "Guía Personajes"}
+{"i": 857, "v": "눈설왕나이트", "es": "Abomasnowita"}
+{"i": 858, "v": "섬지도", "es": "Mapa Isla"}
+{"i": 859, "v": "오래된그로그주", "es": "Grog Añejo"}
+{"i": 860, "v": "진정제", "es": "Bálsamo Sedante"}
+{"i": 861, "v": "작아진나무", "es": "Árbol Miniaturizado"}
+{"i": 862, "v": "끌", "es": "Cincel"}
+{"i": 863, "v": "공기풀무", "es": "Fuelle Neumático"}
+{"i": 864, "v": "디안시나이트", "es": "Diancita"}
+{"i": 865, "v": "Acrílico열쇠", "es": "Llave Acrílica"}
+{"i": 866, "v": "기계심장", "es": "Corazón Mecánico"}
+{"i": 867, "v": "잊혀진왕의검", "es": "Espada de Rey Olvidado"}
+{"i": 868, "v": "온천초대장", "es": "Convocatoria Balneario"}
+{"i": 869, "v": "브리가론나이트 Z", "es": "Chesnaughtita Z"}
+{"i": 870, "v": "마폭시나이트 Z", "es": "Delphoxita Z"}
+{"i": 871, "v": "개굴닌자나이트 Z", "es": "Greninjita Z"}
+{"i": 872, "v": "고릴타나이트", "es": "Rillaboomita"}
+{"i": 873, "v": "에이스번나이트", "es": "Cinderacita"}
+{"i": 874, "v": "인텔리레온나이트", "es": "Inteleonita"}
+{"i": 875, "v": "용감한검", "es": "Espada Valiente"}
+{"i": 876, "v": "돌격조끼", "es": "Coraza Asalto"}
+{"i": 877, "v": "스키보드", "es": "Tabla de Esquí"}
+{"i": 878, "v": "상기노창고열쇠1", "es": "Llave Sanguina 1"}
+{"i": 879, "v": "상기노창고열쇠2", "es": "Llave Sanguina 2"}
+{"i": 880, "v": "상기노창고열쇠3", "es": "Llave Sanguina 3"}
+{"i": 881, "v": "비밀의열쇠", "es": "Llave Secreta"}
+{"i": 882, "v": "역열쇠", "es": "Llave Estación"}
+{"i": 883, "v": "약혼반지", "es": "Anillo de Compromiso"}
+{"i": 884, "v": "얀트라암호서", "es": "Libro del Código Yantra"}
+{"i": 885, "v": "불의카드", "es": "Carta de Fuego"}
+{"i": 886, "v": "물의카드", "es": "Carta de Agua"}
+{"i": 887, "v": "땅의카드", "es": "Carta de Tierra"}
+{"i": 888, "v": "보호헬멧", "es": "Casco Protector"}
+{"i": 889, "v": "사악한가면", "es": "Máscara Maligna"}
+{"i": 890, "v": "태고의뿌리", "es": "Raíz Ancestral"}
+{"i": 891, "v": "신비한유전자", "es": "Gen Misterioso"}
+{"i": 892, "v": "화산배터리", "es": "Batería Volcánica"}
+{"i": 893, "v": "M배아", "es": "Embrión M"}
+{"i": 894, "v": "검은꽃", "es": "Flor Negra"}
+{"i": 895, "v": "궁극의열쇠", "es": "Llave Definitiva"}
+{"i": 896, "v": "지가르데나이트", "es": "Zygardita"}
+{"i": 897, "v": "종의왼쪽조각", "es": "Parte Izquierda de la Campana"}
+{"i": 898, "v": "종의오른쪽조각", "es": "Parte Derecha de la Campana"}
+{"i": 899, "v": "앤테이나이트", "es": "Enteita"}
+{"i": 900, "v": "플라엣테나이트", "es": "Floettita"}
+{"i": 901, "v": "불카모스나이트", "es": "Volcaronita"}
+{"i": 902, "v": "브리가론나이트", "es": "Chesnaughtita"}
+{"i": 903, "v": "마폭시나이트", "es": "Delphoxita"}
+{"i": 904, "v": "개굴닌자나이트", "es": "Greninjita"}
+{"i": 905, "v": "할비롱나이트", "es": "Drampita"}
+{"i": 906, "v": "우츠보트나이트", "es": "Victreebelita"}
+{"i": 907, "v": "망나뇽나이트", "es": "Dragonitita"}
+{"i": 908, "v": "칼라마네로나이트", "es": "Malamarita"}
+{"i": 909, "v": "루차불나이트", "es": "Hawluchita"}
+{"i": 910, "v": "픽시나이트", "es": "Clefablita"}
+{"i": 911, "v": "아쿠스타나이트", "es": "Starmita"}
+{"i": 912, "v": "메가니움나이트", "es": "Meganiumita"}
+{"i": 913, "v": "장크로다일나이트", "es": "Feraligatrita"}
+{"i": 914, "v": "무장조나이트", "es": "Skarmorita"}
+{"i": 915, "v": "눈여아나이트", "es": "Froslassita"}
+{"i": 916, "v": "염무왕나이트", "es": "Emboarita"}
+{"i": 917, "v": "몰드류나이트", "es": "Excadrillita"}
+{"i": 918, "v": "펜드라나이트", "es": "Scolipedita"}
+{"i": 919, "v": "곤율거니나이트", "es": "Scraftita"}
+{"i": 920, "v": "저리더프나이트", "es": "Eelektrossita"}
+{"i": 921, "v": "샹델라나이트", "es": "Chandelurita"}
+{"i": 922, "v": "화염레오나이트", "es": "Pyroarita"}
+{"i": 923, "v": "거북손데스나이트", "es": "Barbaraclita"}
+{"i": 924, "v": "드래캄나이트", "es": "Dragalgita"}
+{"i": 925, "v": "대여르나이트", "es": "Falinksita"}
+{"i": 926, "v": "라이츄나이트", "es": "Raichuita"}
+{"i": 927, "v": "치렁나이트", "es": "Chimechita"}
+{"i": 928, "v": "앱솔나이트 Z", "es": "Absolita Z"}
+{"i": 929, "v": "찌르호크나이트", "es": "Staraptita"}
+{"i": 930, "v": "한카리아스나이트 Z", "es": "Garchompita Z"}
+{"i": 931, "v": "루카리오나이트 Z", "es": "Lucarionita Z"}
+{"i": 932, "v": "골루그나이트", "es": "Golurkita"}
+{"i": 933, "v": "냐오닉스나이트", "es": "Meowsticita"}
+{"i": 934, "v": "모단단게나이트", "es": "Crabominita"}
+{"i": 935, "v": "갑주무사나이트", "es": "Golisopita"}
+{"i": 936, "v": "마기아나나이트", "es": "Magearnita"}
+{"i": 937, "v": "스코빌런나이트", "es": "Scovillainita"}
+{"i": 938, "v": "드닐레이브나이트", "es": "Baxcalibrita"}
+{"i": 939, "v": "싸리용나이트", "es": "Tatsugirinita"}
+{"i": 940, "v": "킬라플로르나이트", "es": "Glimmoranita"}
+{"i": 941, "v": "히드런나이트", "es": "Heatranita"}
+{"i": 942, "v": "다크라이나이트", "es": "Darkranita"}
+{"i": 943, "v": "제라오라나이트", "es": "Zeraorita"}
+{"i": 944, "v": "눌록상장", "es": "Diploma Nuzlocke"}
+{"i": 945, "v": "영웅상장", "es": "Diploma Heroico"}
+{"i": 946, "v": "조작된주사위", "es": "Dado Trucado"}
+{"i": 947, "v": "피의반지", "es": "Anillo Sanguino"}
+{"i": 948, "v": "아조스의도구", "es": "Herramientas Azoth"}

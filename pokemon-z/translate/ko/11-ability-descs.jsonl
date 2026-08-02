@@ -1,0 +1,257 @@
+{"i": 0, "v": ""}
+{"i": 1, "v": "공격할 때 상대를 풀죽게 할 수 있다. 선두에 있으면 야생 포켓몬을 쫓아낸다.", "es": "Puede hacer retroceder al enemigo al atacarle. Repele PKMN salvajes, si es el primero del equipo."}
+{"i": 2, "v": "강한 비를 부른다.", "es": "Invoca una fuerte lluvia."}
+{"i": 3, "v": "매 턴이 끝날 때 스피드가 올라간다.", "es": "Sube la velocidad al final de cada turno."}
+{"i": 4, "v": "급소에 맞지 않는다.", "es": "Evita que le hagan golpes críticos."}
+{"i": 5, "v": "한 방에 쓰러지지 않는다.", "es": "Este Pokémon no puede ser derrotado de un solo golpe."}
+{"i": 6, "v": "자폭 기술을 막는다.", "es": "Evita ataques autodestructivos."}
+{"i": 7, "v": "마비되지 않는다.", "es": "Evita quedar paralizado."}
+{"i": 8, "v": "모래바람이 불면 회피율이 올라간다.", "es": "Sube la Evasión durante la tormenta arena."}
+{"i": 9, "v": "접촉 공격을 받으면 30% 확률로 상대를 마비시킨다.", "es": "Tiene un 30% de paralizar con el daño de contacto recibido."}
+{"i": 10, "v": "전기타입 공격을 받으면 HP를 회복한다.", "es": "Restaura PS cuando recibe ataques electricos"}
+{"i": 11, "v": "물타입 공격을 받으면 HP를 회복한다.", "es": "Restaura PS cuando recibe ataques agua."}
+{"i": 12, "v": "헤롱헤롱 상태가 되지 않는다.", "es": "Evita el enamoramiento."}
+{"i": 13, "v": "배틀에 나와 있는 동안 날씨의 효과를 없앤다.", "es": "Anula los efectos del clima, mientras esté en combate."}
+{"i": 14, "v": "명중률이 30% 올라간다. 포켓몬에게서 도구를 찾을 확률도 올라간다.", "es": "Sube la precisión un 30%. También aumenta la probabilidad de encontrar objetos en los Pokémon."}
+{"i": 15, "v": "잠들지 않는다.", "es": "Evita quedarse dormido."}
+{"i": 16, "v": "마지막에 받은 공격의 타입으로 자신의 타입이 바뀐다.", "es": "Cambia su tipo por el del último ataque recibido."}
+{"i": 17, "v": "독에 걸리지 않는다.", "es": "Evita ser envenenado."}
+{"i": 18, "v": "불꽃 데미지에 면역이며 불꽃 공격을 받으면 특수공격이 올라간다.", "es": "Inmune al daño de fuego y aumenta el ataque especial al recibir un ataque de fuego."}
+{"i": 19, "v": "기술의 부가 효과를 받지 않는다.", "es": "Inmune a efectos secundarios de movimiento."}
+{"i": 20, "v": "혼란에 걸리지 않는다.", "es": "Evita la confusión."}
+{"i": 21, "v": "강제로 교체당하지 않는다.", "es": "Evita que le obliguen huir."}
+{"i": 22, "v": "상대의 공격을 떨어뜨린다.", "es": "Baja el ataque al rival."}
+{"i": 23, "v": "상대가 도망치지 못하게 한다.", "es": "Impide que el rival escape."}
+{"i": 24, "v": "접촉한 상대에게 데미지를 준다.", "es": "Inflige daño al enemigo en el contacto."}
+{"i": 25, "v": "좀처럼 데미지를 입지 않는다.", "es": "Cuesta mucho hacerle daño."}
+{"i": 26, "v": "땅타입 공격에 면역이다.", "es": "Inmunidad a los ataques de tipo tierra."}
+{"i": 27, "v": "접촉 공격을 받으면 30% 확률로 포자를 남긴다.", "es": "Tiene un 30% de dejar esporas al recibir daño de contacto."}
+{"i": 28, "v": "상태이상을 상대와 나눈다.", "es": "Comparte cambios de estado al enemigo."}
+{"i": 29, "v": "능력이 떨어지지 않는다.", "es": "Evita reducción de estadísticas."}
+{"i": 30, "v": "배틀에서 물러나면 상태이상이 낫는다.", "es": "Al salir del combate, cura los problemas de estado."}
+{"i": 31, "v": "전기타입 공격에 면역이며 받으면 특수공격이 올라간다.", "es": "Es inmune a los ataques eléctricos y aumenta su Ataque Especial al recibir uno."}
+{"i": 32, "v": "기술의 부가 효과 확률이 두 배가 된다.", "es": "Duplica la probabilidad de efectos secundarios de los movimientos."}
+{"i": 33, "v": "비가 오면 스피드가 두 배가 된다.", "es": "Si hay lluvia, duplicará la velocidad."}
+{"i": 34, "v": "햇살이 강하면 스피드가 두 배가 된다.", "es": "Duplica la velocidad mientras haya sol."}
+{"i": 35, "v": "상대의 명중률을 떨어뜨린다.", "es": "Reduce la precisión del adversario."}
+{"i": 36, "v": "상대의 특성을 복사한다.", "es": "Copia la habilidad del rival."}
+{"i": 37, "v": "배틀 중 공격이 200% 올라간다.", "es": "Sube el ataque un 200% mientras está en combate."}
+{"i": 38, "v": "접촉 공격을 받으면 30% 확률로 상대를 독 상태로 만든다.", "es": "Tiene un 30% de envenenar cuando recibe daño de contacto."}
+{"i": 39, "v": "풀죽지 않는다.", "es": "Inmune al retroceso."}
+{"i": 40, "v": "얼지 않는다.", "es": "Evita ser congelado."}
+{"i": 41, "v": "화상을 입지 않는다.", "es": "No puede ser quemado."}
+{"i": 42, "v": "강철타입 포켓몬이 도망치지 못하게 한다.", "es": "Evita la huida de PKMN tipo Acero."}
+{"i": 43, "v": "소리 기술에 면역이다.", "es": "Inmune a los ataques de sonido."}
+{"i": 44, "v": "비가 오는 동안 매 턴 HP를 회복한다.", "es": "Recupera PS en cada turno mientras haya lluvia."}
+{"i": 45, "v": "모래바람을 부른다.", "es": "Convoca una tormenta de arena."}
+{"i": 46, "v": "상대의 PP 소모가 두 배가 된다.", "es": "Se dobla el uso de PP en el enemigo."}
+{"i": 47, "v": "불꽃과 얼음타입 공격에서 받는 데미지가 절반으로 줄어든다.", "es": "Reduce el daño recibido de los ataques de tipo fuego y hielo a la mitad."}
+{"i": 48, "v": "잠드는 턴이 절반으로 줄어든다.", "es": "Duerme la mitad de turnos."}
+{"i": 49, "v": "접촉한 상대를 30% 확률로 화상 상태로 만든다.", "es": "Tiene un 30% de quemar al enemigo al contacto."}
+{"i": 50, "v": "야생 포켓몬과의 배틀에서 반드시 도망칠 수 있다.", "es": "Permite escapar en un combate contra un PKMN salvaje."}
+{"i": 51, "v": "명중률이 떨어지지 않는다.", "es": "Impide que le bajen la precisión."}
+{"i": 52, "v": "공격이 떨어지지 않는다.", "es": "Impide que le bajen en el ataque."}
+{"i": 53, "v": "도구를 주워 올 때가 있다.", "es": "Puede que recoja objetos."}
+{"i": 54, "v": "연속으로 공격할 수 없다.", "es": "No puede atacar un turno seguido del otro."}
+{"i": 55, "v": "명중률이 20% 떨어지는 대신 공격이 50% 올라간다.", "es": "Sube el ataque un 50% a cambio de bajar la precisión un 20%."}
+{"i": 56, "v": "공격해 온 상대를 헤롱헤롱하게 만들 때가 있다.", "es": "Puede enamorar al rival cuando este le golpea."}
+{"i": 57, "v": "마이너스와 함께 있으면 특수공격이 올라간다.", "es": "Sube el ataque especial en conjunción con menos."}
+{"i": 58, "v": "플러스와 함께 있으면 특수공격이 올라간다.", "es": "Sube el ataque especial en conjunción con mas"}
+{"i": 59, "v": "날씨에 따라 타입이 바뀐다.", "es": "Cambia su tipo según el clima."}
+{"i": 60, "v": "지닌 도구를 빼앗기지 않는다.", "es": "No le pueden quitar el objeto equipado."}
+{"i": 61, "v": "매 턴이 끝날 때 30% 확률로 상태이상이 낫는다.", "es": "Tiene un 30% de curarse un estado alterado al final de cada turno."}
+{"i": 62, "v": "상태이상에 걸리면 공격이 50% 올라간다.", "es": "Sube el ataque un 50% si sufre de cambio de estado."}
+{"i": 63, "v": "상태이상에 걸리면 방어가 올라간다.", "es": "Sube la def. si sufre de cambio de estado."}
+{"i": 64, "v": "체력을 흡수당하면 오히려 상대에게 데미지를 준다.", "es": "Si le intentan drenar vida, causará daño en su lugar."}
+{"i": 65, "v": "HP가 적으면 풀타입 기술의 위력이 50% 올라간다.", "es": "Sube los ataques tipo Planta un 50% si tiene pocos PS."}
+{"i": 66, "v": "HP가 적으면 불꽃타입 기술의 위력이 50% 올라간다.", "es": "Sube los ataques tipo Fuego un 50% si tiene pocos PS."}
+{"i": 67, "v": "HP가 적으면 물타입 기술의 위력이 50% 올라간다.", "es": "Sube los ataques tipo Agua un 50% si tiene pocos PS."}
+{"i": 68, "v": "HP가 적으면 벌레타입 기술의 위력이 50% 올라간다.", "es": "Sube los ataques tipo Bicho un 50% si tiene pocos PS."}
+{"i": 69, "v": "반동 데미지를 받는 기술을 써도 데미지를 받지 않는다.", "es": "Evita el daño al atacar con movimientos que dañan al usuario."}
+{"i": 70, "v": "날씨를 햇살이 강함 상태로 만든다.", "es": "Convoca un día soleado."}
+{"i": 71, "v": "상대를 도망칠 수 없게 한다.", "es": "Evita la huida del enemigo."}
+{"i": 72, "v": "잠들지 않는다.", "es": "Evita quedarse dormido."}
+{"i": 73, "v": "능력치가 떨어지지 않는다.", "es": "Evita que le bajen las estadísticas."}
+{"i": 74, "v": "배틀 중 물리공격력이 2배가 된다.", "es": "Duplica el ataque físico, durante el combate."}
+{"i": 75, "v": "급소에 맞지 않는다.", "es": "Evita que le hagan golpes críticos."}
+{"i": 76, "v": "날씨의 효과를 없앤다.", "es": "Anula los efectos del clima."}
+{"i": 77, "v": "혼란 상태일 때 회피율이 올라간다.", "es": "Incrementa la evasión cuando el PKMN está confuso."}
+{"i": 78, "v": "전기타입 기술을 무효화하고 받으면 스피드가 올라간다.", "es": "Sube la velocidad si recibe un ataque eléctrico y es inmune contra este tipo."}
+{"i": 79, "v": "상대가 같은 성별이면 공격이 올라간다.", "es": "Sube el ataque, si el rival es del mismo género."}
+{"i": 80, "v": "풀죽으면 스피드가 올라간다.", "es": "Sube la velocidad cuando el PKMN poseedor retrocede."}
+{"i": 81, "v": "싸라기눈이 내리면 회피율이 올라간다.", "es": "Aumenta la evasión si está nevando."}
+{"i": 82, "v": "지니고 있는 나무열매를 보통 때보다 일찍 사용한다.", "es": "El PKMN poseedor utiliza la baya equipada antes de lo normal."}
+{"i": 83, "v": "급소에 맞으면 공격이 최고조까지 올라간다.", "es": "Sube el ataque un 300% cuando recibe un golpe crítico."}
+{"i": 84, "v": "지닌 도구를 잃으면 스피드가 올라간다.", "es": "Sube la velocidad cuando pierde un objeto equipado."}
+{"i": 85, "v": "불꽃타입 기술로 받는 데미지가 절반이 된다.", "es": "Reduce a la mitad el daño de los ataques de tipo fuego."}
+{"i": 86, "v": "능력 변화가 2배가 된다.", "es": "Duplica los cambios de estadísitcas."}
+{"i": 87, "v": "물타입 기술을 받으면 회복하지만 불꽃타입 데미지가 커진다.", "es": "Los ataques de Agua le curan, pero recibe más daño de Fuego."}
+{"i": 88, "v": "상대의 방어와 특수방어 중 낮 쪽에 맞춰 공격이나 특수공격을 올린다.", "es": "Sube el Ataque o Ataque Especial dependiendo de qué defensa sea la menor en el enemigo."}
+{"i": 89, "v": "주먹을 쓰는 기술의 위력이 20% 올라간다.", "es": "Sube el poder de los ataques con puño un 20%."}
+{"i": 90, "v": "독 상태일 때 HP가 줄지 않고 매 턴 회복한다.", "es": "Restaura PS al final de cada turno si esta envenenado, en lugar de perder salud."}
+{"i": 91, "v": "자신과 같은 타입의 기술을 쓰면 데미지가 더 들어간다.", "es": "Recibe un bonus de daño cuando ataca con movimientos de su mismo tipo."}
+{"i": 92, "v": "연속 공격 기술이 항상 5번 맞는다.", "es": "Los ataques de multi-golpeo siempren golpeen 5 veces."}
+{"i": 93, "v": "비가 오면 상태이상이 낫는다.", "es": "Cura problemas de estado cuando llueve."}
+{"i": 94, "v": "햇살이 강하면 특수공격이 올라간다.", "es": "Durante el clima soleado, sube el atq. esp. del PKMN."}
+{"i": 95, "v": "상태이상에 걸리면 스피드가 50% 올라간다.", "es": "Sube la velocidad un 50% durante un cambio de estado."}
+{"i": 96, "v": "모든 공격을 노말타입으로 바꾸고 위력을 50% 올린다.", "es": "Convierte los ataques en tipo Normal y los potencia un 50%."}
+{"i": 97, "v": "급소 공격의 데미지가 올라간다.", "es": "Aumenta el daño de los golpes críticos."}
+{"i": 98, "v": "직접 공격에만 데미지를 받는다.", "es": "Solo recibe daño de ataques directos."}
+{"i": 99, "v": "명중률이 100%가 된다.", "es": "Aumenta la precisión al 100%."}
+{"i": 100, "v": "스피드가 떨어져 나중에 공격한다.", "es": "Baja la velocidad para atacar en segundo lugar."}
+{"i": 101, "v": "위력 60 이하인 기술의 위력이 50% 올라간다.", "es": "Aumenta un 50% el poder de ataques con 60 de potencia o menos."}
+{"i": 102, "v": "상태이상에 걸리지 않는다.", "es": "Previene problemas de estado."}
+{"i": 103, "v": "지닌 도구를 쓸 수 없게 한다.", "es": "Impide el uso de objetos equipados."}
+{"i": 104, "v": "상대의 특성이 방어 계열이면 무효화한다.", "es": "Anula la habilidad del rival si es defensiva."}
+{"i": 105, "v": "급소에 맞을 확률이 올라간다.", "es": "Sube la posibilidad de producir un golpe crítico."}
+{"i": 106, "v": "물리 공격에 쓰러지면 상대에게 데미지를 준다.", "es": "Daña al rival si se es debilitado con un atq. físico."}
+{"i": 107, "v": "상대가 효과가 굉장한 기술을 지니고 있으면 몸을 떤다.", "es": "Si el enemigo tiene ataques supereficaces, tu Pokémon se estremecerá."}
+{"i": 108, "v": "상대의 가장 강한 기술을 알 수 있다.", "es": "Permite conocer el ataque más potente del rival."}
+{"i": 109, "v": "능력 변화를 무시한다.", "es": "Ignora los cambios de estadísticas."}
+{"i": 110, "v": "효과가 별로인 기술의 위력이 50% 올라간다.", "es": "Potencia los movimientos poco eficaces un 50%."}
+{"i": 111, "v": "효과가 굉장한 공격으로 받게 되는 데미지가 줄어든다.", "es": "Reduce el daño recibido de los ataques súper efectivos."}
+{"i": 112, "v": "처음 5턴 동안 공격과 스피드가 떨어진다.", "es": "Reduce el atq. y veloc. durante los primeros 5 turnos."}
+{"i": 113, "v": "노말·격투 기술로도 고스트타입을 공격할 수 있다.", "es": "Permite atacar PKMN fantasma con ataques normales y de lucha."}
+{"i": 114, "v": "물타입 공격을 끌어당기며 받으면 특수공격이 올라간다.", "es": "El PKMN atrae los ataques de tipo Agua y aumentan su Ataque Especial."}
+{"i": 115, "v": "눈이 내리면 매 턴이 끝날 때 HP를 회복한다.", "es": "Restaura PS al final de cada turno si hay nieve."}
+{"i": 116, "v": "효과가 굉장한 공격으로 받게 되는 데미지가 줄어든다.", "es": "Disminuye el daño recibido de los ataques super efectivos."}
+{"i": 117, "v": "눈을 부른다.", "es": "Convoca la nieve."}
+{"i": 118, "v": "배틀이 끝나면 꿀을 모아 온다.", "es": "Recoge miel después del combate."}
+{"i": 119, "v": "상대의 지닌 도구를 알 수 있고 도구를 찾을 확률이 올라간다.", "es": "Ve el objeto del oponente y aumenta probabilidad de encontrar objetos."}
+{"i": 120, "v": "반동이 있는 기술의 위력이 올라간다.", "es": "Sube el poder de los atq. que también dañan al propio usuario."}
+{"i": 121, "v": "지닌 플레이트에 따라 타입이 바뀐다.", "es": "Cambia el tipo según la tabla."}
+{"i": 122, "v": "햇살이 강하면 공격과 특수방어가 올라간다.", "es": "Sube el atq. y def. esp. durante clima soleado"}
+{"i": 123, "v": "잠든 상대의 HP를 매 턴 6분의 1씩 깎는다.", "es": "Reduce 1/6 los PS del rival que esté dormido al final de cada turno."}
+{"i": 124, "v": "상대와 닿기만 해도 도구를 빼앗는다.", "es": "Al minimo contacto con el rival, le quita el objeto."}
+{"i": 125, "v": "부가 효과가 있는 기술의 위력이 30% 오르지만 그 효과는 사라진다.", "es": "Los ataques con efecto secundario hacen un 30% más de daño, pero pierden el efecto."}
+{"i": 126, "v": "강철타입 공격의 위력이 50% 올라간다.", "es": "Potencia un 50% los ataques de tipo Acero."}
+{"i": 127, "v": "상대가 나무열매를 먹지 못하게 한다.", "es": "Evita al enemigo comer bayas."}
+{"i": 128, "v": "능력이 떨어지면 공격이 올라간다.", "es": "Si le reducen una característica, sube el ataque."}
+{"i": 129, "v": "HP가 적어지면 공격과 특수공격이 떨어진다.", "es": "Reduce el Atq. y Atq. Esp. cuando le queda pocos PS."}
+{"i": 130, "v": "공격받으면 30% 확률로 그 기술을 2~3턴 동안 봉인한다.", "es": "Cuando recibe un ataque del enemigo, tiene un 30% de anulárselo durante 2-3 turnos."}
+{"i": 131, "v": "모든 상태이상을 없앤다.", "es": "Permite eliminar todos los problemas de estado."}
+{"i": 132, "v": "더블배틀에서 아군이 받는 데미지를 줄인다.", "es": "Reduce el daño que reciben los PKMN aliados en combates dobles."}
+{"i": 133, "v": "공격받으면 방어가 떨어지고 스피드가 올라간다.", "es": "Baja la defensa y aumenta la velocidad al recibir un golpe."}
+{"i": 134, "v": "몸무게가 두 배가 된다.", "es": "Duplica el peso."}
+{"i": 135, "v": "몸무게가 줄어든다.", "es": "Disminuye el peso."}
+{"i": 136, "v": "HP가 가득 차 있을 때 받는 데미지가 줄어든다.", "es": "Reduce el daño cuando el PS está lleno."}
+{"i": 137, "v": "독 상태일 때 공격이 50% 올라간다.", "es": "Sube el Ataque un 50% si esta envenenado."}
+{"i": 138, "v": "화상 상태일 때 특수공격이 50% 올라간다.", "es": "Sube el Ataque Especial un 50% si esta quemado."}
+{"i": 139, "v": "나무열매를 다시 쓸 수 있게 된다.", "es": "Puede usar nuevamente las bayas."}
+{"i": 140, "v": "더블배틀에서 아군의 공격으로 데미지를 받지 않는다.", "es": "No recibe daño por ataques del aliado en combates dobles."}
+{"i": 141, "v": "능력 하나가 오르고 다른 하나가 떨어진다.", "es": "Incrementa y reduce una estadistica."}
+{"i": 142, "v": "모래바람 데미지와 가루·포자 기술을 막는다.", "es": "Protege del daño de la Tormenta Arena, y de polvos y esporas."}
+{"i": 143, "v": "접촉한 상대를 독 상태로 만들 때가 있다.", "es": "Puede envenenar al objetivo con solo tocarlo."}
+{"i": 144, "v": "몬스터볼로 돌아가면 HP를 회복한다.", "es": "Recupera un PS cuando lo regresa a su PokéBall."}
+{"i": 145, "v": "방어가 떨어지지 않는다.", "es": "Impide la reducción de defensa."}
+{"i": 146, "v": "모래바람이 불 때 스피드가 올라간다.", "es": "Aumenta la velocidad durante un tormenta arena."}
+{"i": 147, "v": "상태이상에 걸릴 확률이 줄어든다.", "es": "Reduce la probabilidad de cambio de estado."}
+{"i": 148, "v": "상대가 먼저 행동하면 특수공격이 올라간다.", "es": "Si el enemigo se mueve primero, sube el ataque especial."}
+{"i": 149, "v": "다른 포켓몬으로 변신할 수 있다.", "es": "Permite transformarse en otros PKMN."}
+{"i": 150, "v": "상대 포켓몬으로 자동으로 변신한다.", "es": "Se transforma automáticamente en el PKMN rival."}
+{"i": 151, "v": "상대의 방어 기술을 무시한다.", "es": "No sirven las defensas como protección."}
+{"i": 152, "v": "공격을 받으면 상대의 특성을 없앤다.", "es": "Elimina la habilidad del enemigo al recibir un golpe."}
+{"i": 153, "v": "상대를 쓰러뜨리면 공격이 올라간다.", "es": "Sube el ataque cuando debilitas al rival."}
+{"i": 154, "v": "악타입 공격을 받으면 공격이 올라간다.", "es": "Aumenta el ataque al recibir un ataque de tipo Siniestro."}
+{"i": 155, "v": "벌레·고스트·악타입 공격을 받으면 스피드가 올라간다.", "es": "Incrementa la Velocidad al recibir ataques de Bicho, Fantasma o Siniestro."}
+{"i": 156, "v": "변화 기술의 효과를 반사한다.", "es": "Refleja el efecto de los movimientos modificadores."}
+{"i": 157, "v": "풀타입 기술을 무효화하고 받으면 공격이 올라간다.", "es": "Inmune a ataques tipo planta y aumenta el ataque al recibir uno."}
+{"i": 158, "v": "변화 기술을 먼저 쓸 수 있다.", "es": "Hace que los ataques de efectos tengan prioridad."}
+{"i": 159, "v": "모래바람이 불 때 일부 기술의 위력이 올라간다.", "es": "Sube el poder de ciertos movimientos en una tormenta de arena."}
+{"i": 160, "v": "접촉해 온 상대에게 데미지를 준다.", "es": "Provoca daño al rival que haga contacto con este PKMN."}
+{"i": 161, "v": "HP가 줄어들면 폼이 바뀐다.", "es": "Cambia la forma del Pokémon cuando quedan pocos HP."}
+{"i": 162, "v": "명중률이 올라간다.", "es": "Aumenta la precisión del PKMN."}
+{"i": 163, "v": "다른 특성의 효과를 무효로 한다.", "es": "Anula el efecto de otras habilidades."}
+{"i": 164, "v": "다른 특성의 효과를 무효로 한다.", "es": "Anula el efecto de otras habilidades."}
+{"i": 165, "v": "싸라기눈이 내릴 때 스피드가 올라간다.", "es": "Sube la velocidad mientras haya granizo."}
+{"i": 166, "v": "노말타입 기술이 페어리타입이 되고 위력이 20% 올라간다.", "es": "Convierte los movimientos de tipo Normal en Hada y los potencia un 20%."}
+{"i": 167, "v": "노말타입 기술이 벌레타입이 되고 위력이 20% 올라간다.", "es": "Convierte los movimientos de tipo Normal en Bicho y los potencia un 20%."}
+{"i": 168, "v": "노말타입 기술이 얼음타입이 되고 위력이 20% 올라간다.", "es": "Convierte los movimientos de tipo Normal en Hielo y los potencia un 20%."}
+{"i": 169, "v": "접촉 기술의 위력이 올라간다.", "es": "Aumenta la potencia de los mov. de contacto."}
+{"i": 170, "v": "특수공격이 올라가지만 하나의 기술만 쓸 수 있다.", "es": "Aumenta el Atq. Esp. pero solo permite usar un movimiento."}
+{"i": 171, "v": "두 번 공격하며 두 번째 공격은 조금 약해진다.", "es": "Ataca dos veces, siendo el segundo ataque un poco más débil."}
+{"i": 172, "v": "노말타입 기술이 고스트타입이 되고 위력이 20% 올라간다.", "es": "Convierte los movimientos de tipo Normal en Fantasma y los potencia un 20%."}
+{"i": 173, "v": "노말타입 기술이 전기타입이 되고 위력이 20% 올라간다.", "es": "Convierte los movimientos de tipo Normal en Eléctrico y los potencia un 20%."}
+{"i": 174, "v": "상대를 위협해 특수공격을 떨어뜨린다.", "es": "Espanta al rival y reduce su Atq.Especial."}
+{"i": 175, "v": "반동 데미지를 받지 않는다.", "es": "No recibe daño de retroceso."}
+{"i": 176, "v": "여러 가지 일을 한다.", "es": "Hace unas cuantas cosas."}
+{"i": 177, "v": "데미지를 받으면 방어가 올라간다.", "es": "Aumenta la Defensa al recibir daño."}
+{"i": 178, "v": "불꽃타입 공격의 데미지가 50% 올라간다.", "es": "Aumenta el daño de los ataques de tipo Fuego un 50%."}
+{"i": 179, "v": "무는 기술의 위력이 50% 올라간다.", "es": "Potencia los ataques de mordedura un 50%."}
+{"i": 180, "v": "물리 공격에 대한 방어가 올라간다.", "es": "Aumenta la defensa ante ataques físicos."}
+{"i": 181, "v": "노말타입 기술을 비행타입으로 바꾸고 위력을 올린다.", "es": "Cambia y potencia movs de tipo Normal en Volador."}
+{"i": 182, "v": "능력이 떨어지면 특수공격이 올라간다.", "es": "Aumenta el Ataque Especial cuando le bajan una característica."}
+{"i": 183, "v": "파동 기술의 데미지가 50% 올라간다.", "es": "Aumenta el daño de los ataques de pulso un 50%."}
+{"i": 184, "v": "접촉 공격의 데미지는 줄지만 불꽃 공격의 데미지는 커진다.", "es": "Reduce el daño recibido de contacto pero aumenta el daño recibido de Fuego."}
+{"i": 185, "v": "HP가 적으면 전기 기술의 위력이 올라간다.", "es": "Sube el poder Eléctrico si tiene pocos PS."}
+{"i": 186, "v": "얼음타입 공격의 데미지가 50% 올라간다.", "es": "Aumenta el daño de los ataques de tipo Hielo un 50%."}
+{"i": 187, "v": "능력 변화가 뒤집힌다.", "es": "Invierte los cambios en las características."}
+{"i": 188, "v": "노말타입 기술을 물타입으로 바꾸고 위력을 20% 올린다.", "es": "Convierte los movimientos de tipo Normal en Agua y los potencia un 20%."}
+{"i": 189, "v": "자신이 쓰는 기술의 타입으로 바뀐다.", "es": "Se convierte en el tipo del movimiento que utiliza."}
+{"i": 190, "v": "변장으로 처음 받는 공격을 막는다.", "es": "Evita el primer ataque recibido usando su disfraz."}
+{"i": 191, "v": "공격 폼과 방어 폼을 오간다.", "es": "Alterna entre forma ofensiva y forma defensiva."}
+{"i": 192, "v": "노말타입 기술을 풀타입으로 바꾸고 위력을 20% 올린다.", "es": "Convierte movs. Normal en Planta y los potencia un 20%."}
+{"i": 193, "v": "풀타입 공격의 데미지가 50% 올라간다.", "es": "Aumenta un 50% el daño de los ataques de tipo Planta."}
+{"i": 194, "v": "배틀에 나오면 5턴 동안 일렉트릭필드를 편다.", "es": "Crea un campo eléctrico al entrar en combate durante 5 turnos."}
+{"i": 195, "v": "배틀에 나오면 5턴 동안 사이코필드를 편다.", "es": "Crea un campo psíquico al entrar en combate durante 5 turnos."}
+{"i": 196, "v": "배틀에 나오면 5턴 동안 그래스필드를 편다.", "es": "Crea un campo de hierba al entrar en combate durante 5 turnos."}
+{"i": 197, "v": "배틀에 나오면 5턴 동안 미스트필드를 편다.", "es": "Crea un campo de niebla al entrar en combate durante 5 turnos."}
+{"i": 198, "v": "공격받으면 상대의 스피드를 떨어뜨린다.", "es": "Baja la Velocidad del rival cuando recibe un golpe."}
+{"i": 199, "v": "회복 기술이 먼저 나간다.", "es": "Los movimientos curativos tiene prioridad."}
+{"i": 200, "v": "효과가 굉장한 공격의 위력이 25% 올라간다.", "es": "Potencia los ataques supereficaces un 25%."}
+{"i": 201, "v": "HP가 절반으로 줄면 특수공격이 올라간다.", "es": "Al perder la mitad de los PS, aumenta el Ataque Especial."}
+{"i": 202, "v": "독 상태인 상대에게는 반드시 급소에 맞는다.", "es": "Golpes críticos garantizados contra rivales envenenados."}
+{"i": 203, "v": "불꽃이나 물 공격을 받으면 스피드가 대폭 올라간다.", "es": "Si recibe daño de Fuego o Agua, sube muchísimo la Velodidad."}
+{"i": 204, "v": "HP가 가득할 때 비행타입 기술이 먼저 나간다.", "es": "Prioridad a los movimientos de tipo Volador si los PS están al máximo."}
+{"i": 205, "v": "베기 기술의 위력이 50% 올라간다.", "es": "Potencia los ataques de corte un 50%."}
+{"i": 206, "v": "비행 기술을 되받아쳐 상대에게 되돌려준다.", "es": "Contrarresta ataques voladores devolviendo el golpe al agresor."}
+{"i": 207, "v": "에스퍼타입 공격의 데미지가 50% 올라간다.", "es": "Aumenta un 50% el daño de los ataques de tipo Psíquico."}
+{"i": 208, "v": "급소에 잘 맞는 찌르기 기술이 30% 확률로 상대를 풀죽게 한다.", "es": "Los movs. punzantes de alta probabilidad de crítico tienen un 30% de hacer retroceder."}
+{"i": 209, "v": "벌레타입 기술을 쓰면 다른 포켓몬과 교체된다.", "es": "Cambia a otro Pokémon tras usar un mov. de tipo Bicho."}
+{"i": 210, "v": "눈이 내리면 얼음 기술의 위력과 스피드가 50% 올라간다.", "es": "Aumenta el poder de hielo y la velocidad un 50% en clima nevado."}
+{"i": 211, "v": "매 턴 끝에 독 데미지가 두 배가 된다.", "es": "El envenenamiento daña el doble al final de cada turno."}
+{"i": 212, "v": "본래 타입뿐만 아니라 모든 타입 공격 시 50%의 데미지 보정을 받는다.", "es": "Recibe bonus de daño del 50% atacando con todos los tipos y no solo con su tipo original."}
+{"i": 213, "v": "그래스필드에서 모든 데미지와 스피드가 30% 올라간다.", "es": "Aumenta todo daño y la Velocidad un 30% en Campo de Hierba."}
+{"i": 214, "v": "불꽃 기술을 받지 않고, 받으면 특수공격이 올라간다.", "es": "Se potencia el Ataque Especial si recibe ataques de Fuego, y es inmune a ellos."}
+{"i": 215, "v": "땅 기술을 받지 않고 오히려 회복한다.", "es": "Se cura si recibe ataques de Tierra, y es inmune a ellos."}
+{"i": 216, "v": "발차기 기술의 위력이 20% 올라간다.", "es": "Sube el poder de las patadas un 20%."}
+{"i": 217, "v": "배틀에 나온 첫 턴에 스피드가 50%, 공격이 20% 올라간다.", "es": "En el 1ºturno que salga a combatir, tendrá un 50% extra de Velocidad y un 20% extra de Ataque."}
+{"i": 218, "v": "배틀에 나올 때 종을 울려 파티의 상태이상을 치료한다. 또한 소리 기술이 에스퍼타입이 되고 위력이 20% 올라간다.", "es": "Repica una campana para curar los estados del equipo cuando sale a combatir. Además, los movs. de sonido pasan a ser psíquicos y aumentan un 20% su potencia."}
+{"i": 219, "v": "폭탄이나 일부 탄환 기술의 영향을 받지 않는다.", "es": "No le afectan las bombas ni algunos proyectiles."}
+{"i": 220, "v": "나무열매를 먹으면 HP를 3분의 1 회복한다.", "es": "Recupera un tercio de PS al comer cualquier baya."}
+{"i": 221, "v": "물타입 기술에 맞으면 방어가 크게 올라간다.", "es": "Aumenta mucho la Defensa si le alcanza un movimiento de tipo Agua."}
+{"i": 222, "v": "바위타입 기술의 데미지가 올라간다.", "es": "Da bonificación de daño a los movimientos de tipo Roca."}
+{"i": 223, "v": "공격받으면 독압정을 흩뿌린다.", "es": "Suelta púas tóxicas al ser golpeado."}
+{"i": 224, "v": "공격받으면 전기를 모은다.", "es": "Se carga de energía eléctrica al ser golpeado."}
+{"i": 225, "v": "불꽃 기술에 데미지를 받지 않고 오히려 방어가 크게 올라간다.", "es": "El fuego le sube mucho la Defensa en lugar de hacerle daño."}
+{"i": 226, "v": "소리 기술의 위력이 올라가고 소리 기술에 받는 데미지가 절반이 된다.", "es": "Potencia los ataques de sonido y, si el poseedor es atacado por uno, el daño recibido será la mitad."}
+{"i": 227, "v": "몸을 감싼 차가운 비늘이 받는 특수공격 데미지를 절반으로 줄인다.", "es": "Las gélidas escamas que protegen su cuerpo reducen a la mitad el daño que le infligen los ataques especiales."}
+{"i": 228, "v": "선제공격 기술에 영향을 받지 않는다.", "es": "Inmune a los movimientos de prioridad."}
+{"i": 229, "v": "HP가 절반이 되면 방어와 특수방어가 떨어지는 대신 공격과 스피드가 올라간다.", "es": "Cuando pierde la mitad de salud, reduce sus defensas a cambio de aumentar su ataque y velocidad."}
+{"i": 230, "v": "강철·독타입 포켓몬도 독 상태로 만들 수 있다.", "es": "Permite envenenar incluso a Pokémon de tipo Acero y Veneno."}
+{"i": 231, "v": "능력 변화 효과를 상대에게 되돌려준다.", "es": "Rebota los cambios de estadísticas al oponente."}
+{"i": 232, "v": "화상을 입지 않는다. 불꽃 기술을 받으면 공격이 올라간다.", "es": "No puede ser quemado. Si es alcanzado por fuego, se sube el Ataque."}
+{"i": 233, "v": "접촉 공격으로 30% 확률로 상대를 마비시킨다.", "es": "Tiene un 30% de paralizar al enemigo con ataques de contacto."}
+{"i": 234, "v": "HP가 3분의 2 이상일 때 회피율이 오르는 폼이 된다.", "es": "Cuando su salud está por encima del 2/3 adquiere una forma que aumenta su Evasión."}
+{"i": 235, "v": "접촉 기술로 공격해 온 상대의 회피율을 크게 떨어뜨린다.", "es": "Reduce mucho la Evasión del enemigo si te ataca con movimientos de contacto."}
+{"i": 236, "v": "배틀에 나올 때 트릭룸을 편다.", "es": "Aplica Espacio Raro cuando sale a combatir."}
+{"i": 237, "v": "접촉 공격으로 출혈 상태를 만들 수 있다(상대가 급소를 맞을 확률이 2배가 된다).", "es": "Los ataques de contacto pueden aplicar Hemorragia (el objetivo tendrá el doble de prob. de recibir golpes críticos)."}
+{"i": 238, "v": "소리 기술이 얼음타입이 되고 30% 확률로 상대를 풀죽게 한다.", "es": "Los movs. de sonido pasan a ser de tipo Hielo y tienen un 30% de hacer retroceder."}
+{"i": 239, "v": "턴이 끝날 때 잠든 상대의 HP를 4분의 1 깎는다.", "es": "Reduce 1/4 los PS del rival que esté dormido al final de cada turno."}
+{"i": 240, "v": "변화 기술의 영향을 받지 않는다.", "es": "No es afectado por ataques de estado."}
+{"i": 241, "v": "상태이상을 막고 고스트타입 기술의 데미지를 절반으로 줄인다.", "es": "Evita estados alterados y reduce a la mitad el daño del Tipo fantasma."}
+{"i": 242, "v": "모든 포켓몬의 특성을 무효화한다.", "es": "Anula las habilidades de todos los Pokémon."}
+{"i": 243, "v": "일렉트릭필드일 때 스피드가 2배가 된다.", "es": "Duplica la Velocidad en terreno eléctrico."}
+{"i": 244, "v": "쓰러질 때 남은 HP만큼 상대에게 데미지를 준다.", "es": "Al caer debilitado, inflige al rival un daño equivalente a los PS que le quedaran."}
+{"i": 245, "v": "바람 기술을 받으면 공격이 1랭크 올라간다.", "es": "Si recibe un ataque de viento/tormenta su ataque sube 1 nivel."}
+{"i": 246, "v": "바람 기술을 받으면 전기를 모은다.", "es": "Si recibe un ataque de viento/tormenta se carga con energía eléctrica."}
+{"i": 247, "v": "상대를 독 상태로 만들면 혼란 상태로도 만든다.", "es": "Si envenena al rival también lo confunde."}
+{"i": 248, "v": "페어리타입 데미지가 30% 올라간다.", "es": "Aumenta el daño de tipo Hada un 30%."}
+{"i": 249, "v": "악타입 데미지가 30% 올라간다.", "es": "Aumenta el daño de tipo Siniestro un 30%."}
+{"i": 250, "v": "전기타입 데미지가 30% 올라간다.", "es": "Aumenta el daño de tipo Eléctrico un 30%."}
+{"i": 251, "v": "오라 특성의 효과를 뒤집는다.", "es": "Invierte los efectos de habilidades de aura."}
+{"i": 252, "v": "드래곤타입 데미지가 50% 올라간다.", "es": "Aumenta el daño del tipo Dragón un 50%."}
+{"i": 253, "v": "접촉 공격을 받으면 상대의 특수방어를 1랭크 떨어뜨린다.", "es": "Cuando le golpean por contacto, reduce 1 nivel la Defensa Especial del enemigo."}
+{"i": 254, "v": "상대를 쓰러뜨리면 특수공격이 올라간다.", "es": "Aumenta el Ataque Especial al debilitar a un enemigo."}
+{"i": 255, "v": "비행·바위타입 기술에 받는 데미지가 3분의 2로 줄어든다.", "es": "Reduce el daño recibido de Volador y Roca un 2/3."}
+{"i": 256, "v": "노말타입 기술을 드래곤타입으로 바꾸고 위력을 올린다.", "es": "Cambia y potencia movs de tipo Normal en Dragón."}
