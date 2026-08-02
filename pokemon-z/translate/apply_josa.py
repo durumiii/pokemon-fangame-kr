@@ -2,9 +2,10 @@
 # requires-python = ">=3.12"
 # dependencies = ["rubymarshal"]
 # ///
-"""korean.dat의 조사 병기 「(은)는」류를 Josa Select 문법 \\j[…]로 바꾼다.
+"""korean.dat의 조사 병기 「(은)는」류를 조사 자동 선택 문법 \\j[…]로 바꾼다.
 
-Josa Select 모드가 주입돼 있어야 화면에서 해석된다 — 모드 없이 이 변환만
+조사 스크립트(옛 Josa Select 모드 — 지금은 한글패치 통합의 본문 섹션,
+share/josa.rb)가 있어야 화면에서 해석된다 — 없이 이 변환만
 하면 대사에 \\j[은,는]가 그대로 보이니 주의. 되쓰기 규율은 apply_names.py와
 같다(왕복 검증 통과 후에만 기록).
 

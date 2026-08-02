@@ -19,6 +19,12 @@
   rubymarshal 기본 기록기는 문자열 번호가 어긋나 조용히 깨진다).
 
 모드 .rb는 루비 1.8.7 문법으로 써야 한다(해시 로켓, 신형 문법 금지).
+
+설치의 정본은 fangame-library `fanlib/modstore.py`다(같은 규약: MOD: 접두사·Main 앞·
+md5 id — 바꾸려면 양쪽을 함께). 이 도구는 개발 반복용으로 남는다 — 기반에서 전체를
+다시 짓는 성질이 디버깅에 유용해서다. 그 성질의 이면: **모드를 명시해 돌리면 나열에서
+빠진 모드는 결과에서 사라진다**(라이브러리로 설치한 것 포함). 그래서 기본값이 전부이고,
+명시 실행 때는 게임에 있던 모드가 빠지면 경고를 낸다.
 """
 import argparse
 import hashlib
@@ -80,6 +86,17 @@ def main() -> int:
         if not args.mods:
             print("보관소에 주입형 모드가 없어요.", file=sys.stderr)
             return 1
+
+    # 전체 재구축이라, 게임에 있던 주입 모드가 이번 나열에서 빠지면 사라진다 — 경고.
+    game_scripts = args.game / "Data" / "Scripts.rxdata"
+    if game_scripts.exists():
+        current = {
+            title_of(e).decode("utf-8").removeprefix("MOD:").split("/", 1)[0]
+            for e in load_sections(game_scripts) if title_of(e).startswith(MARKER)
+        }
+        for dropped in sorted(current - set(args.mods)):
+            print(f"경고: 게임에 주입돼 있던 「{dropped}」가 이번 나열에 없어요 — "
+                  f"전체 재구축이라 결과에서 빠집니다.", file=sys.stderr)
 
     sections = load_sections(args.base)
     md5_by_title = {}

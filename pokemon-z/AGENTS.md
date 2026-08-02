@@ -10,8 +10,8 @@
 덧붙인다(`Main` 직전, 나중 정의가 이긴다). 기반은 게임 폴더가 아니라 **모드 보관소의
 한글패치판**이라 몇 번을 돌려도 결과가 같다. 보관소는 게임별 하위 폴더 체제다 —
 `/mnt/d/GameVault/mods/Pokemon Z Fangame/<모드>/`(폴더명은 é 없는 쪽이 정본 —
-2026-08-02 fangame-library가 근원 정리). 주입 모드는 일곱: Battle Speed Z(M-23 — 배틀 애니메이션 기본 2배속) · Better Movements Z ·
-Frame Profiler(v3 — 단계별·이동/정지 분리 측정, 재진입 가드) · Josa Select ·
+2026-08-02 fangame-library가 근원 정리). 주입 모드는 여섯: Battle Speed Z(M-23 — 배틀 애니메이션 기본 2배속) · Better Movements Z ·
+Frame Profiler(v3 — 단계별·이동/정지 분리 측정, 재진입 가드) ·
 UI Text KR · GC Tamer · Controller UX Z(M-22 — 커서 숨김·이름 입력 패드 확인·
 등록 아이템 패드 X·Xbox 글리프. 기본 패드 매핑은 F1 실측: JS 번호가 XInput 원시
 순서라 패드 A·B·X·Y·LB·RB·RS클릭 → 가상 C·B·X·A·Y·Z·L. 화면 단축키 표기는
@@ -94,8 +94,10 @@ voices.md.** 전거 서열은 glossary.md 머리 참조.
 
 **dat로 못 고치는 문자열이 있다** — 플러그인 스크립트에 하드코딩된 화면 문자열
 (일시정지 단축키·출현 안내판·배지명). 그런 자리는 `mods/UI Text KR`의 교체표에
-한 줄 더한다(그리기 진입점 훅). 조사 자동 선택은 `Josa Select` 모드가 맡는다 —
-번역문은 `\j[받침형,무받침형]`을 쓴다.
+한 줄 더한다(그리기 진입점 훅). 조사 자동 선택(`\j[받침형,무받침형]` 해석)은
+2026-08-03부터 모드가 아니라 **한글패치 통합의 본문 섹션**이다 — 번역이 이 문법을
+전제해 분리 불가라 흡수했다. 소스 정본은 `share/josa.rb`, 굽기는 `share/bake_josa.py`
+(수술판·pre-intl.bak 양쪽, 멱등).
 
 밟아 둔 사실들:
 - `korean.dat`은 Essentials 다국어 포맷(절 24개 = MessageTypes 상수). 대사 쌍은

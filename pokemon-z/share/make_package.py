@@ -5,8 +5,10 @@
 """공유용 한글패치 패키지 조립.
 
 산출: dist/<패키지명>/ — 받는 사람이 게임 폴더에 덮어쓰면 끝나는 형태.
-원 패치(한글패치 통합 모드)의 에셋 전체 + 최신 korean.dat + Josa Select·
+원 패치(한글패치 통합 모드)의 에셋 전체 + 최신 korean.dat +
 UI Text KR을 주입한 Scripts.rxdata + 번역표(ko JSONL)와 독립 빌더.
+조사 자동 선택(옛 Josa Select)은 2026-08-03부터 한글패치 통합의 본문
+섹션이라 따로 주입하지 않는다(수술판·pre-intl.bak 양쪽에 구움 — bake_josa.py).
 
 주입은 fangame-library modstore가 정본이라 여기서 다시 만들지 않는다 —
 스테이징 폴더를 게임 이름으로 만들어 modstore.apply로 얹는다(제목 판별이
@@ -15,10 +17,10 @@ Game.ini 없으면 폴더 이름 폴백인 것을 이용).
 usage: uv run make_package.py [--variant debug|clean|mods] [--name "..."]
 
 변형 (v5 배포 체계, 2026-08-03):
-  debug — 통 패치: 번역 전체(수술·Josa·UI Text) + 디버그 3편집(patch_debug)
-  clean — 순수 번역: 번역 에셋+dat+Scripts(원본+Josa만).
+  debug — 통 패치: 번역 전체(수술·UI Text) + 디버그 3편집(patch_debug)
+  clean — 순수 번역: 번역 에셋+dat+Scripts(원본, Josa 포함).
           보간 6곳·부적 수정·화면 한글화는 빠진다(모드 묶음이 보충).
-  mods  — 스크립트 모드 묶음: 완성 Scripts.rxdata(수술+Josa+UI Text) 단품.
+  mods  — 스크립트 모드 묶음: 완성 Scripts.rxdata(수술+UI Text) 단품.
           clean 위에 덮어쓰면 통 패치(디버그 제외)와 같아진다.
 """
 import json
@@ -31,7 +33,7 @@ HERE = Path(__file__).parent
 TRANSLATE = HERE.parent / "translate"
 STORE = Path("/mnt/d/GameVault/mods")
 BASE_MOD = STORE / "Pokemon Z Fangame" / "한글패치 통합"
-INJECT_MODS = ["Josa Select", "UI Text KR"]
+INJECT_MODS = ["UI Text KR"]
 DIST = HERE / "dist"
 
 # modstore는 vendor에 없다 — devbox의 fangame-library가 필요하다 (FANGAME_LIBRARY로 지정 가능)
@@ -76,10 +78,10 @@ def main():
     DIST.mkdir(exist_ok=True)
 
     if variant == "mods":
-        # 완성 Scripts 단품: 수술판(BASE_MOD 사본) + Josa + UI Text KR
+        # 완성 Scripts 단품: 수술판(BASE_MOD 사본, Josa 내장) + UI Text KR
         (stage / "Data").mkdir(parents=True)
         shutil.copy2(BASE_MOD / "Data" / "Scripts.rxdata", stage / "Data" / "Scripts.rxdata")
-        for mod in ["Josa Select", "UI Text KR"]:
+        for mod in INJECT_MODS:
             r = modstore.apply(STORE / "Pokemon Z Fangame", mod, stage)
             print(f"주입: {mod} → {r['did']}")
         shutil.copy2(HERE / "읽어주세요-모드묶음.txt", stage / "읽어주세요.txt")
@@ -104,10 +106,10 @@ def main():
 
     # 3. Scripts 조립 — 변형별
     if variant == "clean":
-        # 원본(수술 전) + Josa만. 보간·부적·화면 한글화 제외.
+        # 원본(수술 전, Josa 내장). 보간·부적·화면 한글화 제외.
         shutil.copy2(BASE_MOD / "Data" / "Scripts.rxdata.pre-intl.bak",
                      stage / "Data" / "Scripts.rxdata")
-        inject = ["Josa Select"]
+        inject = []
     else:  # full(기본판)·debug(통합+디버그) — 수술판 Scripts + 전체 주입
         inject = list(INJECT_MODS)
     for mod in inject:
