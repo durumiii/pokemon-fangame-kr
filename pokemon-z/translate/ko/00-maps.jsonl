@@ -3017,7 +3017,7 @@
 {"k": "<b>Eneldo:</b> ¡Puaj! Careces de talento para la cocina, Aspirante \\PN. Por favor, no vuelvas a intentar cocinar nunca más.", "v": "<b>에넬도:</b> 으악! 후보생 \\PN, 자네는 요리에 재능이 전혀 없군. 제발 다시는 요리할 생각 말게."}
 {"k": "(Dos de tus Pokémon han recibido Estados Alterados)", "v": "(당신의 포켓몬 중 두 마리가 상태이상에 걸렸다)"}
 {"k": "<b>Eneldo:</b> ¿Sabéis? Cuando era joven me perdí en la montaña. Para sobrevivir, tuve que comer excrementos Pokémon.", "v": "<b>에넬도:</b> 그거 아나? 내가 어릴 때 산에서 길을 잃은 적이 있다네. 살아남으려고 포켓몬 배설물까지 먹어야 했지."}
-{"k": "Bien, pues aquello era un manjar comparado con el plato de \\PN. ¡Me encargaré personalmente de que no vuelvas a acercarte a una cocina en la vida!", "v": "헌데, 그 배설물이 \\PN의 요리에 비하면 산해진미였어. 자네가 평생 다시는 부엌 근처에도 못 가도록 내가 직접 저지하겠네!"}
+{"k": "Bien, pues aquello era un manjar comparado con el plato de \\PN. ¡Me encargaré personalmente de que no vuelvas a acercarte a una cocina en la vida!", "v": "헌데, 그 배설물도 \\PN의 요리에 비하면 산해진미였네. 자네가 평생 다시는 부엌 근처에도 못 가도록 내가 직접 막겠네!"}
 {"k": "(Tres de tus Pokémon han recibido Estados Alterados)", "v": "(당신의 포켓몬 중 세 마리가 상태이상에 걸렸다)"}
 {"k": "<b>Zafra:</b> ¡Va-vale! ¡<b>Zafra</b>, que no te puedan los nervios! ¡Estás en un combate Pokémon de verdad!", "v": "<b>사프라:</b> 자-잘하자! <b>사프라</b>, 긴장하면 안 돼! 지금 진짜 포켓몬 배틀 중이라고!"}
 {"k": "¡Pre-prepárate para perder!\\n...\\n¡Porfi!", "v": "지-질 준비하세요!\\n...\\n제발요!"}
@@ -7811,7 +7811,7 @@
 {"k": "¿Vas a la <b>Fábrica de Pokéball</b>? ¿Quieres dejar tu currículum tal vez?", "v": "<b>몬스터볼 공장</b>에 가려는 건가? 혹시 이력서라도 제출할 셈인가?"}
 {"k": "No te ofendas, pero... no pareces el tipo de persona que tiene conocimientos de metalurgia y soldadura.", "v": "기분 나쁘게 듣지는 말게나... 자네가 야금술이나 용접 지식이 있어 보이진 않거든."}
 {"k": "Es.... misterioso. Es muy misterioso.", "v": "이건... 신비롭구나. 참으로 신비로워."}
-{"k": "¿Sabías que un Pokémon con la habilidad Ojocompuesto tendrá más posibilidades de hacer que los Pokémon salvajes suelten objetos al ser derrotados?", "v": "‘복안’ 특성을 가진 포켓몬이 있으면 야생 포켓몬을 쓰러뜨렸을 때 아이템을 떨어뜨릴 확률이 높아진다는 걸 알고 계셨나요?"}
+{"k": "¿Sabías que un Pokémon con la habilidad Ojocompuesto tendrá más posibilidades de hacer que los Pokémon salvajes suelten objetos al ser derrotados?", "v": "‘복안’ 특성을 가진 포켓몬이 있으면 야생 포켓몬을 쓰러뜨렸을 때 아이템을 떨어뜨릴 확률이 높아진다는 걸 알고 있느냐?"}
 {"k": "Un truco muy interesante para todo un Alquimista Pokémon.", "v": "포켓몬 연금술사라면 알아두어야 할 아주 흥미로운 비법이지."}
 {"k": "<b>Ciudad Romantis</b>, un encanto de ciudad ligeramente encantada.", "v": "<b>후늬시티</b>, 살짝 신비로운 분위기가 감도는 매력적인 도시."}
 {"k": "¡A-ayuda! A ti se te dan bien los Pokémon, ¿no?", "v": "도, 도와주세요! 당신 포켓몬을 잘 다루시죠?"}
@@ -12479,7 +12479,7 @@
 {"k": "Mira, he formado parte del equipo que supervisó la construcción de la Estación Luminalia.", "v": "이봐, 내가 미르 스테이션 건설 감독 팀에 있었거든."}
 {"k": "Y puedo decirte que se ha construido sobre algo... muy extraño. Algún tipo de caverna de la que emanaban unas energías malignas como si fueran de otro mundo.", "v": "근데 말이지... 그곳은 아주 이상한 곳 위에 지어졌어. 마치 다른 세상에서 온 듯한 사악한 에너지가 뿜어져 나오는 일종의 동굴이었지."}
 {"k": "Total, que levantamos un muro y pusimos una puerta. Y tiramos la llave al río. También podríamos no haber construido ninguna puerta pero nos gusta complicarnos la vida.", "v": "결국 벽을 세우고 문을 달았어. 열쇠는 강에 던져버렸고. 문 따위 만들지 않을 수도 있었지만, 원래 삶이란 복잡하게 꼬아야 제맛이니까."}
-{"k": "Espero que nadie, jamás de los jamases, encuentre esa <b>Llave Secreta de la Estación Luminalia</b>.", "v": "누구도, 두 번 다시는 그 <b>미르 스테이션 비밀의열쇠</b>를 찾아내지 못하길 바랍니다."}
+{"k": "Espero que nadie, jamás de los jamases, encuentre esa <b>Llave Secreta de la Estación Luminalia</b>.", "v": "누구도, 두 번 다시는 그 <b>미르 스테이션 비밀의열쇠</b>를 찾아내지 못하길 바랄 뿐이야."}
 {"k": "Entonces me llevaré mi secreto a la tumba, ya que estoy solo...", "v": "나 혼자 남았으니, 이 비밀은 무덤까지 가져가야겠어..."}
 {"k": "A mi edad, solo me arrepiento de no haberme atrevido a yacer con más hombres.", "v": "내 나이가 되고 보니, 더 많은 사내와 동침해 보지 못한 것만이 후회스럽구먼."}
 {"k": "Sí", "v": "네"}
