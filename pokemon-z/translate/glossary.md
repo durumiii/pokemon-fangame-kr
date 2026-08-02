@@ -67,3 +67,44 @@
 
 기술명 섀도펀치·섀도클로는 공식 기술명이므로 「그림자」로 바꾸지 않는다.
 | Aspirante | 후보생 (호칭으로도: "\PN 후보생") | | | |
+
+## 지명 (2026-08-02 판정 — 본가 실지명은 본가 정식 한국어명)
+
+이 게임의 무대는 과거 칼로스이고, 도시 22곳 중 13곳의 스페인어 이름이
+**본가 XY 칼로스 도시의 스페인어 정식명 그 자체**다(프리즘타워 건설 중,
+미르 스테이션, 마스터타워 등 실지물 정황 일치). 규칙 「지명·인물이 본가와
+완전히 같은 대상이면 본가 번역을 따른다」에 따라 이 13곳은 정식 한국어명을
+쓴다. 전거는 PokeAPI location_names 실측 + Bulbapedia 교차 확인(사라시티·
+삼채시티 2건 스팟체크 일치, 2026-08-02).
+
+| 원문 (스페인어 정식명) | 본가 | 표기 |
+|---|---|---|
+| Ciudad Luminalia | Lumiose | 미르시티 (복합: 미르 스테이션·미르 궁전·미르 지하묘지·미르 신시가지·미르 박물관·미르 그랜드 호텔·미르열쇠) |
+| Ciudad Novarte | Santalune | 백단시티 (백단 아카데미) |
+| Pueblo Petroglifo | Ambrette | 가라마을 (가라 동굴) |
+| Ciudad Relieve | Cyllage | 삼채시티 |
+| Pueblo Vánitas | Camphrier | 고목내마을 |
+| Ciudad Batik | Kiloude | 기남시티 (기남마을·기남 여관 — 원문이 Pueblo/Hostal인 자리) |
+| Ciudad Romantis | Laverre | 후늬시티 |
+| Pueblo Fresco | Dendemille | 버들비마을 |
+| Ciudad Fluxus | Anistar | 향전시티 |
+| Pueblo Mosaico | Couriway | 배롱마을 |
+| Ciudad Fractal | Snowbelle | 이설시티 (이설 유적·이설 엘리트·이설 듀오) |
+| Ciudad Yantra | Shalour | 사라시티 |
+| Pueblo Cromlech | Geosenge | 옥유마을 (옥유마을 외곽) |
+| Villa Pokémon | Pokémon Village | 포켓몬마을 |
+| Cueva de los Reflejos | Reflection Cave | 비춤의 동굴 |
+| Bahía Azul | Azure Bay | 아쥐르만 |
+| Gruta Helada | Frost Cavern | 프로스트케이브 |
+| Cueva Desenlace | Terminus Cave | 끝의 동굴 |
+| Torre Prisma / Torre Maestra | Prism Tower / Tower of Mastery | 프리즘타워 / 마스터타워 |
+
+창작 지명 9곳은 음차 유지: 리엔소마을·비닐로마을·그리사야시티·아크릴리코마을·
+콜라주마을·올레오시티·프로파노마을·보데곤마을·상기노마을. 언급뿐인
+Ciudad Gres는 그레스시티. 시설은 절21 표기를 정본으로(세뇨리알 대성당·
+로시욘 저택·포켓몬 키우미집·기남 여관 등).
+
+주의: **Orden Yantra(얀트라 교단)·Clan Cromlech(크롬레크 일족) 등 조직명은
+도시명을 따라가지 않는다** — 산스크리트 얀트라·거석 크롬레크라는 일반 개념이
+어원이라 보고 음차를 유지했다(도시는 사라시티·옥유마을). 원문의 도시-조직
+말장난은 한국어에서 끊어진다는 대가를 감수한 판정.

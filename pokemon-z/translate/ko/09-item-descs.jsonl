@@ -227,8 +227,8 @@
 {"i": 226, "v": "포켓몬의 마비를 푸는 스프레이약.", "es": "Medicina en spray que cura a un Pokémon paralizado."}
 {"i": 227, "v": "포켓몬의 얼음 상태를 푸는 스프레이약.", "es": "Medicina en spray que descongela a un Pokémon."}
 {"i": 228, "v": "포켓몬의 모든 상태이상을 치료하는 스프레이약.", "es": "Medicina en spray que cura todos los problemas de estado de un Pokémon."}
-{"i": 229, "v": "얀트라시티의 명물 과자. 포켓몬의 모든 상태이상을 치료한다.", "es": "Dulce típico de Ciudad Yantra que cura todos los problemas de estado de un Pokémon."}
-{"i": 230, "v": "루미날리아시티의 명물. 포켓몬의 상태이상을 치료한다.", "es": "Especialidad de Ciudad Luminalia. Cura los problemas de estado de un Pokémon."}
+{"i": 229, "v": "사라시티의 명물 과자. 포켓몬의 모든 상태이상을 치료한다.", "es": "Dulce típico de Ciudad Yantra que cura todos los problemas de estado de un Pokémon."}
+{"i": 230, "v": "미르시티의 명물. 포켓몬의 상태이상을 치료한다.", "es": "Especialidad de Ciudad Luminalia. Cura los problemas de estado de un Pokémon."}
 {"i": 231, "v": "Ciudad Porcelana의 명물. 포켓몬의 상태이상을 치료한다.", "es": "Especialidad de Ciudad Porcelana. Cura los problemas de estado de un Pokémon."}
 {"i": 232, "v": "기절한 포켓몬을 되살려 HP를 절반 회복하는 약.", "es": "Medicina que reanima a un Pokémon debilitado y restaura la mitad de sus PS."}
 {"i": 233, "v": "기절한 포켓몬을 되살려 HP를 모두 회복하는 약.", "es": "Medicina que reanima a un Pokémon debilitado y restaura todos sus PS."}
@@ -802,13 +802,13 @@
 {"i": 801, "v": "이어롭을 메가진화시키는 돌.", "es": "Piedra para megaevolucionar a Lopunny."}
 {"i": 802, "v": "옛 바니타스 구역의 문을 여는 열쇠.", "es": "Llave que abre la puerta del barrio de Viejo Vánitas."}
 {"i": 803, "v": "포켓몬의 모든 개체값을 7씩 올린다.", "es": "Aumenta todos los IVs (+7 en cada stat) de un Pokémon."}
-{"i": 804, "v": "루미날리아 부지의 문을 여는 열쇠.", "es": "Llave que abre la puerta a los terrenos de Luminalia."}
-{"i": 805, "v": "페트로글리포 동굴에서 발굴할 때 쓰는 도구. 정과 함께 써야 한다.", "es": "Una de las herramientas para excavar en la Cueva Petroglifo, pero hay que acompañarla con un cincel."}
+{"i": 804, "v": "미르시티 부지의 문을 여는 열쇠.", "es": "Llave que abre la puerta a los terrenos de Luminalia."}
+{"i": 805, "v": "가라 동굴에서 발굴할 때 쓰는 도구. 정과 함께 써야 한다.", "es": "Una de las herramientas para excavar en la Cueva Petroglifo, pero hay que acompañarla con un cincel."}
 {"i": 806, "v": "어째서인지 파오리가 이 빵을 아주 좋아한다.", "es": "Por algún motivo, los Farfetch'd adoran este tipo de pan."}
 {"i": 807, "v": "고스트타입 포켓몬에게 반드시 명중한다.", "es": "Es infalible contra Pokémon Fantasma."}
 {"i": 808, "v": "빛도 날도 잃은 지 오래됐다.", "es": "Hace tiempo que perdió su brillo y su filo."}
 {"i": 809, "v": "자루 안에서 뭔가 움직인다. 안 보는 게 낫겠다.", "es": "Algo se mueve dentro de la bolsa. Mejor no mirar."}
-{"i": 810, "v": "루미날리아시티 서쪽 대로의 총사에게 쓰는 물건.", "es": "Para usarlo con el Mosquetero del Bulevar Oeste de Ciudad Luminalia."}
+{"i": 810, "v": "미르시티 서쪽 대로의 총사에게 쓰는 물건.", "es": "Para usarlo con el Mosquetero del Bulevar Oeste de Ciudad Luminalia."}
 {"i": 811, "v": "지닌 포켓몬이 상대 기술의 추가 효과를 받지 않게 된다.", "es": "Protege a quien la lleve de los efectos secundarios de los movimientos de los rivales."}
 {"i": 812, "v": "펀치 기술의 데미지가 15% 올라가고 접촉 효과를 받지 않게 된다.", "es": "Aumenta un 15% el daño de los ataques de puño y protege de efectos de contacto al ejecutarlos."}
 {"i": 813, "v": "방어·특수방어가 10% 올라가고 상대가 능력을 떨어뜨리지 못하게 한다.", "es": "Aumenta las defensas un 10% y protege al portador de las bajadas de estadísticas del oponente."}
@@ -818,7 +818,7 @@
 {"i": 817, "v": "옛 바니타스의 특별한 묘비에 들어맞는다.", "es": "Encaja en una lápida especial de Viejo Vánitas."}
 {"i": 818, "v": "옛 말보 왕의 물건. 꽃을 좋아했다고 한다.", "es": "Perteneció al antiguo Rey Malvo. Le gustaban las flores."}
 {"i": 819, "v": "올바른 장소에서 손에 쥐면 그림자 속으로 데려다준다.", "es": "Llevándolo en la mano y en el lugar correcto, te llevará a las sombras."}
-{"i": 820, "v": "루미날리아 궁전의 새로운 길을 열어 준다.", "es": "Desbloquea nuevos caminos por el Palacio Luminalia."}
+{"i": 820, "v": "미르 궁전의 새로운 길을 열어 준다.", "es": "Desbloquea nuevos caminos por el Palacio Luminalia."}
 {"i": 821, "v": "무시무시한 장치의 제작 설명서. 전부 이해할 만한 지식이 없다.", "es": "Manual para la construcción de un terrible artefacto. No tienes conocimientos para entenderlo del todo"}
 {"i": 822, "v": "직접 만든 볼. 일반 몬스터볼보다 포획률이 50% 높다.", "es": "Hecha por ti, es un 50% más potente que una Pokéball normal."}
 {"i": 823, "v": "직접 만든 볼. 일반 슈퍼볼보다 포획률이 50% 높다.", "es": "Hecha por ti, es un 50% más potente que una Superball normal."}
@@ -860,13 +860,13 @@
 {"i": 859, "v": "아득한 옛날 해적들이 마시던 불길한 술.", "es": "Un siniestro brebaje pirata de tiempos antiquísimos."}
 {"i": 860, "v": "슬리퍼의 정신 지배를 무효화한다.", "es": "Anula el control mental de los Hypno."}
 {"i": 861, "v": "실은 변장한 꼬지모다. 망각의 감옥에 있는 친구에게 데려가라.", "es": "En realidad es un Sudowoodo camuflado. Llévalo con su amigo en Prisión del Olvido."}
-{"i": 862, "v": "페트로글리포 동굴에서 발굴할 때 쓰는 도구. 망치와 함께 써야 한다.", "es": "Una de las herramientas para excavar en la Cueva Petroglifo, pero hay que acompañarlo con un martillo."}
+{"i": 862, "v": "가라 동굴에서 발굴할 때 쓰는 도구. 망치와 함께 써야 한다.", "es": "Una de las herramientas para excavar en la Cueva Petroglifo, pero hay que acompañarlo con un martillo."}
 {"i": 863, "v": "바람 기술의 위력을 50% 올린다.", "es": "Potencia un 50% los movimientos de viento."}
 {"i": 864, "v": "디안시의 메가진화용 돌.", "es": "Piedra para megaevolucionar a Diancie."}
 {"i": 865, "v": "아크릴리코 구호소의 비밀문을 연다.", "es": "Abre la puerta secreta del Hospicio Acrílico."}
 {"i": 866, "v": "연금술사의 손에 들어가면 새로운 기계 포켓몬이 태어날지도 모른다.", "es": "En manos de un alquimista, podría dar origen a un nuevo Pokémon mecánico."}
 {"i": 867, "v": "돌로 만든 모조품. 잊힌 고대 왕의 것이었다.", "es": "Es una réplica de piedra. Pertenecía a un rey de tiempos ancestrales que ya fue olvidado."}
-{"i": 868, "v": "모사이코마을의 수상한 운전사에게 건네줄 물건.", "es": "Entrégasela al conductor misterioso de Pueblo Mosaico."}
+{"i": 868, "v": "배롱마을의 수상한 운전사에게 건네줄 물건.", "es": "Entrégasela al conductor misterioso de Pueblo Mosaico."}
 {"i": 869, "v": "브리가론의 메가진화용 돌.", "es": "Piedra para megaevolucionar a Chesnaught."}
 {"i": 870, "v": "마폭시의 메가진화용 돌.", "es": "Piedra para megaevolucionar a Delphox."}
 {"i": 871, "v": "개굴닌자의 메가진화용 돌.", "es": "Piedra para megaevolucionar a Greninja."}
@@ -880,7 +880,7 @@
 {"i": 879, "v": "상기노 서커스의 창고 하나를 연다.", "es": "Abre uno de los almacenes del Circo Sanguino."}
 {"i": 880, "v": "상기노 서커스의 창고 하나를 연다.", "es": "Abre uno de los almacenes del Circo Sanguino."}
 {"i": 881, "v": "상기노 서커스의 창고 하나를 연다.", "es": "Abre uno de los almacenes del Circo Sanguino."}
-{"i": 882, "v": "루미날리아역에서 뭔가를 여는 듯하다.", "es": "Aparentemente, abre algo en la Estación Luminalia."}
+{"i": 882, "v": "미르 스테이션에서 뭔가를 여는 듯하다.", "es": "Aparentemente, abre algo en la Estación Luminalia."}
 {"i": 883, "v": "칼렌둘라라는 이름이 새겨져 있다.", "es": "Hay un nombre grabado, Caléndula."}
 {"i": 884, "v": "너에겐 아무 의미도 없다. 누군가에겐 쓸모가 있을지도.", "es": "A ti no te dice nada. Tal vez a alguien le sea útil."}
 {"i": 885, "v": "상기노마을의 점술사 미미가 가진 세 장의 카드 중 하나.", "es": "Una de las tres cartas de Mimi, la Tarotista de Pueblo Sanguino."}
@@ -895,8 +895,8 @@
 {"i": 894, "v": "이벨타르가 내린 가장 귀한 선물. 죽음을 단 한 번 피하게 해 준다.", "es": "El más valioso don de Yveltal. Permite evadir la Muerte solo una vez."}
 {"i": 895, "v": "칼로스의 모든 메달이 모여 만들어진 고대의 유물.", "es": "Un artefacto ancestral formado a partir de todas las medallas de Kalos."}
 {"i": 896, "v": "지가르데를 메가진화시키는 돌.", "es": "Piedra para megaevolucionar a Zygarde."}
-{"i": 897, "v": "루미날리아시티 대성당에 있는 작은 종의 왼쪽 반쪽.", "es": "La mitad izquierda de una pequeña campana que pertenece a la Catedral de Ciudad Luminalia."}
-{"i": 898, "v": "루미날리아시티 대성당에 있는 작은 종의 오른쪽 반쪽.", "es": "La mitad derecha de una pequeña campana que pertenece a la Catedral de Ciudad Luminalia."}
+{"i": 897, "v": "미르시티 대성당에 있는 작은 종의 왼쪽 반쪽.", "es": "La mitad izquierda de una pequeña campana que pertenece a la Catedral de Ciudad Luminalia."}
+{"i": 898, "v": "미르시티 대성당에 있는 작은 종의 오른쪽 반쪽.", "es": "La mitad derecha de una pequeña campana que pertenece a la Catedral de Ciudad Luminalia."}
 {"i": 899, "v": "앤테이를 메가진화시키는 돌.", "es": "Piedra para megaevolucionar a Entei."}
 {"i": 900, "v": "플라엣테를 메가진화시키는 돌.", "es": "Piedra para megaevolucionar a Floette."}
 {"i": 901, "v": "불카모스를 메가진화시키는 돌.", "es": "Piedra para megaevolucionar a Volcarona."}

@@ -24,7 +24,12 @@ module UiTextKR
     ["Medalla Forja", "포르하 배지"],
     ["Medalla Escarcha", "에스카르차 배지"],
     ["Medalla Luzbel", "루스벨 배지"],
-    ["Medalla Odonata", "오도나타 배지"]
+    ["Medalla Odonata", "오도나타 배지"],
+    # 연금술(Crafteo) 레시피 조합 화면 하단 — 222_Crafteo.rb pbRedrawItem의
+    # textpos 리터럴(첫 화면만 한글이고 둘째 화면이 누락돼 있었다)
+    ["C: Combinar", "C: 조합"],
+    ["Arriba/Abajo: Cantidad", "위/아래: 수량"],
+    ["X: Salir", "X: 나가기"]
   ]
 
   def self.fix(text)

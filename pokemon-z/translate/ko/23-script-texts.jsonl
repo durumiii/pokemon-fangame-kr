@@ -3931,7 +3931,7 @@
 {"k": "quemado", "v": "화상"}
 {"k": "paralizado", "v": "마비"}
 {"k": "congelado", "v": "얼음"}
-{"k": "Fuerte", "v": "노력하는"}
+{"k": "Fuerte", "v": "노력"}
 {"k": "Huraña", "v": "외로움"}
 {"k": "Audaz", "v": "용감"}
 {"k": "Firme", "v": "고집"}
@@ -3940,22 +3940,22 @@
 {"k": "Dócil", "v": "온순"}
 {"k": "Plácida", "v": "무사태평"}
 {"k": "Agitada", "v": "장난꾸러기"}
-{"k": "Floja", "v": "솔직"}
+{"k": "Floja", "v": "촐랑"}
 {"k": "Miedosa", "v": "겁쟁이"}
 {"k": "Activa", "v": "성급"}
-{"k": "Seria", "v": "진지"}
+{"k": "Seria", "v": "성실"}
 {"k": "Alegre", "v": "명랑"}
 {"k": "Ingenua", "v": "천진난만"}
-{"k": "Modesta", "v": "조심성"}
-{"k": "Afable", "v": "수줍음"}
+{"k": "Modesta", "v": "조심"}
+{"k": "Afable", "v": "의젓"}
 {"k": "Mansa", "v": "냉정"}
 {"k": "Tímida", "v": "수줍음"}
 {"k": "Alocada", "v": "덜렁"}
-{"k": "Serena", "v": "얌전"}
-{"k": "Amable", "v": "상냥"}
+{"k": "Serena", "v": "차분"}
+{"k": "Amable", "v": "얌전"}
 {"k": "Grosera", "v": "건방"}
 {"k": "Cauta", "v": "신중"}
-{"k": "Rara", "v": "희귀"}
+{"k": "Rara", "v": "변덕"}
 {"k": "Precisión", "v": "명중률"}
 {"k": "Evasión", "v": "회피율"}
 {"k": "Monstruo", "v": "괴수"}
@@ -4207,7 +4207,7 @@
 {"k": "¡{1} esquivó el ataque!", "v": "{1}\\j[은,는] 공격을 피했다!"}
 {"k": "¡{1} fue infectado!", "v": "{1}에게 씨앗을 심었다!"}
 {"k": "¡{1} absorbió el Lodo Líquido!", "v": "{1}\\j[이,가] 해감액을 흡수했다!"}
-{"k": "¡{1} ha perdido energía!", "v": "{1}\\j[은,는] 기력을 잃었다!"}
+{"k": "¡{1} ha perdido energía!", "v": "{1}의 체력을 흡수했다!"}
 {"k": "¡Los PS de {1} están al máximo!", "v": "{1}의 HP가 최대다!"}
 {"k": "¡{2} de {1} evitó que {3} utilice {4}!", "v": "{1}의 {2}\\j[이,가] {3}의 {4} 사용을 막았다!"}
 {"k": "¡Todos los Pokémon que oyeron la canción se debilitarán dentro de tres turnos!", "v": "노래를 들은 모든 포켓몬은 세 턴 뒤에 쓰러진다!"}
@@ -6632,7 +6632,7 @@
 {"k": "Una isla peculiar", "v": "독특한 섬"}
 {"k": "Resuelve el misterio de la Isla Certijo.", "v": "세르티호섬의 수수께끼를 풀어라."}
 {"k": "Las criptas de la ciudad", "v": "도시의 지하 묘지"}
-{"k": "Llega a lo profundo de las Criptas de Luminalia.", "v": "루미날리아 지하 묘지 깊은 곳까지 도달하라."}
+{"k": "Llega a lo profundo de las Criptas de Luminalia.", "v": "미르 지하묘지 깊은 곳까지 도달하라."}
 {"k": "El tesoro maldito", "v": "저주받은 보물"}
 {"k": "Encuentra el tesoro de la Isla Montesanto.", "v": "몬테산토섬의 보물을 찾아라."}
 {"k": "Un merecido descanso", "v": "마땅한 휴식"}
@@ -6695,7 +6695,7 @@
 {"k": "¡Ya te queda poco para alcanzar el verdadero Vínculo con tus Pokémon! ¡Continúa luchando un poco más!", "v": "포켓몬과 진정한 유대를 맺기까지 얼마 안 남았다! 조금만 더 힘내서 싸워라!"}
 {"k": "La Pokéball contiene un", "v": "몬스터볼 안에는 "}
 {"k": "HAY BITMAP {1}", "v": "비트맵 {1} 있음"}
-{"k": "Consigue los demás logros. Habla con EricLostie en Pueblo Cromlech.", "v": "나머지 업적을 달성하라. 크롬레크마을의 EricLostie와 이야기하라."}
+{"k": "Consigue los demás logros. Habla con EricLostie en Pueblo Cromlech.", "v": "나머지 업적을 달성하라. 옥유마을의 EricLostie와 이야기하라."}
 {"k": "En la Pokéball hay un", "v": "몬스터볼 안에는 "}
 {"k": "¿Esto es lo que sienten los entrenadores todos los días? ¡Ahora entiendo por qué tiene tanto éxito eso de conseguir medallas!", "v": "트레이너들은 매일 이런 기분을 느끼는 건가? 배지을 모으는 게 왜 그렇게 인기 있는지 이제 알겠어!"}
 {"k": "Pasa la noche en el Balneario Oculto.", "v": "숨겨진 온천에서 하룻밤을 보내라."}
@@ -6807,3 +6807,6 @@
 {"k": "\\se[]1,\\wt[4] 2,\\wt[4] y...\\wt[8] ...\\wt[8] ...\\wt[8] ¡Puf!\\se[balldrop]\\1", "v": "\\se[]1,\\wt[4] 2,\\wt[4] 그리고...\\wt[8] ...\\wt[8] ...\\wt[8] 짠!\\se[balldrop]\\1"}
 {"k": "{1} ha olvidado cómo usar {2}.\\1", "v": "{1}\\j[은,는] {2} 쓰는 법을\r\n깔끔하게 잊어버렸다.\\1"}
 {"k": "Y...\\1", "v": "그리고...\\1"}
+{"k": "{1:s}\nID: {2:05d} EO: {3:s}\\1", "v": "{1:s}\r\nID: {2:05d}   어버이: {3:s}\\1"}
+{"k": "Por el {2} de {1},\n{3} envía a {4}.\\1", "v": "{1}의 {2}\\j[와,과] 맞바꾸어\r\n{3}\\j[이,가] {4}\\j[을,를] 보내왔다.\\1"}
+{"k": "{1} ha olvidado cómo\nusar {2}.\\1", "v": "{1}\\j[은,는] {2} 쓰는 법을\r\n깔끔하게 잊어버렸다.\\1"}

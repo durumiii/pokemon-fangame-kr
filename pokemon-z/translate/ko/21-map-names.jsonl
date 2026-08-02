@@ -78,7 +78,7 @@
 {"i": 77, "v": "집", "es": "Casa"}
 {"i": 78, "v": "빛나는 동굴", "es": "Cueva Refulgente"}
 {"i": 79, "v": "7번도로 남쪽", "es": "Ruta 7 Sur"}
-{"i": 80, "v": "노바르테시티", "es": "Ciudad Novarte"}
+{"i": 80, "v": "백단시티", "es": "Ciudad Novarte"}
 {"i": 81, "v": "불탄 공방", "es": "Taller Quemado"}
 {"i": 82, "v": "포켓몬센터", "es": "Centro Pokémon"}
 {"i": 83, "v": "집", "es": "Casa"}
@@ -88,7 +88,7 @@
 {"i": 87, "v": "포켓몬 요새", "es": "Bastión Pokémon"}
 {"i": 88, "v": "란토 저택", "es": "Chateau Lanto"}
 {"i": 89, "v": "포켓몬 요새", "es": "Bastión Pokémon"}
-{"i": 90, "v": "노바르테 아카데미", "es": "Academia Novarte"}
+{"i": 90, "v": "백단 아카데미", "es": "Academia Novarte"}
 {"i": 91, "v": "8번도로 서쪽", "es": "Ruta 8 Oeste"}
 {"i": 92, "v": "란토 저택", "es": "Chateau Lanto"}
 {"i": 93, "v": "집", "es": "Casa"}
@@ -100,7 +100,7 @@
 {"i": 99, "v": "폭풍 언덕", "es": "Colina de Tormenta"}
 {"i": 100, "v": "8번도로 동쪽", "es": "Ruta 8 Este"}
 {"i": 101, "v": "장면", "es": "Escena"}
-{"i": 102, "v": "페트로글리포마을", "es": "Pueblo Petroglifo"}
+{"i": 102, "v": "가라마을", "es": "Pueblo Petroglifo"}
 {"i": 103, "v": "9번도로", "es": "Ruta 9"}
 {"i": 104, "v": "포켓몬센터", "es": "Centro Pokémon"}
 {"i": 105, "v": "전환", "es": "Transición"}
@@ -131,7 +131,7 @@
 {"i": 130, "v": "휴게소", "es": "Estación de Servicio"}
 {"i": 131, "v": "집", "es": "Casa"}
 {"i": 132, "v": "페트로 동굴", "es": "Petrocueva"}
-{"i": 133, "v": "렐리에베시티", "es": "Ciudad Relieve"}
+{"i": 133, "v": "삼채시티", "es": "Ciudad Relieve"}
 {"i": 134, "v": "포켓몬센터", "es": "Centro Pokémon"}
 {"i": 135, "v": "집", "es": "Casa"}
 {"i": 136, "v": "티에라우니다 동굴", "es": "Gruta Tierraunida"}
@@ -139,7 +139,7 @@
 {"i": 138, "v": "옛 바니타스", "es": "Viejo Vánitas"}
 {"i": 139, "v": "옛 바니타스", "es": "Viejo Vánitas"}
 {"i": 140, "v": "옛 바니타스", "es": "Viejo Vánitas"}
-{"i": 141, "v": "바니타스마을", "es": "Pueblo Vánitas"}
+{"i": 141, "v": "고목내마을", "es": "Pueblo Vánitas"}
 {"i": 142, "v": "포켓몬센터", "es": "Centro Pokémon"}
 {"i": 143, "v": "라 타라스크", "es": "La Tarasque"}
 {"i": 144, "v": "라 타라스크", "es": "La Tarasque"}
@@ -158,10 +158,10 @@
 {"i": 157, "v": "13번도로", "es": "Ruta 13"}
 {"i": 158, "v": "집", "es": "Casa"}
 {"i": 159, "v": "13번도로", "es": "Ruta 13"}
-{"i": 160, "v": "루미날리아시티 - 남쪽", "es": "Ciudad Luminalia - Sur"}
-{"i": 161, "v": "루미날리아시티 - 동쪽", "es": "Ciudad Luminalia - Este"}
-{"i": 162, "v": "루미날리아시티 - 서쪽", "es": "Ciudad Luminalia - Oeste"}
-{"i": 163, "v": "루미날리아시티 - 북쪽", "es": "Ciudad Luminalia - Norte"}
+{"i": 160, "v": "미르시티 - 남쪽", "es": "Ciudad Luminalia - Sur"}
+{"i": 161, "v": "미르시티 - 동쪽", "es": "Ciudad Luminalia - Este"}
+{"i": 162, "v": "미르시티 - 서쪽", "es": "Ciudad Luminalia - Oeste"}
+{"i": 163, "v": "미르시티 - 북쪽", "es": "Ciudad Luminalia - Norte"}
 {"i": 164, "v": "포켓몬센터", "es": "Centro Pokémon"}
 {"i": 165, "v": "8번도로 서쪽", "es": "Ruta 8 Oeste"}
 {"i": 166, "v": "카두코 구호소", "es": "Hospicio Caduco"}
@@ -170,7 +170,7 @@
 {"i": 169, "v": "멜리아 장면 2", "es": "Escena Melia 2"}
 {"i": 170, "v": "진짜배기 인트로", "es": "Intro de verdad de la buena"}
 {"i": 171, "v": "진짜배기 인트로 2", "es": "Intro de verdad de la buena 2"}
-{"i": 172, "v": "루미날리아 궁전", "es": "Palacio Luminalia"}
+{"i": 172, "v": "미르 궁전", "es": "Palacio Luminalia"}
 {"i": 173, "v": "포켓몬 요새", "es": "Bastión Pokémon"}
 {"i": 174, "v": "포켓몬센터", "es": "Centro Pokémon"}
 {"i": 175, "v": "포켓몬센터", "es": "Centro Pokémon"}
@@ -184,14 +184,14 @@
 {"i": 183, "v": "세뇨리알 대성당", "es": "Catedral Señorial"}
 {"i": 184, "v": "미술관", "es": "Galería de Arte"}
 {"i": 185, "v": "집", "es": "Casa"}
-{"i": 186, "v": "루미날리아 지하묘지", "es": "Criptas de Luminalia"}
-{"i": 187, "v": "루미날리아 지하묘지", "es": "Criptas de Luminalia"}
+{"i": 186, "v": "미르 지하묘지", "es": "Criptas de Luminalia"}
+{"i": 187, "v": "미르 지하묘지", "es": "Criptas de Luminalia"}
 {"i": 188, "v": "고아원", "es": "Orfanato"}
 {"i": 189, "v": "장면", "es": "Escena"}
-{"i": 190, "v": "루미날리아 궁전", "es": "Palacio Luminalia"}
-{"i": 191, "v": "루미날리아 궁전", "es": "Palacio Luminalia"}
-{"i": 192, "v": "루미날리아 궁전", "es": "Palacio Luminalia"}
-{"i": 193, "v": "루미날리아 궁전", "es": "Palacio Luminalia"}
+{"i": 190, "v": "미르 궁전", "es": "Palacio Luminalia"}
+{"i": 191, "v": "미르 궁전", "es": "Palacio Luminalia"}
+{"i": 192, "v": "미르 궁전", "es": "Palacio Luminalia"}
+{"i": 193, "v": "미르 궁전", "es": "Palacio Luminalia"}
 {"i": 194, "v": "크리산토 장면", "es": "Escena Crisanto"}
 {"i": 195, "v": "크리산토 장면 2", "es": "Escena Crisanto 2"}
 {"i": 196, "v": "옛 바니타스", "es": "Viejo Vánitas"}
@@ -200,11 +200,11 @@
 {"i": 199, "v": "그리사야 동굴", "es": "Cueva Grisalla"}
 {"i": 200, "v": "음침한 동굴", "es": "Cueva Lóbrega"}
 {"i": 201, "v": "음침한 동굴", "es": "Cueva Lóbrega"}
-{"i": 202, "v": "루미날리아 지하묘지", "es": "Criptas de Luminalia"}
+{"i": 202, "v": "미르 지하묘지", "es": "Criptas de Luminalia"}
 {"i": 203, "v": "세뇨리알 대성당", "es": "Catedral Señorial"}
 {"i": 204, "v": "장면들", "es": "Escenas"}
 {"i": 205, "v": "장면들 2", "es": "Escenas 2"}
-{"i": 206, "v": "루미날리아 궁전", "es": "Palacio Luminalia"}
+{"i": 206, "v": "미르 궁전", "es": "Palacio Luminalia"}
 {"i": 207, "v": "성찰의 방", "es": "Cámaras de Reflexión"}
 {"i": 208, "v": "성찰의 방", "es": "Cámaras de Reflexión"}
 {"i": 209, "v": "성찰의 방", "es": "Cámaras de Reflexión"}
@@ -212,10 +212,10 @@
 {"i": 211, "v": "장면 1", "es": "Escena 1"}
 {"i": 212, "v": "장면 2", "es": "Escena 2"}
 {"i": 213, "v": "장면 3", "es": "Escena 3"}
-{"i": 214, "v": "루미날리아 궁전", "es": "Palacio Luminalia"}
+{"i": 214, "v": "미르 궁전", "es": "Palacio Luminalia"}
 {"i": 215, "v": "장면 4", "es": "Escena 4"}
-{"i": 216, "v": "루미날리아 궁전", "es": "Palacio Luminalia"}
-{"i": 217, "v": "루미날리아 궁전", "es": "Palacio Luminalia"}
+{"i": 216, "v": "미르 궁전", "es": "Palacio Luminalia"}
+{"i": 217, "v": "미르 궁전", "es": "Palacio Luminalia"}
 {"i": 218, "v": "마지막 장면 P1", "es": "Escenas Finales P1"}
 {"i": 219, "v": "마지막 장면 P1", "es": "Escenas Finales P1"}
 {"i": 220, "v": "마차", "es": "Carruaje"}
@@ -231,21 +231,21 @@
 {"i": 230, "v": "몬테산토섬", "es": "Isla Montesanto"}
 {"i": 231, "v": "몬테산토섬", "es": "Isla Montesanto"}
 {"i": 232, "v": "몬스터볼 공장", "es": "Fábrica de Pokéball"}
-{"i": 233, "v": "로만티스시티", "es": "Ciudad Romantis"}
+{"i": 233, "v": "후늬시티", "es": "Ciudad Romantis"}
 {"i": 234, "v": "15번도로", "es": "Ruta 15"}
 {"i": 235, "v": "몬스터볼 공장", "es": "Fábrica de Pokéball"}
 {"i": 236, "v": "몬스터볼 공장", "es": "Fábrica de Pokéball"}
 {"i": 237, "v": "16번도로", "es": "Ruta 16"}
-{"i": 238, "v": "얼음동굴", "es": "Gruta Helada"}
+{"i": 238, "v": "프로스트케이브", "es": "Gruta Helada"}
 {"i": 239, "v": "포켓몬센터", "es": "Centro Pokémon"}
 {"i": 240, "v": "전환", "es": "Transición"}
 {"i": 241, "v": "집", "es": "Casa"}
 {"i": 242, "v": "17번도로", "es": "Ruta 17"}
-{"i": 243, "v": "얼음동굴", "es": "Gruta Helada"}
+{"i": 243, "v": "프로스트케이브", "es": "Gruta Helada"}
 {"i": 244, "v": "집", "es": "Casa"}
-{"i": 245, "v": "얼음동굴", "es": "Gruta Helada"}
+{"i": 245, "v": "프로스트케이브", "es": "Gruta Helada"}
 {"i": 246, "v": "집", "es": "Casa"}
-{"i": 247, "v": "바틱시티", "es": "Ciudad Batik"}
+{"i": 247, "v": "기남시티", "es": "Ciudad Batik"}
 {"i": 248, "v": "리그 장면", "es": "Escena Liga"}
 {"i": 249, "v": "훈련 장면 1", "es": "Escena Entrenamiento 1"}
 {"i": 250, "v": "훈련 장면 2", "es": "Escena Entrenamiento 2"}
@@ -259,7 +259,7 @@
 {"i": 258, "v": "칼로스 피레네", "es": "Pirineos de Kalos"}
 {"i": 259, "v": "포켓몬센터", "es": "Centro Pokémon"}
 {"i": 260, "v": "집", "es": "Casa"}
-{"i": 261, "v": "바틱 여관", "es": "Hostal Batik"}
+{"i": 261, "v": "기남 여관", "es": "Hostal Batik"}
 {"i": 262, "v": "어둠의 탑 P2", "es": "Torre Oscura P2"}
 {"i": 263, "v": "어둠의 탑 P0", "es": "Torre Oscura P0"}
 {"i": 264, "v": "어둠의 탑 P1", "es": "Torre Oscura P1"}
@@ -281,34 +281,34 @@
 {"i": 280, "v": "장면", "es": "Escena"}
 {"i": 281, "v": "몬스터볼 공장", "es": "Fábrica de Pokéball"}
 {"i": 282, "v": "몬스터볼 공장", "es": "Fábrica de Pokéball"}
-{"i": 283, "v": "프레스코마을", "es": "Pueblo Fresco"}
+{"i": 283, "v": "버들비마을", "es": "Pueblo Fresco"}
 {"i": 284, "v": "16번도로", "es": "Ruta 16"}
 {"i": 285, "v": "장면", "es": "Escena"}
 {"i": 286, "v": "프레스코 풍차", "es": "Molino Fresco"}
 {"i": 287, "v": "18번도로", "es": "Ruta 18"}
 {"i": 288, "v": "18번도로", "es": "Ruta 18"}
 {"i": 289, "v": "불타는 구렁", "es": "Sima Ardiente"}
-{"i": 290, "v": "모사이코마을", "es": "Pueblo Mosaico"}
+{"i": 290, "v": "배롱마을", "es": "Pueblo Mosaico"}
 {"i": 291, "v": "비밀 온천", "es": "Balneario Oculto"}
 {"i": 292, "v": "20번도로", "es": "Ruta 20"}
 {"i": 293, "v": "전환", "es": "Transición"}
 {"i": 294, "v": "화가의 집", "es": "Casa de la Pintora"}
 {"i": 295, "v": "포켓몬센터", "es": "Centro Pokémon"}
 {"i": 296, "v": "집", "es": "Casa"}
-{"i": 297, "v": "플룩수스시티", "es": "Ciudad Fluxus"}
+{"i": 297, "v": "향전시티", "es": "Ciudad Fluxus"}
 {"i": 298, "v": "물에 잠긴 옛 대장간", "es": "Antigua Forja Inundada"}
 {"i": 299, "v": "19번도로", "es": "Ruta 19"}
-{"i": 300, "v": "종착동굴", "es": "Cueva Desenlace"}
-{"i": 301, "v": "종착동굴", "es": "Cueva Desenlace"}
+{"i": 300, "v": "끝의 동굴", "es": "Cueva Desenlace"}
+{"i": 301, "v": "끝의 동굴", "es": "Cueva Desenlace"}
 {"i": 302, "v": "카페 페드린", "es": "Café Pedrín"}
-{"i": 303, "v": "종착동굴", "es": "Cueva Desenlace"}
+{"i": 303, "v": "끝의 동굴", "es": "Cueva Desenlace"}
 {"i": 304, "v": "금세공방", "es": "Orfebrería"}
 {"i": 305, "v": "포켓몬 요새", "es": "Bastión Pokémon"}
 {"i": 306, "v": "전환", "es": "Transición"}
 {"i": 307, "v": "포켓몬센터", "es": "Centro Pokémon"}
 {"i": 308, "v": "집", "es": "Casa"}
 {"i": 309, "v": "망각의 감옥", "es": "Prisión del Olvido"}
-{"i": 310, "v": "프락탈시티", "es": "Ciudad Fractal"}
+{"i": 310, "v": "이설시티", "es": "Ciudad Fractal"}
 {"i": 311, "v": "포켓몬센터", "es": "Centro Pokémon"}
 {"i": 312, "v": "전환", "es": "Transición"}
 {"i": 313, "v": "집", "es": "Casa"}
@@ -329,9 +329,9 @@
 {"i": 328, "v": "옛 대장간 - 장면 2", "es": "Antigua Forja - Escenas 2"}
 {"i": 329, "v": "장면 2", "es": "Escena 2"}
 {"i": 330, "v": "동부 카타콤", "es": "Catacumbas Orientales"}
-{"i": 331, "v": "모사이코마을", "es": "Pueblo Mosaico"}
+{"i": 331, "v": "배롱마을", "es": "Pueblo Mosaico"}
 {"i": 332, "v": "지휘실", "es": "Sala de Mando"}
-{"i": 333, "v": "프락탈 장면", "es": "Escena Fractal"}
+{"i": 333, "v": "이설 장면", "es": "Escena Fractal"}
 {"i": 334, "v": "전환", "es": "Transición"}
 {"i": 335, "v": "해저", "es": "Fondo Marino"}
 {"i": 336, "v": "해저", "es": "Fondo Marino"}
@@ -354,13 +354,13 @@
 {"i": 353, "v": "떠도는 숲", "es": "Bosque Errante"}
 {"i": 354, "v": "23번도로", "es": "Ruta 23"}
 {"i": 355, "v": "떠도는 숲", "es": "Bosque Errante"}
-{"i": 356, "v": "포켓몬빌리지", "es": "Villa Pokemon"}
+{"i": 356, "v": "포켓몬마을", "es": "Villa Pokemon"}
 {"i": 357, "v": "포켓몬센터", "es": "Centro Pokémon"}
 {"i": 358, "v": "22번도로", "es": "Ruta 22"}
 {"i": 359, "v": "22번도로", "es": "Ruta 22"}
 {"i": 360, "v": "상기노마을", "es": "Pueblo Sanguino"}
-{"i": 361, "v": "루미날리아 신시가지 - 남쪽", "es": "Expansiones de Luminalia - Sur"}
-{"i": 362, "v": "루미날리아 신시가지 - 중앙", "es": "Expansiones de Luminalia - Centro"}
+{"i": 361, "v": "미르 신시가지 - 남쪽", "es": "Expansiones de Luminalia - Sur"}
+{"i": 362, "v": "미르 신시가지 - 중앙", "es": "Expansiones de Luminalia - Centro"}
 {"i": 363, "v": "전환", "es": "Transición"}
 {"i": 364, "v": "전환", "es": "Transición"}
 {"i": 365, "v": "떠도는 숲", "es": "Bosque Errante"}
@@ -373,14 +373,14 @@
 {"i": 372, "v": "떠도는 숲", "es": "Bosque Errante"}
 {"i": 373, "v": "23번도로", "es": "Ruta 23"}
 {"i": 374, "v": "서커스의 악몽", "es": "Pesadilla del Circo"}
-{"i": 375, "v": "루미날리아역", "es": "Estación Luminalia"}
+{"i": 375, "v": "미르 스테이션", "es": "Estación Luminalia"}
 {"i": 376, "v": "24번도로", "es": "Ruta 24"}
 {"i": 377, "v": "옛 장난감 가게", "es": "Vieja Juguetería"}
 {"i": 378, "v": "천막", "es": "Carpa"}
 {"i": 379, "v": "상기노 서커스", "es": "Circo Sanguino"}
 {"i": 380, "v": "서커스의 악몽", "es": "Pesadilla del Circo"}
-{"i": 381, "v": "얀트라시티", "es": "Ciudad Yantra"}
-{"i": 382, "v": "얀트라시티", "es": "Ciudad Yantra"}
+{"i": 381, "v": "사라시티", "es": "Ciudad Yantra"}
+{"i": 382, "v": "사라시티", "es": "Ciudad Yantra"}
 {"i": 383, "v": "밤하늘", "es": "Cielo Nocturno"}
 {"i": 384, "v": "어둠의 덤불", "es": "Maraña Oscura"}
 {"i": 385, "v": "프리즘타워", "es": "Torre Prisma"}
@@ -389,8 +389,8 @@
 {"i": 388, "v": "어둠의 덤불", "es": "Maraña Oscura"}
 {"i": 389, "v": "프리즘타워", "es": "Torre Prisma"}
 {"i": 390, "v": "프리즘타워", "es": "Torre Prisma"}
-{"i": 391, "v": "루미날리아 신시가지 - 서쪽", "es": "Expansiones de Luminalia - Oeste"}
-{"i": 392, "v": "루미날리아 신시가지 - 동쪽", "es": "Expansiones de Luminalia - Este"}
+{"i": 391, "v": "미르 신시가지 - 서쪽", "es": "Expansiones de Luminalia - Oeste"}
+{"i": 392, "v": "미르 신시가지 - 동쪽", "es": "Expansiones de Luminalia - Este"}
 {"i": 393, "v": "프리즘타워", "es": "Torre Prisma"}
 {"i": 394, "v": "포켓몬센터", "es": "Centro Pokémon"}
 {"i": 395, "v": "카페 갈라네스", "es": "Café Galanes"}
@@ -403,7 +403,7 @@
 {"i": 402, "v": "포켓몬 요새", "es": "Bastión Pokémon"}
 {"i": 403, "v": "서부 카타콤", "es": "Catacumbas Occidentales"}
 {"i": 404, "v": "좌초된 배", "es": "Barco Encallado"}
-{"i": 405, "v": "루미날리아 그랜드 호텔", "es": "Gran Hotel Luminalia"}
+{"i": 405, "v": "미르 그랜드 호텔", "es": "Gran Hotel Luminalia"}
 {"i": 406, "v": "집", "es": "Casa"}
 {"i": 407, "v": "서커스의 악몽", "es": "Pesadilla del Circo"}
 {"i": 408, "v": "서커스의 악몽", "es": "Pesadilla del Circo"}
@@ -413,24 +413,24 @@
 {"i": 412, "v": "수수께끼의 장소", "es": "Lugar Misterioso"}
 {"i": 413, "v": "얀트라 도서관", "es": "Biblioteca Yantra"}
 {"i": 414, "v": "25번도로", "es": "Ruta 25"}
-{"i": 415, "v": "루미날리아 그랜드 호텔", "es": "Gran Hotel Luminalia"}
+{"i": 415, "v": "미르 그랜드 호텔", "es": "Gran Hotel Luminalia"}
 {"i": 416, "v": "연구소", "es": "Laboratorio"}
-{"i": 417, "v": "루미날리아 그랜드 호텔", "es": "Gran Hotel Luminalia"}
-{"i": 418, "v": "루미날리아 그랜드 호텔", "es": "Gran Hotel Luminalia"}
+{"i": 417, "v": "미르 그랜드 호텔", "es": "Gran Hotel Luminalia"}
+{"i": 418, "v": "미르 그랜드 호텔", "es": "Gran Hotel Luminalia"}
 {"i": 419, "v": "세뇨리알 대성당", "es": "Catedral Señorial"}
-{"i": 420, "v": "반사동굴", "es": "Cueva de los Reflejos"}
+{"i": 420, "v": "비춤의 동굴", "es": "Cueva de los Reflejos"}
 {"i": 421, "v": "25번도로", "es": "Ruta 25"}
-{"i": 422, "v": "크롬레크마을", "es": "Pueblo Cromlech"}
+{"i": 422, "v": "옥유마을", "es": "Pueblo Cromlech"}
 {"i": 423, "v": "마스터타워", "es": "Torre Maestra"}
 {"i": 424, "v": "마스터타워", "es": "Torre Maestra"}
 {"i": 425, "v": "마스터타워", "es": "Torre Maestra"}
 {"i": 426, "v": "아스터 장면 3", "es": "Escena Aster 3"}
 {"i": 427, "v": "궁극병기", "es": "El Arma Definitiva"}
 {"i": 428, "v": "???"}
-{"i": 429, "v": "루미날리아 그랜드 호텔", "es": "Gran Hotel Luminalia"}
-{"i": 430, "v": "루미날리아역", "es": "Estación Luminalia"}
+{"i": 429, "v": "미르 그랜드 호텔", "es": "Gran Hotel Luminalia"}
+{"i": 430, "v": "미르 스테이션", "es": "Estación Luminalia"}
 {"i": 431, "v": "프리즘타워", "es": "Torre Prisma"}
-{"i": 432, "v": "푸른 만", "es": "Bahía Azul"}
+{"i": 432, "v": "아쥐르만", "es": "Bahía Azul"}
 {"i": 433, "v": "탈라시아 동굴", "es": "Cueva Talasia"}
 {"i": 434, "v": "창기둥", "es": "Columna Lanza"}
 {"i": 435, "v": "시티 1", "es": "Ciudad 1"}
@@ -459,11 +459,11 @@
 {"i": 458, "v": "장면 6", "es": "Escena 6"}
 {"i": 459, "v": "장면 7", "es": "Escena 7"}
 {"i": 460, "v": "장면 8", "es": "Escena 8"}
-{"i": 461, "v": "얀트라시티", "es": "Ciudad Yantra"}
-{"i": 462, "v": "얀트라시티", "es": "Ciudad Yantra"}
+{"i": 461, "v": "사라시티", "es": "Ciudad Yantra"}
+{"i": 462, "v": "사라시티", "es": "Ciudad Yantra"}
 {"i": 463, "v": "포켓몬센터", "es": "Centro Pokémon"}
-{"i": 464, "v": "루미날리아 창고", "es": "Almacén Luminalia"}
-{"i": 465, "v": "반사동굴", "es": "Cueva de los Reflejos"}
+{"i": 464, "v": "미르 창고", "es": "Almacén Luminalia"}
+{"i": 465, "v": "비춤의 동굴", "es": "Cueva de los Reflejos"}
 {"i": 466, "v": "25번도로", "es": "Ruta 25"}
 {"i": 467, "v": "25번도로", "es": "Ruta 25"}
 {"i": 468, "v": "비밀 온천", "es": "Balneario Oculto"}
@@ -478,9 +478,9 @@
 {"i": 477, "v": "궁극병기", "es": "El Arma Definitiva"}
 {"i": 478, "v": "집", "es": "Casa"}
 {"i": 479, "v": "25번도로", "es": "Ruta 25"}
-{"i": 480, "v": "크롬레크마을", "es": "Pueblo Cromlech"}
-{"i": 481, "v": "크롬레크 외곽", "es": "Afueras de Cromlech"}
-{"i": 482, "v": "크롬레크 외곽", "es": "Afueras de Cromlech"}
+{"i": 480, "v": "옥유마을", "es": "Pueblo Cromlech"}
+{"i": 481, "v": "옥유마을 외곽", "es": "Afueras de Cromlech"}
+{"i": 482, "v": "옥유마을 외곽", "es": "Afueras de Cromlech"}
 {"i": 483, "v": "25번도로", "es": "Ruta 25"}
 {"i": 484, "v": "25번도로", "es": "Ruta 25"}
 {"i": 485, "v": "25번도로", "es": "Ruta 25"}
@@ -495,12 +495,12 @@
 {"i": 494, "v": "장면 2", "es": "Escena 2"}
 {"i": 495, "v": "병기의 심장", "es": "Corazón del Arma"}
 {"i": 496, "v": "장면 3", "es": "Escena 3"}
-{"i": 497, "v": "크롬레크마을", "es": "Pueblo Cromlech"}
+{"i": 497, "v": "옥유마을", "es": "Pueblo Cromlech"}
 {"i": 498, "v": "장면 4", "es": "Escena 4"}
 {"i": 499, "v": "장면 5", "es": "Escena 5"}
 {"i": 500, "v": "마지막 장면들", "es": "Escenas Finales"}
 {"i": 501, "v": "장면 1", "es": "Escena 1"}
-{"i": 502, "v": "크롬레크마을", "es": "Pueblo Cromlech"}
+{"i": 502, "v": "옥유마을", "es": "Pueblo Cromlech"}
 {"i": 503, "v": "장면 2", "es": "Escena 2"}
 {"i": 504, "v": "리엔소마을", "es": "Pueblo Lienzo"}
 {"i": 505, "v": "에필로그", "es": "Epílogo"}
