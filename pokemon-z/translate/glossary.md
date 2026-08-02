@@ -56,7 +56,7 @@
 |---|---|---|---|---|
 | Arma Definitiva | 궁극병기 | | Team Azoth | 팀 아조스 |
 | Alquimia Pokémon | 포켓몬 연금술(사) | | pokécuartos/pokéfrancos | 포켓프랑 |
-| Legislador | 입법관 (2026-08-02 판정) | | Capitán/Capitana | 선장 (인물 불문) |
+| Legislador | 입법관 (2026-08-02 판정) | | Capitán/Capitana | **대장**(군 계열: 메를로·크리산토·센데라·근위대) / **선장**(배·해적: 로토) — 2026-08-02 재판정, 실기 소견 근거 |
 | Pokémon Sombrío/Shadow | 그림자 포켓몬 (GO 공식) | | Pokochos | 포핀 |
 | Hall de la Fama | 명예의 전당 | | Alfa/Nido Alfa | 알파/알파 둥지 (이 게임 고유) |
 | Regente | 섭정 | | Orden Yantra | 얀트라 교단 |
