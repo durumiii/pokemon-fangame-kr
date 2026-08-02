@@ -434,3 +434,23 @@ jsonl 실물 일치(잔여 3은 동일 원문 중복 키). 부수 소득: 기존
 NPC 어투 재번역 트랙 전체 종료. 배치 중복률 실측 5.5%(428행, ~$0.4) —
 공통 대사는 절23 단일 키라 어나더레드식 수천 중복은 구조적으로 없음.
 극성 상충 중복 원문 40건 목록: docs/research/npc-dup-es-conflicts.jsonl.
+
+## v5 패키징 — 3종 변형 체계 (2026-08-03)
+
+사용자 방침: ① 통 패치(v4 구성+디버그) ② 순수 번역/스크립트 모드 분리 배포,
+조사 스크립트는 번역과 불가분이라 순수 번역에 포함. 모드 적용 툴 배포는 차후.
+
+- **디버그 패치 실물 격리**: 커뮤니티 배포 Scripts (1).rxdata(Downloads)를
+  수술 전 원본과 diff — 변경은 3건뿐($DEBUG=true / 전투 후 i.heal /
+  퀵메뉴 라벨 [A][D][S] 괄호 제거). 통짜 파일을 쓰면 우리 수술·주입이
+  소실되므로 `share/patch_debug.py`(멱등, 사후 검증 내장)로 3편집만 이식.
+  PokeBattle_Battle 절이 CRLF라 앵커를 줄끝 무관으로 처리(실측).
+- **make_package.py --variant debug|clean|mods** 3종:
+  debug=수술+Josa+UI Text+디버그 / clean=원본(pre-intl)+Josa만 /
+  mods=수술+Josa+UI Text Scripts 단품. 각 판 Scripts 구성은 마커 실측으로
+  검증(수술 마커·MOD 절·$DEBUG 유무 전수 일치). korean.dat 해시는
+  세 경로(두 패키지+보관소) 동일 실측. 변형별 안내문 3종 신설, 읽어주세요
+  v5 갱신(NPC 어투 재작성·지명 정식화·부적 수정 등).
+- 산출: share/dist/ 3종 zip(통합+디버그 10.8MB·순수 번역 10.8MB·모드 묶음
+  2.0MB). 통합+디버그 zip은 클린 설치 테스트용으로 Windows Downloads 복사.
+  릴리스 업로드는 클린 설치 테스트 통과 후.
