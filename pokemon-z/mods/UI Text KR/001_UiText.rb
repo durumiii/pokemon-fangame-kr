@@ -5,11 +5,15 @@
 
 module UiTextKR
   TABLE = [
-    # 단축키 표기는 컨트롤러(Xbox 배치) 기준 — 가상 X·Y·Z가 패드 X·LB·RB에 얹혀
-    # 있다(F1 기본 바인딩 실측, Controller UX Z 설계 문서 참조)
-    ["[A] Curar", "[X] 회복"],
-    ["[S] Viajar", "[LB] 이동"],
-    ["[D] Brújula", "[RB] 나침반"],
+    # 단축키 표기는 키보드 기본 바인딩 기준(기본판 표준 — 2026-08-03 사용자 판정).
+    # 컨트롤러 라벨([X]/[LB]/[RB])은 Controller UX Z의 004_PadLabels 오버라이드 몫.
+    ["[A] Curar", "[A] 회복"],
+    ["[S] Viajar", "[S] 이동"],
+    ["[D] Brújula", "[D] 나침반"],
+    # 디버그 패치판은 괄호를 벗긴다("A Curar") — 무괄호 짝도 커버
+    ["A Curar", "A 회복"],
+    ["S Viajar", "S 이동"],
+    ["D Brújula", "D 나침반"],
     ["Esta zona no tiene encuentros", "이 지역에는 나오는 포켓몬이 없습니다"],
     ["No hay Pokémon salvajes", "야생 포켓몬이 없습니다"],
     ["Pokémon salvajes en esta zona: ", "이 지역의 야생 포켓몬: "],

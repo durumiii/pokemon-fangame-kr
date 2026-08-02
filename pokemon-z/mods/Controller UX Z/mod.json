@@ -6,16 +6,49 @@
   "install": "inject",
   "created_at": "2026-08-02",
   "scripts": [
-    { "file": "001_Cursor.rb", "script_name": "001_Cursor.rb" },
-    { "file": "002_TextEntryPad.rb", "script_name": "002_TextEntryPad.rb" },
-    { "file": "003_KeyItemPad.rb", "script_name": "003_KeyItemPad.rb" }
+    {
+      "file": "001_Cursor.rb",
+      "script_name": "001_Cursor.rb"
+    },
+    {
+      "file": "002_TextEntryPad.rb",
+      "script_name": "002_TextEntryPad.rb"
+    },
+    {
+      "file": "003_KeyItemPad.rb",
+      "script_name": "003_KeyItemPad.rb"
+    },
+    {
+      "file": "004_PadLabels.rb",
+      "script_name": "004_PadLabels.rb"
+    }
   ],
   "assets": [
-    { "file": "Graphics/Pictures/helpArrowKeys.png", "install_to": "Graphics/Pictures/helpArrowKeys.png", "replaces_crc": 1170200926 },
-    { "file": "Graphics/Pictures/helpCkey.png", "install_to": "Graphics/Pictures/helpCkey.png", "replaces_crc": 1279305480 },
-    { "file": "Graphics/Pictures/helpXkey.png", "install_to": "Graphics/Pictures/helpXkey.png", "replaces_crc": 480639110 },
-    { "file": "Graphics/Pictures/helpZkey.png", "install_to": "Graphics/Pictures/helpZkey.png", "replaces_crc": 1096498970 },
-    { "file": "Graphics/Pictures/helpF5key.png", "install_to": "Graphics/Pictures/helpF5key.png", "replaces_crc": 648367897 }
+    {
+      "file": "Graphics/Pictures/helpArrowKeys.png",
+      "install_to": "Graphics/Pictures/helpArrowKeys.png",
+      "replaces_crc": 1170200926
+    },
+    {
+      "file": "Graphics/Pictures/helpCkey.png",
+      "install_to": "Graphics/Pictures/helpCkey.png",
+      "replaces_crc": 1279305480
+    },
+    {
+      "file": "Graphics/Pictures/helpXkey.png",
+      "install_to": "Graphics/Pictures/helpXkey.png",
+      "replaces_crc": 480639110
+    },
+    {
+      "file": "Graphics/Pictures/helpZkey.png",
+      "install_to": "Graphics/Pictures/helpZkey.png",
+      "replaces_crc": 1096498970
+    },
+    {
+      "file": "Graphics/Pictures/helpF5key.png",
+      "install_to": "Graphics/Pictures/helpF5key.png",
+      "replaces_crc": 648367897
+    }
   ],
   "expects": {
     "TextEntry": "43095b0c2760565384ce8c5aaa3df9d2",
