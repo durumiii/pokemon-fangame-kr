@@ -64,6 +64,28 @@ redo/apply, 청크 원장 `batch/`). **모델은 gemini-3.6-flash + reasoning_ef
 씽킹이 존재 강제이나 양은 조절되고, 실측 A/B에서 품질 동급·비용 3.2배였다. 한 줄짜리
 탐침은 effort가 안 듣는 것처럼 보였다 — **작은 표본으로 파라미터를 판정하지 마라.**
 
+### 작업 개념도 (2026-08-02 구조화 — 새 제보는 이 표부터)
+
+텍스트 문제는 「닿는 경로(층)」 × 「값 판정」 2차원으로 떨어진다.
+**조사 첫 수는 `uv run translate/probe.py "문구"`** — dat 조회·jsonl·스크립트
+소스·canon을 한 번에 훑고 층을 알려준다. 수정 후엔
+`uv run translate/verify.py` 게이트(canon 정합·dat 미러·파수 키·수술 잔존·
+gsub 오폭)를 통과시킨다. 재배포 전 --strict.
+
+| 층 | 정본 | 도구 |
+|---|---|---|
+| ① 번역표 (_INTL→korean.dat) | translate/ko/*.jsonl | build.py |
+| ② 키 어긋남 (①의 병리) | 〃 + *.add.jsonl | 루비 오라클, export.py |
+| ③ 하드코딩 화면 문자열 | mods/UI Text KR 치환표 | modstore 재주입 |
+| ④ 런타임 가변 문자열(보간) | share/patch_intl.py EDITS | 소스 수술(멱등) |
+| ⑤ 로직-문자열 결합(기능 버그) | 〃 | 〃 (예: 부적 18종) |
+
+값 판정은 셋뿐: **(A) 본가에 있다 → 판정하지 않고 조회한다**
+(`translate/canon/canon.jsonl`, PKHeX 산 4,800여 항목 — verify가 전수 대조.
+이름만 같은 별개 대상은 canon/exceptions.jsonl, 구세대 스페인어명은
+canon/aliases.jsonl). **(B) 창작 요소 → glossary.md 판정.** **(C) 문체·어투 →
+voices.md.** 전거 서열은 glossary.md 머리 참조.
+
 **번역 정본은 `translate/ko/`다 — korean.dat는 빌드 산출물.** 절별 JSONL
 (한 줄 = 한 문장, 원문 병기)이고 `build.py`로 굽는다(왕복 검증 내장). **dat를 직접
 문지르면 직후 `export.py`로 재동기화하라.** apply_* 스크립트들은 정본 도입 이전의

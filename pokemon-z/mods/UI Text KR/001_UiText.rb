@@ -38,38 +38,43 @@ module UiTextKR
     [" Auto Save", " (자동 저장)"],
     ["Partida ", "저장 "],
     # 인물 안내(231_Guia Personajes) 인포그래픽 라벨 — names.json 음차 준수.
+    # 맨이름 쌍은 단어 경계 정규식 — Auretosk 등 라틴 이스터에그 부분 오폭 방지.
     # AZ·F3은 keep 명단이라 그대로. Hombre del Saco는 대사 정본 「자루 든 남자」.
     ["Áster Zéphir (AZ)", "아스테르 제피르 (AZ)"],
     ["Hombre del Saco", "자루 든 남자"],
-    ["Olivier", "올리비에"],
-    ["Crisanto", "크리산토"],
-    ["Melia", "멜리아"],
-    ["Merlot", "메를로"],
-    ["Canola", "카놀라"],
-    ["Mirra", "미라"],
-    ["Núbila", "누빌라"],
-    ["Hisopo", "히소포"],
-    ["Lanto", "란토"],
-    ["Alca", "알카"],
-    ["Wolfram", "볼프람"],
-    ["Zafra", "사프라"],
-    ["Loto", "로토"],
-    ["Genos", "게노스"],
-    ["Belladona", "벨라도나"],
-    ["Malvo", "말보"],
-    ["Aure", "아우레"],
-    ["Rosaleda", "로살레다"],
-    ["Ferrofaz", "페로파스"],
-    ["Pinot", "피노"],
-    ["Hibis", "히비스"],
-    ["Anturia", "안투리아"],
-    ["Cendera", "센데라"]
+    [/\bOlivier\b/, "올리비에"],
+    [/\bCrisanto\b/, "크리산토"],
+    [/\bMelia\b/, "멜리아"],
+    [/\bMerlot\b/, "메를로"],
+    [/\bCanola\b/, "카놀라"],
+    [/\bMirra\b/, "미라"],
+    [/\bNúbila\b/, "누빌라"],
+    [/\bHisopo\b/, "히소포"],
+    [/\bLanto\b/, "란토"],
+    [/\bAlca\b/, "알카"],
+    [/\bWolfram\b/, "볼프람"],
+    [/\bZafra\b/, "사프라"],
+    [/\bLoto\b/, "로토"],
+    [/\bGenos\b/, "게노스"],
+    [/\bBelladona\b/, "벨라도나"],
+    [/\bMalvo\b/, "말보"],
+    [/\bAure\b/, "아우레"],
+    [/\bRosaleda\b/, "로살레다"],
+    [/\bFerrofaz\b/, "페로파스"],
+    [/\bPinot\b/, "피노"],
+    [/\bHibis\b/, "히비스"],
+    [/\bAnturia\b/, "안투리아"],
+    [/\bCendera\b/, "센데라"]
   ]
 
   def self.fix(text)
     return text if !text.is_a?(String)
     TABLE.each do |pair|
-      text = text.gsub(pair[0], pair[1]) if text.include?(pair[0])
+      if pair[0].is_a?(Regexp)
+        text = text.gsub(pair[0], pair[1])
+      elsif text.include?(pair[0])
+        text = text.gsub(pair[0], pair[1])
+      end
     end
     text
   end

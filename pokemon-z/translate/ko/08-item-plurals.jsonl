@@ -717,7 +717,7 @@
 {"i": 716, "v": "기술머신108", "es": "MT108s"}
 {"i": 717, "v": "포켓몬나침반", "es": "Pokébrújula"}
 {"i": 718, "v": "정령플레이트", "es": "Tablas Duende"}
-{"i": 719, "v": "노말플레이트", "es": "Tablas Neutras"}
+{"i": 719, "v": "순백플레이트", "es": "Tablas Neutras"}
 {"i": 720, "v": "프리즘수정", "es": "Cristal Prisma"}
 {"i": 721, "v": "약점보험", "es": "Seguros Debilidad"}
 {"i": 722, "v": "트럭열쇠", "es": "Llave Camión"}
@@ -809,9 +809,9 @@
 {"i": 808, "v": "녹슨검", "es": "Espada Deslustrada"}
 {"i": 809, "v": "수상한소지품", "es": "Pertenencias Sospechosas"}
 {"i": 810, "v": "수면가루", "es": "Polvo de Sueño"}
-{"i": 811, "v": "은밀한망토", "es": "Capas Furtivas"}
-{"i": 812, "v": "복싱글러브", "es": "Guantes de Boxeo"}
-{"i": 813, "v": "순수한부적", "es": "Amuletos Puros"}
+{"i": 811, "v": "은밀망토", "es": "Capas Furtivas"}
+{"i": 812, "v": "펀치글러브", "es": "Guantes de Boxeo"}
+{"i": 813, "v": "클리어참", "es": "Amuletos Puros"}
 {"i": 814, "v": "턱뼈골격", "es": "Armazón de Fauces"}
 {"i": 815, "v": "지가르데조각상", "es": "Efigie de Zygarde"}
 {"i": 816, "v": "플라제스나이트", "es": "Florgesita"}
@@ -926,15 +926,15 @@
 {"i": 925, "v": "대여르나이트", "es": "Falinksitas"}
 {"i": 926, "v": "라이츄나이트", "es": "Raichuitas"}
 {"i": 927, "v": "치렁나이트", "es": "Chimechitas"}
-{"i": 928, "v": "앱솔나이트 Z", "es": "Absolitas Z"}
+{"i": 928, "v": "앱솔나이트Z", "es": "Absolitas Z"}
 {"i": 929, "v": "찌르호크나이트", "es": "Staraptitas"}
-{"i": 930, "v": "한카리아스나이트 Z", "es": "Garchompitas Z"}
+{"i": 930, "v": "한카리아스나이트Z", "es": "Garchompitas Z"}
 {"i": 931, "v": "루카리오나이트 Z", "es": "Lucarionitas Z"}
 {"i": 932, "v": "골루그나이트", "es": "Golurkitas"}
 {"i": 933, "v": "냐오닉스나이트", "es": "Meowsticitas"}
 {"i": 934, "v": "모단단게나이트", "es": "Crabominitas"}
 {"i": 935, "v": "갑주무사나이트", "es": "Golisopitas"}
-{"i": 936, "v": "마기아나나이트", "es": "Magearnitas"}
+{"i": 936, "v": "마기아나이트", "es": "Magearnitas"}
 {"i": 937, "v": "스코빌런나이트", "es": "Scovillainitas"}
 {"i": 938, "v": "드닐레이브나이트", "es": "Baxcalibritas"}
 {"i": 939, "v": "싸리용나이트", "es": "Tatsugirinitas"}
@@ -944,6 +944,6 @@
 {"i": 943, "v": "제라오라나이트", "es": "Zeraoritas"}
 {"i": 944, "v": "너즐록상장", "es": "Diploma Nuzlocke"}
 {"i": 945, "v": "영웅상장", "es": "Diploma Heroico"}
-{"i": 946, "v": "조작된주사위", "es": "Dado Trucado"}
+{"i": 946, "v": "속임수주사위", "es": "Dado Trucado"}
 {"i": 947, "v": "피의반지", "es": "Anillo Sanguino"}
 {"i": 948, "v": "아조스의도구", "es": "Herramientas Azoth"}
