@@ -124,18 +124,21 @@ def main():
     # 재번역 도구 — 남이 특정 대사를 다시 번역할 때 일관성을 지켜 주는 재료
     kit = tbl / "번역 도구"
     kit.mkdir()
-    for fname in ("prompt.md", "glossary.md", "voices.md", "speaker-aliases.json"):
+    for fname in ("prompt.md", "prompt-npc.md", "glossary.md", "voices.md",
+                  "speaker-aliases.json", "persona-table.jsonl", "sprite-groups.json"):
         shutil.copy2(TRANSLATE / fname, kit / fname)
+    for fname in ("canon.jsonl", "aliases.jsonl", "exceptions.jsonl", "messages.jsonl.gz"):
+        src = TRANSLATE / "canon" / fname
+        if src.exists():  # aliases는 아직 빈 개념일 수 있다
+            shutil.copy2(src, kit / fname)
     shutil.copy2(HERE / "빌드.py", tbl / "빌드.py")
     shutil.copy2(HERE.resolve().parents[0] / "vendor" / "fanlib" / "rubywrite.py",
                  tbl / "rubywrite.py")
     shutil.copy2(HERE / "수정법.txt", tbl / "수정법.txt")
+    shutil.copy2(HERE / "번역표-README.md", tbl / "README.md")
 
-    # 5. 안내문
+    # 5. 안내문 (판본 안내는 읽어주세요 본문에 통합 — 2026-08-03)
     shutil.copy2(HERE / "읽어주세요.txt", stage / "읽어주세요.txt")
-    extra = HERE / f"읽어주세요-{variant}.txt"
-    if extra.exists():
-        shutil.copy2(extra, stage / "이 판본은.txt")
 
     stage.rename(final)
     total = sum(1 for _ in final.rglob("*") if _.is_file())
