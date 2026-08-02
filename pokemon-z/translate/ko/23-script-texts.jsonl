@@ -1930,14 +1930,13 @@
 {"k": "You don't have enough money.", "v": "돈이 부족합니다."}
 {"k": "Certainly. You want {1}.\nThat will be ${2}. OK?", "v": "Certainly. You want {1}.\r\nThat will be ${2}. OK?"}
 {"k": "{1}? Certainly.\nHow many would you like?", "v": "{1}?  Certainly.\r\nHow many would you like?"}
-{"k": "{1}, and you want {2}.\nThat will be ${3}. OK?", "v": "{1}, and you want {2}.\r\nThat will be ${3}. OK?"}
+{"k": "{1}, and you want {2}.\nThat will be ${3}. OK?", "v": "{1} 카드 {2}장이군.\r\n전부 ${3}일세. 괜찮은가?"}
 {"k": "Failed to delete stored items", "v": "Failed to delete stored items"}
 {"k": "You have no more room in the Bag.", "v": "가방에 더 이상 공간이 없다."}
-{"k": "Here you are!\nThank you!", "v": "Here you are!\r\nThank you!"}
+{"k": "Here you are!\nThank you!", "v": "자, 여기 있네!\r\n고맙네!"}
 {"k": "I'll throw in a Premier Ball, too.", "v": "I'll throw in a Premier Ball, too."}
 {"k": "{1}? Oh, no.\nI can't buy that.", "v": "{1}? 이런.\r\n그건 살 수 없어."}
 {"k": "{1}?\nHow many would you like to sell?", "v": "{1}?\r\nHow many would you like to sell?"}
-{"k": "I can pay ${1}.\nWould that be OK?", "v": "I can pay ${1}.\r\nWould that be OK?"}
 {"k": "Turned over the {1} and received ${2}.", "v": "{1}(을)를 건네고 {2}포켓프랑을 받았습니다."}
 {"k": "Buy", "v": "구입"}
 {"k": "Sell", "v": "판매"}
@@ -2108,11 +2107,11 @@
 {"k": "{1} ${2}", "v": "{1} {2}포켓프랑"}
 {"k": "There are no cards that you can buy.", "v": "살 수 있는 카드가 없습니다."}
 {"k": "Money:\n{1}", "v": "소지금:\n{1}"}
-{"k": "The {1} card? Certainly.\nHow many would you like?", "v": "The {1} card?  Certainly.\r\nHow many would you like?"}
+{"k": "The {1} card? Certainly.\nHow many would you like?", "v": "{1} 카드 말이지? 물론 있네.\r\n몇 장 필요한가?"}
 {"k": "You have no room for more cards.", "v": "카드를 더 넣을 공간이 없습니다."}
 {"k": "You have no cards.", "v": "카드가 없습니다."}
 {"k": "The {1} card? Oh, no.\nI can't buy that.", "v": "{1} 카드? 이런.\r\n그건 살 수 없어."}
-{"k": "The {1} card? How many would you like to sell?", "v": "The {1} card?  How many would you like to sell?"}
+{"k": "The {1} card? How many would you like to sell?", "v": "{1} 카드 말인가? 몇 장 팔 텐가?"}
 {"k": "I can pay ${1}. Would that be OK?", "v": "{1}포켓프랑을 지불할 수 있습니다. 괜찮겠습니까?"}
 {"k": "Turned over the {1} card and received ${2}.", "v": "{1} 카드를 넘기고 {2}포켓프랑을 받았습니다."}
 {"k": "Graphics/Pictures/Slot Machine/images", "v": "Graphics/Pictures/Slot Machine/images"}
@@ -5362,7 +5361,6 @@
 {"k": "¿Sobrescribir la partida anterior?", "v": "이전 저장 데이터에 덮어쓰시겠습니까?"}
 {"k": "\\se[]{1} ha guardado la partida.\\se[save]\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] 게임을 저장했다.\\se[save]\\wtnp[30]"}
 {"k": "{1} está pensando en el Pokemon que habéis visto antes.", "v": "{1}\\j[은,는] 아까 본 포켓몬을 생각하고 있다."}
-{"k": "{1} - {2}", "v": "{1} - {2}"}
 {"k": "Set Ally Position", "v": "Set Ally Position"}
 {"k": "Set Enemy Position", "v": "Set Enemy Position"}
 {"k": "Set Enemy Altitude", "v": "Set Enemy Altitude"}
@@ -6748,48 +6746,19 @@
 {"k": "¡{1} ya lleva una unidad de {2}.\\1", "v": "{1}\\j[은,는] 이미 {2}\\j[을,를] 하나 지니고 있다.\\1"}
 {"k": "\\\\se[PC open]{1} accedió al Rancho Pokémon.", "v": "\\\\se[PC open]{1}\\j[은,는] 포켓몬 목장에 접속했다."}
 {"k": "\\\\se[computeropen]{1} accedió al Rancho Pokémon.", "v": "\\\\se[computeropen]{1}\\j[은,는] 포켓몬 목장에 접속했다."}
-{"k": "¡{1} envió a {2}!", "v": "{1}\\j[은,는]\r\n{2}\\j[을,를] 내보냈다!"}
-{"k": "<c3=404040,B0B0B0>{2} de {1} de {3}\n", "v": "<c3=404040,B0B0B0>{3}년 {1}월 {2}일\n"}
-{"k": "PS Máx.<r>{1} Ataque<r>{2} Defensa<r>{3} At. Esp.<r>{4} Def. Esp.<r>{5} Velocidad<r>{6}", "v": "최대 HP<r>{1}\r\n공격<r>{2}\r\n방어<r>{3}\r\n특수공격<r>{4}\r\n특수방어<r>{5}\r\n스피드<r>{6}"}
-{"k": "{1} ha olvidado cómo usar {2}.\u0001", "v": "{1}\\j[은,는] {2}\\j[을,를]\r\n깨끗이 잊었다!\u0001"}
-{"k": "¡{1} ha usado\r\n{2}!", "v": "{1}의\r\n{2}!"}
-{"k": "Listar por tipo. Sólamente atrapados.", "v": "타입별로 표시.\r\n잡은 포켓몬만."}
-{"k": "{1} puso \\c[1]{2}\\c[0] en el bolsillo <icon=bagPocket1>\\c[1]{3}\\c[0].", "v": "{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를]\r\n<icon=bagPocket1>\\c[1]{3}\\c[0] 포켓에 넣었다."}
-{"k": "{1} puso \\c[1]{2}\\c[0] en el bolsillo <icon=bagPocket2>\\c[1]{3}\\c[0].", "v": "{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를]\r\n<icon=bagPocket2>\\c[1]{3}\\c[0] 포켓에 넣었다."}
-{"k": "{1} puso \\c[1]{2}\\c[0] en el bolsillo <icon=bagPocket3>\\c[1]{3}\\c[0].", "v": "{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를]\r\n<icon=bagPocket3>\\c[1]{3}\\c[0] 포켓에 넣었다."}
-{"k": "{1} puso \\c[1]{2}\\c[0] en el bolsillo <icon=bagPocket4>\\c[1]{3}\\c[0].", "v": "{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를]\r\n<icon=bagPocket4>\\c[1]{3}\\c[0] 포켓에 넣었다."}
-{"k": "{1} puso \\c[1]{2}\\c[0] en el bolsillo <icon=bagPocket5>\\c[1]{3}\\c[0].", "v": "{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를]\r\n<icon=bagPocket5>\\c[1]{3}\\c[0] 포켓에 넣었다."}
-{"k": "{1} puso \\c[1]{2}\\c[0] en el bolsillo <icon=bagPocket6>\\c[1]{3}\\c[0].", "v": "{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를]\r\n<icon=bagPocket6>\\c[1]{3}\\c[0] 포켓에 넣었다."}
-{"k": "{1} puso \\c[1]{2}\\c[0] en el bolsillo <icon=bagPocket7>\\c[1]{3}\\c[0].", "v": "{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를]\r\n<icon=bagPocket7>\\c[1]{3}\\c[0] 포켓에 넣었다."}
-{"k": "{1} puso \\c[1]{2}\\c[0] en el bolsillo <icon=bagPocket8>\\c[1]{3}\\c[0].", "v": "{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를]\r\n<icon=bagPocket8>\\c[1]{3}\\c[0] 포켓에 넣었다."}
-{"k": "¡{1} te desafía!", "v": "{1}\\j[이,가]\r\n승부를 걸어왔다!"}
+{"k": "{1} puso \\c[1]{2}\\c[0]\nen el bolsillo <icon=bagPocket1>\\c[1]{3}\\c[0].", "v": "{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를]\r\n<icon=bagPocket1>\\c[1]{3}\\c[0] 포켓에 넣었다."}
+{"k": "{1} puso \\c[1]{2}\\c[0]\nen el bolsillo <icon=bagPocket2>\\c[1]{3}\\c[0].", "v": "{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를]\r\n<icon=bagPocket2>\\c[1]{3}\\c[0] 포켓에 넣었다."}
+{"k": "{1} puso \\c[1]{2}\\c[0]\nen el bolsillo <icon=bagPocket3>\\c[1]{3}\\c[0].", "v": "{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를]\r\n<icon=bagPocket3>\\c[1]{3}\\c[0] 포켓에 넣었다."}
+{"k": "{1} puso \\c[1]{2}\\c[0]\nen el bolsillo <icon=bagPocket4>\\c[1]{3}\\c[0].", "v": "{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를]\r\n<icon=bagPocket4>\\c[1]{3}\\c[0] 포켓에 넣었다."}
+{"k": "{1} puso \\c[1]{2}\\c[0]\nen el bolsillo <icon=bagPocket5>\\c[1]{3}\\c[0].", "v": "{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를]\r\n<icon=bagPocket5>\\c[1]{3}\\c[0] 포켓에 넣었다."}
+{"k": "{1} puso \\c[1]{2}\\c[0]\nen el bolsillo <icon=bagPocket6>\\c[1]{3}\\c[0].", "v": "{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를]\r\n<icon=bagPocket6>\\c[1]{3}\\c[0] 포켓에 넣었다."}
+{"k": "{1} puso \\c[1]{2}\\c[0]\nen el bolsillo <icon=bagPocket7>\\c[1]{3}\\c[0].", "v": "{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를]\r\n<icon=bagPocket7>\\c[1]{3}\\c[0] 포켓에 넣었다."}
+{"k": "{1} puso \\c[1]{2}\\c[0]\nen el bolsillo <icon=bagPocket8>\\c[1]{3}\\c[0].", "v": "{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를]\r\n<icon=bagPocket8>\\c[1]{3}\\c[0] 포켓에 넣었다."}
 {"k": "¡{1} ha sobrevivido al envenenamiento!\\n¡El veneno ha desaparecido!\\1", "v": "{1}\\j[은,는] 독을 이겨냈다!\\n독이 사라졌다!\\1"}
-{"k": "\r\n¡Oh! ¡Ha picado algo!", "v": "앗! 입질이 왔다!"}
-{"k": "... ... ... ...¡Nada! No responde.", "v": "... ... ... ...아무것도 없다!\r\n반응이 없다."}
-{"k": "<c3=404040,B0B0B0>\"Estado del Huevo\"\n", "v": "<c3=404040,B0B0B0>\"알 상태\"\n"}
-{"k": "<c3=404040,B0B0B0>Un extraño Huevo Pokémon hallado por <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.\n", "v": "<c3=404040,B0B0B0><c3=F83820,E09890>{1}<c3=404040,B0B0B0>\\j[이,가] 발견한 이상한 포켓몬 알.\n"}
-{"k": "Borrando partida... No cierres el juego...\\wtnp[0]", "v": "저장 데이터를 지우는 중...\r\n게임을 끄지 마세요...\\wtnp[0]"}
 {"k": "Guardas {1} en\\nel bolsillo <icon=bagPocket{2}>\\c[1]{3}\\c[0].", "v": "{1}\\j[을,를] 가방의\\n<icon=bagPocket{2}>\\c[1]{3}\\c[0] 포켓에 넣었다."}
-{"k": "Listar por color del cuerpo. Sólamente los vistos.", "v": "몸 색깔별로 표시.\r\n본 포켓몬만."}
-{"k": "Listar por primera letra del nombre. Solamente los vistos.", "v": "이름 첫 글자별로 표시.\r\n본 포켓몬만."}
-{"k": "No afecta a\r\n{1}...", "v": "{1}에게는\r\n효과가 없다..."}
-{"k": "No ha afectado a {1}...", "v": "{1}에게는\r\n효과가 없었다..."}
-{"k": "No puede utilizar el movimiento Martillo Colosal  dos veces seguidas", "v": "기가톤해머 기술을 두 번 연속으로 사용할 수 없다"}
-{"k": "POKéMON ANTERIOR: {1} Nv{2} MáxPS: {3}\nESTE POKÉMON: {4} Nv{5} MáxPS: {6}", "v": "이전 포켓몬:\n {1} Lv{2} 최대HP: {3}\n이 포켓몬:\n {4} Lv{5} 최대HP: {6}"}
-{"k": "PS Máx.<r>+{1} Ataque<r>+{2} Defensa<r>+{3} At. Esp.<r>+{4} Def. Esp.<r>+{5} Velocidad<r>+{6}", "v": "최대 HP<r>+{1}\r\n공격<r>+{2}\r\n방어<r>+{3}\r\n특수공격<r>+{4}\r\n특수방어<r>+{5}\r\n스피드<r>+{6}"}
-{"k": "PS Máx.<r>+{1} Ataque<r>+{2} Defensa<r>+{3} At. Esp<r>+{4} Def. Esp<r>+{5} Velocidad<r>+{6}", "v": "최대 HP<r>+{1}\r\n공격<r>+{2}\r\n방어<r>+{3}\r\n특수공격<r>+{4}\r\n특수방어<r>+{5}\r\n스피드<r>+{6}"}
-{"k": "PS Máx.<r>{1} Ataque<r>{2} Defensa<r>{3} At. Esp<r>{4} Def. Esp<r>{5} Velocidad<r>{6}", "v": "최대 HP<r>{1}\r\n공격<r>{2}\r\n방어<r>{3}\r\n특수공격<r>{4}\r\n특수방어<r>{5}\r\n스피드<r>{6}"}
-{"k": "Por el {2} de {1}, {3} envía a {4}.\u0001", "v": "{1}의 {2}\\j[으로,로]\r\n{3}\\j[은,는] {4}\\j[을,를] 내보냈다.\u0001"}
-{"k": "Puedo pagarte ${1}. ¿Te parece bien?", "v": "${1}에 사겠습니다.\r\n괜찮으신가요?"}
-{"k": "Ribbon for clearing the Pokémon League and entering the Hall of Fame in another region. ", "v": "다른 지방의 포켓몬리그를 제패하고 명예의 전당에 오른 기념 리본. "}
-{"k": "The {1} card? Oh, no. I can't buy that.", "v": "{1} 카드요? 아, 안 됩니다.\r\n그건 살 수 없어요."}
 {"k": "\\se[ItemGet]¡Has obtenido \\c[1]{1}\\c[0]!\\nÉsta contiene \\c[1]{2}\\c[0].\\wtnp[30]", "v": "\\se[ItemGet]\\c[1]{1}\\c[0]\\j[을,를] 손에 넣었다!\\n안에는 \\c[1]{2}\\c[0]\\j[이,가] 들어 있다.\\wtnp[30]"}
 {"k": "\\se[ItemGet]¡{1} ha encontrado \\c[1]{2}\\c[0]!\\nÉsta contiene \\c[1]{3}\\c[0].\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를] 발견했다!\\n안에는 \\c[1]{3}\\c[0]\\j[이,가] 들어 있다.\\wtnp[30]"}
 {"k": "\\se[ItemGet]¡{1} ha recibido \\c[1]{2}\\c[0]!\\nÉste contiene \\c[1]{3}\\c[0].\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를] 받았다!\\n안에는 \\c[1]{3}\\c[0]\\j[이,가] 들어 있다.\\wtnp[30]"}
-{"k": "\\se[]¡Mon Dieu! ¡{1} está evolucionando!\\^", "v": "\\se[]맙소사!\r\n{1}의 모습이...!\\^"}
-{"k": "\\se[]¡Oh, dios mío! ¡{1} está evolucionando!\\^", "v": "\\se[]세상에!\r\n{1}의 모습이...!\\^"}
-{"k": "{1} entró en pánico y dejó caer ${2}...", "v": "{1}\\j[은,는] 당황해서\r\n${2}\\j[을,를] 떨어뜨렸다..."}
-{"k": "{1} es una buena elección. Te costará ${2}. ¿De acuerdo?", "v": "{1}\\j[은,는] 좋은 선택입니다.\r\n${2}입니다. 괜찮으신가요?"}
 {"k": "{1} ha metido la cosecha de {2} en el Bolsillo de <icon=bagPocket1>\\c[1]Bayas\\c[0] de la Mochila.\u0001", "v": "{1}\\j[은,는] 수확한 {2}\\j[을,를] 가방의 <icon=bagPocket1>\\c[1]나무열매\\c[0] 포켓에 넣었다.\u0001"}
 {"k": "{1} ha metido la cosecha de {2} en el Bolsillo de <icon=bagPocket2>\\c[1]Bayas\\c[0] de la Mochila.\u0001", "v": "{1}\\j[은,는] 수확한 {2}\\j[을,를] 가방의 <icon=bagPocket2>\\c[1]나무열매\\c[0] 포켓에 넣었다.\u0001"}
 {"k": "{1} ha metido la cosecha de {2} en el Bolsillo de <icon=bagPocket3>\\c[1]Bayas\\c[0] de la Mochila.\u0001", "v": "{1}\\j[은,는] 수확한 {2}\\j[을,를] 가방의 <icon=bagPocket3>\\c[1]나무열매\\c[0] 포켓에 넣었다.\u0001"}
@@ -6798,11 +6767,7 @@
 {"k": "{1} ha metido la cosecha de {2} en el Bolsillo de <icon=bagPocket6>\\c[1]Bayas\\c[0] de la Mochila.\u0001", "v": "{1}\\j[은,는] 수확한 {2}\\j[을,를] 가방의 <icon=bagPocket6>\\c[1]나무열매\\c[0] 포켓에 넣었다.\u0001"}
 {"k": "{1} ha metido la cosecha de {2} en el Bolsillo de <icon=bagPocket7>\\c[1]Bayas\\c[0] de la Mochila.\u0001", "v": "{1}\\j[은,는] 수확한 {2}\\j[을,를] 가방의 <icon=bagPocket7>\\c[1]나무열매\\c[0] 포켓에 넣었다.\u0001"}
 {"k": "{1} ha metido la cosecha de {2} en el Bolsillo de <icon=bagPocket8>\\c[1]Bayas\\c[0] de la Mochila.\u0001", "v": "{1}\\j[은,는] 수확한 {2}\\j[을,를] 가방의 <icon=bagPocket8>\\c[1]나무열매\\c[0] 포켓에 넣었다.\u0001"}
-{"k": "{1} ha usado\r\n{2}.", "v": "{1}의\r\n{2}."}
 {"k": "{1} se ha desmayado...\\1", "v": "{1}\\j[은,는] 쓰러졌다...\\1"}
-{"k": "{1}... Y quieres {2}. Te costará ${3}. ¿De acuerdo?", "v": "{1}... 그리고 {2}\\j[을,를] 원하시는군요.\r\n${3}입니다. 괜찮으신가요?"}
-{"k": "¡Aparecieron {1} y {2} salvajes!", "v": "야생 {1}\\j[과,와]\r\n{2}\\j[이,가] 나타났다!"}
-{"k": "¡Aquí tienes! ¡Gracias!", "v": "여기 있습니다!\r\n감사합니다!"}
 {"k": "¡Clic!\\wt[10]\n......\\wt[5] ......\\1", "v": "찰칵!\\wt[10]\n......\\wt[5] ......\\1"}
 {"k": "¡El {1} salvaje dejó\ncaer {2} <icon=bagPocket1>!", "v": "야생 {1}\\j[이,가]\n{2} <icon=bagPocket1>\\j[을,를] 떨어뜨렸다!"}
 {"k": "¡El {1} salvaje dejó\ncaer {2} <icon=bagPocket2>!", "v": "야생 {1}\\j[이,가]\n{2} <icon=bagPocket2>\\j[을,를] 떨어뜨렸다!"}
@@ -6812,19 +6777,6 @@
 {"k": "¡El {1} salvaje dejó\ncaer {2} <icon=bagPocket6>!", "v": "야생 {1}\\j[이,가]\n{2} <icon=bagPocket6>\\j[을,를] 떨어뜨렸다!"}
 {"k": "¡El {1} salvaje dejó\ncaer {2} <icon=bagPocket7>!", "v": "야생 {1}\\j[이,가]\n{2} <icon=bagPocket7>\\j[을,를] 떨어뜨렸다!"}
 {"k": "¡El {1} salvaje dejó\ncaer {2} <icon=bagPocket8>!", "v": "야생 {1}\\j[이,가]\n{2} <icon=bagPocket8>\\j[을,를] 떨어뜨렸다!"}
-{"k": "¡{1} envió a {2}! ¡Adelante, {3}!", "v": "{1}\\j[은,는] {2}\\j[을,를] 내보냈다!\r\n가랏, {3}!"}
-{"k": "¡{1} ha derrotado a {2}!", "v": "{1}\\j[은,는]\r\n{2}\\j[을,를] 쓰러뜨렸다!"}
-{"k": "¡{1} ha obtenido ${2} por la victoria!", "v": "{1}\\j[은,는] 승리해서\r\n${2}\\j[을,를] 얻었다!"}
-{"k": "¡{1} ha perdido contra {2}!", "v": "{1}\\j[은,는]\r\n{2}에게 졌다!"}
-{"k": "¡{1} ha recuperado el movimiento {2}!", "v": "{1}\\j[은,는] 기술 \n{2}\\j[을,를] 되찾았다!"}
-{"k": "¡{1} usó\r\n{2}!", "v": "{1}의\r\n{2}!"}
-{"k": "¡{1} y {2} te desafían!", "v": "{1}\\j[과,와] {2}\\j[이,가]\r\n승부를 걸어왔다!"}
-{"k": "¡{1}, cambio! ¡Vuelve aquí!", "v": "{1}, 교체!\r\n돌아와!"}
-{"k": "¿Qué? ¡La evolución de {1} se ha detenido!", "v": "어라?\r\n{1}의 진화가 멈췄다!"}
-{"k": "¿Qué? ¡{1} ha dejado de evolucionar!", "v": "어라?\r\n{1}의 진화가 멈췄다!"}
-{"k": "¿{1}? ¿Cuántas unidades quieres vender?", "v": "{1} 말인가요?\r\n몇 개나 파시겠습니까?"}
-{"k": "¿{1}? Buena elección. ¿Cuántas unidades quieres?", "v": "{1} 말인가요? 좋은 선택입니다.\r\n몇 개 드릴까요?"}
-{"k": "¿{1}? ¡Oh, no! No puedo comprar eso.", "v": "{1} 말인가요? 아, 안 됩니다!\r\n그건 살 수 없어요."}
 {"k": "La caja \"{1}\" está llena.\\1", "v": "\"{1}\" 박스가 가득 찼다.\\1"}
 {"k": "¡No hay espacio para el Pokémon!\\1", "v": "포켓몬을 넣을 자리가 없다!\\1"}
 {"k": "Altavoz: ¡Ding-dong!\\1", "v": "스피커: 딩동!\\1"}
@@ -6840,21 +6792,10 @@
 {"k": "¡El {1} indica algo justo bajo los pies!\\1", "v": "{1}\\j[이,가] 바로 발밑에 무언가 있다고 알리고 있다!\\1"}
 {"k": "¡Alto!\n¡El {1} está respondiendo!\\1", "v": "앗!\n{1}\\j[이,가] 반응하고 있다!\\1"}
 {"k": "Ésta contiene {1}.\\1", "v": "안에 {1}\\j[이,가] 들어 있다.\\1"}
-{"k": "The {1} card? Certainly. How many would you like?", "v": "{1} 카드 말이지? 물론 있네.\r\n몇 장 필요한가?"}
-{"k": "{1}, and you want {2}. That will be ${3}. OK?", "v": "{1} 카드 {2}장이군.\r\n전부 ${3}일세. 괜찮은가?"}
-{"k": "Here you are! Thank you!", "v": "자, 여기 있네!\r\n고맙네!"}
-{"k": "The {1} card?  How many would you like to sell?", "v": "{1} 카드 말인가? 몇 장 팔 텐가?"}
 {"k": "¿Y ésto?\\1", "v": "어라, 이건?\\1"}
 {"k": "No starting position was set in the map editor.\\1", "v": "맵 에디터에서 시작 위치가 설정되지 않았습니다.\\1"}
-{"k": "Llevas:<r>{1:d}  ", "v": "가진 수:<r>{1:d}  "}
 {"k": "¡{1} ha recibido {2}!\\se[ItemGet]\\1", "v": "{1}\\j[은,는] {2}\\j[을,를] 받았다!\\se[ItemGet]\\1"}
 {"k": "¡Hay un Pokémon que está listo para abrir su corazón!\\1", "v": "마음을 열 준비가 된 포켓몬이 있다!\\1"}
-{"k": "{1}  Nv{2}  {3}", "v": "{1}  Lv.{2}  {3}"}
-{"k": "{1}  Nv{2}  {3}/{4}", "v": "{1}  Lv.{2}  {3}/{4}"}
-{"k": "<c3=404040,B0B0B0>Naturaleza <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.\n", "v": "<c3=404040,B0B0B0>성격: <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.\n"}
-{"k": "<c3=F83820,E09890>Faraway place\n", "v": "<c3=F83820,E09890>먼 곳\n"}
-{"k": "<c3=404040,B0B0B0>Huevo eclosionado.\n", "v": "<c3=404040,B0B0B0>알이 부화했다.\n"}
-{"k": "{1:s} ID: {2:05d} EO: {3:s}\\wtnp[0]", "v": "{1:s}\r\nID: {2:05d}   어버이: {3:s}\\wtnp[0]"}
 {"k": "{1:s} ID: {2:05d} EO: {3:s}\\1", "v": "{1:s}\r\nID: {2:05d}   어버이: {3:s}\\1"}
 {"k": "Por el {2} de {1}, {3} envía a {4}.\\1", "v": "{1}의 {2}\\j[와,과] 맞바꾸어\r\n{3}\\j[이,가] {4}\\j[을,를] 보내왔다.\\1"}
 {"k": "El Corral \"{1}\" del Rancho de {2} está lleno.\\1", "v": "{2}의 목장 우리 \"{1}\"\\j[이,가] 가득 찼다.\\1"}
@@ -6863,10 +6804,6 @@
 {"k": "¡{1} ha obtenido un {2}!\\se[PokemonGet]\\1", "v": "{1}\\j[은,는] {2}\\j[을,를] 손에 넣었다!\\se[PokemonGet]\\1"}
 {"k": "{1} ha recibido un Pokémon de {2}.\\se[PokemonGet]\\1", "v": "{1}\\j[은,는] {2}에게서 포켓몬을 받았다.\\se[PokemonGet]\\1"}
 {"k": "{1} ha recibido un Pokémon.\\se[PokemonGet]\\1", "v": "{1}\\j[은,는] 포켓몬을 받았다.\\se[PokemonGet]\\1"}
-{"k": "¡Mi espada destruye imperios enteros! ¿Qué crees que será capaz de hacerle a tus Pokémon? ", "v": "내 검은 제국도 통째로 무너뜨리지! 네 포켓몬쯤이야 어떻게 될 것 같나? "}
-{"k": "El nivel nuevo ({1}) es menor que el nivel actual del Pokémon ({2}), lo que no debería pasar. [Depurar: {3}]", "v": "새 레벨({1})이 포켓몬의 현재 레벨({2})보다\r\n낮습니다. 일어나서는 안 되는 일입니다.\r\n[디버그: {3}]"}
-{"k": "                             PS ATQ DEF AES DES VEL TOT", "v": "                             HP 공격 방어 특공 특방 스피드 합계"}
-{"k": "STATS BASE:       {1:03d} {2:03d} {3:03d} {5:03d} {6:03d} {4:03d} {7:03d}", "v": "종족값:           {1:03d} {2:03d} {3:03d} {5:03d} {6:03d} {4:03d} {7:03d}"}
 {"k": "\\se[]1,\\wt[4] 2,\\wt[4] y...\\wt[8] ...\\wt[8] ...\\wt[8] ¡Puf!\\se[balldrop]\\1", "v": "\\se[]1,\\wt[4] 2,\\wt[4] 그리고...\\wt[8] ...\\wt[8] ...\\wt[8] 짠!\\se[balldrop]\\1"}
 {"k": "{1} ha olvidado cómo usar {2}.\\1", "v": "{1}\\j[은,는] {2} 쓰는 법을\r\n깔끔하게 잊어버렸다.\\1"}
 {"k": "Y...\\1", "v": "그리고...\\1"}
