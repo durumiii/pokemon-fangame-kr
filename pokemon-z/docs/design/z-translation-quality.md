@@ -474,7 +474,7 @@ NPC 어투 재번역 트랙 전체 종료. 배치 중복률 실측 5.5%(428행, 
 GUI 화자별 보기의 크리산토 분산(crisantoTS/w/Montado…) 문제는 어간 묶음
 보기 개선 후보로 기록.
 
-## v5 릴리스 (2026-08-03)
+## v5 릴리스 (2026-08-03, 최종 구성 2차)
 
 https://github.com/durumiii/pokemon-fangame-kr/releases/tag/v5 — 3종 자산
 (통합+디버그 10.8MB · 순수 번역 10.8MB · 스크립트 모드 묶음 2.0MB).
@@ -482,3 +482,8 @@ https://github.com/durumiii/pokemon-fangame-kr/releases/tag/v5 — 3종 자산
 ASCII 파일명+한글 표시 라벨(`파일#라벨`)로 재업로드(교훈: 릴리스 자산은
 ASCII 파일명). 릴리스 직전 게이트 --strict green, 검수 저장 46건·크리산토
 재손질 688행·격상 교정 2건까지 반영. v4 이후 미배포 누적분 전량 해소.
+
+릴리스 구성 확정(사용자 지시): **기본판(디버그 없는 통합, pokemon-z-kr-patch-v5.zip)
+이 첫 자산** — 자산 정렬이 알파벳순이라 patch-v5가 맨 위. 통합+디버그·순수 번역
+유지, 스크립트 모드 묶음은 자산에서 제거(로컬 변형으로는 존치). make_package에
+--variant full 신설.

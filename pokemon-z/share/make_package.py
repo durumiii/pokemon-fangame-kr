@@ -60,6 +60,7 @@ def main():
     if "--variant" in sys.argv:
         variant = sys.argv[sys.argv.index("--variant") + 1]
     default_names = {
+        "full": "포켓몬Z 한글패치 v5",   # 기본판 — 디버그 없는 통합
         "debug": "포켓몬Z 한글패치 v5 (통합+디버그)",
         "clean": "포켓몬Z 한글패치 v5 (순수 번역)",
         "mods": "포켓몬Z 한글패치 v5 (스크립트 모드 묶음)",
@@ -107,7 +108,7 @@ def main():
         shutil.copy2(BASE_MOD / "Data" / "Scripts.rxdata.pre-intl.bak",
                      stage / "Data" / "Scripts.rxdata")
         inject = ["Josa Select"]
-    else:  # debug(통 패치)
+    else:  # full(기본판)·debug(통합+디버그) — 수술판 Scripts + 전체 주입
         inject = list(INJECT_MODS)
     for mod in inject:
         r = modstore.apply(STORE / "Pokemon Z Fangame", mod, stage)
