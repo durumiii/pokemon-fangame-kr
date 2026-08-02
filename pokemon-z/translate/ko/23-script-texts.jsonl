@@ -6097,10 +6097,10 @@
 {"k": "Había una vez un Pokémon Princesa que se hizo muuuuuuy fuerte...", "v": "옛날 옛적에 아주아주 강해진 공주 포켓몬이 있었대..."}
 {"k": "Estás a punto de desatar un calor infernal, ¿lo has pensado bien?", "v": "지옥 같은 열기를 해방하려는 참인데, 잘 생각해 보았나?"}
 {"k": "No puedes viajar aquí.", "v": "여기로는 이동할 수 없다."}
-{"k": "El Pokévial está vacío. Recárgalo en el Centro Pokémon.", "v": "포켓약병이 비었습니다. 포켓몬센터에서 채우십시오."}
-{"k": "¿Curar a tu equipo con el Pokévial?", "v": "포켓약병으로 파티를 회복시키겠습니까?"}
-{"k": "¿Curar a tu equipo con el Pokévial? Le quedan {1} usos de {2}", "v": "포켓약병으로 파티를 회복시키겠습니까? {2}회 중 {1}회 남음"}
-{"k": "¿Quieres curar a tu equipo con el Pokévial? Le quedan {1} usos de {2}.", "v": "포켓약병으로 파티를 회복시키겠습니까? {2}회 중 {1}회 남았습니다."}
+{"k": "El Pokévial está vacío. Recárgalo en el Centro Pokémon.", "v": "포켓몬약병이 비었습니다. 포켓몬센터에서 채우십시오."}
+{"k": "¿Curar a tu equipo con el Pokévial?", "v": "포켓몬약병으로 파티를 회복시키겠습니까?"}
+{"k": "¿Curar a tu equipo con el Pokévial? Le quedan {1} usos de {2}", "v": "포켓몬약병으로 파티를 회복시키겠습니까? {2}회 중 {1}회 남음"}
+{"k": "¿Quieres curar a tu equipo con el Pokévial? Le quedan {1} usos de {2}.", "v": "포켓몬약병으로 파티를 회복시키겠습니까? {2}회 중 {1}회 남았습니다."}
 {"k": "El agua parece tranquila, ¿quieres navegar?", "v": "수면이 잔잔해 보인다. 파도타기를 할까?"}
 {"k": "¡{1} usó Montura Surf!", "v": "{1}\\j[은,는] 파도타기라이드를 썼다!"}
 {"k": "¡{2} de {1} provocó una nevada!", "v": "{1}의 {2}\\j[이,가] 눈을 내리게 했다!"}
@@ -6645,8 +6645,8 @@
 {"k": "Consigue al menos 50 recetas de alquimia.", "v": "연금술 레시피를 50개 이상 모아라."}
 {"k": "Maestro Alfa", "v": "Maestro Alfa"}
 {"k": "Derrota a los Pokémon de los 18 Nidos Alfa.", "v": "알파 둥지 18곳의 포켓몬을 쓰러뜨려라."}
-{"k": "Pokévial Definitivo", "v": "궁극의 포켓약병"}
-{"k": "Encuentra las 4 mejoras del Pokévial", "v": "포켓약병 강화 4개를 찾아라"}
+{"k": "Pokévial Definitivo", "v": "궁극의 포켓몬약병"}
+{"k": "Encuentra las 4 mejoras del Pokévial", "v": "포켓몬약병 강화 4개를 찾아라"}
 {"k": "Hogar reconstruido", "v": "재건된 집"}
 {"k": "Trae a 15 personas a Pueblo Acrílico.", "v": "아크릴리코마을에 15명을 데려와라."}
 {"k": "Iniciado en la Pokédex", "v": "도감에 등록됨"}
@@ -6657,7 +6657,7 @@
 {"k": "Captura 750 Pokémon.", "v": "포켓몬 750마리를 잡아라."}
 {"k": "La Leyenda Z", "v": "Z의 전설"}
 {"k": "Consigue todos los logros.", "v": "모든 업적을 달성하라."}
-{"k": "Encuentra las 4 mejoras del Pokévial.", "v": "포켓약병 강화 4개를 찾아라."}
+{"k": "Encuentra las 4 mejoras del Pokévial.", "v": "포켓몬약병 강화 4개를 찾아라."}
 {"k": "Captura 250 Pokémon.", "v": "포켓몬 250마리를 잡아라."}
 {"k": "Vence a la Sombra de la Ópera.", "v": "오페라의 그림자를 쓰러뜨려라."}
 {"k": "Vence a la Maravilla Mecánica.", "v": "기계 장치의 경이를 쓰러뜨려라."}
@@ -6713,7 +6713,7 @@
 {"k": "¡Tienes un talento inusitado! ¡Eso no te lo voy a negar nunca!", "v": "보기 드문 재능이야! 그건 절대로 부정하지 않겠다!"}
 {"k": "¡No puedes usar ataques de daño fijo!", "v": "고정 데미지 기술은 쓸 수 없다!"}
 {"k": "¡Un placer hacer intercambios contigo!", "v": "교환해서 즐거웠어!"}
-{"k": "Encuentra las 4 mejoras del Pokévial (5 usos del vial).", "v": "포켓약병 강화 4개를 찾아라 (약병 5회 사용)."}
+{"k": "Encuentra las 4 mejoras del Pokévial (5 usos del vial).", "v": "포켓몬약병 강화 4개를 찾아라 (약병 5회 사용)."}
 {"k": "<c3=404040,B0B0B0>Huevo eclosionado.\\n", "v": "<c3=404040,B0B0B0>알에서 태어났다.\\n"}
 {"k": "<c3=404040,B0B0B0>Naturaleza <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.\\n", "v": "<c3=404040,B0B0B0>성격은 <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.\\n"}
 {"k": "<c3=404040,B0B0B0>Un extraño Huevo Pokémon hallado por <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.\\n", "v": "<c3=404040,B0B0B0><c3=F83820,E09890>{1}<c3=404040,B0B0B0>\\j[이,가] 발견한 신기한 포켓몬 알.\\n"}

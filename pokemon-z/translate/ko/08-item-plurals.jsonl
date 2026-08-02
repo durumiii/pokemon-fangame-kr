@@ -524,7 +524,7 @@
 {"i": 523, "v": "반사거울", "es": "Espejos Reflectores"}
 {"i": 524, "v": "둥근부적", "es": "Amuletos Ovales"}
 {"i": 525, "v": "빛나는부적", "es": "Amuletos Iris"}
-{"i": 526, "v": "포켓약병", "es": "Pokévial"}
+{"i": 526, "v": "포켓몬약병", "es": "Pokévial"}
 {"i": 527, "v": "승선티켓", "es": "Ticket Barco"}
 {"i": 528, "v": "부화기", "es": "Incubadoras"}
 {"i": 529, "v": "자전거교환권", "es": "Bono Bici"}
@@ -538,7 +538,7 @@
 {"i": 537, "v": "공방열쇠", "es": "Llave del Taller"}
 {"i": 538, "v": "영수증", "es": "Resguardo"}
 {"i": 539, "v": "등반장비", "es": "Equipo de Escalada"}
-{"i": 540, "v": "특별한포켓인형", "es": "Pokémuñeco Especial"}
+{"i": 540, "v": "특별한포켓몬인형", "es": "Pokémuñeco Especial"}
 {"i": 541, "v": "돌격조끼", "es": "Chaleco Asalto"}
 {"i": 542, "v": "체력왕관", "es": "Chapa Vigor"}
 {"i": 543, "v": "공격왕관", "es": "Chapa Fuerte"}
@@ -567,7 +567,7 @@
 {"i": 566, "v": "퓨즈", "es": "Fusible"}
 {"i": 567, "v": "워글나이트", "es": "Braviarita"}
 {"i": 568, "v": "조작설명서", "es": "Guía Controles"}
-{"i": 569, "v": "Jara의편지", "es": "Carta de Jara"}
+{"i": 569, "v": "하라의편지", "es": "Carta de Jara"}
 {"i": 570, "v": "매운라면", "es": "Ramen Picante"}
 {"i": 571, "v": ""}
 {"i": 572, "v": ""}
@@ -622,7 +622,7 @@
 {"i": 621, "v": "이올브나이트", "es": "Orbeetleita"}
 {"i": 622, "v": "갈가부기나이트", "es": "Drednawita"}
 {"i": 623, "v": "석탄산나이트", "es": "Coalossalita"}
-{"i": 624, "v": "애프룡・단지래플・과미드라나이트", "es": "Megapiedra Manzánida"}
+{"i": 624, "v": "애프룡·단지래플·과미드라나이트", "es": "Megapiedra Manzánida"}
 {"i": 625, "v": "사다이사나이트", "es": "Sandacondita"}
 {"i": 626, "v": "스트린더나이트", "es": "Toxtricitita"}
 {"i": 627, "v": "다태우지네나이트", "es": "Centiskorchita"}
@@ -673,7 +673,7 @@
 {"i": 672, "v": "번치코나이트", "es": "Blazikenita"}
 {"i": 673, "v": "피카츄나이트", "es": "Pikachuita"}
 {"i": 674, "v": "특제포켓몬푸드", "es": "Supercomida Pokémon"}
-{"i": 675, "v": "정제포켓에센스", "es": "Pokésencia Refinada"}
+{"i": 675, "v": "정제포켓몬에센스", "es": "Pokésencia Refinada"}
 {"i": 676, "v": "이상해꽃나이트", "es": "Venusaurita"}
 {"i": 677, "v": "리자몽나이트Y", "es": "Charizardita Y"}
 {"i": 678, "v": "거북왕나이트", "es": "Blastoisita"}
@@ -715,7 +715,7 @@
 {"i": 714, "v": "기술머신106", "es": "MT106s"}
 {"i": 715, "v": "기술머신107", "es": "MT107s"}
 {"i": 716, "v": "기술머신108", "es": "MT108s"}
-{"i": 717, "v": "포켓나침반", "es": "Pokébrújula"}
+{"i": 717, "v": "포켓몬나침반", "es": "Pokébrújula"}
 {"i": 718, "v": "정령플레이트", "es": "Tablas Duende"}
 {"i": 719, "v": "노말플레이트", "es": "Tablas Neutras"}
 {"i": 720, "v": "프리즘수정", "es": "Cristal Prisma"}
@@ -725,9 +725,9 @@
 {"i": 724, "v": "보만다나이트", "es": "Salamencita"}
 {"i": 725, "v": "메타그로스나이트", "es": "Metagrossita"}
 {"i": 726, "v": "한카리아스나이트", "es": "Garchompita"}
-{"i": 727, "v": "프리져의 깃털", "es": "Pluma de Articuno"}
-{"i": 728, "v": "썬더의 깃털", "es": "Pluma de Zapdos"}
-{"i": 729, "v": "파이어의 깃털", "es": "Pluma de Moltres"}
+{"i": 727, "v": "프리져의깃털", "es": "Pluma de Articuno"}
+{"i": 728, "v": "썬더의깃털", "es": "Pluma de Zapdos"}
+{"i": 729, "v": "파이어의깃털", "es": "Pluma de Moltres"}
 {"i": 730, "v": "급소방지", "es": "Anticrítico"}
 {"i": 731, "v": "상장", "es": "Diploma"}
 {"i": 732, "v": "고운털", "es": "Pelajes Finos"}
@@ -739,7 +739,7 @@
 {"i": 738, "v": "타오르는불씨", "es": "Brasas Candentes"}
 {"i": 739, "v": "생명의물", "es": "Agua Vital"}
 {"i": 740, "v": "향기이끼", "es": "Musgo Aromático"}
-{"i": 741, "v": "포켓독소", "es": "Pokétoxinas"}
+{"i": 741, "v": "독주머니", "es": "Pokétoxinas"}
 {"i": 742, "v": "차가운파편", "es": "Esquirlas Frías"}
 {"i": 743, "v": "탄력섬유", "es": "Fibras Elásticas"}
 {"i": 744, "v": "꿈의액체", "es": "Fluido Onírico"}
@@ -759,7 +759,7 @@
 {"i": 758, "v": "수은열쇠", "es": "Llave Mercúrica"}
 {"i": 759, "v": "포켓목표", "es": "PokéObjetivo"}
 {"i": 760, "v": "어두운와인", "es": "Vino Sombrío"}
-{"i": 761, "v": "Isidora의손수건", "es": "Pañuelo de Isidora"}
+{"i": 761, "v": "이시도라의손수건", "es": "Pañuelo de Isidora"}
 {"i": 762, "v": "은화", "es": "Moneda Plata"}
 {"i": 763, "v": "금화", "es": "Moneda Oro"}
 {"i": 764, "v": "귀족가발", "es": "Peluca Regia"}
@@ -772,8 +772,8 @@
 {"i": 771, "v": "사과조림", "es": "Compota de Manzana"}
 {"i": 772, "v": "정제크림", "es": "Crema Refinada"}
 {"i": 773, "v": "올리브오일", "es": "Aceite de Oliva"}
-{"i": 774, "v": "이벨타르 조각상", "es": "Efigie de Yveltal"}
-{"i": 775, "v": "제르네아스 조각상", "es": "Efigie de Xerneas"}
+{"i": 774, "v": "이벨타르조각상", "es": "Efigie de Yveltal"}
+{"i": 775, "v": "제르네아스조각상", "es": "Efigie de Xerneas"}
 {"i": 776, "v": "벌레부적", "es": "Amuleto Bicho"}
 {"i": 777, "v": "악부적", "es": "Amuleto Siniestro"}
 {"i": 778, "v": "드래곤부적", "es": "Amuleto Dragón"}
@@ -813,7 +813,7 @@
 {"i": 812, "v": "복싱글러브", "es": "Guantes de Boxeo"}
 {"i": 813, "v": "순수한부적", "es": "Amuletos Puros"}
 {"i": 814, "v": "턱뼈골격", "es": "Armazón de Fauces"}
-{"i": 815, "v": "지가르데 조각상", "es": "Efigie de Zygarde"}
+{"i": 815, "v": "지가르데조각상", "es": "Efigie de Zygarde"}
 {"i": 816, "v": "플라제스나이트", "es": "Florgesita"}
 {"i": 817, "v": "무덤열쇠", "es": "Llave Tumba"}
 {"i": 818, "v": "마법물뿌리개", "es": "Regadera Mágica"}
