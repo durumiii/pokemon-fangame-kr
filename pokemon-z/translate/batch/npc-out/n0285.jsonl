@@ -23,6 +23,6 @@
 {"id": "273:14:22", "es": "¿Revisar Hall de Fama?", "old": "명예의 전당을 확인하시겠습니까?", "new": "명예의 전당을 확인하시겠습니까?", "ok": true, "why": null}
 {"id": "273:15:23", "es": "En este <b>Tablón de Misiones</b> encontrarás algunos encargos pendientes con los que te hayas topado en tu aventura.", "old": "이 <b>의뢰 게시판</b>에서는 모험 중에 마주친 미완료 의뢰들을 확인할 수 있습니다.", "new": "이 <b>의뢰 게시판</b>에서는 모험 중에 마주친 미완료 의뢰들을 확인할 수 있습니다.", "ok": true, "why": null}
 {"id": "273:4:24", "es": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "old": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영합니다. 의료의 기적을 선보여 드리죠. 포켓몬들을 치료하시겠습니까?", "new": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 의료의 기적을 보여드리죠. 포켓몬들을 치료하시겠습니까?", "ok": true, "why": null}
-{"id": "273:4:25", "es": "Esto llevará un rato.", "old": "시간이 조금 걸릴 겁니다.", "new": "잠시만 기다려 주십시오.", "ok": true, "why": null}
+{"id": "273:4:25", "es": "Esto llevará un rato.", "old": "시간이 조금 걸릴 겁니다.", "new": "시간이 조금 걸릴 겁니다.", "ok": true, "why": null}
 {"id": "273:4:26", "es": "Misión cumplida, ¡vuelve cuando lo necesites!", "old": "치료 완료! 필요할 때 언제든 다시 오세요!", "new": "치료 완료예요! 필요할 때 언제든 또 들러주세요!", "ok": true, "why": null}
 {"id": "273:4:27", "es": "Estamos a tu servicio.", "old": "언제든 이용해 주세요.", "new": "언제든 이용해 주십시오.", "ok": true, "why": null}

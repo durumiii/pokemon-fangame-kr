@@ -26,7 +26,7 @@
 {"id": "504:41:25", "es": "¿Quieres navegar a la <b>Prisión del Olvido</b>?", "old": "<b>망각의 감옥</b>으로 항해하시겠습니까?", "new": "<b>망각의 감옥</b>으로 항해하시겠습니까?", "ok": true, "why": null}
 {"id": "504:41:26", "es": "De aquí no me moveré, ¡je, je, je!", "old": "난 여기서 절대 안 떠날 거야, 헤헤헤!", "new": "난 여기서 절대 안 떠날 거야, 헤헤헤!", "ok": true, "why": null}
 {"id": "504:30:27", "es": "¡Hola! Estoy contratada por la parroquia del pueblo, ¿quieres curar a tu equipo?", "old": "안녕하세요! 저는 마을 교구에 고용되어 일하고 있는데, 지닌 포켓몬을 치료해 드릴까요?", "new": "안녕하세요! 저는 마을 교구의 의뢰를 받고 일하고 있어요. 지닌 포켓몬을 치료해 드릴까요?", "ok": true, "why": null}
-{"id": "504:30:28", "es": "Esto llevará un rato.", "old": "잠시 시간이 걸릴 거예요.", "new": "잠시만 기다려 주십시오.", "ok": true, "why": null}
+{"id": "504:30:28", "es": "Esto llevará un rato.", "old": "잠시 시간이 걸릴 거예요.", "new": "잠시 시간이 걸릴 거예요.", "ok": true, "why": null}
 {"id": "504:30:29", "es": "Misión cumplida, ¡vuelve cuando lo necesites!", "old": "치료 끝! 필요할 때 언제든 다시 찾아주세요!", "new": "치료를 마쳤어요! 도움이 필요할 때 언제든 다시 찾아주세요!", "ok": true, "why": null}
 {"id": "504:30:30", "es": "Estamos a tu servicio.", "old": "언제든 도와드리겠습니다.", "new": "언제든 이용해 주십시오.", "ok": true, "why": null}
 {"id": "504:19:31", "es": "¿Eres de <b>Paldea</b>? ¿No estuvimos en guerra con vosotros hace unas décadas?", "old": "<b>팔데아</b> 출신이신가요? 몇십 년 전만 해도 우리가 당신들과 전쟁을 벌이지 않았던가요?", "new": "너 <b>팔데아</b>에서 왔냐? 몇십 년 전까지만 해도 우리랑 전쟁하던 녀석들 아닌가?", "ok": true, "why": null}

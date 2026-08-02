@@ -5,7 +5,7 @@
 {"id": "260:5:4", "es": "¿Y qué objeto otorga Levitación a un Pokémon aunque no tenga esta habilidad?", "old": "그렇다면 '부유' 특성이 없는 포켓몬에게도 '부유' 상태를 부여하는 도구는 무엇일까요?", "new": "그렇다면 '부유' 특성이 없는 포켓몬에게도 '부유' 상태를 주는 도구는 무엇일까요?", "ok": true, "why": null}
 {"id": "260:5:5", "es": "¡Muy bien! Dominas el arte de la Levitación.", "old": "아주 잘했어요! 부유의 기술을 완벽히 마스터했군요.", "new": "정말 잘하셨어요! 부유의 기술을 완벽하게 마스터하셨군요!", "ok": true, "why": null}
 {"id": "260:6:6", "es": "¿Te has acercado al <b>Hostal Batik</b>?", "old": "<b>기남 여관</b>에 가보셨나요?", "new": "<b>기남 여관</b>에는 가보셨나요?", "ok": true, "why": null}
-{"id": "260:6:7", "es": "El regente <b>Hibis</b> ha instalado una especie de prueba para demostrar quiénes son dignos de su aprecio.", "old": "<b>히비스</b> 섭정님이 누가 자신의 호의를 받을 자격이 있는지 가려내기 위한 일종의 시험을 마련하셨어요.", "new": "<b>히비스</b> 섭정님께서 누가 당신의 호의를 받을 자격이 있는지 가려내려고 일종의 시험을 마련하셨답니다.", "ok": true, "why": null}
+{"id": "260:6:7", "es": "El regente <b>Hibis</b> ha instalado una especie de prueba para demostrar quiénes son dignos de su aprecio.", "old": "<b>히비스</b> 섭정님이 누가 자신의 호의를 받을 자격이 있는지 가려내기 위한 일종의 시험을 마련하셨어요.", "new": "<b>히비스</b> 섭정님이 누가 자신의 호의를 받을 자격이 있는지 가려내기 위한 일종의 시험을 마련하셨어요.", "ok": true, "why": null}
 {"id": "260:6:8", "es": "Dijo algo de \"separar el grano de la paja\" entre los habitantes del pueblo.", "old": "마을 주민들 중에서 \"알곡과 쭉정이를 가려내겠다\" 같은 말을 하셨죠.", "new": "마을 주민들 중에서 \"알곡과 쭉정이를 가려내겠다\"라나 뭐라나, 그런 말씀을 하셨죠.", "ok": true, "why": null}
 {"id": "260:7:9", "es": "Aquí solo hay basura.", "old": "여기에는 쓰레기밖에 없어.", "new": "여기에는 쓰레기밖에 없다.", "ok": true, "why": null}
 {"id": "260:3:10", "es": "Ve-vete... Aún estás a tiempo.", "old": "가-가버려... 아직 늦지 않았어.", "new": "가, 어서 가게... 아직 늦지 않았다네.", "ok": true, "why": null}

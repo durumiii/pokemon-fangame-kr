@@ -5,7 +5,7 @@
 {"id": "162:18:4", "es": "¡Por favor, vuelve a visitarnos!", "old": "다음에 또 이용해 주세요!", "new": "다음에 또 찾아주세요!", "ok": true, "why": null}
 {"id": "162:18:5", "es": "No tienes más espacio. Vuelve cuando lo tengas.", "old": "가방에 자리가 없네요. 가방을 비우고 다시 오세요.", "new": "가방에 자리가 없네요. 자리를 비우고 다시 찾아주세요.", "ok": true, "why": null}
 {"id": "162:18:6", "es": "¡Coinciden los últimos cuatro dígitos, por lo tanto has ganado el primer premio!", "old": "끝 네 자리가 일치하므로 1등에 당첨되셨습니다!", "new": "끝 네 자리가 일치하니까 1등에 당첨되셨어요!", "ok": true, "why": null}
-{"id": "162:18:7", "es": "¡Coinciden los últimos tres dígitos, por lo tanto has ganado el tercer premio!", "old": "끝 세 자리가 일치하므로 3등에 당첨되셨습니다!", "new": "끝 세 자리가 일치하니까 2등에 당첨되셨어요!", "ok": true, "why": null}
+{"id": "162:18:7", "es": "¡Coinciden los últimos tres dígitos, por lo tanto has ganado el tercer premio!", "old": "끝 세 자리가 일치하므로 3등에 당첨되셨습니다!", "new": "끝 세 자리가 일치하니까 3등에 당첨되셨어요!", "ok": true, "why": null}
 {"id": "162:18:8", "es": "¡Coinciden los últimos dos dígitos, por lo tanto has ganado el tercer premio!", "old": "끝 두 자리가 일치하므로 3등에 당첨되셨습니다!", "new": "끝 두 자리가 일치하니까 3등에 당첨되셨어요!", "ok": true, "why": null}
 {"id": "162:18:9", "es": "¡Coincide el último dígito, por lo tanto has ganado el cuarto premio!", "old": "끝 한 자리가 일치하므로 4등에 당첨되셨습니다!", "new": "끝 한 자리가 일치하니까 4등에 당첨되셨어요!", "ok": true, "why": null}
 {"id": "162:18:10", "es": "Oh, ya veo.\\nPor favor, vuelve a visitarnos.", "old": "아, 그렇군요.\\n다음에 또 이용해 주세요.", "new": "아, 그렇군요.\\n다음에 또 찾아주세요.", "ok": true, "why": null}

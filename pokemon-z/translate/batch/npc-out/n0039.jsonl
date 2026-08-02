@@ -24,7 +24,7 @@
 {"id": "35:31:23", "es": "Me mantendré alerta. No quiero que nadie cometa ninguna fechoría aquí dentro.", "old": "경계를 게을리하지 않겠습니다. 이곳에서 누군가 악행을 저지르는 꼴은 못 봅니다.", "new": "경계를 게을리하지 않겠다. 이곳에서 누군가 악행을 저지르는 꼴은 못 보니까.", "ok": true, "why": null}
 {"id": "35:26:24", "es": "Estas fiestas siempre son buenas para conocer gente interesante. ¿Estará por aquí mi futura mujer?", "old": "이런 연회는 늘 흥미로운 사람들을 만나기 좋은 자리죠. 혹시 내 미래의 아내가 여기 있을까요?", "new": "이런 연회는 늘 흥미로운 사람들을 만나기 좋은 자리죠. 혹시 제 미래의 아내가 여기 있을까요?", "ok": true, "why": null}
 {"id": "35:37:25", "es": "¡Hola! Estoy contratada por el servicio de la casa, ¿quieres curar a tu equipo?", "old": "안녕하세요! 저는 이 저택의 고용인이에요. 포켓몬들을 치료해 드릴까요?", "new": "안녕하세요! 저는 이 저택에 고용된 간호사예요. 포켓몬들을 치료해 드릴까요?", "ok": true, "why": null}
-{"id": "35:37:26", "es": "Esto llevará un rato.", "old": "시간이 좀 걸릴 거예요.", "new": "잠시만 기다려 주십시오.", "ok": true, "why": null}
+{"id": "35:37:26", "es": "Esto llevará un rato.", "old": "시간이 좀 걸릴 거예요.", "new": "시간이 좀 걸릴 거예요.", "ok": true, "why": null}
 {"id": "35:37:27", "es": "Misión cumplida, ¡vuelve cuando lo necesites!", "old": "의뢰 완료! 도움이 필요하면 언제든 다시 오세요!", "new": "치료가 끝났어요! 도움이 필요하면 언제든 다시 오세요!", "ok": true, "why": null}
 {"id": "35:37:28", "es": "Estamos a tu servicio.", "old": "언제든 말씀만 하십시오.", "new": "언제든 말씀만 하십시오.", "ok": true, "why": null}
 {"id": "35:32:29", "es": "Dicen que el regente de <b>Ciudad Novarte</b> se encuentra bastante enfermo, y no ha dejado descendencia alguna.", "old": "<b>백단시티</b>의 섭정께서 병세가 매우 중하신데, 후사를 남기지 못하셨다고 하더군요.", "new": "<b>백단시티</b>의 섭정이 병세가 중하다는데, 후사를 전혀 남기지 못했다고 하더군.", "ok": true, "why": null}
