@@ -4077,15 +4077,15 @@
 {"k": "¡{2} de {1} bajó {4} de {3}!", "v": "{1}의 {2}\\j[이,가] {3}의 {4}\\j[을,를] 떨어뜨렸다!"}
 {"k": "¡{2} de {1} bajó mucho {4} de {3}!", "v": "{1}의 {2}\\j[이,가] {3}의 {4}\\j[을,를] 크게 떨어뜨렸다!"}
 {"k": "¡{2} de {1} bajó severamente {4} de {3}!", "v": "{1}의 {2}\\j[이,가] {3}의 {4}\\j[을,를] 매우 크게 떨어뜨렸다!"}
-{"k": "¡El sustituto ha protegido a {1} de {3} de {2}!", "v": "분신이 {2}의 {3}\\j[으로,로]부터 {1}\\j[을,를] 지켰다!"}
+{"k": "¡El sustituto ha protegido a {1} de {3} de {2}!", "v": "{1}의 대타출동이 {2}의 {3}\\j[을,를] 막았다!"}
 {"k": "¡{1} se ha protegido de {3} de {2} con Neblina!", "v": "{1}\\j[은,는] 하얀안개로 {2}의 {3}\\j[으로,로]부터 몸을 지켰다!"}
 {"k": "¡{2} de {1} hizo ineficaz {3}!", "v": "{1}의 {2}\\j[이,가] {3}\\j[을,를] 무효로 만들었다!"}
 {"k": "¡{2} de {1} recuperó sus PS!", "v": "{1}의 {2}\\j[이,가] HP를 회복했다!"}
 {"k": "¡{2} de {1} subió la potencia de sus movimientos de tipo Fuego!", "v": "{1}의 {2}\\j[이,가] 불꽃타입 기술의 위력을 올렸다!"}
 {"k": "¡{1} evita los ataques de sus Pokémon aliados!", "v": "{1}\\j[은,는] 아군 포켓몬의 공격을 피한다!"}
 {"k": "¡La {1} aumentó la potencia de {2}!", "v": "{1}\\j[이,가] {2}의 위력을 올렸다!"}
-{"k": "¡El sustituto recibe el daño en lugar de {1}!", "v": "분신이 {1} 대신 데미지를 받았다!"}
-{"k": "¡El sustituto de {1} se acabó!", "v": "{1}의 대타가 사라졌다!"}
+{"k": "¡El sustituto recibe el daño en lugar de {1}!", "v": "대타출동이 {1} 대신 데미지를 받았다!"}
+{"k": "¡El sustituto de {1} se acabó!", "v": "{1}의 대타출동은 사라졌다..."}
 {"k": "¡Es un golpe crítico en {1}!", "v": "{1}의 급소에 맞았다!"}
 {"k": "¡Es un golpe crítico!", "v": "급소에 맞았다!"}
 {"k": "¡Es super efectivo en {1}!", "v": "{1}에게 효과가 굉장했다!"}
@@ -4095,7 +4095,7 @@
 {"k": "¡{1} aguantó el golpe!", "v": "{1}\\j[은,는] 공격을 버텼다!"}
 {"k": "¡{1} resistió con Robustez!", "v": "{1}\\j[은,는] 옹골참으로 공격을 버텼다!"}
 {"k": "¡{1} resistió usando Banda Focus!", "v": "{1}\\j[은,는] 기합의띠로 버텼다!"}
-{"k": "¡{1} resistió usando Cinta Focus!", "v": "{1}\\j[은,는] 기합의띠로 버텼다!"}
+{"k": "¡{1} resistió usando Cinta Focus!", "v": "{1}\\j[은,는] 기합의머리띠로 버텼다!"}
 {"k": "¡{1} ha usado\n{2}!", "v": "{1}의\r\n{2}!"}
 {"k": "¡{1} también se ha hecho daño!", "v": "{1}도 데미지를 입었다!"}
 {"k": "¡Pero no pasó nada!", "v": "하지만 아무 일도 일어나지 않았다!"}
@@ -4170,13 +4170,13 @@
 {"k": "¡{1} se cubrió con Capa Mágica!", "v": "{1}\\j[은,는] 매직코트로 몸을 감쌌다!"}
 {"k": "¡{1} espera a que su rival haga algún movimiento!", "v": "{1}\\j[은,는] 상대가 움직이기를 기다린다!"}
 {"k": "¡{1} se convirtió en {2}!", "v": "{1}\\j[은,는] {2}\\j[이,가] 됐다!"}
-{"k": "¡{1} es víctima de Tormento!", "v": "{1}\\j[은,는] 앙코르에 걸렸다!"}
+{"k": "¡{1} es víctima de Tormento!", "v": "{1}\\j[은,는] 트집을 잡혔다!"}
 {"k": "¡{1} selló movimientos del oponente!", "v": "{1}\\j[이,가] 상대의 기술을 봉인했다!"}
 {"k": "¡{2} de {1} fue desactivado!", "v": "{1}의 {2}\\j[이,가] 봉인됐다!"}
 {"k": "¡{1} se dejó engañar por Mofa!", "v": "{1}\\j[이,가] 도발에 넘어갔다!"}
 {"k": "¡{1} no puede curarse!", "v": "{1}\\j[은,는] 회복할 수 없다!"}
-{"k": "¡{1} es víctima de una Maldición!", "v": "{1}\\j[은,는] 저주에 걸렸다!"}
-{"k": "¡{1} es azotado por un torbellino!", "v": "{1}\\j[은,는] 회오리에 휩쓸렸다!"}
+{"k": "¡{1} es víctima de una Maldición!", "v": "{1}\\j[은,는] 저주받고 있다!"}
+{"k": "¡{1} es azotado por un torbellino!", "v": "{1}\\j[은,는] 소용돌이에 휩쓸렸다!"}
 {"k": "¡{1} se ha cargado completamente gracias a su Hierba Única!", "v": "파워풀허브 덕분에 {1}\\j[이,가] 힘을 모두 모았다!"}
 {"k": "¡{1} absorbió luz solar!", "v": "{1}\\j[은,는] 햇빛을 흡수했다!"}
 {"k": "¡{1} se rodeó de una luz gélida!", "v": "{1}\\j[은,는] 서늘한 빛으로 몸을 둘렀다!"}
@@ -4189,13 +4189,13 @@
 {"k": "¡{1} se ha ocultado bajo el agua!", "v": "{1}\\j[은,는] 물속으로 숨었다!"}
 {"k": "¡{1} saltó muy alto!", "v": "{1}\\j[은,는] 높이 뛰어올랐다!"}
 {"k": "¡{1} ha desaparecido!", "v": "{1}\\j[이,가] 사라졌다!"}
-{"k": "¡{1} es oprimido por Atadura de {2}!", "v": "{1}\\j[은,는] {2}의 조이기에 붙잡혔다!"}
+{"k": "¡{1} es oprimido por Atadura de {2}!", "v": "{1}\\j[은,는] {2}에게 조이기를 당했다!"}
 {"k": "¡{1} atenazó a {2}!", "v": "{1}\\j[은,는] {2}\\j[을,를] 옭아맸다!"}
-{"k": "¡{1} fue atrapado en el torbellino!", "v": "{1}\\j[은,는] 회오리에 갇혔다!"}
+{"k": "¡{1} fue atrapado en el torbellino!", "v": "{1}\\j[은,는] 소용돌이에 갇혔다!"}
 {"k": "¡{1} quedó atrapado en Lluvia Ígnea!", "v": "{1}\\j[은,는] 마그마스톰에 갇혔다!"}
 {"k": "¡{1} quedó atrapado en Bucle Arena!", "v": "{1}\\j[은,는] 모래지옥에 갇혔다!"}
 {"k": "¡{1} fue atrapado por {2}!", "v": "{1}\\j[이,가] {2}에게 붙잡혔다!"}
-{"k": "¡{1} quedó atrapado en el torbellino!", "v": "{1}\\j[은,는] 회오리에 갇혔다!"}
+{"k": "¡{1} quedó atrapado en el torbellino!", "v": "{1}\\j[은,는] 소용돌이에 갇혔다!"}
 {"k": "¡{1} quedó confuso por la fatiga!", "v": "{1}\\j[은,는] 몹시 지쳐서 혼란에 빠졌다!"}
 {"k": "¡{1} liberó energía!", "v": "{1}\\j[은,는] 에너지를 해방했다!"}
 {"k": "¡{1} está juntando energía!", "v": "{1}\\j[은,는] 에너지를 모으고 있다!"}
@@ -4206,7 +4206,7 @@
 {"k": "¡{1} se rodeó de un manto de agua!", "v": "{1}\\j[은,는] 물의 장막에 휩싸였다!"}
 {"k": "¡{1} echó raíces!", "v": "{1}\\j[은,는] 뿌리를 내렸다!"}
 {"k": "¡{1} esquivó el ataque!", "v": "{1}\\j[은,는] 공격을 피했다!"}
-{"k": "¡{1} fue infectado!", "v": "{1}\\j[이,가] 감염됐다!"}
+{"k": "¡{1} fue infectado!", "v": "{1}에게 씨앗을 심었다!"}
 {"k": "¡{1} absorbió el Lodo Líquido!", "v": "{1}\\j[이,가] 해감액을 흡수했다!"}
 {"k": "¡{1} ha perdido energía!", "v": "{1}\\j[은,는] 기력을 잃었다!"}
 {"k": "¡Los PS de {1} están al máximo!", "v": "{1}의 HP가 최대다!"}
@@ -4255,11 +4255,11 @@
 {"k": "¡Hay monedas por todas partes!", "v": "사방에 동전이 널려 있다!"}
 {"k": "¡Reflejo del equipo enemigo no funciona!", "v": "상대 팀의 리플렉터는 효과가 없다!"}
 {"k": "¡Reflejo no funciona en tu equipo!", "v": "우리 편에는 리플렉터가 효과가 없다!"}
-{"k": "¡{1} ya tiene un sustituto!", "v": "{1}\\j[은,는] 이미 대타가 있다!"}
+{"k": "¡{1} ya tiene un sustituto!", "v": "{1}\\j[은,는] 이미 대타출동이 나와 있다!"}
 {"k": "¡Estaba muy debil para crear un sustituto!", "v": "체력이 부족해서 대타를 만들 수 없다!"}
-{"k": "¡{1} creó un sustituto!", "v": "{1}\\j[은,는] 대타를 만들었다!"}
+{"k": "¡{1} creó un sustituto!", "v": "{1}\\j[은,는] 대타출동을 불러냈다!"}
 {"k": "¡Se redujeron los PP de {2} de {1} en {3}!", "v": "{1}의 {2} PP가 {3}만큼 줄었다!"}
-{"k": "¡{1} ha caído en una Pesadilla!", "v": "{1}\\j[은,는] 악몽에 빠졌다!"}
+{"k": "¡{1} ha caído en una Pesadilla!", "v": "{1}\\j[은,는] 악몽을 꾸기 시작했다!"}
 {"k": "¡{1} se liberó de {3} de {2}!", "v": "{1}\\j[이,가] {2}의 {3}에서 풀려났다!"}
 {"k": "¡{1} se liberó de las drenadoras!", "v": "{1}\\j[이,가] 씨뿌리기에서 벗어났다!"}
 {"k": "¡{1} se deshizo de las piedras puntiagudas!", "v": "{1}\\j[이,가] 스텔스록을 치웠다!"}
@@ -4469,7 +4469,7 @@
 {"k": "¡El ataque de tipo Agua se evaporó por la fuerza del sol abrazador!", "v": "물타입 공격이 큰가뭄 속에서 증발하고 말았다!"}
 {"k": "¡Cuando las llamas tocaron el polvo que cubría al Pokémon, éste explotó!", "v": "불길이 포켓몬을 덮은 가루에 닿아 폭발했다!"}
 {"k": "¡{1} se ha transformado en tipo {2}!", "v": "{1}\\j[은,는] {2} 타입으로 변했다!"}
-{"k": "¡{1} ha sido arrastrado!", "v": "{1}\\j[은,는] 끌려나갔다!"}
+{"k": "¡{1} ha sido arrastrado!", "v": "{1}\\j[은,는] 배틀에 끌려 나왔다!"}
 {"k": "¡{1} regresó con {2}!", "v": "{1}\\j[은,는] {2}\\j[과,와] 함께 돌아왔다!"}
 {"k": "¡{1} despertó con el Alboroto!", "v": "{1}\\j[이,가] 소란 때문에 잠에서 깼다!"}
 {"k": "¡{1} ha huido!", "v": "{1}\\j[은,는] 도망쳤다!"}
@@ -4613,7 +4613,7 @@
 {"k": "¡{1} se desmayó!", "v": "{1}\\j[은,는] 쓰러졌다!"}
 {"k": "¡{2} de {1} evita que baje el Ataque!", "v": "¡{1}의 {2}\\j[이,가] 공격이 떨어지는 것을 막았다!"}
 {"k": "¡{2} de {1} evita que baje la Defensa!", "v": "¡{1}의 {2}\\j[이,가] 방어가 떨어지는 것을 막았다!"}
-{"k": "¡{1} ha sido infectado con la infestación de {2}!", "v": "{1}\\j[은,는] {2}의 속박에 걸렸다!"}
+{"k": "¡{1} ha sido infectado con la infestación de {2}!", "v": "{1}\\j[은,는] {2}의 엉겨붙기에 엉겨붙었다!"}
 {"k": "¡{1} montó un Alboroto!", "v": "{1}\\j[은,는] 소란을 피웠다!"}
 {"k": "¡{2} decidió aprovechar la oportunidad que le dió {1}!", "v": "{2}\\j[이,가] {1}\\j[이,가] 만든 기회를 놓치지 않았다!"}
 {"k": "¡{1} retrasó su turno!", "v": "{1}\\j[은,는] 턴을 미뤘다!"}
@@ -4669,7 +4669,7 @@
 {"k": "¡Acua Aro ha recuperado salud de {1}!", "v": "아쿠아링이 {1}의 체력을 회복시켰다!"}
 {"k": "¡{1} ha absorbido nutrientes con las raíces!", "v": "{1}\\j[이,가] 뿌리로 영양분을 흡수했다!"}
 {"k": "¡{1} ha absorbido el Lodo Líquido!", "v": "{1}\\j[이,가] 해감액을 흡수했다!"}
-{"k": "¡Las drenadoras restaron salud a {1}!", "v": "씨뿌리기가 {1}의 체력을 앗아갔다!"}
+{"k": "¡Las drenadoras restaron salud a {1}!", "v": "씨뿌리기가 {1}의 체력을 빼앗는다!"}
 {"k": "¡{1} ha recuperado salud gracias al Antídoto!", "v": "포이즌힐 덕분에 {1}의 체력이 회복되었다!"}
 {"k": "¡{1} está inmerso en una Pesadilla!", "v": "{1}\\j[은,는] 악몽을 꾸고 있다!"}
 {"k": "¡{1} se liberó de {2}!", "v": "{1}\\j[은,는] {2}에서 풀려났다!"}
@@ -4902,14 +4902,14 @@
 {"k": "{1} ha usado {2}.", "v": "{1}의 {2}!"}
 {"k": "¡Este árbol parece fácil de cortar!\u0001", "v": "이 나무는 쉽게 벨 수 있을 것 같다!\u0001"}
 {"k": "¿Quieres cortarlo?", "v": "자를까?"}
-{"k": "¡{1} ha usado Corte!", "v": "{1}\\j[은,는] 거합베기를 썼다!"}
+{"k": "¡{1} ha usado Corte!", "v": "{1}\\j[은,는] 풀베기를 썼다!"}
 {"k": "Este árbol parece fácil de cortar.", "v": "이 나무는 쉽게 벨 수 있을 것 같다."}
 {"k": "Lo siento, necesitas una medalla nueva.", "v": "미안하지만 새로운 배지가 필요해."}
 {"k": "No se puede usar aquí.", "v": "여기서는 쓸 수 없다."}
 {"k": "¡{1} ha usado {2}!", "v": "{1}\\j[은,는] {2}\\j[을,를] 썼다!"}
 {"k": "No pasó nada...", "v": "아무 일도 없었다..."}
 {"k": "Hay un árbol no demasiado grande. ¿Quieres utilizar Golpe cabeza?", "v": "그리 크지 않은 나무가 있다. 박치기를 쓸까?"}
-{"k": "¡{1} ha usado Golpe cabeza!", "v": "{1}\\j[은,는] 몸통박치기를 썼다!"}
+{"k": "¡{1} ha usado Golpe cabeza!", "v": "{1}\\j[은,는] 박치기를 썼다!"}
 {"k": "Un Pokémon podría esconderse en este árbol. Tal vez un Pokémon pueda sacudirlo.", "v": "이 나무에는 포켓몬이 숨어 있을지도 모른다. 포켓몬이라면 흔들 수 있을지도 모른다."}
 {"k": "Esta roca se podría romper. ¿Quieres usar Golpe roca?", "v": "이 바위는 부술 수 있을 것 같다. 바위깨기를 쓸까?"}
 {"k": "¡{1} ha usado Golpe roca!", "v": "{1}\\j[은,는] 바위깨기를 썼다!"}
