@@ -4616,7 +4616,7 @@
 {"k": "¡{1} montó un Alboroto!", "v": "{1}\\j[은,는] 소란을 피웠다!"}
 {"k": "¡{2} decidió aprovechar la oportunidad que le dió {1}!", "v": "{2}\\j[이,가] {1}\\j[이,가] 만든 기회를 놓치지 않았다!"}
 {"k": "¡{1} retrasó su turno!", "v": "{1}\\j[은,는] 턴을 미뤘다!"}
-{"k": "¡{1} alteró las dimensiones!", "v": "{1}\\j[이,가] 차원을 뒤틀었다!"}
+{"k": "¡{1} alteró las dimensiones!", "v": "{1}\\j[은,는] 시공을 뒤틀었다!"}
 {"k": "¡{1} y {2} han intercambiado posiciones!", "v": "{1}\\j[과,와] {2}\\j[이,가] 자리를 바꿨다!"}
 {"k": "¡{1} ha sido cubierto con polvo!", "v": "{1}\\j[은,는] 가루를 뒤집어썼다!"}
 {"k": "¡{1} va a usar un tatami para bloquear ataques!", "v": "{1}\\j[이,가] 다다미가에시로 공격을 막으려 한다!"}
@@ -6059,7 +6059,7 @@
 {"k": "Ha desaparecido la extraña sensación que había en el terreno de combate.", "v": "배틀 필드에 감돌던 기묘한 기운이 사라졌다."}
 {"k": "¡La sensación extraña desapareció del campo!", "v": "기묘한 기운이 필드에서 사라졌다!"}
 {"k": "¡{1} megaevoluciona gracias al vínculo con {3}!", "v": "{3}\\j[과,와]의 유대 덕분에 {1}\\j[이,가] 메가진화했다!"}
-{"k": "¡Las dimensiones han vuelto a la normalidad!", "v": "차원이 원래대로 돌아왔다!"}
+{"k": "¡Las dimensiones han vuelto a la normalidad!", "v": "뒤틀어진 시공이 원래대로 돌아왔다!"}
 {"k": "¡La corriente eléctrica ha desaparecido del campo de batalla!", "v": "일렉트릭필드가 배틀 필드에서 사라졌다!"}
 {"k": "¡El campo de hierba ha desaparecido del campo de batalla!", "v": "그래스필드가 배틀 필드에서 사라졌다!"}
 {"k": "¡La niebla se ha desvanecido del campo de batalla!", "v": "미스트필드가 배틀 필드에서 사라졌다!"}
@@ -6359,7 +6359,7 @@
 {"k": "¿Crees que ya has ganado? Todavía no has visto mi as en la manga...", "v": "이겼다고 생각해? 아직 내 숨은 패를 못 봤잖아..."}
 {"k": "¿Has pensado bien en lo que haces? ¡El siguiente golpe va a doler mucho!", "v": "지금 뭘 하는지 잘 생각했나? 다음 공격은 꽤 아플 거다!"}
 {"k": "Este calor... este fuego... ¡esto era ser un entrenador Pokémon!", "v": "이 열기... 이 불꽃... 이게 바로 포켓몬 트레이너지!"}
-{"k": "{1} alteró las dimensiones!", "v": "{1}\\j[이,가] 차원을 뒤틀었다!"}
+{"k": "{1} alteró las dimensiones!", "v": "{1}\\j[은,는] 시공을 뒤틀었다!"}
 {"k": "¡El efecto de Zona Extraña ha terminado!", "v": "원더룸의 효과가 끝났다!"}
 {"k": "¡Se ha creado una Zona Extraña donde la Defensa y la Defensa Especial se intercambian!", "v": "방어와 특수방어가 뒤바뀌는 원더룸이 만들어졌다!"}
 {"k": "¡Se ha acabado el efecto de Zona Extraña!", "v": "원더룸의 효과가 끝났다!"}
@@ -6810,3 +6810,7 @@
 {"k": "{1:s}\nID: {2:05d} EO: {3:s}\\1", "v": "{1:s}\r\nID: {2:05d}   어버이: {3:s}\\1"}
 {"k": "Por el {2} de {1},\n{3} envía a {4}.\\1", "v": "{1}의 {2}\\j[와,과] 맞바꾸어\r\n{3}\\j[이,가] {4}\\j[을,를] 보내왔다.\\1"}
 {"k": "{1} ha olvidado cómo\nusar {2}.\\1", "v": "{1}\\j[은,는] {2} 쓰는 법을\r\n깔끔하게 잊어버렸다.\\1"}
+{"k": "¡Solo puedes capturar Pokémon de tipo {1}!", "v": "{1}타입 포켓몬만 잡을 수 있다!"}
+{"k": "{1} está debilitado.\nApenas puede tenerse en pie...", "v": "{1}\\j[은,는] 기절해 있다.\n서 있는 것조차 버거워 보인다..."}
+{"k": "Sin duda, tienes el mejor {1} del mundo.", "v": "분명 세상에서 제일가는 {1}\\j[이,가] 틀림없다."}
+{"k": "¿Qué habilidad quieres para {1}?", "v": "{1}에게 어떤 특성을 원하나요?"}
