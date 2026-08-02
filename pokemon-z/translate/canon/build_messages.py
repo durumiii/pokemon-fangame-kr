@@ -13,7 +13,10 @@
   gh repo clone tanripj/pokemon_text_dumps <경로>   # 653MB, 커밋하지 않는다
   DUMPS=<경로> uv run build_messages.py
 
-산출: messages.jsonl.gz — {"es","ko","src"} (src = 게임 코드).
+산출: messages.jsonl.gz — {"es","ko","src","kind","file"}.
+src = 게임 코드, kind = gametext(시스템)/storytext(대사),
+file = 덤프 내 텍스트 파일 라벨(도메인 힌트: cafe·shop·taxi·trmsg 등 —
+언어 간 헤더 행번호·라벨 완전 일치 실측, za 1.0.0 diff 무출력).
 """
 import gzip
 import json
@@ -48,8 +51,14 @@ def pairs(game: Path):
         n = min(len(es), len(ko))
         if abs(len(es) - len(ko)) > 0:
             print(f"경고: {d} 줄 수 불일치 es {len(es)} ko {len(ko)} — 앞 {n}줄만")
+        label = ""
         for a, b in zip(es[:n], ko[:n]):
-            yield a.strip(), b.strip()
+            if b.startswith("Text File : "):
+                label = b[len("Text File : "):].strip()
+                continue
+            if b.startswith("~~~~~"):
+                continue
+            yield a.strip(), b.strip(), kind, label
 
 
 def main():
@@ -60,16 +69,18 @@ def main():
             print(f"건너뜀(없음): {g}")
             continue
         n = 0
-        for es, ko in pairs(gd):
+        for es, ko, kind, label in pairs(gd):
             if es in SKIP or ko in SKIP or es == ko:
                 continue
-            table[es] = (ko, g)  # 뒤 게임이 덮어씀 = 최신 우선
+            table[es] = (ko, g, kind, label)  # 뒤 게임이 덮어씀 = 최신 우선
             n += 1
         print(f"{g}: {n}쌍 처리 (누적 고유 {len(table)})")
     out = HERE / "messages.jsonl.gz"
     with gzip.open(out, "wt", encoding="utf-8") as f:
-        for es, (ko, g) in table.items():
-            f.write(json.dumps({"es": es, "ko": ko, "src": g}, ensure_ascii=False) + "\n")
+        for es, (ko, g, kind, label) in table.items():
+            f.write(json.dumps(
+                {"es": es, "ko": ko, "src": g, "kind": kind, "file": label},
+                ensure_ascii=False) + "\n")
     print(f"{out}: 고유 {len(table)}쌍")
 
 
