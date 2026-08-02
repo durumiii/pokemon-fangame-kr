@@ -95,13 +95,29 @@ def main():
                     print(f"③ {name}:{ln} [{tag}] {line.strip()[:76]}")
     print(f"③ scripts: {shown}줄 일치" if shown else "③ scripts: 없음")
 
-    # ④ canon
+    # ④ canon (이름)
     hits = [json.loads(l) for l in open(HERE / "canon" / "canon.jsonl", encoding="utf-8")
             if q.lower() in l.lower()][:4]
     for r in hits:
         print(f"④ canon[{r['domain']}] es={r['es']!r} en={r['en']!r} ko={r['ko']!r}")
     if not hits:
-        print("④ canon: 없음 (창작 요소이거나 표기 상이 — 구세대명이면 aliases.jsonl 후보)")
+        print("④ canon 이름: 없음 (창작 요소이거나 표기 상이 — 구세대명이면 aliases.jsonl 후보)")
+
+    # ⑤ canon 문장(공식 덤프 16만 쌍) — es·ko 양방향 부분 검색.
+    #    주의: Z의 스페인어는 Essentials 문구라 공식 es와 다른 경우가 많다(직격률 ~5%).
+    #    자동 적용 금지 — 사람이 문맥을 보고 고르는 조회 코퍼스다.
+    import gzip
+    m = 0
+    mz = HERE / "canon" / "messages.jsonl.gz"
+    if mz.exists():
+        ql = q.lower()
+        for line in gzip.open(mz, "rt", encoding="utf-8"):
+            if ql in line.lower():
+                r = json.loads(line)
+                m += 1
+                if m <= 6:
+                    print(f"⑤ 공식[{r['src']}] {r['es'][:52]!r} → {r['ko'][:44]!r}")
+        print(f"⑤ 공식 문장: {m}쌍 일치" if m else "⑤ 공식 문장: 없음")
 
 
 if __name__ == "__main__":
