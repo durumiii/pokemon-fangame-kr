@@ -1,2 +1,7 @@
 __pycache__/
 *.pyc
+
+# duru 파일 전송함 · 로컬 작업물 — 공개 repo에 올리지 않는다
+inbox/
+outbox/
+*.local.*
