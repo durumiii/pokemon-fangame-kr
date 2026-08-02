@@ -1,0 +1,3 @@
+{"id": "228:21:0", "es": "Mira, me acaban de devolver estos tres. ¿Alguno despierta tu interés?", "old": "봐봐, 방금 이 세 권이 반납되었단다. 마음에 드는 게 있니?", "new": "여기 보세요, 방금 이 세 권이 반납되었어요. 마음에 드는 게 있으신가요?", "ok": true, "why": null}
+{"id": "228:21:1", "es": "(Devuelves el anterior libro y te quedas con este)", "old": "(이전 책을 반납하고 이 책을 빌렸다)", "new": "(이전 책을 반납하고 이 책을 빌렸다)", "ok": true, "why": null}
+{"id": "228:21:2", "es": "¡Espera, primero tienes que devolverme el que ya habías sacado!", "old": "잠깐, 먼저 이미 빌려 간 책부터 반납해야지!", "new": "잠깐만요! 먼저 이미 빌려 가신 책부터 반납하셔야 해요!", "ok": true, "why": null}

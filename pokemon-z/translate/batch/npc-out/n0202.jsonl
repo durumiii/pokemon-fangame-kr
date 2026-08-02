@@ -1,0 +1,4 @@
+{"id": "186:17:0", "es": "Cerrada, pero en tu interior sabes que podrías abrir esto con una llave especial...", "old": "잠겨 있다. 하지만 특별한 열쇠라면 열 수 있다는 것을 마음속으로 알고 있다...", "new": "잠겨 있다. 하지만 마음속으로는 특별한 열쇠가 있으면 열 수 있다는 것을 느끼고 있다...", "ok": true, "why": null}
+{"id": "186:17:1", "es": "¿Quieres usar una Llave Mercúrica?", "old": "수은열쇠를 사용하시겠습니까?", "new": "수은열쇠를 사용하시겠습니까?", "ok": true, "why": null}
+{"id": "186:17:2", "es": "Usas una Llave Mercúrica para romper el sello de la puerta.", "old": "수은열쇠를 사용해서 문에 걸린 봉인을 풀었다.", "new": "수은열쇠를 사용해 문에 걸린 봉인을 풀었다.", "ok": true, "why": null}
+{"id": "186:15:3", "es": "¿Quieres salir de las <b>Criptas de Luminalia</b>?", "old": "<b>미르 지하묘지</b>에서 나가시겠습니까?", "new": "<b>미르 지하묘지</b>에서 나가시겠습니까?", "ok": true, "why": null}

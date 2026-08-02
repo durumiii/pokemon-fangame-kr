@@ -1,0 +1,7 @@
+{"id": "374:27:0", "es": "Esta puerta está cerrada.", "old": "이 문은 잠겨 있습니다.", "new": "이 문은 잠겨 있다.", "ok": true, "why": null}
+{"id": "374:27:1", "es": "¡Una llave encaja perfectamente!", "old": "열쇠가 딱 들어맞는다!", "new": "열쇠가 딱 들어맞는다!", "ok": true, "why": null}
+{"id": "374:16:2", "es": "Un Morpeko se dirige a la sala de rituales.", "old": "모르페코가 의식실로 향한다.", "new": "모르페코가 의식실로 향한다.", "ok": true, "why": null}
+{"id": "374:2:3", "es": "¿Te intrigan los Morpeko? ¡Son unos Pokémon muy talentosos! ¿Quieres saber más de ellos?", "old": "모르페코에 관심이 있으신가요? 정말 재능이 뛰어난 포켓몬이랍니다! 모르페코에 대해 더 알고 싶으신가요?", "new": "모르페코에게 관심이 있으신가요? 정말 재능이 뛰어난 포켓몬이에요! 모르페코에 대해 더 알고 싶으신가요?", "ok": true, "why": null}
+{"id": "374:2:4", "es": "Hemos dejado algunas llaves tiradas por ahí porque somos muy descuidados. El problema es que son casi transparentes y cuesta mucho verlas, aunque emiten un brillo a veces.", "old": "우리가 너무 덤벙대서 열쇠 몇 개를 바닥에 떨어뜨려 두었어요. 문제는 거의 투명해서 가끔 반짝이긴 해도 눈에 잘 띄지 않는다는 점이죠.", "new": "우리가 너무 덜렁대서 열쇠 몇 개를 아무 데나 떨어뜨리고 다녔어요. 문제는 열쇠가 거의 투명해서 가끔 반짝이긴 해도 찾아내기가 참 어렵다는 거죠.", "ok": true, "why": null}
+{"id": "374:4:5", "es": "Zona no autorizada. ¿Necesites que te guíe a tu lugar correcto? No aceptaré un \"no\" por respuesta.", "old": "허가되지 않은 구역입니다. 가셔야 할 곳으로 안내해 드릴까요? \"아니오\"라는 대답은 받지 않겠습니다.", "new": "관계자 외 출입 금지 구역이에요. 올바른 자리로 안내해 드릴까요? \"아니요\"라는 대답은 받지 않을게요.", "ok": true, "why": null}
+{"id": "374:4:6", "es": "Vuelve a tu carril, por favor. No debes desviarte del camino.", "old": "제자리로 돌아가 주십시오. 정해진 길을 벗어나면 안 됩니다.", "new": "제자리로 돌아가 주세요. 정해진 길을 벗어나면 안 돼요.", "ok": true, "why": null}

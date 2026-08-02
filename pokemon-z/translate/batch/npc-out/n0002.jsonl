@@ -1,0 +1,11 @@
+{"id": "1:1:0", "es": "¿Qué aspecto tiene tu personaje?", "old": "캐릭터는 어떤 모습인가요?", "new": "캐릭터는 어떤 모습인가요?", "ok": true, "why": null}
+{"id": "1:1:1", "es": "¿Puedes dar más detalles?", "old": "좀 더 자세히 알려주실 수 있나요?", "new": "좀 더 자세히 알려주실 수 있나요?", "ok": true, "why": null}
+{"id": "1:1:2", "es": "¿Puedes dar más detalles de tu aspecto?", "old": "외모를 좀 더 자세히 알려주실 수 있나요?", "new": "외모를 좀 더 자세히 알려주실 수 있나요?", "ok": true, "why": null}
+{"id": "1:1:3", "es": "Por último, ¿podrías escribir el nombre de tu personaje?", "old": "마지막으로, 캐릭터 이름을 적어주시겠어요?", "new": "마지막으로, 캐릭터 이름을 적어주시겠어요?", "ok": true, "why": null}
+{"id": "1:1:4", "es": "¿Podrías escribir el nombre de tu personaje?", "old": "캐릭터 이름을 적어주시겠어요?", "new": "캐릭터 이름을 적어주시겠어요?", "ok": true, "why": null}
+{"id": "1:1:5", "es": "Selecciona el modo de juego.", "old": "게임 모드를 선택하세요.", "new": "게임 모드를 선택하세요.", "ok": true, "why": null}
+{"id": "1:4:6", "es": "¿Eliges el <b>Modo Normal</b>? No podrás cambiar la dificultad una vez elegido.", "old": "<b>일반 모드</b>를 선택하시겠습니까? 일단 선택하면 난이도를 변경할 수 없습니다.", "new": "<b>일반 모드</b>를 선택하시겠습니까? 한번 선택하면 난이도를 변경할 수 없습니다.", "ok": true, "why": null}
+{"id": "1:4:7", "es": "Además, los Pokémon de entrenadores rivales siempre tendrán 31 IVs en todas sus estadísticas y más EVs que en el Modo Normal.", "old": "아울러 상대 트레이너 포켓몬의 개체값(IV)은 모든 능력치에서 항상 31이며, 일반 모드보다 더 많은 노력치(EV)를 가집니다.", "new": "아울러 상대 트레이너 포켓몬은 모든 능력치의 개체값(IV)이 항상 31이며, 일반 모드보다 노력치(EV)가 더 높습니다.", "ok": true, "why": null}
+{"id": "1:4:8", "es": "(NOTA: Los EVs de los Pokémon rivales siguen la fórmula de [nivel del rival*1.5] EVs en cada estadística en el Modo Normal y [nivel del rival*2.5] EVs en cada estadística en el Modo Heroico, hasta un tope de 510).", "old": "(참고: 상대 포켓몬의 노력치(EV)는 각 능력치마다 일반 모드에서 [상대 레벨*1.5], 영웅 모드에서 [상대 레벨*2.5] 공식으로 적용되며, 최대 510까지 제한됩니다).", "new": "(참고: 상대 포켓몬의 노력치(EV)는 각 능력치마다 일반 모드에서 [상대 레벨*1.5], 영웅 모드에서 [상대 레벨*2.5] 공식으로 적용되며, 최대 510까지 적용됩니다).", "ok": true, "why": null}
+{"id": "1:4:9", "es": "¿Quieres activar este modo aún así?", "old": "그래도 이 모드를 선택하시겠습니까?", "new": "그래도 이 모드를 선택하시겠습니까?", "ok": true, "why": null}
+{"id": "1:4:10", "es": "Esto significa que tus Pokémon siempre serán un poco más fuertes que los Pokémon enemigos.", "old": "즉, 당신의 포켓몬이 적 포켓몬보다 항상 조금 더 강해집니다.", "new": "즉, 당신의 포켓몬이 적 포켓몬보다 항상 조금 더 강해집니다.", "ok": true, "why": null}

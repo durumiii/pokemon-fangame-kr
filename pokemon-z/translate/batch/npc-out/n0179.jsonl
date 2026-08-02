@@ -1,0 +1,28 @@
+{"id": "162:18:0", "es": "¡El número ID del \\v[2] de tu equipo coincide con el del cupón!", "old": "지닌 포켓몬인 \\v[2]의 ID 번호가 추첨권 번호와 일치합니다!", "new": "지닌 포켓몬인 \\v[2]의 ID 번호가 추첨권 번호와 일치해요!", "ok": true, "why": null}
+{"id": "162:18:1", "es": "¡El número ID del \\v[2] guardado en PC coincide con el del cupón!", "old": "PC에 있는 \\v[2]의 ID 번호가 추첨권 번호와 일치합니다!", "new": "PC에 있는 \\v[2]의 ID 번호가 추첨권 번호와 일치해요!", "ok": true, "why": null}
+{"id": "162:18:2", "es": "¡Qué sorpresa! ¡Coincidieron los cinco dígitos!", "old": "정말 놀랍네요! 다섯 자리가 모두 일치합니다!", "new": "어머, 정말 놀라워요! 다섯 자리가 모두 일치해요!", "ok": true, "why": null}
+{"id": "162:18:3", "es": "¡Has ganado el premio mayor!", "old": "특등에 당첨되셨습니다!", "new": "특등에 당첨되셨어요!", "ok": true, "why": null}
+{"id": "162:18:4", "es": "¡Por favor, vuelve a visitarnos!", "old": "다음에 또 이용해 주세요!", "new": "다음에 또 찾아주세요!", "ok": true, "why": null}
+{"id": "162:18:5", "es": "No tienes más espacio. Vuelve cuando lo tengas.", "old": "가방에 자리가 없네요. 가방을 비우고 다시 오세요.", "new": "가방에 자리가 없네요. 자리를 비우고 다시 찾아주세요.", "ok": true, "why": null}
+{"id": "162:18:6", "es": "¡Coinciden los últimos cuatro dígitos, por lo tanto has ganado el primer premio!", "old": "끝 네 자리가 일치하므로 1등에 당첨되셨습니다!", "new": "끝 네 자리가 일치하니까 1등에 당첨되셨어요!", "ok": true, "why": null}
+{"id": "162:18:7", "es": "¡Coinciden los últimos tres dígitos, por lo tanto has ganado el tercer premio!", "old": "끝 세 자리가 일치하므로 3등에 당첨되셨습니다!", "new": "끝 세 자리가 일치하니까 2등에 당첨되셨어요!", "ok": true, "why": null}
+{"id": "162:18:8", "es": "¡Coinciden los últimos dos dígitos, por lo tanto has ganado el tercer premio!", "old": "끝 두 자리가 일치하므로 3등에 당첨되셨습니다!", "new": "끝 두 자리가 일치하니까 3등에 당첨되셨어요!", "ok": true, "why": null}
+{"id": "162:18:9", "es": "¡Coincide el último dígito, por lo tanto has ganado el cuarto premio!", "old": "끝 한 자리가 일치하므로 4등에 당첨되셨습니다!", "new": "끝 한 자리가 일치하니까 4등에 당첨되셨어요!", "ok": true, "why": null}
+{"id": "162:18:10", "es": "Oh, ya veo.\\nPor favor, vuelve a visitarnos.", "old": "아, 그렇군요.\\n다음에 또 이용해 주세요.", "new": "아, 그렇군요.\\n다음에 또 찾아주세요.", "ok": true, "why": null}
+{"id": "162:18:11", "es": "Ya has participado en el sorteo hoy. Por favor, regresa mañana.", "old": "오늘은 이미 추첨에 참여하셨습니다. 내일 다시 와 주세요.", "new": "오늘은 이미 추첨에 참여하셨어요. 내일 다시 찾아주세요.", "ok": true, "why": null}
+{"id": "162:18:12", "es": "Te estaba esperando. Toma el objeto que has ganado.", "old": "기다리고 있었습니다. 당첨 상품을 받아 가세요.", "new": "기다리고 있었어요. 당첨 상품을 받아 가세요.", "ok": true, "why": null}
+{"id": "162:46:13", "es": "La amistad está por encima de casi cualquier cosa, no permitiremos que ocurra nada malo.", "old": "우정은 무엇보다 소중하니까, 절대로 나쁜 일이 생기게 두지 않을 거야.", "new": "우정은 무엇보다 소중하니까, 절대로 나쁜 일이 생기게 두지 않을 거야.", "ok": true, "why": null}
+{"id": "162:19:14", "es": "\"La bella y el monstruo\" es mi cuento favorito, narra la trágica historia entre una entrenadora que se enamora de su Pokémon, el cual puede tomar forma humana.", "old": "\"미녀와 야수\"는 제가 가장 좋아하는 동화인데, 사람으로 변할 수 있는 포켓몬과 사랑에 빠진 한 트레이너의 비극적인 이야기를 다루고 있죠.", "new": "\"미녀와 야수\"는 내가 제일 좋아하는 동화인데, 사람으로 변할 수 있는 포켓몬과 사랑에 빠진 한 트레이너의 비극적인 이야기거든.", "ok": true, "why": null}
+{"id": "162:47:15", "es": "Permanecerá plácidamente dormido durante un buen rato.", "old": "한동안 평온하게 잠들어 있을 것이다.", "new": "한동안 평온하게 잠들어 있을 거다.", "ok": true, "why": null}
+{"id": "162:47:16", "es": "Permanecerá plácidamente dormida durante un buen rato.", "old": "한동안 평온하게 잠들어 있을 것이다.", "new": "한동안 평온하게 잠들어 있을 거다.", "ok": true, "why": null}
+{"id": "162:14:17", "es": "Mi Pokémon quiere visitar la <b>Galería de Arte</b>.", "old": "내 포켓몬이 <b>미술관</b>에 가고 싶어 해요.", "new": "내 포켓몬이 <b>미술관</b>에 가고 싶어 해요.", "ok": true, "why": null}
+{"id": "162:14:18", "es": "No me lo dice con palabras, por supuesto, pero yo lo percibo igualmente.", "old": "말로 하지는 않지만, 저는 그래도 다 느껴지거든요.", "new": "말로 하지는 않지만, 내게는 다 느껴지거든요.", "ok": true, "why": null}
+{"id": "162:14:19", "es": "Tanto tiempo juntos...", "old": "그만큼 오랫동안 함께 지냈으니까요...", "new": "그만큼 오랫동안 함께 지냈으니까요...", "ok": true, "why": null}
+{"id": "162:20:20", "es": "El café de por aquí está bien, pero el mejor que he probado se hace en <b>Ciudad Gres</b>.", "old": "이 근처 커피도 괜찮지만, 제가 마셔본 것 중 으뜸은 <b>그레스시티</b> 커피예요.", "new": "이 근처 커피도 괜찮지만, 내가 마셔본 것 중 으뜸은 <b>그레스시티</b> 커피야.", "ok": true, "why": null}
+{"id": "162:20:21", "es": "Ese es un lugar muy lejano, ¡no creo que alguien como tú pueda visitarlo!", "old": "거긴 아주 먼 곳이라너 같은 사람이 가볼 수나 있을지 모르겠네!", "new": "거긴 아주 먼 곳이라, 너 같은 애가 가볼 수나 있을지 모르겠네!", "ok": true, "why": null}
+{"id": "162:43:22", "es": "La Ocaso Ball empieza a brillar con fuerza...", "old": "다크볼이 강하게 빛나기 시작한다...", "new": "다크볼이 강하게 빛나기 시작한다...", "ok": true, "why": null}
+{"id": "162:43:23", "es": "¿Quieres viajar a las <b>Criptas de Luminalia</b>?", "old": "<b>미르 지하묘지</b>로 이동하시겠습니까?", "new": "<b>미르 지하묘지</b>로 이동하시겠습니까?", "ok": true, "why": null}
+{"id": "162:10:24", "es": "Yo no tengo problema con que estos individuos feriantes de <b>Pueblo Profano</b> se ganen la vida, pero...", "old": "<b>프로파노마을</b>에서 온 저 축제 상인들이 밥벌이를 하는 건 상관없는데...", "new": "<b>프로파노마을</b>에서 온 저 축제 상인들이 밥벌이하는 것까진 상관 안 하겠는데...", "ok": true, "why": null}
+{"id": "162:10:25", "es": "¿Tienen que hacerlo en mi barrio? ¿Tan cerca de mi casa?", "old": "하필 우리 동네에서 해야 하나? 우리 집 바로 앞에서?", "new": "하필 우리 동네에서 해야 하나요? 우리 집 바로 앞에서?", "ok": true, "why": null}
+{"id": "162:21:26", "es": "Si utilizas bien el movimiento Sorpresa en un combate doble, podrías ganar un turno extra.", "old": "더블 배틀에서 ‘속이기’ 기술을 잘 활용하면 턴을 하나 더 얻을 수 있습니다.", "new": "더블 배틀에서 '속이기' 기술을 잘 쓰면 턴을 하나 더 얻을 수 있어.", "ok": true, "why": null}
+{"id": "162:21:27", "es": "Es un truco secreto que me enseñó mi hermano mayor, que sabe mucho de combates Pokémon.", "old": "포켓몬 배틀을 잘 아는 우리 형이 가르쳐 준 비밀 팁이야.", "new": "포켓몬 배틀을 잘 아는 우리 오빠가 가르쳐 준 비밀 팁이야.", "ok": true, "why": null}

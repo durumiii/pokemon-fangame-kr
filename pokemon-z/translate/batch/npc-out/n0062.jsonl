@@ -1,0 +1,23 @@
+{"id": "56:16:0", "es": "¿No quieres comprarme alguna hierba especial antes de continuar? ¡Tienen propiedades curativas fascinantes!", "old": "계속 가기 전에 특별한 허브라도 사지 않겠어요? 정말 놀라운 치유 효과가 있거든요!", "new": "더 지나가기 전에 내 특별한 약초라도 좀 사 가지 않겠어? 참으로 신비로운 치유 효능이 있지!", "ok": true, "why": null}
+{"id": "56:16:1", "es": "Quiero ahorrar todo el dinero posible para que a los Pokémon de la Guardería no les falte de nada.", "old": "키우미집에 있는 포켓몬들이 부족함 없이 지낼 수 있게 가능한 한 돈을 모으고 싶어요.", "new": "키우미집 포켓몬들에게 부족함이 없도록 가능한 한 돈을 모으려는 게지.", "ok": true, "why": null}
+{"id": "56:22:2", "es": "¿Quieres usar la Montura Gogoat?", "old": "고고트라이드를 사용하시겠습니까?", "new": "고고트라이드를 사용하시겠습니까?", "ok": true, "why": null}
+{"id": "56:17:3", "es": "¡Ah, eres tú! Hemos ido a mirar a tus Pokémon, ¡y nos hemos encontrado un huevo! Aquí ha habido tema...", "old": "아, 너구나! 네 포켓몬을 보러 갔다가 알을 발견했지 뭐야! 둘이 아주 좋은 사이였나 봐...", "new": "아, 너구나! 네 포켓몬을 보러 갔다가 알을 발견했다네! 둘 사이에 무슨 일이 있었나 보구먼...", "ok": true, "why": null}
+{"id": "56:17:4", "es": "¿Te gustaría quedártelo?", "old": "이 알을 가져가시겠어요?", "new": "이 알을 가져가겠느냐?", "ok": true, "why": null}
+{"id": "56:17:5", "es": "No tienes espacio en tu equipo para guardarlo.", "old": "지닌포켓몬에 알을 받으실 공간이 없습니다.", "new": "지닌포켓몬에 알을 받을 자리가 없구나.", "ok": true, "why": null}
+{"id": "56:17:6", "es": "No tengo problema en quedármelo, ¿pero estás seguro de que no lo quieres?", "old": "제가 가져도 상관은 없는데, 정말 안 가져가셔도 괜찮겠어요?", "new": "내가 맡아도 상관은 없다만, 정말 안 가져가도 괜찮겠느냐?", "ok": true, "why": null}
+{"id": "56:17:7", "es": "Vale, lo cuidaré muy bien, ¡muchas gracias!", "old": "좋아요, 정성껏 잘 키울게요. 정말 고마워요!", "new": "그래, 정성껏 잘 돌보마. 참으로 고맙구나!", "ok": true, "why": null}
+{"id": "56:17:8", "es": "Soy el encargado de la Guardería, aquí puedes dejar a tus Pokémon para que los cuidemos.", "old": "저는 키우미집의 맡기기 담당이에요. 포켓몬을 잘 돌봐드릴 테니 언제든 맡겨주세요.", "new": "나는 키우미집 관리인이란다. 잘 돌봐줄 테니 언제든 포켓몬을 맡기렴.", "ok": true, "why": null}
+{"id": "56:17:9", "es": "Habla con mi mujer si quieres dejarnos alguno de tus Pokémon. Y ni se te ocurra intentar descubrir como se reproducen.", "old": "포켓몬을 맡기고 싶다면 내 아내에게 말해. 그리고 포켓몬이 어떻게 알을 낳는지는 괜히 밝혀내려고 하지 마라.", "new": "포켓몬을 맡기고 싶다면 내 아내에게 말을 걸어보게. 그리고 포켓몬이 어떻게 번식하는지는 괜히 밝혀내려 하지 말게나.", "ok": true, "why": null}
+{"id": "56:17:10", "es": "¡Ah, eres tú! Tu \\v[3] está muy bien.", "old": "아, 너구나! 네 \\v[3]은 아주 잘 지내고 있어.", "new": "아, 너구나! 네 \\v[3]은 아주 잘 지내고 있단다.", "ok": true, "why": null}
+{"id": "56:17:11", "es": "¡Ah, eres tú! \\v[3] y \\v[4] están bien.", "old": "아, 너구나! \\v[3]와(과) \\v[4]은(는) 잘 지내고 있어.", "new": "아, 너구나! \\v[3]와(과) \\v[4]은(는) 잘 지내고 있단다.", "ok": true, "why": null}
+{"id": "56:17:12", "es": "Aunque no les gusta estar juntos.", "old": "서로 같이 있는 걸 별로 안 좋아하는 것 같지만 말이야.", "new": "서로 같이 있는 건 별로 안 좋아하는 것 같지만 말일세.", "ok": true, "why": null}
+{"id": "56:17:13", "es": "Parece que no se llevan demasiado bien.", "old": "둘이 별로 사이가 안 좋은 것 같아요.", "new": "둘이 별로 사이가 안 좋은 것 같구먼.", "ok": true, "why": null}
+{"id": "56:17:14", "es": "Parece que se gustan un poco.", "old": "둘이 조금은 호감이 있는 것 같아요.", "new": "둘이 조금은 호감이 있는 모양이란다.", "ok": true, "why": null}
+{"id": "56:17:15", "es": "Están juntos todo el tiempo.", "old": "둘은 항상 붙어 있더라고요.", "new": "둘이 항상 붙어 있더구나.", "ok": true, "why": null}
+{"id": "56:18:16", "es": "¡Mmm! Soplan vientos de cambio, lo siento en las hojas otoñales de los árboles.", "old": "음! 변화의 바람이 불고 있군요. 나무의 가을 단풍에서 느껴집니다.", "new": "음! 변화의 바람이 불어오고 있군요. 가을나무의 단풍잎에서 느껴집니다.", "ok": true, "why": null}
+{"id": "56:18:17", "es": "El mundo está destinado a vivir cambios constantemente, y el cambio es bueno. Lo contrario es la no-existencia.", "old": "세상은 끊임없이 변화하게 되어 있고, 변화는 좋은 것입니다. 그 반대는 비존재일 뿐이지요.", "new": "세상은 끊임없이 변화를 겪을 운명이고, 변화란 좋은 것이지요. 그 반대는 비존재에 불과합니다.", "ok": true, "why": null}
+{"id": "56:20:18", "es": "Una estatua de Sawsbuck, esculpida con una melancolía otoñal.", "old": "가을의 멜랑콜리를 담아 조각한 바라철록의 동상이다.", "new": "가을의 멜랑콜리를 담아 조각한 바라철록의 동상이다.", "ok": true, "why": null}
+{"id": "56:20:19", "es": "¿Quieres acercar a tu Sawsbuck a la estatua?", "old": "바라철록을 동상에 가까이 가보게 하시겠습니까?", "new": "바라철록을 동상에 가까이 가보게 하시겠습니까?", "ok": true, "why": null}
+{"id": "56:20:20", "es": "¡Sawsbuck ha cambiado su forma!", "old": "바라철록의 폼이 바뀌었다!", "new": "바라철록의 폼이 바뀌었다!", "ok": true, "why": null}
+{"id": "56:15:21", "es": "Si pones a un Ditto a criar con cualquier otro Pokémon, siempre saldrá un huevo.", "old": "메타몽을 다른 포켓몬과 함께 맡기면 반드시 알이 태어납니다.", "new": "메타몽을 다른 포켓몬이랑 같이 맡기면 꼭 알을 낳더라고!", "ok": true, "why": null}
+{"id": "56:15:22", "es": "Es algo que hemos descubierto hace poco y que supone toda una revolución en la Crianza Pokémon.", "old": "이것은 우리가 최근에 발견한 사실로, 포켓몬 키우기에 있어 일종의 혁명이라 할 수 있죠.", "new": "얼마 전에 새로 밝혀낸 사실인데, 포켓몬 키우기에서는 정말 대혁명이라니까!", "ok": true, "why": null}
