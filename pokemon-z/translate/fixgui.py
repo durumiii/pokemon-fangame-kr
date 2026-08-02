@@ -23,6 +23,34 @@ from pathlib import Path
 HERE = Path(__file__).parent
 KO = HERE / "ko"
 NOTES = HERE / "fixnotes.jsonl"
+JOIN = HERE.parent / "docs" / "research" / "map-speaker-join.jsonl.gz"
+GROUPS = HERE / "sprite-groups.json"
+
+_ctx = None  # (map,k) → {"sprite","group","map_name"} 지연 로드
+
+
+def ctx():
+    global _ctx
+    if _ctx is None:
+        import gzip
+        import re
+        _ctx = {"row": {}, "mapname": {}}
+        try:
+            g = json.loads(GROUPS.read_text(encoding="utf-8"))["groups"]
+            s2g = {s: grp for grp, ss in g.items() for s in ss}
+            stem = lambda s: re.sub(r"(ow|OW|TS|w)?\d*$", "", s) or "(없음)"
+            for line in gzip.open(JOIN, "rt", encoding="utf-8"):
+                d = json.loads(line)
+                if "sprite" not in d:
+                    continue
+                key = (d["map"], d["k"])
+                if key not in _ctx["row"]:
+                    _ctx["row"][key] = {"sprite": d["sprite"] or "(없음)",
+                                        "group": s2g.get(stem(d["sprite"]), "?")}
+                _ctx["mapname"].setdefault(d["map"], d.get("map_name", ""))
+        except Exception as e:
+            print("조인표 로드 실패(찾아보기 축소):", e)
+    return _ctx
 
 PAGE = """<!doctype html><html lang=ko><head><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
@@ -77,6 +105,13 @@ PAGE = """<!doctype html><html lang=ko><head><meta charset=utf-8>
   <input type=text id=q placeholder="문구 검색 — 한국어 번역 또는 스페인어 원문" autofocus>
   <select id=filef><option value="">전체 파일</option></select>
   <button class=primary onclick=search()>검색</button>
+  <select id=browseby onchange=doBrowse()>
+   <option value="">찾아보기…</option>
+   <option value=map>맵별</option>
+   <option value=sprite>화자별</option>
+   <option value=group>분류별</option>
+   <option value=file>파일별</option>
+  </select>
  </div>
  <span id=dirty></span>
  <button onclick=build() id=buildbtn>빌드 → 게임 반영</button>
@@ -113,7 +148,7 @@ async function search(){
 function more(){
  const frag=HITS.slice(SHOWN,SHOWN+STEP).map((h,k)=>{const i=SHOWN+k;return `
   <div class=card id=card${i}>
-   <span class=chip>${esc(h.file)}:${h.line}</span>${h.map!==null?`<span class=chip>맵 ${h.map}</span>`:''}
+   <span class=chip>${esc(h.file)}:${h.line}</span>${h.map!==null&&h.map!==undefined?`<span class=chip>맵 ${h.map}</span>`:''}${h.sprite&&h.sprite!=='?'?`<span class=chip>${esc(h.sprite)}</span>`:''}${h.group&&h.group!=='?'?`<span class=chip>${esc(h.group)}</span>`:''}
    <div class=es>${esc(h.es)}</div>
    <textarea id=v${i} data-orig="${esc(h.v)}"
      onkeydown="if(event.ctrlKey&&event.key==='Enter')save(${i},'${h.file}',${h.line})">${esc(h.v)}</textarea>
@@ -167,6 +202,24 @@ async function doneNote(i){
  await fetch('/done',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({i})});
  notes();
 }
+async function doBrowse(){
+ const by=$('browseby').value; if(!by)return;
+ $('meta').textContent='불러오는 중...';
+ const r=await fetch('/browse?by='+by); const js=await r.json();
+ const names={map:'맵',sprite:'화자',group:'분류',file:'파일'};
+ $('meta').textContent=`${names[by]}별 — ${js.groups.length}개 묶음`;
+ $('out').innerHTML=js.groups.map(g=>`
+  <div class=card style="cursor:pointer" onclick="openGroup('${by}','${esc(g.key)}')">
+   <b>${esc(g.label)}</b> <span class=chip>${g.count}행</span>
+  </div>`).join('');
+}
+async function openGroup(by,key){
+ $('meta').textContent='불러오는 중...';
+ const r=await fetch('/list?by='+by+'&key='+encodeURIComponent(key)); const js=await r.json();
+ HITS=js.hits; SHOWN=0;
+ $('meta').textContent=`${key} — ${js.hits.length}행`+(js.hits.length>=500?' (상한 500)':'');
+ $('out').innerHTML=''; more();
+}
 </script></body></html>"""
 
 
@@ -204,6 +257,73 @@ def save_row(file, line, new_v):
     lines[line - 1] = json.dumps(d, ensure_ascii=False)
     p.write_text("\n".join(lines) + "\n", encoding="utf-8")
     return None
+
+
+def maps_rows():
+    """00-maps 행 전수 — 검색과 같은 형태 + sprite·group 부착."""
+    c = ctx()
+    p = KO / "00-maps.jsonl"
+    cur_map = None
+    for i, line in enumerate(p.read_text(encoding="utf-8").splitlines(), 1):
+        d = json.loads(line)
+        if "map" in d and "n" in d:
+            cur_map = d["map"]
+            continue
+        info = c["row"].get((cur_map, d.get("k", "")), {})
+        yield {"file": p.name, "line": i, "map": cur_map,
+               "es": d.get("k", ""), "v": d.get("v", ""),
+               "sprite": info.get("sprite", "?"), "group": info.get("group", "?")}
+
+
+def browse(by):
+    from collections import Counter
+    c = ctx()
+    if by == "file":
+        out = []
+        for p in sorted(KO.glob("*.jsonl")):
+            n = sum(1 for l in p.read_text(encoding="utf-8").splitlines()
+                    if l and "\"v\"" in l)
+            out.append({"key": p.name, "label": p.name, "count": n})
+        return out
+    cnt = Counter()
+    for r in maps_rows():
+        if by == "map":
+            cnt[r["map"]] += 1
+        elif by == "sprite":
+            cnt[r["sprite"]] += 1
+        elif by == "group":
+            cnt[r["group"]] += 1
+    if by == "map":
+        return [{"key": str(k), "label": f"맵 {k} · {c['mapname'].get(k, '')}",
+                 "count": n} for k, n in sorted(cnt.items(), key=lambda x: x[0] or 0)]
+    return [{"key": str(k), "label": str(k), "count": n}
+            for k, n in cnt.most_common()]
+
+
+def listing(by, key):
+    if by == "file":
+        p = KO / key
+        cur_map = None
+        out = []
+        for i, line in enumerate(p.read_text(encoding="utf-8").splitlines(), 1):
+            d = json.loads(line)
+            if "map" in d and "n" in d:
+                cur_map = d["map"]
+                continue
+            if "v" in d:
+                out.append({"file": p.name, "line": i, "map": cur_map,
+                            "es": d.get("k") or d.get("es") or "", "v": d["v"]})
+            if len(out) >= 500:
+                break
+        return out
+    out = []
+    for r in maps_rows():
+        val = str(r["map"]) if by == "map" else r.get(by, "?")
+        if val == key:
+            out.append(r)
+        if len(out) >= 500:
+            break
+    return out
 
 
 def load_notes():
@@ -248,6 +368,13 @@ class H(BaseHTTPRequestHandler):
             self._json({"hits": hits, "truncated": trunc})
         elif u.path == "/notes":
             self._json({"notes": load_notes()})
+        elif u.path == "/browse":
+            by = urllib.parse.parse_qs(u.query).get("by", ["map"])[0]
+            self._json({"groups": browse(by)})
+        elif u.path == "/list":
+            qs = urllib.parse.parse_qs(u.query)
+            self._json({"hits": listing(qs.get("by", ["map"])[0],
+                                        qs.get("key", [""])[0])})
         else:
             self._json({"err": "?"}, 404)
 
