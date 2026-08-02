@@ -12,7 +12,14 @@ UI Text KR을 주입한 Scripts.rxdata + 번역표(ko JSONL)와 독립 빌더.
 스테이징 폴더를 게임 이름으로 만들어 modstore.apply로 얹는다(제목 판별이
 Game.ini 없으면 폴더 이름 폴백인 것을 이용).
 
-usage: uv run make_package.py [--name "포켓몬Z 한글패치 v4"]
+usage: uv run make_package.py [--variant debug|clean|mods] [--name "..."]
+
+변형 (v5 배포 체계, 2026-08-03):
+  debug — 통 패치: 번역 전체(수술·Josa·UI Text) + 디버그 3편집(patch_debug)
+  clean — 순수 번역: 번역 에셋+dat+Scripts(원본+Josa만).
+          보간 6곳·부적 수정·화면 한글화는 빠진다(모드 묶음이 보충).
+  mods  — 스크립트 모드 묶음: 완성 Scripts.rxdata(수술+Josa+UI Text) 단품.
+          clean 위에 덮어쓰면 통 패치(디버그 제외)와 같아진다.
 """
 import json
 import os
@@ -38,8 +45,26 @@ sys.path.insert(0, str(_FANLIB_HOME))
 from fanlib import modstore  # noqa: E402
 
 
+def _run_patch_debug(scripts_path: Path):
+    import subprocess
+    r = subprocess.run(
+        ["uv", "run", str(HERE / "patch_debug.py"), str(scripts_path)],
+        capture_output=True, text=True)
+    print(r.stdout.strip())
+    if r.returncode != 0:
+        sys.exit(f"patch_debug 실패: {r.stderr[-400:]}")
+
+
 def main():
-    name = "포켓몬Z 한글패치 v4"
+    variant = "debug"
+    if "--variant" in sys.argv:
+        variant = sys.argv[sys.argv.index("--variant") + 1]
+    default_names = {
+        "debug": "포켓몬Z 한글패치 v5 (통합+디버그)",
+        "clean": "포켓몬Z 한글패치 v5 (순수 번역)",
+        "mods": "포켓몬Z 한글패치 v5 (스크립트 모드 묶음)",
+    }
+    name = default_names[variant]
     if "--name" in sys.argv:
         name = sys.argv[sys.argv.index("--name") + 1]
     stage = DIST / "Pokemon Z Fangame"  # 주입기 게임 판별용 임시 이름
@@ -48,6 +73,19 @@ def main():
         if p.exists():
             shutil.rmtree(p)
     DIST.mkdir(exist_ok=True)
+
+    if variant == "mods":
+        # 완성 Scripts 단품: 수술판(BASE_MOD 사본) + Josa + UI Text KR
+        (stage / "Data").mkdir(parents=True)
+        shutil.copy2(BASE_MOD / "Data" / "Scripts.rxdata", stage / "Data" / "Scripts.rxdata")
+        for mod in ["Josa Select", "UI Text KR"]:
+            r = modstore.apply(STORE / "Pokemon Z Fangame", mod, stage)
+            print(f"주입: {mod} → {r['did']}")
+        shutil.copy2(HERE / "읽어주세요-모드묶음.txt", stage / "읽어주세요.txt")
+        stage.rename(final)
+        size = sum(p.stat().st_size for p in final.rglob("*") if p.is_file())
+        print(f"완성: {final} — {size / 1e6:.1f}MB")
+        return
 
     # 1. 원 패치 에셋 전체 (mod.json의 install_to 그대로)
     card = json.loads((BASE_MOD / "mod.json").read_text(encoding="utf-8"))
@@ -63,10 +101,19 @@ def main():
     # 2. 최신 korean.dat (보관소 사본이 build.py 산출로 항상 최신)
     shutil.copy2(BASE_MOD / "Data" / "korean.dat", stage / "Data" / "korean.dat")
 
-    # 3. 주입 모드 둘 → 스테이징의 Scripts.rxdata에
-    for mod in INJECT_MODS:
+    # 3. Scripts 조립 — 변형별
+    if variant == "clean":
+        # 원본(수술 전) + Josa만. 보간·부적·화면 한글화 제외.
+        shutil.copy2(BASE_MOD / "Data" / "Scripts.rxdata.pre-intl.bak",
+                     stage / "Data" / "Scripts.rxdata")
+        inject = ["Josa Select"]
+    else:  # debug(통 패치)
+        inject = list(INJECT_MODS)
+    for mod in inject:
         r = modstore.apply(STORE / "Pokemon Z Fangame", mod, stage)
         print(f"주입: {mod} → {r['did']}")
+    if variant == "debug":
+        _run_patch_debug(stage / "Data" / "Scripts.rxdata")
 
     # 4. 번역표 + 독립 빌더
     tbl = stage / "번역표"
@@ -85,6 +132,9 @@ def main():
 
     # 5. 안내문
     shutil.copy2(HERE / "읽어주세요.txt", stage / "읽어주세요.txt")
+    extra = HERE / f"읽어주세요-{variant}.txt"
+    if extra.exists():
+        shutil.copy2(extra, stage / "이 판본은.txt")
 
     stage.rename(final)
     total = sum(1 for _ in final.rglob("*") if _.is_file())
