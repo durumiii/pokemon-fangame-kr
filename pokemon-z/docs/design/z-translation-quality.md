@@ -363,7 +363,7 @@ v값 수정→빌드 한 사이클):
 | `You've run out of Coins.\nGame over!` | 슬롯머신(영어) | 코인이 다 떨어졌다!\n게임 오버! |
 | REFEREE: Judging category 1~3 … (3행) | 배틀아레나(영어) | 심판 문구 3종 번역 |
 | `¡{1}!` / `¿...?` | 배틀 | {1}! / ...? |
-| `{1} custom4 with {2}` ~ custom7 (4행) | Pokedex Mejorada | **정체 불명 — 노출 확인 후** |
+| ~~`{1} custom4 with {2}` ~ custom7 (4행)~~ | Pokedex Mejorada | 죽은 줄 확정(2026-08-04) — 진화 방법 29~32(LevelRain·HappinessMoveType·Custom1·2), PBS pokemon.txt 사용 0건. 방치 |
 
 부수 확인: 이번 대조에서 스페인어 키 이름(Bloq Mayus 등)·Nv→Lv류는 이미
 번역돼 있었다(한글 없는 정상 번역이라 1차 스캔에서 오탐났던 부류). 죽은 짐
