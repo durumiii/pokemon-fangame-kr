@@ -5,6 +5,7 @@ cd "$(dirname "$0")"
 REPO=${1:-$(gh api user -q .login)/z-kr-studio}
 OWNER=${REPO%%/*}
 TMP=$(mktemp -d)
+trap 'rm -rf "$TMP"' EXIT
 gh repo view "$REPO" >/dev/null 2>&1 || gh repo create "$REPO" --public
 git clone "https://github.com/$REPO" "$TMP" 2>/dev/null
 rsync -a --delete \
@@ -17,4 +18,3 @@ git add -A
 git diff --cached --quiet || { git commit -m "deploy $(date +%F)"; git push origin HEAD; }
 gh api "repos/$REPO/pages" -X POST -f 'source[branch]=main' -f 'source[path]=/' 2>/dev/null || true
 echo "https://$OWNER.github.io/${REPO#*/}/"
-rm -rf "$TMP"
