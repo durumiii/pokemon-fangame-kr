@@ -215,6 +215,59 @@ async function build(){
   }
 }
 
+// ─── 고침 파일 내보내기/가져오기 ────────────────────────
+let CONFLICTS = [];
+function exportFix(){
+  if (!S.edits.size){ toast('내보낼 수정이 없어요'); return; }
+  const lines = [JSON.stringify({app:APP_VER, patch:S.meta ?? S.sha}),
+    ...[...S.edits.values()].map(e=>JSON.stringify(e))];
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([lines.join('\n')+'\n'], {type:'application/x-ndjson'}));
+  a.download = `z-kr-고침-${new Date().toISOString().slice(0,10)}-${S.edits.size}건.jsonl`;
+  a.click(); URL.revokeObjectURL(a.href);
+  toast('고침 파일을 내려받았어요 — 커뮤니티에 첨부해 공유하세요');
+}
+
+function importFix(){
+  $('importfile').onchange = async ev => {
+    const f = ev.target.files[0]; ev.target.value = ''; if (!f) return;
+    const lines = (await f.text()).split('\n').filter(Boolean).map(l=>JSON.parse(l));
+    const head = lines[0]?.app ? lines.shift() : null;
+    const byId = new Map(S.rows.map(r=>[rid(r), r]));
+    let applied = 0, skipped = 0; const conflicts = [];
+    for (const e of lines){
+      const row = byId.get(rid(e));
+      if (!row || (e.k && row.k !== e.k)){ skipped++; continue; }   // 원문 불일치 → 버전 다름
+      const mine = S.edits.get(rid(e));
+      if (mine && mine.v !== e.v){ conflicts.push({row, mine, theirs:e}); continue; }
+      S.edits.set(rid(e), {sec:row.sec, map:row.map, idx:row.idx, k:row.k, v:e.v});
+      applied++;
+    }
+    persist(); updateDirty();
+    $('meta').textContent = `가져오기: ${applied}건 병합 · ${skipped}건 건너뜀(원문 불일치)` +
+      (head?.patch && head.patch !== (S.meta ?? S.sha) ? ` · 주의: 다른 패치판(${head.patch})의 고침` : '');
+    if (conflicts.length) showConflicts(conflicts);
+    else toast(`병합 완료 — ${applied}건. 빌드하면 반영돼요`, 4000);
+  };
+  $('importfile').click();
+}
+
+function showConflicts(cs){
+  $('out').innerHTML = `<div class=meta>내 수정과 겹치는 ${cs.length}행 — 남길 쪽을 고르세요</div>` +
+    cs.map((c,i)=>`<div class=card id=cf${i}>
+      ${c.row.k?`<div class=es>${esc(c.row.k)}</div>`:''}
+      <div class=rowbar><button class=primary onclick=pickConflict(${i},0)>내 것: ${esc(c.mine.v)}</button></div>
+      <div class=rowbar><button onclick=pickConflict(${i},1)>가져온 것: ${esc(c.theirs.v)}</button></div>
+    </div>`).join('');
+  CONFLICTS = cs;
+}
+function pickConflict(i, theirs){
+  const c = CONFLICTS[i];
+  if (theirs) S.edits.set(rid(c.row), {sec:c.row.sec, map:c.row.map, idx:c.row.idx, k:c.row.k, v:c.theirs.v});
+  persist(); updateDirty();
+  $('cf'+i).style.opacity = .4; $('cf'+i).style.pointerEvents = 'none';
+}
+
 async function restoreMenu(){
   const hasPrev = await exists(S.dir, 'Data/korean.dat.prev');
   const pick = prompt(
