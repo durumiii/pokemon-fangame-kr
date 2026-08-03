@@ -27,6 +27,7 @@ import json
 import os
 import shutil
 import sys
+import time
 from pathlib import Path
 
 HERE = Path(__file__).parent
@@ -45,6 +46,32 @@ if not (_FANLIB_HOME / "fanlib" / "modstore.py").exists():
     sys.exit(f"fangame-library를 찾지 못했습니다: {_FANLIB_HOME} — FANGAME_LIBRARY 환경변수로 경로를 주세요")
 sys.path.insert(0, str(_FANLIB_HOME))
 from fanlib import modstore  # noqa: E402
+
+# modkit — 매니페스트 동봉용 (fanlib과 같은 경로 임포트 패턴)
+_MODKIT_HOME = Path(
+    os.environ.get("MODKIT_HOME")
+    or Path.home() / "workspace" / "claude-native" / "sketches" / "modkit"
+)
+if not (_MODKIT_HOME / "modkit" / "manifest.py").exists():
+    sys.exit(f"modkit를 찾지 못했습니다: {_MODKIT_HOME} — MODKIT_HOME 환경변수로 경로를 주세요")
+sys.path.insert(0, str(_MODKIT_HOME))
+from modkit import manifest as mkmanifest  # noqa: E402
+
+
+def _embed_manifest(final: Path, game: str, version: str):
+    """완성된 스테이징 폴더 자신을 capture해 manifest.json으로 동봉한다.
+
+    capture가 manifest.json이 생기기 전에 돌므로 자기 자신은 자연히 빠지지만,
+    이 패키지를 게임 폴더에 덮어쓴 뒤에는 manifest.json도 게임 폴더에 남는다 —
+    나중에 그 파일로 diagnose를 돌릴 때 자기 자신이 외래로 잡히지 않도록 exclude에
+    "manifest.json"을 더해 만든 매니페스트에 그 규칙을 함께 싣는다.
+    """
+    t0 = time.monotonic()
+    made = mkmanifest.capture(
+        final, game=game, version=version,
+        exclude=mkmanifest.DEFAULT_EXCLUDE + ("manifest.json",))
+    mkmanifest.save(made, final / "manifest.json")
+    print(f"매니페스트: {len(made['files'])}개 파일, {time.monotonic() - t0:.2f}초")
 
 
 def _run_patch_debug(scripts_path: Path):
@@ -146,6 +173,7 @@ def main():
     total = sum(1 for _ in final.rglob("*") if _.is_file())
     size = sum(p.stat().st_size for p in final.rglob("*") if p.is_file())
     print(f"완성: {final} — 파일 {total}개, {size / 1e6:.0f}MB")
+    _embed_manifest(final, "Pokemon Z Fangame", name)
     print("배포 전 점검: 읽어주세요.txt 버전·날짜, zip으로 묶기")
 
 

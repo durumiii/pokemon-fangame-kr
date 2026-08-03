@@ -52,6 +52,8 @@ vm.runInContext(src + `
   idbGet, idbSet, reopenFolder, migrateEdits, hist, histAll, memo, showHist,
   doRestore, reloadAfterRestore, batchReport, batchParts, canReport, card,
   memoIndex, renderHome, updateDirty, FIELD_CAP,
+  applyEdit, replaceMenu, replacePreview, replaceApply, replAll, REPL_CAP,
+  replHits: () => REPL,
   setHits: h => { HITS = h; }};
 function readFile(){ return globalThis.__fsFile; }
 function writeFile(){}
@@ -397,6 +399,63 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   await ctx.reopenFolder();                                   // 권한 거부 → 로드하지 않고 안내만
   a.equal(ctx.S.dir, 'unchanged');
   a.ok(el('toast').textContent.includes('폴더 접근 권한이 없어요'));
+
+  // ─ 일괄 바꾸기 ─
+  // 미리보기는 지금 값(미빌드 수정 반영) 기준으로 찾고, 강조는 이스케이프한 뒤에 끼운다
+  ctx.S.rows = [
+    { sec: 0, map: 1, idx: 1, k: 'a', v: '메달을 받았다' },
+    { sec: 0, map: 1, idx: 2, k: 'b', v: '<b>메달</b> 진열장' },      // 태그가 그대로 살아나면 안 된다
+    { sec: 0, map: 1, idx: 3, k: 'c', v: '\\c[2]메달\\PN' },          // 치환이 코드를 삼키는 행
+    { sec: 0, map: 1, idx: 4, k: 'd', v: '관계없는 행' },
+  ];
+  ctx.S.edits = new Map(); ctx.S.applied = new Map();
+  ctx.S.base = 'replbase';
+  ctx.replaceMenu();
+  el('rfind').value = '메달'; el('rto').value = '배지';
+  ctx.replacePreview();
+  a.equal(ctx.replHits().length, 3);
+  a.equal(el('meta').textContent, '3행 매칭');
+  const prev = el('replout').innerHTML;
+  a.ok(prev.includes('<mark>메달</mark>') && prev.includes('<mark>배지</mark>'));
+  a.ok(prev.includes('&lt;b&gt;') && !prev.includes('<b>메달'));      // 원문 태그는 문자로만 나온다
+  a.ok(prev.includes('id=rc0 checked'));                              // 멀쩡한 행은 기본 선택
+
+  // 마크업을 삼키는 행은 자동 해제 + 경고, 나머지는 기본 선택
+  el('rto').value = '';                                              // \c[2]메달\PN → \c[2]\PN? 아니, '메달'만 지운다
+  ctx.replacePreview();
+  const del = ctx.replHits();
+  a.deepEqual(del.map(h => h.lost.length ? 1 : 0), [0, 0, 0]);       // '메달'만 지우면 코드는 남는다
+  el('rfind').value = '\\c[2]메달'; el('rto').value = '메달';         // 이번엔 색 코드를 삼킨다
+  ctx.replacePreview();
+  const lostHit = ctx.replHits();
+  a.equal(lostHit.length, 1);
+  a.deepEqual(lostHit[0].lost, ['\\c[2]']);
+  a.ok(el('replout').innerHTML.includes('색·이름 코드가 사라져요'));
+  a.ok(!el('replout').innerHTML.includes('checked'));                 // 경고 행은 기본 해제
+
+  // 선택 적용: 체크한 행만 edits에 들어가고 이력에도 행마다 남는다
+  el('rfind').value = '메달'; el('rto').value = '배지';
+  ctx.replacePreview();
+  ctx.replAll(false);
+  el('rc0').checked = true; el('rc2').checked = true;                 // 1·3번째 행만
+  const histBefore = ctx.histAll().length;
+  ctx.replaceApply();
+  a.equal(ctx.S.edits.size, 2);
+  a.equal(ctx.S.edits.get('0:1:1').v, '배지을 받았다');                // 조사는 안 고쳐진다 — 행별 확인이 필요한 이유
+  a.equal(ctx.S.edits.get('0:1:3').v, '\\c[2]배지\\PN');
+  a.equal(ctx.S.edits.has('0:1:2'), false);                           // 체크 안 한 행은 그대로
+  a.equal(ctx.histAll().length - histBefore, 2);                      // 행마다 한 건씩
+  a.equal(ctx.histAll().at(-1).type, 'edit');
+  a.ok(el('meta').textContent.startsWith('2행 적용'));
+  a.equal(ctx.replHits().length, 1);                                  // 적용된 행은 새 값이라 목록에서 빠진다
+
+  // 원문으로 되돌리는 치환은 edits에서 빠져야 한다(저장 버튼과 같은 의미)
+  el('rfind').value = '배지'; el('rto').value = '메달';
+  ctx.replacePreview();
+  a.equal(ctx.replHits().length, 2);                                  // 방금 고친 두 행
+  ctx.replAll(true);
+  ctx.replaceApply();
+  a.equal(ctx.S.edits.size, 0);                                       // 원문과 같아지면 수정 해제
 
   console.log('SELFCHECK_OK');
 })().catch(e => { console.error(e); process.exit(1); });

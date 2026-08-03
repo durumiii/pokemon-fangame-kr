@@ -156,7 +156,7 @@ async function useFolder(dir){
   S.base = hadBak ? await sha12(await readFile(S.dir, 'Data/korean.dat.bak')) : S.sha;
   migrateEdits();
   const dropped = restoreEdits();
-  for (const id of ['q','secf','searchbtn','buildbtn','exportbtn','importbtn','restorebtn','histbtn','batchbtn'])
+  for (const id of ['q','secf','searchbtn','buildbtn','replbtn','exportbtn','importbtn','restorebtn','histbtn','batchbtn'])
     $(id).disabled = false;
   $('secf').innerHTML = '<option value="">전체 분류</option>' +
     Object.entries(SEC_LABEL).map(([s,l])=>`<option value=${s}>${l}</option>`).join('');
@@ -225,16 +225,20 @@ function more(){
 }
 
 const MARKUP = /\\c\[\d+\]|\\[A-Za-z]+|\{\d+\}|<[^>]+>/g;
+// 한 행에 새 값을 앉힌다 — 저장 버튼과 일괄 바꾸기가 같은 경로를 쓴다(persist/화면 갱신은 부르는 쪽 몫)
+function applyEdit(r, v){
+  // textarea는 CR/CRLF를 LF로 접어 돌려준다 — 안 고친 행이 수정으로 잡히지 않게 같은 모양끼리 비교
+  const id = rid(r), prev = S.edits.get(id);
+  if (v === r.v.replace(/\r\n?/g, '\n')) S.edits.delete(id);
+  else S.edits.set(id, {sec:r.sec, map:r.map, idx:r.idx, k:r.k, v});
+  hist({type:'edit', rid:id, k:r.k, old:prev ? prev.v : r.v, new:v});
+}
 function save(i){
   const r = HITS[i], v = $('v'+i).value;
   const lost = (r.v.match(MARKUP)||[]).filter(t => !v.includes(t));
   if (lost.length && !confirm(`색·이름 코드가 사라졌어요: ${lost.join(' ')}\n지우면 화면이 깨질 수 있어요. 그래도 저장할까요?`))
     return;
-  // textarea는 CR/CRLF를 LF로 접어 돌려준다 — 안 고친 행이 수정으로 잡히지 않게 같은 모양끼리 비교
-  const prev = S.edits.get(rid(r));
-  if (v === r.v.replace(/\r\n?/g, '\n')) S.edits.delete(rid(r));
-  else S.edits.set(rid(r), {sec:r.sec, map:r.map, idx:r.idx, k:r.k, v});
-  hist({type:'edit', rid:rid(r), k:r.k, old:prev ? prev.v : r.v, new:v});
+  applyEdit(r, v);
   persist(); updateDirty();
   $('st'+i).className='st ok'; $('st'+i).textContent='저장됨';
   $('card'+i).classList.add('saved');
@@ -316,6 +320,68 @@ function migrateEdits(){
   if (S.sha === S.base || !localStorage.getItem(old)) return;
   if (!localStorage.getItem('edits:'+S.base)) localStorage.setItem('edits:'+S.base, localStorage.getItem(old));
   localStorage.removeItem(old);
+}
+
+// ─── 일괄 바꾸기 ──────────────────────────────────────
+// 「메달→배지」 일괄 치환이 '배지을' 같은 조사 오류를 21곳 남긴 적이 있다 —
+// 모두 바꾸기가 아니라 행별로 결과를 보고 고르는 것이 이 화면의 요점이다
+let REPL = []; const REPL_CAP = 500;
+// 검색·치환은 지금 값(미빌드 수정 반영) 기준. 원문 CR은 저장값과 같은 LF 모양으로 접는다
+const curV = r => S.edits.get(rid(r))?.v ?? (r.v ?? '').replace(/\r\n?/g, '\n');
+// 이스케이프한 조각 사이에만 강조를 끼운다 — 원문이 태그로 살아나지 않게
+const hl = (parts, s) => parts.map(esc).join(`<mark>${esc(s)}</mark>`);
+
+function replaceMenu(){
+  $('meta').textContent = '일괄 바꾸기 — 찾을 문구와 바꿀 문구를 넣고 미리보기하세요';
+  $('out').innerHTML = `<div class=card>
+    <div class=rowbar>
+      <input type=text id=rfind placeholder="찾을 문구" onkeydown="if(event.key==='Enter')replacePreview()">
+      <input type=text id=rto placeholder="바꿀 문구 (비우면 삭제)" onkeydown="if(event.key==='Enter')replacePreview()">
+    </div>
+    <div class=rowbar><button class=primary onclick=replacePreview()>미리보기</button>
+      <span class=es>글자 그대로 찾아요(정규식 아님). 고른 행만 적용돼요.</span></div>
+  </div><div id=replout></div>`;
+}
+
+function replacePreview(){
+  const find = $('rfind').value, to = $('rto').value;
+  if (!find){ toast('찾을 문구를 넣어주세요'); return; }
+  REPL = [];
+  let total = 0;
+  for (const r of S.rows){
+    const v = curV(r);
+    if (!v.includes(find)) continue;
+    total++;
+    if (REPL.length >= REPL_CAP) continue;
+    const parts = v.split(find), nv = parts.join(to);
+    // 치환이 색·이름 코드를 삼킨 행 — 적용은 할 수 있게 두되 기본 선택에서 뺀다
+    const lost = (v.match(MARKUP)||[]).filter(t => !nv.includes(t));
+    REPL.push({r, parts, nv, lost});
+  }
+  $('meta').textContent = `${total}행 매칭` +
+    (total > REPL_CAP ? ` — 앞 ${REPL_CAP}행만 보여줘요. 찾을 문구를 더 좁혀주세요` : '');
+  if (!total){ $('replout').innerHTML = '<div class=empty>매칭되는 행이 없습니다.</div>'; return; }
+  $('replout').innerHTML =
+    `<div class=rowbar><button class=ghost onclick=replAll(true)>모두 선택</button>
+      <button class=ghost onclick=replAll(false)>모두 해제</button>
+      <button class=primary onclick=replaceApply()>선택 적용</button></div>` +
+    REPL.map((h, i) => `<div class="card ${h.lost.length?'notecard':''}">
+      <label class=rowbar><input type=checkbox id=rc${i} ${h.lost.length?'':'checked'}>
+        <span class=chip>${SEC_LABEL[h.r.sec]??('절'+h.r.sec)}</span>${h.r.map!=null?`<span class=chip>맵 ${h.r.map}</span>`:''}
+        ${h.lost.length?`<span class="st warn">색·이름 코드가 사라져요: ${esc(h.lost.join(' '))}</span>`:''}</label>
+      <div class=es>${hl(h.parts, find)}</div>
+      <div>${hl(h.parts, to)}</div></div>`).join('');
+}
+function replAll(on){ REPL.forEach((_, i) => { const c = $('rc'+i); if (c) c.checked = on; }); }
+
+function replaceApply(){
+  const sel = REPL.filter((_, i) => $('rc'+i)?.checked);
+  if (!sel.length){ toast('적용할 행을 골라주세요'); return; }
+  for (const h of sel) applyEdit(h.r, h.nv);
+  persist(); updateDirty();
+  replacePreview();   // 적용된 행은 새 값 기준이라 목록에서 빠진다
+  $('meta').textContent = `${sel.length}행 적용 — [빌드]를 누르면 게임에 반영돼요`;
+  toast(`${sel.length}행 적용했어요`);
 }
 
 // ─── 이력 원장 ────────────────────────────────────────

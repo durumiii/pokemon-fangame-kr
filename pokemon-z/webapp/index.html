@@ -46,6 +46,8 @@
  #toast.show{opacity:1}
  kbd{font-size:11px;color:var(--sub);border:1px solid var(--line);border-radius:4px;padding:1px 5px;background:var(--panel)}
  .more{width:100%;padding:11px}
+ mark{background:rgba(91,141,239,.3);color:var(--tx);border-radius:3px;padding:0 2px}
+ input[type=checkbox]{width:15px;height:15px;accent-color:var(--acc);flex:none}
 </style>
 </head><body>
 <header>
@@ -57,6 +59,8 @@
  </div>
  <span id=dirty></span>
  <button id=buildbtn onclick=build() disabled>빌드 → 게임 반영</button>
+ <button class=ghost id=replbtn onclick=replaceMenu() disabled
+   title="한 문구를 여러 행에서 한꺼번에 고쳐요 — 행마다 확인하고 골라요">바꾸기</button>
  <button class=ghost id=batchbtn onclick=batchReport() disabled
    title="저장한 수정과 메모를 한 번에 제보해요">모아서 제보</button>
  <button class=ghost id=exportbtn onclick=exportFix() disabled>내보내기</button>
