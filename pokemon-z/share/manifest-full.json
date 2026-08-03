@@ -12,16 +12,17 @@
   "_quarantine/*",
   "modkit-log.jsonl",
   "manifest.json",
-  "manifest.json",
-  "번역표/*",
-  "읽어주세요.txt",
-  "Partidas Guardadas*",
-  "showdown.txt",
-  "progreso*.dat",
-  "amadeus.dat",
   "Data/Constants.rxdata",
   "Data/MapChecker.dat",
-  "LastSave.dat"
+  "*LastSave.dat",
+  "Game.rxdata",
+  "Game_*.rxdata",
+  "번역표/*",
+  "읽어주세요.txt",
+  "Data/progreso*.dat",
+  "showdown.txt",
+  "Partidas Guardadas*",
+  "amadeus.dat"
  ],
  "files": {
   ".nomedia": [
