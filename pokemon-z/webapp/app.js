@@ -320,17 +320,24 @@ function save(i){
   syncReport(i);
   toast('저장됨 — [빌드]를 누르면 게임에 반영돼요');
 }
+// 로그인·지문 채집 없이 기기 단위로만 묶어보는 순수 난수 식별자 — localStorage 초기화 시 재발급됨을 수용
+function reporterId(){
+  let id = localStorage.getItem('reporter');
+  if (!id){ id = crypto.randomUUID(); localStorage.setItem('reporter', id); }
+  return id;
+}
 // 구글폼에 no-cors로 던진다(응답 확인 불가, 실패해도 toast로만 알림)
-async function sendForm(vals){
+// silent: 일괄 전송 중 매 건 toast 도배 방지(진행·완료 토스트는 호출부가 낸다)
+async function sendForm(vals, {batch=false, silent=false}={}){
   const fd = new FormData(), E = REPORT_FORM.entries;
   for (const [k, v] of Object.entries(vals)) fd.append(E[k], v);
-  fd.append(E.patch, `${S.meta ?? 'hash:'+S.sha} / ${APP_VER}`);
+  fd.append(E.patch, `${S.meta ?? 'hash:'+S.sha} / ${APP_VER} / u:${reporterId().slice(0,8)}${batch?' / 일괄':''}`);
   try {
     await fetch(`https://docs.google.com/forms/d/e/${REPORT_FORM.id}/formResponse`,
       {method:'POST', mode:'no-cors', body:fd});
-    toast('제보를 보냈어요 — 고마워요! 다음 판에 반영을 검토합니다', 4000);
+    if (!silent) toast('제보를 보냈어요 — 고마워요! 다음 판에 반영을 검토합니다', 4000);
   } catch {
-    toast('전송이 안 됐어요 — 인터넷 연결을 확인해 주세요', 5000);
+    if (!silent) toast('전송이 안 됐어요 — 인터넷 연결을 확인해 주세요', 5000);
   }
 }
 // 제안=내가 저장한 번역, 코멘트=그 행 메모(없으면 물어본다). 제보는 사본이라 보낸 뒤에도 데이터는 그대로다
@@ -343,25 +350,26 @@ async function report(i){
   await sendForm({sec:`${r.sec}:${SEC_LABEL[r.sec] ?? ''}`, idx:`${r.map ?? ''}:${r.idx}`,
                   k:r.k ?? '', v:r.v, suggest: e ? e.v : '', comment});
 }
-// 폼 한 칸에 들어갈 수 있는 길이 — 넘치면 잘리는 대신 잘렸다고 알린다
+// 폼 한 칸에 들어갈 수 있는 길이 — 넘치면 잘리는 대신 잘렸다고 알린다(단건에는 사실상 불필요하나 방어로 유지)
 const FIELD_CAP = 30000;
 const cut = s => s.length > FIELD_CAP ? s.slice(0, FIELD_CAP) + '…(이하 생략)' : s;
-function batchParts(){
-  const all = new Map([...S.applied, ...S.edits]);   // 같은 행은 미빌드분이 이긴다
+// 수정·메모가 있는 행마다 개별 제보와 같은 필드로 한 행씩 순차 전송한다("일괄" 표기는 patch 칸에만)
+async function batchReport(){
+  const all = new Map([...S.applied, ...S.edits]);   // 같은 행은 미빌드분(edits)이 이긴다
   const memos = memoIndex();
   const byId = new Map(S.rows.map(r=>[rid(r), r]));
-  return {
-    n: all.size + memos.size,
-    suggest: [...all].map(([id, e]) =>
-      `[${SEC_LABEL[e.sec] ?? '절'+e.sec}] ${e.k || byId.get(id)?.v || ''} → ${e.v}`).join('\n'),
-    comment: [...memos.values()].map(m => `[메모] ${m.k ?? ''}: ${m.text}`).join('\n'),
-  };
-}
-async function batchReport(){
-  const p = batchParts();
-  if (!p.n){ toast('보낼 수정이나 메모가 없어요'); return; }
-  await sendForm({sec:`일괄 ${p.n}건`, idx:'', k:'', v:'',
-                  suggest: cut(p.suggest), comment: cut(p.comment)});
+  const ids = [...new Set([...all.keys(), ...memos.keys()])];
+  if (!ids.length){ toast('보낼 수정이나 메모가 없어요'); return; }
+  for (let i = 0; i < ids.length; i++){
+    const id = ids[i], r = byId.get(id), e = all.get(id), m = memos.get(id);
+    toast(`일괄 제보 중... ${i+1}/${ids.length}건째`);
+    await sendForm({sec: r ? `${r.sec}:${SEC_LABEL[r.sec] ?? ''}` : '',
+                     idx: r ? `${r.map ?? ''}:${r.idx}` : '',
+                     k: r?.k ?? '', v: r?.v ?? '',
+                     suggest: e ? cut(e.v) : '', comment: m ? cut(m.text) : ''},
+                    {batch:true, silent:true});
+  }
+  toast(`${ids.length}건 보냈어요`);
 }
 let persistFailed = false;   // 연속 실패 시 토스트 도배 방지
 function persist(){

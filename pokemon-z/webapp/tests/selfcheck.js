@@ -22,7 +22,9 @@ const ctx = {
   URL: { createObjectURL: () => 'blob:mock', revokeObjectURL() {} },
   Blob: class { constructor(parts, opts) { this.parts = parts; this.type = opts?.type; } },
   FormData: class { constructor() { this._m = new Map(); } append(k, v) { this._m.set(k, v); } },
-  fetch: async (...args) => { ctx.__lastFetch = args; return {}; },
+  fetch: async (...args) => { ctx.__fetchCalls.push(args); ctx.__lastFetch = args; return {}; },
+  __fetchCalls: [],
+  crypto: { randomUUID: () => `uuid-${++ctx.__uuidN}` }, __uuidN: 0,
   addEventListener() {}, confirm: () => true, prompt: () => '',
   setTimeout, clearTimeout, console,
   // 메모리 IndexedDB 목업 — app.js의 idbDo가 쓰는 만큼만(open→transaction→get/put→oncomplete)
@@ -53,9 +55,9 @@ vm.runInContext(src + `
 ;globalThis.X = {rid, esc, MARKUP, S, persist, restoreEdits, save, build, report,
   exportFix, importFix, showConflicts, pickConflict, CONFLICTS, REPORT_FORM,
   idbGet, idbSet, reopenFolder, migrateEdits, hist, histAll, memo, showHist,
-  doRestore, reloadAfterRestore, batchReport, batchParts, canReport, card,
+  doRestore, reloadAfterRestore, batchReport, canReport, card,
   memoIndex, renderHome, updateDirty, FIELD_CAP, memoDel, persistMemos,
-  showMine, mineSave, mineCancel, mineMemoDel,
+  showMine, mineSave, mineCancel, mineMemoDel, reporterId,
   clearMemos: () => { MEMOS = null; },
   loadSpeakers, fillBrowse, doBrowse, openGroup, browseGroups, spkOf, mapName,
   setSpk: v => { SPK = v; MAPNAME = null; }, BROWSE_CAP,
@@ -322,6 +324,8 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   const reportRow = { sec: 3, map: 7, idx: 9, k: '원문키', v: '원문값' };
   ctx.setHits([reportRow]);
   el('v0').value = '원문값';                                          // 무편집 → suggest는 prompt(빈 문자열) 결과
+  const reporterId = ctx.reporterId();                                // 최초 호출 시 발급되어 이후 재사용된다
+  a.equal(ctx.reporterId(), reporterId);                              // 두 번 불러도 같은 해시(localStorage 재사용)
   await ctx.report(0);
   const [reportUrl, reportInit] = ctx.__lastFetch;
   a.equal(reportUrl, 'https://docs.google.com/forms/d/e/formid123/formResponse');
@@ -333,7 +337,7 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   a.equal(fd.get('e.v'), '원문값');
   a.equal(fd.get('e.suggest'), '');                                   // 저장한 수정이 없으면 빈 제안
   a.equal(fd.get('e.comment'), '');                                   // 메모가 없으면 prompt 결과(빈 문자열)
-  a.equal(fd.get('e.patch'), 'hash:reportsha / studio-1');            // meta 없으면 hash:sha로 대체
+  a.equal(fd.get('e.patch'), `hash:reportsha / studio-1 / u:${reporterId.slice(0,8)}`); // meta 없으면 hash:sha로 대체 + 제보자 해시
 
   // 제안=내가 저장한 번역, 코멘트=그 행 메모 — 둘 다 있으면 물어보지 않는다
   ctx.S.rows = [reportRow];
@@ -368,25 +372,40 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   a.equal(ctx.canReport('5:-1:1'), true);                             // 반영됨(applied)도 제보 재료
   ctx.S.applied = new Map();
 
-  // 일괄 제보: 수정 덤프 + 메모 덤프 + 분류 "일괄 N건"
+  // 일괄 제보: 항목마다 개별 제보와 같은 필드로 행 단위 전송, "일괄" 표기는 patch 칸에만
   ctx.S.rows = [reportRow, { sec: 0, map: 1, idx: 2, k: '', v: '키없는원문' }];
   ctx.S.edits = new Map([['3:7:9', { sec: 3, map: 7, idx: 9, k: '원문키', v: '수정A' }]]);
   ctx.S.applied = new Map([['0:1:2', { sec: 0, map: 1, idx: 2, k: '', v: '수정B' }]]);
-  const parts = ctx.batchParts();
-  a.equal(parts.n, 3);                                                 // 수정 2 + 메모 1
-  a.deepEqual(parts.suggest.split('\n').sort(),
-    ['[도감 설명] 원문키 → 수정A', '[맵 대사] 키없는원문 → 수정B'].sort());   // k 없으면 현재 번역문을 원문 자리에
-  a.equal(parts.comment, '[메모] 원문키: 어투 확인 필요');
+  // memoIndex()에는 위에서 넣어둔 '3:7:9' 메모가 그대로 남아 있다 → 3:7:9는 수정+메모 겹침, 0:1:2는 수정만
+  ctx.__fetchCalls.length = 0;
   await ctx.batchReport();
-  const fd3 = ctx.__lastFetch[1].body._m;
-  a.equal(fd3.get('e.sec'), '일괄 3건');
-  a.equal(fd3.get('e.idx'), ''); a.equal(fd3.get('e.k'), ''); a.equal(fd3.get('e.v'), '');
-  a.equal(fd3.get('e.patch'), 'hash:reportsha / studio-1');            // 패치 표식은 개별 제보와 같은 형식
+  a.equal(ctx.__fetchCalls.length, 2);                                 // 수정이 있는 행 2건 — 개별 POST 2회
+  const byIdx = ctx.__fetchCalls.map(([, init]) => init.body._m)
+    .sort((x, y) => x.get('e.idx').localeCompare(y.get('e.idx')));
+  const [rowA, rowB] = byIdx;                                          // idx '1:2' < idx '7:9' 사전순
+  a.equal(rowA.get('e.sec'), '0:맵 대사'); a.equal(rowA.get('e.idx'), '1:2');
+  a.equal(rowA.get('e.k'), ''); a.equal(rowA.get('e.v'), '키없는원문');
+  a.equal(rowA.get('e.suggest'), '수정B'); a.equal(rowA.get('e.comment'), '');
+  a.equal(rowB.get('e.sec'), '3:도감 설명'); a.equal(rowB.get('e.idx'), '7:9');
+  a.equal(rowB.get('e.k'), '원문키'); a.equal(rowB.get('e.v'), '원문값');
+  a.equal(rowB.get('e.suggest'), '수정A'); a.equal(rowB.get('e.comment'), '어투 확인 필요'); // 수정+메모 겹치는 행
+  a.equal(rowA.get('e.patch'), `hash:reportsha / studio-1 / u:${reporterId.slice(0,8)} / 일괄`);
+  a.equal(rowB.get('e.patch'), `hash:reportsha / studio-1 / u:${reporterId.slice(0,8)} / 일괄`);
 
-  // 30,000자 절단
-  ctx.S.edits = new Map([['3:7:9', { sec: 3, map: 7, idx: 9, k: '원문키', v: 'x'.repeat(40000) }]]);
+  // 메모만 있고 수정이 없는 행은 comment만 채운 1행으로 간다
+  ctx.S.edits = new Map(); ctx.S.applied = new Map();
+  ctx.__fetchCalls.length = 0;
   await ctx.batchReport();
-  const longSuggest = ctx.__lastFetch[1].body._m.get('e.suggest');
+  a.equal(ctx.__fetchCalls.length, 1);
+  const memoOnly = ctx.__fetchCalls[0][1].body._m;
+  a.equal(memoOnly.get('e.sec'), '3:도감 설명'); a.equal(memoOnly.get('e.idx'), '7:9');
+  a.equal(memoOnly.get('e.suggest'), ''); a.equal(memoOnly.get('e.comment'), '어투 확인 필요');
+
+  // 30,000자 절단(단건 제보와 동일한 방어 로직, 일괄에서도 유지)
+  ctx.S.edits = new Map([['3:7:9', { sec: 3, map: 7, idx: 9, k: '원문키', v: 'x'.repeat(40000) }]]);
+  ctx.__fetchCalls.length = 0;
+  await ctx.batchReport();
+  const longSuggest = ctx.__fetchCalls[0][1].body._m.get('e.suggest');
   a.equal(longSuggest.length, ctx.FIELD_CAP + '…(이하 생략)'.length);
   a.ok(longSuggest.endsWith('…(이하 생략)'));
 
@@ -584,8 +603,10 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   ctx.clearMemos();
   a.equal(ctx.memoIndex().size, 0);                            // 다시 읽어도 안 살아난다
 
-  // 삭제한 메모는 일괄 제보에도 개별 제보 코멘트에도 실리지 않는다
-  a.equal(ctx.batchParts().comment, '');
+  // 삭제한 메모는 일괄 제보에도 개별 제보 코멘트에도 실리지 않는다 — 보낼 게 없어 전송조차 안 된다
+  ctx.__fetchCalls.length = 0;
+  await ctx.batchReport();
+  a.equal(ctx.__fetchCalls.length, 0);
   a.equal(ctx.canReport('0:1:2'), false);
 
   // 인라인 재수정: 목록에서 고친 값이 그대로 대기 수정에 앉는다
