@@ -1732,7 +1732,7 @@
 {"k": "<ac><c2=06644bd2>{1}</c2></ac>", "v": "<ac><c2=06644bd2>{1}</c2></ac>"}
 {"k": "Player<r><c3={1}>{2}</c3><br>", "v": "주인공<r><c3={1}>{2}</c3><br>"}
 {"k": "Time<r><c3={1:s}>{2:02d}:{3:02d}</c3><br>", "v": "플레이 시간<r><c3={1:s}>{2:02d}:{3:02d}</c3><br>"}
-{"k": "Badges<r><c3={1}>{2}</c3><br>", "v": "메달<r><c3={1}>{2}</c3><br>"}
+{"k": "Badges<r><c3={1}>{2}</c3><br>", "v": "배지<r><c3={1}>{2}</c3><br>"}
 {"k": "Pokédex<r><c3={1}>{2}/{3}</c3>", "v": "도감<r><c3={1}>{2}/{3}</c3>"}
 {"k": "The script is taking too long. The game will restart.", "v": "The script is taking too long.  The game will restart."}
 {"k": "\\se[]The game was saved.\\se[save]\\wtnp[30]", "v": "\\se[]게임을 저장했다.\\se[save]\\wtnp[30]"}
@@ -2251,7 +2251,7 @@
 {"k": "You now have ${1}.", "v": "You now have ${1}."}
 {"k": "Set the player's Coin amount.", "v": "Set the player's Coin amount."}
 {"k": "You now have {1} Coins.", "v": "You now have {1} Coins."}
-{"k": "{1} Badge {2}", "v": "{1} 메달 {2}"}
+{"k": "{1} Badge {2}", "v": "{1} 배지 {2}"}
 {"k": "Filled party with demo Pokémon.", "v": "파티를 데모 포켓몬으로 채웠다."}
 {"k": "Gave Running Shoes.", "v": "Gave Running Shoes."}
 {"k": "Lost Running Shoes.", "v": "Lost Running Shoes."}
