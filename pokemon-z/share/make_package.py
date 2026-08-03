@@ -63,8 +63,9 @@ def _embed_manifest(final: Path, name: str):
     sys.path.insert(0, str(modkit_home))
     from modkit import manifest as modkit_manifest
 
+    exclude_patterns = modkit_manifest.DEFAULT_EXCLUDE + ("번역표/*", "읽어주세요.txt")
     made = modkit_manifest.capture(
-        final, game="Pokemon Z Fangame", version=name, scope="partial")
+        final, game="Pokemon Z Fangame", version=name, scope="partial", exclude=exclude_patterns)
     modkit_manifest.save(made, final / "manifest.json")
     print(f"manifest.json 동봉: {len(made['files'])}개 파일 (scope=partial)")
 
