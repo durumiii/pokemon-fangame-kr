@@ -186,12 +186,14 @@ async function build(){
   if (!S.edits.size){ toast('저장된 수정이 없어요'); return; }
   const b = $('buildbtn'); b.disabled = true; b.textContent = '빌드 중...';
   const n = S.edits.size, prevSha = S.sha;
+  let wrote = false;
   try {
     const out = await pyBuild([...S.edits.values()]);
     // 직전본 백업 → 본체 기록 (원본 .bak은 openFolder에서 이미 보존)
     const cur = await readFile(S.dir, 'Data/korean.dat');
     await writeFile(S.dir, 'Data/korean.dat.prev', cur);
     await writeFile(S.dir, 'Data/korean.dat', out);
+    wrote = true;
     // 빌드 산출물로 상태 재동기화 — sha가 바뀌므로 반영 끝난 edits는 비운다(중복 적용 방지)
     await loadCore(out);
     localStorage.removeItem('edits:'+prevSha);
@@ -200,9 +202,14 @@ async function build(){
     updateDirty();
     toast(`빌드 완료 (${n}건 반영) — 게임을 재시작하면 보여요`, 4000);
   } catch (err) {
-    toast('빌드 실패 — 파일은 그대로예요: ' + err.message, 6000);
-    // core.build_dat 실패 시 파이썬 쪽 상태에 부분 변형이 남을 수 있어 디스크 원본으로 재로드
-    try { await loadCore(await readFile(S.dir, 'Data/korean.dat')); } catch {}
+    if (wrote) {
+      // 파일은 이미 새 내용으로 갱신됨 — 화면 상태 갱신만 실패한 것
+      toast('파일은 갱신됐지만 화면 상태 갱신에 실패했어요 — 새로고침해 주세요: ' + err.message, 6000);
+    } else {
+      toast('빌드 실패 — 파일은 그대로예요: ' + err.message, 6000);
+      // core.build_dat 실패 시 파이썬 쪽 상태에 부분 변형이 남을 수 있어 디스크 원본으로 재로드
+      try { await loadCore(await readFile(S.dir, 'Data/korean.dat')); } catch {}
+    }
   } finally {
     b.disabled = false; b.textContent = '빌드 → 게임 반영';
   }
