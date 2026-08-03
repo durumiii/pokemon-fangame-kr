@@ -49,9 +49,20 @@ from fanlib import modstore  # noqa: E402
 def _embed_manifest(final: Path, name: str):
     """패키지에 진단용 지문(manifest.json)을 동봉한다.
 
-    스테이징 폴더만 담으므로 scope="partial" — 받는 사람의 게임 폴더에는 여기 없는
-    원본 파일이 잔뜩 있고, 그것을 외래로 몰면 modkit 진단이 게임을 부순다.
+    정본은 make_manifest_full.py가 뜬 manifest-full.json — 원본 배포 zip에 v5.1을
+    얹은 게임 폴더 전체(scope="full")라, 옛 한글패치 v3 잔재처럼 패치가 덮지 않는
+    자리의 파일도 외래로 잡힌다. 그게 없으면 스테이징 폴더만 담은 partial로
+    떨어진다 — 목록 밖 파일은 진단이 손대지 않는다(안전하지만 잔재를 못 본다).
     """
+    full = HERE / "manifest-full.json"
+    if full.exists():
+        made = json.loads(full.read_text(encoding="utf-8"))
+        made["version"] = name
+        (final / "manifest.json").write_text(
+            json.dumps(made, ensure_ascii=False, indent=1), encoding="utf-8")
+        print(f"manifest.json 동봉: {len(made['files'])}개 파일 (scope=full)")
+        return
+
     modkit_home = Path(
         os.environ.get("MODKIT_HOME")
         or Path.home() / "workspace" / "claude-native" / "sketches" / "essentials-modkit"
