@@ -320,7 +320,9 @@ function updateDirty(){
 // ─── 빌드·복원 ────────────────────────────────────────
 async function build(){
   if (!S.edits.size){ toast('저장된 수정이 없어요'); return; }
+  // 복원과 맞잠금 — 빌드 중에 복원하면 이 빌드 산출물이 방금 되돌린 파일을 덮는다
   const b = $('buildbtn'); b.disabled = true; b.textContent = '빌드 중...';
+  $('restorebtn').disabled = true;
   const n = S.edits.size;
   let wrote = false;
   try {
@@ -349,6 +351,7 @@ async function build(){
     }
   } finally {
     b.disabled = false; b.textContent = '빌드 → 게임 반영';
+    $('restorebtn').disabled = false;
   }
 }
 

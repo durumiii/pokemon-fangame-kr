@@ -217,14 +217,19 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   ctx.S.dir = {};
   ctx.S.py = { toPy: x => x };
   ctx.S.core = {
-    build_dat: () => new VMU8([9, 9]),                      // Uint8Array 분기 — pyBuild가 그대로 반환
+    // Uint8Array 분기 — pyBuild가 그대로 반환. 빌드가 도는 동안의 복원 버튼 상태를 여기서 엿본다
+    build_dat: () => { lockDuringBuild = el('restorebtn').disabled; return new VMU8([9, 9]); },
     load_dat: () => JSON.stringify({ meta: null, sha: 'newsha', rows: [] }),
   };
   ctx.S.sha = 'oldsha'; ctx.S.base = 'buildbase';
   ctx.S.edits = new Map([['0:1:2', { sec: 0, map: 1, idx: 2, k: 'x', v: 'y' }]]);
   ctx.S.applied = new Map();
   ctx.persist();
+  let lockDuringBuild = null;
+  el('restorebtn').disabled = false;
   await ctx.build();
+  a.equal(lockDuringBuild, true);                           // 빌드 도는 동안 복원은 잠긴다(맞잠금)
+  a.equal(el('restorebtn').disabled, false);                // 끝나면 함께 풀린다
   a.equal(ctx.S.edits.size, 0);                             // 빌드 성공 시 edits 비움
   a.equal(ctx.S.applied.get('0:1:2').v, 'y');               // 비운 게 아니라 applied로 옮겨진다
   a.deepEqual(JSON.parse(ctx.localStorage.getItem('edits:buildbase')), []);  // 기준 키는 그대로, 내용만 비움
