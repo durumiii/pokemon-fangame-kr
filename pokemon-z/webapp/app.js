@@ -30,27 +30,43 @@ function esc(s){ const d=document.createElement('div'); d.textContent=s ?? '';
 // 비동기 경로의 예외가 콘솔에만 남고 화면은 멀쩡해 보이는 일을 막는다
 addEventListener('unhandledrejection', e => toast('오류: ' + (e.reason?.message ?? e.reason), 6000));
 
-async function bootPy(){
+// 페이지 로드 직후 미리 불러 두는 선시동과, 폴더를 고른 뒤의 실제 호출이 이 하나로 합류한다 —
+// 진행 중 promise를 저장해 두 번째 호출도 같은 promise를 기다린다(다운로드 중복 없음).
+// 실패하면 다음 호출이 재시도할 수 있게 저장을 비운다(오프라인 등으로 선시동만 실패한 경우).
+let bootPromise = null;
+async function bootPy({announce=false}={}){
   if (S.py) return S.py;
-  $('meta').textContent = '엔진 로드 중... (첫 방문은 수십 초, 이후 캐시)';
-  const py = await loadPyodide();
-  // 파이썬 소스를 pyodide FS에 심는다
-  const files = ["core.py","rubywrite.py",
-    ...["__init__.py","reader.py","writer.py","classes.py","constants.py","utils.py"]
-      .map(f=>"vendor/rubymarshal/"+f)];
-  py.FS.mkdirTree('/app/rubymarshal');
-  for (const f of files){
-    const res = await fetch(f);
-    // 404 HTML을 파이썬 소스로 심으면 한참 뒤 난해한 구문 오류로 터진다 — 받은 자리에서 막는다
-    if (!res.ok) throw new Error('필수 파일을 못 받았어요: ' + f);
-    const src = await res.text();
-    const dst = f.startsWith('vendor/') ? '/app/rubymarshal/'+f.split('/').pop() : '/app/'+f;
-    py.FS.writeFile(dst, src);
-  }
-  py.runPython("import sys; sys.path.insert(0, '/app')");
-  S.core = py.pyimport("core");
-  S.py = py;
-  return py;
+  if (bootPromise) return bootPromise;
+  bootPromise = (async () => {
+    if (announce) $('meta').textContent = '엔진 내려받는 중(첫 방문 1회)...';
+    console.time('boot:download');
+    const py = await loadPyodide();
+    console.timeEnd('boot:download');
+    if (announce) $('meta').textContent = '엔진 시동...';
+    console.time('boot:init');
+    try {
+      // 파이썬 소스를 pyodide FS에 심는다
+      const files = ["core.py","rubywrite.py",
+        ...["__init__.py","reader.py","writer.py","classes.py","constants.py","utils.py"]
+          .map(f=>"vendor/rubymarshal/"+f)];
+      py.FS.mkdirTree('/app/rubymarshal');
+      for (const f of files){
+        const res = await fetch(f);
+        // 404 HTML을 파이썬 소스로 심으면 한참 뒤 난해한 구문 오류로 터진다 — 받은 자리에서 막는다
+        if (!res.ok) throw new Error('필수 파일을 못 받았어요: ' + f);
+        const src = await res.text();
+        const dst = f.startsWith('vendor/') ? '/app/rubymarshal/'+f.split('/').pop() : '/app/'+f;
+        py.FS.writeFile(dst, src);
+      }
+      py.runPython("import sys; sys.path.insert(0, '/app')");
+      S.core = py.pyimport("core");
+      S.py = py;
+      return py;
+    } finally {
+      console.timeEnd('boot:init');   // 실패해도 타이머는 닫는다 — 다음 재시도에서 이름 충돌 경고가 안 나게
+    }
+  })().catch(err => { bootPromise = null; throw err; });
+  return bootPromise;
 }
 
 // Task 5(빌드)가 쓰는 진입점 — edits 배열 → korean.dat 바이트
@@ -146,18 +162,21 @@ async function useFolder(dir){
   }
   // 검증을 통과한 폴더만 기억한다. 저장 실패가 작업을 막으면 안 된다(시크릿 모드 등)
   try { await idbSet('dirHandle', S.dir); } catch {}
-  await bootPy();
-  $('meta').textContent = '번역 데이터 읽는 중...';
+  const spkPromise = loadSpeakers();   // 폴더 읽기와 겹치게 지금 시작(사용은 fillBrowse 직전에)
+  console.time('data:read');
+  await bootPy({announce:true});
+  $('meta').textContent = '번역 데이터 읽는 중(3만 행)...';
   const dat = await readFile(S.dir, 'Data/korean.dat');
   // 순정 원본 1회 보존 — 이미 있으면 절대 덮어쓰지 않는다
   const hadBak = await exists(S.dir, 'Data/korean.dat.bak');
   if (!hadBak) await writeFile(S.dir, 'Data/korean.dat.bak', dat);
   await loadCore(dat);
+  console.timeEnd('data:read');
   // 저장 키는 빌드마다 바뀌는 현재 sha가 아니라 순정 원본 sha로 고정한다
   S.base = hadBak ? await sha12(await readFile(S.dir, 'Data/korean.dat.bak')) : S.sha;
   migrateEdits();
   const dropped = restoreEdits();
-  await loadSpeakers();
+  await spkPromise;
   for (const id of ['q','secf','browse','searchbtn','buildbtn','replbtn','exportbtn','importbtn','restorebtn','histbtn','batchbtn','minebtn'])
     $(id).disabled = false;
   $('secf').innerHTML = '<option value="">전체 분류</option>' +
@@ -762,3 +781,7 @@ async function reloadAfterRestore(src){
 
 // 지난 폴더가 남아 있을 때만 재연결 버튼을 드러낸다
 idbGet('dirHandle').then(h => { if (h) $('reopenbtn').style.display = ''; }).catch(()=>{});
+
+// 엔진 선시동 — 폴더를 고르는 동안 다운로드·시동이 겹치게 지금 시작한다.
+// 실패(오프라인 등)는 조용히 묻는다 — 실제 폴더 열기 때 bootPy가 다시 시도한다.
+bootPy().catch(()=>{});

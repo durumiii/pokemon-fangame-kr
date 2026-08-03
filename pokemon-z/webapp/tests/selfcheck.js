@@ -25,6 +25,10 @@ const ctx = {
   fetch: async (...args) => { ctx.__fetchCalls.push(args); ctx.__lastFetch = args; return {}; },
   __fetchCalls: [],
   crypto: { randomUUID: () => `uuid-${++ctx.__uuidN}` }, __uuidN: 0,
+  // 선시동 목업 — 없으면(브라우저 밖) bootPy가 조용히 실패해야 하고, 있으면 몇 번 불려도 한 번만 떠야 한다
+  loadPyodide: async () => { ctx.__pyodideCalls++;
+    return { FS: { mkdirTree(){}, writeFile(){} }, pyimport: () => ({}), runPython(){} }; },
+  __pyodideCalls: 0,
   addEventListener() {}, confirm: () => true, prompt: () => '',
   setTimeout, clearTimeout, console,
   // 메모리 IndexedDB 목업 — app.js의 idbDo가 쓰는 만큼만(open→transaction→get/put→oncomplete)
@@ -63,7 +67,7 @@ vm.runInContext(src + `
   setSpk: v => { SPK = v; MAPNAME = null; }, BROWSE_CAP,
   applyEdit, replaceMenu, replacePreview, replaceApply, replAll, REPL_CAP,
   replHits: () => REPL,
-  setHits: h => { HITS = h; }};
+  setHits: h => { HITS = h; }, bootPy};
 function readFile(){ return globalThis.__fsFile; }
 function writeFile(){}
 `, ctx);
@@ -665,6 +669,19 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   a.ok(el('out').innerHTML.includes('검색해 다시 고치세요'));
   a.ok(!el('out').innerHTML.includes("mineCancel('0:1:2')"));
   a.ok(el('out').innerHTML.includes('남긴 메모가 없어요'));    // 빈 상태 문구
+
+  // 선시동 중복 방지: 파일 fetch가 정상 응답하는 환경에서 bootPy를 겹쳐 불러도 loadPyodide는 한 번만 떠야 한다
+  ctx.S.py = null;
+  const savedFetchForBoot = ctx.fetch;
+  ctx.fetch = async () => ({ ok: true, text: async () => '' });
+  const callsBefore = ctx.__pyodideCalls;
+  const [bootA, bootB] = await Promise.all([ctx.bootPy(), ctx.bootPy()]);   // 동시 호출
+  a.equal(ctx.__pyodideCalls, callsBefore + 1);                            // loadPyodide는 1회만
+  a.equal(bootA, bootB);                                                   // 같은 py 인스턴스를 공유
+  await ctx.bootPy();                                                      // 이미 뜬 뒤 재호출도 늘지 않는다
+  a.equal(ctx.__pyodideCalls, callsBefore + 1);
+  ctx.fetch = savedFetchForBoot;
+  ctx.S.py = null;   // 이후 테스트에 영향 없게 되돌린다(다른 테스트는 S.py를 직접 목업해 쓴다)
 
   console.log('SELFCHECK_OK');
 })().catch(e => { console.error(e); process.exit(1); });
