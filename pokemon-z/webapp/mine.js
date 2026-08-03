@@ -51,7 +51,8 @@ function mineSave(id){
   const v = $('mv'+id).value;
   if (!confirmMarkup(r, v)) return;
   applyEdit(r, v);
-  persist(); updateDirty(); showMine();
+  // 목록을 다시 그리지 않는다 — 다른 행에 입력 중이던 글이 날아간다(검색 화면의 save와 같은 이유)
+  persist(); updateDirty();
   toast('저장됨 — [빌드]를 누르면 게임에 반영돼요');
 }
 // 원문 그대로를 다시 앉히면 applyEdit가 대기 목록에서 뺀다 — 취소와 저장이 같은 경로다

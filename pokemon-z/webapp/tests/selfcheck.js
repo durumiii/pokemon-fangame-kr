@@ -599,6 +599,18 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   a.equal(ctx.S.edits.get('0:1:1').v, '다시 고친값');
   a.equal(JSON.parse(ctx.localStorage.getItem('edits:minebase'))[0].v, '다시 고친값');
   a.equal(ctx.histAll().at(-1).new, '다시 고친값');            // 재수정도 이력에 남는다
+  a.ok(el('out').innerHTML.includes('고친값'));                // 저장이 목록을 다시 그리면 안 된다 —
+  a.ok(!el('out').innerHTML.includes('다시 고친값'));          // 다른 행에 입력 중이던 글이 날아간다
+
+  // 저장도 색·이름 코드 경고를 지나야 한다 — 물어봐서 아니라고 하면 값이 안 바뀐다
+  const savedConfirm = ctx.confirm;
+  ctx.confirm = () => false;
+  el('mv0:1:1').value = '코드 없는 값';
+  ctx.S.rows[0].v = '\\c[2]번역1';
+  ctx.mineSave('0:1:1');
+  a.equal(ctx.S.edits.get('0:1:1').v, '다시 고친값');          // 거절했으니 그대로
+  ctx.confirm = savedConfirm;
+  ctx.S.rows[0].v = '번역1';
 
   // 수정 취소: 대기에서 빠지고 저장분도 함께 비워진다
   ctx.mineCancel('0:1:1');
@@ -608,6 +620,13 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   a.equal(el('dirty').style.display, 'none');                  // "빌드 필요" 표시도 내려간다
   ctx.mineCancel('0:1:1');                                     // 없는 행을 또 취소해도 조용히 넘어간다
   a.equal(ctx.S.edits.size, 0);
+
+  // CR이 든 원문도 취소가 먹어야 한다 — 저장값은 textarea가 접은 LF 모양이라 그대로 비교하면 안 빠진다
+  ctx.S.rows = [{ sec: 0, map: 1, idx: 1, k: '스페인어원문1', v: '첫 줄\r\n둘째 줄' }];
+  ctx.S.edits = new Map([['0:1:1', { sec: 0, map: 1, idx: 1, k: '스페인어원문1', v: '고친 줄' }]]);
+  ctx.mineCancel('0:1:1');
+  a.equal(ctx.S.edits.size, 0);
+  ctx.S.rows = [{ sec: 0, map: 1, idx: 1, k: '스페인어원문1', v: '번역1' }];
 
   // 반영됨은 표시만 — 취소 버튼 없이 되돌리는 방법만 알려준다
   ctx.S.applied = new Map([['0:1:2', { sec: 0, map: 1, idx: 2, k: '스페인어원문2', v: '반영된값' }]]);
