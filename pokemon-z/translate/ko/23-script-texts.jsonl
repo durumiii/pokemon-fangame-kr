@@ -6713,7 +6713,7 @@
 {"k": "¡Un placer hacer intercambios contigo!", "v": "교환해서 즐거웠어!"}
 {"k": "Encuentra las 4 mejoras del Pokévial (5 usos del vial).", "v": "포켓몬약병 강화 4개를 찾아라 (약병 5회 사용)."}
 {"k": "<c3=404040,B0B0B0>Huevo eclosionado.\\n", "v": "<c3=404040,B0B0B0>알에서 태어났다.\\n"}
-{"k": "<c3=404040,B0B0B0>Naturaleza <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.\\n", "v": "<c3=404040,B0B0B0>성격은 <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.\\n"}
+{"k": "<c3=404040,B0B0B0>Naturaleza <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.\\n", "v": "<c3=404040,B0B0B0><c3=F83820,E09890>{1}<c3=404040,B0B0B0> 성격이다.\\n"}
 {"k": "<c3=404040,B0B0B0>Un extraño Huevo Pokémon hallado por <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.\\n", "v": "<c3=404040,B0B0B0><c3=F83820,E09890>{1}<c3=404040,B0B0B0>\\j[이,가] 발견한 신기한 포켓몬 알.\\n"}
 {"k": "<c3=404040,B0B0B0>\\\"Estado del Huevo\\\"\\n", "v": "<c3=404040,B0B0B0>\\\"알의 상태\\\"\\n"}
 {"k": "<c3=F83820,E09890>Faraway place\\n", "v": "<c3=F83820,E09890>머나먼 곳\\n"}

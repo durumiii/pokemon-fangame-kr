@@ -64,6 +64,20 @@ EDITS += [
      "@list[@index].parameters[1])"),
 ]
 
+# 요약 화면 성격 한 줄 — 명사(얌전)를 활용형(얌전한)으로. 성격명 자체는 성격
+# 변경 목록 등에서 명사로 계속 쓰이므로 이 화면의 변수에만 25종 표를 얹는다.
+# 짝인 템플릿 번역은 절23 「{1} 성격이다.」 (translate/ko 정본). 루비 1.8 문법.
+_NATURE_ADJ = ("노력하는,외로움을 타는,용감한,고집스러운,개구쟁이,대담한,온순한,"
+               "무사태평한,장난꾸러기,촐랑거리는,겁이 많은,성급한,성실한,명랑한,"
+               "천진난만한,조심스러운,의젓한,냉정한,수줍음이 많은,덜렁거리는,"
+               "차분한,얌전한,건방진,신중한,변덕스러운").split(",")
+EDITS += [
+    ("PScreen_Summary",
+     "naturename=PBNatures.getName(pokemon.nature)",
+     "naturename=([" + ",".join(f'"{a}"' for a in _NATURE_ADJ) + "]"
+     "[pokemon.nature] || PBNatures.getName(pokemon.nature))"),
+]
+
 # 부적(Amuleto) 18종 — pbAmuleto(116_PItem_ItemEffects)가 번역된 아이템 이름을
 # 스페인어 원문과 문자열 비교해 인카운터 스위치(280~297)를 켠다. 이름이
 # 한글화되면 영원히 거짓이 되는 기능 버그라, 이름 비교를 상수 비교로 수술한다.
