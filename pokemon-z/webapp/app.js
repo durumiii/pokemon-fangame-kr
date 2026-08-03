@@ -370,9 +370,11 @@ function replacePreview(){
         <span class=chip>${SEC_LABEL[h.r.sec]??('절'+h.r.sec)}</span>${h.r.map!=null?`<span class=chip>맵 ${h.r.map}</span>`:''}
         ${h.lost.length?`<span class="st warn">색·이름 코드가 사라져요: ${esc(h.lost.join(' '))}</span>`:''}</label>
       <div class=es>${hl(h.parts, find)}</div>
-      <div>${hl(h.parts, to)}</div></div>`).join('');
+      <div class=nv>${hl(h.parts, to)}</div></div>`).join('');
 }
-function replAll(on){ REPL.forEach((_, i) => { const c = $('rc'+i); if (c) c.checked = on; }); }
+// 모두 선택은 경고 행을 건드리지 않는다 — 코드가 깨지는 행은 하나씩 확인하고 켜야 한다
+function replAll(on){ REPL.forEach((h, i) => {
+  const c = $('rc'+i); if (c && !(on && h.lost.length)) c.checked = on; }); }
 
 function replaceApply(){
   const sel = REPL.filter((_, i) => $('rc'+i)?.checked);

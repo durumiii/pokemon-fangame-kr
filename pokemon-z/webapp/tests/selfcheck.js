@@ -432,6 +432,10 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   a.deepEqual(lostHit[0].lost, ['\\c[2]']);
   a.ok(el('replout').innerHTML.includes('색·이름 코드가 사라져요'));
   a.ok(!el('replout').innerHTML.includes('checked'));                 // 경고 행은 기본 해제
+  el('rc0').checked = false;
+  ctx.replAll(true);
+  a.equal(el('rc0').checked, false);                                  // [모두 선택]도 경고 행은 건너뛴다
+  a.ok(el('replout').innerHTML.includes('class=nv'));                 // 결과 줄에도 줄바꿈이 보이는 클래스
 
   // 선택 적용: 체크한 행만 edits에 들어가고 이력에도 행마다 남는다
   el('rfind').value = '메달'; el('rto').value = '배지';
