@@ -64,6 +64,28 @@ EDITS += [
      "@list[@index].parameters[1])"),
 ]
 
+# Constants.rxdata 로드 실패 표면화(진단 전용, 동작 불변) — JoiPlay에서 이 로드가
+# 조용히 삼켜져 뒤(246 RandomObjects)에서 NameError로 터지는 사슬(원장 JoiPlay
+# 티켓). 실패 시 진짜 원인을 화면에 띄운다. 문구는 ASCII — JoiPlay는 한글 폰트가
+# 깨지는 환경이라서다. 기능 수정은 원인 확정 전 금지(2026-08-04 사용자 결정).
+EDITS += [
+    ("PSystem_System",
+     '  begin\r\n'
+     '    consts=pbSafeLoad("Data/Constants.rxdata")\r\n'
+     '    consts=[] if !consts\r\n'
+     '  rescue\r\n'
+     '    consts=[]\r\n'
+     '  end',
+     '  begin\r\n'
+     '    consts=pbSafeLoad("Data/Constants.rxdata")\r\n'
+     '    consts=[] if !consts\r\n'
+     '  rescue\r\n'
+     '    p "KR-PATCH DIAG: Constants.rxdata load failed - #{$!.class}: #{$!.message}"\r\n'
+     '    consts=[]\r\n'
+     '  end\r\n'
+     '  p "KR-PATCH DIAG: Constants.rxdata empty - game constants missing (please report this screen)" if consts.length==0'),
+]
+
 # 요약 화면 성격 한 줄 — 명사(얌전)를 활용형(얌전한)으로. 성격명 자체는 성격
 # 변경 목록 등에서 명사로 계속 쓰이므로 이 화면의 변수에만 25종 표를 얹는다.
 # 짝인 템플릿 번역은 절23 「{1} 성격이다.」 (translate/ko 정본). 루비 1.8 문법.
