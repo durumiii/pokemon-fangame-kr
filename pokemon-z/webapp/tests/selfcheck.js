@@ -22,6 +22,25 @@ const ctx = {
   fetch: async (...args) => { ctx.__lastFetch = args; return {}; },
   addEventListener() {}, confirm: () => true, prompt: () => '',
   setTimeout, clearTimeout, console,
+  // 메모리 IndexedDB 목업 — app.js의 idbDo가 쓰는 만큼만(open→transaction→get/put→oncomplete)
+  indexedDB: {
+    _kv: new Map(),
+    open() {
+      const rq = {};
+      setTimeout(() => {
+        rq.result = { transaction: () => {
+          const tx = { objectStore: () => ({
+            get: k => ({ result: ctx.indexedDB._kv.get(k) }),
+            put: (v, k) => { ctx.indexedDB._kv.set(k, v); return {}; },
+          }) };
+          setTimeout(() => tx.oncomplete?.(), 0);
+          return tx;
+        } };
+        rq.onsuccess();
+      }, 0);
+      return rq;
+    },
+  },
 };
 vm.createContext(ctx);
 // const/let은 vm 전역에 붙지 않으므로 명시적으로 꺼낸다
@@ -30,6 +49,7 @@ vm.createContext(ctx);
 vm.runInContext(src + `
 ;globalThis.X = {rid, esc, MARKUP, S, persist, restoreEdits, save, build, report,
   exportFix, importFix, showConflicts, pickConflict, CONFLICTS, REPORT_FORM,
+  idbGet, idbSet, reopenFolder,
   setHits: h => { HITS = h; }};
 function readFile(){ return globalThis.__fsFile; }
 function writeFile(){}
@@ -170,6 +190,18 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   a.equal(fd.get('e.v'), '원문값');
   a.equal(fd.get('e.suggest'), '');                                   // 무편집이면 빈 코멘트
   a.equal(fd.get('e.patch'), 'hash:reportsha / studio-1');            // meta 없으면 hash:sha로 대체
+
+  // 폴더 핸들 보존: IndexedDB 왕복 + 권한 거부 시 폴백
+  a.equal(await ctx.idbGet('dirHandle'), undefined);          // 처음엔 비어 있다
+  const fakeHandle = { name: 'PokemonZ', _perm: 'denied',
+                       requestPermission: async () => fakeHandle._perm };
+  await ctx.idbSet('dirHandle', fakeHandle);
+  a.equal((await ctx.idbGet('dirHandle')).name, 'PokemonZ');  // 저장한 핸들이 그대로 돌아온다
+
+  ctx.S.dir = 'unchanged';
+  await ctx.reopenFolder();                                   // 권한 거부 → 로드하지 않고 안내만
+  a.equal(ctx.S.dir, 'unchanged');
+  a.ok(el('toast').textContent.includes('폴더 접근 권한이 없어요'));
 
   console.log('SELFCHECK_OK');
 })().catch(e => { console.error(e); process.exit(1); });

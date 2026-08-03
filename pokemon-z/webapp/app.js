@@ -89,12 +89,48 @@ async function loadCore(datBytes){
   return res;
 }
 
+// ─── 폴더 핸들 보존 ────────────────────────────────────
+// FileSystemHandle은 localStorage(문자열)에 못 넣는다 — 구조화 복제가 되는 IndexedDB로
+function idbDo(mode, fn){
+  return new Promise((res, rej) => {
+    const rq = indexedDB.open('zstudio', 1);
+    rq.onupgradeneeded = () => rq.result.createObjectStore('kv');
+    rq.onerror = () => rej(rq.error);
+    rq.onsuccess = () => {
+      const tx = rq.result.transaction('kv', mode);
+      const r = fn(tx.objectStore('kv'));
+      tx.oncomplete = () => res(r.result);
+      tx.onerror = () => rej(tx.error);
+    };
+  });
+}
+const idbGet = k => idbDo('readonly', s => s.get(k));
+const idbSet = (k, v) => idbDo('readwrite', s => s.put(v, k));
+
 async function openFolder(){
   if (!window.showDirectoryPicker){ toast('이 브라우저는 지원하지 않아요 — Chrome/Edge로 열어주세요', 5000); return; }
-  try { S.dir = await showDirectoryPicker({mode:'readwrite'}); } catch { return; }
+  let dir;
+  try { dir = await showDirectoryPicker({mode:'readwrite'}); } catch { return; }
+  await useFolder(dir);
+}
+
+// 지난 폴더 재연결 — 권한이 없으면 조용히 일반 선택으로 안내한다
+async function reopenFolder(){
+  const h = await idbGet('dirHandle');
+  if (!h){ toast('저장된 폴더가 없어요 — [게임 폴더 선택]을 눌러주세요', 5000); return; }
+  if (await h.requestPermission({mode:'readwrite'}) !== 'granted'){
+    toast('폴더 접근 권한이 없어요 — [게임 폴더 선택]으로 다시 골라주세요', 5000); return;
+  }
+  await useFolder(h);
+}
+
+async function useFolder(dir){
+  S.dir = dir;
   if (!await exists(S.dir, 'Data/korean.dat')){
     toast('선택한 폴더에 Data\\korean.dat가 없어요 — 게임 폴더를 선택해 주세요', 5000); return;
   }
+  // 검증을 통과한 폴더만 기억한다. 저장 실패가 작업을 막으면 안 된다(시크릿 모드 등)
+  try { await idbSet('dirHandle', S.dir); } catch {}
   await bootPy();
   $('meta').textContent = '번역 데이터 읽는 중...';
   const dat = await readFile(S.dir, 'Data/korean.dat');
@@ -304,3 +340,6 @@ async function restoreMenu(){
   await writeFile(S.dir, 'Data/korean.dat', await readFile(S.dir, src));
   toast('복원 완료 — 페이지를 새로고침해 다시 불러오세요', 5000);
 }
+
+// 지난 폴더가 남아 있을 때만 재연결 버튼을 드러낸다
+idbGet('dirHandle').then(h => { if (h) $('reopenbtn').style.display = ''; }).catch(()=>{});
