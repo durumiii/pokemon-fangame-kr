@@ -865,3 +865,49 @@ git commit -m "feat(webapp): Pages 배포 스크립트 + 수정법 안내에 웹
 - rubymarshal wheel의 실제 모듈 파일 목록 — Task 1 Step 1에서 확인한 목록으로 Task 4 `bootPy`의 파일 배열을 맞출 것.
 - pyodide `toPy(Uint8Array)` → 파이썬 쪽 `bytes()` 캐스팅은 core.py가 이미 `bytes(dat_bytes)`로 감싸므로 memoryview여도 동작. `build_dat` 반환 bytes는 JS에서 `.toJs()`로 Uint8Array화 — pyodide 버전에 따라 `{create_proxies:false}` 옵션이 필요하면 조정.
 - v5 dat에는 표식이 없으므로 제보는 해시로 식별 — Task 3 이후 첫 배포판(v5.1 등)부터 표식이 실린다.
+
+---
+
+# 2차 작업 (실기 스모크 피드백, 2026-08-03)
+
+스펙의 "2차 요구" 절 참조. 공통: 기존 app.js 구조·헬퍼 재사용, node --check + selfcheck 확장, 브라우저 실기는 사용자 대기. 영속 키 전환(Task 10)이 기반이므로 10→11→12 순서 고정, 9·13은 독립.
+
+### Task 9: 폴더 핸들 보존·재연결
+
+**Files:** Modify: `pokemon-z/webapp/app.js`, `pokemon-z/webapp/index.html`
+
+- dirHandle을 IndexedDB(`kv` 오브젝트스토어, 키 `dirHandle`)에 저장(구조화 복제 가능).
+- 시작 화면: 저장된 핸들이 있으면 [지난 폴더 다시 연결] 버튼 표시 → `handle.requestPermission({mode:'readwrite'})`가 'granted'면 openFolder의 로드 경로 재사용, 아니면 일반 폴더 선택으로 폴백.
+- IndexedDB 헬퍼는 idbGet/idbSet 두 함수(promise 래퍼, ~15줄)로 최소화.
+
+### Task 10: 순정 기준 키 + 이력 원장 + 메모
+
+**Files:** Modify: `pokemon-z/webapp/app.js`, `pokemon-z/webapp/index.html`
+
+- **기준 키 전환**: 로드 시 `Data/korean.dat.bak`이 있으면 그 파일의 sha 앞 12자를 `S.base`로, 없으면(방금 .bak을 만든 경우) 현재 dat sha. 이후 모든 localStorage 키는 `edits:<base>`·`hist:<base>`·`applied:<base>`(11에서 사용). 기존 `edits:<sha>` 키는 발견 시 1회 이전(마이그레이션 3줄).
+- **이력 원장**: `hist:<base>`에 append-only JSON 배열. 이벤트: {t:ISO, type:'edit'|'memo'|'build'|'restore'|'import', ...} — edit는 {rid,k,old,new}, memo는 {rid,k,text}, build는 {n}, restore는 {src}. 기록 지점: save()/memo/build 성공/restoreMenu/importFix.
+- **메모 UI**: 카드 rowbar에 메모 입력칸+[메모] 버튼(fixgui 스타일). 메모는 이력에만 쌓임(빌드에 안 들어감).
+- **[이력] 버튼**(헤더): 최신순 카드 목록 — 시각·종류·내용, edit는 구→신 표시. 데이터는 새로고침·빌드 후에도 유지.
+
+### Task 11: applied 집합 + 내보내기 개선
+
+**Files:** Modify: `pokemon-z/webapp/app.js`
+
+- 빌드 성공 시 edits를 비우는 대신 `applied:<base>`(Map 직렬화)로 병합 이동(같은 rid는 최신 우선).
+- exportFix: applied+pending 합집합(같은 rid는 pending 우선)을 내보냄. 비었을 때만 "내보낼 수정이 없어요". 헤더 patch는 순정 표식/베이스 해시.
+- 카드 렌더 시 applied 행은 'saved' 테두리 대신 옅은 "반영됨" 칩 표시(구분).
+- dirty 표시는 pending만 집계(빌드 필요 여부의 의미 유지).
+
+### Task 12: 일괄 제보
+
+**Files:** Modify: `pokemon-z/webapp/app.js`, `pokemon-z/webapp/index.html`
+
+- 헤더에 [모아서 제보] 버튼: applied+pending 수정과 메모(hist에서 type:'memo')를 텍스트로 정리 — 행마다 `[분류] 원문 → 수정값` / `[메모] 원문: 텍스트`.
+- 구글폼 한 건 전송: 분류=`일괄 N건`, 제안=덤프(글자수 제한 대비 30,000자에서 자름+"…이하 생략"), 패치 버전=기존 report()와 동일 포맷. 나머지 필드 빈 값.
+- 전송 후 토스트. 보낸 뒤에도 데이터는 지우지 않음(제보는 사본).
+
+### Task 13: 복원 선택 카드
+
+**Files:** Modify: `pokemon-z/webapp/app.js`
+
+- restoreMenu()의 prompt() 제거 → `#out`에 선택 카드 2장(순정 원본/직전 빌드 전) + [취소]. .prev 없으면 해당 카드 비활성(회색, 사유 표시). 복원 실행 시 이력 기록(Task 10의 hist) + 완료 카드에서 [다시 불러오기] 버튼(loadCore 재호출로 새로고침 없이 복귀).
