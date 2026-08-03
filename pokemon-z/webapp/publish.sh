@@ -14,6 +14,8 @@ rsync -a --delete \
   --exclude .pytest_cache \
   ./ "$TMP/"
 cd "$TMP"
+# Jekyll이 밑줄 파일(__init__.py)을 빼먹지 않게 비활성화
+touch .nojekyll
 git add -A
 git diff --cached --quiet || { git commit -m "deploy $(date +%F)"; git push origin HEAD; }
 gh api "repos/$REPO/pages" -X POST -f 'source[branch]=main' -f 'source[path]=/' 2>/dev/null || true
