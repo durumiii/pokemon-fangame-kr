@@ -57,6 +57,7 @@
   <input type=text id=q placeholder="문구 검색 — 한국어 번역 또는 원문" disabled>
   <select id=secf disabled><option value="">전체 분류</option></select>
   <button class=primary id=searchbtn onclick=search() disabled>검색</button>
+  <select id=browse onchange=doBrowse() disabled title="맵·분류·화자별로 훑어봐요"><option value="">찾아보기…</option></select>
  </div>
  <span id=dirty></span>
  <button id=buildbtn onclick=build() disabled>빌드 → 게임 반영</button>

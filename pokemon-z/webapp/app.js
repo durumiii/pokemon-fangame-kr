@@ -100,6 +100,7 @@ async function loadCore(datBytes){
   try { msg = await readFile(S.dir, 'Data/messages.dat'); } catch {}
   const res = JSON.parse(S.core.load_dat(S.py.toPy(datBytes), msg && S.py.toPy(msg)));
   S.rows = res.rows; S.sha = res.sha; S.meta = res.meta;
+  MAPNAME = null;   // 21절이 새로 로드됐다 — 맵 이름 색인도 다시 만든다
   return res;
 }
 
@@ -156,16 +157,86 @@ async function useFolder(dir){
   S.base = hadBak ? await sha12(await readFile(S.dir, 'Data/korean.dat.bak')) : S.sha;
   migrateEdits();
   const dropped = restoreEdits();
-  for (const id of ['q','secf','searchbtn','buildbtn','replbtn','exportbtn','importbtn','restorebtn','histbtn','batchbtn'])
+  await loadSpeakers();
+  for (const id of ['q','secf','browse','searchbtn','buildbtn','replbtn','exportbtn','importbtn','restorebtn','histbtn','batchbtn'])
     $(id).disabled = false;
   $('secf').innerHTML = '<option value="">전체 분류</option>' +
     Object.entries(SEC_LABEL).map(([s,l])=>`<option value=${s}>${l}</option>`).join('');
+  fillBrowse();
   $('meta').textContent = metaBase() +
     (S.edits.size ? ` · 이어서 작업: 저장 ${S.edits.size}건 복원됨` : '') +
     (dropped ? ` · 패치 판이 바뀌어 ${dropped}건 제외` : '');
   if (dropped) toast(`패치 판이 바뀌어 옛 수정 ${dropped}건을 제외했어요 — 그 행들은 다시 고쳐주세요`, 6000);
   updateDirty();
   renderHome();
+}
+
+// ─── 찾아보기 ─────────────────────────────────────────
+// speakers.json은 있으면 좋은 곁들이다 — 못 받아도 맵별·분류별은 그대로 돌아간다
+let SPK = null, MAPNAME = null, GROUPS = [];
+const BROWSE = {map:'맵별', sec:'분류별', sprite:'화자별', group:'화자 분류별'};
+const BROWSE_CAP = 500;
+
+async function loadSpeakers(){
+  try {
+    const res = await fetch('speakers.json');
+    if (res.ok) SPK = await res.json();
+  } catch {}
+}
+function fillBrowse(){
+  $('browse').innerHTML = '<option value="">찾아보기…</option>' +
+    Object.entries(BROWSE).filter(([k]) => SPK || k === 'map' || k === 'sec')
+      .map(([k,l]) => `<option value=${k}>${l}</option>`).join('');
+}
+// 맵 이름은 21절이 정본(번역돼 있다) — 조인표 이름은 21절에 빈 자리일 때의 폴백
+function mapName(m){
+  MAPNAME ??= new Map(S.rows.filter(r => r.sec === 21).map(r => [r.idx, r.v]));
+  return MAPNAME.get(m) || SPK?.maps[m]?.name || '';
+}
+// 맵 대사 한 행의 화자 — [스프라이트, 분류]. 조인표에 없으면 null
+function spkOf(r){
+  const e = r.sec === 0 && SPK?.maps[r.map]?.rows[r.k];
+  return e ? [SPK.sp[e[0]], SPK.gp[e[1]]] : null;
+}
+
+function browseGroups(by){
+  const m = new Map();
+  const put = (key, label, r) => {
+    let g = m.get(key);
+    if (!g) m.set(key, g = {label, rows:[]});
+    g.rows.push(r);
+  };
+  for (const r of S.rows){
+    if (by === 'sec'){ put(r.sec, SEC_LABEL[r.sec] ?? '절'+r.sec, r); continue; }
+    if (r.sec !== 0) continue;                       // 화자·맵은 맵 대사에만 있다
+    if (by === 'map'){ put(r.map, `맵 ${r.map} · ${mapName(r.map)}`, r); continue; }
+    const s = spkOf(r);
+    if (!s) continue;
+    const k = by === 'sprite' ? s[0] : s[1];
+    put(k, k, r);
+  }
+  const g = [...m.values()];
+  // 절·맵은 번호 순(S.rows 순서 그대로), 화자·분류는 많은 것부터
+  return by === 'sec' || by === 'map' ? g : g.sort((a,b) => b.rows.length - a.rows.length);
+}
+function doBrowse(){
+  const by = $('browse').value;
+  $('browse').value = '';            // 같은 항목을 다시 골라도 열리게 되돌린다
+  if (!by) return;
+  GROUPS = browseGroups(by);
+  $('meta').textContent = `${BROWSE[by]} — ${GROUPS.length}개 묶음`;
+  $('out').innerHTML = GROUPS.length
+    ? GROUPS.map((g,i) => `<div class=card style="cursor:pointer" onclick=openGroup(${i})>
+        <b>${esc(g.label)}</b> <span class=chip>${g.rows.length}행</span></div>`).join('')
+    : '<div class=empty>묶을 행이 없습니다.</div>';
+}
+function openGroup(i){
+  const g = GROUPS[i];
+  HITS = g.rows.slice(0, BROWSE_CAP); SHOWN = 0;
+  $('meta').textContent = `${g.label} — ${g.rows.length}행` +
+    (g.rows.length > BROWSE_CAP ? ` (앞 ${BROWSE_CAP}행만 보여줘요)` : '');
+  $('out').innerHTML = '';
+  more();
 }
 
 // ─── 검색·수정 ────────────────────────────────────────
@@ -195,10 +266,10 @@ function syncReport(i){
   b.title = b.disabled ? '수정하거나 메모를 남긴 행만 제보할 수 있어요' : '';
 }
 function card(r, i){
-  const id = rid(r), e = S.edits.get(id);
+  const id = rid(r), e = S.edits.get(id), s = spkOf(r);
   const v = e ? e.v : r.v;
   return `<div class="card ${e?'saved':''}" id=card${i}>
-    <span class=chip>${SEC_LABEL[r.sec]??('절'+r.sec)}</span>${r.map!=null?`<span class=chip>맵 ${r.map}</span>`:''}${!e&&S.applied.has(id)?'<span class=chip>반영됨</span>':''}
+    <span class=chip>${SEC_LABEL[r.sec]??('절'+r.sec)}</span>${r.map!=null?`<span class=chip>맵 ${r.map}</span>`:''}${s?`<span class=chip>${esc(s[0])} · ${esc(s[1])}</span>`:''}${!e&&S.applied.has(id)?'<span class=chip>반영됨</span>':''}
     ${REPORT_FORM.id?`<button class=ghost id=rp${i} style="float:right" onclick=report(${i})
       ${canReport(id)?'':'disabled title="수정하거나 메모를 남긴 행만 제보할 수 있어요"'}>${ICON.flag} 제보</button>`:''}
     ${r.k?`<div class=es>${esc(r.k)}</div>`:''}
@@ -447,7 +518,7 @@ function renderHome(){
     `<div class=rowbar><button class=ghost onclick=${fn}>${label}</button><span class=es>${desc}</span></div>`;
   $('out').innerHTML = `<div class=card>
     <span class=chip>대기 ${S.edits.size}건</span><span class=chip>반영됨 ${S.applied.size}건</span><span class=chip>메모 ${memoIndex().size}건</span>
-    <div class=es>어색한 문구를 검색해 바로 고치세요.</div></div>
+    <div class=es>어색한 문구를 검색해 바로 고치세요. 고칠 자리가 정해지지 않았다면 위쪽 [찾아보기]로 맵·분류${SPK?'·화자':''}별로 훑어볼 수 있어요.</div></div>
     <div class=card><div>최근 이력</div>${
       recent.length ? recent.map(e=>`<div class=es>${new Date(e.t).toLocaleString('ko-KR')} · ${HIST_LABEL[e.type] ?? e.type}${e.k?' · '+esc(e.k):''}</div>`).join('')
         : '<div class=es>아직 이력이 없어요 — 수정·메모·빌드가 여기에 쌓여요.</div>'}</div>

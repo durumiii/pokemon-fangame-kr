@@ -4,7 +4,8 @@ const src = fs.readFileSync(path.join(__dirname, '..', 'app.js'), 'utf8');
 const els = {};
 const el = id => els[id] ??= { value: '', textContent: '', className: '', dataset: {},
                                classList: { add() {}, remove() {} }, addEventListener() {},
-                               style: {}, click() {} };
+                               style: {}, click() {}, innerHTML: '', remove() {},
+                               insertAdjacentHTML(_, html) { this.innerHTML += html; } };
 const ctx = {
   document: {
     getElementById: el,
@@ -52,6 +53,8 @@ vm.runInContext(src + `
   idbGet, idbSet, reopenFolder, migrateEdits, hist, histAll, memo, showHist,
   doRestore, reloadAfterRestore, batchReport, batchParts, canReport, card,
   memoIndex, renderHome, updateDirty, FIELD_CAP,
+  loadSpeakers, fillBrowse, doBrowse, openGroup, browseGroups, spkOf, mapName,
+  setSpk: v => { SPK = v; MAPNAME = null; }, BROWSE_CAP,
   applyEdit, replaceMenu, replacePreview, replaceApply, replAll, REPL_CAP,
   replHits: () => REPL,
   setHits: h => { HITS = h; }};
@@ -460,6 +463,72 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   ctx.replAll(true);
   ctx.replaceApply();
   a.equal(ctx.S.edits.size, 0);                                       // 원문과 같아지면 수정 해제
+
+  // ─ 찾아보기 ─
+  // speakers.json이 없을 때: 화자 옵션은 아예 안 뜨고 맵별·분류별만 남는다
+  ctx.setSpk(null);
+  await ctx.loadSpeakers();                                           // 목업 fetch는 ok가 없다 → 조용히 무시
+  ctx.fillBrowse();
+  a.ok(el('browse').innerHTML.includes('value=map') && el('browse').innerHTML.includes('value=sec'));
+  a.ok(!el('browse').innerHTML.includes('value=sprite') && !el('browse').innerHTML.includes('value=group'));
+
+  // 실제 생성물을 그대로 먹인다 — 생성기 형식이 바뀌면 여기서 걸린다
+  const spkPath = path.join(__dirname, '..', 'speakers.json');
+  const realSpk = JSON.parse(fs.readFileSync(spkPath, 'utf8'));
+  const savedFetch = ctx.fetch;
+  ctx.fetch = async () => ({ ok: true, json: async () => realSpk });
+  ctx.setSpk(null);
+  await ctx.loadSpeakers();
+  ctx.fillBrowse();
+  a.ok(el('browse').innerHTML.includes('value=sprite') && el('browse').innerHTML.includes('value=group'));
+  ctx.fetch = savedFetch;
+
+  // 조인: 조인표에 있는 (맵, 원문 k) 행에만 화자가 붙는다
+  const someMap = Object.keys(realSpk.maps).find(m => Object.keys(realSpk.maps[m].rows).length);
+  const someK = Object.keys(realSpk.maps[someMap].rows)[0];
+  const [spI, gpI] = realSpk.maps[someMap].rows[someK];
+  const joined = { sec: 0, map: +someMap, idx: 0, k: someK, v: '번역문' };
+  const unjoined = { sec: 0, map: +someMap, idx: 1, k: '조인표에 없는 원문', v: '번역문2' };
+  a.deepEqual(ctx.spkOf(joined), [realSpk.sp[spI], realSpk.gp[gpI]]);
+  a.equal(ctx.spkOf(unjoined), null);
+  a.equal(ctx.spkOf({ sec: 23, idx: 0, v: 'x' }), null);              // 맵 대사가 아닌 절은 화자 없음
+
+  // 카드 칩: 화자가 붙은 행에만 스프라이트·분류 칩이 뜬다
+  ctx.S.edits = new Map(); ctx.S.applied = new Map();
+  a.ok(ctx.card(joined, 0).includes(ctx.esc(realSpk.sp[spI])));
+  a.ok(!ctx.card(unjoined, 0).includes(ctx.esc(realSpk.sp[spI])));
+
+  // 묶기: 절별은 절 단위로, 맵별은 21절 이름을 병기, 화자별은 조인된 행만
+  ctx.S.rows = [joined, unjoined, { sec: 21, idx: +someMap, v: '어느마을' },
+                { sec: 23, idx: 0, v: '시스템 문구' }];
+  ctx.setSpk(realSpk);
+  a.equal(ctx.mapName(+someMap), '어느마을');                          // 21절이 조인표 이름을 이긴다
+  const bySec = ctx.browseGroups('sec');
+  a.deepEqual(bySec.map(g => [g.label, g.rows.length]),
+    [['맵 대사', 2], ['맵 이름', 1], ['시스템 문구', 1]]);
+  const byMap = ctx.browseGroups('map');
+  a.equal(byMap.length, 1);
+  a.ok(byMap[0].label.includes('어느마을'));
+  a.equal(byMap[0].rows.length, 2);
+  const bySprite = ctx.browseGroups('sprite');
+  a.deepEqual(bySprite.map(g => [g.label, g.rows.length]), [[realSpk.sp[spI], 1]]);  // 조인 안 된 행은 빠진다
+
+  // 묶음 열기: 카드 목록으로 넘어가고 500행 상한이 걸린다
+  el('browse').value = 'map';
+  ctx.doBrowse();
+  a.ok(el('out').innerHTML.includes('어느마을') && el('out').innerHTML.includes('2행'));
+  a.equal(el('browse').value, '');                                    // 같은 항목을 다시 고를 수 있게 되돌린다
+  ctx.openGroup(0);
+  a.ok(el('meta').textContent.includes('2행'));
+  a.ok(el('out').innerHTML.includes('번역문'));
+  const many = Array.from({ length: ctx.BROWSE_CAP + 10 },
+    (_, i) => ({ sec: 0, map: 1, idx: i, k: 'k'+i, v: 'v'+i }));
+  ctx.S.rows = many;
+  ctx.setSpk(null);
+  el('browse').value = 'map';
+  ctx.doBrowse();
+  ctx.openGroup(0);
+  a.ok(el('meta').textContent.includes(`앞 ${ctx.BROWSE_CAP}행만`));
 
   console.log('SELFCHECK_OK');
 })().catch(e => { console.error(e); process.exit(1); });
