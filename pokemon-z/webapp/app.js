@@ -1,0 +1,165 @@
+// ─── 설정 (유지자가 채움) ─────────────────────────────
+const REPORT_FORM = {
+  id: "",          // 구글폼 ID — 비어 있으면 제보 버튼 숨김
+  entries: { sec:"", idx:"", k:"", v:"", suggest:"", patch:"" },
+};
+const APP_VER = "studio-1";
+const SEC_LABEL = {0:"맵 대사",1:"포켓몬 이름",2:"분류",3:"도감 설명",4:"폼",
+ 5:"기술 이름",6:"기술 설명",7:"도구 이름",8:"도구 복수형",9:"도구 설명",
+ 10:"특성 이름",11:"특성 설명",12:"타입",13:"트레이너 직함",14:"트레이너 이름",
+ 15:"대전 시작 대사",16:"승리 대사",17:"패배 대사",18:"지방",19:"장소 이름",
+ 20:"장소 설명",21:"맵 이름",22:"전화",23:"시스템 문구"};
+
+const $ = id => document.getElementById(id);
+const S = { dir:null, rows:[], sha:"", meta:null, edits:new Map(), py:null, core:null };
+const rid = r => `${r.sec}:${r.map ?? -1}:${r.idx}`;
+
+function toast(m, ms=2600){ const t=$('toast'); t.textContent=m; t.classList.add('show');
+  clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('show'), ms); }
+// 속성값 자리에도 그대로 쓰므로 따옴표까지 막는다
+function esc(s){ const d=document.createElement('div'); d.textContent=s ?? '';
+  return d.innerHTML.replace(/"/g,'&quot;'); }
+
+async function bootPy(){
+  if (S.py) return S.py;
+  $('meta').textContent = '엔진 로드 중... (첫 방문은 수십 초, 이후 캐시)';
+  const py = await loadPyodide();
+  // 파이썬 소스를 pyodide FS에 심는다
+  const files = ["core.py","rubywrite.py",
+    ...["__init__.py","reader.py","writer.py","classes.py","constants.py","utils.py"]
+      .map(f=>"vendor/rubymarshal/"+f)];
+  py.FS.mkdirTree('/app/rubymarshal');
+  for (const f of files){
+    const src = await (await fetch(f)).text();
+    const dst = f.startsWith('vendor/') ? '/app/rubymarshal/'+f.split('/').pop() : '/app/'+f;
+    py.FS.writeFile(dst, src);
+  }
+  py.runPython("import sys; sys.path.insert(0, '/app')");
+  S.core = py.pyimport("core");
+  S.py = py;
+  return py;
+}
+
+// Task 5(빌드)가 쓰는 진입점 — edits 배열 → korean.dat 바이트
+async function pyBuild(editsArr){
+  await bootPy();
+  const r = S.core.build_dat(JSON.stringify(editsArr));
+  if (r instanceof Uint8Array) return r;
+  const u8 = r.toJs();
+  r.destroy();
+  return u8;
+}
+
+async function readFile(dir, path){
+  let h = dir;
+  const parts = path.split('/');
+  for (const p of parts.slice(0,-1)) h = await h.getDirectoryHandle(p);
+  const fh = await h.getFileHandle(parts.at(-1));
+  return new Uint8Array(await (await fh.getFile()).arrayBuffer());
+}
+async function writeFile(dir, path, bytes){
+  let h = dir;
+  const parts = path.split('/');
+  for (const p of parts.slice(0,-1)) h = await h.getDirectoryHandle(p);
+  const fh = await h.getFileHandle(parts.at(-1), {create:true});
+  const w = await fh.createWritable();
+  await w.write(bytes); await w.close();
+}
+async function exists(dir, path){
+  try { await readFile(dir, path); return true; } catch { return false; }
+}
+
+async function openFolder(){
+  if (!window.showDirectoryPicker){ toast('이 브라우저는 지원하지 않아요 — Chrome/Edge로 열어주세요', 5000); return; }
+  try { S.dir = await showDirectoryPicker({mode:'readwrite'}); } catch { return; }
+  if (!await exists(S.dir, 'Data/korean.dat')){
+    toast('선택한 폴더에 Data\\korean.dat가 없어요 — 게임 폴더를 선택해 주세요', 5000); return;
+  }
+  await bootPy();
+  $('meta').textContent = '번역 데이터 읽는 중...';
+  const dat = await readFile(S.dir, 'Data/korean.dat');
+  // 순정 원본 1회 보존 — 이미 있으면 절대 덮어쓰지 않는다
+  if (!await exists(S.dir, 'Data/korean.dat.bak')){
+    await writeFile(S.dir, 'Data/korean.dat.bak', dat);
+  }
+  let msg = null;
+  try { msg = await readFile(S.dir, 'Data/messages.dat'); } catch {}
+  const res = JSON.parse(S.core.load_dat(S.py.toPy(dat), msg && S.py.toPy(msg)));
+  S.rows = res.rows; S.sha = res.sha; S.meta = res.meta;
+  restoreEdits();
+  for (const id of ['q','secf','searchbtn','buildbtn','exportbtn','importbtn','restorebtn'])
+    $(id).disabled = false;
+  $('secf').innerHTML = '<option value="">전체 분류</option>' +
+    Object.entries(SEC_LABEL).map(([s,l])=>`<option value=${s}>${l}</option>`).join('');
+  $('meta').textContent = `${S.rows.length.toLocaleString()}행 로드 · 패치 ${S.meta ?? '(표식 없음 · '+S.sha+')'}` +
+    (S.edits.size ? ` · 이어서 작업: 저장 ${S.edits.size}건 복원됨` : '');
+  $('out').innerHTML = '<div class=empty>어색한 문구를 검색해 바로 고치세요.</div>';
+  updateDirty();
+}
+
+// ─── 검색·수정 ────────────────────────────────────────
+let HITS=[], SHOWN=0; const STEP=50;
+$('q')?.addEventListener('keydown', e=>{ if(e.key==='Enter') search(); });
+
+function search(){
+  const q = $('q').value.trim(); if(!q) return;
+  const sec = $('secf').value;
+  HITS = S.rows.filter(r =>
+    (sec==='' || r.sec===+sec) &&
+    ((r.v && r.v.includes(q)) || (r.k && r.k.includes(q))));
+  SHOWN = 0;
+  $('meta').textContent = `${HITS.length}행 매칭`;
+  $('out').innerHTML = HITS.length ? '' : '<div class=empty>매칭되는 행이 없습니다.</div>';
+  if (HITS.length) more();
+}
+
+function card(r, i){
+  const id = rid(r), e = S.edits.get(id);
+  const v = e ? e.v : r.v;
+  return `<div class="card ${e?'saved':''}" id=card${i}>
+    <span class=chip>${SEC_LABEL[r.sec]??('절'+r.sec)}</span>${r.map!=null?`<span class=chip>맵 ${r.map}</span>`:''}
+    ${REPORT_FORM.id?`<button class=ghost style="float:right" onclick=report(${i})>🚩 제보</button>`:''}
+    ${r.k?`<div class=es>${esc(r.k)}</div>`:''}
+    <textarea id=v${i} data-orig="${esc(r.v)}"
+      onkeydown="if(event.ctrlKey&&event.key==='Enter')save(${i})">${esc(v)}</textarea>
+    <div class=rowbar>
+      <button class=primary onclick=save(${i})>저장</button>
+      <button class=ghost onclick="$('v'+${i}).value=$('v'+${i}).dataset.orig">원래대로</button>
+      <span class=st id=st${i}></span>
+    </div></div>`;
+}
+function more(){
+  const frag = HITS.slice(SHOWN, SHOWN+STEP).map((r,k)=>card(r, SHOWN+k)).join('');
+  SHOWN = Math.min(SHOWN+STEP, HITS.length);
+  $('morebtn')?.remove();
+  $('out').insertAdjacentHTML('beforeend', frag);
+  if (SHOWN < HITS.length) $('out').insertAdjacentHTML('beforeend',
+    `<button class=more id=morebtn onclick=more()>더 보기 (${HITS.length-SHOWN}행 남음)</button>`);
+}
+
+const MARKUP = /\\c\[\d+\]|\\[A-Za-z]+|\{\d+\}|<[^>]+>/g;
+function save(i){
+  const r = HITS[i], v = $('v'+i).value;
+  const lost = (r.v.match(MARKUP)||[]).filter(t => !v.includes(t));
+  if (lost.length && !confirm(`색·이름 코드가 사라졌어요: ${lost.join(' ')}\n지우면 화면이 깨질 수 있어요. 그래도 저장할까요?`))
+    return;
+  if (v === r.v) S.edits.delete(rid(r));
+  else S.edits.set(rid(r), {sec:r.sec, map:r.map, idx:r.idx, k:r.k, v});
+  persist(); updateDirty();
+  $('st'+i).className='st ok'; $('st'+i).textContent='저장됨';
+  $('card'+i).classList.add('saved');
+  toast('저장됨 — [빌드]를 누르면 게임에 반영돼요');
+}
+function persist(){
+  localStorage.setItem('edits:'+S.sha, JSON.stringify([...S.edits.values()]));
+}
+function restoreEdits(){
+  S.edits = new Map();
+  for (const e of JSON.parse(localStorage.getItem('edits:'+S.sha) ?? '[]'))
+    S.edits.set(rid(e), e);
+}
+function updateDirty(){
+  const d = $('dirty'), n = S.edits.size;
+  d.style.display = n ? 'inline-block' : 'none';
+  if (n) d.textContent = `저장 ${n}건 — 빌드 필요`;
+}
