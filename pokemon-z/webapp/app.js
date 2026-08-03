@@ -314,8 +314,10 @@ function parseQuery(q){
 }
 function rowMatch(r, f){
   if (f.sec.length && !f.sec.some(s => String(r.sec) === s || (SEC_LABEL[r.sec] ?? '').includes(s))) return false;
+  // 숫자는 맵 번호 정확 일치만 — 이름 부분일치로 흘리면 「맵:1」이 137이나 "1번도로"류 이름까지 쓸어 담는다
   if (f.map.length && !(r.map != null &&
-    f.map.some(m => String(r.map) === m || (mapName(r.map) && mapName(r.map).includes(m))))) return false;
+    f.map.some(m => /^\d+$/.test(m) ? String(r.map) === m
+                                    : (mapName(r.map) && mapName(r.map).includes(m))))) return false;
   if (f.spk.length){
     const s = spkOf(r);
     if (!s || !f.spk.some(x => s[0].includes(x) || s[1].includes(x))) return false;
@@ -352,7 +354,7 @@ function tagValues(tag, part){
   if (tag === '맵'){
     const seen = new Map();   // 맵번호 → 이름 (이름이 비어도 번호는 제안)
     for (const r of S.rows) if (r.sec === 0 && r.map != null && !seen.has(r.map)) seen.set(r.map, mapName(r.map));
-    return [...seen].filter(([m, n]) => String(m).startsWith(part) || hit(n))
+    return [...seen].filter(([m, n]) => /^\d+$/.test(part) ? String(m) === part : hit(n))
       .map(([m, n]) => ({v:String(m), label:`${m} · ${n || '(이름 없음)'}`}));
   }
   if (tag === '화자' && SPK)
