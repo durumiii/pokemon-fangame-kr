@@ -5,9 +5,15 @@ const REPORT_FORM = {
              v:"entry.1404070622", suggest:"entry.538219219", comment:"entry.266338952",
              patch:"entry.1352350096" },
 };
+// 행 무관 일반 제보(전반적 번역·렌더링 등) — 별도 구글폼, 같은 스프레드시트의 새 탭에 연결
+// id가 비어 있으면 화면에서 숨긴다(유지자가 폼 생성 후 채움)
+const GENERAL_FORM = {
+  id: "1FAIpQLSed1vWYuQt14NNAGxhD-oGoS49Cxyf1MwmUia4Q_OmqrFN5Gw",
+  entries: { kind:"entry.1761277727", text:"entry.1561553815", patch:"entry.825168505" },
+};
 // 인라인 SVG만 쓴다 — 이모지는 기기마다 다른 그림이고 외부 아이콘은 오프라인에서 깨진다
 const ICON = {
-  flag: '<svg width=13 height=13 viewBox="0 0 16 16" fill=none stroke=currentColor stroke-width=1.6 stroke-linejoin=round style="vertical-align:-1px"><path d="M3.5 14.5V1.5"/><path d="M3.5 2.5h8l-1.6 2.6 1.6 2.6h-8z" fill=currentColor fill-opacity=.25/></svg>',
+  flag: '<svg width=13 height=13 viewBox="0 0 16 16" fill=none stroke=currentColor stroke-width=1.6 stroke-linejoin=round style="vertical-align:-1px"><path d="M3.5 14.5V1.5"/><path d="M3.5 2.5h8l-1.6 2.6 1.6 2.6h-8z" fill=currentColor fill-opacity=".25"/></svg>',
 };
 const APP_VER = "studio-1";
 const SEC_LABEL = {0:"맵 대사",1:"포켓몬 이름",2:"분류",3:"도감 설명",4:"폼",
@@ -29,6 +35,38 @@ function esc(s){ const d=document.createElement('div'); d.textContent=s ?? '';
 
 // 비동기 경로의 예외가 콘솔에만 남고 화면은 멀쩡해 보이는 일을 막는다
 addEventListener('unhandledrejection', e => toast('오류: ' + (e.reason?.message ?? e.reason), 6000));
+
+// ─── 드롭다운 패널 ────────────────────────────────────
+// 기본 select 대신 쓰는 공용 패널 — 열림/닫힘과 자리만 여기서, 내용은 각자 채운다
+const PANELS = ['tools','browse','sugg'];
+function closePanels(){ for (const id of PANELS){ const p = $(id); if (p) p.hidden = true; } }
+function togglePanel(id, btn){
+  const p = $(id), wasOpen = !p.hidden;
+  closePanels();
+  if (wasOpen) return;
+  if (id === 'browse') fillBrowse();
+  p.hidden = false;
+  // 앵커 버튼 바로 아래, 오른쪽이 화면을 넘으면 버튼 오른끝에 맞춘다 (header 기준 absolute)
+  const hr = btn.closest('header').getBoundingClientRect(), br = btn.getBoundingClientRect();
+  p.style.top = (br.bottom - hr.top + 6) + 'px';
+  p.style.left = 'auto'; p.style.right = 'auto';
+  if (br.left - hr.left + p.offsetWidth > hr.width - 12)
+    p.style.right = Math.max(8, hr.right - br.right) + 'px';
+  else p.style.left = (br.left - hr.left) + 'px';
+}
+addEventListener('click', e => {
+  if (!e.target.closest?.('.menu,[data-menubtn],#q')) closePanels();
+});
+addEventListener('keydown', e => { if (e.key === 'Escape') closePanels(); });
+
+// 로고 클릭 = 홈 — 로드 전에는 시작 화면 그대로 둔다
+function goHome(){
+  if (!S.dir) return;
+  closePanels();
+  $('q').value = '';
+  $('meta').textContent = metaBase();
+  renderHome();
+}
 
 // 페이지 로드 직후 미리 불러 두는 선시동과, 폴더를 고른 뒤의 실제 호출이 이 하나로 합류한다 —
 // 진행 중 promise를 저장해 두 번째 호출도 같은 promise를 기다린다(다운로드 중복 없음).
@@ -178,10 +216,8 @@ async function useFolder(dir){
   migrateEdits();
   const dropped = restoreEdits();
   await spkPromise;
-  for (const id of ['q','secf','browse','searchbtn','buildbtn','replbtn','exportbtn','importbtn','restorebtn','histbtn','batchbtn','minebtn'])
+  for (const id of ['q','searchbtn','browsebtn','toolsbtn','buildbtn','replbtn','exportbtn','importbtn','restorebtn','histbtn','batchbtn','minebtn'])
     $(id).disabled = false;
-  $('secf').innerHTML = '<option value="">전체 분류</option>' +
-    Object.entries(SEC_LABEL).map(([s,l])=>`<option value=${s}>${l}</option>`).join('');
   fillBrowse();
   $('meta').textContent = metaBase() +
     (S.edits.size ? ` · 이어서 작업: 저장 ${S.edits.size}건 복원됨` : '') +
@@ -194,7 +230,7 @@ async function useFolder(dir){
 // ─── 찾아보기 ─────────────────────────────────────────
 // speakers.json은 있으면 좋은 곁들이다 — 못 받아도 맵별·분류별은 그대로 돌아간다
 let SPK = null, MAPNAME = null, GROUPS = [];
-const BROWSE = {map:'맵별', sec:'분류별', sprite:'화자별', group:'화자 분류별'};
+const BROWSE = {map:'맵별', sec:'파일 분류별', sprite:'화자별', group:'화자 분류별'};
 const BROWSE_CAP = 500;
 
 async function loadSpeakers(){
@@ -204,9 +240,9 @@ async function loadSpeakers(){
   } catch {}
 }
 function fillBrowse(){
-  $('browse').innerHTML = '<option value="">찾아보기…</option>' +
+  $('browse').innerHTML =
     Object.entries(BROWSE).filter(([k]) => SPK || k === 'map' || k === 'sec')
-      .map(([k,l]) => `<option value=${k}>${l}</option>`).join('');
+      .map(([k,l]) => `<button data-value=${k} onclick="doBrowse('${k}')">${l}</button>`).join('');
 }
 // 맵 이름은 21절이 정본(번역돼 있다) — 조인표 이름은 21절에 빈 자리일 때의 폴백
 function mapName(m){
@@ -227,7 +263,7 @@ function browseGroups(by){
     g.rows.push(r);
   };
   for (const r of S.rows){
-    if (by === 'sec'){ put(r.sec, SEC_LABEL[r.sec] ?? '절'+r.sec, r); continue; }
+    if (by === 'sec'){ put(r.sec, `${r.sec} · ${SEC_LABEL[r.sec] ?? '절'+r.sec}`, r); continue; }
     if (r.sec !== 0) continue;                       // 화자·맵은 맵 대사에만 있다
     if (by === 'map'){ put(r.map, `맵 ${r.map} · ${mapName(r.map)}`, r); continue; }
     const s = spkOf(r);
@@ -239,9 +275,8 @@ function browseGroups(by){
   // 절·맵은 번호 순(S.rows 순서 그대로), 화자·분류는 많은 것부터
   return by === 'sec' || by === 'map' ? g : g.sort((a,b) => b.rows.length - a.rows.length);
 }
-function doBrowse(){
-  const by = $('browse').value;
-  $('browse').value = '';            // 같은 항목을 다시 골라도 열리게 되돌린다
+function doBrowse(by){
+  closePanels();
   if (!by) return;
   GROUPS = browseGroups(by);
   $('meta').textContent = `${BROWSE[by]} — ${GROUPS.length}개 묶음`;
@@ -261,20 +296,118 @@ function openGroup(i){
 
 // ─── 검색·수정 ────────────────────────────────────────
 let HITS=[], SHOWN=0; const STEP=50;
-$('q')?.addEventListener('keydown', e=>{ if(e.key==='Enter') search(); });
 
+// 태그 검색 — 「분류:도구 맵:12 화자:간호사 상태:수정 나머지는 본문」.
+// 값에 공백이 있으면 따옴표(분류:"도구 이름"). 태그 없는 낱말은 번역·원문 양쪽 AND 매칭.
+const TAGS = {분류:'sec', 맵:'map', 화자:'spk', 원문:'k', 번역:'v', 상태:'state'};
+const TAG_RE = /^(분류|맵|화자|원문|번역|상태):(.*)$/;
+const unq = s => s.replace(/^"([^"]*)"?$/, '$1');
+function parseQuery(q){
+  const f = {sec:[], map:[], spk:[], k:[], v:[], state:[], text:[]};
+  for (const part of q.match(/[^\s:"]+:(?:"[^"]*"?|\S*)|"[^"]*"?|\S+/g) ?? []){
+    const m = part.match(TAG_RE);
+    if (!m){ const t = unq(part); if (t) f.text.push(t); continue; }
+    const val = unq(m[2]);
+    if (val) f[TAGS[m[1]]].push(val);
+  }
+  return f;
+}
+function rowMatch(r, f){
+  if (f.sec.length && !f.sec.some(s => String(r.sec) === s || (SEC_LABEL[r.sec] ?? '').includes(s))) return false;
+  if (f.map.length && !(r.map != null &&
+    f.map.some(m => String(r.map) === m || (mapName(r.map) && mapName(r.map).includes(m))))) return false;
+  if (f.spk.length){
+    const s = spkOf(r);
+    if (!s || !f.spk.some(x => s[0].includes(x) || s[1].includes(x))) return false;
+  }
+  if (!f.k.every(t => r.k && r.k.includes(t))) return false;
+  if (!f.v.every(t => r.v && r.v.includes(t))) return false;
+  if (f.state.length){
+    const id = rid(r);
+    const has = {수정:S.edits.has(id), 반영:S.applied.has(id), 메모:memoIndex().has(id)};
+    if (!f.state.every(st => has[Object.keys(has).find(k => st.startsWith(k))] )) return false;
+  }
+  return f.text.every(t => (r.v && r.v.includes(t)) || (r.k && r.k.includes(t)));
+}
 function search(){
+  closePanels();
   const q = $('q').value.trim();
   if (!q){ $('meta').textContent = metaBase(); renderHome(); return; }   // 검색어를 비우면 홈으로
-  const sec = $('secf').value;
-  HITS = S.rows.filter(r =>
-    (sec==='' || r.sec===+sec) &&
-    ((r.v && r.v.includes(q)) || (r.k && r.k.includes(q))));
+  const f = parseQuery(q);
+  HITS = S.rows.filter(r => rowMatch(r, f));
   SHOWN = 0;
   $('meta').textContent = `${HITS.length}행 매칭`;
   $('out').innerHTML = HITS.length ? '' : '<div class=empty>매칭되는 행이 없습니다.</div>';
   if (HITS.length) more();
 }
+
+// ─── 검색 자동완성 ────────────────────────────────────
+// 커서가 놓인 낱말 기준: 태그 이름 → 그 태그의 값 후보 순으로 제안한다
+let SUGN = -1;   // 방향키로 고른 항목 (−1 = 없음)
+const STATE_VALS = ['수정','반영','메모'];
+function tagValues(tag, part){
+  const hit = s => s && s.includes(part);
+  if (tag === '분류') return Object.values(SEC_LABEL).filter(hit);
+  if (tag === '상태') return STATE_VALS.filter(v => v.startsWith(part));
+  if (tag === '맵'){
+    const seen = new Map();   // 맵번호 → 이름 (이름이 비어도 번호는 제안)
+    for (const r of S.rows) if (r.sec === 0 && r.map != null && !seen.has(r.map)) seen.set(r.map, mapName(r.map));
+    return [...seen].filter(([m, n]) => String(m).startsWith(part) || hit(n))
+      .map(([m, n]) => ({v:String(m), label:`${m} · ${n || '(이름 없음)'}`}));
+  }
+  if (tag === '화자' && SPK)
+    return [...new Set([...SPK.gp, ...SPK.sp])].filter(hit);
+  return [];
+}
+function suggest(){
+  const q = $('q'), upto = q.value.slice(0, q.selectionStart ?? q.value.length);
+  const word = upto.split(/\s+/).pop();
+  const m = word.match(TAG_RE);
+  let items = [];
+  if (m && m[1] in TAGS)
+    items = tagValues(m[1], unq(m[2])).slice(0, 12).map(x => {
+      const v = x.v ?? x, label = x.label ?? x;
+      const ins = /\s/.test(v) ? `"${v}"` : v;
+      return {ins:`${m[1]}:${ins} `, label:`<b>${m[1]}:</b>${esc(label)}`};
+    });
+  else if (word)
+    items = Object.keys(TAGS).filter(t => t.startsWith(word))
+      .map(t => ({ins:`${t}:`, label:`<b>${t}:</b><span class=mi-d style="margin-left:6px">태그로 좁혀요</span>`, stay:true}));
+  SUGN = -1;
+  if (!items.length){ $('sugg').hidden = true; return; }
+  $('sugg')._items = items;
+  $('sugg').innerHTML = items.map((it, i) =>
+    `<button class=si tabindex=-1 onmousedown="event.preventDefault();acceptSugg(${i})">${it.label}</button>`).join('') +
+    '<div class=hint>Tab·클릭으로 채우고 Enter로 검색해요</div>';
+  $('sugg').hidden = false;
+}
+function acceptSugg(i){
+  const it = $('sugg')._items?.[i];
+  if (!it) return;
+  const q = $('q'), pos = q.selectionStart ?? q.value.length;
+  const upto = q.value.slice(0, pos), word = upto.split(/\s+/).pop();
+  q.value = upto.slice(0, upto.length - word.length) + it.ins + q.value.slice(pos);
+  const at = upto.length - word.length + it.ins.length;
+  q.setSelectionRange(at, at);
+  q.focus();
+  suggest();   // 태그 이름을 채웠으면 바로 값 후보로 넘어간다
+}
+$('q')?.addEventListener('input', suggest);
+$('q')?.addEventListener('focus', suggest);
+$('q')?.addEventListener('keydown', e => {
+  const sg = $('sugg');
+  if (!sg.hidden && (e.key === 'ArrowDown' || e.key === 'ArrowUp')){
+    e.preventDefault();
+    const n = sg._items.length;
+    SUGN = (SUGN + (e.key === 'ArrowDown' ? 1 : n - 1) + n) % n;
+    [...sg.querySelectorAll('.si')].forEach((b, i) => b.classList.toggle('on', i === SUGN));
+    return;
+  }
+  if (!sg.hidden && (e.key === 'Tab' || (e.key === 'Enter' && SUGN >= 0))){
+    e.preventDefault(); acceptSugg(SUGN >= 0 ? SUGN : 0); return;
+  }
+  if (e.key === 'Enter'){ sg.hidden = true; search(); }
+});
 
 // 빈 제보를 막는다 — 수정(미빌드·반영됨)도 메모도 없는 행은 보낼 내용이 없다
 const canReport = id => !!(S.edits.has(id) || S.applied.has(id) || memoIndex().has(id));
@@ -409,6 +542,38 @@ async function batchReport(){
     updateDirty();   // batchbtn 활성 상태를 실제 잔여 수정·메모 기준으로 되돌린다
   }
 }
+// ─── 문제 제보 (행 무관) ──────────────────────────────
+// 특정 문구에 매이지 않는 문제 — 데이터 로드 전에도 보낼 수 있다(로드 실패 자체가 제보감)
+const FB_KINDS = ['전반적 번역 문제', '화면·렌더링 문제', '게임 동작 문제', '기타'];
+function feedbackMenu(){
+  closePanels();
+  $('meta').textContent = '문제 제보 — 특정 문구에 매이지 않는 문제를 보내요';
+  $('out').innerHTML = `<div class=card>
+    <div class=rowbar>${FB_KINDS.map((k, i) =>
+      `<label class=chip style="cursor:pointer"><input type=radio name=fbkind value="${k}" ${i ? '' : 'checked'}>${k}</label>`).join('')}</div>
+    <textarea id=fbtext style="min-height:120px;margin-top:8px"
+      placeholder="어떤 문제인지 적어주세요 — 어디서(맵·화면), 무엇이, 어떻게 보였는지가 있으면 고치기 쉬워요"></textarea>
+    <div class=rowbar><button class=primary onclick=sendFeedback()>보내기</button>
+      <span class=es>특정 문구의 문제는 검색해서 그 행의 [제보]를 써주세요.</span></div></div>`;
+}
+async function sendFeedback(){
+  const text = $('fbtext').value.trim();
+  if (!text){ toast('내용을 적어주세요'); return; }
+  const kind = document.querySelector?.('input[name=fbkind]:checked')?.value ?? FB_KINDS[0];
+  const fd = new FormData(), E = GENERAL_FORM.entries;
+  fd.append(E.kind, kind);
+  fd.append(E.text, cut(text));
+  fd.append(E.patch, `${S.meta ?? (S.sha ? 'hash:'+S.sha : '미로드')} / ${APP_VER} / u:${reporterId().slice(0,8)}`);
+  try {
+    await fetch(`https://docs.google.com/forms/d/e/${GENERAL_FORM.id}/formResponse`,
+      {method:'POST', mode:'no-cors', body:fd});
+    toast('제보를 보냈어요 — 고마워요! 다음 판에 반영을 검토합니다', 4000);
+    $('fbtext').value = '';
+  } catch {
+    toast('전송이 안 됐어요 — 인터넷 연결을 확인해 주세요', 5000);
+  }
+}
+
 let persistFailed = false;   // 연속 실패 시 토스트 도배 방지
 function persist(){
   try {
@@ -598,6 +763,7 @@ function renderHome(){
     <div class=card><div>할 수 있는 일</div>
       ${line('내 수정', '저장해 둔 수정과 메모를 다시 고치거나 지워요.', 'showMine()')}
       ${line('모아서 제보', '저장한 수정과 메모를 한 번에 보내요.', 'batchReport()')}
+      ${GENERAL_FORM.id ? line('문제 제보', '전반적 번역·화면 표시 문제처럼 특정 문구에 매이지 않는 제보예요.', 'feedbackMenu()') : ''}
       ${line('내보내기', '고침 파일로 내려받아 다른 사람과 나눠요.', 'exportFix()')}
       ${line('이력', '지금까지의 수정·메모·빌드를 모두 봐요.', 'showHist()')}</div>`;
 }
@@ -606,7 +772,7 @@ function renderHome(){
 async function build(){
   if (!S.edits.size){ toast('저장된 수정이 없어요'); return; }
   // 복원과 맞잠금 — 빌드 중에 복원하면 이 빌드 산출물이 방금 되돌린 파일을 덮는다
-  const b = $('buildbtn'); b.disabled = true; b.textContent = '빌드 중...';
+  const b = $('buildbtn'); b.disabled = true; $('buildlabel').textContent = '빌드 중...';
   $('restorebtn').disabled = true;
   // rid까지 포함한 스냅샷 — 빌드 도는 사이 저장된 수정이 반영됨으로 잘못 넘어가는 걸 막는다
   const snapshot = [...S.edits];
@@ -639,7 +805,7 @@ async function build(){
       try { await loadCore(await readFile(S.dir, 'Data/korean.dat')); } catch {}
     }
   } finally {
-    b.disabled = false; b.textContent = '빌드 → 게임 반영';
+    b.disabled = false; $('buildlabel').textContent = '빌드 → 게임 반영';
     $('restorebtn').disabled = false;
   }
 }
@@ -782,6 +948,9 @@ async function reloadAfterRestore(src){
 
 // 지난 폴더가 남아 있을 때만 재연결 버튼을 드러낸다
 idbGet('dirHandle').then(h => { if (h) $('reopenbtn').style.display = ''; }).catch(()=>{});
+
+// 일반 제보 폼이 아직 없으면 메뉴에서 숨긴다 (행 단위 제보와 별개 폼)
+if (!GENERAL_FORM.id) $('fbbtn').style.display = 'none';
 
 // 엔진 선시동 — 폴더를 고르는 동안 다운로드·시동이 겹치게 지금 시작한다.
 // 실패(오프라인 등)는 조용히 묻는다 — 실제 폴더 열기 때 bootPy가 다시 시도한다.
