@@ -12,7 +12,8 @@ const SEC_LABEL = {0:"맵 대사",1:"포켓몬 이름",2:"분류",3:"도감 설�
  20:"장소 설명",21:"맵 이름",22:"전화",23:"시스템 문구"};
 
 const $ = id => document.getElementById(id);
-const S = { dir:null, rows:[], sha:"", base:"", meta:null, edits:new Map(), py:null, core:null };
+// edits = 아직 빌드 안 된 수정, applied = 이미 dat에 반영된 수정(내보내기용으로 남긴다)
+const S = { dir:null, rows:[], sha:"", base:"", meta:null, edits:new Map(), applied:new Map(), py:null, core:null };
 const rid = r => `${r.sec}:${r.map ?? -1}:${r.idx}`;
 
 function toast(m, ms=2600){ const t=$('toast'); t.textContent=m; t.classList.add('show');
@@ -179,7 +180,7 @@ function card(r, i){
   const id = rid(r), e = S.edits.get(id);
   const v = e ? e.v : r.v;
   return `<div class="card ${e?'saved':''}" id=card${i}>
-    <span class=chip>${SEC_LABEL[r.sec]??('절'+r.sec)}</span>${r.map!=null?`<span class=chip>맵 ${r.map}</span>`:''}
+    <span class=chip>${SEC_LABEL[r.sec]??('절'+r.sec)}</span>${r.map!=null?`<span class=chip>맵 ${r.map}</span>`:''}${!e&&S.applied.has(id)?'<span class=chip>반영됨</span>':''}
     ${REPORT_FORM.id?`<button class=ghost style="float:right" onclick=report(${i})>🚩 제보</button>`:''}
     ${r.k?`<div class=es>${esc(r.k)}</div>`:''}
     <textarea id=v${i} data-orig="${esc(r.v)}"
@@ -243,18 +244,27 @@ async function report(i){
 }
 function persist(){
   localStorage.setItem('edits:'+S.base, JSON.stringify([...S.edits.values()]));
+  localStorage.setItem('applied:'+S.base, JSON.stringify([...S.applied.values()]));
 }
 // 기준 키는 .bak에 고정돼 있어 dat만 새 판으로 갈아끼우면 옛 수정이 남는다.
-// 행 인덱스가 밀렸을 수 있으므로 가져오기와 같은 원문 대조로 거른다. 버린 건수를 돌려준다
-function restoreEdits(){
-  S.edits = new Map();
+// 행 인덱스가 밀렸을 수 있으므로 가져오기와 같은 원문 대조로 거른다.
+// applied도 같은 대조를 쓴다 — 원문 k는 빌드해도 안 바뀌므로 판이 바뀐 것만 걸린다
+function loadStore(prefix){
   const byId = new Map(S.rows.map(r=>[rid(r), r]));
+  const m = new Map();
   let dropped = 0;
-  for (const e of JSON.parse(localStorage.getItem('edits:'+S.base) ?? '[]')){
+  for (const e of JSON.parse(localStorage.getItem(prefix+':'+S.base) ?? '[]')){
     const row = byId.get(rid(e));
     if (!row || (e.k && row.k !== e.k)){ dropped++; continue; }
-    S.edits.set(rid(e), e);
+    m.set(rid(e), e);
   }
+  return {m, dropped};
+}
+// 버린 건수를 돌려준다
+function restoreEdits(){
+  const {m, dropped} = loadStore('edits');
+  S.edits = m;
+  S.applied = loadStore('applied').m;
   return dropped;
 }
 // 옛 판(현재 dat sha 기준)의 저장분을 순정 기준 키로 1회 옮긴다
@@ -317,8 +327,9 @@ async function build(){
     await writeFile(S.dir, 'Data/korean.dat.prev', cur);
     await writeFile(S.dir, 'Data/korean.dat', out);
     wrote = true;
-    // 빌드 산출물로 상태 재동기화 — 반영 끝난 edits는 비운다(중복 적용 방지). 저장 키는 순정 기준이라 그대로다
+    // 빌드 산출물로 상태 재동기화 — 반영 끝난 edits는 applied로 옮긴다(중복 적용 방지 + 내보내기엔 남김)
     await loadCore(out);
+    for (const [id, e] of S.edits) S.applied.set(id, e);
     S.edits = new Map();
     persist();
     updateDirty();
@@ -341,12 +352,15 @@ async function build(){
 // ─── 고침 파일 내보내기/가져오기 ────────────────────────
 let CONFLICTS = [];
 function exportFix(){
-  if (!S.edits.size){ toast('내보낼 수정이 없어요'); return; }
-  const lines = [JSON.stringify({app:APP_VER, patch:S.meta ?? S.sha}),
-    ...[...S.edits.values()].map(e=>JSON.stringify(e))];
+  // 빌드로 이미 반영된 것까지 함께 — 원본과 달라졌으면 언제든 내보낼 수 있어야 한다. 같은 행은 미빌드분이 이긴다
+  const all = new Map([...S.applied, ...S.edits]);
+  if (!all.size){ toast('내보낼 수정이 없어요'); return; }
+  // 표식은 순정 기준으로 — S.sha는 빌드마다 바뀌어 받는 쪽에 "다른 패치판"으로 보인다
+  const lines = [JSON.stringify({app:APP_VER, patch:S.meta ?? S.base}),
+    ...[...all.values()].map(e=>JSON.stringify(e))];
   const a = document.createElement('a');
   a.href = URL.createObjectURL(new Blob([lines.join('\n')+'\n'], {type:'application/x-ndjson'}));
-  a.download = `z-kr-고침-${new Date().toISOString().slice(0,10)}-${S.edits.size}건.jsonl`;
+  a.download = `z-kr-고침-${new Date().toISOString().slice(0,10)}-${all.size}건.jsonl`;
   a.click(); URL.revokeObjectURL(a.href);
   toast('고침 파일을 내려받았어요 — 커뮤니티에 첨부해 공유하세요');
 }
@@ -373,7 +387,7 @@ function importFix(){
     persist(); updateDirty();
     hist({type:'import', n:applied});
     $('meta').textContent = `가져오기: ${applied}건 병합 · ${skipped}건 건너뜀(원문 불일치)` +
-      (head?.patch && head.patch !== (S.meta ?? S.sha) ? ` · 주의: 다른 패치판(${head.patch})의 고침` : '');
+      (head?.patch && head.patch !== (S.meta ?? S.base) ? ` · 주의: 다른 패치판(${head.patch})의 고침` : '');
     if (conflicts.length) showConflicts(conflicts);
     else toast(`병합 완료 — ${applied}건. 빌드하면 반영돼요`, 4000);
   };

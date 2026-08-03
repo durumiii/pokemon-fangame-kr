@@ -121,14 +121,32 @@ a.deepEqual(
 a.equal(el('m0').value, '');                               // 입력칸은 비워진다
 
 // 내보내기: 헤더 1행 + 수정마다 1행, S.edits 값 그대로
-ctx.S.sha = 'expsha'; ctx.S.meta = null;
+ctx.S.sha = 'expsha'; ctx.S.base = 'expbase'; ctx.S.meta = null;
 ctx.S.edits = new Map([['0:1:2', { sec: 0, map: 1, idx: 2, k: 'x', v: 'exported' }]]);
+ctx.S.applied = new Map();
 let capturedBlobText = null;
+const exported = () => { capturedBlobText = null; ctx.exportFix();
+  return capturedBlobText === null ? null : capturedBlobText.trim().split('\n').map(l => JSON.parse(l)); };
 ctx.URL.createObjectURL = b => { capturedBlobText = b.parts.join(''); return 'blob:mock'; };
-ctx.exportFix();
-const expLines = capturedBlobText.trim().split('\n').map(l => JSON.parse(l));
-a.deepEqual(expLines[0], { app: 'studio-1', patch: 'expsha' });   // meta 없으면 sha로 대체
+const expLines = exported();
+a.deepEqual(expLines[0], { app: 'studio-1', patch: 'expbase' });  // meta 없으면 순정 기준 해시(빌드마다 바뀌는 sha 아님)
 a.deepEqual(expLines[1], { sec: 0, map: 1, idx: 2, k: 'x', v: 'exported' });
+
+// 내보내기 합집합: 이미 빌드된 applied도 함께 나가고, 같은 행은 아직 안 빌드된 pending이 이긴다
+ctx.S.applied = new Map([
+  ['0:1:2', { sec: 0, map: 1, idx: 2, k: 'x', v: '빌드된값' }],       // pending과 겹침 → 밀린다
+  ['0:1:9', { sec: 0, map: 1, idx: 9, k: 'q', v: '빌드만된값' }]]);   // pending에 없음 → 그대로 나간다
+const unionLines = exported().slice(1);
+a.equal(unionLines.length, 2);
+a.equal(unionLines.find(e => e.idx === 2).v, 'exported');            // pending 우선
+a.equal(unionLines.find(e => e.idx === 9).v, '빌드만된값');
+
+// 양쪽 다 비었을 때만 "내보낼 수정 없음" — applied만 있어도 내보낼 수 있어야 한다
+ctx.S.edits = new Map();
+a.equal(exported().slice(1).length, 2);                             // applied 2건만으로도 파일이 나온다
+ctx.S.applied = new Map();
+a.equal(exported(), null);                                          // 둘 다 비면 파일 없음
+a.equal(el('toast').textContent, '내보낼 수정이 없어요');
 
 // 빌드 성공: edits 비움 + 옛 sha localStorage 키 제거 (readFile/writeFile은 위에서 목업으로 교체됨)
 const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8Array는 vm의 instanceof를 못 통과한다
@@ -203,12 +221,24 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   };
   ctx.S.sha = 'oldsha'; ctx.S.base = 'buildbase';
   ctx.S.edits = new Map([['0:1:2', { sec: 0, map: 1, idx: 2, k: 'x', v: 'y' }]]);
+  ctx.S.applied = new Map();
   ctx.persist();
   await ctx.build();
   a.equal(ctx.S.edits.size, 0);                             // 빌드 성공 시 edits 비움
+  a.equal(ctx.S.applied.get('0:1:2').v, 'y');               // 비운 게 아니라 applied로 옮겨진다
   a.deepEqual(JSON.parse(ctx.localStorage.getItem('edits:buildbase')), []);  // 기준 키는 그대로, 내용만 비움
+  a.deepEqual(JSON.parse(ctx.localStorage.getItem('applied:buildbase')),     // applied도 같은 기준 키로 저장
+    [{ sec: 0, map: 1, idx: 2, k: 'x', v: 'y' }]);
   a.equal(ctx.S.sha, 'newsha');                              // 새 dat로 상태 재동기화
   a.deepEqual(ctx.histAll().at(-1).type, 'build');           // 빌드도 이력에 남는다
+
+  // applied 복원: 로드 시 edits와 같은 원문 대조로 걸러 되살아난다
+  ctx.S.rows = [{ sec: 0, map: 1, idx: 2, k: 'x', v: 'y' }];
+  ctx.restoreEdits();
+  a.equal(ctx.S.applied.get('0:1:2').v, 'y');
+  ctx.S.rows = [{ sec: 0, map: 1, idx: 2, k: '새판원문', v: 'y' }];
+  ctx.restoreEdits();
+  a.equal(ctx.S.applied.size, 0);                            // 판이 바뀌면 applied도 제외
 
   // 제보: 6필드가 FormData에 담기고 no-cors POST로 fetch가 불려야 한다
   ctx.REPORT_FORM.id = 'formid123';
