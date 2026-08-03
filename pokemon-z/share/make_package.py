@@ -84,10 +84,10 @@ def main():
     if "--variant" in sys.argv:
         variant = sys.argv[sys.argv.index("--variant") + 1]
     default_names = {
-        "full": "포켓몬Z 한글패치 v5",   # 기본판 — 디버그 없는 통합
-        "debug": "포켓몬Z 한글패치 v5 (통합+디버그)",
-        "clean": "포켓몬Z 한글패치 v5 (순수 번역)",
-        "mods": "포켓몬Z 한글패치 v5 (스크립트 모드 묶음)",
+        "full": "포켓몬Z 한글패치 v5.1",   # 기본판 — 디버그 없는 통합
+        "debug": "포켓몬Z 한글패치 v5.1 (통합+디버그)",
+        "clean": "포켓몬Z 한글패치 v5.1 (순수 번역)",
+        "mods": "포켓몬Z 한글패치 v5.1 (스크립트 모드 묶음)",
     }
     name = default_names[variant]
     if "--name" in sys.argv:
