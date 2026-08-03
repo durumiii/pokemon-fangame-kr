@@ -46,6 +46,28 @@ if not (_FANLIB_HOME / "fanlib" / "modstore.py").exists():
 sys.path.insert(0, str(_FANLIB_HOME))
 from fanlib import modstore  # noqa: E402
 
+def _embed_manifest(final: Path, name: str):
+    """패키지에 진단용 지문(manifest.json)을 동봉한다.
+
+    스테이징 폴더만 담으므로 scope="partial" — 받는 사람의 게임 폴더에는 여기 없는
+    원본 파일이 잔뜩 있고, 그것을 외래로 몰면 modkit 진단이 게임을 부순다.
+    """
+    modkit_home = Path(
+        os.environ.get("MODKIT_HOME")
+        or Path.home() / "workspace" / "claude-native" / "sketches" / "essentials-modkit"
+    )
+    if not (modkit_home / "modkit" / "manifest.py").exists():
+        print(f"modkit을 찾지 못해 manifest.json을 건너뜁니다: {modkit_home}")
+        return
+    sys.path.insert(0, str(modkit_home))
+    from modkit import manifest as modkit_manifest
+
+    exclude_patterns = modkit_manifest.DEFAULT_EXCLUDE + ("번역표/*", "읽어주세요.txt")
+    made = modkit_manifest.capture(
+        final, game="Pokemon Z Fangame", version=name, scope="partial", exclude=exclude_patterns)
+    modkit_manifest.save(made, final / "manifest.json")
+    print(f"manifest.json 동봉: {len(made['files'])}개 파일 (scope=partial)")
+
 
 def _run_patch_debug(scripts_path: Path):
     import subprocess
@@ -86,6 +108,7 @@ def main():
             print(f"주입: {mod} → {r['did']}")
         shutil.copy2(HERE / "읽어주세요-모드묶음.txt", stage / "읽어주세요.txt")
         stage.rename(final)
+        _embed_manifest(final, name)
         size = sum(p.stat().st_size for p in final.rglob("*") if p.is_file())
         print(f"완성: {final} — {size / 1e6:.1f}MB")
         return
@@ -143,6 +166,7 @@ def main():
     shutil.copy2(HERE / "읽어주세요.txt", stage / "읽어주세요.txt")
 
     stage.rename(final)
+    _embed_manifest(final, name)
     total = sum(1 for _ in final.rglob("*") if _.is_file())
     size = sum(p.stat().st_size for p in final.rglob("*") if p.is_file())
     print(f"완성: {final} — 파일 {total}개, {size / 1e6:.0f}MB")

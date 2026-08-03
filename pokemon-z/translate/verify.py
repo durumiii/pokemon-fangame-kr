@@ -114,6 +114,9 @@ def check_canon(strict):
 def check_dat_and_sentinels():
     d = load(open(STORE_DAT, "rb"))
     ks, vs = inner_of(d[23])
+    # __kr_patch__는 build.py가 심는 버전 표식 — 정본 미러 대상이 아니다
+    pairs = [(k, v) for k, v in zip(ks, vs) if bytes(k) != b"__kr_patch__"]
+    ks, vs = [k for k, _ in pairs], [v for _, v in pairs]
     jr = rows(HERE / "ko" / "23-script-texts.jsonl")
     # __kr_patch__ 버전 표식(build.py가 심음)은 정본 밖 — 카운트에서 제외
     n_dat = sum(1 for k in ks if bytes(k) != b"__kr_patch__")
