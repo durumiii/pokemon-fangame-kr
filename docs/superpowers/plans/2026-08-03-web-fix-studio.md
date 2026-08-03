@@ -865,3 +865,12 @@ git commit -m "feat(webapp): Pages 배포 스크립트 + 수정법 안내에 웹
 - rubymarshal wheel의 실제 모듈 파일 목록 — Task 1 Step 1에서 확인한 목록으로 Task 4 `bootPy`의 파일 배열을 맞출 것.
 - pyodide `toPy(Uint8Array)` → 파이썬 쪽 `bytes()` 캐스팅은 core.py가 이미 `bytes(dat_bytes)`로 감싸므로 memoryview여도 동작. `build_dat` 반환 bytes는 JS에서 `.toJs()`로 Uint8Array화 — pyodide 버전에 따라 `{create_proxies:false}` 옵션이 필요하면 조정.
 - v5 dat에는 표식이 없으므로 제보는 해시로 식별 — Task 3 이후 첫 배포판(v5.1 등)부터 표식이 실린다.
+
+### Task 16: 내 수정 화면 — 저장분 재수정·취소 (사용자 요청 2026-08-04)
+
+**Files:** Modify: `pokemon-z/webapp/app.js`, `pokemon-z/webapp/index.html`
+
+- 헤더(또는 홈 바로가기) [내 수정]: 대기(pending) 수정 목록 — 행마다 원문(있으면)·수정값 표시, 인라인 편집(textarea+[저장], applyEdit 재사용), [취소](원래대로 = S.edits에서 제거 + hist 기록 + persist).
+- 메모 목록 — 행마다 [삭제](hist에 memo-del 기록 또는 기존 memo 이벤트는 두고 목록에서만 제거하는 방식은 구현 판단 — 단, 삭제 후 일괄 제보·제보 코멘트에 다시 실리면 안 됨: 메모 저장 구조가 hist 파생이라면 별도 활성 메모 저장소로 승격 필요 여부 판단).
+- 반영됨(applied) 목록 — 표시만(수정값·"반영됨" 칩). 취소 기능 없음(이미 dat에 반영 — 되돌리려면 해당 행을 검색해 재수정하는 안내 한 줄).
+- 홈 화면 요약 칩에서 이 화면으로 바로가기.
