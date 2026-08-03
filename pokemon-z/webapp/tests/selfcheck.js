@@ -292,6 +292,24 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   a.equal(el('buildbtn').disabled, false);
   a.equal(el('exportbtn').disabled, false);
 
+  // 빌드 경합: 빌드 도는 사이 저장된 수정이 반영됨으로 잘못 넘어가면 안 된다(스냅샷 이후분은 pending 유지)
+  ctx.S.sha = 'oldrace'; ctx.S.base = 'racebase';
+  ctx.S.edits = new Map([['0:1:2', { sec: 0, map: 1, idx: 2, k: 'x', v: 'y' }]]);
+  ctx.S.applied = new Map();
+  ctx.S.core = {
+    build_dat: () => {
+      // build_dat이 도는 동안 다른 저장이 끼어든 상황을 흉내낸다: 같은 rid 재수정 + 새 rid 추가
+      ctx.S.edits.set('0:1:2', { sec: 0, map: 1, idx: 2, k: 'x', v: '다시고침' });
+      ctx.S.edits.set('0:1:9', { sec: 0, map: 1, idx: 9, k: 'z', v: '새로추가' });
+      return new VMU8([9, 9]);
+    },
+    load_dat: () => JSON.stringify({ meta: null, sha: 'newrace', rows: [] }),
+  };
+  await ctx.build();
+  a.equal(ctx.S.applied.has('0:1:2'), false);                 // 스냅샷 이후 재수정된 rid는 반영 처리되지 않는다
+  a.equal(ctx.S.edits.get('0:1:2').v, '다시고침');             // pending에 최신 값 그대로 남는다
+  a.equal(ctx.S.edits.get('0:1:9').v, '새로추가');             // 스냅샷 이후 추가분도 pending 유지
+
   // 제보: 7필드가 FormData에 담기고 no-cors POST로 fetch가 불려야 한다
   ctx.REPORT_FORM.id = 'formid123';
   Object.assign(ctx.REPORT_FORM.entries, {sec:'e.sec', idx:'e.idx', k:'e.k', v:'e.v',

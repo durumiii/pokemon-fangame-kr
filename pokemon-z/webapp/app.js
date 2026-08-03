@@ -359,9 +359,16 @@ async function batchReport(){
   await sendForm({sec:`일괄 ${p.n}건`, idx:'', k:'', v:'',
                   suggest: cut(p.suggest), comment: cut(p.comment)});
 }
+let persistFailed = false;   // 연속 실패 시 토스트 도배 방지
 function persist(){
-  localStorage.setItem('edits:'+S.base, JSON.stringify([...S.edits.values()]));
-  localStorage.setItem('applied:'+S.base, JSON.stringify([...S.applied.values()]));
+  try {
+    localStorage.setItem('edits:'+S.base, JSON.stringify([...S.edits.values()]));
+    localStorage.setItem('applied:'+S.base, JSON.stringify([...S.applied.values()]));
+    persistFailed = false;
+  } catch {
+    if (!persistFailed) toast('저장 공간이 가득 찼어요 — 수정 내역 저장이 실패했어요', 5000);
+    persistFailed = true;
+  }
 }
 // 기준 키는 .bak에 고정돼 있어 dat만 새 판으로 갈아끼우면 옛 수정이 남는다.
 // 행 인덱스가 밀렸을 수 있으므로 가져오기와 같은 원문 대조로 거른다.
@@ -534,10 +541,12 @@ async function build(){
   // 복원과 맞잠금 — 빌드 중에 복원하면 이 빌드 산출물이 방금 되돌린 파일을 덮는다
   const b = $('buildbtn'); b.disabled = true; b.textContent = '빌드 중...';
   $('restorebtn').disabled = true;
-  const n = S.edits.size;
+  // rid까지 포함한 스냅샷 — 빌드 도는 사이 저장된 수정이 반영됨으로 잘못 넘어가는 걸 막는다
+  const snapshot = [...S.edits];
+  const n = snapshot.length;
   let wrote = false;
   try {
-    const out = await pyBuild([...S.edits.values()]);
+    const out = await pyBuild(snapshot.map(([, e]) => e));
     // 직전본 백업 → 본체 기록 (원본 .bak은 openFolder에서 이미 보존)
     const cur = await readFile(S.dir, 'Data/korean.dat');
     await writeFile(S.dir, 'Data/korean.dat.prev', cur);
@@ -545,8 +554,10 @@ async function build(){
     wrote = true;
     // 빌드 산출물로 상태 재동기화 — 반영 끝난 edits는 applied로 옮긴다(중복 적용 방지 + 내보내기엔 남김)
     await loadCore(out);
-    for (const [id, e] of S.edits) S.applied.set(id, e);
-    S.edits = new Map();
+    // 스냅샷의 rid만 옮긴다 — 빌드 중 같은 rid가 다시 저장됐으면(참조가 바뀜) pending에 남겨 덮지 않는다
+    for (const [id, e] of snapshot) {
+      if (S.edits.get(id) === e) { S.applied.set(id, e); S.edits.delete(id); }
+    }
     persist();
     updateDirty();
     hist({type:'build', n});
