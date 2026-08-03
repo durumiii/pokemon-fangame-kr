@@ -3031,7 +3031,7 @@
 {"k": "Para subir de nivel", "v": "레벨업하려면"}
 {"k": "PRESTADO", "v": "빌림"}
 {"k": "NOTAS ENTRENADOR", "v": "트레이너 메모"}
-{"k": "<c3=404040,B0B0B0>{2} de {1} de {3}", "v": "<c3=404040,B0B0B0>{3}의 {1}의 {2}\n"}
+{"k": "<c3=404040,B0B0B0>{2} de {1} de {3}", "v": "<c3=404040,B0B0B0>{3}년 {1} {2}일\n"}
 {"k": "<c3=404040,B0B0B0>Un extraño Huevo Pokémon hallado por la <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.", "v": "<c3=404040,B0B0B0><c3=F83820,E09890>{1}<c3=404040,B0B0B0>\\j[이,가] 발견한 이상한 포켓몬 알.\n"}
 {"k": "<c3=404040,B0B0B0>\"Estado del Huevo\"", "v": "<c3=404040,B0B0B0>\"알 상태\"\n"}
 {"k": "Parece que a este Huevo le tomará mucho tiempo abrirse.", "v": "이 알은 부화하는 데 한참 걸릴 것 같다."}
@@ -3039,10 +3039,10 @@
 {"k": "A veces se mueve. Debería abrirse pronto.", "v": "가끔 움직인다. 곧 부화할 것 같다."}
 {"k": "Está haciendo ruidos. ¡Está a punto de abrirse!", "v": "소리가 난다. 곧 부화할 것 같다!"}
 {"k": "<c3=404040,B0B0B0>Naturaleza <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.", "v": "<c3=404040,B0B0B0><c3=F83820,E09890>{1}<c3=404040,B0B0B0> 성격."}
-{"k": "Encontrado con Nv. {1}.", "v": "Lv. {1}에서 발견됨."}
-{"k": "Huevo recibido.", "v": "알을 받았다."}
-{"k": "Intercambiado con Nv. {1}.", "v": "Lv. {1}에서 교환됨."}
-{"k": "Lo conocí en un encuentro fatídico en Nv. {1}.", "v": "Lv. {1}에서 운명처럼 만났다."}
+{"k": "Encontrado con Nv. {1}.", "v": "에서 Lv. {1}일 때 발견됨."}
+{"k": "Huevo recibido.", "v": "에서 알을 받음."}
+{"k": "Intercambiado con Nv. {1}.", "v": "에서 Lv. {1}일 때 교환됨."}
+{"k": "Lo conocí en un encuentro fatídico en Nv. {1}.", "v": "에서 Lv. {1}일 때 운명처럼 만남."}
 {"k": "<c3=404040,B0B0B0>Huevo eclosionado.", "v": "<c3=404040,B0B0B0>부화한 알."}
 {"k": "Le encanta comer.", "v": "먹는 것을 아주 좋아한다."}
 {"k": "A menudo se duerme.", "v": "자주 잠든다."}
@@ -6713,10 +6713,10 @@
 {"k": "¡Un placer hacer intercambios contigo!", "v": "교환해서 즐거웠어!"}
 {"k": "Encuentra las 4 mejoras del Pokévial (5 usos del vial).", "v": "포켓몬약병 강화 4개를 찾아라 (약병 5회 사용)."}
 {"k": "<c3=404040,B0B0B0>Huevo eclosionado.\\n", "v": "<c3=404040,B0B0B0>알에서 태어났다.\\n"}
-{"k": "<c3=404040,B0B0B0>Naturaleza <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.\\n", "v": "<c3=404040,B0B0B0><c3=F83820,E09890>{1}<c3=404040,B0B0B0> 성격이다.\\n"}
+{"k": "<c3=404040,B0B0B0>Naturaleza <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.\\n", "v": "<c3=404040,B0B0B0><c3=F83820,E09890>{1}<c3=404040,B0B0B0> 성격\\n"}
 {"k": "<c3=404040,B0B0B0>Un extraño Huevo Pokémon hallado por <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.\\n", "v": "<c3=404040,B0B0B0><c3=F83820,E09890>{1}<c3=404040,B0B0B0>\\j[이,가] 발견한 신기한 포켓몬 알.\\n"}
 {"k": "<c3=404040,B0B0B0>\\\"Estado del Huevo\\\"\\n", "v": "<c3=404040,B0B0B0>\\\"알의 상태\\\"\\n"}
-{"k": "<c3=F83820,E09890>Faraway place\\n", "v": "<c3=F83820,E09890>머나먼 곳\\n"}
+{"k": "<c3=F83820,E09890>Faraway place\\n", "v": "<c3=F83820,E09890>머나먼 곳"}
 {"k": "Borrando partida...\\r\\nNo cierres el juego...\\\\wtnp[0]", "v": "세이브를 삭제하는 중...\\r\\n게임을 끄지 마세요...\\wtnp[0]"}
 {"k": "Capturado: Ninguno\\nBalls: {1}", "v": "잡은 수: 없음\\n볼: {1}"}
 {"k": "Capturado: {1}\\nNivel: {2}\\nBalls: {3}", "v": "잡은 수: {1}\\n레벨: {2}\\n볼: {3}"}

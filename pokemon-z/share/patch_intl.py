@@ -100,6 +100,16 @@ EDITS += [
      "[pokemon.nature] || PBNatures.getName(pokemon.nature))"),
 ]
 
+# 트레이너 메모 — 장소 줄의 개행을 지워 다음 만남 문구와 한 줄로 병합한다:
+# 「1번도로」+「에서 Lv. 5일 때 발견됨.」. 만난 곳·부화한 곳이 같은 리터럴이라
+# EDIT 하나가 2곳을 치환한다. 만남 문구(절23 번역)는 「에서 …」로 시작하고
+# sprintf가 회색 접두를 이미 붙이므로 색 경계도 그대로 선다.
+EDITS += [
+    ("PScreen_Summary",
+     'memo+=sprintf("<c3=F83820,E09890>%s\\n",mapname)',
+     'memo+=sprintf("<c3=F83820,E09890>%s",mapname)'),
+]
+
 # 부적(Amuleto) 18종 — pbAmuleto(116_PItem_ItemEffects)가 번역된 아이템 이름을
 # 스페인어 원문과 문자열 비교해 인카운터 스위치(280~297)를 켠다. 이름이
 # 한글화되면 영원히 거짓이 되는 기능 버그라, 이름 비교를 상수 비교로 수술한다.
