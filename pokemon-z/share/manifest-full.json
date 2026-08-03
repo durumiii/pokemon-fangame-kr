@@ -4,11 +4,17 @@
  "version": "포켓몬Z 한글패치 v5.1",
  "scope": "full",
  "exclude": [
-  "Saves/*",
+  "Game*.rxdata",
+  "*LastSave.dat",
+  "desktop.ini",
+  "*/desktop.ini",
+  "Thumbs.db",
+  "*/Thumbs.db",
+  ".DS_Store",
+  "*/.DS_Store",
+  "[[]????-??-??[]]*.png",
+  "capture*.bmp",
   "*.sav",
-  "LastSave.dat",
-  "*.ini.bak",
-  "screenshot*",
   "_quarantine/*",
   "modkit-log.jsonl",
   "manifest.json",
@@ -52997,10 +53003,6 @@
    9270,
    2288176177
   ],
-  "Graphics/Characters/desktop.ini": [
-   40,
-   531338380
-  ],
   "Graphics/Characters/dino1.png": [
    14968,
    220145326
@@ -71213,10 +71215,6 @@
    1020,
    829330747
   ],
-  "Graphics/Pictures/Logros/LogroGrande/Thumbs.db": [
-   31744,
-   3603875137
-  ],
   "Graphics/Pictures/Logros/LogroGrande/TitleBox.png": [
    2927,
    3142631440
@@ -71280,14 +71278,6 @@
   "Graphics/Pictures/Logros/LogroMini/LogroMini9.png": [
    734,
    1867230821
-  ],
-  "Graphics/Pictures/Logros/LogroMini/Thumbs.db": [
-   25600,
-   2236144980
-  ],
-  "Graphics/Pictures/Logros/Thumbs.db": [
-   57856,
-   1033267826
   ],
   "Graphics/Pictures/Logros/background.png": [
    4859,
@@ -71657,10 +71647,6 @@
    187,
    778231744
   ],
-  "Graphics/Pictures/Slot Machine/Thumbs.db": [
-   7168,
-   2572451736
-  ],
   "Graphics/Pictures/Slot Machine/bg.png": [
    4306,
    1119985935
@@ -71884,10 +71870,6 @@
   "Graphics/Pictures/Tile Puzzle/tilesOmanyte_3.png": [
    1794,
    3980126643
-  ],
-  "Graphics/Pictures/Voltorb Flip/Thumbs.db": [
-   26624,
-   3836724524
   ],
   "Graphics/Pictures/Voltorb Flip/boardbg.png": [
    2970,
