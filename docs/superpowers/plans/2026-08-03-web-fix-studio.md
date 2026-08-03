@@ -866,6 +866,74 @@ git commit -m "feat(webapp): Pages 배포 스크립트 + 수정법 안내에 웹
 - pyodide `toPy(Uint8Array)` → 파이썬 쪽 `bytes()` 캐스팅은 core.py가 이미 `bytes(dat_bytes)`로 감싸므로 memoryview여도 동작. `build_dat` 반환 bytes는 JS에서 `.toJs()`로 Uint8Array화 — pyodide 버전에 따라 `{create_proxies:false}` 옵션이 필요하면 조정.
 - v5 dat에는 표식이 없으므로 제보는 해시로 식별 — Task 3 이후 첫 배포판(v5.1 등)부터 표식이 실린다.
 
+---
+
+# 2차 작업 (실기 스모크 피드백, 2026-08-03)
+
+스펙의 "2차 요구" 절 참조. 공통: 기존 app.js 구조·헬퍼 재사용, node --check + selfcheck 확장, 브라우저 실기는 사용자 대기. 영속 키 전환(Task 10)이 기반이므로 10→11→12 순서 고정, 9·13은 독립.
+
+### Task 9: 폴더 핸들 보존·재연결
+
+**Files:** Modify: `pokemon-z/webapp/app.js`, `pokemon-z/webapp/index.html`
+
+- dirHandle을 IndexedDB(`kv` 오브젝트스토어, 키 `dirHandle`)에 저장(구조화 복제 가능).
+- 시작 화면: 저장된 핸들이 있으면 [지난 폴더 다시 연결] 버튼 표시 → `handle.requestPermission({mode:'readwrite'})`가 'granted'면 openFolder의 로드 경로 재사용, 아니면 일반 폴더 선택으로 폴백.
+- IndexedDB 헬퍼는 idbGet/idbSet 두 함수(promise 래퍼, ~15줄)로 최소화.
+
+### Task 10: 순정 기준 키 + 이력 원장 + 메모
+
+**Files:** Modify: `pokemon-z/webapp/app.js`, `pokemon-z/webapp/index.html`
+
+- **기준 키 전환**: 로드 시 `Data/korean.dat.bak`이 있으면 그 파일의 sha 앞 12자를 `S.base`로, 없으면(방금 .bak을 만든 경우) 현재 dat sha. 이후 모든 localStorage 키는 `edits:<base>`·`hist:<base>`·`applied:<base>`(11에서 사용). 기존 `edits:<sha>` 키는 발견 시 1회 이전(마이그레이션 3줄).
+- **이력 원장**: `hist:<base>`에 append-only JSON 배열. 이벤트: {t:ISO, type:'edit'|'memo'|'build'|'restore'|'import', ...} — edit는 {rid,k,old,new}, memo는 {rid,k,text}, build는 {n}, restore는 {src}. 기록 지점: save()/memo/build 성공/restoreMenu/importFix.
+- **메모 UI**: 카드 rowbar에 메모 입력칸+[메모] 버튼(fixgui 스타일). 메모는 이력에만 쌓임(빌드에 안 들어감).
+- **[이력] 버튼**(헤더): 최신순 카드 목록 — 시각·종류·내용, edit는 구→신 표시. 데이터는 새로고침·빌드 후에도 유지.
+
+### Task 11: applied 집합 + 내보내기 개선
+
+**Files:** Modify: `pokemon-z/webapp/app.js`
+
+- 빌드 성공 시 edits를 비우는 대신 `applied:<base>`(Map 직렬화)로 병합 이동(같은 rid는 최신 우선).
+- exportFix: applied+pending 합집합(같은 rid는 pending 우선)을 내보냄. 비었을 때만 "내보낼 수정이 없어요". 헤더 patch는 순정 표식/베이스 해시.
+- 카드 렌더 시 applied 행은 'saved' 테두리 대신 옅은 "반영됨" 칩 표시(구분).
+- dirty 표시는 pending만 집계(빌드 필요 여부의 의미 유지).
+
+### Task 12: 제보 재배선 + 일괄 제보 + 아이콘
+
+**Files:** Modify: `pokemon-z/webapp/app.js`, `pokemon-z/webapp/index.html`
+
+- **필드 재정의(사용자 지시)**: 제안=사용자가 바꿔 저장한 번역, 코멘트=사용자 메모(프롬프트 입력 또는 해당 행 메모), 패치 버전=신규 문항(entry는 폼 추가 후 부모가 전달). REPORT_FORM.entries에 comment 추가, report()에서 patch를 새 entry로 이동.
+- **빈 제보 차단**: 개별 제보 버튼은 해당 행에 수정(pending/applied) 또는 메모가 있을 때만 활성(없으면 disabled+title 안내). 제보 prompt 취소(null)는 전송 안 함(최종 리뷰 지적 흡수).
+- **일괄 제보**: 헤더 [모아서 제보] — applied+pending 수정과 메모를 정리해 한 건 전송: 분류=`일괄 N건`, 제안=수정 덤프(행마다 `[분류] 원문 → 수정값`), 코멘트=메모 덤프, 각 30,000자 절단+"…이하 생략". 보낼 게 없으면 비활성.
+- **홈 화면(사용자 지시)**: 검색 전/검색어 비움 시의 거대한 빈 #out을 홈으로 활용 — 로드 후 상태 요약(대기 수정 N건·반영됨 N건·메모 N건), 최근 이력 몇 줄, 그리고 할 수 있는 일 안내([모아서 제보]·[내보내기]·[이력] 각 한 줄 설명+바로가기 버튼). 1회성 토스트 안내는 쓰지 않는다. 검색 결과를 지우면 홈으로 복귀. 시각 디자인은 별도 세션 몫이므로 기존 card/chip 스타일 재사용 수준으로.
+- **아이콘**: 🚩 등 이모지를 인라인 SVG 아이콘으로 교체(외부 리소스 금지). 시각 디자인 전반 손질은 별도 세션 몫 — 여기선 기능 배선만.
+- 전송 후 토스트. 보낸 뒤에도 데이터는 지우지 않음(제보는 사본).
+
+### Task 13: 복원 선택 카드
+
+**Files:** Modify: `pokemon-z/webapp/app.js`
+
+- restoreMenu()의 prompt() 제거 → `#out`에 선택 카드 2장(순정 원본/직전 빌드 전) + [취소]. .prev 없으면 해당 카드 비활성(회색, 사유 표시). 복원 실행 시 이력 기록(Task 10의 hist) + 완료 카드에서 [다시 불러오기] 버튼(loadCore 재호출로 새로고침 없이 복귀).
+
+### Task 14: 일괄 바꾸기 모드 (사용자 요청 2026-08-03)
+
+**Files:** Modify: `pokemon-z/webapp/app.js`, `pokemon-z/webapp/index.html`
+
+- 헤더 [바꾸기] 버튼 → #out에 바꾸기 화면: 찾을 문구·바꿀 문구 입력(리터럴, 정규식 아님) + [미리보기].
+- 미리보기: 매칭 행 목록 — 각 행에 바뀐 결과를 원문과 함께 표시(바뀌는 부분 강조), 행마다 체크박스(기본 체크), [모두 선택/해제], 상단에 "N행 매칭".
+- [선택 적용]: 체크된 행만 save()와 같은 경로로 S.edits에 기록(CR 정규화·이력 기록 포함, 마크업 토큰 검사는 치환이 토큰을 건드린 행만 경고 후 제외 여부 확인).
+- 배경: 메달→배지 일괄 치환이 '배지을' 같은 조사 오류 21곳을 남긴 사례 — 단순 모두 바꾸기가 아니라 행별 확인이 요구의 핵심.
+- 검색 대상은 현재 값(pending 수정 반영된 값) 기준. 매칭 500행 상한(기존 검색과 동일한 감각), 초과 시 안내.
+
+### Task 15: 찾아보기 모드 (맵별·분류별·화자별) + 축약 조인표 동봉 (사용자 승인 2026-08-03)
+
+**Files:** Create: `pokemon-z/translate/make_speakers.py`, `pokemon-z/webapp/speakers.json`(생성물) / Modify: `pokemon-z/webapp/app.js`, `pokemon-z/webapp/index.html`
+
+- **축약 조인표 생성기**(repo 쪽, 배포 안 됨): docs/research/map-speaker-join.jsonl.gz + translate/sprite-groups.json에서 fixgui.py의 ctx()와 같은 규칙(sprite stem→group)으로 {"maps": {"<맵번호>": {"name": 맵이름, "rows": {"<k 원문>": [화자, 분류]}}}} 형태 JSON 산출 → webapp/speakers.json. 원문 k는 이미 배포 dat에 있는 텍스트라 추가 노출 없음. 크기 확인해 필요시 화자·분류 문자열 테이블화로 압축.
+- **웹앱 찾아보기**: 헤더 select(fixgui와 같은 「찾아보기…」) — 맵별(dat 0절 맵번호 + 21절 맵 이름, speakers.json 없어도 동작), 분류별(절 단위, 행 수 표시), 화자별/화자분류별(speakers.json 로드 성공 시에만 옵션 노출). 묶음 클릭 → 해당 행 목록(기존 카드 렌더 재사용, 500행 상한).
+- speakers.json fetch 실패는 조용히 무시(찾아보기에서 화자 옵션만 사라짐) — 무설정 원칙 유지.
+- 카드 칩에 화자 표시(있으면) — fixgui와 동일한 감각.
+
 ### Task 16: 내 수정 화면 — 저장분 재수정·취소 (사용자 요청 2026-08-04)
 
 **Files:** Modify: `pokemon-z/webapp/app.js`, `pokemon-z/webapp/index.html`

@@ -71,6 +71,17 @@ redo/apply, 청크 원장 `batch/`). **모델은 gemini-3.6-flash + reasoning_ef
 씽킹이 존재 강제이나 양은 조절되고, 실측 A/B에서 품질 동급·비용 3.2배였다. 한 줄짜리
 탐침은 effort가 안 듣는 것처럼 보였다 — **작은 표본으로 파라미터를 판정하지 마라.**
 
+### 웹 수정 스튜디오 (유저 배포용, 2026-08-04)
+
+`webapp/` — 브라우저에서 korean.dat를 검색·수정·빌드하는 정적 앱
+(https://durumiii.github.io/z-kr-studio/, 재배포는 `webapp/publish.sh`).
+pyodide로 core.py(build.py 값-교체 이식)를 돌리고, 제보는 구글폼 no-cors
+(entry 배선은 app.js 상단, 패치 식별은 `__kr_patch__` 표식+해시 폴백,
+제보자는 익명 난수 `u:해시`). 유저 고침 파일(jsonl)은 가져오기로 정본 병합
+가능. 화자 조인표 축약본은 `translate/make_speakers.py`가 speakers.json으로
+생성(조인표 갱신 시 재생성 후 재배포). 검증은 `webapp/tests/`(pytest 실물
+dat + node selfcheck). 스펙·계획: `docs/superpowers/`(repo 루트).
+
 ### 작업 개념도 (2026-08-02 구조화 — 새 제보는 이 표부터)
 
 텍스트 문제는 「닿는 경로(층)」 × 「값 판정」 2차원으로 떨어진다.
