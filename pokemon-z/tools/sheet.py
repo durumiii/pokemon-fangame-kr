@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 """제보 스프레드시트 조회·수정 CLI (유지자용, devbox 전용).
 
-인증은 gcloud ADC(spreadsheets scope 포함) — 최초 1회만:
-  gcloud auth application-default login \
-    --scopes=https://www.googleapis.com/auth/spreadsheets,https://www.googleapis.com/auth/cloud-platform
-(Sheets API는 rclone 기본 클라이언트·gcloud 기본 scope 둘 다에서 403이라 이 조합이 최소 경로.
- API 활성 프로젝트는 golden-tide-361608 — 2026-08-04 sheets.googleapis.com 켜 둠.)
+인증: 서비스 계정 z-sheet@golden-tide-361608 impersonation.
+gcloud 사용자 토큰(cloud-platform)으로 IAM Credentials API에서 spreadsheets scope
+SA 토큰을 발급받는다 — 브라우저·키 파일 불요. 전제(2026-08-04 세팅 완료):
+  · golden-tide-361608에 sheets/iamcredentials API 활성
+  · choneunyw1에 SA Token Creator 부여
+  · 제보 시트가 SA 이메일에 편집자로 공유돼 있어야 함(시트 소유 계정에서 1회)
+(막다른 길 기록: rclone 기본 클라이언트=Sheets API 미활성 403,
+ gcloud ADC 기본 클라이언트=spreadsheets scope 차단 — 실측.)
 
   uv run tools/sheet.py tabs                 # 탭 목록·행수
   uv run tools/sheet.py rows <탭> [-n 20]    # 행 출력(TSV, 최근 n행)
@@ -14,17 +17,24 @@
 import json, os, subprocess, sys, urllib.parse, urllib.request
 
 SHEET_ID = "1Lp1iW1icicc0plhilX3BnPa2k_mico43TNQfkKiMMiY"   # Z 한글패치 제보 시트
-QUOTA_PROJECT = "golden-tide-361608"
+SA = "z-sheet@golden-tide-361608.iam.gserviceaccount.com"
 GCLOUD = os.path.expanduser("~/google-cloud-sdk/bin/gcloud")
 API = "https://sheets.googleapis.com/v4/spreadsheets"
 
 
 def token():
-    r = subprocess.run([GCLOUD, "auth", "application-default", "print-access-token"],
+    r = subprocess.run([GCLOUD, "auth", "print-access-token"],
                        capture_output=True, text=True)
     if r.returncode:
-        sys.exit("ADC 토큰이 없어요 — 위 docstring의 login 명령을 한 번 실행해 주세요.\n" + r.stderr.strip())
-    return r.stdout.strip()
+        sys.exit("gcloud 로그인이 없어요 — gcloud auth login 후 다시요.\n" + r.stderr.strip())
+    req = urllib.request.Request(
+        f"https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/{SA}:generateAccessToken",
+        method="POST",
+        data=json.dumps({"scope": ["https://www.googleapis.com/auth/spreadsheets"]}).encode(),
+        headers={"Authorization": "Bearer " + r.stdout.strip(),
+                 "Content-Type": "application/json"})
+    with urllib.request.urlopen(req) as resp:
+        return json.load(resp)["accessToken"]
 
 
 def call(path, method="GET", body=None):
@@ -32,7 +42,6 @@ def call(path, method="GET", body=None):
         f"{API}/{SHEET_ID}{path}", method=method,
         data=json.dumps(body).encode() if body else None,
         headers={"Authorization": "Bearer " + token(),
-                 "X-Goog-User-Project": QUOTA_PROJECT,
                  "Content-Type": "application/json"})
     try:
         with urllib.request.urlopen(req) as r:
