@@ -1,7 +1,8 @@
 // ─── 설정 (유지자가 채움) ─────────────────────────────
 const REPORT_FORM = {
-  id: "",          // 구글폼 ID — 비어 있으면 제보 버튼 숨김
-  entries: { sec:"", idx:"", k:"", v:"", suggest:"", patch:"" },
+  id: "1FAIpQLSfRZcs1AE9O9KvJZx5jpR-eQWm4ZKm4TCeHa759-M_ns5sGSg",
+  entries: { sec:"entry.908760751", idx:"entry.1569162646", k:"entry.360216311",
+             v:"entry.1404070622", suggest:"entry.538219219", patch:"entry.266338952" },
 };
 const APP_VER = "studio-1";
 const SEC_LABEL = {0:"맵 대사",1:"포켓몬 이름",2:"분류",3:"도감 설명",4:"폼",
