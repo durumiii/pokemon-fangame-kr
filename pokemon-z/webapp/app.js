@@ -231,13 +231,17 @@ function exportFix(){
 function importFix(){
   $('importfile').onchange = async ev => {
     const f = ev.target.files[0]; ev.target.value = ''; if (!f) return;
-    const lines = (await f.text()).split('\n').filter(Boolean).map(l=>JSON.parse(l));
+    const rawLines = (await f.text()).split('\n').filter(Boolean);
+    const lines = []; let badLines = 0;
+    for (const l of rawLines){ try { lines.push(JSON.parse(l)); } catch { badLines++; } }
+    if (rawLines.length && !lines.length){ toast('고침 파일 형식이 아니에요', 4000); return; }
     const head = lines[0]?.app ? lines.shift() : null;
     const byId = new Map(S.rows.map(r=>[rid(r), r]));
-    let applied = 0, skipped = 0; const conflicts = [];
+    let applied = 0, skipped = badLines; const conflicts = [];
     for (const e of lines){
       const row = byId.get(rid(e));
-      if (!row || (e.k && row.k !== e.k)){ skipped++; continue; }   // 원문 불일치 → 버전 다름
+      if (!row || (e.k && row.k !== e.k) || typeof e.v !== 'string'
+          || !Number.isInteger(e.sec) || !Number.isInteger(e.idx)){ skipped++; continue; }   // 원문 불일치·형식 이상 → 버전 다름
       const mine = S.edits.get(rid(e));
       if (mine && mine.v !== e.v){ conflicts.push({row, mine, theirs:e}); continue; }
       S.edits.set(rid(e), {sec:row.sec, map:row.map, idx:row.idx, k:row.k, v:e.v});

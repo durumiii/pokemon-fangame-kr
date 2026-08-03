@@ -105,6 +105,36 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   ctx.pickConflict(0, 1);                                             // "가져온 것"을 선택
   a.equal(ctx.S.edits.get('0:1:2').v, '가져온수정');                   // 선택 반영
 
+  // 깨진 줄 하나 섞여도 나머지 정상 줄은 병합돼야 한다 (JSON.parse 실패가 파일 전체를 날리면 안 됨)
+  ctx.S.edits = new Map();
+  const mixedLines = [
+    JSON.stringify({ app: 'studio-1', patch: 'expsha' }),
+    '{이건 JSON이 아님',
+    JSON.stringify({ sec: 0, map: 1, idx: 2, k: 'x', v: '정상병합' }),
+  ].join('\n') + '\n';
+  ctx.importFix();
+  await el('importfile').onchange({ target: { files: [{ text: async () => mixedLines }], value: 'x' } });
+  a.equal(ctx.S.edits.get('0:1:2').v, '정상병합');                     // 깨진 줄 무시하고 나머지 병합
+  a.ok(el('meta').textContent.includes('1건 병합') && el('meta').textContent.includes('1건 건너뜀'));
+
+  // v가 문자열이 아닌 줄(예: 객체)은 병합하지 않고 건너뜀 처리해야 한다
+  ctx.S.edits = new Map();
+  const badTypeLines = [
+    JSON.stringify({ app: 'studio-1', patch: 'expsha' }),
+    JSON.stringify({ sec: 0, map: 1, idx: 2, k: 'x', v: { oops: true } }),
+  ].join('\n') + '\n';
+  ctx.importFix();
+  await el('importfile').onchange({ target: { files: [{ text: async () => badTypeLines }], value: 'x' } });
+  a.equal(ctx.S.edits.has('0:1:2'), false);                           // v 타입 이상 → 병합 안 됨
+  a.ok(el('meta').textContent.includes('0건 병합') && el('meta').textContent.includes('1건 건너뜀'));
+
+  // 파일 전체가 JSON이 아니면 병합 시도 없이 한국어 안내로 끝나야 한다
+  ctx.S.edits = new Map();
+  ctx.importFix();
+  await el('importfile').onchange({ target: { files: [{ text: async () => 'not json at all\nstill not json\n' }], value: 'x' } });
+  a.equal(ctx.S.edits.size, 0);
+  a.equal(el('toast').textContent, '고침 파일 형식이 아니에요');       // 한국어 안내로 종료
+
   ctx.__fsFile = new VMU8([1, 2, 3]);
   ctx.S.dir = {};
   ctx.S.py = { toPy: x => x };
