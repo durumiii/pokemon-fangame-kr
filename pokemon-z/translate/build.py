@@ -122,6 +122,21 @@ def main():
             added += 1
         obj._private_data = rubywrite.dumps([keys, values])
 
+    # 웹 스튜디오 제보용 버전 표식 — 게임은 이 키를 조회하지 않는다
+    from datetime import date
+    ver = Path(__file__).with_name("VERSION").read_text(encoding="utf-8").strip()
+    stamp = f"{ver}|{date.today()}".encode()
+    obj = d[23]
+    keys, values = inner_of(obj)
+    kb = b"__kr_patch__"
+    kidx = next((i for i, k in enumerate(keys) if bytes(k) == kb), None)
+    if kidx is None:
+        keys.append(kb)
+        values.append(stamp)
+    else:
+        values[kidx] = stamp
+    obj._private_data = rubywrite.dumps([keys, values])
+
     print(f"정본과 dat의 값 차이: {changed}곳, 새 키 추가: {added}개")
     out = rubywrite.dumps(d)
     r = load(io.BytesIO(out))
