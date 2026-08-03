@@ -66,11 +66,19 @@ a.deepEqual(found, ['\\c[2]', '{1}', '\\PN']);
 a.deepEqual(found.filter(t => !'안녕 {1}'.includes(t)), ['\\c[2]', '\\PN']);  // 사라진 코드만 경고
 
 ctx.S.sha = 'abc'; ctx.S.base = 'abc';
+ctx.S.rows = [{ sec: 0, map: 1, idx: 2, k: 'x', v: '원문' }];   // 복원은 로드된 rows와 대조된다
 ctx.S.edits = new Map([['0:1:2', { sec: 0, map: 1, idx: 2, k: 'x', v: 'y' }]]);
 ctx.persist();
 ctx.S.edits = new Map();
-ctx.restoreEdits();
+a.equal(ctx.restoreEdits(), 0);
 a.equal(ctx.S.edits.get('0:1:2').v, 'y');                   // localStorage 왕복
+
+// 패치 판이 바뀐 경우: 같은 rid에 다른 원문이 서 있으면 옛 수정을 얹지 않는다
+ctx.S.rows = [{ sec: 0, map: 1, idx: 2, k: '새판원문', v: '새판' }];
+a.equal(ctx.restoreEdits(), 1);                             // 1건 제외
+a.equal(ctx.S.edits.size, 0);
+a.ok(ctx.localStorage.getItem('edits:abc'));                // 저장분은 지우지 않는다(판을 되돌리면 살아난다)
+ctx.S.rows = [{ sec: 0, map: 1, idx: 2, k: 'x', v: '원문' }];
 
 // 기준 키 마이그레이션: 빌드된 dat(sha) 아래 있던 저장분이 순정 기준(base) 키로 1회 옮겨진다
 ctx.localStorage.setItem('edits:builtsha', JSON.stringify([{ sec: 0, map: 1, idx: 2, k: 'x', v: '옛저장' }]));

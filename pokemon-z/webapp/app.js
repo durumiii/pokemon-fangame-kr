@@ -146,13 +146,15 @@ async function useFolder(dir){
   // 저장 키는 빌드마다 바뀌는 현재 sha가 아니라 순정 원본 sha로 고정한다
   S.base = hadBak ? await sha12(await readFile(S.dir, 'Data/korean.dat.bak')) : S.sha;
   migrateEdits();
-  restoreEdits();
+  const dropped = restoreEdits();
   for (const id of ['q','secf','searchbtn','buildbtn','exportbtn','importbtn','restorebtn','histbtn'])
     $(id).disabled = false;
   $('secf').innerHTML = '<option value="">전체 분류</option>' +
     Object.entries(SEC_LABEL).map(([s,l])=>`<option value=${s}>${l}</option>`).join('');
   $('meta').textContent = `${S.rows.length.toLocaleString()}행 로드 · 패치 ${S.meta ?? '(표식 없음 · '+S.sha+')'}` +
-    (S.edits.size ? ` · 이어서 작업: 저장 ${S.edits.size}건 복원됨` : '');
+    (S.edits.size ? ` · 이어서 작업: 저장 ${S.edits.size}건 복원됨` : '') +
+    (dropped ? ` · 패치 판이 바뀌어 ${dropped}건 제외` : '');
+  if (dropped) toast(`패치 판이 바뀌어 옛 수정 ${dropped}건을 제외했어요 — 그 행들은 다시 고쳐주세요`, 6000);
   $('out').innerHTML = '<div class=empty>어색한 문구를 검색해 바로 고치세요.</div>';
   updateDirty();
 }
@@ -242,10 +244,18 @@ async function report(i){
 function persist(){
   localStorage.setItem('edits:'+S.base, JSON.stringify([...S.edits.values()]));
 }
+// 기준 키는 .bak에 고정돼 있어 dat만 새 판으로 갈아끼우면 옛 수정이 남는다.
+// 행 인덱스가 밀렸을 수 있으므로 가져오기와 같은 원문 대조로 거른다. 버린 건수를 돌려준다
 function restoreEdits(){
   S.edits = new Map();
-  for (const e of JSON.parse(localStorage.getItem('edits:'+S.base) ?? '[]'))
+  const byId = new Map(S.rows.map(r=>[rid(r), r]));
+  let dropped = 0;
+  for (const e of JSON.parse(localStorage.getItem('edits:'+S.base) ?? '[]')){
+    const row = byId.get(rid(e));
+    if (!row || (e.k && row.k !== e.k)){ dropped++; continue; }
     S.edits.set(rid(e), e);
+  }
+  return dropped;
 }
 // 옛 판(현재 dat sha 기준)의 저장분을 순정 기준 키로 1회 옮긴다
 function migrateEdits(){
