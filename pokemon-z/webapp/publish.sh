@@ -18,5 +18,6 @@ cd "$TMP"
 touch .nojekyll
 git add -A
 git diff --cached --quiet || { git commit -m "deploy $(date +%F)"; git push origin HEAD; }
+gh api -X POST "repos/$REPO/pages/builds" >/dev/null 2>&1 || true
 gh api "repos/$REPO/pages" -X POST -f 'source[branch]=main' -f 'source[path]=/' 2>/dev/null || true
 echo "https://$OWNER.github.io/${REPO#*/}/"
