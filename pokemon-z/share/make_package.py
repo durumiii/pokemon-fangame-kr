@@ -170,7 +170,6 @@ def main():
     total = sum(1 for _ in final.rglob("*") if _.is_file())
     size = sum(p.stat().st_size for p in final.rglob("*") if p.is_file())
     print(f"완성: {final} — 파일 {total}개, {size / 1e6:.0f}MB")
-    _embed_manifest(final, "Pokemon Z Fangame", name)
     print("배포 전 점검: 읽어주세요.txt 버전·날짜, zip으로 묶기")
 
 
