@@ -1678,7 +1678,7 @@
 {"map": 40, "n": 64}
 {"k": "<b>Metre:</b> Hay pisadas recientes entre el polvo, ¡los intrusos no deben de andar lejos!", "v": "<b>메트르:</b> 먼지 속에 최근 남긴 발자국이 있군요. 침입자들이 그리 멀지 않은 곳에 있을 겁니다!"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡Oh, no! ¡Los hemos alertado!", "v": "\\c[3]<b>크리산토:</b>\\c[0] 오, 안 돼! 들키고 말았잖아!"}
-{"k": "\\c[5]<b>Melia:</b>\\c[0] ¿Y ahora qué? ¡Perderé mi reputación de <i>mademoiselle</i> perfecta si nos descubren!", "v": "\\c[5]<b>멜리아:</b>\\c[0] 이제 어쩌지? 들키면 완벽한 <i>마드무아젤</i>이라는 내 평판이 무너진다고!"}
+{"k": "\\c[5]<b>Melia:</b>\\c[0] ¿Y ahora qué? ¡Perderé mi reputación de <i>mademoiselle</i> perfecta si nos descubren!", "v": "\\c[5]<b>멜리아:</b>\\c[0] 이제 어쩌지? 들키면 완벽한 <i>마드모아젤</i>이라는 내 평판이 무너진다고!"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] Dejad que intente una cosa. Aún tengo a mi Pokémon.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 내가 한 번 시도해 볼게. 아직 내 포켓몬이 있으니까."}
 {"k": "¡Jiggly!", "v": "지글리!"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡Confío en ti, amigo mío!", "v": "\\c[3]<b>크리산토:</b>\\c[0] 친구야, 난 널 믿어!"}
@@ -8654,7 +8654,7 @@
 {"k": "Pero no son criaturas diseñadas para gobernar.", "v": "하지만 다스리도록 설계된 생물은 아닙니다."}
 {"k": "\\c[9]<b>Hibis:</b>\\c[0] ¿Sabe? Tal vez tenga que acabar haciéndole un hueco en una de las habitaciones de mi torre, a este ritmo...", "v": "\\c[9]<b>히비스:</b>\\c[0] 이봐요, 이대로 가다간 내 탑의 방 하나를 그대를 위해 비워두어야 할지도 모르겠군요..."}
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] Pensad lo que queráis, maese Regente. Mi advertencia ya os ha sido lanzada.", "v": "\\c[6]<b>미라:</b>\\c[0] 마음대로 생각하시오, 섭정 경. 내 경고는 이미 전달했으니."}
-{"k": "\\c[6]<b>Mirra:</b>\\c[0] Y antes de despedirnos, ¿qué tal van los progresos para entrar en la mente de <i>mademoiselle</i> <b>Olivier</b>?", "v": "\\c[6]<b>미라:</b>\\c[0] 그리고 헤어지기 전에, <i>마드무아젤</i> <b>올리비에</b>의 정신에 파고드는 연구는 얼마나 진척되었소?"}
+{"k": "\\c[6]<b>Mirra:</b>\\c[0] Y antes de despedirnos, ¿qué tal van los progresos para entrar en la mente de <i>mademoiselle</i> <b>Olivier</b>?", "v": "\\c[6]<b>미라:</b>\\c[0] 그리고 헤어지기 전에, <i>마드모아젤</i> <b>올리비에</b>의 정신에 파고드는 연구는 얼마나 진척되었소?"}
 {"k": "\\c[9]<b>Hibis:</b>\\c[0] Debo reconocer que me está costando. Su mente es la más fuerte con la que me he topado, una fortaleza inexpugnable.", "v": "\\c[9]<b>히비스:</b>\\c[0] 솔직히 난항을 겪고 있음을 인정해야겠군요. 그녀의 정신은 내가 마주한 것 중 가장 강인한, 난공불락의 요새입니다."}
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] Pues ya tenéis algo en lo que dedicar más vuestra atención en lugar de otros experimentos.", "v": "\\c[6]<b>미라:</b>\\c[0] 다른 실험들보다 거기에 더 주의를 기울여야 할 이유가 생겼군요."}
 {"k": "Y no os demoréis, pues es muy posible que pronto llegue un aliado de la profesora en su búsqueda.", "v": "그리고 지체하지 마시오. 교수를 찾으려는 그녀의 동료가 곧 도착할지도 모르니."}
@@ -13147,7 +13147,7 @@
 {"k": "\\c[5]<b>Melia:</b>\\c[0] ...", "v": "\\c[5]<b>멜리아:</b>\\c[0] ..."}
 {"k": "\\c[5]<b>Melia:</b>\\c[0] No hace falta que os preocupéis por eso. No nos dediquéis ni un solo pensamiento.", "v": "\\c[5]<b>멜리아:</b>\\c[0] 그쪽 일은 신경 쓰실 필요 없어요. 저희 걱정은 눈곱만큼도 하지 마시고요."}
 {"k": "Porque ese <b>Yveltal</b> va a durar poco con vosotras, ¡muy poco! ¡<i>Oui</i>!", "v": "너희 따위가 그 <b>이벨타르</b>를 오랫동안 쥐고 있진 못할 테니까, 아주 잠깐이겠지! <i>Oui</i>!"}
-{"k": "\\c[4]<b>Prímula:</b>\\c[0] No os comprendo, <i>mademoiselle</i> <b>Melia</b>. ¿Acaso la gente de esta época no distinguís bien la realidad de las cosas?", "v": "\\c[4]<b>프리물라:</b>\\c[0] 이해할 수가 없네요, <i>마드무아젤</i> <b>멜리아</b>. 이 시대 사람들은 현실 판단이 잘 안 되나요?"}
+{"k": "\\c[4]<b>Prímula:</b>\\c[0] No os comprendo, <i>mademoiselle</i> <b>Melia</b>. ¿Acaso la gente de esta época no distinguís bien la realidad de las cosas?", "v": "\\c[4]<b>프리물라:</b>\\c[0] 이해할 수가 없네요, <i>마드모아젤</i> <b>멜리아</b>. 이 시대 사람들은 현실 판단이 잘 안 되나요?"}
 {"k": "\\c[5]<b>Melia:</b>\\c[0] ¿Que no distinguimos bien? ¡Sois vosotras las que andáis confundidas!", "v": "\\c[5]<b>멜리아:</b>\\c[0] 우리가 판단을 못 한다고? 착각하고 있는 건 너희잖아!"}
 {"k": "\\c[5]<b>Melia:</b>\\c[0] Desde que empecé mi propio viaje Pokémon junto a mis amigos, durante todo este tiempo... Nos hemos ido haciendo más y más fuertes a una velocidad vertiginosa.", "v": "\\c[5]<b>멜리아:</b>\\c[0] 친구들과 함께 나만의 포켓몬 여행을 시작한 뒤로... 우리는 어마어마한 속도로 계속 강해졌어."}
 {"k": "¡Esa es la realidad y es innegable!", "v": "그게 바로 현실이고 부정할 수 없는 사실이야!"}

@@ -115,8 +115,10 @@ def check_dat_and_sentinels():
     d = load(open(STORE_DAT, "rb"))
     ks, vs = inner_of(d[23])
     jr = rows(HERE / "ko" / "23-script-texts.jsonl")
-    if len(jr) != len(ks):
-        report("FAIL", f"절23 미러 어긋남: jsonl {len(jr)} ≠ dat {len(ks)}")
+    # __kr_patch__ 버전 표식(build.py가 심음)은 정본 밖 — 카운트에서 제외
+    n_dat = sum(1 for k in ks if bytes(k) != b"__kr_patch__")
+    if len(jr) != n_dat:
+        report("FAIL", f"절23 미러 어긋남: jsonl {len(jr)} ≠ dat {n_dat}")
     sec = {bytes(k).decode("utf-8", "replace"): bytes(v).decode("utf-8", "replace")
            for k, v in zip(ks, vs)}
     for key, expect in SENTINELS:
