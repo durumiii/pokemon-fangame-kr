@@ -20,7 +20,7 @@
  .logo:hover{background:var(--card)}
  .logo img{display:block;filter:drop-shadow(0 1px 2px rgba(0,0,0,.5))}
  .logo b{color:var(--gold)}
- .searchwrap{position:relative;flex:1;display:flex;gap:8px;min-width:300px;max-width:720px}
+ .searchwrap{position:relative;flex:1;display:flex;gap:8px;min-width:300px;max-width:640px;margin:0 auto}
  input,select,textarea,button{font-family:inherit;font-size:13.5px;color:var(--tx);
    background:var(--card);border:1px solid var(--line);border-radius:8px}
  input[type=text]{flex:1;padding:9px 12px;min-width:0}
@@ -85,7 +85,7 @@
 </style>
 </head><body>
 <header>
- <div class=logo onclick=goHome() title="홈으로"><img src=favicon.png alt="" width=24 height=24>Z <b>한글패치 스튜디오</b></div>
+ <div class=logo onclick=goHome() title="홈으로">Z <b>한글패치 스튜디오</b></div>
  <div class=searchwrap>
   <input type=text id=q autocomplete=off spellcheck=false disabled
     placeholder="문구 검색 — 분류:도구 맵:12 화자:간호사 상태:수정 태그도 돼요">
@@ -97,6 +97,8 @@
  </div>
  <div id=browse class=menu hidden></div>
  <span id=dirty></span>
+ <button class=ghost id=batchbtn onclick=batchReport() disabled title="저장한 수정과 메모를 한 번에 제보해요">
+  <svg width=14 height=14 viewBox="0 0 16 16" fill=none stroke=currentColor stroke-width=1.6 stroke-linecap=round stroke-linejoin=round style="color:var(--warn)"><path d="M14 2 2 6.5l4.5 2L8.5 13z" fill=currentColor fill-opacity=".25"/><path d="M14 2 6.5 8.5"/></svg>모아서 제보</button>
  <button class=gold id=buildbtn onclick=build() disabled>
   <svg width=14 height=14 viewBox="0 0 16 16" fill=none stroke=currentColor stroke-width=1.7 stroke-linecap=round stroke-linejoin=round><path d="M9 1.5 3.5 9H8l-1 5.5L12.5 7H8z" fill=currentColor fill-opacity=".3"/></svg><span id=buildlabel>빌드 → 게임 반영</span></button>
  <button class=ghost id=toolsbtn data-menubtn onclick="togglePanel('tools',this)" disabled>
@@ -109,9 +111,6 @@
   <button id=replbtn onclick="closePanels();replaceMenu()" disabled>
    <svg width=15 height=15 viewBox="0 0 16 16" fill=none stroke=currentColor stroke-width=1.6 stroke-linecap=round stroke-linejoin=round style="color:var(--acc)"><path d="M12.5 6H3l2.5-2.5M3.5 10H13l-2.5 2.5"/></svg>
    <span class=mi-t>바꾸기<span class=mi-d>한 문구를 여러 행에서 한꺼번에 — 행마다 확인하고 골라요</span></span></button>
-  <button id=batchbtn onclick="closePanels();batchReport()" disabled>
-   <svg width=15 height=15 viewBox="0 0 16 16" fill=none stroke=currentColor stroke-width=1.6 stroke-linecap=round stroke-linejoin=round style="color:var(--warn)"><path d="M14 2 2 6.5l4.5 2L8.5 13z" fill=currentColor fill-opacity=".25"/><path d="M14 2 6.5 8.5"/></svg>
-   <span class=mi-t>모아서 제보<span class=mi-d>저장한 수정과 메모를 한 번에 보내요</span></span></button>
   <hr>
   <button id=exportbtn onclick="closePanels();exportFix()" disabled>
    <svg width=15 height=15 viewBox="0 0 16 16" fill=none stroke=currentColor stroke-width=1.6 stroke-linecap=round stroke-linejoin=round style="color:var(--sub)"><path d="M8 2v7.5M5 7l3 3 3-3M2.5 12.5h11"/></svg>
@@ -132,7 +131,6 @@
  <div class=meta id=meta>Chrome/Edge에서 열어주세요. 게임 폴더를 선택하면 시작됩니다.</div>
  <div id=out>
   <div class=empty>
-   <img src=favicon.png alt="" width=72 height=72>
    <p>포켓몬 Z 게임 폴더(안에 Data\korean.dat가 있는 폴더)를 선택하세요.</p>
    <button class=primary onclick=openFolder() id=openbtn style="display:inline-flex">게임 폴더 선택</button>
    <button class=ghost onclick=reopenFolder() id=reopenbtn style="display:none">지난 폴더 다시 연결</button>
