@@ -224,7 +224,7 @@ async function useFolder(dir){
 // ─── 찾아보기 ─────────────────────────────────────────
 // speakers.json은 있으면 좋은 곁들이다 — 못 받아도 맵별·분류별은 그대로 돌아간다
 let SPK = null, MAPNAME = null, GROUPS = [];
-const BROWSE = {map:'맵별', sec:'분류별', sprite:'화자별', group:'화자 분류별'};
+const BROWSE = {map:'맵별', sec:'절별(분류)', sprite:'화자별', group:'화자 분류별'};
 const BROWSE_CAP = 500;
 
 async function loadSpeakers(){
@@ -257,7 +257,7 @@ function browseGroups(by){
     g.rows.push(r);
   };
   for (const r of S.rows){
-    if (by === 'sec'){ put(r.sec, SEC_LABEL[r.sec] ?? '절'+r.sec, r); continue; }
+    if (by === 'sec'){ put(r.sec, `${r.sec} · ${SEC_LABEL[r.sec] ?? '절'+r.sec}`, r); continue; }
     if (r.sec !== 0) continue;                       // 화자·맵은 맵 대사에만 있다
     if (by === 'map'){ put(r.map, `맵 ${r.map} · ${mapName(r.map)}`, r); continue; }
     const s = spkOf(r);

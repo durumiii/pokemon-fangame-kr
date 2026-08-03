@@ -561,7 +561,7 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   a.equal(ctx.mapName(+someMap), '어느마을');                          // 21절이 조인표 이름을 이긴다
   const bySec = ctx.browseGroups('sec');
   a.deepEqual(bySec.map(g => [g.label, g.rows.length]),
-    [['맵 대사', 2], ['맵 이름', 1], ['시스템 문구', 1]]);
+    [['0 · 맵 대사', 2], ['21 · 맵 이름', 1], ['23 · 시스템 문구', 1]]);
   const byMap = ctx.browseGroups('map');
   a.equal(byMap.length, 1);
   a.ok(byMap[0].label.includes('어느마을'));
