@@ -65,6 +65,7 @@ vm.runInContext(src + `
   clearMemos: () => { MEMOS = null; },
   loadSpeakers, fillBrowse, doBrowse, openGroup, browseGroups, spkOf, mapName,
   parseQuery, rowMatch, search, goHome, tagValues,
+  GENERAL_FORM, feedbackMenu, sendFeedback,
   setSpk: v => { SPK = v; MAPNAME = null; }, BROWSE_CAP,
   applyEdit, replaceMenu, replacePreview, replaceApply, replAll, REPL_CAP,
   replHits: () => REPL,
@@ -582,6 +583,27 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   ctx.doBrowse('map');
   ctx.openGroup(0);
   a.ok(el('meta').textContent.includes(`앞 ${ctx.BROWSE_CAP}행만`));
+
+  // ─ 문제 제보(행 무관) ─
+  ctx.GENERAL_FORM.id = 'genform1';
+  Object.assign(ctx.GENERAL_FORM.entries, {kind:'g.kind', text:'g.text', patch:'g.patch'});
+  ctx.feedbackMenu();
+  a.ok(el('out').innerHTML.includes('전반적 번역 문제'));       // 종류 선택지가 뜬다
+  el('fbtext').value = '   ';
+  ctx.__lastFetch = null;
+  await ctx.sendFeedback();
+  a.equal(ctx.__lastFetch, null);                               // 빈 내용은 전송하지 않는다
+  el('fbtext').value = '너즐록 화면 글자가 겹쳐 보여요';
+  ctx.S.meta = 'v5'; ctx.S.sha = 'gsha';
+  await ctx.sendFeedback();
+  const [gUrl, gInit] = ctx.__lastFetch;
+  a.equal(gUrl, 'https://docs.google.com/forms/d/e/genform1/formResponse');
+  const gfd = gInit.body._m;
+  a.equal(gfd.get('g.kind'), '전반적 번역 문제');               // querySelector 없는 환경은 기본 종류
+  a.equal(gfd.get('g.text'), '너즐록 화면 글자가 겹쳐 보여요');
+  a.ok(gfd.get('g.patch').startsWith('v5 / studio-1 / u:'));
+  a.equal(el('fbtext').value, '');                              // 보낸 뒤 입력칸 비움
+  ctx.S.meta = null;
 
   // ─ 태그 검색 ─
   // 파서: 태그·따옴표 값·태그 없는 낱말이 제자리에 앉는다

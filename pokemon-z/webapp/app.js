@@ -5,6 +5,12 @@ const REPORT_FORM = {
              v:"entry.1404070622", suggest:"entry.538219219", comment:"entry.266338952",
              patch:"entry.1352350096" },
 };
+// 행 무관 일반 제보(전반적 번역·렌더링 등) — 별도 구글폼, 같은 스프레드시트의 새 탭에 연결
+// id가 비어 있으면 화면에서 숨긴다(유지자가 폼 생성 후 채움)
+const GENERAL_FORM = {
+  id: "",
+  entries: { kind:"", text:"", patch:"" },
+};
 // 인라인 SVG만 쓴다 — 이모지는 기기마다 다른 그림이고 외부 아이콘은 오프라인에서 깨진다
 const ICON = {
   flag: '<svg width=13 height=13 viewBox="0 0 16 16" fill=none stroke=currentColor stroke-width=1.6 stroke-linejoin=round style="vertical-align:-1px"><path d="M3.5 14.5V1.5"/><path d="M3.5 2.5h8l-1.6 2.6 1.6 2.6h-8z" fill=currentColor fill-opacity=".25"/></svg>',
@@ -224,7 +230,7 @@ async function useFolder(dir){
 // ─── 찾아보기 ─────────────────────────────────────────
 // speakers.json은 있으면 좋은 곁들이다 — 못 받아도 맵별·분류별은 그대로 돌아간다
 let SPK = null, MAPNAME = null, GROUPS = [];
-const BROWSE = {map:'맵별', sec:'절별(분류)', sprite:'화자별', group:'화자 분류별'};
+const BROWSE = {map:'맵별', sec:'파일 분류별', sprite:'화자별', group:'화자 분류별'};
 const BROWSE_CAP = 500;
 
 async function loadSpeakers(){
@@ -536,6 +542,38 @@ async function batchReport(){
     updateDirty();   // batchbtn 활성 상태를 실제 잔여 수정·메모 기준으로 되돌린다
   }
 }
+// ─── 문제 제보 (행 무관) ──────────────────────────────
+// 특정 문구에 매이지 않는 문제 — 데이터 로드 전에도 보낼 수 있다(로드 실패 자체가 제보감)
+const FB_KINDS = ['전반적 번역 문제', '화면·렌더링 문제', '게임 동작 문제', '기타'];
+function feedbackMenu(){
+  closePanels();
+  $('meta').textContent = '문제 제보 — 특정 문구에 매이지 않는 문제를 보내요';
+  $('out').innerHTML = `<div class=card>
+    <div class=rowbar>${FB_KINDS.map((k, i) =>
+      `<label class=chip style="cursor:pointer"><input type=radio name=fbkind value="${k}" ${i ? '' : 'checked'}>${k}</label>`).join('')}</div>
+    <textarea id=fbtext style="min-height:120px;margin-top:8px"
+      placeholder="어떤 문제인지 적어주세요 — 어디서(맵·화면), 무엇이, 어떻게 보였는지가 있으면 고치기 쉬워요"></textarea>
+    <div class=rowbar><button class=primary onclick=sendFeedback()>보내기</button>
+      <span class=es>특정 문구의 문제는 검색해서 그 행의 [제보]를 써주세요.</span></div></div>`;
+}
+async function sendFeedback(){
+  const text = $('fbtext').value.trim();
+  if (!text){ toast('내용을 적어주세요'); return; }
+  const kind = document.querySelector?.('input[name=fbkind]:checked')?.value ?? FB_KINDS[0];
+  const fd = new FormData(), E = GENERAL_FORM.entries;
+  fd.append(E.kind, kind);
+  fd.append(E.text, cut(text));
+  fd.append(E.patch, `${S.meta ?? (S.sha ? 'hash:'+S.sha : '미로드')} / ${APP_VER} / u:${reporterId().slice(0,8)}`);
+  try {
+    await fetch(`https://docs.google.com/forms/d/e/${GENERAL_FORM.id}/formResponse`,
+      {method:'POST', mode:'no-cors', body:fd});
+    toast('제보를 보냈어요 — 고마워요! 다음 판에 반영을 검토합니다', 4000);
+    $('fbtext').value = '';
+  } catch {
+    toast('전송이 안 됐어요 — 인터넷 연결을 확인해 주세요', 5000);
+  }
+}
+
 let persistFailed = false;   // 연속 실패 시 토스트 도배 방지
 function persist(){
   try {
@@ -725,6 +763,7 @@ function renderHome(){
     <div class=card><div>할 수 있는 일</div>
       ${line('내 수정', '저장해 둔 수정과 메모를 다시 고치거나 지워요.', 'showMine()')}
       ${line('모아서 제보', '저장한 수정과 메모를 한 번에 보내요.', 'batchReport()')}
+      ${GENERAL_FORM.id ? line('문제 제보', '전반적 번역·화면 표시 문제처럼 특정 문구에 매이지 않는 제보예요.', 'feedbackMenu()') : ''}
       ${line('내보내기', '고침 파일로 내려받아 다른 사람과 나눠요.', 'exportFix()')}
       ${line('이력', '지금까지의 수정·메모·빌드를 모두 봐요.', 'showHist()')}</div>`;
 }
@@ -909,6 +948,9 @@ async function reloadAfterRestore(src){
 
 // 지난 폴더가 남아 있을 때만 재연결 버튼을 드러낸다
 idbGet('dirHandle').then(h => { if (h) $('reopenbtn').style.display = ''; }).catch(()=>{});
+
+// 일반 제보 폼이 아직 없으면 메뉴에서 숨긴다 (행 단위 제보와 별개 폼)
+if (!GENERAL_FORM.id) $('fbbtn').style.display = 'none';
 
 // 엔진 선시동 — 폴더를 고르는 동안 다운로드·시동이 겹치게 지금 시작한다.
 // 실패(오프라인 등)는 조용히 묻는다 — 실제 폴더 열기 때 bootPy가 다시 시도한다.
