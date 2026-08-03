@@ -167,6 +167,27 @@ function save(i){
   $('card'+i).classList.add('saved');
   toast('저장됨 — [빌드]를 누르면 게임에 반영돼요');
 }
+// 원버튼 제보 — 구글폼에 no-cors로 던진다(응답 확인 불가, 실패해도 toast로만 알림)
+async function report(i){
+  const r = HITS[i], val = $('v'+i).value;
+  const suggest = val !== r.v.replace(/\r\n?/g, '\n') ? val
+    : (prompt('제안 번역이나 한 줄 코멘트 (그냥 제보만 하려면 비워두세요)') ?? '');
+  const fd = new FormData();
+  const E = REPORT_FORM.entries;
+  fd.append(E.sec, `${r.sec}:${SEC_LABEL[r.sec] ?? ''}`);
+  fd.append(E.idx, `${r.map ?? ''}:${r.idx}`);
+  fd.append(E.k, r.k ?? '');
+  fd.append(E.v, r.v);
+  fd.append(E.suggest, suggest);
+  fd.append(E.patch, `${S.meta ?? 'hash:'+S.sha} / ${APP_VER}`);
+  try {
+    await fetch(`https://docs.google.com/forms/d/e/${REPORT_FORM.id}/formResponse`,
+      {method:'POST', mode:'no-cors', body:fd});
+    toast('제보를 보냈어요 — 고마워요! 다음 판에 반영을 검토합니다', 4000);
+  } catch {
+    toast('전송이 안 됐어요 — 인터넷 연결을 확인해 주세요', 5000);
+  }
+}
 function persist(){
   localStorage.setItem('edits:'+S.sha, JSON.stringify([...S.edits.values()]));
 }

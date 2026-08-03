@@ -18,7 +18,9 @@ const ctx = {
                   removeItem(k) { delete this._m[k]; } },
   URL: { createObjectURL: () => 'blob:mock', revokeObjectURL() {} },
   Blob: class { constructor(parts, opts) { this.parts = parts; this.type = opts?.type; } },
-  addEventListener() {}, confirm: () => true,
+  FormData: class { constructor() { this._m = new Map(); } append(k, v) { this._m.set(k, v); } },
+  fetch: async (...args) => { ctx.__lastFetch = args; return {}; },
+  addEventListener() {}, confirm: () => true, prompt: () => '',
   setTimeout, clearTimeout, console,
 };
 vm.createContext(ctx);
@@ -26,8 +28,8 @@ vm.createContext(ctx);
 // readFile/writeFile은 실제 소스 뒤에서 재정의해 브라우저 FS API 없이 build()를 목업 검증한다
 // (같은 스코프의 함수 선언은 나중 정의가 이긴다)
 vm.runInContext(src + `
-;globalThis.X = {rid, esc, MARKUP, S, persist, restoreEdits, save, build,
-  exportFix, importFix, showConflicts, pickConflict, CONFLICTS,
+;globalThis.X = {rid, esc, MARKUP, S, persist, restoreEdits, save, build, report,
+  exportFix, importFix, showConflicts, pickConflict, CONFLICTS, REPORT_FORM,
   setHits: h => { HITS = h; }};
 function readFile(){ return globalThis.__fsFile; }
 function writeFile(){}
@@ -149,6 +151,25 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   a.equal(ctx.S.edits.size, 0);                             // 빌드 성공 시 edits 비움
   a.equal(ctx.localStorage.getItem('edits:oldsha'), null);  // 옛 sha 키 제거
   a.equal(ctx.S.sha, 'newsha');                              // 새 dat로 상태 재동기화
+
+  // 제보: 6필드가 FormData에 담기고 no-cors POST로 fetch가 불려야 한다
+  ctx.REPORT_FORM.id = 'formid123';
+  Object.assign(ctx.REPORT_FORM.entries, {sec:'e.sec', idx:'e.idx', k:'e.k', v:'e.v', suggest:'e.suggest', patch:'e.patch'});
+  ctx.S.meta = null; ctx.S.sha = 'reportsha';
+  const reportRow = { sec: 3, map: 7, idx: 9, k: '원문키', v: '원문값' };
+  ctx.setHits([reportRow]);
+  el('v0').value = '원문값';                                          // 무편집 → suggest는 prompt(빈 문자열) 결과
+  await ctx.report(0);
+  const [reportUrl, reportInit] = ctx.__lastFetch;
+  a.equal(reportUrl, 'https://docs.google.com/forms/d/e/formid123/formResponse');
+  a.equal(reportInit.method, 'POST'); a.equal(reportInit.mode, 'no-cors');
+  const fd = reportInit.body._m;
+  a.equal(fd.get('e.sec'), '3:도감 설명');
+  a.equal(fd.get('e.idx'), '7:9');
+  a.equal(fd.get('e.k'), '원문키');
+  a.equal(fd.get('e.v'), '원문값');
+  a.equal(fd.get('e.suggest'), '');                                   // 무편집이면 빈 코멘트
+  a.equal(fd.get('e.patch'), 'hash:reportsha / studio-1');            // meta 없으면 hash:sha로 대체
 
   console.log('SELFCHECK_OK');
 })().catch(e => { console.error(e); process.exit(1); });
