@@ -321,10 +321,19 @@ function save(i){
   toast('저장됨 — [빌드]를 누르면 게임에 반영돼요');
 }
 // 로그인·지문 채집 없이 기기 단위로만 묶어보는 순수 난수 식별자 — localStorage 초기화 시 재발급됨을 수용
+// crypto.randomUUID 미지원·localStorage 접근 실패(사생활 모드 등) 환경에서도 제보 자체는 살린다
 function reporterId(){
-  let id = localStorage.getItem('reporter');
-  if (!id){ id = crypto.randomUUID(); localStorage.setItem('reporter', id); }
-  return id;
+  try {
+    let id = localStorage.getItem('reporter');
+    if (!id){
+      id = (typeof crypto !== 'undefined' && crypto.randomUUID) ? crypto.randomUUID()
+        : 'r' + Math.random().toString(36).slice(2) + Date.now().toString(36);
+      localStorage.setItem('reporter', id);
+    }
+    return id;
+  } catch {
+    return 'unknown';
+  }
 }
 // 구글폼에 no-cors로 던진다(응답 확인 불가, 실패해도 toast로만 알림)
 // silent: 일괄 전송 중 매 건 toast 도배 방지(진행·완료 토스트는 호출부가 낸다)
@@ -354,22 +363,31 @@ async function report(i){
 const FIELD_CAP = 30000;
 const cut = s => s.length > FIELD_CAP ? s.slice(0, FIELD_CAP) + '…(이하 생략)' : s;
 // 수정·메모가 있는 행마다 개별 제보와 같은 필드로 한 행씩 순차 전송한다("일괄" 표기는 patch 칸에만)
+let batchInFlight = false;   // 재진입 가드 — no-cors라 중복 전송을 감지할 길이 없어 시작부터 막는다
 async function batchReport(){
+  if (batchInFlight){ toast('일괄 제보가 진행 중이에요 — 끝날 때까지 기다려 주세요'); return; }
   const all = new Map([...S.applied, ...S.edits]);   // 같은 행은 미빌드분(edits)이 이긴다
   const memos = memoIndex();
   const byId = new Map(S.rows.map(r=>[rid(r), r]));
   const ids = [...new Set([...all.keys(), ...memos.keys()])];
   if (!ids.length){ toast('보낼 수정이나 메모가 없어요'); return; }
-  for (let i = 0; i < ids.length; i++){
-    const id = ids[i], r = byId.get(id), e = all.get(id), m = memos.get(id);
-    toast(`일괄 제보 중... ${i+1}/${ids.length}건째`);
-    await sendForm({sec: r ? `${r.sec}:${SEC_LABEL[r.sec] ?? ''}` : '',
-                     idx: r ? `${r.map ?? ''}:${r.idx}` : '',
-                     k: r?.k ?? '', v: r?.v ?? '',
-                     suggest: e ? cut(e.v) : '', comment: m ? cut(m.text) : ''},
-                    {batch:true, silent:true});
+  batchInFlight = true;
+  $('batchbtn').disabled = true;
+  try {
+    for (let i = 0; i < ids.length; i++){
+      const id = ids[i], r = byId.get(id), e = all.get(id), m = memos.get(id);
+      toast(`일괄 제보 중... ${i+1}/${ids.length}건째`);
+      await sendForm({sec: r ? `${r.sec}:${SEC_LABEL[r.sec] ?? ''}` : '',
+                       idx: r ? `${r.map ?? ''}:${r.idx}` : '',
+                       k: r?.k ?? '', v: r?.v ?? '',
+                       suggest: e ? cut(e.v) : '', comment: m ? cut(m.text) : ''},
+                      {batch:true, silent:true});
+    }
+    toast(`${ids.length}건 보냈어요`);
+  } finally {
+    batchInFlight = false;
+    updateDirty();   // batchbtn 활성 상태를 실제 잔여 수정·메모 기준으로 되돌린다
   }
-  toast(`${ids.length}건 보냈어요`);
 }
 let persistFailed = false;   // 연속 실패 시 토스트 도배 방지
 function persist(){

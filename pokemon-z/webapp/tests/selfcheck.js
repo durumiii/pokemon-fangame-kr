@@ -409,6 +409,15 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   a.equal(longSuggest.length, ctx.FIELD_CAP + '…(이하 생략)'.length);
   a.ok(longSuggest.endsWith('…(이하 생략)'));
 
+  // 재진입 가드: 전송 중 재호출은 fetch를 추가하지 않고 안내만 한다(no-cors라 중복 적재를 나중에 알 길이 없다)
+  ctx.S.edits = new Map([['3:7:9', { sec: 3, map: 7, idx: 9, k: '원문키', v: '재진입값' }]]);
+  ctx.__fetchCalls.length = 0;
+  const inFlight = ctx.batchReport();              // 첫 호출 — await 전이라 아직 진행 중
+  await ctx.batchReport();                          // 진행 중 재호출
+  a.equal(el('toast').textContent, '일괄 제보가 진행 중이에요 — 끝날 때까지 기다려 주세요');
+  await inFlight;
+  a.equal(ctx.__fetchCalls.length, 1);              // 재호출로 fetch가 늘지 않았다 — 같은 행 중복 적재 없음
+
   // 보낼 게 없으면 전송하지 않고 버튼도 잠긴다
   ctx.S.edits = new Map(); ctx.S.applied = new Map();
   ctx.localStorage.removeItem('hist:' + ctx.S.base);
