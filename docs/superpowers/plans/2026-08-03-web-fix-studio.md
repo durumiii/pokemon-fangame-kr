@@ -924,3 +924,12 @@ git commit -m "feat(webapp): Pages 배포 스크립트 + 수정법 안내에 웹
 - [선택 적용]: 체크된 행만 save()와 같은 경로로 S.edits에 기록(CR 정규화·이력 기록 포함, 마크업 토큰 검사는 치환이 토큰을 건드린 행만 경고 후 제외 여부 확인).
 - 배경: 메달→배지 일괄 치환이 '배지을' 같은 조사 오류 21곳을 남긴 사례 — 단순 모두 바꾸기가 아니라 행별 확인이 요구의 핵심.
 - 검색 대상은 현재 값(pending 수정 반영된 값) 기준. 매칭 500행 상한(기존 검색과 동일한 감각), 초과 시 안내.
+
+### Task 15: 찾아보기 모드 (맵별·분류별·화자별) + 축약 조인표 동봉 (사용자 승인 2026-08-03)
+
+**Files:** Create: `pokemon-z/translate/make_speakers.py`, `pokemon-z/webapp/speakers.json`(생성물) / Modify: `pokemon-z/webapp/app.js`, `pokemon-z/webapp/index.html`
+
+- **축약 조인표 생성기**(repo 쪽, 배포 안 됨): docs/research/map-speaker-join.jsonl.gz + translate/sprite-groups.json에서 fixgui.py의 ctx()와 같은 규칙(sprite stem→group)으로 {"maps": {"<맵번호>": {"name": 맵이름, "rows": {"<k 원문>": [화자, 분류]}}}} 형태 JSON 산출 → webapp/speakers.json. 원문 k는 이미 배포 dat에 있는 텍스트라 추가 노출 없음. 크기 확인해 필요시 화자·분류 문자열 테이블화로 압축.
+- **웹앱 찾아보기**: 헤더 select(fixgui와 같은 「찾아보기…」) — 맵별(dat 0절 맵번호 + 21절 맵 이름, speakers.json 없어도 동작), 분류별(절 단위, 행 수 표시), 화자별/화자분류별(speakers.json 로드 성공 시에만 옵션 노출). 묶음 클릭 → 해당 행 목록(기존 카드 렌더 재사용, 500행 상한).
+- speakers.json fetch 실패는 조용히 무시(찾아보기에서 화자 옵션만 사라짐) — 무설정 원칙 유지.
+- 카드 칩에 화자 표시(있으면) — fixgui와 동일한 감각.
