@@ -67,6 +67,8 @@
    title="저장한 수정과 메모를 한 번에 제보해요">모아서 제보</button>
  <button class=ghost id=exportbtn onclick=exportFix() disabled>내보내기</button>
  <button class=ghost id=importbtn onclick=importFix() disabled>가져오기</button>
+ <button class=ghost id=minebtn onclick=showMine() disabled
+   title="저장해 둔 수정과 메모를 보고 다시 고치거나 지워요">내 수정</button>
  <button class=ghost id=histbtn onclick=showHist() disabled>이력</button>
  <button class=ghost id=restorebtn onclick=restoreMenu() disabled>복원</button>
 </header>
@@ -86,4 +88,5 @@
 <input type=file id=importfile accept=".jsonl" style="display:none">
 <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
 <script src="app.js"></script>
+<script src="mine.js"></script>
 </body></html>

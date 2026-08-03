@@ -158,7 +158,7 @@ async function useFolder(dir){
   migrateEdits();
   const dropped = restoreEdits();
   await loadSpeakers();
-  for (const id of ['q','secf','browse','searchbtn','buildbtn','replbtn','exportbtn','importbtn','restorebtn','histbtn','batchbtn'])
+  for (const id of ['q','secf','browse','searchbtn','buildbtn','replbtn','exportbtn','importbtn','restorebtn','histbtn','batchbtn','minebtn'])
     $(id).disabled = false;
   $('secf').innerHTML = '<option value="">전체 분류</option>' +
     Object.entries(SEC_LABEL).map(([s,l])=>`<option value=${s}>${l}</option>`).join('');
@@ -304,11 +304,15 @@ function applyEdit(r, v){
   else S.edits.set(id, {sec:r.sec, map:r.map, idx:r.idx, k:r.k, v});
   hist({type:'edit', rid:id, k:r.k, old:prev ? prev.v : r.v, new:v});
 }
+// 색·이름 코드를 삼키는 저장은 한 번 물어본다 — 지우면 화면이 깨진다
+function confirmMarkup(r, v){
+  const lost = (r.v.match(MARKUP)||[]).filter(t => !v.includes(t));
+  return !lost.length ||
+    confirm(`색·이름 코드가 사라졌어요: ${lost.join(' ')}\n지우면 화면이 깨질 수 있어요. 그래도 저장할까요?`);
+}
 function save(i){
   const r = HITS[i], v = $('v'+i).value;
-  const lost = (r.v.match(MARKUP)||[]).filter(t => !v.includes(t));
-  if (lost.length && !confirm(`색·이름 코드가 사라졌어요: ${lost.join(' ')}\n지우면 화면이 깨질 수 있어요. 그래도 저장할까요?`))
-    return;
+  if (!confirmMarkup(r, v)) return;
   applyEdit(r, v);
   persist(); updateDirty();
   $('st'+i).className='st ok'; $('st'+i).textContent='저장됨';
@@ -471,20 +475,35 @@ function hist(ev){
   const a = histAll();
   a.push({t:new Date().toISOString(), ...ev});
   try { localStorage.setItem('hist:'+S.base, JSON.stringify(a)); } catch {}
-  MEMOS = null;
 }
-// 행마다 이력을 다시 파싱하면 카드 50장에 50번 읽는다 — 최신 메모만 rid로 뽑아 캐시한다
+// 메모는 이력 파생이 아니라 별도 원장이다 — 이력은 지울 수 없고, 지운 메모가 제보에 다시 실리면 안 된다
 let MEMOS = null;
 function memoIndex(){
-  if (!MEMOS){
-    MEMOS = new Map();
-    for (const e of histAll()) if (e.type === 'memo') MEMOS.set(e.rid, {text:e.text, k:e.k});
-  }
+  if (MEMOS) return MEMOS;
+  const raw = localStorage.getItem('memos:'+S.base);
+  if (raw !== null){ try { return MEMOS = new Map(JSON.parse(raw)); } catch {} }
+  // 옛 판은 메모가 이력에만 있었다 — 첫 조회에서 한 번 옮긴다(같은 행은 최신 것이 남는다)
+  MEMOS = new Map();
+  for (const e of histAll()) if (e.type === 'memo') MEMOS.set(e.rid, {text:e.text, k:e.k});
+  if (MEMOS.size) persistMemos();
   return MEMOS;
+}
+function persistMemos(){
+  try { localStorage.setItem('memos:'+S.base, JSON.stringify([...memoIndex()])); } catch {}
+}
+function memoDel(id){
+  const m = memoIndex().get(id);
+  if (!m) return;
+  memoIndex().delete(id);
+  persistMemos();
+  hist({type:'memo-del', rid:id, k:m.k, text:m.text});
+  updateDirty();
 }
 function memo(i){
   const r = HITS[i], text = $('m'+i).value.trim();
   if (!text){ toast('메모 내용을 적어주세요'); return; }
+  memoIndex().set(rid(r), {text, k:r.k});
+  persistMemos();
   hist({type:'memo', rid:rid(r), k:r.k, text});
   $('m'+i).value = '';
   $('st'+i).className='st ok'; $('st'+i).textContent='메모 남김';
@@ -492,10 +511,11 @@ function memo(i){
   updateDirty();   // 메모만 남겨도 제보할 거리가 생긴다
   toast('메모를 이력에 남겼어요 — 빌드에는 들어가지 않아요');
 }
-const HIST_LABEL = {edit:'수정', memo:'메모', build:'빌드', restore:'복원', import:'가져오기'};
+const HIST_LABEL = {edit:'수정', memo:'메모', 'memo-del':'메모 삭제',
+  build:'빌드', restore:'복원', import:'가져오기'};
 function histBody(e){
   if (e.type === 'edit') return `<div class=es>${esc(e.old)}</div><div>→ ${esc(e.new)}</div>`;
-  if (e.type === 'memo') return `<div>${esc(e.text)}</div>`;
+  if (e.type === 'memo' || e.type === 'memo-del') return `<div>${esc(e.text)}</div>`;
   if (e.type === 'build') return `<div>${e.n}건 반영</div>`;
   if (e.type === 'import') return `<div>${e.n}건 병합</div>`;
   if (e.type === 'restore') return `<div>${esc(e.src)}</div>`;
@@ -524,12 +544,13 @@ function renderHome(){
   const line = (label, desc, fn) =>
     `<div class=rowbar><button class=ghost onclick=${fn}>${label}</button><span class=es>${desc}</span></div>`;
   $('out').innerHTML = `<div class=card>
-    <span class=chip>대기 ${S.edits.size}건</span><span class=chip>반영됨 ${S.applied.size}건</span><span class=chip>메모 ${memoIndex().size}건</span>
+    <span style="cursor:pointer" onclick=showMine() title="저장한 수정과 메모를 보고 고쳐요"><span class=chip>대기 ${S.edits.size}건</span><span class=chip>반영됨 ${S.applied.size}건</span><span class=chip>메모 ${memoIndex().size}건</span></span>
     <div class=es>어색한 문구를 검색해 바로 고치세요. 고칠 자리가 정해지지 않았다면 위쪽 [찾아보기]로 맵·분류${SPK?'·화자':''}별로 훑어볼 수 있어요.</div></div>
     <div class=card><div>최근 이력</div>${
       recent.length ? recent.map(e=>`<div class=es>${new Date(e.t).toLocaleString('ko-KR')} · ${HIST_LABEL[e.type] ?? e.type}${e.k?' · '+esc(e.k):''}</div>`).join('')
         : '<div class=es>아직 이력이 없어요 — 수정·메모·빌드가 여기에 쌓여요.</div>'}</div>
     <div class=card><div>할 수 있는 일</div>
+      ${line('내 수정', '저장해 둔 수정과 메모를 다시 고치거나 지워요.', 'showMine()')}
       ${line('모아서 제보', '저장한 수정과 메모를 한 번에 보내요.', 'batchReport()')}
       ${line('내보내기', '고침 파일로 내려받아 다른 사람과 나눠요.', 'exportFix()')}
       ${line('이력', '지금까지의 수정·메모·빌드를 모두 봐요.', 'showHist()')}</div>`;

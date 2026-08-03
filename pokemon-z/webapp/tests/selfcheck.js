@@ -1,6 +1,8 @@
 // app.js 순수 로직 자체점검 — 브라우저 없이: node webapp/tests/selfcheck.js
 const fs = require('fs'), vm = require('vm'), a = require('assert'), path = require('path');
-const src = fs.readFileSync(path.join(__dirname, '..', 'app.js'), 'utf8');
+// 브라우저와 같은 순서로 잇는다 — mine.js는 app.js의 전역을 그대로 쓴다
+const src = ['app.js', 'mine.js']
+  .map(f => fs.readFileSync(path.join(__dirname, '..', f), 'utf8')).join('\n');
 const els = {};
 const el = id => els[id] ??= { value: '', textContent: '', className: '', dataset: {},
                                classList: { add() {}, remove() {} }, addEventListener() {},
@@ -52,7 +54,9 @@ vm.runInContext(src + `
   exportFix, importFix, showConflicts, pickConflict, CONFLICTS, REPORT_FORM,
   idbGet, idbSet, reopenFolder, migrateEdits, hist, histAll, memo, showHist,
   doRestore, reloadAfterRestore, batchReport, batchParts, canReport, card,
-  memoIndex, renderHome, updateDirty, FIELD_CAP,
+  memoIndex, renderHome, updateDirty, FIELD_CAP, memoDel, persistMemos,
+  showMine, mineSave, mineCancel, mineMemoDel,
+  clearMemos: () => { MEMOS = null; },
   loadSpeakers, fillBrowse, doBrowse, openGroup, browseGroups, spkOf, mapName,
   setSpk: v => { SPK = v; MAPNAME = null; }, BROWSE_CAP,
   applyEdit, replaceMenu, replacePreview, replaceApply, replAll, REPL_CAP,
@@ -335,7 +339,7 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   ctx.S.rows = [reportRow];
   ctx.S.edits = new Map([['3:7:9', { sec: 3, map: 7, idx: 9, k: '원문키', v: '내가고친값' }]]);
   ctx.S.applied = new Map();
-  ctx.hist({ type: 'memo', rid: '3:7:9', k: '원문키', text: '어투 확인 필요' });
+  ctx.memoIndex().set('3:7:9', { k: '원문키', text: '어투 확인 필요' });
   ctx.prompt = () => { throw new Error('메모가 있으면 물어보면 안 된다'); };
   await ctx.report(0);
   const fd2 = ctx.__lastFetch[1].body._m;
@@ -401,7 +405,7 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   ctx.S.rows = [reportRow];
   ctx.S.edits = new Map([['3:7:9', { sec: 3, map: 7, idx: 9, k: '원문키', v: '수정A' }]]);
   ctx.S.applied = new Map([['0:1:2', { sec: 0, map: 1, idx: 2, k: '', v: '수정B' }]]);
-  ctx.hist({ type: 'memo', rid: '3:7:9', k: '원문키', text: '메모1' });
+  ctx.memoIndex().set('3:7:9', { k: '원문키', text: '메모1' });
   ctx.renderHome();
   const home = el('out').innerHTML;
   a.ok(home.includes('대기 1건') && home.includes('반영됨 1건') && home.includes('메모 1건'));
@@ -547,6 +551,71 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   ctx.doBrowse();
   ctx.openGroup(0);
   a.ok(el('meta').textContent.includes(`앞 ${ctx.BROWSE_CAP}행만`));
+
+  // ─ 내 수정 화면 ─
+  // 메모 이전: 옛 판은 메모가 이력에만 있었다 — 첫 조회에서 활성 원장으로 옮기고, 같은 행은 최신이 남는다
+  ctx.S.base = 'minebase';
+  ctx.clearMemos();
+  ctx.localStorage.setItem('hist:minebase', JSON.stringify([
+    { t: '2026-08-01T00:00:00Z', type: 'memo', rid: '0:1:1', k: 'a', text: '옛 메모' },
+    { t: '2026-08-02T00:00:00Z', type: 'memo', rid: '0:1:1', k: 'a', text: '고친 메모' },
+    { t: '2026-08-02T01:00:00Z', type: 'memo', rid: '0:1:2', k: 'b', text: '둘째 메모' },
+  ]));
+  a.equal(ctx.localStorage.getItem('memos:minebase'), null);   // 이전 전에는 활성 원장이 없다
+  a.equal(ctx.memoIndex().size, 2);
+  a.equal(ctx.memoIndex().get('0:1:1').text, '고친 메모');      // 같은 행은 최신 것만
+  a.ok(ctx.localStorage.getItem('memos:minebase'));            // 이전 결과가 저장된다
+  // 이미 활성 원장이 있으면 이력에서 다시 만들지 않는다(지운 메모가 되살아나면 안 된다)
+  ctx.localStorage.setItem('memos:minebase', JSON.stringify([['0:1:2', { k: 'b', text: '둘째 메모' }]]));
+  ctx.clearMemos();
+  a.equal(ctx.memoIndex().size, 1);
+  a.equal(ctx.memoIndex().has('0:1:1'), false);
+
+  // 메모 삭제: 활성 원장에서 빠지고 이력에는 삭제 기록이 남는다
+  ctx.S.rows = [
+    { sec: 0, map: 1, idx: 1, k: '스페인어원문1', v: '번역1' },
+    { sec: 0, map: 1, idx: 2, k: '스페인어원문2', v: '번역2' },
+  ];
+  ctx.S.edits = new Map(); ctx.S.applied = new Map();
+  ctx.memoDel('0:1:2');
+  a.equal(ctx.memoIndex().size, 0);
+  a.equal(ctx.histAll().at(-1).type, 'memo-del');
+  a.deepEqual(JSON.parse(ctx.localStorage.getItem('memos:minebase')), []);   // 저장분에서도 사라진다
+  ctx.clearMemos();
+  a.equal(ctx.memoIndex().size, 0);                            // 다시 읽어도 안 살아난다
+
+  // 삭제한 메모는 일괄 제보에도 개별 제보 코멘트에도 실리지 않는다
+  a.equal(ctx.batchParts().comment, '');
+  a.equal(ctx.canReport('0:1:2'), false);
+
+  // 인라인 재수정: 목록에서 고친 값이 그대로 대기 수정에 앉는다
+  ctx.S.edits = new Map([['0:1:1', { sec: 0, map: 1, idx: 1, k: '스페인어원문1', v: '고친값' }]]);
+  ctx.persist();
+  ctx.showMine();
+  a.ok(el('out').innerHTML.includes('대기 중인 수정 1건'));
+  a.ok(el('out').innerHTML.includes('고친값') && el('out').innerHTML.includes('스페인어원문1'));
+  el('mv0:1:1').value = '다시 고친값';
+  ctx.mineSave('0:1:1');
+  a.equal(ctx.S.edits.get('0:1:1').v, '다시 고친값');
+  a.equal(JSON.parse(ctx.localStorage.getItem('edits:minebase'))[0].v, '다시 고친값');
+  a.equal(ctx.histAll().at(-1).new, '다시 고친값');            // 재수정도 이력에 남는다
+
+  // 수정 취소: 대기에서 빠지고 저장분도 함께 비워진다
+  ctx.mineCancel('0:1:1');
+  a.equal(ctx.S.edits.size, 0);
+  a.deepEqual(JSON.parse(ctx.localStorage.getItem('edits:minebase')), []);
+  a.equal(ctx.histAll().at(-1).new, '번역1');                  // 원문으로 되돌린 기록
+  a.equal(el('dirty').style.display, 'none');                  // "빌드 필요" 표시도 내려간다
+  ctx.mineCancel('0:1:1');                                     // 없는 행을 또 취소해도 조용히 넘어간다
+  a.equal(ctx.S.edits.size, 0);
+
+  // 반영됨은 표시만 — 취소 버튼 없이 되돌리는 방법만 알려준다
+  ctx.S.applied = new Map([['0:1:2', { sec: 0, map: 1, idx: 2, k: '스페인어원문2', v: '반영된값' }]]);
+  ctx.showMine();
+  a.ok(el('out').innerHTML.includes('반영된값'));
+  a.ok(el('out').innerHTML.includes('검색해 다시 고치세요'));
+  a.ok(!el('out').innerHTML.includes("mineCancel('0:1:2')"));
+  a.ok(el('out').innerHTML.includes('남긴 메모가 없어요'));    // 빈 상태 문구
 
   console.log('SELFCHECK_OK');
 })().catch(e => { console.error(e); process.exit(1); });
