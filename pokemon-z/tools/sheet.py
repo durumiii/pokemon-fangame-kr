@@ -5,7 +5,7 @@
 gcloud 사용자 토큰(cloud-platform)으로 IAM Credentials API에서 spreadsheets scope
 SA 토큰을 발급받는다 — 브라우저·키 파일 불요. 전제(2026-08-04 세팅 완료):
   · golden-tide-361608에 sheets/iamcredentials API 활성
-  · choneunyw1에 SA Token Creator 부여
+  · Token Creator: durumi0020(폼·시트 소유, GitHub durumiii 연동)·choneunyw1(devbox gcloud 로그인) 둘 다
   · 제보 시트가 SA 이메일에 편집자로 공유돼 있어야 함(시트 소유 계정에서 1회)
 (막다른 길 기록: rclone 기본 클라이언트=Sheets API 미활성 403,
  gcloud ADC 기본 클라이언트=spreadsheets scope 차단 — 실측.)
