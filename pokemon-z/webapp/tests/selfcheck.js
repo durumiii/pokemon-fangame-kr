@@ -13,14 +13,21 @@ const ctx = {
       get innerHTML() { return String(this._t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); },
     }),
   },
-  localStorage: { _m: {}, getItem(k) { return this._m[k] ?? null; }, setItem(k, v) { this._m[k] = v; } },
+  localStorage: { _m: {}, getItem(k) { return this._m[k] ?? null; }, setItem(k, v) { this._m[k] = v; },
+                  removeItem(k) { delete this._m[k]; } },
   addEventListener() {}, confirm: () => true,
   setTimeout, clearTimeout, console,
 };
 vm.createContext(ctx);
 // const/let은 vm 전역에 붙지 않으므로 명시적으로 꺼낸다
-vm.runInContext(src + '\n;globalThis.X = {rid, esc, MARKUP, S, persist, restoreEdits, save,' +
-  ' setHits: h => { HITS = h; }};', ctx);
+// readFile/writeFile은 실제 소스 뒤에서 재정의해 브라우저 FS API 없이 build()를 목업 검증한다
+// (같은 스코프의 함수 선언은 나중 정의가 이긴다)
+vm.runInContext(src + `
+;globalThis.X = {rid, esc, MARKUP, S, persist, restoreEdits, save, build,
+  setHits: h => { HITS = h; }};
+function readFile(){ return globalThis.__fsFile; }
+function writeFile(){}
+`, ctx);
 Object.assign(ctx, ctx.X);
 
 a.equal(ctx.rid({ sec: 0, map: 3, idx: 7 }), '0:3:7');
@@ -50,4 +57,23 @@ el('v0').value = '고친 줄';                                // 진짜 수정�
 ctx.save(0);
 a.equal(ctx.S.edits.get('23:-1:5').v, '고친 줄');
 
-console.log('SELFCHECK_OK');
+// 빌드 성공: edits 비움 + 옛 sha localStorage 키 제거 (readFile/writeFile은 위에서 목업으로 교체됨)
+const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8Array는 vm의 instanceof를 못 통과한다
+(async () => {
+  ctx.__fsFile = new VMU8([1, 2, 3]);
+  ctx.S.dir = {};
+  ctx.S.py = { toPy: x => x };
+  ctx.S.core = {
+    build_dat: () => new VMU8([9, 9]),                      // Uint8Array 분기 — pyBuild가 그대로 반환
+    load_dat: () => JSON.stringify({ meta: null, sha: 'newsha', rows: [] }),
+  };
+  ctx.S.sha = 'oldsha';
+  ctx.S.edits = new Map([['0:1:2', { sec: 0, map: 1, idx: 2, k: 'x', v: 'y' }]]);
+  ctx.localStorage.setItem('edits:oldsha', JSON.stringify([...ctx.S.edits.values()]));
+  await ctx.build();
+  a.equal(ctx.S.edits.size, 0);                             // 빌드 성공 시 edits 비움
+  a.equal(ctx.localStorage.getItem('edits:oldsha'), null);  // 옛 sha 키 제거
+  a.equal(ctx.S.sha, 'newsha');                              // 새 dat로 상태 재동기화
+
+  console.log('SELFCHECK_OK');
+})().catch(e => { console.error(e); process.exit(1); });

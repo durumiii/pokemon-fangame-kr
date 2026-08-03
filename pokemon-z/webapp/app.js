@@ -79,6 +79,15 @@ async function exists(dir, path){
   } catch(e){ if (e.name === 'NotFoundError') return false; throw e; }
 }
 
+// dat 바이트 → S.rows/sha/meta 갱신 (최초 로드·빌드 성공·빌드 실패 복구 셋 다 공용)
+async function loadCore(datBytes){
+  let msg = null;
+  try { msg = await readFile(S.dir, 'Data/messages.dat'); } catch {}
+  const res = JSON.parse(S.core.load_dat(S.py.toPy(datBytes), msg && S.py.toPy(msg)));
+  S.rows = res.rows; S.sha = res.sha; S.meta = res.meta;
+  return res;
+}
+
 async function openFolder(){
   if (!window.showDirectoryPicker){ toast('이 브라우저는 지원하지 않아요 — Chrome/Edge로 열어주세요', 5000); return; }
   try { S.dir = await showDirectoryPicker({mode:'readwrite'}); } catch { return; }
@@ -92,10 +101,7 @@ async function openFolder(){
   if (!await exists(S.dir, 'Data/korean.dat.bak')){
     await writeFile(S.dir, 'Data/korean.dat.bak', dat);
   }
-  let msg = null;
-  try { msg = await readFile(S.dir, 'Data/messages.dat'); } catch {}
-  const res = JSON.parse(S.core.load_dat(S.py.toPy(dat), msg && S.py.toPy(msg)));
-  S.rows = res.rows; S.sha = res.sha; S.meta = res.meta;
+  await loadCore(dat);
   restoreEdits();
   for (const id of ['q','secf','searchbtn','buildbtn','exportbtn','importbtn','restorebtn'])
     $(id).disabled = false;
@@ -173,4 +179,42 @@ function updateDirty(){
   const d = $('dirty'), n = S.edits.size;
   d.style.display = n ? 'inline-block' : 'none';
   if (n) d.textContent = `저장 ${n}건 — 빌드 필요`;
+}
+
+// ─── 빌드·복원 ────────────────────────────────────────
+async function build(){
+  if (!S.edits.size){ toast('저장된 수정이 없어요'); return; }
+  const b = $('buildbtn'); b.disabled = true; b.textContent = '빌드 중...';
+  const n = S.edits.size, prevSha = S.sha;
+  try {
+    const out = await pyBuild([...S.edits.values()]);
+    // 직전본 백업 → 본체 기록 (원본 .bak은 openFolder에서 이미 보존)
+    const cur = await readFile(S.dir, 'Data/korean.dat');
+    await writeFile(S.dir, 'Data/korean.dat.prev', cur);
+    await writeFile(S.dir, 'Data/korean.dat', out);
+    // 빌드 산출물로 상태 재동기화 — sha가 바뀌므로 반영 끝난 edits는 비운다(중복 적용 방지)
+    await loadCore(out);
+    localStorage.removeItem('edits:'+prevSha);
+    S.edits = new Map();
+    persist();
+    updateDirty();
+    toast(`빌드 완료 (${n}건 반영) — 게임을 재시작하면 보여요`, 4000);
+  } catch (err) {
+    toast('빌드 실패 — 파일은 그대로예요: ' + err.message, 6000);
+    // core.build_dat 실패 시 파이썬 쪽 상태에 부분 변형이 남을 수 있어 디스크 원본으로 재로드
+    try { await loadCore(await readFile(S.dir, 'Data/korean.dat')); } catch {}
+  } finally {
+    b.disabled = false; b.textContent = '빌드 → 게임 반영';
+  }
+}
+
+async function restoreMenu(){
+  const hasPrev = await exists(S.dir, 'Data/korean.dat.prev');
+  const pick = prompt(
+    `복원할 대상 번호를 입력하세요:\n 1 = 순정 원본(korean.dat.bak)` +
+    (hasPrev ? `\n 2 = 직전 빌드 전(korean.dat.prev)` : ''), '1');
+  const src = pick === '1' ? 'Data/korean.dat.bak' : pick === '2' && hasPrev ? 'Data/korean.dat.prev' : null;
+  if (!src) return;
+  await writeFile(S.dir, 'Data/korean.dat', await readFile(S.dir, src));
+  toast('복원 완료 — 페이지를 새로고침해 다시 불러오세요', 5000);
 }
