@@ -8,8 +8,8 @@ const REPORT_FORM = {
 // 행 무관 일반 제보(전반적 번역·렌더링 등) — 별도 구글폼, 같은 스프레드시트의 새 탭에 연결
 // id가 비어 있으면 화면에서 숨긴다(유지자가 폼 생성 후 채움)
 const GENERAL_FORM = {
-  id: "",
-  entries: { kind:"", text:"", patch:"" },
+  id: "1FAIpQLSed1vWYuQt14NNAGxhD-oGoS49Cxyf1MwmUia4Q_OmqrFN5Gw",
+  entries: { kind:"entry.1761277727", text:"entry.1561553815", patch:"entry.825168505" },
 };
 // 인라인 SVG만 쓴다 — 이모지는 기기마다 다른 그림이고 외부 아이콘은 오프라인에서 깨진다
 const ICON = {
