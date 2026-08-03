@@ -3039,10 +3039,10 @@
 {"k": "A veces se mueve. Debería abrirse pronto.", "v": "가끔 움직인다. 곧 부화할 것 같다."}
 {"k": "Está haciendo ruidos. ¡Está a punto de abrirse!", "v": "소리가 난다. 곧 부화할 것 같다!"}
 {"k": "<c3=404040,B0B0B0>Naturaleza <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.", "v": "<c3=404040,B0B0B0><c3=F83820,E09890>{1}<c3=404040,B0B0B0> 성격."}
-{"k": "Encontrado con Nv. {1}.", "v": "에서 Lv. {1}일 때 발견됨."}
-{"k": "Huevo recibido.", "v": "에서 알을 받음."}
-{"k": "Intercambiado con Nv. {1}.", "v": "에서 Lv. {1}일 때 교환됨."}
-{"k": "Lo conocí en un encuentro fatídico en Nv. {1}.", "v": "에서 Lv. {1}일 때 운명처럼 만남."}
+{"k": "Encontrado con Nv. {1}.", "v": "에서 Lv. {1}일 때 만났다."}
+{"k": "Huevo recibido.", "v": "에서 알을 받았다."}
+{"k": "Intercambiado con Nv. {1}.", "v": "에서 Lv. {1}일 때 교환했다."}
+{"k": "Lo conocí en un encuentro fatídico en Nv. {1}.", "v": "에서 Lv. {1}일 때 운명처럼 만났다."}
 {"k": "<c3=404040,B0B0B0>Huevo eclosionado.", "v": "<c3=404040,B0B0B0>부화한 알."}
 {"k": "Le encanta comer.", "v": "먹는 것을 아주 좋아한다."}
 {"k": "A menudo se duerme.", "v": "자주 잠든다."}
