@@ -35,7 +35,10 @@ async function bootPy(){
       .map(f=>"vendor/rubymarshal/"+f)];
   py.FS.mkdirTree('/app/rubymarshal');
   for (const f of files){
-    const src = await (await fetch(f)).text();
+    const res = await fetch(f);
+    // 404 HTML을 파이썬 소스로 심으면 한참 뒤 난해한 구문 오류로 터진다 — 받은 자리에서 막는다
+    if (!res.ok) throw new Error('필수 파일을 못 받았어요: ' + f);
+    const src = await res.text();
     const dst = f.startsWith('vendor/') ? '/app/rubymarshal/'+f.split('/').pop() : '/app/'+f;
     py.FS.writeFile(dst, src);
   }
@@ -379,7 +382,8 @@ function importFix(){
       const row = byId.get(rid(e));
       if (!row || (e.k && row.k !== e.k) || typeof e.v !== 'string'
           || !Number.isInteger(e.sec) || !Number.isInteger(e.idx)){ skipped++; continue; }   // 원문 불일치·형식 이상 → 버전 다름
-      const mine = S.edits.get(rid(e));
+      // 이미 빌드된 내 수정(applied)도 충돌 재료다 — 안 그러면 조용히 덮인다
+      const mine = S.edits.get(rid(e)) ?? S.applied.get(rid(e));
       if (mine && mine.v !== e.v){ conflicts.push({row, mine, theirs:e}); continue; }
       S.edits.set(rid(e), {sec:row.sec, map:row.map, idx:row.idx, k:row.k, v:e.v});
       applied++;
@@ -410,16 +414,78 @@ function pickConflict(i, theirs){
   $('cf'+i).style.opacity = .4; $('cf'+i).style.pointerEvents = 'none';
 }
 
+// 백업 파일의 시각·크기 — 표시용이라 못 읽으면 조용히 생략한다
+async function fileInfo(dir, path){
+  try {
+    let h = dir;
+    const parts = path.split('/');
+    for (const p of parts.slice(0,-1)) h = await h.getDirectoryHandle(p);
+    const f = await (await h.getFileHandle(parts.at(-1))).getFile();
+    return `${new Date(f.lastModified).toLocaleString('ko-KR')} · ${Math.round(f.size/1024).toLocaleString()}KB`;
+  } catch { return null; }
+}
+
 async function restoreMenu(){
   const hasPrev = await exists(S.dir, 'Data/korean.dat.prev');
-  const pick = prompt(
-    `복원할 대상 번호를 입력하세요:\n 1 = 순정 원본(korean.dat.bak)` +
-    (hasPrev ? `\n 2 = 직전 빌드 전(korean.dat.prev)` : ''), '1');
-  const src = pick === '1' ? 'Data/korean.dat.bak' : pick === '2' && hasPrev ? 'Data/korean.dat.prev' : null;
-  if (!src) return;
-  await writeFile(S.dir, 'Data/korean.dat', await readFile(S.dir, src));
+  const [bakInfo, prevInfo] = await Promise.all([
+    fileInfo(S.dir, 'Data/korean.dat.bak'),
+    hasPrev ? fileInfo(S.dir, 'Data/korean.dat.prev') : null]);
+  const cardOf = (title, desc, src, why) => `<div class=card>
+    <div>${title}</div><div class=es>${esc(desc)}</div>
+    <div class=rowbar>${why
+      ? `<button disabled>복원할 수 없어요</button><span class=st>${esc(why)}</span>`
+      : `<button class=primary onclick="doRestore('${src}')">이걸로 복원</button>`}</div></div>`;
+  $('meta').textContent = '복원 — 되돌릴 파일을 고르세요';
+  $('out').innerHTML =
+    `<div class=meta>korean.dat을 백업으로 되돌려요. 저장해 둔 수정은 지워지지 않고 미반영 상태로 남아요.</div>` +
+    cardOf('순정 원본으로', bakInfo ? `한글패치 설치 직후 상태 · 보존 ${bakInfo}` : '한글패치 설치 직후 상태',
+           'Data/korean.dat.bak') +
+    cardOf('직전 빌드 전으로', prevInfo ? `마지막 빌드 직전 상태 · 저장 ${prevInfo}` : '마지막 빌드 직전 상태',
+           'Data/korean.dat.prev', hasPrev ? null : '아직 빌드한 적이 없어요') +
+    `<div class=rowbar><button class=ghost onclick=cancelRestore()>취소</button></div>`;
+}
+function cancelRestore(){
+  $('out').innerHTML = '<div class=empty>어색한 문구를 검색해 바로 고치세요.</div>';
+  $('meta').textContent = `${S.rows.length.toLocaleString()}행 로드 · 패치 ${S.meta ?? '(표식 없음 · '+S.sha+')'}`;
+}
+
+// 복원한 파일을 화면 상태에 반영하기 전까지 빌드·내보내기를 막는다 —
+// 구 메모리 상태로 빌드하면 방금 되돌린 파일이 조용히 다시 덮인다
+async function doRestore(src){
+  for (const id of ['buildbtn','exportbtn','restorebtn']) $(id).disabled = true;
+  try {
+    await writeFile(S.dir, 'Data/korean.dat', await readFile(S.dir, src));
+  } catch (err) {
+    for (const id of ['buildbtn','exportbtn','restorebtn']) $(id).disabled = false;
+    toast('복원 실패 — 파일은 그대로예요: ' + err.message, 6000);
+    return;
+  }
   hist({type:'restore', src});
-  toast('복원 완료 — 페이지를 새로고침해 다시 불러오세요', 5000);
+  // dat에 반영돼 있던 수정이 파일에서 사라졌다 — "반영됨" 표시를 지우고 미빌드 수정으로 합류시킨다
+  for (const [id, e] of S.applied) if (!S.edits.has(id)) S.edits.set(id, e);
+  S.applied = new Map();
+  persist(); updateDirty();
+  $('out').innerHTML = '<div class=card><div>복원했어요 — 새 파일로 다시 불러오는 중...</div></div>';
+  await reloadAfterRestore(src);
+}
+
+async function reloadAfterRestore(src){
+  try {
+    await loadCore(await readFile(S.dir, 'Data/korean.dat'));
+    for (const id of ['buildbtn','exportbtn','restorebtn']) $(id).disabled = false;
+    $('meta').textContent = `${S.rows.length.toLocaleString()}행 다시 로드 · 패치 ${S.meta ?? '(표식 없음 · '+S.sha+')'}`;
+    $('out').innerHTML = `<div class=card><div>복원 완료 — ${esc(src)}</div>
+      <div class=es>새로고침 없이 다시 불러왔어요. 게임을 재시작하면 화면에 보여요.</div>` +
+      (S.edits.size ? `<div>미반영 수정 ${S.edits.size}건이 남아 있어요 — [빌드]를 누르면 다시 들어가요.</div>` : '') +
+      '</div>';
+    toast('복원 완료 — 게임을 재시작하면 보여요', 4000);
+  } catch (err) {
+    $('restorebtn').disabled = false;   // 빌드·내보내기는 계속 잠근다 — 화면이 아직 옛 파일 기준이다
+    $('out').innerHTML = `<div class=card><div>파일은 복원했지만 다시 불러오기에 실패했어요.</div>
+      <div class=es>${esc(err.message)}</div>
+      <div>다시 불러오기 전에는 빌드·내보내기를 쓸 수 없어요.</div>
+      <div class=rowbar><button class=primary onclick="reloadAfterRestore('${esc(src)}')">다시 불러오기</button></div></div>`;
+  }
 }
 
 // 지난 폴더가 남아 있을 때만 재연결 버튼을 드러낸다

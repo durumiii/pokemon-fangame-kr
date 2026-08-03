@@ -50,6 +50,7 @@ vm.runInContext(src + `
 ;globalThis.X = {rid, esc, MARKUP, S, persist, restoreEdits, save, build, report,
   exportFix, importFix, showConflicts, pickConflict, CONFLICTS, REPORT_FORM,
   idbGet, idbSet, reopenFolder, migrateEdits, hist, histAll, memo, showHist,
+  doRestore, reloadAfterRestore,
   setHits: h => { HITS = h; }};
 function readFile(){ return globalThis.__fsFile; }
 function writeFile(){}
@@ -239,6 +240,46 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   ctx.S.rows = [{ sec: 0, map: 1, idx: 2, k: '새판원문', v: 'y' }];
   ctx.restoreEdits();
   a.equal(ctx.S.applied.size, 0);                            // 판이 바뀌면 applied도 제외
+
+  // 가져오기 충돌: 이미 빌드된 내 수정(applied)과 겹쳐도 충돌로 잡혀야 한다(조용히 덮이면 안 됨)
+  ctx.S.rows = [{ sec: 0, map: 1, idx: 2, k: 'x', v: '원문' }];
+  ctx.S.edits = new Map();
+  ctx.S.applied = new Map([['0:1:2', { sec: 0, map: 1, idx: 2, k: 'x', v: '빌드된내수정' }]]);
+  ctx.importFix();
+  await el('importfile').onchange({ target: { files: [{ text: async () =>
+    JSON.stringify({ sec: 0, map: 1, idx: 2, k: 'x', v: '가져온수정' }) + '\n' }], value: 'x' } });
+  a.equal(ctx.S.edits.has('0:1:2'), false);                   // 병합 대신 충돌 카드로 분기
+  a.ok(el('out').innerHTML.includes('겹치는 1행'));
+  a.ok(el('out').innerHTML.includes('빌드된내수정'));          // "내 것"으로 applied 값이 제시된다
+
+  // 복원: applied(반영됨)는 pending으로 합류하고, 새 dat 재로드까지 끝나야 빌드·내보내기가 열린다
+  ctx.S.edits = new Map([['0:1:2', { sec: 0, map: 1, idx: 2, k: 'x', v: '미빌드수정' }]]);
+  ctx.S.applied = new Map([
+    ['0:1:2', { sec: 0, map: 1, idx: 2, k: 'x', v: '빌드된값' }],      // pending과 겹침 → pending 유지
+    ['0:1:9', { sec: 0, map: 1, idx: 9, k: 'q', v: '빌드만된값' }]]);  // 겹치지 않음 → pending으로 이동
+  ctx.S.base = 'restorebase';
+  el('buildbtn').disabled = false; el('exportbtn').disabled = false;
+  await ctx.doRestore('Data/korean.dat.bak');
+  a.equal(ctx.S.applied.size, 0);                            // "반영됨" 표시는 사라지고
+  a.equal(ctx.S.edits.get('0:1:2').v, '미빌드수정');          // 겹친 행은 미빌드분이 이긴다
+  a.equal(ctx.S.edits.get('0:1:9').v, '빌드만된값');          // 반영됐던 수정은 잃지 않고 pending으로
+  a.deepEqual(JSON.parse(ctx.localStorage.getItem('applied:restorebase')), []);  // 저장분도 함께 비움
+  a.equal(ctx.histAll().at(-1).type, 'restore');
+  a.equal(el('buildbtn').disabled, false);                   // 재로드까지 끝났으니 다시 열린다
+  a.equal(el('exportbtn').disabled, false);
+
+  // 재로드 실패: 파일은 복원됐지만 화면은 옛 기준 — 빌드·내보내기는 잠긴 채로 [다시 불러오기]만 준다
+  const goodLoad = ctx.S.core.load_dat;
+  ctx.S.core.load_dat = () => { throw new Error('재로드 실패 목업'); };
+  await ctx.doRestore('Data/korean.dat.bak');
+  a.equal(el('buildbtn').disabled, true);
+  a.equal(el('exportbtn').disabled, true);
+  a.equal(el('restorebtn').disabled, false);                 // 복원 버튼만 풀어 다시 시도할 수 있게
+  a.ok(el('out').innerHTML.includes('다시 불러오기'));
+  ctx.S.core.load_dat = goodLoad;
+  await ctx.reloadAfterRestore('Data/korean.dat.bak');        // 완료 카드의 버튼이 하는 일
+  a.equal(el('buildbtn').disabled, false);
+  a.equal(el('exportbtn').disabled, false);
 
   // 제보: 6필드가 FormData에 담기고 no-cors POST로 fetch가 불려야 한다
   ctx.REPORT_FORM.id = 'formid123';
