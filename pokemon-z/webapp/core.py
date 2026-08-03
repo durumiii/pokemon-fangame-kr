@@ -64,3 +64,47 @@ def load_dat(dat_bytes, msg_bytes=None):
     return json.dumps({"meta": meta,
                        "sha": hashlib.sha256(bytes(dat_bytes)).hexdigest()[:12],
                        "rows": rows}, ensure_ascii=False)
+
+
+def build_dat(edits_json):
+    d = _state["d"]
+    edits = json.loads(edits_json)
+    hash_secs, list_edits = {}, []
+    for e in edits:
+        if e["sec"] != 0 and isinstance(d[e["sec"]], list):
+            list_edits.append(e)
+        else:
+            hash_secs.setdefault((e["sec"], e.get("map")), []).append(e)
+
+    for e in list_edits:
+        obj = d[e["sec"]]
+        if e["idx"] >= len(obj):
+            raise ValueError(f"절{e['sec']}[{e['idx']}]: 범위 밖")
+        obj[e["idx"]] = e["v"].encode("utf-8")
+
+    for (sec, mi), es_ in hash_secs.items():
+        oh = d[sec][mi] if sec == 0 else d[sec]
+        keys, values = _inner(oh)
+        for e in es_:
+            j = e["idx"]
+            if j >= len(keys):
+                raise ValueError(f"절{sec}[{j}]: 범위 밖")
+            if "k" in e and e["k"] != _dec(keys[j]):
+                raise ValueError(f"절{sec}[{j}]: 원문 불일치 — 패치 버전이 다른 고침 파일일 수 있음")
+            values[j] = e["v"].encode("utf-8")
+        oh._private_data = rubywrite.dumps([keys, values])
+
+    out = rubywrite.dumps(d)
+    r = load(io.BytesIO(out))
+    if len(r) != len(d):
+        raise ValueError("왕복 검증 실패: 절 수 불일치")
+    for sec in range(len(d)):
+        if isinstance(d[sec], list):
+            if r[sec] != d[sec]:
+                raise ValueError(f"왕복 검증 실패: 절{sec}")
+        elif hasattr(d[sec], "_private_data"):
+            pairs = zip(r[sec], d[sec]) if sec == 0 else [(r[sec], d[sec])]
+            for a, b in pairs:
+                if _inner(a) != _inner(b):
+                    raise ValueError(f"왕복 검증 실패: 절{sec}")
+    return out

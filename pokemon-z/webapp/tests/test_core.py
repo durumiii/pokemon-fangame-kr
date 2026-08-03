@@ -42,3 +42,43 @@ def test_load_sha_and_meta(loaded):
     assert len(loaded["sha"]) == 12
     # v5 dat엔 표식이 없다 — None 허용, 있으면 문자열
     assert loaded["meta"] is None or isinstance(loaded["meta"], str)
+
+
+def test_build_noop_roundtrip(dat_bytes):
+    import core
+    core.load_dat(dat_bytes)
+    out = core.build_dat("[]")
+    before = json.loads(core.load_dat(dat_bytes))["rows"]
+    after = json.loads(core.load_dat(bytes(out)))["rows"]
+    assert before == after  # 무수정 빌드 → 내용 동일
+
+
+def test_build_single_edit(dat_bytes):
+    import core
+    rows = json.loads(core.load_dat(dat_bytes))["rows"]
+    target = next(r for r in rows if r["sec"] == 5)  # 기술 이름 하나
+    edit = dict(target, v="테스트기술XYZ")
+    out = core.build_dat(json.dumps([edit]))
+    rows2 = json.loads(core.load_dat(bytes(out)))["rows"]
+    hit = [r for r in rows2 if r["sec"] == 5 and r["idx"] == target["idx"]]
+    assert hit[0]["v"] == "테스트기술XYZ"
+    assert sum(1 for a, b in zip(rows, rows2) if a != b) == 1  # 다른 행 무변화
+
+
+def test_build_hash_section_edit(dat_bytes):
+    import core
+    rows = json.loads(core.load_dat(dat_bytes))["rows"]
+    target = next(r for r in rows if r["sec"] == 23)
+    out = core.build_dat(json.dumps([dict(target, v="교체된 값")]))
+    rows2 = json.loads(core.load_dat(bytes(out)))["rows"]
+    hit = next(r for r in rows2 if r["sec"] == 23 and r["idx"] == target["idx"])
+    assert hit["v"] == "교체된 값" and hit["k"] == target["k"]
+
+
+def test_build_key_mismatch_rejected(dat_bytes):
+    import core
+    rows = json.loads(core.load_dat(dat_bytes))["rows"]
+    target = next(r for r in rows if r["sec"] == 23)
+    bad = dict(target, k="엉뚱한 원문", v="아무거나")
+    with pytest.raises(ValueError):
+        core.build_dat(json.dumps([bad]))
