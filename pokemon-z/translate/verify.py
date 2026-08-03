@@ -114,6 +114,9 @@ def check_canon(strict):
 def check_dat_and_sentinels():
     d = load(open(STORE_DAT, "rb"))
     ks, vs = inner_of(d[23])
+    # __kr_patch__는 build.py가 심는 버전 표식 — 정본 미러 대상이 아니다
+    pairs = [(k, v) for k, v in zip(ks, vs) if bytes(k) != b"__kr_patch__"]
+    ks, vs = [k for k, _ in pairs], [v for _, v in pairs]
     jr = rows(HERE / "ko" / "23-script-texts.jsonl")
     if len(jr) != len(ks):
         report("FAIL", f"절23 미러 어긋남: jsonl {len(jr)} ≠ dat {len(ks)}")
