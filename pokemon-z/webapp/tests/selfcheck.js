@@ -64,6 +64,7 @@ vm.runInContext(src + `
   showMine, mineSave, mineCancel, mineMemoDel, reporterId,
   clearMemos: () => { MEMOS = null; },
   loadSpeakers, fillBrowse, doBrowse, openGroup, browseGroups, spkOf, mapName,
+  parseQuery, rowMatch, search, goHome, tagValues,
   setSpk: v => { SPK = v; MAPNAME = null; }, BROWSE_CAP,
   applyEdit, replaceMenu, replacePreview, replaceApply, replAll, REPL_CAP,
   replHits: () => REPL,
@@ -569,10 +570,8 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   a.deepEqual(bySprite.map(g => [g.label, g.rows.length]), [[realSpk.sp[spI], 1]]);  // 조인 안 된 행은 빠진다
 
   // 묶음 열기: 카드 목록으로 넘어가고 500행 상한이 걸린다
-  el('browse').value = 'map';
-  ctx.doBrowse();
+  ctx.doBrowse('map');
   a.ok(el('out').innerHTML.includes('어느마을') && el('out').innerHTML.includes('2행'));
-  a.equal(el('browse').value, '');                                    // 같은 항목을 다시 고를 수 있게 되돌린다
   ctx.openGroup(0);
   a.ok(el('meta').textContent.includes('2행'));
   a.ok(el('out').innerHTML.includes('번역문'));
@@ -580,10 +579,51 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
     (_, i) => ({ sec: 0, map: 1, idx: i, k: 'k'+i, v: 'v'+i }));
   ctx.S.rows = many;
   ctx.setSpk(null);
-  el('browse').value = 'map';
-  ctx.doBrowse();
+  ctx.doBrowse('map');
   ctx.openGroup(0);
   a.ok(el('meta').textContent.includes(`앞 ${ctx.BROWSE_CAP}행만`));
+
+  // ─ 태그 검색 ─
+  // 파서: 태그·따옴표 값·태그 없는 낱말이 제자리에 앉는다
+  {
+    const f = ctx.parseQuery('분류:"도구 이름" 맵:12 화자:간호사 상태:수정 원문:hola 번역:안녕 그냥말');
+    a.deepEqual([f.sec, f.map, f.spk, f.state, f.k, f.v, f.text],
+      [['도구 이름'], ['12'], ['간호사'], ['수정'], ['hola'], ['안녕'], ['그냥말']]);
+    a.deepEqual(ctx.parseQuery('상태:').state, []);               // 빈 값 태그는 무시
+    a.deepEqual(ctx.parseQuery('"띄어 쓴 본문"').text, ['띄어 쓴 본문']);
+  }
+  // 행 매칭: 분류 라벨 부분일치·맵 번호/이름·상태·본문 AND
+  ctx.setSpk(realSpk);
+  ctx.S.rows = [joined, unjoined, { sec: 21, idx: +someMap, v: '어느마을' },
+                { sec: 7, idx: 1, k: 'poción', v: '상처약' }];
+  ctx.S.edits = new Map([[ctx.rid(joined), { ...joined, v: '고침' }]]);
+  ctx.S.applied = new Map();
+  a.ok(ctx.rowMatch(ctx.S.rows[3], ctx.parseQuery('분류:도구')));         // "도구 이름" 라벨 부분일치
+  a.ok(!ctx.rowMatch(ctx.S.rows[3], ctx.parseQuery('분류:대사')));
+  a.ok(ctx.rowMatch(joined, ctx.parseQuery('맵:' + someMap)));            // 맵 번호
+  a.ok(ctx.rowMatch(joined, ctx.parseQuery('맵:어느마을')));              // 21절 이름으로도
+  a.ok(!ctx.rowMatch(ctx.S.rows[3], ctx.parseQuery('맵:' + someMap)));    // 맵 없는 절은 맵 태그에 안 걸린다
+  a.ok(ctx.rowMatch(joined, ctx.parseQuery('화자:' + realSpk.sp[spI])));
+  a.ok(!ctx.rowMatch(unjoined, ctx.parseQuery('화자:' + realSpk.sp[spI])));
+  a.ok(ctx.rowMatch(joined, ctx.parseQuery('상태:수정')));
+  a.ok(!ctx.rowMatch(unjoined, ctx.parseQuery('상태:수정')));
+  a.ok(ctx.rowMatch(ctx.S.rows[3], ctx.parseQuery('원문:poción 번역:상처')));
+  a.ok(!ctx.rowMatch(ctx.S.rows[3], ctx.parseQuery('상처 없는말')));      // 본문 낱말은 AND
+  // search(): 태그 조합이 실제 목록으로 떨어진다
+  el('q').value = '분류:도구 상처';
+  ctx.search();
+  a.equal(el('meta').textContent, '1행 매칭');
+  a.ok(el('out').innerHTML.includes('상처약'));
+  // 자동완성 값 후보: 분류·상태·맵 이름
+  a.ok(ctx.tagValues('분류', '도구').includes('도구 이름'));
+  a.deepEqual(ctx.tagValues('상태', ''), ['수정', '반영', '메모']);
+  a.ok(ctx.tagValues('맵', '어느').some(x => x.label.includes('어느마을')));
+  // 홈: 로고 클릭 — 검색어가 비워지고 홈 카드가 선다
+  ctx.S.dir = {};
+  ctx.goHome();
+  a.equal(el('q').value, '');
+  a.ok(el('out').innerHTML.includes('할 수 있는 일'));
+  ctx.S.edits = new Map();
 
   // ─ 내 수정 화면 ─
   // 메모 이전: 옛 판은 메모가 이력에만 있었다 — 첫 조회에서 활성 원장으로 옮기고, 같은 행은 최신이 남는다
