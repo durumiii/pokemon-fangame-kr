@@ -2,7 +2,12 @@
 const REPORT_FORM = {
   id: "1FAIpQLSfRZcs1AE9O9KvJZx5jpR-eQWm4ZKm4TCeHa759-M_ns5sGSg",
   entries: { sec:"entry.908760751", idx:"entry.1569162646", k:"entry.360216311",
-             v:"entry.1404070622", suggest:"entry.538219219", patch:"entry.266338952" },
+             v:"entry.1404070622", suggest:"entry.538219219", comment:"entry.266338952",
+             patch:"entry.1352350096" },
+};
+// 인라인 SVG만 쓴다 — 이모지는 기기마다 다른 그림이고 외부 아이콘은 오프라인에서 깨진다
+const ICON = {
+  flag: '<svg width=13 height=13 viewBox="0 0 16 16" fill=none stroke=currentColor stroke-width=1.6 stroke-linejoin=round style="vertical-align:-1px"><path d="M3.5 14.5V1.5"/><path d="M3.5 2.5h8l-1.6 2.6 1.6 2.6h-8z" fill=currentColor fill-opacity=.25/></svg>',
 };
 const APP_VER = "studio-1";
 const SEC_LABEL = {0:"맵 대사",1:"포켓몬 이름",2:"분류",3:"도감 설명",4:"폼",
@@ -151,16 +156,16 @@ async function useFolder(dir){
   S.base = hadBak ? await sha12(await readFile(S.dir, 'Data/korean.dat.bak')) : S.sha;
   migrateEdits();
   const dropped = restoreEdits();
-  for (const id of ['q','secf','searchbtn','buildbtn','exportbtn','importbtn','restorebtn','histbtn'])
+  for (const id of ['q','secf','searchbtn','buildbtn','exportbtn','importbtn','restorebtn','histbtn','batchbtn'])
     $(id).disabled = false;
   $('secf').innerHTML = '<option value="">전체 분류</option>' +
     Object.entries(SEC_LABEL).map(([s,l])=>`<option value=${s}>${l}</option>`).join('');
-  $('meta').textContent = `${S.rows.length.toLocaleString()}행 로드 · 패치 ${S.meta ?? '(표식 없음 · '+S.sha+')'}` +
+  $('meta').textContent = metaBase() +
     (S.edits.size ? ` · 이어서 작업: 저장 ${S.edits.size}건 복원됨` : '') +
     (dropped ? ` · 패치 판이 바뀌어 ${dropped}건 제외` : '');
   if (dropped) toast(`패치 판이 바뀌어 옛 수정 ${dropped}건을 제외했어요 — 그 행들은 다시 고쳐주세요`, 6000);
-  $('out').innerHTML = '<div class=empty>어색한 문구를 검색해 바로 고치세요.</div>';
   updateDirty();
+  renderHome();
 }
 
 // ─── 검색·수정 ────────────────────────────────────────
@@ -168,7 +173,8 @@ let HITS=[], SHOWN=0; const STEP=50;
 $('q')?.addEventListener('keydown', e=>{ if(e.key==='Enter') search(); });
 
 function search(){
-  const q = $('q').value.trim(); if(!q) return;
+  const q = $('q').value.trim();
+  if (!q){ $('meta').textContent = metaBase(); renderHome(); return; }   // 검색어를 비우면 홈으로
   const sec = $('secf').value;
   HITS = S.rows.filter(r =>
     (sec==='' || r.sec===+sec) &&
@@ -179,12 +185,22 @@ function search(){
   if (HITS.length) more();
 }
 
+// 빈 제보를 막는다 — 수정(미빌드·반영됨)도 메모도 없는 행은 보낼 내용이 없다
+const canReport = id => !!(S.edits.has(id) || S.applied.has(id) || memoIndex().has(id));
+// 카드를 다시 그리지 않고 제보 버튼만 현재 상태에 맞춘다(입력 중인 글이 날아가지 않게)
+function syncReport(i){
+  const b = $('rp'+i);
+  if (!b) return;
+  b.disabled = !canReport(rid(HITS[i]));
+  b.title = b.disabled ? '수정하거나 메모를 남긴 행만 제보할 수 있어요' : '';
+}
 function card(r, i){
   const id = rid(r), e = S.edits.get(id);
   const v = e ? e.v : r.v;
   return `<div class="card ${e?'saved':''}" id=card${i}>
     <span class=chip>${SEC_LABEL[r.sec]??('절'+r.sec)}</span>${r.map!=null?`<span class=chip>맵 ${r.map}</span>`:''}${!e&&S.applied.has(id)?'<span class=chip>반영됨</span>':''}
-    ${REPORT_FORM.id?`<button class=ghost style="float:right" onclick=report(${i})>🚩 제보</button>`:''}
+    ${REPORT_FORM.id?`<button class=ghost id=rp${i} style="float:right" onclick=report(${i})
+      ${canReport(id)?'':'disabled title="수정하거나 메모를 남긴 행만 제보할 수 있어요"'}>${ICON.flag} 제보</button>`:''}
     ${r.k?`<div class=es>${esc(r.k)}</div>`:''}
     <textarea id=v${i} data-orig="${esc(r.v)}"
       onkeydown="if(event.ctrlKey&&event.key==='Enter')save(${i})">${esc(v)}</textarea>
@@ -222,20 +238,13 @@ function save(i){
   persist(); updateDirty();
   $('st'+i).className='st ok'; $('st'+i).textContent='저장됨';
   $('card'+i).classList.add('saved');
+  syncReport(i);
   toast('저장됨 — [빌드]를 누르면 게임에 반영돼요');
 }
-// 원버튼 제보 — 구글폼에 no-cors로 던진다(응답 확인 불가, 실패해도 toast로만 알림)
-async function report(i){
-  const r = HITS[i], val = $('v'+i).value;
-  const suggest = val !== r.v.replace(/\r\n?/g, '\n') ? val
-    : (prompt('제안 번역이나 한 줄 코멘트 (그냥 제보만 하려면 비워두세요)') ?? '');
-  const fd = new FormData();
-  const E = REPORT_FORM.entries;
-  fd.append(E.sec, `${r.sec}:${SEC_LABEL[r.sec] ?? ''}`);
-  fd.append(E.idx, `${r.map ?? ''}:${r.idx}`);
-  fd.append(E.k, r.k ?? '');
-  fd.append(E.v, r.v);
-  fd.append(E.suggest, suggest);
+// 구글폼에 no-cors로 던진다(응답 확인 불가, 실패해도 toast로만 알림)
+async function sendForm(vals){
+  const fd = new FormData(), E = REPORT_FORM.entries;
+  for (const [k, v] of Object.entries(vals)) fd.append(E[k], v);
   fd.append(E.patch, `${S.meta ?? 'hash:'+S.sha} / ${APP_VER}`);
   try {
     await fetch(`https://docs.google.com/forms/d/e/${REPORT_FORM.id}/formResponse`,
@@ -244,6 +253,36 @@ async function report(i){
   } catch {
     toast('전송이 안 됐어요 — 인터넷 연결을 확인해 주세요', 5000);
   }
+}
+// 제안=내가 저장한 번역, 코멘트=그 행 메모(없으면 물어본다). 제보는 사본이라 보낸 뒤에도 데이터는 그대로다
+async function report(i){
+  const r = HITS[i], id = rid(r);
+  const e = S.edits.get(id) ?? S.applied.get(id);
+  const m = memoIndex().get(id);
+  const comment = m ? m.text : prompt('이 행에 남길 한 줄 코멘트 (그냥 제보만 하려면 비워두세요)');
+  if (comment === null) return;   // 취소 — 전송하지 않는다
+  await sendForm({sec:`${r.sec}:${SEC_LABEL[r.sec] ?? ''}`, idx:`${r.map ?? ''}:${r.idx}`,
+                  k:r.k ?? '', v:r.v, suggest: e ? e.v : '', comment});
+}
+// 폼 한 칸에 들어갈 수 있는 길이 — 넘치면 잘리는 대신 잘렸다고 알린다
+const FIELD_CAP = 30000;
+const cut = s => s.length > FIELD_CAP ? s.slice(0, FIELD_CAP) + '…(이하 생략)' : s;
+function batchParts(){
+  const all = new Map([...S.applied, ...S.edits]);   // 같은 행은 미빌드분이 이긴다
+  const memos = memoIndex();
+  const byId = new Map(S.rows.map(r=>[rid(r), r]));
+  return {
+    n: all.size + memos.size,
+    suggest: [...all].map(([id, e]) =>
+      `[${SEC_LABEL[e.sec] ?? '절'+e.sec}] ${e.k || byId.get(id)?.v || ''} → ${e.v}`).join('\n'),
+    comment: [...memos.values()].map(m => `[메모] ${m.k ?? ''}: ${m.text}`).join('\n'),
+  };
+}
+async function batchReport(){
+  const p = batchParts();
+  if (!p.n){ toast('보낼 수정이나 메모가 없어요'); return; }
+  await sendForm({sec:`일괄 ${p.n}건`, idx:'', k:'', v:'',
+                  suggest: cut(p.suggest), comment: cut(p.comment)});
 }
 function persist(){
   localStorage.setItem('edits:'+S.base, JSON.stringify([...S.edits.values()]));
@@ -265,6 +304,7 @@ function loadStore(prefix){
 }
 // 버린 건수를 돌려준다
 function restoreEdits(){
+  MEMOS = null;                    // 기준(S.base)이 바뀌면 메모 캐시도 다른 원장의 것이다
   const {m, dropped} = loadStore('edits');
   S.edits = m;
   S.applied = loadStore('applied').m;
@@ -285,6 +325,16 @@ function hist(ev){
   const a = histAll();
   a.push({t:new Date().toISOString(), ...ev});
   try { localStorage.setItem('hist:'+S.base, JSON.stringify(a)); } catch {}
+  MEMOS = null;
+}
+// 행마다 이력을 다시 파싱하면 카드 50장에 50번 읽는다 — 최신 메모만 rid로 뽑아 캐시한다
+let MEMOS = null;
+function memoIndex(){
+  if (!MEMOS){
+    MEMOS = new Map();
+    for (const e of histAll()) if (e.type === 'memo') MEMOS.set(e.rid, {text:e.text, k:e.k});
+  }
+  return MEMOS;
 }
 function memo(i){
   const r = HITS[i], text = $('m'+i).value.trim();
@@ -292,6 +342,8 @@ function memo(i){
   hist({type:'memo', rid:rid(r), k:r.k, text});
   $('m'+i).value = '';
   $('st'+i).className='st ok'; $('st'+i).textContent='메모 남김';
+  syncReport(i);
+  updateDirty();   // 메모만 남겨도 제보할 거리가 생긴다
   toast('메모를 이력에 남겼어요 — 빌드에는 들어가지 않아요');
 }
 const HIST_LABEL = {edit:'수정', memo:'메모', build:'빌드', restore:'복원', import:'가져오기'};
@@ -315,6 +367,26 @@ function updateDirty(){
   const d = $('dirty'), n = S.edits.size;
   d.style.display = n ? 'inline-block' : 'none';
   if (n) d.textContent = `저장 ${n}건 — 빌드 필요`;
+  $('batchbtn').disabled = !(n || S.applied.size || memoIndex().size);
+}
+
+// ─── 홈 ───────────────────────────────────────────────
+// 검색 전·검색어를 비웠을 때의 빈 화면 자리 — 지금 상태와 할 수 있는 일을 그대로 둔다
+const metaBase = () => `${S.rows.length.toLocaleString()}행 로드 · 패치 ${S.meta ?? '(표식 없음 · '+S.sha+')'}`;
+function renderHome(){
+  const recent = histAll().slice(-5).reverse();
+  const line = (label, desc, fn) =>
+    `<div class=rowbar><button class=ghost onclick=${fn}>${label}</button><span class=es>${desc}</span></div>`;
+  $('out').innerHTML = `<div class=card>
+    <span class=chip>대기 ${S.edits.size}건</span><span class=chip>반영됨 ${S.applied.size}건</span><span class=chip>메모 ${memoIndex().size}건</span>
+    <div class=es>어색한 문구를 검색해 바로 고치세요.</div></div>
+    <div class=card><div>최근 이력</div>${
+      recent.length ? recent.map(e=>`<div class=es>${new Date(e.t).toLocaleString('ko-KR')} · ${HIST_LABEL[e.type] ?? e.type}${e.k?' · '+esc(e.k):''}</div>`).join('')
+        : '<div class=es>아직 이력이 없어요 — 수정·메모·빌드가 여기에 쌓여요.</div>'}</div>
+    <div class=card><div>할 수 있는 일</div>
+      ${line('모아서 제보', '저장한 수정과 메모를 한 번에 보내요.', 'batchReport()')}
+      ${line('내보내기', '고침 파일로 내려받아 다른 사람과 나눠요.', 'exportFix()')}
+      ${line('이력', '지금까지의 수정·메모·빌드를 모두 봐요.', 'showHist()')}</div>`;
 }
 
 // ─── 빌드·복원 ────────────────────────────────────────
@@ -448,8 +520,8 @@ async function restoreMenu(){
     `<div class=rowbar><button class=ghost onclick=cancelRestore()>취소</button></div>`;
 }
 function cancelRestore(){
-  $('out').innerHTML = '<div class=empty>어색한 문구를 검색해 바로 고치세요.</div>';
-  $('meta').textContent = `${S.rows.length.toLocaleString()}행 로드 · 패치 ${S.meta ?? '(표식 없음 · '+S.sha+')'}`;
+  $('meta').textContent = metaBase();
+  renderHome();
 }
 
 // 복원한 파일을 화면 상태에 반영하기 전까지 빌드·내보내기를 막는다 —

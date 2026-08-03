@@ -50,7 +50,8 @@ vm.runInContext(src + `
 ;globalThis.X = {rid, esc, MARKUP, S, persist, restoreEdits, save, build, report,
   exportFix, importFix, showConflicts, pickConflict, CONFLICTS, REPORT_FORM,
   idbGet, idbSet, reopenFolder, migrateEdits, hist, histAll, memo, showHist,
-  doRestore, reloadAfterRestore,
+  doRestore, reloadAfterRestore, batchReport, batchParts, canReport, card,
+  memoIndex, renderHome, updateDirty, FIELD_CAP,
   setHits: h => { HITS = h; }};
 function readFile(){ return globalThis.__fsFile; }
 function writeFile(){}
@@ -286,9 +287,10 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   a.equal(el('buildbtn').disabled, false);
   a.equal(el('exportbtn').disabled, false);
 
-  // 제보: 6필드가 FormData에 담기고 no-cors POST로 fetch가 불려야 한다
+  // 제보: 7필드가 FormData에 담기고 no-cors POST로 fetch가 불려야 한다
   ctx.REPORT_FORM.id = 'formid123';
-  Object.assign(ctx.REPORT_FORM.entries, {sec:'e.sec', idx:'e.idx', k:'e.k', v:'e.v', suggest:'e.suggest', patch:'e.patch'});
+  Object.assign(ctx.REPORT_FORM.entries, {sec:'e.sec', idx:'e.idx', k:'e.k', v:'e.v',
+    suggest:'e.suggest', comment:'e.comment', patch:'e.patch'});
   ctx.S.meta = null; ctx.S.sha = 'reportsha';
   const reportRow = { sec: 3, map: 7, idx: 9, k: '원문키', v: '원문값' };
   ctx.setHits([reportRow]);
@@ -302,8 +304,87 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   a.equal(fd.get('e.idx'), '7:9');
   a.equal(fd.get('e.k'), '원문키');
   a.equal(fd.get('e.v'), '원문값');
-  a.equal(fd.get('e.suggest'), '');                                   // 무편집이면 빈 코멘트
+  a.equal(fd.get('e.suggest'), '');                                   // 저장한 수정이 없으면 빈 제안
+  a.equal(fd.get('e.comment'), '');                                   // 메모가 없으면 prompt 결과(빈 문자열)
   a.equal(fd.get('e.patch'), 'hash:reportsha / studio-1');            // meta 없으면 hash:sha로 대체
+
+  // 제안=내가 저장한 번역, 코멘트=그 행 메모 — 둘 다 있으면 물어보지 않는다
+  ctx.S.rows = [reportRow];
+  ctx.S.edits = new Map([['3:7:9', { sec: 3, map: 7, idx: 9, k: '원문키', v: '내가고친값' }]]);
+  ctx.S.applied = new Map();
+  ctx.hist({ type: 'memo', rid: '3:7:9', k: '원문키', text: '어투 확인 필요' });
+  ctx.prompt = () => { throw new Error('메모가 있으면 물어보면 안 된다'); };
+  await ctx.report(0);
+  const fd2 = ctx.__lastFetch[1].body._m;
+  a.equal(fd2.get('e.suggest'), '내가고친값');
+  a.equal(fd2.get('e.comment'), '어투 확인 필요');
+
+  // 제보 prompt 취소(null)는 전송하지 않는다
+  ctx.S.edits = new Map();
+  ctx.S.rows = [{ sec: 3, map: 7, idx: 9, k: '원문키', v: '원문값' }];
+  const noMemoRow = { sec: 5, map: null, idx: 1, k: '메모없는키', v: '메모없는값' };
+  ctx.setHits([noMemoRow]);
+  ctx.prompt = () => null;
+  ctx.__lastFetch = null;
+  await ctx.report(0);
+  a.equal(ctx.__lastFetch, null);                                     // fetch 자체가 안 불린다
+  ctx.prompt = () => '';
+
+  // 제보 버튼 비활성: 수정도 메모도 없는 행만 잠긴다
+  a.equal(ctx.canReport('5:-1:1'), false);
+  a.ok(ctx.card(noMemoRow, 0).includes('disabled'));
+  a.ok(ctx.card(noMemoRow, 0).includes('수정하거나 메모를 남긴 행만'));
+  a.equal(ctx.canReport('3:7:9'), true);                              // 메모가 있으면 열린다
+  ctx.setHits([reportRow]);
+  a.ok(!ctx.card(reportRow, 0).includes('disabled'));
+  ctx.S.applied = new Map([['5:-1:1', { sec: 5, map: null, idx: 1, k: '메모없는키', v: '반영된값' }]]);
+  a.equal(ctx.canReport('5:-1:1'), true);                             // 반영됨(applied)도 제보 재료
+  ctx.S.applied = new Map();
+
+  // 일괄 제보: 수정 덤프 + 메모 덤프 + 분류 "일괄 N건"
+  ctx.S.rows = [reportRow, { sec: 0, map: 1, idx: 2, k: '', v: '키없는원문' }];
+  ctx.S.edits = new Map([['3:7:9', { sec: 3, map: 7, idx: 9, k: '원문키', v: '수정A' }]]);
+  ctx.S.applied = new Map([['0:1:2', { sec: 0, map: 1, idx: 2, k: '', v: '수정B' }]]);
+  const parts = ctx.batchParts();
+  a.equal(parts.n, 3);                                                 // 수정 2 + 메모 1
+  a.deepEqual(parts.suggest.split('\n').sort(),
+    ['[도감 설명] 원문키 → 수정A', '[맵 대사] 키없는원문 → 수정B'].sort());   // k 없으면 현재 번역문을 원문 자리에
+  a.equal(parts.comment, '[메모] 원문키: 어투 확인 필요');
+  await ctx.batchReport();
+  const fd3 = ctx.__lastFetch[1].body._m;
+  a.equal(fd3.get('e.sec'), '일괄 3건');
+  a.equal(fd3.get('e.idx'), ''); a.equal(fd3.get('e.k'), ''); a.equal(fd3.get('e.v'), '');
+  a.equal(fd3.get('e.patch'), 'hash:reportsha / studio-1');            // 패치 표식은 개별 제보와 같은 형식
+
+  // 30,000자 절단
+  ctx.S.edits = new Map([['3:7:9', { sec: 3, map: 7, idx: 9, k: '원문키', v: 'x'.repeat(40000) }]]);
+  await ctx.batchReport();
+  const longSuggest = ctx.__lastFetch[1].body._m.get('e.suggest');
+  a.equal(longSuggest.length, ctx.FIELD_CAP + '…(이하 생략)'.length);
+  a.ok(longSuggest.endsWith('…(이하 생략)'));
+
+  // 보낼 게 없으면 전송하지 않고 버튼도 잠긴다
+  ctx.S.edits = new Map(); ctx.S.applied = new Map();
+  ctx.localStorage.removeItem('hist:' + ctx.S.base);
+  ctx.memoIndex().clear();
+  ctx.updateDirty();
+  a.equal(el('batchbtn').disabled, true);
+  ctx.__lastFetch = null;
+  await ctx.batchReport();
+  a.equal(ctx.__lastFetch, null);
+  a.equal(el('toast').textContent, '보낼 수정이나 메모가 없어요');
+
+  // 홈 화면: 상태 요약 수치가 지금 상태와 맞아야 한다
+  ctx.S.rows = [reportRow];
+  ctx.S.edits = new Map([['3:7:9', { sec: 3, map: 7, idx: 9, k: '원문키', v: '수정A' }]]);
+  ctx.S.applied = new Map([['0:1:2', { sec: 0, map: 1, idx: 2, k: '', v: '수정B' }]]);
+  ctx.hist({ type: 'memo', rid: '3:7:9', k: '원문키', text: '메모1' });
+  ctx.renderHome();
+  const home = el('out').innerHTML;
+  a.ok(home.includes('대기 1건') && home.includes('반영됨 1건') && home.includes('메모 1건'));
+  a.ok(home.includes('모아서 제보') && home.includes('내보내기') && home.includes('이력'));
+  ctx.updateDirty();
+  a.equal(el('batchbtn').disabled, false);
 
   // 폴더 핸들 보존: IndexedDB 왕복 + 권한 거부 시 폴백
   a.equal(await ctx.idbGet('dirHandle'), undefined);          // 처음엔 비어 있다
