@@ -12,7 +12,7 @@ const SEC_LABEL = {0:"맵 대사",1:"포켓몬 이름",2:"분류",3:"도감 설�
  20:"장소 설명",21:"맵 이름",22:"전화",23:"시스템 문구"};
 
 const $ = id => document.getElementById(id);
-const S = { dir:null, rows:[], sha:"", meta:null, edits:new Map(), py:null, core:null };
+const S = { dir:null, rows:[], sha:"", base:"", meta:null, edits:new Map(), py:null, core:null };
 const rid = r => `${r.sec}:${r.map ?? -1}:${r.idx}`;
 
 function toast(m, ms=2600){ const t=$('toast'); t.textContent=m; t.classList.add('show');
@@ -68,6 +68,11 @@ async function writeFile(dir, path, bytes){
   const fh = await h.getFileHandle(parts.at(-1), {create:true});
   const w = await fh.createWritable();
   await w.write(bytes); await w.close();
+}
+// core.py의 sha와 같은 모양(sha256 앞 12자) — 순정 원본을 저장 키로 삼는다
+async function sha12(bytes){
+  const h = await crypto.subtle.digest('SHA-256', bytes);
+  return [...new Uint8Array(h)].map(b=>b.toString(16).padStart(2,'0')).join('').slice(0,12);
 }
 // 핸들만 확인한다 — 내용을 읽어 판정하면 잠긴 파일이 "없음"이 되어 백업을 덮어쓴다
 async function exists(dir, path){
@@ -135,12 +140,14 @@ async function useFolder(dir){
   $('meta').textContent = '번역 데이터 읽는 중...';
   const dat = await readFile(S.dir, 'Data/korean.dat');
   // 순정 원본 1회 보존 — 이미 있으면 절대 덮어쓰지 않는다
-  if (!await exists(S.dir, 'Data/korean.dat.bak')){
-    await writeFile(S.dir, 'Data/korean.dat.bak', dat);
-  }
+  const hadBak = await exists(S.dir, 'Data/korean.dat.bak');
+  if (!hadBak) await writeFile(S.dir, 'Data/korean.dat.bak', dat);
   await loadCore(dat);
+  // 저장 키는 빌드마다 바뀌는 현재 sha가 아니라 순정 원본 sha로 고정한다
+  S.base = hadBak ? await sha12(await readFile(S.dir, 'Data/korean.dat.bak')) : S.sha;
+  migrateEdits();
   restoreEdits();
-  for (const id of ['q','secf','searchbtn','buildbtn','exportbtn','importbtn','restorebtn'])
+  for (const id of ['q','secf','searchbtn','buildbtn','exportbtn','importbtn','restorebtn','histbtn'])
     $(id).disabled = false;
   $('secf').innerHTML = '<option value="">전체 분류</option>' +
     Object.entries(SEC_LABEL).map(([s,l])=>`<option value=${s}>${l}</option>`).join('');
@@ -179,6 +186,11 @@ function card(r, i){
       <button class=primary onclick=save(${i})>저장</button>
       <button class=ghost onclick="$('v'+${i}).value=$('v'+${i}).dataset.orig">원래대로</button>
       <span class=st id=st${i}></span>
+    </div>
+    <div class=rowbar>
+      <input type=text class=memoin id=m${i} placeholder="메모 — 이력에만 남아요"
+        onkeydown="if(event.key==='Enter')memo(${i})">
+      <button class=ghost onclick=memo(${i})>메모</button>
     </div></div>`;
 }
 function more(){
@@ -197,8 +209,10 @@ function save(i){
   if (lost.length && !confirm(`색·이름 코드가 사라졌어요: ${lost.join(' ')}\n지우면 화면이 깨질 수 있어요. 그래도 저장할까요?`))
     return;
   // textarea는 CR/CRLF를 LF로 접어 돌려준다 — 안 고친 행이 수정으로 잡히지 않게 같은 모양끼리 비교
+  const prev = S.edits.get(rid(r));
   if (v === r.v.replace(/\r\n?/g, '\n')) S.edits.delete(rid(r));
   else S.edits.set(rid(r), {sec:r.sec, map:r.map, idx:r.idx, k:r.k, v});
+  hist({type:'edit', rid:rid(r), k:r.k, old:prev ? prev.v : r.v, new:v});
   persist(); updateDirty();
   $('st'+i).className='st ok'; $('st'+i).textContent='저장됨';
   $('card'+i).classList.add('saved');
@@ -226,12 +240,53 @@ async function report(i){
   }
 }
 function persist(){
-  localStorage.setItem('edits:'+S.sha, JSON.stringify([...S.edits.values()]));
+  localStorage.setItem('edits:'+S.base, JSON.stringify([...S.edits.values()]));
 }
 function restoreEdits(){
   S.edits = new Map();
-  for (const e of JSON.parse(localStorage.getItem('edits:'+S.sha) ?? '[]'))
+  for (const e of JSON.parse(localStorage.getItem('edits:'+S.base) ?? '[]'))
     S.edits.set(rid(e), e);
+}
+// 옛 판(현재 dat sha 기준)의 저장분을 순정 기준 키로 1회 옮긴다
+function migrateEdits(){
+  const old = 'edits:'+S.sha;
+  if (S.sha === S.base || !localStorage.getItem(old)) return;
+  if (!localStorage.getItem('edits:'+S.base)) localStorage.setItem('edits:'+S.base, localStorage.getItem(old));
+  localStorage.removeItem(old);
+}
+
+// ─── 이력 원장 ────────────────────────────────────────
+// append-only — 같은 행을 여러 번 고치면 이벤트도 그만큼 쌓인다
+function histAll(){ try { return JSON.parse(localStorage.getItem('hist:'+S.base) ?? '[]'); } catch { return []; } }
+function hist(ev){
+  const a = histAll();
+  a.push({t:new Date().toISOString(), ...ev});
+  try { localStorage.setItem('hist:'+S.base, JSON.stringify(a)); } catch {}
+}
+function memo(i){
+  const r = HITS[i], text = $('m'+i).value.trim();
+  if (!text){ toast('메모 내용을 적어주세요'); return; }
+  hist({type:'memo', rid:rid(r), k:r.k, text});
+  $('m'+i).value = '';
+  $('st'+i).className='st ok'; $('st'+i).textContent='메모 남김';
+  toast('메모를 이력에 남겼어요 — 빌드에는 들어가지 않아요');
+}
+const HIST_LABEL = {edit:'수정', memo:'메모', build:'빌드', restore:'복원', import:'가져오기'};
+function histBody(e){
+  if (e.type === 'edit') return `<div class=es>${esc(e.old)}</div><div>→ ${esc(e.new)}</div>`;
+  if (e.type === 'memo') return `<div>${esc(e.text)}</div>`;
+  if (e.type === 'build') return `<div>${e.n}건 반영</div>`;
+  if (e.type === 'import') return `<div>${e.n}건 병합</div>`;
+  if (e.type === 'restore') return `<div>${esc(e.src)}</div>`;
+  return '';
+}
+function showHist(){
+  const all = histAll();
+  $('meta').textContent = `이력 ${all.length}건 (순정 기준 ${S.base})`;
+  $('out').innerHTML = all.length ? [...all].reverse().map(e=>`<div class=card>
+    <span class=chip>${new Date(e.t).toLocaleString('ko-KR')}</span><span class=chip>${HIST_LABEL[e.type] ?? e.type}</span>
+    ${e.k?`<div class=es>${esc(e.k)}</div>`:''}${histBody(e)}</div>`).join('')
+    : '<div class=empty>아직 이력이 없어요 — 수정·메모·빌드가 여기에 쌓여요.</div>';
 }
 function updateDirty(){
   const d = $('dirty'), n = S.edits.size;
@@ -243,7 +298,7 @@ function updateDirty(){
 async function build(){
   if (!S.edits.size){ toast('저장된 수정이 없어요'); return; }
   const b = $('buildbtn'); b.disabled = true; b.textContent = '빌드 중...';
-  const n = S.edits.size, prevSha = S.sha;
+  const n = S.edits.size;
   let wrote = false;
   try {
     const out = await pyBuild([...S.edits.values()]);
@@ -252,12 +307,12 @@ async function build(){
     await writeFile(S.dir, 'Data/korean.dat.prev', cur);
     await writeFile(S.dir, 'Data/korean.dat', out);
     wrote = true;
-    // 빌드 산출물로 상태 재동기화 — sha가 바뀌므로 반영 끝난 edits는 비운다(중복 적용 방지)
+    // 빌드 산출물로 상태 재동기화 — 반영 끝난 edits는 비운다(중복 적용 방지). 저장 키는 순정 기준이라 그대로다
     await loadCore(out);
-    localStorage.removeItem('edits:'+prevSha);
     S.edits = new Map();
     persist();
     updateDirty();
+    hist({type:'build', n});
     toast(`빌드 완료 (${n}건 반영) — 게임을 재시작하면 보여요`, 4000);
   } catch (err) {
     if (wrote) {
@@ -306,6 +361,7 @@ function importFix(){
       applied++;
     }
     persist(); updateDirty();
+    hist({type:'import', n:applied});
     $('meta').textContent = `가져오기: ${applied}건 병합 · ${skipped}건 건너뜀(원문 불일치)` +
       (head?.patch && head.patch !== (S.meta ?? S.sha) ? ` · 주의: 다른 패치판(${head.patch})의 고침` : '');
     if (conflicts.length) showConflicts(conflicts);
@@ -338,6 +394,7 @@ async function restoreMenu(){
   const src = pick === '1' ? 'Data/korean.dat.bak' : pick === '2' && hasPrev ? 'Data/korean.dat.prev' : null;
   if (!src) return;
   await writeFile(S.dir, 'Data/korean.dat', await readFile(S.dir, src));
+  hist({type:'restore', src});
   toast('복원 완료 — 페이지를 새로고침해 다시 불러오세요', 5000);
 }
 

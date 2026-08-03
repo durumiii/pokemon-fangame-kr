@@ -49,7 +49,7 @@ vm.createContext(ctx);
 vm.runInContext(src + `
 ;globalThis.X = {rid, esc, MARKUP, S, persist, restoreEdits, save, build, report,
   exportFix, importFix, showConflicts, pickConflict, CONFLICTS, REPORT_FORM,
-  idbGet, idbSet, reopenFolder,
+  idbGet, idbSet, reopenFolder, migrateEdits, hist, histAll, memo, showHist,
   setHits: h => { HITS = h; }};
 function readFile(){ return globalThis.__fsFile; }
 function writeFile(){}
@@ -65,12 +65,28 @@ const found = orig.match(ctx.MARKUP);
 a.deepEqual(found, ['\\c[2]', '{1}', '\\PN']);
 a.deepEqual(found.filter(t => !'안녕 {1}'.includes(t)), ['\\c[2]', '\\PN']);  // 사라진 코드만 경고
 
-ctx.S.sha = 'abc';
+ctx.S.sha = 'abc'; ctx.S.base = 'abc';
 ctx.S.edits = new Map([['0:1:2', { sec: 0, map: 1, idx: 2, k: 'x', v: 'y' }]]);
 ctx.persist();
 ctx.S.edits = new Map();
 ctx.restoreEdits();
 a.equal(ctx.S.edits.get('0:1:2').v, 'y');                   // localStorage 왕복
+
+// 기준 키 마이그레이션: 빌드된 dat(sha) 아래 있던 저장분이 순정 기준(base) 키로 1회 옮겨진다
+ctx.localStorage.setItem('edits:builtsha', JSON.stringify([{ sec: 0, map: 1, idx: 2, k: 'x', v: '옛저장' }]));
+ctx.S.sha = 'builtsha'; ctx.S.base = 'origbase';
+ctx.migrateEdits();
+a.equal(ctx.localStorage.getItem('edits:builtsha'), null);  // 옛 키는 사라지고
+ctx.restoreEdits();
+a.equal(ctx.S.edits.get('0:1:2').v, '옛저장');              // 새 기준 키에서 복원된다
+
+// 이력 원장: append-only — 같은 행을 두 번 고쳐도 이벤트가 각각 쌓인다
+ctx.hist({ type: 'edit', rid: '0:1:2', k: 'x', old: 'a', new: 'b' });
+ctx.hist({ type: 'edit', rid: '0:1:2', k: 'x', old: 'b', new: 'c' });
+const h = ctx.histAll();
+a.equal(h.length, 2);
+a.equal(h[1].new, 'c');
+a.ok(h[0].t && !Number.isNaN(Date.parse(h[0].t)));          // ISO 시각이 붙는다
 
 // CR이 든 값: textarea가 돌려주는 LF 형태로 저장을 눌러도 수정으로 잡히면 안 된다
 const cr = { sec: 23, idx: 5, v: '첫 줄\r\n둘째 줄' };
@@ -82,6 +98,19 @@ a.equal(ctx.S.edits.size, 0);
 el('v0').value = '고친 줄';                                // 진짜 수정은 잡혀야 한다
 ctx.save(0);
 a.equal(ctx.S.edits.get('23:-1:5').v, '고친 줄');
+a.deepEqual(                                               // 수정은 구→신으로 이력에 남는다
+  (({ type, rid, old, new: nv }) => ({ type, rid, old, new: nv }))(ctx.histAll().at(-1)),
+  { type: 'edit', rid: '23:-1:5', old: cr.v, new: '고친 줄' });
+
+// 메모: 이력에만 쌓이고 edits(빌드 대상)는 건드리지 않는다
+const editsBefore = ctx.S.edits.size;
+el('m0').value = '  이 대사 어투 확인 필요  ';
+ctx.memo(0);
+a.equal(ctx.S.edits.size, editsBefore);                    // 빌드에는 안 들어간다
+a.deepEqual(
+  (({ type, rid, text }) => ({ type, rid, text }))(ctx.histAll().at(-1)),
+  { type: 'memo', rid: '23:-1:5', text: '이 대사 어투 확인 필요' });   // 앞뒤 공백은 다듬어 저장
+a.equal(el('m0').value, '');                               // 입력칸은 비워진다
 
 // 내보내기: 헤더 1행 + 수정마다 1행, S.edits 값 그대로
 ctx.S.sha = 'expsha'; ctx.S.meta = null;
@@ -164,13 +193,14 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
     build_dat: () => new VMU8([9, 9]),                      // Uint8Array 분기 — pyBuild가 그대로 반환
     load_dat: () => JSON.stringify({ meta: null, sha: 'newsha', rows: [] }),
   };
-  ctx.S.sha = 'oldsha';
+  ctx.S.sha = 'oldsha'; ctx.S.base = 'buildbase';
   ctx.S.edits = new Map([['0:1:2', { sec: 0, map: 1, idx: 2, k: 'x', v: 'y' }]]);
-  ctx.localStorage.setItem('edits:oldsha', JSON.stringify([...ctx.S.edits.values()]));
+  ctx.persist();
   await ctx.build();
   a.equal(ctx.S.edits.size, 0);                             // 빌드 성공 시 edits 비움
-  a.equal(ctx.localStorage.getItem('edits:oldsha'), null);  // 옛 sha 키 제거
+  a.deepEqual(JSON.parse(ctx.localStorage.getItem('edits:buildbase')), []);  // 기준 키는 그대로, 내용만 비움
   a.equal(ctx.S.sha, 'newsha');                              // 새 dat로 상태 재동기화
+  a.deepEqual(ctx.histAll().at(-1).type, 'build');           // 빌드도 이력에 남는다
 
   // 제보: 6필드가 FormData에 담기고 no-cors POST로 fetch가 불려야 한다
   ctx.REPORT_FORM.id = 'formid123';
