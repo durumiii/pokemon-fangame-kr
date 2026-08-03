@@ -51,6 +51,19 @@ EDITS = [
      '_INTL("¿Qué habilidad quieres para {1}?",pokemon.name)'),
 ]
 
+# 이벤트 선택지(command_102) — 선택지 문자열이 번역 조회 없이 pbShowCommands로
+# 직행해 Sí/No가 스페인어로 노출되는 기능 버그(원장 「제보 6건」 첫 티켓).
+# Messages 절이 Interpreter/Game_Interpreter 양쪽에 같은 본문을 정의하므로
+# 한 EDIT이 2곳을 치환한다. 조회는 게임의 정규 사슬(현재 맵 해시 → 맵0 공통
+# 이벤트 폴백)을 그대로 탄다. 루비 1.8 문법 유의.
+EDITS += [
+    ("Messages",
+     "command=Kernel.pbShowCommands(nil,@list[@index].parameters[0],@list[@index].parameters[1])",
+     "command=Kernel.pbShowCommands(nil,@list[@index].parameters[0].collect{|c| "
+     "MessageTypes.getFromMapHash($game_map ? $game_map.map_id : 0,c)},"
+     "@list[@index].parameters[1])"),
+]
+
 # 부적(Amuleto) 18종 — pbAmuleto(116_PItem_ItemEffects)가 번역된 아이템 이름을
 # 스페인어 원문과 문자열 비교해 인카운터 스위치(280~297)를 켠다. 이름이
 # 한글화되면 영원히 거짓이 되는 기능 버그라, 이름 비교를 상수 비교로 수술한다.

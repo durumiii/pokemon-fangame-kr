@@ -302,11 +302,12 @@ sonnet 서브 3갈래 조사(증거 강제) 후 부모 재검증으로 처리. �
   Zoom:212 재정의)도 조회 없음. 추출은 돼 있어서 dat 절0에 Sí→네 쌍이 263개 맵
   +맵0(공통 이벤트 폴백)에 실려 있는데 표시 쪽이 안 읽는 구조 — 스크립트발 확인창
   (`_INTL("Si")`)만 절23으로 번역되고 이벤트 선택지는 전부 스페인어로 나온다.
-  **처방(층⑤)**: `share/patch_intl.py` EDITS로 command_102 양쪽에
-  `parameters[0].collect{|c| MessageTypes.getFromMapHash($game_map.map_id,c)}`
-  래핑(루비 1.8 문법). 맵 해시 미스 시 맵0 폴백은 엔진에 이미 있음
-  (Intl_Messages getFromMapHash). 재주입 후 실기: 아무 예/아니오 이벤트 +
-  Sí 키 없는 맵(4·6·7…212곳)에서 각 1회.
+  **수술 적용(2026-08-04)**: `share/patch_intl.py` EDITS에 command_102 치환 추가 —
+  선택지 배열을 `collect{|c| MessageTypes.getFromMapHash($game_map ? $game_map.map_id
+  : 0,c)}`로 래핑(루비 1.8 문법). 보관소·게임 양쪽 Messages 절 2곳씩 치환, 멱등
+  재실행 0곳, MOD 13섹션 보존 확인. 맵 해시 미스 시 맵0(공통 이벤트) 폴백은 엔진
+  기본 동작. **실기 대기**: 게임 부팅(=구문 검사) + 아무 예/아니오 이벤트에서
+  네/아니요 확인 + Sí 키 없는 맵(4·6·7 등 212곳)에서 1회.
 - **[중간] 맵271 대사 미번역 제보 — 데이터는 결백, 원인 미확정**: "Todavía no
   hemos tenido la oportunidad de…" 는 korean.dat·messages.dat 모두 맵271[49]
   한 곳뿐이고 번역돼 있으며(아직 동등한 조건에서…), 초기 이식 커밋부터 존재.
