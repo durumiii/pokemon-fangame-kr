@@ -55,7 +55,7 @@ def _embed_manifest(final: Path, name: str):
     """
     modkit_home = Path(
         os.environ.get("MODKIT_HOME")
-        or Path.home() / "workspace" / "claude-native" / "sketches" / "modkit"
+        or Path.home() / "workspace" / "claude-native" / "sketches" / "essentials-modkit"
     )
     if not (modkit_home / "modkit" / "manifest.py").exists():
         print(f"modkit을 찾지 못해 manifest.json을 건너뜁니다: {modkit_home}")
