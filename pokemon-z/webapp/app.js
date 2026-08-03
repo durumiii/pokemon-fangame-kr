@@ -20,6 +20,9 @@ function toast(m, ms=2600){ const t=$('toast'); t.textContent=m; t.classList.add
 function esc(s){ const d=document.createElement('div'); d.textContent=s ?? '';
   return d.innerHTML.replace(/"/g,'&quot;'); }
 
+// 비동기 경로의 예외가 콘솔에만 남고 화면은 멀쩡해 보이는 일을 막는다
+addEventListener('unhandledrejection', e => toast('오류: ' + (e.reason?.message ?? e.reason), 6000));
+
 async function bootPy(){
   if (S.py) return S.py;
   $('meta').textContent = '엔진 로드 중... (첫 방문은 수십 초, 이후 캐시)';
@@ -65,8 +68,15 @@ async function writeFile(dir, path, bytes){
   const w = await fh.createWritable();
   await w.write(bytes); await w.close();
 }
+// 핸들만 확인한다 — 내용을 읽어 판정하면 잠긴 파일이 "없음"이 되어 백업을 덮어쓴다
 async function exists(dir, path){
-  try { await readFile(dir, path); return true; } catch { return false; }
+  const parts = path.split('/');
+  try {
+    let h = dir;
+    for (const p of parts.slice(0,-1)) h = await h.getDirectoryHandle(p);
+    await h.getFileHandle(parts.at(-1));
+    return true;
+  } catch(e){ if (e.name === 'NotFoundError') return false; throw e; }
 }
 
 async function openFolder(){
@@ -143,7 +153,8 @@ function save(i){
   const lost = (r.v.match(MARKUP)||[]).filter(t => !v.includes(t));
   if (lost.length && !confirm(`색·이름 코드가 사라졌어요: ${lost.join(' ')}\n지우면 화면이 깨질 수 있어요. 그래도 저장할까요?`))
     return;
-  if (v === r.v) S.edits.delete(rid(r));
+  // textarea는 CR/CRLF를 LF로 접어 돌려준다 — 안 고친 행이 수정으로 잡히지 않게 같은 모양끼리 비교
+  if (v === r.v.replace(/\r\n?/g, '\n')) S.edits.delete(rid(r));
   else S.edits.set(rid(r), {sec:r.sec, map:r.map, idx:r.idx, k:r.k, v});
   persist(); updateDirty();
   $('st'+i).className='st ok'; $('st'+i).textContent='저장됨';
