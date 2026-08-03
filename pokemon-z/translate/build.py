@@ -54,6 +54,15 @@ def string_to_key(s):
 def main():
     dry = "--dry-run" in sys.argv
     d = load(open(STORE, "rb"))
+    # 재진입 가드: 이전 빌드가 심은 __kr_patch__ 표식은 정본 밖 —
+    # 짝 맞추기 전에 떼어낸다 (아래 표식 코드가 새로 심는다)
+    mkeys, mvalues = inner_of(d[23])
+    raw = [bytes(k) for k in mkeys]
+    if b"__kr_patch__" in raw:
+        mi_ = raw.index(b"__kr_patch__")
+        del mkeys[mi_]
+        del mvalues[mi_]
+        d[23]._private_data = rubywrite.dumps([mkeys, mvalues])
     files = {int(p.name[:2]): p for p in KO.glob("*.jsonl")
              if not p.name.endswith(".add.jsonl")}
     # 추가분: 게임 스크립트에는 있는데 korean.dat에 키가 아예 없는 문자열.

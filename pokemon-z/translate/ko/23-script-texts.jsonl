@@ -984,9 +984,9 @@
 {"k": "Judgment", "v": "판정"}
 {"k": "REFEREE: {1} VS {2}!\nCommence battling!\\wtnp[20]", "v": "REFEREE: {1} VS {2}!\nCommence battling!\\wtnp[20]"}
 {"k": "REFEREE: That's it! We will now go to judging to determine the winner!\\wtnp[20]", "v": "REFEREE: That's it! We will now go to judging to determine the winner!\\wtnp[20]"}
-{"k": "REFEREE: Judging category 1, Mind!\nThe Pokemon showing the most guts!\\wtnp[40]", "v": "REFEREE: Judging category 1, Mind!\nThe Pokemon showing the most guts!\\wtnp[40]"}
-{"k": "REFEREE: Judging category 2, Skill!\nThe Pokemon using moves the best!\\wtnp[40]", "v": "REFEREE: Judging category 2, Skill!\nThe Pokemon using moves the best!\\wtnp[40]"}
-{"k": "REFEREE: Judging category 3, Body!\nThe Pokemon with the most vitality!\\wtnp[40]", "v": "REFEREE: Judging category 3, Body!\nThe Pokemon with the most vitality!\\wtnp[40]"}
+{"k": "REFEREE: Judging category 1, Mind!\nThe Pokemon showing the most guts!\\wtnp[40]", "v": "심판: 심사 항목 1, 정신력!\n가장 근성 있는 포켓몬은!\\wtnp[40]"}
+{"k": "REFEREE: Judging category 2, Skill!\nThe Pokemon using moves the best!\\wtnp[40]", "v": "심판: 심사 항목 2, 기술!\n기술을 가장 잘 쓴 포켓몬은!\\wtnp[40]"}
+{"k": "REFEREE: Judging category 3, Body!\nThe Pokemon with the most vitality!\\wtnp[40]", "v": "심판: 심사 항목 3, 체력!\n가장 활력 넘치는 포켓몬은!\\wtnp[40]"}
 {"k": "REFEREE: Judgment: {1} to {2}!\nWe have a draw!\\wtnp[40]", "v": "심판: 판정 {1} 대 {2}!\n무승부입니다!\\wtnp[40]"}
 {"k": "REFEREE: Judgment: {1} to {2}!\nThe winner is {3}'s {4}!\\wtnp[40]", "v": "심판: 판정 {1} 대 {2}!\n승자는 {3}의 {4}!\\wtnp[40]"}
 {"k": "REFEREE: Judgment: {1} to {2}!\nThe winner is {3}!\\wtnp[40]", "v": "심판: 판정 {1} 대 {2}!\n승자는 {3}!\\wtnp[40]"}
@@ -2118,7 +2118,7 @@
 {"k": "Graphics/Pictures/Slot Machine/ReelOverlay", "v": "Graphics/Pictures/Slot Machine/ReelOverlay"}
 {"k": "Graphics/Pictures/Slot Machine/numbers", "v": "Graphics/Pictures/Slot Machine/numbers"}
 {"k": "You've got 99,999 Coins.", "v": "동전을 99,999개 얻었습니다."}
-{"k": "You've run out of Coins.\nGame over!", "v": "You've run out of Coins.\nGame over!"}
+{"k": "You've run out of Coins.\nGame over!", "v": "코인이 다 떨어졌다!\n게임 오버!"}
 {"k": "It's a Slot Machine.", "v": "슬롯머신이다."}
 {"k": "You don't have any Coins to play!", "v": "게임에 사용할 동전이 없습니다!"}
 {"k": "Your Coin Case is full!", "v": "동전케이스가 가득 찼습니다!"}
@@ -2733,10 +2733,10 @@
 {"k": "El entrenador no ha sido definido, por lo tanto no puede ser mostrado.", "v": "트레이너가 정의되지 않아 표시할 수 없습니다."}
 {"k": "Por favor, consulta la documentación para aprender a configurar un entrenador.", "v": "트레이너 설정 방법은 문서를 참고하세요."}
 {"k": "Mochila", "v": "가방"}
-{"k": "Pasos: {1}/{2}\nBalls: {3}", "v": "Pasos: {1}/{2}\nBalls: {3}"}
+{"k": "Pasos: {1}/{2}\nBalls: {3}", "v": "걸음: {1}/{2}\n볼: {3}"}
 {"k": "Salir", "v": "나가기"}
 {"k": "Capturado: {1}\nNivel: {2}\nBalls: {3}", "v": "포획: {1}\n레벨: {2}\n볼: {3}"}
-{"k": "Capturado: Ninguno\nBalls: {1}", "v": "Capturado: Ninguno\nBalls: {1}"}
+{"k": "Capturado: Ninguno\nBalls: {1}", "v": "잡은 포켓몬: 없음\n볼: {1}"}
 {"k": "Guardar", "v": "리포트"}
 {"k": "Opciones", "v": "설정"}
 {"k": "Depurador", "v": "디버거"}
@@ -2944,7 +2944,7 @@
 {"k": "Setear IVs", "v": "개체값 설정"}
 {"k": "¿Cuál EV cambiar?", "v": "어떤 노력치를 바꿀까?"}
 {"k": "SEstablecer el EV para {1} (máx. {2}).", "v": "{1}의 노력치를 설정한다 (최대 {2})."}
-{"k": "Poder Oculto:\n{1}, potencia {2}.", "v": "Poder Oculto:\n{1}, potencia {2}."}
+{"k": "Poder Oculto:\n{1}, potencia {2}.", "v": "잠재파워:\n{1}, 위력 {2}."}
 {"k": "Hacer aleatorio", "v": "랜덤으로"}
 {"k": "Establecer el IV para {1} (máx. 31).", "v": "{1}의 개체값을 설정한다 (최대 31)."}
 {"k": "{1} no tiene Pokérus.", "v": "{1}\\j[은,는] 포케루스가 없다."}
@@ -3112,8 +3112,8 @@
 {"k": "Bolsillo inválido: {1}", "v": "잘못된 포켓: {1}"}
 {"k": "El número de objeto no es válido.", "v": "올바르지 않은 도구 번호입니다."}
 {"k": "Cerrar almacenamiento.", "v": "보관함을 닫는다."}
-{"k": "Sacar\nobjeto", "v": "Sacar\nobjeto"}
-{"k": "Tirar\nobjeto", "v": "Tirar\nobjeto"}
+{"k": "Sacar\nobjeto", "v": "꺼내기"}
+{"k": "Tirar\nobjeto", "v": "버리기"}
 {"k": "¿Cuántas unidades de {1} quieres tirar?", "v": "{1}\\j[을,를] 몇 개 버릴까?"}
 {"k": "Mapa", "v": "타운맵"}
 {"k": "Celular", "v": "휴대전화"}
@@ -3396,7 +3396,7 @@
 {"k": "FLUJO", "v": "플로우"}
 {"k": "RITMO", "v": "리듬"}
 {"k": "Salir de la tienda.", "v": "상점에서 나간다."}
-{"k": "Dinero:\n<r>${1}", "v": "Dinero:\n<r>${1}"}
+{"k": "Dinero:\n<r>${1}", "v": "소지금:\n<r>${1}"}
 {"k": "No tienes el dinero suficiente.", "v": "돈이 부족하군요."}
 {"k": "{1} es una buena elección.\nTe costará ${2}. ¿De acuerdo?", "v": "{1}, 좋은 선택이야.\r\n${2}인데 괜찮겠어?"}
 {"k": "¿{1}? Buena elección.\n¿Cuántas unidades quieres?", "v": "{1}? 좋은 선택이야.\r\n몇 개 필요해?"}
@@ -3688,8 +3688,8 @@
 {"k": "Pokédex Nacional", "v": "전국 도감"}
 {"k": "Campo entrecomillado inválido (en: {1})", "v": "잘못된 큰따옴표 필드 (위치: {1})"}
 {"k": "Campo {1} no es un entero positivo", "v": "필드 {1}\\j[은,는] 양의 정수가 아님"}
-{"k": "Dinero:\n<ar>{1}</ar>", "v": "Dinero:\n<ar>{1}</ar>"}
-{"k": "Monedas:\n<ar>{1}</ar>", "v": "Monedas:\n<ar>{1}</ar>"}
+{"k": "Dinero:\n<ar>{1}</ar>", "v": "소지금:\n<ar>{1}</ar>"}
+{"k": "Monedas:\n<ar>{1}</ar>", "v": "코인:\n<ar>{1}</ar>"}
 {"k": "Ingresar texto usando el teclado. Presionar\nESC para cancelar o INTRO para confirmar.", "v": "키보드로 입력하세요.\nESC로 취소, ENTER로 확정합니다."}
 {"k": "Ingresar texto usando el teclado.\nPresionar INTRO para confirmar.", "v": "키보드로 입력하세요.\nENTER를 누르면 확정됩니다."}
 {"k": "MAYÚS", "v": "MAYÚS"}
@@ -4510,7 +4510,7 @@
 {"k": "¡{1} ha Mega Evolucionado en {2}!", "v": "{1}\\j[이,가] {2}\\j[으로,로] 메가진화했다!"}
 {"k": "¡{1} ha esperimentado una Regresión Primigenia y ha recobrado su apariencia primitiva!", "v": "{1}\\j[이,가] 원시회귀를 일으켜 태고의 모습을 되찾았다!"}
 {"k": "¡{1} ha llamado a {2}!", "v": "{1}\\j[이,가] {2}\\j[을,를] 불렀다!"}
-{"k": "¡{1}!", "v": "¡{1}!"}
+{"k": "¡{1}!", "v": "{1}!"}
 {"k": "¡{1} recobró el sentido tras la llamada de su Entrenador!", "v": "트레이너가 부르자 {1}\\j[이,가] 정신을 차렸다!"}
 {"k": "¡El resto del equipo también ha ganado Puntos de Experiencia gracias al {1}!", "v": "{1} 덕분에 파티의 나머지도 경험치를 얻었다!"}
 {"k": "¡{1} ha ganado un total de {2} Puntos de Experiencia!", "v": "{1}\\j[은,는] 경험치를 모두 {2}만큼 얻었다!"}
