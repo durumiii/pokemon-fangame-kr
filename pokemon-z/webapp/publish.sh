@@ -9,7 +9,7 @@ trap 'rm -rf "$TMP"' EXIT
 gh repo view "$REPO" >/dev/null 2>&1 || gh repo create "$REPO" --public
 git clone "https://github.com/$REPO" "$TMP" 2>/dev/null
 rsync -a --delete \
-  --exclude .git --exclude tests --exclude publish.sh \
+  --exclude .git --exclude tests --exclude AGENTS.md --exclude publish.sh \
   --exclude vendor/rubymarshal/tests --exclude __pycache__ \
   --exclude .pytest_cache \
   ./ "$TMP/"
