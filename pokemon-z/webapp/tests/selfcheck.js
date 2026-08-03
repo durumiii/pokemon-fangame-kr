@@ -623,6 +623,13 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   a.ok(ctx.rowMatch(ctx.S.rows[3], ctx.parseQuery('분류:도구')));         // "도구 이름" 라벨 부분일치
   a.ok(!ctx.rowMatch(ctx.S.rows[3], ctx.parseQuery('분류:대사')));
   a.ok(ctx.rowMatch(joined, ctx.parseQuery('맵:' + someMap)));            // 맵 번호
+  // 숫자 맵 태그는 정확 일치만 — 「맵:1」이 137이나 이름 속 숫자에 걸리면 안 된다
+  ctx.S.rows.push({ sec: 0, map: 137, idx: 0, k: 'k137', v: 'v137' },
+                  { sec: 21, idx: 137, v: '1번째마을' });
+  a.ok(!ctx.rowMatch(ctx.S.rows.at(-2), ctx.parseQuery('맵:1')));
+  a.ok(!ctx.tagValues('맵', '1').some(x => x.v === '137'));               // 자동완성도 접두 확장 금지
+  a.ok(ctx.tagValues('맵', '137').some(x => x.v === '137'));
+  ctx.S.rows.length -= 2;
   a.ok(ctx.rowMatch(joined, ctx.parseQuery('맵:어느마을')));              // 21절 이름으로도
   a.ok(!ctx.rowMatch(ctx.S.rows[3], ctx.parseQuery('맵:' + someMap)));    // 맵 없는 절은 맵 태그에 안 걸린다
   a.ok(ctx.rowMatch(joined, ctx.parseQuery('화자:' + realSpk.sp[spI])));
