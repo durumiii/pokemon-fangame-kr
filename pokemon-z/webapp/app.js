@@ -33,16 +33,17 @@ addEventListener('unhandledrejection', e => toast('오류: ' + (e.reason?.messag
 // 페이지 로드 직후 미리 불러 두는 선시동과, 폴더를 고른 뒤의 실제 호출이 이 하나로 합류한다 —
 // 진행 중 promise를 저장해 두 번째 호출도 같은 promise를 기다린다(다운로드 중복 없음).
 // 실패하면 다음 호출이 재시도할 수 있게 저장을 비운다(오프라인 등으로 선시동만 실패한 경우).
-let bootPromise = null;
+let bootPromise = null, bootAnnounce = false;
 async function bootPy({announce=false}={}){
   if (S.py) return S.py;
+  if (announce) bootAnnounce = true;   // 선시동 뒤에 실제 호출이 합류해도 남은 단계는 화면에 뜨게
   if (bootPromise) return bootPromise;
   bootPromise = (async () => {
-    if (announce) $('meta').textContent = '엔진 내려받는 중(첫 방문 1회)...';
+    if (bootAnnounce) $('meta').textContent = '엔진 내려받는 중(첫 방문 1회)...';
     console.time('boot:download');
     const py = await loadPyodide();
     console.timeEnd('boot:download');
-    if (announce) $('meta').textContent = '엔진 시동...';
+    if (bootAnnounce) $('meta').textContent = '엔진 시동...';
     console.time('boot:init');
     try {
       // 파이썬 소스를 pyodide FS에 심는다

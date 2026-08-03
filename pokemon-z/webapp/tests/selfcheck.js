@@ -67,7 +67,8 @@ vm.runInContext(src + `
   setSpk: v => { SPK = v; MAPNAME = null; }, BROWSE_CAP,
   applyEdit, replaceMenu, replacePreview, replaceApply, replAll, REPL_CAP,
   replHits: () => REPL,
-  setHits: h => { HITS = h; }, bootPy};
+  setHits: h => { HITS = h; }, bootPy,
+  resetBoot: () => { bootPromise = null; bootAnnounce = false; }};
 function readFile(){ return globalThis.__fsFile; }
 function writeFile(){}
 `, ctx);
@@ -669,6 +670,27 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   a.ok(el('out').innerHTML.includes('검색해 다시 고치세요'));
   a.ok(!el('out').innerHTML.includes("mineCancel('0:1:2')"));
   a.ok(el('out').innerHTML.includes('남긴 메모가 없어요'));    // 빈 상태 문구
+
+  // 선시동(announce 없음) 도중 실제 호출(announce:true)이 합류하면 남은 단계부터 화면 문구가 떠야 한다
+  // (버그였던 지점: bootPromise 캐시가 announce 게이트보다 먼저라 화면이 안 갱신됐었다)
+  {
+    ctx.S.py = null;
+    let resolveLoad;
+    const savedLoadPyodide = ctx.loadPyodide, savedFetch3 = ctx.fetch;
+    ctx.loadPyodide = async () => { ctx.__pyodideCalls++;
+      await new Promise(res => { resolveLoad = res; });
+      return { FS: { mkdirTree(){}, writeFile(){} }, pyimport: () => ({}), runPython(){} }; };
+    ctx.fetch = async () => ({ ok: true, text: async () => '' });
+    el('meta').textContent = '시작 화면';
+    const prefetch = ctx.bootPy(); prefetch.catch(()=>{});   // announce 없음 — 화면 안 건드림
+    a.equal(el('meta').textContent, '시작 화면');
+    const real = ctx.bootPy({announce: true});               // 진행 중인 선시동에 합류
+    resolveLoad();
+    await real;
+    a.equal(el('meta').textContent, '엔진 시동...');          // 합류 후 남은 단계는 화면에 뜬다
+    ctx.loadPyodide = savedLoadPyodide; ctx.fetch = savedFetch3;
+    ctx.resetBoot();   // 다음 테스트가 이번에 뜬 엔진을 재사용하지 않게
+  }
 
   // 선시동 중복 방지: 파일 fetch가 정상 응답하는 환경에서 bootPy를 겹쳐 불러도 loadPyodide는 한 번만 떠야 한다
   ctx.S.py = null;
