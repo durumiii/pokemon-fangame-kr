@@ -11,7 +11,7 @@
 ② 설명문 절(3 도감·6 기술·9 도구·11 특성·20 지명)의 한글 행을 도감체 프롬프트로
    다듬는다. 초벌 배치에서 「대사용 프롬프트와 결이 다르다」고 뺀 자리다.
 
-모델·게이트·원장 규약은 batch.py와 같다(gemini-3.6-flash minimal, validate 7종,
+모델·게이트·진행 기록 규약은 batch.py와 같다(gemini-3.6-flash minimal, validate 7종,
 fill/out/<cid>.jsonl 원자 저장·재개).
 
 usage:

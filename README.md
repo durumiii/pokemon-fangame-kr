@@ -9,7 +9,7 @@
 
 - 배포판은 [Releases](../../releases)에서 받아요 — 게임 폴더에 덮어쓰면 끝.
 - 번역 정본은 [`pokemon-z/translate/ko/`](pokemon-z/translate/ko/)의 절별 JSONL이고,
-  `korean.dat`는 `build.py`로 굽는 빌드 산출물이에요. 오역 제보·수정 PR은 이 파일들로.
+  `korean.dat`는 `build.py`가 만드는 빌드 산출물이에요. 오역 제보·수정 PR은 이 파일들로.
 - 번역 방식·용어 결정의 기록은 [`pokemon-z/docs/`](pokemon-z/docs/)에 있어요.
 
 ## 저작권

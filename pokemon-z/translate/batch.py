@@ -4,10 +4,10 @@
 """걸음 5 초벌 배치 러너 — gemini-3.6-flash(llmgateway).
 
 설계 원칙 셋(2026-08-02 사용자):
-- **재개 가능**: 조각(청크)마다 out/<cid>.jsonl이 원장이다. 있으면 건너뛴다.
+- **재개 가능**: 조각(청크)마다 out/<cid>.jsonl이 진행 기록이다. 있으면 건너뛴다.
   끊기면 그냥 다시 run — 이미 된 조각은 안 태운다.
 - **ETA 인터페이스**: run이 조각마다 진행줄(행 속도·ETA·누적 실비용)을 찍고
-  log.txt에 남긴다. `status`는 언제든 그 원장으로 현황을 낸다.
+  log.txt에 남긴다. `status`는 언제든 그 기록으로 현황을 낸다.
 - **수정 요청**: 프롬프트·말투표를 고친 뒤 `redo --map N | --cid 조각 | --all`로
   그 조각의 출력을 지우면 다음 run이 다시 태운다. 출력마다 프롬프트 해시를
   남겨 어느 판으로 구웠는지 추적된다.
@@ -16,7 +16,7 @@
 설명문 절(도감·기술·도구·특성)은 대사용 프롬프트와 안 맞아 이 배치에서 뺐다.
 
 usage:
-  uv run batch.py plan               # 청크 원장 생성 (batch/chunks.jsonl)
+  uv run batch.py plan               # 청크 목록 생성 (batch/chunks.jsonl)
   uv run batch.py run [--limit N] [--workers 4]
   uv run batch.py status
   uv run batch.py redo --map 27 | --cid m0027-0 | --all-rejected

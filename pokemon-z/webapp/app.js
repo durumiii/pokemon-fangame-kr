@@ -603,7 +603,7 @@ function loadStore(prefix){
 }
 // 버린 건수를 돌려준다
 function restoreEdits(){
-  MEMOS = null;                    // 기준(S.base)이 바뀌면 메모 캐시도 다른 원장의 것이다
+  MEMOS = null;                    // 기준(S.base)이 바뀌면 메모 캐시도 다른 기록의 것이다
   const {m, dropped} = loadStore('edits');
   S.edits = m;
   S.applied = loadStore('applied').m;
@@ -681,7 +681,7 @@ function replaceApply(){
   toast(`${sel.length}행 적용했어요`);
 }
 
-// ─── 이력 원장 ────────────────────────────────────────
+// ─── 이력 기록 ────────────────────────────────────────
 // append-only — 같은 행을 여러 번 고치면 이벤트도 그만큼 쌓인다
 function histAll(){ try { return JSON.parse(localStorage.getItem('hist:'+S.base) ?? '[]'); } catch { return []; } }
 function hist(ev){
@@ -689,7 +689,7 @@ function hist(ev){
   a.push({t:new Date().toISOString(), ...ev});
   try { localStorage.setItem('hist:'+S.base, JSON.stringify(a)); } catch {}
 }
-// 메모는 이력 파생이 아니라 별도 원장이다 — 이력은 지울 수 없고, 지운 메모가 제보에 다시 실리면 안 된다
+// 메모는 이력 파생이 아니라 별도 목록이다 — 이력은 지울 수 없고, 지운 메모가 제보에 다시 실리면 안 된다
 let MEMOS = null;
 function memoIndex(){
   if (MEMOS) return MEMOS;

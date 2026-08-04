@@ -28,7 +28,7 @@ OUT = HERE / "manifest-full.json"
 GAME = "Pokemon Z Fangame"
 VERSION = "포켓몬Z 한글패치 v5.1"
 
-# Essentials 엔진이 스스로 만들거나 다시 굽는 것 — Z 밖에서도 통할 후보라
+# Essentials 엔진이 스스로 만들거나 다시 만드는 것 — Z 밖에서도 통할 후보라
 # 언젠가 modkit 코어(DEFAULT_EXCLUDE 또는 ESSENTIALS_RUNTIME)로 올라갈 몫이다.
 # 근거는 게임 스크립트 실측(Scripts.rxdata 압축 해제 후 검색):
 #   Data/Constants.rxdata  — Compiler:797 save_data (PBS 컴파일 산물)

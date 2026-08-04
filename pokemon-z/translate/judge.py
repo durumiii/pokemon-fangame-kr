@@ -8,7 +8,7 @@
 현행 유지 무방). fix의 수정안은 apply 전에 validate.py 7종 게이트를 다시 지난다.
 
 llmgateway premium 소진으로 API 대신 구독 CLI를 쓴다(2026-08-02 사용자).
-원장 규약은 batch.py와 같다 — judge/out/<cid>.jsonl이 있으면 건너뛴다.
+진행 기록 규약은 batch.py와 같다 — judge/out/<cid>.jsonl이 있으면 건너뛴다.
 
 usage:
   uv run judge.py plan                # 판정 청크 생성 (judge/in/)

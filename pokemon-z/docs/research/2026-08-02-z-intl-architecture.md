@@ -84,7 +84,7 @@ elsif cmdLanguage>=0 && command==cmdLanguage
 
 컴파일 경로 — `177_Compiler.rb:4150`. `$DEBUG`일 때만 도는 `pbCompileAllData` 끝자락이고,
 그 직전 `4148-4149`가 `pbSetTextMessages` → `MessageTypes.saveMessages`다. 곧 **디버그로
-게임을 켜면 `messages.dat`가 스크립트·맵에서 다시 구워진 뒤에 `korean.dat`가 그 위에
+게임을 켜면 `messages.dat`가 스크립트·맵에서 다시 만들어진 뒤에 `korean.dat`가 그 위에
 얹힌다.** `korean.dat`를 덮어쓰지는 않는다.
 
 ### 1-3. 적재된 뒤의 모양
@@ -156,7 +156,7 @@ common event and map event text`).
 줄 수는 `mod/z/translate/ko/*.jsonl`을 센 값이다(`wc -l`, 절0은 맵 헤더 508줄 제외).
 
 **15~17이 비어 있는 것은 누락이 아니다.** 컴파일러가 트레이너 대사를 맵 이벤트 스크립트로
-구워 넣기 때문이다 — `177_Compiler.rb:3917`
+만들어 넣기 때문이다 — `177_Compiler.rb:3917`
 
 ```ruby
 sprintf("pbTrainerBattle(%s,_I(\"%s\"),%s,%d,%s,%d)", safetrcombo,safequote2(espeech), ...)
@@ -273,7 +273,7 @@ end
 
 ### 3-3. 이름류 목록 절 (1~13·18·21)
 
-조인 축은 **데이터 파일의 정수 id**다. 컴파일러가 상수 모듈에 조회 함수를 구워 넣는다 —
+조인 축은 **데이터 파일의 정수 id**다. 컴파일러가 상수 모듈에 조회 함수를 만들어 넣는다 —
 `177_Compiler.rb:1873`
 
 ```ruby

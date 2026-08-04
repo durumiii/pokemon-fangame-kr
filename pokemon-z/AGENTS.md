@@ -67,7 +67,7 @@ enable→start→disable로 감싸야 한다. 실기 판정 대기 중.
 병합 `speaker-aliases.json`) · `glossary.md`(고정 용어표 — 포켓프랑·입법관·선장·
 그림자 포켓몬·후보생은 2026-08-02 사용자 판정) · `prompt.md`(배치 프롬프트 정본) ·
 `validate.py`(7종 게이트 — 파일럿 산출로 보정됨) · `batch.py`(러너: plan/run/status/
-redo/apply, 청크 원장 `batch/`). **모델은 gemini-3.6-flash + reasoning_effort=minimal** —
+redo/apply, 청크 기록 `batch/`). **모델은 gemini-3.6-flash + reasoning_effort=minimal** —
 씽킹이 존재 강제이나 양은 조절되고, 실측 A/B에서 품질 동급·비용 3.2배였다. 한 줄짜리
 탐침은 effort가 안 듣는 것처럼 보였다 — **작은 표본으로 파라미터를 판정하지 마라.**
 
@@ -97,7 +97,7 @@ gsub 오폭)를 통과시킨다. 재배포 전 --strict.
 | ③ 하드코딩 화면 문자열 | mods/UI Text KR 치환표 | modstore 재주입 |
 | ④ 런타임 가변 문자열(보간) | share/patch_intl.py EDITS | 소스 수술(멱등) |
 | ⑤ 로직-문자열 결합(기능 버그) | 〃 | 〃 (예: 부적 18종) |
-| ⑥ 그림에 구운 글자 (PNG 베이크) | Graphics/Pictures (.orig 짝 = 한글화본) | PIL 재렌더 — 텍스트 층 전수 미스면 이 층 의심 (예: 「눌륵」 모드 화면) |
+| ⑥ 그림에 그려 넣은 글자 (PNG 베이크) | Graphics/Pictures (.orig 짝 = 한글화본) | PIL 재렌더 — 텍스트 층 전수 미스면 이 층 의심 (예: 「눌륵」 모드 화면) |
 
 값 판정은 셋뿐: **(A) 본가에 있다 → 판정하지 않고 조회한다**
 (`translate/canon/canon.jsonl`, PKHeX 산 4,800여 항목 — verify가 전수 대조.
@@ -106,7 +106,7 @@ canon/aliases.jsonl). **(B) 창작 요소 → glossary.md 판정.** **(C) 문체
 voices.md.** 전거 서열은 glossary.md 머리 참조.
 
 **번역 정본은 `translate/ko/`다 — korean.dat는 빌드 산출물.** 절별 JSONL
-(한 줄 = 한 문장, 원문 병기)이고 `build.py`로 굽는다(왕복 검증 내장). **dat를 직접
+(한 줄 = 한 문장, 원문 병기)이고 `build.py`가 dat로 만든다(왕복 검증 내장). **dat를 직접
 문지르면 직후 `export.py`로 재동기화하라.** apply_* 스크립트들은 정본 도입 이전의
 이력이자 재적용 도구다.
 
@@ -114,7 +114,7 @@ voices.md.** 전거 서열은 glossary.md 머리 참조.
 (일시정지 단축키·출현 안내판·배지명). 그런 자리는 `mods/UI Text KR`의 교체표에
 한 줄 더한다(그리기 진입점 훅). 조사 자동 선택(`\j[받침형,무받침형]` 해석)은
 2026-08-03부터 모드가 아니라 **한글패치 통합의 본문 섹션**이다 — 번역이 이 문법을
-전제해 분리 불가라 흡수했다. 소스 정본은 `share/josa.rb`, 굽기는 `share/bake_josa.py`
+전제해 분리 불가라 흡수했다. 소스 정본은 `share/josa.rb`, 코어에 넣는 것은 `share/bake_josa.py`
 (수술판·pre-intl.bak 양쪽, 멱등).
 
 밟아 둔 사실들:
@@ -126,7 +126,7 @@ voices.md.** 전거 서열은 glossary.md 머리 참조.
   연속 공백은 하나로), 키가 그 모양이 아니면 영원히 안 맞고 **조용히
   스페인어가 나온다**(예외도 로그도 없다). 정의는 `build.py string_to_key`
   (포터블 루비 오라클로 20,715키 전량 검증) — 의심되면 probe.py가 이 정규화로
-  조회해 준다. 키 수술 이력은 적용 구조 조사 문서 §4-4와 원장 실기 소견 둘째 묶음.
+  조회해 준다. 키 수술 이력은 적용 구조 조사 문서 §4-4와 번역 품질 정본의 실기 소견 둘째 묶음.
 - 스크립트 리터럴의 루비 보간(`#{...}`)은 번역표가 원천 불가 — **`share/patch_intl.py`
   소스 수술(멱등)로 템플릿형에 합류시킨다**(2026-08-02 완료: 수술 6곳, 주머니 번호
   보간 5곳은 런타임 키가 이미 번역돼 비대상). 새 발견도 같은 도구에 EDITS로 얹는다.

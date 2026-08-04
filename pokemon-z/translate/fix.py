@@ -2,7 +2,7 @@
 # requires-python = ">=3.12"
 # dependencies = ["rubymarshal"]
 # ///
-"""즉석 개별 수정 도구 — LLM 없이 찾고 바꾸고 바로 굽는다.
+"""즉석 개별 수정 도구 — LLM 없이 찾고 바꾸고 바로 다시 만든다.
 
     uv run translate/fix.py "찾을 문구"              # 검색(한국어 v·원문 es 모두)
     uv run translate/fix.py "옛" --to "새"           # 전 매칭 행에서 부분 치환 + 자동 빌드

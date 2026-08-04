@@ -8,11 +8,11 @@
 결격 실례 8/10을 잡았고 늘 놓친 둘은 판정 문서의 「경미」 부류였다.
 비용 상한 $15 — 넘으면 멈추고 보고한다.
 
-batch.py와 같은 원장 규약: 통과×청크마다 mine/out/<pass>/<cid>.jsonl이 원장,
+batch.py와 같은 진행 기록 규약: 통과×청크마다 mine/out/<pass>/<cid>.jsonl이 기록,
 있으면 건너뛴다. 끊기면 그냥 다시 run.
 
 usage:
-  uv run mine.py plan               # 현 정본에서 청크 원장 생성 (mine/chunks.jsonl)
+  uv run mine.py plan               # 현 정본에서 청크 목록 생성 (mine/chunks.jsonl)
   uv run mine.py run [--workers 4]
   uv run mine.py status
   uv run mine.py merge              # 합집합 → mine/candidates.jsonl

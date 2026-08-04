@@ -108,7 +108,7 @@ a.equal(ctx.localStorage.getItem('edits:builtsha'), null);  // 옛 키는 사라
 ctx.restoreEdits();
 a.equal(ctx.S.edits.get('0:1:2').v, '옛저장');              // 새 기준 키에서 복원된다
 
-// 이력 원장: append-only — 같은 행을 두 번 고쳐도 이벤트가 각각 쌓인다
+// 이력 기록: append-only — 같은 행을 두 번 고쳐도 이벤트가 각각 쌓인다
 ctx.hist({ type: 'edit', rid: '0:1:2', k: 'x', old: 'a', new: 'b' });
 ctx.hist({ type: 'edit', rid: '0:1:2', k: 'x', old: 'b', new: 'c' });
 const h = ctx.histAll();
@@ -655,7 +655,7 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   ctx.S.edits = new Map();
 
   // ─ 내 수정 화면 ─
-  // 메모 이전: 옛 판은 메모가 이력에만 있었다 — 첫 조회에서 활성 원장으로 옮기고, 같은 행은 최신이 남는다
+  // 메모 이전: 옛 판은 메모가 이력에만 있었다 — 첫 조회에서 활성 목록으로 옮기고, 같은 행은 최신이 남는다
   ctx.S.base = 'minebase';
   ctx.clearMemos();
   ctx.localStorage.setItem('hist:minebase', JSON.stringify([
@@ -663,17 +663,17 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
     { t: '2026-08-02T00:00:00Z', type: 'memo', rid: '0:1:1', k: 'a', text: '고친 메모' },
     { t: '2026-08-02T01:00:00Z', type: 'memo', rid: '0:1:2', k: 'b', text: '둘째 메모' },
   ]));
-  a.equal(ctx.localStorage.getItem('memos:minebase'), null);   // 이전 전에는 활성 원장이 없다
+  a.equal(ctx.localStorage.getItem('memos:minebase'), null);   // 이전 전에는 활성 목록이 없다
   a.equal(ctx.memoIndex().size, 2);
   a.equal(ctx.memoIndex().get('0:1:1').text, '고친 메모');      // 같은 행은 최신 것만
   a.ok(ctx.localStorage.getItem('memos:minebase'));            // 이전 결과가 저장된다
-  // 이미 활성 원장이 있으면 이력에서 다시 만들지 않는다(지운 메모가 되살아나면 안 된다)
+  // 이미 활성 목록이 있으면 이력에서 다시 만들지 않는다(지운 메모가 되살아나면 안 된다)
   ctx.localStorage.setItem('memos:minebase', JSON.stringify([['0:1:2', { k: 'b', text: '둘째 메모' }]]));
   ctx.clearMemos();
   a.equal(ctx.memoIndex().size, 1);
   a.equal(ctx.memoIndex().has('0:1:1'), false);
 
-  // 메모 삭제: 활성 원장에서 빠지고 이력에는 삭제 기록이 남는다
+  // 메모 삭제: 활성 목록에서 빠지고 이력에는 삭제 기록이 남는다
   ctx.S.rows = [
     { sec: 0, map: 1, idx: 1, k: '스페인어원문1', v: '번역1' },
     { sec: 0, map: 1, idx: 2, k: '스페인어원문2', v: '번역2' },

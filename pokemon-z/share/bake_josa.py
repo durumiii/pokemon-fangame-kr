@@ -2,7 +2,7 @@
 # requires-python = ">=3.12"
 # dependencies = ["rubymarshal"]
 # ///
-"""조사 자동 선택(josa.rb)을 한글패치 통합의 Scripts.rxdata에 굽는다.
+"""조사 자동 선택(josa.rb)을 한글패치 통합의 Scripts.rxdata에 넣는다.
 
 번역표가 \\j[은,는] 문법을 전제해 조사 스크립트 없이는 한글패치가 성립하지
 않는다 — 그래서 별도 모드(옛 Josa Select)가 아니라 한글패치 통합의 본문 섹션

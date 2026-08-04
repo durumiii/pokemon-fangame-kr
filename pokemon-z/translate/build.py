@@ -54,7 +54,7 @@ def string_to_key(s):
 def main():
     dry = "--dry-run" in sys.argv
     d = load(open(STORE, "rb"))
-    # 지난 빌드가 구운 __kr_patch__ 표식을 떼고 시작한다 — 안 떼면 다음 빌드의
+    # 지난 빌드가 남긴 __kr_patch__ 표식을 떼고 시작한다 — 안 떼면 다음 빌드의
     # 줄 수 검증이 1개 차이로 죽는다(2026-08-04 실사고). 끝에서 다시 심는다.
     keys, values = inner_of(d[23])
     kidx = next((i for i, k in enumerate(keys) if bytes(k) == b"__kr_patch__"), None)

@@ -10,8 +10,8 @@ PKHeX(kwsch/PKHeX)는 현행 세대까지 관리되는 언어별 정렬 리스�
 산출: canon.jsonl — {"domain","i","es","en","ko"} 한 줄 = 한 항목.
 빈 값·자리표시자(?, ---)는 제외. es는 유럽 스페인어(text/other/es, items/es).
 
-usage: uv run build_canon.py            # 새로 받아서 굽기
-       uv run build_canon.py --offline  # 받아둔 raw/ 캐시로만 굽기
+usage: uv run build_canon.py            # 새로 받아서 만들기
+       uv run build_canon.py --offline  # 받아둔 raw/ 캐시로만 만들기
 """
 import json
 import sys

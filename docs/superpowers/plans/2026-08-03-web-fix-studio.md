@@ -880,12 +880,12 @@ git commit -m "feat(webapp): Pages 배포 스크립트 + 수정법 안내에 웹
 - 시작 화면: 저장된 핸들이 있으면 [지난 폴더 다시 연결] 버튼 표시 → `handle.requestPermission({mode:'readwrite'})`가 'granted'면 openFolder의 로드 경로 재사용, 아니면 일반 폴더 선택으로 폴백.
 - IndexedDB 헬퍼는 idbGet/idbSet 두 함수(promise 래퍼, ~15줄)로 최소화.
 
-### Task 10: 순정 기준 키 + 이력 원장 + 메모
+### Task 10: 순정 기준 키 + 이력 기록 + 메모
 
 **Files:** Modify: `pokemon-z/webapp/app.js`, `pokemon-z/webapp/index.html`
 
 - **기준 키 전환**: 로드 시 `Data/korean.dat.bak`이 있으면 그 파일의 sha 앞 12자를 `S.base`로, 없으면(방금 .bak을 만든 경우) 현재 dat sha. 이후 모든 localStorage 키는 `edits:<base>`·`hist:<base>`·`applied:<base>`(11에서 사용). 기존 `edits:<sha>` 키는 발견 시 1회 이전(마이그레이션 3줄).
-- **이력 원장**: `hist:<base>`에 append-only JSON 배열. 이벤트: {t:ISO, type:'edit'|'memo'|'build'|'restore'|'import', ...} — edit는 {rid,k,old,new}, memo는 {rid,k,text}, build는 {n}, restore는 {src}. 기록 지점: save()/memo/build 성공/restoreMenu/importFix.
+- **이력 기록**: `hist:<base>`에 append-only JSON 배열. 이벤트: {t:ISO, type:'edit'|'memo'|'build'|'restore'|'import', ...} — edit는 {rid,k,old,new}, memo는 {rid,k,text}, build는 {n}, restore는 {src}. 기록 지점: save()/memo/build 성공/restoreMenu/importFix.
 - **메모 UI**: 카드 rowbar에 메모 입력칸+[메모] 버튼(fixgui 스타일). 메모는 이력에만 쌓임(빌드에 안 들어감).
 - **[이력] 버튼**(헤더): 최신순 카드 목록 — 시각·종류·내용, edit는 구→신 표시. 데이터는 새로고침·빌드 후에도 유지.
 

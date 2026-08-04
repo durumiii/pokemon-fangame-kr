@@ -1,7 +1,7 @@
 """번역표(JSONL) → korean.dat 빌드 — 패키지 동봉 독립판.
 
 번역표의 문장을 고친 뒤 이 스크립트를 돌리면 ../Data/korean.dat가 다시
-구워집니다. 원본은 korean.dat.bak으로 남습니다.
+만들어집니다. 원본은 korean.dat.bak으로 남습니다.
 
 필요한 것: Python 3.10+ 와 rubymarshal 패키지.
     pip install rubymarshal
