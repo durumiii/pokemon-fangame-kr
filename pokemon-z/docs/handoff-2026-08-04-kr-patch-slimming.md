@@ -22,7 +22,13 @@ modkit 실기 세션에서 결정된 방향을 넘긴다. **한글패치 통합 
 
 ## 작업 내용
 
-1. **30개 수정 섹션의 분류** — 각 섹션이 (a) 조사 시스템 등 기능 필수(빠지면
+> **작업 1 완료 (2026-08-04, 이 프로젝트 세션)** — 분류 정본은
+> [`docs/design/z-kr-core-section-triage.md`](design/z-kr-core-section-triage.md).
+> 요약: 기능 필수 8자리(33줄)+조사 109줄은 코어에 남고, 22섹션 68줄은 UI Text KR로
+> 이관 가능하다(이관 시 수정 섹션 30 → 11). 성격 25종 1줄은 훅이 안 닿아 번역표로
+> 올리는 편이 낫다. 아래 1번의 섹션 목록은 그 문서가 대신한다.
+
+1. ~~**30개 수정 섹션의 분류**~~ — 각 섹션이 (a) 조사 시스템 등 기능 필수(빠지면
    게임이 안 돌거나 한글이 깨짐), (b) 단순 문구 조립(하드코딩 문자열 번역)인지
    가른다. 30개 목록(실측): Cambia Habilidades, Crafteo, Diploma Nuz1/2,
    DiplomaPokedex, Editor, Export to Showdown, Following, FotoRemington,
