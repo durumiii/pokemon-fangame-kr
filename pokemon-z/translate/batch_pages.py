@@ -35,7 +35,8 @@ from validate import check  # noqa: E402
 
 ATTR = HERE.parent / "docs/research/speaker-attr.jsonl.gz"
 ANON = HERE.parent / "docs/research/2026-08-06-anon-speakers.jsonl"
-APPROVED = HERE.parent / "docs/research/2026-08-03-crisanto-approved.jsonl"
+APPROVED = HERE.parent / "docs/research/approved-lines.jsonl"
+PROMPTS = HERE / "voice-prompts.jsonl"      # 프롬프트에 실리는 말투 정본
 PROTECTED = HERE.parent / "docs/research/protected.jsonl"
 MAPS = HERE / "ko" / "00-maps.jsonl"
 BATCH = HERE / "batch"
@@ -93,6 +94,39 @@ def voice_lines():
     return table
 
 
+MAPCOND = re.compile(r"\[맵(<|>=)(\d+)\]\s*")
+
+
+def resolve_conditions(text, map_id):
+    """`[맵<147] …` / `[맵>=147] …` 절을 **그 장면에 맞는 것만** 남긴다.
+
+    받는 쪽은 이야기의 전후를 모른다 — 「맵147 이후로는 반말」이라고 적어 봐야
+    지금이 그 뒤인지 알 수 없다. 조건은 여기서 풀어서 해당 절만 보낸다.
+    """
+    out = []
+    for part in re.split(r"(?=\[맵)", text):
+        m = MAPCOND.match(part)
+        if not m:
+            out.append(part)
+            continue
+        op, n = m.group(1), int(m.group(2))
+        if (map_id < n) if op == "<" else (map_id >= n):
+            out.append(part[m.end():])
+    return re.sub(r"\s{2,}", " ", "".join(out)).strip()
+
+
+def voice_prompts():
+    """프롬프트에 실리는 말투 정본. 없으면 말투표에서 뽑아 쓴다(과도기)."""
+    if not PROMPTS.exists():
+        return {}
+    out = {}
+    for line in PROMPTS.read_text(encoding="utf-8").splitlines():
+        if line.strip():
+            r = json.loads(line)
+            out[r["name"]] = r
+    return out
+
+
 def voice_instruction(cell):
     """말투표 셀에서 **지시만** 남긴다.
 
@@ -131,11 +165,12 @@ def resolve(who, names):
 
 
 def approved_set():
-    """유지자가 3단 대조로 승인한 줄 — 재번역해도 **자동 채택 금지, 반드시 견줘서 고른다.**
+    """유지자가 견주어 고른 줄 — 재번역해도 **자동 채택 금지, 반드시 견줘서 고른다.**
 
-    2026-08-03 크리산토 트랙이 그렇다: 전용 재배치가 「반 단계 과함」 판정을 받아
-    old-new 블렌드 패스로 523행을 완화했고, 구/중간/최종 3단 대조로 승인됐다.
-    보호(재번역 제외)와는 다르다 — 이 줄은 사정권에 남기되 표시만 단다.
+    둘이 모여 있다. 2026-08-03 크리산토 블렌드 패스(3단 대조 승인) 439행과,
+    2026-08-06 파일럿에서 현행·교정·새번역을 나란히 놓고 고른 366행이다.
+    보호(재번역 제외)와는 다르다 — 이 줄은 사정권에 남기되 표시만 달고, 말투
+    본보기의 원천이 된다.
     """
     out = set()
     if APPROVED.exists():
@@ -154,23 +189,54 @@ def approved_samples(limit=5):
     주는 편이 어떤 서술보다 정확하다.
     """
     from register import axis
-    pool = collections.defaultdict(lambda: collections.defaultdict(list))
     if not APPROVED.exists():
         return {}
     names = ko_names()
+    pool = collections.defaultdict(lambda: collections.defaultdict(list))
+    pinned = collections.defaultdict(list)
     for line in APPROVED.read_text(encoding="utf-8").splitlines():
         if not line.strip():
             continue
         r = json.loads(line)
+        who = r.get("who")
+        if not who or r.get("본보기") is False:      # 손으로 뺀 줄
+            continue
         ko = split_head(r["ko"])[1].replace("\n", " ").strip()
-        if r.get("who") and 12 <= len(ko) <= 60 and "\\" not in ko:
-            pool[resolve(r["who"], names)][axis(ko)[0] or "—"].append(ko)
-    # 격이 갈리는 인물이 많으므로 **존대·하대를 함께** 보인다. 한쪽만 보이면 그쪽으로 쏠린다.
+        name = resolve(who, names)
+        if r.get("본보기") is True:                  # 손으로 박은 줄은 무조건 실린다
+            pinned[name].append((axis(ko)[0] or "—", ko))
+            continue
+        if not (15 <= len(ko) <= 50) or "\\" in ko:
+            continue
+        pool[name][axis(ko)[0] or "—"].append(ko)
+
+    def score(s):
+        """고를 만한 줄인가 — 고유명이 적고 평범한 길이일수록 옮겨 쓰기 좋다."""
+        return (s.count("<b>"), abs(len(s) - 30))
+
     out = {}
-    for name, byax in pool.items():
-        picked = []
-        for ax in ("하대", "존대", "—"):
-            picked += [(ax, x) for x in byax.get(ax, [])[:limit // 2 + 1]]
+    for name in set(pool) | set(pinned):
+        picked = list(pinned.get(name, []))
+        tails = {p[1][-2:] for p in picked}
+        # 존대·하대를 번갈아 뽑고, **어미가 겹치는 줄은 건너뛴다** — 같은 끝을 여러 번
+        # 보이면 그 어미로 쏠린다.
+        ranked = {ax: sorted(v, key=score) for ax, v in pool.get(name, {}).items()}
+        order = ("하대", "존대", "—")
+        while len(picked) < limit:
+            added = False
+            for ax in order:
+                for s in ranked.get(ax, []):
+                    if s[-2:] in tails:
+                        continue
+                    picked.append((ax, s))
+                    tails.add(s[-2:])
+                    ranked[ax].remove(s)
+                    added = True
+                    break
+                if len(picked) >= limit:
+                    break
+            if not added:
+                break
         out[name] = picked[:limit]
     return out
 
@@ -509,13 +575,19 @@ def build_prompt(fresh=False):
 
 
 def scene_header(c):
-    samples = approved_samples()
+    vp, fallback = voice_prompts(), approved_samples()
     lines = []
     for x in c["cast"]:
+        rec = vp.get(x["name"])
+        if rec:
+            instr = resolve_conditions(rec.get("지시", ""), c["map"])
+            samples = [(s.get("격", "—"), s["글"]) for s in rec.get("본보기", [])]
+        else:
+            instr = voice_instruction(x["voice"]) if x["voice"] else ""
+            samples = fallback.get(x["name"], [])
         lines.append(f"- {x['name']}: "
-                     + (voice_instruction(x["voice"]) if x["voice"]
-                        else "not in the style guide — keep the current level"))
-        for ax, ex in samples.get(x["name"], []):
+                     + (instr or "not in the style guide — keep the current level"))
+        for ax, ex in samples:
             lines.append(f"    · 본보기({ax}): {ex}")
     return (f"Scene: {c['map_name']} (map {c['map']}), event 「{c['event_name']}」\n"
             f"Speakers and how each talks (「본보기」 lines are approved translations — "
@@ -644,5 +716,12 @@ if __name__ == "__main__":
         run(pilot, limit, fresh=fresh)
     elif cmd == "report":
         report(pilot)
+    elif cmd == "samples":
+        s = approved_samples()
+        who = args[1] if len(args) > 1 and not args[1].startswith("--") else None
+        for name in ([who] if who else sorted(s, key=lambda k: -len(s[k]))):
+            print(f"— {name}")
+            for ax, ex in s.get(name, []):
+                print(f"    ({ax}) {ex}")
     else:
         print(__doc__)

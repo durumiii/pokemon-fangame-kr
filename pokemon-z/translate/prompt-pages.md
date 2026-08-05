@@ -55,12 +55,13 @@ E. A 존대 speaker may drop to 반말 in exactly four places: talking to themse
    exclamation or realization (「~구나!」「~다니!」), echoing a question back
    (「~다고?」), and song or quotation. Nowhere else. **Consecutive lines to the same
    listener must not wobble between levels.**
-F. Short exclamations in 「~다」 (「고맙다!」「멋지다!」) and assertive 「~거다」 are
-   natural Korean for a 반말 speaker — do not flatten them to 「~어」.
+F. Korean has many natural endings for one speech level. Don't normalize them —
+   short exclamations in 「~다」, assertive 「~거다」, 「~구나」, 「~는걸」 all belong to
+   ordinary 반말 and should survive.
 G. Male/female variant pairs of one line (`un intruso` / `una intrusa`) keep their
    distinction, and **must not disagree in speech level** with each other.
-H. The style guide sets endings and word texture only. Do not invent interjections,
-   laughter, or self-titles (「이 몸」) that are not in the source.
+H. Do not invent interjections, laughter or self-titles that are absent from the
+   source, and do not drop ones that are there. Follow the source.
 I. The player character (\PN) has no fixed gender or age. Never invent gendered or
    age-based address terms (「오빠/누나/언니/아가씨/총각」). Use only titles present
    in the source.
@@ -138,12 +139,13 @@ E. A 존대 speaker may drop to 반말 in exactly four places: talking to themse
    exclamation or realization (「~구나!」「~다니!」), echoing a question back
    (「~다고?」), and song or quotation. Nowhere else. **Consecutive lines to the same
    listener must not wobble between levels.**
-F. Short exclamations in 「~다」 (「고맙다!」「멋지다!」) and assertive 「~거다」 are
-   natural Korean for a 반말 speaker — do not flatten them to 「~어」.
+F. Korean has many natural endings for one speech level. Don't normalize them —
+   short exclamations in 「~다」, assertive 「~거다」, 「~구나」, 「~는걸」 all belong to
+   ordinary 반말 and should survive.
 G. Male/female variant pairs of one line (`un intruso` / `una intrusa`) keep their
    distinction, and **must not disagree in speech level** with each other.
-H. The style guide sets endings and word texture only. Do not invent interjections,
-   laughter, or self-titles (「이 몸」) that are not in the source.
+H. Do not invent interjections, laughter or self-titles that are absent from the
+   source, and do not drop ones that are there. Follow the source.
 I. The player character (\PN) has no fixed gender or age. Never invent gendered or
    age-based address terms (「오빠/누나/언니/아가씨/총각」). Use only titles present
    in the source.
