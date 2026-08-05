@@ -98,8 +98,14 @@ def main():
         # 겹침 판정 칸: 시각·「현재 번역」·패치 버전은 뺀다. 앞 제보를 반영해 빌드하면
         # 같은 자리의 「현재 번역」이 달라져서, 그걸 넣으면 같은 건이 겹침으로 안 잡힌다.
         KEYCOLS = ("분류", "자리", "원문", "제안", "코멘트")
+        # 탭마다 칸이 다르다 — 행 단위 제보 탭엔 KEYCOLS가 있고, 일반 문제 제보 탭엔
+        # (타임스탬프·종류·내용·패치 버전)뿐이다. 겹침 칸이 하나도 없으면 열쇠가
+        # 빈 튜플이 되어 모든 행이 겹침으로 잡힌다(2026-08-05 실측: 새 제보 2행이
+        # 보관 없이 시트에서만 지워졌다). 없으면 시각·판 표시만 뺀 전 칸으로 센다.
+        keycols = [c for c in KEYCOLS if c in head] or \
+                  [c for c in head if c not in ("타임스탬프", "패치 버전")]
         def key(rec):
-            return tuple(rec.get(c, "") for c in KEYCOLS if c in head)
+            return tuple(rec.get(c, "") for c in keycols)
         seen = set()
         if os.path.exists(out):
             with open(out, encoding="utf-8") as f:
