@@ -18,6 +18,8 @@ cd "$TMP"
 touch .nojekyll
 git add -A
 git diff --cached --quiet || { git commit -m "deploy $(date +%F)"; git push origin HEAD; }
+# Pages 켜기가 먼저다 — 꺼져 있을 때 빌드 발주부터 하면 404로 튕기고 그 판은 그냥 지나간다
+# (2026-08-05 실측: 사이트가 통째로 404였고 pages API도 Not Found였다 — 이 순서로 되살아났다)
+gh api "repos/$REPO/pages" -X POST -f 'source[branch]=main' -f 'source[path]=/' >/dev/null 2>&1 || true
 gh api -X POST "repos/$REPO/pages/builds" >/dev/null 2>&1 || true
-gh api "repos/$REPO/pages" -X POST -f 'source[branch]=main' -f 'source[path]=/' 2>/dev/null || true
 echo "https://$OWNER.github.io/${REPO#*/}/"

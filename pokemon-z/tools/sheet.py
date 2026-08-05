@@ -13,8 +13,14 @@ SA 토큰을 발급받는다 — 브라우저·키 파일 불요. 전제(2026-08
   uv run tools/sheet.py tabs                 # 탭 목록·행수
   uv run tools/sheet.py rows <탭> [-n 20]    # 행 출력(TSV, 최근 n행)
   uv run tools/sheet.py set <탭> <A1> <값>   # 셀 수정(트리아지 표시 등)
+  uv run tools/sheet.py archive <탭> [--yes] # 내려받아 보관하고 시트를 비운다
+
+archive는 머리행만 남기고 응답행을 **삭제**한다(내용 지우기가 아니라 행 삭제).
+지우기로 비우면 빈 행이 남아 폼이 그 아래에 이어 쓰고, 그래서 다음 응답이
+7행부터 시작하는 일이 생긴다 — 행을 없애면 다시 2행부터 채워진다.
+보관본은 docs/reports/<탭>.jsonl에 덧붙는다(머리행을 열쇠로 쓴 사전 + 보관 시각).
 """
-import json, os, subprocess, sys, urllib.parse, urllib.request
+import datetime, json, os, subprocess, sys, urllib.parse, urllib.request
 
 SHEET_ID = "1Lp1iW1icicc0plhilX3BnPa2k_mico43TNQfkKiMMiY"   # Z 한글패치 제보 시트
 SA = "z-sheet@golden-tide-361608.iam.gserviceaccount.com"
@@ -72,6 +78,39 @@ def main():
         call(f"/values/{urllib.parse.quote(rng)}?valueInputOption=RAW",
              "PUT", {"range": rng, "values": [[value]]})
         print(f"{rng} ← {value}")
+    elif cmd == "archive":
+        tab = sys.argv[2]
+        meta = call("?fields=sheets.properties")
+        gid = next((s["properties"]["sheetId"] for s in meta["sheets"]
+                    if s["properties"]["title"] == tab), None)
+        if gid is None:
+            sys.exit(f"그런 탭이 없어요: {tab}")
+        vals = call(f"/values/{urllib.parse.quote(tab)}").get("values", [])
+        head, rows = (vals[0], vals[1:]) if vals else ([], [])
+        if not rows:
+            sys.exit("보관할 응답행이 없어요")
+        out = os.path.join(os.path.dirname(__file__), "..", "docs", "reports", tab + ".jsonl")
+        os.makedirs(os.path.dirname(out), exist_ok=True)
+        stamp = datetime.datetime.now().isoformat(timespec="seconds")
+        # 보관이 먼저 땅에 닿아야 지운다 — 파일을 닫은 뒤에 삭제를 부른다
+        kept = 0
+        with open(out, "a", encoding="utf-8") as f:
+            for row in rows:
+                if not any(c.strip() for c in row):
+                    continue          # 예전 「내용 지우기」가 남긴 빈 행 — 보관할 것이 없다
+                rec = dict(zip(head, row + [""] * (len(head) - len(row))))
+                rec["_archived"] = stamp
+                f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+                kept += 1
+        print(f"{kept}행을 {os.path.relpath(out)}에 보관했어요"
+              + (f" (빈 행 {len(rows) - kept}개는 버림)" if kept < len(rows) else ""))
+        if "--yes" not in sys.argv:
+            if input(f"시트 '{tab}'의 {len(rows)}행을 삭제할까요? [y/N] ").strip().lower() != "y":
+                sys.exit("보관만 하고 시트는 그대로 뒀어요")
+        call(":batchUpdate", "POST", {"requests": [{"deleteDimension": {"range": {
+            "sheetId": gid, "dimension": "ROWS",
+            "startIndex": 1, "endIndex": 1 + len(rows)}}}]})
+        print(f"시트에서 {len(rows)}행을 지웠어요 — 다음 응답은 2행부터 쌓여요")
     else:
         sys.exit(__doc__)
 
