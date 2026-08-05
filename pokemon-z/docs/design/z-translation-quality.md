@@ -483,6 +483,54 @@ monsieur/mademoiselle/madame 원문 행 전수(단어 경계, 00·15~17·22·23�
   판정문은 지명만 명시했으나 같은 성씨를 갈라 적을 수 없어 인명까지 밀었다(부모 승인).
 - 남은 자리: `00-maps.jsonl:3332`의 로마자 `<i>monsieur</i>`(다른 행은 전부 「무슈」).
 
+### 로마자 잔재·고유명 정리 (2026-08-05, 서브에이전트 + 사용자 판정)
+
+한국어 번역값에 로마자가 남은 자리를 전수로 훑었다(한글이 든 값 1,154행에서 낱말 373개).
+분류·근거는 `docs/research/2026-08-05-romanized-leftovers.md`, 고유명 3건의 상세는
+`docs/research/2026-08-05-name-puzzles.md`.
+
+- **반영 99행** — 음차 14종 35행(근거는 전부 같은 대상의 기존 한국어 행), 애매 판정
+  (소문자 `chateau`→샤토 · 클래스 값 `Alca`→알카 · `Mikolash`→미콜라시섬 —
+  `Isla Certijo`→세르티호섬 선례), 음차 통일(프리물라 45:0 · 뱃사공 22회),
+  **프랑스어 상용구 철자 37행**(`vous plait`→`plaît` 20 · `Trés bien`→`Très bien` 7 ·
+  `mon cheri`→`mon chéri` 6 · `Excuse moi`→`Excuse-moi` 3 · `créme`→`crème` ·
+  `desolé`→`désolé` · `garson`→`garçon` · `apres-midi`→`après-midi`).
+  판정 기준은 **코퍼스 안에 이미 맞게 적힌 행이 있는 것만**.
+- **고유명 3건**(사용자 판정): `Le Prodige`→르 프로디주 10행 · `Milintercambios`→
+  교환 게시판 3행(4행 한 갈래) · `Cornelio`→콘콤부르 1행. 근거는 glossary 표.
+- **감탄 처리**: `Mamma mia` 3행을 「맘마미아」로 통일(화자가 전부 마리오 패러디 NPC
+  `mariow` — 「맙소사」로 옮겼다가 되돌림). 문장 성분인 삽입구는 옮긴다 —
+  `fais-moi la faveur`→「부탁이니」(페로파스 하게체), `c'est nes pas`→「그렇지?」.
+- **유지 확정**: 프랑스어 감탄·상용구, 일러스트 작가 크레딧, 러시아어 `Blyat`·
+  `Dobro pozhalovat`, 크툴루 주문. `mon amie`·`coeur`는 **오타가 아니다**(mon은 모음 앞
+  ma의 대체형, coeur는 합자 없는 표기 허용).
+
+### 공략 대조 산출물 (2026-08-05)
+
+바깥 공략(pokemonzfangame.com)을 우리 표기로 읽기 위한 대조표 둘.
+
+- `docs/research/2026-08-05-place-name-table.{md,jsonl}` — 지명 241행. **사이트는 본가
+  영어명이 아니라 스페인어 직역 영어를 쓴다**(삼채시티=Relief City). 그래서 영어 칸을
+  「사이트 표기」·「본가 표기」로 갈랐다. 우리 한국어 표기의 갈림은 0건.
+- `docs/research/2026-08-05-site-locations-ko.{md,jsonl}` — 위치표 1,108행 한국어판.
+  손번역 없이 조회표 치환(포켓몬=canon en→ko + 01-species, 지명=위 표, 도구·기술=canon,
+  인물=00-maps의 `<b>` 태그 짝 대조). 이름 조회 1,099/1,108, 장소 붙은 행 722.
+  사이트 철자 오류 9종은 사용자 판정으로 우리 표기를 붙였다(원표 영어 칸은 그대로 둬
+  검색이 된다). 조건 문구에 영어가 남은 40행은 문서 「미해결」 절.
+  **유지자 스프레드시트에 「사이트 위치표(한국어)」 탭으로 올려 뒀다**
+  (`uv run tools/sheet.py upload`).
+
+### 이번 판 도구 변화 (2026-08-05)
+
+- `translate/apply_josa.py` — **dat 직접 수정에서 정본 수정으로**. dat는 build.py
+  산출물이라 옛 방식은 빌드 한 번에 되살아났다. 변수 뒤 조사 처리 추가.
+- `translate/export.py` — build.py의 판 표식 `__kr_patch__`를 정본에 도로 굽던 것 제외.
+  **새 키를 add.jsonl로 얹으면 export로 base jsonl에 접어 넣어야 verify 미러가 맞는다.**
+- `tools/status_icon.py` — 상태이상 아이콘 띠(statuses.PNG·battleStatuses.png)의 글자
+  교체. 글자체 폰트가 없어 낱자를 손으로 뜬다.
+- `tools/sheet.py` — `archive`(제보 내려받아 보관 + 행 삭제, 겹침 거르기)와
+  `upload`(jsonl → 시트 탭) 추가.
+
 ## 미결 (사용자 결정)
 
 - (해소) 특성 발동 화법 → **정보 우선으로 확정**(아래 확정된 결정 절 참조).
