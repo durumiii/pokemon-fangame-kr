@@ -39,6 +39,7 @@ BATCH = HERE / "batch"
 MODEL = "gemini-3.6-flash"
 PAGE_CAP = 90          # 실측: 확정 페이지 835개 중 이 값을 넘는 페이지가 없다
 PILOT_PAGES = 20
+PILOT_MAP_MAX = 90     # 파일럿은 초반부에서만 뽑는다 — 유지자가 판정할 수 있는 구간
 
 # 화자로 잡히지만 사람 말이 아닌 이름표 (안내판·표지·트레이너 팁 따위)
 SYS = {"PISTA DE ENTRENADOR", "Notas del Team Azoth", "\\PN", "AVISO", "Oeste",
@@ -165,6 +166,7 @@ def plan(pilot=False):
                      for r, w, cur in take],
         })
 
+    chunks = dedupe(chunks)
     if pilot:
         chunks = pick_pilot(chunks)
     out = BATCH / ("pilot-chunks.jsonl" if pilot else "page-chunks.jsonl")
@@ -184,40 +186,151 @@ def plan(pilot=False):
                                 sorted(cast_n.items(), key=lambda x: -x[1])[:10]))
 
 
-def pick_pilot(chunks):
-    """표본 20페이지 — 화자를 골고루, 크기를 넓게, 여럿이 얽힌 장면을 우선."""
-    random.seed(20260806)
-    by_lead = defaultdict(list)
+def dedupe(chunks):
+    """같은 (맵, 원문)은 정본에 **한 줄뿐**이라 한 번만 번역한다.
+
+    남길 자리는 **가장 큰 페이지** — 문맥이 많은 쪽이 판단 재료가 낫다.
+    복제가 만드는 여분은 실측 1,730행(전체의 26%)이고, 복제된 자리끼리 화자가
+    갈리는 것은 4개뿐이다(셋은 「...」, 하나는 남/여 짝) — 어차피 정본이 한 줄이라
+    갈래를 살릴 수도 없다.
+    """
+    best = {}
     for c in chunks:
-        if len(c["rows"]) < 5:          # 한두 줄짜리로는 장면 판정을 못 한다
+        for r in c["rows"]:
+            k = (c["map"], fold(r["es"]))
+            if k not in best or len(c["rows"]) > best[k][1]:
+                best[k] = (c["cid"], len(c["rows"]))
+    out, seen = [], set()
+    for c in chunks:
+        rows = []
+        for r in c["rows"]:
+            k = (c["map"], fold(r["es"]))
+            if best[k][0] != c["cid"] or k in seen:   # 같은 페이지 안의 반복도 한 번만
+                continue
+            seen.add(k)
+            rows.append(r)
+        if not rows:
             continue
+        keep = {r["who"] for r in rows}
+        out.append({**c, "rows": rows,
+                    "cast": [x for x in c["cast"] if x["name"] in keep]})
+    dropped = sum(len(c["rows"]) for c in chunks) - sum(len(c["rows"]) for c in out)
+    print(f"복제 정리: {dropped}행 뺌 · 빈 페이지 {len(chunks) - len(out)}개 뺌")
+    return out
+
+
+def pick_pilot(chunks):
+    """표본 20페이지 — 초반부에서, 말투표가 실리는 장면으로, 화자를 골고루.
+
+    초반부만 뽑는 이유는 유지자가 실제로 지나온 구간이라야 판정할 수 있어서다
+    (진행 순서의 대용은 맵 번호 — 조사에서 순위상관 0.988).
+    """
+    random.seed(20260806)
+    pool = [c for c in chunks
+            if len(c["rows"]) >= 5
+            and c["map"] <= PILOT_MAP_MAX
+            and any(x["voice"] for x in c["cast"])]   # 말투표가 실리는 장면
+    by_lead = defaultdict(list)
+    for c in pool:
         by_lead[c["cast"][0]["name"]].append(c)
-    picked, used_ev = [], set()
-    for lead in sorted(by_lead, key=lambda k: -len(by_lead[k])):
-        if len(picked) >= PILOT_PAGES:
-            break
-        cands = [c for c in by_lead[lead] if (c["map"], c["event"]) not in used_ev]
-        if not cands:
+    for v in by_lead.values():
+        random.shuffle(v)
+    picked, used_ev, leads = [], set(), sorted(by_lead, key=lambda k: -len(by_lead[k]))
+    while len(picked) < PILOT_PAGES and any(by_lead.values()):
+        for lead in leads:                            # 화자 한 명씩 돌아가며 한 장면
+            if len(picked) >= PILOT_PAGES:
+                break
+            while by_lead[lead]:
+                c = by_lead[lead].pop()
+                if (c["map"], c["event"]) in used_ev:
+                    continue
+                used_ev.add((c["map"], c["event"]))
+                picked.append(c)
+                break
+    return sorted(picked, key=lambda c: (c["map"], c["event"], c["page"]))
+
+
+# 언제나 실리는 핵심 규칙 — 용어집에서 근거·이력을 뺀 뼈대만
+CORE_TERMS = """\
+- Never touch proper nouns: person, place, species, move, item and ability names keep
+  their current Korean spelling even if the transliteration looks odd.
+- damage is 「데미지」 (not 대미지). Franchise vocabulary: 배틀 · 트레이너 · 체육관 ·
+  기술머신 · 몬스터볼 · 도감. Status: 독/맹독/화상/마비/잠듦/얼음.
+- The currency pokécuartos/pokéfrancos is 「포켓프랑」.
+- Setting is monarchic Kalos: keep rank address (폐하·전하·경·마담·무슈); do not
+  modernize. French/Russian interjections stay (Merci beaucoup, Mon coeur, Blyat);
+  but address titles are transliterated: monsieur→무슈, madame→마담,
+  mademoiselle→마드모아젤. Italian `Mamma mia`→「맘마미아」.
+- Kill translationese: 「~에 대해」→ object particle; 「~하는 것이 가능하다」→
+  「~할 수 있다」; no double passive 「~되어진다」; ¡Qué …! becomes 「정말 ~구나!」
+  not 「얼마나 ~한가!」."""
+
+# 괄호 안이 **짧고** 판정 이력으로만 이뤄진 것만 뗀다. 길게 물면 지시까지 먹는다
+# (실측 사고: 크리산토 셀에서 「반말은 …에게만 쓴다」가 통째로 지워졌다).
+EVIDENCE = re.compile(r"\((?=[^()]{0,60}\))[^()]*?"
+                      r"(?:20\d\d-\d\d-\d\d|사용자 판정|실측|추정)[^()]*\)")
+
+
+def strip_evidence(s):
+    """말투표·용어표 셀에서 판정 이력 괄호만 뗀다 — 모델에게 필요한 것은 지시뿐이다."""
+    prev = None
+    while prev != s:
+        prev, s = s, EVIDENCE.sub("", s)
+    return re.sub(r"\s{2,}", " ", s).replace(" .", ".").strip(" ·—")
+
+
+# 용어 쌍을 캘 절 — 다른 표(지명 대조 따위)는 칸 구성이 달라 잘못 읽힌다
+TERM_SECTIONS = ("## 고정 용어표", "### 2026-08-05 판정")
+
+
+def term_pairs():
+    """용어집의 용어표 절에서 (원문, 표기) 쌍. 표기 칸의 근거 괄호는 뗀다."""
+    pairs, on = [], False
+    for line in (HERE / "glossary.md").read_text(encoding="utf-8").splitlines():
+        if line.startswith(("#", "##", "###")):
+            on = line.startswith(TERM_SECTIONS)
+        if not on or not line.startswith("|"):
             continue
-        multi = [c for c in cands if len(c["cast"]) >= 2 and len(c["rows"]) <= 40]
-        c = random.choice(multi or cands)
-        used_ev.add((c["map"], c["event"]))
-        picked.append(c)
-    return picked
+        cells = [c.strip() for c in line.strip("|").split("|")]
+        for a, b in zip(cells[::2], cells[1::2]):
+            if not a or not b or a in ("원문", "---") or set(a) <= set("-"):
+                continue
+            ko = strip_evidence(b).strip("*")
+            if ko and len(a) < 40:
+                pairs.append((a, ko))
+    return pairs
+
+
+def glossary_for(rows):
+    """이 장면에 실제로 나오는 용어만 고른다 — 전문은 9천 자라 요청마다 실을 것이 못 된다."""
+    es_all = " ".join(r["es"] for r in rows).lower()
+    ko_all = " ".join(r["ko"] for r in rows)
+    hits = []
+    for a, b in term_pairs():
+        keys = [k.strip().lower() for k in re.split(r"[/·]", a) if k.strip()]
+        if any(k in es_all for k in keys) or b.split("(")[0].strip() in ko_all:
+            hits.append(f"- {a} → {b}")
+    return CORE_TERMS + ("\n" + "\n".join(dict.fromkeys(hits)) if hits else "")
 
 
 def build_prompt():
     body = (HERE / "prompt-pages.md").read_text(encoding="utf-8")
-    body = body.split("## 시스템 프롬프트 본문", 1)[1]
-    gloss = (HERE / "glossary.md").read_text(encoding="utf-8")
-    return body.replace("[용어 규칙 — glossary.md 본문 삽입]", gloss)
+    return body.split("## 시스템 프롬프트 본문", 1)[1]
 
 
 def scene_header(c):
-    cast = "\n".join(f"- {x['name']}: {x['voice'] or '말투표에 없음 — 현행 급을 유지하라'}"
-                     for x in c["cast"])
-    return (f"장면: {c['map_name']}(맵{c['map']}) · 이벤트 「{c['event_name']}」\n"
-            f"이 장면의 화자와 말투:\n{cast}\n")
+    cast = "\n".join(
+        f"- {x['name']}: {strip_evidence(x['voice']) if x['voice'] else 'not in the style guide — keep the current level'}"
+        for x in c["cast"])
+    return (f"Scene: {c['map_name']} (map {c['map']}), event 「{c['event_name']}」\n"
+            f"Speakers and how each talks:\n{cast}\n")
+
+
+def render(c):
+    """요청 하나의 시스템 프롬프트 — 본문 + 이 장면의 용어 + 장면 머리말."""
+    return (build_prompt().replace("[용어 규칙 — 장면별 발췌 삽입]",
+                                   glossary_for(c["rows"]))
+            + "\n\n" + scene_header(c))
 
 
 def run(pilot=False, limit=None, workers=4):
@@ -229,17 +342,18 @@ def run(pilot=False, limit=None, workers=4):
     if limit:
         pending = pending[:limit]
     print(f"대기 {len(pending)}/{len(chunks)}페이지 · {sum(len(c['rows']) for c in pending)}행")
-    key, prompt = key_of(), build_prompt()
+    key = key_of()
     lock = threading.Lock()
     st = {"n": 0, "rows": 0, "cost": 0.0, "rej": 0}
 
     def work(c):
         reqrows = [{"id": r["id"], "who": r["who"], "es": r["es"], "ko": r["ko"]}
                    for r in c["rows"]]
-        got, cost = ask_npc(key, MODEL, prompt + "\n\n" + scene_header(c), reqrows)
+        sys_prompt = render(c)
+        got, cost = ask_npc(key, MODEL, sys_prompt, reqrows)
         missing = [r for r in reqrows if r["id"] not in got]
         if missing:
-            got2, c2 = ask_npc(key, MODEL, prompt + "\n\n" + scene_header(c), missing)
+            got2, c2 = ask_npc(key, MODEL, sys_prompt, missing)
             got.update(got2)
             cost += c2
         lines, rej = [], 0
