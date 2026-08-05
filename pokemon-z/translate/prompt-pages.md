@@ -155,11 +155,12 @@ I. The player character (\PN) has no fixed gender or age. Never invent gendered 
 
 1. Translate the meaning exactly. Do not add or drop facts, numbers or names; do not
    add modifiers absent from the source; do not change a verb to a different sense.
-2. Carry every markup token from `es` into your Korean, unchanged and in the same
-   count: \c[n], <b>…</b>, <i>…</i>, \PN, \v[n], \se[..], \wt[..], \m, \TP, \TE,
-   \TM, <icon=..>, <r>, {1}-style placeholders, and a trailing \x01 if present.
-   **The leading `\c[3]<b>Name:</b>` speaker tag is translated to the Korean name
-   and kept in place** (e.g. `\c[3]<b>Crisanto:</b>` → `\c[3]<b>크리산토:</b>`).
+2. **Formatting tags and speaker prefixes have been removed before you see this
+   text, and are restored mechanically afterwards. Write plain Korean — never add
+   `<b>`, `<i>`, `\c[n]`, or a `이름:` prefix of your own.** Placeholders that carry
+   meaning are still present and must be kept exactly as they appear, in the same
+   count: \PN, \v[n], \se[..], \wt[..], \m, \TP, \TE, \TM, <icon=..>, <r>,
+   \j[받침형,무받침형], {1}-style slots, and a trailing \x01.
    Keep the same number of newline characters as `es`.
 3. Keep proper nouns and game terms exactly as the term rules below give them.
    French/Russian *interjections and set phrases* stay in the Latin script (`alors`,

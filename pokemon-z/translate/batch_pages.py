@@ -570,16 +570,21 @@ def remark(text, spans, pairs):
     """
     out, at = text, 0
     for tag, es in spans:
-        ko = pairs.get(es.strip()) or (es.strip() if not re.search(r"[A-Za-zÀ-ÿ]", es) else None)
-        if not ko:
-            ko = pairs.get(es.strip().rstrip(":"))
-        if not ko:
-            continue
-        i = out.find(ko, at)
-        if i < 0:
-            i = out.find(ko)
-            if i < 0:
+        # 후보를 순서대로 본다 — 표기표의 한국어, 그리고 **원문 그대로**. 옮기지 않고
+        # 남겨 둔 삽입구(`S'il vous plait`·`*Ejem*`)는 표기표를 따라가면 못 찾는다.
+        cands = [pairs.get(es.strip()), pairs.get(es.strip().rstrip(":")), es.strip()]
+        i, ko = -1, None
+        for cand in cands:
+            if not cand:
                 continue
+            i = out.find(cand, at)
+            if i < 0:
+                i = out.find(cand)
+            if i >= 0:
+                ko = cand
+                break
+        if ko is None:
+            continue
         out = out[:i] + f"<{tag}>{ko}</{tag}>" + out[i + len(ko):]
         at = i + len(ko) + len(tag) * 2 + 5
     return out
