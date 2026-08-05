@@ -14,6 +14,7 @@ SA 토큰을 발급받는다 — 브라우저·키 파일 불요. 전제(2026-08
   uv run tools/sheet.py rows <탭> [-n 20]    # 행 출력(TSV, 최근 n행)
   uv run tools/sheet.py set <탭> <A1> <값>   # 셀 수정(트리아지 표시 등)
   uv run tools/sheet.py archive <탭> [--yes] # 내려받아 보관하고 시트를 비운다
+  uv run tools/sheet.py upload <탭> <jsonl>  # jsonl을 새 탭으로 올린다(있으면 갈아엎음)
 
 archive는 머리행만 남기고 응답행을 **삭제**한다(내용 지우기가 아니라 행 삭제).
 지우기로 비우면 빈 행이 남아 폼이 그 아래에 이어 쓰고, 그래서 다음 응답이
@@ -127,6 +128,28 @@ def main():
             "sheetId": gid, "dimension": "ROWS",
             "startIndex": 1, "endIndex": 1 + len(rows)}}}]})
         print(f"시트에서 {len(rows)}행을 지웠어요 — 다음 응답은 2행부터 쌓여요")
+    elif cmd == "upload":
+        tab, path = sys.argv[2], sys.argv[3]
+        recs = [json.loads(l) for l in open(path, encoding="utf-8") if l.strip()]
+        if not recs:
+            sys.exit("올릴 줄이 없어요")
+        head = list(recs[0])
+        values = [head] + [[str(r.get(c, "")) for c in head] for r in recs]
+        meta = call("?fields=sheets.properties")
+        gid = next((s["properties"]["sheetId"] for s in meta["sheets"]
+                    if s["properties"]["title"] == tab), None)
+        if gid is None:      # 새 탭
+            call(":batchUpdate", "POST", {"requests": [{"addSheet": {"properties": {
+                "title": tab, "gridProperties": {
+                    "rowCount": len(values) + 10, "columnCount": len(head),
+                    "frozenRowCount": 1}}}}]})
+        else:                # 있으면 통째로 비우고 다시 쓴다
+            call(f"/values/{urllib.parse.quote(tab)}:clear", "POST", {})
+        call(f"/values/{urllib.parse.quote(tab)}!A1?valueInputOption=RAW", "PUT",
+             {"range": f"{tab}!A1", "values": values})
+        print(f"{len(recs)}행 × {len(head)}칸을 '{tab}' 탭에 올렸어요"
+              f" ({'새 탭' if gid is None else '기존 탭 갈아엎음'})")
+        print(f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/edit")
     else:
         sys.exit(__doc__)
 
