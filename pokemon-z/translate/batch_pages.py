@@ -34,6 +34,7 @@ from validate import check  # noqa: E402
 
 ATTR = HERE.parent / "docs/research/speaker-attr.jsonl.gz"
 ANON = HERE.parent / "docs/research/2026-08-06-anon-speakers.jsonl"
+APPROVED = HERE.parent / "docs/research/2026-08-03-crisanto-approved.jsonl"
 PROTECTED = HERE.parent / "docs/research/protected.jsonl"
 MAPS = HERE / "ko" / "00-maps.jsonl"
 BATCH = HERE / "batch"
@@ -128,6 +129,22 @@ def resolve(who, names):
     return who
 
 
+def approved_set():
+    """유지자가 3단 대조로 승인한 줄 — 재번역해도 **자동 채택 금지, 반드시 견줘서 고른다.**
+
+    2026-08-03 크리산토 트랙이 그렇다: 전용 재배치가 「반 단계 과함」 판정을 받아
+    old-new 블렌드 패스로 523행을 완화했고, 구/중간/최종 3단 대조로 승인됐다.
+    보호(재번역 제외)와는 다르다 — 이 줄은 사정권에 남기되 표시만 단다.
+    """
+    out = set()
+    if APPROVED.exists():
+        for line in APPROVED.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                r = json.loads(line)
+                out.add((r["map"], fold(r["es"])))
+    return out
+
+
 def anon_index():
     """이름표가 「???」인 자리의 판정 — 정체와 말투 지침을 자리(맵:이벤트:페이지:명령)로 건다.
 
@@ -177,6 +194,7 @@ def plan(pilot=False):
     ex = excluded_pages(pg)
     ko = ko_index()
     vlines, names, anon = voice_lines(), ko_names(), anon_index()
+    approved = approved_set()
     chunks = []
     for key in sorted(pg):
         if key in ex:
@@ -224,7 +242,8 @@ def plan(pilot=False):
             "event": e, "page": p, "event_name": rows[0].get("event_name", ""),
             "cast": cast,
             "rows": [{"id": f"{m}:{e}:{p}:{r['cmd']}",
-                      "who": resolve(w, names), "es": r["k"], "ko": cur}
+                      "who": resolve(w, names), "es": r["k"], "ko": cur,
+                      **({"approved": True} if (m, fold(r["k"])) in approved else {})}
                      for r, w, cur, _ in take],
         })
 
@@ -403,6 +422,14 @@ def ledger_pairs():
 
 
 BOLD = re.compile(r"<b>(.*?)</b>", re.S)
+# 줄머리 화자 표기 — 「\c[3]<b>이름:</b>\c[0] 」. 뜻이 없는 장식이라 모델이 잘 흘린다.
+HEAD = re.compile(r"^(?:\\c\[\d+\])?<b>[^<]{1,40}:</b>(?:\\c\[\d+\])?\s*")
+
+
+def split_head(s):
+    """줄머리 화자 표기를 떼어 (앞머리, 본문)으로. 없으면 앞머리는 빈 문자열."""
+    m = HEAD.match(s or "")
+    return (m.group(0), s[m.end():]) if m else ("", s or "")
 TITLES = [("monsieur", "무슈"), ("madame", "마담"), ("mademoiselle", "마드모아젤"),
           ("profesora", "교수"), ("profesor", "교수"), ("maese", "선생"),
           ("capitán", "대장"), ("capitana", "대장"), ("regente", "섭정")]
@@ -481,9 +508,16 @@ def run(pilot=False, limit=None, workers=4, fresh=False):
     st = {"n": 0, "rows": 0, "cost": 0.0, "rej": 0}
 
     def work(c):
-        reqrows = [{"id": r["id"], "who": r["who"], "es": r["es"],
-                    **({} if fresh else {"ko": r["ko"]})}
-                   for r in c["rows"]]
+        # 줄머리 화자 표기는 **보내지 않는다** — 색 코드는 뜻이 없어 새로 쓰는 쪽이
+        # 잘 흘린다(실측: B 반려 26행 중 9행이 앞머리). 답을 받은 뒤 그대로 도로 붙인다.
+        heads = {}
+        reqrows = []
+        for r in c["rows"]:
+            he, es = split_head(r["es"])
+            hk, ko = split_head(r["ko"])
+            heads[r["id"]] = hk or he
+            reqrows.append({"id": r["id"], "who": r["who"], "es": es,
+                            **({} if fresh else {"ko": ko})})
         sys_prompt = render(c, fresh)
         got, cost = ask_npc(key, MODEL, sys_prompt, reqrows)
         missing = [r for r in reqrows if r["id"] not in got]
@@ -494,6 +528,10 @@ def run(pilot=False, limit=None, workers=4, fresh=False):
         lines, rej = [], 0
         for r in c["rows"]:
             new, why = got.get(r["id"]), None
+            if new is not None:
+                head = heads[r["id"]]
+                if head:                       # 떼어 둔 앞머리를 도로 붙인다
+                    new = head + split_head(new)[1]
             if new is None:
                 why = "누락"
             else:
