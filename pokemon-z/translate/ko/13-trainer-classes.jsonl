@@ -11,16 +11,16 @@
 {"i": 10, "v": "무슈", "es": "Monsieur"}
 {"i": 11, "v": "마담", "es": "Madame"}
 {"i": 12, "v": "도둑", "es": "Ladrona"}
-{"i": 13, "v": "아조스단 신입", "es": "Recluta Azoth"}
-{"i": 14, "v": "아조스단 신입", "es": "Recluta Azoth"}
-{"i": 15, "v": "아조스단 신입들", "es": "Reclutas Azoth"}
+{"i": 13, "v": "아조스단 신병", "es": "Recluta Azoth"}
+{"i": 14, "v": "아조스단 신병", "es": "Recluta Azoth"}
+{"i": 15, "v": "아조스단 신병들", "es": "Reclutas Azoth"}
 {"i": 16, "v": "라이벌", "es": "Rival"}
 {"i": 17, "v": "라이벌", "es": "Rival"}
 {"i": 18, "v": "라이벌", "es": "Rival"}
-{"i": 19, "v": "총사", "es": "Mosquetero"}
-{"i": 20, "v": "총사", "es": "Mosquetera"}
+{"i": 19, "v": "무사", "es": "Mosquetero"}
+{"i": 20, "v": "무사", "es": "Mosquetera"}
 {"i": 21, "v": "섭정", "es": "Regente"}
-{"i": 22, "v": "총사", "es": "Mosquetero"}
+{"i": 22, "v": "무사", "es": "Mosquetero"}
 {"i": 23, "v": "아조스단 연금술사", "es": "Alquimista Azoth"}
 {"i": 24, "v": "라이벌", "es": "Rival"}
 {"i": 25, "v": "약초사", "es": "Herbolaria"}
@@ -81,17 +81,17 @@
 {"i": 80, "v": "트레이너", "es": "Entrenador"}
 {"i": 81, "v": "트레이너", "es": "Entrenador"}
 {"i": 82, "v": "무슈", "es": "Monsieur"}
-{"i": 83, "v": "상급 기사", "es": "Alto Caballero"}
+{"i": 83, "v": "상급기사", "es": "Alto Caballero"}
 {"i": 84, "v": "귀부인", "es": "Alta Dama"}
-{"i": 85, "v": "상급 기사", "es": "Alto Caballero"}
+{"i": 85, "v": "상급기사", "es": "Alto Caballero"}
 {"i": 86, "v": "귀부인", "es": "Alta Dama"}
 {"i": 87, "v": "왕", "es": "Rey"}
 {"i": 88, "v": "왕들", "es": "Reyes"}
-{"i": 89, "v": "헌병", "es": "Carabinero"}
-{"i": 90, "v": "헌병", "es": "Carabinera"}
+{"i": 89, "v": "경관", "es": "Carabinero"}
+{"i": 90, "v": "경관", "es": "Carabinera"}
 {"i": 91, "v": "천재 트레이너", "es": "Entrenadora Prodigiosa"}
 {"i": 92, "v": "미친 죄수", "es": "Prisionero Loco"}
-{"i": 93, "v": "헌병 듀오", "es": "Dúo Carabinero"}
+{"i": 93, "v": "경관 듀오", "es": "Dúo Carabinero"}
 {"i": 94, "v": "간수", "es": "Alcaide"}
 {"i": 95, "v": "트레이너", "es": "Entrenador"}
 {"i": 96, "v": "트레이너", "es": "Entrenadora"}
@@ -127,8 +127,8 @@
 {"i": 126, "v": "섭정", "es": "Regente"}
 {"i": 127, "v": "수호자", "es": "Guardián"}
 {"i": 128, "v": "화가", "es": "Pintora"}
-{"i": 129, "v": "헌병", "es": "Carabinero"}
-{"i": 130, "v": "헌병", "es": "Carabinera"}
+{"i": 129, "v": "경관", "es": "Carabinero"}
+{"i": 130, "v": "경관", "es": "Carabinera"}
 {"i": 131, "v": "트레이너", "es": "Entrenadora"}
 {"i": 132, "v": "옛 여왕들", "es": "Antiguas Reinas"}
 {"i": 133, "v": "트레이너", "es": "Entrenador"}

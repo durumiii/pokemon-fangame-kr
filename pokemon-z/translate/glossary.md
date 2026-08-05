@@ -107,6 +107,36 @@ canon에 없는 영역의 보조로만).
 | Zafra | 사프라 | 보데곤마을 섭정 겸 요리사. 제보에는 「샤프라」로 적혀 왔으나 사용자가 「사프라」로 확정 — 현행 번역이 이미 37행 전부 「사프라」라 바꿀 자리는 없었다(실측). 스페인어 s는 「ㅅ」(사핀과 같은 결). 받침이 없어 뒤 조사는 를·는·가·와 |
 | maese | **선생** (아래로 부를 땐 「선생님」) | 스페인어 옛 경칭. 상호 호칭이라 「스승님」은 방향이 어긋나고, 농부·죄수 자리가 있어 「경」·「공」도 안 맞는다. 본가는 `maestro`를 사제 관계면 「스승님」, 경칭 호격이면 「선생(님)」으로 갈라 쓴다. 40행 통일 |
 
+### 2026-08-06 판정 (사용자) — 전수 훑기에서 갈린 47건
+
+`tools/names.py sweep`이 정본에서 캐낸 갈림 목록(`docs/research/2026-08-06-names-sweep.md`)을
+유지자가 판정한 것이다. 47건 전부 원장에 올렸고 정본 248행을 고쳤다. 항목별 전후 개수와
+바꾼 자리는 [`docs/research/2026-08-06-names-applied.md`](../docs/research/2026-08-06-names-applied.md).
+판정의 결만 적으면:
+
+- **직함은 직함표와 대사를 한 표기로 누른다.** `Mosquetero/Mosquetera`→「무사」,
+  `Carabinera/Carabinero`→「경관」(자리별 「교도관」안은 철회), `Recluta Azoth`→「아조스단 신병」,
+  `Metre`→「지배인」, `Brujita`→「꼬마마녀」, `Campesina/Campesino`→「시골 아낙」·「시골 농부」.
+- **직함이 붙은 인물명은 「직함 이름」 어순.** `Consejero Narciso`→「즈미 고문」은 예외로
+  이름이 앞이다(어순이 다르니 치환 순서를 긴 것부터 잡아야 한다).
+  `Alto Caballero`는 붙여 써서 「상급기사」 — 인물명도 「상급기사 즈미」·「상급기사 간피」.
+  `Alta Dama Malva`의 「파키라의 고귀한 여인」은 직함을 소유격으로 읽은 오역이라 바로잡았다.
+- **지명은 짝이 되는 지명의 어간을 따른다.** `Viejo Vánitas`→「옛 고목내마을」(짝 `Pueblo
+  Vánitas`가 「고목내마을」), `Petrocueva`→「가라 동굴」(짝 `Pueblo Petroglifo`가 「가라마을」).
+  `Bosque Errante`는 표준 표기 「헤매는 숲」(헤매다), `Santuario Prosperidad`는 「풍요의 사당」.
+- **띄어쓰기는 붙이는 쪽.** 「포켓몬리그」·「배틀포인트」·「상급기사」. 다만 복합 지명
+  「미르 궁전」은 띄어 쓴 기존 판정을 유지한다.
+- **이름 자리는 뜻으로 옮기지 않는다.** `Siestín`→「시에스틴」(「낮잠」 아님),
+  `Naranja`→「오렌지」(짝인 `Lila`·`Menta`가 「릴라」·「민트」라 결을 맞춘 것 — 뜻번역
+  「주황색」도 날음차 「나랑하」도 아니다).
+- **화자 이름표의 일반 호칭도 하나로 고정한다.** `Mujer`→「여성」, `Ciudadana`→「시민」,
+  `Anciana`→「할머니」, `Hombre sentenciado`→「유죄 판결을 받은 남성」. 본문의 같은 낱말은
+  건드리지 않는다 — 원문이 화자 이름표인 자리만 바꿨다.
+- `Vino Sombrío`→「그림자포도주」, `Pokéflauta`→「포켓몬피리」, `Orfebrería`→「보석상」,
+  `Galería de Arte`→「미술관」, `Reto Monotype`→「모노타입 챌린지」,
+  `Vínculo Supremo`→「궁극의 유대」, `Habitación Real`→「왕의 방」.
+- `Pokémon Z`는 건드리지 않기로 했다(미번역으로 남은 한 줄 포함).
+
 > 고유명 표기는 **`translate/canon/names.jsonl`이 정본**이다. 이 표는 판정 근거를 적는
 > 자리고, 기계가 훑는 것은 그쪽이다 — `uv run tools/names.py check`, 재배포 게이트는
 > `verify.py`가 같은 검사를 돈다. 표기를 바꿀 땐 `tools/names.py rename`으로 정본과
