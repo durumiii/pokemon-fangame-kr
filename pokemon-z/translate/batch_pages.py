@@ -16,6 +16,7 @@
 산출: batch/page-out[-pilot]/<cid>.jsonl — {"id","who","es","old","new","ok","why"}
 """
 
+import collections
 import gzip
 import json
 import random
@@ -142,6 +143,35 @@ def approved_set():
             if line.strip():
                 r = json.loads(line)
                 out.add((r["map"], fold(r["es"])))
+    return out
+
+
+def approved_samples(limit=5):
+    """승인된 줄에서 화자별 **본보기**를 뽑는다.
+
+    말투를 형용사로 설명하면 모델이 한쪽으로 쏠린다(2026-08-06: 어미를 누르면
+    평평해지고, 살리라 하면 하게체까지 올라갔다). 이미 승인된 실물을 몇 줄 보여
+    주는 편이 어떤 서술보다 정확하다.
+    """
+    from register import axis
+    pool = collections.defaultdict(lambda: collections.defaultdict(list))
+    if not APPROVED.exists():
+        return {}
+    names = ko_names()
+    for line in APPROVED.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        r = json.loads(line)
+        ko = split_head(r["ko"])[1].replace("\n", " ").strip()
+        if r.get("who") and 12 <= len(ko) <= 60 and "\\" not in ko:
+            pool[resolve(r["who"], names)][axis(ko)[0] or "—"].append(ko)
+    # 격이 갈리는 인물이 많으므로 **존대·하대를 함께** 보인다. 한쪽만 보이면 그쪽으로 쏠린다.
+    out = {}
+    for name, byax in pool.items():
+        picked = []
+        for ax in ("하대", "존대", "—"):
+            picked += [(ax, x) for x in byax.get(ax, [])[:limit // 2 + 1]]
+        out[name] = picked[:limit]
     return out
 
 
@@ -479,11 +509,17 @@ def build_prompt(fresh=False):
 
 
 def scene_header(c):
-    cast = "\n".join(
-        f"- {x['name']}: {voice_instruction(x['voice']) if x['voice'] else 'not in the style guide — keep the current level'}"
-        for x in c["cast"])
+    samples = approved_samples()
+    lines = []
+    for x in c["cast"]:
+        lines.append(f"- {x['name']}: "
+                     + (voice_instruction(x["voice"]) if x["voice"]
+                        else "not in the style guide — keep the current level"))
+        for ax, ex in samples.get(x["name"], []):
+            lines.append(f"    · 본보기({ax}): {ex}")
     return (f"Scene: {c['map_name']} (map {c['map']}), event 「{c['event_name']}」\n"
-            f"Speakers and how each talks:\n{cast}\n")
+            f"Speakers and how each talks (「본보기」 lines are approved translations — "
+            f"match their texture):\n" + "\n".join(lines) + "\n")
 
 
 def render(c, fresh=False):
