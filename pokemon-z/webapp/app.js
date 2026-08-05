@@ -452,12 +452,15 @@ function more(){
 
 const MARKUP = /\\c\[\d+\]|\\[A-Za-z]+|\{\d+\}|<[^>]+>/g;
 // 한 행에 새 값을 앉힌다 — 저장 버튼과 일괄 바꾸기가 같은 경로를 쓴다(persist/화면 갱신은 부르는 쪽 몫)
-function applyEdit(r, v){
+// via: 'bulk'이면 일괄 바꾸기가 만든 고침이다. 저장 버튼과 같은 경로를 쓰기 때문에
+// 여기서 표시해 두지 않으면 나중에 「낱건 판정」과 구분할 길이 없다 — 제보의 patch 칸으로
+// 실려 나가고, 재번역 때 보호할 자리를 가리는 근거가 된다(2026-08-06).
+function applyEdit(r, v, via){
   // textarea는 CR/CRLF를 LF로 접어 돌려준다 — 안 고친 행이 수정으로 잡히지 않게 같은 모양끼리 비교
   const id = rid(r), prev = S.edits.get(id);
   if (v === r.v.replace(/\r\n?/g, '\n')) S.edits.delete(id);
-  else S.edits.set(id, {sec:r.sec, map:r.map, idx:r.idx, k:r.k, v});
-  hist({type:'edit', rid:id, k:r.k, old:prev ? prev.v : r.v, new:v});
+  else S.edits.set(id, {sec:r.sec, map:r.map, idx:r.idx, k:r.k, v, ...(via ? {via} : {})});
+  hist({type:'edit', rid:id, k:r.k, old:prev ? prev.v : r.v, new:v, ...(via ? {via} : {})});
 }
 // 색·이름 코드를 삼키는 저장은 한 번 물어본다 — 지우면 화면이 깨진다
 function confirmMarkup(r, v){
@@ -520,10 +523,13 @@ function markAllSent(){
 }
 // 구글폼에 no-cors로 던진다(응답 확인 불가, 실패해도 toast로만 알림)
 // silent: 일괄 전송 중 매 건 toast 도배 방지(진행·완료 토스트는 호출부가 낸다)
-async function sendForm(vals, {batch=false, silent=false}={}){
+// via='bulk'이면 patch 칸에 「바꾸기」를 덧붙인다 — 「일괄」은 모아서 보냈다는 뜻이고
+// 「바꾸기」는 일괄 바꾸기로 고쳤다는 뜻이라 서로 다른 표시다. 폼·시트는 손대지 않는다.
+async function sendForm(vals, {batch=false, silent=false, via=null}={}){
   const fd = new FormData(), E = REPORT_FORM.entries;
   for (const [k, v] of Object.entries(vals)) fd.append(E[k], v);
-  fd.append(E.patch, `${S.meta ?? 'hash:'+S.sha} / ${APP_VER} / u:${reporterId().slice(0,8)}${batch?' / 일괄':''}`);
+  fd.append(E.patch, `${S.meta ?? 'hash:'+S.sha} / ${APP_VER} / u:${reporterId().slice(0,8)}` +
+                     `${batch?' / 일괄':''}${via === 'bulk' ? ' / 바꾸기' : ''}`);
   try {
     await fetch(`https://docs.google.com/forms/d/e/${REPORT_FORM.id}/formResponse`,
       {method:'POST', mode:'no-cors', body:fd});
@@ -543,7 +549,7 @@ async function report(i){
   if (sentIndex().get(id) === s &&
       !confirm('이 행은 같은 내용으로 이미 제보했어요. 다시 보낼까요?')) return;
   await sendForm({sec:`${r.sec}:${SEC_LABEL[r.sec] ?? ''}`, idx:`${r.map ?? ''}:${r.idx}`,
-                  k:r.k ?? '', v:r.v, suggest: e ? e.v : '', comment});
+                  k:r.k ?? '', v:r.v, suggest: e ? e.v : '', comment}, {via: e?.via ?? null});
   markSent(id, s);
 }
 // 폼 한 칸에 들어갈 수 있는 길이 — 넘치면 잘리는 대신 잘렸다고 알린다(단건에는 사실상 불필요하나 방어로 유지)
@@ -574,7 +580,7 @@ async function batchReport(){
                        idx: r ? `${r.map ?? ''}:${r.idx}` : '',
                        k: r?.k ?? '', v: r?.v ?? '',
                        suggest: e ? cut(e.v) : '', comment: m ? cut(m.text) : ''},
-                      {batch:true, silent:true});
+                      {batch:true, silent:true, via: e?.via ?? null});
       markSent(id, sigs.get(id));
     }
     toast(`${fresh.length}건 보냈어요${skipped ? ` (이미 보낸 ${skipped}건은 뺐어요)` : ''}`, 4000);
@@ -713,7 +719,7 @@ function replAll(on){ REPL.forEach((h, i) => {
 function replaceApply(){
   const sel = REPL.filter((_, i) => $('rc'+i)?.checked);
   if (!sel.length){ toast('적용할 행을 골라주세요'); return; }
-  for (const h of sel) applyEdit(h.r, h.nv);
+  for (const h of sel) applyEdit(h.r, h.nv, 'bulk');
   persist(); updateDirty();
   replacePreview();   // 적용된 행은 새 값 기준이라 목록에서 빠진다
   $('meta').textContent = `${sel.length}행 적용 — [빌드]를 누르면 게임에 반영돼요`;
