@@ -20,7 +20,7 @@
 {"i": 19, "v": "집", "es": "Casa"}
 {"i": 20, "v": "포켓몬 요새", "es": "Bastión Pokémon"}
 {"i": 21, "v": "포켓몬 요새", "es": "Bastión Pokémon"}
-{"i": 22, "v": "총사 병영", "es": "Cuartel Mosquetero"}
+{"i": 22, "v": "무사 병영", "es": "Cuartel Mosquetero"}
 {"i": 23, "v": "3번도로", "es": "Ruta 3"}
 {"i": 24, "v": "아크릴리코마을", "es": "Pueblo Acrílico"}
 {"i": 25, "v": "아크릴리코마을", "es": "Pueblo Acrílico"}
@@ -30,7 +30,7 @@
 {"i": 29, "v": "콜라주마을", "es": "Pueblo Collage"}
 {"i": 30, "v": "포켓몬센터", "es": "Centro Pokémon"}
 {"i": 31, "v": "제재소", "es": "Aserradero"}
-{"i": 32, "v": "떠도는 숲", "es": "Bosque Errante"}
+{"i": 32, "v": "헤매는 숲", "es": "Bosque Errante"}
 {"i": 33, "v": "전환", "es": "Transición"}
 {"i": 34, "v": "집", "es": "Casa"}
 {"i": 35, "v": "로시욘 저택", "es": "Chateau Rosillon"}
@@ -116,8 +116,8 @@
 {"i": 115, "v": "포켓몬 요새", "es": "Bastión Pokémon"}
 {"i": 116, "v": "레스토랑 르 총크", "es": "Restaurante Le Chonk"}
 {"i": 117, "v": "집", "es": "Casa"}
-{"i": 118, "v": "번영의 성소", "es": "Santuario Prosperidad"}
-{"i": 119, "v": "번영의 성소", "es": "Santuario Prosperidad"}
+{"i": 118, "v": "풍요의 사당", "es": "Santuario Prosperidad"}
+{"i": 119, "v": "풍요의 사당", "es": "Santuario Prosperidad"}
 {"i": 120, "v": "드루이드의 방", "es": "Cámara Druídica"}
 {"i": 121, "v": "9번도로", "es": "Ruta 9"}
 {"i": 122, "v": "엑소티코 호텔", "es": "Hotel Exótico"}
@@ -125,20 +125,20 @@
 {"i": 124, "v": "레비아탄 요새", "es": "Fort Leviatán"}
 {"i": 125, "v": "레비아탄 요새", "es": "Fort Leviatán"}
 {"i": 126, "v": "레비아탄 요새", "es": "Fort Leviatán"}
-{"i": 127, "v": "페트로 동굴", "es": "Petrocueva"}
+{"i": 127, "v": "가라 동굴", "es": "Petrocueva"}
 {"i": 128, "v": "북부 카타콤", "es": "Catacumbas Septentrionales"}
 {"i": 129, "v": "드루이드의 방", "es": "Cámara Druídica"}
 {"i": 130, "v": "휴게소", "es": "Estación de Servicio"}
 {"i": 131, "v": "집", "es": "Casa"}
-{"i": 132, "v": "페트로 동굴", "es": "Petrocueva"}
+{"i": 132, "v": "가라 동굴", "es": "Petrocueva"}
 {"i": 133, "v": "삼채시티", "es": "Ciudad Relieve"}
 {"i": 134, "v": "포켓몬센터", "es": "Centro Pokémon"}
 {"i": 135, "v": "집", "es": "Casa"}
 {"i": 136, "v": "티에라우니다 동굴", "es": "Gruta Tierraunida"}
 {"i": 137, "v": "12번도로", "es": "Ruta 12"}
-{"i": 138, "v": "옛 바니타스", "es": "Viejo Vánitas"}
-{"i": 139, "v": "옛 바니타스", "es": "Viejo Vánitas"}
-{"i": 140, "v": "옛 바니타스", "es": "Viejo Vánitas"}
+{"i": 138, "v": "옛 고목내마을", "es": "Viejo Vánitas"}
+{"i": 139, "v": "옛 고목내마을", "es": "Viejo Vánitas"}
+{"i": 140, "v": "옛 고목내마을", "es": "Viejo Vánitas"}
 {"i": 141, "v": "고목내마을", "es": "Pueblo Vánitas"}
 {"i": 142, "v": "포켓몬센터", "es": "Centro Pokémon"}
 {"i": 143, "v": "라 타라스크", "es": "La Tarasque"}
@@ -194,7 +194,7 @@
 {"i": 193, "v": "미르 궁전", "es": "Palacio Luminalia"}
 {"i": 194, "v": "크리산토 장면", "es": "Escena Crisanto"}
 {"i": 195, "v": "크리산토 장면 2", "es": "Escena Crisanto 2"}
-{"i": 196, "v": "옛 바니타스", "es": "Viejo Vánitas"}
+{"i": 196, "v": "옛 고목내마을", "es": "Viejo Vánitas"}
 {"i": 197, "v": "카두코 구호소", "es": "Hospicio Caduco"}
 {"i": 198, "v": "빛나는 동굴", "es": "Cueva Refulgente"}
 {"i": 199, "v": "그리사야 동굴", "es": "Cueva Grisalla"}
@@ -302,7 +302,7 @@
 {"i": 301, "v": "끝의 동굴", "es": "Cueva Desenlace"}
 {"i": 302, "v": "카페 페드린", "es": "Café Pedrín"}
 {"i": 303, "v": "끝의 동굴", "es": "Cueva Desenlace"}
-{"i": 304, "v": "금세공방", "es": "Orfebrería"}
+{"i": 304, "v": "보석상", "es": "Orfebrería"}
 {"i": 305, "v": "포켓몬 요새", "es": "Bastión Pokémon"}
 {"i": 306, "v": "전환", "es": "Transición"}
 {"i": 307, "v": "포켓몬센터", "es": "Centro Pokémon"}
@@ -351,9 +351,9 @@
 {"i": 350, "v": "폭포 동굴", "es": "Cueva de la Cascada"}
 {"i": 351, "v": "프시케 동굴", "es": "Cueva Psique"}
 {"i": 352, "v": "미술관", "es": "Galería de Arte"}
-{"i": 353, "v": "떠도는 숲", "es": "Bosque Errante"}
+{"i": 353, "v": "헤매는 숲", "es": "Bosque Errante"}
 {"i": 354, "v": "23번도로", "es": "Ruta 23"}
-{"i": 355, "v": "떠도는 숲", "es": "Bosque Errante"}
+{"i": 355, "v": "헤매는 숲", "es": "Bosque Errante"}
 {"i": 356, "v": "포켓몬마을", "es": "Villa Pokemon"}
 {"i": 357, "v": "포켓몬센터", "es": "Centro Pokémon"}
 {"i": 358, "v": "22번도로", "es": "Ruta 22"}
@@ -363,14 +363,14 @@
 {"i": 362, "v": "미르 신시가지 - 중앙", "es": "Expansiones de Luminalia - Centro"}
 {"i": 363, "v": "전환", "es": "Transición"}
 {"i": 364, "v": "전환", "es": "Transición"}
-{"i": 365, "v": "떠도는 숲", "es": "Bosque Errante"}
-{"i": 366, "v": "떠도는 숲", "es": "Bosque Errante"}
-{"i": 367, "v": "떠도는 숲", "es": "Bosque Errante"}
-{"i": 368, "v": "떠도는 숲", "es": "Bosque Errante"}
-{"i": 369, "v": "떠도는 숲", "es": "Bosque Errante"}
-{"i": 370, "v": "떠도는 숲", "es": "Bosque Errante"}
-{"i": 371, "v": "떠도는 숲", "es": "Bosque Errante"}
-{"i": 372, "v": "떠도는 숲", "es": "Bosque Errante"}
+{"i": 365, "v": "헤매는 숲", "es": "Bosque Errante"}
+{"i": 366, "v": "헤매는 숲", "es": "Bosque Errante"}
+{"i": 367, "v": "헤매는 숲", "es": "Bosque Errante"}
+{"i": 368, "v": "헤매는 숲", "es": "Bosque Errante"}
+{"i": 369, "v": "헤매는 숲", "es": "Bosque Errante"}
+{"i": 370, "v": "헤매는 숲", "es": "Bosque Errante"}
+{"i": 371, "v": "헤매는 숲", "es": "Bosque Errante"}
+{"i": 372, "v": "헤매는 숲", "es": "Bosque Errante"}
 {"i": 373, "v": "23번도로", "es": "Ruta 23"}
 {"i": 374, "v": "서커스의 악몽", "es": "Pesadilla del Circo"}
 {"i": 375, "v": "미르 스테이션", "es": "Estación Luminalia"}
