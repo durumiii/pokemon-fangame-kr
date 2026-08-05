@@ -44,7 +44,10 @@ MODEL = "gemini-3.6-flash"
 PAGE_CAP = 90          # 실측: 확정 페이지 835개 중 이 값을 넘는 페이지가 없다
 PILOT_PAGES = 20
 PILOT_MAP_MAX = 90     # 파일럿은 초반부에서만 뽑는다 — 유지자가 판정할 수 있는 구간
-PILOT_EXTRA = ("p112-4-0",)   # 초반부 밖이라도 꼭 넣을 장면 (란토 저택 65행 대면)
+PILOT_EXTRA = ()              # 초반부 밖이라도 꼭 넣을 장면
+# 2차 파일럿(2026-08-06): 1차와 안 겹치는 초반 여덟 장면 133행
+PILOT2 = ("p021-17-0", "p026-4-0", "p036-39-0", "p040-6-0", "p042-45-0",
+          "p044-25-0", "p059-47-0", "p061-11-1")
 
 # 화자로 잡히지만 사람 말이 아닌 이름표 (안내판·표지·트레이너 팁 따위)
 SYS = {"PISTA DE ENTRENADOR", "Notas del Team Azoth", "\\PN", "AVISO", "Oeste",
@@ -396,6 +399,16 @@ def dedupe(chunks):
     return out
 
 
+def route(c):
+    """이 장면을 어느 쪽으로 돌릴 것인가.
+
+    승인 줄이 있는 장면은 이미 유지자가 견주어 고른 자리라 **교정판(A)**으로 —
+    현행을 재료로 어긋난 데만 고친다. 손 안 탄 장면은 **새 번역(B)**이 낫다
+    (2026-08-06 파일럿 판정: 승인 줄이 모인 장면에서는 A가 전반적으로 나았다).
+    """
+    return "a" if any(r.get("approved") for r in c["rows"]) else "b"
+
+
 def pick_pilot(chunks):
     """표본 20페이지 — 초반부에서, 말투표가 실리는 장면으로, 화자를 골고루.
 
@@ -424,7 +437,10 @@ def pick_pilot(chunks):
                 used_ev.add((c["map"], c["event"]))
                 picked.append(c)
                 break
-    for cid in PILOT_EXTRA:          # 유지자가 지정한 장면 (2026-08-06: 란토 저택 대면)
+    if PILOT2:                       # 지정 표본이 있으면 그것만
+        byid = {c["cid"]: c for c in chunks}
+        return [byid[cid] for cid in PILOT2 if cid in byid]
+    for cid in PILOT_EXTRA:          # 유지자가 지정한 장면
         c = next((x for x in chunks if x["cid"] == cid), None)
         if c and c not in picked:
             picked.append(c)
@@ -627,6 +643,9 @@ def run(pilot=False, limit=None, workers=4, fresh=False):
             reqrows.append({"id": r["id"], "who": r["who"], "es": es,
                             **({} if fresh else {"ko": ko})})
         sys_prompt = render(c, fresh)
+        (out_dir / (c["cid"] + ".req.json")).write_text(
+            json.dumps({"system": sys_prompt, "user": reqrows},
+                       ensure_ascii=False, indent=1), encoding="utf-8")
         got, cost = ask_npc(key, MODEL, sys_prompt, reqrows)
         missing = [r for r in reqrows if r["id"] not in got]
         if missing:
