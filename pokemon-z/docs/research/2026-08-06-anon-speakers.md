@@ -37,7 +37,7 @@ gzip.open('docs/research/speaker-attr.jsonl.gz','rt',encoding='utf-8')))" | tr '
 
 정체를 밝혀냈다 해도 **원문이 숨기는 것을 번역이 먼저 드러내면 안 된다.** 표의
 `정체` 칸은 어떤 말투로 옮길지 정하는 근거일 뿐이고, 번역문의 `<b>???:</b>` 이름표는
-그대로 둔다. 특히 로스마리노(맵183·203)는 이름이 한참 뒤 맵419에서야 나오므로
+그대로 둔다. 특히 로스마리노(맵183(세뇨리알 대성당)·203)는 이름이 한참 뒤 맵419(세뇨리알 대성당)에서야 나오므로
 앞 자리에 이름을 넣으면 복선이 무너진다.
 
 ## 확정 — 같은 장면 안에서 이름표가 드러난다 (174자리)
@@ -47,31 +47,31 @@ gzip.open('docs/research/speaker-attr.jsonl.gz','rt',encoding='utf-8')))" | tr '
 
 | 정체 | 자리 | 나오는 곳 | 근거 |
 |---|--:|---|---|
-| 로시욘 | 24 | 맵58 ev10·15·16·17 | 같은 페이지에서 멜리아가 「Es monsieur Rosillon, ¿no?」로 알아본 뒤 이름표 Rosillon |
-| 카놀라 | 18 | 맵21 ev17·19·20 | `???` 줄 자체가 「Soy Canola, regente del Bastión Pokémon」 |
-| 벨라도나 | 18 | 맵140 ev31·32·33 | `???` 줄 자체가 「Soy Belladona, la Regente de Pueblo Vánitas」 |
-| 아우레(아우레토스크) | 13 | 맵211 ev3 · 맵212 ev2 · 맵221 ev1 · 맵327 ev15 | 맵212에서 「Soy el Pokémon Auretosk... podéis llamarme Aure」. 맵211은 아우레 전용 색 코드 `\c[6]`이 같고, 맵327은 대드루이드가 「¡Mensajero Auretosk!」로 호명 |
-| 아조스단 신병 | 8 | 맵53 ev14 | 같은 페이지 c71부터 이름표 Recluta Azoth |
-| 피노 소장 | 6 | 맵225 ev33·34·35 | 페로파스가 「¡A-alcaide Pinot!」로 호명한 뒤 이름표 Alcaide Pinot |
-| 누빌라 | 6 | 맵46 ev20 · 맵290 ev53 | 맵46은 「Soy Núbila」, 맵290은 올리비에가 「¡Núbila!」로 부른다 |
-| F3 | 5 | 맵81 ev31 | 「Mi nombre es F3」 |
-| 크리산토 | 5 | 맵2 ev17 · 맵271 ev4 | 맵2는 「me llamo Crisanto」, 맵271은 마녀들이 「¡el Capitán Crisanto!」 |
-| 미라 | 3 | 맵24 ev13 · 맵40 ev17 | 맵24는 「Mi nombre es Mirra」, 맵40은 멜리아의 별칭 「el clérigo raro」 + 이름표 |
-| 아스테르 제피르 | 3 | 맵286 ev11·16·17 | 바로 다음 메시지가 이름표 Áster Zephir |
-| 게노스 | 2 | 맵139 ev51 | 「Soy Genos, Alto Alquimista del Team Azoth」 |
-| 시엠프레비바 | 2 | 맵379 ev9 | 「Soy Siempreviva, maestra de ceremonias」 |
-| 클렘 | 2 | 맵392 ev35 | 「Me llamo Clem」 |
-| 코르넬리오 | 2 | 맵397 ev26 | 「Yo soy Cornelio, líder de la Orden Yantra」 |
-| 우라노 | 2 | 맵468 ev22 | 「Me llamo Urano y soy el dueño de este balneario」 |
-| 로스마리노 | 2 | 맵419 ev8 | 「Puedes llamarme Rosmarino」 |
-| 란토 | 1 | 맵91 ev18 | 크리산토가 「¡Monsieur Lanto!」로 호명 |
-| 알카 | 1 | 맵112 ev4 | 란토가 「Mi señora...」라 부른 뒤 이름표 Alca |
-| 야느와르몽(Dusknoir) | 1 | 맵208 ev5 | 크리산토가 「¡Un Pokémon parlante!」 + 이름표 Dusknoir |
-| 카드 상대 둘 | 50 | 맵150 ev10 · 맵228 ev23 | 아래 「Contrincante」 절 |
+| 로시욘 | 24 | 맵58(왕들의 성소) ev10·15·16·17 | 같은 페이지에서 멜리아가 「Es monsieur Rosillon, ¿no?」로 알아본 뒤 이름표 Rosillon |
+| 카놀라 | 18 | 맵21(포켓몬 요새) ev17·19·20 | `???` 줄 자체가 「Soy Canola, regente del Bastión Pokémon」 |
+| 벨라도나 | 18 | 맵140(옛 고목내마을) ev31·32·33 | `???` 줄 자체가 「Soy Belladona, la Regente de Pueblo Vánitas」 |
+| 아우레(아우레토스크) | 13 | 맵211(장면 1) ev3 · 맵212(장면 2) ev2 · 맵221(마차 2) ev1 · 맵327(옛 대장간 - 장면) ev15 | 맵212(장면 2)에서 「Soy el Pokémon Auretosk... podéis llamarme Aure」. 맵211(장면 1)은 아우레 전용 색 코드 `\c[6]`이 같고, 맵327(옛 대장간 - 장면)은 대드루이드가 「¡Mensajero Auretosk!」로 호명 |
+| 아조스단 신병 | 8 | 맵53(3번도로) ev14 | 같은 페이지 c71부터 이름표 Recluta Azoth |
+| 피노 소장 | 6 | 맵225(망각의 감옥) ev33·34·35 | 페로파스가 「¡A-alcaide Pinot!」로 호명한 뒤 이름표 Alcaide Pinot |
+| 누빌라 | 6 | 맵46(비탈 숲) ev20 · 맵290(배롱마을) ev53 | 맵46(비탈 숲)은 「Soy Núbila」, 맵290(배롱마을)은 올리비에가 「¡Núbila!」로 부른다 |
+| F3 | 5 | 맵81(불탄 공방) ev31 | 「Mi nombre es F3」 |
+| 크리산토 | 5 | 맵2(칼로스 피레네) ev17 · 맵271(몬스터볼 공장) ev4 | 맵2(칼로스 피레네)는 「me llamo Crisanto」, 맵271(몬스터볼 공장)은 마녀들이 「¡el Capitán Crisanto!」 |
+| 미라 | 3 | 맵24(아크릴리코마을) ev13 · 맵40(옛 도서관) ev17 | 맵24(아크릴리코마을)는 「Mi nombre es Mirra」, 맵40(옛 도서관)은 멜리아의 별칭 「el clérigo raro」 + 이름표 |
+| 아스테르 제피르 | 3 | 맵286(프레스코 풍차) ev11·16·17 | 바로 다음 메시지가 이름표 Áster Zephir |
+| 게노스 | 2 | 맵139(옛 고목내마을) ev51 | 「Soy Genos, Alto Alquimista del Team Azoth」 |
+| 시엠프레비바 | 2 | 맵379(상기노 서커스) ev9 | 「Soy Siempreviva, maestra de ceremonias」 |
+| 클렘 | 2 | 맵392(미르 신시가지 - 동쪽) ev35 | 「Me llamo Clem」 |
+| 코르넬리오 | 2 | 맵397(마스터타워) ev26 | 「Yo soy Cornelio, líder de la Orden Yantra」 |
+| 우라노 | 2 | 맵468(비밀 온천) ev22 | 「Me llamo Urano y soy el dueño de este balneario」 |
+| 로스마리노 | 2 | 맵419(세뇨리알 대성당) ev8 | 「Puedes llamarme Rosmarino」 |
+| 란토 | 1 | 맵91(8번도로 서쪽) ev18 | 크리산토가 「¡Monsieur Lanto!」로 호명 |
+| 알카 | 1 | 맵112(란토 저택) ev4 | 란토가 「Mi señora...」라 부른 뒤 이름표 Alca |
+| 야느와르몽(Dusknoir) | 1 | 맵208(성찰의 방) ev5 | 크리산토가 「¡Un Pokémon parlante!」 + 이름표 Dusknoir |
+| 카드 상대 둘 | 50 | 맵150(감본 루주) ev10 · 맵228(망각의 감옥) ev23 | 아래 「Contrincante」 절 |
 
 ## 추정 — 유력하나 확증이 없다 (26자리)
 
-### 맵2 ev11·12·13 — 눈에 파묻힌 조난자 (9자리)
+### 맵2(칼로스 피레네) ev11·12·13 — 눈에 파묻힌 조난자 (9자리)
 
 세 이벤트가 같은 세 줄을 쓴다: 「눈 위에서 발소리가 들리는 것 같은데?」 / 「도와주세요,
 제발!」 / 「제가 떨어뜨린 몬스터볼 중 하나를 사용해 주세요!」 — 몬스터볼 세 개가 곧
@@ -79,27 +79,27 @@ gzip.open('docs/research/speaker-attr.jsonl.gz','rt',encoding='utf-8')))" | tr '
 조난자는 크리산토다. 다만 ev11~13과 ev17은 별개 이벤트라 파일 하나로 이어지지는
 않아 확정으로 올리지 않았다.
 
-### 맵183 ev20·맵203 ev6 — 대성당의 목소리 (15자리)
+### 맵183(세뇨리알 대성당) ev20·맵203(세뇨리알 대성당) ev6 — 대성당의 목소리 (15자리)
 
-이벤트 스프라이트가 `rosmarino`이고, 같은 스프라이트를 쓰는 맵419 ev8에서
+이벤트 스프라이트가 `rosmarino`이고, 같은 스프라이트를 쓰는 맵419(세뇨리알 대성당) ev8에서
 「Puedes llamarme Rosmarino」로 이름이 나온다. 내용도 이어진다 — 대성당, 잃어버린
 종 두 조각, 「나는 괴물이다」, 사람 친구가 없다. 스프라이트가 근거라 확정이 아니라
 추정에 둔다(스프라이트로 화자를 짐작하는 것은 이 프로젝트가 금하는 방식이다.
 여기서는 이름표가 붙은 다른 맵과 스프라이트가 일치한다는 보조 증거로만 썼다).
 
-**말투가 갈라져 있었다 — 2026-08-06 유지자 판정으로 「하대」로 정했다.** 맵419를 함께 하대로 맞출지는 별건으로 남긴다.
+**말투가 갈라져 있었다 — 2026-08-06 유지자 판정으로 「하대」로 정했다.** 맵419(세뇨리알 대성당)를 함께 하대로 맞출지는 별건으로 남긴다.
 
-원래 관측: 맵419의 로스마리노는 해요체인데(「참 예쁘죠?」·「저를
-로스마리노라고 불러도 돼요」) 맵183·203은 하대다(「길이라도 잃은 거니?」·「시작해
+원래 관측: 맵419(세뇨리알 대성당)의 로스마리노는 해요체인데(「참 예쁘죠?」·「저를
+로스마리노라고 불러도 돼요」) 맵183(세뇨리알 대성당)·203은 하대다(「길이라도 잃은 거니?」·「시작해
 보자꾸나」). 같은 인물이 두 말투인 셈이라 유지자 판정이 필요하다.
 
-### 맵46 ev20 c28 — 잘못 상속된 외침 (1자리)
+### 맵46(비탈 숲) ev20 c28 — 잘못 상속된 외침 (1자리)
 
 `\sh` 흔들림 연출이 붙은 「¡Detened esta atrocidad!」(이 만행을 당장 멈춰라)가
 누빌라의 `???`를 상속받았지만, 이건 난입한 일행의 외침이다. 바로 다음 c54에서
 크리산토가 같은 취지로 항의한다. **누빌라 말투를 얹으면 안 되는 자리다.**
 
-### 맵383 ev1 c435 — 되살아난 여왕 둘 중 누구인가 (1자리)
+### 맵383(밤하늘) ev1 c435 — 되살아난 여왕 둘 중 누구인가 (1자리)
 
 「¡Je, je, je! ¡Nos lo habéis puesto en bandeja de plata!」(밥상을 숟가락째
 차려줬네) 뒤에 멜리아가 둘을 함께 「알카의 부하들」이라 부르고, 이름표는 토르나솔라 →
@@ -111,10 +111,10 @@ gzip.open('docs/research/speaker-attr.jsonl.gz','rt',encoding='utf-8')))" | tr '
 
 ## 익명이 의도 — 끝까지 숨긴다 (10자리)
 
-### 떠도는 숲의 원령 — 맵355 ev6 · 맵365 ev12 · 맵371 ev18 · 맵372 ev17
+### 떠도는 숲의 원령 — 맵355(헤매는 숲) ev6 · 맵365(헤매는 숲) ev12 · 맵371(헤매는 숲) ev18 · 맵372(헤매는 숲) ev17
 
 숲 깊은 곳으로 가려는 주인공을 막아서는 목소리 넷이다. 이름표도 스프라이트도 없고
-끝내 드러나지 않는다. 정체를 가리키는 유일한 실마리는 맵355 같은 이벤트에서
+끝내 드러나지 않는다. 정체를 가리키는 유일한 실마리는 맵355(헤매는 숲) 같은 이벤트에서
 올리비에가 하는 말이다 — 「Había escuchado sobre las leyendas del Bosque Errante,
 sobre los fantasmas y espíritus vengativos que lo habitan」(떠도는 숲의 전설,
 그곳에 산다는 유령과 원령들 이야기를 들은 적이 있다).
@@ -135,15 +135,15 @@ de tu insensatez」·「Codicioso entrenador que ha sentido el Vínculo」).
 
 | 곳 | 정체 | 근거 |
 |---|---|---|
-| 맵150 ev10 (46자리) | 여성 해적 | 같은 이벤트 page 0이 스프라이트 `pirata`로 블랙잭을 걸어오고 page 1이 그 판의 진행이다. 여성형이 전량 일치 — 「soy toda una **maestra**」·「estaré **dispuesta**」·「una **entusiaste**」 |
-| 맵228 ev23 (50자리) | 남성 죄수 밀고자 | 같은 이벤트 page 0이 스프라이트 `prisionero1`로 같은 블랙잭을 걸어온다. 남성형이 전량 일치 — 「soy todo un **maestro**」·「estaré **dispuesto**」 |
+| 맵150(감본 루주) ev10 (46자리) | 여성 해적 | 같은 이벤트 page 0이 스프라이트 `pirata`로 블랙잭을 걸어오고 page 1이 그 판의 진행이다. 여성형이 전량 일치 — 「soy toda una **maestra**」·「estaré **dispuesta**」·「una **entusiaste**」 |
+| 맵228(망각의 감옥) ev23 (50자리) | 남성 죄수 밀고자 | 같은 이벤트 page 0이 스프라이트 `prisionero1`로 같은 블랙잭을 걸어온다. 남성형이 전량 일치 — 「soy todo un **maestro**」·「estaré **dispuesto**」 |
 
 두 이벤트의 진행 대사는 성별 어미만 빼면 같은 틀이다. 즉 작가가 미니게임 스크립트를
 복사해 두 NPC에 붙인 것이고, `Contrincante`는 인물 이름이 아니라 **그 판의 상대**를
 가리키는 자리 표시다.
 
 원문은 양쪽 다 tú 일관이므로 **말투 하나로 끝나지 않는다** — 격은 같지만 인물이
-달라 결이 갈린다. 맵150은 도박판 허세와 승부욕을 살린 호기로운 반말, 맵228은
+달라 결이 갈린다. 맵150(감본 루주)은 도박판 허세와 승부욕을 살린 호기로운 반말, 맵228(망각의 감옥)은
 비굴하면서 우쭐대는 반말이 맞다. 말투표의 「여성·상대방 등 → 기본값(일반 NPC)」
 항목은 이 자리에 맞지 않으므로 고쳐야 한다.
 
@@ -166,11 +166,11 @@ partida!」·「Has recibido un \v[135].」·「Te ha tocado un as, ¿que valor 
 - **말투표 미등재 인물 여섯** — 로시욘, 게노스, 코르넬리오, 우라노, 로스마리노,
   야느와르몽(말하는 포켓몬). 각 자리의 `말투지침` 칸에 원문의 격을 근거로 제안을
   적어 두었다.
-- **격이 어긋난 자리들**(표의 `말투지침`에 함께 적음): 맵46 c12 누빌라가 존대
-  「쳐야 해요」, 맵140 c24 벨라도나가 합쇼체 「대해 주십시오」, 맵290 c44 누빌라가
-  존대 「오랜만이군요」, 맵392 c33 클렘이 반말 「내 이름은 클렘」, 맵468은 한 인물
+- **격이 어긋난 자리들**(표의 `말투지침`에 함께 적음): 맵46(비탈 숲) c12 누빌라가 존대
+  「쳐야 해요」, 맵140(옛 고목내마을) c24 벨라도나가 합쇼체 「대해 주십시오」, 맵290(배롱마을) c44 누빌라가
+  존대 「오랜만이군요」, 맵392(미르 신시가지 - 동쪽) c33 클렘이 반말 「내 이름은 클렘」, 맵468(비밀 온천)은 한 인물
   안에서 합쇼체와 하대가 갈림.
-- **맵2 ev17 c10·c11**은 같은 조난자(크리산토)의 말인데 `???`가 아니라 `미상`으로
+- **맵2(칼로스 피레네) ev17 c10·c11**은 같은 조난자(크리산토)의 말인데 `???`가 아니라 `미상`으로
   잡혀 있다. 이 표의 대상이 아니라 손대지 않았다.
 
 ## 재현
@@ -179,7 +179,7 @@ partida!」·「Has recibido un \v[135].」·「Te ha tocado un as, ¿que valor 
 귀속표 안에서 확인되므로 아래 한 줄로 어느 자리든 장면을 통째로 펴 볼 수 있다.
 
 ```
-# 한 자리의 장면 전체 보기 (맵183 ev20 예)
+# 한 자리의 장면 전체 보기 (맵183(세뇨리알 대성당) ev20 예)
 python3 -c "import gzip,json;rows=[json.loads(l) for l in gzip.open('docs/research/speaker-attr.jsonl.gz','rt',encoding='utf-8')];\
 [print(r['cmd'],r['who'],r['k'][:80]) for r in sorted([x for x in rows if x['map']==183 and x['event']==20],key=lambda x:x['cmd'])]"
 ```
