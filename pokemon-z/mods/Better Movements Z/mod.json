@@ -1,7 +1,9 @@
 {
   "name": "Better Movements Z",
   "game": "Pokemon Z Fangame",
-  "description": "걷고 뛰는 감각을 손보는 모드예요. Wishing Star의 Better Movements와 같은 의도를 구형 엔진(Essentials v16)에 다시 구현한 것입니다.\n\n한 칸을 건너는 속도를 걷기·달리기·자전거 모두 약 23% 당겼고, 방향키를 톡 눌렀을 때 제자리 회전에서 실제 이동으로 넘어가는 문턱을 2프레임에서 1프레임으로 줄였어요. 값은 000_Config.rb 한 곳에 모여 있습니다.\n\nNPC와 이벤트 이동은 건드리지 않아요. 동행 포켓몬은 게임이 플레이어 속도를 복사해 가므로 함께 빨라집니다.\n\n설치는 파일 복사가 아니라 주입입니다 — poke-essentials의 mod/z/inject.py가 한글패치판 Scripts.rxdata에 섹션으로 덧붙여요.",
+  "version": "0.1",
+  "summary": "걷고 뛰는 감각을 손보는 모드예요.",
+  "description": "걷고 뛰는 감각을 손보는 모드예요. Wishing Star의 Better Movements와 같은 의도를 구형 엔진(Essentials v16)에 다시 구현한 것입니다.\n\n걷기와 달리기는 바닐라보다 15% 빨라지고, 자전거는 약 23% 빨라져요. 걷기와 달리기의 값은 속도만 보고 고른 게 아니라 화면에 걸음이 고르게 떨어지는 눈금으로 맞춘 것입니다 — 엔진이 프레임마다 밀어내는 거리가 픽셀에 딱 안 떨어지면 걸음 폭이 널뛰어서, 프레임은 멀쩡한데 이동이 버벅이는 것처럼 보이거든요(바닐라가 원래 그렇습니다). 자전거는 고른 눈금이 지금 속도에서 너무 멀어 소수인 채로 뒀어요.\n\n방향키를 톡 눌렀을 때 제자리 회전에서 실제 이동으로 넘어가는 문턱도 2프레임에서 1프레임으로 줄였습니다. 값과 셈은 000_Config.rb 한 곳에 모여 있어요.\n\n달리기 눈금은 서핑·얼음 미끄러짐과 같은 값이라 그 둘도 함께 빨라져요. NPC와 이벤트 이동은 건드리지 않습니다. 동행 포켓몬은 함께 빨라지는데, 플레이어 속도를 물려받아서가 아니라 속도 표 바꿔치기가 Game_Player가 아니라 Game_Character에 얹혀 있어 동행 자신의 이동도 같은 표를 지나기 때문이에요.\n\n설치는 파일 복사가 아니라 주입입니다 — 한글패치판 Scripts.rxdata에 섹션으로 덧붙여요.",
   "engine": "essentials-v16",
   "install": "inject",
   "created_at": "2026-08-01",
@@ -15,10 +17,18 @@
       "script_name": "001_Movement.rb"
     }
   ],
+  "touches": {
+    "methods": [
+      "Game_Character#update_move",
+      "Game_Player#update"
+    ],
+    "files": []
+  },
   "expects": {
     "Game_Character": "424a03a6fa96893da453c8ca9ae85a0b",
     "Game_Player": "0f974764652d1e5f6a680de720e9c465",
     "Walk_Run": "30478cf05a0bb9ae8cb5f5303ef063eb",
     "Following": "3c6e4f28f260d74892ff04c641726d93"
-  }
+  },
+  "baseline_taken": true
 }
