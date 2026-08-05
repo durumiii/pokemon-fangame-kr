@@ -39,7 +39,7 @@ DIST = HERE / "dist"
 # modstore는 vendor에 없다 — devbox의 fangame-library가 필요하다 (FANGAME_LIBRARY로 지정 가능)
 _FANLIB_HOME = Path(
     os.environ.get("FANGAME_LIBRARY")
-    or Path.home() / "workspace" / "claude-native" / "sketches" / "fangame-library"
+    or Path.home() / "workspace" / "claude-native" / "fangame-library"
 )
 if not (_FANLIB_HOME / "fanlib" / "modstore.py").exists():
     sys.exit(f"fangame-library를 찾지 못했습니다: {_FANLIB_HOME} — FANGAME_LIBRARY 환경변수로 경로를 주세요")
@@ -95,10 +95,10 @@ def main():
     if "--variant" in sys.argv:
         variant = sys.argv[sys.argv.index("--variant") + 1]
     default_names = {
-        "full": "포켓몬Z 한글패치 v5.1",   # 기본판 — 디버그 없는 통합
-        "debug": "포켓몬Z 한글패치 v5.1 (통합+디버그)",
-        "clean": "포켓몬Z 한글패치 v5.1 (순수 번역)",
-        "mods": "포켓몬Z 한글패치 v5.1 (스크립트 모드 묶음)",
+        "full": "포켓몬Z 한글패치 v5.2",   # 기본판 — 디버그 없는 통합
+        "debug": "포켓몬Z 한글패치 v5.2 (통합+디버그)",
+        "clean": "포켓몬Z 한글패치 v5.2 (순수 번역)",
+        "mods": "포켓몬Z 한글패치 v5.2 (스크립트 모드 묶음)",
     }
     name = default_names[variant]
     if "--name" in sys.argv:
