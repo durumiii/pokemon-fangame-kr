@@ -109,13 +109,28 @@ gsub 오폭)를 통과시킨다. 재배포 전 --strict.
 | ③ 하드코딩 화면 문자열 | mods/UI Text KR 치환표 | modstore 재주입 |
 | ④ 런타임 가변 문자열(보간) | share/patch_intl.py EDITS | 소스 수술(멱등) |
 | ⑤ 로직-문자열 결합(기능 버그) | 〃 | 〃 (예: 부적 18종) |
-| ⑥ 그림에 그려 넣은 글자 (PNG 베이크) | Graphics/Pictures (.orig 짝 = 한글화본) | PIL 재렌더 — 텍스트 층 전수 미스면 이 층 의심 (예: 「눌륵」 모드 화면) |
+| ⑥ 그림에 그려 넣은 글자 (PNG 베이크) | Graphics/Pictures (.orig 짝 = 한글화본) | PIL 재렌더 — 텍스트 층 전수 미스면 이 층 의심 (예: 「눌륵」 모드 화면). 상태이상 아이콘 띠는 `tools/status_icon.py` |
 
 값 판정은 셋뿐: **(A) 본가에 있다 → 판정하지 않고 조회한다**
 (`translate/canon/canon.jsonl`, PKHeX 산 4,800여 항목 — verify가 전수 대조.
 이름만 같은 별개 대상은 canon/exceptions.jsonl, 구세대 스페인어명은
 canon/aliases.jsonl). **(B) 창작 요소 → glossary.md 판정.** **(C) 문체·어투 →
 voices.md.** 전거 서열은 glossary.md 머리 참조.
+
+**정본을 고치는 도구만 쓴다 — dat를 직접 고치는 도구는 빌드 한 번에 지워진다**
+(2026-08-05 실측: `apply_josa.py`가 dat를 문지르고 있어 조사 병기가 빌드마다
+되살아났다. 정본 대상으로 옮겼다). **`*.add.jsonl`로 새 키를 얹었으면 빌드 뒤
+`export.py`로 base jsonl에 접어 넣어라** — 안 그러면 verify의 절23 미러 대조가 어긋난다.
+
+**화자 판정: 화자 태그가 없는 줄은 같은 이벤트 안에서 앞 화자를 물려받는다.**
+`<b>이름:</b>` 접두가 없는 401 연속행이 그것이다. 배치 번역이 이 자리를 직전에 말한
+**다른** 화자로 잡아 어투가 뒤집힌 사고가 있었다(2026-08-05 맵 111 — 크리산토의 이어지는
+줄이 누빌라의 해요체로 나갔다). 귀속은 `docs/research/map-speaker-join.jsonl.gz`로
+(맵, 원문) → 이벤트를 얻고 **같은 이벤트 안에서만** 접두를 물려주어 판정한다.
+
+**유저 제보는 `tools/sheet.py`로 다룬다** — `archive`(보관 + 행 삭제, 겹침 거르기) ·
+`upload`(jsonl → 시트 탭) · `rows` · `set`. 시트를 비울 땐 **내용 지우기가 아니라 행
+삭제**여야 폼이 다음 응답을 2행부터 쓴다. 흐름 전체는 원장과 메모리 참조.
 
 **번역 정본은 `translate/ko/`다 — korean.dat는 빌드 산출물.** 절별 JSONL
 (한 줄 = 한 문장, 원문 병기)이고 `build.py`가 dat로 만든다(왕복 검증 내장). **dat를 직접
