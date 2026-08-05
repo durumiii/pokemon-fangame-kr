@@ -318,9 +318,12 @@ def glossary_for(rows):
     return CORE_TERMS + ("\n" + "\n".join(dict.fromkeys(hits)) if hits else "")
 
 
-def build_prompt():
+def build_prompt(fresh=False):
+    """교정판(A)은 현행 번역을 함께 주고, 새로 번역(B)은 안 준다."""
     body = (HERE / "prompt-pages.md").read_text(encoding="utf-8")
-    return body.split("## 시스템 프롬프트 본문", 1)[1]
+    if fresh:
+        return body.split("## 시스템 프롬프트 본문 (새로 번역)", 1)[1].split("---", 1)[1]
+    return body.split("## 시스템 프롬프트 본문", 1)[1].split("## 시스템 프롬프트 본문 (새로 번역)")[0]
 
 
 def scene_header(c):
@@ -331,16 +334,17 @@ def scene_header(c):
             f"Speakers and how each talks:\n{cast}\n")
 
 
-def render(c):
+def render(c, fresh=False):
     """요청 하나의 시스템 프롬프트 — 본문 + 이 장면의 용어 + 장면 머리말."""
-    return (build_prompt().replace("[용어 규칙 — 장면별 발췌 삽입]",
-                                   glossary_for(c["rows"]))
+    return (build_prompt(fresh).replace("[용어 규칙 — 장면별 발췌 삽입]",
+                                        glossary_for(c["rows"]))
             + "\n\n" + scene_header(c))
 
 
-def run(pilot=False, limit=None, workers=4):
+def run(pilot=False, limit=None, workers=4, fresh=False):
     src = BATCH / ("pilot-chunks.jsonl" if pilot else "page-chunks.jsonl")
-    out_dir = BATCH / ("page-out-pilot" if pilot else "page-out")
+    out_dir = BATCH / (("page-out-pilot" if pilot else "page-out")
+                       + ("-fresh" if fresh else ""))
     out_dir.mkdir(parents=True, exist_ok=True)
     chunks = [json.loads(l) for l in src.read_text(encoding="utf-8").splitlines() if l]
     pending = [c for c in chunks if not (out_dir / (c["cid"] + ".jsonl")).exists()]
@@ -352,9 +356,10 @@ def run(pilot=False, limit=None, workers=4):
     st = {"n": 0, "rows": 0, "cost": 0.0, "rej": 0}
 
     def work(c):
-        reqrows = [{"id": r["id"], "who": r["who"], "es": r["es"], "ko": r["ko"]}
+        reqrows = [{"id": r["id"], "who": r["who"], "es": r["es"],
+                    **({} if fresh else {"ko": r["ko"]})}
                    for r in c["rows"]]
-        sys_prompt = render(c)
+        sys_prompt = render(c, fresh)
         got, cost = ask_npc(key, MODEL, sys_prompt, reqrows)
         missing = [r for r in reqrows if r["id"] not in got]
         if missing:
@@ -373,8 +378,7 @@ def run(pilot=False, limit=None, workers=4):
             if why:
                 rej += 1
             lines.append({"id": r["id"], "who": r["who"], "es": r["es"],
-                          "old": r["ko"], "new": new if not why else None,
-                          "ok": not why, "why": why})
+                          "old": r["ko"], "new": new, "ok": not why, "why": why})
         (out_dir / (c["cid"] + ".jsonl")).write_text(
             "\n".join(json.dumps(x, ensure_ascii=False) for x in lines) + "\n",
             encoding="utf-8")
@@ -434,10 +438,11 @@ if __name__ == "__main__":
     cmd = args[0] if args else "plan"
     pilot = "--pilot" in args
     limit = int(args[args.index("--limit") + 1]) if "--limit" in args else None
+    fresh = "--fresh" in args
     if cmd == "plan":
         plan(pilot)
     elif cmd == "run":
-        run(pilot, limit)
+        run(pilot, limit, fresh=fresh)
     elif cmd == "report":
         report(pilot)
     else:

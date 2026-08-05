@@ -108,9 +108,42 @@ def walk():
             n = collections.Counter(sig(o, v) for _, o, v in ch)
             src = source_of(sha, body)
             for k, o, v in ch:
-                mark[k] = (src, n[sig(o, v)] >= REPEAT, sha[:7])
+                mark[k] = (src, spread_of(o, v, n[sig(o, v)]), sha[:7])
         prev = cur
     return mark
+
+
+# 문장 끝을 바꾼 고침은 어미 손질이다. 사람이 인물 격을 손보면 같은 최소 고침
+# (「~다」→「~습니다」 따위)이 수십 번 반복되므로, 반복만 보고 일괄 치환으로 몰면
+# **사람의 격 손질이 통째로 보호 밖으로 떨어진다** — 2026-08-06 실측: 맵112(란토
+# 저택) 유지자 제보 25건이 전량 이 함정에 걸려 보호되지 않았고, 재번역 파일럿이
+# 그 페이지를 다시 썼다.
+TAIL = 8
+
+
+def is_ending(old, new):
+    """최소 고침이 문장 끝 언저리에서만 일어났나."""
+    sm = difflib.SequenceMatcher(None, old, new)
+    spans = [(i, j) for tag, i, j, _, _ in sm.get_opcodes() if tag != "equal"]
+    if not spans:
+        return False
+    return min(i for i, _ in spans) >= max(0, len(old) - TAIL)
+
+
+def spread_of(old, new, n):
+    """이 고침을 「퍼진 것」으로 볼 것인가.
+
+    아니라고 보는 자리 둘:
+    - **최소 고침이 비었을 때.** 제보 시트의 「현재 번역」 칸은 스튜디오에서 고친 뒤의
+      글이라 「제안」과 같은 행이 많다. 차이가 없는 것은 「무엇이 바뀌었는지 모른다」는
+      뜻이지 일괄 치환이라는 뜻이 아니다 — 이 자리를 반복으로 세면 **한 번에 보낸 제보가
+      통째로 보호 밖으로 떨어진다**(2026-08-06 실측: 맵112 란토 저택 25건 전량).
+    - **문장 끝만 바뀐 것.** 사람이 인물 격을 손보면 같은 고침(「~다」→「~습니다」)이
+      수십 번 반복된다. 어미 손질은 반복해도 퍼진 것이 아니다.
+    """
+    if old.strip() == new.strip():
+        return False
+    return n >= REPEAT and not is_ending(old, new)
 
 
 def protected(mark):
@@ -140,8 +173,9 @@ def from_reports():
     keys, dropped = set(), 0
     for e in rows:
         prop = (e.get("제안") or "").strip()
+        cur_ko = e.get("현재 번역") or ""
         if "일괄바꾸기" in (e.get("패치 버전") or "") or \
-           (prop and n[sig(e.get("현재 번역") or "", prop)] >= REPEAT):
+           (prop and spread_of(cur_ko, prop, n[sig(cur_ko, prop)])):
             dropped += 1
             continue
         try:
