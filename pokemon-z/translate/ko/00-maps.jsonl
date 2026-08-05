@@ -1859,7 +1859,7 @@
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] Creo que tengo algo de medicina en mi bolsa, veré qué puedo hacer.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 가방에 약이 좀 있으니, 어떻게 해볼 수 있을지 찾아볼게."}
 {"k": "<b>Recluta Azoth 2:</b> ¡Condenado Pokémon! ¡No nos advirtieron de que sería tan peligroso acercarse!", "v": "<b>아조스단 신병 2호:</b> 젠장할 포켓몬 같으니! 가까이 다가가는 게 이렇게 위험할 줄은 아무도 안 알려줬다고!"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡Menos quejas, vosotros! Que al menos lleváis máscaras.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 너희, 불평 좀 그만해! 적어도 마스크는 쓰고 있지 않은가."}
-{"k": "<b>Recluta Azoth 3:</b> ¡Ah, estáis aquí! La jefa ha dado la orden de retirarnos inmediatamente de la zona.", "v": "<b>아조스단 신병 3:</b> 아, 여기 계셨군요! 대장님이 이 지역에서 즉시 철수하라는 명령을 내렸습니다."}
+{"k": "<b>Recluta Azoth 3:</b> ¡Ah, estáis aquí! La jefa ha dado la orden de retirarnos inmediatamente de la zona.", "v": "<b>아조스단 신병 3호:</b> 아, 여기 계셨군요! 대장님이 이 지역에서 즉시 철수하라는 명령을 내렸습니다."}
 {"k": "Parece que la guardia del <b>Capitán Merlot</b> ha llegado a <b>Pueblo Profano</b>. ¡Están interrogando a todos los aldeanos!", "v": "<b>메를로 대장님</b>의 경비대가 <b>프로파노마을</b>에 도착한 모양이야. 마을 주민들을 전부 심문하고 있어!"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¿El capitán está investigando <b>Pueblo Profano</b>? Dudo mucho que ellos tengan culpa de algo.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 대장님이 <b>프로파노마을</b>을 조사하고 계신다고? 그 사람들에게 무슨 잘못이 있을 리가 없을 텐데."}
 {"k": "\\c[5]<b>Melia:</b>\\c[0] Creo que... todo este asunto del <b>Team Azoth</b> le tiene un poco de los nervios.", "v": "\\c[5]<b>멜리아:</b>\\c[0] 내 생각엔... 이번 <b>아조스단</b> 사건 때문에 대장님이 좀 예민해진 것 같아."}
@@ -2697,25 +2697,25 @@
 {"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Tenéis que prometerme que os cuidaréis bien entre vosotras.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 서로를 잘 보살펴주겠다고 약속해다오."}
 {"k": "Y así, el rey se quedó solo...", "v": "그렇게 왕은 홀로 남았다..."}
 {"map": 73, "n": 21}
-{"k": "<b>Recluta Azoth 1:</b> Mmm... ¿crees que aquí encontraremos Pokémon raros de tipo Veneno?", "v": "<b>아조스단 신병 1:</b> 흠… 여기서 희귀한 독타입 포켓몬을 찾을 수 있을까?"}
+{"k": "<b>Recluta Azoth 1:</b> Mmm... ¿crees que aquí encontraremos Pokémon raros de tipo Veneno?", "v": "<b>아조스단 신병 1호:</b> 흠… 여기서 희귀한 독타입 포켓몬을 찾을 수 있을까?"}
 {"k": "<b>Recluta Azoth 2:</b> ¡Espero que sí! Necesitamos sus órganos para extraer toxinas valiosas.", "v": "<b>아조스단 신병 2호:</b> 그러길 바라! 귀중한 독소를 추출하려면 녀석들의 장기가 필요하거든."}
-{"k": "<b>Recluta Azoth 1:</b> ¿Tú otra vez?", "v": "<b>아조스단 신병 1:</b> 너 또야?"}
+{"k": "<b>Recluta Azoth 1:</b> ¿Tú otra vez?", "v": "<b>아조스단 신병 1호:</b> 너 또야?"}
 {"k": "Esta manía tuya de perseguirnos bien podría considerarse acoso, ¡te parecerá bonito!", "v": "우리를 이렇게 끈질기게 쫓아다니는 건 스토킹이나 다름없어. 참 잘하는 짓이다!"}
 {"k": "<b>Recluta Azoth 2:</b> Por desgracia para ti, esta vez iremos con todo nuestro poder.", "v": "<b>아조스단 신병 2호:</b> 안됐지만 이번엔 우리도 전력을 다하겠어."}
 {"k": "¡Adelante! ¡Alabado sea el <b>Team Azoth</b>!", "v": "덤벼라! <b>아조스단</b>에게 영광 있으라!"}
 {"k": "¿Pero tú eres real? ¡Ninguna persona puede ser tan pesada!", "v": "아니, 진짜 너 사람 맞아? 아무리 그래도 이렇게까지 끈질길 수는 없다고!"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡Buen trabajo, \\PN! ¡Al fin les hemos cogido!", "v": "\\c[3]<b>크리산토:</b>\\c[0] 훌륭해, \\PN! 마침내 녀석들을 붙잡았구나!"}
 {"k": "Y ahora, contestad sin evasivas, ¿qué fechoría estáis llevando a cabo?", "v": "자, 이제 솔직하게 대답하세요. 대체 무슨 짓을 저지르고 있는 건가요?"}
-{"k": "<b>Recluta Azoth 1:</b> ¡Fechoría, dice!", "v": "<b>아조스단 신병 1:</b> 무슨 짓이라니!"}
+{"k": "<b>Recluta Azoth 1:</b> ¡Fechoría, dice!", "v": "<b>아조스단 신병 1호:</b> 무슨 짓이라니!"}
 {"k": "<b>Recluta Azoth 2:</b> Solo luchamos para que el Mundo Pokémon no se vuelva un lugar feo y decrépito.", "v": "<b>아조스단 신병 2호:</b> 우리는 포켓몬 세계가 추하고 쇠락한 곳이 되지 않도록 싸우는 것뿐이다."}
 {"k": "¡Y los Pokémon nos ofrecen las claves para ello! Solo tenemos que continuar con nuestras investigaciones.", "v": "그리고 포켓몬이 그 열쇠를 쥐고 있지! 우리는 그저 연구를 계속하기만 하면 된다."}
-{"k": "<b>Recluta Azoth 1:</b> ¡Mira ese Pokémon! Sus órganos pueden valer.", "v": "<b>아조스단 신병 1:</b> 저 포켓몬 좀 봐! 저 장기라면 값 좀 나가겠는데."}
-{"k": "<b>Recluta Azoth 1:</b> ¡Rápido! ¿Tienes Pokéball? ¿O un escalpelo?", "v": "<b>아조스단 신병 1:</b> 빨리! 몬스터볼 있어? 아니면 메스라도?"}
+{"k": "<b>Recluta Azoth 1:</b> ¡Mira ese Pokémon! Sus órganos pueden valer.", "v": "<b>아조스단 신병 1호:</b> 저 포켓몬 좀 봐! 저 장기라면 값 좀 나가겠는데."}
+{"k": "<b>Recluta Azoth 1:</b> ¡Rápido! ¿Tienes Pokéball? ¿O un escalpelo?", "v": "<b>아조스단 신병 1호:</b> 빨리! 몬스터볼 있어? 아니면 메스라도?"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡Oh, <i>mon dieu</i>! ¡A saber qué querrán hacer con ese Clodsire!", "v": "\\c[3]<b>크리산토:</b>\\c[0] 오, <i>mon dieu</i>! 저 토오에게 도대체 무슨 짓을 저지를 셈이지!"}
 {"k": "\\c[5]<b>Melia:</b>\\c[0] ¡No se saldrán con la suya! Es hora de volver a desplegar mi técnica especial.", "v": "\\c[5]<b>멜리아:</b>\\c[0] 제멋대로 하게 두진 않아! 다시 내 필살기를 쓸 때가 왔어."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡No, <b>Melia</b>! ¡No hagas tonterías, que ese Pokémon es muy venenoso!", "v": "\\c[3]<b>크리산토:</b>\\c[0] 안 돼, <b>멜리아</b>! 무모한 짓 하지 마, 그 포켓몬은 독이 엄청 강하다고!"}
 {"k": "\\c[5]<b>Melia:</b>\\c[0] ¿Te vienes conmigo, Pokémoncito? ¡Cuchi, cuchi, cuchi!", "v": "\\c[5]<b>멜리아:</b>\\c[0] 나랑 같이 갈래, 포켓몬아? 오구오구!"}
-{"k": "<b>Recluta Azoth 1:</b> ¡Aaahhh! ¡<i>Merde</i>! ¡Esto se ha llenado de partículas venenosas!", "v": "<b>아조스단 신병 1:</b> 으아아아! <i>Merde</i>! 독 입자가 온통 퍼졌잖아!"}
+{"k": "<b>Recluta Azoth 1:</b> ¡Aaahhh! ¡<i>Merde</i>! ¡Esto se ha llenado de partículas venenosas!", "v": "<b>아조스단 신병 1호:</b> 으아아아! <i>Merde</i>! 독 입자가 온통 퍼졌잖아!"}
 {"k": "<b>Recluta Azoth 2:</b> ¡Me... me cuesta respirar!", "v": "<b>아조스단 신병 2호:</b> 숨… 숨이 안 쉬어져!"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡Cojamos a <b>Melia</b> y salgamos de aquí, \\PN!", "v": "\\c[3]<b>크리산토:</b>\\c[0] <b>멜리아</b>를 데리고 어서 이곳을 빠져나가자, \\PN!"}
 {"map": 74, "n": 45}
@@ -12716,14 +12716,14 @@
 {"map": 420, "n": 1}
 {"k": "¡Es un cúmulo de piedrecitas!", "v": "작은 돌멩이들이 잔뜩 쌓여 있다!"}
 {"map": 421, "n": 34}
-{"k": "<b>Recluta Azoth 1:</b> ¿Entonces cuándo vamos a hacer las maletas y dejar esta ruta de mal agüero?", "v": "<b>아조스단 신병 1:</b> 그럼 언제 짐을 싸서 이 불길한 길을 떠나는 거야?"}
+{"k": "<b>Recluta Azoth 1:</b> ¿Entonces cuándo vamos a hacer las maletas y dejar esta ruta de mal agüero?", "v": "<b>아조스단 신병 1호:</b> 그럼 언제 짐을 싸서 이 불길한 길을 떠나는 거야?"}
 {"k": "¡Pensaba que nuestra labor terminaría cuando <i>monsieur</i> <b>AZ</b> activase el <b>Arma Definitiva</b>!", "v": "<i>무슈</i> <b>AZ</b>가 <b>최종병기</b>를 작동시키면 우리 임무도 끝나는 줄 알았는데!"}
 {"k": "<b>Recluta Azoth 2:</b> ¡Por supuesto que no! Aún queda mucho trabajo que hacer y mucho experimento pendiente.", "v": "<b>아조스단 신병 2호:</b> 당연히 아니지! 아직 해야 할 일도 많고 남은 실험도 수두룩하다고."}
 {"k": "Mientras hablamos, <i>madame</i> <b>Alca</b> está operando el arma desde dentro para destruir a los impuros. ¡Pero eso es solo el comienzo!", "v": "우리가 이렇게 말하는 동안에도 <i>마담</i> <b>알카</b>는 내부에서 무기를 조작하며 불순한 자들을 파괴하고 있어. 하지만 이건 시작에 불과해!"}
 {"k": "Cuando el mundo haya quedado purgado, <b>Alca</b> usará el resto de la energía en eliminar los conceptos del nacimiento y la muerte en el orden del universo. Y eso es un proceso que puede llevar tiempo.", "v": "세상이 정화되고 나면 <b>알카</b>는 남은 에너지를 써서 우주 질서에서 탄생과 죽음이란 개념 자체를 없애 버릴 거야. 그리고 그건 시간이 좀 걸리는 일이지."}
 {"k": "Y mientras dure ese proceso, nosotros tenemos que seguir extrayendo energía vital de los Pokémon de la zona para alimentar el <b>Arma Definitiva</b>.", "v": "그 과정이 진행되는 동안 우리는 <b>최종병기</b>에 공급할 생명 에너지를 이 지역 포켓몬들에게서 계속 뽑아내야 하고."}
-{"k": "<b>Recluta Azoth 1:</b> ¿Quedarán acaso muchos Pokémon salvajes por aquí? Porque creo que ya los hemos convertido a casi todos en piedra...", "v": "<b>아조스단 신병 1:</b> 이 근처에 야생 포켓몬이 아직 남아 있기는 할까? 우리가 거의 다 돌로 만들어 버린 것 같은데..."}
-{"k": "<b>Recluta Azoth 1:</b> ¡Eh, eh! ¿No se supone que nos habíamos librado ya de todos nuestros enemigos?", "v": "<b>아조스단 신병 1:</b> 어, 어! 우리 적들은 이미 다 처리한 거 아니었어?"}
+{"k": "<b>Recluta Azoth 1:</b> ¿Quedarán acaso muchos Pokémon salvajes por aquí? Porque creo que ya los hemos convertido a casi todos en piedra...", "v": "<b>아조스단 신병 1호:</b> 이 근처에 야생 포켓몬이 아직 남아 있기는 할까? 우리가 거의 다 돌로 만들어 버린 것 같은데..."}
+{"k": "<b>Recluta Azoth 1:</b> ¡Eh, eh! ¿No se supone que nos habíamos librado ya de todos nuestros enemigos?", "v": "<b>아조스단 신병 1호:</b> 어, 어! 우리 적들은 이미 다 처리한 거 아니었어?"}
 {"k": "<b>Recluta Azoth 2:</b> ¡Qué raro! Esto debe de tratarse de una anomalía. Un fallo de cálculos. ¡Pero nada que no podamos corregir en un momento!", "v": "<b>아조스단 신병 2호:</b> 이상하네! 이건 분명 이상 현상일 거야. 계산 오류겠지. 하지만 금방 고칠 수 있어!"}
 {"k": "¡El Team Azoth no puede ser humillado por enésima vez!", "v": "아조스단이 또다시 굴욕을 당할 수는 없다!"}
 {"k": "<b>Recluta Azoth 2:</b> ¡Aaaah! ¡Esta persona es tan invencible que ni el <b>Arma Definitiva</b> ha podido con ella!", "v": "<b>아조스단 신병 2호:</b> 으아악! 이 녀석은 얼마나 무적이면 <b>최종병기</b>로도 안 되는 거야!"}
@@ -14205,7 +14205,7 @@
 {"k": "¡Ah! ¿Eres un recién llegado a la región de <b>Kalos</b>?", "v": "아! 너 <b>칼로스</b> 지방에 새로 왔냐?"}
 {"k": "Yo me encargo de hacer cumplir la ley en nombre del <b>Rey Áster</b>. No me lo pongas difícil, ¿eh?", "v": "난 <b>아스테르 왕</b>을 대신해 법을 집행하는 몸이다. 골치 아픈 일 일으키지 마라, 알겠냐?"}
 {"k": "¡Ah! ¿Eres una recién llegada a la región de <b>Kalos</b>?", "v": "아! 너 <b>칼로스</b> 지방에 새로 왔냐?"}
-{"k": "Yo me encargo de hacer cumplir la ley en nombre del nuevo gobierno de la región.", "v": "본 총사는 이 지방의 새 정부를 대표하여 법을 집행한다."}
+{"k": "Yo me encargo de hacer cumplir la ley en nombre del nuevo gobierno de la región.", "v": "나는 이 지방의 새 정부를 대표해 법을 집행하는 일을 맡고 있다."}
 {"k": "¡Cruzar los Pirineos en esta época del año es una experiencia bonita! Además, dicen que se ha visto a un Pokémon majestuoso con forma de ave celeste por las montañas.", "v": "이맘때 피레네산맥을 넘는 건 정말 멋진 경험이에요! 게다가 산속에서 푸른 새 모습을 한 위엄 있는 포켓몬이 목격되었다고 하더군요."}
 {"k": "<b>Barquero:</b> ¿Nos conocemos?", "v": "<b>뱃사공:</b> 우리가 아는 사이입니까?"}
 {"k": "Tu momento crucial no ha llegado. ¡Este barco no es para ti! ¡Je, je, je!", "v": "손님의 때는 아직 오지 않았습니다. 이 배는 손님이 탈 배가 아닙니다! 헤헤헤!"}
