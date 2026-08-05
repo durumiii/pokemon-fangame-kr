@@ -3001,10 +3001,10 @@
 {"k": "<b>Eneldo:</b> ¡<i>Bonjour</i>! A ver qué habéis preparado para mí, ¡os aviso que hoy no me andaré con chiquitas! Tengo el estómago algo sensible.", "v": "<b>에넬도:</b> <i>Bonjour</i>! 나를 위해 뭘 준비했는지 볼까. 미리 말해 두는데 오늘은 봐주지 않을 걸세! 위장이 좀 예민하거든."}
 {"k": "<b>Eneldo:</b> Ya veo que se te da mejor combatir que cocinar. ¡Bueno, está bien que a cada uno se le den bien cosas distintas!", "v": "<b>에넬도:</b> 보아하니 요리보다는 배틀을 더 잘하는 모양이군. 뭐, 사람마다 잘하는 게 다른 법이지!"}
 {"k": "<b>Zafra:</b> ¡Aaaay! ¡El crítico nos está mirando mal! La vamos a fastidiar...", "v": "<b>사프라:</b> 꺄아! 평론가님이 우리를 험악하게 노려보고 있어! 망쳤다..."}
-{"k": "No... no me he presentado, me llamo <b>Zafra</b>. Soy la Regente de este pueblo.", "v": "아... 아이고, 자기소개를 안 했네요! 제 이름은 <b>사프라</b>예요. 이 마을의 섭정을 맡고 있죠."}
-{"k": "Me hice cocinera para demostrarle al mundo que puedo ser algo más que una niña rica, ¡y porque me apasiona cocinar! Algún día, espero ser una de las mejores chefs de toda <b>Kalos</b>.", "v": "저는 그저 부잣집 딸에 그치지 않는다는 걸 세상에 증명하고 싶어서, 그리고 요리가 정말 좋아서 요리사가 됐어요! 언젠가 <b>칼로스</b> 최고의 셰프 중 한 명이 되고 싶거든요."}
-{"k": "¡En fin! Antes de combatir, tendremos que conocer el veredicto del crítico culinario sobre el menú que le hemos preparado.", "v": "아무튼! 배틀을 하기 전에 우리가 준비한 메뉴에 대해 미식 평론가님의 평가를 들어봐야 해요."}
-{"k": "¿Te atreves a empezar ya?", "v": "지금 바로 시작해 볼래요?"}
+{"k": "No... no me he presentado, me llamo <b>Zafra</b>. Soy la Regente de este pueblo.", "v": "아... 아이고, 자기소개를 안 했네! 내 이름은 <b>사프라</b>야. 이 마을 섭정을 맡고 있어."}
+{"k": "Me hice cocinera para demostrarle al mundo que puedo ser algo más que una niña rica, ¡y porque me apasiona cocinar! Algún día, espero ser una de las mejores chefs de toda <b>Kalos</b>.", "v": "난 그저 부잣집 딸에 그치지 않는다는 걸 세상에 증명하고 싶어서, 그리고 요리가 정말 좋아서 요리사가 됐어! 언젠가 <b>칼로스</b> 최고의 셰프 중 한 명이 되고 싶거든."}
+{"k": "¡En fin! Antes de combatir, tendremos que conocer el veredicto del crítico culinario sobre el menú que le hemos preparado.", "v": "아무튼! 배틀을 하기 전에 우리가 준비한 메뉴를 미식 평론가님이 어떻게 볼지 들어봐야 해."}
+{"k": "¿Te atreves a empezar ya?", "v": "지금 바로 시작해 볼래?"}
 {"k": "<b>Eneldo:</b> Estofado de bayas, ¿eh? Un poco básico, veremos si me conquista por su sabor.", "v": "<b>에넬도:</b> 나무열매 스튜라? 좀 평범한데, 맛으로 내 마음을 사로잡을 수 있을지 보겠네."}
 {"k": "¡Ñam, ñam!", "v": "냠냠!"}
 {"k": "...", "v": "..."}
@@ -3020,13 +3020,13 @@
 {"k": "Bien, pues aquello era un manjar comparado con el plato de \\PN. ¡Me encargaré personalmente de que no vuelvas a acercarte a una cocina en la vida!", "v": "헌데, 그 배설물도 \\PN의 요리에 비하면 산해진미였네. 자네가 평생 다시는 부엌 근처에도 못 가도록 내가 직접 막겠네!"}
 {"k": "(Tres de tus Pokémon han recibido Estados Alterados)", "v": "(당신의 포켓몬 중 세 마리가 상태이상에 걸렸다)"}
 {"k": "<b>Zafra:</b> ¡Va-vale! ¡<b>Zafra</b>, que no te puedan los nervios! ¡Estás en un combate Pokémon de verdad!", "v": "<b>사프라:</b> 자-잘하자! <b>사프라</b>, 긴장하면 안 돼! 지금 진짜 포켓몬 배틀 중이라고!"}
-{"k": "¡Pre-prepárate para perder!\\n...\\n¡Porfi!", "v": "지-질 준비하세요!\\n...\\n제발요!"}
+{"k": "¡Pre-prepárate para perder!\\n...\\n¡Porfi!", "v": "지-질 준비해!\\n...\\n제발!"}
 {"k": "¡Aaaah! ¡Sabía que los nervios me jugarían una mala pasada! Estoy más cómoda cocinando con amor.", "v": "아아아! 역시 긴장해서 망칠 줄 알았어! 역시 난 정성을 담아 요리할 때가 제일 편해."}
-{"k": "<b>Zafra:</b> ¡Perdón! Aún estoy aprendiendo algunas nociones del combate Pokémon.", "v": "<b>사프라:</b> 미안해요! 아직 포켓몬 배틀은 요령을 배우는 중이라서요."}
-{"k": "Pero me esforzaré, ¿vale? Algún día volveremos a luchar y trataré de defenderme mejor.", "v": "그래도 저 엄청 열심히 노력할 테니까, 알겠죠? 언젠가 다시 배틀하게 되면 그땐 꼭 멋지게 받아쳐 보일게요!"}
-{"k": "Mientras tanto, has ganado mi medallita.", "v": "우선은 제 배지를 가져가세요!"}
-{"k": "<b>Zafra:</b> Y una MT para recompensar tu empeño en la cocina.", "v": "<b>사프라:</b> 그리고 이건 주방에서 보여준 열정에 대한 보상인 기술머신이에요."}
-{"k": "¡No hagamos esperar mucho al crítico, porfi!", "v": "아이고, 평론가님을 너무 오래 기다리게 하면 안 돼요, 제발!"}
+{"k": "<b>Zafra:</b> ¡Perdón! Aún estoy aprendiendo algunas nociones del combate Pokémon.", "v": "<b>사프라:</b> 미안해! 아직 포켓몬 배틀은 요령을 배우는 중이라서."}
+{"k": "Pero me esforzaré, ¿vale? Algún día volveremos a luchar y trataré de defenderme mejor.", "v": "그래도 나 엄청 열심히 노력할 테니까, 알겠지? 언젠가 다시 배틀하게 되면 그땐 꼭 멋지게 받아쳐 보일게!"}
+{"k": "Mientras tanto, has ganado mi medallita.", "v": "우선은 내 배지를 가져가!"}
+{"k": "<b>Zafra:</b> Y una MT para recompensar tu empeño en la cocina.", "v": "<b>사프라:</b> 그리고 이건 주방에서 보여준 열정에 보답하는 기술머신이야."}
+{"k": "¡No hagamos esperar mucho al crítico, porfi!", "v": "아이고, 평론가님을 너무 오래 기다리게 하면 안 돼, 제발!"}
 {"k": "Sí", "v": "네"}
 {"k": "No", "v": "아니요"}
 {"map": 86, "n": 18}
@@ -3955,12 +3955,12 @@
 {"k": "Esa orden se creó para proteger los secretos de los Pokémon legendarios, pero cayó en el olvido hace siglos.", "v": "그 교단은 전설의 포켓몬의 비밀을 수호하려고 만들어졌지만, 수 세기 전에 잊히고 말았답니다."}
 {"k": "<b>Pueblo Bodegón</b>, prosperidad, alegría y buena comida.", "v": "<b>보데곤마을</b>, 번영과 기쁨, 그리고 맛있는 음식이 있는 곳."}
 {"k": "¡Ay! ¡Espera, \\PN!", "v": "아! 잠깐만, \\PN!"}
-{"k": "<b>Zafra:</b> Quería decirte que mi restaurante pronto celebrará una velada especial para conseguir la acreditación de 5 estrellas.", "v": "<b>사프라:</b> 저희 식당이 곧 5성급 인증을 받기 위한 특별한 연회를 열 예정이라는 말을 전하고 싶었어요."}
-{"k": "Si... si alguna vez te vuelve a picar el gusanillo de la cocina... ¡estás más que invitado! ¿Vale?", "v": "혹시... 또 요리하고 싶어지면... 언제든 대환영이에요! 아하?"}
-{"k": "Si... si alguna vez te vuelve a picar el gusanillo de la cocina... ¡estás más que invitada! ¿Vale?", "v": "혹시... 또 요리하고 싶어지면... 언제든 대환영이에요! 아하?"}
-{"k": "Es que creo que la cocina nos ha unido un poco. Quédate con esto como muestra de mi aprecio.", "v": "요리로 우리가 조금 가까워진 것 같아요. 감사한 마음을 담아 이걸 드릴게요."}
-{"k": "<b>Zafra:</b> Creo que la otra moneda la tiene un extraño clérigo que llegó hace poco al pueblo.", "v": "<b>사프라:</b> 다른 동전은 얼마 전 마을에 찾아온 낯선 성직자가 가지고 있는 것 같아요."}
-{"k": "<b>Zafra:</b> En fin, ¡tengo que empezar a prepararlo todo para los comensales!", "v": "<b>사프라:</b> 어쨌든, 손님 맞을 준비를 서둘러야겠어요!"}
+{"k": "<b>Zafra:</b> Quería decirte que mi restaurante pronto celebrará una velada especial para conseguir la acreditación de 5 estrellas.", "v": "<b>사프라:</b> 우리 식당이 곧 5성급 인증을 받으려고 특별한 연회를 열 거야. 그 말을 해 주고 싶었어."}
+{"k": "Si... si alguna vez te vuelve a picar el gusanillo de la cocina... ¡estás más que invitado! ¿Vale?", "v": "혹시... 또 요리하고 싶어지면... 언제든 대환영이야! 알았지?"}
+{"k": "Si... si alguna vez te vuelve a picar el gusanillo de la cocina... ¡estás más que invitada! ¿Vale?", "v": "혹시... 또 요리하고 싶어지면... 언제든 대환영이야! 알았지?"}
+{"k": "Es que creo que la cocina nos ha unido un poco. Quédate con esto como muestra de mi aprecio.", "v": "요리로 우리가 조금 가까워진 것 같아. 고마운 마음을 담아 이걸 줄게."}
+{"k": "<b>Zafra:</b> Creo que la otra moneda la tiene un extraño clérigo que llegó hace poco al pueblo.", "v": "<b>사프라:</b> 다른 동전은 얼마 전 마을에 찾아온 낯선 성직자가 가지고 있는 것 같아."}
+{"k": "<b>Zafra:</b> En fin, ¡tengo que empezar a prepararlo todo para los comensales!", "v": "<b>사프라:</b> 어쨌든, 손님 맞을 준비를 서둘러야겠어!"}
 {"k": "Antaño, y te hablo de hace siglos, este lugar era muy popular para los druidas que celebraban sus rituales.", "v": "옛날, 수 세기 전 이야기를 해드리자면 이 장소는 드루이드들이 의식을 거행하던 아주 이름난 곳이었답니다."}
 {"k": "Se cuenta que la prosperidad de la que hoy gozamos se debe al empeño de esos druidas por atraer las buenas cosechas.", "v": "오늘날 우리가 누리는 번영도 풍작을 이끌어내려 했던 그 드루이드들의 정성 덕분이라고 하지요."}
 {"k": "Mi Lechonk encontró el otro día una seta enorme enterrada en el suelo.", "v": "우리 맛보돈이 요전에 땅속에 묻혀 있던 엄청나게 큰 버섯을 찾아냈지 뭐야."}
@@ -4023,9 +4023,9 @@
 {"k": "Sí", "v": "네"}
 {"k": "No", "v": "아니요"}
 {"map": 115, "n": 67}
-{"k": "Mi cocina es de vanguardia, con fuertes cimientos en mis raíces pero sin miedo a la innovación. ¿Quieres degustarla?", "v": "제 요리는 제 뿌리에 탄탄한 기반을 두면서도 혁신을 두려워하지 않는 최첨단 요리랍니다. 한번 맛보시겠어요?"}
+{"k": "Mi cocina es de vanguardia, con fuertes cimientos en mis raíces pero sin miedo a la innovación. ¿Quieres degustarla?", "v": "내 요리는 내 뿌리에 탄탄한 기반을 두면서도 혁신을 두려워하지 않는 최첨단 요리야. 한번 맛볼래?"}
 {"k": "Un buen cocinero acepta las críticas constructivas.", "v": "훌륭한 요리사는 건설적인 비판을 기꺼이 받아들인다."}
-{"k": "Pronto cumpliré 30 años como cocinero, pero aún me queda mucho camino por delante. Jamás dejaré de cocinar.", "v": "조만간 요리사 생활 30주년을 맞이합니다만, 아직 갈 길이 깁니다. 저는 절대 요리를 그만두지 않을 것입니다."}
+{"k": "Pronto cumpliré 30 años como cocinero, pero aún me queda mucho camino por delante. Jamás dejaré de cocinar.", "v": "조만간 요리사 생활 30주년이지만, 아직 갈 길이 멀어. 난 절대 요리를 그만두지 않을 거야."}
 {"k": "Ya llevas 2 bayas. Intenta cocinar con ellas.", "v": "이미 나무열매를 2개 모았네요. 이걸로 요리를 해보세요."}
 {"k": "¿Qué baya quieres coger? Solo puedes llevar dos.", "v": "어떤 나무열매를 따고 싶니? 두 개밖에 가져갈 수 없어."}
 {"k": "Ya has cogido una Baya Aranja.", "v": "이미 ‘오랭열매’를 선택하셨군요."}
@@ -4038,21 +4038,21 @@
 {"k": "¡Coges una Baya Zidra de la caja!", "v": "상자에서 ‘자뭉열매’ 한 개를 꺼냈다!"}
 {"k": "Ya has cogido una Baya Ziuela.", "v": "이미 ‘리샘열매’를 선택하셨군요."}
 {"k": "¡Coges una Baya Ziuela de la caja!", "v": "상자에서 ‘리샘열매’ 한 개를 꺼냈다!"}
-{"k": "¿Sabes cuál es el plato más difícil de preparar? Te lo contaré si logras vencerme.", "v": "가장 만들기 어려운 요리가 뭔지 아시나요? 저를 이기시면 알려드리겠습니다."}
+{"k": "¿Sabes cuál es el plato más difícil de preparar? Te lo contaré si logras vencerme.", "v": "가장 만들기 어려운 요리가 뭔지 알아? 날 이기면 알려줄게."}
 {"k": "¡Una buena ensalada de tortas, desde luego!", "v": "당연히 매콤하게 두들겨 맞은 샐러드지!"}
-{"k": "El plato más difícil de cocinar es el postre, pues llega cuando el comensal ya no tiene hambre.", "v": "만들기 가장 어려운 요리는 디저트입니다. 손님의 배가 이미 부른 뒤에 나오기 때문입니다."}
+{"k": "El plato más difícil de cocinar es el postre, pues llega cuando el comensal ya no tiene hambre.", "v": "만들기 가장 어려운 요리는 디저트야. 손님 배가 이미 부른 뒤에 나오거든."}
 {"k": "Receta: \"El plato estará formado por 2 Bayas. Curará la Quemadura y será de color turquesa\"", "v": "레시피: “이 요리는 나무열매 2개로 만들어집니다. 화상을 치료하며, 색은 청록색입니다.”"}
 {"k": "¿Qué quieres hacer?", "v": "어떻게 할까요?"}
 {"k": "No tienes suficientes Bayas para cocinar el plato.", "v": "요리를 만들기 위한 나무열매가 부족합니다."}
-{"k": "<b>Zafra:</b> El menú está listo, ¡muchas gracias!", "v": "<b>사프라:</b> 코스 요리가 준비되었어요. 정말 감사해요!"}
-{"k": "Hora de presentárselo al crítico <b>Eneldo</b>. ¡Estoy hecha un manojo de nervios! ¡Ay!", "v": "이제 비평가 <b>에넬도</b> 씨에게 선보일 시간이에요. 너무 긴장돼서 온몸이 떨려요! 아이고!"}
+{"k": "<b>Zafra:</b> El menú está listo, ¡muchas gracias!", "v": "<b>사프라:</b> 코스 요리가 준비됐어. 정말 고마워!"}
+{"k": "Hora de presentárselo al crítico <b>Eneldo</b>. ¡Estoy hecha un manojo de nervios! ¡Ay!", "v": "이제 비평가 <b>에넬도</b> 씨에게 선보일 시간이야. 너무 긴장돼서 온몸이 떨려! 아이고!"}
 {"k": "No tienes ninguna Baya que tirar a la basura.", "v": "쓰레기통에 버릴 나무열매가 없다."}
 {"k": "Tiras a la basura las Bayas que habías cogido.", "v": "가지고 있던 나무열매를 쓰레기통에 버린다."}
 {"k": "Receta: \"El plato estará formado por 2 Bayas. Curará la Congelación y será parcialmente amarillo\"", "v": "레시피: “이 요리는 나무열매 2개로 구성됩니다. 얼음 상태를 치료하며, 색은 부분적으로 노란색입니다.”"}
 {"k": "Receta: \"El plato estará formado por 2 Bayas. Curará el Veneno, pero no los PS\"", "v": "레시피: “이 요리는 나무열매 2개로 구성됩니다. 독을 치료하지만, HP는 회복되지 않습니다.”"}
-{"k": "Yo no me conformo con preparar comida, ¡quiero crear emociones con mis platos!", "v": "저는 단순히 음식을 만드는 데 그치지 않고, 제 요리로 감동을 선사하고 싶어요!"}
+{"k": "Yo no me conformo con preparar comida, ¡quiero crear emociones con mis platos!", "v": "난 그냥 음식을 만드는 데 그치지 않아. 내 요리로 감동을 주고 싶어!"}
 {"k": "Tus técnicas de combate son... ¡un poco fuertes de sabor! ¡Pero funcionan!", "v": "너의 배틀 방식은... 간이 좀 세긴 하지만! 그래도 효과는 확실하네!"}
-{"k": "Una receta por sí sola no tiene alma. Es el cocinero quien debe darle alma a la receta.", "v": "레시피 자체에는 영혼이 없습니다. 요리사가 레시피에 영혼을 불어넣어야 합니다."}
+{"k": "Una receta por sí sola no tiene alma. Es el cocinero quien debe darle alma a la receta.", "v": "레시피 자체에는 영혼이 없어. 요리사가 레시피에 영혼을 불어넣어야 하는 거야."}
 {"k": "¡Hola, Aspirante! Te doy una cálida bienvenida a nuestro Bastión-Cocina, especializado en el tipo Hada.", "v": "어서 오십시오, 후보생님! 페어리 타입을 전문으로 하는 저희 주방 요새에 오신 것을 환영해요."}
 {"k": "Para avanzar no solo tendrás que demostrar tu habilidad en combate, ¡también tus habilidades culinarias!", "v": "앞으로 나아가시려면 배틀 실력뿐만 아니라 요리 실력도 증명하셔야 합니다!"}
 {"k": "Toma esto, podría venirte bien.", "v": "이것을 받으십시오. 도움이 될 것입니다."}
@@ -4060,27 +4060,27 @@
 {"k": "¿Necesitas que cure a tus Pokémon?", "v": "포켓몬을 치료하시겠습니까?"}
 {"k": "Perfecto, ¡mucha suerte en el bastión!", "v": "좋습니다. 요새에서 행운을 빕니다!"}
 {"k": "<b>Zafra:</b> ¡Aaaaaaay!", "v": "<b>사프라:</b> 꺄아아아악!"}
-{"k": "El crítico culinario <b>Eneldo</b> ha llegado al pueblo, ¡y quiere una prueba de nuestros platos! ¡Ayayay!", "v": "미식 평론가 <b>에넬도</b> 씨가 마을에 도착했는데, 우리 요리를 맛보고 싶대요! 아이고!"}
-{"k": "¿Puedes ayudarme a cocinar el menú? ¡Porfa! ¡Que no doy abasto! Tienes los ingredientes por ahí a tu plena disposición.", "v": "코스 요리 만드는 것 좀 도와줄 수 있어요? 제발요! 나 혼자선 도저히 감당이 안 돼요! 재료는 저쪽에 있으니 마음껏 써도 돼요."}
+{"k": "El crítico culinario <b>Eneldo</b> ha llegado al pueblo, ¡y quiere una prueba de nuestros platos! ¡Ayayay!", "v": "미식 평론가 <b>에넬도</b> 씨가 마을에 도착했는데, 우리 요리를 맛보고 싶대! 아이고!"}
+{"k": "¿Puedes ayudarme a cocinar el menú? ¡Porfa! ¡Que no doy abasto! Tienes los ingredientes por ahí a tu plena disposición.", "v": "코스 요리 만드는 것 좀 도와줄 수 있어? 제발! 나 혼자선 도저히 감당이 안 돼! 재료는 저쪽에 있으니 마음껏 써도 돼."}
 {"k": "Receta: \"El plato estará formado por 2 Bayas. Curará dos Estados Alterados en total\"", "v": "레시피: \"이 요리는 나무열매 2개로 구성됩니다. 총 두 가지 상태이상을 치료합니다.\""}
-{"k": "<b>Zafra:</b> ¿Tienes el plato? ¿Has seguido la receta?", "v": "<b>사프라:</b> 요리가 완성됐나요? 레시피대로 잘 만드셨어요?"}
-{"k": "¡No tenemos tiempo para comprobarlo! ¡Tenemos que cocinar el siguiente plato del menú! ¡Ay, ay!", "v": "확인해 볼 시간이 없어요! 다음 코스 요리를 만들어야 해요! 아이고, 아이고!"}
+{"k": "<b>Zafra:</b> ¿Tienes el plato? ¿Has seguido la receta?", "v": "<b>사프라:</b> 요리가 완성됐어? 레시피대로 잘 만들었어?"}
+{"k": "¡No tenemos tiempo para comprobarlo! ¡Tenemos que cocinar el siguiente plato del menú! ¡Ay, ay!", "v": "확인해 볼 시간이 없어! 다음 코스 요리를 만들어야 해! 아이고, 아이고!"}
 {"k": "Receta: \"El plato estará formado por 2 Bayas. No curará ningún Estado Alterado\"", "v": "레시피: “이 요리는 나무열매 2개로 구성됩니다. 어떤 상태이상도 치료하지 않습니다.”"}
-{"k": "¡No tenemos tiempo para comprobarlo! ¡Tenemos que cocinar el siguiente plato del menú! ¡Ayayay!", "v": "확인해 볼 시간이 없어요! 다음 코스 요리를 만들어야 해요! 꺄아!"}
+{"k": "¡No tenemos tiempo para comprobarlo! ¡Tenemos que cocinar el siguiente plato del menú! ¡Ayayay!", "v": "확인해 볼 시간이 없어! 다음 코스 요리를 만들어야 해! 꺄아!"}
 {"k": "Receta: \"El plato estará formado por 2 Bayas. La mezcla no debe presentar colores fríos\"", "v": "레시피: “이 요리는 나무열매 2개로 구성됩니다. 혼합물에 차가운 색깔이 들어가면 안 됩니다.”"}
-{"k": "No irás a tocar la comida con esas manos, ¿verdad? ¡La buena higiene es esencial en esta cocina!", "v": "그 손으로 음식을 만지진 않으시겠죠? 이 주방에서는 위생 관리가 필수입니다!"}
+{"k": "No irás a tocar la comida con esas manos, ¿verdad? ¡La buena higiene es esencial en esta cocina!", "v": "그 손으로 음식을 만지진 않겠지? 이 주방에서는 위생 관리가 필수야!"}
 {"k": "¡Tus manos están limpias!", "v": "네 손은 깨끗하구나!"}
-{"k": "Puedes coger las bayas que necesites para cocinar, pero en serio, ¡lávate las manos al menos un par de veces al día!", "v": "요리에 필요한 나무열매는 가져가셔도 됩니다만, 그래도 하루에 손 두 번쯤은 꼭 씻어 주세요!"}
+{"k": "Puedes coger las bayas que necesites para cocinar, pero en serio, ¡lávate las manos al menos un par de veces al día!", "v": "요리에 필요한 나무열매는 가져가도 돼. 그래도 하루에 손 두 번쯤은 꼭 씻어!"}
 {"k": "Receta: \"El plato estará formado por 2 Bayas. Curará la Parálisis y será de color Naranja\"", "v": "레시피: “이 요리는 나무열매 2개로 만들어집니다. 마비를 치료하며, 색은 주황색입니다.”"}
 {"k": "Receta: \"El plato estará formado por 2 Bayas. Curará el Sueño y será parcialmente de color Azul\"", "v": "레시피: “이 요리는 나무열매 2개로 만들어집니다. 잠듦을 치료하며, 색은 부분적으로 파란색입니다.”"}
 {"k": "Receta: \"El plato estará formado por 2 Bayas. Curará una enorme cantidad de PS y será de color Verde\"", "v": "레시피: “이 요리는 나무열매 2개로 만들어집니다. 엄청난 양의 HP를 회복시켜 주며, 색은 초록색입니다.”"}
-{"k": "<b>Zafra:</b> Perdona si estoy nerviosa, es que he empezado hace relativamente poco con el negocio de la cocina.", "v": "<b>사프라:</b> 제가 너무 정신없게 굴어서 죄송해요. 요리 장사를 시작한 지 얼마 안 됐거든요."}
-{"k": "No tengo lo que se suele decir... ¿porte de empresaria? Bueno, ¡en cualquier caso ya solo nos queda un plato del menú!", "v": "흔히들 말하는... 사업가로서의 위엄? 그런 건 전혀 없나 봐요. 아무튼 이제 코스 요리도 딱 하나만 남았어요!"}
-{"k": "¿Te gusta el pan de baguette? Tengo aquí una buena barra lista para ti.", "v": "바게트 빵 좋아하세요? 맛있는 바게트 한 줄이 준비되어 있어요."}
+{"k": "<b>Zafra:</b> Perdona si estoy nerviosa, es que he empezado hace relativamente poco con el negocio de la cocina.", "v": "<b>사프라:</b> 내가 너무 정신없게 굴어서 미안해. 요리 장사를 시작한 지 얼마 안 됐거든."}
+{"k": "No tengo lo que se suele decir... ¿porte de empresaria? Bueno, ¡en cualquier caso ya solo nos queda un plato del menú!", "v": "흔히들 말하는... 사업가로서의 위엄? 그런 건 전혀 없나 봐. 아무튼 이제 코스 요리도 딱 하나만 남았어!"}
+{"k": "¿Te gusta el pan de baguette? Tengo aquí una buena barra lista para ti.", "v": "바게트 빵 좋아해? 맛있는 바게트 한 줄이 준비돼 있어."}
 {"k": "El sabor de la derrota es muy agridulce.", "v": "패배의 맛은 참으로 씁쓸하구나."}
-{"k": "Mira, este es el pan de baguette que he horneado yo mismo esta mañana. ¿Es que habías pensado en otra cosa?", "v": "자, 이건 제가 오늘 아침에 직접 구운 바게트 빵입니다. 혹시 딴생각이라도 하셨나요?"}
-{"k": "<b>Zafra:</b> ¿No conoces los detalles de las distintas bayas? Puedes revisar el cartel de la pared.", "v": "<b>사프라:</b> 나무열매들의 특징을 잘 모르시나요? 벽에 붙은 안내판을 확인해 보세요."}
-{"k": "¡Pero hazlo con cierta prisa, porfi! Si el menú se retrasa, ¡mi restaurante jamás prosperará!", "v": "그래도 조금만 서둘러 줘요, 제발! 코스 요리가 늦어지면 우리 가게가 안 살아난다고요!"}
+{"k": "Mira, este es el pan de baguette que he horneado yo mismo esta mañana. ¿Es que habías pensado en otra cosa?", "v": "자, 이건 내가 오늘 아침에 직접 구운 바게트 빵이야. 혹시 딴생각이라도 했어?"}
+{"k": "<b>Zafra:</b> ¿No conoces los detalles de las distintas bayas? Puedes revisar el cartel de la pared.", "v": "<b>사프라:</b> 나무열매들 특징을 잘 몰라? 벽에 붙은 안내판을 확인해 봐."}
+{"k": "¡Pero hazlo con cierta prisa, porfi! Si el menú se retrasa, ¡mi restaurante jamás prosperará!", "v": "그래도 조금만 서둘러 줘, 제발! 코스 요리가 늦어지면 우리 가게는 안 살아난다고!"}
 {"k": "Baya Aranja", "v": "오랭열매"}
 {"k": "Baya Zreza", "v": "버치열매"}
 {"k": "Baya Atania", "v": "유루열매"}
@@ -4136,14 +4136,14 @@
 {"k": "El crítico <b>Eneldo</b> ya está en su mesa, ¡y por lo visto viene de bastante mal humor! ¡Ay!", "v": "평론가 <b>에넬도</b>가 벌써 자리에 앉았는데, 보아하니 기분이 꽤 안 좋은 모양이야! 아이고!"}
 {"k": "Sé que te he pedido demasiado, pero necesito algo más. ¿Podrías auxiliar a los camareros en lo que necesiten?", "v": "내가 너무 많은 걸 부탁한 건 알지만, 딱 하나만 더 부탁할게. 웨이터들이 필요한 게 있으면 좀 도와줄 수 있어?"}
 {"k": "Están desbordados y seguramente les venga bien una mano amiga. De nuevo, ¡<i>merci beaucoup</i>!", "v": "일이 벅차 보여서 손길이 필요할 거야. 다시 한번, <i>merci beaucoup</i>!"}
-{"k": "<b>Zafra:</b> Sé que te he pedido demasiado, pero necesito algo más. ¿Podrías auxiliar a los camareros en lo que necesiten?", "v": "<b>사프라:</b> 너무 많은 부탁을 드린 건 알지만, 한 가지 더 부탁이 있어요. 웨이터들이 필요한 일을 좀 도와줄 수 있을까요?"}
+{"k": "<b>Zafra:</b> Sé que te he pedido demasiado, pero necesito algo más. ¿Podrías auxiliar a los camareros en lo que necesiten?", "v": "<b>사프라:</b> 너무 많은 걸 부탁한 건 알지만, 한 가지만 더 부탁할게. 웨이터들이 필요한 일을 좀 도와줄 수 있어?"}
 {"k": "Están desbordados y seguramente les venga bien una mano amiga. De nuevo, ¡muchísimas gracias por todo!", "v": "일이 벅차 보여서 손길이 필요할 거야. 다시 한번, 정말 너무너무 고마워!"}
-{"k": "<b>Zafra:</b> ¡Hola, \\PN! Al restaurante le va muy bien y es en parte gracias a ti.", "v": "<b>사프라:</b> 안녕하세요, \\PN! 식당이 아주 잘되고 있는데, 어느 정도는 당신 덕분이에요."}
-{"k": "¡Siempre tendrás a una amiga en mí! Ven a comer siempre que quieras.", "v": "전 언제나 당신 편이에요! 식사하러 언제든 놀러 오세요."}
-{"k": "<b>Zafra:</b> ¡Hola, \\PN! ¿Vienes a por el Pokémon que quería regalarte?", "v": "<b>사프라:</b> 안녕, \\PN! 내가 선물해 주려던 포켓몬을 받으러 왔나요?"}
-{"k": "Es un Pokémon fuerte y cariñoso, además se ha adaptado a la vida en la cocina.", "v": "강하고 다정한 포켓몬인데다, 주방 생활에도 잘 적응했거든요."}
-{"k": "Seguro que seréis grandes amigos.", "v": "분명 좋은 친구가 될 수 있을 거예요."}
-{"k": "Tengo que seguir trabajando, ¡por favor, ven a visitarme cuando quieras!", "v": "전 계속 일해야 해서요. 부디 언제든지 놀러 오세요!"}
+{"k": "<b>Zafra:</b> ¡Hola, \\PN! Al restaurante le va muy bien y es en parte gracias a ti.", "v": "<b>사프라:</b> 안녕, \\PN! 식당이 아주 잘되고 있는데, 어느 정도는 네 덕분이야."}
+{"k": "¡Siempre tendrás a una amiga en mí! Ven a comer siempre que quieras.", "v": "난 언제나 네 편이야! 식사하러 언제든 놀러 와."}
+{"k": "<b>Zafra:</b> ¡Hola, \\PN! ¿Vienes a por el Pokémon que quería regalarte?", "v": "<b>사프라:</b> 안녕, \\PN! 내가 선물해 주려던 포켓몬 받으러 왔어?"}
+{"k": "Es un Pokémon fuerte y cariñoso, además se ha adaptado a la vida en la cocina.", "v": "강하고 다정한 포켓몬인데다, 주방 생활에도 잘 적응했거든."}
+{"k": "Seguro que seréis grandes amigos.", "v": "분명 좋은 친구가 될 수 있을 거야."}
+{"k": "Tengo que seguir trabajando, ¡por favor, ven a visitarme cuando quieras!", "v": "난 계속 일해야 해. 언제든지 또 놀러 와!"}
 {"k": "¡Oh, vaya! No tienes espacio en tu equipo.", "v": "오, 이런! 지닌 포켓몬에 자리가 없습니다."}
 {"k": "Estoy hablando de negocios con este caballero. Si pacto bien mis alianzas, en tres generaciones mi familia podría ser de las más boyantes del reino.", "v": "이 신사와 사업 이야기를 나누는 중입니다. 동맹을 잘 맺어둔다면, 3대 후에는 우리 가문이 왕국에서 손꼽히는 가문이 될 수도 있죠."}
 {"k": "Espero que la Regente no se ponga hecha un manojo de nervios con la llegada del crítico culinario...", "v": "미식 평론가가 와서 섭정님이 너무 안절부절못하지 않으셨으면 좋겠네요..."}
@@ -4165,17 +4165,17 @@
 {"k": "<b>Eneldo:</b> ¡Nunca me había sentido tan humillado! Pienso darle cero estrellas a este restaurante, ¡me encargaré personalmente de que lo cierren!", "v": "<b>에넬도:</b> 이렇게 굴욕을 당해본 적은 없었다! 이 식당에는 별점 0점을 주겠다. 내 손으로 직접 문을 닫게 만들어 주마!"}
 {"k": "Me voy ahora mismo. ¡Sabréis bien quién soy yo!", "v": "지금 당장 가겠다. 내가 누군지 똑똑히 알게 될 거다!"}
 {"k": "Unas horas después, concluida la jornada de apertura del restaurante...", "v": "몇 시간 뒤, 식당의 오픈 영업이 마무리되었다..."}
-{"k": "<b>Zafra:</b> ¡Aaah! ¡Es el fin de mi restaurante y de mis sueños!", "v": "<b>사프라:</b> 꺄아! 내 식당도 내 꿈도 이제 끝이에요!"}
-{"k": "Si el crítico <b>Eneldo</b> le pone cero estrellas, esto estará vacío a partir de mañana...", "v": "비평가 <b>에넬도</b> 씨가 별점 0점을 준다면 내일부터 손님이 하나도 안 올 텐데요..."}
+{"k": "<b>Zafra:</b> ¡Aaah! ¡Es el fin de mi restaurante y de mis sueños!", "v": "<b>사프라:</b> 꺄아! 내 식당도 내 꿈도 이제 끝이야!"}
+{"k": "Si el crítico <b>Eneldo</b> le pone cero estrellas, esto estará vacío a partir de mañana...", "v": "비평가 <b>에넬도</b> 씨가 별점 0점을 준다면 내일부터 손님이 하나도 안 올 텐데..."}
 {"k": "<b>Camarero:</b> Regente <b>Zafra</b>, ¡se ha producido un milagro!", "v": "<b>웨이터:</b> 섭정 <b>사프라</b>님, 기적이 일어났습니다!"}
 {"k": "He estado hablando con los comensales y han terminado todos contentísimos.", "v": "손님들과 이야기를 나누었는데 모두 대단히 만족해하셨습니다."}
 {"k": "Afirman que hacía mucho tiempo que no comían tan bien. ¡Y que les han tratado estupendamente!", "v": "이렇게 맛있는 식사는 참 오랜만이라고들 하더군요. 게다가 서비스도 최고였다고 합니다!"}
-{"k": "<b>Zafra:</b> ¿En serio han dicho eso? ¡Ayay! ¡Qué ilusión más grande!", "v": "<b>사프라:</b> 정말 그렇게 말했나요? 아이고! 정말 꿈만 같아요!"}
+{"k": "<b>Zafra:</b> ¿En serio han dicho eso? ¡Ayay! ¡Qué ilusión más grande!", "v": "<b>사프라:</b> 정말 그렇게 말했어? 아이고! 정말 꿈만 같아!"}
 {"k": "<b>Camarero:</b> Puede estar orgullosa, Regente. Además había varios críticos infiltrados que no conocíamos, y todos ellos dejarán buenas reseñas.", "v": "<b>웨이터:</b> 자랑스러워하셔도 됩니다, 섭정님. 게다가 저희가 몰랐던 여러 신분 숨긴 비평가들도 다녀갔는데, 모두 좋은 평가를 남길 거라고 합니다."}
 {"k": "Tengo la sensación de que mañana el restaurante estará todavía más lleno.", "v": "내일은 식당이 훨씬 더 붐빌 것 같은 예감이 드네요."}
-{"k": "<b>Zafra:</b> ¡Pues trabajaremos más que nunca para que todo el mundo sea feliz!", "v": "<b>사프라:</b> 그럼 모두가 행복해질 수 있도록 그 어느 때보다 더 열심히 일해야겠네요!"}
-{"k": "<b>Zafra:</b> ¡Parece que al final todo ha salido bien, \\PN! Y no lo habríamos logrado sin ti.", "v": "<b>사프라:</b> 결국 모든 게 잘 풀린 것 같네요, \\PN! 당신이 없었다면 해내지 못했을 거예요."}
-{"k": "Sé que es poca cosa, pero por favor, acepta a este raro Pokémon característico de los chefs.", "v": "별것 아니지만, 부디 요리사들의 상징인 이 특이한 포켓몬을 받아주세요."}
+{"k": "<b>Zafra:</b> ¡Pues trabajaremos más que nunca para que todo el mundo sea feliz!", "v": "<b>사프라:</b> 그럼 모두가 행복해질 수 있도록 그 어느 때보다 더 열심히 일해야겠어!"}
+{"k": "<b>Zafra:</b> ¡Parece que al final todo ha salido bien, \\PN! Y no lo habríamos logrado sin ti.", "v": "<b>사프라:</b> 결국 모든 게 잘 풀린 것 같네, \\PN! 네가 없었다면 해내지 못했을 거야."}
+{"k": "Sé que es poca cosa, pero por favor, acepta a este raro Pokémon característico de los chefs.", "v": "별것 아니지만, 요리사들의 상징인 이 특이한 포켓몬을 받아 줘."}
 {"k": "¡Ah, <i>bonjour</i>! Estamos un poco llenos ahora mismo, pero estaremos siempre a tu disposición.", "v": "아, <i>bonjour</i>! 지금은 손님이 조금 몰려 있지만, 늘 준비되어 있다네."}
 {"k": "Estoy buscando un Pyroar, ¿lo cambiarías por mi Cyndaquil?", "v": "화염레오를 찾고 있는데, 제 브케인과 교환하시겠어요?"}
 {"k": "Si te haces con un Pyroar, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "화염레오를 얻으셨다면 지니고 있는 포켓몬 맨 앞에 두어서 보여주세요."}
@@ -4215,12 +4215,12 @@
 {"k": "Si tienes un Forretress, ponlo en el primer lugar de tu equipo para que pueda verlo bien.", "v": "쏘콘이 있다면 잘 볼 수 있게 파티 첫 번째 자리에 두어 봐."}
 {"k": "¡Vaya, qué lástima! Tendré que entrenar un Pineco para que evoluciona en Forretress. Qué palo...", "v": "으아, 아쉽다! 피콘을 키워서 쏘콘으로 진화시켜야겠어. 귀찮게 됐네..."}
 {"k": "Shuckle es un Pokémon muy útil, pero yo no sé usarlo. ¡A ver si me va mejor con Forretress!", "v": "단단지는 정말 유용한 포켓몬이지만 난 잘 못 쓰겠더라고. 쏘콘이랑은 더 잘 맞으려나!"}
-{"k": "¡Ay! ¡Me he quemado con el agua hirviendo!", "v": "아이고! 끓는 물에 데어 버렸어요!"}
-{"k": "La cocina es muy sacrificada, pero ver la sonrisa de mis comensales cuando la degustan hace que se me olviden todos los males.", "v": "주방 일은 정말 고되지만, 음식 맛을 보는 손님들의 미소를 보면 모든 고생이 싹 가신답니다."}
+{"k": "¡Ay! ¡Me he quemado con el agua hirviendo!", "v": "아이고! 끓는 물에 데어 버렸어!"}
+{"k": "La cocina es muy sacrificada, pero ver la sonrisa de mis comensales cuando la degustan hace que se me olviden todos los males.", "v": "주방 일은 정말 고되지만, 음식 맛을 보는 손님들 미소를 보면 모든 고생이 싹 가셔."}
 {"k": "Sucedió cuando era joven. Me perdí en el bosque y casi muero deshidratado, pero un majestuoso Pokémon me guió hasta un río y me salvó.", "v": "내가 젊었을 적 일이라네. 숲에서 길을 잃어 탈수로 죽을 뻔했는데, 한 위엄 있는 포켓몬이 강가로 이끌어 날 살려 주었지."}
 {"k": "¿Se trataba de algún Pokémon legendario? Seguramente fuera un Pokémon mundano, pero me gusta pensar que me topé con algo inusual aquel día.", "v": "전설의 포켓몬이었을까? 아마 평범한 포켓몬이었겠지만, 그날 특별한 존재를 만났다고 믿고 싶구먼."}
-{"k": "Si tu Pokémon conoce el movimiento Batido, podrás usarlo fuera de combate para reponer la salud de tu equipo, ¿lo sabías?", "v": "포켓몬이 우유마시기 기술을 알고 있다면 배틀 중이 아닐 때도 파티의 체력을 회복시킬 수 있다는 사실을 알고 계셨습니까?"}
-{"k": "Es muy bonito ver a un Pokémon echar su leche a los demás.", "v": "포켓몬이 다른 포켓몬에게 우유를 나누어 주는 모습은 참 보기 좋답니다."}
+{"k": "Si tu Pokémon conoce el movimiento Batido, podrás usarlo fuera de combate para reponer la salud de tu equipo, ¿lo sabías?", "v": "포켓몬이 우유마시기 기술을 알고 있으면 배틀 중이 아닐 때도 파티 체력을 회복시킬 수 있어. 알고 있었어?"}
+{"k": "Es muy bonito ver a un Pokémon echar su leche a los demás.", "v": "포켓몬이 다른 포켓몬에게 우유를 나누어 주는 모습은 참 보기 좋아."}
 {"k": "¡Uy! ¡Qué agradable visita! Normalmente los días aquí son muy monótonos...", "v": "어머나! 참으로 반가운 손님이구나! 평소에는 하루하루가 가만히 지루하단다..."}
 {"k": "¡Toma esto como muestra de lo buena anfitriona que soy!", "v": "내가 손님 대접을 얼마나 잘하는지 보여 줄 테니 이걸 받으렴!"}
 {"k": "Antes vivía aquí con mis hermanos, pero se fueron todos a buscar trabajo en <b>Ciudad Luminalia</b>.", "v": "예전엔 형제들과 여기서 살았는데, 다들 일자리를 찾아 <b>미르시티</b>로 떠났단다."}
@@ -4717,11 +4717,11 @@
 {"k": "No", "v": "아니요"}
 {"map": 135, "n": 25}
 {"k": "Aquí solo hay basura.", "v": "여기엔 쓰레기밖에 없다."}
-{"k": "¿Clamperl te parece un Pokémon débil?", "v": "진주몽이 약한 포켓몬이라고 생각하시나요?"}
-{"k": "¡Pues no lo subestimes! Puede alcanzar un gran poder sin tan siquiera necesitar evolucionar.", "v": "절대 얕보지 마세요! 진화하지 않고도 엄청난 힘을 발휘할 수 있으니까요."}
-{"k": "Y lo logra gracias a esto.", "v": "바로 이 덕분에 그럴 수 있죠."}
-{"k": "Y si lo que quieres es evolucionarlo a Huntail o a Gorebyss, tendrás que usar una piedra evolutiva.", "v": "헌테일이나 분홍장이로 진화시키고 싶다면 진화석을 사용해야 합니다."}
-{"k": "Si lo que quieres es evolucionar a Clamperl, ya sea a Huntail o a Gorebyss, tendrás que usar una piedra evolutiva.", "v": "진주몽을 헌테일이나 분홍장이로 진화시키고 싶다면 진화석을 사용해야 합니다."}
+{"k": "¿Clamperl te parece un Pokémon débil?", "v": "진주몽이 약한 포켓몬이라고 생각해?"}
+{"k": "¡Pues no lo subestimes! Puede alcanzar un gran poder sin tan siquiera necesitar evolucionar.", "v": "절대 얕보지 마! 진화하지 않고도 엄청난 힘을 발휘할 수 있으니까."}
+{"k": "Y lo logra gracias a esto.", "v": "바로 이 덕분에 그럴 수 있지."}
+{"k": "Y si lo que quieres es evolucionarlo a Huntail o a Gorebyss, tendrás que usar una piedra evolutiva.", "v": "헌테일이나 분홍장이로 진화시키고 싶다면 진화석을 써야 해."}
+{"k": "Si lo que quieres es evolucionar a Clamperl, ya sea a Huntail o a Gorebyss, tendrás que usar una piedra evolutiva.", "v": "진주몽을 헌테일이나 분홍장이로 진화시키고 싶다면 진화석을 써야 해."}
 {"k": "La banda pirata del capitán <b>Loto</b> se instaló aquí hace una semana.", "v": "<b>로토</b> 선장이 이끄는 해적단이 일주일 전에 여기 자리를 잡았어."}
 {"k": "Pero de momento aún no nos han robado ni causado demasiado alboroto, ¿estarán buscando otra cosa?", "v": "그래도 아직 물건을 훔치거나 큰 소동을 일으키진 않았는데, 다른 걸 노리고 있는 걸까?"}
 {"k": "Estoy buscando un Mantine. ¿lo cambiarías por mi Tangrowth?", "v": "만타인을 찾고 있어요. 제 덩쿠림보와 교환하시겠어요?"}
@@ -4758,9 +4758,9 @@
 {"k": "Aprovecho la energía elemental de mis Pokémon para estudiar la ciencia, ¡y en los combates tampoco soy un ignorante!", "v": "포켓몬이 지닌 원소의 힘을 활용해 과학을 연구하고 있죠. 배틀에서도 결코 무지하지 않답니다!"}
 {"k": "¡Menuda sobrecarga! Tu conocimiento en la materia me sorprende.", "v": "엄청난 과부하네요! 이 분야에 대한 당신의 지식에 놀랐습니다."}
 {"k": "Desbordas mucha energía, ¿has pensado en unirte a las filas del rey? Creo que necesitan una ayudita ahora mismo.", "v": "에너지가 넘치는군요. 국왕 전하의 군대에 합류해 볼 생각은 없나요? 지금 도움이 꽤 필요한 것 같던데요."}
-{"k": "Dicen que algunas hierbas solo crecen al alcanzar cierta altura. ¿Pasará lo mismo con los Pokémon?", "v": "어떤 풀은 일정 높이에 도달해야만 자란다고들 하죠. 포켓몬도 마찬가지일까요?"}
+{"k": "Dicen que algunas hierbas solo crecen al alcanzar cierta altura. ¿Pasará lo mismo con los Pokémon?", "v": "어떤 풀은 일정 높이에 도달해야만 자란다고들 하지. 포켓몬도 마찬가지일까?"}
 {"k": "¡Vaya! ¡Vencido por alguien tan joven!", "v": "이럴 수가! 이렇게 어린 사람에게 지다니!"}
-{"k": "Había venido a la montaña a recoger hierbas para mis platos. No esperaba llevarme una paliza por el camino...", "v": "요리에 쓸 허브를 따러 산에 왔어요. 가는 길에 이렇게 두들겨 맞을 줄은 몰랐습니다..."}
+{"k": "Había venido a la montaña a recoger hierbas para mis platos. No esperaba llevarme una paliza por el camino...", "v": "요리에 쓸 허브를 따러 산에 왔어. 가는 길에 이렇게 두들겨 맞을 줄은 몰랐네..."}
 {"k": "¡Hola, soy <b>Le Prodige</b>!", "v": "안녕하세요, 제가 바로 <b>르 프로디주</b>예요!"}
 {"k": "Puedo cambiarte a uno de tus Pokémon por otro de valor similar según la suma total de sus estadísticas.", "v": "능력치 합계에 맞춰, 당신의 포켓몬 중 하나를 비슷한 가치의 다른 포켓몬으로 교환해 드립니다."}
 {"k": "¿Qué te parece?", "v": "어떻게 생각하세요?"}
@@ -5190,7 +5190,7 @@
 {"k": "Puedes seguir jugando de forma normal, pero recuerda que has fracasado.", "v": "일반 모드로 계속 플레이할 수는 있지만, 네가 실패했다는 사실만큼은 기억해라."}
 {"k": "¡Tenemos que poner a salvo a los Pokémon, esa es la máxima prioridad!", "v": "포켓몬들을 안전하게 구출해야 해요, 그게 최우선이에요!"}
 {"map": 149, "n": 37}
-{"k": "Hay un pasaje secreto en algún lugar de este <i>chateau</i>, o eso dicen los rumores...", "v": "이 <i>성</i> 어딘가에 비밀 통로가 있다는 소문이 있더라고요..."}
+{"k": "Hay un pasaje secreto en algún lugar de este <i>chateau</i>, o eso dicen los rumores...", "v": "이 <i>성</i> 어딘가에 비밀 통로가 있다는 소문이 있더라고..."}
 {"k": "<b>Pirata 1:</b> ¡Eh, tú! ¿Es que no has cerrado la puerta o qué?", "v": "<b>해적 1:</b> 야, 너! 문 안 닫았어?"}
 {"k": "<b>Pirata 2:</b> ¡No me cargues el muerto! Te recuerdo que has sido la última en entrar.", "v": "<b>해적 2:</b> 나한테 덮어씌우지 마! 제일 마지막에 들어온 건 너거든?"}
 {"k": "<b>Clavelina:</b> ¡Auxilio, Aspirante! Estas malhechoras han invadido mi hogar.", "v": "<b>클라벨리나:</b> 도와줘요, 후보생! 이 악당들이 내 집에 침입했어요."}
@@ -6494,11 +6494,11 @@
 {"map": 190, "n": 116}
 {"k": "¿Has hablado con el capitán <b>Merlot</b> para recibir las órdenes?", "v": "<b>메를로</b> 대장에게 명령을 전달받았나?"}
 {"k": "¡Preséntate ante él si no lo has hecho!", "v": "아직 안 받았다면 당장 가서 보고하도록 해!"}
-{"k": "Me pregunto si los revolucionarios tendrán piedad de un humilde y pobre trabajador como yo.", "v": "혁명가들이 나 같은 보잘것없는 노동자에게 자비를 베풀어 줄지 모르겠네요."}
+{"k": "Me pregunto si los revolucionarios tendrán piedad de un humilde y pobre trabajador como yo.", "v": "혁명가들이 나 같은 보잘것없는 노동자에게 자비를 베풀어 줄지 모르겠네."}
 {"k": "...", "v": "..."}
-{"k": "Un anciano chef me contó unas crípticas palabras hace tiempo.", "v": "오래전에 한 늙은 셰프가 제게 수수께끼 같은 말을 해 준 적이 있습니다."}
+{"k": "Un anciano chef me contó unas crípticas palabras hace tiempo.", "v": "오래전에 한 늙은 셰프가 나한테 수수께끼 같은 말을 해 준 적이 있어."}
 {"k": "\"Cuando tres miradas del rey apunten hacia la <b>Habitación Real</b>, un tesoro aparecerá\".", "v": "\"왕의 시선 세 개가 <b>왕실 방</b>을 향할 때, 보물이 나타나리라.\""}
-{"k": "¿Es algo como eso lo que buscas?", "v": "혹시 찾으시는 게 그런 건가요?"}
+{"k": "¿Es algo como eso lo que buscas?", "v": "혹시 찾는 게 그런 거야?"}
 {"k": "Será mejor no meterse en mitad de esta batalla campal...", "v": "이 대규모 전투 한복판에 끼어들지 않는 편이 좋겠어..."}
 {"k": "¿Has venido a protegerme? ¡Por favor, no permitas que me hagan ningún daño!", "v": "날 지켜주러 온 건가요? 제발 다치지 않게 해주세요!"}
 {"k": "¿Viejas leyendas en el palacio? No sé de qué nos sirve eso ahora...", "v": "궁전에 전해지는 옛 전설이요? 그게 지금 무슨 소용이 있겠어요..."}
@@ -8776,9 +8776,9 @@
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] Los Pokémon expulsaron de mi tierra a todos aquellos esclavistas que, por cierto, tengo entendido que servían a grandes señores de <b>Kalos</b>.", "v": "\\c[6]<b>미라:</b>\\c[0] 포켓몬들은 내 땅에서 그 노예주들을 전부 쫓아냈다. 듣자하니 그자들은 <b>칼로스</b>의 대영주들을 섬기던 자들이었다더군."}
 {"map": 269, "n": 23}
 {"k": "¿Quieres usar la Montura Gogoat?", "v": "포켓라이더 고고트를 사용하시겠습니까?"}
-{"k": "¡Bonjour! ¿Tú también has venido a recolectar setas en estos páramos pantanosos?", "v": "Bonjour! 당신도 이 축축한 습지대에 버섯을 따러 오셨나요?"}
+{"k": "¡Bonjour! ¿Tú también has venido a recolectar setas en estos páramos pantanosos?", "v": "Bonjour! 너도 이 축축한 습지대에 버섯을 따러 왔어?"}
 {"k": "¡Oh, la, la! ¡Oh, la, la!", "v": "오, 라, 라! 오, 라, 라!"}
-{"k": "Dicen que en estas tierras pantanosas y otoñales, la magia y la brujería es más fuerte que en cualquier otro lugar de la región.", "v": "이 가을빛 축축한 습지에서는 지역 내 다른 어느 곳보다 마법과 주술의 힘이 강하다고 합니다."}
+{"k": "Dicen que en estas tierras pantanosas y otoñales, la magia y la brujería es más fuerte que en cualquier otro lugar de la región.", "v": "이 가을빛 축축한 습지에서는 지역 내 다른 어느 곳보다 마법과 주술의 힘이 강하대."}
 {"k": "¿Vas a Ciudad Romantis? ¿La casa de mi aquelarre de brujas? Je, je, je... ¡Tendrás que pasar por mis hechizos primero!", "v": "후늬시티에 가려는 게냐? 우리 마녀 집회의 집 말이지? 헤헤헤... 먼저 내 마법을 견뎌내야 할 것이니라!"}
 {"k": "¡Mi corazón está encantado y hechizado de haberte conocido!", "v": "당신을 만나게 되어 제 마음은 마법에 걸린 듯 사로잡혔어요!"}
 {"k": "La líder de nuestra aquelarre es una bruja de gran poder llamada Anturia. Ha superado numerosos obstáculos y derrotado a muchos cazadores.", "v": "우리 마녀 집회의 지도자는 ‘안투리아’라는 막강한 마녀시니라. 수많은 난관을 헤쳐 나가고 수많은 사냥꾼을 물리치셨느니라."}
@@ -8787,9 +8787,9 @@
 {"k": "De mayor yo también seré una gran bruja, ¡y conjuraré un castillo encantado solo para mí y para mi príncipe azul! ¡O princesa!", "v": "나도 커서 위대한 마녀가 될 거야! 그리고 나랑 내 백마 탄 왕자님만을 위한 마법의 성을 주문으로 만들어낼 거거든! 아니면 공주님!"}
 {"k": "<b>PISTA DE ENTRENADOR:</b> Para megaevolucionar a tu Pokémon, equípale su Megapiedra correspondiente y pulsa Z (o la tecla que tengas asignada a la tecla Z) durante el combate.", "v": "<b>트레이너 팁:</b> 포켓몬을 메가진화시키려면, 해당 메가스톤을 지니게 한 뒤 배틀 중에 Z 버튼(또는 Z 버튼에 할당된 키)을 누르세요."}
 {"k": "Solo se puede megaevolucionar una vez por combate y tu Pokémon volverá a la normalidad al terminar.", "v": "메가진화는 배틀당 한 번만 할 수 있으며, 배틀이 끝나면 포켓몬은 원래대로 돌아옵니다."}
-{"k": "¡Eh! ¡Este es mi rincón de setas particular! Creo que estoy a punto de dar con una muy gorda y jugosa.", "v": "아! 여기는 저만의 버섯 채집 자리예요! 곧 아주 크고 즙이 많은 녀석을 찾을 것 같습니다."}
+{"k": "¡Eh! ¡Este es mi rincón de setas particular! Creo que estoy a punto de dar con una muy gorda y jugosa.", "v": "아! 여기는 나만의 버섯 채집 자리야! 곧 아주 크고 즙이 많은 녀석을 찾을 것 같아."}
 {"k": "Lo mío es el estudio de las setas, no el estudio de los combates Pokémon.", "v": "제 전문은 버섯 연구지, 포켓몬 배틀 연구가 아니에요."}
-{"k": "¿Sabías que las setas en realidad no son plantas? Luego no tiene mucho sentido que los Pokémon basados en ellas sean tipo Planta.", "v": "버섯이 사실 식물이 아니라는 걸 알고 계셨나요? 그렇다면 버섯을 모티브로 한 포켓몬이 풀타입인 건 좀 이상하지요."}
+{"k": "¿Sabías que las setas en realidad no son plantas? Luego no tiene mucho sentido que los Pokémon basados en ellas sean tipo Planta.", "v": "버섯이 사실 식물이 아니라는 거 알았어? 그렇다면 버섯을 모티브로 한 포켓몬이 풀타입인 건 좀 이상하지."}
 {"k": "¡Has encontrado otra página de Alquimia Pokémon! ¡Qué emocionante!", "v": "새로운 연금술 제작법을 찾았다! 정말 신난다!"}
 {"k": "Tu catálogo de creación se ha ampliado.", "v": "제작할 수 있는 조합법이 늘어났다!"}
 {"k": "Combate doble, ¡uiiiii! Doble el placer, ¡uaaaaaa!", "v": "더블 배틀, 우이이이! 기쁨도 두 배가 되느니라, 우아아아!"}
@@ -12659,10 +12659,10 @@
 {"k": "Nada que un martillazo bien dado no sepa arreglar. ¡Pum! ¡Vamos a pulir un poco esas habilidades de combate!", "v": "망치질 제대로 한 번이면 해결 안 되는 게 없지. 쿵! 그 배틀 실력을 어디 한번 다듬어 보자고!"}
 {"k": "¡Rayos y centellas! ¡Si es que me dejas de piedra con esa fuerza!", "v": "세상에나! 그 엄청난 힘에 아주 굳어버렸지 뭐야!"}
 {"k": "<b>Rúpico:</b> ¡Repámpanos! ¡Si es que eres hasta más fuerte que la última vez! Definitivamente lo dejo por hoy para volver a mi oficio, a mi taller.", "v": "<b>루피코:</b> 세상에! 지난번보다 훨씬 더 강해졌잖아요! 오늘은 여기까지 하고 내 본업으로, 작업실로 돌아가야겠어요!"}
-{"k": "<b>Zafra:</b> ¡Aaay! ¡Qué ilusión me hace volver a verte, \\PN! A mi restaurante le va mejor que nunca y pronto abriré en otros puntos de la región, pero siempre saco tiempo para un buen combate.", "v": "<b>사프라:</b> 꺄아! 다시 만나서 정말 기뻐요, \\PN! 제 식당은 그 어느 때보다 잘되고 있고 곧 이 지방 다른 곳에도 지점을 낼 예정이지만, 배틀을 즐길 시간은 언제든 뺄 수 있죠!"}
-{"k": "¿Quieres ver lo que te he cocinado esta vez?", "v": "이번엔 제가 어떤 것을 준비해 왔는지 보시겠습니까?"}
+{"k": "<b>Zafra:</b> ¡Aaay! ¡Qué ilusión me hace volver a verte, \\PN! A mi restaurante le va mejor que nunca y pronto abriré en otros puntos de la región, pero siempre saco tiempo para un buen combate.", "v": "<b>사프라:</b> 꺄아! 다시 만나서 정말 기뻐, \\PN! 내 식당은 그 어느 때보다 잘되고 있고 곧 이 지방 다른 곳에도 지점을 낼 거지만, 배틀할 시간은 언제든 뺄 수 있어!"}
+{"k": "¿Quieres ver lo que te he cocinado esta vez?", "v": "이번엔 내가 어떤 걸 준비해 왔는지 볼래?"}
 {"k": "Los combates, al igual que la cocina, consisten en saber mezclar los ingredientes en cantidad y calidad para provocar emociones.", "v": "배틀도 요리와 같아서, 감동을 끌어내려면 재료의 양과 질을 정교하게 조율할 줄 알아야 해요."}
-{"k": "<b>Zafra:</b> Pásate más de vez en cuando por el restaurante, ¿vale? Al menos para venir a verme. Siempre serás un comensal especial en mi corazón.", "v": "<b>사프라:</b> 식당에 더 자주 들러 줘요, 알았죠? 적어도 저를 보러라도 와요. 당신은 제 마음속 영원한 특별 손님이니까요!"}
+{"k": "<b>Zafra:</b> Pásate más de vez en cuando por el restaurante, ¿vale? Al menos para venir a verme. Siempre serás un comensal especial en mi corazón.", "v": "<b>사프라:</b> 식당에 더 자주 들러 줘, 알았지? 적어도 날 보러라도 와. 넌 내 마음속 영원한 특별 손님이니까!"}
 {"k": "<b>Cendera:</b> <i>Blyat</i>. No esperaba tener que salir de mi región para atender a estas frivolidades. Y menos contigo como contrincante.", "v": "<b>센데라:</b> <i>Blyat</i>. 이런 하찮은 놀음에 어울리려 내 지방을 떠나야 했을 줄이야. 게다가 상대가 너라니."}
 {"k": "Pero hay que darlo todo siempre sin importar el campo de batalla. ¡Y una ventisca sin compasión está a punto de caer sobre ti!", "v": "하지만 전장이 어디든 언제나 최선을 다해야 하는 법. 무자비한 눈보라가 네놈 위로 휘몰아칠 것이다!"}
 {"k": "Resquebrajar el iceberg que tengo por corazón es muy meritorio. Tienes mi respeto como oponente.", "v": "내 마음속 빙산을 깨부수다니 칭찬할 만합니다. 대적자로서 당신을 인정하겠습니다."}
@@ -12773,8 +12773,8 @@
 {"k": "Pero como digo siempre, en los Pokémon encontraremos la salvación.", "v": "하지만 내가 늘 말하듯, 포켓몬 안에서 우리는 구원을 찾게 될 거야."}
 {"k": "Aquel rey, <b>Aster</b>, posteriormente conocido como <b>AZ</b>... ¿Volveremos a verle algún día?", "v": "그 국왕 <b>아스테르</b>, 훗날 <b>AZ</b>라고 불린 그 사람... 언젠가 다시 볼 수 있을까?"}
 {"k": "Algunos afirman haberlo visto en una región lejana en el lejano oriente, otros en <b>Galar</b>... ¿Qué se propondrá con tanto viaje?", "v": "머나먼 극동 지방에서 봤다는 사람도 있고, <b>가라르</b>에서 봤다는 사람도 있더라고... 왜 그렇게 돌아다니는 걸까?"}
-{"k": "Durante el tiempo en el que ese rayo de luz se me llevó, me sentí como sumergido en un extraño... mar. A mi alrededor notaba a otras muchas personas, y no podía sentir nada salvo sosiego.", "v": "그 빛줄기가 저를 데려갔을 때, 마치 기묘한... 바다에 잠긴 기분이 들었어요. 주변에 수많은 사람이 느껴졌지만, 평온함 말고는 아무것도 느껴지지 않았지요."}
-{"k": "¿Qué fue aquello exactamente?", "v": "그게 대체 뭐였을까요?"}
+{"k": "Durante el tiempo en el que ese rayo de luz se me llevó, me sentí como sumergido en un extraño... mar. A mi alrededor notaba a otras muchas personas, y no podía sentir nada salvo sosiego.", "v": "그 빛줄기가 나를 데려갔을 때, 마치 기묘한... 바다에 잠긴 기분이 들었어. 주변에 수많은 사람이 느껴졌지만, 평온함 말고는 아무것도 느껴지지 않았지."}
+{"k": "¿Qué fue aquello exactamente?", "v": "그게 대체 뭐였을까?"}
 {"k": "Yo no perdí nada, pero a un buen amigo de mi escuadrón le fueron arrebatados todos sus Pokémon. Y todo fue por culpa del <b>Arma Definitiva</b>.", "v": "나는 아무것도 잃지 않았지만, 내 분대의 친한 친구는 포켓몬을 모조리 빼앗겼어. 그게 다 <b>최종병기</b> 때문이었지."}
 {"k": "¿Cómo te recuperas después de ver desaparecer a tantos amigos a la vez?", "v": "한번에 그렇게 많은 동료가 눈앞에서 사라지는 걸 보고 어떻게 마음을 추스르겠어?"}
 {"k": "Debajo de este pueblo hay varias tumbas prehistóricas, ¡algunas de hace más de 3.000 años! O eso dicen los historiadores si es que no se equivocaron poniendo un cero de más.", "v": "이 마을 밑에는 선사 시대의 무덤이 여럿 있는데, 몇몇은 3,000년도 더 되었다더군! 역사가들이 0을 하나 더 붙이는 실수를 한 게 아니라면 말이야."}
