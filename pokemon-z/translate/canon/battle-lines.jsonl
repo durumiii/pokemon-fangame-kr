@@ -1,0 +1,33 @@
+{"절": 23, "행": 3994, "es": "¡{1} ya está dormido!", "ko": "{1}\\j[은,는] 이미 잠들어 있다.", "본가": "[VAR 0102(0000)][VAR 1900(0001)] 이미 잠들어 있다.", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:5622"}
+{"절": 23, "행": 3995, "es": "¡Pero ha fallado!", "ko": "그러나 실패하고 말았다!", "본가": "그러나 실패하고 말았다!!", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:7552"}
+{"절": 23, "행": 4003, "es": "{1} ya está envenenado.", "ko": "{1}\\j[은,는] 이미 몸에 독이 퍼진 상태다.", "본가": "[VAR 0102(0000)][VAR 1900(0001)] 이미 몸에 독이 퍼진 상태다.", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:5534"}
+{"절": 23, "행": 4004, "es": "¡Pero falló!", "ko": "그러나 실패하고 말았다!", "본가": "그러나 실패하고 말았다!!", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:7552"}
+{"절": 23, "행": 4005, "es": "No afecta a {1}...", "ko": "{1}에게는 효과가 없는 것 같다...", "본가": "[VAR 0102(0000)]에게는 효과가 없는 것 같다...", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:5482"}
+{"절": 23, "행": 4015, "es": "{1} ya tiene una quemadura.", "ko": "{1}\\j[은,는] 이미 화상을 입은 상태다.", "본가": "[VAR 0102(0000)][VAR 1900(0001)] 이미 화상을 입은 상태다.", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:5558"}
+{"절": 23, "행": 4020, "es": "¡{1} ha sido quemado!", "ko": "{1}\\j[은,는] 화상을 입었다!", "본가": "[VAR 0102(0000)][VAR 1900(0001)] 화상을 입었다!", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:5542"}
+{"절": 23, "행": 4021, "es": "¡{2} de {1} ha quemado a {3}!", "ko": "{1}의 {2} 때문에 {3}\\j[은,는] 화상을 입었다!", "본가": "[VAR 0102(0000)][VAR 1900(0001)] 화상을 입었다!", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:5542"}
+{"절": 23, "행": 4022, "es": "¡{1} ya está paralizado!", "ko": "{1}\\j[은,는] 이미 마비되어 있다.", "본가": "[VAR 0102(0000)][VAR 1900(0001)] 이미 마비되어 있다.", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:5578"}
+{"절": 23, "행": 4023, "es": "¡El Campo de Niebla evita que {1} sea paralizado!", "ko": "{1}\\j[을,를] 미스트필드가 지켜 주고 있다!", "본가": "[VAR 0102(0000)][VAR 1900(0002)] 미스트필드가 지켜 주고 있다!", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:6846"}
+{"절": 23, "행": 4027, "es": "¡{2} de {1} ha paralizado a {3}! ¡Quizás no pueda moverse!", "ko": "{1}의 {2} 때문에 {3}\\j[은,는] 마비되어 기술이 나오기 어려워졌다!", "본가": "[VAR 0102(0000)][VAR 1900(0001)] 마비되어 기술이 나오기 어려워졌다!", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:5566"}
+{"절": 23, "행": 4028, "es": "¡{1} ya está congelado!", "ko": "{1}\\j[은,는] 이미 얼어 있다.", "본가": "[VAR 0102(0000)][VAR 1900(0001)] 이미 얼어 있다.", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:5598"}
+{"절": 23, "행": 4034, "es": "¡El veneno resta PS a {1}!", "ko": "{1}\\j[은,는] 독에 의한 데미지를 입었다!", "본가": "[VAR 0102(0000)][VAR 1900(0001)] 독에 의한 데미지를 입었다!", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:5526"}
+{"절": 23, "행": 4035, "es": "¡{1} se resiente de la quemadura!", "ko": "{1}\\j[은,는] 화상 데미지를 입었다!", "본가": "[VAR 0102(0000)][VAR 1900(0001)] 화상 데미지를 입었다!", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:5550"}
+{"절": 23, "행": 4037, "es": "¡{1} está congelado!", "ko": "{1}\\j[은,는] 얼어 버려서 움직일 수 없다!", "본가": "[VAR 0102(0000)][VAR 1900(0001)] 얼어 버려서 움직일 수 없다!", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:5590"}
+{"절": 23, "행": 4041, "es": "¡{1} ya está confuso!", "ko": "{1}\\j[은,는] 이미 혼란에 빠져 있다.", "본가": "[VAR 0102(0000)][VAR 1900(0001)] 혼란에 빠져 있다!", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:5666"}
+{"절": 23, "행": 4058, "es": "¡{2} de {1} subió al máximo!", "ko": "{1}의 {2}\\j[이,가] 최고치까지 올라갔다!", "본가": "[VAR 0102(0000)][VAR 1900(0001)] 공격이 최고치까지 올라갔다!", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:5844"}
+{"절": 23, "행": 4163, "es": "¡{1} se está protegiendo!", "ko": "{1}\\j[은,는] 방어 태세에 들어갔다!", "본가": "[VAR 0102(0000)][VAR 1900(0001)] 방어 태세에 들어갔다!", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:5892"}
+{"절": 23, "행": 4207, "es": "¡{1} esquivó el ataque!", "ko": "{1}에게는 맞지 않았다!", "본가": "[VAR 0102(0000)]에게는 맞지 않았다!", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:5486"}
+{"절": 23, "행": 4343, "es": "¡{2} de {1} paralizó a {3}! ¡Quizás no pueda moverse!", "ko": "{1}의 {2} 때문에 {3}\\j[은,는] 마비되어 기술이 나오기 어려워졌다!", "본가": "[VAR 0102(0000)][VAR 1900(0001)] 마비되어 기술이 나오기 어려워졌다!", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:5566"}
+{"절": 23, "행": 4344, "es": "¡{2} de {1} quemó a {3}!", "ko": "{1}의 {2} 때문에 {3}\\j[은,는] 화상을 입었다!", "본가": "[VAR 0102(0000)][VAR 1900(0001)] 화상을 입었다!", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:5542"}
+{"절": 23, "행": 4424, "es": "¡Está tan confuso que se hirió a sí mismo!", "ko": "영문도 모른 채 자신을 공격했다!", "본가": "영문도 모른 채 자신을 공격했다!", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:7561"}
+{"절": 23, "행": 4442, "es": "¡{1} ha evitado el ataque!", "ko": "{1}에게는 맞지 않았다!", "본가": "[VAR 0102(0000)]에게는 맞지 않았다!", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:5486"}
+{"절": 23, "행": 4443, "es": "¡{1} ha esquivado el ataque!", "ko": "{1}에게는 맞지 않았다!", "본가": "[VAR 0102(0000)]에게는 맞지 않았다!", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:5486"}
+{"절": 23, "행": 4451, "es": "¡{1} necesita recuperarse de su ataque!", "ko": "{1}\\j[은,는] 공격의 반동으로 움직일 수 없다!", "본가": "[VAR 0102(0000)][VAR 1900(0001)] 공격의 반동으로 움직일 수 없다!", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:6342"}
+{"절": 23, "행": 4564, "es": "Hace mucho sol...", "ko": "햇살이 강하다!", "본가": "햇살이 강하다!", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:7973"}
+{"절": 23, "행": 4566, "es": "La tormenta de arena arrecia...", "ko": "모래바람이 세차게 분다!", "본가": "모래바람이 세차게 분다!", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:7578"}
+{"절": 23, "행": 4580, "es": "¡La tormenta de arena zarandea a {1}!", "ko": "모래바람이 {1}\\j[을,를] 덮쳤다!", "본가": "모래바람이 [VAR 0102(0000)][VAR 1900(0002)] 덮쳤다!", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:5730"}
+{"절": 23, "행": 4582, "es": "¡El granizo zarandea a {1}!", "ko": "싸라기눈이 {1}\\j[을,를] 덮쳤다!", "본가": "모래바람이 [VAR 0102(0000)][VAR 1900(0002)] 덮쳤다!", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:5730"}
+{"절": 23, "행": 4676, "es": "¡Otra Vez ya no hace efecto en {1}!", "ko": "{1}의 앙코르 상태가 풀렸다!", "본가": "[VAR 0102(0000)]의 앙코르 상태가 풀렸다!", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:5952"}
+{"절": 23, "행": 6055, "es": "¡Campo Psíquico protegió a {1}!", "ko": "{1}\\j[을,를] 사이코필드가 지켜 주고 있다!", "본가": "[VAR 0102(0000)][VAR 1900(0001)] 사이코필드가 지켜 주고 있다!", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:7066"}
+{"절": 23, "행": 6338, "es": "¡{2} de {1} paralizó a {3}!", "ko": "{1}의 {2} 때문에 {3}\\j[은,는] 마비되어 기술이 나오기 어려워졌다!", "본가": "[VAR 0102(0000)][VAR 1900(0001)] 마비되어 기술이 나오기 어려워졌다!", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:5566"}
+{"절": 23, "행": 6350, "es": "¡{1} sufre daño por el veneno!", "ko": "{1}\\j[은,는] 독에 의한 데미지를 입었다!", "본가": "[VAR 0102(0000)][VAR 1900(0001)] 독에 의한 데미지를 입었다!", "출처": "sv/1.0.0/gametext/sv-1.0.0_gametext_korean.txt:5526"}
