@@ -33,6 +33,7 @@ from pilot_npc import ask_npc, key_of  # noqa: E402
 from validate import check  # noqa: E402
 
 ATTR = HERE.parent / "docs/research/speaker-attr.jsonl.gz"
+ANON = HERE.parent / "docs/research/2026-08-06-anon-speakers.jsonl"
 PROTECTED = HERE.parent / "docs/research/protected.jsonl"
 MAPS = HERE / "ko" / "00-maps.jsonl"
 BATCH = HERE / "batch"
@@ -106,6 +107,27 @@ def resolve(who, names):
     return who
 
 
+def anon_index():
+    """이름표가 「???」인 자리의 판정 — 정체와 말투 지침을 자리(맵:이벤트:페이지:명령)로 건다.
+
+    전수 판정(2026-08-06) 256자리. 「비인물」과 「익명의도」는 정체를 밝히면 안 되는
+    자리이므로 이름은 「???」로 두고 지침만 싣는다.
+    """
+    out = {}
+    if not ANON.exists():
+        return out
+    for line in ANON.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        r = json.loads(line)
+        key = (r["map"], r["event"], r["page"], r["cmd"])
+        hide = r.get("판정") in ("비인물", "익명의도")
+        out[key] = {"who": "???" if hide else (r.get("정체") or "???"),
+                    "hint": r.get("말투지침") or "",
+                    "sure": r.get("판정") or ""}
+    return out
+
+
 def pages():
     """이벤트 페이지 → 귀속표 행. 맵 순서·명령 순서를 보존한다."""
     out = defaultdict(list)
@@ -133,7 +155,7 @@ def plan(pilot=False):
     pg = pages()
     ex = excluded_pages(pg)
     ko = ko_index()
-    vlines, names = voice_lines(), ko_names()
+    vlines, names, anon = voice_lines(), ko_names(), anon_index()
     chunks = []
     for key in sorted(pg):
         if key in ex:
@@ -148,14 +170,32 @@ def plan(pilot=False):
             cur = ko.get((r["map"], fold(r["k"])))
             if cur is None:                                # 정본에 없는 자리
                 continue
-            take.append((r, who, cur))
+            hint = ""
+            if who == "???":
+                a = anon.get((r["map"], r["event"], r["page"], r["cmd"]))
+                if a:
+                    who = a["who"]
+                    hint = a["hint"] + (" [정체 판정: 추정]" if a["sure"] == "추정" else "")
+            take.append((r, who, cur, hint))
         if not take:
             continue
         assert len(take) <= PAGE_CAP, f"{key}: {len(take)}행 — 페이지 캡 초과"
-        cast = []
-        for who in dict.fromkeys(w for _, w, _ in take):
+        cast, hints = [], {}
+        for _, w, _, h in take:
+            if h and w not in hints:
+                hints[w] = h
+        seen_cast = {}
+        for who in dict.fromkeys(w for _, w, _, _ in take):
             name = resolve(who, names)
-            cast.append({"name": name, "voice": vlines.get(name, "")})
+            voice = vlines.get(name, "")
+            if hints.get(who):
+                voice = (voice + " " if voice else "") + hints[who]
+            if name in seen_cast:            # ??? 판정으로 같은 인물이 두 번 서지 않게
+                if hints.get(who) and hints[who] not in seen_cast[name]["voice"]:
+                    seen_cast[name]["voice"] += " " + hints[who]
+                continue
+            seen_cast[name] = {"name": name, "voice": voice}
+            cast.append(seen_cast[name])
         m, e, p = key
         chunks.append({
             "cid": f"p{m:03d}-{e}-{p}",
@@ -164,7 +204,7 @@ def plan(pilot=False):
             "cast": cast,
             "rows": [{"id": f"{m}:{e}:{p}:{r['cmd']}",
                       "who": resolve(w, names), "es": r["k"], "ko": cur}
-                     for r, w, cur in take],
+                     for r, w, cur, _ in take],
         })
 
     chunks = dedupe(chunks)
@@ -296,22 +336,42 @@ def term_pairs():
             on = line.startswith(TERM_SECTIONS)
         if not on or not line.startswith("|"):
             continue
+        # 표가 「원문|표기 | |원문|표기」꼴이라 빈 칸이 자리를 가른다 — 빈 칸으로 끊어서
+        # 짝을 맞춘다. 예전엔 짝수/홀수 칸으로 잘라 한 칸씩 밀렸고, 그 바람에
+        # 「Team Azoth → 아조스단」이 프롬프트에 한 번도 실리지 않았다(2026-08-06 실측).
         cells = [c.strip() for c in line.strip("|").split("|")]
-        for a, b in zip(cells[::2], cells[1::2]):
-            if not a or not b or a in ("원문", "---") or set(a) <= set("-"):
-                continue
-            ko = strip_evidence(b).strip("*")
-            if ko and len(a) < 40:
-                pairs.append((a, ko))
+        group = []
+        for cell in cells + [""]:
+            if not cell:
+                if len(group) >= 2:
+                    a, b = group[0], group[1]
+                    if a not in ("원문", "표기", "근거") and not set(a) <= set("-") \
+                            and len(a) < 40:
+                        ko = re.sub(r"\s*\([^)]{12,}\)", "", strip_evidence(b)).strip("* ")
+                        if ko:
+                            pairs.append((a, ko))
+                group = []
+            else:
+                group.append(cell)
     return pairs
 
 
+def ledger_pairs():
+    """고유명 원장 — 이 장면에 나오는 이름의 표기를 못박는다."""
+    out = []
+    for line in (HERE / "canon/names.jsonl").read_text(encoding="utf-8").splitlines():
+        if line.strip():
+            r = json.loads(line)
+            out.append((r["es"], r["ko"]))
+    return out
+
+
 def glossary_for(rows):
-    """이 장면에 실제로 나오는 용어만 고른다 — 전문은 9천 자라 요청마다 실을 것이 못 된다."""
+    """이 장면에 실제로 나오는 용어·고유명만 고른다 — 전문은 9천 자라 매번 실을 것이 못 된다."""
     es_all = " ".join(r["es"] for r in rows).lower()
     ko_all = " ".join(r["ko"] for r in rows)
     hits = []
-    for a, b in term_pairs():
+    for a, b in term_pairs() + ledger_pairs():
         keys = [k.strip().lower() for k in re.split(r"[/·]", a) if k.strip()]
         if any(k in es_all for k in keys) or b.split("(")[0].strip() in ko_all:
             hits.append(f"- {a} → {b}")
