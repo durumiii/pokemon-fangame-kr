@@ -40,6 +40,7 @@ MODEL = "gemini-3.6-flash"
 PAGE_CAP = 90          # 실측: 확정 페이지 835개 중 이 값을 넘는 페이지가 없다
 PILOT_PAGES = 20
 PILOT_MAP_MAX = 90     # 파일럿은 초반부에서만 뽑는다 — 유지자가 판정할 수 있는 구간
+PILOT_EXTRA = ("p112-4-0",)   # 초반부 밖이라도 꼭 넣을 장면 (란토 저택 65행 대면)
 
 # 화자로 잡히지만 사람 말이 아닌 이름표 (안내판·표지·트레이너 팁 따위)
 SYS = {"PISTA DE ENTRENADOR", "Notas del Team Azoth", "\\PN", "AVISO", "Oeste",
@@ -247,6 +248,10 @@ def pick_pilot(chunks):
                 used_ev.add((c["map"], c["event"]))
                 picked.append(c)
                 break
+    for cid in PILOT_EXTRA:          # 유지자가 지정한 장면 (2026-08-06: 란토 저택 대면)
+        c = next((x for x in chunks if x["cid"] == cid), None)
+        if c and c not in picked:
+            picked.append(c)
     return sorted(picked, key=lambda c: (c["map"], c["event"], c["page"]))
 
 
