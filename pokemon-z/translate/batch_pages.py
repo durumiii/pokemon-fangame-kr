@@ -46,9 +46,11 @@ PILOT_EXTRA = ("p112-4-0",)   # 초반부 밖이라도 꼭 넣을 장면 (란토
 # 화자로 잡히지만 사람 말이 아닌 이름표 (안내판·표지·트레이너 팁 따위)
 SYS = {"PISTA DE ENTRENADOR", "Notas del Team Azoth", "\\PN", "AVISO", "Oeste",
        "Sur", "Este", "Norte", "Movimientos de patada", "Movimientos de viento",
-       "ATENCIÓN", "Gran Hotel Luminalia", "1ºRegente"}
+       "ATENCIÓN", "Gran Hotel Luminalia", "1ºRegente",
+       "Contrincante"}   # 블랙잭 미니게임의 진행 문구다 — 사람 대사가 아니다
 # 유지자가 어투를 이미 확정한 인물 — 재번역이 덮으면 안 된다
-VOICE_FIXED = {"Barquero", "Zafra", "Núbila", "Camarero"}
+VOICE_FIXED = {"Barquero", "Zafra", "Núbila", "Camarero",
+               "cocineroOW"}   # 요리사 — 사프라와 같은 자리에서 함께 판정됐다
 
 
 def fold(s):
@@ -87,6 +89,16 @@ def voice_lines():
         if len(cells) >= 5 or len(cells) == 4:
             table[name] = cells[-2]
     return table
+
+
+def voice_instruction(cell):
+    """말투표 셀에서 **지시만** 남긴다.
+
+    표는 사람이 읽는 정본이라 판정 근거·이력이 함께 적힌다. 프롬프트에 그대로
+    넣으면 말투보다 역사가 길어진다(2026-08-06: 크리산토 칸 791자 중 지시는 절반).
+    규약은 「지시 … 근거: …」 — `근거:` 뒤는 사람 몫이다.
+    """
+    return strip_evidence(re.split(r"\s*근거:\s*", cell)[0])
 
 
 def ko_names():
@@ -441,7 +453,7 @@ def build_prompt(fresh=False):
 
 def scene_header(c):
     cast = "\n".join(
-        f"- {x['name']}: {strip_evidence(x['voice']) if x['voice'] else 'not in the style guide — keep the current level'}"
+        f"- {x['name']}: {voice_instruction(x['voice']) if x['voice'] else 'not in the style guide — keep the current level'}"
         for x in c["cast"])
     return (f"Scene: {c['map_name']} (map {c['map']}), event 「{c['event_name']}」\n"
             f"Speakers and how each talks:\n{cast}\n")
