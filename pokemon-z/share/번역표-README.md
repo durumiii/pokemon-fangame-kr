@@ -184,7 +184,8 @@
       아침이슬 ...)의 결에 맞춰 의역했습니다.
     PokéObjetivo       모험 안내서 (다음 목표를 알려 주는 도구 — 의역)
 
-  대사에 섞인 프랑스어 감탄(monsieur, Sacrebleu ...)은 칼로스
-  지방의 정서를 담은 장치로 보고 그대로 두었습니다.
+  대사에 섞인 프랑스어 감탄(Sacrebleu, Merci beaucoup ...)은 칼로스
+  지방의 정서를 담은 장치로 보고 그대로 두었습니다. 다만 호칭
+  monsieur·madame·mademoiselle은 무슈·마담·마드모아젤로 음차했습니다.
 
 

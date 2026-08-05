@@ -71,6 +71,10 @@ def main():
         elif hasattr(obj, "_private_data"):
             keys, values = inner_of(obj)
             for k, v in zip(keys, values):
+                # __kr_patch__는 build.py가 심는 판 표식이라 정본에 들어가면 안 된다
+                # (들어가면 다음 빌드가 그걸 다시 굽고 verify의 미러 대조가 어긋난다)
+                if bytes(k) == b"__kr_patch__":
+                    continue
                 lines.append(jline({"k": k.decode("utf-8", "replace"),
                                     "v": v.decode("utf-8", "replace")}))
         else:

@@ -64,6 +64,19 @@ EDITS += [
      "@list[@index].parameters[1])"),
 ]
 
+# 앙코르 성공 문구가 저주 문구다(원작 소스의 문자열 오배치 — 2026-08-05 제보·조사).
+# 0BC(Otra Vez/Encore)가 Encore 상태 값 셋을 세팅한 바로 다음 줄에서 저주 문구를 띄운다.
+# 진짜 저주 자리는 PokeBattle_Battle의 턴 종료 처리에 따로 있고 그쪽은 정상이다.
+# 두 자리가 같은 리터럴을 쓰므로 번역표로는 원리상 분리할 수 없다 — 소스에서 가른다.
+# 새 문자열은 본가 스페인어판 자구(공식 코퍼스 실측: "¡… ha sufrido los efectos de
+# Otra Vez!" → 「… 앙코르를 받았다!」), 짝 번역은 23-script-texts.add.jsonl.
+# 옛 문자열이 저주 쪽과 안 겹치는 근거: 인자가 다르다(여기는 opponent.pbThis, 저주는 i.pbThis).
+EDITS += [
+    ("PokeBattle_MoveEffects",
+     '_INTL("¡{1} es víctima de una Maldición!",opponent.pbThis)',
+     '_INTL("¡{1} ha sufrido los efectos de Otra Vez!",opponent.pbThis)'),
+]
+
 # Constants.rxdata 로드 실패 표면화(진단 전용, 동작 불변) — JoiPlay에서 이 로드가
 # 조용히 삼켜져 뒤(246 RandomObjects)에서 NameError로 터지는 사슬(제보 목록의 JoiPlay
 # 건). 실패 시 진짜 원인을 화면에 띄운다. 문구는 ASCII — JoiPlay는 한글 폰트가
