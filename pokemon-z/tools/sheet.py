@@ -92,18 +92,34 @@ def main():
         out = os.path.join(os.path.dirname(__file__), "..", "docs", "reports", tab + ".jsonl")
         os.makedirs(os.path.dirname(out), exist_ok=True)
         stamp = datetime.datetime.now().isoformat(timespec="seconds")
+        # 이미 보관한 것과 겹치면 건너뛴다 — 스튜디오 일괄 제보가 저장분 전체를
+        # 다시 보내는 판(2026-08-05 이전)의 제보자가 있으면 같은 건이 또 올라온다
+        # 겹침 판정 칸: 시각·「현재 번역」·패치 버전은 뺀다. 앞 제보를 반영해 빌드하면
+        # 같은 자리의 「현재 번역」이 달라져서, 그걸 넣으면 같은 건이 겹침으로 안 잡힌다.
+        KEYCOLS = ("분류", "자리", "원문", "제안", "코멘트")
+        def key(rec):
+            return tuple(rec.get(c, "") for c in KEYCOLS if c in head)
+        seen = set()
+        if os.path.exists(out):
+            with open(out, encoding="utf-8") as f:
+                seen = {key(json.loads(l)) for l in f if l.strip()}
         # 보관이 먼저 땅에 닿아야 지운다 — 파일을 닫은 뒤에 삭제를 부른다
-        kept = 0
+        kept = dup = 0
         with open(out, "a", encoding="utf-8") as f:
             for row in rows:
                 if not any(c.strip() for c in row):
                     continue          # 예전 「내용 지우기」가 남긴 빈 행 — 보관할 것이 없다
                 rec = dict(zip(head, row + [""] * (len(head) - len(row))))
+                if key(rec) in seen:
+                    dup += 1
+                    continue
+                seen.add(key(rec))
                 rec["_archived"] = stamp
                 f.write(json.dumps(rec, ensure_ascii=False) + "\n")
                 kept += 1
         print(f"{kept}행을 {os.path.relpath(out)}에 보관했어요"
-              + (f" (빈 행 {len(rows) - kept}개는 버림)" if kept < len(rows) else ""))
+              + (f" (이미 보관한 {dup}행 건너뜀)" if dup else "")
+              + (f" (빈 행 {len(rows) - kept - dup}개는 버림)" if kept + dup < len(rows) else ""))
         if "--yes" not in sys.argv:
             if input(f"시트 '{tab}'의 {len(rows)}행을 삭제할까요? [y/N] ").strip().lower() != "y":
                 sys.exit("보관만 하고 시트는 그대로 뒀어요")
