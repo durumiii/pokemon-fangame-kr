@@ -196,6 +196,16 @@ def load_attr():
         return [json.loads(l) for l in f if l.strip()]
 
 
+def ko_key(s):
+    """조회 열쇠 — 공백류를 하나로 접는다.
+
+    귀속표는 이벤트 원문의 줄바꿈을 그대로 담는데 00-maps.jsonl의 k는 그 자리가
+    공백으로 접혀 있다. strip()만으로는 이 차이를 못 메워 확정 원문 5,892개 중
+    343개가 조회에 실패했다(2026-08-06 실측) — 그 자리엔 번역 대신 원문이 나왔다.
+    """
+    return re.sub(r"\s+", " ", s or "").strip()
+
+
 def ko_index():
     """원문 → 현행 한국어. 맵 대사 정본에서 뽑는다."""
     idx = {}
@@ -204,7 +214,7 @@ def ko_index():
             continue
         r = json.loads(line)
         if "map" not in r:
-            idx.setdefault(r["k"].strip(), r["v"])
+            idx.setdefault(ko_key(r["k"]), r["v"])
     return idx
 
 
@@ -213,7 +223,7 @@ def show(rows, ko, limit=None):
         if limit and i >= limit:
             print(f"… 그 밖 {len(rows) - limit}행")
             break
-        v = ko.get(r["k"].strip(), "")
+        v = ko.get(ko_key(r["k"]), "")
         print(f"맵{r['map']}:ev{r['event']}:p{r['page']}:cmd{r['cmd']} "
               f"[{r['how']}]{'[선택지앞]' if r.get('prompt') else ''} {r['who'] or '—'}")
         print(f"    {v or r['k']}")
@@ -237,7 +247,7 @@ def main():
         q = sys.argv[2]
         rows, ko = load_attr(), ko_index()
         hit = [r for r in rows
-               if q in r["k"] or q in ko.get(r["k"].strip(), "")]
+               if q in r["k"] or q in ko.get(ko_key(r["k"]), "")]
         print(f"{len(hit)}행")
         show(hit, ko, 40)
     elif cmd == "lines" and len(sys.argv) > 2:
