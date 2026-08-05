@@ -37,13 +37,13 @@
 | Pueblo Acrílico | Acrylic Town / Acrílico Town |  | 아크릴리코마을 | 19:10, 21:25, 21:26 | 맵 24,25 |
 | Pueblo Bodegón | Bodegón Town |  | 보데곤마을 | 19:31, 21:114 | 맵 113 |
 | Pueblo Collage | Collage Town |  | 콜라주마을 | 19:13, 21:30 | 맵 29 |
-| Pueblo Cromlech |  | Geosenge Town | 옥유마을 | 19:86, 21:423, 21:481, 21:498, 21:503 | 본가 칼로스 실지명 — 본가 한국어 정식명 적용(2026-08-02 판정) · 조직명 Clan Cromlech는 「크롬레크 일족」 — 도시명(옥유마을)을 따라가지 않는다 · 맵 422,480,497,502 |
+| Pueblo Cromlech | Crómlech / Cromlech Town | Geosenge Town | 옥유마을 | 19:86, 21:423, 21:481, 21:498, 21:503 | 본가 칼로스 실지명 — 본가 한국어 정식명 적용(2026-08-02 판정) · 조직명 Clan Cromlech는 「크롬레크 일족」 — 도시명(옥유마을)을 따라가지 않는다 · 맵 422,480,497,502 |
 | Pueblo Fresco | Fresh Town | Dendemille Town | 버들비마을 | 19:57, 21:284 | 본가 칼로스 실지명 — 본가 한국어 정식명 적용(2026-08-02 판정) · 맵 283 |
 | Pueblo Lienzo | Canvas Town |  | 리엔소마을 | 19:1, 21:4, 21:505 | 맵 3,504 |
-| Pueblo Mosaico | Mosaic Town | Couriway Town | 배롱마을 | 19:69, 21:291, 21:332 | 본가 칼로스 실지명 — 본가 한국어 정식명 적용(2026-08-02 판정) · 맵 290,331 |
-| Pueblo Petroglifo | Petroglyph Town / Petroglifo Town | Ambrette Town | 가라마을 | 19:34, 21:103 | 본가 칼로스 실지명 — 본가 한국어 정식명 적용(2026-08-02 판정) · 맵 102 |
+| Pueblo Mosaico | Mosaic Town / Mosaic City | Couriway Town | 배롱마을 | 19:69, 21:291, 21:332 | 본가 칼로스 실지명 — 본가 한국어 정식명 적용(2026-08-02 판정) · 맵 290,331 |
+| Pueblo Petroglifo | Petroglyph Town / Petroglifo Town / Petroglifo | Ambrette Town | 가라마을 | 19:34, 21:103 | 본가 칼로스 실지명 — 본가 한국어 정식명 적용(2026-08-02 판정) · 맵 102 |
 | Pueblo Profano | Profane Town |  | 프로파노마을 | 19:19, 21:43, 21:75, 21:76 | 맵 42,74,75 |
-| Pueblo Sanguino |  |  | 상기노마을 | 19:77, 21:361 | 맵 360 |
+| Pueblo Sanguino | Sanguine Town / Sanguino Town |  | 상기노마을 | 19:77, 21:361 | 맵 360 |
 | Pueblo Vánitas | Vanitas Town | Camphrier Town | 고목내마을 | 19:42, 21:142 | 본가 칼로스 실지명 — 본가 한국어 정식명 적용(2026-08-02 판정) · 맵 141 |
 | Pueblo Vinilo | Vinyl Town |  | 비닐로마을 | 19:4, 21:10 | 맵 9 |
 | Villa Pokemon | Pokémon Village / Pokémon Villa | Pokémon Village | 포켓몬마을 | 19:79, 21:357 | 맵 356 |
@@ -87,13 +87,13 @@
 
 | 스페인어 원문 | 영어(사이트) | 영어(본가) | 한국어 표기 | 출처 | 비고 |
 |---|---|---|---|---|---|
-| Cámara Druídica | druidic cave |  | 드루이드의 방 | 21:121, 21:130 | 맵 120,129 |
+| Cámara Druídica | druidic cave / Druidic Chamber |  | 드루이드의 방 | 21:121, 21:130 | 맵 120,129 |
 | Cámaras de Reflexión |  |  | 성찰의 방 | 21:208, 21:209, 21:210 | 맵 207,208,209 |
 | Catacumbas Meridionales | Southern Catacombs |  | 남부 카타콤 | 19:5, 21:48 | 맵 47 |
 | Catacumbas Occidentales | Western Catacombs |  | 서부 카타콤 | 21:402, 21:404 | 맵 401,403 |
 | Catacumbas Orientales | Eastern Catacombs |  | 동부 카타콤 | 19:73, 21:331 | 맵 330 |
 | Catacumbas Septentrionales | Northern Catacombs |  | 북부 카타콤 | 19:20, 21:129 | 맵 128 |
-| Caverna Atlas |  |  | 아틀라스 동굴 | 21:318 | 맵 317 |
+| Caverna Atlas | Atlas Cavern |  | 아틀라스 동굴 | 21:318 | 맵 317 |
 | Criptas de Luminalia | Luminalia Crypts |  | 미르 지하묘지 | 19:47, 21:187, 21:188, 21:203 | 맵 186,187,202 |
 | Cueva de la Cascada |  |  | 폭포 동굴 | 21:351 | 맵 350 |
 | Cueva de los Reflejos | Reflection Cave | Reflection Cave | 비춤의 동굴 | 21:421, 21:466 | 맵 420,465 |
@@ -107,7 +107,7 @@
 | Fondo Marino | Seafloor / Petroglifo Seafloor / Acrylic Town Seafloor / Acrylic Town Ocean Floor |  | 해저 | 21:336, 21:337 | 맵 335,336 |
 | Gruta Helada | Frozen Grotto / Frost Cavern / Frozen Cave | Frost Cavern | 프로스트케이브 | 19:60, 21:239, 21:244, 21:246 | 본가 Frost Cavern이지만 한국어는 본가 공식명 「프로스트케이브」. 사이트는 Frozen Grotto/Frost Cavern/Frozen Cave로 갈려 있다 · 맵 238,243,245 |
 | Gruta Tierraunida | Earthbound Grotto / Tierraunida Grotto / Unity Cave |  | 티에라우니다 동굴 | 19:40, 21:137 | 맵 136 |
-| Madriguera Profunda |  |  | 깊은 굴 | 19:22, 21:74 | 맵 73 |
+| Madriguera Profunda | Deep Burrow |  | 깊은 굴 | 19:22, 21:74 | 맵 73 |
 | Petrocueva | Petro Cave |  | 페트로 동굴 | 19:37, 21:128, 21:133 | 맵 127,132 |
 | Prisión del Olvido | Prison of Oblivion |  | 망각의 감옥 | 19:48, 21:223, 21:224, 21:225, 21:226, 21:227, 21:228, 21:229, 21:310 | 맵 222,223,224,225,226,227,228,309 |
 | Ruinas Fractales |  |  | 이설 유적 | 19:74 |  |
@@ -124,8 +124,8 @@
 | Bosque Ladera | Hillside Forest |  | 비탈 숲 | 19:12, 21:29, 21:47 | 맵 28,46 |
 | Colina de Tormenta | Storm Hill |  | 폭풍 언덕 | 21:100 | 19절은 Colina Tormenta, 21절은 Colina de Tormenta — 원문 쪽 표기 흔들림(한국어는 동일) · 맵 99 |
 | Colina Tormenta | Storm Hill |  | 폭풍 언덕 | 19:26 | 19절은 Colina Tormenta, 21절은 Colina de Tormenta — 원문 쪽 표기 흔들림(한국어는 동일) |
-| Costa Sanguina | Bloodshore Coast / Sanguina Coast |  | 상기나 해안 | 19:90, 21:445 | 맵 444 |
-| Expansiones de Luminalia | Luminalia Expansions |  | 미르 신시가지 | 19:75 |  |
+| Costa Sanguina | Bloodshore Coast / Sanguina Coast / Sanguine Coast |  | 상기나 해안 | 19:90, 21:445 | 맵 444 |
+| Expansiones de Luminalia | Luminalia Expansions / Luminalia Extensions |  | 미르 신시가지 | 19:75 |  |
 | Expansiones de Luminalia - Centro |  |  | 미르 신시가지 - 중앙 | 21:363 | 맵 362 |
 | Expansiones de Luminalia - Este | East Luminalia Expansions |  | 미르 신시가지 - 동쪽 | 21:393 | 맵 392 |
 | Expansiones de Luminalia - Oeste |  |  | 미르 신시가지 - 서쪽 | 21:392 | 맵 391 |
@@ -137,7 +137,7 @@
 | Maraña Oscura |  |  | 어둠의 덤불 | 21:385, 21:388, 21:389 | 20절의 Maraña Sombría(그늘진 덤불)와 다른 장소다 — 혼동 주의 · 맵 384,387,388 |
 | Marana Sombria |  |  | 그늘진 덤불 | 20:21 | 21절의 Maraña Oscura(어둠의 덤불)와 다른 장소다 — 혼동 주의 |
 | Pantano Profano | Profane Swamp |  | 프로파노 늪 | 19:21, 21:44, 21:45, 21:58 | 맵 43,44,57 |
-| Pirineos de Kalos | Kalos Pyrenees |  | 칼로스 피레네 | 19:50, 21:3, 21:68, 21:256, 21:257, 21:258, 21:259 | 맵 2,67,255,256,257,258 |
+| Pirineos de Kalos | Kalos Pyrenees / Pyrenees |  | 칼로스 피레네 | 19:50, 21:3, 21:68, 21:256, 21:257, 21:258, 21:259 | 맵 2,67,255,256,257,258 |
 
 ### 시설·건물 (79행)
 
@@ -155,7 +155,7 @@
 | Bastión Pokémon | Bastion Vanitas / Vanitas Bastion / Vanitas Town (Pokémon Bastion) |  | 포켓몬 요새 | 21:21, 21:22, 21:62, 21:70, 21:85, 21:86, 21:88, 21:90, 21:116, 21:147, 21:150, 21:174, 21:277, 21:278, 21:306, 21:322, 21:323, 21:403 | 맵 20,21,61,69,84,85,87,89,115,146,149,173,276,277,305,321,322,402 |
 | Biblioteca Yantra |  |  | 얀트라 도서관 | 21:411, 21:414 | 맵 410,413 |
 | Bodega |  |  | 저장고 | 21:9 | 맵 8 |
-| Café Bohemien |  |  | 카페 보에미엔 | 21:64 | 맵 63 |
+| Café Bohemien | Café Bohemie |  | 카페 보에미엔 | 21:64 | 맵 63 |
 | Café Can Can |  |  | 카페 캉캉 | 21:180 | 맵 179 |
 | Café Concordia |  |  | 카페 콘코르디아 | 21:179 | 맵 178 |
 | Café Galanes | Galanes Café |  | 카페 갈라네스 | 21:396 | 맵 395 |
@@ -177,16 +177,16 @@
 | Cuartel Mosquetero |  |  | 총사 병영 | 20:4, 21:23 | 맵 22 |
 | Estación de Servicio | Service Station |  | 휴게소 | 19:63, 21:131 | 맵 130 |
 | Estación Luminalia |  | Lumiose Station | 미르 스테이션 | 21:376, 21:431 | 맵 375,430 |
-| Fábrica de Pokéball | Poké Ball Factory | Poké Ball Factory | 몬스터볼 공장 | 19:55, 21:233, 21:236, 21:237, 21:272, 21:273, 21:282, 21:283 | 맵 232,235,236,271,272,281,282 |
-| Faro Abandonado | Route 23 Lighthouse |  | 버려진 등대 | 19:82, 21:401 | 맵 400 |
+| Fábrica de Pokéball | Poké Ball Factory / Poke Ball Factory | Poké Ball Factory | 몬스터볼 공장 | 19:55, 21:233, 21:236, 21:237, 21:272, 21:273, 21:282, 21:283 | 맵 232,235,236,271,272,281,282 |
+| Faro Abandonado | Route 23 Lighthouse / Abandoned Lighthouse |  | 버려진 등대 | 19:82, 21:401 | 맵 400 |
 | Forja Inundada | Flooded Forge |  | 물에 잠긴 대장간 | 19:66 |  |
-| Fort Leviatán | Fort Leviatan |  | 레비아탄 요새 | 20:10, 21:107, 21:125, 21:126, 21:127 | 맵 106,124,125,126 |
+| Fort Leviatán | Fort Leviatan / Fort Leviathan |  | 레비아탄 요새 | 20:10, 21:107, 21:125, 21:126, 21:127 | 맵 106,124,125,126 |
 | Galería de Arte |  |  | 미술관 | 21:185, 21:353, 21:490 | 맵 184,352,489 |
 | Gambón Rouge |  |  | 감본 루주 | 20:11, 21:151 | 맵 150 |
 | Gran Exposicion | Grand Exhibition |  | 대박람회 | 20:18 |  |
 | Gran Hotel Luminalia |  |  | 미르 그랜드 호텔 | 21:406, 21:416, 21:418, 21:419, 21:430 | 맵 405,415,417,418,429 |
 | Granja Gogoat |  |  | 고고트 농장 | 21:16 | 맵 15 |
-| Granja Yantra | Yantra Ranch |  | 얀트라 농장 | 21:399 | 맵 398 |
+| Granja Yantra | Yantra Ranch / Yantra Farm |  | 얀트라 농장 | 21:399 | 맵 398 |
 | Guardería Pokémon |  |  | 포켓몬 키우미집 | 21:49 | 맵 48 |
 | Guarida Team Flare |  |  | 플레어단 아지트 | 21:442, 21:443 | 맵 441,442 |
 | Herbolario |  |  | 약초상 | 20:15, 21:276 | 맵 275 |
@@ -207,8 +207,8 @@
 | Sala de Mando |  |  | 지휘실 | 21:333 | 맵 332 |
 | Sala del Árbol Eterno |  |  | 영원한 나무의 방 | 21:452 | 맵 451 |
 | Salón Furfrou |  |  | 트리미앙 살롱 | 21:182 | 맵 181 |
-| Santuario de los Reyes | Kings’ Sanctuary / Sanctuary of Kings |  | 왕들의 성소 | 21:59 | 19절은 Santuario de Reyes, 21절은 Santuario de los Reyes — 원문 쪽 표기 흔들림 · 맵 58 |
-| Santuario de Reyes | Kings’ Sanctuary / Sanctuary of Kings |  | 왕들의 성소 | 19:15 | 19절은 Santuario de Reyes, 21절은 Santuario de los Reyes — 원문 쪽 표기 흔들림 |
+| Santuario de los Reyes | Kings’ Sanctuary / Sanctuary of Kings / Kings Sanctuary |  | 왕들의 성소 | 21:59 | 19절은 Santuario de Reyes, 21절은 Santuario de los Reyes — 원문 쪽 표기 흔들림 · 맵 58 |
+| Santuario de Reyes | Kings’ Sanctuary / Sanctuary of Kings / Kings Sanctuary |  | 왕들의 성소 | 19:15 | 19절은 Santuario de Reyes, 21절은 Santuario de los Reyes — 원문 쪽 표기 흔들림 |
 | Santuario Prosperidad | Prosperity Sanctuary |  | 번영의 성소 | 19:30, 21:119, 21:120 | 맵 118,119 |
 | Taller Quemado | Burned Workshop |  | 불탄 공방 | 19:27, 21:82 | 맵 81 |
 | Torre de Guardia Sur | South Watchtower |  | 남쪽 감시탑 | 19:2, 21:7 | 맵 6 |
@@ -229,9 +229,9 @@
 |---|---|---|---|---|---|
 | Batalla de Kalos Este | East Kalos Battle |  | 칼로스 동부 전투 | 21:315, 21:317, 21:345 | 맵 314,316,344 |
 | Campamento de Crisanto |  |  | 크리산토의 캠프 | 21:339 | 맵 338 |
-| Columna Lanza |  |  | 창기둥 | 21:435 | 맵 434 |
+| Columna Lanza | Spear Pillar |  | 창기둥 | 21:435 | 맵 434 |
 | Corazón del Arma |  |  | 병기의 심장 | 21:491, 21:492, 21:493, 21:496 | 맵 490,491,492,495 |
-| El Arma Definitiva |  |  | 궁극병기 | 21:428, 21:471, 21:472, 21:473, 21:474, 21:475, 21:476, 21:477, 21:478, 21:487, 21:489 | 맵 427,470,471,472,473,474,475,476,477,486,488 |
+| El Arma Definitiva | Ultimate Weapon |  | 궁극병기 | 21:428, 21:471, 21:472, 21:473, 21:474, 21:475, 21:476, 21:477, 21:478, 21:487, 21:489 | 맵 427,470,471,472,473,474,475,476,477,486,488 |
 | Lugar Misterioso | Mysterious Place |  | 수수께끼의 장소 | 21:412, 21:413 | 맵 411,412 |
 | Pesadilla del Circo | Circus Nightmare |  | 서커스의 악몽 | 21:375, 21:381, 21:408, 21:409 | 맵 374,380,407,408 |
 

@@ -15,13 +15,13 @@
 {"es": "Pueblo Acrílico", "site_en": ["Acrylic Town", "Acrílico Town"], "canon_en": "", "ko": "아크릴리코마을", "kind": "도시·마을", "src": ["19:10", "21:25", "21:26"], "map_ids": [24, 25], "note": "맵 24,25"}
 {"es": "Pueblo Bodegón", "site_en": ["Bodegón Town"], "canon_en": "", "ko": "보데곤마을", "kind": "도시·마을", "src": ["19:31", "21:114"], "map_ids": [113], "note": "맵 113"}
 {"es": "Pueblo Collage", "site_en": ["Collage Town"], "canon_en": "", "ko": "콜라주마을", "kind": "도시·마을", "src": ["19:13", "21:30"], "map_ids": [29], "note": "맵 29"}
-{"es": "Pueblo Cromlech", "site_en": [], "canon_en": "Geosenge Town", "ko": "옥유마을", "kind": "도시·마을", "src": ["19:86", "21:423", "21:481", "21:498", "21:503"], "map_ids": [422, 480, 497, 502], "note": "본가 칼로스 실지명 — 본가 한국어 정식명 적용(2026-08-02 판정) · 조직명 Clan Cromlech는 「크롬레크 일족」 — 도시명(옥유마을)을 따라가지 않는다 · 맵 422,480,497,502"}
+{"es": "Pueblo Cromlech", "site_en": ["Crómlech", "Cromlech Town"], "canon_en": "Geosenge Town", "ko": "옥유마을", "kind": "도시·마을", "src": ["19:86", "21:423", "21:481", "21:498", "21:503"], "map_ids": [422, 480, 497, 502], "note": "본가 칼로스 실지명 — 본가 한국어 정식명 적용(2026-08-02 판정) · 조직명 Clan Cromlech는 「크롬레크 일족」 — 도시명(옥유마을)을 따라가지 않는다 · 맵 422,480,497,502"}
 {"es": "Pueblo Fresco", "site_en": ["Fresh Town"], "canon_en": "Dendemille Town", "ko": "버들비마을", "kind": "도시·마을", "src": ["19:57", "21:284"], "map_ids": [283], "note": "본가 칼로스 실지명 — 본가 한국어 정식명 적용(2026-08-02 판정) · 맵 283"}
 {"es": "Pueblo Lienzo", "site_en": ["Canvas Town"], "canon_en": "", "ko": "리엔소마을", "kind": "도시·마을", "src": ["19:1", "21:4", "21:505"], "map_ids": [3, 504], "note": "맵 3,504"}
-{"es": "Pueblo Mosaico", "site_en": ["Mosaic Town"], "canon_en": "Couriway Town", "ko": "배롱마을", "kind": "도시·마을", "src": ["19:69", "21:291", "21:332"], "map_ids": [290, 331], "note": "본가 칼로스 실지명 — 본가 한국어 정식명 적용(2026-08-02 판정) · 맵 290,331"}
-{"es": "Pueblo Petroglifo", "site_en": ["Petroglyph Town", "Petroglifo Town"], "canon_en": "Ambrette Town", "ko": "가라마을", "kind": "도시·마을", "src": ["19:34", "21:103"], "map_ids": [102], "note": "본가 칼로스 실지명 — 본가 한국어 정식명 적용(2026-08-02 판정) · 맵 102"}
+{"es": "Pueblo Mosaico", "site_en": ["Mosaic Town", "Mosaic City"], "canon_en": "Couriway Town", "ko": "배롱마을", "kind": "도시·마을", "src": ["19:69", "21:291", "21:332"], "map_ids": [290, 331], "note": "본가 칼로스 실지명 — 본가 한국어 정식명 적용(2026-08-02 판정) · 맵 290,331"}
+{"es": "Pueblo Petroglifo", "site_en": ["Petroglyph Town", "Petroglifo Town", "Petroglifo"], "canon_en": "Ambrette Town", "ko": "가라마을", "kind": "도시·마을", "src": ["19:34", "21:103"], "map_ids": [102], "note": "본가 칼로스 실지명 — 본가 한국어 정식명 적용(2026-08-02 판정) · 맵 102"}
 {"es": "Pueblo Profano", "site_en": ["Profane Town"], "canon_en": "", "ko": "프로파노마을", "kind": "도시·마을", "src": ["19:19", "21:43", "21:75", "21:76"], "map_ids": [42, 74, 75], "note": "맵 42,74,75"}
-{"es": "Pueblo Sanguino", "site_en": [], "canon_en": "", "ko": "상기노마을", "kind": "도시·마을", "src": ["19:77", "21:361"], "map_ids": [360], "note": "맵 360"}
+{"es": "Pueblo Sanguino", "site_en": ["Sanguine Town", "Sanguino Town"], "canon_en": "", "ko": "상기노마을", "kind": "도시·마을", "src": ["19:77", "21:361"], "map_ids": [360], "note": "맵 360"}
 {"es": "Pueblo Vánitas", "site_en": ["Vanitas Town"], "canon_en": "Camphrier Town", "ko": "고목내마을", "kind": "도시·마을", "src": ["19:42", "21:142"], "map_ids": [141], "note": "본가 칼로스 실지명 — 본가 한국어 정식명 적용(2026-08-02 판정) · 맵 141"}
 {"es": "Pueblo Vinilo", "site_en": ["Vinyl Town"], "canon_en": "", "ko": "비닐로마을", "kind": "도시·마을", "src": ["19:4", "21:10"], "map_ids": [9], "note": "맵 9"}
 {"es": "Villa Pokemon", "site_en": ["Pokémon Village", "Pokémon Villa"], "canon_en": "Pokémon Village", "ko": "포켓몬마을", "kind": "도시·마을", "src": ["19:79", "21:357"], "map_ids": [356], "note": "맵 356"}
@@ -55,13 +55,13 @@
 {"es": "Ruta 24", "site_en": ["Route 24"], "canon_en": "", "ko": "24번도로", "kind": "도로", "src": ["19:81", "21:377"], "map_ids": [376], "note": "맵 376"}
 {"es": "Ruta 25", "site_en": ["Route 25"], "canon_en": "", "ko": "25번도로", "kind": "도로", "src": ["19:85", "21:415", "21:422", "21:467", "21:468", "21:480", "21:484", "21:485", "21:486"], "map_ids": [414, 421, 466, 467, 479, 483, 484, 485], "note": "맵 414,421,466,467,479,483,484,485"}
 {"es": "Ruta 26", "site_en": [], "canon_en": "", "ko": "26번도로", "kind": "도로", "src": ["21:488"], "map_ids": [487], "note": "맵 487"}
-{"es": "Cámara Druídica", "site_en": ["druidic cave"], "canon_en": "", "ko": "드루이드의 방", "kind": "던전·동굴", "src": ["21:121", "21:130"], "map_ids": [120, 129], "note": "맵 120,129"}
+{"es": "Cámara Druídica", "site_en": ["druidic cave", "Druidic Chamber"], "canon_en": "", "ko": "드루이드의 방", "kind": "던전·동굴", "src": ["21:121", "21:130"], "map_ids": [120, 129], "note": "맵 120,129"}
 {"es": "Cámaras de Reflexión", "site_en": [], "canon_en": "", "ko": "성찰의 방", "kind": "던전·동굴", "src": ["21:208", "21:209", "21:210"], "map_ids": [207, 208, 209], "note": "맵 207,208,209"}
 {"es": "Catacumbas Meridionales", "site_en": ["Southern Catacombs"], "canon_en": "", "ko": "남부 카타콤", "kind": "던전·동굴", "src": ["19:5", "21:48"], "map_ids": [47], "note": "맵 47"}
 {"es": "Catacumbas Occidentales", "site_en": ["Western Catacombs"], "canon_en": "", "ko": "서부 카타콤", "kind": "던전·동굴", "src": ["21:402", "21:404"], "map_ids": [401, 403], "note": "맵 401,403"}
 {"es": "Catacumbas Orientales", "site_en": ["Eastern Catacombs"], "canon_en": "", "ko": "동부 카타콤", "kind": "던전·동굴", "src": ["19:73", "21:331"], "map_ids": [330], "note": "맵 330"}
 {"es": "Catacumbas Septentrionales", "site_en": ["Northern Catacombs"], "canon_en": "", "ko": "북부 카타콤", "kind": "던전·동굴", "src": ["19:20", "21:129"], "map_ids": [128], "note": "맵 128"}
-{"es": "Caverna Atlas", "site_en": [], "canon_en": "", "ko": "아틀라스 동굴", "kind": "던전·동굴", "src": ["21:318"], "map_ids": [317], "note": "맵 317"}
+{"es": "Caverna Atlas", "site_en": ["Atlas Cavern"], "canon_en": "", "ko": "아틀라스 동굴", "kind": "던전·동굴", "src": ["21:318"], "map_ids": [317], "note": "맵 317"}
 {"es": "Criptas de Luminalia", "site_en": ["Luminalia Crypts"], "canon_en": "", "ko": "미르 지하묘지", "kind": "던전·동굴", "src": ["19:47", "21:187", "21:188", "21:203"], "map_ids": [186, 187, 202], "note": "맵 186,187,202"}
 {"es": "Cueva de la Cascada", "site_en": [], "canon_en": "", "ko": "폭포 동굴", "kind": "던전·동굴", "src": ["21:351"], "map_ids": [350], "note": "맵 350"}
 {"es": "Cueva de los Reflejos", "site_en": ["Reflection Cave"], "canon_en": "Reflection Cave", "ko": "비춤의 동굴", "kind": "던전·동굴", "src": ["21:421", "21:466"], "map_ids": [420, 465], "note": "맵 420,465"}
@@ -75,7 +75,7 @@
 {"es": "Fondo Marino", "site_en": ["Seafloor", "Petroglifo Seafloor", "Acrylic Town Seafloor", "Acrylic Town Ocean Floor"], "canon_en": "", "ko": "해저", "kind": "던전·동굴", "src": ["21:336", "21:337"], "map_ids": [335, 336], "note": "맵 335,336"}
 {"es": "Gruta Helada", "site_en": ["Frozen Grotto", "Frost Cavern", "Frozen Cave"], "canon_en": "Frost Cavern", "ko": "프로스트케이브", "kind": "던전·동굴", "src": ["19:60", "21:239", "21:244", "21:246"], "map_ids": [238, 243, 245], "note": "본가 Frost Cavern이지만 한국어는 본가 공식명 「프로스트케이브」. 사이트는 Frozen Grotto/Frost Cavern/Frozen Cave로 갈려 있다 · 맵 238,243,245"}
 {"es": "Gruta Tierraunida", "site_en": ["Earthbound Grotto", "Tierraunida Grotto", "Unity Cave"], "canon_en": "", "ko": "티에라우니다 동굴", "kind": "던전·동굴", "src": ["19:40", "21:137"], "map_ids": [136], "note": "맵 136"}
-{"es": "Madriguera Profunda", "site_en": [], "canon_en": "", "ko": "깊은 굴", "kind": "던전·동굴", "src": ["19:22", "21:74"], "map_ids": [73], "note": "맵 73"}
+{"es": "Madriguera Profunda", "site_en": ["Deep Burrow"], "canon_en": "", "ko": "깊은 굴", "kind": "던전·동굴", "src": ["19:22", "21:74"], "map_ids": [73], "note": "맵 73"}
 {"es": "Petrocueva", "site_en": ["Petro Cave"], "canon_en": "", "ko": "페트로 동굴", "kind": "던전·동굴", "src": ["19:37", "21:128", "21:133"], "map_ids": [127, 132], "note": "맵 127,132"}
 {"es": "Prisión del Olvido", "site_en": ["Prison of Oblivion"], "canon_en": "", "ko": "망각의 감옥", "kind": "던전·동굴", "src": ["19:48", "21:223", "21:224", "21:225", "21:226", "21:227", "21:228", "21:229", "21:310"], "map_ids": [222, 223, 224, 225, 226, 227, 228, 309], "note": "맵 222,223,224,225,226,227,228,309"}
 {"es": "Ruinas Fractales", "site_en": [], "canon_en": "", "ko": "이설 유적", "kind": "던전·동굴", "src": ["19:74"], "map_ids": [], "note": ""}
@@ -87,8 +87,8 @@
 {"es": "Bosque Ladera", "site_en": ["Hillside Forest"], "canon_en": "", "ko": "비탈 숲", "kind": "지역", "src": ["19:12", "21:29", "21:47"], "map_ids": [28, 46], "note": "맵 28,46"}
 {"es": "Colina de Tormenta", "site_en": ["Storm Hill"], "canon_en": "", "ko": "폭풍 언덕", "kind": "지역", "src": ["21:100"], "map_ids": [99], "note": "19절은 Colina Tormenta, 21절은 Colina de Tormenta — 원문 쪽 표기 흔들림(한국어는 동일) · 맵 99"}
 {"es": "Colina Tormenta", "site_en": ["Storm Hill"], "canon_en": "", "ko": "폭풍 언덕", "kind": "지역", "src": ["19:26"], "map_ids": [], "note": "19절은 Colina Tormenta, 21절은 Colina de Tormenta — 원문 쪽 표기 흔들림(한국어는 동일)"}
-{"es": "Costa Sanguina", "site_en": ["Bloodshore Coast", "Sanguina Coast"], "canon_en": "", "ko": "상기나 해안", "kind": "지역", "src": ["19:90", "21:445"], "map_ids": [444], "note": "맵 444"}
-{"es": "Expansiones de Luminalia", "site_en": ["Luminalia Expansions"], "canon_en": "", "ko": "미르 신시가지", "kind": "지역", "src": ["19:75"], "map_ids": [], "note": ""}
+{"es": "Costa Sanguina", "site_en": ["Bloodshore Coast", "Sanguina Coast", "Sanguine Coast"], "canon_en": "", "ko": "상기나 해안", "kind": "지역", "src": ["19:90", "21:445"], "map_ids": [444], "note": "맵 444"}
+{"es": "Expansiones de Luminalia", "site_en": ["Luminalia Expansions", "Luminalia Extensions"], "canon_en": "", "ko": "미르 신시가지", "kind": "지역", "src": ["19:75"], "map_ids": [], "note": ""}
 {"es": "Expansiones de Luminalia - Centro", "site_en": [], "canon_en": "", "ko": "미르 신시가지 - 중앙", "kind": "지역", "src": ["21:363"], "map_ids": [362], "note": "맵 362"}
 {"es": "Expansiones de Luminalia - Este", "site_en": ["East Luminalia Expansions"], "canon_en": "", "ko": "미르 신시가지 - 동쪽", "kind": "지역", "src": ["21:393"], "map_ids": [392], "note": "맵 392"}
 {"es": "Expansiones de Luminalia - Oeste", "site_en": [], "canon_en": "", "ko": "미르 신시가지 - 서쪽", "kind": "지역", "src": ["21:392"], "map_ids": [391], "note": "맵 391"}
@@ -100,7 +100,7 @@
 {"es": "Maraña Oscura", "site_en": [], "canon_en": "", "ko": "어둠의 덤불", "kind": "지역", "src": ["21:385", "21:388", "21:389"], "map_ids": [384, 387, 388], "note": "20절의 Maraña Sombría(그늘진 덤불)와 다른 장소다 — 혼동 주의 · 맵 384,387,388"}
 {"es": "Marana Sombria", "site_en": [], "canon_en": "", "ko": "그늘진 덤불", "kind": "지역", "src": ["20:21"], "map_ids": [], "note": "21절의 Maraña Oscura(어둠의 덤불)와 다른 장소다 — 혼동 주의"}
 {"es": "Pantano Profano", "site_en": ["Profane Swamp"], "canon_en": "", "ko": "프로파노 늪", "kind": "지역", "src": ["19:21", "21:44", "21:45", "21:58"], "map_ids": [43, 44, 57], "note": "맵 43,44,57"}
-{"es": "Pirineos de Kalos", "site_en": ["Kalos Pyrenees"], "canon_en": "", "ko": "칼로스 피레네", "kind": "지역", "src": ["19:50", "21:3", "21:68", "21:256", "21:257", "21:258", "21:259"], "map_ids": [2, 67, 255, 256, 257, 258], "note": "맵 2,67,255,256,257,258"}
+{"es": "Pirineos de Kalos", "site_en": ["Kalos Pyrenees", "Pyrenees"], "canon_en": "", "ko": "칼로스 피레네", "kind": "지역", "src": ["19:50", "21:3", "21:68", "21:256", "21:257", "21:258", "21:259"], "map_ids": [2, 67, 255, 256, 257, 258], "note": "맵 2,67,255,256,257,258"}
 {"es": "Academia de Alquimistas", "site_en": [], "canon_en": "", "ko": "연금술사 아카데미", "kind": "시설·건물", "src": ["20:7"], "map_ids": [], "note": ""}
 {"es": "Academia Novarte", "site_en": [], "canon_en": "", "ko": "백단 아카데미", "kind": "시설·건물", "src": ["21:91"], "map_ids": [90], "note": "맵 90"}
 {"es": "Almacén de Pokémon", "site_en": [], "canon_en": "", "ko": "포켓몬 창고", "kind": "시설·건물", "src": ["21:255"], "map_ids": [254], "note": "맵 254"}
@@ -113,7 +113,7 @@
 {"es": "Bastión Pokémon", "site_en": ["Bastion Vanitas", "Vanitas Bastion", "Vanitas Town (Pokémon Bastion)"], "canon_en": "", "ko": "포켓몬 요새", "kind": "시설·건물", "src": ["21:21", "21:22", "21:62", "21:70", "21:85", "21:86", "21:88", "21:90", "21:116", "21:147", "21:150", "21:174", "21:277", "21:278", "21:306", "21:322", "21:323", "21:403"], "map_ids": [20, 21, 61, 69, 84, 85, 87, 89, 115, 146, 149, 173, 276, 277, 305, 321, 322, 402], "note": "맵 20,21,61,69,84,85,87,89,115,146,149,173,276,277,305,321,322,402"}
 {"es": "Biblioteca Yantra", "site_en": [], "canon_en": "", "ko": "얀트라 도서관", "kind": "시설·건물", "src": ["21:411", "21:414"], "map_ids": [410, 413], "note": "맵 410,413"}
 {"es": "Bodega", "site_en": [], "canon_en": "", "ko": "저장고", "kind": "시설·건물", "src": ["21:9"], "map_ids": [8], "note": "맵 8"}
-{"es": "Café Bohemien", "site_en": [], "canon_en": "", "ko": "카페 보에미엔", "kind": "시설·건물", "src": ["21:64"], "map_ids": [63], "note": "맵 63"}
+{"es": "Café Bohemien", "site_en": ["Café Bohemie"], "canon_en": "", "ko": "카페 보에미엔", "kind": "시설·건물", "src": ["21:64"], "map_ids": [63], "note": "맵 63"}
 {"es": "Café Can Can", "site_en": [], "canon_en": "", "ko": "카페 캉캉", "kind": "시설·건물", "src": ["21:180"], "map_ids": [179], "note": "맵 179"}
 {"es": "Café Concordia", "site_en": [], "canon_en": "", "ko": "카페 콘코르디아", "kind": "시설·건물", "src": ["21:179"], "map_ids": [178], "note": "맵 178"}
 {"es": "Café Galanes", "site_en": ["Galanes Café"], "canon_en": "", "ko": "카페 갈라네스", "kind": "시설·건물", "src": ["21:396"], "map_ids": [395], "note": "맵 395"}
@@ -135,16 +135,16 @@
 {"es": "Cuartel Mosquetero", "site_en": [], "canon_en": "", "ko": "총사 병영", "kind": "시설·건물", "src": ["20:4", "21:23"], "map_ids": [22], "note": "맵 22"}
 {"es": "Estación de Servicio", "site_en": ["Service Station"], "canon_en": "", "ko": "휴게소", "kind": "시설·건물", "src": ["19:63", "21:131"], "map_ids": [130], "note": "맵 130"}
 {"es": "Estación Luminalia", "site_en": [], "canon_en": "Lumiose Station", "ko": "미르 스테이션", "kind": "시설·건물", "src": ["21:376", "21:431"], "map_ids": [375, 430], "note": "맵 375,430"}
-{"es": "Fábrica de Pokéball", "site_en": ["Poké Ball Factory"], "canon_en": "Poké Ball Factory", "ko": "몬스터볼 공장", "kind": "시설·건물", "src": ["19:55", "21:233", "21:236", "21:237", "21:272", "21:273", "21:282", "21:283"], "map_ids": [232, 235, 236, 271, 272, 281, 282], "note": "맵 232,235,236,271,272,281,282"}
-{"es": "Faro Abandonado", "site_en": ["Route 23 Lighthouse"], "canon_en": "", "ko": "버려진 등대", "kind": "시설·건물", "src": ["19:82", "21:401"], "map_ids": [400], "note": "맵 400"}
+{"es": "Fábrica de Pokéball", "site_en": ["Poké Ball Factory", "Poke Ball Factory"], "canon_en": "Poké Ball Factory", "ko": "몬스터볼 공장", "kind": "시설·건물", "src": ["19:55", "21:233", "21:236", "21:237", "21:272", "21:273", "21:282", "21:283"], "map_ids": [232, 235, 236, 271, 272, 281, 282], "note": "맵 232,235,236,271,272,281,282"}
+{"es": "Faro Abandonado", "site_en": ["Route 23 Lighthouse", "Abandoned Lighthouse"], "canon_en": "", "ko": "버려진 등대", "kind": "시설·건물", "src": ["19:82", "21:401"], "map_ids": [400], "note": "맵 400"}
 {"es": "Forja Inundada", "site_en": ["Flooded Forge"], "canon_en": "", "ko": "물에 잠긴 대장간", "kind": "시설·건물", "src": ["19:66"], "map_ids": [], "note": ""}
-{"es": "Fort Leviatán", "site_en": ["Fort Leviatan"], "canon_en": "", "ko": "레비아탄 요새", "kind": "시설·건물", "src": ["20:10", "21:107", "21:125", "21:126", "21:127"], "map_ids": [106, 124, 125, 126], "note": "맵 106,124,125,126"}
+{"es": "Fort Leviatán", "site_en": ["Fort Leviatan", "Fort Leviathan"], "canon_en": "", "ko": "레비아탄 요새", "kind": "시설·건물", "src": ["20:10", "21:107", "21:125", "21:126", "21:127"], "map_ids": [106, 124, 125, 126], "note": "맵 106,124,125,126"}
 {"es": "Galería de Arte", "site_en": [], "canon_en": "", "ko": "미술관", "kind": "시설·건물", "src": ["21:185", "21:353", "21:490"], "map_ids": [184, 352, 489], "note": "맵 184,352,489"}
 {"es": "Gambón Rouge", "site_en": [], "canon_en": "", "ko": "감본 루주", "kind": "시설·건물", "src": ["20:11", "21:151"], "map_ids": [150], "note": "맵 150"}
 {"es": "Gran Exposicion", "site_en": ["Grand Exhibition"], "canon_en": "", "ko": "대박람회", "kind": "시설·건물", "src": ["20:18"], "map_ids": [], "note": ""}
 {"es": "Gran Hotel Luminalia", "site_en": [], "canon_en": "", "ko": "미르 그랜드 호텔", "kind": "시설·건물", "src": ["21:406", "21:416", "21:418", "21:419", "21:430"], "map_ids": [405, 415, 417, 418, 429], "note": "맵 405,415,417,418,429"}
 {"es": "Granja Gogoat", "site_en": [], "canon_en": "", "ko": "고고트 농장", "kind": "시설·건물", "src": ["21:16"], "map_ids": [15], "note": "맵 15"}
-{"es": "Granja Yantra", "site_en": ["Yantra Ranch"], "canon_en": "", "ko": "얀트라 농장", "kind": "시설·건물", "src": ["21:399"], "map_ids": [398], "note": "맵 398"}
+{"es": "Granja Yantra", "site_en": ["Yantra Ranch", "Yantra Farm"], "canon_en": "", "ko": "얀트라 농장", "kind": "시설·건물", "src": ["21:399"], "map_ids": [398], "note": "맵 398"}
 {"es": "Guardería Pokémon", "site_en": [], "canon_en": "", "ko": "포켓몬 키우미집", "kind": "시설·건물", "src": ["21:49"], "map_ids": [48], "note": "맵 48"}
 {"es": "Guarida Team Flare", "site_en": [], "canon_en": "", "ko": "플레어단 아지트", "kind": "시설·건물", "src": ["21:442", "21:443"], "map_ids": [441, 442], "note": "맵 441,442"}
 {"es": "Herbolario", "site_en": [], "canon_en": "", "ko": "약초상", "kind": "시설·건물", "src": ["20:15", "21:276"], "map_ids": [275], "note": "맵 275"}
@@ -165,8 +165,8 @@
 {"es": "Sala de Mando", "site_en": [], "canon_en": "", "ko": "지휘실", "kind": "시설·건물", "src": ["21:333"], "map_ids": [332], "note": "맵 332"}
 {"es": "Sala del Árbol Eterno", "site_en": [], "canon_en": "", "ko": "영원한 나무의 방", "kind": "시설·건물", "src": ["21:452"], "map_ids": [451], "note": "맵 451"}
 {"es": "Salón Furfrou", "site_en": [], "canon_en": "", "ko": "트리미앙 살롱", "kind": "시설·건물", "src": ["21:182"], "map_ids": [181], "note": "맵 181"}
-{"es": "Santuario de los Reyes", "site_en": ["Kings’ Sanctuary", "Sanctuary of Kings"], "canon_en": "", "ko": "왕들의 성소", "kind": "시설·건물", "src": ["21:59"], "map_ids": [58], "note": "19절은 Santuario de Reyes, 21절은 Santuario de los Reyes — 원문 쪽 표기 흔들림 · 맵 58"}
-{"es": "Santuario de Reyes", "site_en": ["Kings’ Sanctuary", "Sanctuary of Kings"], "canon_en": "", "ko": "왕들의 성소", "kind": "시설·건물", "src": ["19:15"], "map_ids": [], "note": "19절은 Santuario de Reyes, 21절은 Santuario de los Reyes — 원문 쪽 표기 흔들림"}
+{"es": "Santuario de los Reyes", "site_en": ["Kings’ Sanctuary", "Sanctuary of Kings", "Kings Sanctuary"], "canon_en": "", "ko": "왕들의 성소", "kind": "시설·건물", "src": ["21:59"], "map_ids": [58], "note": "19절은 Santuario de Reyes, 21절은 Santuario de los Reyes — 원문 쪽 표기 흔들림 · 맵 58"}
+{"es": "Santuario de Reyes", "site_en": ["Kings’ Sanctuary", "Sanctuary of Kings", "Kings Sanctuary"], "canon_en": "", "ko": "왕들의 성소", "kind": "시설·건물", "src": ["19:15"], "map_ids": [], "note": "19절은 Santuario de Reyes, 21절은 Santuario de los Reyes — 원문 쪽 표기 흔들림"}
 {"es": "Santuario Prosperidad", "site_en": ["Prosperity Sanctuary"], "canon_en": "", "ko": "번영의 성소", "kind": "시설·건물", "src": ["19:30", "21:119", "21:120"], "map_ids": [118, 119], "note": "맵 118,119"}
 {"es": "Taller Quemado", "site_en": ["Burned Workshop"], "canon_en": "", "ko": "불탄 공방", "kind": "시설·건물", "src": ["19:27", "21:82"], "map_ids": [81], "note": "맵 81"}
 {"es": "Torre de Guardia Sur", "site_en": ["South Watchtower"], "canon_en": "", "ko": "남쪽 감시탑", "kind": "시설·건물", "src": ["19:2", "21:7"], "map_ids": [6], "note": "맵 6"}
@@ -182,9 +182,9 @@
 {"es": "Viejo Vánitas", "site_en": ["Old Vanitas", "Old Vanitas Sewers"], "canon_en": "", "ko": "옛 바니타스", "kind": "시설·건물", "src": ["19:41", "21:139", "21:140", "21:141", "21:197"], "map_ids": [138, 139, 140, 196], "note": "맵 138,139,140,196"}
 {"es": "Batalla de Kalos Este", "site_en": ["East Kalos Battle"], "canon_en": "", "ko": "칼로스 동부 전투", "kind": "기타", "src": ["21:315", "21:317", "21:345"], "map_ids": [314, 316, 344], "note": "맵 314,316,344"}
 {"es": "Campamento de Crisanto", "site_en": [], "canon_en": "", "ko": "크리산토의 캠프", "kind": "기타", "src": ["21:339"], "map_ids": [338], "note": "맵 338"}
-{"es": "Columna Lanza", "site_en": [], "canon_en": "", "ko": "창기둥", "kind": "기타", "src": ["21:435"], "map_ids": [434], "note": "맵 434"}
+{"es": "Columna Lanza", "site_en": ["Spear Pillar"], "canon_en": "", "ko": "창기둥", "kind": "기타", "src": ["21:435"], "map_ids": [434], "note": "맵 434"}
 {"es": "Corazón del Arma", "site_en": [], "canon_en": "", "ko": "병기의 심장", "kind": "기타", "src": ["21:491", "21:492", "21:493", "21:496"], "map_ids": [490, 491, 492, 495], "note": "맵 490,491,492,495"}
-{"es": "El Arma Definitiva", "site_en": [], "canon_en": "", "ko": "궁극병기", "kind": "기타", "src": ["21:428", "21:471", "21:472", "21:473", "21:474", "21:475", "21:476", "21:477", "21:478", "21:487", "21:489"], "map_ids": [427, 470, 471, 472, 473, 474, 475, 476, 477, 486, 488], "note": "맵 427,470,471,472,473,474,475,476,477,486,488"}
+{"es": "El Arma Definitiva", "site_en": ["Ultimate Weapon"], "canon_en": "", "ko": "궁극병기", "kind": "기타", "src": ["21:428", "21:471", "21:472", "21:473", "21:474", "21:475", "21:476", "21:477", "21:478", "21:487", "21:489"], "map_ids": [427, 470, 471, 472, 473, 474, 475, 476, 477, 486, 488], "note": "맵 427,470,471,472,473,474,475,476,477,486,488"}
 {"es": "Lugar Misterioso", "site_en": ["Mysterious Place"], "canon_en": "", "ko": "수수께끼의 장소", "kind": "기타", "src": ["21:412", "21:413"], "map_ids": [411, 412], "note": "맵 411,412"}
 {"es": "Pesadilla del Circo", "site_en": ["Circus Nightmare"], "canon_en": "", "ko": "서커스의 악몽", "kind": "기타", "src": ["21:375", "21:381", "21:408", "21:409"], "map_ids": [374, 380, 407, 408], "note": "맵 374,380,407,408"}
 {"es": "Cielo Nocturno", "site_en": [], "canon_en": "", "ko": "밤하늘", "kind": "연출·시스템", "src": ["21:384"], "map_ids": [383], "note": "맵 383"}
