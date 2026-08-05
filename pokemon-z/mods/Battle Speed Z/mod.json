@@ -1,7 +1,7 @@
 {
   "name": "Battle Speed Z",
   "game": "Pokemon Z Fangame",
-  "description": "배틀의 기술·공용 애니메이션을 빠르게 돌리는 모드예요. 기본은 2배속이고, 000_Config.rb의 ANIM_SPEED 하나로 조절해요(1이면 바닐라).\n\n애니메이션 재생기(PBAnimationPlayerX)의 내부 프레임을 화면 프레임마다 배속만큼 밀어서, 효과음과 화면 효과도 같은 박자로 당겨져요. 필드(맵)의 애니메이션은 건드리지 않아요.\n\n설치는 파일 복사가 아니라 주입입니다 — poke-essentials의 mod/z/inject.py 또는 라이브러리 모드 관리자로 설치해요.",
+  "description": "배틀의 기술·공용 애니메이션을 빠르게 돌리는 모드예요. 기본은 2배속이고, 000_Config.rb의 ANIM_SPEED 하나로 조절해요(1이면 바닐라).\n\n애니메이션 재생기(PBAnimationPlayerX)의 내부 프레임을 화면 프레임마다 배속만큼 밀어서, 효과음과 화면 효과도 같은 박자로 당겨져요. 필드(맵)의 애니메이션은 건드리지 않아요.\n\n설치는 파일 복사가 아니라 주입입니다 — pokemon-fangame-kr의 pokemon-z/inject.py 또는 라이브러리 모드 관리자로 설치해요.",
   "engine": "essentials-v16",
   "install": "inject",
   "created_at": "2026-08-02",

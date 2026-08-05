@@ -4,6 +4,10 @@
 > 라이브러리의 모드 관리자와 한 몸이어야 한다. 그래서 `mod/z/inject.py`가 하던 주입을
 > fangame-library의 `modstore`가 **같은 규약으로** 흡수했다. 이 문서는 그 새 구조와,
 > 이쪽(poke-essentials)에 남는 몫·따라올 일을 적는다.
+>
+> ⚠ 이 글의 「이쪽(poke-essentials)」·「`mod/z/`」는 **지금의 이 repo**를 가리킨다 —
+> 2026-08-02 이사로 모드 저작이 `pokemon-fangame-kr/pokemon-z/`로 넘어왔고,
+> 주입기는 `pokemon-z/inject.py`다.
 
 ## 새 구조 — 누가 무엇을 하나
 

@@ -3,7 +3,7 @@
 # ///
 """Pokemon Z(구형 Essentials)용 스크립트 모드 주입기.
 
-    uv run mod/z/inject.py "Better Movements Z" [모드 ...]
+    uv run inject.py "Better Movements Z" [모드 ...]
 
 이 게임에는 PluginScripts.rxdata가 없어서 코드 모드는 Scripts.rxdata 배열에
 섹션으로 덧붙이는 수밖에 없다(RGSS는 배열 순서대로 실행해 나중 정의가 이긴다).
