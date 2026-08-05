@@ -490,6 +490,34 @@ function reporterId(){
     return 'unknown';
   }
 }
+// 보낸 제보를 기억한다 — 일괄 제보가 저장된 수정 전부를 매번 다시 던져 시트에 같은 행이
+// 368행 중 134행 겹쳐 쌓인 적이 있다(2026-08-05 실측). 서명은 「제안+메모」라 값을 고치면
+// 서명이 달라져 다시 나간다. no-cors라 전송 성패는 알 수 없으니 「보냈다고 표시한 것」이지
+// 「도착한 것」이 아니다 — 놓친 건은 그 행에서 [제보]로 다시 보내면 된다.
+let SENT = null;
+// 가르는 문자는 본문에 못 들어가는 NUL — 「가 나」+「」와 「가」+「나」가 같아지지 않게
+const sig =(suggest, comment) => `${suggest} ${comment}`;
+function sentIndex(){
+  if (SENT) return SENT;
+  try { SENT = new Map(JSON.parse(localStorage.getItem('sent:'+S.base) ?? '[]')); }
+  catch { SENT = new Map(); }
+  return SENT;
+}
+function persistSent(){
+  try { localStorage.setItem('sent:'+S.base, JSON.stringify([...sentIndex()])); } catch {}
+}
+function markSent(id, s){ sentIndex().set(id, s); persistSent(); }
+// 지금 저장된 수정·메모를 통째로 「보냄」으로 찍는다 — 이 기능 이전에 이미 제보한 사람이
+// 일괄 제보를 다시 눌러 수백 건을 겹쳐 보내는 걸 막는 한 번짜리 이주 수단
+function markAllSent(){
+  const all = new Map([...S.applied, ...S.edits]), memos = memoIndex();
+  const ids = [...new Set([...all.keys(), ...memos.keys()])];
+  if (!ids.length){ toast('표시할 수정이나 메모가 없어요'); return; }
+  if (!confirm(`${ids.length}건을 이미 보낸 것으로 표시할까요?\n표시한 건은 내용을 고치기 전까지 일괄 제보에서 빠져요.`)) return;
+  for (const id of ids) sentIndex().set(id, sig(all.get(id)?.v ?? '', memos.get(id)?.text ?? ''));
+  persistSent();
+  toast(`${ids.length}건을 보낸 것으로 표시했어요`);
+}
 // 구글폼에 no-cors로 던진다(응답 확인 불가, 실패해도 toast로만 알림)
 // silent: 일괄 전송 중 매 건 toast 도배 방지(진행·완료 토스트는 호출부가 낸다)
 async function sendForm(vals, {batch=false, silent=false}={}){
@@ -511,8 +539,12 @@ async function report(i){
   const m = memoIndex().get(id);
   const comment = m ? m.text : prompt('이 행에 남길 한 줄 코멘트 (그냥 제보만 하려면 비워두세요)');
   if (comment === null) return;   // 취소 — 전송하지 않는다
+  const s = sig(e ? e.v : '', comment);
+  if (sentIndex().get(id) === s &&
+      !confirm('이 행은 같은 내용으로 이미 제보했어요. 다시 보낼까요?')) return;
   await sendForm({sec:`${r.sec}:${SEC_LABEL[r.sec] ?? ''}`, idx:`${r.map ?? ''}:${r.idx}`,
                   k:r.k ?? '', v:r.v, suggest: e ? e.v : '', comment});
+  markSent(id, s);
 }
 // 폼 한 칸에 들어갈 수 있는 길이 — 넘치면 잘리는 대신 잘렸다고 알린다(단건에는 사실상 불필요하나 방어로 유지)
 const FIELD_CAP = 30000;
@@ -526,19 +558,26 @@ async function batchReport(){
   const byId = new Map(S.rows.map(r=>[rid(r), r]));
   const ids = [...new Set([...all.keys(), ...memos.keys()])];
   if (!ids.length){ toast('보낼 수정이나 메모가 없어요'); return; }
+  // 이미 같은 내용으로 보낸 건은 뺀다 — 안 그러면 누를 때마다 저장분 전체가 시트에 겹쳐 쌓인다
+  const sent = sentIndex();
+  const sigs = new Map(ids.map(id => [id, sig(all.get(id)?.v ?? '', memos.get(id)?.text ?? '')]));
+  const fresh = ids.filter(id => sent.get(id) !== sigs.get(id));
+  const skipped = ids.length - fresh.length;
+  if (!fresh.length){ toast(`이미 보낸 ${skipped}건뿐이에요 — 새로 보낼 게 없어요`, 4000); return; }
   batchInFlight = true;
   $('batchbtn').disabled = true;
   try {
-    for (let i = 0; i < ids.length; i++){
-      const id = ids[i], r = byId.get(id), e = all.get(id), m = memos.get(id);
-      toast(`일괄 제보 중... ${i+1}/${ids.length}건째`);
+    for (let i = 0; i < fresh.length; i++){
+      const id = fresh[i], r = byId.get(id), e = all.get(id), m = memos.get(id);
+      toast(`일괄 제보 중... ${i+1}/${fresh.length}건째`);
       await sendForm({sec: r ? `${r.sec}:${SEC_LABEL[r.sec] ?? ''}` : '',
                        idx: r ? `${r.map ?? ''}:${r.idx}` : '',
                        k: r?.k ?? '', v: r?.v ?? '',
                        suggest: e ? cut(e.v) : '', comment: m ? cut(m.text) : ''},
                       {batch:true, silent:true});
+      markSent(id, sigs.get(id));
     }
-    toast(`${ids.length}건 보냈어요`);
+    toast(`${fresh.length}건 보냈어요${skipped ? ` (이미 보낸 ${skipped}건은 뺐어요)` : ''}`, 4000);
   } finally {
     batchInFlight = false;
     updateDirty();   // batchbtn 활성 상태를 실제 잔여 수정·메모 기준으로 되돌린다
@@ -603,7 +642,7 @@ function loadStore(prefix){
 }
 // 버린 건수를 돌려준다
 function restoreEdits(){
-  MEMOS = null;                    // 기준(S.base)이 바뀌면 메모 캐시도 다른 기록의 것이다
+  MEMOS = SENT = null;             // 기준(S.base)이 바뀌면 메모·제보 기록 캐시도 다른 기록의 것이다
   const {m, dropped} = loadStore('edits');
   S.edits = m;
   S.applied = loadStore('applied').m;
@@ -766,6 +805,7 @@ function renderHome(){
       ${line('내 수정', '저장해 둔 수정과 메모를 다시 고치거나 지워요.', 'showMine()')}
       ${line('모아서 제보', '저장한 수정과 메모를 한 번에 보내요.', 'batchReport()')}
       ${GENERAL_FORM.id ? line('문제 제보', '전반적 번역·화면 표시 문제처럼 특정 문구에 매이지 않는 제보예요.', 'feedbackMenu()') : ''}
+      ${line('이미 보낸 것으로 표시', '예전에 제보한 수정을 일괄 제보에서 빼요.', 'markAllSent()')}
       ${line('내보내기', '고침 파일로 내려받아 다른 사람과 나눠요.', 'exportFix()')}
       ${line('이력', '지금까지의 수정·메모·빌드를 모두 봐요.', 'showHist()')}</div>`;
 }

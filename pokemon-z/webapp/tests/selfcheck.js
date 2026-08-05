@@ -63,6 +63,7 @@ vm.runInContext(src + `
   memoIndex, renderHome, updateDirty, FIELD_CAP, memoDel, persistMemos,
   showMine, mineSave, mineCancel, mineMemoDel, reporterId,
   clearMemos: () => { MEMOS = null; },
+  markAllSent, sentIndex, clearSent: () => { SENT = null; },
   loadSpeakers, fillBrowse, doBrowse, openGroup, browseGroups, spkOf, mapName,
   parseQuery, rowMatch, search, goHome, tagValues,
   GENERAL_FORM, feedbackMenu, sendFeedback,
@@ -424,6 +425,25 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   a.equal(el('toast').textContent, '일괄 제보가 진행 중이에요 — 끝날 때까지 기다려 주세요');
   await inFlight;
   a.equal(ctx.__fetchCalls.length, 1);              // 재호출로 fetch가 늘지 않았다 — 같은 행 중복 적재 없음
+
+  // 같은 내용은 두 번 안 간다 — 일괄 제보가 저장분 전체를 매번 다시 던져 시트에 중복이 쌓였던 자리
+  ctx.S.edits = new Map([['3:7:9', { sec: 3, map: 7, idx: 9, k: '원문키', v: '중복검사값' }]]);
+  ctx.__fetchCalls.length = 0;
+  await ctx.batchReport();
+  a.equal(ctx.__fetchCalls.length, 1);
+  await ctx.batchReport();                          // 그대로 다시 눌러도
+  a.equal(ctx.__fetchCalls.length, 1);              // 한 건도 더 안 나간다
+  a.equal(el('toast').textContent, '이미 보낸 1건뿐이에요 — 새로 보낼 게 없어요');
+  ctx.S.edits = new Map([['3:7:9', { sec: 3, map: 7, idx: 9, k: '원문키', v: '중복검사값-고침' }]]);
+  await ctx.batchReport();                          // 값을 고치면 서명이 달라져 다시 나간다
+  a.equal(ctx.__fetchCalls.length, 2);
+
+  // 「이미 보낸 것으로 표시」 — 이 기능 이전에 제보한 사람이 한 번 눌러 통째로 빼는 이주 수단
+  ctx.S.edits = new Map([['3:7:9', { sec: 3, map: 7, idx: 9, k: '원문키', v: '이주값' }]]);
+  ctx.markAllSent();
+  ctx.__fetchCalls.length = 0;
+  await ctx.batchReport();
+  a.equal(ctx.__fetchCalls.length, 0);
 
   // 보낼 게 없으면 전송하지 않고 버튼도 잠긴다
   ctx.S.edits = new Map(); ctx.S.applied = new Map();

@@ -39,6 +39,9 @@ https://durumiii.github.io/z-kr-studio/ (Chrome/Edge 전용, 무설정 원칙 �
   memoIndex()(localStorage memos:<base>). 이력은 hist:<base> append-only.
 - 사용자 문자열은 **반드시 esc() 경유**로만 innerHTML에 넣는다(전 화면 이
   규율로 리뷰 통과). 인라인 onclick에는 rid(숫자:콜론 조합)나 인덱스만.
+- 제보 중복 방지: 보낸 건은 `sent:<base>`에 rid→서명(제안+메모, NUL 구분)으로
+  남고 일괄 제보가 서명이 같은 건을 뺀다. 내용을 고치면 서명이 달라져 다시
+  나간다. 이 장치 이전 제보자용 이주 수단이 홈의 [이미 보낸 것으로 표시].
 - 버튼 잠금 규율: 빌드↔복원은 상호 잠금, 일괄 제보는 batchInFlight 가드,
   복원 후엔 재로드 성공까지 빌드·내보내기 잠금. 잠금 로직은 건드리지 말 것.
 - 제약: 프레임워크·빌드 도구 금지(정적 파일 그대로), 이모지 금지(인라인
