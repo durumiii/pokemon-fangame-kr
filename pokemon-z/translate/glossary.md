@@ -80,7 +80,7 @@ canon에 없는 영역의 보조로만).
 | Hall de la Fama | 명예의 전당 | | Alfa/Nido Alfa | 알파/알파 둥지 (이 게임 고유) |
 | Regente | 섭정 | | Orden Yantra | 얀트라 교단 |
 | Poketour | 포켓투어 | | Rancho | 목장 |
-| estado Caduco | 부패 (상태이상, 2026-08-02 판정 — 연금술 putrefactio와 정합) | | Hospicio Caduco | 카두코 구호소 (지명은 음차 유지) |
+| estado Caduco | **쇠락** (상태이상, 2026-08-05 재판정 — 부패는 시신이 썩는 쪽으로 읽혀 살아 있는 포켓몬의 병에 안 맞았다. caduco는 「낡아 스러지는」 쪽이고, 이 병은 생명 에너지가 기울어 며칠 만에 죽는 병이다. 썩는다는 뜻의 부패는 corrupción·descomposición 쪽 9행에 그대로 둔다) | | Hospicio Caduco | 카두코 구호소 (지명은 음차 유지 — 2026-08-05 재확인) |
 | Hemorragia | 출혈 (창작 상태이상 7번 — 급소 단계 +2) | | versión/forma exótica | 다른 지방의 모습 (2026-08-02 판정 — 리전폼은 비공식 약칭, 공식 표기는 「(지방명)의 모습」. 일반 형용사 exótico는 그대로) |
 | Medalla | 배지 (2026-08-02 판정 — 스페인어권 본가가 배지를 medalla라 부르므로 본가 존중. 고유명은 음차+배지: 가르디아 배지) | | Tablón de Misiones | 의뢰 게시판 |
 

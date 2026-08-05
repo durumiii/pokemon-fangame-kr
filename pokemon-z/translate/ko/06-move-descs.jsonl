@@ -724,7 +724,7 @@
 {"i": 723, "v": "3회 때리며 반드시 급소에 맞는다.", "es": "Golpea 3 veces y siempre asesta un golpe crítico."}
 {"i": 724, "v": "악의 기술을 완전히 통달해야 쓸 수 있는 파괴적인 일격. 반드시 급소에 맞는다.", "es": "Golpe devastador que requiere un absoluto dominio de las artes siniestras. Siempre es crítico."}
 {"i": 725, "v": "바위와 풀타입을 동시에 가진 기술이다.", "es": "Este movimiento es de tipo Roca y Planta a la vez."}
-{"i": 726, "v": "꼬리로 무한대 기호를 그리며 공격한다. 상대를 부패 상태로 만든다.", "es": "Ataca formando un símbolo infinito con su cola. Aplica Caduco al rival."}
+{"i": 726, "v": "꼬리로 무한대 기호를 그리며 공격한다. 상대를 쇠락 상태로 만든다.", "es": "Ataca formando un símbolo infinito con su cola. Aplica Caduco al rival."}
 {"i": 727, "v": "Constellar의 태양 폼과 달 폼을 전환한다. 폼에 따라 물리 기술이 되기도, 특수 기술이 되기도 한다.", "es": "Cambia a Constellar entre forma solar y lunar. Este mov. es físico o especial en función de la forma."}
 {"i": 728, "v": "상대의 방어를 기준으로 데미지를 계산한다.", "es": "Usa la Defensa del objetivo para calcular el daño."}
 {"i": 729, "v": "독 덩어리로 들이받는다. 상대를 독 상태로 만들 수 있다.", "es": "Embiste al rival con una masa venenosa. Puede llegar a envenenar al rival."}
