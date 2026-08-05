@@ -5,35 +5,27 @@
 
 ## 둘째 게임 — Pokemon Z (구형 엔진, 주입형)
 
-**번역 repo에 모드가 있는 이유는 둘이다.** 하나는 번역이 닿지 못하는 층을 메우기
-위해서다 — 스크립트에 스페인어가 박힌 자리는 `korean.dat`로 못 고쳐서 `UI Text KR`
-모드가 그리기 진입점에서 갈아 끼운다(아래 개념도의 ③층). 조사 자동 선택도 같은
-사정으로 시작해 지금은 한글패치 본문에 흡수됐다. 다른 하나는 한글패치를 얹고
-플레이하며 겪은 문제를 고친 것이다 — 걷기 멈칫 조사(`Frame Profiler`)와 그 처방
-(`GC Tamer`), 이동감(`Better Movements Z`), 배틀 속도(`Battle Speed Z`), 패드 조작
-(`Controller UX Z`). 둘 다 같은 주입 레일을 타므로 한자리에 둔다.
+**여기 남는 모드는 `UI Text KR` 하나다.** 스크립트에 스페인어가 박힌 화면 문자열은
+`korean.dat`로 못 고쳐서, 이 모드가 글자를 그리는 진입점에서 갈아 끼운다(아래 개념도의
+③층). 조사 자동 선택도 같은 사정으로 모드에서 시작해 지금은 한글패치 본문에 흡수됐다.
+
+**편의·성능 모드 다섯은 2026-08-06에 poke-essentials `mod/z/`로 보냈다** — Battle Speed Z ·
+Better Movements Z · Controller UX Z · Frame Profiler · GC Tamer. 번역과 상관이 없어서다
+(사용자 판정). 그쪽에 따라간 것: 걷기 멈칫 성능 조사, `Game_Player#update` alias 사슬,
+이동 속도 눈금 계산, 패드 매핑 실측, `docs/design/z-controller-ux.md`.
+**한 자리만 여기와 얽혀 있다** — 일시정지 메뉴의 단축키 표기를 UI Text KR이 키보드
+기준으로 적고 Controller UX Z의 `004_PadLabels`가 치환표 앞머리 선점으로 덮는다.
+UI Text KR의 그 줄을 건드리면 저쪽도 함께 봐야 한다.
 
 **Pokemon Z(Essentials v16 · 루비 1.8.7 · mkxp-z 구판)는 플러그인 묶음이 없다.** 코드
 모드는 `inject.py`가 `Scripts.rxdata` 배열에 `MOD:<모드명>/<파일명>` 섹션으로
 덧붙인다(`Main` 직전, 나중 정의가 이긴다). 기반은 게임 폴더가 아니라 **모드 보관소의
 한글패치판**이라 몇 번을 돌려도 결과가 같다. 보관소는 게임별 하위 폴더 체제다 —
 `/mnt/d/GameVault/mods/Pokemon Z Fangame/<모드>/`(폴더명은 é 없는 쪽이 정본 —
-2026-08-02 fangame-library가 근원 정리). 주입 모드는 여섯: Battle Speed Z(M-23 — 배틀 애니메이션 기본 2배속) · Better Movements Z ·
-Frame Profiler(v3 — 단계별·이동/정지 분리 측정, 재진입 가드) ·
-UI Text KR · GC Tamer · Controller UX Z(M-22 — 커서 숨김·이름 입력 패드 확인·
-등록 아이템 패드 X·Xbox 글리프. 기본 패드 매핑은 F1 실측: JS 번호가 XInput 원시
-순서라 패드 A·B·X·Y·LB·RB·RS클릭 → 가상 C·B·X·A·Y·Z·L. 화면 단축키 표기는
-UI Text KR이 키보드 기준으로 적고, 패드 라벨은 이 모드의 004_PadLabels가
-치환표 앞머리 선점으로 오버라이드한다 — 2026-08-03 판정).
-
-**성능 조사(2026-08-02)가 걷기 멈칫의 정체를 갈랐다.** 지속 프레임 저하는 존재하지
-않고(멈칫 프레임을 빼면 전 구간 60fps 복원 — v1 로그 3시간 전수 재검산), 체감의
-실체는 멈칫 밀도다. 갈래 셋: ① 맵 경계 전환마다 ~0.58초(스프라이트셋 생성+전환 —
-미해결), ② 12초 주기 ~85ms — 크기가 83~90ms에 몰리고 그 순간 돌던 단계에 얹히는
-**루비 GC 지문**(이 루비엔 GC.count가 없어 개입 실험이 곧 판정), ③ 비탈 숲(map28·46)의
-상주 이벤트. GC Tamer가 ②의 실험이자 처방이다 — 평소 GC.disable, 맵 전환·장면
-전환에 몰아 돌리고 90초 안전판. **루비 1.8은 GC.disable 중 GC.start가 무시된다** —
-enable→start→disable로 감싸야 한다. 실기 판정 대기 중.
+2026-08-02 fangame-library가 근원 정리). **보관소에는 모드 여섯이 그대로 서 있다** —
+repo가 갈렸을 뿐 설치 자리는 하나이므로, 주입기를 모드 이름 없이 돌리면 보관소의
+여섯을 다 세운다. 이름을 지정해 돌릴 때 게임에 주입돼 있던 모드가 목록에서 빠지면
+주입기가 경고한다.
 
 지켜야 할 것들:
 
@@ -46,32 +38,14 @@ enable→start→disable로 감싸야 한다. 실기 판정 대기 중.
   (`unshift(a, b,)` — 2026-08-03 실기 사고). 이 환경에 루비가 없어 구문 검사는
   게임 부팅이 대신한다.
 - **주입 섹션은 모드명 정렬 순으로 실린다** — 다른 모드의 상수·모듈은 로드 시점에
-  없을 수 있다. 참조가 필요하면 씬 진입 훅으로 미뤄라(본보기: `Controller UX Z/
-  004_PadLabels.rb` — Scene_Map#main alias에서 한 번 얹기. 로드 시점
-  `defined?` 분기는 조용히 무동작이 된다).
-- **`Game_Player#update`를 통째로 다시 정의하지 마라.** Walk_Run(22)·Following(187)이
-  alias 사슬로 잡고 있어 통째 재정의는 동행을 부순다. 사슬 끝에 alias로 얹는다 —
-  본보기: `Better Movements Z/001_Movement.rb`(속도는 `update_move` 직전 표 바꿔치기,
-  회전 문턱은 `@lastdirframe`을 과거로 밀기).
-- **이동 속도는 `@move_speed`에 직접 박힌다**(setter를 안 지나간다). 걷기 3.8 ·
-  달리기/서핑/얼음 4.8 · 자전거 5.2, 프레임마다 `2**눈금`만큼 **실좌표**를 민다.
-  **픽셀이 아니다** — 한 칸이 실좌표 128이고 화면은 그것을 4로 나누므로 프레임당
-  화면 이동은 `2**눈금 / 4` 픽셀이다(걷기 3.48px, 한 칸에 9.19프레임).
-- **눈금이 정수가 아니면 화면이 흔들린다**(2026-08-04). `screen_x`가
-  `(real_x - display_x + 3) / 4`로 픽셀에 맞춰 자르기 때문에, 프레임당 이동 픽셀이
-  정수가 아니면 걸음 폭이 `[4,3,4,3,…]`처럼 널뛰고 한 칸 끝의 클램프가 마지막
-  프레임을 반 걸음으로 자른다. 카메라가 캐릭터의 이동 거리를 그대로 따라가므로
-  (`Game_Player#update`의 `last_real_x` 차분) 어긋나는 대신 **화면 전체가 같이
-  널뛴다**. 프레임은 안 밀렸으니 프로파일러에 안 잡힌다 — 2026-08-02 성능 조사가
-  「지속 프레임 저하는 없다」고 판정한 뒤에도 남는 체감의 한 갈래다.
-  고른 값은 `2**눈금`이 4의 배수이면서 128을 나눠떨어뜨리는 것, 곧 **정수 눈금**뿐이다
-  (3 → 2px · 4 → 4px · 5 → 8px · 6 → 16px). 값 표와 실측은
-  `mods/Better Movements Z/000_Config.rb`.
+  없을 수 있다. 참조가 필요하면 씬 진입 훅으로 미뤄라(로드 시점 `defined?` 분기는
+  조용히 무동작이 된다).
 - **`mod.json`의 `expects`**(섹션 제목 → 원문 md5)를 적어 두면 게임 판이 올라 원문이
-  바뀌었을 때 주입기가 멈춘다. 훅이 조용히 어긋나는 것보다 낫다.
-- Wishing Star용 모드는 **옮기는 게 아니라 같은 의도를 v16에 재구현**하는 일이다 —
-  21.1의 `@move_time`·`System.uptime`·`Battle::Scene` 세대 구조가 v16엔 없다.
-  엔진 해부는 [`docs/research/2026-08-01-pokemon-z-fangame.md`](docs/research/2026-08-01-pokemon-z-fangame.md).
+  바뀌었을 때 주입기가 멈춘다. 훅이 조용히 어긋나는 것보다 낫다. ⚠ 지금 실사용 게임은
+  한글패치가 얹힌 코어이고 **패치가 코어 섹션 27개를 다시 쓴다** — 그 섹션을 잡는 모드는
+  패치 이전 값으로 뜬 `expects`에 걸린다.
+  근거와 미결은 [`docs/research/2026-08-03-korean-patch-vs-mod-baselines.md`](docs/research/2026-08-03-korean-patch-vs-mod-baselines.md).
+- 엔진 해부는 [`docs/research/2026-08-01-pokemon-z-fangame.md`](docs/research/2026-08-01-pokemon-z-fangame.md).
 
 ## 둘째 게임 — 번역 품질 갈래 (2026-08-01~02)
 

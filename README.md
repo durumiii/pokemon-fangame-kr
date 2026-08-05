@@ -11,9 +11,8 @@
 - 번역 정본은 [`pokemon-z/translate/ko/`](pokemon-z/translate/ko/)의 절별 JSONL이고,
   `korean.dat`는 `build.py`가 만드는 빌드 산출물이에요. 오역 제보·수정 PR은 이 파일들로.
 - 번역 방식·용어 결정의 기록은 [`pokemon-z/docs/`](pokemon-z/docs/)에 있어요.
-- [`pokemon-z/mods/`](pokemon-z/mods/)의 모드 여섯은 번역의 곁가지예요. 스크립트에 박혀
-  번역표로는 못 고치는 화면 문자열을 갈아 끼우는 것(UI Text KR)과, 한글패치를 얹고
-  플레이하며 손본 이동감·배틀 속도·패드 조작이 섞여 있어요.
+- [`pokemon-z/mods/UI Text KR`](pokemon-z/mods/)은 번역의 곁가지예요. 스크립트에 박혀
+  번역표로는 못 고치는 화면 문자열이 있어서, 글자를 그리는 자리에서 갈아 끼워요.
 
 ## 저작권
 
