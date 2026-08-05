@@ -177,7 +177,7 @@
     Regente            섭정 (요새를 다스리는 관장 격 인물)
     Aspirante          후보생 (주인공의 신분)
     Legislador(a)      입법관 (직함, 현대 스페인에서는 '의원'에 가깝습니다)
-    Team Azoth         팀 아조스 · Orden Yantra  얀트라 교단
+    Team Azoth         아조스단 · Orden Yantra  얀트라 교단
     Arma Definitiva    최종병기 · Nido Alfa  알파 둥지
     Pokétoxina         독주머니 (독타입 포켓몬이 떨어뜨리는 소재)
       원문은 Poké+toxina 합성어지만, 같은 계열 소재 아이템(고운털·

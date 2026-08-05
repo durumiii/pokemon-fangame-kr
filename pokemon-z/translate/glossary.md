@@ -42,7 +42,7 @@ canon에 없는 영역의 보조로만).
 - 보너스 콘텐츠의 이스터에그 라틴명(Derringer·Makonawa·Missile·Monte Blues·
   Freestylers Studio)은 **원문 유지**(사용자 판정 2026-08-02).
 - 게임 고유 개념은 현행 번역을 따른다: 최종병기 · 포켓몬 연금술(알케미 혼용
-  자리는 「포켓몬 연금술」로) · 섭정 · 입법관 · 팀 아조스 · 포켓투어.
+  자리는 「포켓몬 연금술」로) · 섭정 · 입법관 · 아조스단 · 포켓투어.
   **medalla는 「배지」다**(2026-08-04 판정 — 아래 고정 용어표. 스페인어권 본가가
   배지를 medalla라 부른다. 옛 「메달 유지」 지침은 이 판정으로 폐기됐고
   정본에도 「메달」 잔존이 없다).
@@ -77,7 +77,7 @@ canon에 없는 영역의 보조로만).
 
 | 원문 | 표기 | | 원문 | 표기 |
 |---|---|---|---|---|
-| Arma Definitiva | 최종병기 | | Team Azoth | 팀 아조스 |
+| Arma Definitiva | 최종병기 | | Team Azoth | 아조스단 |
 | Alquimia Pokémon | 포켓몬 연금술(사) | | pokécuartos/pokéfrancos | 포켓프랑 |
 | Legislador | 입법관 (2026-08-02 판정) | | Capitán/Capitana | **대장**(군 계열: 메를로·크리산토·센데라·근위대) / **선장**(배·해적: 로토) — 2026-08-02 재판정, 실기 소견 근거 |
 | Pokémon Sombrío/Shadow | 그림자 포켓몬 (GO 공식) | | Pokochos | 포핀 |
