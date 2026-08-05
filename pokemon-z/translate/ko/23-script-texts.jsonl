@@ -12,7 +12,7 @@
 {"k": "National Pokédex", "v": "전국 도감"}
 {"k": "<ac>{1:02d}:{2:02d}", "v": "<ac>{1:02d}:{2:02d}"}
 {"k": "Expected a section at the beginning of the file (line {1})", "v": "Expected a section at the beginning of the file (line {1})"}
-{"k": "Can't find {1}", "v": "{1}을(를) 찾을 수 없습니다."}
+{"k": "Can't find {1}", "v": "{1}\\j[을,를] 찾을 수 없습니다."}
 {"k": "Invalid section name {1}", "v": "Invalid section name {1}"}
 {"k": "Section {1} can't be an ordered list (section was recognized as an ordered list because its first line is a number)", "v": "Section {1} can't be an ordered list (section was recognized as an ordered list because its first line is a number)"}
 {"k": "Section {1}'s line count is not divisible by 3 (section was recognized as an ordered list because its first line is a number)", "v": "Section {1}'s line count is not divisible by 3 (section was recognized as an ordered list because its first line is a number)"}
@@ -298,13 +298,13 @@
 {"k": "{1} was hurt by the {2}!", "v": "{1} was hurt by the {2}!"}
 {"k": "{1} was caught in the aftermath!", "v": "{1} was caught in the aftermath!"}
 {"k": "{1}'s {2} made {3} fall in love!", "v": "{1}'s {2} made {3} fall in love!"}
-{"k": "{1}'s {2} poisoned {3}!", "v": "{1}의 {2}(으)로 인해 {3}은(는) 독에 걸렸다!"}
+{"k": "{1}'s {2} poisoned {3}!", "v": "{1}의 {2}\\j[으로,로] 인해 {3}\\j[은,는] 독에 걸렸다!"}
 {"k": "{1}'s {2} made {3} fall asleep!", "v": "{1}'s {2} made {3} fall asleep!"}
 {"k": "{1}'s {2} paralyzed {3}! It may be unable to move!", "v": "{1}'s {2} paralyzed {3}! It may be unable to move!"}
 {"k": "{1}'s {2} burned {3}!", "v": "{1}'s {2} burned {3}!"}
 {"k": "{1} was mummified by {2}!", "v": "{1} was mummified by {2}!"}
-{"k": "{1}'s {2} hurt {3}!", "v": "{1}의 {2}(이)가 {3}에게 상처를 입혔다!"}
-{"k": "{1}'s {2} disabled {3}!", "v": "{1}의 {2}(이)가 {3}의 기술을 봉인했다!"}
+{"k": "{1}'s {2} hurt {3}!", "v": "{1}의 {2}\\j[이,가] {3}에게 상처를 입혔다!"}
+{"k": "{1}'s {2} disabled {3}!", "v": "{1}의 {2}\\j[이,가] {3}의 기술을 봉인했다!"}
 {"k": "{1}'s Air Balloon popped!", "v": "{1}'s Air Balloon popped!"}
 {"k": "{1} consumed its {2} and hurt {3}!", "v": "{1} consumed its {2} and hurt {3}!"}
 {"k": "{1}'s {2} maxed its {3}!", "v": "{1}'s {2} maxed its {3}!"}
@@ -313,7 +313,7 @@
 {"k": "{1} restored a little HP using its {2}!", "v": "{1} restored a little HP using its {2}!"}
 {"k": "{1} lost some of its HP!", "v": "{1} lost some of its HP!"}
 {"k": "{1}'s {2} made it the {3} type!", "v": "{1}'s {2} made it the {3} type!"}
-{"k": "{1} stole {2}'s {3} with {4}!", "v": "{1}은(는) {4}(으)로 {2}의 {3}을(를) 훔쳤다!"}
+{"k": "{1} stole {2}'s {3} with {4}!", "v": "{1}\\j[은,는] {4}\\j[으로,로] {2}의 {3}\\j[을,를] 훔쳤다!"}
 {"k": "{1} pickpocketed {2}'s {3}!", "v": "{1} pickpocketed {2}'s {3}!"}
 {"k": "{1}'s {2} woke it up!", "v": "{1}'s {2} woke it up!"}
 {"k": "{1}'s {2} cured its poisoning!", "v": "{1}'s {2} cured its poisoning!"}
@@ -412,7 +412,7 @@
 {"k": "{1} was dragged out!", "v": "{1} was dragged out!"}
 {"k": "{1} went back to {2}!", "v": "{1} went back to {2}!"}
 {"k": "{1} woke up in the uproar!", "v": "{1} woke up in the uproar!"}
-{"k": "{1} fled!", "v": "{1}은(는) 도망쳤다!"}
+{"k": "{1} fled!", "v": "{1}\\j[은,는] 도망쳤다!"}
 {"k": "{1} is already asleep!", "v": "{1} is already asleep!"}
 {"k": "The Electric Terrain prevented {1} from falling asleep!", "v": "The Electric Terrain prevented {1} from falling asleep!"}
 {"k": "The Misty Terrain prevented {1} from falling asleep!", "v": "The Misty Terrain prevented {1} from falling asleep!"}
@@ -464,7 +464,7 @@
 {"k": "{1} is immobilized by love!", "v": "{1} is immobilized by love!"}
 {"k": "{1}'s {2} won't go any higher!", "v": "{1}'s {2} won't go any higher!"}
 {"k": "{1}'s {2} activated!", "v": "{1}'s {2} activated!"}
-{"k": "{1}'s {2} rose!", "v": "{1}의 {2}(이)가 올라갔다!"}
+{"k": "{1}'s {2} rose!", "v": "{1}의 {2}\\j[이,가] 올라갔다!"}
 {"k": "{1}'s {2} rose sharply!", "v": "{1}'s {2} rose sharply!"}
 {"k": "{1}'s {2} rose drastically!", "v": "{1}'s {2} rose drastically!"}
 {"k": "{1}'s {2} raised its {3}!", "v": "{1}'s {2} raised its {3}!"}
@@ -480,7 +480,7 @@
 {"k": "{1}'s {2} prevents Defense loss!", "v": "{1}'s {2} prevents Defense loss!"}
 {"k": "{1}'s {2} prevents accuracy loss!", "v": "{1}'s {2} prevents accuracy loss!"}
 {"k": "{1}'s {2} won't go any lower!", "v": "{1}'s {2} won't go any lower!"}
-{"k": "{1}'s {2} fell!", "v": "{1}의 {2}(이)가 떨어졌다!"}
+{"k": "{1}'s {2} fell!", "v": "{1}의 {2}\\j[이,가] 떨어졌다!"}
 {"k": "{1}'s {2} harshly fell!", "v": "{1}'s {2} harshly fell!"}
 {"k": "{1}'s {2} severely fell!", "v": "{1}'s {2} severely fell!"}
 {"k": "{1}'s {2} lowered its {3}!", "v": "{1}'s {2} lowered its {3}!"}
@@ -544,7 +544,7 @@
 {"k": "The battlers shared their pain!", "v": "The battlers shared their pain!"}
 {"k": "The tailwind blew from behind your team!", "v": "The tailwind blew from behind your team!"}
 {"k": "The tailwind blew from behind the opposing team!", "v": "The tailwind blew from behind the opposing team!"}
-{"k": "{1} learned {2}!", "v": "{1}은(는) {2}를 배웠다!"}
+{"k": "{1} learned {2}!", "v": "{1}\\j[은,는] {2}\\j[을,를] 배웠다!"}
 {"k": "{1}'s type changed to match {2}'s!", "v": "{1}'s type changed to match {2}'s!"}
 {"k": "{1} acquired {2}!", "v": "{1} acquired {2}!"}
 {"k": "{1} copied {2}'s {3}!", "v": "{1} copied {2}'s {3}!"}
@@ -574,7 +574,7 @@
 {"k": "The mirror move failed!", "v": "The mirror move failed!"}
 {"k": "{1} shrouded itself with Magic Coat!", "v": "{1} shrouded itself with Magic Coat!"}
 {"k": "{1} waits for a target to make a move!", "v": "{1} waits for a target to make a move!"}
-{"k": "{1} turned into {2}!", "v": "{1}은(는) {2}(으)로 변했다!"}
+{"k": "{1} turned into {2}!", "v": "{1}\\j[은,는] {2}\\j[으로,로] 변했다!"}
 {"k": "{1} was subjected to torment!", "v": "{1} was subjected to torment!"}
 {"k": "{1} sealed the opponent's move(s)!", "v": "{1} sealed the opponent's move(s)!"}
 {"k": "{1}'s {2} was disabled!", "v": "{1}'s {2} was disabled!"}
@@ -593,8 +593,8 @@
 {"k": "{1} hid underwater!", "v": "{1} hid underwater!"}
 {"k": "{1} sprang up!", "v": "{1} sprang up!"}
 {"k": "{1} vanished instantly!", "v": "{1} vanished instantly!"}
-{"k": "{1} took {2} into the sky!", "v": "{1}은(는) {2}을(를) 데리고 하늘로 올라갔다!"}
-{"k": "{1} was freed from the Sky Drop!", "v": "{1}은(는) 프리폴에서 풀려났다!"}
+{"k": "{1} took {2} into the sky!", "v": "{1}\\j[은,는] {2}\\j[을,를] 데리고 하늘로 올라갔다!"}
+{"k": "{1} was freed from the Sky Drop!", "v": "{1}\\j[은,는] 프리폴에서 풀려났다!"}
 {"k": "{1} was squeezed by {2}!", "v": "{1} was squeezed by {2}!"}
 {"k": "{1} clamped {2}!", "v": "{1} clamped {2}!"}
 {"k": "{1} was trapped in the fiery vortex!", "v": "{1} was trapped in the fiery vortex!"}
@@ -626,15 +626,15 @@
 {"k": "{1} anchored itself with its roots!", "v": "{1} anchored itself with its roots!"}
 {"k": "{1} can no longer escape!", "v": "{1}\\j[은,는] 더 이상 도망칠 수 없다!"}
 {"k": "{1} dropped its {2}!", "v": "{1} dropped its {2}!"}
-{"k": "{1} stole {2}'s {3}!", "v": "{1}은(는) {2}의 {3}을(를) 훔쳤다!"}
+{"k": "{1} stole {2}'s {3}!", "v": "{1}\\j[은,는] {2}의 {3}\\j[을,를] 훔쳤다!"}
 {"k": "{1} switched items with its opponent!", "v": "{1} switched items with its opponent!"}
-{"k": "{1} obtained {2}.", "v": "{1}은(는) {2}을(를) 손에 넣었다."}
-{"k": "{1} received {2} from {3}!", "v": "{1}은(는) {3}에게서 {2}을(를) 받았다!"}
+{"k": "{1} obtained {2}.", "v": "{1}\\j[은,는] {2}\\j[을,를] 손에 넣었다."}
+{"k": "{1} received {2} from {3}!", "v": "{1}\\j[은,는] {3}에게서 {2}\\j[을,를] 받았다!"}
 {"k": "{1} stole and ate its target's {2}!", "v": "{1} stole and ate its target's {2}!"}
 {"k": "{1}'s {2} was incinerated!", "v": "{1}'s {2} was incinerated!"}
 {"k": "{1} found one {2}!", "v": "{1} found one {2}!"}
 {"k": "{1} flung its {2}!", "v": "{1} flung its {2}!"}
-{"k": "{1} got over its infatuation.", "v": "{1}은(는) 헤롱헤롱 상태에서 풀려났다."}
+{"k": "{1} got over its infatuation.", "v": "{1}\\j[은,는] 헤롱헤롱 상태에서 풀려났다."}
 {"k": "{1}'s status is returned to normal!", "v": "{1}'s status is returned to normal!"}
 {"k": "{1} can't use items anymore!", "v": "{1} can't use items anymore!"}
 {"k": "The area returned to normal!", "v": "The area returned to normal!"}
@@ -680,7 +680,7 @@
 {"k": "{1} foresaw an attack!", "v": "{1} foresaw an attack!"}
 {"k": "{1} chose Doom Desire as its destiny!", "v": "{1} chose Doom Desire as its destiny!"}
 {"k": "{1} can't stockpile any more!", "v": "{1} can't stockpile any more!"}
-{"k": "{1} stockpiled {2}!", "v": "{1}은(는) 비축하기를 {2}번 했다!"}
+{"k": "{1} stockpiled {2}!", "v": "{1}\\j[은,는] 비축하기를 {2}번 했다!"}
 {"k": "{1}'s stockpiled effect wore off!", "v": "{1}의 비축하기 효과가 사라졌다!"}
 {"k": "But it failed to swallow a thing!", "v": "But it failed to swallow a thing!"}
 {"k": "{1} lost its focus and couldn't move!", "v": "{1} lost its focus and couldn't move!"}
@@ -780,7 +780,7 @@
 {"k": "Mega {1}", "v": "메가{1}"}
 {"k": "{1} has Mega Evolved into {2}!", "v": "{1}\\j[이,가] {2}\\j[으로,로] 메가진화했다!"}
 {"k": "{1}'s Primal Reversion!\nIt reverted to its primal form!", "v": "{1}'s Primal Reversion!\nIt reverted to its primal form!"}
-{"k": "{1} called {2}!", "v": "{1}(은)는 {2}(을)를 불렀다!"}
+{"k": "{1} called {2}!", "v": "{1}\\j[은,는] {2}\\j[을,를] 불렀다!"}
 {"k": "{1}!", "v": "{1}!"}
 {"k": "{1} came to its senses from the Trainer's call!", "v": "{1} came to its senses from the Trainer's call!"}
 {"k": "The rest of your team gained Exp. Points thanks to the {1}!", "v": "The rest of your team gained Exp. Points thanks to the {1}!"}
@@ -879,7 +879,7 @@
 {"k": "{1} is healed by poison!", "v": "{1} is healed by poison!"}
 {"k": "{1} is locked in a nightmare!", "v": "{1} is locked in a nightmare!"}
 {"k": "{1} is afflicted by the curse!", "v": "{1} is afflicted by the curse!"}
-{"k": "{1} was freed from {2}!", "v": "{1}(은)는 {2}에서 풀려났다!"}
+{"k": "{1} was freed from {2}!", "v": "{1}\\j[은,는] {2}에서 풀려났다!"}
 {"k": "{1} is hurt by {2}!", "v": "{1} is hurt by {2}!"}
 {"k": "{1} stopped levitating.", "v": "{1} stopped levitating."}
 {"k": "{1} can use items again!", "v": "{1} can use items again!"}
@@ -917,12 +917,12 @@
 {"k": "{1} was badly poisoned by its {2}!", "v": "{1} was badly poisoned by its {2}!"}
 {"k": "{1} was burned by its {2}!", "v": "{1} was burned by its {2}!"}
 {"k": "{1} is hurt by its {2}!", "v": "{1} is hurt by its {2}!"}
-{"k": "{1} defeated {2} and {3}!", "v": "{1}(은)는 {2}와(과) {3}(을)를 쓰러뜨렸다!"}
+{"k": "{1} defeated {2} and {3}!", "v": "{1}\\j[은,는] {2}\\j[과,와] {3}\\j[을,를] 쓰러뜨렸다!"}
 {"k": "{1} defeated\n{2}!", "v": "{1} defeated\r\n{2}!"}
 {"k": "{1} got ${2}\nfor winning!", "v": "{1} got ${2}\r\nfor winning!"}
 {"k": "{1} picked up ${2}!", "v": "{1} picked up ${2}!"}
 {"k": "{1} is out of usable Pokémon!", "v": "{1}\\j[은,는] 더 이상 싸울 수 있는 포켓몬이 없다!"}
-{"k": "{1} lost against {2} and {3}!", "v": "{1}(은)는 {2}와(과) {3}에게 패배했다!"}
+{"k": "{1} lost against {2} and {3}!", "v": "{1}\\j[은,는] {2}\\j[과,와] {3}에게 패배했다!"}
 {"k": "{1} lost against\n{2}!", "v": "{1} lost against\r\n{2}!"}
 {"k": "{1} paid ${2}\nas the prize money...", "v": "{1} paid ${2}\r\nas the prize money..."}
 {"k": "...", "v": "..."}
@@ -1014,10 +1014,10 @@
 {"k": "\\se[ItemGet]{1} found some \\c[1]{2}\\c[0]!\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[이,가] \\c[1]{2}\\c[0]\\j[을,를] 발견했다!\\wtnp[30]"}
 {"k": "\\se[ItemGet]{1} found {2} \\c[1]{3}\\c[0]!\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[이,가] {2}개의 \\c[1]{3}\\c[0]\\j[을,를] 발견했다!\\wtnp[30]"}
 {"k": "\\se[ItemGet]{1} found one \\c[1]{2}\\c[0]!\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[이,가] \\c[1]{2}\\c[0] 1개를 발견했다!\\wtnp[30]"}
-{"k": "{1} put the \\c[1]{2}\\c[0]\nin the <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] Pocket.", "v": "{1}(은)는 <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] 포켓에\n\\c[1]{2}\\c[0](을)를 넣었다."}
-{"k": "{1} found \\c[1]{2}\\c[0]!\\wtnp[20]", "v": "{1}(은)는 \\c[1]{2}\\c[0](을)를 발견했다!\\wtnp[20]"}
+{"k": "{1} put the \\c[1]{2}\\c[0]\nin the <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] Pocket.", "v": "{1}\\j[은,는] <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] 포켓에\n\\c[1]{2}\\c[0]\\j[을,를] 넣었다."}
+{"k": "{1} found \\c[1]{2}\\c[0]!\\wtnp[20]", "v": "{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를] 발견했다!\\wtnp[20]"}
 {"k": "{1} found some \\c[1]{2}\\c[0]!\\wtnp[20]", "v": "{1} found some \\c[1]{2}\\c[0]!\\wtnp[20]"}
-{"k": "{1} found {2} \\c[1]{3}\\c[0]!\\wtnp[20]", "v": "{1}(은)는 \\c[1]{3}\\c[0] {2}개를 발견했다!\\wtnp[20]"}
+{"k": "{1} found {2} \\c[1]{3}\\c[0]!\\wtnp[20]", "v": "{1}\\j[은,는] \\c[1]{3}\\c[0] {2}개를 발견했다!\\wtnp[20]"}
 {"k": "{1} found one \\c[1]{2}\\c[0]!\\wtnp[20]", "v": "{1} found one \\c[1]{2}\\c[0]!\\wtnp[20]"}
 {"k": "Too bad... The Bag is full...", "v": "Too bad... The Bag is full..."}
 {"k": "\\se[ItemGet]Obtained \\c[1]{1}\\c[0]!\\\nIt contained \\c[1]{2}\\c[0].\\wtnp[30]", "v": "\\se[ItemGet]\\c[1]{1}\\c[0]\\j[을,를] 손에 넣었다!\\\n안에 \\c[1]{2}\\c[0]\\j[이,가] 들어 있었다.\\wtnp[30]"}
@@ -1030,12 +1030,12 @@
 {"k": "This tree looks like it can be cut down.", "v": "This tree looks like it can be cut down."}
 {"k": "Sorry, a new Badge is required.", "v": "Sorry, a new Badge is required."}
 {"k": "Can't use that here.", "v": "Can't use that here."}
-{"k": "{1} used {2}!", "v": "{1}(은)는 {2}(을)를 사용했다!"}
+{"k": "{1} used {2}!", "v": "{1}\\j[은,는] {2}\\j[을,를] 사용했다!"}
 {"k": "Nope. Nothing...", "v": "Nope. Nothing..."}
 {"k": "A Pokémon could be in this tree. Would you like to use Headbutt?", "v": "이 나무에 포켓몬이 있을지도 모른다. 박치기를 쓸까?"}
 {"k": "{1} used Headbutt.", "v": "{1} used Headbutt."}
 {"k": "A Pokémon could be in this tree. Maybe a Pokémon could shake it.", "v": "이 나무에 포켓몬이 있을지도 모른다. 포켓몬이라면 흔들 수 있을 것 같다."}
-{"k": "{1} used {2}.", "v": "{1}(은)는 {2}(을)를 사용했다."}
+{"k": "{1} used {2}.", "v": "{1}\\j[은,는] {2}\\j[을,를] 사용했다."}
 {"k": "This rock appears to be breakable. Would you like to use Rock Smash?", "v": "This rock appears to be breakable. Would you like to use Rock Smash?"}
 {"k": "{1} used Rock Smash!", "v": "{1} used Rock Smash!"}
 {"k": "It's a rugged rock, but a Pokémon may be able to smash it.", "v": "울퉁불퉁한 바위다. 포켓몬이라면 부술 수 있을지도 모른다."}
@@ -1045,7 +1045,7 @@
 {"k": "{1} used Strength!\u0001", "v": "{1} used Strength!\u0001"}
 {"k": "{1}'s Strength made it possible to move boulders around!", "v": "{1}'s Strength made it possible to move boulders around!"}
 {"k": "Strength is already being used.", "v": "Strength is already being used."}
-{"k": "{1} used {2}!\u0001", "v": "{1}(은)는 {2}(을)를 사용했다!\u0001"}
+{"k": "{1} used {2}!\u0001", "v": "{1}\\j[은,는] {2}\\j[을,를] 사용했다!\u0001"}
 {"k": "The water is a deep blue...\nWould you like to surf on it?", "v": "The water is a deep blue...\nWould you like to surf on it?"}
 {"k": "{1} used Surf!", "v": "{1} used Surf!"}
 {"k": "You're already surfing.", "v": "You're already surfing."}
@@ -1179,7 +1179,7 @@
 {"k": "\\se[accesspc]Booted up an HM.", "v": "\\se[accesspc]비전머신을 기동시켰다."}
 {"k": "It contained {1}.\u0001", "v": "It contained {1}.\u0001"}
 {"k": "\\se[accesspc]Booted up a TM.", "v": "\\se[accesspc]기술머신을 기동시켰다."}
-{"k": "Teach {1} to {2}?", "v": "{2}에게 {1}을(를) 가르치겠습니까?"}
+{"k": "Teach {1} to {2}?", "v": "{2}에게 {1}\\j[을,를] 가르치겠습니까?"}
 {"k": "You used your last {1}.", "v": "You used your last {1}."}
 {"k": "Can't use that on {1}.", "v": "Can't use that on {1}."}
 {"k": "There is no Pokémon.", "v": "포켓몬이 없습니다."}
@@ -1477,7 +1477,7 @@
 {"k": "Choose move to forget.", "v": "Choose move to forget."}
 {"k": "{1}'s moves were reset.", "v": "{1}'s moves were reset."}
 {"k": "{1}'s moves were set as its first-known moves.", "v": "{1}'s moves were set as its first-known moves."}
-{"k": "{1} is genderless.", "v": "{1}(은)는 성별이 없습니다."}
+{"k": "{1} is genderless.", "v": "{1}\\j[은,는] 성별이 없습니다."}
 {"k": "male", "v": "수컷"}
 {"k": "female", "v": "암컷"}
 {"k": "Gender {1} is natural.", "v": "Gender {1} is natural."}
@@ -1535,7 +1535,7 @@
 {"k": "{1} has no nickname.", "v": "{1}\\j[은,는] 별명이 없다."}
 {"k": "Rename", "v": "이름 변경"}
 {"k": "Erase name", "v": "이름 삭제"}
-{"k": "{1} used.", "v": "{1}(을)를 사용했습니다."}
+{"k": "{1} used.", "v": "{1}\\j[을,를] 사용했습니다."}
 {"k": "{1} ribbons.", "v": "{1} ribbons."}
 {"k": "Not an egg", "v": "Not an egg"}
 {"k": "Egg with eggsteps: {1}.", "v": "Egg with eggsteps: {1}."}
@@ -1889,14 +1889,14 @@
 {"k": "... .... .....\u0001", "v": "... .... .....\u0001"}
 {"k": "{1} hatched from the Egg!", "v": "{1} hatched from the Egg!"}
 {"k": "{1:s}\nID: {2:05d} OT: {3:s}\\wtnp[0]", "v": "{1:s}\nID: {2:05d} 어버이: {3:s}\\wtnp[0]"}
-{"k": "For {1}'s {2},\n{3} sends {4}.\u0001", "v": "{1}의 {2}(이)가 오고,\n{3}(이)가 {4}(을)를 보냈다.\u0001"}
+{"k": "For {1}'s {2},\n{3} sends {4}.\u0001", "v": "{1}의 {2}\\j[이,가] 오고,\n{3}\\j[이,가] {4}\\j[을,를] 보냈다.\u0001"}
 {"k": "{1} bids farewell to {2}.", "v": "{1} bids farewell to {2}."}
 {"k": "{1:s}\nID: {2:05d} OT: {3:s}\u0001", "v": "{1:s}\nID: {2:05d} 어버이: {3:s}\u0001"}
 {"k": "Take good care of {1}.", "v": "Take good care of {1}."}
 {"k": "Species does not exist ({1}).", "v": "Species does not exist ({1})."}
 {"k": "Teach which move?", "v": "Teach which move?"}
 {"k": "Give up trying to teach a new move to {1}?", "v": "Give up trying to teach a new move to {1}?"}
-{"k": "Teach {1}?", "v": "{1}(을)를 가르치겠습니까?"}
+{"k": "Teach {1}?", "v": "{1}\\j[을,를] 가르치겠습니까?"}
 {"k": "Your {1} in the Purify Chamber is ready for purification!", "v": "Your {1} in the Purify Chamber is ready for purification!"}
 {"k": "Purify Chamber", "v": "정화의 챔버"}
 {"k": "\\se[accesspc]Accessed the Purify Chamber.", "v": "\\se[accesspc]정화의 방에 접속했다."}
@@ -1937,7 +1937,7 @@
 {"k": "I'll throw in a Premier Ball, too.", "v": "I'll throw in a Premier Ball, too."}
 {"k": "{1}? Oh, no.\nI can't buy that.", "v": "{1}? 이런.\r\n그건 살 수 없어."}
 {"k": "{1}?\nHow many would you like to sell?", "v": "{1}?\r\nHow many would you like to sell?"}
-{"k": "Turned over the {1} and received ${2}.", "v": "{1}(을)를 건네고 {2}포켓프랑을 받았습니다."}
+{"k": "Turned over the {1} and received ${2}.", "v": "{1}\\j[을,를] 건네고 {2}포켓프랑을 받았습니다."}
 {"k": "Buy", "v": "구입"}
 {"k": "Sell", "v": "판매"}
 {"k": "Welcome!\nHow may I serve you?", "v": "Welcome!\r\nHow may I serve you?"}
@@ -2017,13 +2017,13 @@
 {"k": "ANNOUNCER: The Bug-Catching Contest is over!", "v": "ANNOUNCER:  The Bug-Catching Contest is over!"}
 {"k": "Number of rounds is 0 or less.", "v": "Number of rounds is 0 or less."}
 {"k": "Choose a battle.", "v": "Choose a battle."}
-{"k": "The combined levels exceed {1:d}.", "v": "레벨 합계가 {1:d}을(를) 초과합니다."}
+{"k": "The combined levels exceed {1:d}.", "v": "레벨 합계가 {1:d}\\j[을,를] 초과합니다."}
 {"k": "Pokémon can't be the same.", "v": "같은 포켓몬은 쓸 수 없습니다."}
 {"k": "No identical hold items.", "v": "같은 지닌 물건은 쓸 수 없습니다."}
 {"k": "No identical nicknames.", "v": "같은 별명은 쓸 수 없습니다."}
 {"k": "{1} Pokémon are needed.", "v": "포켓몬 {1}마리가 필요합니다."}
 {"k": "This team is not allowed.", "v": "이 팀은 참가할 수 없습니다."}
-{"k": "{1} is not allowed.", "v": "{1}은(는) 참가할 수 없습니다."}
+{"k": "{1} is not allowed.", "v": "{1}\\j[은,는] 참가할 수 없습니다."}
 {"k": "STANDARD Cup", "v": "스탠더드 컵"}
 {"k": "DOUBLE Cup", "v": "더블 컵"}
 {"k": "FANCY Cup", "v": "팬시 컵"}
@@ -2093,15 +2093,15 @@
 {"k": "You don't have enough cards.", "v": "카드가 부족합니다."}
 {"k": "Opponent has an illegal card, \"{1}\".", "v": "상대가 규정 위반 카드 \"{1}\"\\j[을,를] 가지고 있습니다."}
 {"k": "Choosing the starting player...", "v": "선공 플레이어를 정하는 중..."}
-{"k": "{1} will go first.", "v": "{1}이(가) 먼저 시작합니다."}
-{"k": "{1} is making a move...", "v": "{1}이(가) 수하는 중..."}
-{"k": "{1} can't move somehow...", "v": "{1}이(가) 왠지 움직일 수 없습니다..."}
+{"k": "{1} will go first.", "v": "{1}\\j[이,가] 먼저 시작합니다."}
+{"k": "{1} is making a move...", "v": "{1}\\j[이,가] 수하는 중..."}
+{"k": "{1} can't move somehow...", "v": "{1}\\j[이,가] 왠지 움직일 수 없습니다..."}
 {"k": "The game is a draw.", "v": "무승부입니다."}
 {"k": "Kept all cards of your color.", "v": "자신 색상의 모든 카드를 지켰습니다."}
-{"k": "{1} won against {2}.", "v": "{1}이(가) {2}에게 승리했습니다."}
+{"k": "{1} won against {2}.", "v": "{1}\\j[이,가] {2}에게 승리했습니다."}
 {"k": "Got opponent's {1} card.", "v": "상대의 {1} 카드를 획득했습니다."}
 {"k": "Got all opponent's cards.", "v": "상대의 모든 카드를 획득했습니다."}
-{"k": "{1} lost against {2}.", "v": "{1}이(가) {2}에게 패배했습니다."}
+{"k": "{1} lost against {2}.", "v": "{1}\\j[이,가] {2}에게 패배했습니다."}
 {"k": "Opponent won your {1} card.", "v": "상대에게 {1} 카드를 빼앗겼습니다."}
 {"k": "Opponent won all your cards.", "v": "상대에게 모든 카드를 빼앗겼습니다."}
 {"k": "{1} ${2}", "v": "{1} {2}포켓프랑"}
@@ -2132,12 +2132,12 @@
 {"k": "\\me[Voltorb Flip Win]Board clear!\\wtnp[40]", "v": "\\me[Voltorb Flip Win]Board clear!\\wtnp[40]"}
 {"k": "You've found all of the hidden x2 and x3 cards.", "v": "숨겨진 x2 및 x3 카드를 모두 찾았습니다."}
 {"k": "This means you've found all the Coins in this game, so the game is now over.", "v": "이것으로 게임 내의 모든 코인을 찾았습니다. 게임을 종료합니다."}
-{"k": "{1} received {2} Coins!", "v": "{1}(은)는 {2} 코인을 얻었다!"}
+{"k": "{1} received {2} Coins!", "v": "{1}\\j[은,는] {2} 코인을 얻었다!"}
 {"k": "Advanced to Game Lv. {1}!", "v": "Advanced to Game Lv. {1}!"}
 {"k": "Congratulations!", "v": "Congratulations!"}
 {"k": "You can receive even more Coins in the next game!", "v": "You can receive even more Coins in the next game!"}
 {"k": "If you quit now, you will recieve {1} Coin(s). Will you quit?", "v": "If you quit now, you will recieve {1} Coin(s). Will you quit?"}
-{"k": "{1} received {2} Coin(s)!", "v": "{1}(은)는 {2}개의 코인을 얻었다!"}
+{"k": "{1} received {2} Coin(s)!", "v": "{1}\\j[은,는] {2}개의 코인을 얻었다!"}
 {"k": "You can't play unless you have a Coin Case.", "v": "You can't play unless you have a Coin Case."}
 {"k": "Graphics/Pictures/Mining/cracks", "v": "Graphics/Pictures/Mining/cracks"}
 {"k": "Graphics/Pictures/Mining/tiles", "v": "Graphics/Pictures/Mining/tiles"}
@@ -2307,7 +2307,7 @@
 {"k": "All game data was compiled.", "v": "All game data was compiled."}
 {"k": "Debug logs for battles will be made in the Data folder.", "v": "Debug logs for battles will be made in the Data folder."}
 {"k": "Debug logs for battles will not be made.", "v": "Debug logs for battles will not be made."}
-{"k": "Set variable {1}.", "v": "변수 {1}(을)를 설정합니다."}
+{"k": "Set variable {1}.", "v": "변수 {1}\\j[을,를] 설정합니다."}
 {"k": "The editor has detected that the tileset data was recently edited in RPG Maker XP.", "v": "타일셋 데이터가 최근 RPG Maker XP에서 편집된 것을 감지했습니다."}
 {"k": "Do you want to load those recent edits?", "v": "Do you want to load those recent edits?"}
 {"k": "Tileset Editor (PgUp/PgDn: SCROLL; Z: MENU)", "v": "Tileset Editor (PgUp/PgDn: SCROLL; Z: MENU)"}
@@ -2395,7 +2395,7 @@
 {"k": "Animation was saved to {1} in the game folder.", "v": "애니메이션이 게임 폴더의 {1}에 저장되었습니다."}
 {"k": "It's a text file, so it can be transferred to others easily.", "v": "텍스트 파일이므로 다른 사람에게 쉽게 전달할 수 있습니다."}
 {"k": "The animation is invalid or could not be loaded.", "v": "애니메이션이 잘못되었거나 불러올 수 없었습니다."}
-{"k": "The animation file {1} was not found. The animation will load anyway.", "v": "애니메이션 파일 {1}을(를) 찾을 수 없습니다. 그래도 애니메이션을 불러옵니다."}
+{"k": "The animation file {1} was not found. The animation will load anyway.", "v": "애니메이션 파일 {1}\\j[을,를] 찾을 수 없습니다. 그래도 애니메이션을 불러옵니다."}
 {"k": "Number of frames:", "v": "프레임 수:"}
 {"k": "Define Curve", "v": "곡선 정의"}
 {"k": "Define Path", "v": "경로 정의"}
@@ -3314,10 +3314,10 @@
 {"k": "{1} no puede ser un huevo. ¿Hacer de todos modos?", "v": "{1}\\j[은,는] 알이 될 수 없습니다. 그래도 진행할까요?"}
 {"k": "Medidor del Corazón en {1}.", "v": "하트 게이지를 {1}\\j[으로,로]."}
 {"k": "Bajar Medidor Corazón", "v": "하트 게이지 낮추기"}
-{"k": "El medidor del corazón de {1} bajó de {2} hasta {3} (ahora en etapa {4}).", "v": "{1}의 하트 게이지가 {2}에서 {3}(으)로 내려갔다 (현재 단계 {4})."}
+{"k": "El medidor del corazón de {1} bajó de {2} hasta {3} (ahora en etapa {4}).", "v": "{1}의 하트 게이지가 {2}에서 {3}\\j[으로,로] 내려갔다 (현재 단계 {4})."}
 {"k": "El Pokémon duplicado fue movido a tu equipo.", "v": "복제한 포켓몬을 지닌포켓몬으로 옮겼다."}
 {"k": "Todas las cajas están llenas.", "v": "모든 박스가 가득 찼다."}
-{"k": "El Pokémon duplicado fue movido a la caja \"{1}.\"", "v": "복제한 포켓몬을 박스 \"{1}\"(으)로 옮겼다."}
+{"k": "El Pokémon duplicado fue movido a la caja \"{1}.\"", "v": "복제한 포켓몬을 박스 \"{1}\"\\j[으로,로] 옮겼다."}
 {"k": "¿Estás seguro de borrar este Pokémon?", "v": "정말 이 포켓몬을 삭제할까?"}
 {"k": "Sin habilidad", "v": "특성 없음"}
 {"k": "Sin objeto", "v": "도구 없음"}
@@ -3615,7 +3615,7 @@
 {"k": "Establecer la ropa del jugador.", "v": "플레이어의 옷을 설정한다."}
 {"k": "La ropa del jugador ha sido cambiada.", "v": "플레이어의 옷을 바꿨다."}
 {"k": "Indicar la cantidad de dinero del jugador.", "v": "플레이어의 소지금을 지정한다."}
-{"k": "Ahora tiene ${1}.", "v": "이제 ${1}을(를) 가지고 있습니다."}
+{"k": "Ahora tiene ${1}.", "v": "이제 ${1}\\j[을,를] 가지고 있습니다."}
 {"k": "Indicar la cantidad de monedas del jugador.", "v": "플레이어의 코인 수를 지정한다."}
 {"k": "Ahora tiene {1} monedas.", "v": "이제 동전 {1}개를 가지고 있습니다."}
 {"k": "{1} Medalla {2}", "v": "{1} 배지 {2}"}
@@ -4222,7 +4222,7 @@
 {"k": "¡{2} de {1} cayó al suelo!", "v": "{1}의 {2}\\j[이,가] 땅에 떨어졌다!"}
 {"k": "¡{1} robó {3} de {2}!", "v": "{1}\\j[은,는] {2}에게서 {3}\\j[을,를] 빼앗았다!"}
 {"k": "¡{1} cambió objetos con su oponente!", "v": "{1}\\j[이,가] 상대와 도구를 바꿨다!"}
-{"k": "{1} obtuvo {2}.", "v": "{1}은(는) {2}을(를) 얻었다."}
+{"k": "{1} obtuvo {2}.", "v": "{1}\\j[은,는] {2}\\j[을,를] 얻었다."}
 {"k": "¡{1} recibió {2} de {3}!", "v": "{1}\\j[은,는] {3}에게서 {2}\\j[을,를] 받았다!"}
 {"k": "¡{1} robó y se comió la {2} del oponente!", "v": "{1}\\j[이,가] 상대의 {2}\\j[을,를] 빼앗아 먹었다!"}
 {"k": "¡{2} de {1} le dejó compartir su {3} con {4}!", "v": "{4}\\j[이,가] {1}\\j[으로,로]부터 {3}\\j[을,를] 받았다!"}
@@ -4888,7 +4888,7 @@
 {"k": "No se le puede enseñar ningún movimiento a un Pokémon Oscuro.", "v": "그림자 포켓몬에게는 기술을 가르칠 수 없다."}
 {"k": "{1} y {2} no son compatibles.", "v": "{1}\\j[과,와] {2}\\j[은,는] 맞지 않는다."}
 {"k": "\\se[accesspc]MO iniciada.", "v": "\\se[accesspc]비전머신 시작."}
-{"k": "Ésta contiene {1}.\u0001", "v": "여기에는 {1}이(가) 들어 있다.\u0001"}
+{"k": "Ésta contiene {1}.\u0001", "v": "여기에는 {1}\\j[이,가] 들어 있다.\u0001"}
 {"k": "\\se[accesspc]MT iniciada.", "v": "\\se[accesspc]기술머신 시작."}
 {"k": "¿Quieres enseñarle {1} a {2}?", "v": "{2}에게 {1}\\j[을,를] 가르칠까?"}
 {"k": "Has usado el último {1}.", "v": "마지막 {1}\\j[을,를] 다 썼다."}
@@ -5240,16 +5240,16 @@
 {"k": "The water is dyed a deep blue... Would you like to surf?", "v": "The water is dyed a deep blue...  Would you like to surf?"}
 {"k": "You can't use that if you have someone with you.", "v": "You can't use that if you have someone with you."}
 {"k": "\\se[]{1} found {2}!\\se[itemlevel]\\\nIt contained {3}.\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] {2}\\j[을,를] 발견했다!\\se[itemlevel]\\\n안에 {3}\\j[이,가] 들어 있었다.\\wtnp[30]"}
-{"k": "{1} put the {2}\nin the {3} Pocket.", "v": "{1}은(는) {2}을(를)\n{3} 주머니에 넣었다."}
+{"k": "{1} put the {2}\nin the {3} Pocket.", "v": "{1}\\j[은,는] {2}\\j[을,를]\n{3} 주머니에 넣었다."}
 {"k": "\\se[]{1} found some {2}!\\se[itemlevel]\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] {2}\\j[을,를] 발견했다!\\se[itemlevel]\\wtnp[30]"}
 {"k": "\\se[]{1} found {2} {3}!\\se[itemlevel]\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] {2} {3}\\j[을,를] 발견했다!\\se[itemlevel]\\wtnp[30]"}
 {"k": "\\se[]{1} found {2} {3}s!\\se[itemlevel]\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] {2} {3}\\j[을,를] 발견했다!\\se[itemlevel]\\wtnp[30]"}
-{"k": "{1} put the {2}s\nin the {3} Pocket.", "v": "{1}은(는) {2}을(를)\n{3} 주머니에 넣었다."}
+{"k": "{1} put the {2}s\nin the {3} Pocket.", "v": "{1}\\j[은,는] {2}\\j[을,를]\n{3} 주머니에 넣었다."}
 {"k": "\\se[]{1} found one {2}!\\se[itemlevel]\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] {2}\\j[을,를] 하나 발견했다!\\se[itemlevel]\\wtnp[30]"}
-{"k": "{1} found {2}!\\wtnp[20]", "v": "{1}은(는) {2}을(를) 찾았다!\\wtnp[20]"}
+{"k": "{1} found {2}!\\wtnp[20]", "v": "{1}\\j[은,는] {2}\\j[을,를] 찾았다!\\wtnp[20]"}
 {"k": "{1} found some {2}!\\wtnp[20]", "v": "{1} found some {2}!\\wtnp[20]"}
-{"k": "{1} found {2} {3}!\\wtnp[20]", "v": "{1}은(는) {2}개의 {3}을(를) 찾았다!\\wtnp[20]"}
-{"k": "{1} found {2} {3}s!\\wtnp[20]", "v": "{1}은(는) {2}개의 {3}을(를) 찾았다!\\wtnp[20]"}
+{"k": "{1} found {2} {3}!\\wtnp[20]", "v": "{1}\\j[은,는] {2}개의 {3}\\j[을,를] 찾았다!\\wtnp[20]"}
+{"k": "{1} found {2} {3}s!\\wtnp[20]", "v": "{1}\\j[은,는] {2}개의 {3}\\j[을,를] 찾았다!\\wtnp[20]"}
 {"k": "{1} found one {2}!\\wtnp[20]", "v": "{1} found one {2}!\\wtnp[20]"}
 {"k": "{1} está sufriendo por el veneno.", "v": "{1}\\j[은,는] 독으로 괴로워하고 있다."}
 {"k": "{1} parece dolorido por las quemaduras.", "v": "{1}\\j[은,는] 화상으로 아파 보인다."}
@@ -5763,7 +5763,7 @@
 {"k": "¡Venga! ¡Tienes la victoria a un tiro de piedra! Pero tampoco pienso derrumbarme...", "v": "자! 승리가 코앞이군! 하지만 나도 쉽게 무너지지는 않는다..."}
 {"k": "Esto ya no es una ola, ¡es un auténtico tsunami! ¡Y va a acabar contigo!", "v": "이건 단순한 파도가 아니라 진짜 쓰나미다! 널 덮쳐버릴 거다!"}
 {"k": "Esta chispa que se está encendiendo en mi interior... ¿Qué es exactamente? ¡No sentía algo así desde la guerra!", "v": "내 안에서 피어오르는 이 불씨는... 대체 뭐지? 전쟁 이후로 이런 느낌은 처음이야!"}
-{"k": "{1} va a enviar a {2}.", "v": "{1}(이)가 {2}(을)를 내보내려 합니다."}
+{"k": "{1} va a enviar a {2}.", "v": "{1}\\j[이,가] {2}\\j[을,를] 내보내려 합니다."}
 {"k": "¡{1}, es suficiente! ¡Vuelve!", "v": "{1}, 이제 됐어! 돌아와!"}
 {"k": "Te estás pasando de la raya, ¿eh?", "v": "선 넘는 거 아닌가, 응?"}
 {"k": "Tienes {1} curación disponible de un máximo de {2}.", "v": "회복을 {1}회 사용할 수 있습니다 (최대 {2}회)."}
@@ -6263,16 +6263,16 @@
 {"k": "Esto es importante, ¡no lo tires!", "v": "이건 중요한 거야, 버리지 마!"}
 {"k": "¿Tirar cuántas unidades de {1}?", "v": "{1}\\j[을,를] 몇 개 버릴까?"}
 {"k": "¿Tirar {1} {2}?", "v": "{1} {2}\\j[을,를] 버릴까?"}
-{"k": "Tiras {1} {2}.", "v": "{1} {2}을(를) 버립니다."}
+{"k": "Tiras {1} {2}.", "v": "{1} {2}\\j[을,를] 버립니다."}
 {"k": "dar", "v": "주다"}
 {"k": "{1} elegido.", "v": "{1} 선택됨."}
 {"k": "¿Cuántos quieres tirar?", "v": "몇 개를 버릴까?"}
 {"k": "No hay espacio en la bolsa.", "v": "가방에 공간이 없다."}
-{"k": "Quitar {1} {2}.", "v": "{1} {2}을(를) 지웁니다."}
+{"k": "Quitar {1} {2}.", "v": "{1} {2}\\j[을,를] 지웁니다."}
 {"k": "{1} no puede equiparse.", "v": "{1}\\j[은,는] 장착할 수 없다."}
 {"k": "¿Cuántos quieres dejar?", "v": "몇 개를 맡길까?"}
 {"k": "No hay espacio.", "v": "공간이 없다."}
-{"k": "Dejas {1} {2}.", "v": "{1} {2}을(를) 내려놓습니다."}
+{"k": "Dejas {1} {2}.", "v": "{1} {2}\\j[을,를] 내려놓습니다."}
 {"k": "Número no válido.", "v": "유효하지 않은 번호입니다."}
 {"k": "CANCELAR", "v": "CANCELAR"}
 {"k": "Quitar\nItem", "v": "Quitar\nItem"}
@@ -6628,7 +6628,7 @@
 {"k": "Arrayán", "v": "아라얀"}
 {"k": "Vence al Ermitaño Silvano.", "v": "숲의 은자를 쓰러뜨려라."}
 {"k": "El oponente definitivo", "v": "최강의 상대"}
-{"k": "Derrota al Arma Definitiva.", "v": "궁극병기를 쓰러뜨려라."}
+{"k": "Derrota al Arma Definitiva.", "v": "최종병기를 쓰러뜨려라."}
 {"k": "Una isla peculiar", "v": "독특한 섬"}
 {"k": "Resuelve el misterio de la Isla Certijo.", "v": "세르티호섬의 수수께끼를 풀어라."}
 {"k": "Las criptas de la ciudad", "v": "도시의 지하 묘지"}
