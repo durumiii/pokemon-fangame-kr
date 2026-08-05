@@ -192,7 +192,12 @@ def check_names(strict):
     for fname in sorted(p.name for p in (HERE / "ko").glob("*.jsonl")):
         for n, r in enumerate(rows(HERE / "ko" / fname), 1):
             v = r.get("v") or ""
+            src = (r.get("k") or r.get("es") or "").lower()
             for e in ledger:
+                # 원문에 그 이름이 있는 행에서만 잡는다 — 번역 칸만 보면 옛 표기가
+                # 묻힌 다른 낱말을 문다(「무사」가 변이일 때 「무사히」·「갑주무사」).
+                if e["es"].lower() not in src:
+                    continue
                 for wrong in e.get("변이", []):
                     if wrong in v:
                         bad += 1

@@ -84,8 +84,12 @@ def cmd_check():
             continue
         src = src_of(entry=e)
         for r in ledger:
+            # 변이도 **원문에 그 이름이 있는 행에서만** 잡는다. 번역 칸만 보면
+            # 옛 표기가 묻힌 다른 낱말을 잘못 문다(「무사」가 변이일 때 「무사히」·
+            # 「갑주무사」·「무사태평」 88행이 걸렸다 — 2026-08-06).
+            here = r["es"].lower() in src.lower()
             for wrong in r.get("변이", []):
-                if wrong in v:
+                if wrong in v and here:
                     bad += 1
                     print(f"[변이] {f.name}:{n} {wrong!r} → {r['ko']!r}  | {v[:70]}")
             if r["es"] in src and r["ko"] not in v and not r.get("생략허용"):
@@ -111,7 +115,11 @@ def cmd_rename(es, new):
         print(f"⚠ 받침이 달라져요({old!r} {'있음' if ob else '없음'} → "
               f"{new!r} {'있음' if nb else '없음'}) — 뒤따르는 조사를 확인하세요")
 
-    changed = 0
+    # ⚠ 번역 칸만 보고 바꾸면 안 된다 — 옛 표기가 다른 낱말에 묻혀 있는 자리를 함께 부순다
+    # (2026-08-06 실사고: 「무사」→「총사」가 「무사히」·「갑주무사」(포켓몬 종명)·
+    #  「무사 병영」까지 44행 갈아엎었다). **원문 칸에 그 이름이 있는 행만** 고친다.
+    key = es.lower()
+    changed, skipped = 0, []
     for f in ko_files():
         lines = f.read_text(encoding="utf-8").split("\n")
         hit = 0
@@ -119,14 +127,24 @@ def cmd_rename(es, new):
             if not line.strip():
                 continue
             e = json.loads(line)
-            if old in e.get("v", ""):
-                e["v"] = e["v"].replace(old, new)
-                lines[i] = json.dumps(e, ensure_ascii=False)
-                hit += 1
+            if old not in e.get("v", ""):
+                continue
+            if key not in src_of(entry=e).lower():   # 절에 따라 원문 칸이 k 또는 es다
+                skipped.append((f.name, (e.get("k") or "")[:40], e["v"][:40]))
+                continue
+            e["v"] = e["v"].replace(old, new)
+            lines[i] = json.dumps(e, ensure_ascii=False)
+            hit += 1
         if hit:
             f.write_text("\n".join(lines), encoding="utf-8")
             print(f"  {f.name} {hit}행")
             changed += hit
+    if skipped:
+        print(f"  건너뜀 {len(skipped)}행 — 번역엔 옛 표기가 있으나 원문에 {es!r}가 없어요:")
+        for name, k, v in skipped[:8]:
+            print(f"    {name} | {k} | {v}")
+        if len(skipped) > 8:
+            print(f"    … 그 밖 {len(skipped) - 8}행")
 
     row["ko"] = new
     row["변이"] = sorted(set(row.get("변이", [])) | {old})

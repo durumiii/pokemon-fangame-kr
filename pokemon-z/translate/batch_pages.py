@@ -359,12 +359,25 @@ def term_pairs():
 
 
 def ledger_pairs():
-    """고유명 원장 — 이 장면에 나오는 이름의 표기를 못박는다."""
+    """고유명 표기표 — 이 장면에 나오는 이름을 못박는다.
+
+    셋을 합친다: 고유명 원장(인물·조직) · 지명표(절19) · 맵 이름표(절21).
+    **지명도 고유명이다** — 원장에만 기대면 표에 없는 지명이 새 번역에서 다시
+    음차된다(2026-08-06 실측: 그리사야시티→그리자유시티 · 비탈 숲→라데라 숲).
+    """
     out = []
     for line in (HERE / "canon/names.jsonl").read_text(encoding="utf-8").splitlines():
         if line.strip():
             r = json.loads(line)
             out.append((r["es"], r["ko"]))
+    for sec in ("19-place-names.jsonl", "21-map-names.jsonl"):
+        for line in (HERE / "ko" / sec).read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            r = json.loads(line)
+            es, ko = r.get("k") or r.get("es"), r.get("v")
+            if es and ko and len(es) < 40:
+                out.append((es, ko))
     return out
 
 
