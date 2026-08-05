@@ -26,8 +26,13 @@ usage:
   분기다름    분기 깊이를 넘어 물려받았다 — 미더운 정도가 떨어진다
   명단1       페이지에 이름표가 한 종뿐이라 그 사람으로 본다
   그림        페이지에 이름표가 하나도 없다 — NPC 혼자 말하는 자리라 이벤트 그림이 화자다
+  지문        그림이 사물·연출(표지판·책·화살표)이다 — 화자가 없고 평서 지문이 정답
   미상        이름표도 그림도 없다 — 지문이거나 시스템 문구
   선택지      주인공의 선택지. 주인공은 대사를 하지 않아 이름표가 붙지 않는다
+
+`prompt` 칸이 참이면 **바로 뒤가 선택지인 메시지**다. 인물의 물음일 수도 시스템
+안내일 수도 있으니 어투를 갈기 전에 사람이 본다 — 이 도구는 「누구에게 붙어
+있나」를 계산할 뿐 「사람 말인가」를 판정하지 않는다.
 """
 import gzip
 import json
@@ -88,16 +93,45 @@ def page_messages(cmdlist):
     return out
 
 
-def attribute(msgs, sprite=""):
+def object_sprites():
+    """사물·연출 스프라이트 어간 — 이 그림이 붙은 이벤트의 말은 화자가 아니라 지문이다."""
+    g = json.loads((HERE / "sprite-groups.json").read_text(encoding="utf-8"))["groups"]
+    return set(g.get("사물지문", [])) | set(g.get("포켓몬특수", []))
+
+
+STEM = re.compile(r"(ow|w|TS[A-Za-z]*|\d+)$")
+
+
+def stem(s):
+    s, prev = s or "", None
+    while s != prev:
+        prev, s = s, STEM.sub("", s)
+    return s
+
+
+def attribute(msgs, sprite="", objects=frozenset()):
     """페이지 하나의 메시지 목록에 화자를 붙인다. msgs는 cmd 순으로 정렬돼 있어야 한다.
 
     이름표가 하나도 없는 페이지는 **NPC 하나가 혼자 말하는 자리**이므로 이벤트
-    그림이 곧 화자다 — 옛 방식이 이 구간에서 맞았던 이유이기도 하다. 그림도 없으면
-    화자를 못 정한다(대개 지문·시스템 문구).
+    그림이 곧 화자다 — 옛 방식이 이 구간에서 맞았던 이유이기도 하다.
+
+    이 함수가 정하는 것은 「이 메시지가 이벤트 흐름에서 누구에게 붙어 있나」이지
+    「이게 사람 말인가」가 아니다. 축이 다른 두 가지라 뒤섞으면 시스템 문구까지
+    인물 어투로 갈아엎게 된다(2026-08-06: 조리 안내 「어떻게 할까요?」 9행이
+    사프라 대사로 잡혔다). 그래서 판단이 필요한 자리를 따로 표시한다:
+
+    - `prompt=True` — 바로 뒤가 선택지인 메시지. 인물의 물음일 수도, 시스템
+      안내일 수도 있다. **표시일 뿐 판정이 아니다** — 실제로 지니아의 물음인
+      자리와 스타팅 포켓몬 선택 안내가 둘 다 여기 들어온다.
+    - `how="지문"` — 그림이 사물·연출(표지판·책·화살표 등)이다. 화자가 없고
+      평서 지문이 정답인 자리다.
     """
     cast = {m for _, _, _, t in msgs if (m := (TAG.match(t).group(1) if TAG.match(t) else None))}
+    obj = stem(sprite) in objects
     cur = cur_ind = None
-    for cmdi, ind, kind, text in msgs:
+    for i, (cmdi, ind, kind, text) in enumerate(msgs):
+        nxt = msgs[i + 1] if i + 1 < len(msgs) else None
+        prompt = bool(kind == "text" and nxt and nxt[2] == "choice" and abs(nxt[0] - cmdi) < 3)
         m = TAG.match(text)
         if m:
             cur, cur_ind = m.group(1), ind
@@ -111,23 +145,25 @@ def attribute(msgs, sprite=""):
         elif len(cast) == 1:
             who, how = next(iter(cast)), "명단1"
         elif not cast and sprite:
-            who, how = sprite, "그림"
+            who, how = ("", "지문") if obj else (sprite, "그림")
         else:
             who, how = "", "미상"
-        yield cmdi, ind, kind, text, who, how, sorted(cast)
+        yield cmdi, ind, kind, text, who, how, sorted(cast), prompt
 
 
 def scan():
     rows = []
+    objects = object_sprites()
     infos = load(open(GAME / "MapInfos.rxdata", "rb"))
     names = {k: b2s(v.attributes["@name"]) for k, v in infos.items()}
 
     def emit(mid, mname, eid, ename, page, sprite, cmdlist):
         msgs = page_messages(cmdlist)
-        for cmdi, ind, kind, text, who, how, cast in attribute(msgs, sprite):
+        for cmdi, ind, kind, text, who, how, cast, prompt in attribute(msgs, sprite, objects):
             rows.append({"map": mid, "map_name": mname, "event": eid, "event_name": ename,
                          "page": page, "cmd": cmdi, "ind": ind, "sprite": sprite,
-                         "kind": kind, "who": who, "how": how, "cast": cast, "k": text})
+                         "kind": kind, "who": who, "how": how, "cast": cast,
+                         "prompt": prompt, "k": text})
 
     for ce in load(open(GAME / "CommonEvents.rxdata", "rb")):
         if ce is None:
@@ -179,7 +215,7 @@ def show(rows, ko, limit=None):
             break
         v = ko.get(r["k"].strip(), "")
         print(f"맵{r['map']}:ev{r['event']}:p{r['page']}:cmd{r['cmd']} "
-              f"[{r['how']}] {r['who'] or '—'}")
+              f"[{r['how']}]{'[선택지앞]' if r.get('prompt') else ''} {r['who'] or '—'}")
         print(f"    {v or r['k']}")
 
 
