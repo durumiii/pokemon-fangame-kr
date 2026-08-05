@@ -70,13 +70,22 @@ def ko_index():
 
 
 def voice_lines():
-    """voices.md 표에서 한국어 인물명 → 말투 셀."""
+    """voices.md의 표에서 한국어 이름 → 말투 셀.
+
+    표가 두 가지다 — 인물표는 「이름|행수|소개|말투」 넉 칸, 집단 화자표는
+    「태그|말투」 두 칸. **두 칸짜리를 안 읽으면 총사·아조스단 신병·경관처럼
+    자주 나오는 화자가 통째로 빠진다**(2026-08-06 실측).
+    """
     table = {}
     for line in (HERE / "voices.md").read_text(encoding="utf-8").splitlines():
+        if not line.startswith("|"):
+            continue
         cells = [c.strip() for c in line.split("|")]
-        if len(cells) >= 5 and cells[1] and cells[1] not in ("인물", "갈래", "태그") \
-                and not cells[1].startswith("-"):
-            table[cells[1]] = cells[-2]
+        name = cells[1] if len(cells) > 2 else ""
+        if not name or name in ("인물", "갈래", "태그") or set(name) <= set("-"):
+            continue
+        if len(cells) >= 5 or len(cells) == 4:
+            table[name] = cells[-2]
     return table
 
 
