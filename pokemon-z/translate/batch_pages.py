@@ -536,6 +536,53 @@ def ledger_pairs():
 BOLD = re.compile(r"<b>(.*?)</b>", re.S)
 # 줄머리 화자 표기 — 「\c[3]<b>이름:</b>\c[0] 」. 뜻이 없는 장식이라 모델이 잘 흘린다.
 HEAD = re.compile(r"^(?:\\c\[\d+\])?<b>[^<]{1,40}:</b>(?:\\c\[\d+\])?\s*")
+def strip_fake_head(body, who):
+    """모델이 스스로 지어 붙인 화자 표기를 걷어 낸다.
+
+    앞머리를 빼고 보냈는데도 「\\c[3]크리산토:\\c[0] …」처럼 흉내 내는 자리가 있다.
+    **그 화자의 이름일 때만** 뗀다 — 「오늘:」 같은 평범한 콜론까지 물면 안 된다.
+    """
+    m = re.match(r"^(?:\\c\[\d+\])?(?:<b>)?\s*([^<:\n]{1,20}):(?:</b>)?(?:\\c\[\d+\])?\s*", body)
+    return body[m.end():] if m and m.group(1).strip() == (who or "").strip() else body
+
+
+TAGGED = re.compile(r"<(b|i)>(.*?)</\1>", re.S)
+INLINE_C = re.compile(r"\\c\[\d+\]")
+
+
+def unmark(s):
+    """서식 태그를 떼고 (민글, 표시목록)으로. 표시목록은 (태그, 속 내용) 순서 그대로."""
+    spans = []
+
+    def take(m):
+        spans.append((m.group(1), m.group(2)))
+        return m.group(2)
+
+    return TAGGED.sub(take, s or ""), spans
+
+
+def remark(text, spans, pairs):
+    """민글에 서식을 도로 입힌다.
+
+    `spans`는 **원문 쪽 표시**(태그, 스페인어 내용)이고 `pairs`는 이 장면의 표기표
+    (스페인어 → 한국어)다. 각 표시의 한국어를 글에서 찾아 앞에서부터 한 번씩 감싼다.
+    못 찾은 표시는 건너뛴다 — 억지로 끼우면 엉뚱한 자리를 감싼다.
+    """
+    out, at = text, 0
+    for tag, es in spans:
+        ko = pairs.get(es.strip()) or (es.strip() if not re.search(r"[A-Za-zÀ-ÿ]", es) else None)
+        if not ko:
+            ko = pairs.get(es.strip().rstrip(":"))
+        if not ko:
+            continue
+        i = out.find(ko, at)
+        if i < 0:
+            i = out.find(ko)
+            if i < 0:
+                continue
+        out = out[:i] + f"<{tag}>{ko}</{tag}>" + out[i + len(ko):]
+        at = i + len(ko) + len(tag) * 2 + 5
+    return out
 
 
 def split_head(s):
@@ -634,14 +681,28 @@ def run(pilot=False, limit=None, workers=4, fresh=False):
     def work(c):
         # 줄머리 화자 표기는 **보내지 않는다** — 색 코드는 뜻이 없어 새로 쓰는 쪽이
         # 잘 흘린다(실측: B 반려 26행 중 9행이 앞머리). 답을 받은 뒤 그대로 도로 붙인다.
-        heads = {}
+        # 서식 태그(<b>·<i>·줄 안 \c[n])도 **보내지 않는다** — 뜻이 없는 자리라 모델이
+        # 빠뜨리거나 없던 곳에 새로 붙인다(실측: 새 번역이 「후보생」·「무슈」에 강조를
+        # 지어 붙였다). 원문 쪽 표시를 기억해 뒀다가 답에 도로 입힌다.
+        scene = dict(scene_names(c["rows"]))
+        scene.update({"monsieur": "무슈", "madame": "마담", "mademoiselle": "마드모아젤"})
+        heads, marks = {}, {}
         reqrows = []
         for r in c["rows"]:
             he, es = split_head(r["es"])
             hk, ko = split_head(r["ko"])
             heads[r["id"]] = hk or he
-            reqrows.append({"id": r["id"], "who": r["who"], "es": es,
-                            **({} if fresh else {"ko": ko})})
+            es_plain, es_spans = unmark(es)
+            ko_plain, ko_spans = unmark(ko)
+            # 표기는 **그 줄 자신의 현행 번역**에서 먼저 가져온다 — 자리 수가 맞으면
+            # 순서대로 짝지으면 되고, 장면 표기표는 그것이 어긋날 때의 보조다.
+            pairs = dict(scene)
+            if len(es_spans) == len(ko_spans):
+                pairs.update({a[1].strip(): b[1].strip()
+                              for a, b in zip(es_spans, ko_spans)})
+            marks[r["id"]] = (es_spans, pairs)
+            reqrows.append({"id": r["id"], "who": r["who"], "es": es_plain,
+                            **({} if fresh else {"ko": ko_plain})})
         sys_prompt = render(c, fresh)
         (out_dir / (c["cid"] + ".req.json")).write_text(
             json.dumps({"system": sys_prompt, "user": reqrows},
@@ -656,9 +717,11 @@ def run(pilot=False, limit=None, workers=4, fresh=False):
         for r in c["rows"]:
             new, why = got.get(r["id"]), None
             if new is not None:
+                spans, pairs = marks[r["id"]]
+                new = remark(unmark(new)[0], spans, pairs)
                 head = heads[r["id"]]
                 if head:                       # 떼어 둔 앞머리를 도로 붙인다
-                    new = head + split_head(new)[1]
+                    new = head + strip_fake_head(split_head(new)[1], r["who"])
             if new is None:
                 why = "누락"
             else:

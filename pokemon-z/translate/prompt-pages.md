@@ -71,11 +71,12 @@ I. The player character (\PN) has no fixed gender or age. Never invent gendered 
 1. Preserve meaning and information exactly. `es` is authoritative. Do not add or
    drop facts, numbers or names; do not add modifiers absent from the source; do not
    change a verb to a different sense.
-2. Preserve markup: \c[n], <b>…</b>, <i>…</i>, \j[받침형,무받침형], \PN, \v[n],
-   \se[..], \wt[..], \m, \TP, \TE, \TM, <icon=..>, <r>, and {1}-style placeholders —
-   same kinds, same counts as the current `ko`, arguments unchanged. Keep the
-   trailing \x01 too. **The leading `\c[3]<b>이름:</b>` speaker tag stays as it is;
-   rewrite only what follows.**
+2. **Formatting tags and speaker prefixes have been removed before you see this
+   text, and are restored mechanically afterwards. Write plain Korean — never add
+   `<b>`, `<i>`, `\c[n]`, or a `이름:` prefix of your own.** Placeholders that carry
+   meaning are still present and must be kept exactly as they appear, in the same
+   count: \PN, \v[n], \se[..], \wt[..], \m, \TP, \TE, \TM, <icon=..>, <r>,
+   \j[받침형,무받침형], {1}-style slots, and a trailing \x01.
 3. Keep proper nouns and game terms exactly as the term rules below give them.
    French/Russian *interjections and set phrases* in the source stay in the Latin
    script (`alors`, `d'accord`, `Merci beaucoup`, `s'il vous plait`). **Address
