@@ -9,7 +9,7 @@
 
 ① **제보 시트** — 유지자가 웹 스튜디오로 고친 것. 경로가 스튜디오→제보로 고정돼
    있으므로 이 시트가 「사람이 직접 고친 것」의 정본이다. `patch` 칸의 조각으로
-   낱건인지 일괄 바꾸기인지도 갈린다(「바꾸기」 표시, 2026-08-06 스튜디오 개정).
+   낱건인지 일괄 바꾸기인지도 갈린다(patch 칸의 「일괄바꾸기」 표시, 2026-08-06 스튜디오 개정).
 ② **커밋 꼬리표** — 대화에서 판정하고 반영한 것. 스튜디오를 안 지나가므로
    `Edit-Source:` 꼬리표로 남긴다. 값은 human / batch / bulk-term.
 ③ **최소 고침의 반복** — 꼬리표가 없는 옛 커밋용 보정. 같은 고침이 한 커밋 안에서
@@ -119,7 +119,7 @@ def protected(mark):
 
 
 def from_reports():
-    """제보 시트에서 온 것 — 「바꾸기」 표시가 붙은 일괄 치환은 뺀다."""
+    """제보 시트에서 온 것 — 「일괄바꾸기」 표시가 붙은 것은 뺀다."""
     if not REPORTS.exists():
         return set(), 0
     per, cur = collections.defaultdict(list), None
@@ -133,14 +133,14 @@ def from_reports():
         per[cur].append(r)
     rows = [json.loads(l) for l in REPORTS.read_text(encoding="utf-8").splitlines() if l.strip()]
     rows = [e for e in rows if (e.get("분류") or "").startswith("0:")]
-    # 「바꾸기」 표시가 없던 옛 제보는 최소 고침의 반복으로 가른다 — 스튜디오가 표시를
+    # 「일괄바꾸기」 표시가 없던 옛 제보는 최소 고침의 반복으로 가른다 — 스튜디오가 표시를
     # 달기 전(2026-08-06 이전) 것들이라, 표시가 붙기 시작하면 이 보정은 저절로 놀게 된다.
     n = collections.Counter(sig(e.get("현재 번역") or "", e.get("제안") or "")
                             for e in rows if (e.get("제안") or "").strip())
     keys, dropped = set(), 0
     for e in rows:
         prop = (e.get("제안") or "").strip()
-        if "바꾸기" in (e.get("패치 버전") or "") or \
+        if "일괄바꾸기" in (e.get("패치 버전") or "") or \
            (prop and n[sig(e.get("현재 번역") or "", prop)] >= REPEAT):
             dropped += 1
             continue

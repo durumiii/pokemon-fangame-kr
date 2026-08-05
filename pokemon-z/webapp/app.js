@@ -452,9 +452,8 @@ function more(){
 
 const MARKUP = /\\c\[\d+\]|\\[A-Za-z]+|\{\d+\}|<[^>]+>/g;
 // 한 행에 새 값을 앉힌다 — 저장 버튼과 일괄 바꾸기가 같은 경로를 쓴다(persist/화면 갱신은 부르는 쪽 몫)
-// via: 'bulk'이면 일괄 바꾸기가 만든 고침이다. 저장 버튼과 같은 경로를 쓰기 때문에
-// 여기서 표시해 두지 않으면 나중에 「낱건 판정」과 구분할 길이 없다 — 제보의 patch 칸으로
-// 실려 나가고, 재번역 때 보호할 자리를 가리는 근거가 된다(2026-08-06).
+// via는 이 고침이 어느 화면에서 나왔는지다('bulk' = 일괄 바꾸기 화면). 저장 버튼과
+// 같은 경로를 쓰므로 여기서 달아 두지 않으면 나중에 가릴 길이 없다.
 function applyEdit(r, v, via){
   // textarea는 CR/CRLF를 LF로 접어 돌려준다 — 안 고친 행이 수정으로 잡히지 않게 같은 모양끼리 비교
   const id = rid(r), prev = S.edits.get(id);
@@ -523,13 +522,13 @@ function markAllSent(){
 }
 // 구글폼에 no-cors로 던진다(응답 확인 불가, 실패해도 toast로만 알림)
 // silent: 일괄 전송 중 매 건 toast 도배 방지(진행·완료 토스트는 호출부가 낸다)
-// via='bulk'이면 patch 칸에 「바꾸기」를 덧붙인다 — 「일괄」은 모아서 보냈다는 뜻이고
-// 「바꾸기」는 일괄 바꾸기로 고쳤다는 뜻이라 서로 다른 표시다. 폼·시트는 손대지 않는다.
+// patch 칸 표시는 화면 버튼 이름을 그대로 쓴다 — 「모아서 제보」로 보냈으면 「모아서」,
+// 「일괄 바꾸기」로 고친 줄이면 「일괄바꾸기」. 폼·시트는 손대지 않는다.
 async function sendForm(vals, {batch=false, silent=false, via=null}={}){
   const fd = new FormData(), E = REPORT_FORM.entries;
   for (const [k, v] of Object.entries(vals)) fd.append(E[k], v);
   fd.append(E.patch, `${S.meta ?? 'hash:'+S.sha} / ${APP_VER} / u:${reporterId().slice(0,8)}` +
-                     `${batch?' / 일괄':''}${via === 'bulk' ? ' / 바꾸기' : ''}`);
+                     `${batch?' / 모아서':''}${via === 'bulk' ? ' / 일괄바꾸기' : ''}`);
   try {
     await fetch(`https://docs.google.com/forms/d/e/${REPORT_FORM.id}/formResponse`,
       {method:'POST', mode:'no-cors', body:fd});
@@ -555,7 +554,7 @@ async function report(i){
 // 폼 한 칸에 들어갈 수 있는 길이 — 넘치면 잘리는 대신 잘렸다고 알린다(단건에는 사실상 불필요하나 방어로 유지)
 const FIELD_CAP = 30000;
 const cut = s => s.length > FIELD_CAP ? s.slice(0, FIELD_CAP) + '…(이하 생략)' : s;
-// 수정·메모가 있는 행마다 개별 제보와 같은 필드로 한 행씩 순차 전송한다("일괄" 표기는 patch 칸에만)
+// 수정·메모가 있는 행마다 개별 제보와 같은 필드로 한 행씩 순차 전송한다(「모아서」 표기는 patch 칸에만)
 let batchInFlight = false;   // 재진입 가드 — no-cors라 중복 전송을 감지할 길이 없어 시작부터 막는다
 async function batchReport(){
   if (batchInFlight){ toast('일괄 제보가 진행 중이에요 — 끝날 때까지 기다려 주세요'); return; }
