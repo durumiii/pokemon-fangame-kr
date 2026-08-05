@@ -2510,7 +2510,7 @@
 {"k": "¡Cúidalo muy bien!", "v": "꼭 잘 챙겨줘! "}
 {"k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 아직 안 갖고 있군."}
 {"k": "Si te haces con un Rapidash, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "날쌩마를 구하면 내가 볼 수 있게 지닌포켓몬 첫 번째 칸에 두도록 해라."}
-{"k": "Bueno, otra vez será.", "v": "뭐, 다음 기회에 하지."}
+{"k": "Bueno, otra vez será.", "v": "그렇다면 다음 기회에."}
 {"k": "Ya era hora de deshacerme de ese Charmander, es un Pokémon tremendamente sobrevalorado.", "v": "그 파이리를 처분할 때가 되긴 했다. 정말 엄청나게 과대평가된 포켓몬이라니까."}
 {"k": "Estoy buscando un Clawitzer, ¿lo cambiarías por mi Squirtle?", "v": "블로스터를 찾고 있어요. 제 꼬부기와 바꾸시지 않겠어요?"}
 {"k": "Si te haces con un Clawitzer, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "블로스터를 구하시면 제가 볼 수 있게 지닌포켓몬 첫 번째 칸에 두시죠."}
@@ -3929,7 +3929,7 @@
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] ¡Oh, disculpad mi rústico aspecto! He estado cuidando de los Pokémon para ganarme el pan.", "v": "\\c[6]<b>미라:</b>\\c[0] 아, 내 초라한 차림새를 용서해 다오! 빵을 구하려고 포켓몬들을 돌보고 있었다."}
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] Si estáis aquí intuyo que... habéis aceptado mi propuesta de alianza para cazar al <b>Team Azoth</b>, ¿me equivoco?", "v": "\\c[6]<b>미라:</b>\\c[0] 너희가 여기 있다는 건... <b>아조스단</b>을 사냥하자는 내 동맹 제안을 받아들였다는 뜻이겠지, 내가 틀렸나?"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡E-eso es correcto! Y tenemos información muy valiosa para compartir si vos nos ayudáis.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 맞-맞습니다! 선생께서 저희를 도와주신다면 공유해 드릴 아주 귀중한 정보가 있습니다."}
-{"k": "Pero... ya nos han engañado antes. Por eso pedimos primero una muestra de confianza.", "v": "하지만... 우리는 전에도 속은 적이 있다. 그렇기에 먼저 신뢰의 증표를 요구한다."}
+{"k": "Pero... ya nos han engañado antes. Por eso pedimos primero una muestra de confianza.", "v": "하지만... 저희는 전에도 속은 적이 있습니다. 먼저 신뢰의 증표를 보여 주시길 부탁드립니다."}
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] Una muestra de confianza...", "v": "\\c[6]<b>미라:</b>\\c[0] 신뢰의 표시..."}
 {"k": "...", "v": "..."}
 {"k": "Muy bien. Os mostraré algo que he descubierto recientemente.", "v": "좋다. 내가 최근 발견한 것을 보여주겠다."}
@@ -4042,7 +4042,7 @@
 {"k": "¡Una buena ensalada de tortas, desde luego!", "v": "당연히 매콤하게 두들겨 맞은 샐러드지!"}
 {"k": "El plato más difícil de cocinar es el postre, pues llega cuando el comensal ya no tiene hambre.", "v": "만들기 가장 어려운 요리는 디저트입니다. 손님의 배가 이미 부른 뒤에 나오기 때문입니다."}
 {"k": "Receta: \"El plato estará formado por 2 Bayas. Curará la Quemadura y será de color turquesa\"", "v": "레시피: “이 요리는 나무열매 2개로 만들어집니다. 화상을 치료하며, 색은 청록색입니다.”"}
-{"k": "¿Qué quieres hacer?", "v": "뭘 하고 싶니?"}
+{"k": "¿Qué quieres hacer?", "v": "어떻게 할까요?"}
 {"k": "No tienes suficientes Bayas para cocinar el plato.", "v": "요리를 만들기 위한 나무열매가 부족합니다."}
 {"k": "<b>Zafra:</b> El menú está listo, ¡muchas gracias!", "v": "<b>사프라:</b> 코스 요리가 준비되었어요. 정말 감사해요!"}
 {"k": "Hora de presentárselo al crítico <b>Eneldo</b>. ¡Estoy hecha un manojo de nervios! ¡Ay!", "v": "이제 비평가 <b>에넬도</b> 씨에게 선보일 시간이에요. 너무 긴장돼서 온몸이 떨려요! 아이고!"}
@@ -4104,7 +4104,7 @@
 {"k": "¡Cúidalo muy bien!", "v": "꼭 잘 챙겨줘! "}
 {"k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 너한테는 없는 모양이네."}
 {"k": "Si te haces con un Gastrodon, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "트리토돈을 구하게 되면, 내가 볼 수 있게 지닌 포켓몬 첫 번째 자리에 둬라."}
-{"k": "Bueno, otra vez será.", "v": "뭐, 다음 기회에 하지."}
+{"k": "Bueno, otra vez será.", "v": "그렇다면 다음 기회에."}
 {"k": "Como mosquetera, mi deber es proteger a la familia real a toda costa. ¡Aunque me gustaría que el rey aprendiera a defenderse un poquito!", "v": "총사로서 내 임무는 무슨 일이 있어도 왕가를 지키는 거다. 그래도 국왕 전하께서 스스로를 지키는 법을 조금은 배우셨으면 좋겠는데!"}
 {"k": "¡Tenemos un problema! Tengo que darle la cuenta al crítico <b>Eneldo</b> con todo lo que se ha gastado, que no es poco.", "v": "큰일이에요! 평론가 <b>에넬도</b> 님이 드신 금액을 계산해서 정산해야 하는데, 적은 액수가 아니거든요."}
 {"k": "El problema es que me da mucho miedo.", "v": " 문제는 제가 그분을 너무 무서워한다는 겁니다."}
@@ -4258,7 +4258,7 @@
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] A primera vista no parece un mal tipo, ¿no? Sus preocupaciones parecen genuinas.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 얼핏 보기엔 나쁜 사람 같지 않네, 안 그래? 진심으로 걱정해 주는 것 같아."}
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] Encontré esta cueva secreta poco después de asentarme en el pueblo.", "v": "\\c[6]<b>미라:</b>\\c[0] 마을에 정착하고 얼마 지나지 않아 이 비밀 동굴을 발견했다."}
 {"k": "Lo que yace en su interior es...", "v": "그 안에는..."}
-{"k": "Bueno, prefiero que lo veas con tus propios ojos.", "v": "직접 눈으로 확인하는 편이 낫겠다."}
+{"k": "Bueno, prefiero que lo veas con tus propios ojos.", "v": "직접 눈으로 확인하는 편이 낫겠군."}
 {"k": "¡Es un <b>Nido Alfa</b>! En él vive un Pokémon muy fuerte.", "v": "<b>알파 둥지</b>다! 이곳엔 아주 강한 포켓몬이 살고 있다."}
 {"k": "En concreto, sientes la presencia de un Pokémon Planta muy poderoso.", "v": "구체적으로는 아주 강력한 풀타입 포켓몬의 기운이 느껴진다."}
 {"k": "¿Quieres hacerlo salir?", "v": "그걸 꺼내고 싶니?"}
@@ -4280,7 +4280,7 @@
 {"k": "Decrecer", "v": "축소하다"}
 {"map": 119, "n": 25}
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] ¡Sí! ¡Los símbolos sagrados! Son tres runas de gran poder para los druidas.", "v": "\\c[6]<b>미라:</b>\\c[0] 그렇다! 신성한 상징이다! 드루이드에게 커다란 힘을 주는 세 개의 룬이다."}
-{"k": "Para nosotros, se parecen mucho a las letras \"X\", \"Y\" y \"Z\".", "v": "저희 눈에는 \"X\", \"Y\", \"Z\" 문자와 매우 비슷하게 보입니다."}
+{"k": "Para nosotros, se parecen mucho a las letras \"X\", \"Y\" y \"Z\".", "v": "우리 눈에는 \"X\", \"Y\", \"Z\" 문자와 매우 비슷하게 보이는군."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] \"Formar X, Y y Z bajo tus pies\"...", "v": "\\c[3]<b>크리산토:</b>\\c[0] \"발밑에 X, Y, Z를 새겨라\"..."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] Lo has resuelto, \\PN. ¡Eres un genio!", "v": "\\c[3]<b>크리산토:</b>\\c[0] 수수께끼를 풀었구나, \\PN! 너 정말 천재야!"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] Lo has resuelto, \\PN. ¡Eres una genio!", "v": "\\c[3]<b>크리산토:</b>\\c[0] 수수께끼를 풀었구나, \\PN! 너 정말 천재야!"}
@@ -4288,17 +4288,17 @@
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] ¿Y bien? ¿Qué os parece el lugar secreto que he descubierto?", "v": "\\c[6]<b>미라:</b>\\c[0] 어떤가? 내가 발견한 비밀의 장소가 마음에 드는가?"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] Fascinante... A fe mía que este lugar debe ser de tiempos anteriores a la Reina Fundadora.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 놀랍군요... 맹세코 이곳은 건국 여왕 시대보다도 까마득한 옛적의 유적임이 틀림없습니다."}
 {"k": "Es la entrada a una tumba de druidas, ¿verdad?", "v": "드루이드의 무덤으로 통하는 입구지요?"}
-{"k": "\\c[6]<b>Mirra:</b>\\c[0] Conocéis la materia, <i>monsieur</i> <b>Crisanto</b>.", "v": "\\c[6]<b>미라:</b>\\c[0] 이 분야에 조예가 깊으시군요, <i>무슈</i> <b>크리산토</b>."}
-{"k": "En este sorprendente lugar enterraban a los druidas del pasado.", "v": "이 놀라운 장소에 과거의 드루이드들을 안치했습니다."}
-{"k": "Y con ellos, también enterraban cierto conocimiento ancestral muy preciado.", "v": "그리고 그들과 함께 아주 귀중한 고대의 지식도 매장되었지요."}
+{"k": "\\c[6]<b>Mirra:</b>\\c[0] Conocéis la materia, <i>monsieur</i> <b>Crisanto</b>.", "v": "\\c[6]<b>미라:</b>\\c[0] 이 분야에 조예가 깊은 모양이군, <i>무슈</i> <b>크리산토</b>."}
+{"k": "En este sorprendente lugar enterraban a los druidas del pasado.", "v": "이 놀라운 장소에 과거의 드루이드들이 안치되어 있다."}
+{"k": "Y con ellos, también enterraban cierto conocimiento ancestral muy preciado.", "v": "그리고 그들과 함께 아주 귀중한 고대의 지식도 매장되었지."}
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] Creo que aquí dentro se halla parte de las respuestas que buscamos.", "v": "\\c[6]<b>미라:</b>\\c[0] 우리가 찾는 해답의 일부가 이 안에 있으리라 믿는다."}
 {"k": "Sin embargo...", "v": "하지만..."}
-{"k": "\\c[6]<b>Mirra:</b>\\c[0] No puedo abrir la cámara ya que no entiendo estas runas druídicas.", "v": "\\c[6]<b>미라:</b>\\c[0] 이 드루이드 룬을 이해할 수 없어서 석실을 열지 못하고 있다."}
-{"k": "He tratado con esmero de encontrar a un intérprete, pero se trata de un lenguaje demasiado antiguo y oscuro...", "v": "해석할 자를 정성껏 찾아보았으나, 너무나 오래되고 난해한 언어라..."}
+{"k": "\\c[6]<b>Mirra:</b>\\c[0] No puedo abrir la cámara ya que no entiendo estas runas druídicas.", "v": "\\c[6]<b>미라:</b>\\c[0] 이 드루이드 룬을 이해할 수 없어서 석실을 열지 못하고 있지."}
+{"k": "He tratado con esmero de encontrar a un intérprete, pero se trata de un lenguaje demasiado antiguo y oscuro...", "v": "해석할 자를 힘써 찾아보았으나, 너무나 오래되고 난해한 언어라..."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¿Este grabado de aquí, dice? No parece muy complicado.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 여기 이 각석 말입니까? 그리 복잡해 보이지는 않습니다만."}
-{"k": "\\c[6]<b>Mirra:</b>\\c[0] ¿Sabéis interpretar estas runas?", "v": "\\c[6]<b>미라:</b>\\c[0] 이 룬을 해석할 줄 아시는가?"}
+{"k": "\\c[6]<b>Mirra:</b>\\c[0] ¿Sabéis interpretar estas runas?", "v": "\\c[6]<b>미라:</b>\\c[0] 이 룬을 해석할 줄 아는가?"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] He leído y he almacenado más información en mi cabeza de la que creía que podía serme útil.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 유용하리라 생각했던 것보다 훨씬 많은 지식을 읽고 머릿속에 담아 두었지요."}
-{"k": "Los druidas son la primera civilización de <b>Kalos</b> de la que se tiene constancia, ¿no? Siempre me parecieron muy interesantes.", "v": "드루이드는 기록으로 전해지는 <b>칼로스</b> 최초의 문명이지 않습니까? 늘 흥미롭게 생각하던 참입니다."}
+{"k": "Los druidas son la primera civilización de <b>Kalos</b> de la que se tiene constancia, ¿no? Siempre me parecieron muy interesantes.", "v": "드루이드는 기록으로 전해지는 <b>칼로스</b> 최초의 문명 아닙니까? 늘 흥미롭게 생각하던 참입니다."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡Hasta se dice que fueron ellos quienes tendieron el puente de la convivencia entre humanos y Pokémon en esta región!", "v": "\\c[3]<b>크리산토:</b>\\c[0] 심지어 이 지방에서 인간과 포켓몬이 공존하는 가교를 놓은 것도 바로 그들이라는 전승이 있을 정도니까요!"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡Pero mejor dejo de divagar! Voy a leeros esto.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 하지만 제 사설은 이쯤 해두지요! 이것을 읽어드리겠습니다."}
 {"k": "\"Bajo tus pies, forma los símbolos sagrados para entrar\".", "v": "\"발밑에 신성한 상징을 그려 넣어야 들어올 수 있다\"."}
@@ -4728,7 +4728,7 @@
 {"k": "¡Cúidalo muy bien!", "v": "꼭 잘 챙겨줘! "}
 {"k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 당신은 가지고 있지 않군요."}
 {"k": "Si te haces con un Mantine, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "만타인을 잡게 되면 제가 볼 수 있도록 지닌 포켓몬의 맨 앞자리에 두세요."}
-{"k": "Bueno, otra vez será.", "v": "뭐, 다음 기회에 하지."}
+{"k": "Bueno, otra vez será.", "v": "그렇다면 다음 기회에."}
 {"k": "Los Pokémon son nuestros compañeros del alma, no herramientas. Hay gente que aún no entiende algo tan básico...", "v": "포켓몬은 우리의 영혼의 동반자이지 도구가 아니에요. 아직도 이런 기본적인 사실조차 이해하지 못하는 사람들이 있네요..."}
 {"k": "Los miembros de la banda pirata de <b>Loto</b> se especializan en Pokémon de tipo Agua y de tipo Volador.", "v": "<b>로토</b> 해적단 놈들은 물타입과 비행타입 포켓몬을 전문으로 다루지."}
 {"k": "Conseguir dominar un tipo elemental no es cosa menor, ¡pues imagínate dos! No me extraña que tengan fama de ser tan fuertes.", "v": "한 가지 타입을 주무르는 것도 쉬운 일이 아닌데, 무려 두 가지라니. 강하다고 소문난 것도 무리는 아니야."}
@@ -6080,7 +6080,7 @@
 {"k": "¡Cúidalo muy bien!", "v": "꼭 잘 챙겨줘! "}
 {"k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 너한테는 없는 모양이네."}
 {"k": "Si te haces con ese Pokémon, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "그 포켓몬을 얻거든 내가 볼 수 있게 지닌 포켓몬 첫 번째에 놓아줘."}
-{"k": "Bueno, otra vez será.", "v": "뭐, 다음 기회에 하지."}
+{"k": "Bueno, otra vez será.", "v": "그렇다면 다음 기회에."}
 {"k": "Las cafeterías se volvieron muy populares desde que empezaron a traer café desde el nuevo mundo.", "v": "신대륙에서 커피를 들여오기 시작하면서 카페가 아주 인기를 끌게 됐지."}
 {"k": "Antes no se llamaban cafeterías, claro. Podían llamarse creperías, o pastelerías...", "v": "물론 예전엔 카페라고 부르지 않았어. 크레페 가게나 제과점이라고 불렀으려나..."}
 {"k": "Estoy buscando un Makuhita, ¿lo cambiarías por mi Turtwig?", "v": "내가 마크탕을 찾고 있는데, 내 모부기와 바꾸지 않겠나?"}
@@ -6101,7 +6101,7 @@
 {"k": "¡Cúidalo muy bien!", "v": "꼭 잘 챙겨줘! "}
 {"k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 너한테는 없나 보군."}
 {"k": "Si te haces con un Chandelure, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "샹델라를 구하면 내가 볼 수 있게 지닌 포켓몬의 첫 번째 자리에 두고 와라."}
-{"k": "Bueno, otra vez será.", "v": "뭐, 다음 기회에 하지."}
+{"k": "Bueno, otra vez será.", "v": "그렇다면 다음 기회에."}
 {"k": "Ya era hora de deshacerme de ese Litten, es un Pokémon tremendamente sobrevalorado.", "v": "그 냐오불을 처분할 때가 되었어. 정말 엄청나게 과대평가된 포켓몬이라니까."}
 {"k": "Estoy buscando un Sharpedo, ¿lo cambiarías por mi Popplio?", "v": "샤크니아를 찾고 있답니다. 제 누리공과 교환하지 않으시겠어요?"}
 {"k": "Si te haces con un Sharpedo, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "샤크니아를 구하시면 알아볼 수 있게 지닌 포켓몬의 첫 번째 자리에 두시지요."}
@@ -6125,7 +6125,7 @@
 {"k": "¡Cúidalo muy bien!", "v": "꼭 잘 챙겨줘! "}
 {"k": "¡Vaya! Veo que no tienes uno.", "v": "어머나! 갖고 계신 것 같지 않네요."}
 {"k": "Si te haces con ese Pokémon, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "그 포켓몬을 얻으시면 지닌 포켓몬의 맨 앞에 두고 저한테 보여주세요."}
-{"k": "Bueno, otra vez será.", "v": "뭐, 다음 기회에 하지."}
+{"k": "Bueno, otra vez será.", "v": "그렇다면 다음 기회에."}
 {"k": "Hay tantos modos de ver la vida como personas hay en el mundo.", "v": "세상에 사람이 존재하는 만큼이나 삶을 바라보는 방식도 다양한 법이죠."}
 {"k": "Eso es lo que he aprendido en esta cafetería, conociendo a muchas personas de otras partes del mundo.", "v": "세계 각지에서 온 수많은 사람들을 카페에서 만나면서 깨달은 게 바로 그거랍니다."}
 {"k": "Estoy buscando un Masquerain, ¿lo cambiarías por mi Oshawott?", "v": "비나방을 찾고 있는데, 내 수댕이랑 바꿀래?"}
@@ -9966,7 +9966,7 @@
 {"k": "¡Cúidalo muy bien!", "v": "꼭 잘 챙겨줘! "}
 {"k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 너한테는 없나 보네."}
 {"k": "Si te haces con un Heatmor, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "앤티골을 구하게 되면 내가 볼 수 있게 지닌포켓몬 첫 번째에 놓아주라."}
-{"k": "Bueno, otra vez será.", "v": "뭐, 다음 기회에 하지."}
+{"k": "Bueno, otra vez será.", "v": "그렇다면 다음 기회에."}
 {"k": "¿Has ido a la <b>Orfebrería</b> en busca de Megapiedras y artículos interesantes?", "v": "메가스톤이랑 재미있는 물건을 찾으러 <b>귀금속점</b>에는 가봤어?"}
 {"k": "Estoy buscando un Bruxish, ¿lo cambiarías por mi Sobble?", "v": "치갈기를 찾고 있는데, 제 울머기랑 교환하지 않으시겠어요?"}
 {"k": "Si te haces con un Bruxish, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "치갈기를 구하시면 제가 볼 수 있게 지닌포켓몬 첫 번째 자리에 두세요."}
@@ -10276,7 +10276,7 @@
 {"k": "¡Cúidalo muy bien!", "v": "꼭 잘 챙겨줘! "}
 {"k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 가지고 있지 않군."}
 {"k": "Si te haces con un Krookodile, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "악비아르를 얻거든 내가 볼 수 있게 지닌포켓몬 첫 번째에 두어라."}
-{"k": "Bueno, otra vez será.", "v": "뭐, 다음 기회에 하지."}
+{"k": "Bueno, otra vez será.", "v": "그렇다면 다음 기회에."}
 {"k": "Los Pokémon más fuertes no siempre son los más grandes ni los que tienen un aspecto más intimidanete. De hecho, existe un Pokémon superfuerte que parece un felino de color rosa.", "v": "가장 강한 포켓몬이라고 항상 덩치가 크거나 위협적으로 생긴 건 아니다. 실제론 분홍색 고양이처럼 생겼는데도 엄청나게 강한 포켓몬이 존재하지."}
 {"k": "Hay un total de 4 catacumbas subterráneas que recorren el subsuelo de <b>Kalos</b>. Cada una protegida por dos palancas en sus extremos.", "v": "<b>칼로스</b> 지하에는 총 4개의 지하묘지가 뻗어 있어요. 각각 양쪽 끝에 있는 레버 두 개가 지키고 있죠."}
 {"k": "Hay tesoros muy valiosos en esas catacumbas, un buen entrenador debería tratar de encontrarlas todas.", "v": "그 지하묘지엔 아주 귀한 보물이 숨겨져 있으니, 훌륭한 트레이너라면 모두 찾아내 보세요!"}
@@ -12213,7 +12213,7 @@
 {"k": "¡Cúidalo muy bien!", "v": "꼭 잘 챙겨줘! "}
 {"k": "¡Vaya! Veo que no tienes uno.", "v": "이런... 보아하니 가지고 있지 않구나."}
 {"k": "Si te haces con ese Pokémon, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "그 포켓몬을 손에 넣으면, 내 볼 수 있도록 지닌 포켓몬 첫 번째 자리에 두어라."}
-{"k": "Bueno, otra vez será.", "v": "뭐, 다음 기회에 하지."}
+{"k": "Bueno, otra vez será.", "v": "그렇다면 다음 기회에."}
 {"k": "Cuando acaben las obras de casas nuevas de <b>Ciudad Luminalia</b>, muchas personas de pueblos más pobres podremos establecernos aquí para tener una vida mejor.", "v": "<b>미르시티</b>의 새 집 공사가 끝나면 가난한 마을 사람들도 더 나은 삶을 찾아 이곳에 정착하게 될 것이다."}
 {"k": "Estoy buscando un Kecleon, ¿lo cambiarías por mi Sprigatito?", "v": "켈리몬을 찾고 있는데, 내 나오하랑 바꾸지 않을래?"}
 {"k": "Después de todo lo acontecido en la batalla de <b>Ciudad Fractal</b>, voy a necesitar unos cuantos meses de vacaciones.", "v": "<b>이설시티</b> 전투에서 그런 일을 겪었으니, 몇 달은 푹 쉬어야겠어."}
@@ -12278,7 +12278,7 @@
 {"k": "Estoy buscando un Grumpig, ¿lo cambiarías por mi Alakazam?", "v": "저는 피그킹을 찾고 있습니다. 제 후딘과 교환하시겠습니까?"}
 {"k": "¡Cúidalo muy bien!", "v": "꼭 잘 챙겨줘! "}
 {"k": "Si te haces con un Grumpig, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "피그킹을 얻게 되시면 제가 볼 수 있도록 지닌포켓몬의 첫 번째 자리에 두어 주십시오."}
-{"k": "Bueno, otra vez será.", "v": "뭐, 다음 기회에 하지."}
+{"k": "Bueno, otra vez será.", "v": "그렇다면 다음 기회에."}
 {"k": "A pesar de los siglos, ninguno de los monjes que han habitado esta ciudad han logrado nunca establecer el auténtico Vínculo supremo con sus Pokémon.", "v": "수세기가 흘렀음에도 이 도시에 머물렀던 수도사 중 누구도 포켓몬과 진정한 궁극의 유대를 맺지 못했습니다."}
 {"k": "Tal vez nadie lo consiga nunca.", "v": "어쩌면 앞으로도 아무도 해내지 못할지도 모릅니다."}
 {"k": "Aquí solo hay basura.", "v": "여기엔 쓰레기밖에 없다."}
@@ -12539,7 +12539,7 @@
 {"k": "Estoy buscando un Hariyama, ¿lo cambiarías por mi Hitmontop?", "v": "하리뭉을 찾고 있는데, 제 카포에라와 교환해 주시겠습니까?"}
 {"k": "¡Cúidalo muy bien!", "v": "꼭 잘 챙겨줘! "}
 {"k": "Si te haces con un Hariyama, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "하리뭉을 얻게 되면, 제가 볼 수 있도록 지닌포켓몬 첫 번째 자리에 놓아주십시오."}
-{"k": "Bueno, otra vez será.", "v": "뭐, 다음 기회에 하지."}
+{"k": "Bueno, otra vez será.", "v": "그렇다면 다음 기회에."}
 {"k": "Como <b>Ciudad Yantra</b> está cerrada al exterior, los monjes hacemos mucho uso del intercambio de Pokémon para aprender a combatir de formas distintas.", "v": "<b>사라시티</b>는 외부와 단절된 곳이라, 우리 승려들은 다양한 배틀 방식을 익히고자 포켓몬 교환을 자주 이용하곤 합니다."}
 {"k": "Solo los monjes de mayor virtud pueden vivir en el interior de la <b>Torre Maestra</b>.", "v": "가장 덕이 높은 승려들만이 <b>마스터타워</b> 내부에서 살 수 있지요."}
 {"k": "Y, sin embargo, hay algo en ellos que no me termina de dar confianza. Es como si se hubiesen vuelto más acomodados con el tiempo.", "v": "하지만 아무래도 그들에게선 선뜻 신뢰가 가지 않는 부분이 있습니다. 세월이 흐르며 점점 안주하게 된 것만 같습니다."}
@@ -13725,7 +13725,7 @@
 {"k": "¡Cúidalo muy bien!", "v": "꼭 잘 챙겨줘! "}
 {"k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 너한테는 없나 보네."}
 {"k": "Si te haces con ese Pokémon, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "그 포켓몬을 잡으면 내가 바로 볼 수 있게 지닌포켓몬 제일 앞에 두라고."}
-{"k": "Bueno, otra vez será.", "v": "뭐, 다음 기회에 하지."}
+{"k": "Bueno, otra vez será.", "v": "그렇다면 다음 기회에."}
 {"k": "¡Da gusto respirar un poco de tranquilidad en este pueblo de montaña! Especialmente después de todo lo que ha acontecido.", "v": "이 산골 마을에서 잠시나마 평온을 누릴 수 있어 정말 좋다! 특히 그동안 일어난 온갖 난리를 겪고 난 뒤라 더더욱 그래."}
 {"k": "La <b>Ruta 25</b> tardará en ser la que era después de toda la basura y residuos que dejaron esos desalmados.", "v": "그 몰염치한 자들이 남긴 온갖 쓰레기와 폐기물 때문에, <b>25번도로</b>가 예전 모습을 되찾으려면 시간이 한참 걸리겠단다."}
 {"k": "Mientras tanto, los obreros están construyendo un túnel en la <b>Cueva de los Reflejos</b> para conectar esta zona con <b>Ciudad Yantra</b>.", "v": "그동안 인부들은 이 지역과 <b>사라시티</b>를 연결하려고 <b>비춤의 동굴</b>에 터널을 뚫고 있단다."}
