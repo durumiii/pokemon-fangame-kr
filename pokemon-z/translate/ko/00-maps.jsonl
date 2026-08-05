@@ -1178,7 +1178,7 @@
 {"k": "<b>Margarito:</b> ¡Hola, <i>monsieur</i>! Mi Rancho Pokémon es genial y me hace feliz.", "v": "<b>마르가리토:</b> 안녕하세요, <i>무슈</i>! 제 포켓몬 목장은 정말 멋지고 저를 행복하게 해줘요."}
 {"k": "<b>Margarito:</b> ¡Hola, <i>mademoiselle</i>! Mi Rancho Pokémon es genial y me hace feliz.", "v": "<b>마르가리토:</b> 안녕하세요, <i>마드모아젤</i>! 제 포켓몬 목장은 정말 멋지고 저를 행복하게 해줘요."}
 {"k": "<b>Cerúleo:</b> ¡Hola, \\PN! No le digas a los demás del pueblo que estoy bebiendo en el trabajo, ¿eh? ¡Que me echan la cruz!", "v": "<b>세룰레오:</b> 안녕, \\PN! 마을 사람들에게 나 일하는 중에 술 마신다고 말하면 안 된다, 응? 나 매장당한다고!"}
-{"k": "¿Has estado alguna vez en la gran <i>chateau</i> de <b>Ciudad Relieve</b>? Pues oculta una entrada a una de las catacumbas secretas de <b>Kalos</b>.", "v": "<b>삼채시티</b>의 거대한 <i>샤토</i>에 가본 적이 있으십니까? 그곳에는 <b>칼로스</b>의 비밀 지하묘지 중 하나로 통하는 입구가 숨겨져 있습니다."}
+{"k": "¿Has estado alguna vez en la gran <i>chateau</i> de <b>Ciudad Relieve</b>? Pues oculta una entrada a una de las catacumbas secretas de <b>Kalos</b>.", "v": "<b>삼채시티</b>의 거대한 저택에 가본 적이 있으십니까? 그곳에는 <b>칼로스</b>의 비밀 지하묘지 중 하나로 통하는 입구가 숨겨져 있습니다."}
 {"k": "Eso sí, los Pokémon que en ella habitan no son cosa menor, ¡hip! Dicho de otro modo, ¡son cosa mayor! ¡Hip!", "v": "물론 그곳에 서식하는 포켓몬들은 만만치 않은 녀석들입니다, 딸꾹! 다시 말해, 아주 강력하다는 말씀입니다! 딸꾹!"}
 {"k": "Sí", "v": "네"}
 {"k": "No", "v": "아니요"}
@@ -3251,7 +3251,7 @@
 {"k": "Esta ruta pertenece a mi acaudalado feudo, <i>mon petit</i> <b>Crisanto</b>.", "v": "이 길은 나의 풍요로운 영지에 속해 있답니다, <i>mon petit</i> <b>크리산토</b>."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡Lo... lo siento muchísimo! ¡Hemos embrutecido su hogar con nuestro torpe combate Pokémon!", "v": "\\c[3]<b>크리산토:</b>\\c[0] 정... 정말 죄송합니다! 저희의 서툰 포켓몬 배틀로 훌륭한 거처를 더럽히고 말았네요!"}
 {"k": "\\c[2]<b>Lanto:</b>\\c[0] ¡Justo al contrario! Vuestro noble arte de combate enaltece la estampa de estos jardines.", "v": "\\c[2]<b>란토:</b>\\c[0] 오히려 그 반대지요! 여러분의 고귀한 배틀 기술이 이 정원의 풍경을 더욱 빛내주는군요."}
-{"k": "De hecho, quería invitaros a mi <i>chateau</i> y experimentar juntos una agradable velada.", "v": "사실 여러분을 제 <i>샤토</i>로 초대해 함께 즐거운 저녁 시간을 보내고 싶었습니다."}
+{"k": "De hecho, quería invitaros a mi <i>chateau</i> y experimentar juntos una agradable velada.", "v": "사실 여러분을 제 저택으로 초대해 함께 즐거운 저녁 시간을 보내고 싶었습니다."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¿De verdad nos quiere conceder un honor tan exclusivo? ¿A nosotros?", "v": "\\c[3]<b>크리산토:</b>\\c[0] 정말 저희에게 그토록 특별한 영예를 베풀어 주시는 건가요? 저희에게 말입니까?"}
 {"k": "\\c[2]<b>Lanto:</b>\\c[0] ¡<i>S'il vous plait</i>! Seréis una compañía excelente.", "v": "\\c[2]<b>란토:</b>\\c[0] <i>부디 부탁드립니다</i>! 더없이 훌륭한 동행이 되어줄 테지요."}
 {"k": "Además, la buena <i>mademoiselle</i> <b>Olivier</b> ya se encuentra ahí. Ha acudido a mis dominios para proponerme una colaboración.", "v": "게다가 훌륭하신 <i>마드모아젤</i> <b>올리비에</b>도 이미 와 계십니다. 협업을 제안하러 제 영지를 찾아오셨지요."}
