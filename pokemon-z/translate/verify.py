@@ -13,6 +13,8 @@
   4. 게임 Scripts.rxdata — MOD 절 중복 없음 + 보간 수술·부적 수술 잔존.
   5. UI Text KR gsub 오폭 — 치환표 원문이 번역 정본의 한국어 값에 부분
      일치하는 행이 없는지(있으면 화면에서 한국어가 이중 치환된다).
+  6. 고유명 표기 — canon/names.jsonl에 적어 둔 정본 표기의 「변이」가 번역에
+     남아 있지 않은지(같은 인물이 두 표기로 갈리는 사고를 막는다).
 
 경고(exit 0)와 실패(exit 1)를 구분한다. canon 불일치는 기본 경고 —
 의도적 의역(glossary 판정)이 있을 수 있어서다. --strict면 실패로 격상.
@@ -176,9 +178,33 @@ def check_ui_gsub():
     print(f"UI 치환표: {len(pairs)}쌍, 오폭 후보 {hits}")
 
 
+def check_names(strict):
+    """고유명 표기 원장(canon/names.jsonl)의 변이가 번역에 남았는지.
+
+    변이는 「이 표기는 틀렸다」고 판정이 난 것이라 의역 여지가 없다 —
+    canon 불일치와 달리 기본이 FAIL이다.
+    """
+    path = HERE / "canon" / "names.jsonl"
+    if not path.exists():
+        return
+    ledger = rows(path)
+    bad = 0
+    for fname in sorted(p.name for p in (HERE / "ko").glob("*.jsonl")):
+        for n, r in enumerate(rows(HERE / "ko" / fname), 1):
+            v = r.get("v") or ""
+            for e in ledger:
+                for wrong in e.get("변이", []):
+                    if wrong in v:
+                        bad += 1
+                        report("FAIL" if strict else "WARN",
+                               f"표기 변이 {fname}:{n} {wrong!r} → {e['ko']!r}")
+    print(f"고유명: 이름 {len(ledger)}개, 변이 잔존 {bad}")
+
+
 def main():
     strict = "--strict" in sys.argv
     check_canon(strict)
+    check_names(strict)
     check_dat_and_sentinels()
     check_scripts()
     check_ui_gsub()

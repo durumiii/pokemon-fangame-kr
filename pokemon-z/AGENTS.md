@@ -128,6 +128,13 @@ voices.md.** 전거 서열은 glossary.md 머리 참조.
 줄이 누빌라의 해요체로 나갔다). 귀속은 `docs/research/map-speaker-join.jsonl.gz`로
 (맵, 원문) → 이벤트를 얻고 **같은 이벤트 안에서만** 접두를 물려주어 판정한다.
 
+**고유명 표기는 `translate/canon/names.jsonl`이 정본이다.** 같은 인물·조직이 정본 곳곳에서
+다르게 적히는 사고가 반복됐다(아스터/아스테르 · 샤핀/사핀 · 프리물라/프리뮬라 ·
+팀 아조스/아조스단). 사람 눈으로는 늘 늦으니 원장에 적고 기계가 훑는다 —
+`uv run tools/names.py check`(작업 중), `verify.py`(재배포 게이트, 변이 잔존은 FAIL).
+표기를 바꿀 땐 **`tools/names.py rename <원문> <새표기>`**로 정본과 원장을 함께 고친다
+(받침이 달라지면 조사 경고가 뜬다). 판정 근거는 `translate/glossary.md`에 적는다.
+
 **유저 제보는 `tools/sheet.py`로 다룬다** — `archive`(보관 + 행 삭제, 겹침 거르기) ·
 `upload`(jsonl → 시트 탭) · `rows` · `set`. 시트를 비울 땐 **내용 지우기가 아니라 행
 삭제**여야 폼이 다음 응답을 2행부터 쓴다. 흐름 전체는 원장과 메모리 참조.
