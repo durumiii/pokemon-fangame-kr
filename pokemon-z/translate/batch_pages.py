@@ -347,7 +347,9 @@ def term_pairs():
                     a, b = group[0], group[1]
                     if a not in ("원문", "표기", "근거") and not set(a) <= set("-") \
                             and len(a) < 40:
-                        ko = re.sub(r"\s*\([^)]{12,}\)", "", strip_evidence(b)).strip("* ")
+                        ko = re.sub(r"\s*\([^)]{12,}\)", "", strip_evidence(b))
+                        ko = re.split(r"\s+—\s+", ko)[0]
+                        ko = re.sub(r"\*\*", "", ko).strip("* ")   # 뒤에 붙은 근거·강조 표시를 뗀다
                         if ko:
                             pairs.append((a, ko))
                 group = []
@@ -366,14 +368,43 @@ def ledger_pairs():
     return out
 
 
+BOLD = re.compile(r"<b>(.*?)</b>", re.S)
+TITLES = [("monsieur", "무슈"), ("madame", "마담"), ("mademoiselle", "마드모아젤"),
+          ("profesora", "교수"), ("profesor", "교수"), ("maese", "선생"),
+          ("capitán", "대장"), ("capitana", "대장"), ("regente", "섭정")]
+
+
+def scene_names(rows):
+    """이 장면에 나오는 고유명을 **현행 번역에서 직접 짝지어** 캔다.
+
+    원장·용어집만 보면 그 표에 없는 지명·인명이 새 번역에서 새로 음차된다
+    (2026-08-06 실측: 「그리사야시티→그리자유시티」·「히소포→이소포」·「비탈 숲→라데라 숲」).
+    정본의 굵은 글씨는 이미 원장으로 통일돼 있으므로, 원문과 번역의 <b> 자리를
+    순서대로 맞추면 그 장면에 필요한 표기표가 공짜로 나온다. 개수가 다르면 버린다.
+    """
+    out = {}
+    for r in rows:
+        es, ko = BOLD.findall(r["es"]), BOLD.findall(r["ko"])
+        if len(es) != len(ko):
+            continue
+        for a, b in zip(es, ko):
+            a, b = a.strip(), b.strip()
+            if a and b and a != b and not a.endswith(":") and len(a) < 40:
+                out.setdefault(a, b)
+    return out
+
+
 def glossary_for(rows):
     """이 장면에 실제로 나오는 용어·고유명만 고른다 — 전문은 9천 자라 매번 실을 것이 못 된다."""
     es_all = " ".join(r["es"] for r in rows).lower()
     ko_all = " ".join(r["ko"] for r in rows)
     hits = []
-    for a, b in term_pairs() + ledger_pairs():
+    for a, b in term_pairs() + ledger_pairs() + list(scene_names(rows).items()):
         keys = [k.strip().lower() for k in re.split(r"[/·]", a) if k.strip()]
         if any(k in es_all for k in keys) or b.split("(")[0].strip() in ko_all:
+            hits.append(f"- {a} → {b}")
+    for a, b in TITLES:                       # 호칭은 프롬프트 본문에도 있지만 잘 샌다
+        if a in es_all:
             hits.append(f"- {a} → {b}")
     return CORE_TERMS + ("\n" + "\n".join(dict.fromkeys(hits)) if hits else "")
 
