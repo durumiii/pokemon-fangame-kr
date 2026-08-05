@@ -588,7 +588,7 @@
 | 526 | 기가이어스 | Gigalith | 비춤의 동굴 | Reflection Cave | 비춤의 동굴 또는 진화: — 40레벨 |
 | 527 | 또르박쥐 | Woobat | 남부 카타콤 | Southern Catacombs | 남부 카타콤 또는 Dark Cave |
 | 528 | 맘박쥐 | Swoobat |  |  | Dark Cave 또는 친밀도 |
-| 529 | Drillbur | Drillbur | 그리사야 동굴 | Grisalla Cave | 그리사야 동굴 |
+| 529 | 두더류 | Drillbur | 그리사야 동굴 | Grisalla Cave | 그리사야 동굴 |
 | 530 | 몰드류 | Excadrill | 끝의 동굴 | Terminus Cave | 끝의 동굴 또는 진화: — 31레벨 |
 | 531 | 다부니 | Audino | 21번도로 | Route 21 | 21번도로 |
 | 532 | 으랏차 | Timburr | 콜라주마을 | Collage Town | 콜라주마을 |
@@ -822,7 +822,7 @@
 | 750 | 만마드 | Mudsdale | 9번도로 | Route 9 | 9번도로 또는 진화로 얻는다 |
 | 751 | 물거미 | Dewpider | 폭풍 언덕 / 그리사야시티 | Storm Hill / Grisalla City | 폭풍 언덕 또는 그리사야시티 |
 | 752 | 깨비물거미 | Araquanid | 22번도로 | Route 22 | 22번도로 또는 진화로 얻는다 |
-| 753 | Formantis | Formantis | 몬테산토섬 | Isle Montesanto | 몬테산토섬 |
+| 753 | 짜랑랑 | Formantis | 몬테산토섬 | Isle Montesanto | 몬테산토섬 |
 | 754 | 라란티스 | Lurantis | 몬테산토섬 | Isle Montesanto | 몬테산토섬 또는 진화로 얻는다 |
 | 755 | 자마슈 | Morelull | 3번도로 / 비탈 숲 | Route 3 / Hillside Forest | 3번도로 또는 비탈 숲 |
 | 756 | 마셰이드 | Shiinotic |  |  | 진화: 자마슈 — 24레벨 |
@@ -1020,7 +1020,7 @@
 | 941 | 빈나두 | Tadbulb | 빛나는 동굴 | Shimmering Cave | 빛나는 동굴 |
 | 942 | 찌리배리 | Bellibolt |  |  | 빈나두에게 천둥의돌 사용 |
 | 943 | 부르롱 | Varoom |  |  | Revaroom. 교배로 얻는다 |
-| 944 | Revaroom | Revaroom | 몬스터볼 공장 | Poké Ball Factory | 몬스터볼 공장 |
+| 944 | 부르르룸 | Revaroom | 몬스터볼 공장 | Poké Ball Factory | 몬스터볼 공장 |
 | 945 | 꿈트렁 | Orthworm | 휴게소 | Service Station | 휴게소 |
 | 946 | 두리쥐 | Tandemaus |  |  | 사프라 보상 (이후 — Restaurant) |
 | 947 | 파밀리쥐 | Maushold |  |  | 두리쥐를 25레벨까지 키우면 진화 |
@@ -1038,7 +1038,7 @@
 | 959 | 찌리비크 | Kilowattrel | 11번도로 | Route 11 | 11번도로 또는 진화: 찌리비 — 25레벨 |
 | 960 | 떨구새 | Bombirdier | 14번도로 | Route 14 | 14번도로 |
 | 961 | 시비꼬 | Squawkabilly | 후늬시티 | Romantis City | 피죤투 — 후늬시티와 교환 |
-| 962 | Flamingo | Flamingo | 세르티호섬 | Certijo Island | 세르티호섬 |
+| 962 | 꼬이밍고 | Flamingo | 세르티호섬 | Certijo Island | 세르티호섬 |
 | 963 | 절벼게 | Klawf | 10번도로 | Route 10 | 10번도로 |
 | 964 | 베베솔트 | Nacli |  |  | 스태솔트/콜로솔트. 교배 |
 | 965 | 스태솔트 | Naclstack | 휴게소 | Service Station | 휴게소 |
@@ -1181,11 +1181,11 @@
 | 번호 | 포켓몬(한국어) | 원표 영어명 | 출현 장소(한국어) | 원표 장소 표기 | 조건·비고(한국어) |
 |---|---|---|---|---|---|
 | 899 | 제피레온 | Cefireon | 몬테산토섬 | Montesanto Island | 진화: 이브이 — Wind Feather. (완주: 몬테산토섬) 사용 |
-| 900 | Maidible (Mega Mawile) | Maidible (Mega Mawile) |  |  | 입치트를 45레벨까지 키우면 진화 |
-| 901 | Zippectre (Mega Banette) | Zippectre (Mega Banette) |  |  | 다크펫을 40레벨까지 키우면 진화 |
-| 902 | Soundow (Mega Audino) | Soundow (Mega Audino) |  |  | 다부니를 40레벨까지 키우면 진화 |
-| 908 | Missigno | Missigno | 궁극병기 | Ultimate Weapon | 안쪽에서 포획 — 궁극병기 |
-| 996 | Cherriller | Cherriller |  |  | 체리꼬를 32레벨까지 키우면 진화 |
+| 900 | 메이디블 (메가 입치트) | Maidible (Mega Mawile) |  |  | 입치트를 45레벨까지 키우면 진화 |
+| 901 | 지펙터 (메가 다크펫) | Zippectre (Mega Banette) |  |  | 다크펫을 40레벨까지 키우면 진화 |
+| 902 | 사운도우 (메가 다부니) | Soundow (Mega Audino) |  |  | 다부니를 40레벨까지 키우면 진화 |
+| 908 | 미싱노 | Missigno | 최종병기 | Ultimate Weapon | 안쪽에서 포획 — 최종병기 |
+| 996 | 체리리어 | Cherriller |  |  | 체리꼬를 32레벨까지 키우면 진화 |
 | 997 | 로얄레온 | Royaleon | 세르티호섬 | Certijo Island | 진화: 이브이 — Royal Wig. (세르티호섬) 사용 |
 | 998 | 고르마우스 | Gourmaus |  |  | 파밀리쥐를 38레벨까지 키우면 진화 |
 | 1007 | 할콤바테 | Halcombate |  |  | 루차불을 55레벨까지 키우면 진화 |
@@ -1203,7 +1203,12 @@
 
 조회표로 풀리지 않아 원문을 그대로 둔 자리다.
 
-**포켓몬 이름 9종** — `Cherriller`, `Drillbur`, `Flamingo`, `Formantis`, `Maidible (Mega Mawile)`, `Missigno`, `Revaroom`, `Soundow (Mega Audino)`, `Zippectre (Mega Banette)`
+**포켓몬 이름 9종 — 해소됨(2026-08-05 사용자 판정: 교정)**. 사이트 쪽 철자가 틀린 자리라
+판단해 우리 표기를 붙였다. 「원표 영어명」 칸은 사이트 표기 그대로 두었으니 검색은 그쪽으로 된다.
+`Drillbur`→두더류(Drilbur) · `Formantis`→짜랑랑(Fomantis) · `Revaroom`→부르르룸(Revavroom) ·
+`Flamingo`→꼬이밍고(Flamigo) · `Missigno`→미싱노(Missingno) · `Cherriller`→체리리어(Cherrilier) ·
+`Maidible (Mega Mawile)`→메이디블 (메가 입치트) · `Soundow (Mega Audino)`→사운도우 (메가 다부니) ·
+`Zippectre (Mega Banette)`→지펙터 (메가 다크펫). 근거는 canon.jsonl(species)과 01-species.jsonl.
 
 **영어가 남은 조건 문구 40행**(서로 다른 문구 39종). 대부분 사이트가 붙인 퀘스트·이벤트 이름이라 우리 정본에 대응어가 없다.
 

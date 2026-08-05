@@ -526,7 +526,7 @@
 {"gen": "5세대", "no": "526", "en": "Gigalith", "ko": "기가이어스", "place_en": "Reflection Cave", "place_ko": "비춤의 동굴", "method_en": "Reflection Cave or evolve at 40", "method_ko": "비춤의 동굴 또는 진화: — 40레벨"}
 {"gen": "5세대", "no": "527", "en": "Woobat", "ko": "또르박쥐", "place_en": "Southern Catacombs", "place_ko": "남부 카타콤", "method_en": "Southern Catacombs or Dark Cave", "method_ko": "남부 카타콤 또는 Dark Cave"}
 {"gen": "5세대", "no": "528", "en": "Swoobat", "ko": "맘박쥐", "place_en": "", "place_ko": "", "method_en": "Dark Cave or friendship", "method_ko": "Dark Cave 또는 친밀도"}
-{"gen": "5세대", "no": "529", "en": "Drillbur", "ko": "Drillbur", "place_en": "Grisalla Cave", "place_ko": "그리사야 동굴", "method_en": "Grisalla Cave", "method_ko": "그리사야 동굴"}
+{"gen": "5세대", "no": "529", "en": "Drillbur", "ko": "두더류", "place_en": "Grisalla Cave", "place_ko": "그리사야 동굴", "method_en": "Grisalla Cave", "method_ko": "그리사야 동굴"}
 {"gen": "5세대", "no": "530", "en": "Excadrill", "ko": "몰드류", "place_en": "Terminus Cave", "place_ko": "끝의 동굴", "method_en": "Terminus Cave or evolve at 31", "method_ko": "끝의 동굴 또는 진화: — 31레벨"}
 {"gen": "5세대", "no": "531", "en": "Audino", "ko": "다부니", "place_en": "Route 21", "place_ko": "21번도로", "method_en": "Route 21", "method_ko": "21번도로"}
 {"gen": "5세대", "no": "532", "en": "Timburr", "ko": "으랏차", "place_en": "Collage Town", "place_ko": "콜라주마을", "method_en": "Collage Town", "method_ko": "콜라주마을"}
@@ -750,7 +750,7 @@
 {"gen": "7세대", "no": "750", "en": "Mudsdale", "ko": "만마드", "place_en": "Route 9", "place_ko": "9번도로", "method_en": "Route 9 or Evolution", "method_ko": "9번도로 또는 진화로 얻는다"}
 {"gen": "7세대", "no": "751", "en": "Dewpider", "ko": "물거미", "place_en": "Storm Hill / Grisalla City", "place_ko": "폭풍 언덕 / 그리사야시티", "method_en": "Storm Hill or Grisalla City", "method_ko": "폭풍 언덕 또는 그리사야시티"}
 {"gen": "7세대", "no": "752", "en": "Araquanid", "ko": "깨비물거미", "place_en": "Route 22", "place_ko": "22번도로", "method_en": "Route 22 or Evolution", "method_ko": "22번도로 또는 진화로 얻는다"}
-{"gen": "7세대", "no": "753", "en": "Formantis", "ko": "Formantis", "place_en": "Isle Montesanto", "place_ko": "몬테산토섬", "method_en": "Isle Montesanto", "method_ko": "몬테산토섬"}
+{"gen": "7세대", "no": "753", "en": "Formantis", "ko": "짜랑랑", "place_en": "Isle Montesanto", "place_ko": "몬테산토섬", "method_en": "Isle Montesanto", "method_ko": "몬테산토섬"}
 {"gen": "7세대", "no": "754", "en": "Lurantis", "ko": "라란티스", "place_en": "Isle Montesanto", "place_ko": "몬테산토섬", "method_en": "Isle Montesanto or Evolution", "method_ko": "몬테산토섬 또는 진화로 얻는다"}
 {"gen": "7세대", "no": "755", "en": "Morelull", "ko": "자마슈", "place_en": "Route 3 / Hillside Forest", "place_ko": "3번도로 / 비탈 숲", "method_en": "Route 3 or Hillside Forest", "method_ko": "3번도로 또는 비탈 숲"}
 {"gen": "7세대", "no": "756", "en": "Shiinotic", "ko": "마셰이드", "place_en": "", "place_ko": "", "method_en": "Evolves from Morelull (Lv. 24)", "method_ko": "진화: 자마슈 — 24레벨"}
@@ -938,7 +938,7 @@
 {"gen": "9세대", "no": "941", "en": "Tadbulb", "ko": "빈나두", "place_en": "Shimmering Cave", "place_ko": "빛나는 동굴", "method_en": "Catchable in Shimmering Cave.", "method_ko": "빛나는 동굴"}
 {"gen": "9세대", "no": "942", "en": "Bellibolt", "ko": "찌리배리", "place_en": "", "place_ko": "", "method_en": "Evolves from Tadbulb with Thunder Stone.", "method_ko": "빈나두에게 천둥의돌 사용"}
 {"gen": "9세대", "no": "943", "en": "Varoom", "ko": "부르롱", "place_en": "", "place_ko": "", "method_en": "Obtainable through breeding from Revaroom.", "method_ko": "Revaroom. 교배로 얻는다"}
-{"gen": "9세대", "no": "944", "en": "Revaroom", "ko": "Revaroom", "place_en": "Poké Ball Factory", "place_ko": "몬스터볼 공장", "method_en": "Catchable in Poké Ball Factory.", "method_ko": "몬스터볼 공장"}
+{"gen": "9세대", "no": "944", "en": "Revaroom", "ko": "부르르룸", "place_en": "Poké Ball Factory", "place_ko": "몬스터볼 공장", "method_en": "Catchable in Poké Ball Factory.", "method_ko": "몬스터볼 공장"}
 {"gen": "9세대", "no": "945", "en": "Orthworm", "ko": "꿈트렁", "place_en": "Service Station", "place_ko": "휴게소", "method_en": "Catchable at the Service Station.", "method_ko": "휴게소"}
 {"gen": "9세대", "no": "946", "en": "Tandemaus", "ko": "두리쥐", "place_en": "", "place_ko": "", "method_en": "Zafra reward (after Restaurant).", "method_ko": "사프라 보상 (이후 — Restaurant)"}
 {"gen": "9세대", "no": "947", "en": "Maushold", "ko": "파밀리쥐", "place_en": "", "place_ko": "", "method_en": "Evolves from Tandemaus at 25.", "method_ko": "두리쥐를 25레벨까지 키우면 진화"}
@@ -956,7 +956,7 @@
 {"gen": "9세대", "no": "959", "en": "Kilowattrel", "ko": "찌리비크", "place_en": "Route 11", "place_ko": "11번도로", "method_en": "Catchable on Route 11 or evolves from Wattrel at 25.", "method_ko": "11번도로 또는 진화: 찌리비 — 25레벨"}
 {"gen": "9세대", "no": "960", "en": "Bombirdier", "ko": "떨구새", "place_en": "Route 14", "place_ko": "14번도로", "method_en": "Catchable on Route 14.", "method_ko": "14번도로"}
 {"gen": "9세대", "no": "961", "en": "Squawkabilly", "ko": "시비꼬", "place_en": "Romantis City", "place_ko": "후늬시티", "method_en": "Trade for a Pidgeot in Romantis City.", "method_ko": "피죤투 — 후늬시티와 교환"}
-{"gen": "9세대", "no": "962", "en": "Flamingo", "ko": "Flamingo", "place_en": "Certijo Island", "place_ko": "세르티호섬", "method_en": "Catchable on Certijo Island.", "method_ko": "세르티호섬"}
+{"gen": "9세대", "no": "962", "en": "Flamingo", "ko": "꼬이밍고", "place_en": "Certijo Island", "place_ko": "세르티호섬", "method_en": "Catchable on Certijo Island.", "method_ko": "세르티호섬"}
 {"gen": "9세대", "no": "963", "en": "Klawf", "ko": "절벼게", "place_en": "Route 10", "place_ko": "10번도로", "method_en": "Catchable on Route 10.", "method_ko": "10번도로"}
 {"gen": "9세대", "no": "964", "en": "Nacli", "ko": "베베솔트", "place_en": "", "place_ko": "", "method_en": "Breeding from Naclstack/Garganacl.", "method_ko": "스태솔트/콜로솔트. 교배"}
 {"gen": "9세대", "no": "965", "en": "Naclstack", "ko": "스태솔트", "place_en": "Service Station", "place_ko": "휴게소", "method_en": "Catchable at the Service Station.", "method_ko": "휴게소"}
@@ -1089,11 +1089,11 @@
 {"gen": "전설", "no": "89", "en": "Yveltal", "ko": "이벨타르", "place_en": "Circus Nightmare", "place_ko": "서커스의 악몽", "method_en": "Circus Nightmare", "method_ko": "서커스의 악몽"}
 {"gen": "전설", "no": "90", "en": "Zygarde", "ko": "지가르데", "place_en": "Prism Tower", "place_ko": "프리즘타워", "method_en": "Prism Tower summit", "method_ko": "프리즘타워 꼭대기"}
 {"gen": "페이크몬", "no": "899", "en": "Cefireon", "ko": "제피레온", "place_en": "Montesanto Island", "place_ko": "몬테산토섬", "method_en": "Evolves from Eevee with Wind Feather. (Complete Montesanto Island)", "method_ko": "진화: 이브이 — Wind Feather. (완주: 몬테산토섬) 사용"}
-{"gen": "페이크몬", "no": "900", "en": "Maidible (Mega Mawile)", "ko": "Maidible (Mega Mawile)", "place_en": "", "place_ko": "", "method_en": "Evolves from Mawile at 45.", "method_ko": "입치트를 45레벨까지 키우면 진화"}
-{"gen": "페이크몬", "no": "901", "en": "Zippectre (Mega Banette)", "ko": "Zippectre (Mega Banette)", "place_en": "", "place_ko": "", "method_en": "Evolves from Banette at 40.", "method_ko": "다크펫을 40레벨까지 키우면 진화"}
-{"gen": "페이크몬", "no": "902", "en": "Soundow (Mega Audino)", "ko": "Soundow (Mega Audino)", "place_en": "", "place_ko": "", "method_en": "Evolves from Audino at 40.", "method_ko": "다부니를 40레벨까지 키우면 진화"}
-{"gen": "페이크몬", "no": "908", "en": "Missigno", "ko": "Missigno", "place_en": "Ultimate Weapon", "place_ko": "궁극병기", "method_en": "Catchable inside the Ultimate Weapon.", "method_ko": "안쪽에서 포획 — 궁극병기"}
-{"gen": "페이크몬", "no": "996", "en": "Cherriller", "ko": "Cherriller", "place_en": "", "place_ko": "", "method_en": "Evolves from Cherrim at 32.", "method_ko": "체리꼬를 32레벨까지 키우면 진화"}
+{"gen": "페이크몬", "no": "900", "en": "Maidible (Mega Mawile)", "ko": "메이디블 (메가 입치트)", "place_en": "", "place_ko": "", "method_en": "Evolves from Mawile at 45.", "method_ko": "입치트를 45레벨까지 키우면 진화"}
+{"gen": "페이크몬", "no": "901", "en": "Zippectre (Mega Banette)", "ko": "지펙터 (메가 다크펫)", "place_en": "", "place_ko": "", "method_en": "Evolves from Banette at 40.", "method_ko": "다크펫을 40레벨까지 키우면 진화"}
+{"gen": "페이크몬", "no": "902", "en": "Soundow (Mega Audino)", "ko": "사운도우 (메가 다부니)", "place_en": "", "place_ko": "", "method_en": "Evolves from Audino at 40.", "method_ko": "다부니를 40레벨까지 키우면 진화"}
+{"gen": "페이크몬", "no": "908", "en": "Missigno", "ko": "미싱노", "place_en": "Ultimate Weapon", "place_ko": "최종병기", "method_en": "Catchable inside the Ultimate Weapon.", "method_ko": "안쪽에서 포획 — 최종병기"}
+{"gen": "페이크몬", "no": "996", "en": "Cherriller", "ko": "체리리어", "place_en": "", "place_ko": "", "method_en": "Evolves from Cherrim at 32.", "method_ko": "체리꼬를 32레벨까지 키우면 진화"}
 {"gen": "페이크몬", "no": "997", "en": "Royaleon", "ko": "로얄레온", "place_en": "Certijo Island", "place_ko": "세르티호섬", "method_en": "Evolves from Eevee with Royal Wig. (Certijo Island)", "method_ko": "진화: 이브이 — Royal Wig. (세르티호섬) 사용"}
 {"gen": "페이크몬", "no": "998", "en": "Gourmaus", "ko": "고르마우스", "place_en": "", "place_ko": "", "method_en": "Evolves from Maushold at 38.", "method_ko": "파밀리쥐를 38레벨까지 키우면 진화"}
 {"gen": "페이크몬", "no": "1007", "en": "Halcombate", "ko": "할콤바테", "place_en": "", "place_ko": "", "method_en": "Evolves from Hawlucha at 55.", "method_ko": "루차불을 55레벨까지 키우면 진화"}
