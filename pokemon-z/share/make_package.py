@@ -34,6 +34,12 @@ TRANSLATE = HERE.parent / "translate"
 STORE = Path("/mnt/d/GameVault/mods")
 BASE_MOD = STORE / "Pokemon Z Fangame" / "한글패치 통합"
 INJECT_MODS = ["UI Text KR"]
+VARIANT_SUMMARY = {
+    "debug": "포켓몬 Z 한글패치 — 번역 전체에 디버그 편집을 얹은 통 패치",
+    "full": "포켓몬 Z 한글패치 — 번역 전체(주연 대사 재번역 반영)",
+    "clean": "포켓몬 Z 한글패치 — 순수 번역만(스크립트 수술 없음)",
+    "mods": "포켓몬 Z 한글패치 — 스크립트 모드 묶음(완성 Scripts 단품)",
+}
 DIST = HERE / "dist"
 
 # modstore는 vendor에 없다 — devbox의 fangame-library가 필요하다 (FANGAME_LIBRARY로 지정 가능)
@@ -45,6 +51,39 @@ if not (_FANLIB_HOME / "fanlib" / "modstore.py").exists():
     sys.exit(f"fangame-library를 찾지 못했습니다: {_FANLIB_HOME} — FANGAME_LIBRARY 환경변수로 경로를 주세요")
 sys.path.insert(0, str(_FANLIB_HOME))
 from fanlib import modstore  # noqa: E402
+
+
+def _embed_card(final: Path, name: str, variant: str):
+    """모드 카드(mod.json)를 동봉한다 — 받는 사람이 modkit으로 설치할 수 있게.
+
+    패키지는 게임 폴더에 그대로 덮는 배치라, 카드의 `file`과 `install_to`가 같다.
+    카드에 적을 목록은 **실제로 담긴 파일을 훑어서** 만든다 — 변형마다 Scripts와
+    에셋 구성이 달라 보관소 카드를 그대로 베끼면 어긋난다.
+    """
+    skip = {"mod.json", "manifest.json", "읽어주세요.txt"}
+    assets = []
+    for f in sorted(final.rglob("*")):
+        if not f.is_file():
+            continue
+        rel = f.relative_to(final).as_posix()
+        if rel in skip or rel.startswith("번역표/"):
+            continue
+        assets.append({"file": rel, "install_to": rel})
+    card = {
+        "name": name,
+        "game": "Pokemon Z Fangame",
+        "version": name,
+        "summary": VARIANT_SUMMARY[variant],
+        "description": (HERE / "읽어주세요.txt").read_text(encoding="utf-8").split("\n\n")[0],
+        "install": "assets",
+        "scripts": [],                       # 에셋형 — Scripts.rxdata도 통째로 얹는다
+        "assets": assets,
+        "touches": {"methods": [], "files": [a["install_to"] for a in assets]},
+    }
+    (final / "mod.json").write_text(
+        json.dumps(card, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"mod.json 동봉: 에셋 {len(assets)}개 (모드로도 설치된다)")
+
 
 def _embed_manifest(final: Path, name: str):
     """패키지에 진단용 지문(manifest.json)을 동봉한다.
@@ -120,6 +159,7 @@ def main():
         shutil.copy2(HERE / "읽어주세요-모드묶음.txt", stage / "읽어주세요.txt")
         stage.rename(final)
         _embed_manifest(final, name)
+        _embed_card(final, name, variant)
         size = sum(p.stat().st_size for p in final.rglob("*") if p.is_file())
         print(f"완성: {final} — {size / 1e6:.1f}MB")
         return
@@ -178,6 +218,7 @@ def main():
 
     stage.rename(final)
     _embed_manifest(final, name)
+    _embed_card(final, name, variant)
     total = sum(1 for _ in final.rglob("*") if _.is_file())
     size = sum(p.stat().st_size for p in final.rglob("*") if p.is_file())
     print(f"완성: {final} — 파일 {total}개, {size / 1e6:.0f}MB")
