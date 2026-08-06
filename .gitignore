@@ -6,3 +6,6 @@ inbox/
 outbox/
 *.local.*
 .superpowers/sdd/
+
+# 원격 복구용 백업(릴리스 자산·번들) — 공개 repo에 올리지 않는다
+backups/
