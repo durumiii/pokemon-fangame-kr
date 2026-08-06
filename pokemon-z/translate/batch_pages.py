@@ -277,12 +277,24 @@ def pages():
     return out
 
 
+def approved_events():
+    """판정이 끝난 이벤트 — 다시 보내지 않는다(유지자 판정 2026-08-06, 승인은 이벤트 단위)."""
+    p = HERE.parent / "docs/research/approved-events.jsonl"
+    if not p.exists():
+        return set()
+    return {(json.loads(l)["map"], json.loads(l)["event"])
+            for l in p.read_text(encoding="utf-8").splitlines() if l.strip()}
+
+
 def excluded_pages(pg):
-    """재번역이 건드리면 안 되는 페이지 — 보호·극초반·인트로."""
+    """재번역이 건드리면 안 되는 페이지 — 보호·승인 이벤트·극초반·인트로."""
     ex = {tuple(json.loads(l)[k] for k in ("map", "event", "page"))
           for l in PROTECTED.read_text(encoding="utf-8").splitlines() if l.strip()}
+    done = approved_events()
     for key, rows in pg.items():
-        if key[0] == 65:                                   # 인트로 맵
+        if (key[0], key[1]) in done:                       # 판정 끝난 이벤트
+            ex.add(key)
+        elif key[0] == 65:                                 # 인트로 맵
             ex.add(key)
         elif key[0] <= 16 and any(r.get("who") in ("Crisanto", "Olivier") for r in rows):
             ex.add(key)                                    # 극초반 유지자 손질 구간
