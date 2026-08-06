@@ -93,9 +93,9 @@ def build_prompt():
     return body.replace("[용어 규칙 — glossary.md 본문 삽입]", gloss)
 
 
-def ask_npc(key, model, prompt, reqrows, attempt=0):
+def ask_npc(key, model, prompt, reqrows, attempt=0, effort="minimal"):
     """batch.ask의 npc 필드 포함판(원본은 speaker/es/ko만 직렬화한다)."""
-    payload = {"model": model, "temperature": 0.3, "reasoning_effort": "minimal",
+    payload = {"model": model, "temperature": 0.3, "reasoning_effort": effort,
                "messages": [
                    {"role": "system", "content": prompt},
                    {"role": "user", "content": json.dumps(reqrows, ensure_ascii=False)}]}
@@ -113,7 +113,7 @@ def ask_npc(key, model, prompt, reqrows, attempt=0):
     except Exception as e:
         if attempt < 2:
             time.sleep(8 * (attempt + 1))
-            return ask_npc(key, model, prompt, reqrows, attempt + 1)
+            return ask_npc(key, model, prompt, reqrows, attempt + 1, effort)
         print("에러:", type(e).__name__, e)
         return {}, 0.0
 

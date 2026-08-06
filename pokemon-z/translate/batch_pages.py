@@ -45,9 +45,10 @@ PAGE_CAP = 90          # 실측: 확정 페이지 835개 중 이 값을 넘는 �
 PILOT_PAGES = 20
 PILOT_MAP_MAX = 90     # 파일럿은 초반부에서만 뽑는다 — 유지자가 판정할 수 있는 구간
 PILOT_EXTRA = ()              # 초반부 밖이라도 꼭 넣을 장면
-# 2차 파일럿(2026-08-06): 1차와 안 겹치는 초반 여덟 장면 133행
-PILOT2 = ("p021-17-0", "p026-4-0", "p036-39-0", "p040-6-0", "p042-45-0",
-          "p044-25-0", "p059-47-0", "p061-11-1")
+# 지정 파일럿 표본 — 있으면 이것만 뽑는다. 3차(2026-08-06): 1·2차와 안 겹치는
+# 초반 일곱 장면 107행(남은 미판정 장면이 이게 전부다). 2차 표본은 pilot2-chunks.jsonl.
+PILOT2 = ("p024-43-0", "p024-51-0", "p025-20-0", "p036-45-0", "p040-17-0",
+          "p061-6-1", "p075-1-0")
 
 # 화자로 잡히지만 사람 말이 아닌 이름표 (안내판·표지·트레이너 팁 따위)
 SYS = {"PISTA DE ENTRENADOR", "Notas del Team Azoth", "\\PN", "AVISO", "Oeste",
@@ -685,7 +686,7 @@ def render(c, fresh=False):
             + "\n\n" + scene_header(c))
 
 
-def run(pilot=False, limit=None, workers=4, fresh=False):
+def run(pilot=False, limit=None, workers=4, fresh=False, effort="minimal"):
     src = BATCH / ("pilot-chunks.jsonl" if pilot else "page-chunks.jsonl")
     out_dir = BATCH / (("page-out-pilot" if pilot else "page-out")
                        + ("-fresh" if fresh else ""))
@@ -728,10 +729,10 @@ def run(pilot=False, limit=None, workers=4, fresh=False):
         (out_dir / (c["cid"] + ".req.json")).write_text(
             json.dumps({"system": sys_prompt, "user": reqrows},
                        ensure_ascii=False, indent=1), encoding="utf-8")
-        got, cost = ask_npc(key, MODEL, sys_prompt, reqrows)
+        got, cost = ask_npc(key, MODEL, sys_prompt, reqrows, effort=effort)
         missing = [r for r in reqrows if r["id"] not in got]
         if missing:
-            got2, c2 = ask_npc(key, MODEL, sys_prompt, missing)
+            got2, c2 = ask_npc(key, MODEL, sys_prompt, missing, effort=effort)
             got.update(got2)
             cost += c2
         lines, rej = [], 0
@@ -816,7 +817,8 @@ if __name__ == "__main__":
     if cmd == "plan":
         plan(pilot)
     elif cmd == "run":
-        run(pilot, limit, fresh=fresh)
+        effort = args[args.index("--effort") + 1] if "--effort" in args else "minimal"
+        run(pilot, limit, fresh=fresh, effort=effort)
     elif cmd == "report":
         report(pilot)
     elif cmd == "samples":
