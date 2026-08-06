@@ -55,24 +55,14 @@ function save(id){                  // 판정 하나를 서버에 넘긴다
 function later(id){clearTimeout(timer[id]); timer[id]=setTimeout(()=>save(id),600);}
 function flag(msg){const e=document.getElementById('err'); e.textContent=msg; e.style.display='';}
 
-function render(){
-  const body=document.getElementById('body');
-  body.innerHTML='';
-  for (const sc of DATA){
-    const sec=document.createElement('section');
-    sec.innerHTML=`<div class="scene"><h2>${esc(sc.name)}</h2>
-      <span class="meta">맵 ${sc.map} · 이벤트 ${esc(sc.event)}-${esc(sc.page)} ·
-        ${esc(sc.cast.join(' · '))} · 장면 ${sc.total}행 중 <b>${sc.rows.length}행 선별</b></span>
-      <span class="act" style="margin-left:auto"><button data-all="1">이벤트 일괄 승인</button>
-        <button data-flow="1">장면 흐름</button></span></div>`;
-    const setters=[];
-    for (const r of sc.rows){
+// 카드 하나 — 선별 행과 「이벤트 전체 보기」로 펼친 행이 같은 것을 쓴다
+function makeCard(r, sc){
       ROW[r.id]=r;
       const card=document.createElement('div'); card.className='card';
       card.innerHTML=`<div class="hd"><span class="who">${esc(r.who)}</span>
           <span class="rid">${r.id}</span>
           <button class="ctxbtn" style="margin-left:auto">문맥</button></div>
-        <div class="why">${r.why.map(w=>`<div><b>${esc(w['유형'])}</b>
+        <div class="why">${(r.why||[]).map(w=>`<div><b>${esc(w['유형'])}</b>
           <span class="lay">· ${esc(w['층'])}</span>${w['근거']?' — '+esc(w['근거']):''}</div>`).join('')}</div>
         <div class="es">${esc(r.es)}</div>
         <div class="opt"><span class="tag cur">현행</span><span class="txt" data-v="cur">${esc(r.ko)}</span></div>
@@ -94,7 +84,7 @@ function render(){
         card.classList.toggle('done',!!V[r.id]&&!(V[r.id]==='own'&&!ta.value.trim()));
       };
       const set=(v,force)=>{V[r.id]=(!force&&V[r.id]===v)?undefined:v; paint(); count(); save(r.id);};
-      setters.push(v=>set(v,true));
+      card.querySelector('.ctxbtn').onclick=()=>openFlow(sc, r.id);
       card.querySelectorAll('.txt').forEach(el=>el.onclick=()=>set(el.dataset.v));
       card.querySelectorAll('.tools button[data-v]').forEach(el=>el.onclick=()=>set(el.dataset.v));
       card.querySelector('[data-memo]').onclick=e=>{
@@ -108,9 +98,24 @@ function render(){
         M[r.id]=ta.value; ta.focus(); paint(); count(); later(r.id);
       });
       paint();
-      sec.appendChild(card);
+      return {card, set:v=>set(v,true)};
+}
+
+function render(){
+  const body=document.getElementById('body');
+  body.innerHTML='';
+  for (const sc of DATA){
+    const sec=document.createElement('section');
+    sec.innerHTML=`<div class="scene"><h2>${esc(sc.name)}</h2>
+      <span class="meta">맵 ${sc.map} · 이벤트 ${esc(sc.event)}-${esc(sc.page)} ·
+        ${esc(sc.cast.join(' · '))} · 장면 ${sc.total}행 중 <b>${sc.rows.length}행 선별</b></span>
+      <span class="act" style="margin-left:auto"><button data-open="1">이벤트 전체 보기</button>
+        <button data-all="1">이벤트 일괄 승인</button>
+        <button data-flow="1">장면 흐름</button></span></div>`;
+    const setters=[];
+    for (const r of sc.rows){
+      const c=makeCard(r, sc); setters.push(c.set); sec.appendChild(c.card);
     }
-    sec.querySelectorAll('.ctxbtn').forEach((b,i)=>b.onclick=()=>openFlow(sc, sc.rows[i].id));
     sec.querySelector('[data-flow]').onclick=()=>openFlow(sc, null);
     sec.querySelector('[data-all]').onclick=()=>{
       setters.forEach(f=>f('new'));
@@ -118,8 +123,26 @@ function render(){
       post({event:`${sc.map}:${sc.event}`, 판정:'승인', 텍스트:'',
             메모:`${sc.name} — ${sc.rows.length}행 일괄`});
     };
+    sec.querySelector('[data-open]').onclick=e=>openEvent(sc, sec, e.target);
     body.appendChild(sec);
   }
+}
+
+// 이벤트의 안 걸린 행까지 그 자리에 펼친다 — 걸린 행은 이미 위에 있으니 뺀다
+function openEvent(sc, sec, btn){
+  if(sec.querySelector('.expand')){ sec.querySelector('.expand').remove();
+    btn.classList.remove('on'); return; }
+  btn.classList.add('on'); btn.disabled=true;
+  fetch(`/event?map=${sc.map}&event=${encodeURIComponent(sc.event)}`)
+    .then(r=>r.json()).then(d=>{
+      const shown=new Set(sc.rows.map(r=>r.id));
+      const box=document.createElement('div'); box.className='expand';
+      const rest=d.rows.filter(r=>!shown.has(r.id));
+      box.innerHTML=`<p class="intro" style="margin:2px 2px 10px">이벤트 전체 ${d.rows.length}행 —
+        선별 ${sc.rows.length}행은 위에 있고, 나머지 <b>${rest.length}행</b>이에요.</p>`;
+      for(const r of rest) box.appendChild(makeCard(r, sc).card);
+      sec.appendChild(box); btn.disabled=false; count();
+    }).catch(()=>{flag('이벤트를 못 읽었어요'); btn.disabled=false;});
 }
 function openFlow(sc, id){
   document.getElementById('ctxT').textContent=sc.name;
@@ -164,6 +187,25 @@ fetch('/data').then(r=>r.json()).then(d=>{
 }).catch(()=>flag('데이터를 못 읽었어요 — 서버가 떠 있나요?'));
 </script>
 """
+
+
+def event_rows(out_dir, mapno, event):
+    """한 이벤트의 모든 페이지, 모든 행 — 선별에 걸렸든 아니든.
+
+    이상한 게 많이 나온 장면은 걸린 행만 봐선 판정이 안 선다. 페이지가 여럿으로
+    갈린 이벤트도 있어 `p{맵:03d}-{이벤트}-*`를 다 긁는다.
+    """
+    if not str(mapno).isdigit() or not event.isdigit():   # 경로 조작 차단
+        return []
+    out = []
+    for fp in sorted(Path(out_dir).glob(f"p{int(mapno):03d}-{int(event)}-*.jsonl")):
+        for line in fp.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                r = json.loads(line)
+                if r.get("new"):
+                    out.append({"id": r["id"], "who": r["who"], "es": r["es"],
+                                "ko": r["old"], "new": r["new"]})
+    return out
 
 
 def verdict_path(out):
@@ -221,6 +263,10 @@ def handler(out_dir, vpath):
                 self.send_header("Content-Length", str(len(page)))
                 self.end_headers()
                 self.wfile.write(page)
+            elif u.path == "/event":
+                q = urllib.parse.parse_qs(u.query)
+                self._json({"rows": event_rows(out_dir, q.get("map", [""])[0],
+                                               q.get("event", [""])[0])})
             elif u.path == "/data":
                 # 매번 다시 읽는다 — 선별을 다시 돌리고 새로고침하면 바로 반영된다
                 self._json({"scenes": collect(out_dir),
@@ -251,7 +297,9 @@ def selftest():
         d = Path(t)
         (d / "p024-43-0.jsonl").write_text(
             json.dumps({"id": "24:43:0:0", "who": "기니아", "es": "Hola",
-                        "old": "안녕", "new": "안녕하세요"}, ensure_ascii=False) + "\n",
+                        "old": "안녕", "new": "안녕하세요"}, ensure_ascii=False) + "\n"
+            + json.dumps({"id": "24:43:0:1", "who": "기니아", "es": "Adios",
+                          "old": "잘 가", "new": "잘 가요"}, ensure_ascii=False) + "\n",
             encoding="utf-8")
         (d / "screen.jsonl").write_text(
             json.dumps({"id": "24:43:0:0", "who": "기니아", "flags": ["존칭 변경:님"]},
@@ -262,6 +310,11 @@ def selftest():
         base = f"http://127.0.0.1:{srv.server_address[1]}"
         got = json.load(urllib.request.urlopen(base + "/data"))
         assert len(got["scenes"]) == 1 and got["verdicts"] == {}, got
+        assert len(got["scenes"][0]["rows"]) == 1                 # 걸린 행만
+        ev = json.load(urllib.request.urlopen(base + "/event?map=24&event=43"))["rows"]
+        assert [r["id"] for r in ev] == ["24:43:0:0", "24:43:0:1"], ev   # 안 걸린 행까지
+        assert ev[1]["ko"] == "잘 가" and ev[1]["new"] == "잘 가요"
+        assert json.load(urllib.request.urlopen(base + "/event?map=x&event=y"))["rows"] == []
         urllib.request.urlopen(urllib.request.Request(
             base + "/verdict", method="POST",
             data=json.dumps({"id": "24:43:0:0", "판정": "B새번역",
