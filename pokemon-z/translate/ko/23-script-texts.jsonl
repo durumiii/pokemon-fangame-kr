@@ -14,16 +14,16 @@
 {"k": "Expected a section at the beginning of the file (line {1})", "v": "Expected a section at the beginning of the file (line {1})"}
 {"k": "Can't find {1}", "v": "{1}\\j[을,를] 찾을 수 없습니다."}
 {"k": "Invalid section name {1}", "v": "Invalid section name {1}"}
-{"k": "Section {1} can't be an ordered list (section was recognized as an ordered list because its first line is a number)", "v": "Section {1} can't be an ordered list (section was recognized as an ordered list because its first line is a number)"}
-{"k": "Section {1}'s line count is not divisible by 3 (section was recognized as an ordered list because its first line is a number)", "v": "Section {1}'s line count is not divisible by 3 (section was recognized as an ordered list because its first line is a number)"}
+{"k": "Section {1} can't be an ordered list (section was recognized as an ordered list because its first line is a number)", "v": "Section {1} can’t be an ordered list (section was recognized as an ordered list because its first line is a number)"}
+{"k": "Section {1}'s line count is not divisible by 3 (section was recognized as an ordered list because its first line is a number)", "v": "Section {1}’s line count is not divisible by 3 (section was recognized as an ordered list because its first line is a number)"}
 {"k": "Section {1} has an odd number of entries (section was recognized as a hash because its first line is not a number)", "v": "섹션 {1}의 항목 수가 홀수입니다 (첫 줄이 숫자가 아니어서 해시로 인식됨)"}
 {"k": "Expected a number in section {1}, got {2} instead", "v": "Expected a number in section {1}, got {2} instead"}
 {"k": "Failed to load the bitmap located at: {1}", "v": "다음 위치에서 비트맵을 불러오지 못했습니다: {1}"}
 {"k": "Frame width is 0", "v": "Frame width is 0"}
 {"k": "Frame height is 0", "v": "Frame height is 0"}
-{"k": "Bitmap's width ({1}) is not a multiple of frame width ({2}) [Bitmap={3}]", "v": "Bitmap's width ({1}) is not a multiple of frame width ({2}) [Bitmap={3}]"}
-{"k": "Bitmap's height ({1}) is not a multiple of frame height ({2}) [Bitmap={3}]", "v": "Bitmap's height ({1}) is not a multiple of frame height ({2}) [Bitmap={3}]"}
-{"k": "Bitmap's width ({1}) is not a multiple of frame count ({2}) [Bitmap={3}]", "v": "Bitmap's width ({1}) is not a multiple of frame count ({2}) [Bitmap={3}]"}
+{"k": "Bitmap's width ({1}) is not a multiple of frame width ({2}) [Bitmap={3}]", "v": "Bitmap’s width ({1}) is not a multiple of frame width ({2}) 「Bitmap={3}」"}
+{"k": "Bitmap's height ({1}) is not a multiple of frame height ({2}) [Bitmap={3}]", "v": "Bitmap’s height ({1}) is not a multiple of frame height ({2}) 「Bitmap={3}」"}
+{"k": "Bitmap's width ({1}) is not a multiple of frame count ({2}) [Bitmap={3}]", "v": "Bitmap’s width ({1}) is not a multiple of frame count ({2}) 「Bitmap={3}」"}
 {"k": "Invalid quoted field (in: {1})", "v": "Invalid quoted field (in: {1})"}
 {"k": "Field {1} is not a positive integer", "v": "Field {1} is not a positive integer"}
 {"k": "Yes", "v": "예"}
@@ -271,20 +271,20 @@
 {"k": "HP greater than total HP", "v": "HP greater than total HP"}
 {"k": "{1} fainted!", "v": "{1} fainted!"}
 {"k": "{1} transformed!", "v": "{1} transformed!"}
-{"k": "{1}'s {2} made a heavy rain begin to fall!", "v": "{1}'s {2} made a heavy rain begin to fall!"}
-{"k": "{1}'s {2} turned the sunlight extremely harsh!", "v": "{1}'s {2} turned the sunlight extremely harsh!"}
+{"k": "{1}'s {2} made a heavy rain begin to fall!", "v": "{1}’s {2} made a heavy rain begin to fall!"}
+{"k": "{1}'s {2} turned the sunlight extremely harsh!", "v": "{1}’s {2} turned the sunlight extremely harsh!"}
 {"k": "{1}'s {2} caused a mysterious air current that protects Flying-type Pokémon!", "v": "{1}의 {2}\\j[이,가] 비행타입 포켓몬을 지키는 신비한 기류를 일으켰다!"}
-{"k": "{1}'s {2} made it rain!", "v": "{1}'s {2} made it rain!"}
-{"k": "{1}'s {2} intensified the sun's rays!", "v": "{1}'s {2} intensified the sun's rays!"}
-{"k": "{1}'s {2} whipped up a sandstorm!", "v": "{1}'s {2} whipped up a sandstorm!"}
-{"k": "{1}'s {2} made it hail!", "v": "{1}'s {2} made it hail!"}
+{"k": "{1}'s {2} made it rain!", "v": "{1}’s {2} made it rain!"}
+{"k": "{1}'s {2} intensified the sun's rays!", "v": "{1}‘s {2} intensified the sun’s rays!"}
+{"k": "{1}'s {2} whipped up a sandstorm!", "v": "{1}’s {2} whipped up a sandstorm!"}
+{"k": "{1}'s {2} made it hail!", "v": "{1}’s {2} made it hail!"}
 {"k": "{1} has {2}!", "v": "{1}\\j[은,는] {2}\\j[을,를] 가지고 있다!"}
 {"k": "The effects of the weather disappeared.", "v": "The effects of the weather disappeared."}
-{"k": "{1} traced {2}'s {3}!", "v": "{1} traced {2}'s {3}!"}
+{"k": "{1} traced {2}'s {3}!", "v": "{1} traced {2}’s {3}!"}
 {"k": "{1} frisked {2} and found its {3}!", "v": "{1} frisked {2} and found its {3}!"}
 {"k": "{1} frisked the foe and found one {2}!", "v": "{1} frisked the foe and found one {2}!"}
 {"k": "{1} shuddered with anticipation!", "v": "{1} shuddered with anticipation!"}
-{"k": "{1}'s Forewarn alerted it to {2}!", "v": "{1}'s Forewarn alerted it to {2}!"}
+{"k": "{1}'s Forewarn alerted it to {2}!", "v": "{1}’s Forewarn alerted it to {2}!"}
 {"k": "{1} is exerting its pressure!", "v": "{1} is exerting its pressure!"}
 {"k": "{1} breaks the mold!", "v": "{1} breaks the mold!"}
 {"k": "{1} is radiating a blazing aura!", "v": "{1} is radiating a blazing aura!"}
@@ -294,44 +294,44 @@
 {"k": "{1} reversed all other Pokémon's auras!", "v": "{1}\\j[이,가] 다른 모든 포켓몬의 오라를 뒤집었다!"}
 {"k": "{1} transformed into {2}!", "v": "{1} transformed into {2}!"}
 {"k": "{1} floats in the air with its {2}!", "v": "{1} floats in the air with its {2}!"}
-{"k": "{1}'s {2} was transferred to {3}!", "v": "{1}'s {2} was transferred to {3}!"}
+{"k": "{1}'s {2} was transferred to {3}!", "v": "{1}’s {2} was transferred to {3}!"}
 {"k": "{1} was hurt by the {2}!", "v": "{1} was hurt by the {2}!"}
 {"k": "{1} was caught in the aftermath!", "v": "{1} was caught in the aftermath!"}
-{"k": "{1}'s {2} made {3} fall in love!", "v": "{1}'s {2} made {3} fall in love!"}
+{"k": "{1}'s {2} made {3} fall in love!", "v": "{1}’s {2} made {3} fall in love!"}
 {"k": "{1}'s {2} poisoned {3}!", "v": "{1}의 {2}\\j[으로,로] 인해 {3}\\j[은,는] 독에 걸렸다!"}
-{"k": "{1}'s {2} made {3} fall asleep!", "v": "{1}'s {2} made {3} fall asleep!"}
-{"k": "{1}'s {2} paralyzed {3}! It may be unable to move!", "v": "{1}'s {2} paralyzed {3}! It may be unable to move!"}
-{"k": "{1}'s {2} burned {3}!", "v": "{1}'s {2} burned {3}!"}
+{"k": "{1}'s {2} made {3} fall asleep!", "v": "{1}’s {2} made {3} fall asleep!"}
+{"k": "{1}'s {2} paralyzed {3}! It may be unable to move!", "v": "{1}’s {2} paralyzed {3}! It may be unable to move!"}
+{"k": "{1}'s {2} burned {3}!", "v": "{1}’s {2} burned {3}!"}
 {"k": "{1} was mummified by {2}!", "v": "{1} was mummified by {2}!"}
 {"k": "{1}'s {2} hurt {3}!", "v": "{1}의 {2}\\j[이,가] {3}에게 상처를 입혔다!"}
 {"k": "{1}'s {2} disabled {3}!", "v": "{1}의 {2}\\j[이,가] {3}의 기술을 봉인했다!"}
-{"k": "{1}'s Air Balloon popped!", "v": "{1}'s Air Balloon popped!"}
+{"k": "{1}'s Air Balloon popped!", "v": "{1}’s Air Balloon popped!"}
 {"k": "{1} consumed its {2} and hurt {3}!", "v": "{1} consumed its {2} and hurt {3}!"}
-{"k": "{1}'s {2} maxed its {3}!", "v": "{1}'s {2} maxed its {3}!"}
+{"k": "{1}'s {2} maxed its {3}!", "v": "{1}’s {2} maxed its {3}!"}
 {"k": "{1} held up its {2} against the {3}!", "v": "{1} held up its {2} against the {3}!"}
 {"k": "{1} is switched out with the {2}!", "v": "{1} is switched out with the {2}!"}
 {"k": "{1} restored a little HP using its {2}!", "v": "{1} restored a little HP using its {2}!"}
 {"k": "{1} lost some of its HP!", "v": "{1} lost some of its HP!"}
-{"k": "{1}'s {2} made it the {3} type!", "v": "{1}'s {2} made it the {3} type!"}
+{"k": "{1}'s {2} made it the {3} type!", "v": "{1}’s {2} made it the {3} type!"}
 {"k": "{1} stole {2}'s {3} with {4}!", "v": "{1}\\j[은,는] {4}\\j[으로,로] {2}의 {3}\\j[을,를] 훔쳤다!"}
-{"k": "{1} pickpocketed {2}'s {3}!", "v": "{1} pickpocketed {2}'s {3}!"}
-{"k": "{1}'s {2} woke it up!", "v": "{1}'s {2} woke it up!"}
-{"k": "{1}'s {2} cured its poisoning!", "v": "{1}'s {2} cured its poisoning!"}
-{"k": "{1}'s {2} healed its burn!", "v": "{1}'s {2} healed its burn!"}
-{"k": "{1}'s {2} cured its paralysis!", "v": "{1}'s {2} cured its paralysis!"}
-{"k": "{1}'s {2} defrosted it!", "v": "{1}'s {2} defrosted it!"}
-{"k": "{1}'s {2} snapped it out of its confusion!", "v": "{1}'s {2} snapped it out of its confusion!"}
-{"k": "{1}'s {2} cured its infatuation status!", "v": "{1}'s {2} cured its infatuation status!"}
-{"k": "{1}'s {2} made its taunt wear off!", "v": "{1}'s {2} made its taunt wear off!"}
-{"k": "{1}'s {2} let it share its {3} with {4}!", "v": "{1}'s {2} let it share its {3} with {4}!"}
+{"k": "{1} pickpocketed {2}'s {3}!", "v": "{1} pickpocketed {2}’s {3}!"}
+{"k": "{1}'s {2} woke it up!", "v": "{1}’s {2} woke it up!"}
+{"k": "{1}'s {2} cured its poisoning!", "v": "{1}’s {2} cured its poisoning!"}
+{"k": "{1}'s {2} healed its burn!", "v": "{1}’s {2} healed its burn!"}
+{"k": "{1}'s {2} cured its paralysis!", "v": "{1}’s {2} cured its paralysis!"}
+{"k": "{1}'s {2} defrosted it!", "v": "{1}’s {2} defrosted it!"}
+{"k": "{1}'s {2} snapped it out of its confusion!", "v": "{1}’s {2} snapped it out of its confusion!"}
+{"k": "{1}'s {2} cured its infatuation status!", "v": "{1}’s {2} cured its infatuation status!"}
+{"k": "{1}'s {2} made its taunt wear off!", "v": "{1}’s {2} made its taunt wear off!"}
+{"k": "{1}'s {2} let it share its {3} with {4}!", "v": "{1}’s {2} let it share its {3} with {4}!"}
 {"k": "{1} restored its health using its {2}!", "v": "{1} restored its health using its {2}!"}
-{"k": "{1}'s {2} cured its sleep problem.", "v": "{1}'s {2} cured its sleep problem."}
-{"k": "{1}'s {2} cured its poisoning.", "v": "{1}'s {2} cured its poisoning."}
-{"k": "{1}'s {2} healed its burn.", "v": "{1}'s {2} healed its burn."}
-{"k": "{1}'s {2} cured its paralysis.", "v": "{1}'s {2} cured its paralysis."}
-{"k": "{1}'s {2} thawed it out.", "v": "{1}'s {2} thawed it out."}
-{"k": "{1}'s {2} restored {3}'s PP!", "v": "{1}'s {2} restored {3}'s PP!"}
-{"k": "{1}'s {2} restored health!", "v": "{1}'s {2} restored health!"}
+{"k": "{1}'s {2} cured its sleep problem.", "v": "{1}’s {2} cured its sleep problem."}
+{"k": "{1}'s {2} cured its poisoning.", "v": "{1}’s {2} cured its poisoning."}
+{"k": "{1}'s {2} healed its burn.", "v": "{1}’s {2} healed its burn."}
+{"k": "{1}'s {2} cured its paralysis.", "v": "{1}’s {2} cured its paralysis."}
+{"k": "{1}'s {2} thawed it out.", "v": "{1}’s {2} thawed it out."}
+{"k": "{1}'s {2} restored {3}'s PP!", "v": "{1}‘s {2} restored {3}’s PP!"}
+{"k": "{1}'s {2} restored health!", "v": "{1}’s {2} restored health!"}
 {"k": "For {1}, the {2} was too spicy!", "v": "For {1}, the {2} was too spicy!"}
 {"k": "For {1}, the {2} was too dry!", "v": "For {1}, the {2} was too dry!"}
 {"k": "For {1}, the {2} was too sweet!", "v": "For {1}, the {2} was too sweet!"}
@@ -339,20 +339,20 @@
 {"k": "For {1}, the {2} was too sour!", "v": "For {1}, the {2} was too sour!"}
 {"k": "{1} used its {2} to get pumped!", "v": "{1} used its {2} to get pumped!"}
 {"k": "{1} boosted the accuracy of its next move using its {2}!", "v": "{1} boosted the accuracy of its next move using its {2}!"}
-{"k": "{1}'s {2} restored its health!", "v": "{1}'s {2} restored its health!"}
+{"k": "{1}'s {2} restored its health!", "v": "{1}’s {2} restored its health!"}
 {"k": "{1} restored its status using its {2}!", "v": "{1} restored its status using its {2}!"}
 {"k": "{1} cured its infatuation status using its {2}.", "v": "{1} cured its infatuation status using its {2}."}
-{"k": "{1}'s taunt wore off!", "v": "{1}'s taunt wore off!"}
-{"k": "{1}'s encore ended!", "v": "{1}'s encore ended!"}
-{"k": "{1}'s torment wore off!", "v": "{1}'s torment wore off!"}
+{"k": "{1}'s taunt wore off!", "v": "{1}’s taunt wore off!"}
+{"k": "{1}'s encore ended!", "v": "{1}’s encore ended!"}
+{"k": "{1}'s torment wore off!", "v": "{1}’s torment wore off!"}
 {"k": "{1} is no longer disabled!", "v": "{1}의 봉인이 풀렸다!"}
-{"k": "{1}'s Heal Block wore off!", "v": "{1}'s Heal Block wore off!"}
+{"k": "{1}'s Heal Block wore off!", "v": "{1}’s Heal Block wore off!"}
 {"k": "{1} was hurt by its {2}!", "v": "{1} was hurt by its {2}!"}
-{"k": "{1} snatched {2}'s move!", "v": "{1} snatched {2}'s move!"}
-{"k": "{1} Snatched {2}'s move!", "v": "{1} Snatched {2}'s move!"}
-{"k": "{1}'s {2} took the move!", "v": "{1}'s {2} took the move!"}
+{"k": "{1} snatched {2}'s move!", "v": "{1} snatched {2}’s move!"}
+{"k": "{1} Snatched {2}'s move!", "v": "{1} Snatched {2}’s move!"}
+{"k": "{1}'s {2} took the move!", "v": "{1}’s {2} took the move!"}
 {"k": "{1} bounced the {2} back!", "v": "{1} bounced the {2} back!"}
-{"k": "{1}'s {2} blocks {3}!", "v": "{1}'s {2} blocks {3}!"}
+{"k": "{1}'s {2} blocks {3}!", "v": "{1}’s {2} blocks {3}!"}
 {"k": "{1} ignored orders while asleep!", "v": "{1} ignored orders while asleep!"}
 {"k": "{1} ignored orders!", "v": "{1} ignored orders!"}
 {"k": "{1} took a nap!", "v": "{1} took a nap!"}
@@ -360,7 +360,7 @@
 {"k": "{1} turned away!", "v": "{1} turned away!"}
 {"k": "{1} is loafing around!", "v": "{1} is loafing around!"}
 {"k": "{1} pretended not to notice!", "v": "{1} pretended not to notice!"}
-{"k": "{1} wasn't affected!", "v": "{1} wasn't affected!"}
+{"k": "{1} wasn't affected!", "v": "{1} wasn’t affected!"}
 {"k": "But it failed to spit up a thing!", "v": "But it failed to spit up a thing!"}
 {"k": "{1} protected itself!", "v": "{1} protected itself!"}
 {"k": "{1} was protected by Quick Guard!", "v": "{1} was protected by Quick Guard!"}
@@ -369,34 +369,34 @@
 {"k": "{1} was blocked by the kicked-up mat!", "v": "{1} was blocked by the kicked-up mat!"}
 {"k": "But it failed!", "v": "그러나 실패했다!"}
 {"k": "{1} was hurt!", "v": "{1} was hurt!"}
-{"k": "It doesn't affect\n{1}...", "v": "It doesn't affect\r\n{1}..."}
+{"k": "It doesn't affect\n{1}...", "v": "It doesn’t affect\r\n{1}..."}
 {"k": "{1} makes Ground moves miss with Levitate!", "v": "{1} makes Ground moves miss with Levitate!"}
-{"k": "{1}'s Air Balloon makes Ground moves miss!", "v": "{1}'s Air Balloon makes Ground moves miss!"}
+{"k": "{1}'s Air Balloon makes Ground moves miss!", "v": "{1}’s Air Balloon makes Ground moves miss!"}
 {"k": "{1} makes Ground moves miss with Magnet Rise!", "v": "{1} makes Ground moves miss with Magnet Rise!"}
 {"k": "{1} makes Ground moves miss with Telekinesis!", "v": "{1} makes Ground moves miss with Telekinesis!"}
 {"k": "{1} avoided damage with Wonder Guard!", "v": "{1} avoided damage with Wonder Guard!"}
 {"k": "{1} avoided the attack!", "v": "{1} avoided the attack!"}
 {"k": "{1} evaded the attack!", "v": "{1} evaded the attack!"}
-{"k": "{1}'s attack missed!", "v": "{1}'s attack missed!"}
-{"k": "{1} can't use {2} because of gravity!", "v": "{1} can't use {2} because of gravity!"}
-{"k": "{1} can't use {2} after the taunt!", "v": "{1} can't use {2} after the taunt!"}
-{"k": "{1} can't use {2} because of Heal Block!", "v": "{1} can't use {2} because of Heal Block!"}
-{"k": "{1} can't use the same move in a row due to the torment!", "v": "{1} can't use the same move in a row due to the torment!"}
-{"k": "{1} can't use the sealed {2}!", "v": "{1} can't use the sealed {2}!"}
-{"k": "{1}'s {2} is disabled!", "v": "{1}'s {2} is disabled!"}
+{"k": "{1}'s attack missed!", "v": "{1}’s attack missed!"}
+{"k": "{1} can't use {2} because of gravity!", "v": "{1} can’t use {2} because of gravity!"}
+{"k": "{1} can't use {2} after the taunt!", "v": "{1} can’t use {2} after the taunt!"}
+{"k": "{1} can't use {2} because of Heal Block!", "v": "{1} can’t use {2} because of Heal Block!"}
+{"k": "{1} can't use the same move in a row due to the torment!", "v": "{1} can’t use the same move in a row due to the torment!"}
+{"k": "{1} can't use the sealed {2}!", "v": "{1} can’t use the sealed {2}!"}
+{"k": "{1}'s {2} is disabled!", "v": "{1}’s {2} is disabled!"}
 {"k": "{1} appears incapable of using its power!", "v": "{1} appears incapable of using its power!"}
 {"k": "{1} must recharge!", "v": "{1} must recharge!"}
 {"k": "{1} melted the ice!", "v": "{1} melted the ice!"}
-{"k": "{1} flinched and couldn't move!", "v": "{1} flinched and couldn't move!"}
+{"k": "{1} flinched and couldn't move!", "v": "{1} flinched and couldn’t move!"}
 {"k": "{1} kept going and crashed!", "v": "{1} kept going and crashed!"}
 {"k": "The {1} weakened the damage to {2}!", "v": "The {1} weakened the damage to {2}!"}
 {"k": "{1}'s {2} wore off!", "v": "{1}의 {2} 효과가 떨어졌다!"}
-{"k": "{1}'s {2} lost all its PP due to the grudge!", "v": "{1}'s {2} lost all its PP due to the grudge!"}
-{"k": "{1}'s rage is building!", "v": "{1}'s rage is building!"}
-{"k": "It's super effective on {1}!", "v": "It's super effective on {1}!"}
-{"k": "It's super effective!", "v": "It's super effective!"}
-{"k": "It's not very effective on {1}...", "v": "It's not very effective on {1}..."}
-{"k": "It's not very effective...", "v": "It's not very effective..."}
+{"k": "{1}'s {2} lost all its PP due to the grudge!", "v": "{1}’s {2} lost all its PP due to the grudge!"}
+{"k": "{1}'s rage is building!", "v": "{1}’s rage is building!"}
+{"k": "It's super effective on {1}!", "v": "It’s super effective on {1}!"}
+{"k": "It's super effective!", "v": "It’s super effective!"}
+{"k": "It's not very effective on {1}...", "v": "It’s not very effective on {1}..."}
+{"k": "It's not very effective...", "v": "It’s not very effective..."}
 {"k": "Hit {1} time!", "v": "{1}번 맞았다!"}
 {"k": "Hit {1} times!", "v": "{1}번 맞았다!"}
 {"k": "{1} took its attacker down with it!", "v": "{1} took its attacker down with it!"}
@@ -418,88 +418,88 @@
 {"k": "The Misty Terrain prevented {1} from falling asleep!", "v": "The Misty Terrain prevented {1} from falling asleep!"}
 {"k": "But the uproar kept {1} awake!", "v": "But the uproar kept {1} awake!"}
 {"k": "{1} stayed awake using its {2}!", "v": "{1} stayed awake using its {2}!"}
-{"k": "{1} stayed awake using its partner's {2}!", "v": "{1} stayed awake using its partner's {2}!"}
-{"k": "{1}'s team is protected by Safeguard!", "v": "{1}'s team is protected by Safeguard!"}
+{"k": "{1} stayed awake using its partner's {2}!", "v": "{1} stayed awake using its partner’s {2}!"}
+{"k": "{1}'s team is protected by Safeguard!", "v": "{1}’s team is protected by Safeguard!"}
 {"k": "{1} fell asleep!", "v": "{1} fell asleep!"}
 {"k": "{1} is already poisoned.", "v": "{1} is already poisoned."}
-{"k": "It doesn't affect {1}...", "v": "It doesn't affect {1}..."}
+{"k": "It doesn't affect {1}...", "v": "It doesn’t affect {1}..."}
 {"k": "The Misty Terrain prevented {1} from being poisoned!", "v": "The Misty Terrain prevented {1} from being poisoned!"}
-{"k": "{1}'s {2} prevents poisoning!", "v": "{1}'s {2} prevents poisoning!"}
-{"k": "{1}'s partner's {2} prevents poisoning!", "v": "{1}'s partner's {2} prevents poisoning!"}
+{"k": "{1}'s {2} prevents poisoning!", "v": "{1}’s {2} prevents poisoning!"}
+{"k": "{1}'s partner's {2} prevents poisoning!", "v": "{1}‘s partner’s {2} prevents poisoning!"}
 {"k": "{1}'s {2} had no effect on {3}!", "v": "{1}의 {2}\\j[은,는] {3}에게 효과가 없었다!"}
-{"k": "{1}'s {2} prevents {3}'s {4} from working!", "v": "{1}'s {2} prevents {3}'s {4} from working!"}
+{"k": "{1}'s {2} prevents {3}'s {4} from working!", "v": "{1}‘s {2} prevents {3}’s {4} from working!"}
 {"k": "{1} was badly poisoned!", "v": "{1} was badly poisoned!"}
 {"k": "{1} was poisoned!", "v": "{1} was poisoned!"}
 {"k": "{1} already has a burn.", "v": "{1}\\j[은,는] 이미 화상 상태다."}
 {"k": "The Misty Terrain prevented {1} from being burned!", "v": "The Misty Terrain prevented {1} from being burned!"}
-{"k": "{1}'s {2} prevents burns!", "v": "{1}'s {2} prevents burns!"}
-{"k": "{1}'s partner's {2} prevents burns!", "v": "{1}'s partner's {2} prevents burns!"}
+{"k": "{1}'s {2} prevents burns!", "v": "{1}’s {2} prevents burns!"}
+{"k": "{1}'s partner's {2} prevents burns!", "v": "{1}‘s partner’s {2} prevents burns!"}
 {"k": "{1} was burned!", "v": "{1} was burned!"}
 {"k": "{1} is already paralyzed!", "v": "{1} is already paralyzed!"}
 {"k": "The Misty Terrain prevented {1} from being paralyzed!", "v": "The Misty Terrain prevented {1} from being paralyzed!"}
-{"k": "{1}'s {2} prevents paralysis!", "v": "{1}'s {2} prevents paralysis!"}
-{"k": "{1}'s partner's {2} prevents paralysis!", "v": "{1}'s partner's {2} prevents paralysis!"}
+{"k": "{1}'s {2} prevents paralysis!", "v": "{1}’s {2} prevents paralysis!"}
+{"k": "{1}'s partner's {2} prevents paralysis!", "v": "{1}‘s partner’s {2} prevents paralysis!"}
 {"k": "{1} is paralyzed! It may be unable to move!", "v": "{1} is paralyzed! It may be unable to move!"}
 {"k": "{1} is already frozen solid!", "v": "{1} is already frozen solid!"}
 {"k": "The Misty Terrain prevented {1} from being frozen!", "v": "The Misty Terrain prevented {1} from being frozen!"}
-{"k": "{1}'s {2} prevents freezing!", "v": "{1}'s {2} prevents freezing!"}
-{"k": "{1}'s partner's {2} prevents freezing!", "v": "{1}'s partner's {2} prevents freezing!"}
+{"k": "{1}'s {2} prevents freezing!", "v": "{1}’s {2} prevents freezing!"}
+{"k": "{1}'s partner's {2} prevents freezing!", "v": "{1}‘s partner’s {2} prevents freezing!"}
 {"k": "{1} was frozen solid!", "v": "{1} was frozen solid!"}
 {"k": "{1} is fast asleep.", "v": "{1} is fast asleep."}
 {"k": "{1} was hurt by poison!", "v": "{1} was hurt by poison!"}
 {"k": "{1} was hurt by its burn!", "v": "{1} was hurt by its burn!"}
-{"k": "{1} is paralyzed! It can't move!", "v": "{1} is paralyzed! It can't move!"}
+{"k": "{1} is paralyzed! It can't move!", "v": "{1} is paralyzed! It can’t move!"}
 {"k": "{1} is frozen solid!", "v": "{1} is frozen solid!"}
 {"k": "{1} woke up!", "v": "{1} woke up!"}
 {"k": "{1} was cured of paralysis.", "v": "{1} was cured of paralysis."}
 {"k": "{1} thawed out!", "v": "{1} thawed out!"}
 {"k": "{1} is already confused!", "v": "{1} is already confused!"}
-{"k": "{1}'s {2} prevents confusion!", "v": "{1}'s {2} prevents confusion!"}
+{"k": "{1}'s {2} prevents confusion!", "v": "{1}’s {2} prevents confusion!"}
 {"k": "{1} became confused!", "v": "{1} became confused!"}
 {"k": "{1} is confused!", "v": "{1} is confused!"}
 {"k": "{1} snapped out of confusion!", "v": "{1} snapped out of confusion!"}
-{"k": "{1}'s {2} prevents romance!", "v": "{1}'s {2} prevents romance!"}
+{"k": "{1}'s {2} prevents romance!", "v": "{1}’s {2} prevents romance!"}
 {"k": "{1} fell in love!", "v": "{1} fell in love!"}
 {"k": "{1} is in love with {2}!", "v": "{1} is in love with {2}!"}
 {"k": "{1} is immobilized by love!", "v": "{1} is immobilized by love!"}
-{"k": "{1}'s {2} won't go any higher!", "v": "{1}'s {2} won't go any higher!"}
-{"k": "{1}'s {2} activated!", "v": "{1}'s {2} activated!"}
+{"k": "{1}'s {2} won't go any higher!", "v": "{1}‘s {2} won’t go any higher!"}
+{"k": "{1}'s {2} activated!", "v": "{1}’s {2} activated!"}
 {"k": "{1}'s {2} rose!", "v": "{1}의 {2}\\j[이,가] 올라갔다!"}
-{"k": "{1}'s {2} rose sharply!", "v": "{1}'s {2} rose sharply!"}
-{"k": "{1}'s {2} rose drastically!", "v": "{1}'s {2} rose drastically!"}
-{"k": "{1}'s {2} raised its {3}!", "v": "{1}'s {2} raised its {3}!"}
-{"k": "{1}'s {2} sharply raised its {3}!", "v": "{1}'s {2} sharply raised its {3}!"}
-{"k": "{1}'s {2} went way up!", "v": "{1}'s {2} went way up!"}
-{"k": "{1}'s {2} raised {3}'s {4}!", "v": "{1}'s {2} raised {3}'s {4}!"}
-{"k": "{1}'s {2} sharply raised {3}'s {4}!", "v": "{1}'s {2} sharply raised {3}'s {4}!"}
-{"k": "{1}'s {2} drastically raised {3}'s {4}!", "v": "{1}'s {2} drastically raised {3}'s {4}!"}
+{"k": "{1}'s {2} rose sharply!", "v": "{1}’s {2} rose sharply!"}
+{"k": "{1}'s {2} rose drastically!", "v": "{1}’s {2} rose drastically!"}
+{"k": "{1}'s {2} raised its {3}!", "v": "{1}’s {2} raised its {3}!"}
+{"k": "{1}'s {2} sharply raised its {3}!", "v": "{1}’s {2} sharply raised its {3}!"}
+{"k": "{1}'s {2} went way up!", "v": "{1}’s {2} went way up!"}
+{"k": "{1}'s {2} raised {3}'s {4}!", "v": "{1}‘s {2} raised {3}’s {4}!"}
+{"k": "{1}'s {2} sharply raised {3}'s {4}!", "v": "{1}‘s {2} sharply raised {3}’s {4}!"}
+{"k": "{1}'s {2} drastically raised {3}'s {4}!", "v": "{1}‘s {2} drastically raised {3}’s {4}!"}
 {"k": "{1} is protected by Mist!", "v": "{1} is protected by Mist!"}
-{"k": "{1}'s {2} prevents stat loss!", "v": "{1}'s {2} prevents stat loss!"}
-{"k": "{1}'s {2} prevents {3}'s stat loss!", "v": "{1}'s {2} prevents {3}'s stat loss!"}
-{"k": "{1}'s {2} prevents Attack loss!", "v": "{1}'s {2} prevents Attack loss!"}
-{"k": "{1}'s {2} prevents Defense loss!", "v": "{1}'s {2} prevents Defense loss!"}
-{"k": "{1}'s {2} prevents accuracy loss!", "v": "{1}'s {2} prevents accuracy loss!"}
-{"k": "{1}'s {2} won't go any lower!", "v": "{1}'s {2} won't go any lower!"}
+{"k": "{1}'s {2} prevents stat loss!", "v": "{1}’s {2} prevents stat loss!"}
+{"k": "{1}'s {2} prevents {3}'s stat loss!", "v": "{1}‘s {2} prevents {3}’s stat loss!"}
+{"k": "{1}'s {2} prevents Attack loss!", "v": "{1}’s {2} prevents Attack loss!"}
+{"k": "{1}'s {2} prevents Defense loss!", "v": "{1}’s {2} prevents Defense loss!"}
+{"k": "{1}'s {2} prevents accuracy loss!", "v": "{1}’s {2} prevents accuracy loss!"}
+{"k": "{1}'s {2} won't go any lower!", "v": "{1}‘s {2} won’t go any lower!"}
 {"k": "{1}'s {2} fell!", "v": "{1}의 {2}\\j[이,가] 떨어졌다!"}
-{"k": "{1}'s {2} harshly fell!", "v": "{1}'s {2} harshly fell!"}
-{"k": "{1}'s {2} severely fell!", "v": "{1}'s {2} severely fell!"}
-{"k": "{1}'s {2} lowered its {3}!", "v": "{1}'s {2} lowered its {3}!"}
-{"k": "{1}'s {2} harshly lowered its {3}!", "v": "{1}'s {2} harshly lowered its {3}!"}
-{"k": "{1}'s {2} severely lowered its {3}!", "v": "{1}'s {2} severely lowered its {3}!"}
-{"k": "{1}'s {2} lowered {3}'s {4}!", "v": "{1}'s {2} lowered {3}'s {4}!"}
-{"k": "{1}'s {2} harshly lowered {3}'s {4}!", "v": "{1}'s {2} harshly lowered {3}'s {4}!"}
-{"k": "{1}'s {2} severely lowered {3}'s {4}!", "v": "{1}'s {2} severely lowered {3}'s {4}!"}
-{"k": "{1}'s substitute protected it from {2}'s {3}!", "v": "{1}'s substitute protected it from {2}'s {3}!"}
-{"k": "{1} is protected from {2}'s {3} by Mist!", "v": "{1} is protected from {2}'s {3} by Mist!"}
-{"k": "{1}'s {2} prevented {3}'s {4} from working!", "v": "{1}'s {2} prevented {3}'s {4} from working!"}
-{"k": "{1}'s {2} made {3} ineffective!", "v": "{1}'s {2} made {3} ineffective!"}
-{"k": "{1}'s {2} restored its HP!", "v": "{1}'s {2} restored its HP!"}
-{"k": "{1}'s {2} made {3} useless!", "v": "{1}'s {2} made {3} useless!"}
-{"k": "{1}'s {2} raised its Fire power!", "v": "{1}'s {2} raised its Fire power!"}
+{"k": "{1}'s {2} harshly fell!", "v": "{1}’s {2} harshly fell!"}
+{"k": "{1}'s {2} severely fell!", "v": "{1}’s {2} severely fell!"}
+{"k": "{1}'s {2} lowered its {3}!", "v": "{1}’s {2} lowered its {3}!"}
+{"k": "{1}'s {2} harshly lowered its {3}!", "v": "{1}’s {2} harshly lowered its {3}!"}
+{"k": "{1}'s {2} severely lowered its {3}!", "v": "{1}’s {2} severely lowered its {3}!"}
+{"k": "{1}'s {2} lowered {3}'s {4}!", "v": "{1}‘s {2} lowered {3}’s {4}!"}
+{"k": "{1}'s {2} harshly lowered {3}'s {4}!", "v": "{1}‘s {2} harshly lowered {3}’s {4}!"}
+{"k": "{1}'s {2} severely lowered {3}'s {4}!", "v": "{1}‘s {2} severely lowered {3}’s {4}!"}
+{"k": "{1}'s substitute protected it from {2}'s {3}!", "v": "{1}‘s substitute protected it from {2}’s {3}!"}
+{"k": "{1} is protected from {2}'s {3} by Mist!", "v": "{1} is protected from {2}’s {3} by Mist!"}
+{"k": "{1}'s {2} prevented {3}'s {4} from working!", "v": "{1}‘s {2} prevented {3}’s {4} from working!"}
+{"k": "{1}'s {2} made {3} ineffective!", "v": "{1}’s {2} made {3} ineffective!"}
+{"k": "{1}'s {2} restored its HP!", "v": "{1}’s {2} restored its HP!"}
+{"k": "{1}'s {2} made {3} useless!", "v": "{1}’s {2} made {3} useless!"}
+{"k": "{1}'s {2} raised its Fire power!", "v": "{1}’s {2} raised its Fire power!"}
 {"k": "{1} avoids attacks by its ally Pokémon!", "v": "{1}\\j[은,는] 아군의 공격을 피한다!"}
-{"k": "The {1} strengthened {2}'s power!", "v": "The {1} strengthened {2}'s power!"}
+{"k": "The {1} strengthened {2}'s power!", "v": "The {1} strengthened {2}’s power!"}
 {"k": "The substitute took damage for {1}!", "v": "The substitute took damage for {1}!"}
-{"k": "{1}'s substitute faded!", "v": "{1}'s substitute faded!"}
+{"k": "{1}'s substitute faded!", "v": "{1}’s substitute faded!"}
 {"k": "A critical hit on {1}!", "v": "A critical hit on {1}!"}
 {"k": "A critical hit!", "v": "A critical hit!"}
 {"k": "{1} endured the hit!", "v": "{1} endured the hit!"}
@@ -509,15 +509,15 @@
 {"k": "{1} is damaged by recoil!", "v": "{1} is damaged by recoil!"}
 {"k": "But nothing happened!", "v": "But nothing happened!"}
 {"k": "{1} made {2} drowsy!", "v": "{1} made {2} drowsy!"}
-{"k": "But it failed because of {1}'s {2}!", "v": "But it failed because of {1}'s {2}!"}
+{"k": "But it failed because of {1}'s {2}!", "v": "But it failed because of {1}’s {2}!"}
 {"k": "{1} healed its burn!", "v": "{1} healed its burn!"}
 {"k": "{1} cured its poisoning!", "v": "{1} cured its poisoning!"}
 {"k": "{1} cured its paralysis!", "v": "{1} cured its paralysis!"}
 {"k": "A soothing aroma wafted through the area!", "v": "A soothing aroma wafted through the area!"}
 {"k": "A bell chimed!", "v": "A bell chimed!"}
-{"k": "{1}'s sleep was woken.", "v": "{1}'s sleep was woken."}
+{"k": "{1}'s sleep was woken.", "v": "{1}’s sleep was woken."}
 {"k": "{1} was cured of its poisoning.", "v": "{1} was cured of its poisoning."}
-{"k": "{1}'s burn was healed.", "v": "{1}'s burn was healed."}
+{"k": "{1}'s burn was healed.", "v": "{1}’s burn was healed."}
 {"k": "{1} was thawed out.", "v": "{1} was thawed out."}
 {"k": "{1} was woken from its sleep.", "v": "{1} was woken from its sleep."}
 {"k": "Your team became cloaked in a mystical veil!", "v": "Your team became cloaked in a mystical veil!"}
@@ -525,17 +525,17 @@
 {"k": "{1} woke up.", "v": "{1} woke up."}
 {"k": "{1} began charging power!", "v": "{1} began charging power!"}
 {"k": "{1} is getting pumped!", "v": "{1} is getting pumped!"}
-{"k": "{1}'s stats won't go any higher!", "v": "{1}'s stats won't go any higher!"}
+{"k": "{1}'s stats won't go any higher!", "v": "{1}‘s stats won’t go any higher!"}
 {"k": "{1} became nimble!", "v": "{1} became nimble!"}
 {"k": "{1} cut its own HP and minimized its Attack!", "v": "{1} cut its own HP and minimized its Attack!"}
 {"k": "{1} cut its own HP and maximized its Attack!", "v": "{1} cut its own HP and maximized its Attack!"}
-{"k": "{1}'s stats won't go any lower!", "v": "{1}'s stats won't go any lower!"}
-{"k": "{1}'s stat changes were removed!", "v": "{1}'s stat changes were removed!"}
+{"k": "{1}'s stats won't go any lower!", "v": "{1}‘s stats won’t go any lower!"}
+{"k": "{1}'s stat changes were removed!", "v": "{1}’s stat changes were removed!"}
 {"k": "All stat changes were eliminated!", "v": "All stat changes were eliminated!"}
 {"k": "{1} switched all changes to its Attack and Sp. Atk with the target!", "v": "{1} switched all changes to its Attack and Sp. Atk with the target!"}
 {"k": "{1} switched all changes to its Defense and Sp. Def with the target!", "v": "{1} switched all changes to its Defense and Sp. Def with the target!"}
 {"k": "{1} switched stat changes with the target!", "v": "{1} switched stat changes with the target!"}
-{"k": "{1} copied {2}'s stat changes!", "v": "{1} copied {2}'s stat changes!"}
+{"k": "{1} copied {2}'s stat changes!", "v": "{1} copied {2}’s stat changes!"}
 {"k": "Your team became shrouded in mist!", "v": "Your team became shrouded in mist!"}
 {"k": "The opposing team became shrouded in mist!", "v": "The opposing team became shrouded in mist!"}
 {"k": "{1} switched its Attack and Defense!", "v": "{1} switched its Attack and Defense!"}
@@ -545,26 +545,26 @@
 {"k": "The tailwind blew from behind your team!", "v": "The tailwind blew from behind your team!"}
 {"k": "The tailwind blew from behind the opposing team!", "v": "The tailwind blew from behind the opposing team!"}
 {"k": "{1} learned {2}!", "v": "{1}\\j[은,는] {2}\\j[을,를] 배웠다!"}
-{"k": "{1}'s type changed to match {2}'s!", "v": "{1}'s type changed to match {2}'s!"}
+{"k": "{1}'s type changed to match {2}'s!", "v": "{1}‘s type changed to match {2}’s!"}
 {"k": "{1} acquired {2}!", "v": "{1} acquired {2}!"}
-{"k": "{1} copied {2}'s {3}!", "v": "{1} copied {2}'s {3}!"}
-{"k": "{1} swapped its {2} Ability with its target's {3} Ability!", "v": "{1} swapped its {2} Ability with its target's {3} Ability!"}
-{"k": "{1}'s Ability was suppressed!", "v": "{1}'s Ability was suppressed!"}
+{"k": "{1} copied {2}'s {3}!", "v": "{1} copied {2}’s {3}!"}
+{"k": "{1} swapped its {2} Ability with its target's {3} Ability!", "v": "{1} swapped its {2} Ability with its target’s {3} Ability!"}
+{"k": "{1}'s Ability was suppressed!", "v": "{1}’s Ability was suppressed!"}
 {"k": "{1} was protected by {2}!", "v": "{1} was protected by {2}!"}
 {"k": "{1} is unaffected!", "v": "{1} is unaffected!"}
-{"k": "It's a one-hit KO!", "v": "It's a one-hit KO!"}
+{"k": "It's a one-hit KO!", "v": "It’s a one-hit KO!"}
 {"k": "The bursting flame hit {1}", "v": "The bursting flame hit {1}"}
 {"k": "{1} had its HP restored.", "v": "{1} had its HP restored."}
 {"k": "Magnitude {1}!", "v": "Magnitude {1}!"}
 {"k": "{1} is ready to help {2}!", "v": "{1} is ready to help {2}!"}
-{"k": "Electricity's power was weakened!", "v": "Electricity's power was weakened!"}
-{"k": "Fire's power was weakened!", "v": "Fire's power was weakened!"}
+{"k": "Electricity's power was weakened!", "v": "Electricity’s power was weakened!"}
+{"k": "Fire's power was weakened!", "v": "Fire’s power was weakened!"}
 {"k": "The Lucky Chant shielded your team from critical hits!", "v": "The Lucky Chant shielded your team from critical hits!"}
 {"k": "The Lucky Chant shielded the opposing team from critical hits!", "v": "The Lucky Chant shielded the opposing team from critical hits!"}
-{"k": "Reflect raised your team's Defense!", "v": "Reflect raised your team's Defense!"}
-{"k": "Reflect raised the opposing team's Defense!", "v": "Reflect raised the opposing team's Defense!"}
-{"k": "Light Screen raised your team's Special Defense!", "v": "Light Screen raised your team's Special Defense!"}
-{"k": "Light Screen raised the opposing team's Special Defense!", "v": "Light Screen raised the opposing team's Special Defense!"}
+{"k": "Reflect raised your team's Defense!", "v": "Reflect raised your team’s Defense!"}
+{"k": "Reflect raised the opposing team's Defense!", "v": "Reflect raised the opposing team’s Defense!"}
+{"k": "Light Screen raised your team's Special Defense!", "v": "Light Screen raised your team’s Special Defense!"}
+{"k": "Light Screen raised the opposing team's Special Defense!", "v": "Light Screen raised the opposing team’s Special Defense!"}
 {"k": "{1} took aim at {2}!", "v": "{1} took aim at {2}!"}
 {"k": "{1} was identified!", "v": "{1} was identified!"}
 {"k": "Quick Guard protected your team!", "v": "Quick Guard protected your team!"}
@@ -576,8 +576,8 @@
 {"k": "{1} waits for a target to make a move!", "v": "{1} waits for a target to make a move!"}
 {"k": "{1} turned into {2}!", "v": "{1}\\j[은,는] {2}\\j[으로,로] 변했다!"}
 {"k": "{1} was subjected to torment!", "v": "{1} was subjected to torment!"}
-{"k": "{1} sealed the opponent's move(s)!", "v": "{1} sealed the opponent's move(s)!"}
-{"k": "{1}'s {2} was disabled!", "v": "{1}'s {2} was disabled!"}
+{"k": "{1} sealed the opponent's move(s)!", "v": "{1} sealed the opponent’s move(s)!"}
+{"k": "{1}'s {2} was disabled!", "v": "{1}’s {2} was disabled!"}
 {"k": "{1} fell for the taunt!", "v": "{1} fell for the taunt!"}
 {"k": "{1} was prevented from healing!", "v": "{1} was prevented from healing!"}
 {"k": "{1} received an encore!", "v": "{1} received an encore!"}
@@ -608,15 +608,15 @@
 {"k": "{1} became confused due to fatigue!", "v": "{1} became confused due to fatigue!"}
 {"k": "{1} unleashed energy!", "v": "{1} unleashed energy!"}
 {"k": "{1} is storing energy!", "v": "{1} is storing energy!"}
-{"k": "{1}'s HP is full!", "v": "{1}'s HP is full!"}
-{"k": "{1}'s HP was restored.", "v": "{1}'s HP was restored."}
+{"k": "{1}'s HP is full!", "v": "{1}’s HP is full!"}
+{"k": "{1}'s HP was restored.", "v": "{1}’s HP was restored."}
 {"k": "{1} slept and became healthy!", "v": "{1} slept and became healthy!"}
 {"k": "{1} surrounded itself with a veil of water!", "v": "{1} surrounded itself with a veil of water!"}
 {"k": "{1} planted its roots!", "v": "{1} planted its roots!"}
 {"k": "{1} was seeded!", "v": "{1} was seeded!"}
 {"k": "{1} sucked up the liquid ooze!", "v": "{1} sucked up the liquid ooze!"}
 {"k": "{1} had its energy drained!", "v": "{1} had its energy drained!"}
-{"k": "{1}'s {2} prevents {3} from using {4}!", "v": "{1}'s {2} prevents {3} from using {4}!"}
+{"k": "{1}'s {2} prevents {3} from using {4}!", "v": "{1}’s {2} prevents {3} from using {4}!"}
 {"k": "All Pokémon hearing the song will faint in three turns!", "v": "노래를 들은 모든 포켓몬은 세 턴 뒤에 쓰러진다!"}
 {"k": "{1} wants its target to bear a grudge!", "v": "{1} wants its target to bear a grudge!"}
 {"k": "{1} is trying to take its foe down with it!", "v": "{1} is trying to take its foe down with it!"}
@@ -630,13 +630,13 @@
 {"k": "{1} switched items with its opponent!", "v": "{1} switched items with its opponent!"}
 {"k": "{1} obtained {2}.", "v": "{1}\\j[은,는] {2}\\j[을,를] 손에 넣었다."}
 {"k": "{1} received {2} from {3}!", "v": "{1}\\j[은,는] {3}에게서 {2}\\j[을,를] 받았다!"}
-{"k": "{1} stole and ate its target's {2}!", "v": "{1} stole and ate its target's {2}!"}
-{"k": "{1}'s {2} was incinerated!", "v": "{1}'s {2} was incinerated!"}
+{"k": "{1} stole and ate its target's {2}!", "v": "{1} stole and ate its target’s {2}!"}
+{"k": "{1}'s {2} was incinerated!", "v": "{1}’s {2} was incinerated!"}
 {"k": "{1} found one {2}!", "v": "{1} found one {2}!"}
 {"k": "{1} flung its {2}!", "v": "{1} flung its {2}!"}
 {"k": "{1} got over its infatuation.", "v": "{1}\\j[은,는] 헤롱헤롱 상태에서 풀려났다."}
-{"k": "{1}'s status is returned to normal!", "v": "{1}'s status is returned to normal!"}
-{"k": "{1} can't use items anymore!", "v": "{1} can't use items anymore!"}
+{"k": "{1}'s status is returned to normal!", "v": "{1}’s status is returned to normal!"}
+{"k": "{1} can't use items anymore!", "v": "{1} can’t use items anymore!"}
 {"k": "The area returned to normal!", "v": "The area returned to normal!"}
 {"k": "It created a bizarre area in which Pokémon's held items lose their effects!", "v": "포켓몬이 지닌 도구의 효과가 사라지는 기묘한 공간이 만들어졌다!"}
 {"k": "There is no relief from this heavy rain!", "v": "이 폭우는 그칠 줄을 모른다!"}
@@ -646,32 +646,32 @@
 {"k": "It started to rain!", "v": "It started to rain!"}
 {"k": "A sandstorm brewed!", "v": "A sandstorm brewed!"}
 {"k": "It started to hail!", "v": "It started to hail!"}
-{"k": "Spikes were scattered all around the opposing team's feet!", "v": "Spikes were scattered all around the opposing team's feet!"}
-{"k": "Spikes were scattered all around your team's feet!", "v": "Spikes were scattered all around your team's feet!"}
-{"k": "Poison spikes were scattered all around the opposing team's feet!", "v": "Poison spikes were scattered all around the opposing team's feet!"}
-{"k": "Poison spikes were scattered all around your team's feet!", "v": "Poison spikes were scattered all around your team's feet!"}
+{"k": "Spikes were scattered all around the opposing team's feet!", "v": "Spikes were scattered all around the opposing team’s feet!"}
+{"k": "Spikes were scattered all around your team's feet!", "v": "Spikes were scattered all around your team’s feet!"}
+{"k": "Poison spikes were scattered all around the opposing team's feet!", "v": "Poison spikes were scattered all around the opposing team’s feet!"}
+{"k": "Poison spikes were scattered all around your team's feet!", "v": "Poison spikes were scattered all around your team’s feet!"}
 {"k": "Pointed stones float in the air around the opposing team!", "v": "Pointed stones float in the air around the opposing team!"}
 {"k": "Pointed stones float in the air around your team!", "v": "Pointed stones float in the air around your team!"}
-{"k": "The two moves have become one! It's a combined move!", "v": "The two moves have become one! It's a combined move!"}
+{"k": "The two moves have become one! It's a combined move!", "v": "The two moves have become one! It’s a combined move!"}
 {"k": "A sea of fire enveloped the opposing team!", "v": "A sea of fire enveloped the opposing team!"}
 {"k": "A sea of fire enveloped your team!", "v": "A sea of fire enveloped your team!"}
 {"k": "A swamp enveloped the opposing team!", "v": "A swamp enveloped the opposing team!"}
 {"k": "A swamp enveloped your team!", "v": "A swamp enveloped your team!"}
-{"k": "{1} is waiting for {2}'s move...", "v": "{1} is waiting for {2}'s move..."}
-{"k": "A rainbow appeared in the sky on your team's side!", "v": "A rainbow appeared in the sky on your team's side!"}
-{"k": "A rainbow appeared in the sky on the opposing team's side!", "v": "A rainbow appeared in the sky on the opposing team's side!"}
+{"k": "{1} is waiting for {2}'s move...", "v": "{1} is waiting for {2}’s move..."}
+{"k": "A rainbow appeared in the sky on your team's side!", "v": "A rainbow appeared in the sky on your team’s side!"}
+{"k": "A rainbow appeared in the sky on the opposing team's side!", "v": "A rainbow appeared in the sky on the opposing team’s side!"}
 {"k": "Coins were scattered everywhere!", "v": "Coins were scattered everywhere!"}
-{"k": "The opposing team's Reflect wore off!", "v": "The opposing team's Reflect wore off!"}
-{"k": "Your team's Reflect wore off!", "v": "Your team's Reflect wore off!"}
-{"k": "The opposing team's Light Screen wore off!", "v": "The opposing team's Light Screen wore off!"}
-{"k": "Your team's Light Screen wore off!", "v": "Your team's Light Screen wore off!"}
+{"k": "The opposing team's Reflect wore off!", "v": "The opposing team’s Reflect wore off!"}
+{"k": "Your team's Reflect wore off!", "v": "Your team’s Reflect wore off!"}
+{"k": "The opposing team's Light Screen wore off!", "v": "The opposing team’s Light Screen wore off!"}
+{"k": "Your team's Light Screen wore off!", "v": "Your team’s Light Screen wore off!"}
 {"k": "{1} already has a substitute!", "v": "{1}\\j[은,는] 이미 대타가 있다!"}
 {"k": "It was too weak to make a substitute!", "v": "It was too weak to make a substitute!"}
 {"k": "{1} put in a substitute!", "v": "{1} put in a substitute!"}
 {"k": "{1} cut its own HP and laid a curse on {2}!", "v": "{1} cut its own HP and laid a curse on {2}!"}
-{"k": "It reduced the PP of {1}'s {2} by {3}!", "v": "It reduced the PP of {1}'s {2} by {3}!"}
+{"k": "It reduced the PP of {1}'s {2} by {3}!", "v": "It reduced the PP of {1}’s {2} by {3}!"}
 {"k": "{1} began having a nightmare!", "v": "{1} began having a nightmare!"}
-{"k": "{1} got free of {2}'s {3}!", "v": "{1} got free of {2}'s {3}!"}
+{"k": "{1} got free of {2}'s {3}!", "v": "{1} got free of {2}’s {3}!"}
 {"k": "{1} shed Leech Seed!", "v": "{1} shed Leech Seed!"}
 {"k": "{1} blew away stealth rocks!", "v": "{1} blew away stealth rocks!"}
 {"k": "{1} blew away Spikes!", "v": "{1} blew away Spikes!"}
@@ -679,18 +679,18 @@
 {"k": "{1} blew away sticky webs!", "v": "{1} blew away sticky webs!"}
 {"k": "{1} foresaw an attack!", "v": "{1} foresaw an attack!"}
 {"k": "{1} chose Doom Desire as its destiny!", "v": "{1} chose Doom Desire as its destiny!"}
-{"k": "{1} can't stockpile any more!", "v": "{1} can't stockpile any more!"}
+{"k": "{1} can't stockpile any more!", "v": "{1} can’t stockpile any more!"}
 {"k": "{1} stockpiled {2}!", "v": "{1}\\j[은,는] 비축하기를 {2}번 했다!"}
 {"k": "{1}'s stockpiled effect wore off!", "v": "{1}의 비축하기 효과가 사라졌다!"}
 {"k": "But it failed to swallow a thing!", "v": "But it failed to swallow a thing!"}
-{"k": "{1} lost its focus and couldn't move!", "v": "{1} lost its focus and couldn't move!"}
+{"k": "{1} lost its focus and couldn't move!", "v": "{1} lost its focus and couldn’t move!"}
 {"k": "{1} became the center of attention!", "v": "{1} became the center of attention!"}
 {"k": "Gravity intensified!", "v": "Gravity intensified!"}
 {"k": "{1} levitated with electromagnetism!", "v": "{1} levitated with electromagnetism!"}
 {"k": "{1} was hurled into the air!", "v": "{1} was hurled into the air!"}
 {"k": "{1} fell straight down!", "v": "{1} fell straight down!"}
 {"k": "{1} took the kind offer!", "v": "{1} took the kind offer!"}
-{"k": "{1}'s move was postponed!", "v": "{1}'s move was postponed!"}
+{"k": "{1}'s move was postponed!", "v": "{1}’s move was postponed!"}
 {"k": "{1} reverted the dimensions!", "v": "{1} reverted the dimensions!"}
 {"k": "{1} twisted the dimensions!", "v": "{1} twisted the dimensions!"}
 {"k": "{1} and {2} switched places!", "v": "{1} and {2} switched places!"}
@@ -698,7 +698,7 @@
 {"k": "Wonder Room wore off, and the Defense and Sp. Def stats returned to normal!", "v": "Wonder Room wore off, and the Defense and Sp. Def stats returned to normal!"}
 {"k": "It created a bizarre area in which the Defense and Sp. Def stats are swapped!", "v": "It created a bizarre area in which the Defense and Sp. Def stats are swapped!"}
 {"k": "Congratulations, {1}!", "v": "Congratulations, {1}!"}
-{"k": "{1}'s stats were reversed!", "v": "{1}'s stats were reversed!"}
+{"k": "{1}'s stats were reversed!", "v": "{1}’s stats were reversed!"}
 {"k": "{1} was electrified!", "v": "{1} was electrified!"}
 {"k": "The Ion Deluge started!", "v": "The Ion Deluge started!"}
 {"k": "{1} is covered in powder!", "v": "{1} is covered in powder!"}
@@ -714,15 +714,15 @@
 {"k": "Mist swirled about the battlefield!", "v": "Mist swirled about the battlefield!"}
 {"k": "Everyone is caught up in the happy atmosphere!", "v": "Everyone is caught up in the happy atmosphere!"}
 {"k": "Would you like to give a nickname to {1}?", "v": "Would you like to give a nickname to {1}?"}
-{"k": "{1}'s nickname?", "v": "{1}'s nickname?"}
-{"k": "Box \"{1}\" on {2}'s PC was full.", "v": "Box \"{1}\" on {2}'s PC was full."}
-{"k": "Box \"{1}\" on someone's PC was full.", "v": "Box \"{1}\" on someone's PC was full."}
-{"k": "{1} was transferred to box \"{2}\".", "v": "{1} was transferred to box \"{2}\"."}
-{"k": "{1} was transferred to {2}'s PC.", "v": "{1} was transferred to {2}'s PC."}
-{"k": "{1} was transferred to someone's PC.", "v": "{1} was transferred to someone's PC."}
-{"k": "It was stored in box \"{1}\".", "v": "It was stored in box \"{1}\"."}
+{"k": "{1}'s nickname?", "v": "{1}’s nickname?"}
+{"k": "Box \"{1}\" on {2}'s PC was full.", "v": "Box “{1}” on {2}’s PC was full."}
+{"k": "Box \"{1}\" on someone's PC was full.", "v": "Box “{1}” on someone’s PC was full."}
+{"k": "{1} was transferred to box \"{2}\".", "v": "{1} was transferred to box “{2}”."}
+{"k": "{1} was transferred to {2}'s PC.", "v": "{1} was transferred to {2}’s PC."}
+{"k": "{1} was transferred to someone's PC.", "v": "{1} was transferred to someone’s PC."}
+{"k": "It was stored in box \"{1}\".", "v": "It was stored in box “{1}”."}
 {"k": "{1} threw one {2}!", "v": "{1} threw one {2}!"}
-{"k": "The Trainer blocked the Ball!\nDon't be a thief!", "v": "The Trainer blocked the Ball!\nDon't be a thief!"}
+{"k": "The Trainer blocked the Ball!\nDon't be a thief!", "v": "The Trainer blocked the Ball!\nDon’t be a thief!"}
 {"k": "Oh no! The Pokémon broke free!", "v": "이런! 포켓몬이 뛰쳐나왔다!"}
 {"k": "Aww... It appeared to be caught!", "v": "Aww... It appeared to be caught!"}
 {"k": "Aargh! Almost had it!", "v": "Aargh! Almost had it!"}
@@ -738,32 +738,32 @@
 {"k": "There's no PP left for this move!", "v": "이 기술의 PP가 남아 있지 않다!"}
 {"k": "The effects of the {1} prevent status moves from being used!", "v": "The effects of the {1} prevent status moves from being used!"}
 {"k": "{1} allows the use of only {2}!", "v": "{1} allows the use of only {2}!"}
-{"k": "{1} can't use the same move twice in a row due to the torment!", "v": "{1} can't use the same move twice in a row due to the torment!"}
-{"k": "{1} hasn't eaten any held berry, so it can't possibly belch!", "v": "{1} hasn't eaten any held berry, so it can't possibly belch!"}
+{"k": "{1} can't use the same move twice in a row due to the torment!", "v": "{1} can’t use the same move twice in a row due to the torment!"}
+{"k": "{1} hasn't eaten any held berry, so it can't possibly belch!", "v": "{1} hasn‘t eaten any held berry, so it can’t possibly belch!"}
 {"k": "{1} has no moves left!", "v": "{1}\\j[은,는] 쓸 수 있는 기술이 없다!"}
-{"k": "{1}'s {2} let it move first!", "v": "{1}'s {2} let it move first!"}
-{"k": "An Egg can't battle!", "v": "An Egg can't battle!"}
+{"k": "{1}'s {2} let it move first!", "v": "{1}’s {2} let it move first!"}
+{"k": "An Egg can't battle!", "v": "An Egg can’t battle!"}
 {"k": "You can't switch {1}'s Pokémon with one of yours!", "v": "{1}의 포켓몬을 당신의 포켓몬과 바꿀 수는 없다!"}
 {"k": "{1} has no energy left to battle!", "v": "{1}\\j[은,는] 싸울 기력이 남아 있지 않다!"}
 {"k": "{1} is already in battle!", "v": "{1} is already in battle!"}
 {"k": "{1} has already been selected.", "v": "{1}\\j[은,는] 이미 선택되어 있다."}
-{"k": "{1} can't be switched out!", "v": "{1} can't be switched out!"}
-{"k": "{1}'s {2} prevents switching!", "v": "{1}'s {2} prevents switching!"}
+{"k": "{1} can't be switched out!", "v": "{1} can’t be switched out!"}
+{"k": "{1}'s {2} prevents switching!", "v": "{1}’s {2} prevents switching!"}
 {"k": "{1} is about to send in {2}.", "v": "{1} is about to send in {2}."}
 {"k": "Will {1} change Pokémon?", "v": "{1}\\j[은,는] 포켓몬을 교체할까?"}
-{"k": "{1}, that's enough! Come back!", "v": "{1}, that's enough! Come back!"}
+{"k": "{1}, that's enough! Come back!", "v": "{1}, that’s enough! Come back!"}
 {"k": "Use next Pokémon?", "v": "다음 포켓몬을 낼까?"}
 {"k": "Go! {1}!", "v": "가라! {1}!"}
 {"k": "Do it! {1}!", "v": "해라! {1}!"}
 {"k": "Go for it, {1}!", "v": "Go for it, {1}!"}
-{"k": "Your opponent's weak!\nGet 'em, {1}!", "v": "Your opponent's weak!\nGet 'em, {1}!"}
+{"k": "Your opponent's weak!\nGet 'em, {1}!", "v": "Your opponent’s weak!\nGet ’em, {1}!"}
 {"k": "{1} sent\nout {2}!", "v": "{1} sent\r\nout {2}!"}
 {"k": "{1} used the\n{2}.", "v": "{1} used the\r\n{2}."}
 {"k": "But it had no effect!", "v": "하지만 효과가 없었다!"}
-{"k": "Couldn't return unused item to Bag somehow.", "v": "Couldn't return unused item to Bag somehow."}
-{"k": "Embargo's effect prevents the item's use on {1}!", "v": "Embargo's effect prevents the item's use on {1}!"}
-{"k": "Couldn't return unusable item to Bag somehow.", "v": "Couldn't return unusable item to Bag somehow."}
-{"k": "It's impossible to aim without being focused!", "v": "It's impossible to aim without being focused!"}
+{"k": "Couldn't return unused item to Bag somehow.", "v": "Couldn’t return unused item to Bag somehow."}
+{"k": "Embargo's effect prevents the item's use on {1}!", "v": "Embargo‘s effect prevents the item’s use on {1}!"}
+{"k": "Couldn't return unusable item to Bag somehow.", "v": "Couldn’t return unusable item to Bag somehow."}
+{"k": "It's impossible to aim without being focused!", "v": "It’s impossible to aim without being focused!"}
 {"k": "{1} used the\n{2}!", "v": "{1} used the\r\n{2}!"}
 {"k": "{1} became healthy!", "v": "{1} became healthy!"}
 {"k": "Treat this battle as a win?", "v": "Treat this battle as a win?"}
@@ -772,24 +772,24 @@
 {"k": "Would you like to forfeit the match and quit now?", "v": "Would you like to forfeit the match and quit now?"}
 {"k": "{1} forfeited the match!", "v": "{1} forfeited the match!"}
 {"k": "Got away safely!", "v": "Got away safely!"}
-{"k": "Can't escape!", "v": "Can't escape!"}
+{"k": "Can't escape!", "v": "Can’t escape!"}
 {"k": "{1} escaped using Run Away!", "v": "{1} escaped using Run Away!"}
 {"k": "{1} escaped using its {2}!", "v": "{1} escaped using its {2}!"}
 {"k": "{1}'s fervent wish has reached {2}!", "v": "{1}의 간절한 소원이 {2}에게 닿았다!"}
-{"k": "{1}'s {2} is reacting to {3}'s {4}!", "v": "{1}'s {2} is reacting to {3}'s {4}!"}
+{"k": "{1}'s {2} is reacting to {3}'s {4}!", "v": "{1}‘s {2} is reacting to {3}’s {4}!"}
 {"k": "Mega {1}", "v": "메가{1}"}
 {"k": "{1} has Mega Evolved into {2}!", "v": "{1}\\j[이,가] {2}\\j[으로,로] 메가진화했다!"}
-{"k": "{1}'s Primal Reversion!\nIt reverted to its primal form!", "v": "{1}'s Primal Reversion!\nIt reverted to its primal form!"}
+{"k": "{1}'s Primal Reversion!\nIt reverted to its primal form!", "v": "{1}’s Primal Reversion!\nIt reverted to its primal form!"}
 {"k": "{1} called {2}!", "v": "{1}\\j[은,는] {2}\\j[을,를] 불렀다!"}
 {"k": "{1}!", "v": "{1}!"}
-{"k": "{1} came to its senses from the Trainer's call!", "v": "{1} came to its senses from the Trainer's call!"}
+{"k": "{1} came to its senses from the Trainer's call!", "v": "{1} came to its senses from the Trainer’s call!"}
 {"k": "The rest of your team gained Exp. Points thanks to the {1}!", "v": "The rest of your team gained Exp. Points thanks to the {1}!"}
 {"k": "{1} gained a boosted {2} Exp. Points!", "v": "{1} gained a boosted {2} Exp. Points!"}
 {"k": "{1} gained {2} Exp. Points!", "v": "{1} gained {2} Exp. Points!"}
-{"k": "The new level ({1}) is less than the Pokémon's\ncurrent level ({2}), which shouldn't happen.\n[Debug: {3}]", "v": "새 레벨 ({1})이 포켓몬의\r\n현재 레벨 ({2})보다 낮습니다. 있을 수 없는 일입니다.\r\n[디버그: {3}]"}
+{"k": "The new level ({1}) is less than the Pokémon's\ncurrent level ({2}), which shouldn't happen.\n[Debug: {3}]", "v": "새 레벨 ({1})이 포켓몬의\r\n현재 레벨 ({2})보다 낮습니다. 있을 수 없는 일입니다.\r\n「디버그: {3}」"}
 {"k": "{1} grew to Level {2}!", "v": "{1} grew to Level {2}!"}
 {"k": "{1} is trying to learn {2}.", "v": "{1} is trying to learn {2}."}
-{"k": "But {1} can't learn more than four moves.", "v": "But {1} can't learn more than four moves."}
+{"k": "But {1} can't learn more than four moves.", "v": "But {1} can’t learn more than four moves."}
 {"k": "Delete a move to make room for {1}?", "v": "Delete a move to make room for {1}?"}
 {"k": "Which move should be forgotten?", "v": "Which move should be forgotten?"}
 {"k": "1, 2, and... ... ...", "v": "1,  2, and... ... ..."}
@@ -838,10 +838,10 @@
 {"k": "It is raining heavily.", "v": "It is raining heavily."}
 {"k": "The sunlight is extremely harsh.", "v": "The sunlight is extremely harsh."}
 {"k": "The wind is strong.", "v": "The wind is strong."}
-{"k": "Sky Drop won't let {1} go!", "v": "Sky Drop won't let {1} go!"}
+{"k": "Sky Drop won't let {1} go!", "v": "Sky Drop won’t let {1} go!"}
 {"k": "Items can't be used here.", "v": "여기서는 도구를 사용할 수 없습니다."}
 {"k": "{1} withdrew {2}!", "v": "{1} withdrew {2}!"}
-{"k": "{1}, that's enough!\nCome back!", "v": "{1}, that's enough!\r\nCome back!"}
+{"k": "{1}, that's enough!\nCome back!", "v": "{1}, that’s enough!\r\nCome back!"}
 {"k": "{1} is tightening its focus!", "v": "{1} is tightening its focus!"}
 {"k": "The sunlight faded.", "v": "The sunlight faded."}
 {"k": "{1} was hurt by the sunlight!", "v": "{1} was hurt by the sunlight!"}
@@ -860,22 +860,22 @@
 {"k": "The shadow sky continues.", "v": "The shadow sky continues."}
 {"k": "{1} was hurt by the shadow sky!", "v": "{1} was hurt by the shadow sky!"}
 {"k": "{1} took the {2} attack!", "v": "{1} took the {2} attack!"}
-{"k": "{1}'s {2} restored its HP a little!", "v": "{1}'s {2} restored its HP a little!"}
-{"k": "{1}'s {2} was healed by the rain!", "v": "{1}'s {2} was healed by the rain!"}
-{"k": "{1}'s {2} was hurt by the sunlight!", "v": "{1}'s {2} was hurt by the sunlight!"}
-{"k": "{1}'s wish came true!", "v": "{1}'s wish came true!"}
+{"k": "{1}'s {2} restored its HP a little!", "v": "{1}’s {2} restored its HP a little!"}
+{"k": "{1}'s {2} was healed by the rain!", "v": "{1}’s {2} was healed by the rain!"}
+{"k": "{1}'s {2} was hurt by the sunlight!", "v": "{1}’s {2} was hurt by the sunlight!"}
+{"k": "{1}'s wish came true!", "v": "{1}’s wish came true!"}
 {"k": "{1} is hurt by the sea of fire!", "v": "{1} is hurt by the sea of fire!"}
-{"k": "{1}'s {2} cured its sleep problem!", "v": "{1}'s {2} cured its sleep problem!"}
-{"k": "{1}'s {2} cured its poison problem!", "v": "{1}'s {2} cured its poison problem!"}
-{"k": "{1}'s {2} thawed it out!", "v": "{1}'s {2} thawed it out!"}
-{"k": "{1}'s {2} cured its partner's sleep problem!", "v": "{1}'s {2} cured its partner's sleep problem!"}
-{"k": "{1}'s {2} cured its partner's poison problem!", "v": "{1}'s {2} cured its partner's poison problem!"}
-{"k": "{1}'s {2} healed its partner's burn!", "v": "{1}'s {2} healed its partner's burn!"}
-{"k": "{1}'s {2} cured its partner's paralysis!", "v": "{1}'s {2} cured its partner's paralysis!"}
-{"k": "{1}'s {2} thawed its partner out!", "v": "{1}'s {2} thawed its partner out!"}
-{"k": "Aqua Ring restored {1}'s HP!", "v": "Aqua Ring restored {1}'s HP!"}
+{"k": "{1}'s {2} cured its sleep problem!", "v": "{1}’s {2} cured its sleep problem!"}
+{"k": "{1}'s {2} cured its poison problem!", "v": "{1}’s {2} cured its poison problem!"}
+{"k": "{1}'s {2} thawed it out!", "v": "{1}’s {2} thawed it out!"}
+{"k": "{1}'s {2} cured its partner's sleep problem!", "v": "{1}‘s {2} cured its partner’s sleep problem!"}
+{"k": "{1}'s {2} cured its partner's poison problem!", "v": "{1}‘s {2} cured its partner’s poison problem!"}
+{"k": "{1}'s {2} healed its partner's burn!", "v": "{1}‘s {2} healed its partner’s burn!"}
+{"k": "{1}'s {2} cured its partner's paralysis!", "v": "{1}‘s {2} cured its partner’s paralysis!"}
+{"k": "{1}'s {2} thawed its partner out!", "v": "{1}’s {2} thawed its partner out!"}
+{"k": "Aqua Ring restored {1}'s HP!", "v": "Aqua Ring restored {1}’s HP!"}
 {"k": "{1} absorbed nutrients with its roots!", "v": "{1} absorbed nutrients with its roots!"}
-{"k": "{1}'s health was sapped by Leech Seed!", "v": "{1}'s health was sapped by Leech Seed!"}
+{"k": "{1}'s health was sapped by Leech Seed!", "v": "{1}’s health was sapped by Leech Seed!"}
 {"k": "{1} is healed by poison!", "v": "{1} is healed by poison!"}
 {"k": "{1} is locked in a nightmare!", "v": "{1} is locked in a nightmare!"}
 {"k": "{1} is afflicted by the curse!", "v": "{1} is afflicted by the curse!"}
@@ -883,19 +883,19 @@
 {"k": "{1} is hurt by {2}!", "v": "{1} is hurt by {2}!"}
 {"k": "{1} stopped levitating.", "v": "{1} stopped levitating."}
 {"k": "{1} can use items again!", "v": "{1} can use items again!"}
-{"k": "{1}'s Perish count fell to {2}!", "v": "{1}'s Perish count fell to {2}!"}
-{"k": "Your team's Reflect faded!", "v": "Your team's Reflect faded!"}
-{"k": "The opposing team's Reflect faded!", "v": "The opposing team's Reflect faded!"}
-{"k": "Your team's Light Screen faded!", "v": "Your team's Light Screen faded!"}
-{"k": "The opposing team's Light Screen faded!", "v": "The opposing team's Light Screen faded!"}
+{"k": "{1}'s Perish count fell to {2}!", "v": "{1}’s Perish count fell to {2}!"}
+{"k": "Your team's Reflect faded!", "v": "Your team’s Reflect faded!"}
+{"k": "The opposing team's Reflect faded!", "v": "The opposing team’s Reflect faded!"}
+{"k": "Your team's Light Screen faded!", "v": "Your team’s Light Screen faded!"}
+{"k": "The opposing team's Light Screen faded!", "v": "The opposing team’s Light Screen faded!"}
 {"k": "Your team is no longer protected by Safeguard!", "v": "파티의 신비의부적 효과가 사라졌다!"}
 {"k": "The opposing team is no longer protected by Safeguard!", "v": "상대 파티의 신비의부적 효과가 사라졌다!"}
-{"k": "Your team's Mist faded!", "v": "Your team's Mist faded!"}
-{"k": "The opposing team's Mist faded!", "v": "The opposing team's Mist faded!"}
-{"k": "Your team's Tailwind petered out!", "v": "Your team's Tailwind petered out!"}
-{"k": "The opposing team's Tailwind petered out!", "v": "The opposing team's Tailwind petered out!"}
-{"k": "Your team's Lucky Chant faded!", "v": "Your team's Lucky Chant faded!"}
-{"k": "The opposing team's Lucky Chant faded!", "v": "The opposing team's Lucky Chant faded!"}
+{"k": "Your team's Mist faded!", "v": "Your team’s Mist faded!"}
+{"k": "The opposing team's Mist faded!", "v": "The opposing team’s Mist faded!"}
+{"k": "Your team's Tailwind petered out!", "v": "Your team’s Tailwind petered out!"}
+{"k": "The opposing team's Tailwind petered out!", "v": "The opposing team’s Tailwind petered out!"}
+{"k": "Your team's Lucky Chant faded!", "v": "Your team’s Lucky Chant faded!"}
+{"k": "The opposing team's Lucky Chant faded!", "v": "The opposing team’s Lucky Chant faded!"}
 {"k": "The swamp around your team disappeared!", "v": "아군 주변의 습지대가 사라졌다!"}
 {"k": "The swamp around the opposing team disappeared!", "v": "상대 주변의 습지대가 사라졌다!"}
 {"k": "The sea of fire around your team disappeared!", "v": "아군 주변의 불바다가 사라졌다!"}
@@ -972,27 +972,27 @@
 {"k": "{1} is watching carefully!", "v": "{1} is watching carefully!"}
 {"k": "{1} is eager for more!", "v": "{1} is eager for more!"}
 {"k": "{1} began growling deeply!", "v": "{1} began growling deeply!"}
-{"k": "A glint appears in {1}'s eyes!", "v": "A glint appears in {1}'s eyes!"}
+{"k": "A glint appears in {1}'s eyes!", "v": "A glint appears in {1}’s eyes!"}
 {"k": "{1} is getting into position!", "v": "{1} is getting into position!"}
-{"k": "{1} tied the opponent\n{2} in a referee's decision!", "v": "{1} tied the opponent\n{2} in a referee's decision!"}
-{"k": "{1} defeated the opponent\n{2} in a referee's decision!", "v": "{1} defeated the opponent\n{2} in a referee's decision!"}
-{"k": "{1} lost to the opponent\n{2} in a referee's decision!", "v": "{1} lost to the opponent\n{2} in a referee's decision!"}
+{"k": "{1} tied the opponent\n{2} in a referee's decision!", "v": "{1} tied the opponent\n{2} in a referee’s decision!"}
+{"k": "{1} defeated the opponent\n{2} in a referee's decision!", "v": "{1} defeated the opponent\n{2} in a referee’s decision!"}
+{"k": "{1} lost to the opponent\n{2} in a referee's decision!", "v": "{1} lost to the opponent\n{2} in a referee’s decision!"}
 {"k": "VS", "v": "VS"}
 {"k": "Mind", "v": "마음"}
 {"k": "Skill", "v": "기술"}
 {"k": "Body", "v": "몸"}
 {"k": "Judgment", "v": "판정"}
 {"k": "REFEREE: {1} VS {2}!\nCommence battling!\\wtnp[20]", "v": "REFEREE: {1} VS {2}!\nCommence battling!\\wtnp[20]"}
-{"k": "REFEREE: That's it! We will now go to judging to determine the winner!\\wtnp[20]", "v": "REFEREE: That's it! We will now go to judging to determine the winner!\\wtnp[20]"}
+{"k": "REFEREE: That's it! We will now go to judging to determine the winner!\\wtnp[20]", "v": "REFEREE: That’s it! We will now go to judging to determine the winner!\\wtnp[20]"}
 {"k": "REFEREE: Judging category 1, Mind!\nThe Pokemon showing the most guts!\\wtnp[40]", "v": "심판: 심사 항목 1, 정신력!\n가장 근성 있는 포켓몬은!\\wtnp[40]"}
 {"k": "REFEREE: Judging category 2, Skill!\nThe Pokemon using moves the best!\\wtnp[40]", "v": "심판: 심사 항목 2, 기술!\n기술을 가장 잘 쓴 포켓몬은!\\wtnp[40]"}
 {"k": "REFEREE: Judging category 3, Body!\nThe Pokemon with the most vitality!\\wtnp[40]", "v": "심판: 심사 항목 3, 체력!\n가장 활력 넘치는 포켓몬은!\\wtnp[40]"}
 {"k": "REFEREE: Judgment: {1} to {2}!\nWe have a draw!\\wtnp[40]", "v": "심판: 판정 {1} 대 {2}!\n무승부입니다!\\wtnp[40]"}
 {"k": "REFEREE: Judgment: {1} to {2}!\nThe winner is {3}'s {4}!\\wtnp[40]", "v": "심판: 판정 {1} 대 {2}!\n승자는 {3}의 {4}!\\wtnp[40]"}
 {"k": "REFEREE: Judgment: {1} to {2}!\nThe winner is {3}!\\wtnp[40]", "v": "심판: 판정 {1} 대 {2}!\n승자는 {3}!\\wtnp[40]"}
-{"k": "Can't catch any more...", "v": "Can't catch any more..."}
-{"k": "But {1} couldn't sleep!", "v": "But {1} couldn't sleep!"}
-{"k": "{1}'s team was disqualified!", "v": "{1}'s team was disqualified!"}
+{"k": "Can't catch any more...", "v": "Can’t catch any more..."}
+{"k": "But {1} couldn't sleep!", "v": "But {1} couldn’t sleep!"}
+{"k": "{1}'s team was disqualified!", "v": "{1}’s team was disqualified!"}
 {"k": "SKIPPING BATTLE...", "v": "배틀 스킵 중..."}
 {"k": "{1} has no usable Pokémon!\u0001", "v": "{1}\\j[은,는] 더 이상 싸울 수 있는 포켓몬이 없다!\u0001"}
 {"k": "{1} survived the poisoning.\\\nThe poison faded away!\\\u0001", "v": "{1} survived the poisoning.\\\nThe poison faded away!\\\u0001"}
@@ -1003,7 +1003,7 @@
 {"k": "Landed a Pokémon!", "v": "포켓몬이 걸렸다!"}
 {"k": "\\w[]\\wm\\c[8]\\l[3]After the unfortunate defeat, {1} scurried to a Pokémon Center.", "v": "\\w[]\\wm\\c[8]\\l[3]안타까운 패배 후, {1}\\j[은,는] 서둘러 포켓몬센터로 향했다."}
 {"k": "\\w[]\\wm\\c[8]\\l[3]{1} scurried to a Pokémon Center, protecting the exhausted and fainted Pokémon from further harm.", "v": "\\w[]\\wm\\c[8]\\l[3]{1}\\j[은,는] 지치고 쓰러진 포켓몬들이 더 다치지 않게 감싸 안고 포켓몬센터로 달려갔다."}
-{"k": "Can't find the map 'Map{1:03d}' in the Data folder. The game will resume at the player's position.", "v": "Can't find the map 'Map{1:03d}' in the Data folder. The game will resume at the player's position."}
+{"k": "Can't find the map 'Map{1:03d}' in the Data folder. The game will resume at the player's position.", "v": "Can‘t find the map ’Map{1:03d}‘ in the Data folder. The game will resume at the player’s position."}
 {"k": "\\w[]\\wm\\c[8]\\l[3]After the unfortunate defeat, {1} scurried home.", "v": "\\w[]\\wm\\c[8]\\l[3]After the unfortunate defeat, {1} scurried home."}
 {"k": "\\w[]\\wm\\c[8]\\l[3]{1} scurried home, protecting the exhausted and fainted Pokémon from further harm.", "v": "\\w[]\\wm\\c[8]\\l[3]{1}\\j[은,는] 지치고 쓰러진 포켓몬들이 더 다치지 않게 감싸 안고 집으로 달려갔다."}
 {"k": "The game has detected that the battery is low. You should save soon to avoid losing your progress.", "v": "배터리가 부족합니다. 진행 상황을 잃지 않도록 곧 저장하세요."}
@@ -1029,7 +1029,7 @@
 {"k": "{1} used Cut!", "v": "{1} used Cut!"}
 {"k": "This tree looks like it can be cut down.", "v": "This tree looks like it can be cut down."}
 {"k": "Sorry, a new Badge is required.", "v": "Sorry, a new Badge is required."}
-{"k": "Can't use that here.", "v": "Can't use that here."}
+{"k": "Can't use that here.", "v": "Can’t use that here."}
 {"k": "{1} used {2}!", "v": "{1}\\j[은,는] {2}\\j[을,를] 사용했다!"}
 {"k": "Nope. Nothing...", "v": "Nope. Nothing..."}
 {"k": "A Pokémon could be in this tree. Would you like to use Headbutt?", "v": "이 나무에 포켓몬이 있을지도 모른다. 박치기를 쓸까?"}
@@ -1043,16 +1043,16 @@
 {"k": "It's a big boulder, but a Pokémon may be able to push it aside.", "v": "커다란 바위다. 포켓몬이라면 밀어낼 수 있을지도 모른다."}
 {"k": "Would you like to use Strength?", "v": "Would you like to use Strength?"}
 {"k": "{1} used Strength!\u0001", "v": "{1} used Strength!\u0001"}
-{"k": "{1}'s Strength made it possible to move boulders around!", "v": "{1}'s Strength made it possible to move boulders around!"}
+{"k": "{1}'s Strength made it possible to move boulders around!", "v": "{1}’s Strength made it possible to move boulders around!"}
 {"k": "Strength is already being used.", "v": "Strength is already being used."}
 {"k": "{1} used {2}!\u0001", "v": "{1}\\j[은,는] {2}\\j[을,를] 사용했다!\u0001"}
 {"k": "The water is a deep blue...\nWould you like to surf on it?", "v": "The water is a deep blue...\nWould you like to surf on it?"}
 {"k": "{1} used Surf!", "v": "{1} used Surf!"}
-{"k": "You're already surfing.", "v": "You're already surfing."}
-{"k": "It can't be used when you have someone with you.", "v": "It can't be used when you have someone with you."}
-{"k": "Let's enjoy cycling!", "v": "Let's enjoy cycling!"}
+{"k": "You're already surfing.", "v": "You’re already surfing."}
+{"k": "It can't be used when you have someone with you.", "v": "It can’t be used when you have someone with you."}
+{"k": "Let's enjoy cycling!", "v": "Let’s enjoy cycling!"}
 {"k": "No surfing here!", "v": "여기선 파도타기를 쓸 수 없다!"}
-{"k": "It's a large waterfall. Would you like to use Waterfall?", "v": "It's a large waterfall. Would you like to use Waterfall?"}
+{"k": "It's a large waterfall. Would you like to use Waterfall?", "v": "It’s a large waterfall. Would you like to use Waterfall?"}
 {"k": "{1} used Waterfall.", "v": "{1} used Waterfall."}
 {"k": "A wall of water is crashing down with a mighty roar.", "v": "A wall of water is crashing down with a mighty roar."}
 {"k": "The sea is deep here. Would you like to use Dive?", "v": "The sea is deep here. Would you like to use Dive?"}
@@ -1066,7 +1066,7 @@
 {"k": "The sweet scent faded for some reason...", "v": "The sweet scent faded for some reason..."}
 {"k": "There appears to be nothing here...", "v": "There appears to be nothing here..."}
 {"k": "Encounter type out of range", "v": "Encounter type out of range"}
-{"k": "It's soft, earthy soil.", "v": "It's soft, earthy soil."}
+{"k": "It's soft, earthy soil.", "v": "It’s soft, earthy soil."}
 {"k": "Fertilize", "v": "비료주기"}
 {"k": "Plant Berry", "v": "열매 심기"}
 {"k": "Exit", "v": "그만둔다"}
@@ -1074,7 +1074,7 @@
 {"k": "Want to plant a Berry?", "v": "Want to plant a Berry?"}
 {"k": "The {1} was planted in the soft, earthy soil.", "v": "The {1} was planted in the soft, earthy soil."}
 {"k": "{1} has been laid down.", "v": "{1}\\j[을,를] 내려놓았다."}
-{"k": "It's soft, loamy soil.\nPlant a berry?", "v": "It's soft, loamy soil.\nPlant a berry?"}
+{"k": "It's soft, loamy soil.\nPlant a berry?", "v": "It’s soft, loamy soil.\nPlant a berry?"}
 {"k": "{1} planted a {2} in the soft loamy soil.", "v": "{1} planted a {2} in the soft loamy soil."}
 {"k": "A {1} was planted here.", "v": "A {1} was planted here."}
 {"k": "The {1} has sprouted.", "v": "{1}\\j[이,가] 싹텄다."}
@@ -1105,7 +1105,7 @@
 {"k": "{1:s} (♀, Lv{2:d})", "v": "{1:s} (♀, Lv{2:d})"}
 {"k": "{1:s} (Lv{2:d})", "v": "{1:s} (Lv{2:d})"}
 {"k": "CANCEL", "v": "취소"}
-{"k": "Can't store the egg", "v": "Can't store the egg"}
+{"k": "Can't store the egg", "v": "Can’t store the egg"}
 {"k": "Day-Care Couple", "v": "Day-Care Couple"}
 {"k": "Egg", "v": "알"}
 {"k": "Sunday", "v": "Sunday"}
@@ -1148,22 +1148,22 @@
 {"k": "Add another Pokémon?", "v": "포켓몬을 더 추가할까?"}
 {"k": "This trainer must have at least 1 Pokémon!", "v": "이 트레이너는 포켓몬이 최소 한 마리 필요합니다!"}
 {"k": "Set the level for {1}.", "v": "Set the level for {1}."}
-{"k": "The Trainer's data was added to the list of battles and at PBS/trainers.txt.", "v": "The Trainer's data was added to the list of battles and at PBS/trainers.txt."}
+{"k": "The Trainer's data was added to the list of battles and at PBS/trainers.txt.", "v": "The Trainer’s data was added to the list of battles and at PBS/trainers.txt."}
 {"k": "Add new trainer type {1}?", "v": "Add new trainer type {1}?"}
 {"k": "Add new battle {1} (of {2}) for ({3}, {4})?", "v": "Add new battle {1} (of {2}) for ({3}, {4})?"}
 {"k": "Add new trainer ({1}, {2}, ID {3})?", "v": "Add new trainer ({1}, {2}, ID {3})?"}
 {"k": "Add new trainer ({1}, {2})?", "v": "Add new trainer ({1}, {2})?"}
-{"k": "Can't find trainer ({1}, {2}, ID {3})", "v": "Can't find trainer ({1}, {2}, ID {3})"}
+{"k": "Can't find trainer ({1}, {2}, ID {3})", "v": "Can’t find trainer ({1}, {2}, ID {3})"}
 {"k": "Opponent 1's party has more than three Pokémon, which is not allowed", "v": "상대 1의 파티에 포켓몬이 세 마리를 초과하여 참여할 수 없습니다."}
 {"k": "Opponent 2's party has more than three Pokémon, which is not allowed", "v": "상대 2의 파티에 포켓몬이 세 마리를 초과하여 참여할 수 없습니다."}
 {"k": "AFTER LOSING...", "v": "패배 후..."}
 {"k": "{1} was downgraded to Level {2}!", "v": "{1} was downgraded to Level {2}!"}
-{"k": "{1}'s level remained unchanged.", "v": "{1}'s level remained unchanged."}
+{"k": "{1}'s level remained unchanged.", "v": "{1}’s level remained unchanged."}
 {"k": "{1} was elevated to Level {2}!", "v": "{1} was elevated to Level {2}!"}
-{"k": "It won't have any effect.", "v": "It won't have any effect."}
-{"k": "{1}'s HP was restored by {2} points.", "v": "{1}'s HP was restored by {2} points."}
-{"k": "You can't dismount your Bike here.", "v": "You can't dismount your Bike here."}
-{"k": "{1} can't be taught to an Egg.", "v": "{1} can't be taught to an Egg."}
+{"k": "It won't have any effect.", "v": "It won’t have any effect."}
+{"k": "{1}'s HP was restored by {2} points.", "v": "{1}’s HP was restored by {2} points."}
+{"k": "You can't dismount your Bike here.", "v": "You can’t dismount your Bike here."}
+{"k": "{1} can't be taught to an Egg.", "v": "{1} can’t be taught to an Egg."}
 {"k": "{1} can't be taught to this Pokémon.", "v": "{1}\\j[은,는] 이 포켓몬에게 가르칠 수 없습니다."}
 {"k": "{1} already knows {2}.", "v": "{1} already knows {2}."}
 {"k": "\\se[]{1} learned {2}!\\se[MoveLearnt]", "v": "\\se[]{1}\\j[은,는] {2}\\j[을,를] 배웠다!\\se[MoveLearnt]"}
@@ -1175,20 +1175,20 @@
 {"k": "Give up on learning the move {1}?", "v": "Give up on learning the move {1}?"}
 {"k": "Shadow Pokémon can't be taught any moves.", "v": "그림자 포켓몬에게는 어떤 기술도 가르칠 수 없습니다."}
 {"k": "{1} and {2} are not compatible.", "v": "{1} and {2} are not compatible."}
-{"k": "{1} can't be learned.", "v": "{1} can't be learned."}
+{"k": "{1} can't be learned.", "v": "{1} can’t be learned."}
 {"k": "\\se[accesspc]Booted up an HM.", "v": "\\se[accesspc]비전머신을 기동시켰다."}
 {"k": "It contained {1}.\u0001", "v": "It contained {1}.\u0001"}
 {"k": "\\se[accesspc]Booted up a TM.", "v": "\\se[accesspc]기술머신을 기동시켰다."}
 {"k": "Teach {1} to {2}?", "v": "{2}에게 {1}\\j[을,를] 가르치겠습니까?"}
 {"k": "You used your last {1}.", "v": "You used your last {1}."}
-{"k": "Can't use that on {1}.", "v": "Can't use that on {1}."}
+{"k": "Can't use that on {1}.", "v": "Can’t use that on {1}."}
 {"k": "There is no Pokémon.", "v": "포켓몬이 없습니다."}
 {"k": "Teach {1} to a Pokémon?", "v": "포켓몬에게 {1}\\j[을,를] 가르칠까?"}
 {"k": "ABLE", "v": "배울 수 있음"}
 {"k": "NOT ABLE", "v": "NOT ABLE"}
 {"k": "But the effects of a Repel lingered from earlier.", "v": "But the effects of a Repel lingered from earlier."}
 {"k": "{1} used the {2}.", "v": "{1} used the {2}."}
-{"k": "Repel's effect wore off...", "v": "Repel's effect wore off..."}
+{"k": "Repel's effect wore off...", "v": "Repel’s effect wore off..."}
 {"k": "Do you want to use another Repel?", "v": "Do you want to use another Repel?"}
 {"k": "Wild Pokémon will be repelled.", "v": "야생 포켓몬이 쫓겨납니다."}
 {"k": "Wild Pokémon will be lured.", "v": "야생 포켓몬이 끌려옵니다."}
@@ -1197,37 +1197,37 @@
 {"k": "The Exp Share was turned off.", "v": "The Exp Share was turned off."}
 {"k": "The Exp Share was turned on.", "v": "The Exp Share was turned on."}
 {"k": "... ... ... ...Nope!\nThere's no response.", "v": "... ... ... ...아니다!\r\n반응이 없다."}
-{"k": "The {1}'s indicating something right underfoot!\u0001", "v": "The {1}'s indicating something right underfoot!\u0001"}
-{"k": "Huh?\nThe {1}'s responding!\u0001", "v": "Huh?\nThe {1}'s responding!\u0001"}
-{"k": "There's an item buried around here!", "v": "There's an item buried around here!"}
+{"k": "The {1}'s indicating something right underfoot!\u0001", "v": "The {1}’s indicating something right underfoot!\u0001"}
+{"k": "Huh?\nThe {1}'s responding!\u0001", "v": "Huh?\nThe {1}’s responding!\u0001"}
+{"k": "There's an item buried around here!", "v": "There’s an item buried around here!"}
 {"k": "{1} became healthy.", "v": "{1} became healthy."}
 {"k": "Restore which move?", "v": "Restore which move?"}
 {"k": "PP was restored.", "v": "PP was restored."}
 {"k": "Boost PP of which move?", "v": "Boost PP of which move?"}
-{"k": "{1}'s PP increased.", "v": "{1}'s PP increased."}
-{"k": "{1}'s HP increased.", "v": "{1}'s HP increased."}
-{"k": "{1}'s Attack increased.", "v": "{1}'s Attack increased."}
-{"k": "{1}'s Defense increased.", "v": "{1}'s Defense increased."}
-{"k": "{1}'s Special Attack increased.", "v": "{1}'s Special Attack increased."}
-{"k": "{1}'s Special Defense increased.", "v": "{1}'s Special Defense increased."}
-{"k": "{1}'s Speed increased.", "v": "{1}'s Speed increased."}
+{"k": "{1}'s PP increased.", "v": "{1}’s PP increased."}
+{"k": "{1}'s HP increased.", "v": "{1}’s HP increased."}
+{"k": "{1}'s Attack increased.", "v": "{1}’s Attack increased."}
+{"k": "{1}'s Defense increased.", "v": "{1}’s Defense increased."}
+{"k": "{1}'s Special Attack increased.", "v": "{1}’s Special Attack increased."}
+{"k": "{1}'s Special Defense increased.", "v": "{1}’s Special Defense increased."}
+{"k": "{1}'s Speed increased.", "v": "{1}’s Speed increased."}
 {"k": "{1} adores you! Its base HP fell!", "v": "{1} adores you! Its base HP fell!"}
-{"k": "{1} became more friendly. Its base HP can't go lower.", "v": "{1} became more friendly. Its base HP can't go lower."}
+{"k": "{1} became more friendly. Its base HP can't go lower.", "v": "{1} became more friendly. Its base HP can’t go lower."}
 {"k": "{1} became more friendly. However, its base HP fell!", "v": "{1} became more friendly. However, its base HP fell!"}
 {"k": "{1} adores you! Its base Attack fell!", "v": "{1} adores you! Its base Attack fell!"}
-{"k": "{1} became more friendly. Its base Attack can't go lower.", "v": "{1} became more friendly. Its base Attack can't go lower."}
+{"k": "{1} became more friendly. Its base Attack can't go lower.", "v": "{1} became more friendly. Its base Attack can’t go lower."}
 {"k": "{1} became more friendly. However, its base Attack fell!", "v": "{1} became more friendly. However, its base Attack fell!"}
 {"k": "{1} adores you! Its base Defense fell!", "v": "{1} adores you! Its base Defense fell!"}
-{"k": "{1} became more friendly. Its base Defense can't go lower.", "v": "{1} became more friendly. Its base Defense can't go lower."}
+{"k": "{1} became more friendly. Its base Defense can't go lower.", "v": "{1} became more friendly. Its base Defense can’t go lower."}
 {"k": "{1} became more friendly. However, its base Defense fell!", "v": "{1} became more friendly. However, its base Defense fell!"}
 {"k": "{1} adores you! Its base Special Attack fell!", "v": "{1} adores you! Its base Special Attack fell!"}
-{"k": "{1} became more friendly. Its base Special Attack can't go lower.", "v": "{1} became more friendly. Its base Special Attack can't go lower."}
+{"k": "{1} became more friendly. Its base Special Attack can't go lower.", "v": "{1} became more friendly. Its base Special Attack can’t go lower."}
 {"k": "{1} became more friendly. However, its base Special Attack fell!", "v": "{1} became more friendly. However, its base Special Attack fell!"}
 {"k": "{1} adores you! Its base Special Defense fell!", "v": "{1} adores you! Its base Special Defense fell!"}
-{"k": "{1} became more friendly. Its base Special Defense can't go lower.", "v": "{1} became more friendly. Its base Special Defense can't go lower."}
+{"k": "{1} became more friendly. Its base Special Defense can't go lower.", "v": "{1} became more friendly. Its base Special Defense can’t go lower."}
 {"k": "{1} became more friendly. However, its base Special Defense fell!", "v": "{1} became more friendly. However, its base Special Defense fell!"}
 {"k": "{1} adores you! Its base Speed fell!", "v": "{1} adores you! Its base Speed fell!"}
-{"k": "{1} became more friendly. Its base Speed can't go lower.", "v": "{1} became more friendly. Its base Speed can't go lower."}
+{"k": "{1} became more friendly. Its base Speed can't go lower.", "v": "{1} became more friendly. Its base Speed can’t go lower."}
 {"k": "{1} became more friendly. However, its base Speed fell!", "v": "{1} became more friendly. However, its base Speed fell!"}
 {"k": "{1} changed Forme!", "v": "{1} changed Forme!"}
 {"k": "This can't be used on the fainted Pokémon.", "v": "쓰러진 포켓몬에게는 쓸 수 없습니다."}
@@ -1238,13 +1238,13 @@
 {"k": "It cannot be fused with that fainted Pokémon.", "v": "쓰러진 포켓몬과는 합체시킬 수 없습니다."}
 {"k": "It cannot be fused with itself.", "v": "It cannot be fused with itself."}
 {"k": "It cannot be fused with that Pokémon.", "v": "그 포켓몬과는 합체시킬 수 없습니다."}
-{"k": "Would you like to change {1}'s Ability to {2}?", "v": "Would you like to change {1}'s Ability to {2}?"}
-{"k": "{1}'s Ability changed to {2}!", "v": "{1}'s Ability changed to {2}!"}
+{"k": "Would you like to change {1}'s Ability to {2}?", "v": "Would you like to change {1}’s Ability to {2}?"}
+{"k": "{1}'s Ability changed to {2}!", "v": "{1}’s Ability changed to {2}!"}
 {"k": "{1} snapped out of confusion.", "v": "{1} snapped out of confusion."}
-{"k": "The foe's team became shrouded in mist!", "v": "The foe's team became shrouded in mist!"}
+{"k": "The foe's team became shrouded in mist!", "v": "The foe’s team became shrouded in mist!"}
 {"k": "It's no good! It's impossible to aim when there are two Pokémon!", "v": "안 되겠다! 포켓몬이 둘이면 조준할 수 없어!"}
 {"k": "There is no room left in the PC!", "v": "PC에 더 이상 공간이 없다!"}
-{"k": "Can't use that while on a bicycle.", "v": "Can't use that while on a bicycle."}
+{"k": "Can't use that while on a bicycle.", "v": "Can’t use that while on a bicycle."}
 {"k": "The battery has run dry!\nFor it to recharge, you need to walk another {1} steps.", "v": "배터리가 방전되었다!\n충전하려면 {1}걸음을 더 걸어야 한다."}
 {"k": "The grassy patch remained quiet...", "v": "풀숲은 정적에 싸여 있다..."}
 {"k": "Pokémon already has mail", "v": "포켓몬이 이미 편지를 갖고 있다"}
@@ -1263,17 +1263,17 @@
 {"k": "{1} opened the door to its heart!", "v": "{1} opened the door to its heart!"}
 {"k": "{1} regained the move\n{2}!", "v": "{1} regained the move \n{2}!"}
 {"k": "{1} regained {2} Exp. Points!", "v": "{1} regained {2} Exp. Points!"}
-{"k": "There's a Pokemon that may open the door to its heart!", "v": "There's a Pokemon that may open the door to its heart!"}
+{"k": "There's a Pokemon that may open the door to its heart!", "v": "There’s a Pokemon that may open the door to its heart!"}
 {"k": "You have no Pokemon that can be purified.", "v": "정화할 수 있는 포켓몬이 없습니다."}
 {"k": "{1} adores you!\nThe door to its heart opened a little.", "v": "{1} adores you!\nThe door to its heart opened a little."}
 {"k": "{1} turned friendly.", "v": "{1} turned friendly."}
 {"k": "{1} turned friendly.\nThe door to its heart opened a little.", "v": "{1} turned friendly.\nThe door to its heart opened a little."}
 {"k": "{1} came to its senses from the {2}!", "v": "{1} came to its senses from the {2}!"}
 {"k": "{1} can now be purified!", "v": "{1} can now be purified!"}
-{"k": "This item can't be used on that Pokemon.", "v": "This item can't be used on that Pokemon."}
+{"k": "This item can't be used on that Pokemon.", "v": "This item can’t be used on that Pokemon."}
 {"k": "Its hyper mode attack hurt {1}!", "v": "Its hyper mode attack hurt {1}!"}
-{"k": "{1}'s emotions rose to a fever pitch!\nIt entered Hyper Mode!", "v": "{1}'s emotions rose to a fever pitch!\nIt entered Hyper Mode!"}
-{"k": "Each Pokemon's HP was halved!", "v": "Each Pokemon's HP was halved!"}
+{"k": "{1}'s emotions rose to a fever pitch!\nIt entered Hyper Mode!", "v": "{1}’s emotions rose to a fever pitch!\nIt entered Hyper Mode!"}
+{"k": "Each Pokemon's HP was halved!", "v": "Each Pokemon’s HP was halved!"}
 {"k": "{1} is damaged by the recoil!", "v": "{1} is damaged by the recoil!"}
 {"k": "A shadow sky appeared!", "v": "A shadow sky appeared!"}
 {"k": "It broke all barriers!", "v": "It broke all barriers!"}
@@ -1284,7 +1284,7 @@
 {"k": "Are you sure you want to change it?", "v": "Are you sure you want to change it?"}
 {"k": "Do you want to change its song now?", "v": "Do you want to change its song now?"}
 {"k": "{1} learned a new song!", "v": "{1} learned a new song!"}
-{"k": "The player trainer was not defined, so the menu can't be displayed.", "v": "The player trainer was not defined, so the menu can't be displayed."}
+{"k": "The player trainer was not defined, so the menu can't be displayed.", "v": "The player trainer was not defined, so the menu can’t be displayed."}
 {"k": "Please see the documentation to learn how to set up the trainer player.", "v": "Please see the documentation to learn how to set up the trainer player."}
 {"k": "Pokédex", "v": "도감"}
 {"k": "Pokégear", "v": "포켓기어"}
@@ -1341,18 +1341,18 @@
 {"k": "HT", "v": "키"}
 {"k": "WT", "v": "몸무게"}
 {"k": "{1:s} Pokémon", "v": "{1:s} 포켓몬"}
-{"k": "{1:d}'{2:02d}\"", "v": "{1:d}'{2:02d}\""}
+{"k": "{1:d}'{2:02d}\"", "v": "{1:d}’{2:02d}“"}
 {"k": "{1:4.1f} lbs.", "v": "{1:4.1f} lbs."}
 {"k": "{1:.1f} m", "v": "{1:.1f} m"}
 {"k": "{1:.1f} kg", "v": "{1:.1f} kg"}
 {"k": "Graphics/Pictures/pokedexTypes", "v": "Graphics/Pictures/pokedexTypes"}
 {"k": "????? Pokémon", "v": "????? 포켓몬"}
-{"k": "???'??\"", "v": "???'??\""}
+{"k": "???'??\"", "v": "???’??“"}
 {"k": "????.? lbs.", "v": "????.? lbs."}
 {"k": "????.? m", "v": "????.? m"}
 {"k": "????.? kg", "v": "????.? kg"}
 {"k": "Graphics/Pictures/pokedexentry", "v": "Graphics/Pictures/pokedexentry"}
-{"k": "Don't specify", "v": "Don't specify"}
+{"k": "Don't specify", "v": "Don’t specify"}
 {"k": "None", "v": "없음"}
 {"k": "Normal", "v": "노말"}
 {"k": "Fighting", "v": "Fighting"}
@@ -1395,25 +1395,25 @@
 {"k": "Please enter a message (max. {1} characters).", "v": "Please enter a message (max. {1} characters)."}
 {"k": "Please enter a message (max. 256 characters).", "v": "Please enter a message (max. 256 characters)."}
 {"k": "Stop giving the Pokémon Mail?", "v": "포켓몬에게 편지 주기를 그만둘까?"}
-{"k": "{1} isn't holding anything.", "v": "{1} isn't holding anything."}
+{"k": "{1} isn't holding anything.", "v": "{1} isn’t holding anything."}
 {"k": "The Bag is full. The Pokémon's item could not be removed.", "v": "가방이 가득 찼습니다. 포켓몬의 도구를 뗄 수 없었습니다."}
 {"k": "Send the removed mail to your PC?", "v": "Send the removed mail to your PC?"}
-{"k": "Your PC's Mailbox is full.", "v": "Your PC's Mailbox is full."}
+{"k": "Your PC's Mailbox is full.", "v": "Your PC’s Mailbox is full."}
 {"k": "The mail was sent to your PC.", "v": "The mail was sent to your PC."}
 {"k": "If the mail is removed, the message will be lost. OK?", "v": "If the mail is removed, the message will be lost. OK?"}
 {"k": "Mail was taken from the Pokémon.", "v": "포켓몬에게서 편지를 받았다."}
 {"k": "Received the {1} from {2}.", "v": "Received the {1} from {2}."}
-{"k": "Eggs can't hold items.", "v": "Eggs can't hold items."}
-{"k": "{1}'s mail must be removed before giving it an item.", "v": "{1}'s mail must be removed before giving it an item."}
+{"k": "Eggs can't hold items.", "v": "Eggs can’t hold items."}
+{"k": "{1}'s mail must be removed before giving it an item.", "v": "{1}’s mail must be removed before giving it an item."}
 {"k": "{1} is already holding {2}.\u0001", "v": "{1} is already holding {2}.\u0001"}
 {"k": "Would you like to switch the two items?", "v": "Would you like to switch the two items?"}
-{"k": "Can't re-store deleted item in bag", "v": "Can't re-store deleted item in bag"}
+{"k": "Can't re-store deleted item in bag", "v": "Can’t re-store deleted item in bag"}
 {"k": "The {1} was taken and replaced with the {2}.", "v": "The {1} was taken and replaced with the {2}."}
 {"k": "Took the Pokémon's {1} and gave it the {2}.", "v": "포켓몬에게서 {1}\\j[을,를] 받고 {2}\\j[을,를] 줬다."}
 {"k": "The Pokémon is now holding the {1}.", "v": "포켓몬이 {1}\\j[을,를] 지니게 됐다."}
 {"k": "Give to which Pokémon?", "v": "어느 포켓몬에게 줄까?"}
 {"k": "This Pokémon is holding an item. It can't hold mail.", "v": "이 포켓몬은 도구를 지니고 있어 편지를 지닐 수 없습니다."}
-{"k": "Eggs can't hold mail.", "v": "Eggs can't hold mail."}
+{"k": "Eggs can't hold mail.", "v": "Eggs can’t hold mail."}
 {"k": "Mail was transferred from the Mailbox.", "v": "Mail was transferred from the Mailbox."}
 {"k": "{1} (PP: ---)", "v": "{1} (PP: ---)"}
 {"k": "{1} (PP: {2}/{3})", "v": "{1} (PP: {2}/{3})"}
@@ -1461,22 +1461,22 @@
 {"k": "Fainted", "v": "기절"}
 {"k": "Heal", "v": "회복"}
 {"k": "Set the Pokémon's HP (max. {1}).", "v": "포켓몬의 HP를 설정한다 (최대 {1})."}
-{"k": "{1}'s HP was set to {2}.", "v": "{1}'s HP was set to {2}."}
+{"k": "{1}'s HP was set to {2}.", "v": "{1}’s HP was set to {2}."}
 {"k": "Set the Pokémon's sleep count.", "v": "포켓몬의 수면 턴 수를 설정한다."}
-{"k": "{1}'s status was changed.", "v": "{1}'s status was changed."}
-{"k": "{1}'s status could not be changed.", "v": "{1}'s status could not be changed."}
-{"k": "{1}'s HP was set to 0.", "v": "{1}'s HP was set to 0."}
+{"k": "{1}'s status was changed.", "v": "{1}’s status was changed."}
+{"k": "{1}'s status could not be changed.", "v": "{1}’s status could not be changed."}
+{"k": "{1}'s HP was set to 0.", "v": "{1}’s HP was set to 0."}
 {"k": "{1} was fully healed.", "v": "{1} was fully healed."}
 {"k": "Set the Pokémon's level (max. {1}).", "v": "포켓몬의 레벨을 설정한다 (최대 {1})."}
-{"k": "{1}'s level was set to {2}.", "v": "{1}'s level was set to {2}."}
-{"k": "{1}'s species was changed to {2}.", "v": "{1}'s species was changed to {2}."}
+{"k": "{1}'s level was set to {2}.", "v": "{1}’s level was set to {2}."}
+{"k": "{1}'s species was changed to {2}.", "v": "{1}’s species was changed to {2}."}
 {"k": "Teach move", "v": "기술 가르치기"}
 {"k": "Forget move", "v": "기술 잊게 하기"}
 {"k": "Reset movelist", "v": "기술 목록 리셋"}
 {"k": "Reset initial moves", "v": "초기 기술 리셋"}
 {"k": "Choose move to forget.", "v": "Choose move to forget."}
-{"k": "{1}'s moves were reset.", "v": "{1}'s moves were reset."}
-{"k": "{1}'s moves were set as its first-known moves.", "v": "{1}'s moves were set as its first-known moves."}
+{"k": "{1}'s moves were reset.", "v": "{1}’s moves were reset."}
+{"k": "{1}'s moves were set as its first-known moves.", "v": "{1}’s moves were set as its first-known moves."}
 {"k": "{1} is genderless.", "v": "{1}\\j[은,는] 성별이 없습니다."}
 {"k": "male", "v": "수컷"}
 {"k": "female", "v": "암컷"}
@@ -1486,7 +1486,7 @@
 {"k": "Make female", "v": "암컷으로 변경"}
 {"k": "Remove override", "v": "재정의 해제"}
 {"k": "{1} is now male.", "v": "{1} is now male."}
-{"k": "{1}'s gender couldn't be changed.", "v": "{1}'s gender couldn't be changed."}
+{"k": "{1}'s gender couldn't be changed.", "v": "{1}‘s gender couldn’t be changed."}
 {"k": "{1} is now female.", "v": "{1} is now female."}
 {"k": "Gender override removed.", "v": "Gender override removed."}
 {"k": "Ability {1} is natural.", "v": "Ability {1} is natural."}
@@ -1500,9 +1500,9 @@
 {"k": "Make shiny", "v": "색이 다른 포켓몬으로 변경"}
 {"k": "Make normal", "v": "일반 포켓몬으로 변경"}
 {"k": "Set the Pokémon's form.", "v": "포켓몬의 폼을 설정한다."}
-{"k": "{1}'s form was set to {2}.", "v": "{1}'s form was set to {2}."}
+{"k": "{1}'s form was set to {2}.", "v": "{1}’s form was set to {2}."}
 {"k": "Set the Pokémon's happiness (max. 255).", "v": "포켓몬의 친밀도를 설정한다 (최대 255)."}
-{"k": "{1}'s happiness was set to {2}.", "v": "{1}'s happiness was set to {2}."}
+{"k": "{1}'s happiness was set to {2}.", "v": "{1}’s happiness was set to {2}."}
 {"k": "Sp. Attack", "v": "Sp. Attack"}
 {"k": "Sp. Defense", "v": "Sp. Defense"}
 {"k": "Personal ID is {1}.", "v": "Personal ID is {1}."}
@@ -1528,8 +1528,8 @@
 {"k": "Set OT's gender", "v": "어버이 성별 설정"}
 {"k": "Random foreign ID", "v": "무작위 타인 ID"}
 {"k": "Set foreign ID", "v": "타인 ID 설정"}
-{"k": "{1}'s OT's name?", "v": "{1}'s OT's name?"}
-{"k": "Set OT's gender.", "v": "Set OT's gender."}
+{"k": "{1}'s OT's name?", "v": "{1}‘s OT’s name?"}
+{"k": "Set OT's gender.", "v": "Set OT’s gender."}
 {"k": "Set the new ID (max. 65535).", "v": "Set the new ID (max. 65535)."}
 {"k": "{1} has the nickname {2}.", "v": "{1}의 별명은 {2}이다."}
 {"k": "{1} has no nickname.", "v": "{1}\\j[은,는] 별명이 없다."}
@@ -1549,7 +1549,7 @@
 {"k": "Lower heart gauge", "v": "하트게이지 감소"}
 {"k": "{1} is now a Shadow Pokémon.", "v": "{1}\\j[은,는] 그림자 포켓몬이 됐다."}
 {"k": "{1} is already a Shadow Pokémon.", "v": "{1}\\j[은,는] 이미 그림자 포켓몬이다."}
-{"k": "{1}'s heart gauge was lowered from {2} to {3} (now stage {4}).", "v": "{1}'s heart gauge was lowered from {2} to {3} (now stage {4})."}
+{"k": "{1}'s heart gauge was lowered from {2} to {3} (now stage {4}).", "v": "{1}’s heart gauge was lowered from {2} to {3} (now stage {4})."}
 {"k": "{1} is not a Shadow Pokémon.", "v": "{1}\\j[은,는] 그림자 포켓몬이 아니다."}
 {"k": "Are you sure you want to copy this Pokémon?", "v": "정말 이 포켓몬을 복사할까요?"}
 {"k": "The Pokémon was duplicated.", "v": "포켓몬을 복제했다."}
@@ -1558,8 +1558,8 @@
 {"k": "Switch", "v": "교체"}
 {"k": "Item", "v": "도구"}
 {"k": "Not enough HP...", "v": "Not enough HP..."}
-{"k": "{1} can't use {2} on itself!", "v": "{1} can't use {2} on itself!"}
-{"k": "{1} can't be used on an Egg!", "v": "{1} can't be used on an Egg!"}
+{"k": "{1} can't use {2} on itself!", "v": "{1} can’t use {2} on itself!"}
+{"k": "{1} can't be used on an Egg!", "v": "{1} can’t be used on an Egg!"}
 {"k": "{1} can't be used on that Pokémon.", "v": "{1}\\j[은,는] 그 포켓몬에게 쓸 수 없다."}
 {"k": "Move to where?", "v": "Move to where?"}
 {"k": "Do what with the mail?", "v": "Do what with the mail?"}
@@ -1589,9 +1589,9 @@
 {"k": "TRAINER MEMO", "v": "TRAINER MEMO"}
 {"k": "<c3=404040,B0B0B0>{1} {2}, {3}", "v": "<c3=404040,B0B0B0>{1} {2}, {3}"}
 {"k": "<c3=404040,B0B0B0>A mysterious Pokémon Egg received from <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.", "v": "<c3=404040,B0B0B0><c3=F83820,E09890>{1}<c3=404040,B0B0B0>에게서 받은 이상한 포켓몬 알.\n"}
-{"k": "<c3=404040,B0B0B0>\"The Egg Watch\"", "v": "<c3=404040,B0B0B0>\"The Egg Watch\"\n"}
+{"k": "<c3=404040,B0B0B0>\"The Egg Watch\"", "v": "<c3=404040,B0B0B0>“The Egg Watch”\n"}
 {"k": "It looks like this Egg will take a long time to hatch.", "v": "It looks like this Egg will take a long time to hatch."}
-{"k": "What will hatch from this? It doesn't seem close to hatching.", "v": "What will hatch from this? It doesn't seem close to hatching."}
+{"k": "What will hatch from this? It doesn't seem close to hatching.", "v": "What will hatch from this? It doesn’t seem close to hatching."}
 {"k": "It appears to move occasionally. It may be close to hatching.", "v": "It appears to move occasionally. It may be close to hatching."}
 {"k": "Sounds can be heard coming from inside! It will hatch soon!", "v": "Sounds can be heard coming from inside! It will hatch soon!"}
 {"k": "<c3=F83820,E09890>{1}<c3=404040,B0B0B0> nature.", "v": "<c3=F83820,E09890>{1}<c3=404040,B0B0B0>한 성격."}
@@ -1641,15 +1641,15 @@
 {"k": "ACCURACY", "v": "명중"}
 {"k": "RIBBONS", "v": "RIBBONS"}
 {"k": "No. of Ribbons:", "v": "리본 수:"}
-{"k": "HM moves can't be forgotten now.", "v": "HM moves can't be forgotten now."}
+{"k": "HM moves can't be forgotten now.", "v": "HM moves can’t be forgotten now."}
 {"k": "You must choose a move!", "v": "You must choose a move!"}
 {"k": "CLOSE BAG", "v": "CLOSE BAG"}
 {"k": "x{1: 2d}", "v": "x{1: 2d}"}
 {"k": "Close bag.", "v": "Close bag."}
-{"k": "The {1} can't be held.", "v": "The {1} can't be held."}
-{"k": "The {1} can't be used on {2}.", "v": "The {1} can't be used on {2}."}
-{"k": "That's not a Berry.", "v": "That's not a Berry."}
-{"k": "That's too important to toss out!", "v": "That's too important to toss out!"}
+{"k": "The {1} can't be held.", "v": "The {1} can’t be held."}
+{"k": "The {1} can't be used on {2}.", "v": "The {1} can’t be used on {2}."}
+{"k": "That's not a Berry.", "v": "That’s not a Berry."}
+{"k": "That's too important to toss out!", "v": "That’s too important to toss out!"}
 {"k": "Toss out how many {1}?", "v": "Toss out how many {1}?"}
 {"k": "Is it OK to throw away {1} {2}?", "v": "Is it OK to throw away {1} {2}?"}
 {"k": "Threw away {1} {2}.", "v": "Threw away {1} {2}."}
@@ -1681,7 +1681,7 @@
 {"k": "Let me register you.", "v": "Let me register you."}
 {"k": "The Trainer is close by.\nTalk to the Trainer in person!", "v": "The Trainer is close by.\nTalk to the Trainer in person!"}
 {"k": "The Trainer is out of range.", "v": "The Trainer is out of range."}
-{"k": "{1}'s messages not defined.\nCouldn't call common event {2}.", "v": "{1}'s messages not defined.\nCouldn't call common event {2}."}
+{"k": "{1}'s messages not defined.\nCouldn't call common event {2}.", "v": "{1}’s messages not defined.\nCouldn’t call common event {2}."}
 {"k": "There are no phone numbers stored.", "v": "저장된 전화번호가 없습니다."}
 {"k": "Registered<br>", "v": "등록됨<br>"}
 {"k": "<r>{1}<br>", "v": "<r>{1}<br>"}
@@ -1707,7 +1707,7 @@
 {"k": "Delete all saved data?", "v": "Delete all saved data?"}
 {"k": "Once data has been deleted, there is no way to recover it.\u0001", "v": "데이터를 지우면 되돌릴 방법이 없습니다.\u0001"}
 {"k": "Delete the saved data anyway?", "v": "Delete the saved data anyway?"}
-{"k": "Deleting all data.\nDon't turn off the power.\\wtnp[0]", "v": "Deleting all data.\r\nDon't turn off the power.\\wtnp[0]"}
+{"k": "Deleting all data.\nDon't turn off the power.\\wtnp[0]", "v": "Deleting all data.\r\nDon’t turn off the power.\\wtnp[0]"}
 {"k": "The save file was deleted.", "v": "The save file was deleted."}
 {"k": "No save file was found.", "v": "저장 파일을 찾을 수 없습니다."}
 {"k": "No starting position was set in the map editor.\u0001", "v": "맵 에디터에서 시작 위치가 설정되지 않았습니다.\u0001"}
@@ -1723,12 +1723,12 @@
 {"k": "The map was not found. The game cannot continue.", "v": "맵을 찾을 수 없습니다. 게임을 더 이상 진행할 수 없습니다."}
 {"k": "The map is corrupt. The game cannot continue.", "v": "맵 데이터가 손상되었습니다. 게임을 더 이상 진행할 수 없습니다."}
 {"k": "One or more fonts used in this game do not exist on the system.\u0001", "v": "One or more fonts used in this game do not exist on the system.\u0001"}
-{"k": "The game can be played, but the look of the game's text will not be optimal.\u0001", "v": "The game can be played, but the look of the game's text will not be optimal.\u0001"}
+{"k": "The game can be played, but the look of the game's text will not be optimal.\u0001", "v": "The game can be played, but the look of the game’s text will not be optimal.\u0001"}
 {"k": "Some of the fonts were successfully installed.\u0001", "v": "Some of the fonts were successfully installed.\u0001"}
-{"k": "To install the other fonts, copy the files in this game's Fonts folder to the Fonts folder in Control Panel.", "v": "To install the other fonts, copy the files in this game's Fonts folder to the Fonts folder in Control Panel."}
+{"k": "To install the other fonts, copy the files in this game's Fonts folder to the Fonts folder in Control Panel.", "v": "To install the other fonts, copy the files in this game’s Fonts folder to the Fonts folder in Control Panel."}
 {"k": "The fonts were successfully installed.\u0001", "v": "The fonts were successfully installed.\u0001"}
 {"k": "Would you like to restart the game and apply the changes?", "v": "Would you like to restart the game and apply the changes?"}
-{"k": "To install the necessary fonts, copy the files in this game's Fonts folder to the Fonts folder in Control Panel.", "v": "To install the necessary fonts, copy the files in this game's Fonts folder to the Fonts folder in Control Panel."}
+{"k": "To install the necessary fonts, copy the files in this game's Fonts folder to the Fonts folder in Control Panel.", "v": "To install the necessary fonts, copy the files in this game’s Fonts folder to the Fonts folder in Control Panel."}
 {"k": "<ac><c2=06644bd2>{1}</c2></ac>", "v": "<ac><c2=06644bd2>{1}</c2></ac>"}
 {"k": "Player<r><c3={1}>{2}</c3><br>", "v": "주인공<r><c3={1}>{2}</c3><br>"}
 {"k": "Time<r><c3={1:s}>{2:02d}:{3:02d}</c3><br>", "v": "플레이 시간<r><c3={1:s}>{2:02d}:{3:02d}</c3><br>"}
@@ -1773,22 +1773,22 @@
 {"k": "Full", "v": "전체 화면"}
 {"k": "Screen Border", "v": "Screen Border"}
 {"k": "Box {1:d}", "v": "박스 {1:d}"}
-{"k": "You can't release an Egg.", "v": "You can't release an Egg."}
+{"k": "You can't release an Egg.", "v": "You can’t release an Egg."}
 {"k": "Please remove the mail.", "v": "Please remove the mail."}
 {"k": "That's your last Pokémon!", "v": "마지막 포켓몬이다!"}
 {"k": "Release this Pokémon?", "v": "이 포켓몬을 놓아줄까?"}
 {"k": "{1} was released.", "v": "{1} was released."}
 {"k": "Bye-bye, {1}!", "v": "Bye-bye, {1}!"}
-{"k": "Can't deposit from box...", "v": "Can't deposit from box..."}
+{"k": "Can't deposit from box...", "v": "Can’t deposit from box..."}
 {"k": "Please remove the Mail.", "v": "Please remove the Mail."}
 {"k": "Deposit in which Box?", "v": "Deposit in which Box?"}
 {"k": "The Box is full.", "v": "The Box is full."}
-{"k": "Can't withdraw from party...", "v": "Can't withdraw from party..."}
-{"k": "Your party's full!", "v": "Your party's full!"}
+{"k": "Can't withdraw from party...", "v": "Can’t withdraw from party..."}
+{"k": "Your party's full!", "v": "Your party’s full!"}
 {"k": "Position {1},{2} is empty...", "v": "Position {1},{2} is empty..."}
 {"k": "Position {1},{2} is not empty...", "v": "Position {1},{2} is not empty..."}
 {"k": "Take this {1}?", "v": "Take this {1}?"}
-{"k": "Can't store the {1}.", "v": "Can't store the {1}."}
+{"k": "Can't store the {1}.", "v": "Can’t store the {1}."}
 {"k": "Took the {1}.", "v": "Took the {1}."}
 {"k": "{1} is now being held.", "v": "{1} is now being held."}
 {"k": "WITHDRAW POKéMON", "v": "포켓몬 꺼내기"}
@@ -1843,7 +1843,7 @@
 {"k": "Place", "v": "놓는다"}
 {"k": "The duplicated Pokémon was moved to your party.", "v": "복제한 포켓몬을 파티로 옮겼습니다."}
 {"k": "All boxes are full.", "v": "All boxes are full."}
-{"k": "The duplicated Pokémon was moved to box \"{1}.\"", "v": "복제한 포켓몬을 박스 \"{1}\"\\j[으로,로] 옮겼습니다."}
+{"k": "The duplicated Pokémon was moved to box \"{1}.\"", "v": "복제한 포켓몬을 박스 “{1}”\\j[으로,로] 옮겼습니다."}
 {"k": "No ability", "v": "특성 없음"}
 {"k": "No item", "v": "도구 없음"}
 {"k": "Lv.", "v": "Lv."}
@@ -1860,7 +1860,7 @@
 {"k": "Go back to the previous menu.", "v": "Go back to the previous menu."}
 {"k": "There are no items.", "v": "도구가 없습니다."}
 {"k": "There's no Mail here.", "v": "여기에는 편지가 없다."}
-{"k": "What do you want to do with {1}'s Mail?", "v": "What do you want to do with {1}'s Mail?"}
+{"k": "What do you want to do with {1}'s Mail?", "v": "What do you want to do with {1}’s Mail?"}
 {"k": "Move to Bag", "v": "Move to Bag"}
 {"k": "The message will be lost. Is that OK?", "v": "The message will be lost. Is that OK?"}
 {"k": "The Mail was returned to the Bag with its message erased.", "v": "The Mail was returned to the Bag with its message erased."}
@@ -1872,7 +1872,7 @@
 {"k": "\\se[computeropen]{1} booted up the PC.", "v": "\\se[computeropen]{1}\\j[은,는] PC의 전원을 켰다."}
 {"k": "{1}'s PC", "v": "{1}의 PC"}
 {"k": "\\se[accesspc]Accessed {1}'s PC.", "v": "\\se[accesspc]{1}의 PC에 접속했다."}
-{"k": "Someone's PC", "v": "Someone's PC"}
+{"k": "Someone's PC", "v": "Someone’s PC"}
 {"k": "\\se[accesspc]The Pokémon Storage System was opened.", "v": "\\se[accesspc]포켓몬 보관 시스템을 열었다."}
 {"k": "Withdraw Pokémon", "v": "포켓몬 꺼내기"}
 {"k": "Deposit Pokémon", "v": "포켓몬 맡기기"}
@@ -1900,7 +1900,7 @@
 {"k": "Your {1} in the Purify Chamber is ready for purification!", "v": "Your {1} in the Purify Chamber is ready for purification!"}
 {"k": "Purify Chamber", "v": "정화의 챔버"}
 {"k": "\\se[accesspc]Accessed the Purify Chamber.", "v": "\\se[accesspc]정화의 방에 접속했다."}
-{"k": "Can't place an egg there.", "v": "Can't place an egg there."}
+{"k": "Can't place an egg there.", "v": "Can’t place an egg there."}
 {"k": "Only a Shadow Pokémon can go there.", "v": "거기에는 그림자 포켓몬만 들어갈 수 있습니다."}
 {"k": "Can't place a Shadow Pokémon there.", "v": "거기에는 그림자 포켓몬을 놓을 수 없습니다."}
 {"k": "This {1} is ready to open its heart. However, there must be at least one regular Pokémon in the set to perform a purification ceremony.", "v": "이 {1}\\j[은,는] 마음을 열 준비가 됐습니다. 다만 정화 의식을 치르려면 일반 포켓몬이 최소 한 마리 있어야 합니다."}
@@ -1934,7 +1934,7 @@
 {"k": "Failed to delete stored items", "v": "Failed to delete stored items"}
 {"k": "You have no more room in the Bag.", "v": "가방에 더 이상 공간이 없다."}
 {"k": "Here you are!\nThank you!", "v": "자, 여기 있네!\r\n고맙네!"}
-{"k": "I'll throw in a Premier Ball, too.", "v": "I'll throw in a Premier Ball, too."}
+{"k": "I'll throw in a Premier Ball, too.", "v": "I’ll throw in a Premier Ball, too."}
 {"k": "{1}? Oh, no.\nI can't buy that.", "v": "{1}? 이런.\r\n그건 살 수 없어."}
 {"k": "{1}?\nHow many would you like to sell?", "v": "{1}?\r\nHow many would you like to sell?"}
 {"k": "Turned over the {1} and received ${2}.", "v": "{1}\\j[을,를] 건네고 {2}포켓프랑을 받았습니다."}
@@ -1944,7 +1944,7 @@
 {"k": "Please come again!", "v": "Please come again!"}
 {"k": "Is there anything else I can help you with?", "v": "Is there anything else I can help you with?"}
 {"k": "Faraway place", "v": "아주 먼 곳"}
-{"k": "[Custom]", "v": "[Custom]"}
+{"k": "[Custom]", "v": "「Custom」"}
 {"k": "Choose a phrase to be where the gift Pokémon was obtained from.", "v": "선물 포켓몬을 얻은 장소로 쓸 문구를 선택하세요."}
 {"k": "Enter a phrase.", "v": "Enter a phrase."}
 {"k": "Stop editng this gift?", "v": "Stop editng this gift?"}
@@ -1952,10 +1952,10 @@
 {"k": "Choose a unique ID for this gift.", "v": "Choose a unique ID for this gift."}
 {"k": "That ID is already used by a Mystery Gift.", "v": "That ID is already used by a Mystery Gift."}
 {"k": "Enter a name for the gift.", "v": "Enter a name for the gift."}
-{"k": "Couldn't edit the gift.", "v": "Couldn't edit the gift."}
-{"k": "Didn't create a gift.", "v": "Didn't create a gift."}
+{"k": "Couldn't edit the gift.", "v": "Couldn’t edit the gift."}
+{"k": "Didn't create a gift.", "v": "Didn’t create a gift."}
 {"k": "The gift was saved to MysteryGiftMaster.txt.", "v": "The gift was saved to MysteryGiftMaster.txt."}
-{"k": "Couldn't save the gift to MysteryGiftMaster.txt.", "v": "Couldn't save the gift to MysteryGiftMaster.txt."}
+{"k": "Couldn't save the gift to MysteryGiftMaster.txt.", "v": "Couldn’t save the gift to MysteryGiftMaster.txt."}
 {"k": "There are no Mystery Gifts defined.", "v": "정의된 신비한 선물이 없습니다."}
 {"k": "Searching for online gifts...\\wtnp[0]", "v": "Searching for online gifts...\\wtnp[0]"}
 {"k": "No online Mystery Gifts found.\\wtnp[20]", "v": "온라인 신비한 선물을 찾지 못했습니다.\\wtnp[20]"}
@@ -1963,7 +1963,7 @@
 {"k": "\\ts[]Manage Mystery Gifts (X=online).", "v": "\\ts[]Manage Mystery Gifts (X=online)."}
 {"k": "The gifts were saved to MysteryGift.txt.", "v": "The gifts were saved to MysteryGift.txt."}
 {"k": "Upload MysteryGift.txt to the Internet.", "v": "Upload MysteryGift.txt to the Internet."}
-{"k": "Couldn't save the gifts to MysteryGift.txt.", "v": "Couldn't save the gifts to MysteryGift.txt."}
+{"k": "Couldn't save the gifts to MysteryGift.txt.", "v": "Couldn’t save the gifts to MysteryGift.txt."}
 {"k": "Toggle on/offline", "v": "온/오프라인 전환"}
 {"k": "Edit", "v": "편집"}
 {"k": "Receive", "v": "수령"}
@@ -1975,7 +1975,7 @@
 {"k": "Choose the gift you want to receive.\\wtnp[0]", "v": "Choose the gift you want to receive.\\wtnp[0]"}
 {"k": "The gift has been received!", "v": "선물을 받았다!"}
 {"k": "Please pick up your gift from the deliveryman in any Poké Mart.", "v": "아무 프렌드샵의 배달원에게서 선물을 받으세요."}
-{"k": "Couldn't find an unclaimed Mystery Gift with ID {1}.", "v": "Couldn't find an unclaimed Mystery Gift with ID {1}."}
+{"k": "Couldn't find an unclaimed Mystery Gift with ID {1}.", "v": "Couldn’t find an unclaimed Mystery Gift with ID {1}."}
 {"k": "{1} received {2}!\\se[ItemGet]\u0001", "v": "{1}\\j[은,는] {2}\\j[을,를] 받았다!\\se[ItemGet]\u0001"}
 {"k": "\\se[ItemGet]{1} received \\c[1]{2}\\c[0]!\\\nIt contained \\c[1]{3}\\c[0].\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를] 받았다!\\\n안에 \\c[1]{3}\\c[0]\\j[이,가] 들어 있었다.\\wtnp[30]"}
 {"k": "\\se[ItemGet]{1} received some \\c[1]{2}\\c[0]!\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를] 받았다!\\wtnp[30]"}
@@ -1996,7 +1996,7 @@
 {"k": "\\se[accesspc]Accessed the Hall of Fame.", "v": "\\se[accesspc]명예의 전당에 접속했다."}
 {"k": "PA: Ding-dong!\u0001", "v": "PA:  Ding-dong!\u0001"}
 {"k": "PA: Your safari game is over!", "v": "PA:  Your safari game is over!"}
-{"k": "Announcer: You're out of Safari Balls! Game over!", "v": "Announcer:  You're out of Safari Balls! Game over!"}
+{"k": "Announcer: You're out of Safari Balls! Game over!", "v": "Announcer:  You’re out of Safari Balls! Game over!"}
 {"k": "Bug Catcher Ed", "v": "Bug Catcher Ed"}
 {"k": "Bug Catcher Benny", "v": "Bug Catcher Benny"}
 {"k": "Bug Catcher Josh", "v": "Bug Catcher Josh"}
@@ -2013,7 +2013,7 @@
 {"k": "Switch Pokémon?", "v": "포켓몬을 교체할까?"}
 {"k": "Caught {1}!", "v": "{1} 잡았다!"}
 {"k": "ANNOUNCER: BEEEEEP!", "v": "ANNOUNCER:  BEEEEEP!"}
-{"k": "Time's up!", "v": "Time's up!"}
+{"k": "Time's up!", "v": "Time’s up!"}
 {"k": "ANNOUNCER: The Bug-Catching Contest is over!", "v": "ANNOUNCER:  The Bug-Catching Contest is over!"}
 {"k": "Number of rounds is 0 or less.", "v": "Number of rounds is 0 or less."}
 {"k": "Choose a battle.", "v": "Choose a battle."}
@@ -2091,7 +2091,7 @@
 {"k": "Maximum level must be 0 through 9.", "v": "최대 레벨은 0에서 9 사이여야 합니다."}
 {"k": "Maximum level shouldn't be less than the minimum level.", "v": "최대 레벨은 최소 레벨보다 낮을 수 없습니다."}
 {"k": "You don't have enough cards.", "v": "카드가 부족합니다."}
-{"k": "Opponent has an illegal card, \"{1}\".", "v": "상대가 규정 위반 카드 \"{1}\"\\j[을,를] 가지고 있습니다."}
+{"k": "Opponent has an illegal card, \"{1}\".", "v": "상대가 규정 위반 카드 “{1}”\\j[을,를] 가지고 있습니다."}
 {"k": "Choosing the starting player...", "v": "선공 플레이어를 정하는 중..."}
 {"k": "{1} will go first.", "v": "{1}\\j[이,가] 먼저 시작합니다."}
 {"k": "{1} is making a move...", "v": "{1}\\j[이,가] 수하는 중..."}
@@ -2138,7 +2138,7 @@
 {"k": "You can receive even more Coins in the next game!", "v": "You can receive even more Coins in the next game!"}
 {"k": "If you quit now, you will recieve {1} Coin(s). Will you quit?", "v": "If you quit now, you will recieve {1} Coin(s). Will you quit?"}
 {"k": "{1} received {2} Coin(s)!", "v": "{1}\\j[은,는] {2}개의 코인을 얻었다!"}
-{"k": "You can't play unless you have a Coin Case.", "v": "You can't play unless you have a Coin Case."}
+{"k": "You can't play unless you have a Coin Case.", "v": "You can’t play unless you have a Coin Case."}
 {"k": "Graphics/Pictures/Mining/cracks", "v": "Graphics/Pictures/Mining/cracks"}
 {"k": "Graphics/Pictures/Mining/tiles", "v": "Graphics/Pictures/Mining/tiles"}
 {"k": "Graphics/Pictures/Mining/cursor", "v": "Graphics/Pictures/Mining/cursor"}
@@ -2156,19 +2156,19 @@
 {"k": "Graphics/Pictures/Tile Puzzle/tiles#{@board}", "v": "Graphics/Pictures/Tile Puzzle/tiles#{@board}"}
 {"k": "The recorded data could not be found or saved.", "v": "The recorded data could not be found or saved."}
 {"k": "The recorded data was in an invalid format.", "v": "The recorded data was in an invalid format."}
-{"k": "The recorded data's format is not supported.", "v": "The recorded data's format is not supported."}
+{"k": "The recorded data's format is not supported.", "v": "The recorded data’s format is not supported."}
 {"k": "There was no sound in the recording. Please ensure that a microphone is attached to the computer and is ready.", "v": "녹음된 소리가 없습니다. 마이크가 컴퓨터에 연결되어 준비되었는지 확인하세요."}
 {"k": "All recording devices are in use. Recording is not possible now.", "v": "All recording devices are in use. Recording is not possible now."}
 {"k": "No supported recording device was found. Recording is not possible.", "v": "지원되는 녹음 장치를 찾지 못했습니다. 녹음할 수 없습니다."}
 {"k": "Recording failed: {1}", "v": "Recording failed: {1}"}
 {"k": "There's no more room for Pokémon!\u0001", "v": "포켓몬을 더 데리고 다닐 공간이 없다!\u0001"}
 {"k": "The Pokémon Boxes are full and can't accept any more!", "v": "포켓몬 박스가 가득 차서 더 받을 수 없습니다!"}
-{"k": "Box \"{1}\" on {2}'s PC was full.\u0001", "v": "Box \"{1}\" on {2}'s PC was full.\u0001"}
-{"k": "Box \"{1}\" on someone's PC was full.\u0001", "v": "Box \"{1}\" on someone's PC was full.\u0001"}
-{"k": "{1} was transferred to box \"{2}.\"", "v": "{1} was transferred to box \"{2}.\""}
-{"k": "{1} was transferred to {2}'s PC.\u0001", "v": "{1} was transferred to {2}'s PC.\u0001"}
-{"k": "{1} was transferred to someone's PC.\u0001", "v": "{1} was transferred to someone's PC.\u0001"}
-{"k": "It was stored in box \"{1}.\"", "v": "It was stored in box \"{1}.\""}
+{"k": "Box \"{1}\" on {2}'s PC was full.\u0001", "v": "Box “{1}” on {2}’s PC was full.\u0001"}
+{"k": "Box \"{1}\" on someone's PC was full.\u0001", "v": "Box “{1}” on someone’s PC was full.\u0001"}
+{"k": "{1} was transferred to box \"{2}.\"", "v": "{1} was transferred to box “{2}.”"}
+{"k": "{1} was transferred to {2}'s PC.\u0001", "v": "{1} was transferred to {2}’s PC.\u0001"}
+{"k": "{1} was transferred to someone's PC.\u0001", "v": "{1} was transferred to someone’s PC.\u0001"}
+{"k": "It was stored in box \"{1}.\"", "v": "It was stored in box “{1}.”"}
 {"k": "{1} obtained {2}!\\se[PokemonGet]\u0001", "v": "{1}\\j[은,는] {2}\\j[을,를] 손에 넣었다!\\se[PokemonGet]\u0001"}
 {"k": "{1} received a Pokémon from {2}.\\se[PokemonGet]\u0001", "v": "{1}\\j[은,는] {2}에게서 포켓몬을 받았다.\\se[PokemonGet]\u0001"}
 {"k": "{1} received a Pokémon.\\se[PokemonGet]\u0001", "v": "{1}\\j[은,는] 포켓몬을 받았다.\\se[PokemonGet]\u0001"}
@@ -2177,7 +2177,7 @@
 {"k": "Please wait.\\wtnp[0]", "v": "Please wait.\\wtnp[0]"}
 {"k": "All text in the game was extracted and saved to intl.txt.\u0001", "v": "All text in the game was extracted and saved to intl.txt.\u0001"}
 {"k": "To localize the text for a particular language, translate every second line in the file.\u0001", "v": "To localize the text for a particular language, translate every second line in the file.\u0001"}
-{"k": "After translating, choose \"Compile Text.\"", "v": "After translating, choose \"Compile Text.\""}
+{"k": "After translating, choose \"Compile Text.\"", "v": "After translating, choose “Compile Text.”"}
 {"k": "Successfully compiled text and saved it to intl.dat.", "v": "Successfully compiled text and saved it to intl.dat."}
 {"k": "To use the file in a game, place the file in the Data folder under a different name, and edit the LANGUAGES array in the Settings script.", "v": "To use the file in a game, place the file in the Data folder under a different name, and edit the LANGUAGES array in the Settings script."}
 {"k": "Failed to compile text: {1}", "v": "Failed to compile text:  {1}"}
@@ -2196,7 +2196,7 @@
 {"k": "Use PC", "v": "Use PC"}
 {"k": "Set Player Character", "v": "Set Player Character"}
 {"k": "Rename Player", "v": "Rename Player"}
-{"k": "Randomise Player's ID", "v": "Randomise Player's ID"}
+{"k": "Randomise Player's ID", "v": "Randomise Player’s ID"}
 {"k": "Change Player Outfit", "v": "Change Player Outfit"}
 {"k": "Set Money", "v": "Set Money"}
 {"k": "Set Coins", "v": "Set Coins"}
@@ -2243,13 +2243,13 @@
 {"k": "There is only one player defined.", "v": "There is only one player defined."}
 {"k": "Choose the new player character.", "v": "Choose the new player character."}
 {"k": "The player character was changed.", "v": "The player character was changed."}
-{"k": "The player's name was changed to {1}.", "v": "The player's name was changed to {1}."}
-{"k": "The player's ID was changed to {1} (2).", "v": "The player's ID was changed to {1} (2)."}
-{"k": "Set the player's outfit.", "v": "Set the player's outfit."}
-{"k": "Player's outfit was changed.", "v": "Player's outfit was changed."}
-{"k": "Set the player's money.", "v": "Set the player's money."}
+{"k": "The player's name was changed to {1}.", "v": "The player’s name was changed to {1}."}
+{"k": "The player's ID was changed to {1} (2).", "v": "The player’s ID was changed to {1} (2)."}
+{"k": "Set the player's outfit.", "v": "Set the player’s outfit."}
+{"k": "Player's outfit was changed.", "v": "Player’s outfit was changed."}
+{"k": "Set the player's money.", "v": "Set the player’s money."}
 {"k": "You now have ${1}.", "v": "You now have ${1}."}
-{"k": "Set the player's Coin amount.", "v": "Set the player's Coin amount."}
+{"k": "Set the player's Coin amount.", "v": "Set the player’s Coin amount."}
 {"k": "You now have {1} Coins.", "v": "You now have {1} Coins."}
 {"k": "{1} Badge {2}", "v": "{1} 배지 {2}"}
 {"k": "Filled party with demo Pokémon.", "v": "파티를 데모 포켓몬으로 채웠다."}
@@ -2284,7 +2284,7 @@
 {"k": "The Pokémon in the Day Care can't breed.", "v": "키우미집의 포켓몬은 알을 낳을 수 없습니다."}
 {"k": "An egg is now waiting in the Day Care.", "v": "An egg is now waiting in the Day Care."}
 {"k": "There is no egg available.", "v": "받을 수 있는 알이 없습니다."}
-{"k": "Party is full, can't collect the egg.", "v": "Party is full, can't collect the egg."}
+{"k": "Party is full, can't collect the egg.", "v": "Party is full, can’t collect the egg."}
 {"k": "Collected the {1} egg.", "v": "Collected the {1} egg."}
 {"k": "Disposed of the egg.", "v": "Disposed of the egg."}
 {"k": "All eggs on your party now require one step to hatch.", "v": "All eggs on your party now require one step to hatch."}
@@ -2298,7 +2298,7 @@
 {"k": "Pokémon have roamed.", "v": "포켓몬이 배회했다."}
 {"k": "SET ENCOUNTERS", "v": "SET ENCOUNTERS"}
 {"k": "All Trainers on this map were reset.", "v": "All Trainers on this map were reset."}
-{"k": "This command can't be used here.", "v": "This command can't be used here."}
+{"k": "This command can't be used here.", "v": "This command can’t be used here."}
 {"k": "Set the first Pokémon's level.", "v": "첫 번째 포켓몬의 레벨을 설정한다."}
 {"k": "Set the second Pokémon's level.", "v": "두 번째 포켓몬의 레벨을 설정한다."}
 {"k": "SINGLE TRAINER", "v": "SINGLE TRAINER"}
@@ -2317,8 +2317,8 @@
 {"k": "To ensure that the changes remain, close and reopen RPG Maker XP.", "v": "To ensure that the changes remain, close and reopen RPG Maker XP."}
 {"k": "Exit from the editor?", "v": "에디터를 종료하시겠습니까?"}
 {"k": "Set the terrain tag.", "v": "Set the terrain tag."}
-{"k": "<<", "v": "<<"}
-{"k": ">>", "v": ">>"}
+{"k": "<<", "v": "←"}
+{"k": ">>", "v": "→"}
 {"k": "Frame:", "v": "프레임:"}
 {"k": "Total Frames: {1}", "v": "Total Frames: {1}"}
 {"k": "Old Number: {1}", "v": "Old Number: {1}"}
@@ -2362,13 +2362,13 @@
 {"k": "Set Frame", "v": "프레임 설정"}
 {"k": "Delete Timing", "v": "타이밍 삭제"}
 {"k": "<user's cry>", "v": "<사용자의 울음소리>"}
-{"k": "[Play user's cry]", "v": "[사용자의 울음소리 재생]"}
-{"k": "File: \"{1}\"", "v": "파일: \"{1}\""}
+{"k": "[Play user's cry]", "v": "「사용자의 울음소리 재생」"}
+{"k": "File: \"{1}\"", "v": "파일: “{1}”"}
 {"k": "Volume:", "v": "음량:"}
 {"k": "Pitch:", "v": "음높이:"}
 {"k": "Play Sound", "v": "효과음 재생"}
 {"k": "Stop Sound", "v": "효과음 정지"}
-{"k": "[Erase background graphic]", "v": "[배경 그래픽 지우기]"}
+{"k": "[Erase background graphic]", "v": "「배경 그래픽 지우기」"}
 {"k": "Duration:", "v": "지속 시간:"}
 {"k": "First Frame:", "v": "첫 프레임:"}
 {"k": "Last Frame:", "v": "마지막 프레임:"}
@@ -2437,20 +2437,20 @@
 {"k": "{1:03d} {2:s}", "v": "{1:03d} {2:s}"}
 {"k": "{1:s}", "v": "{1:s}"}
 {"k": "There are no files.", "v": "파일이 없습니다."}
-{"k": "[GLOBAL]", "v": "[GLOBAL]"}
-{"k": "[NEW ITEM]", "v": "[NEW ITEM]"}
+{"k": "[GLOBAL]", "v": "「GLOBAL」"}
+{"k": "[NEW ITEM]", "v": "「NEW ITEM」"}
 {"k": "{1:03d}: {2:s}", "v": "{1:03d}: {2:s}"}
 {"k": "{1:3d}: {2:s}", "v": "{1:3d}: {2:s}"}
-{"k": "[NEW TRAINER TYPE]", "v": "[NEW TRAINER TYPE]"}
+{"k": "[NEW TRAINER TYPE]", "v": "「NEW TRAINER TYPE」"}
 {"k": "Set the value for {1}.", "v": "Set the value for {1}."}
 {"k": "This property cannot be edited.", "v": "This property cannot be edited."}
-{"k": "This property can't be edited here at this time.", "v": "This property can't be edited here at this time."}
+{"k": "This property can't be edited here at this time.", "v": "This property can’t be edited here at this time."}
 {"k": "Choose a value for {1}.", "v": "Choose a value for {1}."}
 {"k": "Enable the setting {1}?", "v": "Enable the setting {1}?"}
 {"k": "Reset the setting {1}?", "v": "Reset the setting {1}?"}
 {"k": "Density: {1},{2},{3}", "v": "Density: {1},{2},{3}"}
 {"k": "Density: Not Defined Yet", "v": "Density: Not Defined Yet"}
-{"k": "[New Encounter Type]", "v": "[New Encounter Type]"}
+{"k": "[New Encounter Type]", "v": "「New Encounter Type」"}
 {"k": "Delete the encounter type {1}?", "v": "Delete the encounter type {1}?"}
 {"k": "{1}% {2} (Lv.{3})", "v": "{1}% {2} (Lv.{3})"}
 {"k": "{1}% {2} (Lv.{3}-Lv.{4})", "v": "{1}% {2} (Lv.{3}-Lv.{4})"}
@@ -2460,13 +2460,13 @@
 {"k": "Set the density of Pokémon in caves (default {1}).", "v": "동굴 포켓몬 밀도를 설정합니다 (기본값 {1})."}
 {"k": "Set the density of Pokémon on water (default {1}).", "v": "수상 포켓몬 밀도를 설정합니다 (기본값 {1})."}
 {"k": "{1}\n{2}", "v": "{1}\n{2}"}
-{"k": "Please enter the trainer type's name.", "v": "Please enter the trainer type's name."}
+{"k": "Please enter the trainer type's name.", "v": "Please enter the trainer type’s name."}
 {"k": "Failed to create the trainer type. Choose a different name.", "v": "Failed to create the trainer type. Choose a different name."}
 {"k": "Is the Trainer male, female, or mixed gender?", "v": "Is the Trainer male, female, or mixed gender?"}
 {"k": "Mixed", "v": "혼합"}
 {"k": "Set the money per level won for defeating the Trainer.", "v": "Set the money per level won for defeating the Trainer."}
 {"k": "The Trainer type was created (ID: {1}).", "v": "The Trainer type was created (ID: {1})."}
-{"k": "Put the Trainer's graphic (trainer{1:03d}.png or trainer{2:s}.png) in Graphics/Characters, or it will be blank.", "v": "Put the Trainer's graphic (trainer{1:03d}.png or trainer{2:s}.png) in Graphics/Characters, or it will be blank."}
+{"k": "Put the Trainer's graphic (trainer{1:03d}.png or trainer{2:s}.png) in Graphics/Characters, or it will be blank.", "v": "Put the Trainer’s graphic (trainer{1:03d}.png or trainer{2:s}.png) in Graphics/Characters, or it will be blank."}
 {"k": "Internal Name", "v": "Internal Name"}
 {"k": "Internal name that appears in constructs like PBTrainers::XXX.", "v": "Internal name that appears in constructs like PBTrainers::XXX."}
 {"k": "Trainer Name", "v": "Trainer Name"}
@@ -2486,7 +2486,7 @@
 {"k": "Letters/phrases representing AI modifications of trainers of this type.", "v": "Letters/phrases representing AI modifications of trainers of this type."}
 {"k": "Trainer Types", "v": "Trainer Types"}
 {"k": "The Trainer type was deleted.", "v": "The Trainer type was deleted."}
-{"k": "[NEW TRAINER BATTLE]", "v": "[NEW TRAINER BATTLE]"}
+{"k": "[NEW TRAINER BATTLE]", "v": "「NEW TRAINER BATTLE」"}
 {"k": "{1:3d}: {2:s} {3:s} ({4:s})", "v": "{1:3d}: {2:s} {3:s} ({4:s})"}
 {"k": "Trainer Type", "v": "Trainer Type"}
 {"k": "Name of the trainer type for this Trainer.", "v": "Name of the trainer type for this Trainer."}
@@ -2519,7 +2519,7 @@
 {"k": "First, define the type of trainer.", "v": "First, define the type of trainer."}
 {"k": "Use existing type", "v": "Use existing type"}
 {"k": "Use new type", "v": "Use new type"}
-{"k": "Now enter the trainer's name.", "v": "Now enter the trainer's name."}
+{"k": "Now enter the trainer's name.", "v": "Now enter the trainer’s name."}
 {"k": "There is no room to create a trainer of that type and name.", "v": "그 타입과 이름으로 트레이너를 만들 공간이 없습니다."}
 {"k": "Can't save. The Pokémon list is empty.", "v": "저장할 수 없습니다. 포켓몬 목록이 비어 있습니다."}
 {"k": "Can't save. No name was entered.", "v": "저장할 수 없습니다. 이름이 입력되지 않았습니다."}
@@ -2581,7 +2581,7 @@
 {"k": "Global Metadata", "v": "Global Metadata"}
 {"k": "Click a point on the map.", "v": "Click a point on the map."}
 {"k": "If true, this map is an outdoor map and will be tinted according to time of day.", "v": "If true, this map is an outdoor map and will be tinted according to time of day."}
-{"k": "If true, the game will display the map's name upon entry.", "v": "If true, the game will display the map's name upon entry."}
+{"k": "If true, the game will display the map's name upon entry.", "v": "If true, the game will display the map’s name upon entry."}
 {"k": "If true, the bicycle can be used on this map.", "v": "If true, the bicycle can be used on this map."}
 {"k": "If true, the bicycle will be mounted automatically on this map and cannot be dismounted.", "v": "If true, the bicycle will be mounted automatically on this map and cannot be dismounted."}
 {"k": "Map ID of this Pokemon Center's town, and X and Y coordinates of its entrance within that town.", "v": "이 포켓몬센터가 있는 마을의 맵 ID와 그 안에서 입구의 X, Y 좌표."}
@@ -2590,9 +2590,9 @@
 {"k": "Specifies the underwater layer of this map. Use only if this map has deep water.", "v": "이 맵의 수중 레이어를 지정합니다. 깊은 물이 있는 맵에서만 쓰세요."}
 {"k": "If true, this map is dark and a circle of light appears around the player. Flash can be used to expand the circle.", "v": "If true, this map is dark and a circle of light appears around the player. Flash can be used to expand the circle."}
 {"k": "If true, this map is part of the Safari Zone (both indoor and outdoor). Not to be used in the reception desk.", "v": "If true, this map is part of the Safari Zone (both indoor and outdoor). Not to be used in the reception desk."}
-{"k": "If true, when the player goes near this map's edge, the game doesn't center the player as usual.", "v": "If true, when the player goes near this map's edge, the game doesn't center the player as usual."}
+{"k": "If true, when the player goes near this map's edge, the game doesn't center the player as usual.", "v": "If true, when the player goes near this map‘s edge, the game doesn’t center the player as usual."}
 {"k": "If true, this map has a randomly generated layout. See the wiki for more information.", "v": "참이면 이 맵은 무작위 생성 구조를 씁니다. 자세한 내용은 위키를 참고하세요."}
-{"k": "PNG files named 'battlebgXXX', 'enemybaseXXX', 'playerbaseXXX' in Battlebacks folder, where XXX is this property's value.", "v": "PNG files named 'battlebgXXX', 'enemybaseXXX', 'playerbaseXXX' in Battlebacks folder, where XXX is this property's value."}
+{"k": "PNG files named 'battlebgXXX', 'enemybaseXXX', 'playerbaseXXX' in Battlebacks folder, where XXX is this property's value.", "v": "PNG files named ‘battlebgXXX’, ‘enemybaseXXX’, ‘playerbaseXXX’ in Battlebacks folder, where XXX is this property’s value."}
 {"k": "Default BGM for wild Pokémon battles on this map.", "v": "이 맵의 야생 포켓몬 배틀 기본 BGM."}
 {"k": "Default BGM for trainer battles on this map.", "v": "Default BGM for trainer battles on this map."}
 {"k": "Default ME played after winning a wild Pokémon battle on this map.", "v": "이 맵에서 야생 포켓몬 배틀 승리 후 재생되는 기본 ME."}
@@ -2618,11 +2618,11 @@
 {"k": "DEL: Delete map from canvas", "v": "DEL: 화면에서 맵 삭제\r\n"}
 {"k": "S: Go to another map", "v": "S: Go to another map\r\n"}
 {"k": "Click to select a map", "v": "Click to select a map\r\n"}
-{"k": "Double-click: Edit map's metadata", "v": "Double-click: Edit map's metadata\r\n"}
-{"k": "E: Edit map's encounters", "v": "E: Edit map's encounters\r\n"}
+{"k": "Double-click: Edit map's metadata", "v": "Double-click: Edit map’s metadata\r\n"}
+{"k": "E: Edit map's encounters", "v": "E: Edit map’s encounters\r\n"}
 {"k": "Drag map to move it", "v": "Drag map to move it\r\n"}
 {"k": "Arrow keys/drag canvas: Move around canvas", "v": "Arrow keys/drag canvas: Move around canvas"}
-{"k": "F5: Help [{1:03d} {2:s}]", "v": "F5: Help [{1:03d} {2:s}]"}
+{"k": "F5: Help [{1:03d} {2:s}]", "v": "F5: Help 「{1:03d} {2:s}」"}
 {"k": "Add Map", "v": "Add Map"}
 {"k": "Go to Map", "v": "Go to Map"}
 {"k": "File {1}, section {2}, key {3}\n{4}", "v": "File {1}, section {2}, key {3}\r\n{4}\r\n"}
@@ -2631,11 +2631,11 @@
 {"k": "Expected a section at the beginning of the file. This error may also occur if the file was not saved in UTF-8.\n{1}", "v": "Expected a section at the beginning of the file. This error may also occur if the file was not saved in UTF-8.\r\n{1}"}
 {"k": "Bad line syntax (expected syntax like XXX=YYY)\n{1}", "v": "Bad line syntax (expected syntax like XXX=YYY)\r\n{1}"}
 {"k": "Processing line {1}", "v": "Processing line {1}"}
-{"k": "Expected a section at the beginning of the file (line {1}). Sections begin with '[name of section]'", "v": "Expected a section at the beginning of the file (line {1}). Sections begin with '[name of section]'"}
-{"k": "The value \"{1}\" must be from 0 through 255 (0x00-0xFF in hex), got a value of {2}\n{3}", "v": "The value \"{1}\" must be from 0 through 255 (0x00-0xFF in hex), got a value of {2}\r\n{3}"}
-{"k": "The value \"{1}\" must be from -128 through 127, got a value of {2}\n{3}", "v": "The value \"{1}\" must be from -128 through 127, got a value of {2}\r\n{3}"}
-{"k": "The value \"{1}\" must be from 0 through 65535 (0x0000-0xFFFF in hex), got a value of {2}\n{3}", "v": "The value \"{1}\" must be from 0 through 65535 (0x0000-0xFFFF in hex), got a value of {2}\r\n{3}"}
-{"k": "The value \"{1}\" must be from -32768 through 32767, got a value of {2}\n{3}", "v": "The value \"{1}\" must be from -32768 through 32767, got a value of {2}\r\n{3}"}
+{"k": "Expected a section at the beginning of the file (line {1}). Sections begin with '[name of section]'", "v": "Expected a section at the beginning of the file (line {1}). Sections begin with ‘「name of section」’"}
+{"k": "The value \"{1}\" must be from 0 through 255 (0x00-0xFF in hex), got a value of {2}\n{3}", "v": "The value “{1}” must be from 0 through 255 (0x00-0xFF in hex), got a value of {2}\r\n{3}"}
+{"k": "The value \"{1}\" must be from -128 through 127, got a value of {2}\n{3}", "v": "The value “{1}” must be from -128 through 127, got a value of {2}\r\n{3}"}
+{"k": "The value \"{1}\" must be from 0 through 65535 (0x0000-0xFFFF in hex), got a value of {2}\n{3}", "v": "The value “{1}” must be from 0 through 65535 (0x0000-0xFFFF in hex), got a value of {2}\r\n{3}"}
+{"k": "The value \"{1}\" must be from -32768 through 32767, got a value of {2}\n{3}", "v": "The value “{1}” must be from -32768 through 32767, got a value of {2}\r\n{3}"}
 {"k": "Invalid quoted field (in: {1})\n{2}", "v": "Invalid quoted field (in: {1})\r\n{2}"}
 {"k": "Field {1} is not a Boolean value (true, false, 1, 0)\n{2}", "v": "Field {1} is not a Boolean value (true, false, 1, 0)\r\n{2}"}
 {"k": "Field {1} is not an integer\n{2}", "v": "Field {1} is not an integer\r\n{2}"}
@@ -2645,21 +2645,21 @@
 {"k": "Incorrect value {1} in {2}\n{3}", "v": "Incorrect value {1} in {2}\r\n{3}"}
 {"k": "Undefined value {1} (expected one of: {2})\n{3}", "v": "Undefined value {1} (expected one of: {2})\r\n{3}"}
 {"k": "Enumeration not defined\n{1}", "v": "Enumeration not defined\r\n{1}"}
-{"k": "Field '{1}' must be greater than 0\n{2}", "v": "Field '{1}' must be greater than 0\r\n{2}"}
-{"k": "Field '{1}' must be 0 or greater\n{2}", "v": "Field '{1}' must be 0 or greater\r\n{2}"}
-{"k": "Field '{1}' is not a hexadecimal number\n{2}", "v": "Field '{1}' is not a hexadecimal number\r\n{2}"}
-{"k": "Field '{1}' must contain only letters, digits, and\nunderscores and can't begin with a number.\n{2}", "v": "Field '{1}' must contain only letters, digits, and\r\nunderscores and can't begin with a number.\r\n{2}"}
+{"k": "Field '{1}' must be greater than 0\n{2}", "v": "Field ‘{1}’ must be greater than 0\r\n{2}"}
+{"k": "Field '{1}' must be 0 or greater\n{2}", "v": "Field ‘{1}’ must be 0 or greater\r\n{2}"}
+{"k": "Field '{1}' is not a hexadecimal number\n{2}", "v": "Field ‘{1}’ is not a hexadecimal number\r\n{2}"}
+{"k": "Field '{1}' must contain only letters, digits, and\nunderscores and can't begin with a number.\n{2}", "v": "Field ‘{1}’ must contain only letters, digits, and\r\nunderscores and can’t begin with a number.\r\n{2}"}
 {"k": "Value {1} not defined by a constant in {2}", "v": "Value {1} not defined by a constant in {2}"}
-{"k": "Undefined item constant name: %s\nName must consist only of letters, numbers, and\nunderscores and can't begin with a number.\nMake sure the item is defined in\nPBS/items.txt.\n{1}", "v": "Undefined item constant name: %s\r\nName must consist only of letters, numbers, and\r\nunderscores and can't begin with a number.\r\nMake sure the item is defined in\r\nPBS/items.txt.\r\n{1}"}
-{"k": "Undefined species constant name: [%s]\nName must consist only of letters, numbers, and\nunderscores and can't begin with a number.\nMake sure the name is defined in\nPBS/pokemon.txt.\n{1}", "v": "Undefined species constant name: [%s]\r\nName must consist only of letters, numbers, and\r\nunderscores and can't begin with a number.\r\nMake sure the name is defined in\r\nPBS/pokemon.txt.\r\n{1}"}
-{"k": "Undefined move constant name: %s\nName must consist only of letters, numbers, and\nunderscores and can't begin with a number.\nMake sure the name is defined in\nPBS/moves.txt.\n{1}", "v": "Undefined move constant name: %s\r\nName must consist only of letters, numbers, and\r\nunderscores and can't begin with a number.\r\nMake sure the name is defined in\r\nPBS/moves.txt.\r\n{1}"}
-{"k": "Undefined nature constant name: %s\nName must consist only of letters, numbers, and\nunderscores and can't begin with a number.\nMake sure the name is defined in\nthe script section PBNatures.\n{1}", "v": "Undefined nature constant name: %s\r\nName must consist only of letters, numbers, and\r\nunderscores and can't begin with a number.\r\nMake sure the name is defined in\r\nthe script section PBNatures.\r\n{1}"}
-{"k": "Undefined Trainer constant name: %s\nName must consist only of letters, numbers, and\nunderscores and can't begin with a number.\nIn addition, the name must be defined\nin trainertypes.txt.\n{1}", "v": "Undefined Trainer constant name: %s\r\nName must consist only of letters, numbers, and\r\nunderscores and can't begin with a number.\r\nIn addition, the name must be defined\r\nin trainertypes.txt.\r\n{1}"}
-{"k": "Required value '{1}' not given in section '{2}'\n{3}", "v": "Required value '{1}' not given in section '{2}'\r\n{3}"}
+{"k": "Undefined item constant name: %s\nName must consist only of letters, numbers, and\nunderscores and can't begin with a number.\nMake sure the item is defined in\nPBS/items.txt.\n{1}", "v": "Undefined item constant name: %s\r\nName must consist only of letters, numbers, and\r\nunderscores and can’t begin with a number.\r\nMake sure the item is defined in\r\nPBS/items.txt.\r\n{1}"}
+{"k": "Undefined species constant name: [%s]\nName must consist only of letters, numbers, and\nunderscores and can't begin with a number.\nMake sure the name is defined in\nPBS/pokemon.txt.\n{1}", "v": "Undefined species constant name: 「%s」\r\nName must consist only of letters, numbers, and\r\nunderscores and can’t begin with a number.\r\nMake sure the name is defined in\r\nPBS/pokemon.txt.\r\n{1}"}
+{"k": "Undefined move constant name: %s\nName must consist only of letters, numbers, and\nunderscores and can't begin with a number.\nMake sure the name is defined in\nPBS/moves.txt.\n{1}", "v": "Undefined move constant name: %s\r\nName must consist only of letters, numbers, and\r\nunderscores and can’t begin with a number.\r\nMake sure the name is defined in\r\nPBS/moves.txt.\r\n{1}"}
+{"k": "Undefined nature constant name: %s\nName must consist only of letters, numbers, and\nunderscores and can't begin with a number.\nMake sure the name is defined in\nthe script section PBNatures.\n{1}", "v": "Undefined nature constant name: %s\r\nName must consist only of letters, numbers, and\r\nunderscores and can’t begin with a number.\r\nMake sure the name is defined in\r\nthe script section PBNatures.\r\n{1}"}
+{"k": "Undefined Trainer constant name: %s\nName must consist only of letters, numbers, and\nunderscores and can't begin with a number.\nIn addition, the name must be defined\nin trainertypes.txt.\n{1}", "v": "Undefined Trainer constant name: %s\r\nName must consist only of letters, numbers, and\r\nunderscores and can’t begin with a number.\r\nIn addition, the name must be defined\r\nin trainertypes.txt.\r\n{1}"}
+{"k": "Required value '{1}' not given in section '{2}'\n{3}", "v": "Required value ‘{1}’ not given in section ‘{2}’\r\n{3}"}
 {"k": "Expected a section at the beginning of the file\n{1}", "v": "Expected a section at the beginning of the file\r\n{1}"}
-{"k": "'{1}' is not a defined type (PBS/types.txt, {2}, Weaknesses)", "v": "'{1}' is not a defined type (PBS/types.txt, {2}, Weaknesses)"}
-{"k": "'{1}' is not a defined type (PBS/types.txt, {2}, Resistances)", "v": "'{1}' is not a defined type (PBS/types.txt, {2}, Resistances)"}
-{"k": "'{1}' is not a defined type (PBS/types.txt, {2}, Immunities)", "v": "'{1}' is not a defined type (PBS/types.txt, {2}, Immunities)"}
+{"k": "'{1}' is not a defined type (PBS/types.txt, {2}, Weaknesses)", "v": "‘{1}’ is not a defined type (PBS/types.txt, {2}, Weaknesses)"}
+{"k": "'{1}' is not a defined type (PBS/types.txt, {2}, Resistances)", "v": "‘{1}’ is not a defined type (PBS/types.txt, {2}, Resistances)"}
+{"k": "'{1}' is not a defined type (PBS/types.txt, {2}, Immunities)", "v": "‘{1}’ is not a defined type (PBS/types.txt, {2}, Immunities)"}
 {"k": "Warning: Map {1}, as mentioned in the map\nconnection data, was not found.\n{2}", "v": "Warning: Map {1}, as mentioned in the map\r\nconnection data, was not found.\r\n{2}"}
 {"k": "North side of first map must connect with south side of second map\n{1}", "v": "North side of first map must connect with south side of second map\r\n{1}"}
 {"k": "South side of first map must connect with north side of second map\n{1}", "v": "South side of first map must connect with north side of second map\r\n{1}"}
@@ -2668,15 +2668,15 @@
 {"k": "Function code", "v": "Function code"}
 {"k": "Base damage", "v": "위력"}
 {"k": "Status moves must have a base damage of 0, use either Physical or Special\n{1}", "v": "Status moves must have a base damage of 0, use either Physical or Special\r\n{1}"}
-{"k": "Warning: Physical and special moves can't have a base damage of 0, changing to a Status move\n{1}", "v": "Warning: Physical and special moves can't have a base damage of 0, changing to a Status move\r\n{1}"}
+{"k": "Warning: Physical and special moves can't have a base damage of 0, changing to a Status move\n{1}", "v": "Warning: Physical and special moves can’t have a base damage of 0, changing to a Status move\r\n{1}"}
 {"k": "Accuracy", "v": "명중률"}
 {"k": "Total PP", "v": "최대 PP"}
 {"k": "Additional Effect", "v": "추가 효과"}
 {"k": "Priority", "v": "우선도"}
 {"k": "No Pokémon type is defined in section {2} (PBS/pokemon.txt)", "v": "섹션 {2}에 포켓몬 타입이 정의되어 있지 않습니다 (PBS/pokemon.txt)"}
-{"k": "A Pokemon species can't be numbered 0 (PBS/pokemon.txt)", "v": "A Pokemon species can't be numbered 0 (PBS/pokemon.txt)"}
+{"k": "A Pokemon species can't be numbered 0 (PBS/pokemon.txt)", "v": "A Pokemon species can’t be numbered 0 (PBS/pokemon.txt)"}
 {"k": "Required entry {1} is missing or empty in section {2} (PBS/pokemon.txt)", "v": "Required entry {1} is missing or empty in section {2} (PBS/pokemon.txt)"}
-{"k": "Value '{1}' can't be less than or close to 0 (section {2}, PBS/pokemon.txt)", "v": "Value '{1}' can't be less than or close to 0 (section {2}, PBS/pokemon.txt)"}
+{"k": "Value '{1}' can't be less than or close to 0 (section {2}, PBS/pokemon.txt)", "v": "Value ‘{1}’ can’t be less than or close to 0 (section {2}, PBS/pokemon.txt)"}
 {"k": "Invalid internal name: {1} (section {2}, PBS/pokemon.txt)", "v": "Invalid internal name: {1} (section {2}, PBS/pokemon.txt)"}
 {"k": "Kind {1} is greater than 20 characters long (section {2}, PBS/pokemon.txt)", "v": "Kind {1} is greater than 20 characters long (section {2}, PBS/pokemon.txt)"}
 {"k": "Species name {1} is greater than 20 characters long (section {2}, PBS/pokemon.txt)", "v": "Species name {1} is greater than 20 characters long (section {2}, PBS/pokemon.txt)"}
@@ -2695,15 +2695,15 @@
 {"k": "Bad IV: {1} (must be from 0-31)\n{2}", "v": "Bad IV: {1} (must be from 0-31)\r\n{2}"}
 {"k": "Bad happiness: {1} (must be from 0-255)\n{2}", "v": "Bad happiness: {1} (must be from 0-255)\r\n{2}"}
 {"k": "Bad nickname: {1} (must be 1-20 characters)\n{2}", "v": "Bad nickname: {1} (must be 1-20 characters)\r\n{2}"}
-{"k": "The entry Home is required in metadata.txt section [{1}]", "v": "The entry Home is required in metadata.txt section [{1}]"}
-{"k": "The entry PlayerA is required in metadata.txt section [{1}]", "v": "The entry PlayerA is required in metadata.txt section [{1}]"}
+{"k": "The entry Home is required in metadata.txt section [{1}]", "v": "The entry Home is required in metadata.txt section 「{1}」"}
+{"k": "The entry PlayerA is required in metadata.txt section [{1}]", "v": "The entry PlayerA is required in metadata.txt section 「{1}」"}
 {"k": "No trainer data file given in section {1}\n{2}", "v": "섹션 {1}에 트레이너 데이터 파일이 없습니다\r\n{2}"}
-{"k": "Can't define both Land and Cave encounters in the same area (map ID {1})", "v": "Can't define both Land and Cave encounters in the same area (map ID {1})"}
-{"k": "In encounters.txt, expected a species entry line,\ngot \"{1}\" instead (probably too few entries in an encounter type).\nPlease check the format of the section numbered {2},\nwhich is just before this line.\n{3}", "v": "In encounters.txt, expected a species entry line,\r\ngot \"{1}\" instead (probably too few entries in an encounter type).\r\nPlease check the format of the section numbered {2},\r\nwhich is just before this line.\r\n{3}"}
+{"k": "Can't define both Land and Cave encounters in the same area (map ID {1})", "v": "Can’t define both Land and Cave encounters in the same area (map ID {1})"}
+{"k": "In encounters.txt, expected a species entry line,\ngot \"{1}\" instead (probably too few entries in an encounter type).\nPlease check the format of the section numbered {2},\nwhich is just before this line.\n{3}", "v": "In encounters.txt, expected a species entry line,\r\ngot “{1}” instead (probably too few entries in an encounter type).\r\nPlease check the format of the section numbered {2},\r\nwhich is just before this line.\r\n{3}"}
 {"k": "Level number is not valid: {1}\n{2}", "v": "Level number is not valid: {1}\r\n{2}"}
 {"k": "Minimum level is greater than maximum level: {1}\n{2}", "v": "Minimum level is greater than maximum level: {1}\r\n{2}"}
 {"k": "Reached end of file unexpectedly. There were too few entries in the last section, expected {1} entries.\nPlease check the format of the section numbered {2}.\n{3}", "v": "Reached end of file unexpectedly. There were too few entries in the last section, expected {1} entries.\r\nPlease check the format of the section numbered {2}.\r\n{3}"}
-{"k": "Wrong syntax for densities in encounters.txt; got \"{1}\"\n{2}", "v": "Wrong syntax for densities in encounters.txt; got \"{1}\"\r\n{2}"}
+{"k": "Wrong syntax for densities in encounters.txt; got \"{1}\"\n{2}", "v": "Wrong syntax for densities in encounters.txt; got “{1}”\r\n{2}"}
 {"k": "Undefined encounter type {1}, expected one of the following:\n{2}\n{3}", "v": "Undefined encounter type {1}, expected one of the following:\r\n{2}\r\n{3}"}
 {"k": "Add new trainer named {1}?", "v": "Add new trainer named {1}?"}
 {"k": "Processing map {1} ({2})", "v": "Processing map {1} ({2})"}
@@ -2712,7 +2712,7 @@
 {"k": "You have no room left in the Bag.", "v": "가방에 남은 공간이 없다."}
 {"k": "\\GHere you go!", "v": "\\GHere you go!"}
 {"k": "\\GYou have no room left in the Bag.", "v": "\\G가방에 남은 공간이 없다."}
-{"k": "\\GYou don't have enough money.", "v": "\\GYou don't have enough money."}
+{"k": "\\GYou don't have enough money.", "v": "\\GYou don’t have enough money."}
 {"k": "New maps copied to the Data folder were successfully imported.", "v": "New maps copied to the Data folder were successfully imported."}
 {"k": "Compiling type data", "v": "Compiling type data"}
 {"k": "Compiling town map data", "v": "Compiling town map data"}
@@ -3033,7 +3033,7 @@
 {"k": "NOTAS ENTRENADOR", "v": "트레이너 메모"}
 {"k": "<c3=404040,B0B0B0>{2} de {1} de {3}", "v": "<c3=404040,B0B0B0>{3}년 {1} {2}일\n"}
 {"k": "<c3=404040,B0B0B0>Un extraño Huevo Pokémon hallado por la <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.", "v": "<c3=404040,B0B0B0><c3=F83820,E09890>{1}<c3=404040,B0B0B0>\\j[이,가] 발견한 이상한 포켓몬 알.\n"}
-{"k": "<c3=404040,B0B0B0>\"Estado del Huevo\"", "v": "<c3=404040,B0B0B0>\"알 상태\"\n"}
+{"k": "<c3=404040,B0B0B0>\"Estado del Huevo\"", "v": "<c3=404040,B0B0B0>“알 상태”\n"}
 {"k": "Parece que a este Huevo le tomará mucho tiempo abrirse.", "v": "이 알은 부화하는 데 한참 걸릴 것 같다."}
 {"k": "¿Qué saldrá? Aún le queda para abrirse.", "v": "무엇이 나올까? 부화하려면 아직 멀었다."}
 {"k": "A veces se mueve. Debería abrirse pronto.", "v": "가끔 움직인다. 곧 부화할 것 같다."}
@@ -3317,7 +3317,7 @@
 {"k": "El medidor del corazón de {1} bajó de {2} hasta {3} (ahora en etapa {4}).", "v": "{1}의 하트 게이지가 {2}에서 {3}\\j[으로,로] 내려갔다 (현재 단계 {4})."}
 {"k": "El Pokémon duplicado fue movido a tu equipo.", "v": "복제한 포켓몬을 지닌포켓몬으로 옮겼다."}
 {"k": "Todas las cajas están llenas.", "v": "모든 박스가 가득 찼다."}
-{"k": "El Pokémon duplicado fue movido a la caja \"{1}.\"", "v": "복제한 포켓몬을 박스 \"{1}\"\\j[으로,로] 옮겼다."}
+{"k": "El Pokémon duplicado fue movido a la caja \"{1}.\"", "v": "복제한 포켓몬을 박스 “{1}”\\j[으로,로] 옮겼다."}
 {"k": "¿Estás seguro de borrar este Pokémon?", "v": "정말 이 포켓몬을 삭제할까?"}
 {"k": "Sin habilidad", "v": "특성 없음"}
 {"k": "Sin objeto", "v": "도구 없음"}
@@ -3416,7 +3416,7 @@
 {"k": "¡Vuelve cuando quieras!", "v": "언제든 다시 와!"}
 {"k": "¿En qué más puedo ayudarte?", "v": "더 도와드릴 일이 있으신가요?"}
 {"k": "Llevas:<r>{1:d}", "v": "소지:<r>{1:d}"}
-{"k": "[Personalizado]", "v": "[커스텀]"}
+{"k": "[Personalizado]", "v": "「커스텀」"}
 {"k": "Ingresa una nota.", "v": "메모를 입력하세요."}
 {"k": "¿Dejar de editar el regalo?", "v": "선물 편집을 그만두겠습니까?"}
 {"k": "Elige una cantidad.", "v": "수량을 선택하세요."}
@@ -3527,12 +3527,12 @@
 {"k": "¿Quieres ponerle un apodo a {1}?", "v": "{1}에게 별명을 붙이시겠습니까?"}
 {"k": "¡No hay espacio para el Pokémon!\u0001", "v": "포켓몬을 넣을 공간이 없다!\u0001"}
 {"k": "¡Las Cajas de la PC están llenas y no aceptan ni un Pokémon más!", "v": "PC 박스가 가득 차서 포켓몬을 더 맡길 수 없다!"}
-{"k": "La caja \"{1}\" de la PC de {2} está llena.\u0001", "v": "{2}의 PC 박스 \"{1}\"\\j[이,가] 가득 찼다.\u0001"}
-{"k": "La caja \"{1}\" de la PC de alguien PC está llena.\u0001", "v": "누군가의 PC 박스 \"{1}\"\\j[이,가] 가득 찼다.\u0001"}
-{"k": "{1} fue transferido a la caja \"{2}.\"", "v": "{1}\\j[을,를] 박스 \"{2}\"\\j[으로,로] 보냈다."}
+{"k": "La caja \"{1}\" de la PC de {2} está llena.\u0001", "v": "{2}의 PC 박스 “{1}”\\j[이,가] 가득 찼다.\u0001"}
+{"k": "La caja \"{1}\" de la PC de alguien PC está llena.\u0001", "v": "누군가의 PC 박스 “{1}”\\j[이,가] 가득 찼다.\u0001"}
+{"k": "{1} fue transferido a la caja \"{2}.\"", "v": "{1}\\j[을,를] 박스 “{2}”\\j[으로,로] 보냈다."}
 {"k": "{1} fue transferido a la PC de {2}.\u0001", "v": "{1}\\j[을,를] {2}의 PC로 보냈다.\u0001"}
 {"k": "{1} fue transferido a la PC de alguien.\u0001", "v": "{1}\\j[을,를] 누군가의 PC로 보냈다.\u0001"}
-{"k": "Fue guardado en la caja \"{1}.\"", "v": "박스 \"{1}\"에 맡겼다."}
+{"k": "Fue guardado en la caja \"{1}.\"", "v": "박스 “{1}”에 맡겼다."}
 {"k": "¡{1} obtuvo {2}!\\se[PokemonGet]\u0001", "v": "{1}\\j[은,는] {2}\\j[을,를] 얻었다!\\se[PokemonGet]\u0001"}
 {"k": "{1} recibió un Pokémon de {2}.\\se[PokemonGet]\u0001", "v": "{1}\\j[은,는] {2}에게서 포켓몬을 받았다.\\se[PokemonGet]\u0001"}
 {"k": "{1} recibió un Pokémon.\\se[PokemonGet]\u0001", "v": "{1}\\j[은,는] 포켓몬을 받았다.\\se[PokemonGet]\u0001"}
@@ -3545,7 +3545,7 @@
 {"k": "Por favor, espera.\\wtnp[0]", "v": "잠시만 기다려 주세요.\\wtnp[0]"}
 {"k": "Todos los textos del juego se extrajeron y se guardaron en intl.txt.\u0001", "v": "게임의 모든 텍스트를 추출해 intl.txt에 저장했습니다.\u0001"}
 {"k": "Para localizar el texto en un idioma en particular, traduzca todas las segundas líneas de cada par en el archivo.\u0001", "v": "특정 언어로 번역하려면 파일에서 각 쌍의 두 번째 줄을 모두 번역하세요.\u0001"}
-{"k": "Luego de traducirlas, elija \"Compilar Texto.\"", "v": "번역을 마친 뒤 \"텍스트 컴파일\"을 선택하세요."}
+{"k": "Luego de traducirlas, elija \"Compilar Texto.\"", "v": "번역을 마친 뒤 “텍스트 컴파일”을 선택하세요."}
 {"k": "Texto compilado exitosamente y guardado en intl.dat.", "v": "텍스트를 성공적으로 컴파일해 intl.dat에 저장했다."}
 {"k": "Para usar el archivo en un juego, ubica el archivo en la carpeta Data con un nombre diferente, y luego edita la matriz LANGUAGES en el script Settings.", "v": "게임에서 이 파일을 쓰려면 Data 폴더에 다른 이름으로 넣고 Settings 스크립트의 LANGUAGES 배열을 수정하세요."}
 {"k": "Fallo al compilar el texto: {1}", "v": "텍스트 컴파일 실패: {1}"}
@@ -3728,7 +3728,7 @@
 {"k": "¿Guardar cambios?", "v": "변경사항을 저장할까?"}
 {"k": "Densidad: {1},{2},{3}", "v": "밀도: {1},{2},{3}"}
 {"k": "Densidad: Aún no definida", "v": "밀도: 아직 설정되지 않음"}
-{"k": "[Nuevo Tipo de Encuentro]", "v": "[새 인카운터 타입]"}
+{"k": "[Nuevo Tipo de Encuentro]", "v": "「새 인카운터 타입」"}
 {"k": "¿Borrar el tipo de encuentro {1}?", "v": "인카운터 타입 {1}\\j[을,를] 삭제할까?"}
 {"k": "{1}% {2} (Nv.{3})", "v": "{1}% {2} (Lv.{3})"}
 {"k": "{1}% {2} (Nv.{3}-Nv.{4})", "v": "{1}% {2} (Lv.{3}-Lv.{4})"}
@@ -3763,7 +3763,7 @@
 {"k": "Letras/frases que representan cambios en la IA de los entrenadores de este tipo.", "v": "이 타입 트레이너의 AI 변화를 나타내는 문자/문구."}
 {"k": "Tipos de Entrenadores", "v": "트레이너 타입"}
 {"k": "El tipo de entrenador fue borrado.", "v": "트레이너 타입을 삭제했습니다."}
-{"k": "[NUEVO COMBATE ENTRENADOR]", "v": "[새로운 트레이너 배틀]"}
+{"k": "[NUEVO COMBATE ENTRENADOR]", "v": "「새로운 트레이너 배틀」"}
 {"k": "Tipo Entrenador", "v": "트레이너 종류"}
 {"k": "Nombre del tipo de entrenador para este Entrenador.", "v": "이 트레이너의 트레이너 타입 이름."}
 {"k": "Nombre Entrenador", "v": "트레이너 이름"}
@@ -3860,7 +3860,7 @@
 {"k": "En verdadero, este mapa es parte de la Zona Safari (tanto interior como exterior). No se usa para la oficina de recepción.", "v": "참으로 설정하면 이 맵은 사파리존에 속합니다 (실내·실외 모두). 접수처에는 쓰지 않습니다."}
 {"k": "En verdadero, cuando el jugador se acerca al borde del mapa, el jugador deja de estar centrado como de costumbre.", "v": "참으로 설정하면 플레이어가 맵 가장자리에 다가갈 때 화면 중앙 고정이 풀립니다."}
 {"k": "En verdadero, este mapa tiene un escenario generado aleatoriamente. Consulta la wiki para más información.", "v": "참으로 설정하면 이 맵은 무작위 생성 구조를 씁니다. 자세한 내용은 위키를 참고하세요."}
-{"k": "Archivos PNG con nombres 'battlebgXXX', 'enemybaseXXX', 'playerbaseXXX' en la carpeta Battlebacks, donde XXX es el valor de esta propiedad.", "v": "Battlebacks 폴더의 'battlebgXXX', 'enemybaseXXX', 'playerbaseXXX' PNG 파일. XXX는 이 속성의 값입니다."}
+{"k": "Archivos PNG con nombres 'battlebgXXX', 'enemybaseXXX', 'playerbaseXXX' en la carpeta Battlebacks, donde XXX es el valor de esta propiedad.", "v": "Battlebacks 폴더의 ‘battlebgXXX’, ‘enemybaseXXX’, ‘playerbaseXXX’ PNG 파일. XXX는 이 속성의 값입니다."}
 {"k": "Música de Fondo por Defecto para batallas con Pokémon salvajes en este mapa.", "v": "이 맵의 야생 포켓몬 배틀 기본 배경음악."}
 {"k": "Música de Fondo por Defecto para batallas contra Entrenadores en este mapa.", "v": "이 맵의 트레이너 배틀 기본 배경음악."}
 {"k": "Efecto de Música por Defecto tras vencer a un Pokémon salvaje en este mapa.", "v": "이 맵에서 야생 포켓몬을 이긴 뒤 재생되는 기본 음악 효과."}
@@ -3890,7 +3890,7 @@
 {"k": "E: Editar encuentros del mapa", "v": "E: 맵 인카운터 편집\r\n"}
 {"k": "Arrastrar mapa para moverlo", "v": "맵을 끌어서 이동\r\n"}
 {"k": "Teclas de fechas/arrastrar plano: Mueve al plano alrededor", "v": "방향키 또는 드래그: 화면을 이동합니다"}
-{"k": "F5: Ayuda [{1:03d} {2:s}]", "v": "F5: 도움말 [{1:03d} {2:s}]"}
+{"k": "F5: Ayuda [{1:03d} {2:s}]", "v": "F5: 도움말 「{1:03d} {2:s}」"}
 {"k": "Agregar Mapa", "v": "맵 추가"}
 {"k": "Saltar al Mapa", "v": "맵으로 이동"}
 {"k": "¿Salir del Editor?", "v": "에디터를 종료할까?"}
@@ -4277,12 +4277,12 @@
 {"k": "¡Se ha incrementado la Gravedad!", "v": "중력이 강해졌다!"}
 {"k": "¡{1} levita por electromagnetismo!", "v": "{1}\\j[이,가] 전자기력으로 떠올랐다!"}
 {"k": "¡{1} ha sido derribado y sufre daño!", "v": "{1}\\j[은,는] 쓰러져 데미지를 입었다!"}
-{"k": "La caja \"{1}\" de la PC de {2} está llena.", "v": "{2}의 PC 박스 \"{1}\"\\j[이,가] 가득 찼다."}
-{"k": "La caja \"{1}\" de la PC de Alguien está llena.", "v": "누군가의 PC 박스 \"{1}\"\\j[이,가] 가득 찼다."}
-{"k": "{1} fue transferido a la caja \"{2}\".", "v": "{1}\\j[을,를] 박스 \"{2}\"\\j[으로,로] 보냈다."}
+{"k": "La caja \"{1}\" de la PC de {2} está llena.", "v": "{2}의 PC 박스 “{1}”\\j[이,가] 가득 찼다."}
+{"k": "La caja \"{1}\" de la PC de Alguien está llena.", "v": "누군가의 PC 박스 “{1}”\\j[이,가] 가득 찼다."}
+{"k": "{1} fue transferido a la caja \"{2}\".", "v": "{1}\\j[을,를] 박스 “{2}”\\j[으로,로] 보냈다."}
 {"k": "{1} fue transferido a la PC de {2}.", "v": "{1}\\j[을,를] {2}의 PC로 보냈다."}
 {"k": "{1} fue transferido a la PC de Alguien.", "v": "{1}\\j[은,는] 누군가의 PC로 전송되었다."}
-{"k": "Fue guardado en la caja \"{1}\".", "v": "박스 \"{1}\"에 맡겼다."}
+{"k": "Fue guardado en la caja \"{1}\".", "v": "박스 “{1}”에 맡겼다."}
 {"k": "{1} usó una {2}.", "v": "{1}\\j[은,는] {2}\\j[을,를] 썼다."}
 {"k": "Pero no hay objetivo...", "v": "하지만 대상이 없다..."}
 {"k": "¡El Entrenador ha bloqueado la Poké Ball!\n¡No seas un ladrón!", "v": "트레이너가 몬스터볼을 막았다!\n남의 것에 손 대면 도둑!"}
@@ -4515,7 +4515,7 @@
 {"k": "¡El resto del equipo también ha ganado Puntos de Experiencia gracias al {1}!", "v": "{1} 덕분에 파티의 나머지도 경험치를 얻었다!"}
 {"k": "¡{1} ha ganado un total de {2} Puntos de Experiencia!", "v": "{1}\\j[은,는] 경험치를 모두 {2}만큼 얻었다!"}
 {"k": "¡{1} ha ganado {2} Puntos de Experiencia!", "v": "{1}\\j[은,는] {2} 경험치를 얻었다!"}
-{"k": "El nivel nuevo ({1}) es menor que el nivel actual\ndel Pokémon ({2}), lo que no debería pasar.\n[Depurar: {3}]", "v": "새 레벨 ({1})이 포켓몬의\r\n현재 레벨 ({2})보다 낮습니다. 있을 수 없는 일입니다.\r\n[디버그: {3}]"}
+{"k": "El nivel nuevo ({1}) es menor que el nivel actual\ndel Pokémon ({2}), lo que no debería pasar.\n[Depurar: {3}]", "v": "새 레벨 ({1})이 포켓몬의\r\n현재 레벨 ({2})보다 낮습니다. 있을 수 없는 일입니다.\r\n「디버그: {3}」"}
 {"k": "¡{1} subió al nivel {2}!", "v": "{1}\\j[은,는] 레벨 {2}\\j[으로,로] 올랐다!"}
 {"k": "¡{1} ha aprendido {2}!", "v": "{1}\\j[은,는] {2}\\j[을,를] 배웠다!"}
 {"k": "{1} quiere aprender el movimiento {2}.", "v": "{1}\\j[은,는] 새로 {2}\\j[을,를] 배우고 싶다...!"}
@@ -4653,9 +4653,9 @@
 {"k": "Error al cargar el bitmap ubicado en: {1}", "v": "다음 위치의 비트맵을 불러오지 못했습니다: {1}"}
 {"k": "El ancho del frame es 0", "v": "프레임 너비가 0입니다"}
 {"k": "El alto del frame es 0", "v": "프레임 높이가 0입니다"}
-{"k": "El ancho del bitmap ({1}) no es un múltiplo del ancho del frame ({2}) [Bitmap={3}]", "v": "비트맵 너비({1})가 프레임 너비({2})의 배수가 아닙니다 [Bitmap={3}]"}
-{"k": "El alto del bitmap ({1}) no es un múltiplo del alto del frame ({2}) [Bitmap={3}]", "v": "비트맵 높이({1})가 프레임 높이({2})의 배수가 아닙니다 [Bitmap={3}]"}
-{"k": "El ancho del bitmap ({1}) no es un múltiplo del contador de frame ({2}) [Bitmap={3}]", "v": "비트맵 너비({1})가 프레임 수({2})의 배수가 아닙니다 [Bitmap={3}]"}
+{"k": "El ancho del bitmap ({1}) no es un múltiplo del ancho del frame ({2}) [Bitmap={3}]", "v": "비트맵 너비({1})가 프레임 너비({2})의 배수가 아닙니다 「Bitmap={3}」"}
+{"k": "El alto del bitmap ({1}) no es un múltiplo del alto del frame ({2}) [Bitmap={3}]", "v": "비트맵 높이({1})가 프레임 높이({2})의 배수가 아닙니다 「Bitmap={3}」"}
+{"k": "El ancho del bitmap ({1}) no es un múltiplo del contador de frame ({2}) [Bitmap={3}]", "v": "비트맵 너비({1})가 프레임 수({2})의 배수가 아닙니다 「Bitmap={3}」"}
 {"k": "¡{1} recuperó su salud!", "v": "{1}\\j[은,는] 체력을 회복했다!"}
 {"k": "{1} ha obtenido {2}.", "v": "{1}\\j[은,는] {2}\\j[을,를] 손에 넣었다."}
 {"k": "¡{1} ha recibido {2} de {3}!", "v": "{1}\\j[은,는] {3}에게서 {2}\\j[을,를] 받았다!"}
@@ -4723,7 +4723,7 @@
 {"k": "¡Cayó un Pokémon!", "v": "포켓몬이 걸렸다!"}
 {"k": "\\w[]\\wm\\c[8]\\l[3]Tras la desafortunada derrota, {1} ha salido corriendo hacia un Centro Pokémon.", "v": "\\w[]\\wm\\c[8]\\l[3]안타까운 패배 후, {1}\\j[은,는] 포켓몬센터로 서둘러 달려갔다."}
 {"k": "\\w[]\\wm\\c[8]\\l[3]{1} ha salido corriendo hacia un Centro Pokémon para que su cansado y debilitado equipo Pokémon no sufra más daños...", "v": "\\w[]\\wm\\c[8]\\l[3]{1}\\j[은,는] 지치고 쓰러진 포켓몬들이 더 이상 피해를 입지 않도록 서둘러 포켓몬센터로 달려갔다..."}
-{"k": "No se pudo encontrar el mapa 'Map{1:03d}' en la carpeta Data. El juego continuará en la posición del jugador.", "v": "Data 폴더에서 'Map{1:03d}' 맵을 찾을 수 없습니다. 현재 플레이어 위치에서 게임을 계속합니다."}
+{"k": "No se pudo encontrar el mapa 'Map{1:03d}' en la carpeta Data. El juego continuará en la posición del jugador.", "v": "Data 폴더에서 ‘Map{1:03d}’ 맵을 찾을 수 없습니다. 현재 플레이어 위치에서 게임을 계속합니다."}
 {"k": "\\w[]\\wm\\c[8]\\l[3]Tras la desafortunada derrota, {1} ha salido corriendo a casa.", "v": "\\w[]\\wm\\c[8]\\l[3]안타까운 패배 후, {1}\\j[은,는] 서둘러 집으로 달려갔다."}
 {"k": "\\w[]\\wm\\c[8]\\l[3]{1} ha salido corriendo a casa para que su cansado y debilitado equipo Pokémon no sufra más daños...", "v": "\\w[]\\wm\\c[8]\\l[3]{1}\\j[은,는] 지치고 쓰러진 포켓몬들이 더 이상 피해를 입지 않도록 서둘러 집으로 달려갔다..."}
 {"k": "El juego detectó que la batería está baja. Debería guardar pronto para evitar la pérdida de su progreso.", "v": "배터리 잔량이 부족합니다. 진행 상황을 잃지 않도록 곧 저장해 주십시오."}
@@ -5057,32 +5057,32 @@
 {"k": "Se esperaba una sección al inicio del archivo. Este error también puede ocurrir si el archivo no ha sido guardado en codificación UTF-8.\n{1}", "v": "파일 시작 부분에 섹션이 필요합니다. 파일이 UTF-8 인코딩으로 저장되지 않은 경우에도 이 오류가 발생할 수 있습니다.\r\n{1}"}
 {"k": "Sintaxis de línea errónea (se esperaba línea con formato XXX=YYY)\n{1}", "v": "줄 구문 오류 (XXX=YYY 형식의 줄이 필요함)\r\n{1}"}
 {"k": "Procesando linea {1}", "v": "{1}번째 줄 처리 중"}
-{"k": "Se esperaba una sección al inicio del archivo (línea {1}). La sección inicia con '[nombre de sección]'", "v": "파일 시작 부분에 섹션이 필요합니다 ({1}번째 줄). 섹션은 '[섹션 이름]'으로 시작합니다."}
-{"k": "El valor \"{1}\" debe estar entre 0 y 255 (0x00-0xFF en hex), se obtuvo un valor de {2}\n{3}", "v": "값 \"{1}\"\\j[은,는] 0에서 255 사이여야 하지만 (16진수 0x00-0xFF) {2} 값을 얻었습니다.\r\n{3}"}
-{"k": "El valor \"{1}\" debe estar entre -128 y 127, se obtuvo un valor de {2}\n{3}", "v": "값 \"{1}\"\\j[은,는] -128에서 127 사이여야 하지만 {2} 값을 얻었습니다.\r\n{3}"}
-{"k": "El valor \"{1}\" debe estar entre 0 y 65535 (0x0000-0xFFFF en hex), se obtuvo un valor de {2}\n{3}", "v": "값 \"{1}\"\\j[은,는] 0에서 65535 사이여야 하지만 (16진수 0x0000-0xFFFF) {2} 값을 얻었습니다.\r\n{3}"}
-{"k": "El valor \"{1}\" debe estar entre -32768 y 32767, se obtuvo un valor de {2}\n{3}", "v": "값 \"{1}\"\\j[은,는] -32768에서 32767 사이여야 하지만 {2} 값을 얻었습니다.\r\n{3}"}
+{"k": "Se esperaba una sección al inicio del archivo (línea {1}). La sección inicia con '[nombre de sección]'", "v": "파일 시작 부분에 섹션이 필요합니다 ({1}번째 줄). 섹션은 ‘「섹션 이름」’으로 시작합니다."}
+{"k": "El valor \"{1}\" debe estar entre 0 y 255 (0x00-0xFF en hex), se obtuvo un valor de {2}\n{3}", "v": "값 “{1}”\\j[은,는] 0에서 255 사이여야 하지만 (16진수 0x00-0xFF) {2} 값을 얻었습니다.\r\n{3}"}
+{"k": "El valor \"{1}\" debe estar entre -128 y 127, se obtuvo un valor de {2}\n{3}", "v": "값 “{1}”\\j[은,는] -128에서 127 사이여야 하지만 {2} 값을 얻었습니다.\r\n{3}"}
+{"k": "El valor \"{1}\" debe estar entre 0 y 65535 (0x0000-0xFFFF en hex), se obtuvo un valor de {2}\n{3}", "v": "값 “{1}”\\j[은,는] 0에서 65535 사이여야 하지만 (16진수 0x0000-0xFFFF) {2} 값을 얻었습니다.\r\n{3}"}
+{"k": "El valor \"{1}\" debe estar entre -32768 y 32767, se obtuvo un valor de {2}\n{3}", "v": "값 “{1}”\\j[은,는] -32768에서 32767 사이여야 하지만 {2} 값을 얻었습니다.\r\n{3}"}
 {"k": "El campo {1} no tiene un valor booleano (true, false, 1, 0)\n{2}", "v": "필드 {1}에 불리언 값(true, false, 1, 0)이 없습니다.\r\n{2}"}
 {"k": "Valor indefinido {1} en {2}\n{3}", "v": "{2}의 값 {1}\\j[이,가] 정의되지 않음\r\n{3}"}
 {"k": "Valor incorrecto {1} en {2}\n{3}", "v": "{2}의 값 {1}\\j[이,가] 잘못됨\r\n{3}"}
 {"k": "Valor indefinido {1} (se esperaba uno de: {2})\n{3}", "v": "정의되지 않은 값 {1} (다음 중 하나여야 함: {2})\r\n{3}"}
 {"k": "Valor incorrecto {1} (se esperaba uno de: {2})\n{3}", "v": "올바르지 않은 값 {1} (다음 중 하나여야 함: {2})\r\n{3}"}
 {"k": "Enumeración no definida\n{1}", "v": "정의되지 않은 열거형\r\n{1}"}
-{"k": "El campo '{1}' debe ser mayor que 0\n{2}", "v": "'{1}' 필드는 0보다 커야 합니다.\r\n{2}"}
-{"k": "El campo '{1}' debe ser 0 o mayor\n{2}", "v": "'{1}' 필드는 0 이상이어야 합니다.\r\n{2}"}
-{"k": "El campo '{1}' no es un número hexadecimal\n{2}", "v": "'{1}' 필드는 16진수 숫자가 아닙니다.\r\n{2}"}
-{"k": "El campo '{1}' solo debe contener letras, números y\nguiones bajos, sin iniciar con un número.\n{2}", "v": "'{1}' 필드에는 문자, 숫자, 언더스코어만 포함될 수 있으며\r\n숫자로 시작할 수 없습니다.\r\n{2}"}
+{"k": "El campo '{1}' debe ser mayor que 0\n{2}", "v": "‘{1}’ 필드는 0보다 커야 합니다.\r\n{2}"}
+{"k": "El campo '{1}' debe ser 0 o mayor\n{2}", "v": "‘{1}’ 필드는 0 이상이어야 합니다.\r\n{2}"}
+{"k": "El campo '{1}' no es un número hexadecimal\n{2}", "v": "‘{1}’ 필드는 16진수 숫자가 아닙니다.\r\n{2}"}
+{"k": "El campo '{1}' solo debe contener letras, números y\nguiones bajos, sin iniciar con un número.\n{2}", "v": "‘{1}’ 필드에는 문자, 숫자, 언더스코어만 포함될 수 있으며\r\n숫자로 시작할 수 없습니다.\r\n{2}"}
 {"k": "El valor {1} no está definido como una constante en {2}", "v": "{1} 값은 {2}에 상수로 정의되어 있지 않습니다."}
 {"k": "Nombre de constante de objeto indefinido: %s\nEl nombre sólo consiste en letras, números y\nguiones bajos y no puede iniciar con un número.\nAsegúrate de que el objeto está definido en\nPBS/items.txt.\n{1}", "v": "정의되지 않은 도구 상수 이름: %s\r\n이름은 문자, 숫자, 언더스코어로만 구성되어야 하며\r\n숫자로 시작할 수 없습니다.\r\n해당 오브젝트가\r\nPBS/items.txt에 정의되어 있는지 확인하십시오.\r\n{1}"}
-{"k": "Nombre de constante de especie indefinido: [%s]\nEl nombre sólo consiste en letras, números y\nguiones bajos y no puede iniciar con un número.\nAsegúrate de que el objeto está definido en\nPBS/pokemon.txt.\n{1}", "v": "정의되지 않은 종 상수 이름: [%s]\r\n이름은 문자, 숫자, 언더스코어로만 구성되어야 하며\r\n숫자로 시작할 수 없습니다.\r\n해당 오브젝트가\r\nPBS/pokemon.txt에 정의되어 있는지 확인하십시오.\r\n{1}"}
+{"k": "Nombre de constante de especie indefinido: [%s]\nEl nombre sólo consiste en letras, números y\nguiones bajos y no puede iniciar con un número.\nAsegúrate de que el objeto está definido en\nPBS/pokemon.txt.\n{1}", "v": "정의되지 않은 종 상수 이름: 「%s」\r\n이름은 문자, 숫자, 언더스코어로만 구성되어야 하며\r\n숫자로 시작할 수 없습니다.\r\n해당 오브젝트가\r\nPBS/pokemon.txt에 정의되어 있는지 확인하십시오.\r\n{1}"}
 {"k": "Nombre de constante de movimiento indefinido: %s\nEl nombre sólo consiste en letras, números y\nguiones bajos y no puede iniciar con un número.\nAsegúrate de que el objeto está definido en\nPBS/moves.txt.\n{1}", "v": "정의되지 않은 기술 상수 이름: %s\r\n이름은 문자, 숫자, 언더스코어로만 구성되어야 하며\r\n숫자로 시작할 수 없습니다.\r\n해당 오브젝트가\r\nPBS/moves.txt에 정의되어 있는지 확인하십시오.\r\n{1}"}
 {"k": "Nombre de constante de naturaleza indefinido: %s\nEl nombre sólo consiste en letras, números y\nguiones bajos y no puede iniciar con un número.\nAsegúrate de que el objeto está definido en\nla sección del script PBNatures.\n{1}", "v": "정의되지 않은 성격 상수 이름: %s\r\n이름은 문자, 숫자, 언더스코어로만 구성되어야 하며\r\n숫자로 시작할 수 없습니다.\r\n해당 오브젝트가\r\nPBNatures 스크립트 섹션에 정의되어 있는지 확인하십시오.\r\n{1}"}
 {"k": "Nombre de constante de Entrenador indefinido: %s\nEl nombre sólo consiste en letras, números y\nguiones bajos y no puede iniciar con un número.\nAsegúrate de que el objeto está definido en\ntrainertypes.txt.\n{1}", "v": "정의되지 않은 트레이너 상수 이름: %s\r\n이름에는 영문자, 숫자,\r\n밑줄만 쓸 수 있으며 숫자로 시작할 수 없습니다.\r\n해당 항목이\r\ntrainertypes.txt에 정의되어 있는지 확인하세요.\r\n{1}"}
-{"k": "El valor obligatorio '{1}' no ha sido indicado en la sección '{2}'\n{3}", "v": "필수 값 '{1}'\\j[이,가] 섹션 '{2}'에 지정되지 않았습니다\r\n{3}"}
+{"k": "El valor obligatorio '{1}' no ha sido indicado en la sección '{2}'\n{3}", "v": "필수 값 ‘{1}’\\j[이,가] 섹션 ‘{2}’에 지정되지 않았습니다\r\n{3}"}
 {"k": "Se esperaba una sección al inicio del archivo\n{1}", "v": "파일 첫머리에 섹션이 필요합니다\r\n{1}"}
-{"k": "'{1}' no es un tipo definido (PBS/types.txt, {2}, Weaknesses/Debilidades)", "v": "'{1}'\\j[은,는] 정의된 타입이 아닙니다 (PBS/types.txt, {2}, Weaknesses/Debilidades)"}
-{"k": "'{1}' no es un tipo definido (PBS/types.txt, {2}, Resistances/Resistencias)", "v": "'{1}'\\j[은,는] 정의된 타입이 아닙니다 (PBS/types.txt, {2}, Resistances/Resistencias)"}
-{"k": "'{1}' no es un tipo definido (PBS/types.txt, {2}, Immunities/Inmunidades)", "v": "'{1}'\\j[은,는] 정의된 타입이 아닙니다 (PBS/types.txt, {2}, Immunities/Inmunidades)"}
+{"k": "'{1}' no es un tipo definido (PBS/types.txt, {2}, Weaknesses/Debilidades)", "v": "‘{1}’\\j[은,는] 정의된 타입이 아닙니다 (PBS/types.txt, {2}, Weaknesses/Debilidades)"}
+{"k": "'{1}' no es un tipo definido (PBS/types.txt, {2}, Resistances/Resistencias)", "v": "‘{1}’\\j[은,는] 정의된 타입이 아닙니다 (PBS/types.txt, {2}, Resistances/Resistencias)"}
+{"k": "'{1}' no es un tipo definido (PBS/types.txt, {2}, Immunities/Inmunidades)", "v": "‘{1}’\\j[은,는] 정의된 타입이 아닙니다 (PBS/types.txt, {2}, Immunities/Inmunidades)"}
 {"k": "Aviso: El mapa {1}, mencionado en los datos\nde conexiones de mapas, no ha sido encontrado.\n{2}", "v": "경고: 맵 연결 데이터에 있는\r\n맵 {1}\\j[을,를] 찾을 수 없습니다.\r\n{2}"}
 {"k": "El lado Norte del primer mapa debe conectarse con el lado Sur del segundo\n{1}", "v": "첫 번째 맵의 북쪽은 두 번째 맵의 남쪽과 이어져야 합니다\r\n{1}"}
 {"k": "El lado Sur del primer mapa debe conectarse con el lado Norte del segundo\n{1}", "v": "첫 번째 맵의 남쪽은 두 번째 맵의 북쪽과 이어져야 합니다\r\n{1}"}
@@ -5093,7 +5093,7 @@
 {"k": "No se ha definido el tipo del Pokémon en la sección {2} (PBS/pokemon.txt)", "v": "섹션 {2}에 포켓몬 타입이 정의되어 있지 않습니다 (PBS/pokemon.txt)"}
 {"k": "Una especie Pokemon no puede ser enumerada en 0 (PBS/pokemon.txt)", "v": "포켓몬 종류는 0번으로 매길 수 없습니다 (PBS/pokemon.txt)"}
 {"k": "Un valor obligatorio {1} no ha sido encontrado o está en blanco en la sección {2} (PBS/pokemon.txt)", "v": "필수 값 {1}\\j[을,를] 찾을 수 없거나 비어 있습니다 (섹션 {2}, PBS/pokemon.txt)"}
-{"k": "El valor '{1}' no puede ser menor que o igual a 0 (sección {2}, PBS/pokemon.txt)", "v": "값 '{1}'\\j[은,는] 0 이하일 수 없습니다 (섹션 {2}, PBS/pokemon.txt)"}
+{"k": "El valor '{1}' no puede ser menor que o igual a 0 (sección {2}, PBS/pokemon.txt)", "v": "값 ‘{1}’\\j[은,는] 0 이하일 수 없습니다 (섹션 {2}, PBS/pokemon.txt)"}
 {"k": "Nombre interno inválido: {1} (sección {2}, PBS/pokemon.txt)", "v": "내부 이름이 올바르지 않습니다: {1} (섹션 {2}, PBS/pokemon.txt)"}
 {"k": "La clase {1} tiene más de 20 caracteres de longitud (sección {2}, PBS/pokemon.txt)", "v": "클래스 {1}\\j[이,가] 20자를 넘습니다 (섹션 {2}, PBS/pokemon.txt)"}
 {"k": "El nombre de la especie {1} tiene más de 20 caracteres de longitud (sección {2}, PBS/pokemon.txt)", "v": "종류 이름 {1}\\j[이,가] 20자를 넘습니다 (섹션 {2}, PBS/pokemon.txt)"}
@@ -5113,15 +5113,15 @@
 {"k": "Felicidad errónea: {1} (debe estar entre 0-255)\n{2}", "v": "친밀도 오류: {1} (0~255 사이여야 함)\r\n{2}"}
 {"k": "Apodo erróneo: {1} (debe ser de 1-20 caracteres)\n{2}", "v": "별명 오류: {1} (1~20자여야 함)\r\n{2}"}
 {"k": "Ball errónea: {1} (debe ser 0 o mayor)\n{2}", "v": "볼 값 오류: {1} (0 이상이어야 함)\r\n{2}"}
-{"k": "Los datos de la Casa son necesarios en la sección metadata.txt [{1}]", "v": "metadata.txt 섹션 [{1}]에 집 데이터가 필요합니다"}
-{"k": "Los datos de PlayerA son necesarios en la sección metadata.txt [{1}]", "v": "metadata.txt 섹션 [{1}]에 PlayerA 데이터가 필요합니다"}
+{"k": "Los datos de la Casa son necesarios en la sección metadata.txt [{1}]", "v": "metadata.txt 섹션 「{1}」에 집 데이터가 필요합니다"}
+{"k": "Los datos de PlayerA son necesarios en la sección metadata.txt [{1}]", "v": "metadata.txt 섹션 「{1}」에 PlayerA 데이터가 필요합니다"}
 {"k": "No se ha indicado el archivo de datos de entrenadores en la sección {1}\n{2}", "v": "섹션 {1}에 트레이너 데이터 파일이 지정되지 않았습니다\r\n{2}"}
 {"k": "No se pueden definir encuentros en Campo y Cueva en la misma área (mapa ID {1})", "v": "같은 지역(맵 ID {1})에 들판과 동굴 인카운터를 함께 정의할 수 없습니다"}
-{"k": "En encounters.txt, se esperaba un línea de especies,\npero se obtuvo \"{1}\" (posiblemente hay muy pocas entradas en un tipo de encuentro).\nVerifica el formato de la sección enumerada con {2},\nque se encuentra justo antes de esta línea.\n{3}", "v": "encounters.txt에서 종 줄이 와야 하는데\r\n\"{1}\"\\j[을,를] 받았습니다 (인카운터 타입의 항목이 너무 적을 수 있습니다).\r\n이 줄 바로 앞에 있는\r\n{2}번 섹션의 형식을 확인하세요.\r\n{3}"}
+{"k": "En encounters.txt, se esperaba un línea de especies,\npero se obtuvo \"{1}\" (posiblemente hay muy pocas entradas en un tipo de encuentro).\nVerifica el formato de la sección enumerada con {2},\nque se encuentra justo antes de esta línea.\n{3}", "v": "encounters.txt에서 종 줄이 와야 하는데\r\n“{1}”\\j[을,를] 받았습니다 (인카운터 타입의 항목이 너무 적을 수 있습니다).\r\n이 줄 바로 앞에 있는\r\n{2}번 섹션의 형식을 확인하세요.\r\n{3}"}
 {"k": "El número de nivel no es válido: {1}\n{2}", "v": "레벨 번호가 올바르지 않음: {1}\r\n{2}"}
 {"k": "El nivel mínimo es mayor que el nivel máximo: {1}\n{2}", "v": "최소 레벨이 최대 레벨보다 큽니다: {1}\r\n{2}"}
 {"k": "Se encontró fin de archivo inesperado. Hay muy pocas entradas en la última sección, se esperaban {1} entradas.\nVerifica el formato de la sección número {2}.\n{3}", "v": "예기치 않은 파일 끝입니다. 마지막 섹션의 항목이 너무 적습니다. {1}개가 필요합니다.\r\n{2}번 섹션의 형식을 확인하세요.\r\n{3}"}
-{"k": "Sintaxis de densidades errónea en encounters.txt; se obtuvo \"{1}\"\n{2}", "v": "encounters.txt의 밀도 구문 오류. \"{1}\"\\j[을,를] 받았습니다\r\n{2}"}
+{"k": "Sintaxis de densidades errónea en encounters.txt; se obtuvo \"{1}\"\n{2}", "v": "encounters.txt의 밀도 구문 오류. “{1}”\\j[을,를] 받았습니다\r\n{2}"}
 {"k": "Tipo de encuentro indefinido {1}, se esperaba uno de los siguientes:\n{2}\n{3}", "v": "정의되지 않은 인카운터 타입 {1}. 다음 중 하나여야 합니다:\r\n{2}\r\n{3}"}
 {"k": "¿Quieres agregar un entrenador nuevo con el nombre {1}?", "v": "{1}\\j[이라는,라는] 이름으로 새 트레이너를 추가할까요?"}
 {"k": "¡Adelante!", "v": "가랏!"}
@@ -5179,8 +5179,8 @@
 {"k": "¡Te has hecho con la victoria!\\^", "v": "승리를 거뒀다!\\^"}
 {"k": "¡Felicidades!", "v": "축하해!"}
 {"k": "{1} is shivering with the effects of being poisoned.", "v": "{1} is shivering with the effects of being poisoned."}
-{"k": "{1}'s burn looks painful.", "v": "{1}'s burn looks painful."}
-{"k": "{1} seems very cold. It's frozen solid!", "v": "{1} seems very cold. It's frozen solid!"}
+{"k": "{1}'s burn looks painful.", "v": "{1}’s burn looks painful."}
+{"k": "{1} seems very cold. It's frozen solid!", "v": "{1} seems very cold. It’s frozen solid!"}
 {"k": "{1} seems really tired.", "v": "{1} seems really tired."}
 {"k": "{1} is standing still and twitching.", "v": "{1} is standing still and twitching."}
 {"k": "{1} seems to be holding something.", "v": "{1} seems to be holding something."}
@@ -5191,14 +5191,14 @@
 {"k": "{1} has a cord in its mouth!", "v": "{1}\\j[이,가] 입에 코드를 물고 있다!"}
 {"k": "{1} seems to want to touch the machinery.", "v": "{1} seems to want to touch the machinery."}
 {"k": "{1} is sniffing around the room.", "v": "{1} is sniffing around the room."}
-{"k": "{1} noticed {2}'s mom is nearby.", "v": "{1} noticed {2}'s mom is nearby."}
+{"k": "{1} noticed {2}'s mom is nearby.", "v": "{1} noticed {2}’s mom is nearby."}
 {"k": "{1} seems to want to settle down at home.", "v": "{1} seems to want to settle down at home."}
 {"k": "{1} seems to be reminiscing on all it has learned in the last year.", "v": "{1}\\j[은,는] 지난 한 해 동안 배운 것들을 떠올리는 듯하다."}
 {"k": "{1} seems glad to be spending its birthday with {2}.", "v": "{1} seems glad to be spending its birthday with {2}."}
 {"k": "{1} is having the best birthday ever!", "v": "{1} is having the best birthday ever!"}
-{"k": "{1} can't believe its been a whole year already!", "v": "{1} can't believe its been a whole year already!"}
+{"k": "{1} can't believe its been a whole year already!", "v": "{1} can’t believe its been a whole year already!"}
 {"k": "{1} seems to be sniffing around for presents...", "v": "{1} seems to be sniffing around for presents..."}
-{"k": "{1} seems a bit out of breath...\nYou're getting old!", "v": "{1} seems a bit out of breath...\nYou're getting old!"}
+{"k": "{1} seems a bit out of breath...\nYou're getting old!", "v": "{1} seems a bit out of breath...\nYou’re getting old!"}
 {"k": "{1} looks ready to party!", "v": "{1} looks ready to party!"}
 {"k": "You wish {1} a happy birthday.\nHappy birthday, {1}!", "v": "You wish {1} a happy birthday.\nHappy birthday, {1}!"}
 {"k": "{1} seems to be looking forward to another year with {2}.", "v": "{1} seems to be looking forward to another year with {2}."}
@@ -5209,7 +5209,7 @@
 {"k": "{1} swayed and danced around as it pleased.", "v": "{1} swayed and danced around as it pleased."}
 {"k": "{1} is pulling out the grass.", "v": "{1} is pulling out the grass."}
 {"k": "{1} let out a roar!", "v": "{1} let out a roar!"}
-{"k": "{1} is making a face like it's angry!", "v": "{1} is making a face like it's angry!"}
+{"k": "{1} is making a face like it's angry!", "v": "{1} is making a face like it’s angry!"}
 {"k": "{1} seems to be angry for some reason.", "v": "{1} seems to be angry for some reason."}
 {"k": "{1} chewed on your feet.", "v": "{1} chewed on your feet."}
 {"k": "{1} is trying to be intimidating.", "v": "{1} is trying to be intimidating."}
@@ -5217,11 +5217,11 @@
 {"k": "{1} is sniffing at the floor.", "v": "{1} is sniffing at the floor."}
 {"k": "{1} is concentrating deeply.", "v": "{1} is concentrating deeply."}
 {"k": "{1} faced this way and nodded.", "v": "{1} faced this way and nodded."}
-{"k": "{1} is glaring straight into {2}'s eyes.", "v": "{1} is glaring straight into {2}'s eyes."}
+{"k": "{1} is glaring straight into {2}'s eyes.", "v": "{1} is glaring straight into {2}’s eyes."}
 {"k": "{1} began poking you in the stomach.", "v": "{1} began poking you in the stomach."}
 {"k": "{1} looks very happy.", "v": "{1} looks very happy."}
 {"k": "{1} happily cuddled up to you.", "v": "{1} happily cuddled up to you."}
-{"k": "{1} is so happy that it can't stand still.", "v": "{1} is so happy that it can't stand still."}
+{"k": "{1} is so happy that it can't stand still.", "v": "{1} is so happy that it can’t stand still."}
 {"k": "{1} looks like it wants to lead!", "v": "{1} looks like it wants to lead!"}
 {"k": "{1} suddenly started walking closer.", "v": "{1} suddenly started walking closer."}
 {"k": "Woah! {1} suddenly hugged {2}.", "v": "Woah! {1} suddenly hugged {2}."}
@@ -5238,7 +5238,7 @@
 {"k": "{1} is happy traveling with {2}.", "v": "{1} is happy traveling with {2}."}
 {"k": "{1} loves traveling with {2}.", "v": "{1} loves traveling with {2}."}
 {"k": "The water is dyed a deep blue... Would you like to surf?", "v": "The water is dyed a deep blue...  Would you like to surf?"}
-{"k": "You can't use that if you have someone with you.", "v": "You can't use that if you have someone with you."}
+{"k": "You can't use that if you have someone with you.", "v": "You can’t use that if you have someone with you."}
 {"k": "\\se[]{1} found {2}!\\se[itemlevel]\\\nIt contained {3}.\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] {2}\\j[을,를] 발견했다!\\se[itemlevel]\\\n안에 {3}\\j[이,가] 들어 있었다.\\wtnp[30]"}
 {"k": "{1} put the {2}\nin the {3} Pocket.", "v": "{1}\\j[은,는] {2}\\j[을,를]\n{3} 주머니에 넣었다."}
 {"k": "\\se[]{1} found some {2}!\\se[itemlevel]\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] {2}\\j[을,를] 발견했다!\\se[itemlevel]\\wtnp[30]"}
@@ -5323,7 +5323,7 @@
 {"k": "Delete This Save File", "v": "Delete This Save File"}
 {"k": "Are you sure you want to delete this save file?", "v": "Are you sure you want to delete this save file?"}
 {"k": "All data will be lost. Confirm once more to proceed.", "v": "All data will be lost.  Confirm once more to proceed."}
-{"k": "You don't have any other save files", "v": "You don't have any other save files"}
+{"k": "You don't have any other save files", "v": "You don’t have any other save files"}
 {"k": "Pokédex<r><c3={1}>{2}/{3}</c3><br>", "v": "도감<r><c3={1}>{2}/{3}</c3><br>"}
 {"k": "Save File:<r><c3={1}>{2}</c3><br>", "v": "Save File:<r><c3={1}>{2}</c3><br>"}
 {"k": "Save File:<r><c3={1}>1</c3><br>", "v": "Save File:<r><c3={1}>1</c3><br>"}
@@ -5365,12 +5365,12 @@
 {"k": "Set Enemy Position", "v": "Set Enemy Position"}
 {"k": "Set Enemy Altitude", "v": "Set Enemy Altitude"}
 {"k": "Auto-Position Sprites", "v": "Auto-Position Sprites"}
-{"k": "Please enter the item's name.", "v": "Please enter the item's name."}
+{"k": "Please enter the item's name.", "v": "Please enter the item’s name."}
 {"k": "Failed to create the item. Choose a different name.", "v": "Failed to create the item.  Choose a different name."}
 {"k": "Purchase price", "v": "Purchase price"}
 {"k": "Description", "v": "설명"}
 {"k": "The item was created (ID: {1}).", "v": "The item was created (ID: {1})."}
-{"k": "Put the item's graphic (item{1:03d}.png or item{2:s}.png) in Graphics/Icons, or it will be blank.", "v": "Put the item's graphic (item{1:03d}.png or item{2:s}.png) in Graphics/Icons, or it will be blank."}
+{"k": "Put the item's graphic (item{1:03d}.png or item{2:s}.png) in Graphics/Icons, or it will be blank.", "v": "Put the item’s graphic (item{1:03d}.png or item{2:s}.png) in Graphics/Icons, or it will be blank."}
 {"k": "Choose a pocket for this item.", "v": "Choose a pocket for this item."}
 {"k": "No Pocket", "v": "포켓 없음"}
 {"k": "Internal name that appears in constructs like PBItems::XXX.", "v": "Internal name that appears in constructs like PBItems::XXX."}
@@ -5383,7 +5383,7 @@
 {"k": "Purchase price of the item.", "v": "Purchase price of the item."}
 {"k": "Description of the item", "v": "Description of the item"}
 {"k": "Use Out of Battle", "v": "Use Out of Battle"}
-{"k": "Can't Use", "v": "Can't Use"}
+{"k": "Can't Use", "v": "Can’t Use"}
 {"k": "On a Pokemon", "v": "On a Pokemon"}
 {"k": "Use directly", "v": "Use directly"}
 {"k": "TM", "v": "기술머신"}
@@ -5427,17 +5427,17 @@
 {"k": "Number of Special Attack Effort Value points gained from the Pokémon.", "v": "이 포켓몬에게서 얻는 특수공격 노력치."}
 {"k": "Special Defense EVs", "v": "Special Defense EVs"}
 {"k": "Number of Special Defense Effort Value points gained from the Pokémon.", "v": "이 포켓몬에게서 얻는 특수방어 노력치."}
-{"k": "[ADD MOVE]", "v": "[ADD MOVE]"}
+{"k": "[ADD MOVE]", "v": "「ADD MOVE」"}
 {"k": "{1:d}: {2:s}", "v": "{1:d}: {2:s}"}
 {"k": "Choose a level.", "v": "Choose a level."}
 {"k": "\\ts[]Do what with this move?", "v": "\\ts[]Do what with this move?"}
 {"k": "Change level", "v": "Change level"}
 {"k": "Change move", "v": "Change move"}
 {"k": "Choose a new level.", "v": "Choose a new level."}
-{"k": "[ADD FORM]", "v": "[ADD FORM]"}
+{"k": "[ADD FORM]", "v": "「ADD FORM」"}
 {"k": "Choose a form name (no commas).", "v": "폼 이름을 선택하세요 (쉼표 불가)."}
 {"k": "\\ts[]Do what with this form name?", "v": "\\ts[]Do what with this form name?"}
-{"k": "[ADD EVOLUTION]", "v": "[ADD EVOLUTION]"}
+{"k": "[ADD EVOLUTION]", "v": "「ADD EVOLUTION」"}
 {"k": "{1:s}: {2:s}, {3:s}", "v": "{1:s}: {2:s}, {3:s}"}
 {"k": "Choose an evolved form, method and parameter.", "v": "Choose an evolved form, method and parameter."}
 {"k": "Choose an evolution method.", "v": "Choose an evolution method."}
@@ -5445,8 +5445,8 @@
 {"k": "Change species", "v": "Change species"}
 {"k": "Change method", "v": "Change method"}
 {"k": "Change parameter", "v": "Change parameter"}
-{"k": "This evolution method doesn't use a parameter.", "v": "This evolution method doesn't use a parameter."}
-{"k": "[NEW SPECIES]", "v": "[NEW SPECIES]"}
+{"k": "This evolution method doesn't use a parameter.", "v": "This evolution method doesn’t use a parameter."}
+{"k": "[NEW SPECIES]", "v": "「NEW SPECIES」"}
 {"k": "InternalName", "v": "InternalName"}
 {"k": "Internal name of the Pokémon.", "v": "포켓몬의 내부 이름."}
 {"k": "Type1", "v": "Type1"}
@@ -5532,7 +5532,7 @@
 {"k": "Item needed to be held by a parent to produce an egg of this species.", "v": "Item needed to be held by a parent to produce an egg of this species."}
 {"k": "Pokémon species", "v": "포켓몬 종류"}
 {"k": "The species was deleted. You should fully recompile before doing anything else.", "v": "The species was deleted. You should fully recompile before doing anything else."}
-{"k": "Can't add a new species.", "v": "Can't add a new species."}
+{"k": "Can't add a new species.", "v": "Can’t add a new species."}
 {"k": "Couldn't find dexdata.dat or messages.dat to get Pokémon data from.", "v": "포켓몬 데이터를 읽을 dexdata.dat이나 messages.dat을 찾을 수 없습니다."}
 {"k": "Z+Up/Down: Rearrange entries\nZ+Right: Insert new entry\nZ+Left: Delete entry\nA: Clear entry", "v": "Z+Up/Down: Rearrange entries\nZ+Right: Insert new entry\nZ+Left: Delete entry\nA: Clear entry"}
 {"k": "\\ts[]Do what with this entry?", "v": "\\ts[]Do what with this entry?"}
@@ -5541,14 +5541,14 @@
 {"k": "Delete entry", "v": "Delete entry"}
 {"k": "Regional Dexes Editor", "v": "Regional Dexes Editor"}
 {"k": "Z+Up/Down: Rearrange Dexes", "v": "Z+Up/Down: Rearrange Dexes"}
-{"k": "[ADD DEX]", "v": "[ADD DEX]"}
+{"k": "[ADD DEX]", "v": "「ADD DEX」"}
 {"k": "Dex {1} (size {2})", "v": "도감 {1} (크기 {2})"}
 {"k": "Fill in this new Dex?", "v": "Fill in this new Dex?"}
 {"k": "Leave blank", "v": "Leave blank"}
 {"k": "Fill with National Dex", "v": "Fill with National Dex"}
 {"k": "\\ts[]Do what with this Dex?", "v": "\\ts[]Do what with this Dex?"}
 {"k": "File {1}, section {2}\n{3}", "v": "File {1}, section {2}\r\n{3}\r\n"}
-{"k": "A different file named '{1}' already exists. Overwrite it?", "v": "A different file named '{1}' already exists. Overwrite it?"}
+{"k": "A different file named '{1}' already exists. Overwrite it?", "v": "A different file named ‘{1}’ already exists. Overwrite it?"}
 {"k": "Edit Items", "v": "Edit Items"}
 {"k": "Edit Pokémon", "v": "포켓몬 편집"}
 {"k": "Reposition Sprites", "v": "Reposition Sprites"}
@@ -5656,8 +5656,8 @@
 {"k": "¡No robes, hijoputa!", "v": "훔치지 마, 이 개자식아!"}
 {"k": "¿Qué es este cosquilleo que siento? Ah, sí. Emociones.", "v": "이 간질거리는 느낌은 뭐지? 아, 그래. 감정이구나."}
 {"k": "PC Pokémon", "v": "포켓몬 PC"}
-{"k": "La caja \"{1}\" del PC de {2} está llena.\u0001", "v": "{2}의 PC 박스 \"{1}\"\\j[이,가] 가득 찼다.\u0001"}
-{"k": "La caja \"{1}\" del PC está llena.\u0001", "v": "PC의 박스 \"{1}\"\\j[이,가] 가득 찼다.\u0001"}
+{"k": "La caja \"{1}\" del PC de {2} está llena.\u0001", "v": "{2}의 PC 박스 “{1}”\\j[이,가] 가득 찼다.\u0001"}
+{"k": "La caja \"{1}\" del PC está llena.\u0001", "v": "PC의 박스 “{1}”\\j[이,가] 가득 찼다.\u0001"}
 {"k": "{1} fue transferido a la PC Pokémon.\u0001", "v": "{1}\\j[을,를] 포켓몬 PC로 보냈다.\u0001"}
 {"k": "¡El Team Gatling no se rinde así como así!", "v": "팀 개틀링은 그렇게 쉽게 포기하지 않아!"}
 {"k": "¡Aquí se decide todo, con mi último Pokémon!", "v": "마지막 포켓몬으로 여기서 결판을 내겠다!"}
@@ -5723,11 +5723,11 @@
 {"k": "¡{1} fue atrapado!", "v": "{1}\\j[을,를] 잡았다!"}
 {"k": "¡{1} rompió su disfraz!", "v": "{1}의 변장이 벗겨졌다!"}
 {"k": "¿Una presa escurridiza? Bien, hora de sacar mis ases en la manga.", "v": "미끄러운 먹잇감이군? 좋아, 숨겨둔 패를 꺼낼 때다."}
-{"k": "But a shinizer's effect still lingers from earlier.", "v": "But a shinizer's effect still lingers from earlier."}
+{"k": "But a shinizer's effect still lingers from earlier.", "v": "But a shinizer’s effect still lingers from earlier."}
 {"k": "The next wild Pokémon you meet will be shiny.", "v": "다음에 만나는 야생 포켓몬은 색이 다른 포켓몬이 됩니다."}
 {"k": "Una Poción Brillante ya está en uso.", "v": "반짝이는물약이 이미 효과 중이다."}
 {"k": "El siguiente Pokémon salvaje será shiny.", "v": "다음에 만나는 야생 포켓몬은 색이 다른 포켓몬이 됩니다."}
-{"k": "But a repellent's effect still lingers from earlier.", "v": "But a repellent's effect still lingers from earlier."}
+{"k": "But a repellent's effect still lingers from earlier.", "v": "But a repellent’s effect still lingers from earlier."}
 {"k": "El siguiente Pokémon que aparezca será variocolor.", "v": "다음에 나타나는 포켓몬은 색이 다른 포켓몬이 됩니다."}
 {"k": "Pero todavía tiene efecto la última Poción Brillante utilizada.", "v": "하지만 이전에 쓴 반짝이는물약의 효과가 아직 남아 있다."}
 {"k": "{1} ha bebido {2}.", "v": "{1}\\j[은,는] {2}\\j[을,를] 마셨다."}
@@ -5755,7 +5755,7 @@
 {"k": "¡No! ¡Esto no se pierde hasta que me quede sin Pokémon! ¡Cambiaremos el viento a nuestro favor, por Makonawa!", "v": "안 돼! 내 포켓몬이 다 쓰러지기 전까지 진 게 아니야! Makonawa를 위해서라도 바람을 우리 쪽으로 돌리겠어!"}
 {"k": "¿Quieres ponerle un mote a {1}?", "v": "{1}에게 별명을 붙이겠습니까?"}
 {"k": "¡Las Cajas del PC están llenas y no aceptan ni un Pokémon más!", "v": "PC 박스가 가득 차서 포켓몬을 더 받을 수 없다!"}
-{"k": "La caja \"{1}\" del PC de alguien PC está llena.\u0001", "v": "누군가의 PC 박스 \"{1}\"\\j[이,가] 가득 찼다.\u0001"}
+{"k": "La caja \"{1}\" del PC de alguien PC está llena.\u0001", "v": "누군가의 PC 박스 “{1}”\\j[이,가] 가득 찼다.\u0001"}
 {"k": "{1} fue transferido al PC de {2}.\u0001", "v": "{1}\\j[을,를] {2}의 PC로 보냈다.\u0001"}
 {"k": "{1} fue transferido al PC de alguien.\u0001", "v": "{1}\\j[을,를] 누군가의 PC로 보냈다.\u0001"}
 {"k": "Mega Lopunny", "v": "메가이어롭"}
@@ -5773,7 +5773,7 @@
 {"k": "¡Tu equipo ha sido curado!", "v": "파티가 모두 회복되었다!"}
 {"k": "Las opciones se me acaban... ¿queda algo que pueda hacer?", "v": "수단이 떨어져 가나... 아직 할 수 있는 게 남아 있나?"}
 {"k": "Si dudas aunque solo sea un momento... ¡serás historia!", "v": "찰나라도 망설인다면... 넌 끝이다!"}
-{"k": "La caja \"{1}\" está llena.\u0001", "v": "박스 \"{1}\"\\j[이,가] 가득 찼다.\u0001"}
+{"k": "La caja \"{1}\" está llena.\u0001", "v": "박스 “{1}”\\j[이,가] 가득 찼다.\u0001"}
 {"k": "Mi poder florece de forma esplendorosa cuando llega la primavera, ¡siente la furia de la naturaleza!", "v": "봄이 오면 내 힘은 찬란하게 피어난다. 자연의 분노를 느껴라!"}
 {"k": "¿Me obligas a usar a esta criatura? ¡Has ido demasiado lejos!", "v": "이 녀석까지 쓰게 만들다니! 너무 나갔잖아!"}
 {"k": "¡Tus otros Pokémon también han ganado Puntos de Experiencia gracias al Repartir Experiencia!", "v": "학습장치 덕분에 다른 포켓몬들도 경험치를 얻었다!"}
@@ -5912,7 +5912,7 @@
 {"k": "{", "v": "{"}
 {"k": "\\|", "v": "\\|"}
 {"k": "}", "v": "}"}
-{"k": "'\"", "v": "'\""}
+{"k": "'\"", "v": "’“"}
 {"k": "AX", "v": "AX"}
 {"k": "Action", "v": "Action"}
 {"k": "Run/Sort", "v": "Run/Sort"}
@@ -5970,14 +5970,14 @@
 {"k": "{1} at level {2} with personalID", "v": "{1} at level {2} with personalID"}
 {"k": "{1} at level {2} with empty space", "v": "{1} at level {2} with empty space"}
 {"k": "{1} when beauty is greater than {2}", "v": "{1} when beauty is greater than {2}"}
-{"k": "{1} using {2} and it's male", "v": "{1} using {2} and it's male"}
-{"k": "{1} using {2} and it's female", "v": "{1} using {2} and it's female"}
+{"k": "{1} using {2} and it's male", "v": "{1} using {2} and it’s male"}
+{"k": "{1} using {2} and it's female", "v": "{1} using {2} and it’s female"}
 {"k": "{1} holding {2} at day", "v": "{1} ({2} 지닌 채 낮)"}
 {"k": "{1} holding {2} at night", "v": "{1} ({2} 지닌 채 밤)"}
 {"k": "{1} when has move {2}", "v": "{2}\\j[을,를] 배웠을 때 {1}"}
 {"k": "{1} when has {2} at party", "v": "파티에 {2}\\j[이,가] 있을 때 {1}"}
-{"k": "{1} at level {2} and it's male", "v": "{1} at level {2} and it's male"}
-{"k": "{1} at level {2} and it's female", "v": "{1} at level {2} and it's female"}
+{"k": "{1} at level {2} and it's male", "v": "{1} at level {2} and it’s male"}
+{"k": "{1} at level {2} and it's female", "v": "{1} at level {2} and it’s female"}
 {"k": "{1} at {2}", "v": "{1} ({2}에서)"}
 {"k": "{1} trading by {2}", "v": "{1} trading by {2}"}
 {"k": "{1} custom1 with {2}", "v": "{1} custom1 with {2}"}
@@ -6141,11 +6141,11 @@
 {"k": "<ac>#{$Trainer.party[i].name}</ac><ac>#{PBSpecies.getName($Trainer.party[i].species)} #{genero}</ac> <ac> Nv. #{$Trainer.party[i].level}</ac> <ac>OT/#{$Trainer.party[i].ot}</ac> <ac>¡Encontrado en</ac><ac> #{mapname}! </ac> <ac></ac>", "v": "<ac>#{$Trainer.party[i].name}</ac><ac>#{PBSpecies.getName($Trainer.party[i].species)} #{genero}</ac> <ac> Lv. #{$Trainer.party[i].level}</ac> <ac>OT/#{$Trainer.party[i].ot}</ac> <ac>만난 곳:</ac><ac> #{mapname}! </ac> <ac></ac> "}
 {"k": "<ac>¡Salón de la Fama! </ac> <ac></ac>", "v": "<ac>명예의 전당! </ac>  <ac></ac> "}
 {"k": "<ac>¡Campeón de la Liga #{JSS_SALONFAMA_REGION}! ¡Felicidades!</ac>", "v": "<ac>#{JSS_SALONFAMA_REGION} 리그 챔피언! 축하합니다!</ac>"}
-{"k": "#{$Trainer.party[i].name} Nv. #{$Trainer.party[i].level}", "v": "#{$Trainer.party[i].name}           Nv. #{$Trainer.party[i].level}"}
+{"k": "#{$Trainer.party[i].name} Nv. #{$Trainer.party[i].level}", "v": "#{$Trainer.party「i」.name}           Nv. #{$Trainer.party「i」.level}"}
 {"k": "increased", "v": "increased"}
 {"k": "rose sharply", "v": "rose sharply"}
 {"k": "increased drastically", "v": "increased drastically"}
-{"k": "{1}'s Aura flared to life!\nIts {2} {3}!", "v": "{1}'s Aura flared to life!\nIts {2} {3}!"}
+{"k": "{1}'s Aura flared to life!\nIts {2} {3}!", "v": "{1}’s Aura flared to life!\nIts {2} {3}!"}
 {"k": "han aumentado", "v": "올라갔다!"}
 {"k": "aumentan mucho", "v": "크게 올라갔다!"}
 {"k": "aumentan drásticamente", "v": "크게 올랐다"}
@@ -6188,11 +6188,11 @@
 {"k": "{1} fue añadido a tu equipo.", "v": "{1}\\j[을,를] 파티에 넣었다."}
 {"k": "{1} fue añadir a tu equipo.", "v": "{1}\\j[을,를] 파티에 넣었다."}
 {"k": "¡Los Ranchos están llenos y no aceptan ni un Pokémon más!", "v": "목장이 가득 차서 포켓몬을 더 받을 수 없다!"}
-{"k": "El Corral \"{1}\" del Rancho de {2} está lleno.\u0001", "v": "{2} 목장의 우리 \"{1}\"\\j[이,가] 가득 찼다.\u0001"}
-{"k": "La Corral \"{1}\" del Rancho está lleno.\u0001", "v": "목장의 우리 \"{1}\"\\j[이,가] 가득 찼다.\u0001"}
-{"k": "{1} fue transferido al Corral \"{2}\".", "v": "{1}\\j[을,를] 목장 \"{2}\"\\j[으로,로] 보냈다."}
+{"k": "El Corral \"{1}\" del Rancho de {2} está lleno.\u0001", "v": "{2} 목장의 우리 “{1}”\\j[이,가] 가득 찼다.\u0001"}
+{"k": "La Corral \"{1}\" del Rancho está lleno.\u0001", "v": "목장의 우리 “{1}”\\j[이,가] 가득 찼다.\u0001"}
+{"k": "{1} fue transferido al Corral \"{2}\".", "v": "{1}\\j[을,를] 목장 “{2}”\\j[으로,로] 보냈다."}
 {"k": "{1} fue transferido al Rancho.\u0001", "v": "{1}\\j[을,를] 목장으로 보냈다.\u0001"}
-{"k": "Fue guardado en el Corral \"{1}\".", "v": "목장 \"{1}\"에 맡겼다."}
+{"k": "Fue guardado en el Corral \"{1}\".", "v": "목장 “{1}”에 맡겼다."}
 {"k": "¡Los Corrales del Rancho están llenos y no aceptan ni un Pokémon más!", "v": "목장의 우리들이 가득 차서 포켓몬을 더 받을 수 없다!"}
 {"k": "Ingredientes", "v": "재료"}
 {"k": "Si no mantienes la cabeza en su sitio, acabarás blandiendo ese Pokémon contra ti. ¡Sigamos!", "v": "정신 똑바로 차리지 않으면 결국 그 포켓몬을 너 자신에게 휘두르게 될 거다. 계속하자!"}
@@ -6209,8 +6209,8 @@
 {"k": "Rancho Pokémon", "v": "포켓몬 목장"}
 {"k": "\\se[PC open]{1} accedió al Rancho Pokémon.", "v": "\\se[PC open]{1}\\j[이,가] 포켓몬 목장에 접속했다."}
 {"k": "¡{1} sufre daño por el frío!", "v": "{1}\\j[은,는] 추위로 데미지를 입었다!"}
-{"k": "La caja \"{1}\" del Rancho de {2} está llena.", "v": "{2}의 목장 박스 \"{1}\"\\j[이,가] 가득 찼다."}
-{"k": "La caja \"{1}\" del Rancho está llena.", "v": "목장의 박스 \"{1}\"\\j[이,가] 가득 찼다."}
+{"k": "La caja \"{1}\" del Rancho de {2} está llena.", "v": "{2}의 목장 박스 “{1}”\\j[이,가] 가득 찼다."}
+{"k": "La caja \"{1}\" del Rancho está llena.", "v": "목장의 박스 “{1}”\\j[이,가] 가득 찼다."}
 {"k": "{1} fue transferido al Rancho.", "v": "{1}\\j[을,를] 목장으로 보냈다."}
 {"k": "¡Robar es de ladrones y políticos!", "v": "훔치는 건 도둑이나 정치인들이나 하는 짓이야!"}
 {"k": "¡{1} solo permite el uso de {2}!", "v": "{1}\\j[은,는] {2}만 쓸 수 있게 됐다!"}
@@ -6384,10 +6384,10 @@
 {"k": "Empiezas a sentir un sueño extraño...", "v": "묘한 졸음이 밀려온다..."}
 {"k": "Tu mente se nubla...", "v": "정신이 흐려진다..."}
 {"k": "SALTANDO COMBATE...", "v": "SALTANDO COMBATE..."}
-{"k": "You don't have any eligible pokemon for a sky battle", "v": "You don't have any eligible pokemon for a sky battle"}
+{"k": "You don't have any eligible pokemon for a sky battle", "v": "You don’t have any eligible pokemon for a sky battle"}
 {"k": "¡Este Pokémon no puede pelear en una batalla aérea!", "v": "이 포켓몬은 공중전에서 싸울 수 없다!"}
 {"k": "¡Tus Pokémon no pueden participar en un combate aéreo!", "v": "네 포켓몬은 공중전에 참가할 수 없다!"}
-{"k": "The opponents don't have any eligible pokemon for a sky battle", "v": "The opponents don't have any eligible pokemon for a sky battle"}
+{"k": "The opponents don't have any eligible pokemon for a sky battle", "v": "The opponents don’t have any eligible pokemon for a sky battle"}
 {"k": "TRAS DERROTARLE...", "v": "TRAS DERROTARLE..."}
 {"k": "¡{1} no puede ser usado en una batalla aérea!", "v": "{1}\\j[은,는] 공중전에서 쓸 수 없다!"}
 {"k": "¡{1} no puede pelear en un combate aéreo!", "v": "{1}\\j[은,는] 공중전에서 싸울 수 없다!"}
@@ -6715,13 +6715,13 @@
 {"k": "<c3=404040,B0B0B0>Huevo eclosionado.\\n", "v": "<c3=404040,B0B0B0>알에서 태어났다.\\n"}
 {"k": "<c3=404040,B0B0B0>Naturaleza <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.\\n", "v": "<c3=404040,B0B0B0><c3=F83820,E09890>{1}<c3=404040,B0B0B0> 성격\\n"}
 {"k": "<c3=404040,B0B0B0>Un extraño Huevo Pokémon hallado por <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.\\n", "v": "<c3=404040,B0B0B0><c3=F83820,E09890>{1}<c3=404040,B0B0B0>\\j[이,가] 발견한 신기한 포켓몬 알.\\n"}
-{"k": "<c3=404040,B0B0B0>\\\"Estado del Huevo\\\"\\n", "v": "<c3=404040,B0B0B0>\\\"알의 상태\\\"\\n"}
+{"k": "<c3=404040,B0B0B0>\\\"Estado del Huevo\\\"\\n", "v": "<c3=404040,B0B0B0>\\“알의 상태\\”\\n"}
 {"k": "<c3=F83820,E09890>Faraway place\\n", "v": "<c3=F83820,E09890>머나먼 곳"}
 {"k": "Borrando partida...\\r\\nNo cierres el juego...\\\\wtnp[0]", "v": "세이브를 삭제하는 중...\\r\\n게임을 끄지 마세요...\\wtnp[0]"}
 {"k": "Capturado: Ninguno\\nBalls: {1}", "v": "잡은 수: 없음\\n볼: {1}"}
 {"k": "Capturado: {1}\\nNivel: {2}\\nBalls: {3}", "v": "잡은 수: {1}\\n레벨: {2}\\n볼: {3}"}
 {"k": "Dinero:\\n<ar>{1}</ar>", "v": "소지금:\\n<ar>{1}</ar>"}
-{"k": "El Pokémon duplicado fue movido a la caja \\\"{1}.\\\"", "v": "복제된 포켓몬을 박스 \\\"{1}\\\"\\j[으로,로] 옮겼다."}
+{"k": "El Pokémon duplicado fue movido a la caja \\\"{1}.\\\"", "v": "복제된 포켓몬을 박스 \\“{1}\\”\\j[으로,로] 옮겼다."}
 {"k": "Faltan algunos tipos de letras en tu ordenador.\\1", "v": "이 컴퓨터에 없는 글꼴이 있습니다.\\1"}
 {"k": "Listar por color del cuerpo.\\r\\nSólamente los vistos.", "v": "몸 색깔로 나열한다.\\r\\n본 포켓몬만."}
 {"k": "Listar por primera letra del nombre.\\r\\nSolamente los vistos.", "v": "이름 첫 글자로 나열한다.\\r\\n본 포켓몬만."}
@@ -6777,7 +6777,7 @@
 {"k": "¡El {1} salvaje dejó\ncaer {2} <icon=bagPocket6>!", "v": "야생 {1}\\j[이,가]\n{2} <icon=bagPocket6>\\j[을,를] 떨어뜨렸다!"}
 {"k": "¡El {1} salvaje dejó\ncaer {2} <icon=bagPocket7>!", "v": "야생 {1}\\j[이,가]\n{2} <icon=bagPocket7>\\j[을,를] 떨어뜨렸다!"}
 {"k": "¡El {1} salvaje dejó\ncaer {2} <icon=bagPocket8>!", "v": "야생 {1}\\j[이,가]\n{2} <icon=bagPocket8>\\j[을,를] 떨어뜨렸다!"}
-{"k": "La caja \"{1}\" está llena.\\1", "v": "\"{1}\" 박스가 가득 찼다.\\1"}
+{"k": "La caja \"{1}\" está llena.\\1", "v": "“{1}” 박스가 가득 찼다.\\1"}
 {"k": "¡No hay espacio para el Pokémon!\\1", "v": "포켓몬을 넣을 자리가 없다!\\1"}
 {"k": "Altavoz: ¡Ding-dong!\\1", "v": "스피커: 딩동!\\1"}
 {"k": "{1} ha metido la cosecha de {2} en el Bolsillo de <icon=bagPocket#{BERRYPOCKET}>\\c[1]Bayas\\c[0] de la Mochila.\\1", "v": "{1}\\j[은,는] 수확한 {2}\\j[을,를] 가방의 <icon=bagPocket#{BERRYPOCKET}>\\c[1]나무열매\\c[0] 포켓에 넣었다.\\1"}
@@ -6798,8 +6798,8 @@
 {"k": "¡Hay un Pokémon que está listo para abrir su corazón!\\1", "v": "마음을 열 준비가 된 포켓몬이 있다!\\1"}
 {"k": "{1:s} ID: {2:05d} EO: {3:s}\\1", "v": "{1:s}\r\nID: {2:05d}   어버이: {3:s}\\1"}
 {"k": "Por el {2} de {1}, {3} envía a {4}.\\1", "v": "{1}의 {2}\\j[와,과] 맞바꾸어\r\n{3}\\j[이,가] {4}\\j[을,를] 보내왔다.\\1"}
-{"k": "El Corral \"{1}\" del Rancho de {2} está lleno.\\1", "v": "{2}의 목장 우리 \"{1}\"\\j[이,가] 가득 찼다.\\1"}
-{"k": "La Corral \"{1}\" del Rancho está lleno.\\1", "v": "목장 우리 \"{1}\"\\j[이,가] 가득 찼다.\\1"}
+{"k": "El Corral \"{1}\" del Rancho de {2} está lleno.\\1", "v": "{2}의 목장 우리 “{1}”\\j[이,가] 가득 찼다.\\1"}
+{"k": "La Corral \"{1}\" del Rancho está lleno.\\1", "v": "목장 우리 “{1}”\\j[이,가] 가득 찼다.\\1"}
 {"k": "{1} fue transferido al Rancho.\\1", "v": "{1}\\j[은,는] 목장으로 옮겨졌다.\\1"}
 {"k": "¡{1} ha obtenido un {2}!\\se[PokemonGet]\\1", "v": "{1}\\j[은,는] {2}\\j[을,를] 손에 넣었다!\\se[PokemonGet]\\1"}
 {"k": "{1} ha recibido un Pokémon de {2}.\\se[PokemonGet]\\1", "v": "{1}\\j[은,는] {2}에게서 포켓몬을 받았다.\\se[PokemonGet]\\1"}

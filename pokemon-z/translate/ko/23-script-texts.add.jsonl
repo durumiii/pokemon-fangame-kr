@@ -1,4 +1,4 @@
-{"k": "La caja \"{1}\" está llena.\\1", "v": "\"{1}\" 박스가 가득 찼다.\\1", "src": "Incubadora"}
+{"k": "La caja \"{1}\" está llena.\\1", "v": "“{1}” 박스가 가득 찼다.\\1", "src": "Incubadora"}
 {"k": "¡No hay espacio para el Pokémon!\\1", "v": "포켓몬을 넣을 자리가 없다!\\1", "src": "Incubadora+PSystem_Utilities NUEVO+RandomObjects"}
 {"k": "Altavoz: ¡Ding-dong!\\1", "v": "스피커: 딩동!\\1", "src": "PBattle_Safari"}
 {"k": "{1} ha metido la cosecha de {2} en el Bolsillo de <icon=bagPocket#{BERRYPOCKET}>\\c[1]Bayas\\c[0] de la Mochila.\\1", "v": "{1}\\j[은,는] 수확한 {2}\\j[을,를] 가방의 <icon=bagPocket#{BERRYPOCKET}>\\c[1]나무열매\\c[0] 포켓에 넣었다.\\1", "src": "PField_BerryPlants"}
@@ -30,14 +30,14 @@
 {"k": "{1:s}\r\nID: {2:05d}   EO: {3:s}\\wtnp[0]", "v": "{1:s}\r\nID: {2:05d}   어버이: {3:s}\\wtnp[0]", "src": "PScreen_Trading"}
 {"k": "{1:s}\r\nID: {2:05d}   EO: {3:s}\\1", "v": "{1:s}\r\nID: {2:05d}   어버이: {3:s}\\1", "src": "PScreen_Trading"}
 {"k": "Por el {2} de {1},\r\n{3} envía a {4}.\\1", "v": "{1}의 {2}\\j[와,과] 맞바꾸어\r\n{3}\\j[이,가] {4}\\j[을,를] 보내왔다.\\1", "src": "PScreen_Trading"}
-{"k": "El Corral \"{1}\" del Rancho de {2} está lleno.\\1", "v": "{2}의 목장 우리 \"{1}\"\\j[이,가] 가득 찼다.\\1", "src": "PSystem_Utilities NUEVO"}
-{"k": "La Corral \"{1}\" del Rancho está lleno.\\1", "v": "목장 우리 \"{1}\"\\j[이,가] 가득 찼다.\\1", "src": "PSystem_Utilities NUEVO"}
+{"k": "El Corral \"{1}\" del Rancho de {2} está lleno.\\1", "v": "{2}의 목장 우리 “{1}”\\j[이,가] 가득 찼다.\\1", "src": "PSystem_Utilities NUEVO"}
+{"k": "La Corral \"{1}\" del Rancho está lleno.\\1", "v": "목장 우리 “{1}”\\j[이,가] 가득 찼다.\\1", "src": "PSystem_Utilities NUEVO"}
 {"k": "{1} fue transferido al Rancho.\\1", "v": "{1}\\j[은,는] 목장으로 옮겨졌다.\\1", "src": "PSystem_Utilities NUEVO"}
 {"k": "¡{1} ha obtenido un {2}!\\se[PokemonGet]\\1", "v": "{1}\\j[은,는] {2}\\j[을,를] 손에 넣었다!\\se[PokemonGet]\\1", "src": "PSystem_Utilities NUEVO"}
 {"k": "{1} ha recibido un Pokémon de {2}.\\se[PokemonGet]\\1", "v": "{1}\\j[은,는] {2}에게서 포켓몬을 받았다.\\se[PokemonGet]\\1", "src": "PSystem_Utilities NUEVO"}
 {"k": "{1} ha recibido un Pokémon.\\se[PokemonGet]\\1", "v": "{1}\\j[은,는] 포켓몬을 받았다.\\se[PokemonGet]\\1", "src": "PSystem_Utilities NUEVO"}
 {"k": "¡Mi espada destruye imperios enteros! ¿Qué crees que será capaz de hacerle a tus Pokémon? ", "v": "내 검은 제국도 통째로 무너뜨리지! 네 포켓몬쯤이야 어떻게 될 것 같나? ", "src": "PokeBattle_Battle"}
-{"k": "El nivel nuevo ({1}) es menor que el nivel actual\r\ndel Pokémon ({2}), lo que no debería pasar.\r\n[Depurar: {3}]", "v": "새 레벨({1})이 포켓몬의 현재 레벨({2})보다\r\n낮습니다. 일어나서는 안 되는 일입니다.\r\n[디버그: {3}]", "src": "PokeBattle_Battle+RepExp"}
+{"k": "El nivel nuevo ({1}) es menor que el nivel actual\r\ndel Pokémon ({2}), lo que no debería pasar.\r\n[Depurar: {3}]", "v": "새 레벨({1})이 포켓몬의 현재 레벨({2})보다\r\n낮습니다. 일어나서는 안 되는 일입니다.\r\n「디버그: {3}」", "src": "PokeBattle_Battle+RepExp"}
 {"k": "                             PS ATQ DEF AES DES VEL TOT", "v": "                             HP 공격 방어 특공 특방 스피드 합계", "src": "Pokedex Mejorada"}
 {"k": "STATS BASE:       {1:03d} {2:03d} {3:03d} {5:03d} {6:03d} {4:03d} {7:03d}", "v": "종족값:           {1:03d} {2:03d} {3:03d} {5:03d} {6:03d} {4:03d} {7:03d}", "src": "Pokedex Mejorada"}
 {"k": "\\se[]1,\\wt[4] 2,\\wt[4] y...\\wt[8] ...\\wt[8] ...\\wt[8] ¡Puf!\\se[balldrop]\\1", "v": "\\se[]1,\\wt[4] 2,\\wt[4] 그리고...\\wt[8] ...\\wt[8] ...\\wt[8] 짠!\\se[balldrop]\\1", "src": "Pokemon_MultipleForms"}
