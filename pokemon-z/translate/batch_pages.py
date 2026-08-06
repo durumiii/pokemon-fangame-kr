@@ -455,9 +455,11 @@ CORE_TERMS = """\
   기술머신 · 몬스터볼 · 도감. Status: 독/맹독/화상/마비/잠듦/얼음.
 - The currency pokécuartos/pokéfrancos is 「포켓프랑」.
 - Setting is monarchic Kalos: keep rank address (폐하·전하·경·마담·무슈); do not
-  modernize. French/Russian interjections stay (Merci beaucoup, Mon coeur, Blyat);
-  but address titles are transliterated: monsieur→무슈, madame→마담,
-  mademoiselle→마드모아젤. Italian `Mamma mia`→「맘마미아」.
+  modernize. French/Russian exclamations stay Latin (Mon Dieu!, Sacrebleu!,
+  Merci beaucoup!, Blyat); phrases woven into the sentence (a mid-sentence
+  s'il vous plait) are translated. Address titles are transliterated:
+  monsieur→무슈, madame→마담, mademoiselle→마드모아젤. Italian `Mamma mia`→「맘마미아」.
+- máscara → 마스크 (not 가면).
 - Kill translationese: 「~에 대해」→ object particle; 「~하는 것이 가능하다」→
   「~할 수 있다」; no double passive 「~되어진다」; ¡Qué …! becomes 「정말 ~구나!」
   not 「얼마나 ~한가!」."""
@@ -477,11 +479,25 @@ def strip_evidence(s):
 
 
 # 용어 쌍을 캘 절 — 다른 표(지명 대조 따위)는 칸 구성이 달라 잘못 읽힌다
-TERM_SECTIONS = ("## 고정 용어표", "### 2026-08-05 판정")
+TERM_SECTIONS = ("## 고정 용어표", "### 2026-08-05 판정", "### 2026-08-06 판정")
+TERMS = HERE / "term-pairs.jsonl"      # 프롬프트에 실리는 용어 정본 — glossary.md는 사람용
 
 
 def term_pairs():
-    """용어집의 용어표 절에서 (원문, 표기) 쌍. 표기 칸의 근거 괄호는 뗀다."""
+    """프롬프트에 실리는 (원문, 표기) 쌍. 정본은 term-pairs.jsonl.
+
+    voice-prompts와 같은 갈래다 — md는 근거·이력이 붙는 사람용 문서고, 기계는
+    표를 md에서 캐다가 짝이 밀리는 사고를 냈다(2026-08-06 「Team Azoth 미탑재」).
+    새 판정은 두 곳에 다 적는다. 파일이 없으면 md 파싱으로 돌아간다(과도기).
+    """
+    if TERMS.exists():
+        return [(r["es"], r["ko"]) for r in
+                (json.loads(l) for l in TERMS.read_text(encoding="utf-8").splitlines()
+                 if l.strip())]
+    return _term_pairs_md()
+
+
+def _term_pairs_md():
     pairs, on = [], False
     for line in (HERE / "glossary.md").read_text(encoding="utf-8").splitlines():
         if line.startswith(("#", "##", "###")):

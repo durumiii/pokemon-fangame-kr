@@ -61,7 +61,9 @@ F. Korean has many natural endings for one speech level. Don't normalize them �
 G. Male/female variant pairs of one line (`un intruso` / `una intrusa`) keep their
    distinction, and **must not disagree in speech level** with each other.
 H. Do not invent interjections, laughter or self-titles that are absent from the
-   source, and do not drop ones that are there. Follow the source.
+   source, and do not drop ones that are there. Follow the source. Render
+   onomatopoeia by the standard Korean convention (`*Ejem*`→`*에헴*`) — do not
+   substitute a different sound of your own.
 I. The player character (\PN) has no fixed gender or age. Never invent gendered or
    age-based address terms (「오빠/누나/언니/아가씨/총각」). Use only titles present
    in the source.
@@ -78,11 +80,12 @@ I. The player character (\PN) has no fixed gender or age. Never invent gendered 
    count: \PN, \v[n], \se[..], \wt[..], \m, \TP, \TE, \TM, <icon=..>, <r>,
    \j[받침형,무받침형], {1}-style slots, and a trailing \x01.
 3. Keep proper nouns and game terms exactly as the term rules below give them.
-   French/Russian *interjections and set phrases* in the source stay in the Latin
-   script (`alors`, `d'accord`, `Merci beaucoup`, `s'il vous plait`). **Address
-   titles are the exception — they are already transliterated and must stay Korean:
-   monsieur→무슈, madame→마담, mademoiselle→마드모아젤. Never turn 무슈 back into
-   `monsieur`.**
+   French/Russian *exclamations and interjections* in the source stay in the Latin
+   script (`alors`, `d'accord`, `Mon Dieu!`, `Sacrebleu!`, `Merci beaucoup!`).
+   But a French phrase *woven into the sentence* as an ordinary word (a polite
+   `s'il vous plait` mid-sentence) is translated into Korean like any other word.
+   **Address titles are always Korean: monsieur→무슈, madame→마담,
+   mademoiselle→마드모아젤. Never turn 무슈 back into `monsieur`.**
 4. Length at most 1.4× the current `ko` (text box width). Do not add or remove
    newline characters.
 5. **If a line is already correct and natural, return its `ko` unchanged.** This is
@@ -146,7 +149,9 @@ F. Korean has many natural endings for one speech level. Don't normalize them �
 G. Male/female variant pairs of one line (`un intruso` / `una intrusa`) keep their
    distinction, and **must not disagree in speech level** with each other.
 H. Do not invent interjections, laughter or self-titles that are absent from the
-   source, and do not drop ones that are there. Follow the source.
+   source, and do not drop ones that are there. Follow the source. Render
+   onomatopoeia by the standard Korean convention (`*Ejem*`→`*에헴*`) — do not
+   substitute a different sound of your own.
 I. The player character (\PN) has no fixed gender or age. Never invent gendered or
    age-based address terms (「오빠/누나/언니/아가씨/총각」). Use only titles present
    in the source.
@@ -163,9 +168,12 @@ I. The player character (\PN) has no fixed gender or age. Never invent gendered 
    \j[받침형,무받침형], {1}-style slots, and a trailing \x01.
    Keep the same number of newline characters as `es`.
 3. Keep proper nouns and game terms exactly as the term rules below give them.
-   French/Russian *interjections and set phrases* stay in the Latin script (`alors`,
-   `d'accord`, `Merci beaucoup`). **Address titles are transliterated:
-   monsieur→무슈, madame→마담, mademoiselle→마드모아젤.**
+   French/Russian *exclamations and interjections* stay in the Latin script
+   (`alors`, `d'accord`, `Mon Dieu!`, `Sacrebleu!`, `Merci beaucoup!`). But a
+   French phrase *woven into the sentence* as an ordinary word (a polite
+   `s'il vous plait` mid-sentence) is translated into Korean like any other word.
+   **Address titles are transliterated: monsieur→무슈, madame→마담,
+   mademoiselle→마드모아젤.**
 4. Keep it inside a text box — roughly the length of the Spanish line, never padded
    out with explanation.
 5. Write dialogue, not subtitles. Contractions, particles and rhythm that a Korean
