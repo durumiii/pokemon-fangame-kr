@@ -93,6 +93,11 @@ def scene_system(fp):
     if not req.exists():
         return PROMPT
     head = json.loads(req.read_text(encoding="utf-8")).get("system", "")
+    # 번역용 정적 지시(~1,100토큰)는 판정에 안 쓰인다 — 용어 규칙부터만 덧댄다.
+    # 게이트웨이가 캐시 할인을 안 주는 걸 실측(2026-08-06)해서 중복 전송 자체를 자른다.
+    i = head.find("### Term rules")
+    if i > 0:
+        head = head[i:]
     return PROMPT + "\n\n---\n참고 — 이 장면을 번역할 때 준 지시:\n" + head
 
 
