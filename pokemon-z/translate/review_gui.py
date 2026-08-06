@@ -128,8 +128,8 @@ function render(){
     sec.querySelector('[data-all]').onclick=()=>{
       setters.forEach(f=>f('new'));
       // 승인은 이벤트 단위 — 행 판정과 별도로 원장에 한 줄 남긴다
-      post({event:`${sc.map}:${sc.event}`, 판정:'승인', 텍스트:'',
-            메모:`${sc.name} — ${sc.rows.length}행 일괄`});
+      post({event:`${sc.map}:${sc.event}-${sc.page}`, 판정:'승인', 텍스트:'',
+            메모:`${sc.name} 이벤트 ${sc.event}-${sc.page} — ${sc.rows.length}행 일괄`});
     };
     sec.querySelector('[data-ask]').onclick=e=>{
       const q=prompt(`「${sc.name}」에 무엇을 조사할까요?`, '');
@@ -140,9 +140,10 @@ function render(){
         .catch(()=>flag('요청을 못 보냈어요'));
     };
     sec.querySelector('.donebox').onchange=e=>{
-      const key=sc.map+':'+sc.event;
+      const key=`${sc.map}:${sc.event}-${sc.page}`;
       if(e.target.checked){ DONE.add(key);
-        post({event:key, 판정:'완료', 텍스트:'', 메모:`${sc.name} — 유지자 완료 표시`});
+        post({event:key, 판정:'완료', 텍스트:'',
+              메모:`${sc.name} 이벤트 ${sc.event}-${sc.page} — 유지자 완료 표시`});
       } else { DONE.delete(key);
         post({event:key, 판정:'', 텍스트:'', 메모:'완료 표시 해제'}); }
       refold();
@@ -192,7 +193,7 @@ function refold(){
   const fr=frontier();
   document.querySelectorAll('section[data-ev]').forEach((sec,i)=>{
     const sc=DATA[i];
-    const done=DONE.has(sc.map+':'+sc.event);
+    const done=DONE.has(`${sc.map}:${sc.event}-${sc.page}`);
     sec.classList.toggle('folded', done || (on && i<=fr));
     const b=sec.querySelector('.fin'); if(b) b.style.display=done?'':'none';
     const c=sec.querySelector('.donebox'); if(c) c.checked=done;

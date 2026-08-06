@@ -92,10 +92,25 @@ def done_events(d, vs):
     for sc in collect(d):
         ev_rows.setdefault((sc["map"], int(sc["event"])), []).extend(
             r["id"] for r in sc["rows"])
-    okev = {tuple(int(x) for x in (r.get("event") or "0:0").split(":"))
-            for r in _ledger_rows(d) if r.get("event")}
+    # 완료 표시는 장면(이벤트-페이지) 단위다. 이벤트가 끝났다고 보려면 화면에 선
+    # 그 이벤트의 페이지가 모두 표시돼야 한다 — 7-0만 눌렀는데 7-1이 딸려가면 안 된다.
+    marked = set()
+    for r in _ledger_rows(d):
+        e = r.get("event")
+        if e and (r.get("판정") or "").strip() in ("완료", "승인"):
+            m, _, rest = e.partition(":")
+            ev, _, pg = rest.partition("-")
+            marked.add((int(m), int(ev), pg))
+    pages = {}
+    for sc in collect(d):
+        pages.setdefault((sc["map"], int(sc["event"])), set()).add(str(sc["page"]))
+
+    def flagged(ev):
+        got = {p for (m, e, p) in marked if (m, e) == ev}
+        return "" in got or (pages.get(ev, set()) and pages[ev] <= got)
+
     return {ev for ev, ids in ev_rows.items()
-            if ev in okev or all(i in vs for i in ids)}
+            if flagged(ev) or all(i in vs for i in ids)}
 
 
 def _ledger_rows(d):
