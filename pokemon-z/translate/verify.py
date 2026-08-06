@@ -113,6 +113,42 @@ def check_canon(strict):
     print(f"canon: 일치 {ok} · 불일치 {mismatch} · 대조표 밖(창작/구세대명) {miss}")
 
 
+def check_ribbons(strict):
+    """절23 리본 이름을 본가 정식명과 대조 — 원문(영어) 키로.
+
+    리본은 이름이지만 이름 절이 아니라 스크립트 문자열 절(23)에 있어서
+    canon 대조의 그물 밖이었다(2026-08-06: 16자리가 비공식 조어·일본어
+    잔재로 남아 있었다). 문장 코퍼스의 영어 칸을 다리로 삼아 잡는다.
+    구세대 콘테스트 리본은 코퍼스(xy 이후)에 없어 대조표 밖으로 센다.
+    """
+    import gzip
+    path = HERE / "canon" / "messages.jsonl.gz"
+    if not path.exists():
+        return
+    want_by_en = {}
+    with gzip.open(path, "rt", encoding="utf-8") as f:
+        for line in f:
+            r = json.loads(line)
+            en = r.get("en") or ""
+            if en.endswith("Ribbon") and r["ko"].endswith("리본"):
+                want_by_en[en] = r["ko"]
+    mismatch = miss = ok = 0
+    for r in rows(HERE / "ko" / "23-script-texts.jsonl"):
+        k, ko = r.get("k") or "", r.get("v")
+        if not k.endswith("Ribbon") or not ko:
+            continue
+        want = want_by_en.get(k)
+        if want is None:
+            miss += 1
+        elif ko == want:
+            ok += 1
+        else:
+            mismatch += 1
+            report("FAIL" if strict else "WARN",
+                   f"리본 불일치 {k!r}: 현행 {ko!r} ≠ 정식 {want!r}")
+    print(f"리본: 일치 {ok} · 불일치 {mismatch} · 대조표 밖(구세대 콘테스트 등) {miss}")
+
+
 def check_dat_and_sentinels():
     d = load(open(STORE_DAT, "rb"))
     ks, vs = inner_of(d[23])
@@ -209,6 +245,7 @@ def check_names(strict):
 def main():
     strict = "--strict" in sys.argv
     check_canon(strict)
+    check_ribbons(strict)
     check_names(strict)
     check_dat_and_sentinels()
     check_scripts()

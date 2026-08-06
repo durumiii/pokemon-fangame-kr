@@ -44,21 +44,28 @@ def pairs(game: Path):
             continue
         es_f = next(iter(d.glob("*_spanish.txt")), None)
         ko_f = next(iter(d.glob("*_korean.txt")), None)
+        en_f = next(iter(d.glob("*_english.txt")), None)
         if not es_f or not ko_f:
             continue
         es = es_f.read_text(encoding="utf-8", errors="replace").splitlines()
         ko = ko_f.read_text(encoding="utf-8", errors="replace").splitlines()
+        # 영어 칸도 같은 줄 번호로 짝짓는다 — 게임 스크립트가 영어 리터럴을
+        # 쓰는 자리(절23 리본·시스템 문구)를 원문 키로 대조하려면 필요하다.
+        en = en_f.read_text(encoding="utf-8", errors="replace").splitlines() if en_f else []
         n = min(len(es), len(ko))
         if abs(len(es) - len(ko)) > 0:
             print(f"경고: {d} 줄 수 불일치 es {len(es)} ko {len(ko)} — 앞 {n}줄만")
+        if en and len(en) != len(ko):
+            print(f"경고: {d} 영어 줄 수 불일치 en {len(en)} ko {len(ko)} — 영어 버림")
+            en = []
         label = ""
-        for a, b in zip(es[:n], ko[:n]):
+        for i, (a, b) in enumerate(zip(es[:n], ko[:n])):
             if b.startswith("Text File : "):
                 label = b[len("Text File : "):].strip()
                 continue
             if b.startswith("~~~~~"):
                 continue
-            yield a.strip(), b.strip(), kind, label
+            yield a.strip(), b.strip(), (en[i].strip() if en else ""), kind, label
 
 
 def main():
@@ -69,17 +76,17 @@ def main():
             print(f"건너뜀(없음): {g}")
             continue
         n = 0
-        for es, ko, kind, label in pairs(gd):
+        for es, ko, en, kind, label in pairs(gd):
             if es in SKIP or ko in SKIP or es == ko:
                 continue
-            table[es] = (ko, g, kind, label)  # 뒤 게임이 덮어씀 = 최신 우선
+            table[es] = (ko, en, g, kind, label)  # 뒤 게임이 덮어씀 = 최신 우선
             n += 1
         print(f"{g}: {n}쌍 처리 (누적 고유 {len(table)})")
     out = HERE / "messages.jsonl.gz"
     with gzip.open(out, "wt", encoding="utf-8") as f:
-        for es, (ko, g, kind, label) in table.items():
+        for es, (ko, en, g, kind, label) in table.items():
             f.write(json.dumps(
-                {"es": es, "ko": ko, "src": g, "kind": kind, "file": label},
+                {"es": es, "ko": ko, "en": en, "src": g, "kind": kind, "file": label},
                 ensure_ascii=False) + "\n")
     print(f"{out}: 고유 {len(table)}쌍")
 
