@@ -95,6 +95,8 @@ def cmd_check():
                 if wrong in v and here:
                     bad += 1
                     print(f"[변이] {f.name}:{n} {wrong!r} → {r['ko']!r}  | {v[:70]}")
+            if f.name in r.get("생략자리", ()):   # 의도된 자리(절13·14 어순 스왑 따위)
+                continue
             if here and r["ko"] not in v and not r.get("생략허용"):
                 missing += 1
                 print(f"[빠짐] {f.name}:{n} 원문에 {r['es']!r} 있는데 {r['ko']!r} 없음 | {v[:70]}")
