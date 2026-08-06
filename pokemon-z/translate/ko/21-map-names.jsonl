@@ -46,7 +46,7 @@
 {"i": 45, "v": "음침한 동굴", "es": "Cueva Lóbrega"}
 {"i": 46, "v": "비탈 숲", "es": "Bosque Ladera"}
 {"i": 47, "v": "남부 카타콤", "es": "Catacumbas Meridionales"}
-{"i": 48, "v": "포켓몬 키우미집", "es": "Guardería Pokémon"}
+{"i": 48, "v": "포켓몬키우미집", "es": "Guardería Pokémon"}
 {"i": 49, "v": "집", "es": "Casa"}
 {"i": 50, "v": "집", "es": "Casa"}
 {"i": 51, "v": "빛나는 동굴", "es": "Cueva Refulgente"}
@@ -134,7 +134,7 @@
 {"i": 133, "v": "삼채시티", "es": "Ciudad Relieve"}
 {"i": 134, "v": "포켓몬센터", "es": "Centro Pokémon"}
 {"i": 135, "v": "집", "es": "Casa"}
-{"i": 136, "v": "이음 동굴", "es": "Gruta Tierraunida"}
+{"i": 136, "v": "땅이음의 동굴", "es": "Gruta Tierraunida"}
 {"i": 137, "v": "12번도로", "es": "Ruta 12"}
 {"i": 138, "v": "옛 고목내마을", "es": "Viejo Vánitas"}
 {"i": 139, "v": "옛 고목내마을", "es": "Viejo Vánitas"}
@@ -175,9 +175,9 @@
 {"i": 174, "v": "포켓몬센터", "es": "Centro Pokémon"}
 {"i": 175, "v": "포켓몬센터", "es": "Centro Pokémon"}
 {"i": 176, "v": "집", "es": "Casa"}
-{"i": 177, "v": "카페 솔레이유", "es": "Café Soleil"}
-{"i": 178, "v": "카페 콘코르디아", "es": "Café Concordia"}
-{"i": 179, "v": "카페 캉캉", "es": "Café Can Can"}
+{"i": 177, "v": "솔레유 카페", "es": "Café Soleil"}
+{"i": 178, "v": "파르트네르 카페", "es": "Café Concordia"}
+{"i": 179, "v": "뚜뚜 카페", "es": "Café Can Can"}
 {"i": 180, "v": "집", "es": "Casa"}
 {"i": 181, "v": "트리미앙 살롱", "es": "Salón Furfrou"}
 {"i": 182, "v": "세뇨리알 대성당", "es": "Catedral Señorial"}
@@ -236,14 +236,14 @@
 {"i": 235, "v": "몬스터볼 공장", "es": "Fábrica de Pokéball"}
 {"i": 236, "v": "몬스터볼 공장", "es": "Fábrica de Pokéball"}
 {"i": 237, "v": "16번도로", "es": "Ruta 16"}
-{"i": 238, "v": "얼음 동굴", "es": "Gruta Helada"}
+{"i": 238, "v": "프로스트케이브", "es": "Gruta Helada"}
 {"i": 239, "v": "포켓몬센터", "es": "Centro Pokémon"}
 {"i": 240, "v": "전환", "es": "Transición"}
 {"i": 241, "v": "집", "es": "Casa"}
 {"i": 242, "v": "17번도로", "es": "Ruta 17"}
-{"i": 243, "v": "얼음 동굴", "es": "Gruta Helada"}
+{"i": 243, "v": "프로스트케이브", "es": "Gruta Helada"}
 {"i": 244, "v": "집", "es": "Casa"}
-{"i": 245, "v": "얼음 동굴", "es": "Gruta Helada"}
+{"i": 245, "v": "프로스트케이브", "es": "Gruta Helada"}
 {"i": 246, "v": "집", "es": "Casa"}
 {"i": 247, "v": "기남시티", "es": "Ciudad Batik"}
 {"i": 248, "v": "리그 장면", "es": "Escena Liga"}
@@ -393,7 +393,7 @@
 {"i": 392, "v": "미르 신시가지 - 동쪽", "es": "Expansiones de Luminalia - Este"}
 {"i": 393, "v": "프리즘타워", "es": "Torre Prisma"}
 {"i": 394, "v": "포켓몬센터", "es": "Centro Pokémon"}
-{"i": 395, "v": "카페 갈라네스", "es": "Café Galanes"}
+{"i": 395, "v": "사나이 카페", "es": "Café Galanes"}
 {"i": 396, "v": "집", "es": "Casa"}
 {"i": 397, "v": "마스터타워", "es": "Torre Maestra"}
 {"i": 398, "v": "얀트라 농장", "es": "Granja Yantra"}
@@ -431,7 +431,7 @@
 {"i": 430, "v": "미르 스테이션", "es": "Estación Luminalia"}
 {"i": 431, "v": "프리즘타워", "es": "Torre Prisma"}
 {"i": 432, "v": "아쥐르만", "es": "Bahía Azul"}
-{"i": 433, "v": "탈라시아 동굴", "es": "Cueva Talasia"}
+{"i": 433, "v": "해신의 굴", "es": "Cueva Talasia"}
 {"i": 434, "v": "창기둥", "es": "Columna Lanza"}
 {"i": 435, "v": "시티 1", "es": "Ciudad 1"}
 {"i": 436, "v": "시티 2", "es": "Ciudad 2"}
@@ -439,8 +439,8 @@
 {"i": 438, "v": "환상 1", "es": "Ilusiones 1"}
 {"i": 439, "v": "환상 2", "es": "Ilusiones 2"}
 {"i": 440, "v": "환상 3", "es": "Ilusiones 3"}
-{"i": 441, "v": "플레어단 아지트", "es": "Guarida Team Flare"}
-{"i": 442, "v": "플레어단 아지트", "es": "Guarida Team Flare"}
+{"i": 441, "v": "플레어단 비밀기지", "es": "Guarida Team Flare"}
+{"i": 442, "v": "플레어단 비밀기지", "es": "Guarida Team Flare"}
 {"i": 443, "v": "다른 장소", "es": "Otro Lugar"}
 {"i": 444, "v": "상기나 해안", "es": "Costa Sanguina"}
 {"i": 445, "v": "다른 장소", "es": "Otro Lugar"}
