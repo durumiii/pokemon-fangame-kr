@@ -173,6 +173,9 @@ section.folded{{margin-bottom:10px;opacity:.62}}
 section.folded .scene{{border-bottom-style:dashed}}
 .fin{{font-size:11.5px;color:var(--ok);background:rgba(76,195,138,.12);
   border:1px solid rgba(76,195,138,.35);border-radius:5px;padding:2px 8px}}
+.donelbl{{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;color:var(--sub);
+  background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 11px;cursor:pointer}}
+.donelbl:has(:checked){{color:var(--ok);border-color:rgba(76,195,138,.5)}}
 .hd{{display:flex;gap:8px;align-items:center;flex-wrap:wrap}}
 .chip{{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;color:var(--sub);
   background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:2px 8px}}

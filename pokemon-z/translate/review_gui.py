@@ -31,6 +31,7 @@ from review_page import HEAD, approved_ids, collect  # noqa: E402
 
 BODY = r"""<script>
 let DATA = [], V = {}, M = {}, NOTE = {};
+const HUMAN = new Set();   // 사람이 손댄 자리 — 기계 수선 채움과 가른다
 const esc = s => (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])).replace(/\n/g,'<br>');
 function diff(a,b){
   let s=0; while(s<a.length&&s<b.length&&a[s]===b[s])s++;
@@ -109,11 +110,13 @@ function render(){
     const sec=document.createElement('section');
     sec.dataset.ev=sc.file;
     sec.innerHTML=`<div class="scene"><h2>${esc(sc.name)}</h2>
-      <span class="fin" style="display:none">끝냄</span>
+      <span class="fin" style="display:none">완료</span>
       <span class="meta">맵 ${sc.map} · 이벤트 ${esc(sc.event)}-${esc(sc.page)} ·
         ${esc(sc.cast.join(' · '))} · 장면 ${sc.total}행 중 <b>${sc.rows.length}행 선별</b>${
         sc.hidden?` · 승인 줄 ${sc.hidden}행 숨김`:''}</span>
-      <span class="act" style="margin-left:auto"><button data-open="1">이벤트 전체 보기</button>
+      <span class="act" style="margin-left:auto">
+        <label class="donelbl"><input type="checkbox" class="donebox"> 완료</label>
+        <button data-open="1">이벤트 전체 보기</button>
         <button data-all="1">이벤트 일괄 승인</button>
         <button data-flow="1">장면 흐름</button></span></div>`;
     const setters=[];
@@ -126,6 +129,14 @@ function render(){
       // 승인은 이벤트 단위 — 행 판정과 별도로 원장에 한 줄 남긴다
       post({event:`${sc.map}:${sc.event}`, 판정:'승인', 텍스트:'',
             메모:`${sc.name} — ${sc.rows.length}행 일괄`});
+    };
+    sec.querySelector('.donebox').onchange=e=>{
+      const key=sc.map+':'+sc.event;
+      if(e.target.checked){ DONE.add(key);
+        post({event:key, 판정:'완료', 텍스트:'', 메모:`${sc.name} — 유지자 완료 표시`});
+      } else { DONE.delete(key);
+        post({event:key, 판정:'', 텍스트:'', 메모:'완료 표시 해제'}); }
+      refold();
     };
     sec.querySelector('[data-open]').onclick=e=>openEvent(sc, sec, e.target);
     body.appendChild(sec);
@@ -159,14 +170,23 @@ function openFlow(sc, id){
   document.getElementById('ctx').showModal();
   if(id){const el=document.getElementById('fl-'+id); if(el) el.scrollIntoView({block:'center'});}
 }
-function fin(sc){return sc.rows.length>0 && sc.rows.every(r=>V[r.id]);}
+let DONE = new Set();               // 「완료」 체크한 이벤트 — 원장에도 남는다
+// 접는 기준은 「내가 본 데까지」다. 안 고른 행은 새 번역 채택이라 판정이 안 남으므로
+// 「모두 판정됨」으로는 읽을 수 없다 — 사람이 손댄 마지막 장면까지를 지나온 것으로 본다.
+function frontier(){
+  let last=-1;
+  DATA.forEach((sc,i)=>{ if(sc.rows.some(r=>HUMAN.has(r.id))) last=i; });
+  return last;
+}
 function refold(){
   const on=document.getElementById('fold').classList.contains('on');
-  document.querySelectorAll('section[data-ev]').forEach(sec=>{
-    const sc=DATA.find(x=>x.file===sec.dataset.ev);
-    const done=sc&&fin(sc);
-    sec.classList.toggle('folded', on&&done);
+  const fr=frontier();
+  document.querySelectorAll('section[data-ev]').forEach((sec,i)=>{
+    const sc=DATA[i];
+    const done=DONE.has(sc.map+':'+sc.event);
+    sec.classList.toggle('folded', done || (on && i<=fr));
     const b=sec.querySelector('.fin'); if(b) b.style.display=done?'':'none';
+    const c=sec.querySelector('.donebox'); if(c) c.checked=done;
   });
 }
 function count(){
@@ -199,9 +219,12 @@ fetch('/data').then(r=>r.json()).then(d=>{
   DATA=d.scenes;
   for(const [id,x] of Object.entries(d.verdicts||{})){
     if(x['판정']) V[id]=BACK[x['판정']];
+    if(x['ts']!=='auto') HUMAN.add(id);
     if(x['판정']==='직접') M[id]=x['텍스트']||'';
     if(x['메모']) NOTE[id]=x['메모'];
   }
+  for(const [k,x] of Object.entries(d.verdicts||{}))     // event:<맵>:<이벤트> 열쇠
+    if(k.startsWith('event:') && x['판정']==='완료') DONE.add(k.slice(6));
   render(); count(); refold();
 }).catch(()=>flag('데이터를 못 읽었어요 — 서버가 떠 있나요?'));
 </script>

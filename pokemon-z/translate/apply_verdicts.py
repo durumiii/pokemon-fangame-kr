@@ -104,8 +104,15 @@ def _ledger_rows(d):
             if l.strip()] if p.exists() else []
 
 
+PROTECTED = HERE.parent / "docs/research/protected.jsonl"
+
+
 def record_applied(evs):
-    """반영이 끝난 이벤트를 승인 이벤트로 올린다 — 화면에서도, 다음 배치에서도 빠진다."""
+    """반영이 끝난 이벤트를 승인 이벤트로 올리고 **보호로 고정한다**.
+
+    유지자 판정 2026-08-06: 검수를 마친 이벤트는 승인일 뿐 아니라 고정이다 —
+    다음 배치가 다시 건드리지 않게 보호 층(page 단위)에도 함께 올린다.
+    """
     have = {(json.loads(l)["map"], json.loads(l)["event"])
             for l in APPROVED_EV.read_text(encoding="utf-8").splitlines() if l.strip()}
     new = [e for e in sorted(evs) if e not in have]
@@ -113,7 +120,26 @@ def record_applied(evs):
         for m, e in new:
             f.write(json.dumps({"map": m, "event": e, "src": "검수 반영"},
                                ensure_ascii=False) + "\n")
+    lock_pages(new)
     return new
+
+
+def lock_pages(evs):
+    """이벤트의 모든 페이지를 보호에 올린다 — 사정권에서 아예 뺀다."""
+    pages = set()
+    for line in CHUNKS.read_text(encoding="utf-8").splitlines():
+        if line.strip():
+            c = json.loads(line)
+            if (c["map"], c["event"]) in set(evs):
+                pages.add((c["map"], c["event"], c["page"]))
+    have = {(r["map"], r["event"], r["page"]) for r in
+            (json.loads(l) for l in PROTECTED.read_text(encoding="utf-8").splitlines()
+             if l.strip())}
+    with PROTECTED.open("a", encoding="utf-8") as f:
+        for m, e, p in sorted(pages - have):
+            f.write(json.dumps({"map": m, "event": e, "page": p},
+                               ensure_ascii=False) + "\n")
+    return pages - have
 
 
 MEND_MEMO = "개행 기계 수선 — 확인 바람"
