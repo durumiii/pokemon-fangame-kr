@@ -195,8 +195,17 @@ TITLE = ("Capitán", "Capitana", "Alcaide", "Archidruida", "Enfermera", "Enferme
          "Reina", "Recluta", "Sargento", "General", "Legislador", "Regente")
 
 
+NUMBERED = re.compile(r"^(아조스단 신병|Recluta Azoth)\s*\d+호?$")
+
+
 def resolve(who, names):
-    """이름표에서 한국어 이름을 찾는다 — 직함이 앞에 붙은 이름표가 흔하다."""
+    """이름표에서 한국어 이름을 찾는다 — 직함이 앞에 붙은 이름표가 흔하다.
+
+    아조스단 신병 1·2·3호는 매번 다른 사람이지만 **말투는 한 벌**이라 이름 하나로
+    접는다(유지자 판정 2026-08-06) — 갈라 두면 본보기 풀만 얇아진다.
+    """
+    if NUMBERED.match(who):
+        who = "아조스단 신병"
     if who in names:
         return names[who]
     parts = who.split()
