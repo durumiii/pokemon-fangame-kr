@@ -1,233 +1,38 @@
 # pokemon-z — 작업 규율
 
-> poke-essentials(sketches)의 mod/AGENTS.md 「둘째 게임」 두 절을 2026-08-02 이사와 함께 옮겨 왔다.
-> 판독·조회와 Wishing Star 갈래는 여전히 그쪽 repo 몫이다.
+스페인어 팬게임 Pokemon Z의 한글패치. **번역 정본은 `translate/ko/`**(절별 JSONL,
+(맵, 원문)마다 한 줄)이고 `korean.dat`는 빌드 산출물이다.
 
-## 둘째 게임 — Pokemon Z (구형 엔진, 주입형)
+## 어디를 읽을 것인가 (필요한 것만 연다)
 
-**여기 남는 모드는 `UI Text KR` 하나다.** 스크립트에 스페인어가 박힌 화면 문자열은
-`korean.dat`로 못 고쳐서, 이 모드가 글자를 그리는 진입점에서 갈아 끼운다(아래 개념도의
-③층). 조사 자동 선택도 같은 사정으로 모드에서 시작해 지금은 한글패치 본문에 흡수됐다.
+| 하려는 일 | 가이드 |
+|---|---|
+| 텍스트 문제 조사·수정, 빌드, dat 포맷 | [docs/guides/text-pipeline.md](docs/guides/text-pipeline.md) |
+| 화자 귀속, 존대·반말(격) 판정 | [docs/guides/speakers-register.md](docs/guides/speakers-register.md) |
+| 주연 대사 재번역 배치, 프롬프트 규약 | [docs/guides/retranslation.md](docs/guides/retranslation.md) |
+| 고유명·용어 표기, 전수 치환 | [docs/guides/names-terms.md](docs/guides/names-terms.md) |
+| 유저 제보 시트, 웹 스튜디오 | [docs/guides/reports.md](docs/guides/reports.md) |
+| 모드 주입(UI Text KR 등) | [docs/guides/mods.md](docs/guides/mods.md) |
 
-**편의·성능 모드 다섯은 2026-08-06에 poke-essentials `mod/z/`로 보냈다** — Battle Speed Z ·
-Better Movements Z · Controller UX Z · Frame Profiler · GC Tamer. 번역과 상관이 없어서다
-(사용자 판정). 그쪽에 따라간 것: 걷기 멈칫 성능 조사, `Game_Player#update` alias 사슬,
-이동 속도 눈금 계산, 패드 매핑 실측, `docs/design/z-controller-ux.md`.
-**한 자리만 여기와 얽혀 있다** — 일시정지 메뉴의 단축키 표기를 UI Text KR이 키보드
-기준으로 적고 Controller UX Z의 `004_PadLabels`가 치환표 앞머리 선점으로 덮는다.
-UI Text KR의 그 줄을 건드리면 저쪽도 함께 봐야 한다.
+현황·미결의 원장은 [docs/design/z-translation-quality.md](docs/design/z-translation-quality.md),
+조사·실측 기록은 `docs/research/`.
 
-**Pokemon Z(Essentials v16 · 루비 1.8.7 · mkxp-z 구판)는 플러그인 묶음이 없다.** 코드
-모드는 `inject.py`가 `Scripts.rxdata` 배열에 `MOD:<모드명>/<파일명>` 섹션으로
-덧붙인다(`Main` 직전, 나중 정의가 이긴다). 기반은 게임 폴더가 아니라 **모드 보관소의
-한글패치판**이라 몇 번을 돌려도 결과가 같다. 보관소는 게임별 하위 폴더 체제다 —
-`/mnt/d/GameVault/mods/Pokemon Z Fangame/<모드>/`(폴더명은 é 없는 쪽이 정본 —
-2026-08-02 fangame-library가 근원 정리). **보관소에는 모드 여섯이 그대로 서 있다** —
-repo가 갈렸을 뿐 설치 자리는 하나이므로, 주입기를 모드 이름 없이 돌리면 보관소의
-여섯을 다 세운다. 이름을 지정해 돌릴 때 게임에 주입돼 있던 모드가 목록에서 빠지면
-주입기가 경고한다.
+## 언제나 지키는 것
 
-지켜야 할 것들:
+- **조사 첫 수는 `uv run translate/probe.py "문구"`**, 수정 후 `uv run translate/verify.py`,
+  재배포 전 `--strict`.
+- **정본을 고치는 도구만 쓴다** — dat를 직접 문지르는 수정은 빌드 한 번에 지워진다.
+- **유지자 판정을 반영하는 커밋에는 꼬리표를 단다** — 마지막 줄에 `Edit-Source: human` ·
+  `batch` · `bulk-term`. 문장 통째 재작성은 사람과 모델이 텍스트로 구분되지 않으므로
+  그때 기록하지 않으면 복원할 수 없다.
+- **릴리스는 유지자에게 물어보고 낸다.**
+- **문서에 맵 번호를 쓸 때는 이름을 함께 적는다**(`uv run translate/mapname.py 150`,
+  일괄 `--tag <문서.md>`).
 
-- **같은 모드를 두 번 주입하면 alias가 두 겹으로 걸려 무한 재귀다**(2026-08-01 실사고 —
-  수확 폴더명의 é 표기가 어긋나 중복 폴더가 생겼고 무인자 열거가 양쪽을 다 셌다).
-  inject.py가 이름으로 합치고 주입 후 `MOD:` 섹션 중복을 확인하지만, 주입 출력에
-  같은 파일이 두 번 보이면 그 자리에서 멈춰라.
-- **모드 .rb는 루비 1.8.7 문법으로.** 해시 로켓, `alias`. 신형 문법(`key:`, `&.`,
-  `%i[]`)은 파싱조차 안 된다. **인자 목록의 트레일링 콤마도 SyntaxError다**
-  (`unshift(a, b,)` — 2026-08-03 실기 사고). 이 환경에 루비가 없어 구문 검사는
-  게임 부팅이 대신한다.
-- **주입 섹션은 모드명 정렬 순으로 실린다** — 다른 모드의 상수·모듈은 로드 시점에
-  없을 수 있다. 참조가 필요하면 씬 진입 훅으로 미뤄라(로드 시점 `defined?` 분기는
-  조용히 무동작이 된다).
-- **`mod.json`의 `expects`**(섹션 제목 → 원문 md5)를 적어 두면 게임 판이 올라 원문이
-  바뀌었을 때 주입기가 멈춘다. 훅이 조용히 어긋나는 것보다 낫다. ⚠ 지금 실사용 게임은
-  한글패치가 얹힌 코어이고 **패치가 코어 섹션 27개를 다시 쓴다** — 그 섹션을 잡는 모드는
-  패치 이전 값으로 뜬 `expects`에 걸린다.
-  근거와 미결은 [`docs/research/2026-08-03-korean-patch-vs-mod-baselines.md`](docs/research/2026-08-03-korean-patch-vs-mod-baselines.md).
-- 엔진 해부는 [`docs/research/2026-08-01-pokemon-z-fangame.md`](docs/research/2026-08-01-pokemon-z-fangame.md).
+## 문서 층위 — 깨끗한 문서와 대장을 가른다
 
-## 둘째 게임 — 번역 품질 갈래 (2026-08-01~02)
-
-**걸음 1~4 + 걸음 5의 준비물·파일럿까지 끝났고, 초벌 배치가 2026-08-02에 발사됐다.**
-플랜·현황 정본은 [`docs/design/z-translation-quality.md`](docs/design/z-translation-quality.md),
-실행 상세는 [`z-batch-run-proposal.md`](docs/design/z-batch-run-proposal.md)(승인 문서 —
-범위·모델 설정·비용 실측·인터페이스가 전부 근거와 함께 있다), 전체 그림은
-[`z-retranslation-methodology.md`](docs/design/z-retranslation-methodology.md).
-검수 재료는 `docs/research/2026-08-01-z-*` 넷과 `2026-08-02-z-*` 넷(말뭉치 전수·
-적용 구조·파일럿 비교·파일럿 판정).
-
-**걸음 5의 도구 일습은 `translate/`에 있다** — `voices.md`(말투표 42인, 별칭
-병합 `speaker-aliases.json`) · `glossary.md`(고정 용어표 — 포켓프랑·입법관·선장·
-그림자 포켓몬·후보생은 2026-08-02 사용자 판정) · `prompt.md`(배치 프롬프트 정본) ·
-`validate.py`(7종 게이트 — 파일럿 산출로 보정됨) · `batch.py`(러너: plan/run/status/
-redo/apply, 청크 기록 `batch/`). **모델은 gemini-3.6-flash + reasoning_effort=minimal** —
-씽킹이 존재 강제이나 양은 조절되고, 실측 A/B에서 품질 동급·비용 3.2배였다. 한 줄짜리
-탐침은 effort가 안 듣는 것처럼 보였다 — **작은 표본으로 파라미터를 판정하지 마라.**
-
-### 웹 수정 스튜디오 (유저 배포용, 2026-08-04)
-
-`webapp/` — 브라우저에서 korean.dat를 검색·수정·빌드하는 정적 앱
-(https://durumiii.github.io/z-kr-studio/, 재배포는 `webapp/publish.sh`).
-pyodide로 core.py(build.py 값-교체 이식)를 돌리고, 제보는 구글폼 no-cors
-(entry 배선은 app.js 상단, 패치 식별은 `__kr_patch__` 표식+해시 폴백,
-제보자는 익명 난수 `u:해시`). 유저 고침 파일(jsonl)은 가져오기로 정본 병합
-가능. 화자 조인표 축약본은 `translate/make_speakers.py`가 speakers.json으로
-생성(조인표 갱신 시 재생성 후 재배포). 검증은 `webapp/tests/`(pytest 실물
-dat + node selfcheck). 스펙·계획: `docs/superpowers/`(repo 루트).
-
-### 작업 개념도 (2026-08-02 구조화 — 새 제보는 이 표부터)
-
-텍스트 문제는 「닿는 경로(층)」 × 「값 판정」 2차원으로 떨어진다.
-**조사 첫 수는 `uv run translate/probe.py "문구"`** — dat 조회·jsonl·스크립트
-소스·canon을 한 번에 훑고 층을 알려준다. 수정 후엔
-`uv run translate/verify.py` 게이트(canon 정합·dat 미러·파수 키·수술 잔존·
-gsub 오폭)를 통과시킨다. 재배포 전 --strict.
-
-| 층 | 정본 | 도구 |
-|---|---|---|
-| ① 번역표 (_INTL→korean.dat) | translate/ko/*.jsonl | build.py |
-| ② 키 어긋남 (①의 병리) | 〃 + *.add.jsonl | 루비 오라클, export.py |
-| ③ 하드코딩 화면 문자열 | mods/UI Text KR 치환표 | modstore 재주입 |
-| ④ 런타임 가변 문자열(보간) | share/patch_intl.py EDITS | 소스 수술(멱등) |
-| ⑤ 로직-문자열 결합(기능 버그) | 〃 | 〃 (예: 부적 18종) |
-| ⑥ 그림에 그려 넣은 글자 (PNG 베이크) | Graphics/Pictures (.orig 짝 = 한글화본) | PIL 재렌더 — 텍스트 층 전수 미스면 이 층 의심 (예: 「눌륵」 모드 화면). 상태이상 아이콘 띠는 `tools/status_icon.py` |
-
-값 판정은 셋뿐: **(A) 본가에 있다 → 판정하지 않고 조회한다**
-(`translate/canon/canon.jsonl`, PKHeX 산 4,800여 항목 — verify가 전수 대조.
-이름만 같은 별개 대상은 canon/exceptions.jsonl, 구세대 스페인어명은
-canon/aliases.jsonl). **(B) 창작 요소 → glossary.md 판정.** **(C) 문체·어투 →
-voices.md.** 전거 서열은 glossary.md 머리 참조.
-
-**정본을 고치는 도구만 쓴다 — dat를 직접 고치는 도구는 빌드 한 번에 지워진다**
-(2026-08-05 실측: `apply_josa.py`가 dat를 문지르고 있어 조사 병기가 빌드마다
-되살아났다. 정본 대상으로 옮겼다). **`*.add.jsonl`로 새 키를 얹었으면 빌드 뒤
-`export.py`로 base jsonl에 접어 넣어라** — 안 그러면 verify의 절23 미러 대조가 어긋난다.
-
-**유지자 판정을 반영하는 커밋에는 꼬리표를 단다** — 커밋 메시지 마지막 줄에
-`Edit-Source: human`(자리를 보고 정한 것) · `batch`(모델·규칙 정리) · `bulk-term`(용어 전수 치환).
-재번역이 덮으면 안 될 자리를 가리는 근거이고, **문장을 통째로 다시 쓴 것은 사람과 모델이
-텍스트로 구분되지 않으므로 그때 기록하지 않으면 복원할 수 없다**(2026-08-06에 이걸 안 남긴
-대가로 커밋 53개를 손으로 읽었다). 읽는 쪽은 `uv run translate/provenance.py build|stats` —
-제보 시트·커밋 꼬리표·최소 고침의 반복 셋을 합쳐 보호 목록을 이벤트 단위로 뱉는다.
-
-**어미 급은 `translate/register.py`의 `axis()`로 잰다** — `reg.py`를 직접 부르면 말줄임이나
-나열로 끝나는 문장에서 틀린다(마지막 조각이 종결형이 아니라서). 인물의 격은 `translate/voices.md`가
-정본이고, **인물 하나에 어미 하나를 배정해 평평하게 누르면 같은 장면의 옆줄과 부딪힌다.**
-⚠ 원문 `usted`는 낱말로 안 나오는 쪽이 더 많다(`le`·`su`·3인칭 활용). ⚠ vosotros 활용은 대개
-경칭이 아니라 **여럿을 부르는 복수**다.
-
-**화자 판정은 `translate/speaker.py`가 정본이다** (2026-08-06 신설). 이름표 없는 줄은
-같은 이벤트 페이지 안에서 **분기 깊이가 같은 동안** 앞 이름표를 물려받는다. 답은 원본
-이벤트에 이미 있다 — 명령 순서(cmd)와 조건 분기 깊이(`@indent`)가 그것이다.
-`scan`으로 귀속표(`docs/research/speaker-attr.jsonl.gz`, 19,310행)를 만들고
-`lines <이름>`으로 한 인물의 대사를 전부 뽑는다. `selftest`는 유지자가 확정한 7자리로
-채점한다(현재 7/7).
-
-⚠ **옛 조인표(`map-speaker-join.jsonl.gz`)로 화자를 판정하지 마라.** 그 표는 명령 순서와
-분기 깊이를 버려서 화자 상속을 계산할 수 없고, 이벤트 스프라이트로 짐작하는 우회로를
-쓰게 만든다. 컷신은 그림이 한 명인데 대사는 여럿이라 이름표 없는 줄 4,265행 중 4분의 3에서
-그림과 실제 화자가 어긋났고, 962행이 그 위에서 다시 쓰였다(498행은 **다른 인물의 말투로**).
-2026-08-05 맵 111 사고가 그 표본이다. 조인표는 스프라이트·좌표 조회용으로만 쓴다.
-
-**이 도구가 정하는 것은 「누구에게 붙어 있나」이지 「사람 말인가」가 아니다.** 축이 다른
-둘을 뒤섞으면 시스템 문구까지 인물 어투로 갈아엎는다(조리 안내 「어떻게 할까요?」 9행이
-사프라 대사로 잡힌 적 있다). 그래서 `prompt` 칸(바로 뒤가 선택지인 메시지 1,031행)과
-`how="지문"`(그림이 사물·연출인 1,124행)을 따로 표시한다 — **표시일 뿐 판정이 아니다.**
-
-**어투를 정할 땐 원문의 격(`tú`/`usted`/`vos`)을 근거로 삼는다.** 맵116 식당 종업원의
-존대는 usted 0회·tú 전량이라 격 오역이었다(2026-08-06 반말로 교정). 다만 한 인물이
-자리마다 격을 바꾸는 경우가 있으니(뱃사공은 평소 tú, 아부·흥정 자리만 usted) 지배적
-격 하나로 평평하게 누르기 전에 진동이 성격인지 본다.
-
-**주연 대사 재번역은 `translate/batch_pages.py`다 — 단위는 이벤트 페이지.**
-`batch_npc.py`(무태그 NPC용)와 갈라지는 점 셋: 대상이 이름표가 붙거나 물려받은 줄이고,
-화자를 옛 조인표가 아니라 귀속표에서 읽고, 묶음이 맵+40행이 아니라 페이지 하나다.
-`plan`(사정권 산출) · `run [--fresh]`(교정판/새 번역) · `samples <이름>`(본보기 확인) · `report`.
-
-**같은 (맵,원문)은 한 번만 번역한다** — 정본에 한 줄뿐이라 여러 자리에서 다시 물으면
-답이 갈리고 마지막 것만 남는다. 남길 자리는 가장 큰 페이지(문맥이 많은 쪽).
-
-**갈래는 승인 줄로 가른다** — 장면에 승인 줄(`docs/research/approved-lines.jsonl`)이 있으면
-**교정판(A: 현행을 함께 줌)**, 없으면 **새 번역(B: 스페인어만 줌)**. B가 훨씬 많이 고치고
-장면을 온전히 보는 강점이 있으나, 이미 유지자가 견주어 고른 자리에서는 A가 낫다는 것이
-2026-08-06 판정이다.
-
-**마크업은 전부 기계 몫이다.** 서식 태그(`<b>`·`<i>`·줄 안 `\c[n]`)와 줄머리 화자 표기는
-떼고 민글만 보낸 뒤 원문 쪽 표시 순서대로 되입힌다(`unmark`/`remark`/`split_head`).
-되입히는 열쇠는 그 줄 자신의 현행 번역이다 — 원문과 번역의 표시 수가 맞으면 순서대로
-짝짓는다(실측: 표시가 있는 1,261줄 중 1,257줄이 맞고, 못 맞추는 것은 번역해 버린
-프랑스어 삽입구 다섯뿐). **모델에게 태그를 시키지 마라** — 뜻이 없는 자리라 빠뜨리거나
-없던 곳에 지어 붙인다.
-
-**프롬프트에 실리는 말투 정본은 `translate/voice-prompts.jsonl`이다.** 말투표
-(`voices.md`)는 근거와 이력을 담는 사람용 문서고, 프롬프트에는 지시와 본보기만 간다.
-셋을 지킨다 — ① **역사·행 수·판정 날짜를 넣지 마라**(받는 쪽은 맥락이 없다).
-② **말투는 형용사보다 본보기가 정확하다**(승인본에서 하대·존대를 섞어 뽑는다).
-③ **이야기의 전후를 조건으로 쓰지 마라** — 「맵147 이후로는 반말」은 `[맵>=147] …` 꼴로
-적고 장면의 맵 번호로 풀어서 해당 절만 보낸다.
-
-**문서에 맵 번호를 쓸 때는 이름을 함께 적는다.** 「맵150」만으로는 읽는 사람이 어디인지
-모른다. `uv run translate/mapname.py 150`으로 찾고, 이미 쓴 문서는
-`uv run translate/mapname.py --tag <문서.md>`로 한 번에 붙인다(자리 표기 `맵150:22:88`과
-구간 표기 `맵 1–58`은 건드리지 않는다).
-
-**고유명 표기는 `translate/canon/names.jsonl`이 정본이다.** 같은 인물·조직이 정본 곳곳에서
-다르게 적히는 사고가 반복됐다(아스터/아스테르 · 샤핀/사핀 · 프리물라/프리뮬라 ·
-팀 아조스/아조스단). 사람 눈으로는 늘 늦으니 원장에 적고 기계가 훑는다 —
-`uv run tools/names.py check`(작업 중), `verify.py`(재배포 게이트, 변이 잔존은 FAIL).
-표기를 바꿀 땐 **`tools/names.py rename <원문> <새표기>`**로 정본과 원장을 함께 고친다
-(받침이 달라지면 조사 경고가 뜬다). 판정 근거는 `translate/glossary.md`에 적는다.
-
-**유저 제보는 `tools/sheet.py`로 다룬다** — `archive`(보관 + 행 삭제, 겹침 거르기) ·
-`upload`(jsonl → 시트 탭) · `rows` · `set`. 시트를 비울 땐 **내용 지우기가 아니라 행
-삭제**여야 폼이 다음 응답을 2행부터 쓴다. 흐름 전체는 원장과 메모리 참조.
-
-**번역 정본은 `translate/ko/`다 — korean.dat는 빌드 산출물.** 절별 JSONL
-(한 줄 = 한 문장, 원문 병기)이고 `build.py`가 dat로 만든다(왕복 검증 내장). **dat를 직접
-문지르면 직후 `export.py`로 재동기화하라.** apply_* 스크립트들은 정본 도입 이전의
-이력이자 재적용 도구다.
-
-**dat로 못 고치는 문자열이 있다** — 플러그인 스크립트에 하드코딩된 화면 문자열
-(일시정지 단축키·출현 안내판·배지명). 그런 자리는 `mods/UI Text KR`의 교체표에
-한 줄 더한다(그리기 진입점 훅). 조사 자동 선택(`\j[받침형,무받침형]` 해석)은
-2026-08-03부터 모드가 아니라 **한글패치 통합의 본문 섹션**이다 — 번역이 이 문법을
-전제해 분리 불가라 흡수했다. 소스 정본은 `share/josa.rb`, 코어에 넣는 것은 `share/bake_josa.py`
-(수술판·pre-intl.bak 양쪽, 멱등).
-
-밟아 둔 사실들:
-- `korean.dat`은 Essentials 다국어 포맷(절 24개 = MessageTypes 상수). 대사 쌍은
-  OrderedHash의 중첩 Marshal — `fanlib.rubywrite`로 왕복 검증됐다. **갱신할 때마다
-  왕복 검증을 다시 하라.**
-- **해시 절의 키는 게임의 stringToKey 정규화 모양이어야 한다** — 루비 `^`/`$`는
-  줄 앵커라 **`\r\n`은 공백이 아니라 `\n`으로** 접히고(줄머리·줄끝 공백 제거,
-  연속 공백은 하나로), 키가 그 모양이 아니면 영원히 안 맞고 **조용히
-  스페인어가 나온다**(예외도 로그도 없다). 정의는 `build.py string_to_key`
-  (포터블 루비 오라클로 20,715키 전량 검증) — 의심되면 probe.py가 이 정규화로
-  조회해 준다. 키 수술 이력은 적용 구조 조사 문서 §4-4와 번역 품질 정본의 실기 소견 둘째 묶음.
-- 스크립트 리터럴의 루비 보간(`#{...}`)은 번역표가 원천 불가 — **`share/patch_intl.py`
-  소스 수술(멱등)로 템플릿형에 합류시킨다**(2026-08-02 완료: 수술 6곳, 주머니 번호
-  보간 5곳은 런타임 키가 이미 번역돼 비대상). 새 발견도 같은 도구에 EDITS로 얹는다.
-  이름 문자열 「동등 비교」가 로직에 박힌 자리(부적 18종)도 같은 도구 몫.
-- **용어 통일은 원문 쪽에서 세라** — 화폐가 포켓코인·쿼트·쿼터 세 갈래, 연금술이
-  알케미와 52:57로 갈라져 있었다. 원문 반복어를 캐서 한국어 분포를 재면 바로 나온다
-  (2026-08-02 전수: 29,678행에서 판정 5건·스윕 235행).
-- **용어 대조는 canon부터, 전거 서열은 glossary.md 머리** — 이름은
-  `canon/canon.jsonl`(PKHeX 산, 현행 세대)에서 조회로 끝낸다. PokéAPI 한국어는
-  2020년 대개명 이전이라 이름 전거로 쓰지 않는다(canon 밖 영역 보조만).
-  스페인어 가짜 친구 실사례: Cinta Focus=Focus **Band**, Banda Focus=Focus
-  **Sash**(기합의띠 맞바꿈 사고). 그리고 **PKHeX es는 현행명**이라 게임의
-  구세대명과 다를 수 있다 — canon/aliases.jsonl로 흡수.
-- **접두 수식은 후치형 템플릿이다** — `{1} rival`·`{1} salvaje`·`{1} aliado`가
-  절23에 따로 서 있고, 여기가 미번역이면 「슬리프 rival」이 나온다.
-- 조사 병기는 **괄호 방향이 두 가지다** — `(은)는`과 `이(가)`. 한쪽만 훑으면 남는다.
-- **이름을 문자열 자동 매칭으로 치환하지 마라** — 빈도 2·3위 Melia·Olivier가 공식
-  캐릭터 스페인어명과 철자만 같은 우연 일치였다. 치환은 확정 명단으로만.
-- **창작 지명처럼 보여도 스페인어 정식명 대조부터** — 도시 22곳 중 13곳이 본가
-  칼로스 도시의 스페인어 정식명 그 자체였다(Luminalia=미르시티, Yantra=사라시티 …).
-  음차로 새 이름을 지은 게 오판이었고 옛 패치의 본가명이 정답이었다(2026-08-02,
-  PokeAPI location_names 실측). 대응표는 translate/glossary.md 지명 절.
-- 절13(트레이너 클래스)과 절14(이름)가 화면에서 이어져 한 문장을 이루는 자리가 넷 있다
-  (Rey de los + Acertijos 등) — 두 칸을 함께 번역해야 한다.
-- 조사(助詞) 자동 선택(`\j[은,는]`)은 Z에 없다 — 플러그인을 번역 모드에 포함하기로
-  결정(사용자). 표기는 「데미지」, 문구는 현행 세대, 음차는 한국어 어감 우선.
+**현행 지침만 담는 문서**(이력·경위 금지): 이 문서 · `docs/guides/*` ·
+`translate/prompt-pages.md` · `translate/voice-prompts.jsonl` · `translate/term-pairs.jsonl`.
+판정 근거·사고 경위·진행 서사는 `docs/research/`와 원장에 적는다.
+`translate/voices.md`·`translate/glossary.md`는 근거가 붙는 **판정 대장**이다 —
+새 판정은 기계 정본(jsonl)과 대장 두 곳에 함께 적는다.
