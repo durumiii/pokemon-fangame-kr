@@ -909,3 +909,91 @@
 {"map": 61, "es": "<b>Hisopo:</b> ¿Cómo? ¡Qué falta de talento! ¡De pasión! ¡De garra!", "ko": "<b>히소포:</b> 뭐라고? 재능도, 열정도, 패기도 이렇게나 부족하다니!", "who": "히소포", "src": "pilot-2"}
 {"map": 61, "es": "¿Es que no te corre sangre por las venas o qué?", "ko": "혈관에 피는 타고 흐르고 있는 거냐?", "who": "히소포", "src": "pilot-2"}
 {"map": 61, "es": "¡Te mandaré directamente a las tinieblas!", "ko": "너를 곧장 칠흑 같은 어둠 속으로 보내 주마!", "who": "히소포", "src": "pilot-2"}
+{"map": 24, "es": "<b>Ginia:</b> ¡Hola, \\PN! Este es un lugar precioso para encontrar la inspiración y pintar.", "ko": "<b>기니아:</b> 안녕하세요, \\PN! 여긴 영감을 얻어서 그림을 그리기 정말 좋은 곳이에요.", "who": "기니아", "src": "pilot-3"}
+{"map": 24, "es": "Si quieres, puedo pintar nuevos colores en tus Pokémon y transformarlos.", "ko": "원하신다면 포켓몬에게 새로운 색을 칠해서 색다르게 바꿔 드릴 수 있어요.", "who": "기니아", "src": "pilot-3"}
+{"map": 24, "es": "Te cobro solo 10.000 pokéfrancos por el coste de los materiales de pintura. ¿Te interesa?", "ko": "그림 재료비로 딱 10,000포켓프랑만 받을게요. 관심 있으신가요?", "who": "기니아", "src": "pilot-3"}
+{"map": 24, "es": "<b>Ginia:</b> ¿No? ¿De verdad no quieres probar nuevos colores en tus Pokémon?", "ko": "<b>기니아:</b> 아닌가요? 정말 포켓몬에게 새로운 색을 칠해 보고 싶지 않으신가요?", "who": "기니아", "src": "pilot-3"}
+{"map": 24, "es": "<b>Ginia:</b> No tienes suficiente dinero.", "ko": "<b>기니아:</b> 돈이 부족하네요.", "who": "기니아", "src": "pilot-3"}
+{"map": 24, "es": "<b>Mimi:</b> ¡<i>D'accord</i>! El poder del fuego ha hecho eclosionar a todos los huevos de tu equipo.", "ko": "<b>미미:</b> <i>D'accord</i>! 불의 힘으로 지닌 포켓몬의 알을 전부 부화시켰어요.", "who": "미미", "src": "pilot-3"}
+{"map": 24, "es": "Te cobraré 500 pokéfrancos por el servicio, si no te importa. ¡Ji, ji!", "ko": "괜찮다면 이용료로 500포켓프랑을 받을게요. 히히!", "who": "미미", "src": "pilot-3"}
+{"map": 24, "es": "<b>Mimi:</b> ¡<i>D'accord</i>! El poder del agua ha cambiado el género de todos tus Pokémon.", "ko": "<b>미미:</b> <i>D'accord</i>! 물의 힘으로 지닌 포켓몬의 성별을 전부 바꿨어요.", "who": "미미", "src": "pilot-3"}
+{"map": 24, "es": "<b>Mimi:</b> ¡<i>D'accord</i>! El poder de la tierra ha alegrado el corazón de tus Pokémon.", "ko": "<b>미미:</b> <i>D'accord</i>! 땅의 힘으로 지닌 포켓몬들의 마음을 즐겁게 해 줬어요.", "who": "미미", "src": "pilot-3"}
+{"map": 24, "es": "La bendición de la Carta de Fuego hará que todos los huevos de tu equipo se abran instantáneamente.", "ko": "불의 카드가 내리는 축복은 지닌 포켓몬의 모든 알을 즉시 부화시켜 줘요.", "who": "미미", "src": "pilot-3"}
+{"map": 24, "es": "La bendición de la Carta de Agua hará fluir el género de los Pokémon de tu equipo.", "ko": "물의 카드가 내리는 축복은 지닌 포켓몬의 성별을 바꿔 줘요.", "who": "미미", "src": "pilot-3"}
+{"map": 24, "es": "Por último, la bendición de la Carta de Tierra repartirá una enorme felicidad en todos tus Pokémon.", "ko": "마지막으로 땅의 카드가 내리는 축복은 지닌 모든 포켓몬에게 커다란 행복을 나눠 줘요.", "who": "미미", "src": "pilot-3"}
+{"map": 25, "es": "<b>Enfermera Pokémon:</b> ¡Aaahhh! ¿E-eres un espíritu? ¿O eres real?", "ko": "<b>포켓몬 간호사:</b> 으아아악! 유-유령이야? 아니면 진짜 사람이야?", "who": "포켓몬 간호사", "src": "pilot-3"}
+{"map": 25, "es": "...", "ko": "...", "who": "포켓몬 간호사", "src": "pilot-3"}
+{"map": 36, "es": "\\c[2]<b>Olivier:</b>\\c[0] \\PN, <b>Crisanto</b>, imagino que os acordáis del <b>Capitán Merlot</b>, el padre de <b>Melia</b>.", "ko": "\\c[2]<b>올리비에:</b>\\c[0] \\PN, <b>크리산토</b>. <b>멜리아</b>의 아버지인 <b>메를로 대장님</b>은 기억하고 있지?", "who": "올리비에", "src": "pilot-3"}
+{"map": 36, "es": "<b>Capitán Merlot:</b> Quiero brindar por usted, <i>mademoiselle</i> <b>Olivier</b>. Está haciendo un trabajo estupendo con sus alumnos.", "ko": "<b>메를로 대장:</b> <i>마드모아젤</i> <b>올리비에</b>, 자네를 위해 건배를 하지. 제자들을 아주 훌륭하게 가르치고 있더군.", "who": "메를로", "src": "pilot-3"}
+{"map": 36, "es": "Nunca pensé que <b>Melia</b> sería capaz de vencer a un Regente... ¡y ya ha vencido a dos!", "ko": "<b>멜리아</b>가 섭정을 쓰러뜨릴 수 있으리라곤 생각도 못했거늘... 벌써 둘이나 꺾었단 말이다!", "who": "메를로", "src": "pilot-3"}
+{"map": 36, "es": "\\c[2]<b>Olivier:</b>\\c[0] Pero el mérito es enteramente suyo, se está convirtiendo en toda una entrenadora Pokémon.", "ko": "\\c[2]<b>올리비에:</b>\\c[0] 하지만 순전히 아이 본인의 공이랍니다. 훌륭한 포켓몬 트레이너로 성장하고 있어요.", "who": "올리비에", "src": "pilot-3"}
+{"map": 36, "es": "\\c[5]<b>Melia:</b>\\c[0] ¡Je, je! Gracias, profe.", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 헤헤! 고맙습니다, 선생님.", "who": "멜리아", "src": "pilot-3"}
+{"map": 36, "es": "\\c[2]<b>Lanto:</b>\\c[0] El arrojo de la juventud por la vida debería ser eterno. ¡Qué lástima que todos tengamos que envejecer!", "ko": "\\c[2]<b>란토:</b>\\c[0] 삶을 향한 청춘의 패기는 영원해야 마땅한 법이지요. 우리 모두 늙어가야만 한다는 게 참으로 안타깝군요!", "who": "란토", "src": "pilot-3"}
+{"map": 36, "es": "<b>Capitán Merlot:</b> Por cierto, <i>monsieur</i> <b>Lanto</b>. Usted siempre está enterado de todos los cotilleos de la región, ¿verdad?", "ko": "<b>메를로 대장:</b> 그나저나 <i>무슈</i> <b>란토</b>. 자네는 늘 이 지방의 온갖 소문에 밝지 않은가?", "who": "메를로", "src": "pilot-3"}
+{"map": 36, "es": "\\c[2]<b>Lanto:</b>\\c[0] En efecto. Uno no llega a una posición privilegiada sin saber cosas.", "ko": "\\c[2]<b>란토:</b>\\c[0] 과연 그렇답니다. 무언가를 알고 있지 않고서야 이런 특권적인 지위에 오를 수는 없는 법이지요.", "who": "란토", "src": "pilot-3"}
+{"map": 36, "es": "<b>Capitán Merlot:</b> Pues a ver si sabe algo acerca de esto.", "ko": "<b>메를로 대장:</b> 그렇다면 이것에 대해서도 아는 바가 있는지 봐야겠군.", "who": "메를로", "src": "pilot-3"}
+{"map": 36, "es": "Por lo visto, mis jornaleros de los campos del norte andan muy alborotados.", "ko": "듣자하니 북쪽 농지의 내 일꾼들이 크게 동요하고 있다는군.", "who": "메를로", "src": "pilot-3"}
+{"map": 36, "es": "Se les escucha hablar de rebelión, de alzar las Pokéball contra la nobleza...", "ko": "반란을 꾀하고 귀족들을 향해 몬스터볼을 겨누겠다는 말이 들려오고 있어...", "who": "메를로", "src": "pilot-3"}
+{"map": 36, "es": "Y también se les escucha pronunciar un extraño nombre.", "ko": "게다가 기묘한 이름 하나를 입에 올린다고도 하더군.", "who": "메를로", "src": "pilot-3"}
+{"map": 36, "es": "<b>Alca</b>.", "ko": "<b>알카</b>.", "who": "메를로", "src": "pilot-3"}
+{"map": 36, "es": "\\c[2]<b>Lanto:</b>\\c[0] ...", "ko": "\\c[2]<b>란토:</b>\\c[0] ...", "who": "란토", "src": "pilot-3"}
+{"map": 36, "es": "¿<b>Alca</b>?", "ko": "<b>알카</b>요?", "who": "란토", "src": "pilot-3"}
+{"map": 36, "es": "Pues... ahora que lo dice...", "ko": "글쎄요... 그렇게 말씀하시니...", "who": "란토", "src": "pilot-3"}
+{"map": 36, "es": "...", "ko": "...", "who": "란토", "src": "pilot-3"}
+{"map": 36, "es": "La verdad es que no me suena de nada esa palabra.", "ko": "솔직히 전혀 들어본 적 없는 이름이군요.", "who": "란토", "src": "pilot-3"}
+{"map": 36, "es": "Siento no poder... complacerle, capitán.", "ko": "대장님의 기대를... 충족시켜 드리지 못해 죄송합니다.", "who": "란토", "src": "pilot-3"}
+{"map": 36, "es": "<b>Capitán Merlot:</b> Es una lástima. Estas insurrecciones empiezan a ser preocupantes para el rey <b>Áster Zephir</b>.", "ko": "<b>메를로 대장:</b> 아쉽게 됐군. 이런 폭동은 <b>아스테르 제피르</b> 국왕 폐하께도 염려스러운 일이 되기 시작했어.", "who": "메를로", "src": "pilot-3"}
+{"map": 36, "es": "Y ese nombre, <b>Alca</b>, es la única pista que tenemos.", "ko": "그리고 <b>알카</b>라는 그 이름이야말로 우리가 가진 유일한 단서다.", "who": "메를로", "src": "pilot-3"}
+{"map": 36, "es": "\\c[2]<b>Lanto:</b>\\c[0] De todos modos, mi honorable capitán, lo que tenga que llegar, llegará.", "ko": "\\c[2]<b>란토:</b>\\c[0] 어찌 됐든, 존경하는 대장님. 올 것은 결국 오게 되어 있답니다.", "who": "란토", "src": "pilot-3"}
+{"map": 36, "es": "<b>Capitán Merlot:</b> ¿Qué quiere decir, <i>monsieur</i>?", "ko": "<b>메를로 대장:</b> <i>무슈</i>, 무슨 뜻으로 하는 소린가?", "who": "메를로", "src": "pilot-3"}
+{"map": 36, "es": "¿No le hace feliz saber que vivirá un cambio histórico? ¿Que será testigo de algo único e irrepetible?", "ko": "역사적 변화를 직접 겪게 된다는 사실이 기쁘지 않으신가요? 유일무이하고 다시없을 광경의 목격자가 되는 것인데 말입니다.", "who": "란토", "src": "pilot-3"}
+{"map": 36, "es": "<b>Capitán Merlot:</b> Sus razonamientos son tan excéntricos como de costumbre, <i>monsieur</i>.", "ko": "<b>메를로 대장:</b> <i>무슈</i>, 자네의 논리는 변함없이 기괴하군.", "who": "메를로", "src": "pilot-3"}
+{"map": 36, "es": "<b>Hisopo:</b> Siento interrumpir tu velada, \\PN.", "ko": "<b>히소포:</b> \\PN, 즐거운 연회를 방해해서 미안하네.", "who": "히소포", "src": "pilot-3"}
+{"map": 36, "es": "Va a dar comienzo la escena de la ópera en la que participas.", "ko": "자네가 출연할 오페라 장면이 곧 시작된다네.", "who": "히소포", "src": "pilot-3"}
+{"map": 36, "es": "¿Me haces el honor de subir al escenario, por favor?", "ko": "부디 무대 위로 올라와 줄 수 있겠나?", "who": "히소포", "src": "pilot-3"}
+{"map": 40, "es": "¡Es un libro totalmente fuera de la ley! Si las autoridades se enteran de esto...", "ko": "완전히 불법인 책이라고! 당국이 이걸 알게 된다면...", "who": "크리산토", "src": "pilot-3"}
+{"map": 40, "es": "\\c[5]<b>Melia:</b>\\c[0] ¡Eeeh! La profe dijo que teníamos que buscar un manuscrito de tapa azul, ¿no?", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 에이! 교수님이 파란 표지의 원고를 찾아야 한다고 하셨잖아, 안 그래?", "who": "멜리아", "src": "pilot-3"}
+{"map": 40, "es": "Tiene que ser este. ¡No perdamos más tiempo! Hay que volver a la fiesta antes de que noten nuestra ausencia.", "ko": "이게 틀림없어. 더 이상 시간 끌지 말자! 우리가 없어진 걸 눈치채기 전에 연회장으로 돌아가야 해.", "who": "멜리아", "src": "pilot-3"}
+{"map": 40, "es": "\\c[3]<b>Crisanto:</b>\\c[0] Quiero admirar un poco este conocimiento ancestral que jamás volveré a ver.", "ko": "\\c[3]<b>크리산토:</b>\\c[0] 다시는 보지 못할 이 고대의 지식을 조금만 더 감상하고 싶어.", "who": "크리산토", "src": "pilot-3"}
+{"map": 40, "es": "¿Cuánto de lo que hay aquí podría mejorar la vida de las personas?", "ko": "여기 있는 내용이 사람들의 삶을 얼마나 이롭게 해 줄 수 있을까?", "who": "크리산토", "src": "pilot-3"}
+{"map": 40, "es": "\\c[5]<b>Melia:</b>\\c[0] ¿Estos libros aburridos? ¡Solo sirven para aplastar Pokémon de tipo Bicho!", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 이 지루한 책들이? 벌레타입 포켓몬을 짓눌러 잡는 데나 쓰이겠지!", "who": "멜리아", "src": "pilot-3"}
+{"map": 40, "es": "¡Anda, vámonos! ¡Porfi!", "ko": "자, 어서 가자! 제발!", "who": "멜리아", "src": "pilot-3"}
+{"map": 40, "es": "<b>???:</b> La muchacha tiene razón. Deberíais marcharos.", "ko": "<b>???:</b> 소녀의 말이 맞다. 너희는 물러가는 편이 좋을 것이다.", "who": "미라", "src": "pilot-3"}
+{"map": 40, "es": "\\c[5]<b>Melia:</b>\\c[0] ¡Aahh! ¡El clérigo raro!", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 아앗! 그 이상한 성직자잖아!", "who": "멜리아", "src": "pilot-3"}
+{"map": 40, "es": "\\c[6]<b>Mirra:</b>\\c[0] Existe otro camino más fácil a través del sistema de drenaje del estanque.", "ko": "\\c[6]<b>미라:</b>\\c[0] 연못의 배수 시설을 지나는 더 쉬운 길이 있다.", "who": "미라", "src": "pilot-3"}
+{"map": 40, "es": "Lo sé porque llevo mucho tiempo estudiando esta casa.", "ko": "내가 이 저택을 오랫동안 조사해서 잘 알지.", "who": "미라", "src": "pilot-3"}
+{"map": 40, "es": "\\c[5]<b>Melia:</b>\\c[0] ¿Y por qué hace eso? Pensaba que los clérigos solo servían para ponerse túnicas graciosas y estar en iglesias.", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 그런데 왜 그런 일을 하세요? 성직자는 우스꽝스러운 사제복을 입고 성당에나 계시는 줄 알았는데요.", "who": "멜리아", "src": "pilot-3"}
+{"map": 40, "es": "\\c[6]<b>Mirra:</b>\\c[0] Ese manuscrito que pretendéis robar perteneció a un gran maestro de la Alquimia Pokémon.", "ko": "\\c[6]<b>미라:</b>\\c[0] 너희가 훔치려는 그 원고는 포켓몬 연금술의 위대한 대가가 남긴 것이다.", "who": "미라", "src": "pilot-3"}
+{"map": 40, "es": "Si estoy en lo cierto, contendría valiosos secretos sobre cómo obtener el control sobre la vida y la muerte.", "ko": "내 생각이 맞다면, 삶과 죽음을 통제하는 귀중한 비밀이 담겨 있을 터다.", "who": "미라", "src": "pilot-3"}
+{"map": 40, "es": "\\c[6]<b>Mirra:</b>\\c[0] ...", "ko": "\\c[6]<b>미라:</b>\\c[0] ...", "who": "미라", "src": "pilot-3"}
+{"map": 40, "es": "\\c[6]<b>Mirra:</b>\\c[0] Si tenéis algún tipo de aprecio por los Pokémon, dejaréis que me lleve el manuscrito.", "ko": "\\c[6]<b>미라:</b>\\c[0] 포켓몬을 조금이라도 아끼는 마음이 있다면, 내가 그 원고를 가져가게 두어라.", "who": "미라", "src": "pilot-3"}
+{"map": 40, "es": "\\c[6]<b>Mirra:</b>\\c[0] Si se desentrañan los secretos que alberga, podría usarse como... un <b>Arma Definitiva</b>.", "ko": "\\c[6]<b>미라:</b>\\c[0] 그 안에 담긴 비밀이 풀린다면... <b>최종병기</b> 같은 것으로 쓰일 수도 있다.", "who": "미라", "src": "pilot-3"}
+{"map": 40, "es": "Un arma que estaría alimentada con la energía vital de los Pokémon.", "ko": "포켓몬의 생명 에너지를 동력으로 삼는 무기로 말이다.", "who": "미라", "src": "pilot-3"}
+{"map": 40, "es": "\\c[5]<b>Melia:</b>\\c[0] ¡Ay, ay! ¡Pero nosotros no seríamos capaces de hacer algo tan terrible!", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 아이고! 하지만 저희가 그런 끔찍한 짓을 할 리가 없잖아요!", "who": "멜리아", "src": "pilot-3"}
+{"map": 40, "es": "Solo somos tres inocentes Aspirantes...", "ko": "저희는 그저 무고한 후보생 세 명일 뿐이라고요...", "who": "멜리아", "src": "pilot-3"}
+{"map": 40, "es": "\\c[3]<b>Crisanto:</b>\\c[0] ¡Claro! Además, nuestra profesora nunca tendría intenciones tan negativas.", "ko": "\\c[3]<b>크리산토:</b>\\c[0] 맞습니다! 게다가 저희 교수님께서 그런 흉악한 의도를 품으실 리가 없습니다.", "who": "크리산토", "src": "pilot-3"}
+{"map": 40, "es": "\\c[6]<b>Mirra:</b>\\c[0] ¡No os fieis de los alquimistas! Pues no pretenden otra cosa que alzarse como dioses pisoteando a los Pokémon.", "ko": "\\c[6]<b>미라:</b>\\c[0] 연금술사들을 믿지 마라! 그자들은 포켓몬을 짓밟고 신으로 군림하려는 것 외에는 아무 관심도 없다.", "who": "미라", "src": "pilot-3"}
+{"map": 40, "es": "\\c[6]<b>Mirra:</b>\\c[0] No pretendo debatir con vosotros. Me llevaré el manuscrito a la fuerza.", "ko": "\\c[6]<b>미라:</b>\\c[0] 너희와 논쟁할 생각은 없다. 힘으로라도 원고를 가져가겠다.", "who": "미라", "src": "pilot-3"}
+{"map": 40, "es": "\\c[6]<b>Mirra:</b>\\c[0] Eso ha sido un poder notable. Tienes mi respeto, \\PN.", "ko": "\\c[6]<b>미라:</b>\\c[0] 제법 뛰어난 힘이로군. 너에게 경의를 표하마, \\PN.", "who": "미라", "src": "pilot-3"}
+{"map": 40, "es": "Viéndolo más de cerca, me temo que ese no es el manuscrito que estoy buscando.", "ko": "자세히 보니, 애석하게도 이것은 내가 찾던 원고가 아니더군.", "who": "미라", "src": "pilot-3"}
+{"map": 40, "es": "\\c[6]<b>Mirra:</b>\\c[0] Mi investigación tendrá que continuar por otros cauces.", "ko": "\\c[6]<b>미라:</b>\\c[0] 내 조사는 다른 길을 통해 계속 이어가겠다.", "who": "미라", "src": "pilot-3"}
+{"map": 40, "es": "\\c[3]<b>Crisanto:</b>\\c[0] Ahora sí que voto para salir de aquí cuanto antes. ¡Cojamos el manuscrito y volvamos con la profesora <b>Olivier</b>!", "ko": "\\c[3]<b>크리산토:</b>\\c[0] 이제 정말 여기서 하루빨리 나가는 데 찬성이야. 원고를 챙겨서 <b>올리비에</b> 교수님께 돌아가자!", "who": "크리산토", "src": "pilot-3"}
+{"map": 61, "es": "<b>Hisopo:</b> ¿Has vuelto arrastrándote desde las sombras? ¡A eso le llamo yo tenacidad!", "ko": "<b>히소포:</b> 어둠 속에서 기어 돌아왔단 말인가? 그거 참 대단한 집념이로군!", "who": "히소포", "src": "pilot-3"}
+{"map": 61, "es": "Tal vez te haya subestimado. Pareces ponerle pasión a los combates Pokémon, al menos.", "ko": "어쩌면 내가 너를 과소평가했는지도 모르겠군. 적어도 포켓몬 배틀에는 열정을 쏟는 모양이니까.", "who": "히소포", "src": "pilot-3"}
+{"map": 61, "es": "<b>Hisopo:</b> Tienes mi atención, Aspirante \\PN. Tú y yo nos batiremos en duelo.", "ko": "<b>히소포:</b> 내 관심을 끌었군, 후보생 \\PN. 너와 나는 결투를 벌이게 될 거다.", "who": "히소포", "src": "pilot-3"}
+{"map": 61, "es": "Coge el ascensor en la parte izquierda del teatro.", "ko": "극장 왼쪽에 있는 엘리베이터를 타라.", "who": "히소포", "src": "pilot-3"}
+{"map": 61, "es": "Te estaré esperando, ¡y mis fantasmagóricos Pokémon también!", "ko": "너를 기다리고 있으마. 나의 환영 같은 포켓몬들도 함께 말이다!", "who": "히소포", "src": "pilot-3"}
+{"map": 75, "es": "<b>Capitán Merlot:</b> ¡Pokéball en mano!", "ko": "<b>메를로 대장:</b> 몬스터볼을 손에 들어라!", "who": "메를로", "src": "pilot-3"}
+{"map": 75, "es": "¡Preparaos para arrestar a quien sea que salga de ahí dentro!", "ko": "저 안에서 나오는 자가 누구든 체포할 준비를 해라!", "who": "메를로", "src": "pilot-3"}
+{"map": 75, "es": "\\c[9]<b>Alca:</b>\\c[0] ...", "ko": "\\c[9]<b>알카:</b>\\c[0] ...", "who": "알카", "src": "pilot-3"}
+{"map": 75, "es": "<b>Capitán Merlot:</b> Así pues, ¿tú eres la líder de esta chusma del <b>Team Azoth</b> y la que está detrás de estas revueltas?", "ko": "<b>메를로 대장:</b> 그렇다면, 네가 이 <b>아조스단</b> 패거리의 수장이자 이번 폭동의 배후에 있는 자냐?", "who": "메를로", "src": "pilot-3"}
+{"map": 75, "es": "¡Por fin nos conocemos!", "ko": "마침내 만나는구나!", "who": "메를로", "src": "pilot-3"}
+{"map": 75, "es": "<b>Capitán Merlot:</b> ¡Mosqueteros, arrestadla!", "ko": "<b>메를로 대장:</b> 총사들이여, 저 자를 체포해라!", "who": "메를로", "src": "pilot-3"}
+{"map": 75, "es": "<b>Capitán Merlot:</b> ¡<i>C'est impossible</i>! ¡Esos Pokémon pertenecen a la élite de mis filas!", "ko": "<b>메를로 대장:</b> <i>C'est impossible</i>! 저 포켓몬들은 내 부대 최고의 정예들이거늘!", "who": "메를로", "src": "pilot-3"}
+{"map": 75, "es": "<b>Capitán Merlot:</b> ¡Aaahh... aahh! ¡Su-suéltame!", "ko": "<b>메를로 대장:</b> 아아... 으윽! 놔... 놓아라!", "who": "메를로", "src": "pilot-3"}
+{"map": 75, "es": "\\c[9]<b>Alca:</b>\\c[0] No habrá una segunda advertencia, ¿me entiendes?", "ko": "\\c[9]<b>알카:</b>\\c[0] 두 번 경고하진 않는다. 알겠느냐?", "who": "알카", "src": "pilot-3"}
+{"map": 75, "es": "¡No habrá una segunda advertencia!", "ko": "두 번 경고하진 않는다!", "who": "알카", "src": "pilot-3"}
+{"map": 75, "es": "\\c[5]<b>Melia:</b>\\c[0] ¡<i>Monsieur</i> <b>Merlot</b>! ¡Noooo!", "ko": "\\c[5]<b>멜리아:</b>\\c[0] <b>무슈</b> <i>메를로</i>! 안 돼요!", "who": "멜리아", "src": "pilot-3"}
+{"map": 75, "es": "\\c[9]<b>Alca:</b>\\c[0] ¡Dejad en paz al <b>Team Azoth</b>!", "ko": "\\c[9]<b>알카:</b>\\c[0] <b>아조스단</b>을 가만히 두어라!", "who": "알카", "src": "pilot-3"}
+{"map": 75, "es": "Si volvéis a contrariarnos...", "ko": "또다시 우리를 거스른다면...", "who": "알카", "src": "pilot-3"}
+{"map": 75, "es": "¡No dejaremos señor ni rey con cabeza!", "ko": "어떤 영주도, 어떤 왕도 살아남지 못할 것이다!", "who": "알카", "src": "pilot-3"}

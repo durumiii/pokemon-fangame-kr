@@ -1,0 +1,117 @@
+# /// script
+# requires-python = ">=3.12"
+# ///
+"""재번역 산출의 모델 선별 층 — 「이 행은 사람 눈이 필요한가」만 묻는다.
+
+판별자(둘 중 어느 쪽이 나은가)는 낙제였다(docs/research/2026-08-06-discriminator-pilot.md).
+여기서는 후보를 견주지 않는다. 한 벌만 놓고 **오류 자리를 먼저 짚게** 한다 —
+그 문서가 재시도 설계로 적어 둔 GEMBA-MQM 꼴이다. 기계 휴리스틱(screen.py)이
+못 보는 층, 곧 원문에 없는 낱말·비문·오역을 겨냥한다.
+
+    uv run translate/screen_llm.py <out-dir> [--model gemini-3.6-flash] [--effort low]
+
+산출: <out-dir>/screen-llm.jsonl — {"id","유형","근거"}. 비용은 stdout.
+
+2차 파일럿 정답지 실측(gemini-3.6-flash · effort=low · 133행 · $0.30):
+이 층 홀로 6행을 지적해 5행이 사람이 손댄 행이었고, 휴리스틱이 못 보던 하드 오류
+둘(지어낸 낱말 「농부」 · 비문 「하도 만 일」)을 둘 다 잡았다. screen.py와 합치면
+하드 9/9 · 선별 19/133. 행당 약 $0.002.
+"""
+
+import json
+import re
+import sys
+import time
+import urllib.request
+from pathlib import Path
+
+HERE = Path(__file__).parent
+sys.path.insert(0, str(HERE))
+from batch import URL, key_of  # noqa: E402
+
+PROMPT = """\
+너는 스페인어 원문과 그 한국어 번역을 대조해 **손볼 곳이 있는 행만** 골라내는 검수자다.
+고르는 것이 아니라 거르는 일이다 — 어느 쪽이 나은지는 묻지 않는다.
+
+입력은 JSON 배열이고 각 항목은 {"id", "who", "es", "ko"}이다.
+아래 네 갈래 중 하나에 걸리는 행만 보고한다:
+
+- `지어냄` — 원문에 근거가 없는 낱말·정보·호칭이 번역에 들어갔다(직업·성별·나이·경칭 포함).
+- `누락` — 원문의 뜻 한 조각이 번역에서 사라졌다.
+- `비문` — 한국어로 성립하지 않는다(조사·어미·띄어쓰기가 어긋나 뜻이 깨진 자리).
+- `오역` — 원문과 뜻이 다르다.
+
+**보고하지 않는 것**: 취향 차이, 밋밋하다·자연스럽지 않다는 인상, 어미가 마음에 안 듦,
+더 나은 표현 제안, 원문 그대로 두기로 한 프랑스어 구절, 서식 태그(<b>·<i>·\\c[n]·\\PN).
+
+의심스러우면 보고하지 마라. 근거를 원문 낱말로 댈 수 있는 것만 보고한다.
+
+출력은 JSON 배열 하나뿐. 문제 없는 행은 넣지 않는다. 형식:
+[{"id": "<입력에 있던 id>", "유형": "지어냄", "근거": "원문에 없는 낱말 「…」이 들어갔다"}]
+문제가 없으면 [] 를 낸다.
+"""
+
+
+def ask(key, model, effort, system, rows, attempt=0):
+    payload = {"model": model, "temperature": 0, "reasoning_effort": effort,
+               "messages": [{"role": "system", "content": system},
+                            {"role": "user",
+                             "content": json.dumps(rows, ensure_ascii=False)}]}
+    req = urllib.request.Request(
+        URL, data=json.dumps(payload).encode(),
+        headers={"Authorization": "Bearer " + key, "Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=300) as r:
+            body = json.load(r)
+        text = body["choices"][0]["message"]["content"]
+        cost = float(body.get("usage", {}).get("cost") or 0)
+        arr = json.loads(re.search(r"\[.*\]", text, re.S).group(0))
+        return [a for a in arr if isinstance(a, dict) and a.get("id")], cost
+    except Exception as e:
+        if attempt < 2:
+            time.sleep(8 * (attempt + 1))
+            return ask(key, model, effort, system, rows, attempt + 1)
+        print("에러:", type(e).__name__, e)
+        return [], 0.0
+
+
+def scene_system(fp):
+    """그 페이지를 번역할 때 쓴 프롬프트를 장면 맥락으로 덧댄다 — 말투 지시·본보기가 거기 있다."""
+    req = fp.with_suffix(".req.json")
+    if not req.exists():
+        return PROMPT
+    head = json.loads(req.read_text(encoding="utf-8")).get("system", "")
+    return PROMPT + "\n\n---\n참고 — 이 장면을 번역할 때 준 지시:\n" + head
+
+
+def run(d, model, effort):
+    key, out, total = key_of(), [], 0.0
+    for fp in sorted(Path(d).glob("*.jsonl")):
+        if fp.name.startswith("screen"):
+            continue
+        rows = [json.loads(l) for l in fp.read_text(encoding="utf-8").splitlines() if l.strip()]
+        ask_rows = [{"id": r["id"], "who": r["who"], "es": r["es"],
+                     "ko": r.get("new") or r["old"]} for r in rows if r.get("new")]
+        if not ask_rows:
+            continue
+        hits, cost = ask(key, model, effort, scene_system(fp), ask_rows)
+        total += cost
+        ids = {r["id"] for r in ask_rows}
+        out += [h for h in hits if h["id"] in ids]
+        print(f"  {fp.name}: {len(ask_rows)}행 → {len(hits)}행 지적 (${cost:.4f})")
+    p = Path(d) / "screen-llm.jsonl"
+    p.write_text("".join(json.dumps(h, ensure_ascii=False) + "\n" for h in out),
+                 encoding="utf-8")
+    print(f"{d}: {len(out)}행 → {p}  합계 ${total:.4f}")
+
+
+if __name__ == "__main__":
+    a = sys.argv[1:]
+    if not a:
+        print(__doc__)
+        sys.exit()
+    model = a[a.index("--model") + 1] if "--model" in a else "gemini-3.6-flash"
+    effort = a[a.index("--effort") + 1] if "--effort" in a else "low"
+    for d in [x for x in a if not x.startswith("--")
+              and x not in (model, effort)]:
+        run(d, model, effort)
