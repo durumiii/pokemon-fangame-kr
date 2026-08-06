@@ -299,14 +299,14 @@ def selftest():
     import urllib.request
     with tempfile.TemporaryDirectory() as t:
         d = Path(t)
-        (d / "p024-43-0.jsonl").write_text(
-            json.dumps({"id": "24:43:0:0", "who": "기니아", "es": "Hola",
+        (d / "p999-99-0.jsonl").write_text(
+            json.dumps({"id": "999:99:0:0", "who": "기니아", "es": "Hola",
                         "old": "안녕", "new": "안녕하세요"}, ensure_ascii=False) + "\n"
-            + json.dumps({"id": "24:43:0:1", "who": "기니아", "es": "Adios",
+            + json.dumps({"id": "999:99:0:1", "who": "기니아", "es": "Adios",
                           "old": "잘 가", "new": "잘 가요"}, ensure_ascii=False) + "\n",
             encoding="utf-8")
         (d / "screen.jsonl").write_text(
-            json.dumps({"id": "24:43:0:0", "who": "기니아", "flags": ["존칭 변경:님"]},
+            json.dumps({"id": "999:99:0:0", "who": "기니아", "flags": ["존칭 변경:님"]},
                        ensure_ascii=False) + "\n", encoding="utf-8")
         v = verdict_path(d)
         srv = ThreadingHTTPServer(("127.0.0.1", 0), handler(d, v))
@@ -315,14 +315,14 @@ def selftest():
         got = json.load(urllib.request.urlopen(base + "/data"))
         assert len(got["scenes"]) == 1 and got["verdicts"] == {}, got
         assert len(got["scenes"][0]["rows"]) == 1                 # 걸린 행만
-        ev = json.load(urllib.request.urlopen(base + "/event?map=24&event=43"))["rows"]
-        assert [r["id"] for r in ev] == ["24:43:0:0", "24:43:0:1"], ev   # 안 걸린 행까지
+        ev = json.load(urllib.request.urlopen(base + "/event?map=999&event=99"))["rows"]
+        assert [r["id"] for r in ev] == ["999:99:0:0", "999:99:0:1"], ev   # 안 걸린 행까지
         assert ev[1]["ko"] == "잘 가" and ev[1]["new"] == "잘 가요"
         assert [r["approved"] for r in ev] == [False, False]
         assert json.load(urllib.request.urlopen(base + "/event?map=x&event=y"))["rows"] == []
         urllib.request.urlopen(urllib.request.Request(
             base + "/verdict", method="POST",
-            data=json.dumps({"id": "24:43:0:0", "판정": "B새번역",
+            data=json.dumps({"id": "999:99:0:0", "판정": "B새번역",
                              "텍스트": "안녕하세요", "메모": "ㅇㅋ"},
                             ensure_ascii=False).encode(),
             headers={"Content-Type": "application/json"}))
@@ -332,8 +332,8 @@ def selftest():
                              "메모": "일괄"}, ensure_ascii=False).encode(),
             headers={"Content-Type": "application/json"}))
         back = json.load(urllib.request.urlopen(base + "/data"))["verdicts"]
-        assert back["24:43:0:0"]["판정"] == "B새번역", back   # 새로고침하면 도로 채워진다
-        assert back["24:43:0:0"]["ts"]
+        assert back["999:99:0:0"]["판정"] == "B새번역", back   # 새로고침하면 도로 채워진다
+        assert back["999:99:0:0"]["ts"]
         assert back["event:24:43"]["판정"] == "승인", back    # 이벤트 승인은 따로 남는다
         srv.shutdown()
     print("selftest ok")

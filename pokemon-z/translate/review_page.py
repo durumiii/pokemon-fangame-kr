@@ -90,16 +90,26 @@ def scene_of(fp, why, ok=frozenset()):
     }
 
 
-def collect(d, ok=None):
+def applied_events(path=None):
+    """반영이 끝나 승인 이벤트로 올라간 것 — 다시 묻지 않는다."""
+    p = Path(path or HERE.parent / "docs/research/approved-events.jsonl")
+    if not p.exists():
+        return set()
+    return {(json.loads(l)["map"], json.loads(l)["event"])
+            for l in p.read_text(encoding="utf-8").splitlines() if l.strip()}
+
+
+def collect(d, ok=None, done=None):
     d = Path(d)
     why = reasons(d)
     ok = approved_ids() if ok is None else ok
+    done = applied_events() if done is None else done
     out = []
     for fp in sorted(d.glob("*.jsonl")):
         if fp.name.startswith("screen"):
             continue
         sc = scene_of(fp, why, ok)
-        if sc:
+        if sc and (sc["map"], int(sc["event"])) not in done:
             out.append(sc)
     return out
 
@@ -337,12 +347,14 @@ def selftest():
         (d / "screen-llm.jsonl").write_text(
             json.dumps({"id": "24:43:0:0", "유형": "제안-호칭", "근거": "경칭 근거 없음"},
                        ensure_ascii=False) + "\n", encoding="utf-8")
-        sc = collect(d, ok=set())
+        sc = collect(d, ok=set(), done=set())
         assert len(sc) == 1, sc
         assert [r["id"] for r in sc[0]["rows"]] == ["24:43:0:0"]   # 걸린 행만
         assert sc[0]["hidden"] == 0
         # 승인 줄은 걸려도 안 보인다 — 그 장면에 남는 게 없으면 장면째 빠진다
-        assert collect(d, ok={"24:43:0:0"}) == []
+        assert collect(d, ok={"24:43:0:0"}, done=set()) == []
+        # 반영이 끝난 이벤트는 장면째 빠진다
+        assert collect(d, ok=set(), done={(24, 43)}) == []
         chunks = d / "chunks.jsonl"
         chunks.write_text(json.dumps(
             {"rows": [{"id": "24:43:0:0", "approved": True}, {"id": "24:43:0:1"}]},

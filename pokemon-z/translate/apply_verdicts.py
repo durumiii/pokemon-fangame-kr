@@ -80,10 +80,49 @@ def decide(row, v, approved):
     return row["new"], "무판정→새번역"
 
 
-def run(out_dir, write=False):
+APPROVED_EV = HERE.parent / "docs/research/approved-events.jsonl"
+
+
+def done_events(d, vs):
+    """판정이 끝난 이벤트 — 화면에 걸린 행이 전부 판정됐거나 이벤트째 승인된 것."""
+    sys.path.insert(0, str(HERE))
+    from review_page import collect  # 화면에 실제로 실리는 행과 같은 셈법을 쓴다
+
+    ev_rows = {}
+    for sc in collect(d):
+        ev_rows.setdefault((sc["map"], int(sc["event"])), []).extend(
+            r["id"] for r in sc["rows"])
+    okev = {tuple(int(x) for x in (r.get("event") or "0:0").split(":"))
+            for r in _ledger_rows(d) if r.get("event")}
+    return {ev for ev, ids in ev_rows.items()
+            if ev in okev or all(i in vs for i in ids)}
+
+
+def _ledger_rows(d):
+    p = Path(d).parent / f"verdicts-{Path(d).name}.jsonl"
+    return [json.loads(l) for l in p.read_text(encoding="utf-8").splitlines()
+            if l.strip()] if p.exists() else []
+
+
+def record_applied(evs):
+    """반영이 끝난 이벤트를 승인 이벤트로 올린다 — 화면에서도, 다음 배치에서도 빠진다."""
+    have = {(json.loads(l)["map"], json.loads(l)["event"])
+            for l in APPROVED_EV.read_text(encoding="utf-8").splitlines() if l.strip()}
+    new = [e for e in sorted(evs) if e not in have]
+    with APPROVED_EV.open("a", encoding="utf-8") as f:
+        for m, e in new:
+            f.write(json.dumps({"map": m, "event": e, "src": "검수 반영"},
+                               ensure_ascii=False) + "\n")
+    return new
+
+
+def run(out_dir, write=False, events_only=False):
     d = Path(out_dir)
     ledger = d.parent / f"verdicts-{d.name}.jsonl"
     vs, appr = verdicts(ledger), approved_ids()
+    keep = done_events(d, vs) if events_only else None
+    if events_only:
+        print(f"판정 끝난 이벤트 {len(keep)}개만 반영한다")
 
     plan, why = {}, {}
     clash, stat = [], {}
@@ -92,6 +131,9 @@ def run(out_dir, write=False):
             if not line.strip():
                 continue
             r = json.loads(line)
+            m, e = (int(x) for x in r["id"].split(":")[:2])
+            if keep is not None and (m, e) not in keep:
+                continue
             new, tag = decide(r, vs.get(r["id"]), appr)
             stat[tag] = stat.get(tag, 0) + 1
             if new is None:
@@ -127,6 +169,8 @@ def run(out_dir, write=False):
         out.append(json.dumps(r, ensure_ascii=False))
     MAPS.write_text("\n".join(out) + "\n", encoding="utf-8")
     print(f"정본 {MAPS.name}: {hit}행 고침")
+    if events_only and keep:
+        print(f"승인 이벤트 등재: {len(record_applied(keep))}개 새로 올림")
 
 
 if __name__ == "__main__":
@@ -134,4 +178,4 @@ if __name__ == "__main__":
     if not a:
         print(__doc__)
         sys.exit()
-    run(a[0], write="--write" in sys.argv)
+    run(a[0], write="--write" in sys.argv, events_only="--events" in sys.argv)
