@@ -187,9 +187,14 @@ def load_verdicts(p):
 
 
 def append_verdict(p, rec):
+    """자리마다 최종 판정 한 줄만 남긴다 — 같은 자리를 고쳐 누르면 그 줄을 갈아 끼운다."""
     rec["ts"] = time.strftime("%Y-%m-%dT%H:%M:%S")
-    with p.open("a", encoding="utf-8") as f:
-        f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+    cur = load_verdicts(p)
+    cur[rec.get("id") or ("event:" + rec.get("event", ""))] = rec
+    tmp = p.with_suffix(".tmp")
+    tmp.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in cur.values()),
+                   encoding="utf-8")
+    tmp.replace(p)
 
 
 def handler(out_dir, vpath):
