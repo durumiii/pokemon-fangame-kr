@@ -15,7 +15,7 @@
 # ⚠ :soft는 반투명을 쓰므로 mkxp.json의 solidFonts가 켜져 있으면 효과가 없다
 #   (알파 블렌딩을 끄는 옵션이라 옅은 겹이 진하게 찍힌다).
 
-PIXEL_SHADOW_STYLE = :thin
+PIXEL_SHADOW_STYLE = :soft
 PIXEL_SHADOW_FAINT = 48          # :soft의 바깥 겹 알파 (0~255)
 
 def pixelShadowFaint(color)

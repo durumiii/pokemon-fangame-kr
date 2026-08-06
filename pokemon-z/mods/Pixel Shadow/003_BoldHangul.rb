@@ -14,7 +14,7 @@
 # 라틴·숫자는 속이 넓어 엔진 기본(가로 1픽셀)을 그대로 쓴다.
 
 PIXEL_BOLD_SIDE = :right
-PIXEL_BOLD_ALPHA = 110
+PIXEL_BOLD_ALPHA = 150
 
 def pixelShadowWide?(ch)
   s = ch[0]
