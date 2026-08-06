@@ -1,0 +1,26 @@
+{
+  "name": "Pixel Shadow",
+  "game": "Pokemon Z Fangame",
+  "description": "픽셀 폰트에 맞게 글자 그림자와 굵게를 다시 잡는 모드예요.\n\n그림자 — 게임은 글자를 그림자 색으로 세 번(오른쪽·아래·대각) 찍는데 오프셋 2픽셀은 획이 굵은 원판 포켓몬 폰트에 맞춘 값이라, 획이 1픽셀인 픽셀 폰트에서는 그림자가 글자보다 두꺼워 보입니다. 기본값은 1픽셀 세 겹에 2픽셀 대각을 아주 옅게(알파 48) 얹은 「1.25픽셀」이에요. 001_Shadow.rb의 PIXEL_SHADOW_STYLE로 :thin · :soft · :step · :thick 중에 고릅니다.\n\n굵게 — 폰트에 굵은 판이 없으면 엔진이 글자를 가로로 1픽셀 겹쳐 흉내 내는데, 그 겹침이 한글의 세로 틈을 메워 「배」·「대」의 ㅐ가 덩어리가 됩니다. 오른쪽 1픽셀 자리에 반투명(기본 알파 150)으로 한 겹만 얹어 「1.5픽셀」 굵기를 만들어요. 틈이 반톤으로 남아 글자 모양이 살아 있습니다. 라틴·숫자는 속이 넓어 엔진 기본을 그대로 씁니다.\n\n값 조정은 pokemon-fangame-kr의 share/shadow-style.sh <단> [그림자알파] [굵게알파]로 한 번에 합니다.",
+  "engine": "essentials-v16",
+  "install": "inject",
+  "created_at": "2026-08-07",
+  "scripts": [
+    {
+      "file": "001_Shadow.rb",
+      "script_name": "001_Shadow.rb"
+    },
+    {
+      "file": "002_MessageShadow.rb",
+      "script_name": "002_MessageShadow.rb"
+    },
+    {
+      "file": "003_BoldHangul.rb",
+      "script_name": "003_BoldHangul.rb"
+    }
+  ],
+  "expects": {
+    "SpriteWindow": "dd49c0623e5fc170534c44aa6c198e23",
+    "DrawText": "b6e3111c62e7c43b528fa60894e9acb6"
+  }
+}
