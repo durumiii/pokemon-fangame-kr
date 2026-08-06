@@ -256,7 +256,11 @@ def event_rows(out_dir, mapno, event):
         return []
     ok = approved_ids()
     out = []
-    for fp in sorted(Path(out_dir).glob(f"p{int(mapno):03d}-{int(event)}-*.jsonl")):
+    d = Path(out_dir)
+    # 주연 산출은 p<맵>-<이벤트>-<페이지>, 트레이너 산출은 t<맵>-<이벤트> 꼴이다
+    files = sorted(d.glob(f"p{int(mapno):03d}-{int(event)}-*.jsonl")) \
+        + sorted(d.glob(f"t{int(mapno):03d}-{int(event)}.jsonl"))
+    for fp in files:
         for line in fp.read_text(encoding="utf-8").splitlines():
             if line.strip():
                 r = json.loads(line)

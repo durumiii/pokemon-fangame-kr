@@ -7971,12 +7971,12 @@
 {"k": "A veces pensamos que somos los mejores hasta que descubrimos la vastedad del mundo y la de gente talentosa que hay en él.", "v": "가끔은 스스로가 최고라고 생각하곤 하지만, 세상이 얼마나 넓고 재능 있는 사람이 많은지 깨닫기 전까지일 뿐이지요."}
 {"k": "¡Has encontrado otra página de Alquimia Pokémon! ¡Qué emocionante!", "v": "새로운 연금술 제작법을 찾았다! 정말 신난다!"}
 {"k": "Tu catálogo de creación se ha ampliado.", "v": "제작할 수 있는 조합법이 늘어났다!"}
-{"k": "<b>PISTA DE ENTRENADOR:</b> Para combatir el frío de la Gruta Helada, lo mejor es llevar objetos cálidos en tu inventario.", "v": "<b>트레이너 팁:</b> 프로스트케이브의 추위에 맞서려면 가방에 따뜻한 도구를 가지고 다니는 것이 가장 좋습니다."}
+{"k": "<b>PISTA DE ENTRENADOR:</b> Para combatir el frío de la Gruta Helada, lo mejor es llevar objetos cálidos en tu inventario.", "v": "<b>트레이너 팁:</b> 얼음 동굴의 추위에 맞서려면 가방에 따뜻한 도구를 가지고 다니는 것이 가장 좋습니다."}
 {"k": "¿Quieres usar la Montura Gogoat?", "v": "포켓라이더 고고트를 사용하시겠습니까?"}
 {"k": "¿Usar <b>Polvo Explosivo</b>?", "v": "<b>폭발가루</b>를 사용하시겠습니까?"}
-{"k": "¿Quieres entrar en la Gruta Helada? Entonces me permitirás darte un breve consejo... a cambio de un combate Pokémon.", "v": "프로스트케이브에 들어가고 싶으신가요? 그렇다면 포켓몬 배틀을 대가로 간단한 조언 하나를 드리죠..."}
+{"k": "¿Quieres entrar en la Gruta Helada? Entonces me permitirás darte un breve consejo... a cambio de un combate Pokémon.", "v": "얼음 동굴에 들어가고 싶으신가요? 그렇다면 포켓몬 배틀을 대가로 간단한 조언 하나를 드리죠..."}
 {"k": "Parece mentira que mis elegantes Pokémon hayan podido perder.", "v": "내 우아한 포켓몬들이 지다니 정말 믿기지 않네요."}
-{"k": "Bien, esto es lo que debes saber. Dentro de la Gruta Helada, tus Pokémon sufrirán mucho frío a no ser que lleves un par de Brasas Candentes en tu inventario o una Piedra Fuego.", "v": "좋아요, 알아두어야 할 점은 이것입니다. 프로스트케이브 안에서는 가방에 타오르는불씨 두 개나 불꽃의돌을 갖고 있지 않으면 포켓몬들이 심한 추위를 겪게 될 겁니다."}
+{"k": "Bien, esto es lo que debes saber. Dentro de la Gruta Helada, tus Pokémon sufrirán mucho frío a no ser que lleves un par de Brasas Candentes en tu inventario o una Piedra Fuego.", "v": "좋아요, 알아두어야 할 점은 이것입니다. 얼음 동굴 안에서는 가방에 타오르는불씨 두 개나 불꽃의돌을 갖고 있지 않으면 포켓몬들이 심한 추위를 겪게 될 겁니다."}
 {"k": "¡Es un <b>Nido Alfa</b>! En él vive un Pokémon muy fuerte.", "v": "<b>알파 둥지</b>다! 그곳에는 아주 강한 포켓몬이 살고 있다."}
 {"k": "En concreto, sientes la presencia de un Pokémon Hielo muy poderoso.", "v": "구체적으로는, 매우 강력한 얼음타입 포켓몬의 기운이 느껴진다."}
 {"k": "¿Quieres hacerlo salir?", "v": "그걸 꺼내고 싶니?"}
@@ -8027,7 +8027,7 @@
 {"k": "No", "v": "아니요"}
 {"map": 245, "n": 11}
 {"k": "Una inscripción escrita con un enigmático lenguaje de puntos.", "v": "수수께끼 같은 점 문자로 쓰인 비문이다."}
-{"k": "Hemos venido a la Gruta Helada para someternos a un entrenamiento extremo! ¡Seremos los primeros miembros del cuerpo de mosqueteros en dominar la Megaevolución!", "v": "우린 극한의 훈련을 받으려고 프로스트케이브에 왔다! 메가진화를 마스터하는 최초의 총사대원이 되겠어!"}
+{"k": "Hemos venido a la Gruta Helada para someternos a un entrenamiento extremo! ¡Seremos los primeros miembros del cuerpo de mosqueteros en dominar la Megaevolución!", "v": "우린 극한의 훈련을 받으려고 얼음 동굴에 왔다! 메가진화를 마스터하는 최초의 총사대원이 되겠어!"}
 {"k": "El camino hacia la Megaevolución está plagado de obstáculos. Pero los superaremos.", "v": "메가진화로 가는 길은 장애물로 가득하다. 하지만 우린 모두 극복할 것이다."}
 {"k": "Para dominar todas las Megaevoluciones tendrás que hacerte con todas las Megapiedras posibles. ¿Estás investigando bien cada rincón de la región?", "v": "모든 메가진화를 마스터하려면 가능한 모든 메가스톤을 손에 넣어야 해. 이 지방 구석구석을 잘 조사하고는 있겠지?"}
 {"k": "Hace mucho frío y no llevas nada en la bolsa que desprenda calor...", "v": "날씨가 매우 추운데 가방 안에 열기를 내는 물건이 없군요..."}
@@ -9209,8 +9209,8 @@
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] Creo que ha salido de <b>Pueblo Fresco</b>.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 아무래도 <b>버들비마을</b>을 벗어난 것 같아."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] Vale, yo iré a cubrir la <b>Ruta 18</b>. <b>Melia</b>, tú vigila la <b>Ruta 16</b>.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 좋아, 내가 <b>18번도로</b>를 뒤져 볼게. <b>멜리아</b>, 넌 <b>16번도로</b>를 살펴다오."}
 {"k": "¡<i>S'il voul plais</i>! ¡No hagas ninguna tontería, papi!", "v": "제발! 바보 같은 짓은 하지 마, 아빠!"}
-{"k": "¿Vas a ir hasta la <b>Gruta Helada</b>? ¿Quieres que te suelte una pista por 2.000 pokéfrancos?", "v": "<b>프로스트케이브</b>까지 가실 건가요? 2,000 포켓프랑을 내시면 힌트를 드릴게요!"}
-{"k": "En la <b>Gruta Helada</b> hace tanto frío que tus Pokémon sufrirán Congelación al entrar.", "v": "<b>프로스트케이브</b>는 너무 추워서 들어가는 순간 포켓몬이 얼음 상태가 돼요."}
+{"k": "¿Vas a ir hasta la <b>Gruta Helada</b>? ¿Quieres que te suelte una pista por 2.000 pokéfrancos?", "v": "<b>얼음 동굴</b>까지 가실 건가요? 2,000 포켓프랑을 내시면 힌트를 드릴게요!"}
+{"k": "En la <b>Gruta Helada</b> hace tanto frío que tus Pokémon sufrirán Congelación al entrar.", "v": "<b>얼음 동굴</b>는 너무 추워서 들어가는 순간 포켓몬이 얼음 상태가 돼요."}
 {"k": "Para evitar esto, puedes llevar ciertos objetos cálidos que desprendan calor en tu bolsa.", "v": "이를 막으려면 가방에 열을 내는 따뜻한 물건들을 가지고 들어가시면 돼요."}
 {"k": "Creo que es una transacción generosa, pero allá tú.", "v": "참 관대한 거래라고 생각하지만, 마음대로 하세요!"}
 {"k": "\\c[5]<b>Melia:</b>\\c[0] Ay... estoy cansada. Pero ha sido un buen recital, Floette.", "v": "\\c[5]<b>멜리아:</b>\\c[0] 아휴... 피곤해라. 그래도 연주회는 성공적이었어, 플라엣테."}
