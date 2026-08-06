@@ -1,0 +1,22 @@
+{
+  "name": "Pixel Shadow",
+  "game": "Pokemon Z Fangame",
+  "description": "글자 그림자를 2픽셀에서 1픽셀로 줄이는 모드예요.\n\n게임은 글자를 그림자 색으로 세 번(오른쪽·아래·대각) 찍고 그 위에 본 글자를 얹습니다. 오프셋 2픽셀은 획이 굵은 원판 포켓몬 폰트에 맞춘 값이라, 획이 1픽셀인 픽셀 폰트에서는 그림자가 글자보다 두꺼워 보여요.\n\n그리는 방식은 원본 그대로 두고 오프셋만 바꿉니다. 값은 001_Shadow.rb의 PIXEL_SHADOW_OFFSET에서 조정할 수 있어요.",
+  "engine": "essentials-v16",
+  "install": "inject",
+  "created_at": "2026-08-07",
+  "scripts": [
+    {
+      "file": "001_Shadow.rb",
+      "script_name": "001_Shadow.rb"
+    },
+    {
+      "file": "002_MessageShadow.rb",
+      "script_name": "002_MessageShadow.rb"
+    }
+  ],
+  "expects": {
+    "SpriteWindow": "dd49c0623e5fc170534c44aa6c198e23",
+    "DrawText": "b6e3111c62e7c43b528fa60894e9acb6"
+  }
+}
