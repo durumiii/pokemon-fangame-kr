@@ -1,0 +1,28 @@
+{
+  "_읽는이에게": [
+    "파일 이름 → 그 파일이 들고 나갈 패밀리명. 게임은 폰트를 파일 이름이 아니라",
+    "이 이름으로 찾는다. 원판 pkmn*.ttf 여덟 벌이 이 이름들을 들고 있으면서 한글이",
+    "0자라, 같은 이름을 한글 든 폰트가 직접 들게 해 그 자리를 덮는다.",
+    "요청 이름의 출처는 게임 스크립트 실물이다 — SpriteWindow의 MessageConfig::FontName과",
+    "pbTryFonts 세 자리, PScreen_Options의 $VersionStyles 네 줄.",
+    "\"Arial Black\" 한 자리는 뺐다(RPG__Sprite의 대미지 숫자 — 한글이 안 지나간다)."
+  ],
+  "families": {
+    "pkmnem.ttf": "Power Green",
+    "pkmnemn.ttf": "Power Green Narrow",
+    "pkmnems.ttf": "Power Green Small",
+    "pkmndp.ttf": "Power Clear",
+    "pkmndpb.ttf": "Power Clear",
+    "pkmnrs.ttf": "Power Red and Blue",
+    "pkmnrsi.ttf": "Power Red and Blue Intl",
+    "pkmnfl.ttf": "Power Red and Green",
+    "kr-emerald.ttf": "Pokemon Emerald",
+    "kr-emerald-small.ttf": "Pokemon Emerald Small",
+    "kr-emerald-narrow.ttf": "Pokemon Emerald Narrow",
+    "kr-fireleaf.ttf": "Pokemon FireLeaf",
+    "kr-rs.ttf": "Pokemon RS",
+    "kr-dp.ttf": "Pokemon DP",
+    "kr-arial.ttf": "Arial",
+    "kr-arial-narrow.ttf": "Arial Narrow"
+  }
+}
