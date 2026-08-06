@@ -1,20 +1,20 @@
-# 한글 굵게를 세로로 겹친다 (Ruby 1.8.7)
+# 한글 굵게를 「반 픽셀」만큼만 (Ruby 1.8.7)
 #
-# 폰트에 굵은 판이 없으면 엔진은 글자를 **가로로** 1픽셀 겹쳐 굵게를 흉내 낸다. 획이
-# 1픽셀인 픽셀 폰트에서는 그 겹침이 한글의 세로 틈을 메워, 「배」·「대」처럼 ㅐ가 든 글자가
-# 통째로 덩어리가 된다. 굵게를 끄는 대신 **겹치는 방향을 세로로 돌린다** — 굵기는 그대로
-# 얻고 세로 틈은 살아남는다.
+# 폰트에 굵은 판이 없으면 엔진은 글자를 가로로 1픽셀 겹쳐 굵게를 흉내 낸다. 획이 1픽셀인
+# 픽셀 폰트에서는 그 겹침이 한글의 세로 틈을 그대로 메워, 「배」·「대」의 ㅐ가 덩어리가 된다.
 #
-# 실측(번역문에서 자주 쓰는 한글 300자, 2026-08-07):
-#   24px  가로 겹침: 세로 틈이 사라진 글자 43 · 가로 틈 0
-#         세로 겹침: 세로 틈이 사라진 글자  0 · 가로 틈 8
-#   22px  가로 겹침: 47 · 37      세로 겹침: 34 · 129
-# 게임이 지정하는 크기는 24가 가장 많다. 가로 틈은 받침 있는 글자에서 조금 좁아지지만
-# 세로 틈이 메워질 때처럼 글자가 뭉개지지는 않는다.
+# 픽셀 사이 값은 그릴 수 없으니 **옅게 겹쳐서** 만든다 — 오른쪽 1픽셀 자리에 같은 글자를
+# 반투명으로 한 겹 얹는다. 획은 굵어 보이고, 틈은 메워지는 대신 반톤으로 남아 글자 모양이
+# 살아 있다. 세로로 겹치는 방식도 재 봤지만(세로 틈은 완벽히 남는다) 획의 무게가 아래로
+# 쏠려 어색해 버렸다(2026-08-07 유지자 판정).
 #
-# 라틴·숫자는 속이 넓어 엔진 기본(가로 겹침)으로 둔다.
+# PIXEL_BOLD_SIDE  = 겹치는 자리 :right(가로) 또는 :diag(대각)
+# PIXEL_BOLD_ALPHA = 그 겹의 진하기 0~255. 0이면 굵게를 아예 걸지 않는다(=포기).
+#                    80 옅게 · 110 보통 · 150 진하게 · 255면 엔진 기본과 같아진다.
+# 라틴·숫자는 속이 넓어 엔진 기본(가로 1픽셀)을 그대로 쓴다.
 
-PIXEL_BOLD_VERTICAL = true      # false면 엔진 기본 그대로
+PIXEL_BOLD_SIDE = :right
+PIXEL_BOLD_ALPHA = 110
 
 def pixelShadowWide?(ch)
   s = ch[0]
@@ -35,7 +35,7 @@ def drawSingleFormattedChar(bitmap, ch)
     end
     if ch[0] != "\n" && ch[0] != "\r" && ch[0] != " " && !isWaitChar(ch[0])
       # 한글 굵게는 우리가 세로로 겹쳐 만든다 — 엔진의 가로 겹침은 끈다
-      fatten = PIXEL_BOLD_VERTICAL && ch[6] && pixelShadowWide?(ch)
+      fatten = ch[6] && pixelShadowWide?(ch)      # 한글 굵게는 우리가 반겹으로 만든다
       wantbold = fatten ? false : ch[6]
       if bitmap.font.bold != wantbold
         bitmap.font.bold = wantbold
@@ -70,7 +70,7 @@ def drawSingleFormattedChar(bitmap, ch)
           for layer in pixelShadowLayers
             bitmap.font.color = layer[2] ? faint : ch[9]
             bitmap.draw_text(ch[1] + layer[0], ch[2] + layer[1], ch[3] + 2, ch[4], ch[0])
-            bitmap.draw_text(ch[1] + layer[0], ch[2] + layer[1] + 1, ch[3] + 2, ch[4], ch[0]) if fatten
+
           end
         end
       end
@@ -78,7 +78,14 @@ def drawSingleFormattedChar(bitmap, ch)
         bitmap.font.color = ch[8]
       end
       bitmap.draw_text(ch[1] + offset, ch[2] + offset, ch[3], ch[4], ch[0])
-      bitmap.draw_text(ch[1] + offset, ch[2] + offset + 1, ch[3], ch[4], ch[0]) if fatten
+      if fatten && PIXEL_BOLD_ALPHA > 0
+        half = Color.new(ch[8].red, ch[8].green, ch[8].blue, PIXEL_BOLD_ALPHA)
+        dx = 1
+        dy = (PIXEL_BOLD_SIDE == :diag) ? 1 : 0
+        bitmap.font.color = half
+        bitmap.draw_text(ch[1] + offset + dx, ch[2] + offset + dy, ch[3], ch[4], ch[0])
+        bitmap.font.color = ch[8]
+      end
     else
       if bitmap.font.color != ch[8]
         bitmap.font.color = ch[8]
