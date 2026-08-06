@@ -14,6 +14,7 @@ usage: uv run build_canon.py            # 새로 받아서 만들기
        uv run build_canon.py --offline  # 받아둔 raw/ 캐시로만 만들기
 """
 import json
+import re
 import sys
 import urllib.request
 from pathlib import Path
@@ -29,6 +30,10 @@ DOMAINS = {  # domain → (경로 틀, 파일 틀)
     "natures":   "other/{lang}/text_Natures_{lang}.txt",
     "types":     "other/{lang}/text_Types_{lang}.txt",
     "items":     "items/text_Items_{lang}.txt",
+    # 리본은 줄 모양이 다르다 — 「열쇠<탭>이름」이고, 열쇠가 세대를 들고 있다
+    # (RibbonG3CoolSuper·RibbonG4CoolGreat). 3·4세대 콘테스트 리본은 본가 문장
+    # 덤프(XY 이후)에 없어서 이 파일이 유일한 전거다.
+    "ribbons":   "other/{lang}/text_Ribbons_{lang}.txt",
 }
 LANGS = ["es", "en", "ko"]
 PLACEHOLDER = {"", "?", "??", "???", "----", "-----", "(None)", "None"}
@@ -54,9 +59,20 @@ def main():
             length = min(len(c) for c in cols.values())
             for i in range(length):
                 row = {lang: cols[lang][i].strip() for lang in LANGS}
+                key = None
+                if domain == "ribbons":
+                    key = row["en"].split("\t")[0]
+                    row = {lang: v.split("\t")[-1].strip() for lang, v in row.items()}
+                    # 「쿨리본 (3세대)」의 꼬리는 PKHeX가 목록에서 세대를 가르려고 붙인
+                    # 것이지 게임 안 표기가 아니다.
+                    row = {lang: re.sub(r"\s*\((G3|G4|Gen3|Gen4|ORAS|\d세대)\)$", "", v)
+                           for lang, v in row.items()}
                 if any(v in PLACEHOLDER for v in row.values()):
                     continue
-                f.write(json.dumps({"domain": domain, "i": i, **row}, ensure_ascii=False) + "\n")
+                rec = {"domain": domain, "i": i, **row}
+                if key:
+                    rec["key"] = key
+                f.write(json.dumps(rec, ensure_ascii=False) + "\n")
                 n += 1
     print(f"{out}: {n}행")
 
