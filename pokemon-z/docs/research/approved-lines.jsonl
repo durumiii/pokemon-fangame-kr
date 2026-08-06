@@ -803,3 +803,109 @@
 {"map": 90, "es": "Vamos a su despacho a hablar con él, \\PN.", "ko": "원장실로 가서 이야기해 보자꾸나, \\PN.", "who": "Olivier", "src": "pilot-2026-08-06"}
 {"map": 90, "es": "\\c[2]<b>Lanto:</b>\\c[0] Yo he de volver a mi humilde morada, pero insisto...", "ko": "\\c[2]<b>란토:</b>\\c[0] 저는 이만 비루한 보금자리로 돌아가봐야겠습니다만, 부디...", "who": "Lanto", "src": "pilot-2026-08-06"}
 {"map": 90, "es": "Si alguna vez necesitáis cualquier cosa, tenéis a un amigo en mí. ¡No os cortéis en pedirme nada!", "ko": "혹시라도 필요한 것이 생기면 언제든 저를 찾아주십시오. 망설이지 마시고 편하게 부탁하시고요!", "who": "Lanto", "src": "pilot-2026-08-06"}
+{"map": 21, "es": "\\c[5]<b>Melia:</b>\\c[0] ¡Mira, \\PN! ¡He llegado antes que tú al primer Bastión Pokémon!", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 이것 봐, \\PN! 내가 너보다 먼저 첫 번째 포켓몬 요새에 도착했다고!", "who": "멜리아", "src": "pilot-2"}
+{"map": 21, "es": "¿Has venido aquí directamente o te has parado a examinar los rincones de la ciudad?", "ko": "여기 구경도 안 하고 곧장 온 거야, 아니면 구석구석 구경하다 온 거야?", "who": "멜리아", "src": "pilot-2"}
+{"map": 21, "es": "<b>???:</b> <i>*Ejem*</i>", "ko": "<b>???:</b> <i>*에헴*</i>", "who": "카놀라", "src": "pilot-2"}
+{"map": 21, "es": "<b>???:</b> Supongo que sois los nuevos Aspirantes del <b>PokéTour</b> que ha enviado <i>mademoiselle</i> <b>Olivier</b>, ¿no?", "ko": "<b>???:</b> 그대들이 <b>마드모아젤</b> <i>올리비에</i>께서 보낸 <b>포켓투어</b>의 새로운 후보생들이겠지?", "who": "카놀라", "src": "pilot-2"}
+{"map": 21, "es": "<b>???:</b> Supongo que sois las nuevas Aspirantes del <b>PokéTour</b> que ha enviado <i>mademoiselle</i> <b>Olivier</b>, ¿no?", "ko": "<b>???:</b> 그대들이 <b>마드모아젤</b> <i>올리비에</i>께서 보낸 <b>포켓투어</b>의 새로운 후보생들이겠지?", "who": "카놀라", "src": "pilot-2"}
+{"map": 21, "es": "\\c[5]<b>Melia:</b>\\c[0] ¡Al otro no hace falta esperarlo! La última vez que lo vi había prendido fuego a su casaca haciendo Alquimia Pokémon.", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 다른 한 녀석은 기다릴 필요도 없어요! 지난번에 봤을 땐 포켓몬 연금술을 하다가 제 외투에 불을 붙이고 있더라고요.", "who": "멜리아", "src": "pilot-2"}
+{"map": 21, "es": "<b>???:</b> En ese caso, me presento.", "ko": "<b>???:</b> 그렇다면 인사를 건네도록 하지.", "who": "카놀라", "src": "pilot-2"}
+{"map": 21, "es": "Soy <b>Canola</b>, regente del Bastión Pokémon de <b>Ciudad Grisalla</b>.", "ko": "나는 <b>카놀라</b>, <b>그리사야시티</b> 포켓몬 요새의 섭정이다.", "who": "카놀라", "src": "pilot-2"}
+{"map": 21, "es": "<b>Canola:</b> ¿Os han explicado ya cómo funciona esto?", "ko": "<b>카놀라:</b> 포켓투어가 어떻게 진행되는지는 이미 설명을 들었겠지?", "who": "카놀라", "src": "pilot-2"}
+{"map": 21, "es": "Cada 4 años, se celebra un <b>PokéTour</b> donde los Aspirantes tratan de derrotar a los 12 Regentes de <b>Kalos</b>.", "ko": "4년마다 <b>포켓투어</b>가 열려, 후보생들은 <b>칼로스</b>의 섭정 12명을 쓰러뜨려야 한다.", "who": "카놀라", "src": "pilot-2"}
+{"map": 21, "es": "Si lo consiguen, tienen derecho a una audiencia con el rey <b>Áster Zephir</b> en <b>Ciudad Luminalia</b> y este les concederá cualquier deseo.", "ko": "성공한다면 <b>미르시티</b>에서 <b>아스테르 제피르</b> 왕을 접견할 권리를 얻게 되며, 국왕께서 어떤 소원이든 들어주실 것이다.", "who": "카놀라", "src": "pilot-2"}
+{"map": 21, "es": "Cualquier deseo que entre dentro de lo humanamente posible, claro.", "ko": "물론 인간의 힘으로 가능한 범위 안의 소원이겠지만 말이다.", "who": "카놀라", "src": "pilot-2"}
+{"map": 21, "es": "\\c[5]<b>Melia:</b>\\c[0] ¡Yo ya tengo claro lo que voy a pedirle!", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 난 국왕님께 부탁할 소원을 벌써 정해뒀어요!", "who": "멜리아", "src": "pilot-2"}
+{"map": 21, "es": "\\c[5]<b>Melia:</b>\\c[0] Podemos empezar cuando quiera, regente <b>Canola</b>.", "ko": "\\c[5]<b>멜리아:</b>\\c[0] <b>카놀라</b> 섭정님만 괜찮으시다면 언제든 시작해요.", "who": "멜리아", "src": "pilot-2"}
+{"map": 21, "es": "<b>Canola:</b> Ya, pero llegáis en un momento bastante malo para la ciudad.", "ko": "<b>카놀라:</b> 하지만 안타깝게도 지금 이 도시는 그리 좋은 상황이 아니다.", "who": "카놀라", "src": "pilot-2"}
+{"map": 21, "es": "Se están dando muchos casos de robos de Pokémon en los últimos días.", "ko": "요 며칠 사이에 포켓몬 도난 사건이 빈번하게 발생하고 있거든.", "who": "카놀라", "src": "pilot-2"}
+{"map": 21, "es": "Como Regente, no puedo dejar este asunto sin atender.", "ko": "섭정으로서 이 문제를 방치할 수는 없는 노릇이다.", "who": "카놀라", "src": "pilot-2"}
+{"map": 21, "es": "\\c[5]<b>Melia:</b>\\c[0] ¿Y tan grave es eso?", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 그게 그렇게 심각한 일인가요?", "who": "멜리아", "src": "pilot-2"}
+{"map": 21, "es": "Quiero decir, ¿las personas del pueblo no se roban constantemente entre ellas?", "ko": "제 말은, 시골 사람들은 원래 서로 물건을 자주 훔치지 않나요?", "who": "멜리아", "src": "pilot-2"}
+{"map": 21, "es": "<b>Canola:</b> Esa es una presunción muy imprudente e injusta.", "ko": "<b>카놀라:</b> 대단히 경솔하고 부당한 단정이로구나.", "who": "카놀라", "src": "pilot-2"}
+{"map": 21, "es": "Y además...", "ko": "게다가...", "who": "카놀라", "src": "pilot-2"}
+{"map": 21, "es": "¿Cuándo va a encontrar a mi querido Pokémon, regente <b>Canola</b>?", "ko": "제 소중한 포켓몬은 대체 언제 찾아주실 건가요, <b>카놀라</b> 섭정님?", "who": "카놀라", "src": "pilot-2"}
+{"map": 21, "es": "¡<i>Sacrebleu</i>! ¡Se supone que la tenemos aquí para que solucione nuestros problemas!", "ko": "<i>Sacrebleu</i>! 우리 문제를 해결하라고 당신이 여기 있는 거잖아요!", "who": "카놀라", "src": "pilot-2"}
+{"map": 21, "es": "Si no aparece pronto, ¡mi familia romperá negocios con la suya!", "ko": "곧 찾아내지 못한다면, 우리 가문은 귀하 가문과의 거래를 끊겠습니다!", "who": "카놀라", "src": "pilot-2"}
+{"map": 21, "es": "<b>Canola:</b> Y ahí lo tenéis. Los robos de Pokémon han empezado a afectar a gente pudiente.", "ko": "<b>카놀라:</b> 보았겠지. 포켓몬 도난 사건이 이제 유력 인사들에게까지 영향을 미치기 시작했다.", "who": "카놀라", "src": "pilot-2"}
+{"map": 21, "es": "A esa le robaron un Furfrou anoche.", "ko": "저 부인은 어젯밤 트리미앙을 도둑맞았지.", "who": "카놀라", "src": "pilot-2"}
+{"map": 21, "es": "\\c[5]<b>Melia:</b>\\c[0] ¿En serio? ¿Un Furfrou? ¿El Pokémon más cuqui de la vida?", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 정말? 트리미앙이라고? 세상에서 제일 귀여운 그 포켓몬?", "who": "멜리아", "src": "pilot-2"}
+{"map": 21, "es": "\\c[5]<b>Melia:</b>\\c[0] Tú no sabrás qué Pokémon es ese, \\PN.", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 너는 그게 어떤 포켓몬인지 모르지, \\PN.", "who": "멜리아", "src": "pilot-2"}
+{"map": 21, "es": "¡Deja que te ilustre!", "ko": "내가 설명해 줄게!", "who": "멜리아", "src": "pilot-2"}
+{"map": 21, "es": "Es más o menos así, ¿lo ves? Peludito y con aspecto canino.", "ko": "대충 이렇게 생겼어, 보이지? 털이 몽실몽실하고 강아지처럼 생겼거든.", "who": "멜리아", "src": "pilot-2"}
+{"map": 21, "es": "Cuando era pequeña, me regalaron uno y un pintor me retrató abrazada a él.", "ko": "어릴 때 선물받은 적이 있는데, 화가가 내가 그 아이를 안고 있는 모습을 초상화로 그려주기도 했어.", "who": "멜리아", "src": "pilot-2"}
+{"map": 21, "es": "Después se lo entregamos a una familia de campesinos para que pudieran comer ese mes.", "ko": "그 후엔 어느 시골 농부 가족에게 주어서 그 달에 끼니를 해결할 수 있게 해줬지.", "who": "멜리아", "src": "pilot-2"}
+{"map": 21, "es": "\\c[5]<b>Melia:</b>\\c[0] O sea, me refiero a que Furfrou es muy bueno olfateando bayas, por eso ayudó a los campesinos a conseguir comida.", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 아, 그러니까 트리미앙이 나무열매 냄새를 정말 잘 맡아서 농부들이 먹을거리를 구하는 데 도움을 줬다는 뜻이야.", "who": "멜리아", "src": "pilot-2"}
+{"map": 21, "es": "<b>Canola:</b> En fin, pues así están las cosas.", "ko": "<b>카놀라:</b> 아무튼 사정이 이러하다.", "who": "카놀라", "src": "pilot-2"}
+{"map": 21, "es": "Enviaría a mis mosqueteros a buscar al Furfrou, pero están hasta arriba de trabajo.", "ko": "내 총사들을 보내 트리미앙을 찾게 하고 싶지만, 다들 업무가 산더미처럼 쌓여 있거든.", "who": "카놀라", "src": "pilot-2"}
+{"map": 21, "es": "\\c[5]<b>Melia:</b>\\c[0] ¡Ya sé! ¡Nos puede asignar la misión a nosotros!", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 아, 알았다! 그 임무를 저희에게 맡겨주시면 되잖아요!", "who": "멜리아", "src": "pilot-2"}
+{"map": 21, "es": "\\c[5]<b>Melia:</b>\\c[0] ¡Ya sé! ¡Nos puede asignar la misión a nosotras!", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 아, 알았다! 그 임무를 저희에게 맡겨주시면 되잖아요!", "who": "멜리아", "src": "pilot-2"}
+{"map": 21, "es": "<b>Canola:</b> ¡Perfecto! ¡Eso es lo que quería oir de vuestra boca y la actitud que busco en los Aspirantes!", "ko": "<b>카놀라:</b> 훌륭하구나! 그것이야말로 내 그대들에게 기대하던 패기요, 후보생다운 자세다!", "who": "카놀라", "src": "pilot-2"}
+{"map": 21, "es": "Tomad esta misión como una prueba previa a nuestro enfrentamiento, que no será nada fácil.", "ko": "이번 임무를 나와의 대결에 앞선 시험이라 생각하거라. 결코 만만치 않을 테니.", "who": "카놀라", "src": "pilot-2"}
+{"map": 21, "es": "\\c[5]<b>Melia:</b>\\c[0] Buscaremos pistas de ese Furfrou por la ciudad, \\PN.", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 마을을 돌아다니면서 그 트리미앙의 단서를 찾아보자, \\PN.", "who": "멜리아", "src": "pilot-2"}
+{"map": 21, "es": "¡Algo encontraremos!", "ko": "무언가 발견할 수 있을 거야!", "who": "멜리아", "src": "pilot-2"}
+{"map": 26, "es": "<b>Plumanegra:</b> No esperaba encontrarme con ese espadachín débil y pretencioso por aquí.", "ko": "<b>검은깃털:</b> 여기서 그 약해 빠지고 잘난 척만 하는 검사를 만날 줄은 몰랐는데.", "who": "검은깃털", "src": "pilot-2"}
+{"map": 26, "es": "Si se pasa de listo, tendré que terminar la faena que dejé a medias con él. ¡Seré su perdición!", "ko": "건방지게 굴면 지난번에 하다 만 일을 끝마쳐주지. 놈을 아주 파멸시켜 버리겠어!", "who": "검은깃털", "src": "pilot-2"}
+{"map": 26, "es": "Y tú, ¿qué es lo que quieres?", "ko": "너, 무슨 일이지?", "who": "검은깃털", "src": "pilot-2"}
+{"map": 26, "es": "Si vas a molestarme, espero que sea para algo provechoso.", "ko": "귀찮게 할 거라면 뭔가 득이 되는 일이어야 할 거다.", "who": "검은깃털", "src": "pilot-2"}
+{"map": 26, "es": "Supongo que ya te habrás dado cuenta, pero soy un malhechor. Y estoy orgulloso de ello.", "ko": "이미 눈치챘겠지만 나는 악당이다. 그리고 그걸 자랑스럽게 여기지.", "who": "검은깃털", "src": "pilot-2"}
+{"map": 26, "es": "Sin embargo, debo reconocer que el sosiego de este lugar me da una paz extraña... Casi siniestra.", "ko": "하지만 이 장소의 고요함이 묘하게 평온함을 준다는 건 인정해야겠군... 거의 섬뜩할 정도야.", "who": "검은깃털", "src": "pilot-2"}
+{"map": 26, "es": "Me pregunto si tendrá que ver con las catacumbas que hay debajo de este edificio. Desgraciadamente, no he encontrado aún la forma de acceder\na ellas.", "ko": "이 건물 아래에 있는 카타콤 때문인가 싶기도 해. 안타깝게도 들어갈 방법은 아직 못 찾았지만.", "who": "검은깃털", "src": "pilot-2"}
+{"map": 36, "es": "¿El hombre con el que habla la profesora es... <i>monsieur</i> <b>Lanto</b>?", "ko": "교수님과 이야기하고 계신 분이... <i>무슈</i> <b>란토</b>인가?", "who": "크리산토", "src": "pilot-2"}
+{"map": 36, "es": "Pero además también es un filántropo, mecenas, intelectual... ¡un amante del progreso y de la cultura!", "ko": "게다가 박애주의자에 자선가, 지식인이자... 진보와 문화를 사랑하는 분이지!", "who": "크리산토", "src": "pilot-2"}
+{"map": 36, "es": "\\c[2]<b>Lanto:</b>\\c[0] ¡Oooh! ¡Qué dos jóvenes tan apuestos!", "ko": "\\c[2]<b>란토:</b>\\c[0] 오오! 참으로 훤칠하고 멋진 두 젊은이군요!", "who": "란토", "src": "pilot-2"}
+{"map": 36, "es": "\\c[2]<b>Lanto:</b>\\c[0] ¡Qué ojos tan dicharacheros y llenos de luz! ¿Cómo os llamáis?", "ko": "\\c[2]<b>란토:</b>\\c[0] 눈빛이 어찌나 활기차고 빛나는지요! 이름이 어떻게 되나요?", "who": "란토", "src": "pilot-2"}
+{"map": 36, "es": "\\c[2]<b>Lanto:</b>\\c[0] ¿Habéis venido sin compañía? ¿La estáis buscando?", "ko": "\\c[2]<b>란토:</b>\\c[0] 일행 없이 둘이서만 왔나요? 혹시 같이 즐길 사람을 찾고 있었나요?", "who": "란토", "src": "pilot-2"}
+{"map": 36, "es": "\\c[2]<b>Lanto:</b>\\c[0] ¡Ju, ju, ju! Yo os puedo mostrar las partes más divertidas de una fiesta.", "ko": "\\c[2]<b>란토:</b>\\c[0] 후, 후, 후! 내가 파티에서 가장 즐거운 곳들을 안내해 줄 수도 있답니다.", "who": "란토", "src": "pilot-2"}
+{"map": 36, "es": "Tente un poco de respeto, que les doblas la edad.", "ko": "나이가 두 배는 차이 나는 애들한테 체통 좀 지키시지.", "who": "올리비에", "src": "pilot-2"}
+{"map": 36, "es": "\\c[2]<b>Lanto:</b>\\c[0] Veo que tu carácter se amarga con el tiempo, <i>mademoiselle</i> <b>Olivier</b>.", "ko": "\\c[2]<b>란토:</b>\\c[0] <i>마드모아젤</i> <b>올리비에</b>, 시간이 지날수록 성격이 팍팍해지는군요.", "who": "란토", "src": "pilot-2"}
+{"map": 36, "es": "¿Por qué malpiensas de mi gentil cortesía?", "ko": "내 정중한 호의를 왜 곡해하시나요?", "who": "란토", "src": "pilot-2"}
+{"map": 36, "es": "\\c[2]<b>Olivier:</b>\\c[0] Cortesía, claro...", "ko": "\\c[2]<b>올리비에:</b>\\c[0] 친절은 무슨, 잘도 그렇겠네...", "who": "올리비에", "src": "pilot-2"}
+{"map": 36, "es": "\\c[3]<b>Crisanto:</b>\\c[0] ¡Yo he entendido su cortesía perfectamente, <i>monsieur</i>!", "ko": "\\c[3]<b>크리산토:</b>\\c[0] 저는 <i>무슈</i>의 호의를 완벽히 이해했습니다!", "who": "크리산토", "src": "pilot-2"}
+{"map": 36, "es": "Usted no me conoce, pero mi nombre es <b>Crisanto</b>. Es gracias a uno de sus programas de mecenazgo que pude estudiar y labrarme\nun futuro.", "ko": "저를 모르시겠지만, 제 이름은 <b>크리산토</b>입니다. 무슈의 장학 후원 프로그램 덕분에 공부하고 제 미래를 개척할 수 있었습니다.", "who": "크리산토", "src": "pilot-2"}
+{"map": 36, "es": "Le debo tanto, <i>monsieur</i>...", "ko": "<i>무슈</i>께 참으로 큰 은혜를 입었습니다...", "who": "크리산토", "src": "pilot-2"}
+{"map": 36, "es": "\\c[2]<b>Lanto:</b>\\c[0] ¿Y estudiaste algo relacionado con los deportes, <b>Crisanto</b>? ", "ko": "\\c[2]<b>란토:</b>\\c[0] 아, 혹시 체육 관련 분야를 공부했나요, <b>크리산토</b> 군?", "who": "란토", "src": "pilot-2"}
+{"map": 36, "es": "Tienes una constitución muy... atlética.", "ko": "체격이 아주... 운동선수처럼 다부지군요.", "who": "란토", "src": "pilot-2"}
+{"map": 36, "es": "\\c[2]<b>Olivier:</b>\\c[0] Haced el favor de terminar esta conversación y sentaos en la mesa. Ahora mismo.", "ko": "\\c[2]<b>올리비에:</b>\\c[0] 그만 대화 끝내고 가서 테이블에 앉아라. 지금 당장.", "who": "올리비에", "src": "pilot-2"}
+{"map": 40, "es": "\\c[5]<b>Melia:</b>\\c[0] ¿Por qué dices eso? ¿Solo porque la puerta está cerrada?", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 왜 그런 말을 해? 문이 닫혀 있다고 해서?", "who": "멜리아", "src": "pilot-2"}
+{"map": 40, "es": "\\c[3]<b>Crisanto:</b>\\c[0] ¿Ves ese Florges encima de la puerta? Es el emblema de la familia real.", "ko": "\\c[3]<b>크리산토:</b>\\c[0] 문 위에 있는 저 플라제스가 보여? 왕가의 문장이야.", "who": "크리산토", "src": "pilot-2"}
+{"map": 40, "es": "La puerta solo puede ser abierta por el rey de <b>Kalos</b> o por un familiar muy cercano con la misma sangre real.", "ko": "저 문은 <b>칼로스</b>의 왕이나, 같은 왕족의 피가 흐르는 아주 가까운 친족만이 열 수 있어.", "who": "크리산토", "src": "pilot-2"}
+{"map": 40, "es": "\\c[3]<b>Crisanto:</b>\\c[0] No hemos sido capaces de cumplir con lo que nos encargó la profesora. ¡Qué pésimos aprendices somos!", "ko": "\\c[3]<b>크리산토:</b>\\c[0] 교수님이 맡겨주신 과제도 해내지 못하다니. 우린 정말 형편없는 제자들이야!", "who": "크리산토", "src": "pilot-2"}
+{"map": 40, "es": "Ahora nos rodea la amarga fragancia del más absoluto fracaso...", "ko": "이제 우리를 감싸는 건 완전한 실패의 씁쓸한 향기뿐이구나...", "who": "크리산토", "src": "pilot-2"}
+{"map": 40, "es": "\\c[5]<b>Melia:</b>\\c[0] ...", "ko": "\\c[5]<b>멜리아:</b>\\c[0] ...", "who": "멜리아", "src": "pilot-2"}
+{"map": 40, "es": "\\c[5]<b>Melia:</b>\\c[0] ¡Ábrete, puertecita!", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 열려라, 작은 문아!", "who": "멜리아", "src": "pilot-2"}
+{"map": 40, "es": "\\c[5]<b>Melia:</b>\\c[0] Es muy largo de explicar, pero en resumen no soy hija del <b>Capitán Merlot</b>.", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 설명하자면 긴데, 요약하자면 난 <b>메를로 대장</b>의 딸이 아니거든.", "who": "멜리아", "src": "pilot-2"}
+{"map": 40, "es": "Soy, en realidad...", "ko": "사실 난...", "who": "멜리아", "src": "pilot-2"}
+{"map": 40, "es": "\\c[5]<b>Melia:</b>\\c[0] Hija del rey <b>Áster Zephir</b> y... heredera a la corona de <b>Kalos</b>, creo.", "ko": "\\c[5]<b>멜리아:</b>\\c[0] <b>아스테르 제피르</b> 왕의 딸이자... 아마도 <b>칼로스</b>의 왕위 계승자일걸.", "who": "멜리아", "src": "pilot-2"}
+{"map": 40, "es": "\\c[5]<b>Melia:</b>\\c[0] ¡Es un secreto! ¿Eh? <i>S'il vous plait</i>, me enfadaré mucho con vosotros si reveláis mi identidad.", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 이건 비밀이야! 알겠지? <i>부탁이니까</i>, 내 정체를 밝히면 진짜 화낼 거야!", "who": "멜리아", "src": "pilot-2"}
+{"map": 40, "es": "\\c[5]<b>Melia:</b>\\c[0] De verdad que es muy largo de contar. Ya hablaremos de ello en otro momento.", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 정말 말하자면 너무 길어. 그 이야기는 나중에 하자.", "who": "멜리아", "src": "pilot-2"}
+{"map": 40, "es": "Ahora vamos a ver qué se esconde detrás de esta puertecita.", "ko": "자, 그럼 이 작은 문 뒤에 뭐가 숨어 있는지 볼까?", "who": "멜리아", "src": "pilot-2"}
+{"map": 42, "es": "\\c[3]<b>Crisanto:</b>\\c[0] ¿Te han dicho algo del estado del capitán?", "ko": "\\c[3]<b>크리산토:</b>\\c[0] 대장님의 상태에 대해 들은 건 있어?", "who": "크리산토", "src": "pilot-2"}
+{"map": 42, "es": "\\c[5]<b>Melia:</b>\\c[0] Se lo han llevado a casa. Podrá recuperarse pero... tendrá que estar un tiempo en cama.", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 집으로 모셔다드렸어. 회복은 하시겠지만... 당분간은 침대에 누워 계셔야 할 거야.", "who": "멜리아", "src": "pilot-2"}
+{"map": 42, "es": "\\c[3]<b>Crisanto:</b>\\c[0] Esa tal <b>Alca</b>... ¿era la jefa del <b>Team Azoth</b>?", "ko": "\\c[3]<b>크리산토:</b>\\c[0] <b>알카</b>라는 그 사람... <b>아조스단</b>의 두목이었던 걸까?", "who": "크리산토", "src": "pilot-2"}
+{"map": 42, "es": "\\c[5]<b>Melia:</b>\\c[0] Yo... ¡yo sabía que ocurriría alguna desgracia! ¡Todo esto es culpa mía!", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 난... 난 불행한 일이 일어날 줄 알고 있었어! 이 모든 게 다 내 탓이야!", "who": "멜리아", "src": "pilot-2"}
+{"map": 42, "es": "Seguro que la profesora <b>Olivier</b> podrá darnos buen consejo sobre todo esto.", "ko": "<b>올리비에 교수님</b>이라면 이 모든 일에 대해 좋은 조언을 해주실 수 있을 거야.", "who": "크리산토", "src": "pilot-2"}
+{"map": 42, "es": "Nuestro tercer señor Regente nos espera.", "ko": "우리의 세 번째 섭정께서 기다리고 계시니 말이야.", "who": "크리산토", "src": "pilot-2"}
+{"map": 44, "es": "\\c[5]<b>Melia:</b>\\c[0] ¡Ay! Me escuecen mucho... los ojitos...", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 아이고! 눈이... 너무 따가워...", "who": "멜리아", "src": "pilot-2"}
+{"map": 44, "es": "<b>Recluta Azoth 2:</b> ¡Condenado Pokémon! ¡No nos advirtieron de que sería tan peligroso acercarse! ", "ko": "<b>아조스단 신병 2호:</b> 빌어먹을 포켓몬 같으니! 가깝게 접근하는 게 이렇게 위험하다고는 아무도 말 안 했다고!", "who": "아조스단 신병 2호", "src": "pilot-2"}
+{"map": 44, "es": "<b>Recluta Azoth 3:</b> ¡Ah, estáis aquí! La jefa ha dado la orden de retirarnos inmediatamente de la zona.", "ko": "<b>아조스단 신병 3호:</b> 아, 여기 있었구나! 대장님이 이 지역에서 즉시 철수하라는 명령을 내렸어.", "who": "아조스단 신병 3호", "src": "pilot-2"}
+{"map": 44, "es": "\\c[5]<b>Melia:</b>\\c[0] Creo que... todo este asunto del <b>Team Azoth</b> le tiene un poco de los nervios.", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 아무래도... 이번 <b>아조스단</b> 일 때문에 조금 신경이 곤두서 계신 것 같아.", "who": "멜리아", "src": "pilot-2"}
+{"map": 59, "es": "Unas horas más tarde...", "ko": "몇 시간 뒤...", "who": "크리산토", "src": "pilot-2"}
+{"map": 59, "es": "\\c[3]<b>Crisanto:</b>\\c[0] ¡<i>Mon Dieu</i>, profesora! La veo bien.", "ko": "\\c[3]<b>크리산토:</b>\\c[0] <i>Mon Dieu</i>, 교수님! 안색이 참 좋아 보이십니다.", "who": "크리산토", "src": "pilot-2"}
+{"map": 59, "es": "\\c[5]<b>Melia:</b>\\c[0] ¿Verdad que sí? Ese color le favorece mucho.", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 그렇죠? 그 색상이 정말 잘 어울리세요.", "who": "멜리아", "src": "pilot-2"}
+{"map": 59, "es": "\\c[2]<b>Olivier:</b>\\c[0] Pero atended, que es lo importante.", "ko": "\\c[2]<b>올리비에:</b>\\c[0] 아무튼 중요한 이야기니까 잘 들어라.", "who": "올리비에", "src": "pilot-2"}
+{"map": 59, "es": "Por si no lo sabíais, <i>monsieur</i> <b>Rosillon</b> es un coleccionista de libros prohibidos y reliquias ocultistas.", "ko": "너희는 몰랐겠지만, <i>무슈</i> <b>로시욘</b>은 금서나 오컬트 유물을 수집하는 취미가 있단다.", "who": "올리비에", "src": "pilot-2"}
+{"map": 59, "es": "\\c[5]<b>Melia:</b>\\c[0] ¡Es verdad! Mi padre me contó una vez que incluso tiene una biblioteca secreta en algún lugar de la mansión.", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 맞아요! 아버지께서 말씀해 주셨는데, 저택 어딘가에 비밀 도서관도 갖고 계신대요.", "who": "멜리아", "src": "pilot-2"}
+{"map": 59, "es": "\\c[2]<b>Olivier:</b>\\c[0] Efectivamente. Y en lo profundo de esa biblioteca, guarda algo que yo busco.", "ko": "\\c[2]<b>올리비에:</b>\\c[0] 맞는 말이다. 그리고 그 도서관 깊은 곳에 내가 찾는 물건이 있지.", "who": "올리비에", "src": "pilot-2"}
+{"map": 59, "es": "Un manuscrito de un antiguo monje que habla sobre secretos muy profundos de la Alquimia Pokémon. Tiene una tapa azul.", "ko": "포켓몬 연금술의 깊은 비법을 다룬 옛 수도사의 사본인데, 파란색 표지로 되어 있단다.", "who": "올리비에", "src": "pilot-2"}
+{"map": 59, "es": "\\c[3]<b>Crisanto:</b>\\c[0] Pero, profesora... lo que nos pide se llama robar...", "ko": "\\c[3]<b>크리산토:</b>\\c[0] 하지만 교수님... 저희에게 요구하시는 건 도둑질이라 불리는 행위입니다만...", "who": "크리산토", "src": "pilot-2"}
+{"map": 59, "es": "\\c[2]<b>Olivier:</b>\\c[0] ¡Déjate de remilgos, que ese hombre podría enterrarnos en dinero a nosotros y a toda nuestra descendencia de los siglos venideros!", "ko": "\\c[2]<b>올리비에:</b>\\c[0] 쓸데없는 소리 마라! 그 사람은 우리와 수백 년 뒤의 후손들까지 돈으로 파묻어 버릴 수 있는 부자란 말이다!", "who": "올리비에", "src": "pilot-2"}
+{"map": 59, "es": "\\c[2]<b>Olivier:</b>\\c[0] Pronto va a anochecer. Es la hora.", "ko": "\\c[2]<b>올리비에:</b>\\c[0] 곧 해가 지겠구나. 때가 됐다.", "who": "올리비에", "src": "pilot-2"}
+{"map": 61, "es": "<b>Hisopo:</b> Pongámonos a trabajar, ¿vale? Quiero que practiquéis la escena romántica del segundo acto.", "ko": "<b>히소포:</b> 자, 연습에 들어가자! 2막의 로맨틱한 장면을 연기해 봐라!", "who": "히소포", "src": "pilot-2"}
+{"map": 61, "es": "Mostradme vuestras dotes de improvisación. ¡Dejad que las musas del arte invadan todo vuestro ser!", "ko": "어디 너희의 즉흥 연기 실력을 보여다오. 예술의 뮤즈가 온몸을 지배하도록 만드는 거다!", "who": "히소포", "src": "pilot-2"}
+{"map": 61, "es": "<b>Actriz:</b> No hay felicidad o infelicidad en este mundo, solo la comparación entre distintos estados de ánimo.", "ko": "<b>여배우:</b> 이 세상에 행복이나 불행 따위는 없다. 그저 서로 다른 감정 상태를 비교할 뿐.", "who": "Actriz", "src": "pilot-2"}
+{"map": 61, "es": "Así pues, ¿solo el que ha deseado morir conoce realmente lo bueno que es vivir?", "ko": "그렇다면 죽기를 열망했던 자만이 삶이 얼마나 아름다운지 진정으로 알 수 있단 말인가?", "who": "Actriz", "src": "pilot-2"}
+{"map": 61, "es": "¿Qué representa para vos la vida, al fin y al cabo?", "ko": "당신에게 삶이란 결국 무엇을 의미하는 것이오?", "who": "Actriz", "src": "pilot-2"}
+{"map": 61, "es": "<b>Hisopo:</b> ¿Cómo? ¡Qué falta de talento! ¡De pasión! ¡De garra!", "ko": "<b>히소포:</b> 뭐라고? 재능도, 열정도, 패기도 이렇게나 부족하다니!", "who": "히소포", "src": "pilot-2"}
+{"map": 61, "es": "¿Es que no te corre sangre por las venas o qué?", "ko": "혈관에 피는 타고 흐르고 있는 거냐?", "who": "히소포", "src": "pilot-2"}
+{"map": 61, "es": "¡Te mandaré directamente a las tinieblas!", "ko": "너를 곧장 칠흑 같은 어둠 속으로 보내 주마!", "who": "히소포", "src": "pilot-2"}
