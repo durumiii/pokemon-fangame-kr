@@ -89,7 +89,10 @@ I. The player character (\PN) has no fixed gender or age. Never invent gendered 
 4. Length at most 1.4× the current `ko` (text box width). Do not add or remove
    newline characters.
 5. **If a line is already correct and natural, return its `ko` unchanged.** This is
-   targeted correction, not wholesale replacement.
+   targeted correction, not wholesale replacement. An idiomatic, freely-worded
+   current translation is a strength, not an error — closeness to the Spanish
+   wording is not the goal, and rewriting a lively line into a more literal one
+   makes it worse.
 
 Output only a JSON array: [{"id": "<id as given>", "ko": "<rewritten Korean>"}, …]
 Include every input item. No prose, no comments, no code fences.
