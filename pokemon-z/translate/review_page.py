@@ -17,6 +17,7 @@
 
 import html
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -74,7 +75,11 @@ def scene_of(fp, why, ok=frozenset()):
     hit = [r for r in rows if r["id"] in why and r.get("new") and r["id"] not in ok]
     if not hit:
         return None
-    mid, ev, pg = (fp.stem.lstrip("p").split("-") + ["", ""])[:3]
+    # 파일 이름은 p<맵>-<이벤트>-<페이지>(주연) 또는 t<맵>-<이벤트>(트레이너) 꼴이다
+    m = re.match(r"^[A-Za-z]*(\d+)-(\d+)(?:-(\d+))?$", fp.stem)
+    if not m:
+        return None
+    mid, ev, pg = m.group(1), m.group(2), m.group(3) or "0"
     return {
         "file": fp.stem, "map": int(mid), "event": ev, "page": pg,
         "name": mapname.ko(int(mid)) or f"맵 {int(mid)}",
