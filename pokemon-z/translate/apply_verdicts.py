@@ -200,7 +200,9 @@ def run(out_dir, write=False, events_only=False):
 
     plan, why = {}, {}
     clash, stat = [], {}
-    for fp in sorted(d.glob("p*.jsonl")):
+    for fp in sorted(d.glob("*.jsonl")):
+        if fp.name.startswith("screen"):     # 산출 파일 이름은 p…(주연)·t…(트레이너)
+            continue
         for line in fp.read_text(encoding="utf-8").splitlines():
             if not line.strip():
                 continue

@@ -1232,7 +1232,7 @@
 {"k": "Ver mercancía", "v": "상품 보기"}
 {"map": 27, "n": 31}
 {"k": "<b>PISTA DE ENTRENADOR:</b> Aunque en este juego no se haga de noche de forma visual, contará el día y la noche según la hora de tu PC.", "v": "<b>트레이너 팁:</b> 이 게임에서는 시각적으로 밤이 찾아오지는 않지만, PC의 시간을 기준으로 낮과 밤이 구분됩니다."}
-{"k": "¿Has visto a esa dama que está de paseo? Voy a impresionarla con mis dotes de entrenador. ¿Me permites?", "v": "산책 중인 저 숙녀분이 보이시나요? 내 트레이너로서의 실력으로 그 마음을 사로잡아 보려는 거다. 실례해도 되겠습니까?"}
+{"k": "¿Has visto a esa dama que está de paseo? Voy a impresionarla con mis dotes de entrenador. ¿Me permites?", "v": "산책 중인 저 숙녀분이 보이시나요? 내 트레이너로서의 실력으로 그 마음을 사로잡아보려는데, 실례해도 되겠습니까?"}
 {"k": "No me importa perder en esto, tengo otras cualidades.", "v": "여기서 지더라도 상관없어요. 저에게는 다른 장점들이 있으니까요."}
 {"k": "Ganar o perder no lo es todo, hay otras cualidades personales muy importantes como la generosidad o la gentileza.", "v": "승패가 전부는 아니에요. 관대함이나 친절함처럼 훨씬 더 중요한 품격이라는 게 있는 법이지요."}
 {"k": "¿Quieres usar la Montura Gogoat?", "v": "포켓라이더 고고트를 사용하시겠습니까?"}
@@ -1263,9 +1263,9 @@
 {"k": "Acepto", "v": "동의합니다"}
 {"k": "No me interesa", "v": "관심 없어요"}
 {"map": 28, "n": 15}
-{"k": "¡Eh! ¡Este es mi escondite! Y me temo que solo hay sitio para una persona.", "v": "어이! 여긴 내 은신처야! 딱 한 사람 들어올 자리밖에 없어서 말이지."}
+{"k": "¡Eh! ¡Este es mi escondite! Y me temo que solo hay sitio para una persona.", "v": "어이! 여긴 내 은신처야! 보아하니 딱 한 사람 들어올 자리밖에 없거든."}
 {"k": "¡Está bien! ¡Compartiré el escondite contigo!", "v": "좋아! 내 은신처를 너랑 공유해 줄게!"}
-{"k": "Me estoy escondiendo de los mosqueteros hasta que se olviden de mis fechorías, aunque la verdad es que el bosquecito es un sitio agradable.", "v": "총사대 녀석들이 내 악행을 잊을 때까지 숨어 있는 중인데, 사실 이 작은 숲은 참 살기 좋은 곳이란 말이지."}
+{"k": "Me estoy escondiendo de los mosqueteros hasta que se olviden de mis fechorías, aunque la verdad es que el bosquecito es un sitio agradable.", "v": "총사 녀석들이 내가 한 짓거리를 잊을 때까지 숨어 있는 중이야. 뭐, 이 숲이 생각보다 지내기 괜찮단 말이지."}
 {"k": "Por orden del rey, el que perturbare a los Pokémon Bicho del <b>Bosque Ladera</b> será severamente castigado.", "v": "국왕 폐하의 명에 따라, <b>비탈 숲</b>의 벌레포켓몬을 어지럽히는 자는 엄벌에 처할 것이다."}
 {"k": "¡Es un <b>Nido Alfa</b>! En él vive un Pokémon muy fuerte.", "v": "<b>알파 둥지</b>다! 이곳에는 아주 강한 포켓몬이 살고 있다."}
 {"k": "En concreto, sientes la presencia de un Pokémon Bicho muy poderoso.", "v": "구체적으로는, 매우 강력한 벌레포켓몬의 기운이 느껴진다."}
@@ -1644,7 +1644,7 @@
 {"k": "Es momento de invertir en Pokémon de la región de <b>Kanto</b>, señor. ¡Van a tener mucho valor en el futuro!", "v": "지금이 바로 <b>관동</b> 지방의 포켓몬에 투자할 때입니다. 앞으로 가치가 엄청나게 오를 테니까요!"}
 {"k": "He bebido un poco de más... ¡hip! ¡Pero aún puedo ganarte sin problema!", "v": "술을 좀 과하게 마셨어요... 딸꾹! 하지만 당신쯤 이기는 건 문제없어요!"}
 {"k": "No vuelvo a beber, ¡hip! Mis Pokémon no se merecen esto.", "v": "다시는 술 안 마실 거예요, 딸꾹! 제 포켓몬들에게 못 할 짓이죠."}
-{"k": "He visto a monsieur Lanto persiguiendo a jovencitas por los pasillos, ¡qué hombre más deplorable!", "v": "무슈 란토가 복도에서 어린 여자아이들을 쫓아다니는 걸 봤는데, 정말 한심한 남자예요!"}
+{"k": "He visto a monsieur Lanto persiguiendo a jovencitas por los pasillos, ¡qué hombre más deplorable!", "v": "무슈 란토가 복도에서 어린 여자아이들을 쫓아다니는 걸 봤어요. 정말 한심한 남자예요!"}
 {"map": 38, "n": 6}
 {"k": "Florges es el Pokémon insignia de la familia real <b>Zephir</b>.", "v": "플라제스는 <b>제피르</b> 왕가를 상징하는 포켓몬이랍니다."}
 {"k": "Los colores de su flor son el azul y el negro. Una variedad extremadamente rara.", "v": "꽃 색깔은 파란색과 검은색이에요. 대단히 희귀한 품종이죠."}
@@ -1666,9 +1666,9 @@
 {"k": "La profe dijo que teníamos que buscar un libro en la parte más profunda o algo así, ¿no?", "v": "선생님이 제일 깊은 곳에서 책을 찾아오라고했던 것 같은데, 맞지?"}
 {"k": "La profe dijo que teníamos que buscar un <b>manuscrito antiguo</b>, ¿no? ¡A ver si damos pronto con él!", "v": "선생님이 <b>고대 필사본</b>을 찾아오라고했던 것 맞지? 얼른 찾아내자!"}
 {"k": "En algún lugar, una puerta se ha abierto.", "v": "어딘가에서 문이 열렸다."}
-{"k": "¿Le gusta la biblioteca? ¿Le interesa algún libro en concreto? ¿O tal vez puedo ayudarte en otra cosa?", "v": "도서관은 마음에 드시나요, 후보생님? 특별히 찾으시는 책이라도 있으신가요? 아니면 다른 도움이 필요하신가요?"}
+{"k": "¿Le gusta la biblioteca? ¿Le interesa algún libro en concreto? ¿O tal vez puedo ayudarte en otra cosa?", "v": "도서관은 마음에 드십니까, 후보생님? 특별히 관심이 가시는 책이라도 있으신지요?"}
 {"k": "Te las apañas bien en soledad, ¡un grandísimo don!", "v": "혼자서도 훌륭하게 잘 헤쳐나가시는군요. 정말 대단한 재능이십니다!"}
-{"k": "Hacía tiempo que no veía a nadie en la biblioteca, pero mi deber sigue siendo guardarla y atender a los visitantes.", "v": "도서관에 사람 발길이 끊긴 지 오래입니다만, 이곳을 지키고 방문객을 모시는 것이 저의 의무입니다."}
+{"k": "Hacía tiempo que no veía a nadie en la biblioteca, pero mi deber sigue siendo guardarla y atender a los visitantes.", "v": "도서관에서 사람을 뵙는 것도 참 오랜만입니다만, 이곳을 지키고 방문객을 모시는 것이 저의 의무입니다."}
 {"k": "\"Para acceder a la parte más profunda de la biblioteca, los libros que no se ven a simple vista son la clave\".", "v": "\"도서관 가장 깊은 곳으로 가려면, 한눈에 보이지 않는 책들이 열쇠가 된다.\""}
 {"k": "Por favor, deja que te auxilie a estar en forma con los combates Pokémon. ¡Se me da de fábula!", "v": "포켓몬 배틀로 단련하실 수 있게 제가 도와드리겠습니다. 제 전문이거든요!"}
 {"k": "Mi diagnóstico es que estás muy en forma, sin duda.", "v": "진단 결과, 단련이 아주 잘 되어 있으시네요."}
@@ -2042,9 +2042,9 @@
 {"k": "Los ricos también lloramos, ¿sabes? Tenemos problemas de otra magnitud, pero a ojos de nuestra realidad el pesar es el mismo.", "v": "부자도 눈물을 흘린다는 걸 알고 있나요? 우리에겐 다른 차원의 문제가 있지만, 우리가 체감하는 슬픔의 무게는 같은 거랍니다."}
 {"map": 52, "n": 13}
 {"k": "<b>PISTA DE ENTRENADOR:</b> Todos los Pokémon de la saga son obtenibles en <b>Pokémon Z</b>.", "v": "<b>트레이너 팁:</b> 이 시리즈의 모든 포켓몬을 <b>포켓몬 Z</b>에서 얻을 수 있습니다."}
-{"k": "¿Y esos andares tan cabizbajos? ¡Déjame enseñarte algo de distinción!", "v": "왜 그렇게 고개를 숙이고 다니나요? 내가 품위란 게 뭔지 보여 드리죠!"}
+{"k": "¿Y esos andares tan cabizbajos? ¡Déjame enseñarte algo de distinción!", "v": "왜 그렇게 고개를 숙이고 다니나요? 내가 품위란 무엇인지 똑똑히 보여주겠어요!"}
 {"k": "Un combate de categoría, sin duda.", "v": "그야말로 격식 있는 배틀이었어요."}
-{"k": "Has ganado, por lo que deberías ir con la cabeza bien alta. Diantre, ¡incluso perdiendo deberías llevarla bien alta!", "v": "당신이 이겼으니 당당히 고개를 들고 가세요. 이런, 지더라도 고개는 당당히 들고 다니는 법입니다!"}
+{"k": "Has ganado, por lo que deberías ir con la cabeza bien alta. Diantre, ¡incluso perdiendo deberías llevarla bien alta!", "v": "당신이 이겼으니 고개를 당당히 드세요. 이런, 심지어 지더라도 고개는 당당하게 들고 다녀야 하는 법이죠!"}
 {"k": "¡Es un arbusto de bayas!", "v": "열매가 열리는 관목이다!"}
 {"k": "Ya has arrancado las bayas de este arbusto.", "v": "이 관목에서는 이미 열매를 다 땄다."}
 {"k": "Después de trabajar de sol a sol, ¡me desquito con un buen combate Pokémon!", "v": "해 질 때까지 푹 일하고 나서 신나게 포켓몬 배틀 한 판 하면 피로가 싹 풀린다니까!"}
@@ -2629,12 +2629,12 @@
 {"k": "No me lo digas, no le has gustado al regente Hisopo. ¡Ahoguemos las penas juntos aquí abajo!", "v": "말씀하지 않으셔도 알아요, 섭정 히소포 님의 마음에 들지 못하신 거죠? 이 아래에서 같이 마음을 달래봐요!"}
 {"k": "Creo que no se puede caer más bajo.", "v": "이보다 더 밑바닥으로 떨어질 수는 없을 것 같네요."}
 {"k": "El regente Hisopo es muy estricto con sus artistas, ¡pero no es para menos! Por algo es famoso en todo el mundo por la calidad de sus óperas.", "v": "섭정 히소포 님은 자신의 예술가들에게 매우 엄격하시지만, 그럴 만도 하죠! 괜히 오페라의 수준으로 전 세계에 이름을 떨치신 게 아니니까요."}
-{"k": "¡Aaaaah! ¡Llevo horas aquí abajo! ¡Necesito salir o me volveré loca!", "v": "아아아악! 몇 시간째 여기 지하에 있는 건지 모르겠어요! 당장 나가지 않으면 미쳐버릴 것 같아요!"}
+{"k": "¡Aaaaah! ¡Llevo horas aquí abajo! ¡Necesito salir o me volveré loca!", "v": "아아아악! 몇 시간째 이 아래 갇혀 있는 거예요! 당장 나가지 않으면 미쳐버릴 것 같아요!"}
 {"k": "¿Y si colaboramos para salir de aquí?", "v": "여기서 나가기 위해 같이 협력해 보는 건 어떨까요?"}
 {"k": "Mi corazón me dice que la dirección correcta es hacia arriba. ¡Pero no me hagas mucho caso! Hace tiempo que mi corazón se marchitó por desamor...", "v": "내 직감은 위쪽이 올바른 길이라고 말하고 있어요! 하지만 제 말을 너무 믿지는 마세요… 실연의 상처로 제 마음은 진작에 시들어버렸으니까요…"}
-{"k": "¿Te gusta mi vestido? Supongo que sí, ¡pero lo que no te gustará es la derrota!", "v": "제 드레스가 마음에 드시나요? 물론 그렇겠죠, 하지만 패배의 맛은 마음에 들지 않으실 거예요!"}
+{"k": "¿Te gusta mi vestido? Supongo que sí, ¡pero lo que no te gustará es la derrota!", "v": "제 드레스가 마음에 드시나요? 당연히 그렇겠죠, 하지만 패배는 마음에 들지 않으실 걸요!"}
 {"k": "¡El regente me va a matar cuando vea que he ensuciado el vestido!", "v": "드레스를 더럽힌 걸 아시면 섭정 님이 절 가만두지 않으실 거예요!"}
-{"k": "Dicen que existe una mazmorra aún más profunda en la que el regente envía a los que osan insultar a los grandes músicos de la historia.", "v": "역사상 위대한 음악가들을 감히 모욕하는 자들을 섭정 님이 가두시는 더 깊은 지하 감옥이 있다는 소문이 있어요!"}
+{"k": "Dicen que existe una mazmorra aún más profunda en la que el regente envía a los que osan insultar a los grandes músicos de la historia.", "v": "위대한 음악가들을 감히 모욕하는 자를 가두는, 더 깊은 지하 감옥이 있다는 소문이 있어요!"}
 {"map": 70, "n": 30}
 {"k": "¡Es un arbusto de bayas!", "v": "열매나무다!"}
 {"k": "Ya has arrancado las bayas de este arbusto.", "v": "이 관목에서는 이미 열매를 다 땄다."}
