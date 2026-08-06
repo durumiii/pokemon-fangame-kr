@@ -116,6 +116,7 @@ function render(){
         sc.hidden?` · 승인 줄 ${sc.hidden}행 숨김`:''}</span>
       <span class="act" style="margin-left:auto">
         <label class="donelbl"><input type="checkbox" class="donebox"> 완료</label>
+        <button data-ask="1">조사 요청</button>
         <button data-open="1">이벤트 전체 보기</button>
         <button data-all="1">이벤트 일괄 승인</button>
         <button data-flow="1">장면 흐름</button></span></div>`;
@@ -129,6 +130,14 @@ function render(){
       // 승인은 이벤트 단위 — 행 판정과 별도로 원장에 한 줄 남긴다
       post({event:`${sc.map}:${sc.event}`, 판정:'승인', 텍스트:'',
             메모:`${sc.name} — ${sc.rows.length}행 일괄`});
+    };
+    sec.querySelector('[data-ask]').onclick=e=>{
+      const q=prompt(`「${sc.name}」에 무엇을 조사할까요?`, '');
+      if(q===null) return;
+      fetch('/ask',{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({event:`${sc.map}:${sc.event}`, 장면:sc.name, 물음:q})})
+        .then(x=>{ e.target.classList.add('on'); e.target.textContent='조사 요청함'; })
+        .catch(()=>flag('요청을 못 보냈어요'));
     };
     sec.querySelector('.donebox').onchange=e=>{
       const key=sc.map+':'+sc.event;
@@ -319,6 +328,19 @@ def handler(out_dir, vpath):
                 self._json({"err": "?"}, 404)
 
         def do_POST(self):
+            if self.path == "/ask":            # 「조사 요청」 — 사람이 볼 물음을 쌓는다
+                n = int(self.headers.get("Content-Length", 0))
+                b = json.loads(self.rfile.read(n)) if n else {}
+                if not b.get("event"):
+                    return self._json({"err": "event 없음"}, 400)
+                ask = vpath.parent / f"asks-{vpath.stem.removeprefix('verdicts-')}.jsonl"
+                with ask.open("a", encoding="utf-8") as f:
+                    f.write(json.dumps(
+                        {"event": b["event"], "장면": b.get("장면", ""),
+                         "물음": b.get("물음", ""), "id": b.get("id", ""),
+                         "ts": time.strftime("%Y-%m-%dT%H:%M:%S")},
+                        ensure_ascii=False) + "\n")
+                return self._json({"ok": True})
             if self.path != "/verdict":
                 return self._json({"err": "?"}, 404)
             n = int(self.headers.get("Content-Length", 0))
