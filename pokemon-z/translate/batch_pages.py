@@ -41,7 +41,7 @@ PROMPTS = HERE / "voice-prompts.jsonl"      # 프롬프트에 실리는 말투 �
 PROTECTED = HERE.parent / "docs/research/protected.jsonl"
 MAPS = HERE / "ko" / "00-maps.jsonl"
 BATCH = HERE / "batch"
-MODEL = "gemini-3.6-flash"
+from batch import MODEL  # 백엔드 전환(Z_BACKEND)을 한 곳에서
 PAGE_CAP = 90          # 실측: 확정 페이지 835개 중 이 값을 넘는 페이지가 없다
 PILOT_PAGES = 20
 PILOT_MAP_MAX = 90     # 파일럿은 초반부에서만 뽑는다 — 유지자가 판정할 수 있는 구간

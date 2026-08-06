@@ -23,6 +23,7 @@ usage:
   uv run batch.py apply              # 검증 통과 행을 정본 ko/에 반영
 """
 import hashlib
+import os
 import json
 import re
 import sys
@@ -38,6 +39,12 @@ BATCH = HERE / "batch"
 OUT = BATCH / "out"
 MODEL = "gemini-3.6-flash"
 URL = "https://api.llmgateway.io/v1/chat/completions"
+KEY_NAME = "LLMGATEWAY_API_KEY"
+if os.environ.get("Z_BACKEND") == "openrouter":
+    # llmgateway 크레딧 소진 시 대체 경로(2026-08-06). 캐싱은 명시 cache_control 방식.
+    MODEL = "google/gemini-3.6-flash"
+    URL = "https://openrouter.ai/api/v1/chat/completions"
+    KEY_NAME = "OPENROUTER_API_KEY"
 CHUNK_ROWS = 40  # 한 요청의 행 수. 60 이하 맵은 통째로 간다(장면 유지)
 
 sys.path.insert(0, str(HERE))
@@ -46,9 +53,9 @@ from validate import check  # noqa: E402  (7종 검사 재사용)
 
 def key_of() -> str:
     for line in (Path.home() / ".hermes" / ".env").read_text().splitlines():
-        if line.startswith("LLMGATEWAY_API_KEY="):
+        if line.startswith(KEY_NAME + "="):
             return line.split("=", 1)[1].strip()
-    sys.exit("LLMGATEWAY_API_KEY 없음 (~/.hermes/.env)")
+    sys.exit(KEY_NAME + " 없음 (~/.hermes/.env)")
 
 
 def read_jsonl(p):

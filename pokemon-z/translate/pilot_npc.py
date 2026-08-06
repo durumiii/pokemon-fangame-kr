@@ -11,6 +11,7 @@
 
 import gzip
 import json
+import os
 import random
 import re as _re
 import sys
@@ -95,10 +96,20 @@ def build_prompt():
 
 def ask_npc(key, model, prompt, reqrows, attempt=0, effort="minimal"):
     """batch.ask의 npc 필드 포함판(원본은 speaker/es/ko만 직렬화한다)."""
+    system = prompt
+    if "openrouter" in URL:
+        # OpenRouter는 명시 cache_control 방식(입력 0.25배). 정적 지시(용어 규칙 앞)를
+        # 캐시 블록으로 쪼갠다 — Gemini 최소 1,024토큰이라 정적부가 짧으면 그냥 보낸다.
+        i = prompt.find("### Term rules")
+        if i > 4000:
+            system = [{"type": "text", "text": prompt[:i],
+                       "cache_control": {"type": "ephemeral"}},
+                      {"type": "text", "text": prompt[i:]}]
     payload = {"model": model, "temperature": 0.3, "reasoning_effort": effort,
                "messages": [
-                   {"role": "system", "content": prompt},
-                   {"role": "user", "content": json.dumps(reqrows, ensure_ascii=False)}]}
+                   {"role": "system", "content": system},
+                   {"role": "user", "content": json.dumps(reqrows, ensure_ascii=False)}],
+               **({"usage": {"include": True}} if "openrouter" in URL else {})}
     req = urllib.request.Request(URL, data=json.dumps(payload).encode(),
                                  headers={"Authorization": "Bearer " + key,
                                           "Content-Type": "application/json"})
@@ -111,6 +122,12 @@ def ask_npc(key, model, prompt, reqrows, attempt=0, effort="minimal"):
         return {str(a["id"]): a["ko"] for a in arr
                 if isinstance(a, dict) and isinstance(a.get("ko"), str)}, cost
     except Exception as e:
+        if getattr(e, "code", None) == 402:
+            # 크레딧 소진 — 재시도 무의미. 계속 돌면 전 행 「누락」 쓰레기 페이지가
+            # 쌓인다(2026-08-06 실측 24페이지). 즉시 전체 정지.
+            print("크레딧 소진(402) — 정지. 충전 또는 Z_BACKEND=openrouter로 재개.")
+            sys.stdout.flush()
+            os._exit(2)
         if attempt < 2:
             time.sleep(8 * (attempt + 1))
             return ask_npc(key, model, prompt, reqrows, attempt + 1, effort)
