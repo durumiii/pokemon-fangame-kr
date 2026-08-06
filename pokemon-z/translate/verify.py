@@ -122,20 +122,30 @@ def check_ribbons(strict):
     구세대 콘테스트 리본은 코퍼스(xy 이후)에 없어 대조표 밖으로 센다.
     """
     import gzip
-    path = HERE / "canon" / "messages.jsonl.gz"
-    if not path.exists():
-        return
     want_by_en = {}
-    with gzip.open(path, "rt", encoding="utf-8") as f:
-        for line in f:
-            r = json.loads(line)
-            en = r.get("en") or ""
-            if en.endswith("Ribbon") and r["ko"].endswith("리본"):
-                want_by_en[en] = r["ko"]
+    # ① PKHeX 리본표(canon.jsonl의 ribbons 도메인) — 3·4세대 콘테스트 리본까지 있다.
+    #    게임 쪽 이름은 「Cool Ribbon Super」, PKHeX는 「Cool Super」라 Ribbon을 끼워 맞춘다.
+    for r in rows(HERE / "canon" / "canon.jsonl"):
+        if r.get("domain") != "ribbons":
+            continue
+        parts = r["en"].split()
+        want_by_en[" ".join(parts[:1] + ["Ribbon"] + parts[1:])] = r["ko"]
+        want_by_en[r["en"] + " Ribbon"] = r["ko"]
+    # ② 문장 코퍼스 — 게임 안 표기가 PKHeX 목록과 다른 자리를 덮는다(뒤가 이긴다).
+    path = HERE / "canon" / "messages.jsonl.gz"
+    if path.exists():
+        with gzip.open(path, "rt", encoding="utf-8") as f:
+            for line in f:
+                r = json.loads(line)
+                en = r.get("en") or ""
+                if en.endswith("Ribbon") and r["ko"].endswith("리본"):
+                    want_by_en[en] = r["ko"]
     mismatch = miss = ok = 0
     for r in rows(HERE / "ko" / "23-script-texts.jsonl"):
         k, ko = r.get("k") or "", r.get("v")
-        if not k.endswith("Ribbon") or not ko:
+        # 「Cool Ribbon Super」처럼 뒤에 등급이 붙는 이름까지 본다. 설명 문장
+        # (「A Ribbon awarded for …」)은 낱말 수로 걸러 낸다.
+        if "Ribbon" not in k or not ko or len(k.split()) > 4 or k.endswith("."):
             continue
         want = want_by_en.get(k)
         if want is None:

@@ -4822,3 +4822,167 @@
 {"domain": "items", "i": 2682, "es": "Baya Chilan D", "en": "Hyper Chilan Berry", "ko": "이차원 카리열매"}
 {"domain": "items", "i": 2683, "es": "Baya Hibis D", "en": "Hyper Roseli Berry", "ko": "이차원 로셀열매"}
 {"domain": "items", "i": 2684, "es": "Pan de Naria", "en": "Canari Bread", "ko": "카나리빵"}
+{"domain": "ribbons", "i": 0, "es": "Campeón de Kalos", "en": "Kalos Champion", "ko": "칼로스챔피언리본", "key": "RibbonChampionKalos"}
+{"domain": "ribbons", "i": 1, "es": "Campeón", "en": "Champion", "ko": "챔피언리본", "key": "RibbonChampionG3"}
+{"domain": "ribbons", "i": 2, "es": "Campeón de Sinnoh", "en": "Sinnoh Champion", "ko": "신오챔피언리본", "key": "RibbonChampionSinnoh"}
+{"domain": "ribbons", "i": 3, "es": "Amistad", "en": "Best Friends", "ko": "절친리본", "key": "RibbonBestFriends"}
+{"domain": "ribbons", "i": 4, "es": "Ejercicio", "en": "Training", "ko": "수행리본", "key": "RibbonTraining"}
+{"domain": "ribbons", "i": 5, "es": "Figura del Combate", "en": "Skillful Battler", "ko": "그레이트배틀리본", "key": "RibbonBattlerSkillful"}
+{"domain": "ribbons", "i": 6, "es": "As del Combate", "en": "Expert Battler", "ko": "마스터배틀리본", "key": "RibbonBattlerExpert"}
+{"domain": "ribbons", "i": 7, "es": "Esfuerzo", "en": "Effort", "ko": "노력리본", "key": "RibbonEffort"}
+{"domain": "ribbons", "i": 8, "es": "Alerta", "en": "Alert", "ko": "뚝심리본", "key": "RibbonAlert"}
+{"domain": "ribbons", "i": 9, "es": "Impacto", "en": "Shock", "ko": "철렁리본", "key": "RibbonShock"}
+{"domain": "ribbons", "i": 10, "es": "Abatimiento", "en": "Downcast", "ko": "풀죽기리본", "key": "RibbonDowncast"}
+{"domain": "ribbons", "i": 11, "es": "Descuido", "en": "Careless", "ko": "덜렁이리본", "key": "RibbonCareless"}
+{"domain": "ribbons", "i": 12, "es": "Relax", "en": "Relax", "ko": "상쾌리본", "key": "RibbonRelax"}
+{"domain": "ribbons", "i": 13, "es": "Cabezada", "en": "Snooze", "ko": "잠보리본", "key": "RibbonSnooze"}
+{"domain": "ribbons", "i": 14, "es": "Sonrisa", "en": "Smile", "ko": "방글방글리본", "key": "RibbonSmile"}
+{"domain": "ribbons", "i": 15, "es": "Maravilla", "en": "Gorgeous", "ko": "고저스리본", "key": "RibbonGorgeous"}
+{"domain": "ribbons", "i": 16, "es": "Realeza", "en": "Royal", "ko": "로열리본", "key": "RibbonRoyal"}
+{"domain": "ribbons", "i": 17, "es": "Realeza Maravilla", "en": "Gorgeous Royal", "ko": "고저스로열리본", "key": "RibbonGorgeousRoyal"}
+{"domain": "ribbons", "i": 18, "es": "Artista", "en": "Artist", "ko": "브로마이드리본", "key": "RibbonArtist"}
+{"domain": "ribbons", "i": 19, "es": "Huella", "en": "Footprint", "ko": "발자국리본", "key": "RibbonFootprint"}
+{"domain": "ribbons", "i": 20, "es": "Récord", "en": "Record", "ko": "레코드리본", "key": "RibbonRecord"}
+{"domain": "ribbons", "i": 21, "es": "Leyenda", "en": "Legend", "ko": "레전드리본", "key": "RibbonLegend"}
+{"domain": "ribbons", "i": 22, "es": "Campo", "en": "Country", "ko": "컨트리리본", "key": "RibbonCountry"}
+{"domain": "ribbons", "i": 23, "es": "Nacional", "en": "National", "ko": "내셔널리본", "key": "RibbonNational"}
+{"domain": "ribbons", "i": 24, "es": "Planeta", "en": "Earth", "ko": "어스리본", "key": "RibbonEarth"}
+{"domain": "ribbons", "i": 25, "es": "Mundo", "en": "World", "ko": "월드리본", "key": "RibbonWorld"}
+{"domain": "ribbons", "i": 26, "es": "Clásica", "en": "Classic", "ko": "클래식리본", "key": "RibbonClassic"}
+{"domain": "ribbons", "i": 27, "es": "Principal", "en": "Premier", "ko": "프리미어리본", "key": "RibbonPremier"}
+{"domain": "ribbons", "i": 28, "es": "Evento", "en": "Event", "ko": "이벤트리본", "key": "RibbonEvent"}
+{"domain": "ribbons", "i": 29, "es": "Cumpleaños", "en": "Birthday", "ko": "버스데이리본", "key": "RibbonBirthday"}
+{"domain": "ribbons", "i": 30, "es": "Especial", "en": "Special", "ko": "스페셜리본", "key": "RibbonSpecial"}
+{"domain": "ribbons", "i": 31, "es": "Recuerdo", "en": "Souvenir", "ko": "메모리얼리본", "key": "RibbonSouvenir"}
+{"domain": "ribbons", "i": 32, "es": "Deseo", "en": "Wishing", "ko": "위시리본", "key": "RibbonWishing"}
+{"domain": "ribbons", "i": 33, "es": "Campeón de Torneo", "en": "Battle Champion", "ko": "배틀챔피언리본", "key": "RibbonChampionBattle"}
+{"domain": "ribbons", "i": 34, "es": "Campeón de Área", "en": "Regional Champion", "ko": "에리어챔피언리본", "key": "RibbonChampionRegional"}
+{"domain": "ribbons", "i": 35, "es": "Campeón Nacional", "en": "National Champion", "ko": "내셔널챔피언리본", "key": "RibbonChampionNational"}
+{"domain": "ribbons", "i": 36, "es": "Campeón Mundial", "en": "World Champion", "ko": "월드챔피언리본", "key": "RibbonChampionWorld"}
+{"domain": "ribbons", "i": 37, "es": "Recuerdo de Concurso", "en": "Contest Memory", "ko": "추억콘테스트리본", "key": "RibbonCountMemoryContest"}
+{"domain": "ribbons", "i": 38, "es": "Recuerdo de Combate", "en": "Battle Memory", "ko": "추억배틀리본", "key": "RibbonCountMemoryBattle"}
+{"domain": "ribbons", "i": 39, "es": "Campeón de Hoenn (ROZA)", "en": "Hoenn Champion", "ko": "호연챔피언리본", "key": "RibbonChampionG6Hoenn"}
+{"domain": "ribbons", "i": 40, "es": "Estelar de Concursos", "en": "Contest Star", "ko": "콘테스트스타리본", "key": "RibbonContestStar"}
+{"domain": "ribbons", "i": 41, "es": "Carisma experto", "en": "Coolness Master", "ko": "근사함마스터리본", "key": "RibbonMasterCoolness"}
+{"domain": "ribbons", "i": 42, "es": "Belleza experto", "en": "Beauty Master", "ko": "아름다움마스터리본", "key": "RibbonMasterBeauty"}
+{"domain": "ribbons", "i": 43, "es": "Dulzura experto", "en": "Cuteness Master", "ko": "귀여움마스터리본", "key": "RibbonMasterCuteness"}
+{"domain": "ribbons", "i": 44, "es": "Ingenio experto", "en": "Cleverness Master", "ko": "슬기로움마스터리본", "key": "RibbonMasterCleverness"}
+{"domain": "ribbons", "i": 45, "es": "Dureza experto", "en": "Toughness Master", "ko": "강인함마스터리본", "key": "RibbonMasterToughness"}
+{"domain": "ribbons", "i": 46, "es": "Carisma", "en": "Cool", "ko": "쿨리본", "key": "RibbonG3Cool"}
+{"domain": "ribbons", "i": 47, "es": "Carisma alto", "en": "Cool Super", "ko": "쿨리본슈퍼", "key": "RibbonG3CoolSuper"}
+{"domain": "ribbons", "i": 48, "es": "Carisma avanzado", "en": "Cool Hyper", "ko": "쿨리본하이퍼", "key": "RibbonG3CoolHyper"}
+{"domain": "ribbons", "i": 49, "es": "Carisma experto", "en": "Cool Master", "ko": "쿨리본마스터", "key": "RibbonG3CoolMaster"}
+{"domain": "ribbons", "i": 50, "es": "Belleza", "en": "Beauty", "ko": "뷰티리본", "key": "RibbonG3Beauty"}
+{"domain": "ribbons", "i": 51, "es": "Belleza alto", "en": "Beauty Super", "ko": "뷰티리본슈퍼", "key": "RibbonG3BeautySuper"}
+{"domain": "ribbons", "i": 52, "es": "Belleza avanzado", "en": "Beauty Hyper", "ko": "뷰티리본하이퍼", "key": "RibbonG3BeautyHyper"}
+{"domain": "ribbons", "i": 53, "es": "Belleza experto", "en": "Beauty Master", "ko": "뷰티리본마스터", "key": "RibbonG3BeautyMaster"}
+{"domain": "ribbons", "i": 54, "es": "Dulzura", "en": "Cute", "ko": "큐트리본", "key": "RibbonG3Cute"}
+{"domain": "ribbons", "i": 55, "es": "Dulzura alto", "en": "Cute Super", "ko": "큐트리본슈퍼", "key": "RibbonG3CuteSuper"}
+{"domain": "ribbons", "i": 56, "es": "Dulzura avanzado", "en": "Cute Hyper", "ko": "큐트리본하이퍼", "key": "RibbonG3CuteHyper"}
+{"domain": "ribbons", "i": 57, "es": "Dulzura experto", "en": "Cute Master", "ko": "큐트리본마스터", "key": "RibbonG3CuteMaster"}
+{"domain": "ribbons", "i": 58, "es": "Ingenio", "en": "Smart", "ko": "지니어스리본", "key": "RibbonG3Smart"}
+{"domain": "ribbons", "i": 59, "es": "Ingenio alto", "en": "Smart Super", "ko": "지니어스리본슈퍼", "key": "RibbonG3SmartSuper"}
+{"domain": "ribbons", "i": 60, "es": "Ingenio avanzado", "en": "Smart Hyper", "ko": "지니어스리본하이퍼", "key": "RibbonG3SmartHyper"}
+{"domain": "ribbons", "i": 61, "es": "Ingenio experto", "en": "Smart Master", "ko": "지니어스리본마스터", "key": "RibbonG3SmartMaster"}
+{"domain": "ribbons", "i": 62, "es": "Dureza", "en": "Tough", "ko": "파워풀리본", "key": "RibbonG3Tough"}
+{"domain": "ribbons", "i": 63, "es": "Dureza alto", "en": "Tough Super", "ko": "파워풀리본슈퍼", "key": "RibbonG3ToughSuper"}
+{"domain": "ribbons", "i": 64, "es": "Dureza avanzado", "en": "Tough Hyper", "ko": "파워풀리본하이퍼", "key": "RibbonG3ToughHyper"}
+{"domain": "ribbons", "i": 65, "es": "Dureza experto", "en": "Tough Master", "ko": "파워풀리본마스터", "key": "RibbonG3ToughMaster"}
+{"domain": "ribbons", "i": 66, "es": "Carisma", "en": "Cool", "ko": "쿨리본", "key": "RibbonG4Cool"}
+{"domain": "ribbons", "i": 67, "es": "Carisma difícil", "en": "Cool Great", "ko": "쿨리본그레이트", "key": "RibbonG4CoolGreat"}
+{"domain": "ribbons", "i": 68, "es": "Carisma superior", "en": "Cool Ultra", "ko": "쿨리본울트라", "key": "RibbonG4CoolUltra"}
+{"domain": "ribbons", "i": 69, "es": "Carisma experto", "en": "Cool Master", "ko": "쿨리본마스터", "key": "RibbonG4CoolMaster"}
+{"domain": "ribbons", "i": 70, "es": "Belleza", "en": "Beauty", "ko": "뷰티리본", "key": "RibbonG4Beauty"}
+{"domain": "ribbons", "i": 71, "es": "Belleza difícil", "en": "Beauty Great", "ko": "뷰티리본그레이트", "key": "RibbonG4BeautyGreat"}
+{"domain": "ribbons", "i": 72, "es": "Belleza superior", "en": "Beauty Ultra", "ko": "뷰티리본울트라", "key": "RibbonG4BeautyUltra"}
+{"domain": "ribbons", "i": 73, "es": "Belleza experto", "en": "Beauty Master", "ko": "뷰티리본마스터", "key": "RibbonG4BeautyMaster"}
+{"domain": "ribbons", "i": 74, "es": "Dulzura", "en": "Cute", "ko": "큐트리본", "key": "RibbonG4Cute"}
+{"domain": "ribbons", "i": 75, "es": "Dulzura difícil", "en": "Cute Great", "ko": "큐트리본그레이트", "key": "RibbonG4CuteGreat"}
+{"domain": "ribbons", "i": 76, "es": "Dulzura superior", "en": "Cute Ultra", "ko": "큐트리본울트라", "key": "RibbonG4CuteUltra"}
+{"domain": "ribbons", "i": 77, "es": "Dulzura experto", "en": "Cute Master", "ko": "큐트리본마스터", "key": "RibbonG4CuteMaster"}
+{"domain": "ribbons", "i": 78, "es": "Ingenio", "en": "Smart", "ko": "지니어스리본", "key": "RibbonG4Smart"}
+{"domain": "ribbons", "i": 79, "es": "Ingenio difícil", "en": "Smart Great", "ko": "지니어스리본그레이트", "key": "RibbonG4SmartGreat"}
+{"domain": "ribbons", "i": 80, "es": "Ingenio superior", "en": "Smart Ultra", "ko": "지니어스리본울트라", "key": "RibbonG4SmartUltra"}
+{"domain": "ribbons", "i": 81, "es": "Ingenio experto", "en": "Smart Master", "ko": "지니어스리본마스터", "key": "RibbonG4SmartMaster"}
+{"domain": "ribbons", "i": 82, "es": "Dureza", "en": "Tough", "ko": "파워풀리본", "key": "RibbonG4Tough"}
+{"domain": "ribbons", "i": 83, "es": "Dureza difícil", "en": "Tough Great", "ko": "파워풀리본그레이트", "key": "RibbonG4ToughGreat"}
+{"domain": "ribbons", "i": 84, "es": "Dureza superior", "en": "Tough Ultra", "ko": "파워풀리본울트라", "key": "RibbonG4ToughUltra"}
+{"domain": "ribbons", "i": 85, "es": "Dureza experto", "en": "Tough Master", "ko": "파워풀리본마스터", "key": "RibbonG4ToughMaster"}
+{"domain": "ribbons", "i": 86, "es": "Ganador", "en": "Winning", "ko": "위닝리본", "key": "RibbonWinning"}
+{"domain": "ribbons", "i": 87, "es": "Victoria", "en": "Victory", "ko": "빅토리리본", "key": "RibbonVictory"}
+{"domain": "ribbons", "i": 88, "es": "Habilidad", "en": "Ability", "ko": "어빌리티리본", "key": "RibbonAbility"}
+{"domain": "ribbons", "i": 89, "es": "Gran Habilidad", "en": "Great Ability", "ko": "그레이트어빌리티리본", "key": "RibbonAbilityGreat"}
+{"domain": "ribbons", "i": 90, "es": "Doble Habilidad", "en": "Double Ability", "ko": "더블어빌리티리본", "key": "RibbonAbilityDouble"}
+{"domain": "ribbons", "i": 91, "es": "Habilidad Múltiple", "en": "Multi Ability", "ko": "멀티어빌리티리본", "key": "RibbonAbilityMulti"}
+{"domain": "ribbons", "i": 92, "es": "Habilidad Par", "en": "Pair Ability", "ko": "페어어빌리티리본", "key": "RibbonAbilityPair"}
+{"domain": "ribbons", "i": 93, "es": "Hablildad Mundial", "en": "World Ability", "ko": "월드어빌리티리본", "key": "RibbonAbilityWorld"}
+{"domain": "ribbons", "i": 94, "es": "Carisma", "en": "Cool", "ko": "쿨리본", "key": "RibbonCountG3Cool"}
+{"domain": "ribbons", "i": 95, "es": "Belleza", "en": "Beauty", "ko": "뷰티리본", "key": "RibbonCountG3Beauty"}
+{"domain": "ribbons", "i": 96, "es": "Dulzura", "en": "Cute", "ko": "큐트리본", "key": "RibbonCountG3Cute"}
+{"domain": "ribbons", "i": 97, "es": "Ingenio", "en": "Smart", "ko": "지니어스리본", "key": "RibbonCountG3Smart"}
+{"domain": "ribbons", "i": 98, "es": "Dureza", "en": "Tough", "ko": "파워풀리본", "key": "RibbonCountG3Tough"}
+{"domain": "ribbons", "i": 99, "es": "Campeón de Alola", "en": "Alola Champion", "ko": "알로라챔피언리본", "key": "RibbonChampionAlola"}
+{"domain": "ribbons", "i": 100, "es": "Maestro Battle Royale", "en": "Battle Royal Master", "ko": "로열마스터리본", "key": "RibbonBattleRoyale"}
+{"domain": "ribbons", "i": 101, "es": "As del Árbol", "en": "Battle Tree Great", "ko": "그레이트트리리본", "key": "RibbonBattleTreeGreat"}
+{"domain": "ribbons", "i": 102, "es": "Maestro del Árbol", "en": "Battle Tree Master", "ko": "마스터트리리본", "key": "RibbonBattleTreeMaster"}
+{"domain": "ribbons", "i": 103, "es": "Campeón de Galar", "en": "Galar Champion", "ko": "가라르챔피언리본", "key": "RibbonChampionGalar"}
+{"domain": "ribbons", "i": 104, "es": "Maestro de la Torre", "en": "Tower Master", "ko": "마스터타워리본", "key": "RibbonTowerMaster"}
+{"domain": "ribbons", "i": 105, "es": "Rango Maestro", "en": "Master Rank", "ko": "마스터랭크리본", "key": "RibbonMasterRank"}
+{"domain": "ribbons", "i": 106, "es": "Emblema Almuerzo", "en": "Lunchtime Mark", "ko": "정오의증표", "key": "RibbonMarkLunchtime"}
+{"domain": "ribbons", "i": 107, "es": "Emblema Noche", "en": "Sleepy-Time Mark", "ko": "자정의증표", "key": "RibbonMarkSleepyTime"}
+{"domain": "ribbons", "i": 108, "es": "Emblema Ocaso", "en": "Dusk Mark", "ko": "황혼의증표", "key": "RibbonMarkDusk"}
+{"domain": "ribbons", "i": 109, "es": "Emblema Alba", "en": "Dawn Mark", "ko": "새벽의증표", "key": "RibbonMarkDawn"}
+{"domain": "ribbons", "i": 110, "es": "Emblema Nube", "en": "Cloudy Mark", "ko": "흐림의증표", "key": "RibbonMarkCloudy"}
+{"domain": "ribbons", "i": 111, "es": "Emblema Lluvia", "en": "Rainy Mark", "ko": "강우의증표", "key": "RibbonMarkRainy"}
+{"domain": "ribbons", "i": 112, "es": "Emblema Tormenta", "en": "Stormy Mark", "ko": "우레의증표", "key": "RibbonMarkStormy"}
+{"domain": "ribbons", "i": 113, "es": "Emblema Nieve", "en": "Snowy Mark", "ko": "강설의증표", "key": "RibbonMarkSnowy"}
+{"domain": "ribbons", "i": 114, "es": "Emblema Nevasca", "en": "Blizzard Mark", "ko": "폭설의증표", "key": "RibbonMarkBlizzard"}
+{"domain": "ribbons", "i": 115, "es": "Emblema Sequedad", "en": "Dry Mark", "ko": "건조의증표", "key": "RibbonMarkDry"}
+{"domain": "ribbons", "i": 116, "es": "Emblema Polvareda", "en": "Sandstorm Mark", "ko": "모래먼지의증표", "key": "RibbonMarkSandstorm"}
+{"domain": "ribbons", "i": 117, "es": "Emblema Niebla", "en": "Misty Mark", "ko": "짙은안개의증표", "key": "RibbonMarkMisty"}
+{"domain": "ribbons", "i": 118, "es": "Emblema Destino", "en": "Destiny Mark", "ko": "운명의증표", "key": "RibbonMarkDestiny"}
+{"domain": "ribbons", "i": 119, "es": "Emblema Pesca", "en": "Fishing Mark", "ko": "낚아올린증표", "key": "RibbonMarkFishing"}
+{"domain": "ribbons", "i": 120, "es": "Emblema Curri", "en": "Curry Mark", "ko": "카레의증표", "key": "RibbonMarkCurry"}
+{"domain": "ribbons", "i": 121, "es": "Emblema Familiaridad", "en": "Uncommon Mark", "ko": "가끔보는증표", "key": "RibbonMarkUncommon"}
+{"domain": "ribbons", "i": 122, "es": "Emblema Rareza", "en": "Rare Mark", "ko": "본적없는증표", "key": "RibbonMarkRare"}
+{"domain": "ribbons", "i": 123, "es": "Emblema Travesura", "en": "Rowdy Mark", "ko": "장난꾸러기증표", "key": "RibbonMarkRowdy"}
+{"domain": "ribbons", "i": 124, "es": "Emblema Despreocupación", "en": "Absent-Minded Mark", "ko": "촐랑거리는증표", "key": "RibbonMarkAbsentMinded"}
+{"domain": "ribbons", "i": 125, "es": "Emblema Nerviosismo", "en": "Jittery Mark", "ko": "긴장의증표", "key": "RibbonMarkJittery"}
+{"domain": "ribbons", "i": 126, "es": "Emblema Ilusión", "en": "Excited Mark", "ko": "기대의증표", "key": "RibbonMarkExcited"}
+{"domain": "ribbons", "i": 127, "es": "Emblema Carisma", "en": "Charismatic Mark", "ko": "카리스마의증표", "key": "RibbonMarkCharismatic"}
+{"domain": "ribbons", "i": 128, "es": "Emblema Compostura", "en": "Calmness Mark", "ko": "냉정의증표", "key": "RibbonMarkCalmness"}
+{"domain": "ribbons", "i": 129, "es": "Emblema Pasión", "en": "Intense Mark", "ko": "정열의증표", "key": "RibbonMarkIntense"}
+{"domain": "ribbons", "i": 130, "es": "Emblema Distracción", "en": "Zoned-Out Mark", "ko": "방심의증표", "key": "RibbonMarkZonedOut"}
+{"domain": "ribbons", "i": 131, "es": "Emblema Felicidad", "en": "Joyful Mark", "ko": "다행의증표", "key": "RibbonMarkJoyful"}
+{"domain": "ribbons", "i": 132, "es": "Emblema Cólera", "en": "Angry Mark", "ko": "분노의증표", "key": "RibbonMarkAngry"}
+{"domain": "ribbons", "i": 133, "es": "Emblema Sonrisa", "en": "Smiley Mark", "ko": "미소의증표", "key": "RibbonMarkSmiley"}
+{"domain": "ribbons", "i": 134, "es": "Emblema Llanto", "en": "Teary Mark", "ko": "비통의증표", "key": "RibbonMarkTeary"}
+{"domain": "ribbons", "i": 135, "es": "Emblema Buen Humor", "en": "Upbeat Mark", "ko": "쾌조의증표", "key": "RibbonMarkUpbeat"}
+{"domain": "ribbons", "i": 136, "es": "Emblema Mal Humor", "en": "Peeved Mark", "ko": "격렬의증표", "key": "RibbonMarkPeeved"}
+{"domain": "ribbons", "i": 137, "es": "Emblema Intelecto", "en": "Intellectual Mark", "ko": "이성의증표", "key": "RibbonMarkIntellectual"}
+{"domain": "ribbons", "i": 138, "es": "Emblema Impulsividad", "en": "Ferocious Mark", "ko": "본능의증표", "key": "RibbonMarkFerocious"}
+{"domain": "ribbons", "i": 139, "es": "Emblema Astucia", "en": "Crafty Mark", "ko": "교활의증표", "key": "RibbonMarkCrafty"}
+{"domain": "ribbons", "i": 140, "es": "Emblema Intimidación", "en": "Scowling Mark", "ko": "두려움의증표", "key": "RibbonMarkScowling"}
+{"domain": "ribbons", "i": 141, "es": "Emblema Amabilidad", "en": "Kindly Mark", "ko": "상냥함의증표", "key": "RibbonMarkKindly"}
+{"domain": "ribbons", "i": 142, "es": "Emblema Desconcierto", "en": "Flustered Mark", "ko": "동요의증표", "key": "RibbonMarkFlustered"}
+{"domain": "ribbons", "i": 143, "es": "Emblema Motivación", "en": "Pumped-Up Mark", "ko": "고양의증표", "key": "RibbonMarkPumpedUp"}
+{"domain": "ribbons", "i": 144, "es": "Emblema Desgana", "en": "Zero Energy Mark", "ko": "권태의증표", "key": "RibbonMarkZeroEnergy"}
+{"domain": "ribbons", "i": 145, "es": "Emblema Confianza", "en": "Prideful Mark", "ko": "자신의증표", "key": "RibbonMarkPrideful"}
+{"domain": "ribbons", "i": 146, "es": "Emblema Inseguridad", "en": "Unsure Mark", "ko": "불신의증표", "key": "RibbonMarkUnsure"}
+{"domain": "ribbons", "i": 147, "es": "Emblema Sencillez", "en": "Humble Mark", "ko": "순박의증표", "key": "RibbonMarkHumble"}
+{"domain": "ribbons", "i": 148, "es": "Emblema Altanería", "en": "Thorny Mark", "ko": "불순의증표", "key": "RibbonMarkThorny"}
+{"domain": "ribbons", "i": 149, "es": "Emblema Vigor", "en": "Vigor Mark", "ko": "기력의증표", "key": "RibbonMarkVigor"}
+{"domain": "ribbons", "i": 150, "es": "Emblema Extenuación", "en": "Slump Mark", "ko": "피곤의증표", "key": "RibbonMarkSlump"}
+{"domain": "ribbons", "i": 151, "es": "Hisui", "en": "Hisui", "ko": "히스이리본", "key": "RibbonHisui"}
+{"domain": "ribbons", "i": 152, "es": "Estrella Rutilante", "en": "Twinkling Star", "ko": "트윙클스타리본", "key": "RibbonTwinklingStar"}
+{"domain": "ribbons", "i": 153, "es": "Campeón de Paldea", "en": "Paldea Champion", "ko": "팔데아챔피언리본", "key": "RibbonChampionPaldea"}
+{"domain": "ribbons", "i": 154, "es": "Emblema Enormidad", "en": "Jumbo Mark", "ko": "커다란증표", "key": "RibbonMarkJumbo"}
+{"domain": "ribbons", "i": 155, "es": "Emblema Miniatura", "en": "Mini Mark", "ko": "조그만증표", "key": "RibbonMarkMini"}
+{"domain": "ribbons", "i": 156, "es": "Emblema Recolección", "en": "Itemfinder Mark", "ko": "습득의증표", "key": "RibbonMarkItemfinder"}
+{"domain": "ribbons", "i": 157, "es": "Emblema Compañerismo", "en": "Partner Mark", "ko": "파트너의증표", "key": "RibbonMarkPartner"}
+{"domain": "ribbons", "i": 158, "es": "Emblema Sibaritismo", "en": "Gourmand Mark", "ko": "미식가의증표", "key": "RibbonMarkGourmand"}
+{"domain": "ribbons", "i": 159, "es": "Excepcionalidad", "en": "Once-in-a-Lifetime", "ko": "천재일우리본", "key": "RibbonOnceInALifetime"}
+{"domain": "ribbons", "i": 160, "es": "Emblema Alfa", "en": "Alpha Mark", "ko": "우두머리의증표", "key": "RibbonMarkAlpha"}
+{"domain": "ribbons", "i": 161, "es": "Emblema Imbatibilidad", "en": "Mightiest Mark", "ko": "최강의증표", "key": "RibbonMarkMightiest"}
+{"domain": "ribbons", "i": 162, "es": "Emblema Dominancia", "en": "Titan Mark", "ko": "주인의증표", "key": "RibbonMarkTitan"}
+{"domain": "ribbons", "i": 163, "es": "Camarada", "en": "Partner", "ko": "파트너리본", "key": "RibbonPartner"}
