@@ -113,8 +113,14 @@
 글자가 네모로 떨어지는데 그것을 알릴 장치도 없다. **modkit에 `provides`가 들어오기
 전까지 이 가름은 선언으로 표현되지 않는다.**
 
-요청은 `essentials-modkit/docs/handoff-2026-08-07-requires-capability.md`에 남겼다.
-그것이 들어오면 픽셀 폰트 모드에 `"provides": ["hangul-font"]`, 한글패치에
+**이 구현도 다음 세션의 일이다.** 조사와 설계는
+`essentials-modkit/docs/handoff-2026-08-07-requires-capability.md`에 끝내 놓았다 —
+`declare.gate`의 검사 집합을 「설치된 이름 ∪ 그들의 `provides` 합집합」으로 넓히는 몇 줄,
+SPEC 2절 카드 필드 표 한 줄, `lint`의 권장 검사 하나. 그 문서의 「같이 정해 주었으면 하는
+것 넷」(`order`도 능력을 받는가 · 능력 이름의 표준화 · `conflicts`도 받는가 · 부분 덮임
+제공자 판정)을 먼저 정하고 손댄다.
+
+들어오면 픽셀 폰트 모드에 `"provides": ["hangul-font"]`, 한글패치에
 `"requires": ["hangul-font"]`를 적는다.
 
 ## 정해지지 않은 것
