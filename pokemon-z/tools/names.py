@@ -87,12 +87,15 @@ def cmd_check():
             # 변이도 **원문에 그 이름이 있는 행에서만** 잡는다. 번역 칸만 보면
             # 옛 표기가 묻힌 다른 낱말을 잘못 문다(「무사」가 변이일 때 「무사히」·
             # 「갑주무사」·「무사태평」 88행이 걸렸다 — 2026-08-06).
-            here = r["es"].lower() in src.lower()
+            # 원문 대조는 **낱말 경계**로 — 부분 문자열은 「Alca」가 「Alcaide(소장)」에,
+            # 「Mimi」가 「Mimikyu」에 걸린다(2026-08-06 실측 29건 중 24건이 이 오탐).
+            # 대소문자도 지킨다 — 「Mujer(이름표)」를 소문자 mujer(보통명사)에 물리면 안 된다
+            here = re.search(r"\b" + re.escape(r["es"]) + r"\b", src)
             for wrong in r.get("변이", []):
                 if wrong in v and here:
                     bad += 1
                     print(f"[변이] {f.name}:{n} {wrong!r} → {r['ko']!r}  | {v[:70]}")
-            if r["es"] in src and r["ko"] not in v and not r.get("생략허용"):
+            if here and r["ko"] not in v and not r.get("생략허용"):
                 missing += 1
                 print(f"[빠짐] {f.name}:{n} 원문에 {r['es']!r} 있는데 {r['ko']!r} 없음 | {v[:70]}")
     print(f"\n이름 {len(ledger)}개 · 변이 잔존 {bad} · 표기 빠짐 {missing}")
