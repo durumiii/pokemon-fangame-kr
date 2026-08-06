@@ -15,8 +15,7 @@
 | Z-5 | 조연 말투 정본 등재 — 페르소나표 밖 68화자 364행 | P-3 | 중간 | 원장 미결 2 |
 | Z-6 | 유저 제보 판정 122건 | P-3 | 중간 | [triage](reports/2026-08-06-triage.md) |
 | Z-7 | 구세대 콘테스트 리본 밖 표기 — 코퍼스에 없는 자리 정리 | P-2 | 작음 | 원장 미결 11 |
-| Z-8 | **한글패치 모드를 정식 경로로 다시 만든다** — 번역 모드와 폰트 모드로 가르고 modkit `new`→`lint`로. 옛 Z-9·Z-10(폰트·그림자 실기 확인)이 이 안으로 들어왔다 | P-3 | 큼 | [인계](handoff-2026-08-07-mod-rebuild.md) |
-| Z-9 | modkit에 능력 선언(`provides`) — 번역 모드가 「한글 폰트를 제공하는 모드 아무거나」를 요구할 길이 없다. Z-8이 여기 막혀 있다 | P-3 | 작음 | [핸드오프](../../sketches/essentials-modkit/docs/handoff-2026-08-07-requires-capability.md) |
+| Z-8 | **한글패치 모드를 정식 경로로 다시 만든다** — `한글패치 통합-Runa`와 `DPPT Font`로 가르고 modkit `new`→`lint`로. 옛 Z-9·Z-10(폰트·그림자 실기 확인)이 이 안으로 들어왔다 | P-3 | 큼 | [인계](handoff-2026-08-07-mod-rebuild.md) |
 | Z-11 | Z-GUI 상태이상 아이콘 배포 경로 — 「쇠락」 아이콘이 패치 zip에 없다 | P-2 | 작음 | 원장 미결 7 |
 | Z-12 | 실기 확인 묶음 — 앙코르 · `\j[` 노출 · 「옛 고목내마을열쇠」 잘림 · 맵21:17 화자 상속 | P-1 | 중간 | 원장 미결 6 |
 | Z-13 | modkit 복제 설치본 사고 후속 — 제거 앞 소유 확인 문, fanlib 로깅 연결 | P-3 | 중간 | [핸드오프](../../sketches/essentials-modkit/docs/handoff-2026-08-07-clone-install-wipe.md) |
