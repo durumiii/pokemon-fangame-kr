@@ -14,7 +14,9 @@
 | 유저 제보 시트, 웹 스튜디오 | [docs/guides/reports.md](docs/guides/reports.md) |
 | 모드 주입(UI Text KR 등) | [docs/guides/mods.md](docs/guides/mods.md) |
 
-현황·미결의 원장은 [docs/design/z-translation-quality.md](docs/design/z-translation-quality.md),
+**열린 일감의 정본은 [docs/ROADMAP.md](docs/ROADMAP.md)**(티켓), 낸 것과 낼 것은
+[docs/CHANGELOG.md](docs/CHANGELOG.md)에 쌓는다. 판정 근거·사고 경위의 원장은
+[docs/design/z-translation-quality.md](docs/design/z-translation-quality.md),
 조사·실측 기록은 `docs/research/`.
 
 ## 언제나 지키는 것
