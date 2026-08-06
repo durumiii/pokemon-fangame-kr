@@ -30,7 +30,7 @@ sys.path.insert(0, str(HERE))
 from review_page import HEAD, approved_ids, collect  # noqa: E402
 
 BODY = r"""<script>
-let DATA = [], V = {}, M = {}, NOTE = {};
+let DATA = [], V = {}, M = {}, NOTE = {}, STAT = null;
 const HUMAN = new Set();   // 사람이 손댄 자리 — 기계 수선 채움과 가른다
 const esc = s => (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])).replace(/\n/g,'<br>');
 function diff(a,b){
@@ -203,8 +203,12 @@ function count(){
   const t={cur:0,new:0,own:0,hold:0};
   Object.values(V).forEach(v=>{if(v)t[v]++;});
   const notes=Object.values(NOTE).filter(x=>x&&x.trim()).length;
+  const st=STAT||{}, done=st['끝남']||0, all=st['물을것']||tot;
+  const pct=all?Math.round(done*100/all):0;
   document.getElementById('cnt').innerHTML=
-    `<b>${Object.values(V).filter(Boolean).length}</b> / ${tot} 판정 · 새 번역 ${t.new} · 현행 ${t.cur} · 직접 ${t.own} · 보류 ${t.hold} · 메모 ${notes}`;
+    `끝마침 <b>${done}</b> / ${all}행 (${pct}%) · 남은 ${tot}행 · ` +
+    `이 화면 판정 ${Object.values(V).filter(Boolean).length} ` +
+    `(현행 ${t.cur} · 직접 ${t.own} · 보류 ${t.hold} · 새번역 ${t.new}) · 메모 ${notes}`;
 }
 document.getElementById('fold').onclick=e=>{
   e.target.classList.toggle('on');
@@ -232,6 +236,7 @@ fetch('/data').then(r=>r.json()).then(d=>{
     if(x['판정']==='직접') M[id]=x['텍스트']||'';
     if(x['메모']) NOTE[id]=x['메모'];
   }
+  STAT=d.stat||null;
   for(const [k,x] of Object.entries(d.verdicts||{}))     // event:<맵>:<이벤트> 열쇠
     if(k.startsWith('event:') && x['판정']==='완료') DONE.add(k.slice(6));
   render(); count(); refold();
@@ -281,6 +286,23 @@ def load_verdicts(p):
     return out
 
 
+def progress(out_dir, scenes):
+    """검수가 어디까지 왔나 — 처음 선별된 행 가운데 화면에서 빠진 것이 끝난 것이다.
+
+    빠지는 길은 셋이다: 이벤트가 반영돼 승인·보호로 갔거나, 수선 행이 먼저 반영됐거나,
+    승인 줄이라 애초에 물을 것이 아니었거나. 판정을 안 눌러도 새 번역 채택으로 끝나므로
+    「판정한 수」로는 진도를 셀 수 없다.
+    """
+    from review_page import applied_rows, approved_ids, reasons
+    d = Path(out_dir)
+    ids = set(reasons(d))                       # 두 층이 처음 걸러 낸 자리 전부
+    skip = ids & (approved_ids() | applied_rows())
+    left = sum(len(s["rows"]) for s in scenes)
+    return {"전체": len(ids), "승인줄": len(skip),
+            "물을것": len(ids) - len(skip), "남음": left,
+            "끝남": len(ids) - len(skip) - left}
+
+
 def append_verdict(p, rec):
     """자리마다 최종 판정 한 줄만 남긴다 — 같은 자리를 고쳐 누르면 그 줄을 갈아 끼운다."""
     rec["ts"] = time.strftime("%Y-%m-%dT%H:%M:%S")
@@ -322,8 +344,9 @@ def handler(out_dir, vpath):
                                                q.get("event", [""])[0])})
             elif u.path == "/data":
                 # 매번 다시 읽는다 — 선별을 다시 돌리고 새로고침하면 바로 반영된다
-                self._json({"scenes": collect(out_dir),
-                            "verdicts": load_verdicts(vpath)})
+                sc = collect(out_dir)
+                self._json({"scenes": sc, "verdicts": load_verdicts(vpath),
+                            "stat": progress(out_dir, sc)})
             else:
                 self._json({"err": "?"}, 404)
 
