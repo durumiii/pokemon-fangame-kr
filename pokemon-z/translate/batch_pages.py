@@ -383,8 +383,13 @@ def plan(pilot=False):
             if name in seen_cast:            # ??? 판정으로 같은 인물이 두 번 서지 않게
                 if hints.get(who) and hints[who] not in seen_cast[name]["voice"]:
                     seen_cast[name]["voice"] += " " + hints[who]
+                    seen_cast[name]["hint"] = (seen_cast[name].get("hint", "")
+                                               + " " + hints[who]).strip()
                 continue
-            seen_cast[name] = {"name": name, "voice": voice}
+            # 익명(???) 자리의 말투지침은 따로도 든다 — 말투 정본에 있는 인물이면
+            # scene_header가 voice를 안 읽어서 지침이 버려졌다(2026-08-06 티켓④ 적발)
+            seen_cast[name] = {"name": name, "voice": voice,
+                               **({"hint": hints[who]} if hints.get(who) else {})}
             cast.append(seen_cast[name])
         attach_personas(cast, take, names)
         m, e, p = key
@@ -718,6 +723,8 @@ def scene_header(c):
         rec = vp.get(x["name"])
         if rec:
             instr = resolve_conditions(rec.get("지시", ""), c["map"])
+            if x.get("hint"):                  # 익명 자리 지침은 정본 지시에 덧댄다
+                instr = (instr + " " if instr else "") + x["hint"]
             samples = [(s.get("격", "—"), s["글"]) for s in rec.get("본보기", [])]
         else:
             instr = voice_instruction(x["voice"]) if x["voice"] else ""
