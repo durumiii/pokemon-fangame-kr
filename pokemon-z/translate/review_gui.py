@@ -84,7 +84,7 @@ function makeCard(r, sc){
         mine.classList.toggle('open',V[r.id]==='own');
         card.classList.toggle('done',!!V[r.id]&&!(V[r.id]==='own'&&!ta.value.trim()));
       };
-      const set=(v,force)=>{V[r.id]=(!force&&V[r.id]===v)?undefined:v; paint(); count(); save(r.id);};
+      const set=(v,force)=>{V[r.id]=(!force&&V[r.id]===v)?undefined:v; paint(); count(); refold(); save(r.id);};
       card.querySelector('.ctxbtn').onclick=()=>openFlow(sc, r.id);
       card.querySelectorAll('.txt').forEach(el=>el.onclick=()=>set(el.dataset.v));
       card.querySelectorAll('.tools button[data-v]').forEach(el=>el.onclick=()=>set(el.dataset.v));
@@ -107,7 +107,9 @@ function render(){
   body.innerHTML='';
   for (const sc of DATA){
     const sec=document.createElement('section');
+    sec.dataset.ev=sc.file;
     sec.innerHTML=`<div class="scene"><h2>${esc(sc.name)}</h2>
+      <span class="fin" style="display:none">끝냄</span>
       <span class="meta">맵 ${sc.map} · 이벤트 ${esc(sc.event)}-${esc(sc.page)} ·
         ${esc(sc.cast.join(' · '))} · 장면 ${sc.total}행 중 <b>${sc.rows.length}행 선별</b>${
         sc.hidden?` · 승인 줄 ${sc.hidden}행 숨김`:''}</span>
@@ -157,6 +159,16 @@ function openFlow(sc, id){
   document.getElementById('ctx').showModal();
   if(id){const el=document.getElementById('fl-'+id); if(el) el.scrollIntoView({block:'center'});}
 }
+function fin(sc){return sc.rows.length>0 && sc.rows.every(r=>V[r.id]);}
+function refold(){
+  const on=document.getElementById('fold').classList.contains('on');
+  document.querySelectorAll('section[data-ev]').forEach(sec=>{
+    const sc=DATA.find(x=>x.file===sec.dataset.ev);
+    const done=sc&&fin(sc);
+    sec.classList.toggle('folded', on&&done);
+    const b=sec.querySelector('.fin'); if(b) b.style.display=done?'':'none';
+  });
+}
 function count(){
   const tot=DATA.reduce((n,s)=>n+s.rows.length,0);
   const t={cur:0,new:0,own:0,hold:0};
@@ -165,6 +177,11 @@ function count(){
   document.getElementById('cnt').innerHTML=
     `<b>${Object.values(V).filter(Boolean).length}</b> / ${tot} 판정 · 새 번역 ${t.new} · 현행 ${t.cur} · 직접 ${t.own} · 보류 ${t.hold} · 메모 ${notes}`;
 }
+document.getElementById('fold').onclick=e=>{
+  e.target.classList.toggle('on');
+  e.target.textContent=e.target.classList.contains('on')?'끝낸 이벤트 펴기':'끝낸 이벤트 접기';
+  refold();
+};
 document.getElementById('dump').onclick=()=>{
   const L=[];
   for(const sc of DATA) for(const r of sc.rows){
@@ -185,7 +202,7 @@ fetch('/data').then(r=>r.json()).then(d=>{
     if(x['판정']==='직접') M[id]=x['텍스트']||'';
     if(x['메모']) NOTE[id]=x['메모'];
   }
-  render(); count();
+  render(); count(); refold();
 }).catch(()=>flag('데이터를 못 읽었어요 — 서버가 떠 있나요?'));
 </script>
 """

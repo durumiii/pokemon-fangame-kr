@@ -116,13 +116,46 @@ def record_applied(evs):
     return new
 
 
+MEND_MEMO = "개행 기계 수선 — 확인 바람"
+APPLIED_ROWS = BATCH / "applied-rows.jsonl"
+
+
+def mend_rows(d, vs):
+    """기계 수선 행 중 **그 이벤트의 유일한 선별이 아닌 것** — 먼저 반영하고 화면에서 지운다.
+
+    유일한 선별이면 남긴다. 그 행을 지우면 이벤트가 목록에서 통째로 사라져,
+    장면을 열어 볼 길이 막힌다(유지자 판정 2026-08-06).
+    """
+    sys.path.insert(0, str(HERE))
+    from review_page import collect
+
+    out = set()
+    for sc in collect(d):
+        ids = [r["id"] for r in sc["rows"]]
+        mend = {i for i in ids if (vs.get(i) or {}).get("메모") == MEND_MEMO}
+        if len(mend) < len(ids):      # 사람이 볼 행이 남아야 이벤트가 목록에 선다
+            out |= mend
+    return out
+
+
+def record_rows(ids):
+    have = {json.loads(l)["id"] for l in APPLIED_ROWS.read_text(encoding="utf-8").splitlines()
+            if l.strip()} if APPLIED_ROWS.exists() else set()
+    new = sorted(ids - have)
+    with APPLIED_ROWS.open("a", encoding="utf-8") as f:
+        for i in new:
+            f.write(json.dumps({"id": i, "src": "개행 기계 수선"}, ensure_ascii=False) + "\n")
+    return new
+
+
 def run(out_dir, write=False, events_only=False):
     d = Path(out_dir)
     ledger = d.parent / f"verdicts-{d.name}.jsonl"
     vs, appr = verdicts(ledger), approved_ids()
     keep = done_events(d, vs) if events_only else None
+    rows_ok = mend_rows(d, vs) if events_only else set()
     if events_only:
-        print(f"판정 끝난 이벤트 {len(keep)}개만 반영한다")
+        print(f"판정 끝난 이벤트 {len(keep)}개 · 먼저 반영할 수선 행 {len(rows_ok)}개")
 
     plan, why = {}, {}
     clash, stat = [], {}
@@ -132,7 +165,7 @@ def run(out_dir, write=False, events_only=False):
                 continue
             r = json.loads(line)
             m, e = (int(x) for x in r["id"].split(":")[:2])
-            if keep is not None and (m, e) not in keep:
+            if keep is not None and (m, e) not in keep and r["id"] not in rows_ok:
                 continue
             new, tag = decide(r, vs.get(r["id"]), appr)
             stat[tag] = stat.get(tag, 0) + 1
@@ -171,6 +204,8 @@ def run(out_dir, write=False, events_only=False):
     print(f"정본 {MAPS.name}: {hit}행 고침")
     if events_only and keep:
         print(f"승인 이벤트 등재: {len(record_applied(keep))}개 새로 올림")
+    if events_only and rows_ok:
+        print(f"수선 행 등재: {len(record_rows(rows_ok))}개 — 화면에서 빠진다")
 
 
 if __name__ == "__main__":

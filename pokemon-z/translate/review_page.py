@@ -99,10 +99,19 @@ def applied_events(path=None):
             for l in p.read_text(encoding="utf-8").splitlines() if l.strip()}
 
 
+def applied_rows(path=None):
+    """이미 정본에 반영돼 다시 볼 것 없는 행(`batch/applied-rows.jsonl`)."""
+    p = Path(path or HERE / "batch/applied-rows.jsonl")
+    if not p.exists():
+        return set()
+    return {json.loads(l)["id"] for l in p.read_text(encoding="utf-8").splitlines()
+            if l.strip()}
+
+
 def collect(d, ok=None, done=None):
     d = Path(d)
     why = reasons(d)
-    ok = approved_ids() if ok is None else ok
+    ok = (approved_ids() | applied_rows()) if ok is None else ok
     done = applied_events() if done is None else done
     out = []
     for fp in sorted(d.glob("*.jsonl")):
@@ -159,6 +168,11 @@ section{{margin-bottom:30px}}
 .card{{background:var(--card);border:1px solid var(--line);border-radius:10px;
   padding:13px 16px;margin-bottom:12px}}
 .card.done{{border-color:rgba(76,195,138,.5)}}
+section.folded .card,section.folded .expand{{display:none}}
+section.folded{{margin-bottom:10px;opacity:.62}}
+section.folded .scene{{border-bottom-style:dashed}}
+.fin{{font-size:11.5px;color:var(--ok);background:rgba(76,195,138,.12);
+  border:1px solid rgba(76,195,138,.35);border-radius:5px;padding:2px 8px}}
 .hd{{display:flex;gap:8px;align-items:center;flex-wrap:wrap}}
 .chip{{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;color:var(--sub);
   background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:2px 8px}}
@@ -203,7 +217,8 @@ dialog::backdrop{{background:rgba(0,0,0,.6)}}
 <header><span class="logo">Z <b>선별분 검수</b></span>
   <span class="count" id="cnt"></span>
   <span id="ledger">{ledger}</span><span id="err"></span>
-  <span class="act"><button id="dump">판정 TSV</button></span></header>
+  <span class="act"><button id="fold">끝낸 이벤트 접기</button>
+    <button id="dump">판정 TSV</button></span></header>
 <main>
 <p class="intro">선별 두 층에 걸린 행만 실려 있어요. 각 행에 <b>왜 걸렸는지</b>가 붙고,
 「문맥」을 열면 그 장면 전체를 현행 번역으로 읽을 수 있어요. 장면 머리의
