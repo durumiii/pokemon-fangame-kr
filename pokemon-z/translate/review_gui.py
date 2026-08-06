@@ -1,0 +1,297 @@
+# /// script
+# requires-python = ">=3.12"
+# ///
+"""선별분 검수 스튜디오 — 로컬 서버로 띄우고 판정을 그때그때 저장한다.
+
+정적 HTML은 판정이 브라우저에만 남아 새로고침 한 번에 날아간다. 여기서는 데이터만
+주고받고, 판정은 누를 때마다 서버가 jsonl에 덧붙인다 — 창을 닫았다 열어도 이어서 본다.
+
+    uv run translate/review_gui.py --out translate/batch/page-out-pilot-fresh [--port 8788]
+
+  GET  /         검수 UI
+  GET  /data     {"scenes":[...], "verdicts":{id:{판정,텍스트,메모}}}
+  POST /verdict  {"id","판정","텍스트","메모"} → 덧붙임 저장, 같은 id는 마지막 것이 이긴다
+
+판정 원장은 `translate/batch/verdicts-<out이름>.jsonl`. 화면 오른쪽 위 「판정 TSV」는
+예비 내보내기고, 원장이 정본이다.
+
+장면·선별 사유를 모으는 일은 `review_page.py`(정적 생성판)와 같은 코드를 쓴다.
+"""
+
+import json
+import sys
+import time
+import urllib.parse
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from pathlib import Path
+
+HERE = Path(__file__).parent
+sys.path.insert(0, str(HERE))
+from review_page import HEAD, collect  # noqa: E402
+
+BODY = r"""<script>
+let DATA = [], V = {}, M = {}, NOTE = {};
+const esc = s => (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])).replace(/\n/g,'<br>');
+function diff(a,b){
+  let s=0; while(s<a.length&&s<b.length&&a[s]===b[s])s++;
+  let e=0; while(e<a.length-s&&e<b.length-s&&a[a.length-1-e]===b[b.length-1-e])e++;
+  return [a.slice(0,s),a.slice(s,a.length-e),b.slice(s,b.length-e),a.slice(a.length-e)];
+}
+const mark=(base,cand)=>{const[p,,m,sf]=diff(base,cand);return esc(p)+'<ins>'+esc(m)+'</ins>'+esc(sf);};
+const LABEL={cur:'현행',new:'B새번역',own:'직접',hold:'보류'};
+const ROW={};                       // id → 원자료 (저장할 때 텍스트를 뽑는다)
+const timer={};
+function post(rec){                 // 원장에 한 줄 — 이게 정본이다
+  return fetch('/verdict',{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(rec)})
+    .then(x=>{if(!x.ok) flag('저장 실패 — ' + (rec.id||rec.event));})
+    .catch(()=>flag('서버 끊김 — ' + (rec.id||rec.event)));
+}
+function save(id){                  // 판정 하나를 서버에 넘긴다
+  const v=V[id], r=ROW[id];
+  const txt=v==='new'?r.new:v==='own'?(M[id]||''):v==='cur'?r.ko:'';
+  post({id, 판정:v?LABEL[v]:'', 텍스트:txt, 메모:(NOTE[id]||'')});
+}
+function later(id){clearTimeout(timer[id]); timer[id]=setTimeout(()=>save(id),600);}
+function flag(msg){const e=document.getElementById('err'); e.textContent=msg; e.style.display='';}
+
+function render(){
+  const body=document.getElementById('body');
+  body.innerHTML='';
+  for (const sc of DATA){
+    const sec=document.createElement('section');
+    sec.innerHTML=`<div class="scene"><h2>${esc(sc.name)}</h2>
+      <span class="meta">맵 ${sc.map} · 이벤트 ${esc(sc.event)}-${esc(sc.page)} ·
+        ${esc(sc.cast.join(' · '))} · 장면 ${sc.total}행 중 <b>${sc.rows.length}행 선별</b></span>
+      <span class="act" style="margin-left:auto"><button data-all="1">이벤트 일괄 승인</button>
+        <button data-flow="1">장면 흐름</button></span></div>`;
+    const setters=[];
+    for (const r of sc.rows){
+      ROW[r.id]=r;
+      const card=document.createElement('div'); card.className='card';
+      card.innerHTML=`<div class="hd"><span class="who">${esc(r.who)}</span>
+          <span class="rid">${r.id}</span>
+          <button class="ctxbtn" style="margin-left:auto">문맥</button></div>
+        <div class="why">${r.why.map(w=>`<div><b>${esc(w['유형'])}</b>
+          <span class="lay">· ${esc(w['층'])}</span>${w['근거']?' — '+esc(w['근거']):''}</div>`).join('')}</div>
+        <div class="es">${esc(r.es)}</div>
+        <div class="opt"><span class="tag cur">현행</span><span class="txt" data-v="cur">${esc(r.ko)}</span></div>
+        <div class="opt"><span class="tag new">새</span><span class="txt" data-v="new">${mark(r.ko,r.new)}</span></div>
+        <div class="tools"><button data-v="own">직접</button><button data-v="hold">보류</button>
+          <button data-memo="1">메모</button></div>
+        <div class="mine"><textarea rows="2" placeholder="고친 문장을 여기에"></textarea>
+          <p class="fill">넣기: <button type="button" data-fill="cur">현행</button>
+            <button type="button" data-fill="new">새 번역</button></p></div>
+        <div class="memo"><textarea rows="2" placeholder="메모 — 무엇을 골랐든 따로 남아요"></textarea></div>`;
+      const mine=card.querySelector('.mine'), ta=mine.querySelector('textarea');
+      const memo=card.querySelector('.memo'), na=memo.querySelector('textarea');
+      ta.value=M[r.id]||''; na.value=NOTE[r.id]||'';
+      if(na.value) memo.classList.add('open');
+      const paint=()=>{
+        card.querySelectorAll('.txt').forEach(x=>x.classList.toggle('sel',x.dataset.v===V[r.id]));
+        card.querySelectorAll('.tools button[data-v]').forEach(x=>x.classList.toggle('on',x.dataset.v===V[r.id]));
+        mine.classList.toggle('open',V[r.id]==='own');
+        card.classList.toggle('done',!!V[r.id]&&!(V[r.id]==='own'&&!ta.value.trim()));
+      };
+      const set=(v,force)=>{V[r.id]=(!force&&V[r.id]===v)?undefined:v; paint(); count(); save(r.id);};
+      setters.push(v=>set(v,true));
+      card.querySelectorAll('.txt').forEach(el=>el.onclick=()=>set(el.dataset.v));
+      card.querySelectorAll('.tools button[data-v]').forEach(el=>el.onclick=()=>set(el.dataset.v));
+      card.querySelector('[data-memo]').onclick=e=>{
+        memo.classList.toggle('open'); e.target.classList.toggle('on',memo.classList.contains('open'));
+        if(memo.classList.contains('open')) na.focus();
+      };
+      ta.oninput=()=>{M[r.id]=ta.value; paint(); count(); later(r.id);};
+      na.oninput=()=>{NOTE[r.id]=na.value; count(); later(r.id);};
+      mine.querySelectorAll('[data-fill]').forEach(b=>b.onclick=()=>{
+        ta.value=b.dataset.fill==='cur'?r.ko:r.new;
+        M[r.id]=ta.value; ta.focus(); paint(); count(); later(r.id);
+      });
+      paint();
+      sec.appendChild(card);
+    }
+    sec.querySelectorAll('.ctxbtn').forEach((b,i)=>b.onclick=()=>openFlow(sc, sc.rows[i].id));
+    sec.querySelector('[data-flow]').onclick=()=>openFlow(sc, null);
+    sec.querySelector('[data-all]').onclick=()=>{
+      setters.forEach(f=>f('new'));
+      // 승인은 이벤트 단위 — 행 판정과 별도로 원장에 한 줄 남긴다
+      post({event:`${sc.map}:${sc.event}`, 판정:'승인', 텍스트:'',
+            메모:`${sc.name} — ${sc.rows.length}행 일괄`});
+    };
+    body.appendChild(sec);
+  }
+}
+function openFlow(sc, id){
+  document.getElementById('ctxT').textContent=sc.name;
+  document.getElementById('ctxM').textContent=
+    `맵 ${sc.map} · 이벤트 ${sc.event}-${sc.page} · ${sc.total}행 — 현행 번역으로 읽는 장면`;
+  document.getElementById('ctxB').innerHTML=sc.flow.map(r=>
+    `<div class="line${r.id===id?' here':''}" id="fl-${r.id}">
+       <span class="nm">${esc(r.who)}${r.hit?' ●':''}</span><span>${esc(r.ko)}</span>
+       <span class="sp">${esc(r.es)}</span></div>`).join('');
+  document.getElementById('ctx').showModal();
+  if(id){const el=document.getElementById('fl-'+id); if(el) el.scrollIntoView({block:'center'});}
+}
+function count(){
+  const tot=DATA.reduce((n,s)=>n+s.rows.length,0);
+  const t={cur:0,new:0,own:0,hold:0};
+  Object.values(V).forEach(v=>{if(v)t[v]++;});
+  const notes=Object.values(NOTE).filter(x=>x&&x.trim()).length;
+  document.getElementById('cnt').innerHTML=
+    `<b>${Object.values(V).filter(Boolean).length}</b> / ${tot} 판정 · 새 번역 ${t.new} · 현행 ${t.cur} · 직접 ${t.own} · 보류 ${t.hold} · 메모 ${notes}`;
+}
+document.getElementById('dump').onclick=()=>{
+  const L=[];
+  for(const sc of DATA) for(const r of sc.rows){
+    const v=V[r.id], note=(NOTE[r.id]||'').trim();
+    if(!v&&!note) continue;
+    const txt=v==='new'?r.new:v==='own'?(M[r.id]||''):v==='cur'?r.ko:'';
+    L.push([r.id,v?LABEL[v]:'메모만',r.who,(txt||'').replace(/\n/g,'\\n'),note.replace(/\n/g,' ')].join('\t'));
+  }
+  document.getElementById('txt').value=L.length?L.join('\n'):'아직 고르거나 적은 것이 없어요.';
+  document.getElementById('out').showModal();
+};
+const BACK={};
+Object.entries(LABEL).forEach(([k,v])=>BACK[v]=k);
+fetch('/data').then(r=>r.json()).then(d=>{
+  DATA=d.scenes;
+  for(const [id,x] of Object.entries(d.verdicts||{})){
+    if(x['판정']) V[id]=BACK[x['판정']];
+    if(x['판정']==='직접') M[id]=x['텍스트']||'';
+    if(x['메모']) NOTE[id]=x['메모'];
+  }
+  render(); count();
+}).catch(()=>flag('데이터를 못 읽었어요 — 서버가 떠 있나요?'));
+</script>
+"""
+
+
+def verdict_path(out):
+    return Path(out).parent / f"verdicts-{Path(out).name}.jsonl"
+
+
+def load_verdicts(p):
+    """같은 자리는 마지막 줄이 이긴다 — 덧붙임 원장이라 고쳐 쓴 자국도 그대로 남는다.
+
+    행 판정은 `id`로, 이벤트 일괄 승인은 `event`로 들어온다. 화면에 도로 채울 땐
+    행 판정만 쓰므로 이벤트 기록은 `event:<map>:<event>` 열쇠로 따로 담는다.
+    """
+    out = {}
+    if p.exists():
+        for line in p.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                r = json.loads(line)
+                key = r.get("id") or ("event:" + r.get("event", ""))
+                out[key] = r
+    return out
+
+
+def append_verdict(p, rec):
+    rec["ts"] = time.strftime("%Y-%m-%dT%H:%M:%S")
+    with p.open("a", encoding="utf-8") as f:
+        f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+
+
+def handler(out_dir, vpath):
+    page = (HEAD.format(title=f"선별분 검수 — {Path(out_dir).name}",
+                        ledger=f"판정 저장 중 → {vpath}") + BODY).encode()
+
+    class H(BaseHTTPRequestHandler):
+        def log_message(self, *a):
+            pass
+
+        def _json(self, obj, code=200):
+            body = json.dumps(obj, ensure_ascii=False).encode()
+            self.send_response(code)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+
+        def do_GET(self):
+            u = urllib.parse.urlparse(self.path)
+            if u.path == "/":
+                self.send_response(200)
+                self.send_header("Content-Type", "text/html; charset=utf-8")
+                self.send_header("Content-Length", str(len(page)))
+                self.end_headers()
+                self.wfile.write(page)
+            elif u.path == "/data":
+                # 매번 다시 읽는다 — 선별을 다시 돌리고 새로고침하면 바로 반영된다
+                self._json({"scenes": collect(out_dir),
+                            "verdicts": load_verdicts(vpath)})
+            else:
+                self._json({"err": "?"}, 404)
+
+        def do_POST(self):
+            if self.path != "/verdict":
+                return self._json({"err": "?"}, 404)
+            n = int(self.headers.get("Content-Length", 0))
+            b = json.loads(self.rfile.read(n)) if n else {}
+            if not b.get("id") and not b.get("event"):
+                return self._json({"err": "id·event 없음"}, 400)
+            keys = ("event", "판정", "텍스트", "메모") if b.get("event") else \
+                   ("id", "판정", "텍스트", "메모")
+            append_verdict(vpath, {k: b.get(k, "") for k in keys})
+            self._json({"ok": True})
+
+    return H
+
+
+def selftest():
+    import tempfile
+    import threading
+    import urllib.request
+    with tempfile.TemporaryDirectory() as t:
+        d = Path(t)
+        (d / "p024-43-0.jsonl").write_text(
+            json.dumps({"id": "24:43:0:0", "who": "기니아", "es": "Hola",
+                        "old": "안녕", "new": "안녕하세요"}, ensure_ascii=False) + "\n",
+            encoding="utf-8")
+        (d / "screen.jsonl").write_text(
+            json.dumps({"id": "24:43:0:0", "who": "기니아", "flags": ["존칭 변경:님"]},
+                       ensure_ascii=False) + "\n", encoding="utf-8")
+        v = verdict_path(d)
+        srv = ThreadingHTTPServer(("127.0.0.1", 0), handler(d, v))
+        threading.Thread(target=srv.serve_forever, daemon=True).start()
+        base = f"http://127.0.0.1:{srv.server_address[1]}"
+        got = json.load(urllib.request.urlopen(base + "/data"))
+        assert len(got["scenes"]) == 1 and got["verdicts"] == {}, got
+        urllib.request.urlopen(urllib.request.Request(
+            base + "/verdict", method="POST",
+            data=json.dumps({"id": "24:43:0:0", "판정": "B새번역",
+                             "텍스트": "안녕하세요", "메모": "ㅇㅋ"},
+                            ensure_ascii=False).encode(),
+            headers={"Content-Type": "application/json"}))
+        urllib.request.urlopen(urllib.request.Request(
+            base + "/verdict", method="POST",
+            data=json.dumps({"event": "24:43", "판정": "승인", "텍스트": "",
+                             "메모": "일괄"}, ensure_ascii=False).encode(),
+            headers={"Content-Type": "application/json"}))
+        back = json.load(urllib.request.urlopen(base + "/data"))["verdicts"]
+        assert back["24:43:0:0"]["판정"] == "B새번역", back   # 새로고침하면 도로 채워진다
+        assert back["24:43:0:0"]["ts"]
+        assert back["event:24:43"]["판정"] == "승인", back    # 이벤트 승인은 따로 남는다
+        srv.shutdown()
+    print("selftest ok")
+
+
+def main(argv):
+    a = list(argv)
+    out = a[a.index("--out") + 1] if "--out" in a else None
+    port = int(a[a.index("--port") + 1]) if "--port" in a else 8788
+    if not out:
+        print(__doc__)
+        return
+    v = verdict_path(out)
+    n = len(load_verdicts(v))
+    print(f"http://localhost:{port}   판정 원장 {v}" + (f" (기존 {n}행)" if n else ""))
+    print("중지: Ctrl+C", flush=True)
+    ThreadingHTTPServer(("0.0.0.0", port), handler(out, v)).serve_forever()
+
+
+if __name__ == "__main__":
+    if len(sys.argv) > 1 and sys.argv[1] == "selftest":
+        selftest()
+    else:
+        main(sys.argv[1:])

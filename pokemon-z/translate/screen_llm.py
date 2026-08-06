@@ -12,22 +12,25 @@
 
 산출: <out-dir>/screen-llm.jsonl — {"id","유형","근거"}. 비용은 stdout.
 
-2차 파일럿 정답지 실측(gemini-3.6-flash · effort=low · 133행 · $0.30):
-이 층 홀로 6행을 지적해 5행이 사람이 손댄 행이었고, 휴리스틱이 못 보던 하드 오류
-둘(지어낸 낱말 「농부」 · 비문 「하도 만 일」)을 둘 다 잡았다. screen.py와 합치면
-하드 9/9 · 선별 19/133. 행당 약 $0.002.
+실측(1차 장면 13페이지 319행 · gemini-3.6-flash · effort=low · $0.12): 이 층 홀로 10행을
+지적해 7행이 유지자가 새 번역을 안 고른 행이었다. 제안 갈래(호칭·격·직역투)가 그 몫의
+대부분이다. 행당 약 $0.0004.
+
+백엔드는 `batch.py`가 정한다 — `Z_BACKEND=openrouter`를 얹으면 URL·키·모델이 함께 바뀐다.
+크레딧이 마르면(402) 재시도하지 않고 즉시 멈춘다 — 빈 산출을 쌓지 않기 위해서다.
 """
 
 import json
 import re
 import sys
 import time
+import urllib.error
 import urllib.request
 from pathlib import Path
 
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
-from batch import URL, key_of  # noqa: E402
+from batch import MODEL, URL, key_of  # noqa: E402
 
 PROMPT = """\
 너는 스페인어 원문과 그 한국어 번역을 대조해 **손볼 곳이 있는 행만** 골라내는 검수자다.
@@ -41,24 +44,40 @@ PROMPT = """\
 - `비문` — 한국어로 성립하지 않는다(조사·어미·띄어쓰기가 어긋나 뜻이 깨진 자리).
 - `오역` — 원문과 뜻이 다르다.
 
-위 넷은 **오류**다. 그와 별도로, 아래 세 갈래는 `제안`으로 보고할 수 있다 —
-확신이 아니라 「사람이 한 번 보면 좋겠다」는 표시다:
+위 넷은 **오류**다. 그와 별도로, 아래 네 갈래는 `제안`으로 보고한다 — 확신이 아니라
+「사람이 한 번 보면 좋겠다」는 표시다. **제안은 의심스러우면 올려라.** 걸리는 데가
+있는데 왜인지 딱 짚기 어려워도, 짚을 수 있는 만큼만 적어 올린다.
 
-- `제안-직역투` — 스페인어 구문을 그대로 옮긴 티(「~에 대해」, 이중 피동, 관계절 직역,
-  원문에는 자연스러운데 한국어로는 군더더기인 낱말 — 「사실」·「정말로」 따위).
-- `제안-호칭` — 호칭·경칭의 방향이 관계와 안 맞아 보인다(적에게 존칭, 손윗사람에게
-  낮춤, 장면 머리의 말투 지시와 어긋나는 2인칭).
+- `제안-호칭` — 호칭·경칭·2인칭이 관계와 안 맞아 보인다. 사람이 가장 자주 짚는 자리다:
+  · 원문에 없는 존칭이 붙거나(「대장」→「대장님」), 있던 존칭이 빠졌다.
+  · 부하가 상관을, 백성이 왕족을 부르는데 경칭이 없다(「메를로 대장님」·「국왕 폐하」꼴).
+  · 적대하는 상대에게 존칭을 쓰거나, 손윗사람에게 낮춤말을 쓴다.
+  · 장면 머리의 말투 지시가 「A에게 존대」라고 했는데 그 상대에게 반말이다.
+  · 인명·직함의 한국어 표기가 장면 안에서 흔들린다.
+- `제안-격` — 존대와 반말이 어긋난다:
+  · 같은 상대에게 잇달아 말하는데 줄마다 격이 흔들린다.
+  · 화자와 듣는 이의 관계에 견주어 격이 반대로 보인다.
+  · 원문의 usted/vos 흔적(le·su·3인칭 동사·-áis/-éis·vuestro)이 있는데 반말로 갔다.
+- `제안-직역투` — 스페인어 구문을 그대로 옮긴 티:
+  · 「~에 대해(서)」, 「~를 통해」, 「~하는 것이 가능하다」, 이중 피동 「~되어진다」.
+  · 관계절을 그대로 편 긴 수식, 「~에 의해」 피동.
+  · 원문에는 자연스러운데 한국어로는 군더더기인 낱말(「사실」·「정말로」·「그것」 따위).
+  · ¡Qué …! 를 「얼마나 ~한가!」로 옮긴 자리.
 - `제안-어색` — 문장은 성립하지만 게임 대사로 소리 내 읽으면 걸린다(어미가 겉돌거나
-  구어 리듬이 죽은 자리). **문어투 어미 자체는 걸지 마라** — 그 인물의 결일 수 있다.
+  구어 리듬이 죽은 자리, 말맛이 밋밋해진 재작성). **문어투 어미 자체는 걸지 마라** —
+  그 인물의 결일 수 있다.
 
 **보고하지 않는 것**: 원문 그대로 두기로 한 프랑스어 감탄구, 서식 태그(<b>·<i>·\\c[n]·\\PN),
-단순 취향(둘 다 자연스러운데 다른 표현이 떠오르는 경우).
+낱말 하나를 동의어로 바꾸면 되는 순수 취향.
 
-오류는 의심스러우면 보고하지 마라 — 근거를 원문 낱말로 댈 수 있는 것만.
-제안은 한 페이지에 **가장 걸리는 것 다섯까지** — 전부에 달면 선별이 아니다.
+오류는 의심스러우면 보고하지 마라 — 근거를 원문 낱말로 댈 수 있는 것만. 오류에는 수 제한이
+없다. 제안은 **오류와 따로 세어** 한 페이지에 걸리는 것 다섯까지 — 오류가 몇이든 제안 몫
+다섯은 그대로다.
 
 출력은 JSON 배열 하나뿐. 문제 없는 행은 넣지 않는다. 형식:
 [{"id": "<입력에 있던 id>", "유형": "지어냄", "근거": "원문에 없는 낱말 「…」이 들어갔다"},
+ {"id": "<id>", "유형": "제안-호칭", "근거": "부하가 상관을 부르는데 경칭이 없다"},
+ {"id": "<id>", "유형": "제안-격", "근거": "앞 줄은 존대인데 같은 상대에게 반말로 갔다"},
  {"id": "<id>", "유형": "제안-직역투", "근거": "「사실」이 원문 En realidad의 직역 군더더기다"}]
 문제가 없으면 [] 를 낸다.
 """
@@ -73,8 +92,13 @@ def ask(key, model, effort, system, rows, attempt=0):
         URL, data=json.dumps(payload).encode(),
         headers={"Authorization": "Bearer " + key, "Content-Type": "application/json"})
     try:
-        with urllib.request.urlopen(req, timeout=300) as r:
-            body = json.load(r)
+        try:
+            with urllib.request.urlopen(req, timeout=300) as r:
+                body = json.load(r)
+        except urllib.error.HTTPError as e:
+            if e.code == 402:                   # 크레딧 소진 — 재시도해도 같다, 즉시 멈춘다
+                raise SystemExit(f"402 결제 필요 — 중단합니다: {e.read()[:200].decode('utf-8','replace')}")
+            raise
         text = body["choices"][0]["message"]["content"]
         cost = float(body.get("usage", {}).get("cost") or 0)
         arr = json.loads(re.search(r"\[.*\]", text, re.S).group(0))
@@ -127,7 +151,7 @@ if __name__ == "__main__":
     if not a:
         print(__doc__)
         sys.exit()
-    model = a[a.index("--model") + 1] if "--model" in a else "gemini-3.6-flash"
+    model = a[a.index("--model") + 1] if "--model" in a else MODEL
     effort = a[a.index("--effort") + 1] if "--effort" in a else "low"
     for d in [x for x in a if not x.startswith("--")
               and x not in (model, effort)]:
