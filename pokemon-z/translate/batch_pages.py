@@ -30,12 +30,13 @@ from pathlib import Path
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 import mapname  # noqa: E402
-from pilot_npc import ask_npc, key_of  # noqa: E402
+from pilot_npc import ask_npc, key_of, npc_line  # noqa: E402
 from validate import check  # noqa: E402
 
 ATTR = HERE.parent / "docs/research/speaker-attr.jsonl.gz"
 ANON = HERE.parent / "docs/research/2026-08-06-anon-speakers.jsonl"
 APPROVED = HERE.parent / "docs/research/approved-lines.jsonl"
+PERSONAS = HERE / "persona-table.jsonl"     # 무태그 NPC 페르소나표(스프라이트 단위)
 PROMPTS = HERE / "voice-prompts.jsonl"      # 프롬프트에 실리는 말투 정본
 PROTECTED = HERE.parent / "docs/research/protected.jsonl"
 MAPS = HERE / "ko" / "00-maps.jsonl"
@@ -129,6 +130,44 @@ def voice_prompts():
             r = json.loads(line)
             out[r["name"]] = r
     return out
+
+
+def personas():
+    """스프라이트 → 페르소나표 행. 말투 지시가 아예 없는 조연에게 쓰는 보충이다.
+
+    사람 NPC 스프라이트 64종만 올라 있다는 점이 그대로 안전장치다. 화살표
+    (`flecha`)나 포켓몬 번호(`199`·`477`)처럼 사람이 아닌 스프라이트는 표에
+    없으니 붙지 않는다 — 2026-08-06 실측에서 Bruja의 14행이 `flecha`였다.
+    """
+    return {r["sprite"]: r for r in
+            (json.loads(l) for l in
+             PERSONAS.read_text(encoding="utf-8").splitlines() if l.strip())}
+
+
+def attach_personas(cast, take, names):
+    """말투 지시가 빈 화자에게 그 자리의 스프라이트로 페르소나를 얹는다.
+
+    **한 스프라이트를 두 화자가 나눠 쓰면 붙이지 않는다.** 스프라이트는 화자가
+    아니라 이벤트 페이지의 속성이라, 한 페이지에서 두 사람이 말하면 둘 다 같은
+    값을 받는다(2026-08-06 실측: p331-7-0에서 Briof와 「유죄 판결을 받은 남성」이
+    함께 `burguesow`, p327-15-0에서 Druida 1이 대드루이드 피쿠스의 스프라이트를
+    물려받았다). 후보가 둘 이상인 화자도 마찬가지로 건너뛴다.
+    """
+    per = personas()
+    # 페르소나표가 낡았거나 장면과 안 맞는 화자 — 붙은 17건 전수 검토에서 적발
+    # (2026-08-06: 혁명가는 대사가 정중한데 표는 「반말·단호」, 유죄남은 「재산 과시」가
+    #  결백 호소 장면과 상충, 나카르는 표가 이전 시점 스냅숏)
+    bad = {"Revolucionaria", "유죄 판결을 받은 남성", "나카르", "Nácar"}
+    by = defaultdict(set)
+    for r, w, _, _ in take:
+        by[resolve(w, names)].add(r.get("sprite") or "")
+    for x in cast:
+        if x["voice"] or x["name"] in bad:
+            continue
+        cand = {s for s in by[x["name"]] if s in per
+                and not any(s in by[o] for o in by if o != x["name"])}
+        if len(cand) == 1:
+            x["persona"] = npc_line(per[cand.pop()])
 
 
 def voice_instruction(cell):
@@ -347,6 +386,7 @@ def plan(pilot=False):
                 continue
             seen_cast[name] = {"name": name, "voice": voice}
             cast.append(seen_cast[name])
+        attach_personas(cast, take, names)
         m, e, p = key
         chunks.append({
             "cid": f"p{m:03d}-{e}-{p}",
@@ -683,7 +723,8 @@ def scene_header(c):
             instr = voice_instruction(x["voice"]) if x["voice"] else ""
             samples = fallback.get(x["name"], [])
         lines.append(f"- {x['name']}: "
-                     + (instr or "not in the style guide — keep the current level"))
+                     + (instr or x.get("persona")
+                        or "not in the style guide — keep the current level"))
         for ax, ex in samples:
             lines.append(f"    · 본보기({ax}): {ex}")
     return (f"Scene: {c['map_name']} (map {c['map']}), event 「{c['event_name']}」\n"
