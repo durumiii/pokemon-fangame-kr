@@ -56,10 +56,22 @@ def reasons(d):
     return out
 
 
-def scene_of(fp, why):
-    """페이지 파일 하나 → 장면 하나. 걸린 행이 없으면 None."""
+def approved_ids(chunks=None):
+    """승인 줄 — 유지자가 이미 판정을 끝낸 자리(`page-chunks.jsonl`의 `approved`).
+
+    선별에 걸려도 다시 물으면 안 된다. 없으면 빈 집합이라 이 파일이 없는 산출도 돈다.
+    """
+    p = Path(chunks or HERE / "batch/page-chunks.jsonl")
+    if not p.exists():
+        return set()
+    return {r["id"] for line in p.read_text(encoding="utf-8").splitlines() if line.strip()
+            for r in json.loads(line).get("rows", []) if r.get("approved")}
+
+
+def scene_of(fp, why, ok=frozenset()):
+    """페이지 파일 하나 → 장면 하나. 승인 줄을 뺀 뒤 걸린 행이 없으면 None."""
     rows = read_jsonl(fp)
-    hit = [r for r in rows if r["id"] in why and r.get("new")]
+    hit = [r for r in rows if r["id"] in why and r.get("new") and r["id"] not in ok]
     if not hit:
         return None
     mid, ev, pg = (fp.stem.lstrip("p").split("-") + ["", ""])[:3]
@@ -68,22 +80,25 @@ def scene_of(fp, why):
         "name": mapname.ko(int(mid)) or f"맵 {int(mid)}",
         "cast": list(dict.fromkeys(r["who"] for r in rows)),
         "total": len(rows),
-        "rows": [{"id": r["id"], "who": r["who"], "es": r["es"],
-                  "ko": r["old"], "new": r["new"], "why": why[r["id"]]} for r in hit],
+        # 걸렸지만 승인 줄이라 숨긴 행 수 — 장면 머리에 알린다
+        "hidden": sum(1 for r in rows if r["id"] in why and r.get("new") and r["id"] in ok),
+        "rows": [{"id": r["id"], "who": r["who"], "es": r["es"], "ko": r["old"],
+                  "new": r["new"], "why": why[r["id"]]} for r in hit],
         # 문맥은 장면 전부 — 현행 번역으로 읽어야 흐름이 잡힌다
         "flow": [{"id": r["id"], "who": r["who"], "ko": r["old"], "es": r["es"],
                   "hit": r["id"] in why} for r in rows],
     }
 
 
-def collect(d):
+def collect(d, ok=None):
     d = Path(d)
     why = reasons(d)
+    ok = approved_ids() if ok is None else ok
     out = []
     for fp in sorted(d.glob("*.jsonl")):
         if fp.name.startswith("screen"):
             continue
-        sc = scene_of(fp, why)
+        sc = scene_of(fp, why, ok)
         if sc:
             out.append(sc)
     return out
@@ -322,9 +337,17 @@ def selftest():
         (d / "screen-llm.jsonl").write_text(
             json.dumps({"id": "24:43:0:0", "유형": "제안-호칭", "근거": "경칭 근거 없음"},
                        ensure_ascii=False) + "\n", encoding="utf-8")
-        sc = collect(d)
+        sc = collect(d, ok=set())
         assert len(sc) == 1, sc
         assert [r["id"] for r in sc[0]["rows"]] == ["24:43:0:0"]   # 걸린 행만
+        assert sc[0]["hidden"] == 0
+        # 승인 줄은 걸려도 안 보인다 — 그 장면에 남는 게 없으면 장면째 빠진다
+        assert collect(d, ok={"24:43:0:0"}) == []
+        chunks = d / "chunks.jsonl"
+        chunks.write_text(json.dumps(
+            {"rows": [{"id": "24:43:0:0", "approved": True}, {"id": "24:43:0:1"}]},
+            ensure_ascii=False) + "\n", encoding="utf-8")
+        assert approved_ids(chunks) == {"24:43:0:0"}
         assert sc[0]["total"] == 2 and len(sc[0]["flow"]) == 2     # 문맥은 장면 전부
         assert [w["층"] for w in sc[0]["rows"][0]["why"]] == ["휴리스틱", "모델"]
         h = build(sc, "t")

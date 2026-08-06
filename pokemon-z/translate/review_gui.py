@@ -27,7 +27,7 @@ from pathlib import Path
 
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
-from review_page import HEAD, collect  # noqa: E402
+from review_page import HEAD, approved_ids, collect  # noqa: E402
 
 BODY = r"""<script>
 let DATA = [], V = {}, M = {}, NOTE = {};
@@ -61,6 +61,7 @@ function makeCard(r, sc){
       const card=document.createElement('div'); card.className='card';
       card.innerHTML=`<div class="hd"><span class="who">${esc(r.who)}</span>
           <span class="rid">${r.id}</span>
+          ${r.approved?'<span class="chip" title="유지자가 이미 판정한 줄">승인 줄</span>':''}
           <button class="ctxbtn" style="margin-left:auto">문맥</button></div>
         <div class="why">${(r.why||[]).map(w=>`<div><b>${esc(w['유형'])}</b>
           <span class="lay">· ${esc(w['층'])}</span>${w['근거']?' — '+esc(w['근거']):''}</div>`).join('')}</div>
@@ -108,7 +109,8 @@ function render(){
     const sec=document.createElement('section');
     sec.innerHTML=`<div class="scene"><h2>${esc(sc.name)}</h2>
       <span class="meta">맵 ${sc.map} · 이벤트 ${esc(sc.event)}-${esc(sc.page)} ·
-        ${esc(sc.cast.join(' · '))} · 장면 ${sc.total}행 중 <b>${sc.rows.length}행 선별</b></span>
+        ${esc(sc.cast.join(' · '))} · 장면 ${sc.total}행 중 <b>${sc.rows.length}행 선별</b>${
+        sc.hidden?` · 승인 줄 ${sc.hidden}행 숨김`:''}</span>
       <span class="act" style="margin-left:auto"><button data-open="1">이벤트 전체 보기</button>
         <button data-all="1">이벤트 일괄 승인</button>
         <button data-flow="1">장면 흐름</button></span></div>`;
@@ -197,6 +199,7 @@ def event_rows(out_dir, mapno, event):
     """
     if not str(mapno).isdigit() or not event.isdigit():   # 경로 조작 차단
         return []
+    ok = approved_ids()
     out = []
     for fp in sorted(Path(out_dir).glob(f"p{int(mapno):03d}-{int(event)}-*.jsonl")):
         for line in fp.read_text(encoding="utf-8").splitlines():
@@ -204,7 +207,8 @@ def event_rows(out_dir, mapno, event):
                 r = json.loads(line)
                 if r.get("new"):
                     out.append({"id": r["id"], "who": r["who"], "es": r["es"],
-                                "ko": r["old"], "new": r["new"]})
+                                "ko": r["old"], "new": r["new"],
+                                "approved": r["id"] in ok})
     return out
 
 
@@ -314,6 +318,7 @@ def selftest():
         ev = json.load(urllib.request.urlopen(base + "/event?map=24&event=43"))["rows"]
         assert [r["id"] for r in ev] == ["24:43:0:0", "24:43:0:1"], ev   # 안 걸린 행까지
         assert ev[1]["ko"] == "잘 가" and ev[1]["new"] == "잘 가요"
+        assert [r["approved"] for r in ev] == [False, False]
         assert json.load(urllib.request.urlopen(base + "/event?map=x&event=y"))["rows"] == []
         urllib.request.urlopen(urllib.request.Request(
             base + "/verdict", method="POST",
