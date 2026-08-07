@@ -60,6 +60,8 @@ FONT_VARIANTS = {
     "galmuri": ("갈무리", "galmuri-kr.ttf", "갈무리11 한글"),
     "bw": ("BW", "bw-kr.ttf", "Pokemon BW 한글"),
 }
+# 배포 화면에 세울 차례 — 권하는 것이 맨 위다(유지자 실기 판단, 2026-08-07).
+FONT_ORDER = {"galmuri": 1, "dppt": 2, "bw": 3}
 # 재배포 조건이 붙은 글꼴의 라이선스 원문 — 함께 담지 않으면 조건을 어긴다.
 FONT_LICENSES = [
     BASE_MOD / "Fonts" / "pokemon-dppt-LICENSE.txt",
@@ -278,11 +280,11 @@ def main():
         if font not in FONT_VARIANTS:
             sys.exit(f"--font은 {'·'.join(FONT_VARIANTS)} 중 하나예요")
     label = FONT_VARIANTS[font][0]
-    asset_names = {                       # 릴리스 자산 파일명 — v5.2의 규약을 잇는다
-        "runa": f"pokemon-z-kr-patch-v5.2.1_{font}",
-        # 릴리스 화면은 자산을 이름순으로 늘어놓는다 — 디버그가 글꼴 셋 아래 서도록
-        # `zz-`를 붙인다(지문 파일이 `zz-SHA256SUMS`인 것과 같은 규약).
-        "runa-debug": "pokemon-z-kr-patch-v5.2.1_zz-debug-add",
+    # 릴리스 화면은 자산을 **파일 이름순**으로 늘어놓는다(라벨 순서가 아니다). 받는 쪽이
+    # 위에서부터 읽으면 되도록 이름에 차례를 넣는다 — 권하는 것이 맨 위다.
+    asset_names = {
+        "runa": f"pokemon-z-kr-patch-v5.2.1_{FONT_ORDER[font]}-{font}",
+        "runa-debug": "pokemon-z-kr-patch-v5.2.1_4-debug-add",
     }
     default_names = {
         "full": "포켓몬Z 한글패치 v5.2",   # 기본판 — 디버그 없는 통합
