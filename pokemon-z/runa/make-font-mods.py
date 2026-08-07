@@ -25,13 +25,16 @@ STORE = Path("/mnt/d/GameVault/mods/Pokemon Z Fangame")
 # 모드 이름 → (마스터 파일, 한 줄 소개, 라이선스 원문 더하기)
 VARIANTS = {
     "DPPT Font": (
-        "dppt-kr.ttf", "한글도 DPPt 원판 글꼴이에요.", []),
-    "DPPT Font (갈무리 한글)": (
-        "galmuri-kr.ttf", "한글만 갈무리11로 바꿨어요 — 셋 중 가장 또렷하고, 글자가 "
-        "1픽셀 넓어 줄이 조금 길어져요.", ["Galmuri-OFL.txt"]),
-    "DPPT Font (BW 한글)": (
-        "bw-kr.ttf", "한글만 Pokemon BW로 바꿨어요 — DPPt와 크기가 같아 줄 길이가 "
-        "변하지 않아요.", ["pokemon-bw-LICENSE.txt", "pokemon-bw-README.txt"]),
+        "dppt-kr.ttf",
+        "한글이 든 DPPt 픽셀 글꼴과, 그 획 굵기에 맞춘 글자 그림자·굵게.", []),
+    "Galmuri Font": (
+        "galmuri-kr.ttf",
+        "한글만 갈무리11로 바꾼 글꼴 — 또렷하지만 글자가 한 픽셀 크다.",
+        ["Galmuri-OFL.txt"]),
+    "BW Font": (
+        "bw-kr.ttf",
+        "한글만 Pokemon BW로 바꾼 글꼴 — DPPt와 크기가 같다.",
+        ["pokemon-bw-LICENSE.txt", "pokemon-bw-README.txt"]),
 }
 ALWAYS = ["pokemon-dppt-LICENSE.txt", "pokemon-dppt-README.txt"]
 
@@ -63,7 +66,7 @@ def main() -> None:
 
         card = dict(base)
         card["name"] = name
-        card["summary"] = f"{base['summary'][:-1]} {blurb}"
+        card["summary"] = blurb
         rivals = [one for one in VARIANTS if one != name]
         card["conflicts"] = {one: "같은 자리에 다른 한글 글꼴을 넣는 형제 모드예요." for one in rivals}
         card["assets"] = [{"file": f"Fonts/{p.name}", "install_to": f"Fonts/{p.name}"}
