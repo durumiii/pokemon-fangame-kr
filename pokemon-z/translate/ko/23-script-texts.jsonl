@@ -1313,7 +1313,7 @@
 {"k": "<ac>{1:s}</ac>", "v": "<ac>{1:s}</ac>"}
 {"k": "<ac>{1:s} - Search results</ac>", "v": "<ac>{1:s} - Search results</ac>"}
 {"k": "ABC", "v": "ABC"}
-{"k": "DEF", "v": "방어"}
+{"k": "DEF", "v": "DEF"}
 {"k": "GHI", "v": "GHI"}
 {"k": "JKL", "v": "JKL"}
 {"k": "MNO", "v": "MNO"}
@@ -2785,7 +2785,7 @@
 {"k": "Psíquico", "v": "에스퍼"}
 {"k": "Hielo", "v": "얼음"}
 {"k": "Dragón", "v": "드래곤"}
-{"k": "Oscuro", "v": "다크"}
+{"k": "Oscuro", "v": "악"}
 {"k": "Sin especificar", "v": "지정 안 함"}
 {"k": "Rojo", "v": "빨강"}
 {"k": "Azul", "v": "파랑"}
@@ -3961,7 +3961,7 @@
 {"k": "Monstruo", "v": "괴수"}
 {"k": "Agua 1", "v": "수중1"}
 {"k": "Campo", "v": "육상"}
-{"k": "Hada", "v": "요정"}
+{"k": "Hada", "v": "페어리"}
 {"k": "Humanoide", "v": "인간형"}
 {"k": "Agua 3", "v": "수중3"}
 {"k": "Amorfo", "v": "부정형"}

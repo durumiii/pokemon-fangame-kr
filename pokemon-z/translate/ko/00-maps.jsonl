@@ -7842,7 +7842,7 @@
 {"k": "Ya has arrancado las bayas de este arbusto.", "v": "이 관목에서는 이미 나무열매를 다 땄다."}
 {"k": "¡Has encontrado otra página de Alquimia Pokémon! ¡Qué emocionante!", "v": "새로운 연금술 제작법을 찾았다! 정말 신난다!"}
 {"k": "Tu catálogo de creación se ha ampliado.", "v": "제작할 수 있는 조합법이 늘어났다!"}
-{"k": "Ho-hola, ¿es verdad que lograste vencer a Anturia? ¿Pu-puedo ser tu fan número uno? ¿Tu fiel seguidora?", "v": "안-안녕, 정말 안투리아를 물리친 게 사실이냐? 제-내가 네 1호 팬이 되어도 되겠느냐? 네 충실한 신도가 말이다!"}
+{"k": "Ho-hola, ¿es verdad que lograste vencer a Anturia? ¿Pu-puedo ser tu fan número uno? ¿Tu fiel seguidora?", "v": "안-안녕, 정말 안투리아를 물리친 게 사실이냐? 내-내가 네 1호 팬이 되어도 되겠느냐? 네 충실한 신도가 말이다!"}
 {"k": "¡Aaah! ¡No puedo creer que me hayas dejado luchar contra ti!", "v": "아아! 나와 배틀을 해주다니 정말 믿기지 않아!"}
 {"k": "Si tienes 100 fans yo soy una de ellos. Si tienes solo tiene 1 fan, esa soy yo. Si no tienes ningún fan es porque yo ya no estoy en este mundo.", "v": "네 팬이 100명이라면 나도 그중 하나니라. 네 팬이 단 1명이라면 그게 바로 나니라. 네 팬이 한 명도 없다면 그건 내가 이미 이 세상 사람이 아니기 때문이니라."}
 {"k": "<b>PISTA DE ENTRENADOR:</b> Los Pokémon de tipo Planta no se ven afectados por los movimientos de polvos y esporas.", "v": "<b>트레이너 팁:</b> 풀타입 포켓몬은 가루와 포자 계열 기술에 영향을 받지 않습니다."}
@@ -8231,7 +8231,7 @@
 {"map": 251, "n": 5}
 {"k": "\\c[1]<b>Ferrofaz:</b>\\c[0] Puedes verlo, ¿verdad?", "v": "\\c[1]<b>페로파스:</b>\\c[0] 보이지, 그렇지?"}
 {"k": "Todo lo que tu Pokémon es, sus movimientos, sus aptitudes... lo tienes en tu cabeza.", "v": "자네 포켓몬의 모든 것, 기술과 적성 같은 것이… 자네 머릿속에 들어 있네."}
-{"k": "Y yo... también he recordado a mis viejos compañeros.", "v": "그리고 저-나는… 옛 동료들을 정말-정말 떠올렸다네."}
+{"k": "Y yo... también he recordado a mis viejos compañeros.", "v": "그리고 나-나는… 옛 동료들을 정말-정말 떠올렸다네."}
 {"k": "Puedes empezar, \\PN.", "v": "\\PN, 시작해 보게."}
 {"k": "Sí. Ahora me quedo más tranquilo. Lo habéis conseguido.", "v": "그래. 이제야 안심이 되는군. 자네들이 해냈네."}
 {"map": 252, "n": 17}
@@ -11189,7 +11189,7 @@
 {"k": "Puedes seguir jugando de forma normal, pero recuerda que has fracasado.", "v": "평소처럼 게임을 계속할 수는 있지만, 네가 실패했다는 사실을 명심해라."}
 {"k": "Es hora de irse a dormir.", "v": "이제 잘 시간이야."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ...", "v": "\\c[3]<b>크리산토:</b>\\c[0] ..."}
-{"k": "¡\\PN! ¡Pe-pero...! Sa-sabes que esta no es tu habitación, ¿ve-verdad?", "v": "\\PN! 그-하지만...! 이-이게 네 방이 아니라는 건 알-알잖아?"}
+{"k": "¡\\PN! ¡Pe-pero...! Sa-sabes que esta no es tu habitación, ¿ve-verdad?", "v": "\\PN! 하-하지만...! 이-이게 네 방이 아니라는 건 알-알잖아?"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] Pero si quieres... puedes quedarte aquí un rato, charlar de lo que sea... Tu compañía siempre es bien recibida.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 하지만 원한다면… 여기서 잠시 머물며 이야기라도 나눠도 좋아… 네가 함께해 주는 건 언제나 반가우니까."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] Ha sido buena idea venir aquí al final, ¿no? Después de todas las calamidades que hemos pasado, un remanso de paz al fin.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 결국 이곳에 오길 잘했어. 온갖 시련을 겪은 끝에 마침내 평온한 안식처를 찾았으니."}
 {"k": "¿Sa-sabes una cosa? No he tenido oportunidad de decírtelo hasta ahora, pero en realidad llegué a echarte mucho de menos todo el tiempo que estuvimos separados...", "v": "있잖아, 지금까지 말할 기회가 없었는데… 떨어져 있던 내내 사실 네가 참 많이 그리웠어…"}
