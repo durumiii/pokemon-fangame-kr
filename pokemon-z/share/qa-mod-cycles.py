@@ -29,7 +29,7 @@ INZIP = {n.split("/", 1)[1] for n in ZIP.namelist() if "/" in n}
 
 SKIP = {"LastSave.dat", "modkit-owners.json", "modkit-log.jsonl"}
 
-MODS = ["DPPT Font", "한글패치 통합-Runa", "UI Text KR", "Controller UX", "Z-GUI",
+MODS = ["DPPT Font", "한글패치 코어", "UI Text KR", "Controller UX", "Z-GUI",
         "Battle Speed", "Better Movements", "Frame Profiler", "GC Tamer", "디버그 모드"]
 
 
@@ -167,8 +167,8 @@ if __name__ == "__main__":
         "정순 설치 → 역순 제거": (MODS, list(reversed(MODS))),
         "역순 설치 → 역순 제거": (list(reversed(MODS)), MODS),
         "겹치는 것 먼저 → 무작위 제거": (
-            ["Controller UX", "Z-GUI", "DPPT Font", "한글패치 통합-Runa"] +
-            [m for m in MODS if m not in ("Controller UX", "Z-GUI", "DPPT Font", "한글패치 통합-Runa")],
+            ["Controller UX", "Z-GUI", "DPPT Font", "한글패치 코어"] +
+            [m for m in MODS if m not in ("Controller UX", "Z-GUI", "DPPT Font", "한글패치 코어")],
             rng.sample(MODS, len(MODS))),
         "무작위 설치 → 무작위 제거": (rng.sample(MODS, len(MODS)), rng.sample(MODS, len(MODS))),
     }

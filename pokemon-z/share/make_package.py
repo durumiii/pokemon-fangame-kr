@@ -24,7 +24,7 @@ usage: uv run make_package.py [--variant runa|debug|clean|mods] [--font dppt|gal
   mods  — 스크립트 모드 묶음: 완성 Scripts.rxdata(수술+UI Text) 단품.
           clean 위에 덮어쓰면 통 패치(디버그 제외)와 같아진다.
 
-  runa  — 합본(v5.2.1~): 한글패치 통합-Runa + UI Text KR + Z-GUI + DPPT Font를
+  runa  — 합본(v5.2.1~): 한글패치 코어 + UI Text KR + Z-GUI + DPPT Font를
           한 벌로 묶는다. 번역표에 UTF-8 인코딩 딱지가 붙어 있어 최신 루비
           실행기에서도 돈다. `--font`로 한글 글꼴을 골라 세 벌을 낸다 —
           담기는 글꼴은 라틴·부호가 모두 DPPt이고 한글 음절만 다르다.
@@ -51,7 +51,7 @@ VARIANT_SUMMARY = {
 DIST = HERE / "dist"
 
 # ─ 합본(runa) 전용 ───────────────────────────────────────────────────────────
-RUNA_MOD = STORE / "Pokemon Z Fangame" / "한글패치 통합-Runa"
+RUNA_MOD = STORE / "Pokemon Z Fangame" / "한글패치 코어"
 RUNA_INJECT = ["UI Text KR", "DPPT Font"]
 RUNA_ASSET_MODS = ["Z-GUI"]                       # 파일만 얹는 모드 — 번역 자산 뒤에 덮는다
 # 원본 배포판의 실행 설정을 한 판만 함께 싣는다. v5.1·v5.2가 넣었던 `fontSub`(글꼴 이름
@@ -118,8 +118,10 @@ def _embed_card(final: Path, name: str, variant: str):
         # 합본이 이미 품고 있는 것 — 능력으로 밝히고, 같은 것을 또 얹지 못하게 막는다.
         card["provides"] = ["hangul-font", "ui-text-kr", "korean-patch"]
         swallowed = "합본이 같은 것을 이미 품고 있어서 따로 얹으면 서로 덮어써요."
+        # 옛 이름(`한글패치 통합-Runa`)도 남긴다 — 그 이름으로 받아 둔 사람의 서랍에서도
+        # 이중 설치를 막아야 한다. 이름이 바뀌어도 물건은 같다.
         card["conflicts"] = {one: swallowed for one in
-                             ("DPPT Font", "UI Text KR", "Z-GUI",
+                             ("DPPT Font", "UI Text KR", "Z-GUI", "한글패치 코어",
                               "한글패치 통합", "한글패치 통합-Runa")}
     (final / "mod.json").write_text(
         json.dumps(card, ensure_ascii=False, indent=1), encoding="utf-8")

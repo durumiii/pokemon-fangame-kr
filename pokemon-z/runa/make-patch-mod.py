@@ -1,7 +1,7 @@
 # /// script
 # requires-python = ">=3.12"
 # ///
-"""한글패치 통합-Runa 모드를 보관소에 조립한다.
+"""한글패치 코어 모드를 보관소에 조립한다.
 
 담는 것은 셋이다.
 
@@ -24,7 +24,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-NAME = "한글패치 통합-Runa"
+NAME = "한글패치 코어"
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parent                                     # pokemon-z/
 CARD = REPO / "mods" / NAME / "mod.json"

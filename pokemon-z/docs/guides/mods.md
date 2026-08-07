@@ -31,7 +31,7 @@ UI Text KR이 키보드 기준으로 적고 저쪽 `004_PadLabels`가 덮는다.
 
 배포용 모드는 보관소에 놓인 폴더가 아니라 **재료에서 짓는 산출물**이다. 조립기 넷:
 
-    uv run runa/make-patch-mod.py      # 한글패치 통합-Runa (번역표·코어·자산)
+    uv run runa/make-patch-mod.py      # 한글패치 코어 (번역표·코어·자산)
     uv run runa/make-galmuri-master.py # 갈무리 마스터 — 통짜 원본을 우리 글자 수만큼 줄인다
     uv run runa/make-hangul-variant.py # BW 마스터 — DPPt의 한글만 갈아 끼운다
     uv run runa/make-font-mods.py      # 글꼴 모드 셋(DPPT·Galmuri·BW Font)

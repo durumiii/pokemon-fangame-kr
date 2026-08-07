@@ -85,7 +85,7 @@ def test_build_key_mismatch_rejected(dat_bytes):
 
 
 # ── 딱지판(루비 1.9+ 실행기용 korean.dat) ────────────────────────────────
-RUNA = Path("/mnt/d/GameVault/mods/Pokemon Z Fangame/한글패치 통합-Runa/Data/korean.dat")
+RUNA = Path("/mnt/d/GameVault/mods/Pokemon Z Fangame/한글패치 코어/Data/korean.dat")
 
 
 @pytest.fixture(scope="module")
