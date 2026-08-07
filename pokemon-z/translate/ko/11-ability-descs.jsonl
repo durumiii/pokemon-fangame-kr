@@ -231,11 +231,11 @@
 {"i": 230, "v": "강철·독타입 포켓몬도 독 상태로 만들 수 있다.", "es": "Permite envenenar incluso a Pokémon de tipo Acero y Veneno."}
 {"i": 231, "v": "능력 변화 효과를 상대에게 되돌려준다.", "es": "Rebota los cambios de estadísticas al oponente."}
 {"i": 232, "v": "화상을 입지 않는다. 불꽃 기술을 받으면 공격이 올라간다.", "es": "No puede ser quemado. Si es alcanzado por fuego, se sube el Ataque."}
-{"i": 233, "v": "접촉 공격으로 30% 확률로 상대를 마비시킨다.", "es": "Tiene un 30% de paralizar al enemigo con ataques de contacto."}
+{"i": 233, "v": "접촉 공격이 30% 확률로 상대를 마비시킨다.", "es": "Tiene un 30% de paralizar al enemigo con ataques de contacto."}
 {"i": 234, "v": "HP가 3분의 2 이상일 때 회피율이 오르는 폼이 된다.", "es": "Cuando su salud está por encima del 2/3 adquiere una forma que aumenta su Evasión."}
 {"i": 235, "v": "접촉 기술로 공격해 온 상대의 회피율을 크게 떨어뜨린다.", "es": "Reduce mucho la Evasión del enemigo si te ataca con movimientos de contacto."}
 {"i": 236, "v": "배틀에 나올 때 트릭룸을 편다.", "es": "Aplica Espacio Raro cuando sale a combatir."}
-{"i": 237, "v": "접촉 공격으로 출혈 상태를 만들 수 있다(상대가 급소를 맞을 확률이 2배가 된다).", "es": "Los ataques de contacto pueden aplicar Hemorragia (el objetivo tendrá el doble de prob. de recibir golpes críticos)."}
+{"i": 237, "v": "접촉 공격으로 출혈 상태를 만들 수 있다.", "es": "Los ataques de contacto pueden aplicar Hemorragia (el objetivo tendrá el doble de prob. de recibir golpes críticos)."}
 {"i": 238, "v": "소리 기술이 얼음타입이 되고 30% 확률로 상대를 풀죽게 한다.", "es": "Los movs. de sonido pasan a ser de tipo Hielo y tienen un 30% de hacer retroceder."}
 {"i": 239, "v": "턴이 끝날 때 잠든 상대의 HP를 4분의 1 깎는다.", "es": "Reduce 1/4 los PS del rival que esté dormido al final de cada turno."}
 {"i": 240, "v": "변화 기술의 영향을 받지 않는다.", "es": "No es afectado por ataques de estado."}

@@ -170,7 +170,7 @@ canon에 없는 영역의 보조로만).
 | Ciudad Novarte | Santalune | 백단시티 (백단 아카데미) |
 | Pueblo Petroglifo | Ambrette | 가라마을 (가라 동굴) |
 | Ciudad Relieve | Cyllage | 삼채시티 |
-| Pueblo Vánitas | Camphrier | 고목내마을 |
+| Pueblo Vánitas | Camphrier | 고목내마을 (고목내과수원 — 원문이 `Huerto Vánitas`인 자리) |
 | Ciudad Batik | Kiloude | 기남시티 (기남마을·기남 여관 — 원문이 Pueblo/Hostal인 자리) |
 | Ciudad Romantis | Laverre | 후늬시티 |
 | Pueblo Fresco | Dendemille | 버들비마을 |

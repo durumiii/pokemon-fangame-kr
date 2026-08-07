@@ -4570,7 +4570,7 @@
 {"k": "Las misteriosas turbulencias continúan con fuerza...", "v": "기묘한 난기류가 여전히 거세다..."}
 {"k": "¡{1} no se puede liberar de la Caída Libre!", "v": "{1}\\j[은,는] 프리폴에서 벗어날 수 없다!"}
 {"k": "Los objetos no se pueden utilizar aquí.", "v": "여기서는 도구를 쓸 수 없다."}
-{"k": "¡{1} saca a {2}!", "v": "{1}\\j[은,는] {2}\\j[을,를] 꺼냈다!"}
+{"k": "¡{1} saca a {2}!", "v": "{1}\\j[은,는] {2}\\j[을,를] 집어넣었다!"}
 {"k": "¡{1}, cambio!\n¡Vuelve aquí!", "v": "{1}, 교체!\r\n돌아와!"}
 {"k": "¡{1} está reforzando su concentración!", "v": "{1}\\j[은,는] 정신을 집중하고 있다!"}
 {"k": "Se ha ido el sol.", "v": "햇살이 원래대로 돌아왔다."}
@@ -4976,23 +4976,23 @@
 {"k": "La Defensa Especial de {1} se ha incrementado.", "v": "{1}의 특수방어가 올랐다."}
 {"k": "La Velocidad de {1} se ha incrementado.", "v": "{1}의 스피드가 올랐다."}
 {"k": "Los PS de {1} se incrementaron.", "v": "{1}의 HP가 늘어났다."}
-{"k": "¡{1} te adora! ¡Pero sus PS de base han disminuido!", "v": "{1}\\j[이,가] 당신을 매우 잘 따른다! 하지만 기초 HP가 줄었다!"}
-{"k": "{1} se ha vuelto más amable. ¡Sus PS de base ya no pueden bajar más!", "v": "{1}\\j[이,가] 더 친근해졌다. 기초 HP는 더 이상 내려가지 않는다!"}
+{"k": "¡{1} te adora! ¡Pero sus PS de base han disminuido!", "v": "{1}\\j[이,가] 더 친근해졌다. 기초 HP는 더 이상 내려가지 않는다!"}
+{"k": "{1} se ha vuelto más amable. ¡Sus PS de base ya no pueden bajar más!", "v": "{1}\\j[이,가] 당신을 매우 잘 따른다! 하지만 기초 HP가 줄었다!"}
 {"k": "{1} se ha vuelto más amable. ¡Pero tiene menos PS de base!", "v": "{1}\\j[이,가] 더 친근해졌다. 하지만 기초 HP가 줄었다!"}
-{"k": "¡{1} te adora! ¡Pero su Ataque de base ha disminuido!", "v": "{1}\\j[이,가] 당신을 매우 잘 따른다! 하지만 기초 공격이 줄었다!"}
-{"k": "{1} se ha vuelto más amable. ¡Su Ataque de base ya no puede bajar más!", "v": "{1}\\j[이,가] 더 친근해졌다. 기초 공격은 더 이상 내려가지 않는다!"}
+{"k": "¡{1} te adora! ¡Pero su Ataque de base ha disminuido!", "v": "{1}\\j[이,가] 더 친근해졌다. 기초 공격은 더 이상 내려가지 않는다!"}
+{"k": "{1} se ha vuelto más amable. ¡Su Ataque de base ya no puede bajar más!", "v": "{1}\\j[이,가] 당신을 매우 잘 따른다! 하지만 기초 공격이 줄었다!"}
 {"k": "{1} se ha vuelto más amable. ¡Pero tiene menos Ataque de base!", "v": "{1}\\j[이,가] 더 친근해졌다. 하지만 기초 공격이 줄었다!"}
-{"k": "¡{1} te adora! ¡Pero su Defensa de base ha disminuido!", "v": "{1}\\j[이,가] 당신을 매우 잘 따른다! 하지만 기초 방어가 줄었다!"}
-{"k": "{1} se ha vuelto más amable. ¡Su Defensa de base ya no puede bajar más!", "v": "{1}\\j[이,가] 더 친근해졌다. 기초 방어는 더 이상 내려가지 않는다!"}
+{"k": "¡{1} te adora! ¡Pero su Defensa de base ha disminuido!", "v": "{1}\\j[이,가] 더 친근해졌다. 기초 방어는 더 이상 내려가지 않는다!"}
+{"k": "{1} se ha vuelto más amable. ¡Su Defensa de base ya no puede bajar más!", "v": "{1}\\j[이,가] 당신을 매우 잘 따른다! 하지만 기초 방어가 줄었다!"}
 {"k": "{1} se ha vuelto más amable. ¡Pero tiene menos Defensa de base!", "v": "{1}\\j[이,가] 더 친근해졌다. 하지만 기초 방어가 줄었다!"}
-{"k": "¡{1} te adora! ¡Pero su Ataque Especial de base ha disminuido!", "v": "{1}\\j[이,가] 당신을 매우 잘 따른다! 하지만 기초 특수공격이 줄었다!"}
-{"k": "{1} se ha vuelto más amable. ¡Su Ataque Especial de base ya no puede bajar más!", "v": "{1}\\j[이,가] 더 친근해졌다. 기초 특수공격은 더 이상 내려가지 않는다!"}
+{"k": "¡{1} te adora! ¡Pero su Ataque Especial de base ha disminuido!", "v": "{1}\\j[이,가] 더 친근해졌다. 기초 특수공격은 더 이상 내려가지 않는다!"}
+{"k": "{1} se ha vuelto más amable. ¡Su Ataque Especial de base ya no puede bajar más!", "v": "{1}\\j[이,가] 당신을 매우 잘 따른다! 하지만 기초 특수공격이 줄었다!"}
 {"k": "{1} se ha vuelto más amable. ¡Pero tiene menos Ataque Especial de base!", "v": "{1}\\j[이,가] 더 친근해졌다. 하지만 기초 특수공격이 줄었다!"}
-{"k": "¡{1} te adora! ¡Pero su Defensa Especial de base ha disminuido!", "v": "{1}\\j[이,가] 당신을 매우 잘 따른다! 하지만 기초 특수방어가 줄었다!"}
-{"k": "{1} se ha vuelto más amable. ¡Su Defensa Especial de base ya no puede bajar más!", "v": "{1}\\j[이,가] 더 친근해졌다. 기초 특수방어는 더 이상 내려가지 않는다!"}
+{"k": "¡{1} te adora! ¡Pero su Defensa Especial de base ha disminuido!", "v": "{1}\\j[이,가] 더 친근해졌다. 기초 특수방어는 더 이상 내려가지 않는다!"}
+{"k": "{1} se ha vuelto más amable. ¡Su Defensa Especial de base ya no puede bajar más!", "v": "{1}\\j[이,가] 당신을 매우 잘 따른다! 하지만 기초 특수방어가 줄었다!"}
 {"k": "{1} se ha vuelto más amable. ¡Pero tiene menos Defensa Especial de base!", "v": "{1}\\j[이,가] 더 친근해졌다. 하지만 기초 특수방어가 줄었다!"}
-{"k": "¡{1} te adora! ¡Pero su Velocidad de base ha disminuido!", "v": "{1}\\j[이,가] 당신을 매우 잘 따른다! 하지만 기초 스피드가 줄었다!"}
-{"k": "{1} se ha vuelto más amable. ¡Su Velocidad de base ya no puede bajar más!", "v": "{1}\\j[이,가] 더 친근해졌다. 기초 스피드는 더 이상 내려가지 않는다!"}
+{"k": "¡{1} te adora! ¡Pero su Velocidad de base ha disminuido!", "v": "{1}\\j[이,가] 더 친근해졌다. 기초 스피드는 더 이상 내려가지 않는다!"}
+{"k": "{1} se ha vuelto más amable. ¡Su Velocidad de base ya no puede bajar más!", "v": "{1}\\j[이,가] 당신을 매우 잘 따른다! 하지만 기초 스피드가 줄었다!"}
 {"k": "{1} se ha vuelto más amable. ¡Pero tiene menos Velocidad de base!", "v": "{1}\\j[이,가] 더 친근해졌다. 하지만 기초 스피드가 줄었다!"}
 {"k": "¡{1} ha cambiado de forma!", "v": "{1}\\j[은,는] 폼이 바뀌었다!"}
 {"k": "No se puede usar en un Pokémon debilitado.", "v": "쓰러진 포켓몬에게는 쓸 수 없다."}
