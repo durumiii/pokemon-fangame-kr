@@ -74,7 +74,7 @@ vm.runInContext(src + `
   parseQuery, rowMatch, search, goHome, tagValues,
   GENERAL_FORM, feedbackMenu, sendFeedback,
   setSpk: v => { SPK = v; MAPNAME = null; }, BROWSE_CAP,
-  applyEdit, replaceMenu, replacePreview, replaceApply, replAll, REPL_CAP,
+  applyEdit, replaceMenu, replacePreview, replaceApply, replAll, REPL_CAP, srcSearch,
   replHits: () => REPL,
   setHits: h => { HITS = h; }, hits: () => HITS, bootPy,
   resetBoot: () => { bootPromise = null; bootAnnounce = false; }};
@@ -566,7 +566,21 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   ctx.replAll(true); ctx.replaceApply();
   a.equal(ctx.S.edits.size, 1);
   a.equal(ctx.S.edits.get('0:1:1').v, '배지을 받았다');
-  el('rsrc').value = '';                                              // 조건을 비우면 전체 대상
+  // 찾을 문구를 비우면 원문으로만 찾아 고칠 수 있는 카드로 연다
+  el('rfind').value = ''; el('rsrc').value = 'medalla';
+  ctx.replacePreview();
+  a.equal(ctx.hits().length, 1);
+  a.equal(ctx.hits()[0].k, 'la medalla');
+  a.ok(el('meta').textContent.includes('원문 「medalla」 — 1행'));
+  a.ok(el('out').innerHTML.includes('id=v0'));                        // 편집 카드가 뜬다
+  el('rsrc').value = '없는원문';
+  ctx.replacePreview();
+  a.ok(el('out').innerHTML.includes('그 원문을 가진 행이 없습니다'));
+  el('rsrc').value = '';                                              // 둘 다 비면 아무것도 안 한다
+  ctx.replacePreview();
+  a.equal(el('toast').textContent, '찾을 문구나 원문을 넣어주세요');
+
+  el('rfind').value = '메달'; el('rsrc').value = '';                  // 조건을 비우면 전체 대상
   ctx.replacePreview();
   a.equal(ctx.replHits().length, 2);                                  // 방금 고친 행은 '메달'이 없어 빠진다
   a.ok(!el('meta').textContent.includes('제외'));

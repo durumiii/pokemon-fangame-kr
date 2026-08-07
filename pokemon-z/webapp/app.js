@@ -694,13 +694,16 @@ function replaceMenu(){
         onkeydown="if(event.key==='Enter')replacePreview()">
     </div>
     <div class=rowbar><button class=primary onclick=replacePreview()>미리보기</button>
-      <span class=es>글자 그대로 찾아요(정규식 아님). 고른 행만 적용돼요.</span></div>
+      <span class=es>글자 그대로 찾아요(정규식 아님). 고른 행만 적용돼요.
+        찾을 문구를 비우면 원문으로만 찾아 카드로 보여줘요.</span></div>
   </div><div id=replout></div>`;
 }
 
 function replacePreview(){
   const find = $('rfind').value, to = $('rto').value, src = $('rsrc')?.value.trim() ?? '';
-  if (!find){ toast('찾을 문구를 넣어주세요'); return; }
+  if (!find && !src){ toast('찾을 문구나 원문을 넣어주세요'); return; }
+  // 번역 쪽을 비우면 원문 검색 — 바꿀 게 없으니 그 행들을 고칠 수 있는 카드로 연다
+  if (!find) return srcSearch(src);
   REPL = []; OFF_SRC = [];
   let total = 0, offSrc = 0;
   for (const r of S.rows){
@@ -741,6 +744,16 @@ function replacePreview(){
       <div class=es>${hl(h.parts, find)}</div>
       <div class=nv>${hl(h.parts, to)}</div></div>`).join('') + offCard;
 }
+// 원문만으로 찾기 — 검색창의 `원문:` 태그와 같은 자리를 보되, 바꾸기 화면에서 곧장 쓴다
+function srcSearch(src){
+  HITS = S.rows.filter(r => (r.k ?? '').includes(src));
+  SHOWN = 0;
+  $('meta').textContent = `원문 「${src}」 — ${HITS.length}행` +
+    (HITS.length ? ' · 카드에서 바로 고칠 수 있어요' : '');
+  $('out').innerHTML = HITS.length ? '' : '<div class=empty>그 원문을 가진 행이 없습니다.</div>';
+  if (HITS.length) more();
+}
+
 // 모두 선택은 경고 행을 건드리지 않는다 — 코드가 깨지는 행은 하나씩 확인하고 켜야 한다
 function replAll(on){ REPL.forEach((h, i) => {
   const c = $('rc'+i); if (c && !(on && h.lost.length)) c.checked = on; }); }
