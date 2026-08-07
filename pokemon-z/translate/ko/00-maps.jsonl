@@ -1268,7 +1268,7 @@
 {"k": "Me estoy escondiendo de los mosqueteros hasta que se olviden de mis fechorías, aunque la verdad es que el bosquecito es un sitio agradable.", "v": "총사 녀석들이 내가 한 짓거리를 잊을 때까지 숨어 있는 중이야. 뭐, 이 숲이 생각보다 지내기 괜찮단 말이지."}
 {"k": "Por orden del rey, el que perturbare a los Pokémon Bicho del <b>Bosque Ladera</b> será severamente castigado.", "v": "국왕 폐하의 명에 따라, <b>비탈 숲</b>의 벌레포켓몬을 어지럽히는 자는 엄벌에 처할 것이다."}
 {"k": "¡Es un <b>Nido Alfa</b>! En él vive un Pokémon muy fuerte.", "v": "<b>알파 둥지</b>다! 안에는 아주 강한 포켓몬이 살고 있다."}
-{"k": "En concreto, sientes la presencia de un Pokémon Bicho muy poderoso.", "v": "구체적으로는, 매우 강력한 벌레포켓몬의 기운이 느껴진다."}
+{"k": "En concreto, sientes la presencia de un Pokémon Bicho muy poderoso.", "v": "아주 강력한 벌레타입 포켓몬의 기운이 느껴진다."}
 {"k": "¿Quieres hacerlo salir?", "v": "다가가 볼까?"}
 {"k": "No es seguro continuar llevando solo 1 Pokémon saludable en el equipo.", "v": "배틀할 수 있는 포켓몬이 하나뿐인 채로 다가가는 건 위험하다."}
 {"k": "¡El Pokémon Alfa ha huido! Pero ha soltado un objeto tras de sí.", "v": "알파 포켓몬이 도망쳤다! 하지만 뒤에 도구를 떨어뜨렸다."}
@@ -1817,7 +1817,7 @@
 {"k": "<b>PISTA DE ENTRENADOR:</b> Si uno de tus Pokémon tiene la habilidad Intrépido, podrá acertar a Pokémon de tipo Fantasma no solo con movimientos de tipo Normal, ¡sino también de tipo Lucha!", "v": "<b>트레이너 팁:</b> 보유한 포켓몬 중 하나가 특성 ‘배짱’을 가지고 있다면, 노말타입뿐만 아니라 격투타입 기술로도 고스트타입 포켓몬을 공격할 수 있습니다!"}
 {"map": 44, "n": 66}
 {"k": "¡Es un <b>Nido Alfa</b>! En él vive un Pokémon muy fuerte.", "v": "<b>알파 둥지</b>다! 안에는 아주 강한 포켓몬이 살고 있다."}
-{"k": "En concreto, sientes la presencia de un Pokémon Veneno muy poderoso.", "v": "구체적으로 말하면, 매우 강력한 독타입 포켓몬의 존재가 느껴진다."}
+{"k": "En concreto, sientes la presencia de un Pokémon Veneno muy poderoso.", "v": "아주 강력한 독타입 포켓몬의 기운이 느껴진다."}
 {"k": "¿Quieres hacerlo salir?", "v": "다가가 볼까?"}
 {"k": "No es seguro continuar llevando solo 1 Pokémon saludable en el equipo.", "v": "배틀할 수 있는 포켓몬이 하나뿐인 채로 다가가는 건 위험하다."}
 {"k": "¡El Pokémon Alfa ha huido! Pero ha soltado un objeto tras de sí.", "v": "알파 포켓몬이 도망쳤다! 하지만 뒤에 도구를 떨어뜨리고 갔다."}
@@ -2150,7 +2150,7 @@
 {"k": "El viento de cambio te ha traído hasta mí, esto es el destino.", "v": "변화의 바람이 당신을 내게로 이끌었으니, 이것이 바로 운명이군요."}
 {"k": "El mundo está destinado a vivir cambios constantemente, y el cambio es bueno. Lo contrario es la no-existencia.", "v": "세상은 끊임없이 변화를 겪을 운명이고, 변화란 좋은 것이지요. 그 반대는 비존재에 불과합니다."}
 {"k": "¡Es un <b>Nido Alfa</b>! En él vive un Pokémon muy fuerte.", "v": "<b>알파 둥지</b>다! 안에는 아주 강한 포켓몬이 살고 있다."}
-{"k": "En concreto, sientes la presencia de un Pokémon Normal muy poderoso.", "v": "구체적으로는 매우 강력한 노말타입 포켓몬의 기운이 느껴진다."}
+{"k": "En concreto, sientes la presencia de un Pokémon Normal muy poderoso.", "v": "아주 강력한 노말타입 포켓몬의 기운이 느껴진다."}
 {"k": "¿Quieres hacerlo salir?", "v": "다가가 볼까?"}
 {"k": "No es seguro continuar llevando solo 1 Pokémon saludable en el equipo.", "v": "배틀할 수 있는 포켓몬이 하나뿐인 채로 다가가는 건 위험하다."}
 {"k": "¡El Pokémon Alfa ha huido! Pero ha soltado un objeto tras de sí.", "v": "알파 포켓몬이 도망쳐 버렸어요! 하지만 뒤에 도구를 하나 떨어뜨리고 갔네요."}
@@ -3345,7 +3345,7 @@
 {"k": "Tu catálogo de creación se ha ampliado.", "v": "제작할 수 있는 조합법이 늘어났다!"}
 {"k": "<b>PISTA DE ENTRENADOR:</b> Tras usar Campo de Hierba, los Pokémon que estén en contacto con el suelo verán reducido a la mitad el daño que reciban de movimientos de tipo Tierra.", "v": "<b>트레이너 팁:</b> 그래스필드를 사용한 뒤, 땅에 닿아 있는 포켓몬은 받는 땅타입 기술 데미지가 절반으로 줄어듭니다."}
 {"k": "¡Es un <b>Nido Alfa</b>! En él vive un Pokémon muy fuerte.", "v": "<b>알파 둥지</b>다! 안에는 아주 강한 포켓몬이 살고 있다."}
-{"k": "En concreto, sientes la presencia de un Pokémon Roca muy poderoso.", "v": "구체적으로는 매우 강력한 바위타입 포켓몬의 기운이 느껴진다."}
+{"k": "En concreto, sientes la presencia de un Pokémon Roca muy poderoso.", "v": "아주 강력한 바위타입 포켓몬의 기운이 느껴진다."}
 {"k": "¿Quieres hacerlo salir?", "v": "다가가 볼까?"}
 {"k": "No es seguro continuar llevando solo 1 Pokémon saludable en el equipo.", "v": "배틀할 수 있는 포켓몬이 하나뿐인 채로 다가가는 건 위험하다."}
 {"k": "¡El Pokémon Alfa ha huido! Pero ha soltado un objeto tras de sí.", "v": "알파 포켓몬이 도망쳤다! 하지만 뒤에 도구를 떨어뜨리고 갔다."}
@@ -3429,7 +3429,7 @@
 {"k": "Has apagado la luz de mis Pokémon.", "v": "내 포켓몬의 빛을 꺼뜨려 버렸네."}
 {"k": "No... ¡no estoy loca! ¡De vez en cuando sale luz del Taller Quemado! Hay algo ahí dentro...", "v": "아냐... 난 미친 게 아니네! 불탄 공방에서는 가끔 빛이 새어 나온단 말일세! 그 안에 분명 뭔가 있어..."}
 {"k": "¡Es un <b>Nido Alfa</b>! En él vive un Pokémon muy fuerte.", "v": "<b>알파 둥지</b>다! 안에는 아주 강한 포켓몬이 살고 있다."}
-{"k": "En concreto, sientes la presencia de un Pokémon Eléctrico muy poderoso.", "v": "특히 매우 강력한 전기 타입 포켓몬의 기운이 느껴진다."}
+{"k": "En concreto, sientes la presencia de un Pokémon Eléctrico muy poderoso.", "v": "아주 강력한 전기타입 포켓몬의 기운이 느껴진다."}
 {"k": "¿Quieres hacerlo salir?", "v": "다가가 볼까?"}
 {"k": "No es seguro continuar llevando solo 1 Pokémon saludable en el equipo.", "v": "배틀할 수 있는 포켓몬이 하나뿐인 채로 다가가는 건 위험하다."}
 {"k": "¡El Pokémon Alfa ha huido! Pero ha soltado un objeto tras de sí.", "v": "알파 포켓몬이 도망쳤습니다! 하지만 아이템을 떨어뜨리고 갔습니다."}
@@ -3788,7 +3788,7 @@
 {"k": "Si quiero dejar de ser ignorante, debería empezar por aprenderme la tabla de tipos.", "v": "무지에서 벗어나고 싶다면 상성표부터 외우기 시작해야겠는걸."}
 {"k": "Un pueblo educado es un pueblo libre, por eso los poderosos nos quieren mantener en la ignorancia. Bueno, eso se ha acabado.", "v": "배운 민중이야말로 자유로운 민중이다! 그렇기에 권력자들은 우리를 무지 속에 가둬 두려 하지. 하지만 이제 그런 짓도 끝이다."}
 {"k": "¡Es un <b>Nido Alfa</b>! En él vive un Pokémon muy fuerte.", "v": "<b>알파 둥지</b>다! 안에는 아주 강한 포켓몬이 살고 있다."}
-{"k": "En concreto, sientes la presencia de un Pokémon Agua muy poderoso.", "v": "특히 매우 강력한 물타입 포켓몬의 기운이 느껴진다."}
+{"k": "En concreto, sientes la presencia de un Pokémon Agua muy poderoso.", "v": "아주 강력한 물타입 포켓몬의 기운이 느껴진다."}
 {"k": "¿Quieres hacerlo salir?", "v": "다가가 볼까?"}
 {"k": "No es seguro continuar llevando solo 1 Pokémon saludable en el equipo.", "v": "배틀할 수 있는 포켓몬이 하나뿐인 채로 다가가는 건 위험하다."}
 {"k": "¡El Pokémon Alfa ha huido! Pero ha soltado un objeto tras de sí.", "v": "알파 포켓몬이 도망쳤다! 하지만 뒤에 도구를 떨어뜨리고 갔다."}
@@ -4094,12 +4094,12 @@
 {"k": "<b>Eneldo:</b> ¡Pienso buscar todos los fallos posibles para encasquetarle cero estrellas a este tugurio!", "v": "<b>에넬도:</b> 트집거리라면 모조리 찾아낼 생각이라네! 이따위 허름한 가게에는 별점 0점이 어울리지!"}
 {"k": "La Regente <b>Zafra</b> debe recibir una buena dosis de humildad...", "v": "<b>사프라</b> 섭정도 겸손이 뭔지 똑똑히 깨달아야 할 게야..."}
 {"k": "...", "v": "..."}
-{"k": "¿Cómo? ¿Que vais a cobrarme la comida? ¿Vais a hacerle pagar al gran crítico <b>Eneldo</b>?", "v": "뭐라고? 나한테 음식값을 받겠다는 건가? 이 위대한 평론가 <b>에넬도</b>에게 돈을 내게 하겠다는 겐가?"}
+{"k": "¿Cómo? ¿Que vais a cobrarme la comida? ¿Vais a hacerle pagar al gran crítico <b>Eneldo</b>?", "v": "뭐라고? 나한테 음식값을 받겠다는 건가? 이 위대한 평론가 <b>에넬도</b>에게 돈을 내게 하겠다고?"}
 {"k": "¿Es que no ves el valor de la publicidad que os estoy haciendo simplemente con mi mera presencia? ¡Qué desfachatez!", "v": "내가 그저 이곳에 있어 주는 것만으로도 자네들에게 얼마나 큰 홍보가 되는지 모른단 말인가? 참으로 뻔뻔하군!"}
 {"k": "¿Y cuánto tengo que pagarte exactamente?", "v": "그래서 정확히 얼마를 내야 한다는 건가?"}
-{"k": "¿En serio? ¿1700 pokécuartos por un menú tan mediocre? ¡Os auguro poco futuro con esa política de precios!", "v": "진심인가요? 이런 형편없는 메뉴에 1700 포켓프랑이라니? 그런 가격 정책으로는 미래가 뻔히 보이네요!"}
-{"k": "¡En fin! Pagaré porque no quiero hacer el numerito, ¡pero mañana reflejaré bien mis quejas en mi gaceta!", "v": "좋아요! 소동을 일으키고 싶지 않으니 돈은 내겠지만, 내일 내 신문 기사에 불만을 제대로 적어 두죠!"}
-{"k": "¿Seguro que eso es lo que te debo? No te veo con cara de seguridad. Deberías ser profesional y revisar de nuevo los precios y lo que he comido.", "v": "정말 제가 그만큼 내야 하는 게 맞나요? 표정에 자신감이 없어 보이네요. 프로답게 가격과 제가 먹은 메뉴를 다시 확인해 보세요."}
+{"k": "¿En serio? ¿1700 pokécuartos por un menú tan mediocre? ¡Os auguro poco futuro con esa política de precios!", "v": "뭐라고? 이런 형편없는 메뉴에 1700 포켓프랑이라니? 그런 가격 정책으로는 미래가 뻔히 보이는군!"}
+{"k": "¡En fin! Pagaré porque no quiero hacer el numerito, ¡pero mañana reflejaré bien mis quejas en mi gaceta!", "v": "좋아! 소동을 일으키고 싶지 않으니 돈은 내겠지만, 내일 내 신문 기사에 불만을 제대로 적어 두지!"}
+{"k": "¿Seguro que eso es lo que te debo? No te veo con cara de seguridad. Deberías ser profesional y revisar de nuevo los precios y lo que he comido.", "v": "정말 내가 그만큼을 내야 한단 말인가? 표정에 자신감이 없어 보이는군. 프로답게 가격과 먹은 메뉴를 다시 확인해 보게나!"}
 {"k": "Estoy buscando un Gastrodon, ¿lo cambiarías por mi Mudkip?", "v": "트리토돈을 찾고 있다. 내 물짱이랑 교환할래?"}
 {"k": "¡Cúidalo muy bien!", "v": "꼭 잘 챙겨줘! "}
 {"k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 너한테는 없는 모양이네."}
@@ -4260,7 +4260,7 @@
 {"k": "Lo que yace en su interior es...", "v": "그 안에는..."}
 {"k": "Bueno, prefiero que lo veas con tus propios ojos.", "v": "직접 눈으로 확인하는 편이 낫겠군."}
 {"k": "¡Es un <b>Nido Alfa</b>! En él vive un Pokémon muy fuerte.", "v": "<b>알파 둥지</b>다! 안에는 아주 강한 포켓몬이 살고 있다."}
-{"k": "En concreto, sientes la presencia de un Pokémon Planta muy poderoso.", "v": "구체적으로는 아주 강력한 풀타입 포켓몬의 기운이 느껴진다."}
+{"k": "En concreto, sientes la presencia de un Pokémon Planta muy poderoso.", "v": "아주 강력한 풀타입 포켓몬의 기운이 느껴진다."}
 {"k": "¿Quieres hacerlo salir?", "v": "다가가 볼까?"}
 {"k": "No es seguro continuar llevando solo 1 Pokémon saludable en el equipo.", "v": "배틀할 수 있는 포켓몬이 하나뿐인 채로 다가가는 건 위험하다."}
 {"k": "¡El Pokémon Alfa ha huido! Pero ha soltado un objeto tras de sí.", "v": "알파 포켓몬이 도망쳤다! 하지만 뒤에 도구를 떨어뜨렸다."}
@@ -4775,7 +4775,7 @@
 {"k": "La situación de <b>Viejo Vánitas</b> ha mejorado bastante y los Pokémon han empezado a sanar.", "v": "<b>옛 고목내마을</b>의 상황이 꽤 좋아져서 포켓몬들도 회복되기 시작했다."}
 {"k": "Supongo que has tenido algo que ver, de modo que te doy las gracias.", "v": "네가 손을 보탠 모양인데, 고맙다."}
 {"k": "¡Es un <b>Nido Alfa</b>! En él vive un Pokémon muy fuerte.", "v": "<b>알파 둥지</b>다! 안에는 아주 강한 포켓몬이 살고 있다."}
-{"k": "En concreto, sientes la presencia de un Pokémon Volador muy poderoso.", "v": "매우 강력한 비행타입 포켓몬의 기운이 느껴진다."}
+{"k": "En concreto, sientes la presencia de un Pokémon Volador muy poderoso.", "v": "아주 강력한 비행타입 포켓몬의 기운이 느껴진다."}
 {"k": "¿Quieres hacerlo salir?", "v": "다가가 볼까?"}
 {"k": "No es seguro continuar llevando solo 1 Pokémon saludable en el equipo.", "v": "배틀할 수 있는 포켓몬이 하나뿐인 채로 다가가는 건 위험하다."}
 {"k": "¡El Pokémon Alfa ha huido! Pero ha soltado un objeto tras de sí.", "v": "알파 포켓몬이 도망쳤다! 하지만 뒤에 도구를 떨어뜨리고 갔다."}
@@ -5054,7 +5054,7 @@
 {"k": "No", "v": "아니요"}
 {"map": 144, "n": 10}
 {"k": "¿Girar la válvula?", "v": "밸브를 돌릴까요?"}
-{"k": "¿Y quién no lo haría?", "v": "누가 안 그러겠는가?"}
+{"k": "¿Y quién no lo haría?", "v": "밸브를 돌렸다!"}
 {"k": "Veo que has hecho acopio de valor para desafiarnos, ¡pues pienso dejarte una buena impresión de nuestra tenacidad!", "v": "용기를 내어 우리에게 도전하러 온 모양인데, 우리의 끈기가 어떤 것인지 똑똑히 보여주마!"}
 {"k": "¡Tus Pokémon sí que son tenaces!", "v": "네 포켓몬들은 정말 끈질기구나!"}
 {"k": "Los miembros de la tripulación venimos de regiones diferentes, pero a todos nos une la misma bandera de la libertad.", "v": "우리 선원들은 각기 다른 지방에서 왔지만, 모두 같은 자유의 깃발 아래 하나로 뭉쳐 있다!"}
@@ -5067,7 +5067,7 @@
 {"k": "¿Girar la Manivela Verde?", "v": "초록색 손잡이를 돌릴까?"}
 {"k": "¿Girar la Manivela Azul?", "v": "파란색 손잡이를 돌릴까?"}
 {"k": "¿Girar la válvula?", "v": "밸브를 돌릴까요?"}
-{"k": "¿Y quién no lo haría?", "v": "누가 안 그러겠어?"}
+{"k": "¿Y quién no lo haría?", "v": "밸브를 돌렸다!"}
 {"k": "¿Girar la Manivela Roja?", "v": "빨간색 손잡이를 돌릴까?"}
 {"k": "No soy una simple pirata, ¡soy una aeropirata! ¿Sabes cuál es la diferencia?", "v": "난 그냥 해적이 아니야, 공중 해적이라고! 차이가 뭔지 알아?"}
 {"k": "Soy una aeropirata derrotada.", "v": "패배한 공중 해적이지."}
@@ -7233,7 +7233,7 @@
 {"k": "<b>Ferrofaz</b> mencionó que los Pokémon de los presos eran guardados en un almacén.", "v": "<b>페로파스</b>는 죄수들의 포켓몬이 창고에 보관되어 있다고 했다."}
 {"k": "¿Podría ser...?", "v": "혹시...?"}
 {"k": "¡Es un <b>Nido Alfa</b>! En él vive un Pokémon muy fuerte.", "v": "<b>알파 둥지</b>다! 안에는 아주 강한 포켓몬이 살고 있다."}
-{"k": "En concreto, sientes la presencia de un Pokémon Fuego muy poderoso.", "v": "구체적으로 말하면, 매우 강력한 불꽃타입 포켓몬의 기운이 느껴진다."}
+{"k": "En concreto, sientes la presencia de un Pokémon Fuego muy poderoso.", "v": "아주 강력한 불꽃타입 포켓몬의 기운이 느껴진다."}
 {"k": "¿Quieres hacerlo salir?", "v": "다가가 볼까?"}
 {"k": "No es seguro continuar llevando solo 1 Pokémon saludable en el equipo.", "v": "배틀할 수 있는 포켓몬이 하나뿐인 채로 다가가는 건 위험하다."}
 {"k": "¡El Pokémon Alfa ha huido! Pero ha soltado un objeto tras de sí.", "v": "알파 포켓몬이 도망쳤다! 하지만 뒤에 도구를 떨어뜨리고 갔다."}
@@ -7855,7 +7855,7 @@
 {"k": "Como Ranger Pokémon que soy, mi responsabilidad es la de asegurar que los Pokémon disfruten de una existencia llena de gozo y felicidad.", "v": "포켓몬 레인저로서 제 책임은 포켓몬들이 기쁨과 행복으로 가득 찬 삶을 누리도록 보장하는 것입니다."}
 {"k": "Las derrotas escuecen poco cuando pienso en el bien que traerá el mañana.", "v": "내일이 가져다줄 좋은 일들을 생각하면 패배의 아픔쯤은 아무것도 아닙니다."}
 {"k": "¡Es un <b>Nido Alfa</b>! En él vive un Pokémon muy fuerte.", "v": "<b>알파 둥지</b>다! 안에는 아주 강한 포켓몬이 살고 있다."}
-{"k": "En concreto, sientes la presencia de un Pokémon Fantasma muy poderoso.", "v": "구체적으로는, 매우 강력한 고스트타입 포켓몬의 기운이 느껴진다."}
+{"k": "En concreto, sientes la presencia de un Pokémon Fantasma muy poderoso.", "v": "아주 강력한 고스트타입 포켓몬의 기운이 느껴진다."}
 {"k": "¿Quieres hacerlo salir?", "v": "다가가 볼까?"}
 {"k": "No es seguro continuar llevando solo 1 Pokémon saludable en el equipo.", "v": "배틀할 수 있는 포켓몬이 하나뿐인 채로 다가가는 건 위험하다."}
 {"k": "¡El Pokémon Alfa ha huido! Pero ha soltado un objeto tras de sí.", "v": "알파 포켓몬이 도망쳤다! 하지만 뒤에 도구를 떨어뜨리고 갔다."}
@@ -7978,7 +7978,7 @@
 {"k": "Parece mentira que mis elegantes Pokémon hayan podido perder.", "v": "내 우아한 포켓몬들이 지다니 정말 믿기지 않네요."}
 {"k": "Bien, esto es lo que debes saber. Dentro de la Gruta Helada, tus Pokémon sufrirán mucho frío a no ser que lleves un par de Brasas Candentes en tu inventario o una Piedra Fuego.", "v": "좋아요, 알아두어야 할 점은 이것입니다. 프로스트케이브 안에서는 가방에 타오르는불씨 두 개나 불꽃의돌을 갖고 있지 않으면 포켓몬들이 심한 추위를 겪게 될 겁니다."}
 {"k": "¡Es un <b>Nido Alfa</b>! En él vive un Pokémon muy fuerte.", "v": "<b>알파 둥지</b>다! 안에는 아주 강한 포켓몬이 살고 있다."}
-{"k": "En concreto, sientes la presencia de un Pokémon Hielo muy poderoso.", "v": "구체적으로는, 매우 강력한 얼음타입 포켓몬의 기운이 느껴진다."}
+{"k": "En concreto, sientes la presencia de un Pokémon Hielo muy poderoso.", "v": "아주 강력한 얼음타입 포켓몬의 기운이 느껴진다."}
 {"k": "¿Quieres hacerlo salir?", "v": "다가가 볼까?"}
 {"k": "No es seguro continuar llevando solo 1 Pokémon saludable en el equipo.", "v": "배틀할 수 있는 포켓몬이 하나뿐인 채로 다가가는 건 위험하다."}
 {"k": "¡El Pokémon Alfa ha huido! Pero ha soltado un objeto tras de sí.", "v": "알파 포켓몬이 도망쳤다! 하지만 뒤에 도구를 떨어뜨리고 갔다."}
@@ -8100,7 +8100,7 @@
 {"k": "¿Ves estos edificios negros? Se les conoce como las <b>Torres Oscuras</b>, y son el laboratorio del regente <b>Hibis</b>.", "v": "저 검은 건물들이 보이시나요? <b>어둠의 탑들</b>이라고 불리는데, 섭정 <b>히비스</b>의 연구소랍니다."}
 {"k": "Dicen que si te acercas demasiado, puedes escuchar sus pensamientos dentro de tu cabeza.", "v": "너무 가까이 다가가면 머릿속에서 그 사람들의 생각이 들려온다고 하더군요."}
 {"k": "¡Es un <b>Nido Alfa</b>! En él vive un Pokémon muy fuerte.", "v": "<b>알파 둥지</b>다! 안에는 아주 강한 포켓몬이 살고 있다."}
-{"k": "En concreto, sientes la presencia de un Pokémon Psíquico muy poderoso.", "v": "구체적으로는 아주 강력한 에스퍼타입 포켓몬의 기운이 느껴진다."}
+{"k": "En concreto, sientes la presencia de un Pokémon Psíquico muy poderoso.", "v": "아주 강력한 에스퍼타입 포켓몬의 기운이 느껴진다."}
 {"k": "¿Quieres hacerlo salir?", "v": "다가가 볼까?"}
 {"k": "No es seguro continuar llevando solo 1 Pokémon saludable en el equipo.", "v": "배틀할 수 있는 포켓몬이 하나뿐인 채로 다가가는 건 위험하다."}
 {"k": "¡El Pokémon Alfa ha huido! Pero ha soltado un objeto tras de sí.", "v": "알파 포켓몬이 도망쳤다! 하지만 뒤에 도구를 떨어뜨리고 갔다."}
@@ -9489,7 +9489,7 @@
 {"k": "\\PN, avísame cuando lo tengas todo listo para combatir.", "v": "\\PN, 배틀 준비가 다 되면 나한테 말해줘."}
 {"k": "<b>Melia</b> quiere combatir contigo antes de ir a <b>Ciudad Fluxus</b>.", "v": "<b>멜리아</b>는 <b>향전시티</b>로 가기 전에 너와 배틀하고 싶어 한다."}
 {"k": "¡Es un <b>Nido Alfa</b>! En él vive un Pokémon muy fuerte.", "v": "<b>알파 둥지</b>다! 안에는 아주 강한 포켓몬이 살고 있다."}
-{"k": "En concreto, sientes la presencia de un Pokémon Lucha muy poderoso.", "v": "특히, 매우 강력한 격투타입 포켓몬의 기운이 느껴진다."}
+{"k": "En concreto, sientes la presencia de un Pokémon Lucha muy poderoso.", "v": "아주 강력한 격투타입 포켓몬의 기운이 느껴진다."}
 {"k": "¿Quieres hacerlo salir?", "v": "다가가 볼까?"}
 {"k": "No es seguro continuar llevando solo 1 Pokémon saludable en el equipo.", "v": "배틀할 수 있는 포켓몬이 하나뿐인 채로 다가가는 건 위험하다."}
 {"k": "¡El Pokémon Alfa ha huido! Pero ha soltado un objeto tras de sí.", "v": "알파 포켓몬이 도망쳤다! 하지만 뒤에 도구를 떨어뜨리고 갔다."}
@@ -9932,7 +9932,7 @@
 {"k": "La verdad es que cada vez os entiendo menos.", "v": "솔직히 갈수록 너희를 이해할 수가 없네."}
 {"k": "¿Por qué los entrenadores siempre tenéis ese afán de meteros en los rincones más peligrosos e inhóspitos del mundo? ¿Es que no tenéis sentido común?", "v": "왜 트레이너들은 왜 항상 세상에서 제일 위험하고 험한 구석만 못 들어가서 안달일까? 도대체 분별력이 있는 거냐고?"}
 {"k": "¡Es un <b>Nido Alfa</b>! En él vive un Pokémon muy fuerte.", "v": "<b>알파 둥지</b>다! 안에는 아주 강한 포켓몬이 살고 있다."}
-{"k": "En concreto, sientes la presencia de un Pokémon Acero muy poderoso.", "v": "구체적으로는, 매우 강력한 강철타입 포켓몬의 기운이 느껴진다."}
+{"k": "En concreto, sientes la presencia de un Pokémon Acero muy poderoso.", "v": "아주 강력한 강철타입 포켓몬의 기운이 느껴진다."}
 {"k": "¿Quieres hacerlo salir?", "v": "다가가 볼까?"}
 {"k": "No es seguro continuar llevando solo 1 Pokémon saludable en el equipo.", "v": "배틀할 수 있는 포켓몬이 하나뿐인 채로 다가가는 건 위험하다."}
 {"k": "¡El Pokémon Alfa ha huido! Pero ha soltado un objeto tras de sí.", "v": "알파 포켓몬이 도망쳤다! 하지만 뒤에 도구를 떨어뜨리고 갔다."}
@@ -11537,7 +11537,7 @@
 {"k": "El doctor le responde: \"El tratamiento es sencillo, el gran payaso Pagliacci se encuentra esta noche en la ciudad, vaya a verlo, eso lo animará\".", "v": "의사가 말하길 “치료법은 간단합니다. 오늘 밤 위대한 광대 파글리아치가 이 도시에 왔으니 보러 가십시오. 기분이 나아질 겁니다.”"}
 {"k": "El hombre se echa a llorar y dice \"Pero, doctor… ¡Yo soy Pagliacci!\".", "v": "그러자 남자가 왈칵 눈물을 터뜨리며 말했지. “하지만 의사 선생님… 내가 바로 파글리아치요!”"}
 {"k": "¡Es un <b>Nido Alfa</b>! En él vive un Pokémon muy fuerte.", "v": "<b>알파 둥지</b>다! 안에는 아주 강한 포켓몬이 살고 있다."}
-{"k": "En concreto, sientes la presencia de un Pokémon Siniestro muy poderoso.", "v": "구체적으로는 매우 강력한 악타입 포켓몬의 기운이 느껴진다."}
+{"k": "En concreto, sientes la presencia de un Pokémon Siniestro muy poderoso.", "v": "아주 강력한 악타입 포켓몬의 기운이 느껴진다."}
 {"k": "¿Quieres hacerlo salir?", "v": "다가가 볼까?"}
 {"k": "No es seguro continuar llevando solo 1 Pokémon saludable en el equipo.", "v": "배틀할 수 있는 포켓몬이 하나뿐인 채로 다가가는 건 위험하다."}
 {"k": "¡El Pokémon Alfa ha huido! Pero ha soltado un objeto tras de sí.", "v": "알파 포켓몬이 도망쳤다! 하지만 뒤에 도구를 떨어뜨리고 갔다."}
@@ -11653,7 +11653,7 @@
 {"k": "¿Dónde estabas tú cuando el Folde Oeste cayó?", "v": "서부 폴데가 함락됐을 때 넌 어디서 뭘 하고 있었냐?"}
 {"k": "<b>Gran Hotel Luminalia:</b> Donde resurgen los entrenadores Pokémon definitivos", "v": "<b>미르 그랜드 호텔:</b> 궁극의 포켓몬 트레이너들이 다시 떠오르는 곳"}
 {"k": "¡Es un <b>Nido Alfa</b>! En él vive un Pokémon muy fuerte.", "v": "<b>알파 둥지</b>다! 안에는 아주 강한 포켓몬이 살고 있다."}
-{"k": "En concreto, sientes la presencia de un Pokémon Tierra muy poderoso.", "v": "구체적으로는, 매우 강력한 땅타입 포켓몬의 기운이 느껴진다."}
+{"k": "En concreto, sientes la presencia de un Pokémon Tierra muy poderoso.", "v": "아주 강력한 땅타입 포켓몬의 기운이 느껴진다."}
 {"k": "¿Quieres hacerlo salir?", "v": "다가가 볼까?"}
 {"k": "No es seguro continuar llevando solo 1 Pokémon saludable en el equipo.", "v": "배틀할 수 있는 포켓몬이 하나뿐인 채로 다가가는 건 위험하다."}
 {"k": "¡El Pokémon Alfa ha huido! Pero ha soltado un objeto tras de sí.", "v": "알파 포켓몬이 도망쳤다! 하지만 뒤에 도구를 하나 떨어뜨렸다."}
@@ -11730,7 +11730,7 @@
 {"k": "Tu catálogo de creación se ha ampliado.", "v": "제작할 수 있는 조합법이 늘어났다!"}
 {"map": 368, "n": 10}
 {"k": "¡Es un <b>Nido Alfa</b>! En él vive un Pokémon muy fuerte.", "v": "<b>알파 둥지</b>다! 안에는 아주 강한 포켓몬이 살고 있다."}
-{"k": "En concreto, sientes la presencia de un Pokémon Hada muy poderoso.", "v": "조금 더 느껴보니, 매우 강력한 페어리타입 포켓몬의 기운이 풍겨온다."}
+{"k": "En concreto, sientes la presencia de un Pokémon Hada muy poderoso.", "v": "아주 강력한 페어리타입 포켓몬의 기운이 느껴진다."}
 {"k": "¿Quieres hacerlo salir?", "v": "다가가 볼까?"}
 {"k": "No es seguro continuar llevando solo 1 Pokémon saludable en el equipo.", "v": "배틀할 수 있는 포켓몬이 하나뿐인 채로 다가가는 건 위험하다."}
 {"k": "¡El Pokémon Alfa ha huido! Pero ha soltado un objeto tras de sí.", "v": "알파 포켓몬이 도망쳤다! 하지만 도망치면서 뭔가를 떨어뜨렸다."}
@@ -11774,7 +11774,7 @@
 {"k": "¡Este Medicham ha aprendido Enfermería Pokémon!", "v": "이 요가램이 포켓몬 간호를 배웠습니다!"}
 {"k": "¿Quieres curar a tus Pokémon?", "v": "포켓몬을 치료하시겠습니까?"}
 {"k": "¡Es un <b>Nido Alfa</b>! En él vive un Pokémon muy fuerte.", "v": "<b>알파 둥지</b>다! 안에는 아주 강한 포켓몬이 살고 있다."}
-{"k": "En concreto, sientes la presencia de un Pokémon Dragón tremendamente poderoso.", "v": "구체적으로는 엄청나게 강력한 드래곤 포켓몬의 기운이 느껴진다."}
+{"k": "En concreto, sientes la presencia de un Pokémon Dragón tremendamente poderoso.", "v": "아주 강력한 드래곤타입 포켓몬의 기운이 느껴진다."}
 {"k": "¿Quieres hacerlo salir?", "v": "다가가 볼까?"}
 {"k": "No es seguro continuar llevando solo 1 Pokémon saludable en el equipo.", "v": "배틀할 수 있는 포켓몬이 하나뿐인 채로 다가가는 건 위험하다."}
 {"k": "¡El Pokémon Alfa ha huido! Pero ha soltado un objeto tras de sí.", "v": "알파 포켓몬이 도망쳤다! 하지만 뒤에 도구를 떨어뜨리고 갔다."}
