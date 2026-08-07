@@ -28,8 +28,11 @@ NAME = "한글패치 코어"
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parent                                     # pokemon-z/
 CARD = REPO / "mods" / NAME / "mod.json"
-SOURCE = Path("/mnt/d/GameVault/mods/Pokemon Z Fangame/한글패치 통합")
 STORE = Path("/mnt/d/GameVault/mods/Pokemon Z Fangame") / NAME
+# 재료는 제 폴더다. 옛 「한글패치 통합」에서 떠 오던 것인데, 둘이 mod.json 말고는
+# 바이트까지 같아져(2026-08-07 전수 대조) 하나만 남겼다. 번역표는 어차피 정본에서
+# 새로 굽고 나머지는 그대로 옮기므로, 제자리 재조립이라도 결과가 달라지지 않는다.
+SOURCE = STORE
 # 원본 지문은 **지문표**에서 뜬다. 설치본에서 뜨면 이미 얹혀 있는 모드의 자국을
 # 원본으로 새긴다 — 실제로 한 번 그랬고(2026-08-07), 호환 검사가 그것을 잡아냈다.
 MANIFEST = Path("/mnt/d/GameVault/manifests/pokemon-z/V2.18-정본.json")

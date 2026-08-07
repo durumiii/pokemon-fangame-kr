@@ -5,9 +5,9 @@
 """공유용 한글패치 패키지 조립.
 
 산출: dist/<패키지명>/ — 받는 사람이 게임 폴더에 덮어쓰면 끝나는 형태.
-원 패치(한글패치 통합 모드)의 에셋 전체 + 최신 korean.dat +
+원 패치(한글패치 코어 모드)의 에셋 전체 + 최신 korean.dat +
 UI Text KR을 주입한 Scripts.rxdata + 번역표(ko JSONL)와 독립 빌더.
-조사 자동 선택(옛 Josa Select)은 2026-08-03부터 한글패치 통합의 본문
+조사 자동 선택(옛 Josa Select)은 2026-08-03부터 한글패치 코어의 본문
 섹션이라 따로 주입하지 않는다(수술판·pre-intl.bak 양쪽에 구움 — bake_josa.py).
 
 주입은 fangame-library modstore가 정본이라 여기서 다시 만들지 않는다 —
@@ -38,7 +38,7 @@ from pathlib import Path
 HERE = Path(__file__).parent
 TRANSLATE = HERE.parent / "translate"
 STORE = Path("/mnt/d/GameVault/mods")
-BASE_MOD = STORE / "Pokemon Z Fangame" / "한글패치 통합"
+BASE_MOD = STORE / "Pokemon Z Fangame" / "한글패치 코어"
 INJECT_MODS = ["UI Text KR"]
 VARIANT_SUMMARY = {
     "debug": "포켓몬 Z 한글패치 — 번역 전체에 디버그 편집을 얹은 통 패치",
@@ -68,11 +68,6 @@ FONT_VARIANTS = {
 }
 # 배포 화면에 세울 차례 — 권하는 것이 맨 위다(유지자 실기 판단, 2026-08-07).
 FONT_ORDER = {"galmuri": 1, "dppt": 2, "bw": 3}
-# 재배포 조건이 붙은 글꼴의 라이선스 원문 — 함께 담지 않으면 조건을 어긴다.
-FONT_LICENSES = [
-    BASE_MOD / "Fonts" / "pokemon-dppt-LICENSE.txt",
-    BASE_MOD / "Fonts" / "pokemon-dppt-README.txt",
-]
 
 # modstore는 vendor에 없다 — devbox의 fangame-library가 필요하다 (FANGAME_LIBRARY로 지정 가능)
 _FANLIB_HOME = Path(
