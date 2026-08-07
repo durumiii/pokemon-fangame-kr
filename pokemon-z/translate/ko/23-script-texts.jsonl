@@ -4869,9 +4869,9 @@
 {"k": "El nivel de {1} no ha cambiado.", "v": "{1}의 레벨은 변하지 않았다."}
 {"k": "¡{1} ha subido al nivel {2}!", "v": "{1}\\j[은,는] 레벨 {2}\\j[으로,로] 올랐다!"}
 {"k": "PS Máx.<r>+{1}\nAtaque<r>+{2}\nDefensa<r>+{3}\nAt. Esp.<r>+{4}\nDef. Esp.<r>+{5}\nVelocidad<r>+{6}", "v": "최대HP<r>+{1}\r\n공격<r>+{2}\r\n방어<r>+{3}\r\n특수공격<r>+{4}\r\n특수방어<r>+{5}\r\n스피드<r>+{6}"}
-{"k": "No tuvo ningún efecto.", "v": "아무 효과도 없었다."}
+{"k": "No tuvo ningún efecto.", "v": "그러나 아무 일도 일어나지 않았다!"}
 {"k": "Los PS de {1} subieron en {2} puntos.", "v": "{1}의 HP가 {2} 올라갔다."}
-{"k": "¡Pero no tuvo ningún efecto!", "v": "하지만 아무 효과도 없었다!"}
+{"k": "¡Pero no tuvo ningún efecto!", "v": "그러나 아무 일도 일어나지 않았다!"}
 {"k": "La salud de {1} ha sido recuperada.", "v": "{1}의 체력을 회복했다."}
 {"k": "No puede usarse aquí.", "v": "여기서는 쓸 수 없다."}
 {"k": "No puede usarse cuando está con alguien.", "v": "누군가와 동행 중일 때는 사용할 수 없다."}
@@ -4950,7 +4950,7 @@
 {"k": "Eso no se puede usar aquí.", "v": "그건 여기서 쓸 수 없다."}
 {"k": "Usando el objeto...", "v": "도구를 사용하는 중..."}
 {"k": "{1} ha recuperado los PS.", "v": "{1}\\j[은,는] HP를 회복했다."}
-{"k": "No tendrá ningún efecto.", "v": "아무런 효과도 없다."}
+{"k": "No tendrá ningún efecto.", "v": "그러나 아무 일도 일어나지 않았다!"}
 {"k": "Monedas: {1}", "v": "동전: {1}"}
 {"k": "Has desactivado el Repartir Exp.", "v": "학습장치를 껐다."}
 {"k": "Has activado el Repartir Exp.", "v": "학습장치를 켰다."}
@@ -5681,7 +5681,7 @@
 {"k": "¡No voy a perder! ¡Voy a mostrarte el poder definitivo de mis Pokémon!", "v": "질 수 없어! 내 포켓몬의 궁극의 힘을 보여주지!"}
 {"k": "¡Un héroe no puede perder! ¡Iría en contra de todos los principios morales de cualquier historia!", "v": "영웅은 질 수 없어! 이야기의 모든 도리에 어긋나는 일이라고!"}
 {"k": "¿Pero qué tenemos aquí? Eres un objeto inamovible. Bueno, ¡pues aquí viene la fuerza imparable!", "v": "이거 참, 무슨 일이지? 넌 꿈쩍도 않는 물체로군. 좋아, 그럼 막을 수 없는 힘이 간다!"}
-{"k": "No tendrá ningún efecto..", "v": "아무 효과도 없을 것이다.."}
+{"k": "No tendrá ningún efecto..", "v": "그러나 아무 일도 일어나지 않았다!"}
 {"k": "{1} aumentó su Salud potencial.", "v": "{1}의 잠재 HP가 올랐다."}
 {"k": "{1} aumentó su Ataque potencial.", "v": "{1}의 잠재 공격이 올랐다."}
 {"k": "{1} aumentó su Defensa potencial.", "v": "{1}의 잠재 방어가 올랐다."}
@@ -6086,7 +6086,7 @@
 {"k": "{1} ate the Serious Mint.", "v": "{1} ate the Serious Mint."}
 {"k": "{1} ate the Timid Mint.", "v": "{1} ate the Timid Mint."}
 {"k": "{1} ha cambiado su naturaleza.", "v": "{1}의 성격이 바뀌었다."}
-{"k": "No tendrá ningún efecto", "v": "아무 효과도 없을 것이다"}
+{"k": "No tendrá ningún efecto", "v": "그러나 아무 일도 일어나지 않았다!"}
 {"k": "Dime joven, ¿crees en los fantasmas o necesitas más?", "v": "말해봐 젊은이, 유령을 믿나? 아니면 더 봐야겠나?"}
 {"k": "Vamos a utilizar nuestra técnica final ninja, ¡esto va a ponerse intenso!", "v": "닌자의 최종 오의를 쓰겠다. 이제부터 뜨거워질 거다!"}
 {"k": "¡Observa a mi imponente Pokémon! Ya ha evolucionado a su fase final.", "v": "내 위풍당당한 포켓몬을 봐라! 이미 최종 진화를 마쳤지."}
@@ -6094,7 +6094,7 @@
 {"k": "Ya he visto el final de esto. Un resultado sorprendente.", "v": "이 승부의 결말은 이미 봤다. 놀라운 결과였지."}
 {"k": "Había una vez un Pokémon Princesa que se hizo muuuuuuy fuerte...", "v": "옛날 옛적에 아주아주 강해진 공주 포켓몬이 있었대..."}
 {"k": "Estás a punto de desatar un calor infernal, ¿lo has pensado bien?", "v": "지옥 같은 열기를 해방하려는 참인데, 잘 생각해 보았나?"}
-{"k": "No puedes viajar aquí.", "v": "여기로는 이동할 수 없다."}
+{"k": "No puedes viajar aquí.", "v": "여기서는 공중날기를 할 수 없다."}
 {"k": "El Pokévial está vacío. Recárgalo en el Centro Pokémon.", "v": "포켓몬약병이 비었습니다. 포켓몬센터에서 채워 주세요."}
 {"k": "¿Curar a tu equipo con el Pokévial?", "v": "포켓몬약병으로 파티를 회복시키겠습니까?"}
 {"k": "¿Curar a tu equipo con el Pokévial? Le quedan {1} usos de {2}", "v": "포켓몬약병으로 파티를 회복시키겠습니까? {2}회 중 {1}회 남음"}
@@ -6349,7 +6349,7 @@
 {"k": "¡{1} sangra! ¡Recibirá más golpes críticos!", "v": "{1}\\j[이,가] 피를 흘린다! 급소를 더 자주 맞게 된다!"}
 {"k": "¡{1} sufre daño por el veneno!", "v": "{1}\\j[은,는] 독에 의한 데미지를 입었다!"}
 {"k": "¡Tengo por mío todo cuanto abarca cielo y mar! ¡Este combate también será mío, cariño!", "v": "하늘과 바다에 닿는 모든 것이 내 것이다! 이 승부도 내 것이 되겠지, 얘야!"}
-{"k": "Mi convicción es más fuerte que nunca ahora. Las manifestaré a través de mi último Pokémon.", "v": "지금 내 신념은 그 어느 때보다 굳건하다. 마지막 포켓몬으로 보여주지."}
+{"k": "Mi convicción es más fuerte que nunca ahora. Las manifestaré a través de mi último Pokémon.", "v": "지금 내 신념은 그 어느 때보다 굳건해. 마지막 포켓몬으로 보여주겠어!"}
 {"k": "Se acabó el juego. Voy a aplicarte la dosis más mortal de la que dispongo.", "v": "장난은 끝이다. 내가 가진 가장 치명적인 걸 쓰지."}
 {"k": "Vamos a utilizar nuestra técnica final de cazadora, ¡esto va a ponerse intenso!", "v": "사냥꾼의 최종 오의를 쓰겠다. 뜨거워질 거야!"}
 {"k": "¡Aaaah! ¡No voy a perder ahora que tengo a mis Pokémon superpoderosos!", "v": "으아아! 초강력 포켓몬이 있는데 질 수는 없지!"}
