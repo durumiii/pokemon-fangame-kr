@@ -115,10 +115,32 @@ def test_tagged_dat_keeps_tags_after_edit(runa_bytes):
     assert hit["v"] == "딱지시험"
 
 
-def test_untagged_dat_stays_untagged(dat_bytes):
+@pytest.fixture(scope="module")
+def untagged_bytes(dat_bytes):
+    """딱지 없는 판 — 배포 dat가 딱지판 하나로 합쳐져 실물이 없으므로 여기서 만든다.
+
+    core.tag_utf8의 반대 — 문자열을 바이트열로 되돌리면 rubymarshal이 딱지 없이 쓴다.
+    """
+    import core
+    import rubywrite
+
+    def untag(o):
+        if isinstance(o, list):
+            return [untag(x) for x in o]
+        if hasattr(o, "_private_data"):
+            o._private_data = rubywrite.dumps(untag(core._inner(o)))
+            return o
+        # str·bytes·RubyString(딱지 붙은 문자열) 모두 맨 바이트열로
+        return core._raw(o) if isinstance(o, (str, bytes, bytearray)) or hasattr(o, "text") else o
+
+    core.load_dat(dat_bytes)
+    return rubywrite.dumps(untag(core._state["d"]))
+
+
+def test_untagged_dat_stays_untagged(untagged_bytes):
     """딱지 없는 판을 열어 고치면 딱지를 새로 붙이지 않는다."""
     import core
-    rows = json.loads(core.load_dat(dat_bytes))["rows"]
+    rows = json.loads(core.load_dat(untagged_bytes))["rows"]
     assert core._state["tagged"] is False
     target = next(r for r in rows if r["sec"] == 5)
     out = core.build_dat(json.dumps([dict(target, v="딱지없음시험")]))

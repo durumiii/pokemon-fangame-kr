@@ -62,6 +62,9 @@
  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;
    padding:13px 16px;margin-bottom:12px}
  .card.saved{border-color:rgba(76,195,138,.5)}
+ .card.focus{border-color:var(--acc);box-shadow:0 0 0 1px var(--acc)}
+ .chip.ev{cursor:pointer;color:var(--tx)}
+ .chip.ev:hover{border-color:var(--acc);color:var(--acc)}
  .chip{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;color:var(--sub);background:var(--panel);
    border:1px solid var(--line);border-radius:5px;padding:2px 8px;margin-right:6px}
  .es{color:var(--es);font-size:13px;line-height:1.55;margin:8px 0 6px;white-space:pre-wrap}
@@ -148,4 +151,5 @@
 <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
 <script src="app.js"></script>
 <script src="mine.js"></script>
+<script src="event.js"></script>
 </body></html>

@@ -1,11 +1,14 @@
 // app.js 순수 로직 자체점검 — 브라우저 없이: node webapp/tests/selfcheck.js
 const fs = require('fs'), vm = require('vm'), a = require('assert'), path = require('path');
-// 브라우저와 같은 순서로 잇는다 — mine.js는 app.js의 전역을 그대로 쓴다
-const src = ['app.js', 'mine.js']
+// 브라우저와 같은 순서로 잇는다 — mine.js·event.js는 app.js의 전역을 그대로 쓴다
+const src = ['app.js', 'mine.js', 'event.js']
   .map(f => fs.readFileSync(path.join(__dirname, '..', f), 'utf8')).join('\n');
 const els = {};
 const el = id => els[id] ??= { value: '', textContent: '', className: '', dataset: {},
-                               classList: { add() {}, remove() {} }, addEventListener() {},
+                               classList: { _s: new Set(), add(c) { this._s.add(c); },
+                                            remove(c) { this._s.delete(c); },
+                                            contains(c) { return this._s.has(c); } },
+                               addEventListener() {},
                                style: {}, click() {}, innerHTML: '', remove() {},
                                insertAdjacentHTML(_, html) { this.innerHTML += html; } };
 const ctx = {
@@ -65,12 +68,14 @@ vm.runInContext(src + `
   clearMemos: () => { MEMOS = null; },
   markAllSent, sentIndex, clearSent: () => { SENT = null; },
   loadSpeakers, fillBrowse, doBrowse, openGroup, browseGroups, spkOf, mapName,
+  evOf, evName, evLabel, eventRows, evJump, openSpot, openEvent,
+  setFocus: v => { FOCUS = v; },
   parseQuery, rowMatch, search, goHome, tagValues,
   GENERAL_FORM, feedbackMenu, sendFeedback,
   setSpk: v => { SPK = v; MAPNAME = null; }, BROWSE_CAP,
   applyEdit, replaceMenu, replacePreview, replaceApply, replAll, REPL_CAP,
   replHits: () => REPL,
-  setHits: h => { HITS = h; }, bootPy,
+  setHits: h => { HITS = h; }, hits: () => HITS, bootPy,
   resetBoot: () => { bootPromise = null; bootAnnounce = false; }};
 function readFile(){ return globalThis.__fsFile; }
 function writeFile(){}
@@ -380,7 +385,7 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   a.equal(ctx.canReport('5:-1:1'), true);                             // 반영됨(applied)도 제보 재료
   ctx.S.applied = new Map();
 
-  // 일괄 제보: 항목마다 개별 제보와 같은 필드로 행 단위 전송, "일괄" 표기는 patch 칸에만
+  // 일괄 제보: 항목마다 개별 제보와 같은 필드로 행 단위 전송, 「모아서」 표기는 patch 칸에만
   ctx.S.rows = [reportRow, { sec: 0, map: 1, idx: 2, k: '', v: '키없는원문' }];
   ctx.S.edits = new Map([['3:7:9', { sec: 3, map: 7, idx: 9, k: '원문키', v: '수정A' }]]);
   ctx.S.applied = new Map([['0:1:2', { sec: 0, map: 1, idx: 2, k: '', v: '수정B' }]]);
@@ -397,8 +402,8 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   a.equal(rowB.get('e.sec'), '3:도감 설명'); a.equal(rowB.get('e.idx'), '7:9');
   a.equal(rowB.get('e.k'), '원문키'); a.equal(rowB.get('e.v'), '원문값');
   a.equal(rowB.get('e.suggest'), '수정A'); a.equal(rowB.get('e.comment'), '어투 확인 필요'); // 수정+메모 겹치는 행
-  a.equal(rowA.get('e.patch'), `hash:reportsha / studio-1 / u:${reporterId.slice(0,8)} / 일괄`);
-  a.equal(rowB.get('e.patch'), `hash:reportsha / studio-1 / u:${reporterId.slice(0,8)} / 일괄`);
+  a.equal(rowA.get('e.patch'), `hash:reportsha / studio-1 / u:${reporterId.slice(0,8)} / 모아서`);
+  a.equal(rowB.get('e.patch'), `hash:reportsha / studio-1 / u:${reporterId.slice(0,8)} / 모아서`);
 
   // 메모만 있고 수정이 없는 행은 comment만 채운 1행으로 간다
   ctx.S.edits = new Map(); ctx.S.applied = new Map();
@@ -603,6 +608,58 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   ctx.doBrowse('map');
   ctx.openGroup(0);
   a.ok(el('meta').textContent.includes(`앞 ${ctx.BROWSE_CAP}행만`));
+
+  // ─ 이벤트 모아 보기 ─
+  // 생성물에서 자리가 여럿인 원문과 하나뿐인 원문을 실제로 찾아 쓴다(형식이 바뀌면 여기서 걸린다)
+  ctx.setSpk(realSpk);
+  let evMap, multiK, soloK;
+  for (const [m, mv] of Object.entries(realSpk.maps)){
+    for (const [k, e] of Object.entries(mv.rows)){
+      if (!e[2]) continue;
+      if (e[2].length > 1 && !multiK){ evMap = m; multiK = k; }
+      if (evMap === m && e[2].length === 1 && !soloK) soloK = k;
+    }
+    if (multiK && soloK) break;
+    multiK = soloK = undefined;
+  }
+  a.ok(multiK && soloK, '자리가 여럿인 원문과 하나인 원문이 같은 맵에 있어야 한다');
+  const mapN = +evMap, multi = realSpk.maps[evMap].rows[multiK][2], solo = realSpk.maps[evMap].rows[soloK][2];
+  const rowOf = k => ({ sec: 0, map: mapN, idx: 0, k, v: '번역:' + k.slice(0, 8) });
+  a.equal(ctx.evOf(rowOf(multiK)).length, multi.length);
+  a.equal(ctx.evOf({ sec: 0, map: mapN, idx: 0, k: '조인표에 없는 원문' }), null);
+  a.equal(ctx.evOf({ sec: 23, idx: 0 }), null);                       // 맵 대사가 아닌 절은 자리 없음
+  a.equal(ctx.evName(solo[0]), realSpk.en[solo[0][3]]);
+
+  // 한 이벤트 페이지의 행은 명령 순번대로 선다
+  const [ev, page] = solo[0];
+  const inPage = [];
+  for (const [k, e] of Object.entries(realSpk.maps[evMap].rows))
+    for (const p of e[2] ?? []) if (p[0] === ev && p[1] === page) inPage.push([p[2], k]);
+  inPage.sort((x, y) => x[0] - y[0]);
+  const want = [...new Set(inPage.map(([, k]) => k))];                // dat는 (맵,원문)마다 한 행
+  ctx.S.rows = want.map(rowOf).reverse();                             // 일부러 거꾸로 넣어도
+  a.deepEqual(ctx.eventRows(mapN, ev, page).map(r => r.k), want);     // 명령 순서로 돌아온다
+  a.deepEqual(ctx.eventRows(mapN, 999999, 0), []);                    // 없는 이벤트는 빈 목록
+
+  // 카드 칩: 이벤트 이름이 뜨고, 자리가 여럿이면 몇 곳인지 붙는다
+  ctx.S.edits = new Map(); ctx.S.applied = new Map();
+  ctx.setHits([rowOf(multiK), rowOf(soloK)]);
+  a.ok(ctx.card(rowOf(multiK), 0).includes(`외 ${multi.length - 1}곳`));
+  a.ok(ctx.card(rowOf(soloK), 1).includes(ctx.esc(ctx.evName(solo[0]))));
+  a.ok(!ctx.card({ sec: 23, idx: 0, v: 'x' }, 2).includes('evJump'));  // 자리 없는 행엔 칩이 없다
+
+  // 자리가 여럿이면 목록부터, 하나면 곧장 이벤트 화면
+  ctx.S.rows = Object.keys(realSpk.maps[evMap].rows).map(rowOf);
+  ctx.evJump(0);
+  a.ok(el('meta').textContent.includes(`${multi.length}곳`));
+  a.ok(el('out').innerHTML.includes('openSpot(0)'));
+  ctx.openSpot(0);
+  a.ok(el('meta').textContent.includes(ctx.evName(multi[0])));
+  a.ok(el('card' + ctx.hits().findIndex(r => r.k === multiK)).classList.contains('focus'));
+  ctx.setHits([rowOf(multiK), rowOf(soloK)]);                         // 이벤트 화면이 HITS를 갈아 끼웠으니 되돌린다
+  ctx.evJump(1);                                                      // soloK — 목록을 거치지 않는다
+  a.ok(!el('out').innerHTML.includes('openSpot('));
+  a.ok(el('meta').textContent.includes(ctx.evName(solo[0])));
 
   // ─ 문제 제보(행 무관) ─
   ctx.GENERAL_FORM.id = 'genform1';

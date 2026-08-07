@@ -421,10 +421,13 @@ function syncReport(i){
   b.title = b.disabled ? '수정하거나 메모를 남긴 행만 제보할 수 있어요' : '';
 }
 function card(r, i){
-  const id = rid(r), e = S.edits.get(id), s = spkOf(r);
+  const id = rid(r), e = S.edits.get(id), s = spkOf(r), ev = evOf(r);
   const v = e ? e.v : r.v;
+  // 이벤트 칩은 누르면 그 이벤트의 대사를 순서대로 펼친다 — 자리가 여럿이면 목록부터
+  const evChip = ev?.length
+    ? `<span class="chip ev" onclick=evJump(${i}) title="이 대사가 속한 이벤트 보기">${esc(evName(ev[0]))}${ev.length>1?` 외 ${ev.length-1}곳`:''}</span>` : '';
   return `<div class="card ${e?'saved':''}" id=card${i}>
-    <span class=chip>${SEC_LABEL[r.sec]??('절'+r.sec)}</span>${r.map!=null?`<span class=chip>맵 ${r.map}</span>`:''}${s?`<span class=chip>${esc(s[0])} · ${esc(s[1])}</span>`:''}${!e&&S.applied.has(id)?'<span class=chip>반영됨</span>':''}
+    <span class=chip>${SEC_LABEL[r.sec]??('절'+r.sec)}</span>${r.map!=null?`<span class=chip>맵 ${r.map}${mapName(r.map)?' · '+esc(mapName(r.map)):''}</span>`:''}${evChip}${s?`<span class=chip>${esc(s[0])} · ${esc(s[1])}</span>`:''}${!e&&S.applied.has(id)?'<span class=chip>반영됨</span>':''}
     ${REPORT_FORM.id?`<button class=ghost id=rp${i} style="float:right" onclick=report(${i})
       ${canReport(id)?'':'disabled title="수정하거나 메모를 남긴 행만 제보할 수 있어요"'}>${ICON.flag} 제보</button>`:''}
     ${r.k?`<div class=es>${esc(r.k)}</div>`:''}

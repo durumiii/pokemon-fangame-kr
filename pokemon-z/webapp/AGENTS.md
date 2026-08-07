@@ -11,11 +11,12 @@ https://durumiii.github.io/z-kr-studio/ (Chrome/Edge 전용, 무설정 원칙 �
 | 파일 | 역할 |
 |---|---|
 | index.html | 마크업 + CSS 전부 인라인(fixgui.py 다크 테마 이식) |
-| app.js | 상태·화면·파일IO·빌드·공유·제보 전부 (~790줄) |
+| app.js | 상태·화면·파일IO·빌드·공유·제보 전부 (~1,000줄) |
 | mine.js | [내 수정] 화면만 분리 (~70줄) |
+| event.js | 이벤트 모아 보기 — 카드의 이벤트 칩·자리 목록·이벤트 화면 (~60줄) |
 | core.py | pyodide에서 도는 파이썬 — dat 파싱·값 교체·왕복 검증 |
 | rubywrite.py, vendor/rubymarshal/ | Ruby Marshal 직렬화(수정 금지 — repo 정본의 사본) |
-| speakers.json | 화자 조인표 축약본(생성물 — `translate/make_speakers.py`로 재생성) |
+| speakers.json | 화자 조인표 + 이벤트 자리 축약본(생성물 — `translate/make_speakers.py`로 재생성) |
 | tests/selfcheck.js | node 자체점검(DOM·FS·pyodide 목업 위 로직 검증) |
 | tests/test_core.py | pytest — 실물 korean.dat 대상(devbox에만 존재, 없으면 skip) |
 | publish.sh | 공개 repo(durumiii/z-kr-studio) rsync 배포 + Pages 빌드 명시 발주 |
@@ -33,7 +34,11 @@ https://durumiii.github.io/z-kr-studio/ (Chrome/Edge 전용, 무설정 원칙 �
 
 - 화면은 SPA 없이 `#out` innerHTML 통째 교체 하나로 돈다. 화면 종류:
   홈(renderHome)·검색 결과(card/more)·이력(showHist)·내 수정(showMine)·
-  바꾸기(replUI)·복원(restoreMenu)·찾아보기(browse). 상단 `#meta`가 상태 줄.
+  바꾸기(replUI)·복원(restoreMenu)·찾아보기(browse)·이벤트(openEvent/evJump).
+  상단 `#meta`가 상태 줄.
+- 이벤트 자리는 speakers.json의 `rows[원문][2]` = `[[이벤트, 페이지, 명령순번,
+  이벤트이름색인], ...]`. 한 대사가 여러 자리에 걸리면(맵 하나에서만 2,606개)
+  칩이 「이름 외 N곳」이 되고 자리 목록을 먼저 보여준다.
 - 상태는 전역 `S` — rows(전체 행)·edits(대기 수정 Map)·applied(반영됨 Map)·
   base(순정 .bak 해시 = localStorage 키 기준)·meta/sha. 메모는
   memoIndex()(localStorage memos:<base>). 이력은 hist:<base> append-only.
