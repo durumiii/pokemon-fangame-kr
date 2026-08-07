@@ -695,36 +695,42 @@ function replaceMenu(){
     </div>
     <div class=rowbar><button class=primary onclick=replacePreview()>미리보기</button>
       <span class=es>글자 그대로 찾아요(정규식 아님). 고른 행만 적용돼요.
-        찾을 문구를 비우면 원문으로만 찾아 카드로 보여줘요.</span></div>
+        찾을 문구를 비우면 원문이 기준이 되어 그 행들의 번역을 통째로 바꿔요.</span></div>
   </div><div id=replout></div>`;
 }
 
 function replacePreview(){
   const find = $('rfind').value, to = $('rto').value, src = $('rsrc')?.value.trim() ?? '';
   if (!find && !src){ toast('찾을 문구나 원문을 넣어주세요'); return; }
-  // 번역 쪽을 비우면 원문 검색 — 바꿀 게 없으니 그 행들을 고칠 수 있는 카드로 연다
-  if (!find) return srcSearch(src);
+  // 찾을 문구를 비우면 원문이 기준이 된다 — 그 원문을 가진 행의 번역을 통째로 바꿔 통일한다
+  // (같은 스페인어가 여러 자리에 서 있는데 번역이 제각각인 자리를 한 번에 맞추는 길)
+  const bySrc = !find;
+  if (bySrc && !to){ toast('바꿀 문구를 넣어주세요 — 원문 매칭 행의 번역이 이 값으로 통일돼요'); return; }
   REPL = []; OFF_SRC = [];
   let total = 0, offSrc = 0;
   for (const r of S.rows){
     const v = curV(r);
-    if (!v.includes(find)) continue;
+    if (!bySrc && !v.includes(find)) continue;
     // 원문 조건 — 번역 칸만 훑으면 「무사히」를 고치다 「갑주무사」까지 갈아엎는다.
     // 원문이 없는 절(k 없음)은 견줄 것이 없으니 조건이 걸리면 제외한다.
     if (src && !(r.k ?? '').includes(src)){
-      offSrc++;
-      if (OFF_SRC.length < OFF_CAP) OFF_SRC.push(r);
+      if (!bySrc){                       // 원문 기준일 땐 애초에 대상이 아니라 「제외」가 아니다
+        offSrc++;
+        if (OFF_SRC.length < OFF_CAP) OFF_SRC.push(r);
+      }
       continue;
     }
+    if (bySrc && v === to) continue;      // 이미 그 값인 행은 바꿀 것이 없다
     total++;
     if (REPL.length >= REPL_CAP) continue;
-    const parts = v.split(find), nv = parts.join(to);
+    const parts = bySrc ? [v] : v.split(find), nv = bySrc ? to : parts.join(to);
     // 치환이 색·이름 코드를 삼킨 행 — 적용은 할 수 있게 두되 기본 선택에서 뺀다
     const lost = (v.match(MARKUP)||[]).filter(t => !nv.includes(t));
     REPL.push({r, parts, nv, lost});
   }
-  $('meta').textContent = `${total}행 매칭` +
-    (src ? ` (원문 조건으로 ${offSrc}행 제외)` : '') +
+  $('meta').textContent = (bySrc ? `원문 「${src}」 — ${total}행 매칭 · 번역을 통째로 바꿔요`
+                                 : `${total}행 매칭`) +
+    (!bySrc && src ? ` (원문 조건으로 ${offSrc}행 제외)` : '') +
     (total > REPL_CAP ? ` — 앞 ${REPL_CAP}행만 보여줘요. 찾을 문구를 더 좁혀주세요` : '');
   // 빠진 행은 목록으로 — 조건이 너무 좁아 고쳐야 할 자리를 놓쳤는지 여기서 눈으로 본다
   const offCard = offSrc ? `<div class="card notecard">
@@ -741,17 +747,8 @@ function replacePreview(){
         <span class=chip>${SEC_LABEL[h.r.sec]??('절'+h.r.sec)}</span>${h.r.map!=null?`<span class=chip>맵 ${h.r.map}</span>`:''}
         ${h.lost.length?`<span class="st warn">색·이름 코드가 사라져요: ${esc(h.lost.join(' '))}</span>`:''}</label>
       ${src && h.r.k ? `<div class=es>${hl(h.r.k.split(src), src)}</div>` : ''}
-      <div class=es>${hl(h.parts, find)}</div>
-      <div class=nv>${hl(h.parts, to)}</div></div>`).join('') + offCard;
-}
-// 원문만으로 찾기 — 검색창의 `원문:` 태그와 같은 자리를 보되, 바꾸기 화면에서 곧장 쓴다
-function srcSearch(src){
-  HITS = S.rows.filter(r => (r.k ?? '').includes(src));
-  SHOWN = 0;
-  $('meta').textContent = `원문 「${src}」 — ${HITS.length}행` +
-    (HITS.length ? ' · 카드에서 바로 고칠 수 있어요' : '');
-  $('out').innerHTML = HITS.length ? '' : '<div class=empty>그 원문을 가진 행이 없습니다.</div>';
-  if (HITS.length) more();
+      <div class=es>${bySrc ? esc(h.parts[0]) : hl(h.parts, find)}</div>
+      <div class=nv>${bySrc ? esc(h.nv) : hl(h.parts, to)}</div></div>`).join('') + offCard;
 }
 
 // 모두 선택은 경고 행을 건드리지 않는다 — 코드가 깨지는 행은 하나씩 확인하고 켜야 한다

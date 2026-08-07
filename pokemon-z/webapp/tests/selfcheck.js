@@ -74,7 +74,7 @@ vm.runInContext(src + `
   parseQuery, rowMatch, search, goHome, tagValues,
   GENERAL_FORM, feedbackMenu, sendFeedback,
   setSpk: v => { SPK = v; MAPNAME = null; }, BROWSE_CAP,
-  applyEdit, replaceMenu, replacePreview, replaceApply, replAll, REPL_CAP, srcSearch,
+  applyEdit, replaceMenu, replacePreview, replaceApply, replAll, REPL_CAP,
   replHits: () => REPL,
   setHits: h => { HITS = h; }, hits: () => HITS, bootPy,
   resetBoot: () => { bootPromise = null; bootAnnounce = false; }};
@@ -566,23 +566,51 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   ctx.replAll(true); ctx.replaceApply();
   a.equal(ctx.S.edits.size, 1);
   a.equal(ctx.S.edits.get('0:1:1').v, '배지을 받았다');
-  // 찾을 문구를 비우면 원문으로만 찾아 고칠 수 있는 카드로 연다
-  el('rfind').value = ''; el('rsrc').value = 'medalla';
+  // 찾을 문구를 비우면 원문이 기준 — 그 원문을 가진 행의 번역을 통째로 바꾼다
+  ctx.S.rows = [
+    { sec: 0, map: 1, idx: 1, k: 'Exportar equipo', v: '장비 수출' },
+    { sec: 0, map: 2, idx: 5, k: 'Exportar equipo', v: '엔트리 내보내기' },   // 이미 그 값인 행
+    { sec: 0, map: 3, idx: 7, k: 'Exportar equipo\\c[2]', v: '\\c[2]장비 수출' },
+    { sec: 0, map: 4, idx: 9, k: 'Importar equipo', v: '장비 수입' },
+  ];
+  ctx.S.edits = new Map();
+  ctx.replaceMenu();
+  el('rfind').value = ''; el('rto').value = '엔트리 내보내기'; el('rsrc').value = 'Exportar equipo';
   ctx.replacePreview();
-  a.equal(ctx.hits().length, 1);
-  a.equal(ctx.hits()[0].k, 'la medalla');
-  a.ok(el('meta').textContent.includes('원문 「medalla」 — 1행'));
-  a.ok(el('out').innerHTML.includes('id=v0'));                        // 편집 카드가 뜬다
-  el('rsrc').value = '없는원문';
+  a.equal(ctx.replHits().length, 2);                                  // 이미 그 값인 행은 빠진다
+  a.deepEqual(ctx.replHits().map(h => h.nv), ['엔트리 내보내기', '엔트리 내보내기']);
+  a.ok(el('meta').textContent.includes('원문 「Exportar equipo」 — 2행 매칭'));
+  a.ok(el('meta').textContent.includes('통째로'));
+  a.ok(!el('meta').textContent.includes('제외'));                     // 대상이 아닌 행은 「제외」가 아니다
+  a.ok(!el('replout').innerHTML.includes('건너뛴'));
+  a.equal(ctx.replHits()[1].lost.length, 1);                          // 통째 교체는 색 코드를 삼킨다 → 경고
+  a.ok(el('replout').innerHTML.includes('<mark>Exportar equipo</mark>'));
+  el('rc0').checked = false; el('rc1').checked = false;               // 목업은 앞 절의 체크가 남는다
+  ctx.replAll(true);
+  a.equal(el('rc0').checked, true);
+  a.equal(el('rc1').checked, false);                                  // 경고 행은 [모두 선택]도 건너뛴다
+  ctx.replaceApply();
+  a.equal(ctx.S.edits.size, 1);
+  a.equal(ctx.S.edits.get('0:1:1').v, '엔트리 내보내기');
+  a.equal(ctx.S.edits.has('0:4:9'), false);                           // 다른 원문은 그대로
+
+  el('rto').value = '';                                               // 원문 기준인데 바꿀 값이 없으면 안 한다
   ctx.replacePreview();
-  a.ok(el('out').innerHTML.includes('그 원문을 가진 행이 없습니다'));
-  el('rsrc').value = '';                                              // 둘 다 비면 아무것도 안 한다
+  a.ok(el('toast').textContent.startsWith('바꿀 문구를 넣어주세요'));
+  el('rsrc').value = '';
   ctx.replacePreview();
   a.equal(el('toast').textContent, '찾을 문구나 원문을 넣어주세요');
 
-  el('rfind').value = '메달'; el('rsrc').value = '';                  // 조건을 비우면 전체 대상
+  ctx.S.rows = [                                                      // 앞 절의 행으로 되돌린다
+    { sec: 0, map: 1, idx: 1, k: 'la medalla', v: '메달을 받았다' },
+    { sec: 0, map: 1, idx: 2, k: 'el escudo', v: '메달 모양 방패' },
+    { sec: 23, idx: 9, v: '메달 보관함' },
+  ];
+  ctx.S.edits = new Map();
+  ctx.replaceMenu();
+  el('rfind').value = '메달'; el('rto').value = '배지'; el('rsrc').value = '';   // 조건을 비우면 전체 대상
   ctx.replacePreview();
-  a.equal(ctx.replHits().length, 2);                                  // 방금 고친 행은 '메달'이 없어 빠진다
+  a.equal(ctx.replHits().length, 3);                                  // 원문이 없는 절까지 다시 들어온다
   a.ok(!el('meta').textContent.includes('제외'));
   ctx.S.rows = [                                                      // 아래 묶음 시험이 쓰는 행으로 되돌린다
     { sec: 0, map: 1, idx: 1, k: 'a', v: '메달을 받았다' },
