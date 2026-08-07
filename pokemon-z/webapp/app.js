@@ -705,7 +705,6 @@ function replacePreview(){
   // 찾을 문구를 비우면 원문이 기준이 된다 — 그 원문을 가진 행의 번역을 통째로 바꿔 통일한다
   // (같은 스페인어가 여러 자리에 서 있는데 번역이 제각각인 자리를 한 번에 맞추는 길)
   const bySrc = !find;
-  if (bySrc && !to){ toast('바꿀 문구를 넣어주세요 — 원문 매칭 행의 번역이 이 값으로 통일돼요'); return; }
   REPL = []; OFF_SRC = [];
   let total = 0, offSrc = 0;
   for (const r of S.rows){
@@ -720,7 +719,6 @@ function replacePreview(){
       }
       continue;
     }
-    if (bySrc && v === to) continue;      // 이미 그 값인 행은 바꿀 것이 없다
     total++;
     if (REPL.length >= REPL_CAP) continue;
     const parts = bySrc ? [v] : v.split(find), nv = bySrc ? to : parts.join(to);

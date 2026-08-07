@@ -577,27 +577,28 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   ctx.replaceMenu();
   el('rfind').value = ''; el('rto').value = '엔트리 내보내기'; el('rsrc').value = 'Exportar equipo';
   ctx.replacePreview();
-  a.equal(ctx.replHits().length, 2);                                  // 이미 그 값인 행은 빠진다
-  a.deepEqual(ctx.replHits().map(h => h.nv), ['엔트리 내보내기', '엔트리 내보내기']);
-  a.ok(el('meta').textContent.includes('원문 「Exportar equipo」 — 2행 매칭'));
+  a.equal(ctx.replHits().length, 3);                                  // 원문이 걸린 행 전부가 미리보기에 선다
+  a.deepEqual(ctx.replHits().map(h => h.nv), ['엔트리 내보내기', '엔트리 내보내기', '엔트리 내보내기']);
+  a.ok(el('meta').textContent.includes('원문 「Exportar equipo」 — 3행 매칭'));
   a.ok(el('meta').textContent.includes('통째로'));
   a.ok(!el('meta').textContent.includes('제외'));                     // 대상이 아닌 행은 「제외」가 아니다
   a.ok(!el('replout').innerHTML.includes('건너뛴'));
-  a.equal(ctx.replHits()[1].lost.length, 1);                          // 통째 교체는 색 코드를 삼킨다 → 경고
+  a.equal(ctx.replHits()[2].lost.length, 1);                          // 통째 교체는 색 코드를 삼킨다 → 경고
   a.ok(el('replout').innerHTML.includes('<mark>Exportar equipo</mark>'));
-  el('rc0').checked = false; el('rc1').checked = false;               // 목업은 앞 절의 체크가 남는다
+  for (const i of [0, 1, 2]) el('rc'+i).checked = false;              // 목업은 앞 절의 체크가 남는다
   ctx.replAll(true);
-  a.equal(el('rc0').checked, true);
-  a.equal(el('rc1').checked, false);                                  // 경고 행은 [모두 선택]도 건너뛴다
+  a.deepEqual([0,1,2].map(i => el('rc'+i).checked), [true, true, false]);  // 경고 행은 [모두 선택]도 건너뛴다
   ctx.replaceApply();
-  a.equal(ctx.S.edits.size, 1);
+  a.equal(ctx.S.edits.size, 1);                                       // 이미 그 값인 행은 수정으로 잡히지 않는다
   a.equal(ctx.S.edits.get('0:1:1').v, '엔트리 내보내기');
   a.equal(ctx.S.edits.has('0:4:9'), false);                           // 다른 원문은 그대로
 
-  el('rto').value = '';                                               // 원문 기준인데 바꿀 값이 없으면 안 한다
+  // 바꿀 문구가 비어도 미리보기는 뜬다 — 한국어 기준과 같은 길(비우면 지우기)
+  el('rto').value = '';
   ctx.replacePreview();
-  a.ok(el('toast').textContent.startsWith('바꿀 문구를 넣어주세요'));
-  el('rsrc').value = '';
+  a.equal(ctx.replHits().length, 3);
+  a.deepEqual(ctx.replHits().map(h => h.nv), ['', '', '']);
+  el('rfind').value = ''; el('rsrc').value = '';
   ctx.replacePreview();
   a.equal(el('toast').textContent, '찾을 문구나 원문을 넣어주세요');
 
