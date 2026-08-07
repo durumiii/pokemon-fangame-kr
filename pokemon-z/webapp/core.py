@@ -29,8 +29,45 @@ def _inner(oh):
     return load(io.BytesIO(bytes(oh._private_data)))
 
 
+def _raw(v):
+    """마샬 문자열의 바이트.
+
+    딱지가 없으면 판독기가 `bytes`를, 붙어 있으면 `RubyString`(문자열은 `.text`에
+    들어 있고 `bytes()`로 감쌀 수 없는 객체)을 준다. 딱지판과 안 붙은 판을 같은
+    코드로 다뤄야 해서 여기서 한 줄로 모은다.
+    """
+    if isinstance(v, str):
+        return v.encode("utf-8")
+    text = getattr(v, "text", None)          # rubymarshal의 RubyString
+    return text.encode("utf-8") if isinstance(text, str) else bytes(v)
+
+
 def _dec(b):
-    return bytes(b).decode("utf-8", "replace")
+    return _raw(b).decode("utf-8", "replace")
+
+
+def tag_utf8(o):
+    """모든 문자열에 UTF-8 인코딩 딱지를 붙인다(마샬 ivar `:E`).
+
+    딱지판을 열었으면 저장할 때도 딱지를 붙여야 한다 — 고친 줄만 딱지가 빠지면
+    루비 1.9+ 실행기가 그 줄에서만 인코딩이 어긋난다. build.py의 같은 이름 함수와
+    한 벌이다.
+    """
+    if isinstance(o, (bytes, bytearray)):
+        return bytes(o).decode("utf-8", "replace")
+    if isinstance(o, list):
+        return [tag_utf8(x) for x in o]
+    if hasattr(o, "_private_data"):
+        o._private_data = rubywrite.dumps(tag_utf8(_inner(o)))
+    return o
+
+
+def _looks_tagged(d):
+    """이 dat의 문자열에 인코딩 딱지가 붙어 있나 — 첫 낱 문자열 하나로 판별한다."""
+    for obj in d:
+        if isinstance(obj, list) and obj and not hasattr(obj[0], "_private_data"):
+            return not isinstance(obj[0], (bytes, bytearray))
+    return False
 
 
 def load_dat(dat_bytes, msg_bytes=None):
@@ -49,18 +86,19 @@ def load_dat(dat_bytes, msg_bytes=None):
             ref = es[sec] if sec < len(es) and isinstance(es[sec], list) else []
             for i, v in enumerate(obj):
                 row = {"sec": sec, "idx": i, "v": _dec(v)}
-                if i < len(ref) and bytes(ref[i]) != bytes(v):
+                if i < len(ref) and _raw(ref[i]) != _raw(v):
                     row["k"] = _dec(ref[i])
                 rows.append(row)
         elif hasattr(obj, "_private_data"):
             keys, values = _inner(obj)
             for j in range(len(keys)):
-                if sec == META_SEC and bytes(keys[j]) == META_KEY:
+                if sec == META_SEC and _raw(keys[j]) == META_KEY:
                     meta = _dec(values[j])
                     continue
                 rows.append({"sec": sec, "idx": j,
                              "k": _dec(keys[j]), "v": _dec(values[j])})
     _state["d"] = d
+    _state["tagged"] = _looks_tagged(d)
     return json.dumps({"meta": meta,
                        "sha": hashlib.sha256(bytes(dat_bytes)).hexdigest()[:12],
                        "rows": rows}, ensure_ascii=False)
@@ -94,6 +132,8 @@ def build_dat(edits_json):
             values[j] = e["v"].encode("utf-8")
         oh._private_data = rubywrite.dumps([keys, values])
 
+    if _state.get("tagged"):
+        d = tag_utf8(d)          # 고친 줄만 딱지가 빠지지 않게, 저장 직전에 전체를 맞춘다
     out = rubywrite.dumps(d)
     r = load(io.BytesIO(out))
     if len(r) != len(d):
