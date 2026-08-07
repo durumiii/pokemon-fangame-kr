@@ -6372,13 +6372,13 @@
 {"k": "¡{1} está sangrando, recibirá más golpes críticos!", "v": "{1}\\j[이,가] 피를 흘리고 있다. 급소를 더 자주 맞게 된다!"}
 {"k": "¡{1} curó su Hemorragia!", "v": "{1}의 출혈이 멎었다!"}
 {"k": "{1} ya tiene estado Hemorragia.", "v": "{1}\\j[은,는] 이미 출혈 상태다."}
-{"k": "¡{1} sufre Hemorragia!", "v": "{1}\\j[은,는] 출혈 상태다!"}
+{"k": "¡{1} sufre Hemorragia!", "v": "{1}\\j[은,는] 출혈 상태가 되었다!"}
 {"k": "¡{2} de {1} ha infligido estado Hemorragia a {3}!", "v": "{1}의 {2}\\j[이,가] {3}\\j[을,를] 출혈 상태로 만들었다!"}
 {"k": "Estado: Hemorragia", "v": "상태: 출혈"}
 {"k": "{1} se curó de la Hemorragia.", "v": "{1}의 출혈이 멎었다."}
-{"k": "¡{2} de {1} desgarró a {3}!", "v": "{1}의 {2}\\j[이,가] {3}\\j[을,를] 찢었다!"}
-{"k": "¡{1} empieza a sangrar por la {2}!", "v": "{1}\\j[이,가] {2} 때문에 출혈을 일으켰다!"}
-{"k": "¡{1} desgarró a {2}!", "v": "{1}\\j[은,는] {2}\\j[을,를] 찢었다!"}
+{"k": "¡{2} de {1} desgarró a {3}!", "v": "{1}의 {2} 때문에 {3}\\j[은,는] 출혈 상태가 되었다!"}
+{"k": "¡{1} empieza a sangrar por la {2}!", "v": "{1}\\j[은,는] {2} 때문에 출혈 상태가 되었다!"}
+{"k": "¡{1} desgarró a {2}!", "v": "{1}의 공격에 {2}\\j[은,는] 출혈 상태가 되었다!"}
 {"k": "¡Solo puedes capturar Pokémon de tipo #{allowed_type}!", "v": "#{allowed_type} 타입 포켓몬만 잡을 수 있다!"}
 {"k": "{1} conociendo {2}", "v": "{1} conociendo {2}"}
 {"k": "Empiezas a sentir un sueño extraño...", "v": "묘한 졸음이 밀려온다..."}
