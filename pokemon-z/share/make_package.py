@@ -280,7 +280,9 @@ def main():
     label = FONT_VARIANTS[font][0]
     asset_names = {                       # 릴리스 자산 파일명 — v5.2의 규약을 잇는다
         "runa": f"pokemon-z-kr-patch-v5.2.1_{font}",
-        "runa-debug": "pokemon-z-kr-patch-v5.2.1_debug-add",
+        # 릴리스 화면은 자산을 이름순으로 늘어놓는다 — 디버그가 글꼴 셋 아래 서도록
+        # `zz-`를 붙인다(지문 파일이 `zz-SHA256SUMS`인 것과 같은 규약).
+        "runa-debug": "pokemon-z-kr-patch-v5.2.1_zz-debug-add",
     }
     default_names = {
         "full": "포켓몬Z 한글패치 v5.2",   # 기본판 — 디버그 없는 통합
