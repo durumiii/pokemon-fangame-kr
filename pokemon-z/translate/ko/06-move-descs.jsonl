@@ -408,7 +408,7 @@
 {"i": 407, "v": "잠든 상태에서 자신이 배운 기술 중 하나를 무작위로 쓴다.", "es": "Mientras duerme, usa uno de sus movimientos elegido al azar."}
 {"i": 408, "v": "연기나 먹물을 뿜어 상대의 명중률을 떨어뜨린다.", "es": "Baja la Precisión del objetivo con una nube de humo o tinta."}
 {"i": 409, "v": "최대 HP의 절반을 회복한다. 배틀 밖에서는 HP의 일부를 동료에게 나누어 준다.", "es": "Restaura la mitad de los PS máximos del usuario. Fuera de combate se usa para transferir parte de sus PS a un aliado."}
-{"i": 410, "v": "아무 효과도 없다. 튀어오를 뿐이다.", "es": "No tiene ningún efecto. Solo salpica."}
+{"i": 410, "v": "공격도 하지 않고 팔딱팔딱 튈 뿐 아무 일도 일어나지 않는다...", "es": "No tiene ningún efecto. Solo salpica."}
 {"i": 411, "v": "에너지를 모아 방어와 특수방어를 올린다. 최대 세 번까지 쓸 수 있다.", "es": "Acumula energía y sube la Defensa y la Defensa Especial. Puede utilizarse hasta tres veces."}
 {"i": 412, "v": "자신의 HP를 조금 써서 미끼가 될 대타를 만든다.", "es": "Utiliza parte de los PS propios para crear un sustituto que actúa como señuelo."}
 {"i": 413, "v": "기묘한 음파. 상대를 혼란에 빠뜨릴 수 있다.", "es": "Raras ondas sónicas que pueden confundir al objetivo."}
