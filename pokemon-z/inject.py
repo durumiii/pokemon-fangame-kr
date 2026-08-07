@@ -56,7 +56,7 @@ BASE = find_mod("한글패치 코어") / "Data" / "Scripts.rxdata"
 
 
 def load_sections(path: Path) -> list:
-    from rubymarshal.reader import load
+    from datread import load
 
     with open(path, "rb") as fh:
         return load(fh)
@@ -130,7 +130,7 @@ def main() -> int:
 
     # 쓰기 전에 되읽어 왕복을 확인한다
     import io
-    from rubymarshal.reader import load as rload
+    from datread import load as rload
 
     again = rload(io.BytesIO(payload))
     assert len(again) == len(result), "왕복에서 섹션 수가 달라졌다"

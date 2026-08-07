@@ -12,6 +12,10 @@
 
 초기 1회 + 재동기화용. 평소 편집은 ko/ 파일에 하고 build.py로 다시 만든다.
 
+⚠ **이 도구는 dat를 통째로 정본에 덮는다.** 회수할 dat가 마지막 빌드 시점에 멈춰 있으면
+그 뒤 정본이 받은 수정이 옛 값으로 돌아간다(2026-08-08 실측 282행). dat에 손으로 넣은
+수정만 건지려면 `harvest.py`를 쓴다 — 기준선·dat·정본 셋을 견주어 손댄 자리만 가져온다.
+
 usage: uv run export.py
 """
 import io
@@ -20,7 +24,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "vendor"))
-from rubymarshal.reader import load  # noqa: E402
+from datread import load  # noqa: E402  (딱지를 떼 옛 도구가 그대로 읽는다)
 
 STORE = Path("/mnt/d/GameVault/mods/Pokemon Z Fangame/한글패치 코어/Data/korean.dat")
 MESSAGES = Path("/mnt/d/Game/Pokemon Z/V2.18/Data/messages.dat")

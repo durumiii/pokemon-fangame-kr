@@ -42,7 +42,7 @@ from pathlib import Path
 
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE.parent / "vendor"))
-from rubymarshal.reader import load  # noqa: E402
+from datread import load  # noqa: E402  (딱지를 떼 옛 도구가 그대로 읽는다)
 
 GAME = Path("/mnt/d/Game/Pokemon Z/V2.18/Data")
 OUT = HERE.parent / "docs" / "research" / "speaker-attr.jsonl.gz"

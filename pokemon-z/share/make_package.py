@@ -208,7 +208,7 @@ def _settle_injections(scripts_path: Path):
     또 얹지 못하게 `conflicts`로 막는다.
     """
     sys.path.insert(0, str(HERE.parent / "vendor"))
-    from rubymarshal.reader import load                       # noqa: E402
+    from datread import load                                  # noqa: E402
     from fanlib import rubywrite                              # noqa: E402
 
     with open(scripts_path, "rb") as fh:

@@ -22,7 +22,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 import rubywrite  # noqa: E402  (동봉본)
 
 try:
-    from rubymarshal.reader import load
+    from datread import load
 except ImportError:
     sys.exit("rubymarshal 패키지가 필요합니다:  pip install rubymarshal")
 

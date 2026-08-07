@@ -78,7 +78,7 @@ PLACEHOLDER = re.compile(r"\{\d+[^}]*\}|\\[A-Za-z]+\[[^\]]*\]|\\PN|<[^>]+>")
 
 
 def scripts_text() -> tuple[str, str]:
-    from rubymarshal.reader import load
+    from datread import load
     texts = []
     for fname in ("Scripts.rxdata", "EditorScripts.rxdata"):
         arr = load(io.BytesIO((GAME / fname).read_bytes()))

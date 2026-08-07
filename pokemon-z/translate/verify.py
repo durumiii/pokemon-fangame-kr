@@ -30,7 +30,7 @@ from pathlib import Path
 
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE.parent / "vendor"))
-from rubymarshal.reader import load  # noqa: E402
+from datread import load  # noqa: E402  (딱지를 떼 옛 도구가 그대로 읽는다)
 
 STORE_DAT = Path("/mnt/d/GameVault/mods/Pokemon Z Fangame/한글패치 코어/Data/korean.dat")
 GAME_RX = Path("/mnt/d/Game/Pokemon Z/V2.18/Data/Scripts.rxdata")

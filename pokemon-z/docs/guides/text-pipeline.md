@@ -27,7 +27,11 @@ PKHeX 산 — verify가 전수 대조. 이름만 같은 별개 대상은 canon/e
 **(맵, 원문)마다 한 줄**이다.
 
 - **정본을 고치는 도구만 쓴다** — dat를 직접 문지르는 수정은 빌드 한 번에 지워진다.
-  부득이 dat를 직접 고쳤으면 직후 `export.py`로 재동기화.
+  부득이 dat를 직접 고쳤으면(웹 스튜디오 등) **`harvest.py`로 회수한다**:
+  `uv run translate/harvest.py` → 미리보기, `--write` → 반영. 기준선(그 dat를 만든 배포본)·
+  dat·정본 셋을 견주어 **dat에서만 고친 자리**를 가져오고, 정본이 그 뒤 따로 움직인 자리는
+  충돌로 알린다. ⚠ **`export.py`로 하지 마라** — 통째 덮기라 정본이 옛 값으로 돌아간다
+  (2026-08-08 실측 282행). export는 절 구조를 처음 만들거나 `*.add.jsonl`을 접어 넣는 자리다.
 - **`*.add.jsonl`로 새 키를 얹었으면 빌드 뒤 `export.py`로 base jsonl에 접어 넣어라** —
   안 그러면 verify의 절23 미러 대조가 어긋난다.
 - 수정 후 `uv run translate/verify.py`, 재배포 전 `--strict`.

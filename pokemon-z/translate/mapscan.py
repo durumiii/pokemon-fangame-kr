@@ -21,7 +21,7 @@ import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
-from rubymarshal.reader import load
+from datread import load  # 딱지를 떼 옛 도구가 그대로 읽는다
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_GAME = "/mnt/d/Game/Pokemon Z/V2.18"
