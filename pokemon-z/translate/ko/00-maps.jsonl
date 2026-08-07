@@ -78,7 +78,7 @@
 {"k": "¿Podrías escribir el nombre de tu personaje?", "v": "당신의 이름을 적어주시겠어요?"}
 {"k": "Selecciona el modo de juego.", "v": "게임 모드를 선택하세요."}
 {"k": "¿Eliges el <b>Modo Normal</b>? No podrás cambiar la dificultad una vez elegido.", "v": "<b>일반 모드</b>를 선택하시겠습니까? 한번 선택하면 난이도를 변경할 수 없습니다."}
-{"k": "<b>AVISO:</b> El <b>Modo Heroico</b> fuerza a jugar en el modo de combate \"Fijo\" sin posibilidad de cambiarlo. También bloquea el uso de objetos curativos para el jugador durante todos los combates, pero no para los entrenadores rivales.", "v": "<b>알림:</b> <b>영웅 모드</b>에서는 배틀 모드가 “고정”으로 설정되며 변경할 수 없습니다. 또한 모든 배틀 동안 플레이어는 회복 도구를 사용할 수 없지만, 상대 트레이너는 회복 도구를 사용할 수 있습니다."}
+{"k": "<b>AVISO:</b> El <b>Modo Heroico</b> fuerza a jugar en el modo de combate \"Fijo\" sin posibilidad de cambiarlo. También bloquea el uso de objetos curativos para el jugador durante todos los combates, pero no para los entrenadores rivales.", "v": "<b>알림:</b> <b>영웅 모드</b>에서는 배틀 모드가 “토너먼트 방식”으로 설정되며 변경할 수 없습니다. 또한 모든 배틀 동안 플레이어는 회복 도구를 사용할 수 없지만, 상대 트레이너는 회복 도구를 사용할 수 있습니다."}
 {"k": "Además, los Pokémon de entrenadores rivales siempre tendrán 31 IVs en todas sus estadísticas y más EVs que en el Modo Normal.", "v": "아울러 상대 트레이너 포켓몬은 모든 능력치의 개체값(IV)이 항상 31이며, 일반 모드보다 노력치(EV)가 더 높습니다."}
 {"k": "(NOTA: Los EVs de los Pokémon rivales siguen la fórmula de [nivel del rival*1.5] EVs en cada estadística en el Modo Normal y [nivel del rival*2.5] EVs en cada estadística en el Modo Heroico, hasta un tope de 510).", "v": "(참고: 상대 포켓몬의 노력치(EV)는 각 능력치마다 일반 모드에서 「상대 레벨*1.5」, 영웅 모드에서 「상대 레벨*2.5」 공식으로 적용되며, 최대 510까지 적용됩니다)."}
 {"k": "¿Quieres activar este modo aún así?", "v": "그래도 이 모드를 선택하시겠습니까?"}
