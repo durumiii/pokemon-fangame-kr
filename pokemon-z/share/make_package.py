@@ -54,6 +54,12 @@ DIST = HERE / "dist"
 RUNA_MOD = STORE / "Pokemon Z Fangame" / "한글패치 통합-Runa"
 RUNA_INJECT = ["UI Text KR", "DPPT Font"]
 RUNA_ASSET_MODS = ["Z-GUI"]                       # 파일만 얹는 모드 — 번역 자산 뒤에 덮는다
+# 원본 배포판의 실행 설정을 한 판만 함께 싣는다. v5.1·v5.2가 넣었던 `fontSub`(글꼴 이름
+# 14종을 Galmuri11로 꺾는 표)를 걷어 내려는 것 — v5.2.1부터는 글꼴 파일이 그 이름을 직접
+# 들기 때문에 표가 남아 있으면 새 글꼴이 옛 Galmuri11로 되돌아간다. 원본과 우리 옛 판의
+# 차이는 그 표와 기본값과 같은 smoothScaling 한 줄뿐이라, 원본을 그대로 덮어도 잃는 설정이
+# 없다(2026-08-07 실측). ⚠ 옛 판에서 올라오는 사람이 한 바퀴 지나면 **다음 판에서 뺀다**.
+VANILLA_MKXP = HERE / "vanilla" / "mkxp.json"
 # 글꼴 갈래 — 이름표, 마스터 파일, 안내문에 쓸 한 줄.
 FONT_VARIANTS = {
     "dppt": ("DPPt", "dppt-kr.ttf", "DPPt 원판 한글"),
@@ -258,6 +264,11 @@ def _bundle_extras(stage: Path, font: str):
     for fname in keep:
         shutil.copy2(runa / "fonts" / "licenses" / fname, stage / "Fonts" / fname)
     print(f"글꼴 라이선스 {len(keep)}장 동봉")
+
+    if not VANILLA_MKXP.exists():
+        sys.exit(f"원본 실행 설정이 없어요: {VANILLA_MKXP}")
+    shutil.copy2(VANILLA_MKXP, stage / "mkxp.json")
+    print("원본 mkxp.json 동봉 — 옛 판의 fontSub를 걷는다(다음 판에서 뺄 것)")
 
 
 def _run_patch_debug(scripts_path: Path):
