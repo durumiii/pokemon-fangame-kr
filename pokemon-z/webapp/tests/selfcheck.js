@@ -1,7 +1,7 @@
 // app.js 순수 로직 자체점검 — 브라우저 없이: node webapp/tests/selfcheck.js
 const fs = require('fs'), vm = require('vm'), a = require('assert'), path = require('path');
-// 브라우저와 같은 순서로 잇는다 — mine.js·event.js는 app.js의 전역을 그대로 쓴다
-const src = ['app.js', 'mine.js', 'event.js']
+// 브라우저와 같은 순서로 잇는다 — mine.js·hist.js·event.js는 app.js의 전역을 그대로 쓴다
+const src = ['app.js', 'mine.js', 'hist.js', 'event.js']
   .map(f => fs.readFileSync(path.join(__dirname, '..', f), 'utf8')).join('\n');
 const els = {};
 const el = id => els[id] ??= { value: '', textContent: '', className: '', dataset: {},
@@ -65,7 +65,7 @@ vm.runInContext(src + `
   doRestore, reloadAfterRestore, batchReport, canReport, card,
   memoIndex, renderHome, updateDirty, FIELD_CAP, memoDel, persistMemos,
   showMine, mineSave, mineCancel, mineMemoDel, reporterId,
-  editOps, undoOp, opBegin, opEnd, MINE_OPS, ops: () => OPS,
+  editOps, undoOp, opBegin, opEnd, opCard, HIST_OPS, ops: () => OPS,
   clearMemos: () => { MEMOS = null; },
   markAllSent, sentIndex, clearSent: () => { SENT = null; },
   loadSpeakers, fillBrowse, doBrowse, openGroup, browseGroups, spkOf, mapName,
@@ -562,8 +562,9 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   a.ok(ops[1].key.startsWith('bulk-'));                               // op 표로 묶인다(시각 창 폴백 아님)
 
   // 되돌리기: 그 동작 전 값으로 돌아가고, 되돌린 것도 한 묶음으로 이력에 남는다
-  ctx.showMine();
+  ctx.showHist();
   a.ok(el('out').innerHTML.includes('일괄 바꾸기') && el('out').innerHTML.includes('3행'));
+  a.ok(el('meta').textContent.includes('동작 2개'));
   ctx.undoOp(1);
   a.equal(ctx.S.edits.has('0:1:1'), false);                           // 원문으로 돌아가 대기에서 빠지고
   a.equal(ctx.S.edits.get('0:1:4').v, '낱개로 고친 행');               // 딴 동작은 그대로
@@ -579,7 +580,7 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   ctx.replacePreview(); ctx.replAll(true); ctx.replaceApply();
   ctx.setHits([ctx.S.rows[0]]);
   el('v0').value = '나중에 손으로 고친 값'; ctx.save(0);
-  ctx.showMine();                                                     // 버튼은 이 화면이 그린 목록의 자리로 부른다
+  ctx.showHist();                                                     // 버튼은 이 화면이 그린 목록의 자리로 부른다
   ctx.undoOp(ctx.ops().findIndex(o => o.kind === 'bulk'));
   a.equal(ctx.S.edits.get('0:1:1').v, '나중에 손으로 고친 값');        // 남의 고침은 보존
   a.ok(el('toast').textContent.includes('1행은 그 뒤에 다시 고쳐져'));
@@ -592,6 +593,14 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   ]));
   ops = ctx.editOps();
   a.deepEqual(ops.map(o => o.evs.length), [1, 2]);                     // 30분 뒤 것은 딴 묶음
+
+  // 수정이 아닌 이벤트는 묶이지 않고 제 차례에 그대로 선다 — 묶음도 그 자리에서 끊긴다
+  ctx.hist({type:'build', n:3});
+  ctx.hist({type:'edit', rid:'0:1:4', k:'d', old:'x', new:'y', via:'bulk'});
+  ops = ctx.editOps();
+  a.deepEqual(ops.map(o => o.kind), ['bulk', 'ev', 'bulk', 'bulk']);
+  ctx.showHist();
+  a.ok(el('out').innerHTML.includes('빌드') && el('out').innerHTML.includes('3건 반영'));
 
   // ─ 찾아보기 ─
   // speakers.json이 없을 때: 화자 옵션은 아예 안 뜨고 맵별·분류별만 남는다

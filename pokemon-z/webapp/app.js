@@ -780,24 +780,6 @@ function memo(i){
   updateDirty();   // 메모만 남겨도 제보할 거리가 생긴다
   toast('메모를 이력에 남겼어요 — 빌드에는 들어가지 않아요');
 }
-const HIST_LABEL = {edit:'수정', memo:'메모', 'memo-del':'메모 삭제',
-  build:'빌드', restore:'복원', import:'가져오기'};
-function histBody(e){
-  if (e.type === 'edit') return `<div class=es>${esc(e.old)}</div><div>→ ${esc(e.new)}</div>`;
-  if (e.type === 'memo' || e.type === 'memo-del') return `<div>${esc(e.text)}</div>`;
-  if (e.type === 'build') return `<div>${e.n}건 반영</div>`;
-  if (e.type === 'import') return `<div>${e.n}건 병합</div>`;
-  if (e.type === 'restore') return `<div>${esc(e.src)}</div>`;
-  return '';
-}
-function showHist(){
-  const all = histAll();
-  $('meta').textContent = `이력 ${all.length}건 (순정 기준 ${S.base})`;
-  $('out').innerHTML = all.length ? [...all].reverse().map(e=>`<div class=card>
-    <span class=chip>${new Date(e.t).toLocaleString('ko-KR')}</span><span class=chip>${HIST_LABEL[e.type] ?? e.type}</span>
-    ${e.k?`<div class=es>${esc(e.k)}</div>`:''}${histBody(e)}</div>`).join('')
-    : '<div class=empty>아직 이력이 없어요 — 수정·메모·빌드가 여기에 쌓여요.</div>';
-}
 function updateDirty(){
   const d = $('dirty'), n = S.edits.size;
   d.style.display = n ? 'inline-block' : 'none';
