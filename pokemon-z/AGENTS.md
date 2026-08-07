@@ -24,6 +24,9 @@
 - **조사 첫 수는 `uv run translate/probe.py "문구"`**, 수정 후 `uv run translate/verify.py`,
   재배포 전 `--strict`.
 - **정본을 고치는 도구만 쓴다** — dat를 직접 문지르는 수정은 빌드 한 번에 지워진다.
+  웹 스튜디오로 dat를 고쳤으면 `uv run translate/harvest.py`(미리보기) → `--write`로
+  정본에 회수하고 `build.py`로 다시 내려보낸다. ⚠ 회수를 `export.py`로 하지 마라 —
+  통째 덮기라 정본이 옛 값으로 돌아간다.
 - **유지자 판정을 반영하는 커밋에는 꼬리표를 단다** — 마지막 줄에 `Edit-Source: human` ·
   `batch` · `bulk-term`. 문장 통째 재작성은 사람과 모델이 텍스트로 구분되지 않으므로
   그때 기록하지 않으면 복원할 수 없다.

@@ -11,6 +11,18 @@ SA `z-sheet@golden-tide-361608.iam.gserviceaccount.com` impersonation(키 없음
 - 제출 시각은 플레이 시각이 아니다.
 - 유지자 본인의 제보자 해시: `u:911f0bab` · `u:8e2a930c`(기기·브라우저마다 늘어난다).
 
+## 제보를 정본에 넣는 절차
+
+1. `uv run tools/sheet.py archive <탭> --yes` — 보관 jsonl에 덧붙고 시트가 비워진다.
+2. 보관분을 자리·원문으로 정본과 대조한다. **자리 해석은 절마다 다르다** — 맵 대사는
+   `맵:블록안순번`(0-based), 절23은 0-based 줄, 그 밖 목록 절은 `i` 필드 값.
+3. 같은 자리에 제안이 여럿이면 **늦게 낸 것**을 택한다(스튜디오에서 여러 번 고쳐 보낸 자리).
+4. 반영 커밋에는 `Edit-Source: human` 꼬리표.
+
+⚠ **제안이 자리와 안 맞아 보이면 멈추고 물어라.** 원문 기준 일괄 바꾸기는 한 번에 수십
+자리를 갈므로 자리를 잘못 짚으면 그만큼 번진다(2026-08-08: `¿Y quién no lo haría?`에
+「밸브를 돌렸다!」가 와서 2자리를 남겨 두고 확인했다).
+
 ## 웹 수정 스튜디오 — `webapp/`
 
 https://durumiii.github.io/z-kr-studio/ — 브라우저에서 korean.dat를 검색·수정·빌드하는
@@ -20,5 +32,16 @@ https://durumiii.github.io/z-kr-studio/ — 브라우저에서 korean.dat를 검
 
 - 재배포는 `webapp/publish.sh` — **Pages 켜기를 빌드 발주보다 먼저**(통째 404 이력).
 - 화자 조인표 축약본은 `translate/make_speakers.py`가 speakers.json으로 생성 —
-  조인표 갱신 시 재생성 후 재배포.
+  조인표·귀속표 갱신 시 재생성 후 재배포(이벤트 자리도 이 파일에 실린다).
 - 검증은 `webapp/tests/`(pytest 실물 dat + node selfcheck). 스펙: `docs/superpowers/`(repo 루트).
+
+**[빌드]가 하는 일** — 고른 폴더의 `Data/korean.dat` **하나만** 바꾼다. 직전본을
+`korean.dat.prev`로 남기고(순정 원본은 폴더를 처음 열 때 `.bak`으로 1회 보존), 원본이
+딱지판이면 저장 직전에 전체 딱지를 다시 맞춘 뒤 왕복 검증을 거쳐 쓴다.
+⚠ **repo 정본은 건드리지 않는다** — 모드를 다시 깔거나 조립하면 사라지므로
+`translate/harvest.py`로 회수해야 남는다(→ [text-pipeline](text-pipeline.md)).
+
+**화면 갈래**(2026-08-08 기준): 검색 결과 카드의 이벤트 칩 → 그 이벤트-페이지 대사를
+명령 순서대로(자리가 여럿이면 목록 먼저) · [일괄 바꾸기]는 번역 기준 / 원문 조건 /
+**원문 기준**(찾을 문구를 비우면 그 원문의 번역을 통째로 갈아 끼운다) 세 갈래 ·
+[이력]은 동작 묶음으로 서고 묶음째 되돌린다.
