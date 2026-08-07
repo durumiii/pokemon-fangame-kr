@@ -37,6 +37,9 @@ https://durumiii.github.io/z-kr-studio/ (Chrome/Edge 전용, 무설정 원칙 �
   홈(renderHome)·검색 결과(card/more)·이력(showHist)·내 수정(showMine)·
   바꾸기(replUI)·복원(restoreMenu)·찾아보기(browse)·이벤트(openEvent/evJump).
   상단 `#meta`가 상태 줄.
+- 일괄 바꾸기는 번역 칸에서 찾지만 **원문 조건**(`#rsrc`)을 걸 수 있다 — 스페인어
+  원문에 그 말이 없는 행은 빼고, 뺀 행을 목록으로 보여준다(개수만 알리면 조건이
+  너무 좁아 놓친 자리를 확인할 길이 없다).
 - 되돌리기는 [이력] 화면에 산다 — 수정 이벤트에 `op`(동작 표)를 달아 묶고, 그 표가
   없는 옛 이력은 같은 갈래가 잇달아 온 5초 창으로 묶는다. 동작을 만드는 쪽이
   `opBegin('bulk')`/`opEnd()`로 감싼다. 되돌릴 때 **그 뒤에 다시 고쳐진 행은

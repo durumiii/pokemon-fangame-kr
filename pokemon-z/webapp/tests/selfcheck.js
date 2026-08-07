@@ -547,6 +547,38 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   ctx.replaceApply();
   a.equal(ctx.S.edits.size, 0);                                       // 원문과 같아지면 수정 해제
 
+  // 원문 조건: 번역에 걸려도 스페인어 원문에 그 말이 없으면 뺀다(「무사히」/「갑주무사」 사고 자리)
+  ctx.S.rows = [
+    { sec: 0, map: 1, idx: 1, k: 'la medalla', v: '메달을 받았다' },
+    { sec: 0, map: 1, idx: 2, k: 'el escudo', v: '메달 모양 방패' },   // 번역에만 '메달'
+    { sec: 23, idx: 9, v: '메달 보관함' },                             // 원문이 없는 절
+  ];
+  ctx.S.edits = new Map();
+  ctx.replaceMenu();
+  el('rfind').value = '메달'; el('rto').value = '배지'; el('rsrc').value = 'medalla';
+  ctx.replacePreview();
+  a.equal(ctx.replHits().length, 1);
+  a.equal(ctx.replHits()[0].r.idx, 1);
+  a.ok(el('meta').textContent.includes('원문 조건으로 2행 제외'));
+  a.ok(el('replout').innerHTML.includes('건너뛴 2행'));                // 빠진 행은 목록으로 보여준다
+  a.ok(el('replout').innerHTML.includes('el escudo'));
+  a.ok(el('replout').innerHTML.includes('<mark>medalla</mark>'));      // 매칭 카드엔 원문도 함께
+  ctx.replAll(true); ctx.replaceApply();
+  a.equal(ctx.S.edits.size, 1);
+  a.equal(ctx.S.edits.get('0:1:1').v, '배지을 받았다');
+  el('rsrc').value = '';                                              // 조건을 비우면 전체 대상
+  ctx.replacePreview();
+  a.equal(ctx.replHits().length, 2);                                  // 방금 고친 행은 '메달'이 없어 빠진다
+  a.ok(!el('meta').textContent.includes('제외'));
+  ctx.S.rows = [                                                      // 아래 묶음 시험이 쓰는 행으로 되돌린다
+    { sec: 0, map: 1, idx: 1, k: 'a', v: '메달을 받았다' },
+    { sec: 0, map: 1, idx: 2, k: 'b', v: '<b>메달</b> 진열장' },
+    { sec: 0, map: 1, idx: 3, k: 'c', v: '\\c[2]메달\\PN' },
+    { sec: 0, map: 1, idx: 4, k: 'd', v: '관계없는 행' },
+  ];
+  ctx.S.edits = new Map();
+  ctx.replaceMenu();
+
   // ─ 동작 묶음과 되돌리기 ─
   // 일괄 바꾸기 한 번 = 한 묶음. 낱개 저장은 낱개대로 선다.
   ctx.localStorage.removeItem('hist:replbase');

@@ -675,6 +675,8 @@ function migrateEdits(){
 // 「메달→배지」 일괄 치환이 '배지을' 같은 조사 오류를 21곳 남긴 적이 있다 —
 // 모두 바꾸기가 아니라 행별로 결과를 보고 고르는 것이 이 화면의 요점이다
 let REPL = []; const REPL_CAP = 500;
+// 원문 조건에 걸려 빠진 행 — 개수만 알리면 무엇이 빠졌는지 확인할 길이 없다
+let OFF_SRC = []; const OFF_CAP = 20;
 // 검색·치환은 지금 값(미빌드 수정 반영) 기준. 원문 CR은 저장값과 같은 LF 모양으로 접는다
 const curV = r => S.edits.get(rid(r))?.v ?? (r.v ?? '').replace(/\r\n?/g, '\n');
 // 이스케이프한 조각 사이에만 강조를 끼운다 — 원문이 태그로 살아나지 않게
@@ -687,19 +689,30 @@ function replaceMenu(){
       <input type=text id=rfind placeholder="찾을 문구" onkeydown="if(event.key==='Enter')replacePreview()">
       <input type=text id=rto placeholder="바꿀 문구 (비우면 삭제)" onkeydown="if(event.key==='Enter')replacePreview()">
     </div>
+    <div class=rowbar>
+      <input type=text id=rsrc placeholder="원문에 이 말이 있는 행만 (스페인어, 비우면 전체)"
+        onkeydown="if(event.key==='Enter')replacePreview()">
+    </div>
     <div class=rowbar><button class=primary onclick=replacePreview()>미리보기</button>
       <span class=es>글자 그대로 찾아요(정규식 아님). 고른 행만 적용돼요.</span></div>
   </div><div id=replout></div>`;
 }
 
 function replacePreview(){
-  const find = $('rfind').value, to = $('rto').value;
+  const find = $('rfind').value, to = $('rto').value, src = $('rsrc')?.value.trim() ?? '';
   if (!find){ toast('찾을 문구를 넣어주세요'); return; }
-  REPL = [];
-  let total = 0;
+  REPL = []; OFF_SRC = [];
+  let total = 0, offSrc = 0;
   for (const r of S.rows){
     const v = curV(r);
     if (!v.includes(find)) continue;
+    // 원문 조건 — 번역 칸만 훑으면 「무사히」를 고치다 「갑주무사」까지 갈아엎는다.
+    // 원문이 없는 절(k 없음)은 견줄 것이 없으니 조건이 걸리면 제외한다.
+    if (src && !(r.k ?? '').includes(src)){
+      offSrc++;
+      if (OFF_SRC.length < OFF_CAP) OFF_SRC.push(r);
+      continue;
+    }
     total++;
     if (REPL.length >= REPL_CAP) continue;
     const parts = v.split(find), nv = parts.join(to);
@@ -708,8 +721,14 @@ function replacePreview(){
     REPL.push({r, parts, nv, lost});
   }
   $('meta').textContent = `${total}행 매칭` +
+    (src ? ` (원문 조건으로 ${offSrc}행 제외)` : '') +
     (total > REPL_CAP ? ` — 앞 ${REPL_CAP}행만 보여줘요. 찾을 문구를 더 좁혀주세요` : '');
-  if (!total){ $('replout').innerHTML = '<div class=empty>매칭되는 행이 없습니다.</div>'; return; }
+  // 빠진 행은 목록으로 — 조건이 너무 좁아 고쳐야 할 자리를 놓쳤는지 여기서 눈으로 본다
+  const offCard = offSrc ? `<div class="card notecard">
+    <div>원문에 「${esc(src)}」가 없어 건너뛴 ${offSrc}행</div>` +
+    OFF_SRC.map(r => `<div class=es>${esc(r.k ?? '(원문 없는 절)')}</div><div>${esc(curV(r))}</div>`).join('') +
+    (offSrc > OFF_CAP ? `<div class=es>… 그 밖 ${offSrc - OFF_CAP}행</div>` : '') + '</div>' : '';
+  if (!total){ $('replout').innerHTML = offCard + '<div class=empty>매칭되는 행이 없습니다.</div>'; return; }
   $('replout').innerHTML =
     `<div class=rowbar><button class=ghost onclick=replAll(true)>모두 선택</button>
       <button class=ghost onclick=replAll(false)>모두 해제</button>
@@ -718,8 +737,9 @@ function replacePreview(){
       <label class=rowbar><input type=checkbox id=rc${i} ${h.lost.length?'':'checked'}>
         <span class=chip>${SEC_LABEL[h.r.sec]??('절'+h.r.sec)}</span>${h.r.map!=null?`<span class=chip>맵 ${h.r.map}</span>`:''}
         ${h.lost.length?`<span class="st warn">색·이름 코드가 사라져요: ${esc(h.lost.join(' '))}</span>`:''}</label>
+      ${src && h.r.k ? `<div class=es>${hl(h.r.k.split(src), src)}</div>` : ''}
       <div class=es>${hl(h.parts, find)}</div>
-      <div class=nv>${hl(h.parts, to)}</div></div>`).join('');
+      <div class=nv>${hl(h.parts, to)}</div></div>`).join('') + offCard;
 }
 // 모두 선택은 경고 행을 건드리지 않는다 — 코드가 깨지는 행은 하나씩 확인하고 켜야 한다
 function replAll(on){ REPL.forEach((h, i) => {
