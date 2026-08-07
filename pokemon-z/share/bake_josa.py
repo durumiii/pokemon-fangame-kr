@@ -2,10 +2,10 @@
 # requires-python = ">=3.12"
 # dependencies = ["rubymarshal"]
 # ///
-"""조사 자동 선택(josa.rb)을 한글패치 통합의 Scripts.rxdata에 넣는다.
+"""조사 자동 선택(josa.rb)을 한글패치 코어의 Scripts.rxdata에 넣는다.
 
 번역표가 \\j[은,는] 문법을 전제해 조사 스크립트 없이는 한글패치가 성립하지
-않는다 — 그래서 별도 모드(옛 Josa Select)가 아니라 한글패치 통합의 본문 섹션
+않는다 — 그래서 별도 모드(옛 Josa Select)가 아니라 한글패치 코어의 본문 섹션
 「Josa Select」로 담는다(2026-08-03 흡수 결정). MOD: 접두사가 없으므로
 inject.py 재구축·modstore 설치 어느 쪽에서도 기반의 일부로 살아남는다.
 
@@ -13,7 +13,7 @@ inject.py 재구축·modstore 설치 어느 쪽에서도 기반의 일부로 살
 훅 대상 섹션(SpriteWindow·DrawText)의 md5가 기대와 다르면 멈춘다(판 갱신 신호).
 
 usage: uv run bake_josa.py [대상 Scripts.rxdata ...]
-  무인자면 한글패치 통합의 수술판 + 수술 전 백업(pre-intl.bak) 둘 다.
+  무인자면 한글패치 코어의 수술판 + 수술 전 백업(pre-intl.bak) 둘 다.
 """
 import hashlib
 import sys
@@ -25,7 +25,7 @@ sys.path.insert(0, str(HERE.parent / "vendor"))
 from rubymarshal.reader import load  # noqa: E402
 from fanlib import rubywrite  # noqa: E402
 
-BASE_MOD = Path("/mnt/d/GameVault/mods/Pokemon Z Fangame/한글패치 통합")
+BASE_MOD = Path("/mnt/d/GameVault/mods/Pokemon Z Fangame/한글패치 코어")
 DEFAULT_TARGETS = [
     BASE_MOD / "Data" / "Scripts.rxdata",
     BASE_MOD / "Data" / "Scripts.rxdata.pre-intl.bak",

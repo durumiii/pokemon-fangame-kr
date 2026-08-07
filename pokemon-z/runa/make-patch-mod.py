@@ -7,7 +7,7 @@
 
   번역표 `Data/korean.dat` — 정본(translate/ko/)에서 새로 굽는다. 이 갈래의 build.py는
                              문자열에 UTF-8 인코딩 딱지를 붙인다(루비 1.9+ 실행기용).
-  번역된 코어·맵        — 지금 배포 중인 「한글패치 통합」의 것을 그대로 가져온다.
+  번역된 코어·맵        — 지금 배포 중인 「한글패치 코어」의 것을 그대로 가져온다.
   번역 자산(그림·소리)  — 마찬가지. 상류 배포물이 디스크에 없어 이것이 유일본이다.
 
 폰트는 담지 않는다 — DPPT Font 모드의 몫이고, 카드가 그것을 `requires`로 가리킨다.
@@ -29,7 +29,7 @@ HERE = Path(__file__).resolve().parent
 REPO = HERE.parent                                     # pokemon-z/
 CARD = REPO / "mods" / NAME / "mod.json"
 STORE = Path("/mnt/d/GameVault/mods/Pokemon Z Fangame") / NAME
-# 재료는 제 폴더다. 옛 「한글패치 통합」에서 떠 오던 것인데, 둘이 mod.json 말고는
+# 재료는 제 폴더다. 옛 「한글패치 코어」에서 떠 오던 것인데, 둘이 mod.json 말고는
 # 바이트까지 같아져(2026-08-07 전수 대조) 하나만 남겼다. 번역표는 어차피 정본에서
 # 새로 굽고 나머지는 그대로 옮기므로, 제자리 재조립이라도 결과가 달라지지 않는다.
 SOURCE = STORE

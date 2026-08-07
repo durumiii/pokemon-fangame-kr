@@ -31,7 +31,7 @@ from fontTools.ttLib.scaleUpem import scale_upem
 
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "fonts" / "dppt-kr.ttf"
-GALMURI = Path("/mnt/d/GameVault/mods/Pokemon Z Fangame/한글패치 통합/Fonts/Galmuri11.ttf")
+GALMURI = Path("/mnt/d/GameVault/mods/Pokemon Z Fangame/한글패치 코어/Fonts/Galmuri11.ttf")
 
 REPLACE = "●■▲♥○□△♡◆◇★☆♦♣♠"                        # 있지만 찌그러지는 것
 ADD = list('"\'<>[\\]^`{|}') + list("–—─⇒π¨‥▽▼▶§®¯´¼¾¢£¤¦©«¬±µ¶¸½") \

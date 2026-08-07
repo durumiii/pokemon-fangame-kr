@@ -32,7 +32,7 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE.parent / "vendor"))
 from rubymarshal.reader import load  # noqa: E402
 
-STORE_DAT = Path("/mnt/d/GameVault/mods/Pokemon Z Fangame/한글패치 통합/Data/korean.dat")
+STORE_DAT = Path("/mnt/d/GameVault/mods/Pokemon Z Fangame/한글패치 코어/Data/korean.dat")
 GAME_RX = Path("/mnt/d/Game/Pokemon Z/V2.18/Data/Scripts.rxdata")
 UI_MOD = HERE.parent / "mods" / "UI Text KR" / "001_UiText.rb"
 

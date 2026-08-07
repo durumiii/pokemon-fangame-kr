@@ -8,7 +8,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))          # core, rubywrite
 sys.path.insert(0, str(HERE.parent / "vendor"))  # rubymarshal
 
-STORE = Path("/mnt/d/GameVault/mods/Pokemon Z Fangame/한글패치 통합/Data/korean.dat")
+STORE = Path("/mnt/d/GameVault/mods/Pokemon Z Fangame/한글패치 코어/Data/korean.dat")
 MESSAGES = Path("/mnt/d/Game/Pokemon Z/V2.18/Data/messages.dat")
 
 pytestmark = pytest.mark.skipif(not STORE.exists(), reason="실물 korean.dat 없음")

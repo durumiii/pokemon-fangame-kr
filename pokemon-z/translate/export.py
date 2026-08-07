@@ -22,7 +22,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "vendor"))
 from rubymarshal.reader import load  # noqa: E402
 
-STORE = Path("/mnt/d/GameVault/mods/Pokemon Z Fangame/한글패치 통합/Data/korean.dat")
+STORE = Path("/mnt/d/GameVault/mods/Pokemon Z Fangame/한글패치 코어/Data/korean.dat")
 MESSAGES = Path("/mnt/d/Game/Pokemon Z/V2.18/Data/messages.dat")
 KO = Path(__file__).with_name("ko")
 

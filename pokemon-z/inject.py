@@ -52,7 +52,7 @@ def find_mod(name: str) -> Path:
     raise SystemExit(f"repo에도 보관소에도 없는 모드예요: {name}")
 
 
-BASE = find_mod("한글패치 통합") / "Data" / "Scripts.rxdata"
+BASE = find_mod("한글패치 코어") / "Data" / "Scripts.rxdata"
 
 
 def load_sections(path: Path) -> list:

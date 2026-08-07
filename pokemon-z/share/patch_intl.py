@@ -28,7 +28,7 @@ from rubymarshal.reader import load  # noqa: E402
 from fanlib import rubywrite  # noqa: E402
 
 DEFAULT_TARGETS = [
-    Path("/mnt/d/GameVault/mods/Pokemon Z Fangame/한글패치 통합/Data/Scripts.rxdata"),
+    Path("/mnt/d/GameVault/mods/Pokemon Z Fangame/한글패치 코어/Data/Scripts.rxdata"),
     Path("/mnt/d/Game/Pokemon Z/V2.18/Data/Scripts.rxdata"),
 ]
 
