@@ -6,10 +6,14 @@
   "install": "inject",
   "created_at": "2026-08-02",
   "scripts": [
-    { "file": "001_UiText.rb", "script_name": "001_UiText.rb" }
+    {
+      "file": "001_UiText.rb",
+      "script_name": "001_UiText.rb"
+    }
   ],
   "expects": {
     "SpriteWindow": "dd49c0623e5fc170534c44aa6c198e23",
     "DrawText": "b6e3111c62e7c43b528fa60894e9acb6"
-  }
+  },
+  "summary": "스크립트에 박혀 있어 번역표로는 못 고치는 화면 문구를 한국어로 바꿉니다"
 }

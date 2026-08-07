@@ -152,6 +152,22 @@ def _embed_manifest(final: Path, name: str):
     print(f"manifest.json 동봉: {len(made['files'])}개 파일 (scope=partial)")
 
 
+def _zip(final: Path, asset: str):
+    """배포 자산 zip을 뜬다 — 안은 게임 폴더 기준의 평평한 구조다(감싸는 폴더 없음).
+
+    받는 사람이 압축을 풀어 게임 폴더에 그대로 덮는 배치라, 한 겹 더 씌우면
+    옮겨 담는 손이 한 번 더 든다.
+    """
+    import zipfile
+
+    out = DIST / f"{asset}.zip"
+    with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as z:
+        for p in sorted(final.rglob("*")):
+            if p.is_file():
+                z.write(p, p.relative_to(final).as_posix())
+    print(f"zip: {out.name} — {out.stat().st_size / 1e6:.1f}MB")
+
+
 def _scrub_stage(stage: Path):
     """주입기가 스테이징에 남긴 제 작업 파일을 걷어 낸다.
 
@@ -262,6 +278,10 @@ def main():
         if font not in FONT_VARIANTS:
             sys.exit(f"--font은 {'·'.join(FONT_VARIANTS)} 중 하나예요")
     label = FONT_VARIANTS[font][0]
+    asset_names = {                       # 릴리스 자산 파일명 — v5.2의 규약을 잇는다
+        "runa": f"pokemon-z-kr-patch-v5.2.1_{font}",
+        "runa-debug": "pokemon-z-kr-patch-v5.2.1_debug-add",
+    }
     default_names = {
         "full": "포켓몬Z 한글패치 v5.2",   # 기본판 — 디버그 없는 통합
         "debug": "포켓몬Z 한글패치 v5.2 (통합+디버그)",
@@ -305,6 +325,8 @@ def main():
         _embed_card(final, name, variant)
         size = sum(p.stat().st_size for p in final.rglob("*") if p.is_file())
         print(f"완성: {final} — {size / 1e6:.1f}MB")
+        if "--zip" in sys.argv:
+            _zip(final, asset_names.get(variant, name))
         return
 
     base = RUNA_MOD if variant == "runa" else BASE_MOD
@@ -373,7 +395,10 @@ def main():
     total = sum(1 for _ in final.rglob("*") if _.is_file())
     size = sum(p.stat().st_size for p in final.rglob("*") if p.is_file())
     print(f"완성: {final} — 파일 {total}개, {size / 1e6:.0f}MB")
-    print("배포 전 점검: 읽어주세요.txt 버전·날짜, zip으로 묶기")
+    if "--zip" in sys.argv:
+        _zip(final, asset_names.get(variant, name))
+    else:
+        print("배포 전 점검: 읽어주세요.txt 버전·날짜, --zip으로 묶기")
 
 
 if __name__ == "__main__":
