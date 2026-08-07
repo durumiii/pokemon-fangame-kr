@@ -65,6 +65,7 @@ vm.runInContext(src + `
   doRestore, reloadAfterRestore, batchReport, canReport, card,
   memoIndex, renderHome, updateDirty, FIELD_CAP, memoDel, persistMemos,
   showMine, mineSave, mineCancel, mineMemoDel, reporterId,
+  editOps, undoOp, opBegin, opEnd, MINE_OPS, ops: () => OPS,
   clearMemos: () => { MEMOS = null; },
   markAllSent, sentIndex, clearSent: () => { SENT = null; },
   loadSpeakers, fillBrowse, doBrowse, openGroup, browseGroups, spkOf, mapName,
@@ -545,6 +546,52 @@ const VMU8 = vm.runInContext('Uint8Array', ctx);   // vm 밖에서 만든 Uint8A
   ctx.replAll(true);
   ctx.replaceApply();
   a.equal(ctx.S.edits.size, 0);                                       // 원문과 같아지면 수정 해제
+
+  // ─ 동작 묶음과 되돌리기 ─
+  // 일괄 바꾸기 한 번 = 한 묶음. 낱개 저장은 낱개대로 선다.
+  ctx.localStorage.removeItem('hist:replbase');
+  ctx.S.edits = new Map();
+  el('rfind').value = '메달'; el('rto').value = '배지';
+  ctx.replacePreview(); ctx.replAll(true); ctx.replaceApply();        // 3행짜리 일괄 바꾸기
+  ctx.setHits([ctx.S.rows[3]]);
+  el('v0').value = '낱개로 고친 행'; ctx.save(0);
+  let ops = ctx.editOps();
+  a.equal(ops.length, 2);
+  a.equal(ops[0].kind, 'one');                                        // 최근 동작이 앞
+  a.deepEqual([ops[1].kind, ops[1].evs.length], ['bulk', 3]);
+  a.ok(ops[1].key.startsWith('bulk-'));                               // op 표로 묶인다(시각 창 폴백 아님)
+
+  // 되돌리기: 그 동작 전 값으로 돌아가고, 되돌린 것도 한 묶음으로 이력에 남는다
+  ctx.showMine();
+  a.ok(el('out').innerHTML.includes('일괄 바꾸기') && el('out').innerHTML.includes('3행'));
+  ctx.undoOp(1);
+  a.equal(ctx.S.edits.has('0:1:1'), false);                           // 원문으로 돌아가 대기에서 빠지고
+  a.equal(ctx.S.edits.get('0:1:4').v, '낱개로 고친 행');               // 딴 동작은 그대로
+  ops = ctx.editOps();
+  a.equal(ops[0].kind, 'undo');
+  a.equal(ops[0].evs.length, 3);
+  a.equal(el('toast').textContent, '3행을 되돌렸어요');
+
+  // 그 뒤에 다시 고친 행은 되돌리기가 건드리지 않는다
+  ctx.localStorage.removeItem('hist:replbase');
+  ctx.S.edits = new Map();
+  el('rfind').value = '메달'; el('rto').value = '배지';
+  ctx.replacePreview(); ctx.replAll(true); ctx.replaceApply();
+  ctx.setHits([ctx.S.rows[0]]);
+  el('v0').value = '나중에 손으로 고친 값'; ctx.save(0);
+  ctx.showMine();                                                     // 버튼은 이 화면이 그린 목록의 자리로 부른다
+  ctx.undoOp(ctx.ops().findIndex(o => o.kind === 'bulk'));
+  a.equal(ctx.S.edits.get('0:1:1').v, '나중에 손으로 고친 값');        // 남의 고침은 보존
+  a.ok(el('toast').textContent.includes('1행은 그 뒤에 다시 고쳐져'));
+
+  // op 표가 없는 옛 이력도 시각 창으로 묶인다(판 올리기 전에 쌓인 기록)
+  ctx.localStorage.setItem('hist:replbase', JSON.stringify([
+    {t:'2026-08-07T10:00:00.000Z', type:'edit', rid:'0:1:1', k:'a', old:'x', new:'y', via:'bulk'},
+    {t:'2026-08-07T10:00:01.000Z', type:'edit', rid:'0:1:2', k:'b', old:'x', new:'y', via:'bulk'},
+    {t:'2026-08-07T10:30:00.000Z', type:'edit', rid:'0:1:3', k:'c', old:'x', new:'y', via:'bulk'},
+  ]));
+  ops = ctx.editOps();
+  a.deepEqual(ops.map(o => o.evs.length), [1, 2]);                     // 30분 뒤 것은 딴 묶음
 
   // ─ 찾아보기 ─
   // speakers.json이 없을 때: 화자 옵션은 아예 안 뜨고 맵별·분류별만 남는다

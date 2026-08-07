@@ -12,7 +12,7 @@ https://durumiii.github.io/z-kr-studio/ (Chrome/Edge 전용, 무설정 원칙 �
 |---|---|
 | index.html | 마크업 + CSS 전부 인라인(fixgui.py 다크 테마 이식) |
 | app.js | 상태·화면·파일IO·빌드·공유·제보 전부 (~1,000줄) |
-| mine.js | [내 수정] 화면만 분리 (~70줄) |
+| mine.js | [내 수정] 화면 — 최근 동작 묶음·되돌리기·대기 수정·메모 (~140줄) |
 | event.js | 이벤트 모아 보기 — 카드의 이벤트 칩·자리 목록·이벤트 화면 (~60줄) |
 | core.py | pyodide에서 도는 파이썬 — dat 파싱·값 교체·왕복 검증 |
 | rubywrite.py, vendor/rubymarshal/ | Ruby Marshal 직렬화(수정 금지 — repo 정본의 사본) |
@@ -36,6 +36,10 @@ https://durumiii.github.io/z-kr-studio/ (Chrome/Edge 전용, 무설정 원칙 �
   홈(renderHome)·검색 결과(card/more)·이력(showHist)·내 수정(showMine)·
   바꾸기(replUI)·복원(restoreMenu)·찾아보기(browse)·이벤트(openEvent/evJump).
   상단 `#meta`가 상태 줄.
+- 되돌리기는 이력에서 나온다 — 수정 이벤트에 `op`(동작 표)를 달아 묶고, 그 표가
+  없는 옛 이력은 같은 갈래가 잇달아 온 5초 창으로 묶는다. 동작을 만드는 쪽이
+  `opBegin('bulk')`/`opEnd()`로 감싼다. 되돌릴 때 **그 뒤에 다시 고쳐진 행은
+  건너뛴다**(남의 고침을 지우게 된다). 되돌리기 자체도 한 동작으로 이력에 쌓인다.
 - 이벤트 자리는 speakers.json의 `rows[원문][2]` = `[[이벤트, 페이지, 명령순번,
   이벤트이름색인], ...]`. 한 대사가 여러 자리에 걸리면(맵 하나에서만 2,606개)
   칩이 「이름 외 N곳」이 되고 자리 목록을 먼저 보여준다.

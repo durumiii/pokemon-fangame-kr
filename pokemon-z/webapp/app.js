@@ -457,12 +457,19 @@ const MARKUP = /\\c\[\d+\]|\\[A-Za-z]+|\{\d+\}|<[^>]+>/g;
 // 한 행에 새 값을 앉힌다 — 저장 버튼과 일괄 바꾸기가 같은 경로를 쓴다(persist/화면 갱신은 부르는 쪽 몫)
 // via는 이 고침이 어느 화면에서 나왔는지다('bulk' = 일괄 바꾸기 화면). 저장 버튼과
 // 같은 경로를 쓰므로 여기서 달아 두지 않으면 나중에 가릴 길이 없다.
+// 한 동작(일괄 바꾸기 한 번, 되돌리기 한 번)이 만든 수정들을 이력에서 묶는 표.
+// 동작을 시작하는 쪽이 opBegin/opEnd로 감싸면 그 사이의 수정이 한 묶음이 된다.
+let OPID = null;
+function opBegin(kind){ return OPID = `${kind}-${Date.now()}`; }
+function opEnd(){ OPID = null; }
+
 function applyEdit(r, v, via){
   // textarea는 CR/CRLF를 LF로 접어 돌려준다 — 안 고친 행이 수정으로 잡히지 않게 같은 모양끼리 비교
   const id = rid(r), prev = S.edits.get(id);
   if (v === r.v.replace(/\r\n?/g, '\n')) S.edits.delete(id);
   else S.edits.set(id, {sec:r.sec, map:r.map, idx:r.idx, k:r.k, v, ...(via ? {via} : {})});
-  hist({type:'edit', rid:id, k:r.k, old:prev ? prev.v : r.v, new:v, ...(via ? {via} : {})});
+  hist({type:'edit', rid:id, k:r.k, old:prev ? prev.v : r.v, new:v,
+        ...(via ? {via} : {}), ...(OPID ? {op:OPID} : {})});
 }
 // 색·이름 코드를 삼키는 저장은 한 번 물어본다 — 지우면 화면이 깨진다
 function confirmMarkup(r, v){
@@ -721,7 +728,9 @@ function replAll(on){ REPL.forEach((h, i) => {
 function replaceApply(){
   const sel = REPL.filter((_, i) => $('rc'+i)?.checked);
   if (!sel.length){ toast('적용할 행을 골라주세요'); return; }
+  opBegin('bulk');
   for (const h of sel) applyEdit(h.r, h.nv, 'bulk');
+  opEnd();
   persist(); updateDirty();
   replacePreview();   // 적용된 행은 새 값 기준이라 목록에서 빠진다
   $('meta').textContent = `${sel.length}행 적용 — [빌드]를 누르면 게임에 반영돼요`;
