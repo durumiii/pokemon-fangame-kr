@@ -32,6 +32,27 @@ def inner_of(oh):
     return load(io.BytesIO(bytes(oh._private_data)))
 
 
+def tag_utf8(o):
+    """모든 문자열에 UTF-8 인코딩 딱지를 붙인다(마샬 ivar `:E`).
+
+    딱지가 없으면 루비 1.9+ 는 dat의 문자열을 ASCII-8BIT로 읽는다. 그러면
+    UTF-8 리터럴과 만나는 자리마다 Encoding::CompatibilityError가 나고,
+    번역표 조회는 **비ASCII 표제만** 빗나간다 — ASCII만으로 된 표제는 인코딩이
+    달라도 같은 것으로 쳐서 그대로 맞는다. 절23으로 실측하면 표제 6,819개 중
+    2,451개(36%)가 빗나가고, 딱지를 붙이면 0개다(루비 3.1.7, 2026-08-07).
+    루비 1.8.7 은 딱지를 무시하므로 데스크톱 mkxp-z 구판은 영향이 없다
+    — 양쪽 실런타임으로 실측(2026-08-06).
+    """
+    if isinstance(o, (bytes, bytearray)):
+        return bytes(o).decode("utf-8")
+    if isinstance(o, list):
+        return [tag_utf8(x) for x in o]
+    if hasattr(o, "_private_data"):
+        inner = load(io.BytesIO(bytes(o._private_data)))
+        o._private_data = rubywrite.dumps(tag_utf8(inner))
+    return o
+
+
 def read_jsonl(path):
     return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line]
 
@@ -145,6 +166,7 @@ def main():
     obj._private_data = rubywrite.dumps([keys, values])
 
     print(f"정본과 dat의 값 차이: {changed}곳, 새 키 추가: {added}개")
+    d = tag_utf8(d)
     out = rubywrite.dumps(d)
     r = load(io.BytesIO(out))
     assert len(r) == len(d), "절 수 불일치"
@@ -161,6 +183,11 @@ def main():
 
     if dry:
         print("dry-run — 파일에 쓰지 않음")
+        return
+    only = next((a.split("=", 1)[1] for a in sys.argv if a.startswith("--out=")), None)
+    if only:  # 시험판 — 보관소·게임을 건드리지 않고 한 곳에만 쓴다
+        Path(only).write_bytes(out)
+        print(f"기록 완료(시험판): {only}")
         return
     STORE.write_bytes(out)
     GAME.write_bytes(out)

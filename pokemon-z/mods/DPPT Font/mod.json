@@ -1,0 +1,131 @@
+{
+  "name": "DPPT Font",
+  "game": "Pokemon Z Fangame",
+  "version": "1.0",
+  "summary": "한글이 든 DPPt 픽셀 폰트와, 그 획 굵기에 맞춘 글자 그림자.",
+  "description": "게임이 요청하는 폰트 이름 16종을 한글 든 픽셀 폰트가 직접 들도록 바꿔 넣는 모드예요. 원판 폰트는 그 이름들을 들고 있으면서 한글이 한 자도 없어서, 한국어를 쓰면 글자가 네모로 떨어집니다.\n\n폰트는 DPPt 픽셀 폰트에 갈무리에서 106자를 들여온 것이에요 — 대괄호·따옴표·낱자모(ㄱ~ㅣ)·문장부호, 그리고 찌그러지던 도형 21자. 한글 음절은 손대지 않아 글자의 얼굴이 그대로입니다. 폰트를 파일 이름이 아니라 폰트 안의 이름으로 찾는 엔진(조이플레이 계열)에서도 잡혀요.\n\n그림자 — 게임은 글자를 그림자 색으로 세 번(오른쪽·아래·대각) 찍는데 오프셋 2픽셀은 획이 굵은 원판 폰트에 맞춘 값이라, 획이 1픽셀인 픽셀 폰트에서는 그림자가 글자보다 두꺼워 보입니다. 기본값은 1픽셀 세 겹에 2픽셀 대각을 아주 옅게(알파 48) 얹은 「1.25픽셀」이에요. 001_Shadow.rb의 PIXEL_SHADOW_STYLE로 :thin · :soft · :step · :thick 중에 고릅니다.\n\n굵게 — 엔진은 글자 크기의 10분의 1만큼 글리프 폭을 넓혀 굵게를 만듭니다. 획이 1픽셀인 픽셀 폰트에서는 그 두께가 한글의 세로 틈을 메워 「배」·「대」의 ㅐ가 덩어리가 됩니다. 방식은 엔진과 같게 두되 양을 한 눈금 덜어내고(001의 PIXEL_BOLD_TRIM), 덜어낸 자리에 옅은 한 겹을 얹어 그 사이의 반 눈금을 만들어요(PIXEL_BOLD_ALPHA). 크기에 비례하므로 큰 글자에서도 굵기가 따라 올라갑니다. 라틴·숫자는 속이 넓어 엔진 기본을 그대로 씁니다.",
+  "engine": "essentials-v16",
+  "install": "inject",
+  "created_at": "2026-08-07",
+  "provides": [
+    "hangul-font"
+  ],
+  "scripts": [
+    {
+      "file": "001_Shadow.rb",
+      "script_name": "001_Shadow.rb"
+    },
+    {
+      "file": "002_MessageShadow.rb",
+      "script_name": "002_MessageShadow.rb"
+    },
+    {
+      "file": "003_BoldHangul.rb",
+      "script_name": "003_BoldHangul.rb"
+    }
+  ],
+  "assets": [
+    {
+      "file": "Fonts/pkmnem.ttf",
+      "install_to": "Fonts/pkmnem.ttf",
+      "replaces_crc": 2916500896
+    },
+    {
+      "file": "Fonts/pkmnemn.ttf",
+      "install_to": "Fonts/pkmnemn.ttf",
+      "replaces_crc": 1707126671
+    },
+    {
+      "file": "Fonts/pkmnems.ttf",
+      "install_to": "Fonts/pkmnems.ttf",
+      "replaces_crc": 1904909073
+    },
+    {
+      "file": "Fonts/pkmndp.ttf",
+      "install_to": "Fonts/pkmndp.ttf",
+      "replaces_crc": 3514808436
+    },
+    {
+      "file": "Fonts/pkmndpb.ttf",
+      "install_to": "Fonts/pkmndpb.ttf",
+      "replaces_crc": 1046620591
+    },
+    {
+      "file": "Fonts/pkmnrs.ttf",
+      "install_to": "Fonts/pkmnrs.ttf",
+      "replaces_crc": 2345952428
+    },
+    {
+      "file": "Fonts/pkmnrsi.ttf",
+      "install_to": "Fonts/pkmnrsi.ttf",
+      "replaces_crc": 2167264077
+    },
+    {
+      "file": "Fonts/pkmnfl.ttf",
+      "install_to": "Fonts/pkmnfl.ttf",
+      "replaces_crc": 3491183794
+    },
+    {
+      "file": "Fonts/kr-emerald.ttf",
+      "install_to": "Fonts/kr-emerald.ttf"
+    },
+    {
+      "file": "Fonts/kr-emerald-small.ttf",
+      "install_to": "Fonts/kr-emerald-small.ttf"
+    },
+    {
+      "file": "Fonts/kr-emerald-narrow.ttf",
+      "install_to": "Fonts/kr-emerald-narrow.ttf"
+    },
+    {
+      "file": "Fonts/kr-fireleaf.ttf",
+      "install_to": "Fonts/kr-fireleaf.ttf"
+    },
+    {
+      "file": "Fonts/kr-rs.ttf",
+      "install_to": "Fonts/kr-rs.ttf"
+    },
+    {
+      "file": "Fonts/kr-dp.ttf",
+      "install_to": "Fonts/kr-dp.ttf"
+    },
+    {
+      "file": "Fonts/kr-arial.ttf",
+      "install_to": "Fonts/kr-arial.ttf"
+    },
+    {
+      "file": "Fonts/kr-arial-narrow.ttf",
+      "install_to": "Fonts/kr-arial-narrow.ttf"
+    }
+  ],
+  "touches": {
+    "methods": [
+      "pbDrawShadowText",
+      "pbDrawOutlineText",
+      "drawSingleFormattedChar",
+      "renderLineBrokenChunksWithShadow"
+    ],
+    "files": [
+      "Fonts/pkmnem.ttf",
+      "Fonts/pkmnemn.ttf",
+      "Fonts/pkmnems.ttf",
+      "Fonts/pkmndp.ttf",
+      "Fonts/pkmndpb.ttf",
+      "Fonts/pkmnrs.ttf",
+      "Fonts/pkmnrsi.ttf",
+      "Fonts/pkmnfl.ttf",
+      "Fonts/kr-emerald.ttf",
+      "Fonts/kr-emerald-small.ttf",
+      "Fonts/kr-emerald-narrow.ttf",
+      "Fonts/kr-fireleaf.ttf",
+      "Fonts/kr-rs.ttf",
+      "Fonts/kr-dp.ttf",
+      "Fonts/kr-arial.ttf",
+      "Fonts/kr-arial-narrow.ttf"
+    ]
+  },
+  "expects": {
+    "SpriteWindow": "dd49c0623e5fc170534c44aa6c198e23",
+    "DrawText": "b6e3111c62e7c43b528fa60894e9acb6"
+  }
+}

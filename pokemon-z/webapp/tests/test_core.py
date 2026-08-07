@@ -82,3 +82,45 @@ def test_build_key_mismatch_rejected(dat_bytes):
     bad = dict(target, k="엉뚱한 원문", v="아무거나")
     with pytest.raises(ValueError):
         core.build_dat(json.dumps([bad]))
+
+
+# ── 딱지판(루비 1.9+ 실행기용 korean.dat) ────────────────────────────────
+RUNA = Path("/mnt/d/GameVault/mods/Pokemon Z Fangame/한글패치 통합-Runa/Data/korean.dat")
+
+
+@pytest.fixture(scope="module")
+def runa_bytes():
+    if not RUNA.exists():
+        pytest.skip("딱지판 korean.dat 없음")
+    return RUNA.read_bytes()
+
+
+def test_tagged_dat_loads(runa_bytes):
+    """딱지가 붙으면 판독기가 문자열을 str로 준다 — bytes()로 감싸면 TypeError로 죽었다."""
+    import core
+    got = json.loads(core.load_dat(runa_bytes))
+    assert got["rows"] and core._state["tagged"] is True
+    assert all(isinstance(r["v"], str) for r in got["rows"][:50])
+
+
+def test_tagged_dat_keeps_tags_after_edit(runa_bytes):
+    """고친 줄만 딱지가 빠지면 그 줄에서만 인코딩이 어긋난다."""
+    import core
+    rows = json.loads(core.load_dat(runa_bytes))["rows"]
+    target = next(r for r in rows if r["sec"] == 5)
+    out = core.build_dat(json.dumps([dict(target, v="딱지시험")]))
+    again = json.loads(core.load_dat(bytes(out)))
+    assert core._state["tagged"] is True          # 다시 열어도 딱지판이다
+    hit = next(r for r in again["rows"] if r["sec"] == 5 and r["idx"] == target["idx"])
+    assert hit["v"] == "딱지시험"
+
+
+def test_untagged_dat_stays_untagged(dat_bytes):
+    """딱지 없는 판을 열어 고치면 딱지를 새로 붙이지 않는다."""
+    import core
+    rows = json.loads(core.load_dat(dat_bytes))["rows"]
+    assert core._state["tagged"] is False
+    target = next(r for r in rows if r["sec"] == 5)
+    out = core.build_dat(json.dumps([dict(target, v="딱지없음시험")]))
+    core.load_dat(bytes(out))
+    assert core._state["tagged"] is False

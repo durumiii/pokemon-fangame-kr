@@ -9,3 +9,6 @@ outbox/
 
 # 원격 복구용 백업(릴리스 자산·번들) — 공개 repo에 올리지 않는다
 backups/
+
+# 마스터 폰트에서 찍어 내는 16벌 — runa/stamp-fonts.py가 언제든 다시 만든다
+pokemon-z/mods/DPPT Font/Fonts/
