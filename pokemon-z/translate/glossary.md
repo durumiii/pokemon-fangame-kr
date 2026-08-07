@@ -242,7 +242,7 @@ Ciudad Gres는 그레스시티. 시설은 절21 표기를 정본으로(세뇨리
 | 원문 | 표기 | 근거 |
 |---|---|---|
 | Tortilla Mu-Mu | 튼튼밀크 오믈렛 | `Leche Mu-mu` = 「튼튼밀크」(코퍼스 3건, 절7·9에도 이미 그 표기) |
-| Paldeano Secreto | 팔데아식 세크레토 | Paldea = 「팔데아지방」 · secreto는 스페인 돼지고기 부위(옆 메뉴가 맛보돈) |
+| Paldeano Secreto | 팔데아 비밀 메뉴 | Paldea = 「팔데아지방」 · secreto는 「비밀」이자 스페인 돼지고기 부위 이름이다(옆 메뉴가 맛보돈) — 말맛을 살려 「비밀 메뉴」로 |
 | Sopa Kingler | 킹크랩 수프 | Kingler = 「킹크랩」 |
 | Bonguris Horneadas | 구운 규토리 | Bonguri = 「규토리」 |
 | Sushi Tatsugiri | 싸리용 초밥 | Tatsugiri = 「싸리용」 |
