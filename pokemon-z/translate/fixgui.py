@@ -12,10 +12,10 @@ Windows 브라우저에서 localhost로 바로 열린다(WSL 포트 공유).
 (fix.py --notes와 같은 파일).
 """
 
-import html
 import json
 import subprocess
 import sys
+import time
 import urllib.parse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -116,6 +116,7 @@ PAGE = """<!doctype html><html lang=ko><head><meta charset=utf-8>
  </div>
  <span id=dirty></span>
  <button onclick=build() id=buildbtn>빌드 → 게임 반영</button>
+ <button class=ghost onclick=replUI()>바꾸기</button>
  <button class=ghost onclick=refSearch()>참고</button>
  <button class=ghost onclick=notes()>메모</button>
  <button class=ghost onclick=histView()>이력</button>
@@ -224,23 +225,74 @@ function showOrig(i){
  }else el.style.display='none';
 }
 function restoreOrig(i){$('v'+i).value=$('v'+i).dataset.orig;toast('되돌렸어요 — 저장을 눌러야 반영됩니다')}
+const KIND={row:'행 수정',bulk:'일괄 바꾸기',revert:'되돌리기'};
 async function histView(){
  const r=await fetch('/history');const js=await r.json();
- $('meta').textContent=`저장 이력 — 최근 ${js.log.length}건`;
- $('out').innerHTML=js.log.map((h,i)=>`
+ $('meta').textContent=`이력 — 동작 ${js.ops.length}묶음`;
+ $('out').innerHTML=js.ops.map(o=>`
   <div class=card>
-   <span class=chip>${esc(h.file)}:${h.line}</span>
-   <div class=es>구: ${esc(h.old)}</div>
-   <div>신: ${esc(h.new)}</div>
-   <div class=rowbar><button onclick='revertHist(${JSON.stringify(h).replace(/'/g,"\\'")})'>구판으로 되돌리기</button></div>
+   <span class=chip>${KIND[o.kind]||o.kind}</span><span class=chip>${o.rows.length}행</span>
+   ${o.label?`<span class=chip>${esc(o.label)}</span>`:''}
+   ${o.rows.slice(0,5).map(h=>`<div class=es>${esc(h.file)}:${h.line} · 구: ${esc(h.old)}<br>&nbsp;&nbsp;신: ${esc(h.new)}</div>`).join('')}
+   ${o.rows.length>5?`<div class=chip>외 ${o.rows.length-5}행</div>`:''}
+   <div class=rowbar><button onclick="revertOp('${esc(o.op)}')">이 묶음 되돌리기</button></div>
   </div>`).join('')||'<div class=empty>저장 이력이 없습니다.</div>';
 }
-async function revertHist(h){
- const r=await fetch('/save',{method:'POST',headers:{'Content-Type':'application/json'},
-   body:JSON.stringify({file:h.file,line:h.line,v:h.old})});
+async function revertOp(op){
+ const r=await fetch('/revert',{method:'POST',headers:{'Content-Type':'application/json'},
+   body:JSON.stringify({op})});
  const js=await r.json();
- if(js.ok){dirty(1);toast('되돌림 저장됨 — 빌드하면 게임에 반영돼요');histView()}
- else toast('실패: '+js.err,4000);
+ dirty(js.done);
+ toast(`${js.done}행 되돌림`+(js.skipped?` · ${js.skipped}행 건너뜀(뒤에 다시 고쳐진 자리)`:'')
+   +(js.errs&&js.errs.length?` · 실패 ${js.errs.length}`:''),4000);
+ histView();
+}
+let PLAN=[];
+function replUI(){
+ $('meta').textContent='일괄 바꾸기 — 미리보기로 대상을 확인하고 고른 자리만 적용합니다.';
+ $('out').innerHTML=`<div class=card>
+  <div class=rowbar><input type=text id=rfind placeholder="찾을 문구 (번역 칸) — 비우면 원문 기준">
+   <input type=text id=rrepl placeholder="바꿀 문구"></div>
+  <div class=rowbar><input type=text id=rsrc placeholder="원문(스페인어) 조건 — 선택">
+   <input type=text id=rfile placeholder="파일 이름 — 선택 (예: 00-maps.jsonl)">
+   <button class=primary onclick=replPlan()>미리보기</button></div>
+  <div class=meta>찾을 문구를 비우고 원문 조건만 주면 그 원문을 가진 행의 번역을 통째로 갈아 끼웁니다.</div>
+ </div><div id=plan></div>`;
+}
+async function replPlan(){
+ const body={find:$('rfind').value,repl:$('rrepl').value,src:$('rsrc').value,file:$('rfile').value};
+ $('plan').innerHTML='<div class=empty>찾는 중...</div>';
+ const r=await fetch('/replan',{method:'POST',headers:{'Content-Type':'application/json'},
+   body:JSON.stringify(body)});
+ const js=await r.json();
+ if(!js.ok){$('plan').innerHTML=`<div class=empty>${esc(js.err)}</div>`;return}
+ PLAN=js.hits;
+ if(!PLAN.length){$('plan').innerHTML='<div class=empty>바뀔 행이 없습니다.</div>';return}
+ $('plan').innerHTML=`<div class=card><b>${PLAN.length}행 바뀝니다</b>${PLAN.length>=500?' (상한 500)':''}
+   <div class=rowbar><button class=primary onclick=replApply()>선택 적용</button>
+    <button class=ghost onclick="planAll(true)">전체 선택</button>
+    <button class=ghost onclick="planAll(false)">전체 해제</button></div></div>`
+  +PLAN.map((h,i)=>`<div class=card id=pc${i}>
+    <label class=rowbar><input type=checkbox id=pk${i} checked>
+     <span class=chip>${esc(h.file)}:${h.line}</span></label>
+    <div class=es>${esc(h.es)}</div>
+    <div class=es>구: ${esc(h.v)}</div><div>신: ${esc(h.new)}</div>
+   </div>`).join('')
+  +(js.skipped.length?`<div class=card><b>원문 조건에 걸려 뺀 행 ${js.skipped.length}</b>`
+    +js.skipped.map(h=>`<div class=es>${esc(h.file)}:${h.line} · ${esc(h.es)}<br>${esc(h.v)}</div>`).join('')
+    +'</div>':'');
+}
+function planAll(on){PLAN.forEach((_,i)=>{const c=$('pk'+i);if(c)c.checked=on})}
+async function replApply(){
+ const items=PLAN.filter((_,i)=>$('pk'+i)&&$('pk'+i).checked);
+ if(!items.length){toast('고른 자리가 없어요');return}
+ const label=`「${$('rfind').value||'(원문 기준)'}」→「${$('rrepl').value}」`;
+ const r=await fetch('/replace',{method:'POST',headers:{'Content-Type':'application/json'},
+   body:JSON.stringify({items,label})});
+ const js=await r.json();
+ dirty(js.done);
+ toast(`${js.done}행 반영`+(js.errs.length?` · 실패 ${js.errs.length}`:'')+' — 빌드하면 게임에 반영돼요',4000);
+ histView();
 }
 async function refSearch(){
  const q=$('q').value.trim(); if(!q){toast('검색창에 찾을 용어를 입력하세요');return}
@@ -275,8 +327,8 @@ async function openGroup(by,key){
 </script></body></html>"""
 
 
-def search(q, only_file=""):
-    hits = []
+def iter_rows(only_file=""):
+    """정본 전 행(v를 가진 행만) — {file,line,map,es,v}."""
     for p in sorted(KO.glob("*.jsonl")):
         if only_file and p.name != only_file:
             continue
@@ -289,18 +341,59 @@ def search(q, only_file=""):
             v = d.get("v")
             if v is None:
                 continue
-            es = d.get("k") or d.get("es") or ""
-            if q in v or q in es:
-                hits.append({"file": p.name, "line": i, "map": cur_map, "es": es, "v": v})
+            yield {"file": p.name, "line": i, "map": cur_map,
+                   "es": d.get("k") or d.get("es") or "", "v": v}
+
+
+def search(q, only_file=""):
+    hits = []
+    for r in iter_rows(only_file):
+        if q in r["v"] or q in r["es"]:
+            hits.append(r)
             if len(hits) >= 500:
                 return hits, True
     return hits, False
 
 
+def plan_replace(rows, find, repl, src=""):
+    """세 갈래 일괄 바꾸기의 대상 산정.
+
+    find 있음 → 번역 칸에서 찾는다(src를 주면 그 말이 원문에 있는 행만).
+    find 없음 → 원문 기준: src를 가진 행의 번역을 repl로 통째 갈아 끼운다.
+    돌려주는 skipped는 **원문 조건에 걸려 빠진 행** — 개수만 알리면 조건이 좁아
+    놓친 자리를 확인할 길이 없다.
+    """
+    if not find and not src:
+        return [], [], "찾을 문구나 원문 조건 중 하나는 필요합니다"
+    hits, skipped = [], []
+    for r in rows:
+        if find:
+            if find not in r["v"]:
+                continue
+            if src and src not in r["es"]:
+                skipped.append(r)
+                continue
+            new = r["v"].replace(find, repl)
+        else:
+            if src not in r["es"]:
+                continue
+            new = repl
+        if new == r["v"]:
+            continue
+        hits.append({**r, "new": new})
+        if len(hits) >= 500:
+            break
+    return hits, skipped[:200], None
+
+
 FIXLOG = HERE / "fixlog.jsonl"
 
 
-def save_row(file, line, new_v):
+def new_op():
+    return str(time.time_ns())
+
+
+def save_row(file, line, new_v, op=None, kind="row", label=""):
     p = KO / file
     if not p.is_file() or p.parent != KO:
         return "잘못된 파일"
@@ -316,15 +409,62 @@ def save_row(file, line, new_v):
     p.write_text("\n".join(lines) + "\n", encoding="utf-8")
     with open(FIXLOG, "a", encoding="utf-8") as f:
         f.write(json.dumps({"file": file, "line": line, "es": d.get("k", ""),
-                            "old": old, "new": new_v}, ensure_ascii=False) + "\n")
+                            "old": old, "new": new_v,
+                            "op": op or new_op(), "kind": kind, "label": label},
+                           ensure_ascii=False) + "\n")
     return None
 
 
-def history(limit=100):
+def apply_replace(items, label):
+    """고른 자리를 한 동작으로 묶어 적용 — (반영 수, 실패 목록)."""
+    op, done, errs = new_op(), 0, []
+    for it in items:
+        err = save_row(it["file"], int(it["line"]), it["new"], op=op,
+                       kind="bulk", label=label)
+        if err:
+            errs.append(f"{it['file']}:{it['line']} {err}")
+        else:
+            done += 1
+    return done, errs
+
+
+def log_rows():
     if not FIXLOG.exists():
         return []
-    rows = [json.loads(l) for l in FIXLOG.read_text(encoding="utf-8").splitlines() if l]
-    return rows[::-1][:limit]
+    return [json.loads(l) for l in FIXLOG.read_text(encoding="utf-8").splitlines() if l]
+
+
+def history(limit=60):
+    """이력을 동작 묶음으로 세운다 — op가 없는 옛 줄은 한 줄이 곧 한 묶음."""
+    ops, order = {}, []
+    for i, r in enumerate(log_rows()):
+        key = r.get("op") or f"legacy{i}"
+        if key not in ops:
+            ops[key] = {"op": key, "kind": r.get("kind", "row"),
+                        "label": r.get("label", ""), "rows": []}
+            order.append(key)
+        ops[key]["rows"].append(r)
+    return [ops[k] for k in order[::-1][:limit]]
+
+
+def revert_op(opid):
+    """묶음째 되돌린다. 그 뒤에 다시 고쳐진 행은 건너뛴다 — 남의 고침을 지우게 된다."""
+    rows = next((g["rows"] for g in history(10**9) if g["op"] == opid), [])
+    if not rows:
+        return 0, 0, ["그 묶음이 이력에 없습니다"]
+    cur = {(r["file"], r["line"]): r["v"] for r in iter_rows()}
+    op, done, skipped, errs = new_op(), 0, 0, []
+    for r in rows[::-1]:
+        if cur.get((r["file"], r["line"])) != r["new"]:
+            skipped += 1
+            continue
+        err = save_row(r["file"], r["line"], r["old"], op=op, kind="revert",
+                       label=f"{opid} 되돌리기")
+        if err:
+            errs.append(f"{r['file']}:{r['line']} {err}")
+        else:
+            done += 1
+    return done, skipped, errs
 
 
 _ref = None  # 참고 자료 지연 로드
@@ -466,7 +606,7 @@ class H(BaseHTTPRequestHandler):
             self._json({"hits": listing(qs.get("by", ["map"])[0],
                                         qs.get("key", [""])[0])})
         elif u.path == "/history":
-            self._json({"log": history()})
+            self._json({"ops": history()})
         elif u.path == "/ref":
             q = urllib.parse.parse_qs(u.query).get("q", [""])[0]
             self._json(ref_search(q))
@@ -496,6 +636,21 @@ class H(BaseHTTPRequestHandler):
             del notes[int(b["i"]) - 1]
             save_notes(notes)
             self._json({"ok": True})
+        elif self.path == "/replan":
+            b = self._body()
+            hits, skipped, err = plan_replace(iter_rows(b.get("file", "")),
+                                              b.get("find", ""), b.get("repl", ""),
+                                              b.get("src", ""))
+            self._json({"ok": err is None, "err": err,
+                        "hits": hits, "skipped": skipped})
+        elif self.path == "/replace":
+            b = self._body()
+            done, errs = apply_replace(b["items"], b.get("label", ""))
+            self._json({"ok": not errs, "done": done, "errs": errs})
+        elif self.path == "/revert":
+            b = self._body()
+            done, skipped, errs = revert_op(b["op"])
+            self._json({"ok": not errs, "done": done, "skipped": skipped, "errs": errs})
         elif self.path == "/build":
             r = subprocess.run(["uv", "run", str(HERE / "build.py")],
                                capture_output=True, text=True)
