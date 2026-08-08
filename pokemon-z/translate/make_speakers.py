@@ -22,8 +22,8 @@ import re
 from pathlib import Path
 
 HERE = Path(__file__).parent
-JOIN = HERE.parent / "docs" / "research" / "map-speaker-join.jsonl.gz"
-ATTR = HERE.parent / "docs" / "research" / "speaker-attr.jsonl.gz"
+JOIN = HERE / "data" / "map-speaker-join.jsonl.gz"
+ATTR = HERE / "data" / "speaker-attr.jsonl.gz"
 GROUPS = HERE / "sprite-groups.json"
 OUT = HERE.parent / "webapp" / "speakers.json"
 

@@ -24,7 +24,7 @@ HERE = Path(__file__).parent
 LEDGER = HERE.parent / "docs" / "ledger"   # 판정 대장 (glossary·voices)
 KO = HERE / "ko"
 NOTES = HERE / "fixnotes.jsonl"
-JOIN = HERE.parent / "docs" / "research" / "map-speaker-join.jsonl.gz"
+JOIN = HERE / "data" / "map-speaker-join.jsonl.gz"
 GROUPS = HERE / "sprite-groups.json"
 
 _ctx = None  # (map,k) → {"sprite","group","map_name"} 지연 로드
