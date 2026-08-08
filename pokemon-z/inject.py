@@ -42,17 +42,22 @@ GAME = Path("/mnt/d/Game/Pokemon Z/V2.18")
 MARKER = b"MOD:"
 
 
-def find_mod(name: str) -> Path:
+def find_mod(name: str, needs: str = "mod.json") -> Path:
     """repo(우리 것)를 먼저, 보관소(남에게서 온 것 — 한글패치 등)를 다음에 본다.
-    보관소는 게임별 하위 폴더로 나뉜다(<보관소>/<게임>/<모드>)."""
+    보관소는 게임별 하위 폴더로 나뉜다(<보관소>/<게임>/<모드>).
+
+    `needs`는 그 후보가 실제로 갖고 있어야 할 파일이다 — repo의 「한글패치 코어」는
+    mod.json만 실린 껍데기(자산은 보관소에만 산다)라, 기반 Scripts를 찾을 때
+    repo 쪽이 먼저 잡히면 없는 경로를 물고 죽는다."""
     candidates = sorted(MODS.glob(f"{name}/mod.json")) \
         + sorted(STORE.glob(f"*/{name}/mod.json")) + sorted(STORE.glob(f"{name}/mod.json"))
     for card in candidates:
-        return card.parent
-    raise SystemExit(f"repo에도 보관소에도 없는 모드예요: {name}")
+        if (card.parent / needs).exists():
+            return card.parent
+    raise SystemExit(f"repo에도 보관소에도 없는 모드예요: {name} ({needs} 있는 자리 기준)")
 
 
-BASE = find_mod("한글패치 코어") / "Data" / "Scripts.rxdata"
+BASE = find_mod("한글패치 코어", "Data/Scripts.rxdata") / "Data" / "Scripts.rxdata"
 
 
 def load_sections(path: Path) -> list:
