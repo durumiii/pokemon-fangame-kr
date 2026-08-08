@@ -309,7 +309,7 @@
 {"k": "\\PN y <b>Crisanto</b>, supongo.", "v": "\\PN이랑 <b>크리산토</b>겠지, 아마도."}
 {"k": "Bienvenidos al <b>Laboratorio Flare</b>, os agradecería la buena voluntad de no tocar nada, a ser posible.", "v": "<b>플레어 연구소</b>에 온 것을 환영한다. 가급적 아무것도 건드리지 않아 주면 고맙겠구나."}
 {"k": "\\c[2]<b>Olivier:</b>\\c[0] ¡<i>Sacrebleu</i>! ¡Si ya habéis tocado demasiado!", "v": "\\c[2]<b>올리비에:</b>\\c[0] <i>Sacrebleu</i>! 이미 만질 대로 만져 버렸잖아!"}
-{"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡Pro-profesora! ¡Nosotros no...!", "v": "\\c[3]<b>크리산토:</b>\\c[0] 교-박사님! 저희가 한 게 아니...!"}
+{"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡Pro-profesora! ¡Nosotros no...!", "v": "\\c[3]<b>크리산토:</b>\\c[0] 바-박사님! 저희가 한 게 아니...!"}
 {"k": "¡Algo ha salido solo de ese frasco y...!", "v": "저 플라스크에서 무언가가 저절로 튀어나오더니...!"}
 {"k": "\\c[2]<b>Olivier:</b>\\c[0] ¿En serio? ¡<i>Mon Dieu</i>! ¡Qué error de cálculo!", "v": "\\c[2]<b>올리비에:</b>\\c[0] 정말이니? <i>Mon Dieu</i>! 엄청난 계산 착오였잖아!"}
 {"k": "Se supone que no tenía que desarrollar capacidad psicomotriz hasta la semana que viene.", "v": "다음 주나 되어야 운동 능력이 생길 줄 알았는데 말이지."}
@@ -8526,7 +8526,7 @@
 {"k": "¡Comienza a sonar una bonita melodía!", "v": "아름다운 멜로디가 울려 퍼지기 시작했다!"}
 {"k": "No ocurre nada.", "v": "아무 일도 일어나지 않는다."}
 {"k": "Tal vez exista alguien aquí dentro que conozca la clave correcta.", "v": "어쩌면 이 안에 올바른 비밀번호를 아는 사람이 있을지도 모른다."}
-{"k": "¿E-eres tú, Profesor? ¡Da-da-dame más fluido! ¡Fluido Onírico!", "v": "바... 교수님이야? 액... 액체 좀 더 줘! 꿈의액체!"}
+{"k": "¿E-eres tú, Profesor? ¡Da-da-dame más fluido! ¡Fluido Onírico!", "v": "교... 교수님이야? 액... 액체 좀 더 줘! 꿈의액체!"}
 {"k": "Mi mente se acerca más a las estrellas y a las galaxias cuanto más fluido tomo.", "v": "액체를 마실수록 내 정신이 별과 은하에 점점 더 가까워지거든."}
 {"k": "Si me das Fluido Onírico, te contaré un secretito. ¡Je, je, je! ¡Pero dame!", "v": "꿈의액체 좀 주면 비밀 하나 알려줄게. 히히히! 어서 줘!"}
 {"k": "¿Darle 1 unidad de Fluido Onírico?", "v": "꿈의액체 1개를 줄까?"}
@@ -14049,7 +14049,7 @@
 {"k": "¡Lo sé y me da igual! ¡Es todo cuanto puedo hacer!", "v": "알지만 상관없어! 이게 내가 할 수 있는 전부야!"}
 {"k": "<b>Pyroar:</b> ...", "v": "<b>화염레오:</b> ..."}
 {"k": "\\c[2]<b>Olivier:</b>\\c[0] <i>Merci</i>, Pyroar. Eres, sin duda, la mejor compañera que una entrenadora Pokémon puede tener.", "v": "\\c[2]<b>올리비에:</b>\\c[0] <i>Merci</i>, 화염레오. 넌 틀림없이 포켓몬 트레이너가 가질 수 있는 최고의 파트너야."}
-{"k": "\\c[5]<b>Melia:</b>\\c[0] ¡Pro-profe! ¿Qué va a hacer?", "v": "\\c[5]<b>멜리아:</b>\\c[0] 교, 박사님! 뭘 하시려는 거예요?"}
+{"k": "\\c[5]<b>Melia:</b>\\c[0] ¡Pro-profe! ¿Qué va a hacer?", "v": "\\c[5]<b>멜리아:</b>\\c[0] 바, 박사님! 뭘 하시려는 거예요?"}
 {"k": "\\c[1]<b>AZ:</b>\\c[0] ¡<i>Madame</i> <b>Olivier</b>! ¡El arma está irradiando energía! ¡Si la perfora ahora, usted podría...!", "v": "\\c[1]<b>AZ:</b>\\c[0] <b>마담</b> <i>올리비에</i>! 병기가 에너지를 방출하고 있소! 지금 뚫으려 했다간 당신도...!"}
 {"k": "\\c[2]<b>Olivier:</b>\\c[0] ¡Soy profesora! ¡Deduzco los detalles!", "v": "\\c[2]<b>올리비에:</b>\\c[0] 난 박사야! 세부사항쯤은 이미 다 알고 있어!"}
 {"k": "\\c[2]<b>Olivier:</b>\\c[0] \\PN, <b>Crisanto</b>, <b>Melia</b>... Habéis superado mis expectativas.", "v": "\\c[2]<b>올리비에:</b>\\c[0] \\PN, <b>크리산토</b>, <b>멜리아</b>... 너희는 내 기대를 뛰어넘었단다."}
