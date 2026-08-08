@@ -154,20 +154,39 @@ def attribute(msgs, sprite="", objects=frozenset()):
 TRIGGER = {0: "말걸기", 1: "플레이어접촉", 2: "이벤트접촉", 3: "자동실행", 4: "병렬처리"}
 
 
-def scene(trigger, n_msg):
+TRAINER = re.compile(r"^Trainer\(\d+\)$")
+
+# 페이지가 「연출」을 하고 있다는 신호 — 인물을 걸어 다니게 하고(209) 화면·소리를 만진다.
+MOVE = 209                                    # 이동 루트 설정
+STAGE = frozenset({203, 204, 223, 224, 231, 232, 241})
+# 203 화면 스크롤 · 204 지도 스크롤 · 223 화면 색조 · 224 화면 플래시
+# 231/232 그림 표시·이동 · 241 BGM 연주
+# ⚠ SE 연주(250)와 회복(314)은 뺐다 — 「명상하여 포켓몬을 치료하시겠습니까?」 같은
+#   기능 이벤트가 이 둘 때문에 컷신으로 샜다(2026-08-08 표본 검증).
+
+
+def scene(trigger, n_msg, event_name="", codes=frozenset(), has_tag=False):
     """이 페이지가 「스토리 장면」인가 「지나가며 거는 말」인가.
 
-    RPG Maker XP의 `@trigger`가 1차 근거다 — 자동실행·병렬처리·접촉은 플레이어가
-    고르지 않았는데 시작되는 자리라 컷신이고, 말걸기는 NPC 앞에 서서 버튼을 눌러야
-    나온다. 말걸기 중에도 주연과의 긴 대화가 있으므로 **메시지 수**를 함께 본다
-    (`n_msg`도 그대로 싣는다 — 경계를 다시 그을 때 이 수를 보고 정하면 된다).
+    `@trigger` 하나로는 갈리지 않는다(2026-08-08 실측) — 이벤트 접촉(2)은 컷신이 아니라
+    **트레이너 시야 도발**이었고(대사 있는 256페이지 전부가 `Trainer(n)` 이름), 반대로
+    말걸기(0)로 시작하는 스토리 장면도 있다. 그래서 게임이 이미 갖고 있는 두 답을 쓴다.
+
+    - **제작자가 붙인 이벤트 이름** — `Trainer(n)`은 도발 대사다. 기본 이름(EV0xx)만
+      쓰는 게임이라 이름으로 알 수 있는 것은 여기까지다.
+    - **명령 구성** — 컷신은 인물을 걸어 다니게 하고(이동 루트 209) 화면 색조·BGM·
+      스크롤을 만진다. 자동실행 페이지의 87%가 이동 루트를 쓰는 반면 말걸기는 16%다.
+
+    자동실행·병렬은 플레이어가 고르지 않았는데 열리므로 그대로 컷신이다.
     """
     if trigger < 0:
         return "공통"
+    if trigger == 2 or TRAINER.match(event_name or ""):
+        return "트레이너"
     if trigger in (3, 4):
         return "컷신"
-    if trigger in (1, 2):
-        return "접촉"
+    if MOVE in codes and codes & STAGE and (has_tag or n_msg > 6):
+        return "컷신"
     return "대화" if n_msg > 6 else "잡담"
 
 
@@ -180,10 +199,13 @@ def scan():
     def emit(mid, mname, eid, ename, page, sprite, cmdlist, trigger=-1):
         msgs = page_messages(cmdlist)
         n_msg = sum(1 for _, _, kind, _ in msgs if kind == "text")
+        codes = {c.attributes["@code"] for c in cmdlist}
+        has_tag = any(TAG.match(t) for _, _, kind, t in msgs if kind == "text")
+        sc = scene(trigger, n_msg, ename, codes, has_tag)
         for cmdi, ind, kind, text, who, how, cast, prompt in attribute(msgs, sprite, objects):
             rows.append({"map": mid, "map_name": mname, "event": eid, "event_name": ename,
                          "page": page, "cmd": cmdi, "ind": ind, "sprite": sprite,
-                         "trigger": trigger, "n_msg": n_msg, "scene": scene(trigger, n_msg),
+                         "trigger": trigger, "n_msg": n_msg, "scene": sc,
                          "kind": kind, "who": who, "how": how, "cast": cast,
                          "prompt": prompt, "k": text})
 
