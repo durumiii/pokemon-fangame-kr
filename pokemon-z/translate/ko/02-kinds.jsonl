@@ -450,7 +450,7 @@
 {"i": 449, "v": "하마", "es": "Hippo"}
 {"i": 450, "v": "중량", "es": "Heavyweight"}
 {"i": 451, "v": "전갈", "es": "Scorpion"}
-{"i": 452, "v": "도깨비전갈", "es": "Ogre Scorp"}
+{"i": 452, "v": "요괴전갈", "es": "Ogre Scorp"}
 {"i": 453, "v": "독설", "es": "Toxic Mouth"}
 {"i": 454, "v": "독설", "es": "Toxic Mouth"}
 {"i": 455, "v": "벌레잡이", "es": "Bug Catcher"}
@@ -648,7 +648,7 @@
 {"i": 647, "v": "망아지", "es": "Colt"}
 {"i": 648, "v": "선율", "es": "Melody"}
 {"i": 649, "v": "고생대", "es": "Paleozoic"}
-{"i": 650, "v": "가시열매", "es": "Spiky Nut"}
+{"i": 650, "v": "밤송이", "es": "Spiky Nut"}
 {"i": 651, "v": "가시갑옷", "es": "Spiky Armor"}
 {"i": 652, "v": "가시갑옷", "es": "Spiky Armor"}
 {"i": 653, "v": "여우", "es": "Fox"}
@@ -793,110 +793,110 @@
 {"i": 792, "v": "월륜", "es": "Moone"}
 {"i": 793, "v": "기생", "es": "Parásito"}
 {"i": 794, "v": "팽창", "es": "Hinchado"}
-{"i": 795, "v": "우아", "es": "Elegancia"}
-{"i": 796, "v": "발광", "es": "Luminaria"}
-{"i": 797, "v": "발사", "es": "Lanzamiento"}
+{"i": 795, "v": "염미", "es": "Elegancia"}
+{"i": 796, "v": "전기장식", "es": "Luminaria"}
+{"i": 797, "v": "쏴올리기", "es": "Lanzamiento"}
 {"i": 798, "v": "발도", "es": "Desenvaine"}
-{"i": 799, "v": "대식가", "es": "Tragaldabas"}
+{"i": 799, "v": "악식성", "es": "Tragaldabas"}
 {"i": 800, "v": "프리즘", "es": "Prism"}
-{"i": 801, "v": "인공", "es": "Aritificial"}
+{"i": 801, "v": "인조", "es": "Aritificial"}
 {"i": 802, "v": "그림자살이", "es": "Gloomdweller"}
 {"i": 803, "v": "독침", "es": "Pin Veneno"}
 {"i": 804, "v": "독침", "es": "Poison Pin"}
-{"i": 805, "v": "벽", "es": "Muro"}
+{"i": 805, "v": "돌담", "es": "Muro"}
 {"i": 806, "v": "불꽃놀이", "es": "Pirotecnia"}
-{"i": 807, "v": "프리즘", "es": "Prism"}
+{"i": 807, "v": "신뢰", "es": "Prism"}
 {"i": 808, "v": "너트", "es": "Tuerca"}
 {"i": 809, "v": "너트", "es": "Tuerca"}
-{"i": 810, "v": "침팬지", "es": "Chimpancé"}
-{"i": 811, "v": "리듬", "es": "Ritmo"}
-{"i": 812, "v": "타악", "es": "Percusión"}
+{"i": 810, "v": "꼬마원숭이", "es": "Chimpancé"}
+{"i": 811, "v": "비트", "es": "Ritmo"}
+{"i": 812, "v": "드러머", "es": "Percusión"}
 {"i": 813, "v": "토끼", "es": "Conejo"}
 {"i": 814, "v": "토끼", "es": "Conejo"}
 {"i": 815, "v": "스트라이커", "es": "Delantero"}
 {"i": 816, "v": "물도마뱀", "es": "Acuartija"}
 {"i": 817, "v": "물도마뱀", "es": "Acuartija"}
-{"i": 818, "v": "요원", "es": "Agente"}
-{"i": 819, "v": "볼주머니", "es": "Abazón"}
-{"i": 820, "v": "탐욕", "es": "Avaricia"}
-{"i": 821, "v": "작은새", "es": "Pajarito"}
+{"i": 818, "v": "에이전트", "es": "Agente"}
+{"i": 819, "v": "볼가득", "es": "Abazón"}
+{"i": 820, "v": "욕심쟁이", "es": "Avaricia"}
+{"i": 821, "v": "아기새", "es": "Pajarito"}
 {"i": 822, "v": "까마귀", "es": "Cuervo"}
 {"i": 823, "v": "까마귀", "es": "Cuervo"}
 {"i": 824, "v": "유충", "es": "Larva"}
 {"i": 825, "v": "레이돔", "es": "Radomo"}
-{"i": 826, "v": "일곱점", "es": "Siete Puntos"}
+{"i": 826, "v": "칠성", "es": "Siete Puntos"}
 {"i": 827, "v": "여우", "es": "Zorro"}
 {"i": 828, "v": "여우", "es": "Zorro"}
 {"i": 829, "v": "꽃장식", "es": "Adornofloral"}
 {"i": 830, "v": "솜장식", "es": "Adornoalgodón"}
 {"i": 831, "v": "양", "es": "Oveja"}
 {"i": 832, "v": "양", "es": "Oveja"}
-{"i": 833, "v": "물기", "es": "Mordedura"}
-{"i": 834, "v": "깨물기", "es": "Mordisco"}
+{"i": 833, "v": "물고늘어지기", "es": "Mordedura"}
+{"i": 834, "v": "물어뜯기", "es": "Mordisco"}
 {"i": 835, "v": "강아지", "es": "Perrito"}
 {"i": 836, "v": "개", "es": "Perro"}
 {"i": 837, "v": "석탄", "es": "Carbón"}
 {"i": 838, "v": "석탄", "es": "Carbón"}
 {"i": 839, "v": "석탄", "es": "Carbón"}
-{"i": 840, "v": "사과벌레", "es": "Manzanido"}
-{"i": 841, "v": "새콤사과", "es": "Manzanala"}
-{"i": 842, "v": "달콤사과", "es": "Manzanéctar"}
+{"i": 840, "v": "사과살이", "es": "Manzanido"}
+{"i": 841, "v": "사과날개", "es": "Manzanala"}
+{"i": 842, "v": "사과즙", "es": "Manzanéctar"}
 {"i": 843, "v": "모래뱀", "es": "Serpiente Arena"}
 {"i": 844, "v": "모래뱀", "es": "Serpiente Arena"}
-{"i": 845, "v": "먹보", "es": "Tragón"}
-{"i": 846, "v": "돌진", "es": "Arremetida"}
-{"i": 847, "v": "꿰뚫기", "es": "Ensarta"}
-{"i": 848, "v": "새싹", "es": "Retoño"}
+{"i": 845, "v": "그대로삼키기", "es": "Tragón"}
+{"i": 846, "v": "돌격", "es": "Arremetida"}
+{"i": 847, "v": "꼬치", "es": "Ensarta"}
+{"i": 848, "v": "젖먹이", "es": "Retoño"}
 {"i": 849, "v": "펑크", "es": "Punki"}
-{"i": 850, "v": "라디에이터", "es": "Radiador"}
-{"i": 851, "v": "라디에이터", "es": "Radiador"}
-{"i": 852, "v": "말썽꾸러기", "es": "Malcriado"}
-{"i": 853, "v": "주짓수", "es": "Jiu-Jitsu"}
-{"i": 854, "v": "차", "es": "Té"}
-{"i": 855, "v": "차", "es": "Té"}
-{"i": 856, "v": "평온", "es": "Calma"}
-{"i": 857, "v": "정적", "es": "Serenidad"}
-{"i": 858, "v": "침묵", "es": "Silencio"}
-{"i": 859, "v": "약삭빠름", "es": "Astuto"}
-{"i": 860, "v": "심술", "es": "Malicioso"}
-{"i": 861, "v": "덩치", "es": "Voluminoso"}
-{"i": 862, "v": "방벽", "es": "Bloqueador"}
+{"i": 850, "v": "발열", "es": "Radiador"}
+{"i": 851, "v": "발열", "es": "Radiador"}
+{"i": 852, "v": "떼쟁이", "es": "Malcriado"}
+{"i": 853, "v": "유술", "es": "Jiu-Jitsu"}
+{"i": 854, "v": "홍차", "es": "Té"}
+{"i": 855, "v": "홍차", "es": "Té"}
+{"i": 856, "v": "차분", "es": "Calma"}
+{"i": 857, "v": "정숙", "es": "Serenidad"}
+{"i": 858, "v": "정적", "es": "Silencio"}
+{"i": 859, "v": "꾀부리기", "es": "Astuto"}
+{"i": 860, "v": "성악", "es": "Malicioso"}
+{"i": 861, "v": "벌크업", "es": "Voluminoso"}
+{"i": 862, "v": "정지", "es": "Bloqueador"}
 {"i": 863, "v": "바이킹", "es": "Vikingo"}
 {"i": 864, "v": "산호", "es": "Coral"}
-{"i": 865, "v": "들오리", "es": "Pato Salvaje"}
-{"i": 866, "v": "희극", "es": "Cómico"}
-{"i": 867, "v": "관", "es": "Coffin"}
-{"i": 868, "v": "생크림", "es": "Nata"}
-{"i": 869, "v": "생크림", "es": "Nata"}
-{"i": 870, "v": "대형", "es": "Formación"}
+{"i": 865, "v": "청둥오리", "es": "Pato Salvaje"}
+{"i": 866, "v": "코미디언", "es": "Cómico"}
+{"i": 867, "v": "원념", "es": "Coffin"}
+{"i": 868, "v": "크림", "es": "Nata"}
+{"i": 869, "v": "크림", "es": "Nata"}
+{"i": 870, "v": "진형", "es": "Formación"}
 {"i": 871, "v": "성게", "es": "Erizo de Mar"}
 {"i": 872, "v": "애벌레", "es": "Gusano"}
 {"i": 873, "v": "얼음나방", "es": "Polillahielo"}
 {"i": 874, "v": "거석", "es": "Megalito"}
 {"i": 875, "v": "펭귄", "es": "Pingüino"}
-{"i": 876, "v": "감지", "es": "Sensorio"}
-{"i": 877, "v": "두얼굴", "es": "Dos Caras"}
-{"i": 878, "v": "청동코끼리", "es": "Broncefante"}
-{"i": 879, "v": "청동코끼리", "es": "Broncefante"}
+{"i": 876, "v": "감정", "es": "Sensorio"}
+{"i": 877, "v": "양면", "es": "Dos Caras"}
+{"i": 878, "v": "동상", "es": "Broncefante"}
+{"i": 879, "v": "동상", "es": "Broncefante"}
 {"i": 880, "v": "화석", "es": "Fósil"}
 {"i": 881, "v": "화석", "es": "Fósil"}
 {"i": 882, "v": "화석", "es": "Fósil"}
 {"i": 883, "v": "화석", "es": "Fósil"}
 {"i": 884, "v": "합금", "es": "Aleación"}
-{"i": 885, "v": "원한", "es": "Resentido"}
-{"i": 886, "v": "보호자", "es": "Cuidador"}
-{"i": 887, "v": "은밀", "es": "Furtivo"}
-{"i": 888, "v": "무사", "es": "Guerrero"}
-{"i": 889, "v": "무사", "es": "Guerrero"}
+{"i": 885, "v": "원망", "es": "Resentido"}
+{"i": 886, "v": "돌보미", "es": "Cuidador"}
+{"i": 887, "v": "스텔스", "es": "Furtivo"}
+{"i": 888, "v": "강자", "es": "Guerrero"}
+{"i": 889, "v": "강자", "es": "Guerrero"}
 {"i": 890, "v": "거대", "es": "Gigantesco"}
-{"i": 891, "v": "쿵후", "es": "Kung-fu"}
-{"i": 892, "v": "쿵후", "es": "Kung-fu"}
-{"i": 893, "v": "음험한원숭이", "es": "Simiestro"}
+{"i": 891, "v": "권법", "es": "Kung-fu"}
+{"i": 892, "v": "권법", "es": "Kung-fu"}
+{"i": 893, "v": "나쁜원숭이", "es": "Simiestro"}
 {"i": 894, "v": "일렉트론", "es": "Electrón"}
-{"i": 895, "v": "드래곤구체", "es": "Dragosfera"}
-{"i": 896, "v": "사나운준마", "es": "Corcel Feroz"}
-{"i": 897, "v": "쾌속준마", "es": "Corcel Veloz"}
-{"i": 898, "v": "왕", "es": "Rey"}
+{"i": 895, "v": "용옥", "es": "Dragosfera"}
+{"i": 896, "v": "사나운말", "es": "Corcel Feroz"}
+{"i": 897, "v": "빠른말", "es": "Corcel Veloz"}
+{"i": 898, "v": "킹", "es": "Rey"}
 {"i": 899, "v": "비구름", "es": "Nimbo"}
 {"i": 900, "v": "속임수", "es": "Deceiver"}
 {"i": 901, "v": "꼭두각시", "es": "Marionette"}
