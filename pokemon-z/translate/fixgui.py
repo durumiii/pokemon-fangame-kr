@@ -21,6 +21,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 HERE = Path(__file__).parent
+LEDGER = HERE.parent / "docs" / "ledger"   # 판정 대장 (glossary·voices)
 KO = HERE / "ko"
 NOTES = HERE / "fixnotes.jsonl"
 JOIN = HERE.parent / "docs" / "research" / "map-speaker-join.jsonl.gz"
@@ -333,7 +334,7 @@ def ref_search(q):
     global _ref
     if _ref is None:
         import gzip
-        _ref = {"gloss": (HERE / "glossary.md").read_text(encoding="utf-8").splitlines(),
+        _ref = {"gloss": (LEDGER / "glossary.md").read_text(encoding="utf-8").splitlines(),
                 "canon": [], "msgs": []}
         cp = HERE / "canon" / "canon.jsonl"
         if cp.exists():

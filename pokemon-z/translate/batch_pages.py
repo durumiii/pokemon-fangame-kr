@@ -28,6 +28,7 @@ from collections import defaultdict
 from pathlib import Path
 
 HERE = Path(__file__).parent
+LEDGER = HERE.parent / "docs" / "ledger"   # 판정 대장 (glossary·voices)
 sys.path.insert(0, str(HERE))
 import mapname  # noqa: E402
 from pilot_npc import ask_npc, key_of, npc_line  # noqa: E402
@@ -87,7 +88,7 @@ def voice_lines():
     자주 나오는 화자가 통째로 빠진다**(2026-08-06 실측).
     """
     table = {}
-    for line in (HERE / "voices.md").read_text(encoding="utf-8").splitlines():
+    for line in (LEDGER / "voices.md").read_text(encoding="utf-8").splitlines():
         if not line.startswith("|"):
             continue
         cells = [c.strip() for c in line.split("|")]
@@ -566,7 +567,7 @@ def term_pairs():
 
 def _term_pairs_md():
     pairs, on = [], False
-    for line in (HERE / "glossary.md").read_text(encoding="utf-8").splitlines():
+    for line in (LEDGER / "glossary.md").read_text(encoding="utf-8").splitlines():
         if line.startswith(("#", "##", "###")):
             on = line.startswith(TERM_SECTIONS)
         if not on or not line.startswith("|"):

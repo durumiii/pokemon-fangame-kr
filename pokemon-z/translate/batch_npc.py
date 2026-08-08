@@ -24,6 +24,7 @@ from collections import defaultdict
 from pathlib import Path
 
 HERE = Path(__file__).parent
+LEDGER = HERE.parent / "docs" / "ledger"   # 판정 대장 (glossary·voices)
 sys.path.insert(0, str(HERE))
 from batch import worth_rewriting  # noqa: E402
 from pilot_npc import ask_npc, build_prompt, key_of, load_personas  # noqa: E402
@@ -89,7 +90,7 @@ def voices_map():
 def voice_lines():
     """voices.md 표에서 인물명 → 말투 셀."""
     table = {}
-    for line in (HERE / "voices.md").read_text(encoding="utf-8").splitlines():
+    for line in (LEDGER / "voices.md").read_text(encoding="utf-8").splitlines():
         cells = [c.strip() for c in line.split("|")]
         if len(cells) >= 5 and cells[1] and cells[1] not in ("인물", "갈래", "태그") \
                 and not cells[1].startswith("-"):

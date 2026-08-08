@@ -1,5 +1,11 @@
 # 주연 대사 재번역 — `translate/batch_pages.py`
 
+**범위** — LLM 배치 재번역의 사정권, 프롬프트 규약, 산출 선별.
+**여는 때** — 대사를 배치로 다시 번역할 때 · 프롬프트나 선별 기준을 고칠 때.
+**다루지 않는 것** — 한 자리 손수정([text-pipeline.md](text-pipeline.md)) · 말투 정본
+([../ledger/voices.md](../ledger/voices.md)).
+**전제** — 화자·말투 개념([events-and-speech.md](events-and-speech.md)).
+
 단위는 **이벤트 페이지**(장면 하나). `plan [--pilot]` · `run [--pilot] [--fresh]` ·
 `samples <이름>`(본보기 확인) · `report`. 배치 모델은 gemini-3.6-flash +
 reasoning_effort=minimal. **작은 표본으로 파라미터를 판정하지 마라.**
@@ -93,4 +99,4 @@ reasoning_effort=minimal. **작은 표본으로 파라미터를 판정하지 마
 
 - 선행 연구 대조: [`../research/2026-08-06-translation-prompting-research.md`](../research/2026-08-06-translation-prompting-research.md)
 - 판별자(LLM-as-judge) 실측·재시도 설계: [`../research/2026-08-06-discriminator-pilot.md`](../research/2026-08-06-discriminator-pilot.md)
-- 파일럿 판정 이력·방법론: [`../design/z-translation-quality.md`](../design/z-translation-quality.md)
+- 파일럿 판정 이력·방법론: [`../ledger/quality.md`](../ledger/quality.md)

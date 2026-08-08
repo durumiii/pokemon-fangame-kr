@@ -384,9 +384,11 @@ def main():
     # 재번역 도구 — 남이 특정 대사를 다시 번역할 때 일관성을 지켜 주는 재료
     kit = tbl / "번역 도구"
     kit.mkdir()
-    for fname in ("prompt.md", "prompt-npc.md", "glossary.md", "voices.md",
+    for fname in ("prompt.md", "prompt-npc.md",
                   "speaker-aliases.json", "persona-table.jsonl", "sprite-groups.json"):
         shutil.copy2(TRANSLATE / fname, kit / fname)
+    for fname in ("glossary.md", "voices.md"):   # 판정 대장은 docs/ledger에 산다
+        shutil.copy2(TRANSLATE.parent / "docs" / "ledger" / fname, kit / fname)
     for fname in ("canon.jsonl", "aliases.jsonl", "exceptions.jsonl", "messages.jsonl.gz"):
         src = TRANSLATE / "canon" / fname
         if src.exists():  # aliases는 아직 빈 개념일 수 있다

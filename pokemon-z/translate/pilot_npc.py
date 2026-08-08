@@ -21,6 +21,7 @@ from collections import defaultdict
 from pathlib import Path
 
 HERE = Path(__file__).parent
+LEDGER = HERE.parent / "docs" / "ledger"   # 판정 대장 (glossary·voices)
 sys.path.insert(0, str(HERE))
 from batch import URL, key_of, worth_rewriting  # noqa: E402
 
@@ -90,7 +91,7 @@ def npc_line(p):
 def build_prompt():
     body = (HERE / "prompt-npc.md").read_text(encoding="utf-8")
     body = body.split("## 시스템 프롬프트 본문", 1)[1]
-    gloss = (HERE / "glossary.md").read_text(encoding="utf-8")
+    gloss = (LEDGER / "glossary.md").read_text(encoding="utf-8")
     return body.replace("[용어 규칙 — glossary.md 본문 삽입]", gloss)
 
 

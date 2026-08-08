@@ -31,6 +31,7 @@ from collections import Counter
 from pathlib import Path
 
 HERE = Path(__file__).parent
+LEDGER = HERE.parent / "docs" / "ledger"   # 판정 대장 (glossary·voices)
 FILL = HERE / "fill"
 OUT = FILL / "out"
 GAME = Path("/mnt/d/Game/Pokemon Z/V2.18/Data")
@@ -148,7 +149,7 @@ def plan():
 
 
 def build_prompt(kind):
-    gloss = (HERE / "glossary.md").read_text(encoding="utf-8")
+    gloss = (LEDGER / "glossary.md").read_text(encoding="utf-8")
     tpl = PROMPT_NEW if kind == "new" else PROMPT_DESC
     return tpl.replace("{GLOSSARY}", gloss)
 

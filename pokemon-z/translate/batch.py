@@ -35,6 +35,7 @@ from collections import Counter
 from pathlib import Path
 
 HERE = Path(__file__).parent
+LEDGER = HERE.parent / "docs" / "ledger"   # 판정 대장 (glossary·voices)
 BATCH = HERE / "batch"
 OUT = BATCH / "out"
 MODEL = "gemini-3.6-flash"
@@ -144,7 +145,7 @@ def plan():
 
 def voice_table():
     table = {}
-    for line in (HERE / "voices.md").read_text(encoding="utf-8").splitlines():
+    for line in (LEDGER / "voices.md").read_text(encoding="utf-8").splitlines():
         cells = [c.strip() for c in line.split("|")]
         if len(cells) >= 5 and cells[1] and cells[1] not in ("인물", "갈래", "태그") \
                 and not cells[1].startswith("-"):
@@ -155,10 +156,10 @@ def voice_table():
 def build_prompt(speakers):
     body = (HERE / "prompt.md").read_text(encoding="utf-8")
     body = body.split("## 시스템 프롬프트 본문", 1)[1].split("## 파일럿에서", 1)[0]
-    gloss = (HERE / "glossary.md").read_text(encoding="utf-8")
+    gloss = (LEDGER / "glossary.md").read_text(encoding="utf-8")
     vt = voice_table()
     lines = [f"- {s}: {vt[s]}" for s in sorted(speakers or []) if s and s in vt]
-    common = (HERE / "voices.md").read_text(encoding="utf-8").split("## 배치 프롬프트에 얹을 공통 규칙", 1)[1]
+    common = (LEDGER / "voices.md").read_text(encoding="utf-8").split("## 배치 프롬프트에 얹을 공통 규칙", 1)[1]
     voices = "말투표 (이 장면의 화자):\n" + ("\n".join(lines) if lines else "- (태그 화자 없음 — 기본값 적용)")
     voices += "\n기본값: 서술문은 간결한 평서(~했다), 일반 NPC는 해요체, 시스템 문구는 합쇼체.\n"
     voices += "공통 규칙:" + common

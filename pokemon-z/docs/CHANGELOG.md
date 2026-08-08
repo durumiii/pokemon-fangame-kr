@@ -141,4 +141,4 @@
 ## v5.1 이전
 
 v5 계열 패키징 체계(3종 변형)와 그 이전 이력은 원장
-[z-translation-quality](design/z-translation-quality.md)의 절별 기록을 본다.
+[z-translation-quality](ledger/quality.md)의 절별 기록을 본다.
