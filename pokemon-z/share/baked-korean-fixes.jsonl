@@ -12,3 +12,4 @@
 {"sec": "PokeBattle_Scene", "line": 2371, "old": "훔치는 건 도둑이나 하는 짓이다.", "new": "남의 것에 손대면 도둑!", "why": "본가 la·za btl_std(실측)"}
 {"sec": "Diploma Nuz1", "line": 7, "old": "눌록을 완주했음을", "new": "너즐록을 완주했음을", "why": "정본 표기 «너즐록»(07·09절 일관, 유지자 2026-08-09)"}
 {"sec": "Diploma Nuz2", "line": 7, "old": "눌록을 완주했음을", "new": "너즐록을 완주했음을", "why": "위와 동일 (하드/영웅 표기 어긋남은 별도 확인)"}
+{"sec": "PScreen_Options", "line": 739, "old": "case @sprites[\"option\"].index", "new": "idx = @sprites[\"option\"].index; idx += 1 if idx >= 5 && $game_switches && $game_switches[666]; case idx", "why": "원작 버그 — 히로이코(스위치 666) 세이브는 배틀 방식 항목이 빠진 배열을 쓰는데 설명표는 한 벌이라 5번(달리기 키)부터 한 칸씩 밀림. 유지자 승인 2026-08-09"}
