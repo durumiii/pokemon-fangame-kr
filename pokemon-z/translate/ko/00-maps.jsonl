@@ -3847,9 +3847,9 @@
 {"k": "Según las teorías de la Jefa Alquimista <b>Núbila</b>, podría devolver la vida a los organismos muertos si se manipulan adecuadamente.", "v": "수석 연금술사 <b>누빌라</b>의 이론에 따르면, 적절히 다룰 경우 죽은 유기체에 생명을 되돌려줄 수 있다고 한다."}
 {"k": "Entonces, ¿de verdad existe una forma de burlar la muerte? ¿Y la clave está en los Pokémon?", "v": "정말 죽음을 피할 방법이 존재하는 걸까? 그리고 그 열쇠를 포켓몬이 쥐고 있는 걸까?"}
 {"map": 112, "n": 68}
-{"k": "\\c[2]<b>Lanto:</b>\\c[0] ¿Por qué no encuentras el modo de marcharte de mi casa?", "v": "\\c[2]<b>란토:</b>\\c[0] 어째서 내 집에서 나갈 생각을 안 하는 건가요?"}
-{"k": "\\sh¡VAMOS! ¡FUERA!", "v": "\\sh가자! 나가라!"}
-{"k": "¡Ahora eres una persona non-grata aquí!", "v": "이제 당신은 여기서 환영받지 못하는 존재랍니다!"}
+{"k": "\\c[2]<b>Lanto:</b>\\c[0] ¿Por qué no encuentras el modo de marcharte de mi casa?", "v": "\\c[2]<b>란토:</b>\\c[0] 어째서 내 집에서 나갈 생각을 않는 거냐?"}
+{"k": "\\sh¡VAMOS! ¡FUERA!", "v": "\\sh꺼져! 나가란 말이다!"}
+{"k": "¡Ahora eres una persona non-grata aquí!", "v": "너희는 이제 여기서 환영받지 못해!"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡Profesora <b>Olivier</b>!", "v": "\\c[3]<b>크리산토:</b>\\c[0] <b>올리비에</b> 교수님!"}
 {"k": "\\c[2]<b>Lanto:</b>\\c[0] ¡Aay! ¿No podíais estaros quietos un ratito?", "v": "\\c[2]<b>란토:</b>\\c[0] 아아! 잠시만이라도 가만히 계실 수 없었나요?"}
 {"k": "Solo necesitaba daros de beber uno de mis vinos especiales para dejaros inconscientes. Y os despertaríais formando parte de mi colección personal de juguetes.", "v": "제 특제 와인 한 모금이면 의식을 잃었을 텐데요. 깨어났을 땐 제 개인 장난감 컬렉션이 되어 있었겠죠."}
@@ -3863,13 +3863,13 @@
 {"k": "...", "v": "..."}
 {"k": "\\PN... <b>Crisanto</b>...", "v": "\\PN... <b>크리산토</b>..."}
 {"k": "Salid de aquí...\\nEste hombre es... un monstruo...", "v": "여기서 나가...\\n이 사람은... 괴물이야..."}
-{"k": "\\c[2]<b>Lanto:</b>\\c[0] Ni hombre, ni monstruo, ¡pronto seré un dios en la tierra!", "v": "\\c[2]<b>란토:</b>\\c[0] 사람도, 괴물도 아니다. 나는 곧 지상의 신이 될 테니까!"}
+{"k": "\\c[2]<b>Lanto:</b>\\c[0] Ni hombre, ni monstruo, ¡pronto seré un dios en la tierra!", "v": "\\c[2]<b>란토:</b>\\c[0] 사람도, 괴물도 아닙니다. 나는 곧 지상의 신이 될 테니까!"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] Entonces, ¿de eso se trata?", "v": "\\c[3]<b>크리산토:</b>\\c[0] 그렇다면, 그게 목적이셨습니까?"}
 {"k": "¿Está buscando la fórmula de la inmortalidad para vivir eternamente?", "v": "영원히 살기 위해 불로불사의 비법이라도 찾으시는 건가요?"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡Una meta muy pueril para un villano! ¡Esperaba algo más elevado por su parte!", "v": "\\c[3]<b>크리산토:</b>\\c[0] 악당 치고는 너무나 유치한 목표군요! 당신 정도의 인물이라면 훨씬 더 고상한 무언가를 바랄 줄 알았거늘!"}
 {"k": "<b>???:</b> Esa no es nuestra meta.", "v": "<b>???:</b> 그건 우리의 목표가 아니다."}
-{"k": "\\c[2]<b>Lanto:</b>\\c[0] Mi señora...", "v": "\\c[2]<b>란토:</b>\\c[0] 제 아내..."}
-{"k": "\\c[9]<b>Alca:</b>\\c[0] Baja a la profesora de ahí, <b>Lanto</b>.", "v": "\\c[9]<b>알카:</b>\\c[0] <b>란토</b>, 그 선생님을 거기서 내려주어라."}
+{"k": "\\c[2]<b>Lanto:</b>\\c[0] Mi señora...", "v": "\\c[2]<b>란토:</b>\\c[0] 알카 님..."}
+{"k": "\\c[9]<b>Alca:</b>\\c[0] Baja a la profesora de ahí, <b>Lanto</b>.", "v": "\\c[9]<b>알카:</b>\\c[0] <b>란토</b>, 올리비에 교수를 거기서 내려주어라."}
 {"k": "Sabes que no tolero estos excesos.", "v": "내가 이런 지나친 짓을 용납하지 않는다는 걸 잘 알 텐데."}
 {"k": "\\c[9]<b>Alca:</b>\\c[0] Cuidad bien de vuestra mentora.", "v": "\\c[9]<b>알카:</b>\\c[0] 너희의 멘토를 잘 돌보아라."}
 {"k": "Su mente es muy valiosa, una de esas que conviene preservar para la posteridad.", "v": "그의 지혜는 매우 귀중하여 후세를 위해 보존할 가치가 있나니."}
@@ -3886,23 +3886,23 @@
 {"k": "Entonces podríamos modificar las leyes de la vida y la muerte para que esa generación de humanos y Pokémon aptos construyesen un paraíso de belleza suprema para toda la eternidad.", "v": "그렇다면 우리는 삶과 죽음의 법칙을 개조하여, 자격을 갖춘 인간과 포켓몬의 그 세대가 영원토록 지극히 아름다운 낙원을 건설하게 할 수 있으리라."}
 {"k": "¡<i>Fou</i>! ¡Me vas a dar dolor de cabeza!", "v": "<i>Fou</i>! 머리가 아플 지경이네!"}
 {"k": "A ver si te entiendo bien. Queréis juntar a un grupo de buena gente y después cambiar las leyes de la naturaleza para que nadie nazca ni muera nunca más.", "v": "내가 제대로 이해했나 보자. 훌륭한 사람들을 모아둔 다음, 다시는 누구도 태어나거나 죽지 않도록 자연의 법칙을 바꾸고 싶다는 소리잖아."}
-{"k": "¡Qué aburrido e inútil sería eso!", "v": "얼마나 지루하고 쓸모없는 짓이야!"}
-{"k": "\\c[2]<b>Olivier:</b>\\c[0] La vida debe abrirse camino según el orden natural.", "v": "\\c[2]<b>올리비에:</b>\\c[0] 생명은 자연의 섭리에 따라 스스로 길을 열어야 하는 법이다."}
-{"k": "Vivir, desarrollarnos, morir... y que los que vengan después traten de ser mejores que nosotros.", "v": "살아가고, 자라나고, 죽고... 다음 세대는 우리보다 더 나아지기 위해 노력하는 것이지."}
-{"k": "¡Así es como debería ser!", "v": "바로 이래야지!"}
+{"k": "¡Qué aburrido e inútil sería eso!", "v": "얼마나 지루하고 쓸모없는 짓인가!"}
+{"k": "\\c[2]<b>Olivier:</b>\\c[0] La vida debe abrirse camino según el orden natural.", "v": "\\c[2]<b>올리비에:</b>\\c[0] 생명은 자연의 섭리에 따라 제 길을 이어 가야 해."}
+{"k": "Vivir, desarrollarnos, morir... y que los que vengan después traten de ser mejores que nosotros.", "v": "살아가고, 성장하고, 죽음을 맞이하고… 그다음에 올 이들이 우리보다 더 나은 존재가 되도록 하는 것."}
+{"k": "¡Así es como debería ser!", "v": "그게 마땅한 이치야!"}
 {"k": "\\c[9]<b>Alca:</b>\\c[0] Tu visión ha demostrado que solo trae conflictos, <b>Olivier</b>. El Mundo Pokémon está más marchitado cada día que pasa.", "v": "\\c[9]<b>알카:</b>\\c[0] <b>올리비에</b>, 너의 비전은 갈등만을 불러온다는 것이 증명되었다. 포켓몬 세계는 하루가 다르게 시들어 가고 있다."}
 {"k": "Los Pokémon siempre estuvieron ahí para ofrecernos las claves del auténtico camino que debemos recorrer.", "v": "포켓몬은 우리가 걸어가야 할 진정한 길의 열쇠를 건네기 위해 늘 곁에 존재해 왔다."}
 {"k": "¡Estamos llegando al límite! Es imperativo que descubramos esas claves antes que la guerra, el hambre y la enfermedad acaben con todo.", "v": "우리는 한계에 다다르고 있다! 전쟁과 기아, 질병이 모든 것을 멸하기 전에 그 열쇠를 찾아내는 것이 시급하다."}
 {"k": "\\c[2]<b>Lanto:</b>\\c[0] Estos zotes de mente obtusa jamás lo entenderán. ¡Permítame romperlos como si fueran mis juguetitos!", "v": "\\c[2]<b>란토:</b>\\c[0] 이 머리 나쁜 멍청이들은 절대 이해하지 못할 겁니다. 제가 제 장난감처럼 싹 부숴버리게 해주십시오!"}
 {"k": "\\c[9]<b>Alca:</b>\\c[0] Repréndelos si quieres, pero no los mates.", "v": "\\c[9]<b>알카:</b>\\c[0] 원한다면 꾸짖되, 죽이지는 마라."}
-{"k": "Quiero que piensen en todo esto.", "v": "저들이 이 모든 것을 곰곰이 생각해보길 바란다."}
-{"k": "\\c[2]<b>Lanto:</b>\\c[0] ¡<i>Merci beaucoup</i>! ¡Voy a empezar divirtiéndome con \\PN!", "v": "\\c[2]<b>란토:</b>\\c[0] <i>Merci beaucoup</i>! 우선 \\PN\\j[이랑,랑] 재미나게 놀아볼까요!"}
+{"k": "Quiero que piensen en todo esto.", "v": "저들이 이 모든 것을 곰곰이 생각해보길 바라니."}
+{"k": "\\c[2]<b>Lanto:</b>\\c[0] ¡<i>Merci beaucoup</i>! ¡Voy a empezar divirtiéndome con \\PN!", "v": "\\c[2]<b>란토:</b>\\c[0] <i>Merci beaucoup</i>! 우선 \\PN, 당신과 신나게 놀아볼까요!"}
 {"k": "¡¿Cómo?! ¡¿Qué significa esto?! ¡Se supone que tienes que ser mi juguete!", "v": "뭐라고?! 이게 무슨 소리야?! 네가 내 장난감이 되어야 한단 말이다!"}
-{"k": "\\c[2]<b>Lanto:</b>\\c[0] ¡Pero... pero...!", "v": "\\c[2]<b>란토:</b>\\c[0] 하지만... 하지만...!"}
-{"k": "\\sh¿CÓMO TE ATREVES A HUMILLARME EN MI PROPIA CASA, ESCORIA MISERABLE?", "v": "\\sh비열한 쓰레기 주제에 감히 내 저택에서 나에게 수치심을 줘?"}
+{"k": "\\c[2]<b>Lanto:</b>\\c[0] ¡Pero... pero...!", "v": "\\c[2]<b>란토:</b>\\c[0] 어떻게... 어떻게...!"}
+{"k": "\\sh¿CÓMO TE ATREVES A HUMILLARME EN MI PROPIA CASA, ESCORIA MISERABLE?", "v": "\\sh비열한 쓰레기 주제에 감히 내 저택에서 나에게 수치심을 주다니?"}
 {"k": "¡Te juro por todo mi linaje que te voy a...!", "v": "내 가문의 모든 것을 걸고 맹세하건대, 널 가만두지...!"}
 {"k": "\\c[9]<b>Alca:</b>\\c[0] Detén este lamentable espectáculo, <b>Lanto</b>. Ya te has divertido suficiente.", "v": "\\c[9]<b>알카:</b>\\c[0] 그 한심한 추태는 그쯤 해둬라, <b>란토</b>. 이제 충분히 즐겼잖느냐."}
-{"k": "\\c[2]<b>Lanto:</b>\\c[0] ¡Pero... aún no he acabado con ellos!", "v": "\\c[2]<b>란토:</b>\\c[0] 하지만... 아직 끝장내지도 못했는걸요!"}
+{"k": "\\c[2]<b>Lanto:</b>\\c[0] ¡Pero... aún no he acabado con ellos!", "v": "\\c[2]<b>란토:</b>\\c[0] 하지만... 아직 결판이 나지 않았습니다!"}
 {"k": "\\c[9]<b>Alca:</b>\\c[0] Se han ganado su libertad con arduo tesón. Tienen derecho a una segunda oportunidad.", "v": "\\c[9]<b>알카:</b>\\c[0] 저들은 끈질긴 기상으로 스스로 자유를 쟁취했다. 두 번째 기회를 누릴 자격이 있어."}
 {"k": "\\c[9]<b>Alca:</b>\\c[0] Sois el tipo de personas que aportarían en el mundo eterno que pretendo forjar. Y espero poder contaros en mi grupo de elegidos algún día.", "v": "\\c[9]<b>알카:</b>\\c[0] 너희는 내가 만들어낼 영원한 세상에 기여할 만한 인재들이다. 언젠가 너희를 내 선택받은 자들로 맞이할 수 있기를 바라마."}
 {"k": "Eso es todo. He de acometer asuntos más importantes que este.", "v": "이만 가보겠다. 이보다 더 중요한 일을 처리해야 하니."}
