@@ -12,7 +12,9 @@ Windows 브라우저에서 localhost로 바로 열린다(WSL 포트 공유).
 (fix.py --notes와 같은 파일).
 """
 
+import gzip
 import json
+import re
 import subprocess
 import sys
 import time
@@ -25,17 +27,22 @@ LEDGER = HERE.parent / "docs" / "ledger"   # 판정 대장 (glossary·voices)
 KO = HERE / "ko"
 NOTES = HERE / "fixnotes.jsonl"
 JOIN = HERE / "data" / "map-speaker-join.jsonl.gz"
+ATTR = HERE / "data" / "speaker-attr.jsonl.gz"
 GROUPS = HERE / "sprite-groups.json"
 
-_ctx = None  # (map,k) → {"sprite","group","map_name"} 지연 로드
+_ctx = None  # 조인표·귀속표 지연 로드
+
+
+def norm(s):
+    """정본의 k에는 화면 너비로 접힌 줄바꿈이 박혀 있다 — 표끼리 이을 땐 줄여서 맞춘다."""
+    return re.sub(r"\s+", " ", s).strip()
 
 
 def ctx():
+    """(맵,원문)→화자·분류, (맵,원문)→이벤트 자리, (맵,이벤트,페이지)→명령 순서."""
     global _ctx
     if _ctx is None:
-        import gzip
-        import re
-        _ctx = {"row": {}, "mapname": {}}
+        _ctx = {"row": {}, "mapname": {}, "spots": {}, "page": {}}
         try:
             g = json.loads(GROUPS.read_text(encoding="utf-8"))["groups"]
             s2g = {s: grp for grp, ss in g.items() for s in ss}
@@ -51,280 +58,62 @@ def ctx():
                 _ctx["mapname"].setdefault(d["map"], d.get("map_name", ""))
         except Exception as e:
             print("조인표 로드 실패(찾아보기 축소):", e)
+        try:
+            for line in gzip.open(ATTR, "rt", encoding="utf-8"):
+                d = json.loads(line)
+                k = norm(d["k"])
+                spot = [d["event"], d["page"], d["cmd"], d["event_name"]]
+                _ctx["spots"].setdefault((d["map"], k), []).append(spot)
+                _ctx["page"].setdefault((d["map"], d["event"], d["page"]), []).append(
+                    [d["cmd"], k, d["event_name"], d.get("sprite") or ""])
+                _ctx["mapname"].setdefault(d["map"], d.get("map_name", ""))
+            for v in _ctx["spots"].values():
+                v.sort(key=lambda p: (p[0], p[1], p[2]))
+        except Exception as e:
+            print("귀속표 로드 실패(이벤트 칩 없음):", e)
     return _ctx
 
-PAGE = """<!doctype html><html lang=ko><head><meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<title>Z 번역 스튜디오</title>
-<style>
- :root{--bg:#16171b;--panel:#1e2026;--card:#23252c;--line:#32343d;--tx:#e6e7ea;--sub:#9a9ca6;
-   --acc:#5b8def;--acc2:#3d68c4;--ok:#4cc38a;--warn:#e5a54b;--err:#e5644b;--es:#93b8f2}
- *{box-sizing:border-box}
- body{font-family:'Pretendard','Malgun Gothic',system-ui,sans-serif;margin:0;background:var(--bg);color:var(--tx)}
- header{position:sticky;top:0;z-index:10;background:var(--panel);border-bottom:1px solid var(--line);
-   display:flex;align-items:center;gap:14px;padding:12px 22px;flex-wrap:wrap}
- .logo{font-weight:700;font-size:15px;letter-spacing:.3px;white-space:nowrap}
- .logo b{color:var(--acc)}
- .searchwrap{flex:1;display:flex;gap:8px;min-width:280px;max-width:640px}
- input,select,textarea,button{font-family:inherit;font-size:13.5px;color:var(--tx);
-   background:var(--card);border:1px solid var(--line);border-radius:8px}
- input[type=text]{flex:1;padding:9px 12px}
- input:focus,textarea:focus{outline:none;border-color:var(--acc)}
- select{padding:8px 10px}
- button{padding:8px 14px;cursor:pointer;transition:background .12s}
- button:hover{background:#2c2e37}
- button.primary{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
- button.primary:hover{background:var(--acc2)}
- button.ghost{background:transparent}
- #dirty{display:none;font-size:12.5px;color:var(--warn);background:rgba(229,165,75,.12);
-   border:1px solid rgba(229,165,75,.35);border-radius:20px;padding:4px 12px}
- main{max-width:1060px;margin:18px auto;padding:0 22px 80px}
- .meta{color:var(--sub);font-size:13px;margin:6px 2px 14px}
- .card{background:var(--card);border:1px solid var(--line);border-radius:10px;
-   padding:12px 16px;margin-bottom:12px}
- .card.saved{border-color:rgba(76,195,138,.5)}
- .chip{display:inline-block;font-size:11.5px;color:var(--sub);background:var(--panel);
-   border:1px solid var(--line);border-radius:5px;padding:2px 8px;margin-right:6px}
- .es{color:var(--es);font-size:13px;line-height:1.55;margin:8px 0 6px;white-space:pre-wrap}
- textarea{width:100%;min-height:48px;padding:8px 10px;line-height:1.6;resize:vertical;white-space:pre-wrap}
- .rowbar{display:flex;gap:8px;align-items:center;margin-top:8px;flex-wrap:wrap}
- .memoin{flex:1;min-width:160px;padding:7px 10px}
- .st{font-size:12.5px} .st.ok{color:var(--ok)} .st.warn{color:var(--err)}
- .empty{color:var(--sub);text-align:center;padding:60px 0;font-size:14px}
- .notecard{border-left:3px solid var(--warn)}
- .notecard.done{border-left-color:var(--ok);opacity:.55}
- #toast{position:fixed;right:22px;bottom:22px;background:var(--panel);border:1px solid var(--line);
-   border-radius:10px;padding:11px 18px;font-size:13.5px;box-shadow:0 6px 24px rgba(0,0,0,.45);
-   opacity:0;transition:opacity .2s;pointer-events:none}
- #toast.show{opacity:1}
- kbd{font-size:11px;color:var(--sub);border:1px solid var(--line);border-radius:4px;padding:1px 5px;background:var(--panel)}
- .more{width:100%;padding:11px}
-</style></head><body>
-<header>
- <div class=logo>Z <b>번역 스튜디오</b></div>
- <div class=searchwrap>
-  <input type=text id=q placeholder="문구 검색 — 한국어 번역 또는 스페인어 원문" autofocus>
-  <select id=filef><option value="">전체 파일</option></select>
-  <button class=primary onclick=search()>검색</button>
-  <select id=browseby onchange=doBrowse()>
-   <option value="">찾아보기…</option>
-   <option value=map>맵별</option>
-   <option value=sprite>화자별</option>
-   <option value=group>분류별</option>
-   <option value=file>파일별</option>
-  </select>
- </div>
- <span id=dirty></span>
- <button onclick=build() id=buildbtn>빌드 → 게임 반영</button>
- <button class=ghost onclick=replUI()>바꾸기</button>
- <button class=ghost onclick=refSearch()>참고</button>
- <button class=ghost onclick=notes()>메모</button>
- <button class=ghost onclick=histView()>이력</button>
-</header>
-<main>
- <div class=meta id=meta>검색어를 입력하세요. 저장 <kbd>Ctrl+Enter</kbd> · 검색 <kbd>Enter</kbd></div>
- <div id=out><div class=empty>어색한 문구를 발견하면 여기서 찾아 바로 고치세요.<br>
-  확신이 없으면 메모로 남겨 두면 됩니다 — 나중에 한꺼번에 처리해요.</div></div>
-</main>
-<div id=toast></div>
-<script>
-const $=id=>document.getElementById(id);
-let HITS=[],SHOWN=0,DIRTY=0;const STEP=50;
-$('q').addEventListener('keydown',e=>{if(e.key==='Enter')search()});
-function toast(m,ms=2200){const t=$('toast');t.textContent=m;t.classList.add('show');
- clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),ms)}
-function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
-function dirty(n){DIRTY+=n;const d=$('dirty');
- if(DIRTY>0){d.style.display='inline-block';d.textContent=`저장 ${DIRTY}건 — 빌드 필요`}
- else d.style.display='none'}
-async function search(){
- const q=$('q').value.trim(); if(!q)return;
- $('meta').textContent='검색 중...';
- const f=$('filef').value;
- const r=await fetch('/search?q='+encodeURIComponent(q)+(f?'&file='+encodeURIComponent(f):''));
- const js=await r.json(); HITS=js.hits; SHOWN=0;
- $('meta').textContent=`${js.hits.length}행 매칭`+(js.truncated?' (상한 500행)':'');
- if(!js.hits.length){$('out').innerHTML='<div class=empty>매칭되는 행이 없습니다.</div>';return}
- $('out').innerHTML=''; more();
- const files=[...new Set(js.hits.map(h=>h.file))];
- $('filef').innerHTML='<option value="">전체 파일</option>'+files.map(f=>`<option>${f}</option>`).join('');
-}
-function more(){
- const frag=HITS.slice(SHOWN,SHOWN+STEP).map((h,k)=>{const i=SHOWN+k;return `
-  <div class=card id=card${i}>
-   <span class=chip>${esc(h.file)}:${h.line}</span>${h.map!==null&&h.map!==undefined?`<span class=chip>맵 ${h.map}</span>`:''}${h.sprite&&h.sprite!=='?'?`<span class=chip>${esc(h.sprite)}</span>`:''}${h.group&&h.group!=='?'?`<span class=chip>${esc(h.group)}</span>`:''}
-   <div class=es>${esc(h.es)}</div>
-   <textarea id=v${i} data-orig="${esc(h.v)}"
-     onkeydown="if(event.ctrlKey&&event.key==='Enter')save(${i},'${h.file}',${h.line})">${esc(h.v)}</textarea>
-   <div class=rowbar>
-    <button class=primary onclick=save(${i},'${h.file}',${h.line})>저장</button>
-    <button class=ghost onclick=showOrig(${i})>원본</button>
-    <input class=memoin id=m${i} placeholder="메모 — 나중에 배치로 손볼 내용">
-    <button onclick=memo(${i})>메모</button>
-    <span class=st id=st${i}></span>
-   </div>
-   <div class=es id=orig${i} style="display:none"></div>
-  </div>`}).join('');
- SHOWN=Math.min(SHOWN+STEP,HITS.length);
- const btn=$('morebtn');if(btn)btn.remove();
- $('out').insertAdjacentHTML('beforeend',frag);
- if(SHOWN<HITS.length)$('out').insertAdjacentHTML('beforeend',
-  `<button class=more id=morebtn onclick=more()>더 보기 (${HITS.length-SHOWN}행 남음)</button>`);
-}
-async function save(i,file,line){
- const v=$('v'+i).value;
- const r=await fetch('/save',{method:'POST',headers:{'Content-Type':'application/json'},
-   body:JSON.stringify({file,line,v})});
- const js=await r.json();
- if(js.ok){$('st'+i).className='st ok';$('st'+i).textContent='저장됨';
-  $('card'+i).classList.add('saved');dirty(1);toast('저장됨 — 빌드하면 게임에 반영돼요')}
- else{$('st'+i).className='st warn';$('st'+i).textContent=js.err}
-}
-async function memo(i){
- const note=$('m'+i).value.trim()||'(내용 없음)';
- await fetch('/note',{method:'POST',headers:{'Content-Type':'application/json'},
-   body:JSON.stringify({query:$('v'+i).value.slice(0,80),note})});
- $('st'+i).className='st ok';$('st'+i).textContent='메모 기록됨';toast('메모에 쌓아 뒀어요')
-}
-async function build(){
- const b=$('buildbtn');b.disabled=true;b.textContent='빌드 중...';
- const r=await fetch('/build',{method:'POST'});const js=await r.json();
- b.disabled=false;b.textContent='빌드 → 게임 반영';
- if(js.ok){DIRTY=0;dirty(0);toast('빌드 완료 — 게임을 재시작하면 반영됩니다',3200)}
- else toast('빌드 실패: '+js.msg,5000);
-}
-async function notes(){
- const r=await fetch('/notes');const js=await r.json();
- const pend=js.notes.filter(n=>!n.done).length;
- $('meta').textContent=`메모 — 미결 ${pend}건 / 전체 ${js.notes.length}건`;
- $('out').innerHTML=js.notes.map((n,i)=>`
-  <div class="card notecard ${n.done?'done':''}">
-   <span class=chip>${i+1}</span> 「${esc(n.query)}」
-   <div class=es>${esc(n.note)}</div>
-   <div class=rowbar>
-    <button onclick=gotoNote(${JSON.stringify(n.query).replace(/"/g,'&quot;')})>대상 찾아가기</button>
-    <button onclick=doneNote(${i+1},${n.done?'false':'true'})>${n.done?'완료 취소':'완료 처리'}</button>
-    <button class=ghost onclick=delNote(${i+1})>삭제</button>
-   </div>
-  </div>`).join('')||'<div class=empty>메모가 없습니다.</div>';
-}
-function gotoNote(q){$('q').value=q;search()}
-async function doneNote(i,done){
- await fetch('/done',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({i,done})});
- notes();
-}
-async function delNote(i){
- await fetch('/notedel',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({i})});
- notes();
-}
-function showOrig(i){
- const el=$('orig'+i);const ta=$('v'+i);
- if(el.style.display==='none'){
-  el.innerHTML='저장 전 원본: '+esc(ta.dataset.orig)+' &nbsp;<button class=ghost onclick="restoreOrig('+i+')">이 값으로 되돌리기</button>';
-  el.style.display='block';
- }else el.style.display='none';
-}
-function restoreOrig(i){$('v'+i).value=$('v'+i).dataset.orig;toast('되돌렸어요 — 저장을 눌러야 반영됩니다')}
-const KIND={row:'행 수정',bulk:'일괄 바꾸기',revert:'되돌리기'};
-async function histView(){
- const r=await fetch('/history');const js=await r.json();
- $('meta').textContent=`이력 — 동작 ${js.ops.length}묶음`;
- $('out').innerHTML=js.ops.map(o=>`
-  <div class=card>
-   <span class=chip>${KIND[o.kind]||o.kind}</span><span class=chip>${o.rows.length}행</span>
-   ${o.label?`<span class=chip>${esc(o.label)}</span>`:''}
-   ${o.rows.slice(0,5).map(h=>`<div class=es>${esc(h.file)}:${h.line} · 구: ${esc(h.old)}<br>&nbsp;&nbsp;신: ${esc(h.new)}</div>`).join('')}
-   ${o.rows.length>5?`<div class=chip>외 ${o.rows.length-5}행</div>`:''}
-   <div class=rowbar><button onclick="revertOp('${esc(o.op)}')">이 묶음 되돌리기</button></div>
-  </div>`).join('')||'<div class=empty>저장 이력이 없습니다.</div>';
-}
-async function revertOp(op){
- const r=await fetch('/revert',{method:'POST',headers:{'Content-Type':'application/json'},
-   body:JSON.stringify({op})});
- const js=await r.json();
- dirty(js.done);
- toast(`${js.done}행 되돌림`+(js.skipped?` · ${js.skipped}행 건너뜀(뒤에 다시 고쳐진 자리)`:'')
-   +(js.errs&&js.errs.length?` · 실패 ${js.errs.length}`:''),4000);
- histView();
-}
-let PLAN=[];
-function replUI(){
- $('meta').textContent='일괄 바꾸기 — 미리보기로 대상을 확인하고 고른 자리만 적용합니다.';
- $('out').innerHTML=`<div class=card>
-  <div class=rowbar><input type=text id=rfind placeholder="찾을 문구 (번역 칸) — 비우면 원문 기준">
-   <input type=text id=rrepl placeholder="바꿀 문구"></div>
-  <div class=rowbar><input type=text id=rsrc placeholder="원문(스페인어) 조건 — 선택">
-   <input type=text id=rfile placeholder="파일 이름 — 선택 (예: 00-maps.jsonl)">
-   <button class=primary onclick=replPlan()>미리보기</button></div>
-  <div class=meta>찾을 문구를 비우고 원문 조건만 주면 그 원문을 가진 행의 번역을 통째로 갈아 끼웁니다.</div>
- </div><div id=plan></div>`;
-}
-async function replPlan(){
- const body={find:$('rfind').value,repl:$('rrepl').value,src:$('rsrc').value,file:$('rfile').value};
- $('plan').innerHTML='<div class=empty>찾는 중...</div>';
- const r=await fetch('/replan',{method:'POST',headers:{'Content-Type':'application/json'},
-   body:JSON.stringify(body)});
- const js=await r.json();
- if(!js.ok){$('plan').innerHTML=`<div class=empty>${esc(js.err)}</div>`;return}
- PLAN=js.hits;
- if(!PLAN.length){$('plan').innerHTML='<div class=empty>바뀔 행이 없습니다.</div>';return}
- $('plan').innerHTML=`<div class=card><b>${PLAN.length}행 바뀝니다</b>${PLAN.length>=500?' (상한 500)':''}
-   <div class=rowbar><button class=primary onclick=replApply()>선택 적용</button>
-    <button class=ghost onclick="planAll(true)">전체 선택</button>
-    <button class=ghost onclick="planAll(false)">전체 해제</button></div></div>`
-  +PLAN.map((h,i)=>`<div class=card id=pc${i}>
-    <label class=rowbar><input type=checkbox id=pk${i} checked>
-     <span class=chip>${esc(h.file)}:${h.line}</span></label>
-    <div class=es>${esc(h.es)}</div>
-    <div class=es>구: ${esc(h.v)}</div><div>신: ${esc(h.new)}</div>
-   </div>`).join('')
-  +(js.skipped.length?`<div class=card><b>원문 조건에 걸려 뺀 행 ${js.skipped.length}</b>`
-    +js.skipped.map(h=>`<div class=es>${esc(h.file)}:${h.line} · ${esc(h.es)}<br>${esc(h.v)}</div>`).join('')
-    +'</div>':'');
-}
-function planAll(on){PLAN.forEach((_,i)=>{const c=$('pk'+i);if(c)c.checked=on})}
-async function replApply(){
- const items=PLAN.filter((_,i)=>$('pk'+i)&&$('pk'+i).checked);
- if(!items.length){toast('고른 자리가 없어요');return}
- const label=`「${$('rfind').value||'(원문 기준)'}」→「${$('rrepl').value}」`;
- const r=await fetch('/replace',{method:'POST',headers:{'Content-Type':'application/json'},
-   body:JSON.stringify({items,label})});
- const js=await r.json();
- dirty(js.done);
- toast(`${js.done}행 반영`+(js.errs.length?` · 실패 ${js.errs.length}`:'')+' — 빌드하면 게임에 반영돼요',4000);
- histView();
-}
-async function refSearch(){
- const q=$('q').value.trim(); if(!q){toast('검색창에 찾을 용어를 입력하세요');return}
- $('meta').textContent='참고 자료 검색 중... (첫 실행은 코퍼스 로드로 수십 초)';
- const r=await fetch('/ref?q='+encodeURIComponent(q)); const js=await r.json();
- $('meta').textContent=`참고 — 「${q}」`;
- const sec=(t,rows)=>rows.length?`<div class=card><b>${t}</b>${rows}</div>`:'';
- $('out').innerHTML=
-  sec('용어집 (glossary.md)', js.glossary.map(l=>`<div class=es>${esc(l)}</div>`).join(''))+
-  sec('본가 정식명 (canon)', js.canon.map(c=>`<div class=es>${esc(c.es||'')} · ${esc(c.en||'')} → <b>${esc(c.ko||'')}</b> <span class=chip>${esc(c.domain||'')}</span></div>`).join(''))+
-  sec('공식 문장 코퍼스 (참고용 — 자동 적용 금지)', js.messages.map(m=>`<div class=es>[${esc(m.src||'')}·${esc(m.file||'')}] ${esc(m.es||'')}<br>→ ${esc(m.ko||'')}</div>`).join(''))
-  ||'<div class=empty>참고 자료에 매칭이 없습니다.</div>';
-}
-async function doBrowse(){
- const by=$('browseby').value; if(!by)return;
- $('meta').textContent='불러오는 중...';
- const r=await fetch('/browse?by='+by); const js=await r.json();
- const names={map:'맵',sprite:'화자',group:'분류',file:'파일'};
- $('meta').textContent=`${names[by]}별 — ${js.groups.length}개 묶음`;
- $('out').innerHTML=js.groups.map(g=>`
-  <div class=card style="cursor:pointer" onclick="openGroup('${by}','${esc(g.key)}')">
-   <b>${esc(g.label)}</b> <span class=chip>${g.count}행</span>
-  </div>`).join('');
-}
-async function openGroup(by,key){
- $('meta').textContent='불러오는 중...';
- const r=await fetch('/list?by='+by+'&key='+encodeURIComponent(key)); const js=await r.json();
- HITS=js.hits; SHOWN=0;
- $('meta').textContent=`${key} — ${js.hits.length}행`+(js.hits.length>=500?' (상한 500)':'');
- $('out').innerHTML=''; more();
-}
-</script></body></html>"""
+
+def chips(hits):
+    """카드 칩에 붙일 것 — 맵 이름 · 이벤트 자리 · 같은 원문이 선 다른 맵 수."""
+    c = ctx()
+    want = {norm(h["es"]) for h in hits}
+    others = {}
+    for r in iter_rows():
+        k = norm(r["es"])
+        if k in want:
+            others.setdefault(k, set()).add(r["map"])
+    for h in hits:
+        k = norm(h["es"])
+        h["mapname"] = c["mapname"].get(h["map"], "")
+        h["spots"] = c["spots"].get((h["map"], k), [])
+        h["omaps"] = len(others.get(k, ())) - 1
+    return hits
+
+
+def event_page(mp, event, page):
+    """한 이벤트-페이지의 대사를 명령 순서대로 — 현행 번역을 붙여서."""
+    rows = sorted(ctx()["page"].get((mp, event, page), []), key=lambda p: p[0])
+    cur = {norm(r["es"]): r for r in iter_rows() if r["map"] == mp}
+    out = []
+    for cmd, k, name, sprite in rows:
+        r = cur.get(k)
+        out.append({"cmd": cmd, "es": k, "sprite": sprite, "name": name,
+                    "file": r["file"] if r else "", "line": r["line"] if r else 0,
+                    "v": r["v"] if r else "(번역표에 없음)"})
+    return out
+
+
+def same_es(es, mp):
+    """같은 원문이 선 다른 맵의 자리 — 정본은 (맵,원문)마다 별개 줄이라 값이 갈린다."""
+    k = norm(es)
+    c = ctx()
+    return [{**r, "mapname": c["mapname"].get(r["map"], "")}
+            for r in iter_rows() if norm(r["es"]) == k and r["map"] != mp]
+
+
+def page():
+    return (HERE / "fixgui.html").read_text(encoding="utf-8")
 
 
 def iter_rows(only_file=""):
@@ -473,7 +262,6 @@ _ref = None  # 참고 자료 지연 로드
 def ref_search(q):
     global _ref
     if _ref is None:
-        import gzip
         _ref = {"gloss": (LEDGER / "glossary.md").read_text(encoding="utf-8").splitlines(),
                 "canon": [], "msgs": []}
         cp = HERE / "canon" / "canon.jsonl"
@@ -586,7 +374,7 @@ class H(BaseHTTPRequestHandler):
     def do_GET(self):
         u = urllib.parse.urlparse(self.path)
         if u.path == "/":
-            body = PAGE.encode()
+            body = page().encode()
             self.send_response(200)
             self.send_header("Content-Type", "text/html; charset=utf-8")
             self.send_header("Content-Length", str(len(body)))
@@ -595,7 +383,20 @@ class H(BaseHTTPRequestHandler):
         elif u.path == "/search":
             qs = urllib.parse.parse_qs(u.query)
             hits, trunc = search(qs.get("q", [""])[0], qs.get("file", [""])[0])
-            self._json({"hits": hits, "truncated": trunc})
+            self._json({"hits": chips(hits), "truncated": trunc})
+        elif u.path == "/event":
+            qs = urllib.parse.parse_qs(u.query)
+            g = lambda k: int(qs.get(k, ["0"])[0])
+            self._json({"rows": event_page(g("map"), g("event"), g("page"))})
+        elif u.path == "/line":
+            qs = urllib.parse.parse_qs(u.query)
+            f, ln = qs.get("file", [""])[0], int(qs.get("line", ["0"])[0])
+            hit = next((r for r in iter_rows(f) if r["line"] == ln), None)
+            self._json({"hit": chips([hit])[0] if hit else None})
+        elif u.path == "/samees":
+            qs = urllib.parse.parse_qs(u.query)
+            self._json({"hits": chips(same_es(qs.get("es", [""])[0],
+                                              int(qs.get("map", ["-1"])[0])))})
         elif u.path == "/notes":
             self._json({"notes": load_notes()})
         elif u.path == "/browse":
@@ -603,8 +404,8 @@ class H(BaseHTTPRequestHandler):
             self._json({"groups": browse(by)})
         elif u.path == "/list":
             qs = urllib.parse.parse_qs(u.query)
-            self._json({"hits": listing(qs.get("by", ["map"])[0],
-                                        qs.get("key", [""])[0])})
+            self._json({"hits": chips(listing(qs.get("by", ["map"])[0],
+                                              qs.get("key", [""])[0]))})
         elif u.path == "/history":
             self._json({"ops": history()})
         elif u.path == "/ref":

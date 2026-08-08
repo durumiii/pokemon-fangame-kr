@@ -70,8 +70,38 @@ def test_bulk_and_revert(tmp):
     assert kinds == ["revert", "row", "bulk"], kinds
 
 
+def test_chips_and_event(tmp):
+    """이벤트·맵 칩 — 원문의 줄바꿈을 접어 귀속표와 잇고, 명령 순서를 지킨다."""
+    fixgui.KO = tmp
+    fixgui.FIXLOG = tmp / "fixlog.jsonl"
+    rows = [{"map": 1, "n": 2}, {"k": "Hola\namigo", "v": "안녕 친구"},
+            {"k": "Adios", "v": "잘 가"},
+            {"map": 2, "n": 1}, {"k": "Hola amigo", "v": "안녕 동무"}]
+    (tmp / "a.jsonl").write_text(
+        "\n".join(json.dumps(r, ensure_ascii=False) for r in rows) + "\n", encoding="utf-8")
+    fixgui._ctx = {
+        "row": {}, "mapname": {1: "마을", 2: "동굴"},
+        "spots": {(1, "Hola amigo"): [[7, 0, 3, "촌장"], [9, 0, 1, "경비"]]},
+        "page": {(1, 7, 0): [[3, "Hola amigo", "촌장", "npc"], [1, "Adios", "촌장", "npc"]]},
+    }
+
+    h = fixgui.chips([r for r in fixgui.iter_rows() if r["line"] == 2])[0]
+    assert h["mapname"] == "마을"
+    assert len(h["spots"]) == 2          # 한 대사가 이벤트 둘에 걸린 자리
+    assert h["omaps"] == 1               # 같은 원문이 맵 2에도 선다
+
+    ev = fixgui.event_page(1, 7, 0)
+    assert [r["cmd"] for r in ev] == [1, 3]          # 명령 순서대로
+    assert [r["v"] for r in ev] == ["잘 가", "안녕 친구"]
+
+    other = fixgui.same_es("Hola\namigo", 1)
+    assert [(r["map"], r["v"]) for r in other] == [(2, "안녕 동무")]
+
+
 if __name__ == "__main__":
     test_plan()
     with tempfile.TemporaryDirectory() as d:
         test_bulk_and_revert(Path(d))
+    with tempfile.TemporaryDirectory() as d:
+        test_chips_and_event(Path(d))
     print("OK")
