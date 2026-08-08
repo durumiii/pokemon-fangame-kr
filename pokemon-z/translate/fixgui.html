@@ -2,73 +2,119 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <title>Z 번역 스튜디오</title>
 <style>
+ /* 배포판 스튜디오(webapp/index.html)와 같은 판 — 갈라지면 그쪽을 정본으로 맞춘다 */
  :root{--bg:#16171b;--panel:#1e2026;--card:#23252c;--line:#32343d;--tx:#e6e7ea;--sub:#9a9ca6;
-   --acc:#5b8def;--acc2:#3d68c4;--ok:#4cc38a;--warn:#e5a54b;--err:#e5644b;--es:#93b8f2}
- *{box-sizing:border-box}
+   --acc:#5b8def;--acc2:#3d68c4;--ok:#4cc38a;--warn:#e5a54b;--err:#e5644b;--es:#93b8f2;
+   --gold:#e9b64a;--gold2:#c99427}
+ *{box-sizing:border-box;scrollbar-width:thin;scrollbar-color:#3a3d47 transparent}
+ ::-webkit-scrollbar{width:9px;height:9px}
+ ::-webkit-scrollbar-thumb{background:#3a3d47;border-radius:5px;border:2px solid var(--bg)}
+ ::-webkit-scrollbar-track{background:transparent}
  body{font-family:'Pretendard','Malgun Gothic',system-ui,sans-serif;margin:0;background:var(--bg);color:var(--tx)}
  header{position:sticky;top:0;z-index:10;background:var(--panel);border-bottom:1px solid var(--line);
-   display:flex;align-items:center;gap:14px;padding:12px 22px;flex-wrap:wrap}
- .logo{font-weight:700;font-size:15px;letter-spacing:.3px;white-space:nowrap}
- .logo b{color:var(--acc)}
- .searchwrap{flex:1;display:flex;gap:8px;min-width:280px;max-width:640px}
+   display:flex;align-items:center;gap:10px;padding:10px 22px;flex-wrap:wrap}
+ .logo{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px;letter-spacing:.3px;
+   white-space:nowrap;cursor:pointer;user-select:none;padding:2px 6px;border-radius:8px}
+ .logo:hover{background:var(--card)}
+ .logo b{color:var(--gold)}
+ .searchwrap{position:relative;flex:1;display:flex;gap:8px;min-width:300px;max-width:640px;margin:0 auto}
  input,select,textarea,button{font-family:inherit;font-size:13.5px;color:var(--tx);
    background:var(--card);border:1px solid var(--line);border-radius:8px}
- input[type=text]{flex:1;padding:9px 12px}
+ input[type=text]{flex:1;padding:9px 12px;min-width:0}
+ #q{font-size:14px}
  input:focus,textarea:focus{outline:none;border-color:var(--acc)}
- select{padding:8px 10px}
- button{padding:8px 14px;cursor:pointer;transition:background .12s}
+ button{display:inline-flex;align-items:center;gap:6px;padding:8px 13px;cursor:pointer;
+   transition:background .12s;white-space:nowrap}
+ button svg{flex:none}
  button:hover{background:#2c2e37}
  button.primary{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
  button.primary:hover{background:var(--acc2)}
+ button.gold{background:linear-gradient(180deg,var(--gold),var(--gold2));border-color:var(--gold2);
+   color:#231a05;font-weight:700}
+ button.gold:hover{background:linear-gradient(180deg,#f2c35e,var(--gold))}
  button.ghost{background:transparent}
+ button:disabled{opacity:.45;cursor:not-allowed}
+ button:disabled:hover{background:var(--card)}
+ button.gold:disabled:hover{background:linear-gradient(180deg,var(--gold),var(--gold2))}
  #dirty{display:none;font-size:12.5px;color:var(--warn);background:rgba(229,165,75,.12);
-   border:1px solid rgba(229,165,75,.35);border-radius:20px;padding:4px 12px}
- main{max-width:1060px;margin:18px auto;padding:0 22px 80px}
- .meta{color:var(--sub);font-size:13px;margin:6px 2px 14px}
+   border:1px solid rgba(229,165,75,.35);border-radius:20px;padding:4px 12px;white-space:nowrap}
+ /* 드롭다운 패널 — 기본 select 대신 (스크롤바까지 우리 것) */
+ .menu{position:absolute;z-index:30;min-width:220px;max-height:min(480px,70vh);overflow-y:auto;
+   background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:6px;
+   box-shadow:0 10px 30px rgba(0,0,0,.5)}
+ .menu[hidden]{display:none}
+ .menu button{display:flex;width:100%;text-align:left;background:transparent;border:none;
+   border-radius:7px;padding:8px 10px;gap:9px;align-items:center}
+ .menu button:hover{background:var(--card)}
+ .menu .mi-t{display:flex;flex-direction:column;gap:1px;min-width:0}
+ .menu .mi-d{font-size:11.5px;color:var(--sub);white-space:normal}
+ .menu hr{border:none;border-top:1px solid var(--line);margin:5px 4px}
+ main{max-width:1100px;margin:20px auto;padding:0 22px 80px}
+ .meta{color:var(--sub);font-size:13px;margin:6px 2px 16px}
  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;
-   padding:12px 16px;margin-bottom:12px}
+   padding:13px 16px;margin-bottom:12px}
  .card.saved{border-color:rgba(76,195,138,.5)}
- .chip{display:inline-block;font-size:11.5px;color:var(--sub);background:var(--panel);
-   border:1px solid var(--line);border-radius:5px;padding:2px 8px;margin-right:6px}
- .chip.act{cursor:pointer;color:var(--acc)}
- .chip.act:hover{border-color:var(--acc);background:#2c2e37}
- .cmd{color:var(--sub);font-size:11.5px;margin-right:6px}
- .here{border-color:var(--acc)}
+ .chip{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;color:var(--sub);
+   background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:2px 8px;margin-right:6px}
+ .chip.act{cursor:pointer;color:var(--tx)}
+ .chip.act:hover{border-color:var(--acc);color:var(--acc)}
+ .chip.here{border-color:var(--acc);color:var(--acc)}
+ .cmd{display:inline-block;color:var(--sub);font-size:11.5px;margin-right:6px}
  .es{color:var(--es);font-size:13px;line-height:1.55;margin:8px 0 6px;white-space:pre-wrap}
+ .nv{font-size:13px;line-height:1.55;margin:0 0 2px;white-space:pre-wrap}
+ mark{background:rgba(91,141,239,.3);color:var(--tx);border-radius:3px;padding:0 2px}
  textarea{width:100%;min-height:48px;padding:8px 10px;line-height:1.6;resize:vertical;white-space:pre-wrap}
  .rowbar{display:flex;gap:8px;align-items:center;margin-top:8px;flex-wrap:wrap}
  .memoin{flex:1;min-width:160px;padding:7px 10px}
+ input[type=checkbox]{width:15px;height:15px;accent-color:var(--acc);flex:none}
  .st{font-size:12.5px} .st.ok{color:var(--ok)} .st.warn{color:var(--err)}
- .empty{color:var(--sub);text-align:center;padding:60px 0;font-size:14px}
+ .empty{color:var(--sub);text-align:center;padding:60px 0 70px;font-size:14px}
  .notecard{border-left:3px solid var(--warn)}
  .notecard.done{border-left-color:var(--ok);opacity:.55}
- #toast{position:fixed;right:22px;bottom:22px;background:var(--panel);border:1px solid var(--line);
+ #toast{position:fixed;right:22px;bottom:22px;z-index:40;background:var(--panel);border:1px solid var(--line);
    border-radius:10px;padding:11px 18px;font-size:13.5px;box-shadow:0 6px 24px rgba(0,0,0,.45);
    opacity:0;transition:opacity .2s;pointer-events:none}
  #toast.show{opacity:1}
  kbd{font-size:11px;color:var(--sub);border:1px solid var(--line);border-radius:4px;padding:1px 5px;background:var(--panel)}
- .more{width:100%;padding:11px}
+ .more{width:100%;padding:11px;justify-content:center}
 </style></head><body>
 <header>
- <div class=logo>Z <b>번역 스튜디오</b></div>
+ <div class=logo onclick=goHome() title="홈으로">Z <b>번역 스튜디오</b></div>
  <div class=searchwrap>
-  <input type=text id=q placeholder="문구 검색 — 한국어 번역 또는 스페인어 원문" autofocus>
-  <select id=filef><option value="">전체 파일</option></select>
-  <button class=primary onclick=search()>검색</button>
-  <select id=browseby onchange=doBrowse()>
-   <option value="">찾아보기…</option>
-   <option value=map>맵별</option>
-   <option value=sprite>화자별</option>
-   <option value=group>분류별</option>
-   <option value=file>파일별</option>
-  </select>
+  <input type=text id=q autocomplete=off spellcheck=false autofocus
+    placeholder="문구 검색 — 한국어 번역 또는 스페인어 원문">
+  <button class=primary onclick=search()>
+   <svg width=14 height=14 viewBox="0 0 16 16" fill=none stroke=currentColor stroke-width=1.8 stroke-linecap=round><circle cx=7 cy=7 r="4.5"/><path d="M10.5 10.5 14 14"/></svg>검색</button>
+  <button class=ghost id=browsebtn data-menubtn onclick="togglePanel('browse',this)" title="맵·화자·분류·파일별로 훑어봐요">
+   <svg width=14 height=14 viewBox="0 0 16 16" fill=none stroke=currentColor stroke-width=1.6 stroke-linecap=round style="color:var(--es)"><path d="M2 3.5h12M2 8h12M2 12.5h12"/><circle cx=4 cy=3.5 r=1.3 fill=currentColor stroke="none"/><circle cx=8 cy=8 r=1.3 fill=currentColor stroke="none"/><circle cx=12 cy=12.5 r=1.3 fill=currentColor stroke="none"/></svg>찾아보기</button>
+ </div>
+ <div id=browse class=menu hidden>
+  <button onclick="pickBrowse('map')"><span class=mi-t>맵별<span class=mi-d>맵 하나의 대사를 통째로</span></span></button>
+  <button onclick="pickBrowse('sprite')"><span class=mi-t>화자별<span class=mi-d>같은 그림을 쓰는 NPC의 대사</span></span></button>
+  <button onclick="pickBrowse('group')"><span class=mi-t>분류별<span class=mi-d>간호사·점원 같은 무리</span></span></button>
+  <button onclick="pickBrowse('file')"><span class=mi-t>파일별<span class=mi-d>정본 절(jsonl) 하나씩</span></span></button>
  </div>
  <span id=dirty></span>
- <button onclick=build() id=buildbtn>빌드 → 게임 반영</button>
- <button class=ghost onclick=replUI()>바꾸기</button>
- <button class=ghost onclick=refSearch()>참고</button>
- <button class=ghost onclick=notes()>메모</button>
- <button class=ghost onclick=histView()>이력</button>
+ <button class=gold onclick=build() id=buildbtn>
+  <svg width=14 height=14 viewBox="0 0 16 16" fill=none stroke=currentColor stroke-width=1.7 stroke-linecap=round stroke-linejoin=round><path d="M9 1.5 3.5 9H8l-1 5.5L12.5 7H8z" fill=currentColor fill-opacity=".3"/></svg><span id=buildlabel>빌드 → 게임 반영</span></button>
+ <button class=ghost id=toolsbtn data-menubtn onclick="togglePanel('tools',this)">
+  <svg width=14 height=14 viewBox="0 0 16 16" fill=none stroke=currentColor stroke-width=1.6 stroke-linecap=round stroke-linejoin=round style="color:var(--sub)"><path d="M10.8 2.2a3.4 3.4 0 0 0-4.4 4.2L2 10.8a1.6 1.6 0 0 0 2.3 2.3l4.3-4.4a3.4 3.4 0 0 0 4.2-4.4L10.5 6.5 8.6 6.4l-.1-1.9z"/></svg>도구
+  <svg width=10 height=10 viewBox="0 0 16 16" fill=none stroke=currentColor stroke-width=2 stroke-linecap=round style="color:var(--sub)"><path d="m4 6 4 4 4-4"/></svg></button>
+ <div id=tools class=menu hidden>
+  <button onclick="closePanels();replUI()">
+   <svg width=15 height=15 viewBox="0 0 16 16" fill=none stroke=currentColor stroke-width=1.6 stroke-linecap=round stroke-linejoin=round style="color:var(--acc)"><path d="M12.5 6H3l2.5-2.5M3.5 10H13l-2.5 2.5"/></svg>
+   <span class=mi-t>바꾸기<span class=mi-d>한 문구를 여러 행에서 한꺼번에 — 행마다 확인하고 골라요</span></span></button>
+  <button onclick="closePanels();refSearch()">
+   <svg width=15 height=15 viewBox="0 0 16 16" fill=none stroke=currentColor stroke-width=1.6 stroke-linecap=round stroke-linejoin=round style="color:var(--gold)"><path d="M2.5 3.5h4a2 2 0 0 1 1.5.7 2 2 0 0 1 1.5-.7h4v9h-4a2 2 0 0 0-1.5.7 2 2 0 0 0-1.5-.7h-4zM8 4.2v9"/></svg>
+   <span class=mi-t>참고<span class=mi-d>검색창의 말을 용어집·본가 이름·문장 코퍼스에서 찾아요</span></span></button>
+  <hr>
+  <button onclick="closePanels();notes()">
+   <svg width=15 height=15 viewBox="0 0 16 16" fill=none stroke=currentColor stroke-width=1.6 stroke-linecap=round stroke-linejoin=round style="color:var(--warn)"><path d="m11 2.5 2.5 2.5L6 12.5l-3.2.7.7-3.2z"/></svg>
+   <span class=mi-t>메모<span class=mi-d>나중에 손볼 자리를 쌓아 두고 다시 찾아가요</span></span></button>
+  <button onclick="closePanels();histView()">
+   <svg width=15 height=15 viewBox="0 0 16 16" fill=none stroke=currentColor stroke-width=1.6 stroke-linecap=round style="color:var(--es)"><circle cx=8 cy=8 r="5.8"/><path d="M8 4.8V8l2.3 1.6"/></svg>
+   <span class=mi-t>이력<span class=mi-d>동작 묶음으로 보고 묶음째 되돌려요</span></span></button>
+ </div>
 </header>
 <main>
  <div class=meta id=meta>검색어를 입력하세요. 저장 <kbd>Ctrl+Enter</kbd> · 검색 <kbd>Enter</kbd></div>
@@ -78,7 +124,7 @@
 <div id=toast></div>
 <script>
 const $=id=>document.getElementById(id);
-let HITS=[],SHOWN=0,DIRTY=0;const STEP=50;
+let HITS=[],ALL=[],SHOWN=0,DIRTY=0,FILE='',QRY='',TRUNC=false;const STEP=50;
 $('q').addEventListener('keydown',e=>{if(e.key==='Enter')search()});
 function toast(m,ms=2200){const t=$('toast');t.textContent=m;t.classList.add('show');
  clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),ms)}
@@ -86,23 +132,57 @@ function esc(s){const d=document.createElement('div');d.textContent=s;return d.i
 function dirty(n){DIRTY+=n;const d=$('dirty');
  if(DIRTY>0){d.style.display='inline-block';d.textContent=`저장 ${DIRTY}건 — 빌드 필요`}
  else d.style.display='none'}
+// 드롭다운 패널 — 열림/닫힘과 자리만 여기서, 내용은 마크업에 있다
+const PANELS=['tools','browse'];
+function closePanels(){for(const id of PANELS){const p=$(id);if(p)p.hidden=true}}
+function togglePanel(id,btn){
+ const p=$(id),wasOpen=!p.hidden;
+ closePanels(); if(wasOpen)return;
+ p.hidden=false;
+ const hr=btn.closest('header').getBoundingClientRect(),br=btn.getBoundingClientRect();
+ p.style.top=(br.bottom-hr.top+6)+'px'; p.style.left='auto'; p.style.right='auto';
+ if(br.left-hr.left+p.offsetWidth>hr.width-12)p.style.right=Math.max(8,hr.right-br.right)+'px';
+ else p.style.left=(br.left-hr.left)+'px';
+}
+addEventListener('click',e=>{if(!e.target.closest?.('.menu,[data-menubtn]'))closePanels()});
+addEventListener('keydown',e=>{if(e.key==='Escape')closePanels()});
+function goHome(){
+ closePanels();$('q').value='';FILE='';ALL=[];HITS=[];
+ $('meta').innerHTML='검색어를 입력하세요. 저장 <kbd>Ctrl+Enter</kbd> · 검색 <kbd>Enter</kbd>';
+ $('out').innerHTML='<div class=empty>어색한 문구를 발견하면 여기서 찾아 바로 고치세요.<br>'
+  +'확신이 없으면 메모로 남겨 두면 됩니다 — 나중에 한꺼번에 처리해요.</div>';
+}
+function pickBrowse(by){closePanels();doBrowse(by)}
+// 이스케이프한 조각 사이에만 강조를 끼운다 — 원문이 태그로 살아나지 않게
+function hl(s){return QRY&&s.includes(QRY)
+ ?s.split(QRY).map(esc).join(`<mark>${esc(QRY)}</mark>`):esc(s)}
 async function search(){
  const q=$('q').value.trim(); if(!q)return;
- $('meta').textContent='검색 중...';
- const f=$('filef').value;
- const r=await fetch('/search?q='+encodeURIComponent(q)+(f?'&file='+encodeURIComponent(f):''));
- const js=await r.json(); HITS=js.hits; SHOWN=0;
- $('meta').textContent=`${js.hits.length}행 매칭`+(js.truncated?' (상한 500행)':'');
- if(!js.hits.length){$('out').innerHTML='<div class=empty>매칭되는 행이 없습니다.</div>';return}
- $('out').innerHTML=''; more();
- const files=[...new Set(js.hits.map(h=>h.file))];
- $('filef').innerHTML='<option value="">전체 파일</option>'+files.map(f=>`<option>${f}</option>`).join('');
+ QRY=q; $('meta').textContent='검색 중...';
+ const r=await fetch('/search?q='+encodeURIComponent(q));
+ const js=await r.json(); ALL=js.hits; TRUNC=js.truncated; FILE='';
+ showHits();
 }
+// 파일 필터는 검색 결과 위 칩 줄로 — 상한 500행은 필터 전 기준이다
+function showHits(){
+ HITS=FILE?ALL.filter(h=>h.file===FILE):ALL; SHOWN=0;
+ $('meta').textContent=`${HITS.length}행 매칭`+(FILE?` · ${FILE}`:'')
+  +(TRUNC?' (상한 500행)':'');
+ if(!ALL.length){$('out').innerHTML='<div class=empty>매칭되는 행이 없습니다.</div>';return}
+ const cnt={}; ALL.forEach(h=>cnt[h.file]=(cnt[h.file]||0)+1);
+ const files=Object.keys(cnt).sort();
+ $('out').innerHTML=files.length>1?`<div class=meta id=filebar>
+   <span class="chip act${FILE?'':' here'}" onclick="pickFile('')">전체 ${ALL.length}</span>`
+   +files.map(f=>`<span class="chip act${FILE===f?' here':''}" onclick="pickFile('${esc(f)}')">${esc(f)} ${cnt[f]}</span>`).join('')
+   +'</div>':'';
+ more();
+}
+function pickFile(f){FILE=f;showHits()}
 function more(){
  const frag=HITS.slice(SHOWN,SHOWN+STEP).map((h,k)=>{const i=SHOWN+k;return `
   <div class=card id=card${i}>
    <span class=chip>${esc(h.file)}:${h.line}</span>${mapChips(h,i)}${evChip(h,i)}${h.sprite&&h.sprite!=='?'?`<span class=chip>${esc(h.sprite)}</span>`:''}${h.group&&h.group!=='?'?`<span class=chip>${esc(h.group)}</span>`:''}
-   <div class=es>${esc(h.es)}</div>
+   <div class=es>${hl(h.es)}</div>
    <textarea id=v${i} data-orig="${esc(h.v)}"
      onkeydown="if(event.ctrlKey&&event.key==='Enter')save(${i},'${h.file}',${h.line})">${esc(h.v)}</textarea>
    <div class=rowbar>
@@ -152,7 +232,7 @@ async function openEvent(mp,ev,pg){
    <div class=es>${esc(r.es)}</div><div>${esc(r.v)}</div>
   </div>`).join('');
 }
-function jumpTo(file,line){$('q').value='';$('filef').value=file;openLine(file,line)}
+function jumpTo(file,line){openLine(file,line)}
 async function openLine(file,line){
  const r=await fetch('/line?file='+encodeURIComponent(file)+'&line='+line);const js=await r.json();
  if(!js.hit){toast('그 행을 찾지 못했어요');return}
@@ -301,9 +381,8 @@ async function refSearch(){
   sec('공식 문장 코퍼스 (참고용 — 자동 적용 금지)', js.messages.map(m=>`<div class=es>[${esc(m.src||'')}·${esc(m.file||'')}] ${esc(m.es||'')}<br>→ ${esc(m.ko||'')}</div>`).join(''))
   ||'<div class=empty>참고 자료에 매칭이 없습니다.</div>';
 }
-async function doBrowse(){
- const by=$('browseby').value; if(!by)return;
- $('meta').textContent='불러오는 중...';
+async function doBrowse(by){
+ QRY=''; $('meta').textContent='불러오는 중...';
  const r=await fetch('/browse?by='+by); const js=await r.json();
  const names={map:'맵',sprite:'화자',group:'분류',file:'파일'};
  $('meta').textContent=`${names[by]}별 — ${js.groups.length}개 묶음`;
