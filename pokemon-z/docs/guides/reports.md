@@ -40,6 +40,9 @@ https://durumiii.github.io/z-kr-studio/ — 브라우저에서 korean.dat를 검
 - 화자 조인표 축약본은 `translate/make_speakers.py`가 speakers.json으로 생성 —
   조인표·귀속표 갱신 시 재생성 후 재배포(이벤트 자리도 이 파일에 실린다).
 - 검증은 `webapp/tests/`(pytest 실물 dat + node selfcheck). 스펙: `docs/superpowers/`(repo 루트).
+- **스튜디오 코드를 고치기 전에 [webapp/AGENTS.md](../../webapp/AGENTS.md)를 읽는다** —
+  파일 여섯의 역할표와 화면별 규약이 거기 있고, `rubywrite.py`·`vendor/rubymarshal/`이
+  **수정 금지**(저장소 정본의 사본)라는 것도 거기에만 적혀 있다.
 
 **[빌드]가 하는 일** — 고른 폴더의 `Data/korean.dat` **하나만** 바꾼다. 직전본을
 `korean.dat.prev`로 남기고(순정 원본은 폴더를 처음 열 때 `.bak`으로 1회 보존), 원본이

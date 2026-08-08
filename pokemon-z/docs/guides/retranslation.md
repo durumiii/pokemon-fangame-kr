@@ -18,8 +18,11 @@ reasoning_effort=minimal. **작은 표본으로 파라미터를 판정하지 마
   (A: 현행을 함께 줌), 없으면 새 번역(B: 스페인어만 줌).
 - 세 층을 구분한다: **보호**(`translate/data/protected.jsonl`)는 사정권에서 아예 뺀다 · **승인 줄**은
   사정권에 남되 자동 채택 금지, 말투 본보기의 원천 · 그 밖은 자유.
+- **보호 목록은 `uv run translate/provenance.py build`가 만든다** — 제보 시트와 커밋의
+  `Edit-Source:` 꼬리표를 읽어 「사람이 자리를 보고 고친 줄」을 가린다. **배치를 돌리기
+  전에 다시 굽는다** — 낡은 목록으로 돌면 사람이 판정한 자리를 모델이 덮어쓴다.
 - 유지자 판정 반영 커밋에는 `Edit-Source: human` 꼬리표. 고른 줄은 승인 줄에 합친다
-  (`{"map","es","ko","who","src"}`).
+  (`{"map","es","ko","who","src"}`). 그 꼬리표의 소비자가 위의 `provenance.py`다.
 
 ## 마크업은 전부 기계 몫
 
