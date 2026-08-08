@@ -4,7 +4,7 @@
 {"k": "TMs & HMs", "v": "기술머신"}
 {"k": "Berries", "v": "나무열매"}
 {"k": "Mail", "v": "우편"}
-{"k": "Battle Items", "v": "배틀아이템"}
+{"k": "Battle Items", "v": "배틀"}
 {"k": "Key Items", "v": "중요한 물건"}
 {"k": "Bill", "v": "빌"}
 {"k": "Kanto Pokédex", "v": "관동 도감"}
@@ -1286,7 +1286,7 @@
 {"k": "{1} learned a new song!", "v": "{1} learned a new song!"}
 {"k": "The player trainer was not defined, so the menu can't be displayed.", "v": "The player trainer was not defined, so the menu can’t be displayed."}
 {"k": "Please see the documentation to learn how to set up the trainer player.", "v": "Please see the documentation to learn how to set up the trainer player."}
-{"k": "Pokédex", "v": "도감"}
+{"k": "Pokédex", "v": "포켓몬 도감"}
 {"k": "Pokégear", "v": "포켓기어"}
 {"k": "Balls: {1}", "v": "볼: {1}"}
 {"k": "Steps: {1}/{2}\nBalls: {3}", "v": "Steps: {1}/{2}\nBalls: {3}"}
@@ -1807,18 +1807,18 @@
 {"k": "Jump to which Box?", "v": "Jump to which Box?"}
 {"k": "Forest", "v": "숲"}
 {"k": "City", "v": "도시"}
-{"k": "Desert", "v": "Desert"}
-{"k": "Savanna", "v": "Savanna"}
+{"k": "Desert", "v": "사막"}
+{"k": "Savanna", "v": "사바나"}
 {"k": "Crag", "v": "Crag"}
 {"k": "Volcano", "v": "화산"}
 {"k": "Snow", "v": "설원"}
 {"k": "Cave", "v": "동굴"}
-{"k": "Beach", "v": "Beach"}
+{"k": "Beach", "v": "바닷가"}
 {"k": "Seafloor", "v": "Seafloor"}
-{"k": "River", "v": "River"}
+{"k": "River", "v": "강"}
 {"k": "Sky", "v": "하늘"}
 {"k": "Poké Center", "v": "포켓몬센터"}
-{"k": "Machine", "v": "기계"}
+{"k": "Machine", "v": "금속"}
 {"k": "Checks", "v": "체크"}
 {"k": "Simple", "v": "심플"}
 {"k": "Heart", "v": "하트"}
@@ -1992,7 +1992,7 @@
 {"k": "IDNo.{1}", "v": "IDNo.{1}"}
 {"k": "Hall of Fame No.", "v": "명예의 전당 No."}
 {"k": "Welcome to the Hall of Fame!", "v": "Welcome to the Hall of Fame!"}
-{"k": "Hall of Fame", "v": "명예의 전당"}
+{"k": "Hall of Fame", "v": "전당등록"}
 {"k": "\\se[accesspc]Accessed the Hall of Fame.", "v": "\\se[accesspc]명예의 전당에 접속했다."}
 {"k": "PA: Ding-dong!\u0001", "v": "PA:  Ding-dong!\u0001"}
 {"k": "PA: Your safari game is over!", "v": "PA:  Your safari game is over!"}
@@ -2820,7 +2820,7 @@
 {"k": "SALIR", "v": "나가기"}
 {"k": "CONFIRMAR", "v": "확인"}
 {"k": "Nv.{1}", "v": "Lv.{1}"}
-{"k": "Si", "v": "네"}
+{"k": "Si", "v": "예"}
 {"k": "Ingrese un mensaje (máx. {1} caracteres).", "v": "메시지를 입력하세요 (최대 {1}자)."}
 {"k": "Ingresa un mensaje (máx. de 256 caracteres).", "v": "메시지를 입력하세요 (최대 256자)."}
 {"k": "¿Quieres dejar al Pokémon sin la carta?", "v": "포켓몬에게서 편지를 떼어내시겠습니까?"}
@@ -3244,12 +3244,12 @@
 {"k": "Volcán", "v": "화산"}
 {"k": "Nieve", "v": "눈"}
 {"k": "Cueva", "v": "동굴"}
-{"k": "Playa", "v": "해변"}
+{"k": "Playa", "v": "바닷가"}
 {"k": "Mar", "v": "바다"}
 {"k": "Río", "v": "강"}
 {"k": "Cielo", "v": "하늘"}
 {"k": "Centro Pokémon", "v": "포켓몬센터"}
-{"k": "Máquina", "v": "기계"}
+{"k": "Máquina", "v": "금속"}
 {"k": "Losas", "v": "타일"}
 {"k": "Sencillo", "v": "심플"}
 {"k": "Corazón", "v": "하트"}
@@ -3258,7 +3258,7 @@
 {"k": "Trío", "v": "트리오"}
 {"k": "Chica Kimono", "v": "기모노 소녀"}
 {"k": "Logo Rocket", "v": "로켓단 로고"}
-{"k": "Elige un fondo.", "v": "배경을 선택하세요."}
+{"k": "Elige un fondo.", "v": "어느 벽지로 하겠습니까?"}
 {"k": "¿Nombre de la Caja?", "v": "박스 이름은?"}
 {"k": "¿Salir de la Caja?", "v": "박스를 종료하시겠습니까?"}
 {"k": "¿Hacer más cambios?", "v": "더 변경할까?"}
@@ -3459,7 +3459,7 @@
 {"k": "ID N°{1}", "v": "ID No.{1}"}
 {"k": "Hall de la Fama N°", "v": "명예의 전당 N°"}
 {"k": "¡Bienvenido al Hall de la Fama!", "v": "명예의 전당에 온 것을 환영합니다!"}
-{"k": "Hall de la Fama", "v": "명예의 전당"}
+{"k": "Hall de la Fama", "v": "전당등록"}
 {"k": "\\se[accesspc]Acceso al Hall de la Fama concedido.", "v": "\\se[accesspc]명예의 전당 접속이 허가되었습니다."}
 {"k": "Altavoz: ¡Ding-dong!\u0001", "v": "스피커: 딩동!\u0001"}
 {"k": "Altavoz: ¡Tu partida de Safari ha terminado!", "v": "스피커: 사파리 게임이 끝났습니다!"}
@@ -3679,7 +3679,7 @@
 {"k": "Objetos", "v": "도구"}
 {"k": "Medicinas", "v": "회복약"}
 {"k": "MTs / MOs", "v": "기술머신/비전머신"}
-{"k": "Bayas", "v": "열매"}
+{"k": "Bayas", "v": "나무열매"}
 {"k": "Cartas", "v": "Cartas"}
 {"k": "Obj. Batallas", "v": "배틀도구"}
 {"k": "Obj. Claves", "v": "중요한물건"}
