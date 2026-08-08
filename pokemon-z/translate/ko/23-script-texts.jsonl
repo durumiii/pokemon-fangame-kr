@@ -925,7 +925,7 @@
 {"k": "{1} lost against {2} and {3}!", "v": "{1}\\j[은,는] {2}\\j[과,와] {3}에게 패배했다!"}
 {"k": "{1} lost against\n{2}!", "v": "{1} lost against\r\n{2}!"}
 {"k": "{1} paid ${2}\nas the prize money...", "v": "{1} paid ${2}\r\nas the prize money..."}
-{"k": "...", "v": "..."}
+{"k": "...", "v": "......"}
 {"k": "{1} panicked and lost\n${2}...", "v": "{1} panicked and lost\r\n${2}..."}
 {"k": "{1} blacked out!", "v": "{1} blacked out!"}
 {"k": "Graphics/Pictures/battleCommandButtons", "v": "Graphics/Pictures/battleCommandButtons"}
@@ -3352,7 +3352,7 @@
 {"k": "Sacar Pokémon", "v": "포켓몬 내보내기"}
 {"k": "Dejar Pokémon", "v": "맡긴다"}
 {"k": "Mover Pokémon", "v": "포켓몬 교체"}
-{"k": "¡Nos vemos!", "v": "또 보자!"}
+{"k": "¡Nos vemos!", "v": "그만둔다"}
 {"k": "Pasar un Pokémon guardado en una Caja a tu equipo.", "v": "박스에 맡긴 포켓몬을 지닌포켓몬으로 옮깁니다."}
 {"k": "Guardar un Pokémon de tu equipo en una Caja.", "v": "지닌포켓몬을 박스에 맡깁니다."}
 {"k": "Mover los Pokémon de las Cajas y tu equipo.", "v": "박스와 지닌포켓몬 사이에서 포켓몬을 옮깁니다."}
@@ -3403,7 +3403,7 @@
 {"k": "{1}... Y quieres {2}.\nTe costará ${3}. ¿De acuerdo?", "v": "{1}... 그리고 {2}\\j[이,가] 필요하군.\r\n${3}인데 괜찮겠어?"}
 {"k": "Error al borrar objeto guardado", "v": "저장된 도구 삭제 중 오류"}
 {"k": "No tienes espacio en la Mochila.", "v": "가방에 공간이 없다."}
-{"k": "¡Aquí tienes!\n¡Gracias!", "v": "여기 있어!\r\n고마워!"}
+{"k": "¡Aquí tienes!\n¡Gracias!", "v": "네, 여기 있습니다!\r\n대단히 감사합니다!"}
 {"k": "También recibes una Honor Ball extra.", "v": "덤으로 프리미어볼도 하나 더 받는다."}
 {"k": "¿{1}? ¡Oh, no!\nNo puedo comprar eso.", "v": "{1}? 이런!\r\n그건 살 수 없어."}
 {"k": "¿{1}?\n¿Cuántas unidades quieres vender?", "v": "{1}?\r\n몇 개를 팔까?"}
@@ -3411,7 +3411,7 @@
 {"k": "Entregaste {1}.\nRecibiste ${2} por la venta.", "v": "{1}\\j[을,를]\n${2}에 매각했다."}
 {"k": "Me gustaría comprar algo", "v": "사러 왔다"}
 {"k": "Me gustaría vender algo", "v": "팔러 왔다"}
-{"k": "Solo estoy mirando", "v": "그냥 구경할게요"}
+{"k": "Solo estoy mirando", "v": "구경만 할게요"}
 {"k": "¡Bienvenido!\n¿En qué puedo ayudarte?", "v": "어서 오세요!\r\n무엇을 도와드릴까요?"}
 {"k": "¡Vuelve cuando quieras!", "v": "또 오세요!"}
 {"k": "¿En qué más puedo ayudarte?", "v": "더 도와드릴 일이 있으신가요?"}
@@ -4521,7 +4521,7 @@
 {"k": "{1} quiere aprender el movimiento {2}.", "v": "{1}\\j[은,는] 새로 {2}\\j[을,를] 배우고 싶다...!"}
 {"k": "Pero {1} ya conoce cuatro movimientos.", "v": "하지만 {1}\\j[은,는] 이미 기술을 4개 알고 있다!"}
 {"k": "¿Quieres sustituir uno de esos movimientos por {1}?", "v": "어느 기술 대신 {1}\\j[을,를] 배우게 하겠습니까?"}
-{"k": "¿Qué movimiento quieres que olvide?", "v": "어느 기술을 잊게 할까?"}
+{"k": "¿Qué movimiento quieres que olvide?", "v": "어느 기술을 잊게 하겠습니까?"}
 {"k": "1, 2 y...", "v": "1, 2 그리고..."}
 {"k": "¡Puf!", "v": "짠!"}
 {"k": "¡{1} ha olvidado cómo utilizar {2}!", "v": "{1}\\j[은,는] {2}\\j[을,를] 깨끗이 잊었다!"}
@@ -4882,7 +4882,7 @@
 {"k": "\\se[]¡{1} ha aprendido {2}!\\se[MoveLearnt]", "v": "\\se[]{1}\\j[은,는] {2}\\j[을,를] 배웠다!\\se[MoveLearnt]"}
 {"k": "{1} está intentando aprender {2}.", "v": "{1}\\j[은,는] 새로 {2}\\j[을,를] 배우고 싶다..."}
 {"k": "¿Quieres remplazar un movimiento por {1}?", "v": "기술을 잊게 하고 {1}\\j[을,를] 배우게 하겠습니까?"}
-{"k": "¿Qué movimiento debería olvidar?", "v": "어느 기술을 잊게 할까?"}
+{"k": "¿Qué movimiento debería olvidar?", "v": "어느 기술을 잊게 하겠습니까?"}
 {"k": "\\se[]1,\\wt[16] 2, y\\wt[16]...\\wt[16] ...\\wt[16] ... ¡Puf!\\se[balldrop]", "v": "\\se[]1,\\wt[16] 2, 그리고\\wt[16]...\\wt[16] ...\\wt[16] ... 짠!\\se[balldrop]"}
 {"k": "\\se[]{1} ha olvidado cómo usar {2}. Y... ¡{1} ha aprendido {3}!\\se[MoveLearnt]", "v": "\\se[]{1}\\j[은,는] {2}의 사용법을 잊었다! 그리고... {1}\\j[은,는] {3}\\j[을,를] 배웠다!\\se[MoveLearnt]"}
 {"k": "No se le puede enseñar ningún movimiento a un Pokémon Oscuro.", "v": "그림자 포켓몬에게는 기술을 가르칠 수 없다."}
