@@ -314,8 +314,9 @@ function pickFile(f){FILE=f;showHits()}
 function more(){
  const frag=HITS.slice(SHOWN,SHOWN+STEP).map((h,k)=>{const i=SHOWN+k;return `
   <div class=card id=card${i}>
-   <span class=chip>${esc(h.file)}:${h.line}</span>${mapChips(h,i)}${evChip(h,i)}${h.sprite&&h.sprite!=='?'?`<span class=chip>${esc(h.sprite)}</span>`:''}${h.group&&h.group!=='?'?`<span class=chip>${esc(h.group)}</span>`:''}
+   ${h.cmd!==undefined?`<span class=cmd>명령 ${h.cmd}</span>`:''}${h.line?`<span class=chip>${esc(h.file)}:${h.line}</span>`:'<span class=chip>번역표에 없음 — 고칠 수 없어요</span>'}${mapChips(h,i)}${evChip(h,i)}${h.sprite&&h.sprite!=='?'?`<span class=chip>${esc(h.sprite)}</span>`:''}${h.group&&h.group!=='?'?`<span class=chip>${esc(h.group)}</span>`:''}
    <div class=es>${hl(h.es)}</div>
+   ${!h.line?'':`
    <textarea id=v${i} data-orig="${esc(h.v)}"
      onkeydown="if(event.ctrlKey&&event.key==='Enter')save(${i},'${h.file}',${h.line})">${esc(h.v)}</textarea>
    <div class=rowbar>
@@ -325,7 +326,7 @@ function more(){
     <button onclick=memo(${i})>메모</button>
     <span class=st id=st${i}></span>
    </div>
-   <div class=es id=orig${i} style="display:none"></div>
+   <div class=es id=orig${i} style="display:none"></div>`}
   </div>`}).join('');
  SHOWN=Math.min(SHOWN+STEP,HITS.length);
  const btn=$('morebtn');if(btn)btn.remove();
@@ -355,17 +356,16 @@ function spotList(i){
   </div>`).join('');
 }
 async function openEvent(mp,ev,pg){
- $('meta').textContent='이벤트 불러오는 중...';
+ QRY=''; $('meta').textContent='이벤트 불러오는 중...';
  const r=await fetch(`/event?map=${mp}&event=${ev}&page=${pg}`);const js=await r.json();
  if(!js.rows.length){$('out').innerHTML='<div class=empty>이 페이지에 대사가 없습니다.</div>';return}
- $('meta').textContent=`${js.rows[0].name||'EV'+ev} — 맵 ${mp} · 이벤트 ${ev} · 페이지 ${pg+1} · ${js.rows.length}행 (명령 순서)`;
- $('out').innerHTML=js.rows.map(r=>`<div class=card>
-   <span class=cmd>명령 ${r.cmd}</span>${r.sprite?`<span class=chip>${esc(r.sprite)}</span>`:''}
-   ${r.line?`<span class="chip act" onclick="jumpTo('${esc(r.file)}',${r.line})">${esc(r.file)}:${r.line}</span>`:'<span class=chip>번역표에 없음</span>'}
-   <div class=es>${esc(r.es)}</div><div>${esc(r.v)}</div>
-  </div>`).join('');
+ // 검색 결과와 같은 카드를 쓴다 — 이벤트를 읽다 그 자리에서 고칠 수 있어야 한다
+ HITS=js.rows; SHOWN=0; ALL=js.rows; FILE=''; TRUNC=false;
+ const miss=js.rows.filter(r=>!r.line).length;
+ $('meta').textContent=`${js.rows[0].name||'EV'+ev} — 맵 ${mp} · 이벤트 ${ev} · `
+  +`페이지 ${pg+1} · ${js.rows.length}행 (명령 순서)`+(miss?` · 번역표에 없는 ${miss}행은 못 고쳐요`:'');
+ $('out').innerHTML=''; more();
 }
-function jumpTo(file,line){openLine(file,line)}
 async function openLine(file,line){
  const r=await fetch('/line?file='+encodeURIComponent(file)+'&line='+line);const js=await r.json();
  if(!js.hit){toast('그 행을 찾지 못했어요');return}

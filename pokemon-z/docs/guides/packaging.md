@@ -9,9 +9,22 @@
 korean.dat로 고칠지 모드로 고칠지 갈린다.
 
 Pokemon Z는 Essentials v16 · 루비 1.8.7 · mkxp-z 구판. 플러그인 묶음이 없어 코드 모드는
-`inject.py`가 `Scripts.rxdata`에 `MOD:<모드명>/<파일명>` 섹션으로 덧붙인다(`Main` 직전,
-나중 정의가 이긴다). 기반은 게임 폴더가 아니라 **모드 보관소의 한글패치판**
-(`/mnt/d/GameVault/mods/Pokemon Z Fangame/<모드>/`, 폴더명은 é 없는 쪽이 정본)이라 멱등이다.
+`Scripts.rxdata`에 `MOD:<모드명>/<파일명>` 섹션으로 덧붙는다(`Main` 직전, 나중 정의가
+이긴다).
+
+**설치·제거는 essentials-modkit으로 한다**(`~/workspace/claude-native/sketches/essentials-modkit`).
+모드 하나만 얹고 내리므로 다른 모드를 건드리지 않고, 기준선 대조·백업·겹침 안내가 붙는다.
+저장소의 모드 폴더를 그대로 보관소로 넘긴다:
+
+    cd ~/workspace/claude-native/sketches/essentials-modkit
+    uv run python -c "from modkit.cli import main; main(['apply','<모드명>','/mnt/d/Game/Pokemon Z/V2.18','--store','<모드 폴더의 부모>'])"
+
+`lint`(카드·스크립트 검사) · `remove` · `shelf`도 같은 자리에서 부르고, 새 모드의 뼈대는
+`modkit new`가 만든다. 판이 어긋나 멈추면(BaseChanged) 경고를 읽고 `--force`로 강행한다.
+
+⚠ **새 모드는 보관소에 복사해야 사용자의 모드 서랍에 보인다.** `--store`를 저장소 쪽으로
+돌려도 게임에는 잘 얹히지만, 라이브러리는 보관소만 본다. 저장소에서 짓고 보관소
+(`/mnt/d/GameVault/mods/Pokemon Z Fangame/<모드>/`)로 복사한 다음 그 보관소를 `--store`로 얹는다.
 
 **repo에 남는 모드는 넷이다.** `UI Text KR`(스크립트에 박힌 화면 문자열은 korean.dat로
 못 고쳐서 그리기 진입점에서 갈아 끼운다 — 텍스트 층 ③) · `Type Matchup Z`(기술 선택창
@@ -20,11 +33,11 @@ Pokemon Z는 Essentials v16 · 루비 1.8.7 · mkxp-z 구판. 플러그인 묶�
 셋은 커뮤니티 배포판에서 떼어 오거나 착안한 것이라 출처가 이 저장소의 조사에 걸려 있다
 ([커뮤니티 수정판 조사](../log/research/2026-08-09-community-mods-triage.md) ①·②).
 새 주입형 모드의 소스는 이 저장소 `mods/`에 둔다(유지자 판정 2026-08-09).
-편의·성능 모드 다섯은 poke-essentials `mod/z/` 몫이다 — ⚠ **그쪽 `inject.py`는 낡았다**
-(기반 모드 이름이 옛 「한글패치 통합」, 판독도 `vendor/datread`를 안 거친다). 주입기는
-이 저장소 것을 쓴다. ⚠ 이 저장소 `inject.py`도 무인자 전체 재구축은 지금 Controller
-UX의 `expects`(순정 기준 md5)가 패치판 기반과 어긋나 멈춘다 — 개별 설치는 modkit
-`apply`가 기준선 대조로 넘어간다(Z-35에서 실측). **한 자리만 얽혀 있다** — 일시정지 단축키 표기를
+편의·성능 모드 여섯은 poke-essentials `mod/z/` 몫이다. ⚠ **양쪽 저장소의 `inject.py`는
+쓰지 마라** — 기반에서 전부를 다시 짓는 도구라 나열에서 빠진 모드가 결과에서 사라지고,
+무인자 전체 재구축은 Controller UX의 `expects`(순정 기준 md5)가 패치판 기반과 어긋나
+멈춘다(Z-35에서 실측). 설치는 위의 modkit `apply`가 기준선 대조로 넘어간다.
+**한 자리만 얽혀 있다** — 일시정지 단축키 표기를
 UI Text KR이 키보드 기준으로 적고 저쪽 `004_PadLabels`가 덮는다. 그 줄을 건드리면 저쪽도 본다.
 보관소에는 양쪽 모드가 함께 서 있으므로 주입기를 무인자로 돌리면 전부 세운다.
 
