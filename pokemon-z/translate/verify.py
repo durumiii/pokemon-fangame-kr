@@ -159,6 +159,35 @@ def check_ribbons(strict):
     print(f"리본: 일치 {ok} · 불일치 {mismatch} · 대조표 밖(구세대 콘테스트 등) {miss}")
 
 
+def check_kinds(strict):
+    """절02 도감 분류를 genera.jsonl(종번호 키, PokeAPI 산·공식 덤프 교차 검증)과 대조.
+
+    분류는 원문이 짧은 낱말이라 문자열 대조는 오탐 천지다(「Seed」=비비용 무늬) —
+    종번호로 잇는다. 팬게임 창작종은 종명이 표와 달라서 거른다: 절01의 한국어
+    종명이 표를 만든 종과 같은 자리(canon species와 일치)만 본다.
+    """
+    path = HERE / "canon" / "genera.jsonl"
+    if not path.exists():
+        return
+    genera = {r["i"]: r["ko"] for r in rows(path)}
+    canon_sp = {r["i"]: r["ko"] for r in rows(HERE / "canon" / "canon.jsonl")
+                if r.get("domain") == "species" and "i" in r}
+    species = {r["i"]: r["v"] for r in rows(HERE / "ko" / "01-species.jsonl") if r.get("v")}
+    mismatch = skip = ok = 0
+    for r in rows(HERE / "ko" / "02-kinds.jsonl"):
+        i, ko = r.get("i"), r.get("v")
+        if not ko or i not in genera or canon_sp.get(i) != species.get(i):
+            skip += 1  # 창작종·리전폼·표 밖 — 대조 불가
+            continue
+        if ko == genera[i]:
+            ok += 1
+        else:
+            mismatch += 1
+            report("FAIL" if strict else "WARN",
+                   f"분류 불일치 i={i}({species.get(i)}): 현행 {ko!r} ≠ 본가 {genera[i]!r}")
+    print(f"분류: 일치 {ok} · 불일치 {mismatch} · 대조 밖(창작종 등) {skip}")
+
+
 def check_dat_and_sentinels():
     d = load(open(STORE_DAT, "rb"))
     ks, vs = inner_of(d[23])
@@ -256,6 +285,7 @@ def main():
     strict = "--strict" in sys.argv
     check_canon(strict)
     check_ribbons(strict)
+    check_kinds(strict)
     check_names(strict)
     check_dat_and_sentinels()
     check_scripts()
