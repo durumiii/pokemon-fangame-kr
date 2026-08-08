@@ -4602,7 +4602,7 @@
 {"k": "¡Acua Aro recuperó salud de {1}!", "v": "아쿠아링이 {1}의 HP를 회복시켰다!"}
 {"k": "¡{1} ha derrotado a {2} y {3}!", "v": "{1}\\j[이,가] {2}\\j[과,와] {3}\\j[을,를] 쓰러뜨렸다!"}
 {"k": "¡{1} ha derrotado a\n{2}!", "v": "{1}\\j[이,가]\r\n{2}\\j[을,를] 쓰러뜨렸다!"}
-{"k": "¡{1} ha obtenido ${2}\npor la victoria!", "v": "{1}\\j[은,는] 상금으로 ${2} 만큼 받았다!"}
+{"k": "¡{1} ha obtenido ${2}\npor la victoria!", "v": "{1}\\j[은,는] 상금으로 ${2}\\j[을,를] 얻었다!"}
 {"k": "¡{1} ha recogido ${2}!", "v": "{1}\\j[이,가] ${2}\\j[을,를] 주웠다!"}
 {"k": "¡{1} no tiene más Pokémon que puedan pelear!", "v": "{1}에게 더 이상 싸울 수 있는 포켓몬이 없다!"}
 {"k": "¡{1} ha perdido contra {2} y {3}!", "v": "{1}\\j[은,는] {2}\\j[과,와] {3}에게 졌다!"}
@@ -5637,7 +5637,7 @@
 {"k": "{1} es muy mal Pokémon.", "v": "{1}\\j[은,는] 아주 별로인 포켓몬이다."}
 {"k": "{1} es un Pokémon bastante regulero.", "v": "{1}\\j[은,는] 그저 그런 포켓몬이다."}
 {"k": "{1} es un Pokémon decentillo.", "v": "{1}\\j[은,는] 그럭저럭 괜찮은 포켓몬이다."}
-{"k": "{1} es un Pokémon bastante bueno.", "v": "{1}\\j[은,는] 꽤 좋은 포켓몬이다."}
+{"k": "{1} es un Pokémon bastante bueno.", "v": "{1}\\j[은,는] 꽤 좋은 포켓몬이지."}
 {"k": "¡{1} es un Pokémon buenísimo!", "v": "{1}\\j[은,는] 아주 좋은 포켓몬이다!"}
 {"k": "¡{1} es un Pokémon de la hostia!", "v": "{1}\\j[은,는] 끝내주는 포켓몬이다!"}
 {"k": "Hasta aquí llegamos. Vamos a ponernos serios.", "v": "여기까지다. 이제 진지하게 가볼까."}
@@ -6232,7 +6232,7 @@
 {"k": "¡{1} escapó gracias a Retirada!", "v": "{1}\\j[은,는] 회수로 빠져나갔다!"}
 {"k": "¡Se activó Retirada de {1}!", "v": "{1}의 회수가 발동했다!"}
 {"k": "Has elegido el camino del tormento, ¡será un placer indescriptible!", "v": "고통의 길을 골랐군. 말로 다 못 할 즐거움이 되겠어!"}
-{"k": "¡Eh, cuidado con mancharme el traje! Que vale más que diez veces tú.", "v": "이봐, 내 옷에 얼룩 묻히지 마! 너 열 명 값보다 비싼 거야."}
+{"k": "¡Eh, cuidado con mancharme el traje! Que vale más que diez veces tú.", "v": "내 옷에 얼룩 묻히지 마! 너보다 열 배는 비싼 거니까."}
 {"k": "Siento que me voy haciendo más fuerte a medida que el combate transcurre. ¿Me permites que desate todo el poder de este Pokémon?", "v": "배틀이 이어질수록 내가 강해지는 게 느껴진다. 이 포켓몬의 모든 힘을 해방해도 되겠나?"}
 {"k": "¡{1} ahora es hembra!", "v": "{1}\\j[은,는] 이제 암컷이다!"}
 {"k": "¡{1} ahora es macho!", "v": "{1}\\j[은,는] 이제 수컷이다!"}
