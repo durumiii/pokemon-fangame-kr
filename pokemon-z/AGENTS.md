@@ -32,12 +32,16 @@
 |---|---|---|
 | 게이트 | 이 문서 | 구조가 바뀔 때만 |
 | 지침 | `docs/guides/` | 현행만. 낡으면 고쳐 쓴다. 이력·경위 금지 |
-| 대장 | `docs/ledger/` — [glossary](docs/ledger/glossary.md) · [voices](docs/ledger/voices.md) · [quality](docs/ledger/quality.md)(원장) | 판정 + 근거. 뒤집히면 옛 판정을 남기고 새 항목. **새 항목은 위로 쌓는다** — 최근 것만 보려면 앞부분만 읽으면 된다 |
+| 대장 | `docs/ledger/` — [glossary](docs/ledger/glossary.md)(표기) · [voices](docs/ledger/voices.md)(말투) · [quality](docs/ledger/quality.md)(그 밖의 판정) | **왜 그렇게 정했나**만. 뒤집히면 옛 판정을 남기고 새 항목. 새 항목은 위로 쌓는다 |
 | 기록 | `docs/log/` (research · reports · attic) | 날짜 박제. 고치지 않는다 — 틀렸으면 새 파일에서 바로잡고 링크 |
 
-열린 일감은 [docs/ROADMAP.md](docs/ROADMAP.md)(티켓 — 한 줄 + 근거 링크), 낸 것과
-낼 것은 [docs/CHANGELOG.md](docs/CHANGELOG.md). 지침을 고칠 때 이력이 지워지는 것을
-망설이지 마라 — 이력은 기록층에 있다.
+열린 일감은 [docs/ROADMAP.md](docs/ROADMAP.md)(티켓 — 한 줄 + 근거 링크, 세부는
+`docs/tickets/Z-번호.md`), 낸 것과 낼 것은 [docs/CHANGELOG.md](docs/CHANGELOG.md).
+지침을 고칠 때 이력이 지워지는 것을 망설이지 마라 — 이력은 기록층에 있다.
+
+**대장은 일하다 여는 곳이 아니다.** 지금 지켜야 할 규칙은 지침에, 지금 할 일은
+로드맵에 있다. 대장은 이미 정한 것을 **뒤집으려 할 때** 근거를 보러 가는 곳이다.
+규칙을 찾다가 대장을 열고 있다면 대개 지침이 빈 것이니, 찾은 것을 지침으로 올려라.
 
 **지침 문서의 개요 규약** — 머리에 네 줄: **범위**(무엇을 다루나) · **여는 때**(어떤
 상황에서 필요한가) · **다루지 않는 것**(그리고 그건 어디 있나) · **전제**(먼저 알아야
