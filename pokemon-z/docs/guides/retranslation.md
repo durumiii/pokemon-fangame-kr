@@ -99,4 +99,5 @@ reasoning_effort=minimal. **작은 표본으로 파라미터를 판정하지 마
 
 - 선행 연구 대조: [`../research/2026-08-06-translation-prompting-research.md`](../log/research/2026-08-06-translation-prompting-research.md)
 - 판별자(LLM-as-judge) 실측·재시도 설계: [`../research/2026-08-06-discriminator-pilot.md`](../log/research/2026-08-06-discriminator-pilot.md)
-- 파일럿 판정 이력·방법론: [`../ledger/quality.md`](../ledger/quality.md)
+- 파일럿 설계와 비용 산정: [`../log/2026-08-08-quality-plan-and-progress.md`](../log/2026-08-08-quality-plan-and-progress.md)
+- 살아남은 판정: [`../ledger/quality.md`](../ledger/quality.md)

@@ -123,5 +123,5 @@
 
 ## v5.1 이전
 
-v5 계열 패키징 체계(3종 변형)와 그 이전 이력은 원장
-[z-translation-quality](ledger/quality.md)의 절별 기록을 본다.
+v5 계열 패키징 체계(3종 변형)와 그 이전 이력은
+[번역 품질 작업 경위](log/2026-08-08-quality-plan-and-progress.md)의 절별 기록을 본다.
