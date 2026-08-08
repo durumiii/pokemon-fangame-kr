@@ -80,7 +80,7 @@ def decide(row, v, approved):
     return row["new"], "무판정→새번역"
 
 
-APPROVED_EV = HERE.parent / "docs/research/approved-events.jsonl"
+APPROVED_EV = HERE / "data/approved-events.jsonl"
 
 
 def done_events(d, vs):
@@ -119,7 +119,7 @@ def _ledger_rows(d):
             if l.strip()] if p.exists() else []
 
 
-PROTECTED = HERE.parent / "docs/research/protected.jsonl"
+PROTECTED = HERE / "data/protected.jsonl"
 
 
 def record_applied(evs):

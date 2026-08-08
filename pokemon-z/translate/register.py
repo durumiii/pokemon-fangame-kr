@@ -29,9 +29,9 @@ sys.path.insert(0, str(Path(__file__).parent))
 from reg import classify, clean  # noqa: E402
 
 HERE = Path(__file__).parent
-ATTR = HERE.parent / "docs/research/speaker-attr.jsonl.gz"
+ATTR = HERE / "data/speaker-attr.jsonl.gz"
 KO_MAPS = HERE / "ko/00-maps.jsonl"
-OUT = HERE.parent / "docs/research/2026-08-06-register-mismatch.md"
+OUT = HERE.parent / "docs/log/research/2026-08-06-register-mismatch.md"
 
 # 존대 / 하대 두 축. 나머지는 판정 보류.
 HIGH = {"합쇼", "해요"}

@@ -30,7 +30,7 @@ from batch import worth_rewriting  # noqa: E402
 from pilot_npc import ask_npc, build_prompt, key_of, load_personas  # noqa: E402
 from validate import check  # noqa: E402
 
-JOIN = HERE.parent / "docs/research/map-speaker-join.jsonl.gz"
+JOIN = HERE / "data/map-speaker-join.jsonl.gz"
 CHUNKS = HERE / "batch" / "npc-chunks.jsonl"
 OUT = HERE / "batch" / "npc-out"
 MODEL = "gemini-3.6-flash"

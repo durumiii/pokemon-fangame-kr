@@ -9,7 +9,7 @@
 
     uv run translate/mapscan.py [--game "/mnt/d/Game/Pokemon Z/V2.18"]
 
-산출: docs/research/map-speaker-join.jsonl (한 줄 = 대사 하나, 이벤트 문맥 포함)
+산출: translate/data/map-speaker-join.jsonl (한 줄 = 대사 하나, 이벤트 문맥 포함)
 stdout: 조인율·스프라이트 분포·어미 분포 리포트.
 """
 
@@ -122,7 +122,7 @@ ENDING = re.compile(r"(다|요|죠|까|니|네|라|자|해|어|아|지|오|소|�
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--game", default=DEFAULT_GAME)
-    ap.add_argument("--out", default=str(ROOT / "docs/research/map-speaker-join.jsonl.gz"))
+    ap.add_argument("--out", default=str(ROOT / "translate/data/map-speaker-join.jsonl.gz"))
     args = ap.parse_args()
 
     ev_rows = scan_maps(args.game)

@@ -25,7 +25,7 @@ LEDGER = HERE.parent / "docs" / "ledger"   # 판정 대장 (glossary·voices)
 sys.path.insert(0, str(HERE))
 from batch import URL, key_of, worth_rewriting  # noqa: E402
 
-JOIN = HERE.parent / "docs/research/map-speaker-join.jsonl.gz"
+JOIN = HERE / "data/map-speaker-join.jsonl.gz"
 PERSONA = HERE / "persona-table.jsonl"
 SAMPLE = HERE / "pilot" / "npc-sample.jsonl"
 

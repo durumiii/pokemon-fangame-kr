@@ -36,9 +36,9 @@ HERE = Path(__file__).parent
 ROOT = HERE.parent
 REPO = ROOT.parent
 KO_MAPS = "pokemon-z/translate/ko/00-maps.jsonl"
-REPORTS = ROOT / "docs/reports/설문지 응답 시트1.jsonl"
-ATTR = ROOT / "docs/research/speaker-attr.jsonl.gz"
-OUT = ROOT / "docs/research/protected.jsonl"
+REPORTS = ROOT / "docs/log/reports/설문지 응답 시트1.jsonl"
+ATTR = ROOT / "translate/data/speaker-attr.jsonl.gz"
+OUT = ROOT / "translate/data/protected.jsonl"
 
 # 꼬리표가 없던 시절의 커밋 갈래 (2026-08-06 손판정, 한 번만 채우면 된다)
 LEGACY = {

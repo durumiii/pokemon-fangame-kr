@@ -14,7 +14,7 @@
 
 usage:
   uv run translate/speaker.py scan          이벤트를 훑어 귀속표를 만든다
-                                            → docs/research/speaker-attr.jsonl.gz
+                                            → translate/data/speaker-attr.jsonl.gz
   uv run translate/speaker.py who <검색어>   원문·번역에 그 말이 든 줄의 화자를 보인다
   uv run translate/speaker.py lines <이름>   그 인물의 대사를 전부 뽑는다(어투 감사용)
   uv run translate/speaker.py stats         판정 근거별 집계
@@ -45,7 +45,7 @@ sys.path.insert(0, str(HERE.parent / "vendor"))
 from datread import load  # noqa: E402  (딱지를 떼 옛 도구가 그대로 읽는다)
 
 GAME = Path("/mnt/d/Game/Pokemon Z/V2.18/Data")
-OUT = HERE.parent / "docs" / "research" / "speaker-attr.jsonl.gz"
+OUT = HERE / "data" / "speaker-attr.jsonl.gz"
 KO_MAPS = HERE / "ko" / "00-maps.jsonl"
 
 TAG = re.compile(r"^(?:\\c\[\d+\])?<b>([^<:]{1,24}):</b>")

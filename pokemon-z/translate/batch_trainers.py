@@ -31,7 +31,7 @@ from batch_pages import fold, ko_index  # noqa: E402
 from pilot_npc import ask_npc, build_prompt, key_of, load_personas  # noqa: E402
 from validate import check  # noqa: E402
 
-ATTR = HERE.parent / "docs/research/speaker-attr.jsonl.gz"
+ATTR = HERE / "data/speaker-attr.jsonl.gz"
 BATCH = HERE / "batch"
 CHUNKS = BATCH / "trainer-chunks.jsonl"
 OUT = BATCH / "trainer-out"

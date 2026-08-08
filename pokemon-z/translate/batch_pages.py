@@ -34,12 +34,12 @@ import mapname  # noqa: E402
 from pilot_npc import ask_npc, key_of, npc_line  # noqa: E402
 from validate import check  # noqa: E402
 
-ATTR = HERE.parent / "docs/research/speaker-attr.jsonl.gz"
-ANON = HERE.parent / "docs/research/2026-08-06-anon-speakers.jsonl"
-APPROVED = HERE.parent / "docs/research/approved-lines.jsonl"
+ATTR = HERE / "data/speaker-attr.jsonl.gz"
+ANON = HERE / "data/2026-08-06-anon-speakers.jsonl"
+APPROVED = HERE / "data/approved-lines.jsonl"
 PERSONAS = HERE / "persona-table.jsonl"     # 무태그 NPC 페르소나표(스프라이트 단위)
 PROMPTS = HERE / "voice-prompts.jsonl"      # 프롬프트에 실리는 말투 정본
-PROTECTED = HERE.parent / "docs/research/protected.jsonl"
+PROTECTED = HERE / "data/protected.jsonl"
 MAPS = HERE / "ko" / "00-maps.jsonl"
 BATCH = HERE / "batch"
 from batch import MODEL  # 백엔드 전환(Z_BACKEND)을 한 곳에서
@@ -328,7 +328,7 @@ def pages():
 
 def approved_events():
     """판정이 끝난 이벤트 — 다시 보내지 않는다(유지자 판정 2026-08-06, 승인은 이벤트 단위)."""
-    p = HERE.parent / "docs/research/approved-events.jsonl"
+    p = HERE / "data/approved-events.jsonl"
     if not p.exists():
         return set()
     return {(json.loads(l)["map"], json.loads(l)["event"])
@@ -872,7 +872,7 @@ def report(pilot=False):
             cell = lambda s: (s or "").replace("|", "\\|").replace("\n", "<br>")
             md.append(f"| {d['who']} | {cell(d['es'])} | {cell(d['old'])} | {cell(new)} |")
         md.append("")
-    dst = HERE.parent / "docs/research/2026-08-06-retranslate-pilot.md"
+    dst = HERE.parent / "docs/log/research/2026-08-06-retranslate-pilot.md"
     md.insert(2, f"행 {tot} · 그대로 둔 행 {same} · 기계 반려 {rej}\n")
     dst.write_text("\n".join(md), encoding="utf-8")
     print(f"{tot}행 (그대로 {same} · 반려 {rej}) → {dst}")

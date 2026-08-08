@@ -97,7 +97,7 @@ def scene_of(fp, why, ok=frozenset()):
 
 def applied_events(path=None):
     """반영이 끝나 승인 이벤트로 올라간 것 — 다시 묻지 않는다."""
-    p = Path(path or HERE.parent / "docs/research/approved-events.jsonl")
+    p = Path(path or HERE / "data/approved-events.jsonl")
     if not p.exists():
         return set()
     return {(json.loads(l)["map"], json.loads(l)["event"])

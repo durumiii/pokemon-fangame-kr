@@ -16,7 +16,7 @@ from pathlib import Path
 
 HERE = Path(__file__).parent
 NAMES = HERE / "ko/21-map-names.jsonl"
-ATTR = HERE.parent / "docs/research/speaker-attr.jsonl.gz"
+ATTR = HERE / "data/speaker-attr.jsonl.gz"
 
 _ko = _es = None
 

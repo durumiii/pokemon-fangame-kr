@@ -51,14 +51,14 @@ RPG Maker 이벤트는 겉모양이 같아도 플레이어가 겪는 방식이 �
 
 이름표 없는 줄은 같은 이벤트 페이지 안에서 **분기 깊이가 같은 동안** 앞 이름표를
 물려받는다 — 답은 명령 순서(cmd)와 조건 분기 깊이(`@indent`)에 이미 있다.
-`scan`이 귀속표(`docs/research/speaker-attr.jsonl.gz`)를 만들고 `lines <이름>`이 한
+`scan`이 귀속표(`docs/log/research/speaker-attr.jsonl.gz`)를 만들고 `lines <이름>`이 한
 인물의 대사를 전부 뽑는다. `selftest`는 유지자 확정 7자리로 채점한다.
 
 - ⚠ **옛 조인표(`map-speaker-join.jsonl.gz`)로 화자를 판정하지 마라** — 명령 순서·분기
   깊이가 없어 상속을 계산할 수 없고, 스프라이트로 짐작하는 우회로를 쓰게 만든다.
   스토리 장면은 그림 하나에 화자 여럿이라, 이 우회로가 이름표 없는 4,265행 중 4분의
   3에서 화자를 틀렸다(2026-08-06 실측). 조인표는 스프라이트·좌표 조회용으로만 쓴다.
-- 이름표 「???」 자리는 전수 판정본(`docs/research/2026-08-06-anon-speakers.jsonl`)을 쓴다 —
+- 이름표 「???」 자리는 전수 판정본(`docs/log/research/2026-08-06-anon-speakers.jsonl`)을 쓴다 —
   「비인물」·「익명의도」는 정체를 밝히면 안 되는 자리다.
 
 ## 말투 배정 — 화자가 어느 부류인가부터
@@ -89,7 +89,7 @@ RPG Maker 이벤트는 겉모양이 같아도 플레이어가 겪는 방식이 �
 - ⚠ **원문의 `tú`는 반말 근거가 아니다.** 스페인어의 일상 기본형이라 한국어 존대와
   얼마든지 함께 간다. 잡담 NPC의 원문은 거의 전부 `tú`인데, 그걸 반말 근거로 읽으면
   귀족 부인도 어린이도 같은 반말이 된다(2026-08-08 사고 — 교환 NPC 133줄을 반말로
-  밀었다가 되돌렸다. 경위: [../research/2026-08-08-register-materials.md](../research/2026-08-08-register-materials.md)).
+  밀었다가 되돌렸다. 경위: [../research/2026-08-08-register-materials.md](../log/research/2026-08-08-register-materials.md)).
 - 원문의 격은 **격을 올리는 예외를 잡는 데만** 쓴다 — 원문이 usted·경칭이면 그 자리는
   그림과 무관하게 격을 올린다.
 
@@ -99,4 +99,4 @@ RPG Maker 이벤트는 겉모양이 같아도 플레이어가 겪는 방식이 �
 충돌이 아니다 — 앞은 *누구 말인가*, 뒤는 *어떤 말투인가*의 규칙이고, 앞은 스토리 장면의
 함정, 뒤는 접촉 잡담의 원리다. 이벤트의 두 부류를 가르지 않으면 이 둘이 모순으로 보인다.
 
-관계별 격 실측표: [`../research/2026-08-06-register-by-relation.md`](../research/2026-08-06-register-by-relation.md).
+관계별 격 실측표: [`../research/2026-08-06-register-by-relation.md`](../log/research/2026-08-06-register-by-relation.md).

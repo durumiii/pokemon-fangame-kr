@@ -14,7 +14,7 @@ reasoning_effort=minimal. **작은 표본으로 파라미터를 판정하지 마
 
 - **같은 (맵,원문)은 한 번만 번역한다** — 정본에 한 줄뿐이라 여러 자리에서 물으면 답이
   갈리고 마지막 것만 남는다. 남길 자리는 가장 큰 페이지(문맥이 많은 쪽).
-- **갈래는 승인 줄(`docs/research/approved-lines.jsonl`)로 가른다** — 있으면 교정판
+- **갈래는 승인 줄(`docs/log/research/approved-lines.jsonl`)로 가른다** — 있으면 교정판
   (A: 현행을 함께 줌), 없으면 새 번역(B: 스페인어만 줌).
 - 세 층을 구분한다: **보호**(`protected.jsonl`)는 사정권에서 아예 뺀다 · **승인 줄**은
   사정권에 남되 자동 채택 금지, 말투 본보기의 원천 · 그 밖은 자유.
@@ -97,6 +97,6 @@ reasoning_effort=minimal. **작은 표본으로 파라미터를 판정하지 마
 
 ## 근거 문서
 
-- 선행 연구 대조: [`../research/2026-08-06-translation-prompting-research.md`](../research/2026-08-06-translation-prompting-research.md)
-- 판별자(LLM-as-judge) 실측·재시도 설계: [`../research/2026-08-06-discriminator-pilot.md`](../research/2026-08-06-discriminator-pilot.md)
+- 선행 연구 대조: [`../research/2026-08-06-translation-prompting-research.md`](../log/research/2026-08-06-translation-prompting-research.md)
+- 판별자(LLM-as-judge) 실측·재시도 설계: [`../research/2026-08-06-discriminator-pilot.md`](../log/research/2026-08-06-discriminator-pilot.md)
 - 파일럿 판정 이력·방법론: [`../ledger/quality.md`](../ledger/quality.md)

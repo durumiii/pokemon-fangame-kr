@@ -116,9 +116,9 @@ canon에 없는 영역의 보조로만).
 
 ### 2026-08-06 판정 (사용자) — 전수 훑기에서 갈린 47건
 
-`tools/names.py sweep`이 정본에서 캐낸 갈림 목록(`docs/research/2026-08-06-names-sweep.md`)을
+`tools/names.py sweep`이 정본에서 캐낸 갈림 목록(`docs/log/research/2026-08-06-names-sweep.md`)을
 유지자가 판정한 것이다. 47건 전부 원장에 올렸고 정본 248행을 고쳤다. 항목별 전후 개수와
-바꾼 자리는 [`docs/research/2026-08-06-names-applied.md`](../docs/research/2026-08-06-names-applied.md).
+바꾼 자리는 [`docs/log/research/2026-08-06-names-applied.md`](../docs/log/research/2026-08-06-names-applied.md).
 판정의 결만 적으면:
 
 - **직함은 직함표와 대사를 한 표기로 누른다.** `Mosquetero/Mosquetera`→「무사」,

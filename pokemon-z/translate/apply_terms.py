@@ -6,7 +6,7 @@
 
 전수 대조(ES↔공식 KO, Bulbapedia 판정)에서 Z 패치가 고칠 곳은 기술 셋뿐이었다.
 나머지 불일치는 전부 대조 기준 쪽이 구명이었다(PokéAPI는 2020년 대개명 이전,
-WS 로케일도 일부 구명). 근거: docs/research/2026-08-01-z-terminology-audit.md.
+WS 로케일도 일부 구명). 근거: docs/log/research/2026-08-01-z-terminology-audit.md.
 
 + combate 계열 통일: 스페인어 원문이 combate인 대사에서 시합·대결 → 배틀.
 

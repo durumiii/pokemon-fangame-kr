@@ -90,8 +90,8 @@ Haiku 4.5 / 저가 게이트웨이 모델)로 돌려 나란히 놓고 사용자�
 ## 실행 순서 (2026-08-01 저녁 갱신 — 수집·검수 완료, 적용 단계 진입 대기)
 
 **끝난 것**: 인명 362건 판별·음차·검증(공식 6건 확정, 4~7묶음 데이터 판정 —
-[`../research/2026-08-01-z-names-proposal.md`](../research/2026-08-01-z-names-proposal.md)),
-배틀 표현집 195행([`../research/2026-08-01-z-battle-expressions.md`](../research/2026-08-01-z-battle-expressions.md)),
+[`../research/2026-08-01-z-names-proposal.md`](../log/research/2026-08-01-z-names-proposal.md)),
+배틀 표현집 195행([`../research/2026-08-01-z-battle-expressions.md`](../log/research/2026-08-01-z-battle-expressions.md)),
 공식 인명 ES↔KO 485쌍 CSV(`mod/z/tools/bulba/`), 결정 확정(조사 플러그인 포함·데미지·
 현행 문구·어감 우선).
 
@@ -112,7 +112,7 @@ Haiku 4.5 / 저가 게이트웨이 모델)로 돌려 나란히 놓고 사용자�
    거의 전부 일치 — 수정은 기술 셋(깨트리기·탐내기·프레젠트)뿐이고 종 18·기술 41·
    특성 32·도구 905라는 옛 수는 기준 쪽 구명/조인 오류/영어 기준 오독이었다.
    combate 13건은 배틀로 통일. 근거와 기준 DB의 세대 함정(PokéAPI=2020 대개명 이전)은
-   [`../research/2026-08-01-z-terminology-audit.md`](../research/2026-08-01-z-terminology-audit.md).
+   [`../research/2026-08-01-z-terminology-audit.md`](../log/research/2026-08-01-z-terminology-audit.md).
 4. **배틀 표현 적용 — 됐다(2026-08-01, 실기 확인 대기).** 절23에서 표현집과 다른
    94자리를 전통 표현으로 교체(상태이상·날씨·설치기·급소/상성/실패·랭크·포획·경험치 —
    "{1}의 {2}!" 기술 사용 문구 포함). 교체 목록은 `mod/z/translate/battle-expr-replacements.json`
@@ -121,8 +121,8 @@ Haiku 4.5 / 저가 게이트웨이 모델)로 돌려 나란히 놓고 사용자�
 5. **파일럿 — 됐다(2026-08-02).** 표본 200쌍 × 7모델(클로드 3 + 게이트웨이 4) →
    기계 검증 → 사용자 1차 판정(Opus·Gemini 3.5/3.6만 생존) → Fable 판정관의
    논쟁 30행 판정. 결론: 초벌은 gemini-3.6-flash — 실패 결이 기계 검증으로 잡히는
-   부류라서다. 근거: [`../research/2026-08-02-z-pilot-comparison.md`](../research/2026-08-02-z-pilot-comparison.md) ·
-   [`-adjudication.md`](../research/2026-08-02-z-pilot-adjudication.md).
+   부류라서다. 근거: [`../research/2026-08-02-z-pilot-comparison.md`](../log/research/2026-08-02-z-pilot-comparison.md) ·
+   [`-adjudication.md`](../log/research/2026-08-02-z-pilot-adjudication.md).
 6. **준비물(0단) — 됐다(2026-08-02).** 말투표 42인(`mod/z/translate/voices.md`,
    별칭 병합 `speaker-aliases.json`) · 용어집(`glossary.md`, 고정 용어표 17 —
    포켓프랑·입법관·선장·그림자 포켓몬·후보생 판정 포함, 기존 표기 235행 스윕) ·
@@ -437,7 +437,7 @@ monsieur/mademoiselle/madame 원문 행 전수(단어 경계, 00·15~17·22·23�
 - **그림 2장 재렌더** — `statuses.PNG`·`battleStatuses.png`의 6번째 칸(0부터 5번).
   글자가 그림에 구워져 있어 번역표로는 안 고쳐진다. 두 그림의 소유는 **Z-GUI 모드**
   (2026-08-04 귀속 판정) — 게임 폴더와 모드 카드 양쪽에 썼고, 옛 판은
-  `docs/attic/2026-08-05-status-icons-부패/`에 남겼다. 카드의 `replaces_crc`는
+  `docs/log/attic/2026-08-05-status-icons-부패/`에 남겼다. 카드의 `replaces_crc`는
   순정 파일 지문이라 그대로 유효하다.
 - 스크립트 하드코딩은 없었다 — `PokeBattle_Battler`의 회복 문구는 `_INTL` 포장이라
   절23으로 번역된다. 절23 6178/6182/6184/6185/6292가 그 자리다.
@@ -457,7 +457,7 @@ monsieur/mademoiselle/madame 원문 행 전수(단어 경계, 00·15~17·22·23�
 잡아 어투가 뒤집혔다. 맵 111에서 크리산토의 이어지는 줄(38·40)과 34가 누빌라의 해요체로
 번역돼 있었다. 접두가 붙은 37·39·41은 원래 맞았다 — 제보자는 묶음으로 신고했다.
 
-- **화자 귀속 판정법(재현)**: `docs/research/map-speaker-join.jsonl.gz`로 (맵, 원문) → 이벤트를
+- **화자 귀속 판정법(재현)**: `docs/log/research/map-speaker-join.jsonl.gz`로 (맵, 원문) → 이벤트를
   얻고, **같은 이벤트 안에서** `<b>이름:</b>` 접두를 만날 때까지 앞 화자를 물려준다. 이벤트가
   바뀌면 화자를 끊는다. 이 방법으로 누빌라 귀속 55행을 뽑았다(조인 실패 359행은 전체 13,770행
   기준 2.6%).
@@ -486,8 +486,8 @@ monsieur/mademoiselle/madame 원문 행 전수(단어 경계, 00·15~17·22·23�
 ### 로마자 잔재·고유명 정리 (2026-08-05, 서브에이전트 + 사용자 판정)
 
 한국어 번역값에 로마자가 남은 자리를 전수로 훑었다(한글이 든 값 1,154행에서 낱말 373개).
-분류·근거는 `docs/research/2026-08-05-romanized-leftovers.md`, 고유명 3건의 상세는
-`docs/research/2026-08-05-name-puzzles.md`.
+분류·근거는 `docs/log/research/2026-08-05-romanized-leftovers.md`, 고유명 3건의 상세는
+`docs/log/research/2026-08-05-name-puzzles.md`.
 
 - **반영 99행** — 음차 14종 35행(근거는 전부 같은 대상의 기존 한국어 행), 애매 판정
   (소문자 `chateau`→샤토 · 클래스 값 `Alca`→알카 · `Mikolash`→미콜라시섬 —
@@ -509,10 +509,10 @@ monsieur/mademoiselle/madame 원문 행 전수(단어 경계, 00·15~17·22·23�
 
 바깥 공략(pokemonzfangame.com)을 우리 표기로 읽기 위한 대조표 둘.
 
-- `docs/research/2026-08-05-place-name-table.{md,jsonl}` — 지명 241행. **사이트는 본가
+- `docs/log/research/2026-08-05-place-name-table.{md,jsonl}` — 지명 241행. **사이트는 본가
   영어명이 아니라 스페인어 직역 영어를 쓴다**(삼채시티=Relief City). 그래서 영어 칸을
   「사이트 표기」·「본가 표기」로 갈랐다. 우리 한국어 표기의 갈림은 0건.
-- `docs/research/2026-08-05-site-locations-ko.{md,jsonl}` — 위치표 1,108행 한국어판.
+- `docs/log/research/2026-08-05-site-locations-ko.{md,jsonl}` — 위치표 1,108행 한국어판.
   손번역 없이 조회표 치환(포켓몬=canon en→ko + 01-species, 지명=위 표, 도구·기술=canon,
   인물=00-maps의 `<b>` 태그 짝 대조). 이름 조회 1,099/1,108, 장소 붙은 행 722.
   사이트 철자 오류 9종은 사용자 판정으로 우리 표기를 붙였다(원표 영어 칸은 그대로 둬
@@ -606,7 +606,7 @@ monsieur/mademoiselle/madame 원문 행 전수(단어 경계, 00·15~17·22·23�
 
 제보 「마비 상태 문구를 본가 표현으로. 비슷한 것들 모아서」에서 시작해 상태이상·능력변화·
 급소·효과·날씨 계열을 공식 한국어판과 전수 대조했다. 대조표는
-`docs/research/2026-08-06-battle-text-canon.md`, 채택한 자구는 출처(파일:줄)와 함께
+`docs/log/research/2026-08-06-battle-text-canon.md`, 채택한 자구는 출처(파일:줄)와 함께
 **`translate/canon/battle-lines.jsonl`에 등재**했다. 기준 판은 SV와 레전드 Z-A.
 
 **이미 맞던 것이 많다.** 능력 변화(올라갔다/크게/매우 크게, 떨어지는 쪽 모두)는 전부
@@ -682,7 +682,7 @@ Z 원문은 가해자가 앞에 온다. 바꾸려면 자리표시자 순서를 �
 사실에 대한 것이지 「어미를 고쳐야 한다」는 처방에 대한 것이 아니다. 이중 말투가 정체성인
 인물 아홉(란토·크리산토·멜리아·올리비에·아우레·메를로·히소포·센데라·피노, 1,553행)은
 어미만으로 판정할 수 없어 전량 제외했다.
-조사본: `docs/research/2026-08-06-speaker-attribution.md` + 표 둘.
+조사본: `docs/log/research/2026-08-06-speaker-attribution.md` + 표 둘.
 
 ### 어투 교정 — 요리사·사프라·뱃사공 (2026-08-06)
 
@@ -741,7 +741,7 @@ Z 원문은 가해자가 앞에 온다. 바꾸려면 자리표시자 순서를 �
 보관본 344건을 정본과 대조: 제안 있는 331건 중 **이미 반영 156 · 잔량 175**, 메모만 13건.
 잔량은 두 갈래 — 제보 당시 번역이 그대로인 98건, 그 뒤 다른 판정으로 번역이 바뀌었지만
 제보자 제안은 반영되지 않은 77건(연금술 문구 9·Azoth 10은 이미 무의미해졌다).
-전량 대조표: `docs/reports/2026-08-05-triage.md`.
+전량 대조표: `docs/log/reports/2026-08-05-triage.md`.
 
 ### 제보 두 판과 도구 복구 (2026-08-08)
 
@@ -840,7 +840,7 @@ Z 원문은 가해자가 앞에 온다. 바꾸려면 자리표시자 순서를 �
 2. **조연 말투 정본 등재** — 페르소나표 밖 68화자 364행(즈미 고문 15 · 마르가리토 14 ·
    세룰레오 14 · 에스피노 13 · 덴드로 13 …). 오늘 판정에서 아우레·로스마리노·멜리아는
    등재했다. 본보기 0줄 화자(페로파스 162 …)는 NPC 배치 판정에서 승인이 쌓이면 채운다.
-3. **제보 판정 필요 122건** — `docs/reports/2026-08-06-triage.md`. 시트에 남아 있던
+3. **제보 판정 필요 122건** — `docs/log/reports/2026-08-06-triage.md`. 시트에 남아 있던
    제안 3건(맵102)은 반영했고, 시트 비우기(행 삭제)는 유지자 손으로 남았다.
 4. **말투표 사각** — 수수께끼의 왕·에넬도 등. 이름 키 불일치 2건(「여성」·「아우레토스크」)과
    `register.axis()`의 호칭 「~군?」 오판.
@@ -860,13 +860,13 @@ Z 원문은 가해자가 앞에 온다. 바꾸려면 자리표시자 순서를 �
    그다음이 절23 UI 문구 413(「중요한물건」→「중요한 물건」 꼴). ⚠ `00-maps` 494와
    `14-trainer-names` 118은 문자열만 겹친 오탐이 대부분이라 자동 대조에서 빼야 한다
    (「Melia→모미지」는 본가의 딴 인물). 절별 수치·표본·손대는 순서는
-   [`../research/2026-08-07-corpus-coverage.md`](../research/2026-08-07-corpus-coverage.md).
+   [`../research/2026-08-07-corpus-coverage.md`](../log/research/2026-08-07-corpus-coverage.md).
 10. **번역표에 키가 없는 스크립트 문구 102종** (2026-08-07 실측) — 특성 전문가 화면의
    스페인어 노출을 좇다 나왔다. 스크립트의 `_INTL` 리터럴 4,845개 중 102종이 절23에 키
    자체가 없어 원문이 그대로 화면에 나온다. 랜덤라이저 메뉴 29 · 필드 상태이상·기절 안내 17 ·
    미스터리 기프트 11 · 배틀 아레나 8 · 도구 사용과 기술 습득 5 · 알 부화 3 …
    제어열(`\se[…]`·`\wt[16]`)이 섞인 줄이 많아 위치를 지키며 옮겨야 한다. 절별 목록·표본은
-   [`../research/2026-08-07-intl-key-gaps.md`](../research/2026-08-07-intl-key-gaps.md).
+   [`../research/2026-08-07-intl-key-gaps.md`](../log/research/2026-08-07-intl-key-gaps.md).
 11. **구세대 콘테스트 리본 표기** (2026-08-06) — 절23의 콘테스트 리본 30줄은 본가
    덤프(xy 이후)에 없어 대조표 밖이다. 그 안에서 표기 체계가 셋으로 갈려 있고
    여덟 줄은 영문이 반쯤 남았다(`Beauty Ribbon Ultra` → 「뷰티리본 하이per」,
@@ -892,7 +892,7 @@ Z 원문은 가해자가 앞에 온다. 바꾸려면 자리표시자 순서를 �
 
 실기 첫 소견 1번(일회용 NPC 「~다」 번역투 + 어울리지 않는 해요체·혼재)의 조사.
 도구는 `translate/mapscan.py`(Map*.rxdata + CommonEvents 이벤트 판독 → 대사-화자
-조인표), 산출은 `docs/research/map-speaker-join.jsonl.gz`(13,770행 전수, 이벤트
+조인표), 산출은 `docs/log/research/map-speaker-join.jsonl.gz`(13,770행 전수, 이벤트
 문맥 포함). 실측(2026-08-03):
 
 - **조인율 97.4%** — 00-maps.jsonl 13,770행 중 13,411행이 (맵, 정규화 문구)로
@@ -926,7 +926,7 @@ voices 라우팅, ④ 진짜 혼재(NPC 발화끼리 존대·비존대 왕복) �
   분리, 나머지를 화자 그룹 15종으로 손매핑. 무태그 재집계 10,045행(색코드 화자
   태그 `\c[n]<b>이름:</b>` ~2,500행을 태그분으로 재분류 — 12,553은 구 집계).
   주연 유출 1,511행은 voices 라우팅 몫.
-- **화법 전거 조사** `docs/research/2026-08-03-npc-register-study.md` — 블랙2
+- **화법 전거 조사** `docs/log/research/2026-08-03-npc-register-study.md` — 블랙2
   한국어판 롬 덤프(스토리 14,642문장, 추출기 자가 검사 포함)·공식 XY~Z-A 대화
   부분집합 28,896·어나더레드 11,962행에 공용 분류기(`translate/reg.py`, 자체
   점검 29건) 적용. **일회용 NPC 기본값은 반말(해체) — 세 코퍼스 독립 일치
@@ -1001,7 +1001,7 @@ jsonl 실물 일치(잔여 3은 동일 원문 중복 키). 부수 소득: 기존
 잔여 2행도 수동 번역으로 종결(AZ 챔피언 선언 장중체·행인 인사 반말) —
 NPC 어투 재번역 트랙 전체 종료. 배치 중복률 실측 5.5%(428행, ~$0.4) —
 공통 대사는 절23 단일 키라 어나더레드식 수천 중복은 구조적으로 없음.
-극성 상충 중복 원문 40건 목록: docs/research/npc-dup-es-conflicts.jsonl.
+극성 상충 중복 원문 40건 목록: docs/log/research/npc-dup-es-conflicts.jsonl.
 
 ## v5 패키징 — 3종 변형 체계 (2026-08-03)
 

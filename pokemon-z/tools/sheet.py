@@ -19,7 +19,7 @@ SA 토큰을 발급받는다 — 브라우저·키 파일 불요. 전제(2026-08
 archive는 머리행만 남기고 응답행을 **삭제**한다(내용 지우기가 아니라 행 삭제).
 지우기로 비우면 빈 행이 남아 폼이 그 아래에 이어 쓰고, 그래서 다음 응답이
 7행부터 시작하는 일이 생긴다 — 행을 없애면 다시 2행부터 채워진다.
-보관본은 docs/reports/<탭>.jsonl에 덧붙는다(머리행을 열쇠로 쓴 사전 + 보관 시각).
+보관본은 docs/log/reports/<탭>.jsonl에 덧붙는다(머리행을 열쇠로 쓴 사전 + 보관 시각).
 """
 import datetime, json, os, subprocess, sys, urllib.parse, urllib.request
 

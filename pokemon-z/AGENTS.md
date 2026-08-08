@@ -33,7 +33,7 @@
 | 게이트 | 이 문서 | 구조가 바뀔 때만 |
 | 지침 | `docs/guides/` | 현행만. 낡으면 고쳐 쓴다. 이력·경위 금지 |
 | 대장 | `docs/ledger/` — [glossary](docs/ledger/glossary.md) · [voices](docs/ledger/voices.md) · [quality](docs/ledger/quality.md)(원장) | 판정 + 근거. 뒤집히면 옛 판정을 남기고 새 항목 |
-| 기록 | `docs/research/` · `docs/reports/` · `docs/attic/` | 날짜 박제. 고치지 않는다 — 틀렸으면 새 파일에서 바로잡고 링크 |
+| 기록 | `docs/log/` (research · reports · attic) | 날짜 박제. 고치지 않는다 — 틀렸으면 새 파일에서 바로잡고 링크 |
 
 열린 일감은 [docs/ROADMAP.md](docs/ROADMAP.md)(티켓 — 한 줄 + 근거 링크), 낸 것과
 낼 것은 [docs/CHANGELOG.md](docs/CHANGELOG.md). 지침을 고칠 때 이력이 지워지는 것을

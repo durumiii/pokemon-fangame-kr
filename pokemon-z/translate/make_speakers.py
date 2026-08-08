@@ -5,7 +5,7 @@
 
     uv run translate/make_speakers.py
 
-docs/research/map-speaker-join.jsonl.gz(비공개 조사 산출물)에서 웹앱 찾아보기에
+translate/data/map-speaker-join.jsonl.gz(비공개 조사 산출물)에서 웹앱 찾아보기에
 필요한 것만 뽑는다: 맵별로 (원문 k) → [화자 스프라이트, 분류]. 원문 k는 이미
 배포 dat에 들어 있는 텍스트라 새로 공개되는 정보가 아니다.
 

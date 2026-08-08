@@ -24,7 +24,7 @@ usage:
 `check`가 아는 것은 원장에 적힌 변이뿐이라, 모르는 갈림은 애초에 검사 대상이
 아니었다. `sweep`은 반대로 간다 — 정본에서 원문↔번역 쌍을 직접 캐서 한 원문이
 여러 한국어로 적힌 자리를 찾아낸다. 규칙과 한계는
-docs/research/2026-08-06-names-sweep.md.
+docs/log/research/2026-08-06-names-sweep.md.
 """
 import itertools
 import json
