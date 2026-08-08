@@ -2969,8 +2969,8 @@
 {"k": "¡Gracias! Me has intercambiado un buen ejemplar.", "v": "고마워! 정말 멋진 애로 바꿔 줬네."}
 {"k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 퍼퓨돈이 없구나."}
 {"k": "Si te haces con un Oinkologne, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "퍼퓨돈을 잡게 되면 내가 볼 수 있게 선두에 두어 줘."}
-{"k": "¿No? ¡A este paso nos quedaremos sin trufas!", "v": "안 바꿀 거야? 이대로 가다간 송로버섯이 다 떨어지고 말 텐데!"}
-{"k": "El Oinkologne que me intercambiaste es un buen ejemplar, ¡está encontrando muchas trufas!", "v": "네가 바꿔 준 퍼퓨돈은 정말 대단해. 송로버섯을 엄청 잘 찾아내거든!"}
+{"k": "¿No? ¡A este paso nos quedaremos sin trufas!", "v": "안 바꿀 거야? 이대로 가다간 트러플이 다 떨어지고 말 텐데!"}
+{"k": "El Oinkologne que me intercambiaste es un buen ejemplar, ¡está encontrando muchas trufas!", "v": "네가 바꿔 준 퍼퓨돈은 정말 대단해. 트러플을 엄청 잘 찾아내거든!"}
 {"k": "Aquí solo hay basura.", "v": "여기에는 쓰레기밖에 없다."}
 {"k": "Sí", "v": "네"}
 {"k": "No", "v": "아니요"}
@@ -3141,7 +3141,7 @@
 {"k": "Y en cuanto a perder sus piernas, sepa que dispone de otras dos extremidades adicionales para continuar con su vida.", "v": "그리고 다리를 잃더라도 삶을 계속해 나갈 두 개의 사지가 더 있다는 점을 알아 두십시오."}
 {"k": "<b>Wolfram:</b> Pues... un poco sí que me reconforta, ciertamente. ¡Qué autómata tan sabio!", "v": "<b>볼프람:</b> 글쎄요… 듣고 보니 확실히 조금은 위안이 되네요. 정말 현명한 자동인형이군요!"}
 {"k": "\\c[2]<b>Olivier:</b>\\c[0] ¡Menos cháchara y andando! Voy a encargarme de que la justicia te encierre en la mazmorra más profunda.", "v": "\\c[2]<b>올리비에:</b>\\c[0] 잡담은 그만하고 어서 움직여! 너를 가장 깊은 지하 감옥에 가두도록 만들 테니까."}
-{"k": "<b>Wolfram:</b> ¡Uy, por ahí no vamos a entendernos! Alguien de tan buena familia como yo no puede acabar en tan insalubres condiciones.", "v": "<b>볼프람:</b> 허, 말도 안 되는 소리군요! 나같은 명가의 자손이 그런 비위생적인 환경에서 지낼 수는 없어요."}
+{"k": "<b>Wolfram:</b> ¡Uy, por ahí no vamos a entendernos! Alguien de tan buena familia como yo no puede acabar en tan insalubres condiciones.", "v": "<b>볼프람:</b> 허, 말도 안 되는 소리군요! 나 같은 명가의 자손이 그런 비위생적인 환경에서 지낼 수는 없어요."}
 {"k": "¡Bomba de humo!", "v": "연막탄!"}
 {"k": "\\c[2]<b>Olivier:</b>\\c[0] ¡Cobarde! ¡Rattata miserable!", "v": "\\c[2]<b>올리비에:</b>\\c[0] 비겁한 놈! 이 형편없는 꼬렛새끼 같으니!"}
 {"k": "\\c[6]<b>F3:</b>\\c[0] Si ese <b>Team Azoth</b> se ha hecho con los documentos, temo que hayamos comprometido la investigación de mi padre.", "v": "\\c[6]<b>F3:</b>\\c[0] 문서가 <b>아조스단</b> 손에 들어갔군요. 우리가 아버지의 연구를 위험에 빠뜨린 게 아닐지 두렵습니다."}
@@ -3161,7 +3161,7 @@
 {"k": "\\c[2]<b>Olivier:</b>\\c[0] Voy a tener que tomar una medida desesperada de la que me sentiré poco orgullosa.", "v": "\\c[2]<b>올리비에:</b>\\c[0] 별로 자랑스럽지 않은 절박한 수단이라도 써야겠어."}
 {"k": "Ese majadero de <i>monsieur</i> <b>Lanto</b> parece dispuesto a echarnos una mano, después de todo.", "v": "그 바보 같은 <i>무슈</i> <b>란토</b>가 어쨌든 우리를 도와줄 생각이 있는 것 같거든."}
 {"k": "Tendré que reunirme con él y ver si le puedo sacar algo de pasta sin darle mucha información.", "v": "그자를 만나서 정보는 많이 주지 않고 돈만 좀 뜯어낼 수 있을지 알아봐야겠어."}
-{"k": "\\c[2]<b>Olivier:</b>\\c[0] En cuanto a ti, suerte en el Bastión Pokémon. Sospecho que ese autómata será una caja de sorpresas en combate.", "v": "\\c[2]<b>올리비에:</b>\\c[0] 너는 포켓몬 요새에서 행운을 빌게. 그 자동인형은 배틀에서 상당한 변수가 될 것 같거든."}
+{"k": "\\c[2]<b>Olivier:</b>\\c[0] En cuanto a ti, suerte en el Bastión Pokémon. Sospecho que ese autómata será una caja de sorpresas en combate.", "v": "\\c[2]<b>올리비에:</b>\\c[0] 그리고 너는... 포켓몬 요새에서도 행운이 따르기를 바라마. 그 자동인형이 어떻게 배틀에 임할지는 나도 도무지 알 수 없구나."}
 {"k": "La tecnología y la ética humana suelen avanzar de la mano, pero la segunda lo hace a ritmo mucho más lento.", "v": "기술과 인간의 윤리는 보통 함께 발전하지만, 윤리의 발전 속도는 훨씬 느린 법이지요."}
 {"k": "Es algo preocupante si, por ejemplo, algún día desarrollamos una tecnología que nos permite destruirnos entre nosotros.", "v": "예를 들어 언젠가 서로를 파멸시킬 기술을 개발하게 된다면 참 우려스러운 일이에요."}
 {"k": "El Regente <b>Sapin</b> pasó sus últimos años obsesionado con el estudio de la materia viva.", "v": "<b>사핀</b> 섭정은 생명체 연구에 집착하며 여생을 보냈다네."}
@@ -4312,7 +4312,7 @@
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] ¡Vaya! Fijaos en estas momias de druidas.", "v": "\\c[6]<b>미라:</b>\\c[0] 이런, 이 드루이드 미라들을 보아라."}
 {"k": "Sepultados bajo la roca y el musgo, creyendo que su espíritu sería uno con la tierra.", "v": "바위와 이끼 아래 매장되어, 자신들의 영혼이 대지와 하나가 되리라 믿었던 것이다."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] Estos druidas eran más sabios de lo que parecen, Maese <b>Mirra</b>.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 이 드루이드들은 겉보기보다 훨씬 더 현명했던 모양입니다, <b>미라</b> 선생."}
-{"k": "Lograron ciertos avances científicos que a día de hoy somos incapaces de explicar.", "v": "오늘날의 우리로서는 설명할 수 없는 몇 가지 과학적 발전을 이루어 낸 듯 하니까요."}
+{"k": "Lograron ciertos avances científicos que a día de hoy somos incapaces de explicar.", "v": "오늘날의 우리로서는 설명할 수 없는 몇 가지 과학적 발전을 이루어 낸 듯하니까요."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡Mirad! A lo mejor encontramos algo interesante en esta pared.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 이것 좀 보세요! 이 벽에 뭔가 흥미로운 게 있어요."}
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] Estos dibujos... ¿representan a los Pokémon legendarios Xerneas, Yveltal y Zygarde?", "v": "\\c[6]<b>미라:</b>\\c[0] 이 그림들은... 전설의 포켓몬 제르네아스, 이벨타르, 지가르데를 그리고 있는 것인가?"}
 {"k": "Ciertamente guardan una semblanza. Pero hay una silueta más.", "v": "확실히 닮아 있다. 하지만 실루엣이 하나 더 존재한다."}
@@ -4358,7 +4358,7 @@
 {"k": "Tu catálogo de creación se ha ampliado.", "v": "제작할 수 있는 조합법이 늘어났다!"}
 {"k": "¡Cuidad! ¡Podrías estar pisando valiosas trufas!", "v": "조심해! 귀한 트러플을 밟을지도 몰라!"}
 {"k": "Pues me has pisado la cara.", "v": "글쎄, 방금은 내 얼굴을 밟아버렸네."}
-{"k": "Mi Pokémon es la mejor encontrando trufas, ¡gracias a ella puedo llegar a fin de mes!", "v": "내 포켓몬은 송로버섯 찾는 데는 아주 최고거든. 이 아이 덕분에 겨우 먹고사는 중이야!"}
+{"k": "Mi Pokémon es la mejor encontrando trufas, ¡gracias a ella puedo llegar a fin de mes!", "v": "내 포켓몬은 트러플 찾는 데는 아주 최고거든. 이 아이 덕분에 겨우 먹고사는 중이야!"}
 {"map": 122, "n": 20}
 {"k": "¿A ti te gusta más el Ponyta normal o el de <b>Galar</b>? Admitiré que el de <b>Galar</b> es muy bonito, pero... es de <b>Galar</b>...", "v": "너는 일반 포니타랑 <b>가라르</b> 포니타 중에 어느 쪽이 더 좋아? <b>가라르</b> 포니타가 정말 예쁘긴 한데… 그치만… <b>가라르</b> 포니타잖아…"}
 {"k": "Sin duda, la muerte de nuestra reina dejó al rey <b>Áster</b> profundamente afectado.", "v": "왕비님의 서거는 의심할 여지 없이 <b>아스테르</b> 국왕 폐하께 깊은 충격을 안겨드렸지."}
