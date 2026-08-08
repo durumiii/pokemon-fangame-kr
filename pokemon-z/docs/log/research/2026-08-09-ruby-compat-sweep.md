@@ -58,4 +58,5 @@ zip(`share/dist/…_2-dppt.zip`)의 `Data/Scripts.rxdata` 260개 섹션 전부.
 
 ## 남긴 것
 
-선제 제거 방안과 우선순위 판정은 [Z-32](../../tickets/Z-32.md).
+선제 제거 방안과 우선순위 판정은 [Z-31](../../tickets/Z-31.md)
+(구 Z-32 — 2026-08-09에 Z-31로 합쳤다).
