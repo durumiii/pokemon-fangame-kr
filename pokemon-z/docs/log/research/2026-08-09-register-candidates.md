@@ -8,7 +8,7 @@
 ⚠ **근거 1~2건짜리 절은 방향 자체가 판정 대상이다** — 한 자리의 교정이 그 자리 사정일 수
 있다. 방향이 굳은 것은 `prodigio`(10건)뿐이다.
 
-## `prodigio` — B3합쇼 → B2해요  (근거 10건 / 페이지 16·후보 16문안)  [ ] O  [ ] X  [ ] ?
+## `prodigio` — B3합쇼 → B2해요  (근거 10건 / 페이지 16·후보 16문안)  [x] O  [ ] X  [ ] ?
 근거 예: 「동의합니다」 → 「그렇게 하죠」
 
 ### 맵27(Ruta 4) ev25( prodigio) p0 · trigger 말걸기
@@ -173,7 +173,7 @@ haciendo intercambios.
 haciendo intercambios.
   -   세계 곳곳에서 저를 찾아주시면 계속 교환을 이어갈 수 있어요.
 
-## `burguesow` — B5지문평서 → B2해요  (근거 4건 / 페이지 2·후보 2문안)  [ ] O  [ ] X  [ ] ?
+## `burguesow` — B5지문평서 → B2해요  (근거 4건 / 페이지 2·후보 2문안)  [x] O  [ ] X  [ ] ?
 근거 예: 「연금술 수준을 끝까지 끌어올린다면 상상조차 못 할 일을 해낼 수 있어요. 어쩌면 새로운 포켓몬을 창조할 수도 있을 거다.」 → 「연금술 수준을 끝까지 끌어올린다면 상상조차 못 할 일을 해낼 수 있어요. 어쩌면 새로운 포켓몬을 창조할 수도 있겠지요!」
 
 ### 맵93(Casa) ev25( ) p0 · trigger 말걸기
@@ -203,7 +203,7 @@ lugar de tu equipo para que pueda verlo bien.
 - → Ahora mismo no eres capaz de entenderlo, pero llegará el día en el que esta roca será importante par
   - → 지금은 이해 못 하겠지만, 언젠가 이 돌이 너한테 꼭 필요한 날이 올 거다.
 
-## `gitano` — B2해요 → B1반말  (근거 2건 / 페이지 12·후보 24문안)  [ ] O  [ ] X  [ ] ?
+## `gitano` — B2해요 → B1반말  (근거 2건 / 페이지 12·후보 24문안)  [x] O  [ ] X  [ ] ?
 근거 예: 「이곳은 예약된 방이에요.」 → 「이곳은 예약된 방이야.」
 
 ### 맵42(Pueblo Profano) ev13(EV013) p0 · trigger 말걸기
@@ -288,7 +288,7 @@ lugar de tu equipo para que pueda verlo bien.
 -   Puede que el pueblo haya quedado hechizado después de todo aquello.
   -   그 일들을 다 겪고 나니 마을 전체가 마법이라도 걸려 버린 거겠지.
 
-## `mosqueteraMontada` — B3합쇼 → B1반말  (근거 2건 / 페이지 3·후보 4문안)  [ ] O  [ ] X  [ ] ?
+## `mosqueteraMontada` — B3합쇼 → B1반말  (근거 2건 / 페이지 3·후보 4문안)  [x] O  [ ] X  [ ] ?
 근거 예: 「국왕 폐하의 방문에 맞춰 경호에 만전을 기하고자 철저한 조치를 취했습니다.」 → 「국왕 폐하의 방문에 맞춰 경호에 만전을 기하고자 철저한 조치를 취했어.」
 
 ### 맵59(Ciudad Óleo) ev28(EV028) p1 · trigger 말걸기
@@ -309,7 +309,7 @@ lugar de tu equipo para que pueda verlo bien.
 -   ¡Ten mucho cuidado si te cruzas con ese prisionero! Creo que fue condenado por espionaje, estafa de 
   -   혹시 그 탈옥수와 마주치면 각별히 조심하렴! 스파이짓, 암호화폐 사기, 포켓몬과의 비정상적인 행위, 극심한 치사함으로 수감된 놈이거든.
 
-## `cazadorow` — B5지문평서 → B1반말  (근거 1건 / 페이지 31·후보 58문안)  [ ] O  [ ] X  [ ] ?
+## `cazadorow` — B5지문평서 → B1반말  (근거 1건 / 페이지 31·후보 58문안)  [x] O  [ ] X  [ ] ?
 근거 예: 「난 내 포켓몬이 맞지 않게 하는 전문가다. 내 솜씨를 한번 구경해 보겠나?」 → 「내 포켓몬의 털끝 하나 못 건드리게 하는 게 특기지. 내 실력, 한번 구경해 보겠나?
 」
 
@@ -552,7 +552,7 @@ lugar de tu equipo para que pueda verlo bien.
 -   Vaya. Entonces no tengo mucho que hacer aquí, si tengo que medirme con personas de tu enjundia.
   -   거참. 너 같은 실력자와 겨뤄야 한다면 내가 여기서 할 수 있는 일은 없겠군.
 
-## `mosqueterow` — B2해요 → B1반말  (근거 1건 / 페이지 2·후보 6문안)  [ ] O  [ ] X  [ ] ?
+## `mosqueterow` — B2해요 → B1반말  (근거 1건 / 페이지 2·후보 6문안)  [x] O  [ ] X  [ ] ?
 근거 예: 「어쩌면 놀라셨나요?」 → 「어때, 놀랍지?」
 
 ### 맵63(Café Bohemien) ev5(EV005) p0 · trigger 말걸기
@@ -585,7 +585,7 @@ de tu equipo para que pueda verlo.
 -   Bueno, otra vez será.
   -   그렇다면 다음 기회에.
 
-## `metre` — B3합쇼 → B2해요  (근거 1건 / 페이지 23·후보 70문안)  [ ] O  [ ] X  [ ] ?
+## `metre` — B3합쇼 → B2해요  (근거 1건 / 페이지 23·후보 70문안)  [x] O  [ ] X  [ ] ?
 근거 예: 「새로운 섭정인 <b>F3</b> 님이 오신 모양인데, 기록적인 속도로 전기 장벽 퍼즐을 설계하셨습니다.」 → 「새로운 섭정인 <b>F3</b> 님이 오신 모양인데, 기록적인 속도로 전기 장벽 퍼즐을 설계하셨지요.」
 
 ### 맵20(Bastión Pokémon) ev10(EV010) p0 · trigger 말걸기
@@ -814,7 +814,7 @@ de tu equipo para que pueda verlo.
 - → Perfecto, ¡mucha suerte en el bastión!
   - → 좋습니다. 요새에서 행운을 빕니다!
 
-## `anciano` — B4어른말 → B1반말  (근거 1건 / 페이지 15·후보 16문안)  [ ] O  [ ] X  [ ] ?
+## `anciano` — B4어른말 → B1반말  (근거 1건 / 페이지 15·후보 16문안)  [x] O  [ ] X  [ ] ?
 근거 예: 「처형대에 서 있는 사람들은 내 평생 친구의 자식들이라네. 정말 정직한 아이들이란다!」 → 「처형대에 서 있는 사람들은 내 평생 친구의 자식들이라네. 정말 정직한 아이들인데!」
 
 ### 맵4(Casa) ev18(EV018) p1 · trigger 말걸기
@@ -923,7 +923,7 @@ de tu equipo para que pueda verlo.
 -   Los que vivimos ahora somos sus descendientes, aunque no hemos olvidado todavía algunas de sus enseñ
   -   지금 살아가는 우리는 그들의 후손이라, 그 가르침을 아직 잊지 않고 이어받고 있지.
 
-## `revolucionario` — B5지문평서 → B1반말  (근거 1건 / 페이지 5·후보 5문안)  [ ] O  [ ] X  [ ] ?
+## `revolucionario` — B5지문평서 → B1반말  (근거 1건 / 페이지 5·후보 5문안)  [x] O  [ ] X  [ ] ?
 근거 예: 「권력을 쥔 자들의 편을 드는 건가? 그렇다면 너도 함께 몰락해야 한다!」 → 「권력을 쥔 자들의 편을 드는가? 그렇다면 너도 함께 몰락해라!」
 
 ### 맵102(Pueblo Petroglifo) ev28(EV028) p1 · trigger 말걸기
@@ -954,7 +954,7 @@ de tu equipo para que pueda verlo.
 -   Pero la mayoría vuelve con las manos vacías.
   -   하지만 대부분은 빈손으로 돌아오지.
 
-## `nina` — B1반말 → B2해요  (근거 1건 / 페이지 16·후보 28문안)  [ ] O  [ ] X  [ ] ?
+## `nina` — B1반말 → B2해요  (근거 1건 / 페이지 16·후보 28문안)  [x] O  [ ] X  [ ] ?
 근거 예: 「너... 누구야?」 → 「누구...세요?」
 
 ### 맵4(Casa) ev16(EV016) p0 · trigger 말걸기
@@ -1055,7 +1055,7 @@ de tu equipo para que pueda verlo.
 - → Morpeko me parece mucho más chulo que Pachirisu. ¡Gracias por cambiármelo!
   - → 모르페코가 파치리스보다 훨씬 멋진 것 같아. 바꿔줘서 고마워!
 
-## `nino` — B1반말 → B2해요  (근거 1건 / 페이지 9·후보 23문안)  [ ] O  [ ] X  [ ] ?
+## `nino` — B1반말 → B2해요  (근거 1건 / 페이지 9·후보 23문안)  [x] O  [ ] X  [ ] ?
 근거 예: 「난 가끔 포켓몬이랑 얘기해서 무슨 말인지 알아듣거든. 너도 그렇지?」 → 「난 가끔 포켓몬이랑 얘기해서 무슨 말인지 알아듣거든요.」
 
 ### 맵176(Casa) ev6(Trader - Basic) p0 · trigger 말걸기
@@ -1128,7 +1128,7 @@ de tu equipo para que pueda verlo.
 - → ¡Mi Mankey le dará un martillazo tan, pero tan fuerte al Mr.Mime que saldrá volando!
   - → 내 망키가 마임맨에게 진짜, 진짜 세게 망치질을 해서 날려 버릴 거야!
 
-## `criada` — B3합쇼 → B1반말  (근거 1건 / 페이지 3·후보 3문안)  [ ] O  [ ] X  [ ] ?
+## `criada` — B3합쇼 → B1반말  (근거 1건 / 페이지 3·후보 3문안)  [x] O  [ ] X  [ ] ?
 근거 예: 「들리는 말로는, <b>6번도로</b> 강물 위를 달리는 낯선 포켓몬을 보았다고 합니다.」 → 「누군가 <b>6번도로</b> 강물 위를 달리는 낯선 포켓몬을 보았대.」
 
 ### 맵13(Chateau Merlot) ev21(EV021) p0 · trigger 말걸기
@@ -1151,7 +1151,7 @@ de tu equipo para que pueda verlo.
 - → Todo lo que soy ahora, se lo debo a ellos.
   - → 지금의 제가 있는 건 모두 그 아이들 덕분이랍니다.
 
-## `brujita` — B4어른말 → B1반말  (근거 1건 / 페이지 19·후보 26문안)  [ ] O  [ ] X  [ ] ?
+## `brujita` — B4어른말 → B1반말  (근거 1건 / 페이지 19·후보 26문안)  [x] O  [ ] X  [ ] ?
 근거 예: 「악당을 잡았으니 총사 병영으로 돌아가서 보상을 받거라.」 → 「악당을 체포했으니, 총사 본부로 돌아가 보상을 받자.」
 
 ### 맵44(Pantano Profano) ev7(EV007) p1 · trigger 말걸기
@@ -1278,7 +1278,7 @@ de tu equipo para que pueda verlo.
 - → La Regente <b>Anturia</b> te espera en la... Sala del <b>Gran Caldero Pokémon</b>.
   - → 섭정 <b>안투리아</b>님께서... <b>포켓몬 대가마솥</b>의 방에서 기다리고 계시느니라.
 
-## `burguesaow` — B3합쇼 → B2해요  (근거 1건 / 페이지 18·후보 18문안)  [ ] O  [ ] X  [ ] ?
+## `burguesaow` — B3합쇼 → B2해요  (근거 1건 / 페이지 18·후보 18문안)  [x] O  [ ] X  [ ] ?
 근거 예: 「<b>칼로스</b> 역사상 가장 인기 많았던 전설의 <b>프리물라</b> 여왕께서 바로 이 마을 출신이십니다.」 → 「<b>칼로스</b> 역사상 가장 인기 많았던 전설의 <b>프리물라</b> 여왕께서 바로 이 마을 출신이세요.」
 
 ### 맵9(Pueblo Vinilo) ev18(EV018) p0 · trigger 말걸기
@@ -1404,7 +1404,7 @@ estadísticas se
 -   No estamos solos en este mundo, lo compartimos con los Pokémon.
   -   우리는 이 세상에 혼자가 아니며, 포켓몬과 함께 살아가고 있으니까요.
 
-## `curanderaow` — B5지문평서 → B4어른말  (근거 1건 / 페이지 8·후보 12문안)  [ ] O  [ ] X  [ ] ?
+## `curanderaow` — B5지문평서 → B4어른말  (근거 1건 / 페이지 8·후보 12문안)  [x] O  [ ] X  [ ] ?
 근거 예: 「내 민트는 포켓몬의 성격을 뒤바꿔 버리는 힘이 있다...」 → 「내 민트에는 포켓몬의 성격을 뒤바꿔 버리는 힘이 있단다...」
 
 ### 맵19(Casa) ev23(EV023) p1 · trigger 말걸기
