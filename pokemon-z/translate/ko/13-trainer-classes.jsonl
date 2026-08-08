@@ -37,19 +37,19 @@
 {"i": 36, "v": "대장", "es": "Capitán"}
 {"i": 37, "v": "해적", "es": "Pirata"}
 {"i": 38, "v": "무슈와 마담", "es": "Monsieur y Madame"}
-{"i": 39, "v": "신비한 자매", "es": "Hermanas Misteriosas"}
+{"i": 39, "v": "이상한 자매", "es": "Hermanas Misteriosas"}
 {"i": 40, "v": "연금술사", "es": "Alquimista"}
 {"i": 41, "v": "아조스단 연금술사", "es": "Alquimista Azoth"}
 {"i": 42, "v": "섭정", "es": "Regente"}
 {"i": 43, "v": "정원사", "es": "Jardinero"}
-{"i": 44, "v": "꿈꾸는 소녀", "es": "Niña Soñadora"}
+{"i": 44, "v": "메르헨소녀", "es": "Niña Soñadora"}
 {"i": 45, "v": "라이벌", "es": "Rival"}
 {"i": 46, "v": "아조스단 흡혈귀", "es": "Vampiro Azoth"}
 {"i": 47, "v": "아조스단 연금술사", "es": "Alquimista Azoth"}
 {"i": 48, "v": "무슈", "es": "Monsieur"}
 {"i": 49, "v": "드루이드", "es": "Druida"}
 {"i": 50, "v": "성직자", "es": "Clérigo"}
-{"i": 51, "v": "요리사", "es": "Chef"}
+{"i": 51, "v": "셰프", "es": "Chef"}
 {"i": 52, "v": "섭정", "es": "Regente"}
 {"i": 53, "v": "요리 평론가", "es": "Crítico de cocina"}
 {"i": 54, "v": "라이벌", "es": "Rival"}
@@ -59,7 +59,7 @@
 {"i": 58, "v": "수수께끼의", "es": "Rey de los"}
 {"i": 59, "v": "혁명가", "es": "Revolucionario"}
 {"i": 60, "v": "혁명가", "es": "Revolucionaria"}
-{"i": 61, "v": "트레이너", "es": "Entrenadora"}
+{"i": 61, "v": "포켓몬 트레이너", "es": "Entrenadora"}
 {"i": 62, "v": "혁명가들", "es": "Revolucionarios"}
 {"i": 63, "v": "섭정", "es": "Regente"}
 {"i": 64, "v": "해적 듀오", "es": "Dúo Pirata"}
@@ -94,11 +94,11 @@
 {"i": 93, "v": "경관 듀오", "es": "Dúo Carabinero"}
 {"i": 94, "v": "간수", "es": "Alcaide"}
 {"i": 95, "v": "트레이너", "es": "Entrenador"}
-{"i": 96, "v": "트레이너", "es": "Entrenadora"}
+{"i": 96, "v": "포켓몬 트레이너", "es": "Entrenadora"}
 {"i": 97, "v": "트레이너", "es": "Entrenador"}
-{"i": 98, "v": "트레이너", "es": "Entrenadora"}
+{"i": 98, "v": "포켓몬 트레이너", "es": "Entrenadora"}
 {"i": 99, "v": "트레이너", "es": "Entrenador"}
-{"i": 100, "v": "트레이너", "es": "Entrenadora"}
+{"i": 100, "v": "포켓몬 트레이너", "es": "Entrenadora"}
 {"i": 101, "v": "광인", "es": "Lunático"}
 {"i": 102, "v": "광녀", "es": "Lunática"}
 {"i": 103, "v": "자루 든", "es": "Hombre del"}
@@ -112,7 +112,7 @@
 {"i": 111, "v": "섭정", "es": "Regente"}
 {"i": 112, "v": "레인저", "es": "Ranger"}
 {"i": 113, "v": "레인저", "es": "Ranger"}
-{"i": 114, "v": "신비한 자매", "es": "Hermanas Misteriosas"}
+{"i": 114, "v": "이상한 자매", "es": "Hermanas Misteriosas"}
 {"i": 115, "v": "기계장치", "es": "Artificio"}
 {"i": 116, "v": "방랑자", "es": "Hombre Errante"}
 {"i": 117, "v": "방앗간 주인", "es": "Molinera"}
@@ -120,7 +120,7 @@
 {"i": 119, "v": "섭정", "es": "Regente"}
 {"i": 120, "v": "유령", "es": "Fantasma"}
 {"i": 121, "v": "Papa"}
-{"i": 122, "v": "레인저들", "es": "Rangers"}
+{"i": 122, "v": "레인저스", "es": "Rangers"}
 {"i": 123, "v": "박사", "es": "Profesora"}
 {"i": 124, "v": "이설 엘리트", "es": "Élite de Fractal"}
 {"i": 125, "v": "이설 듀오", "es": "Dúo de Fractal"}
@@ -129,7 +129,7 @@
 {"i": 128, "v": "화가", "es": "Pintora"}
 {"i": 129, "v": "경관", "es": "Carabinero"}
 {"i": 130, "v": "경관", "es": "Carabinera"}
-{"i": 131, "v": "트레이너", "es": "Entrenadora"}
+{"i": 131, "v": "포켓몬 트레이너", "es": "Entrenadora"}
 {"i": 132, "v": "옛 여왕들", "es": "Antiguas Reinas"}
 {"i": 133, "v": "트레이너", "es": "Entrenador"}
 {"i": 134, "v": "트레이너", "es": "Entrenador"}
@@ -138,11 +138,11 @@
 {"i": 137, "v": "어릿광대", "es": "Arlequina"}
 {"i": 138, "v": "기계 광대", "es": "Payaso Mecánico"}
 {"i": 139, "v": "섭정", "es": "Regente"}
-{"i": 140, "v": "트레이너", "es": "Entrenadora"}
-{"i": 141, "v": "트레이너", "es": "Entrenadora"}
-{"i": 142, "v": "트레이너", "es": "Entrenadora"}
+{"i": 140, "v": "포켓몬 트레이너", "es": "Entrenadora"}
+{"i": 141, "v": "포켓몬 트레이너", "es": "Entrenadora"}
+{"i": 142, "v": "포켓몬 트레이너", "es": "Entrenadora"}
 {"i": 143, "v": "전설", "es": "Leyenda"}
-{"i": 144, "v": "트레이너", "es": "Entrenadora"}
+{"i": 144, "v": "포켓몬 트레이너", "es": "Entrenadora"}
 {"i": 145, "v": "포켓몬", "es": "Pokémon"}
 {"i": 146, "v": "포켓몬", "es": "Pokémon"}
 {"i": 147, "v": "성직자", "es": "Clérigo"}
@@ -184,13 +184,13 @@
 {"i": 183, "v": "베테랑", "es": "Veterano"}
 {"i": 184, "v": "꽃", "es": "Flor"}
 {"i": 185, "v": "트레이너", "es": "Entrenador"}
-{"i": 186, "v": "트레이너", "es": "Entrenadora"}
+{"i": 186, "v": "포켓몬 트레이너", "es": "Entrenadora"}
 {"i": 187, "v": "이야기꾼", "es": "Cuentacuentos"}
 {"i": 188, "v": "영원의 여왕", "es": "Reina Eterna"}
 {"i": 189, "v": "영원의 왕", "es": "Rey Eterno"}
 {"i": 190, "v": "영원의 여왕", "es": "Reina Eterna"}
 {"i": 191, "v": "영원의 왕", "es": "Rey Eterno"}
 {"i": 192, "v": "붉은 혈통의", "es": "Malvo"}
-{"i": 193, "v": "트레이너", "es": "Entrenadora"}
+{"i": 193, "v": "포켓몬 트레이너", "es": "Entrenadora"}
 {"i": 194, "v": "알카", "es": "Alca"}
-{"i": 195, "v": "트레이너", "es": "Entrenadora"}
+{"i": 195, "v": "포켓몬 트레이너", "es": "Entrenadora"}
