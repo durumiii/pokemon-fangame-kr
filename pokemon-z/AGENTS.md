@@ -64,6 +64,10 @@
 - **유지자 판정을 반영하는 커밋에는 꼬리표를 단다** — 마지막 줄에 `Edit-Source: human` ·
   `batch` · `bulk-term`. 문장 통째 재작성은 사람과 모델이 텍스트로 구분되지 않으므로
   그때 기록하지 않으면 복원할 수 없다.
+- **유지자가 스튜디오에서 남긴 메모·수정을 먼저 본다** — 미결 메모는
+  `translate/fixnotes.jsonl`(`done` 없는 줄), 손댄 자리는 `translate/fixlog.jsonl`과
+  `git diff translate/ko/`. 읽는 법은 [text-pipeline](docs/guides/text-pipeline.md)
+  「유지자가 스튜디오에서 남긴 것」 절.
 - **유지자가 판정할 자리는 재료를 갖춰 내놓는다** — 원문 · 앞뒤 대사(페이지 전문) ·
   현행 번역 · 제안 · 판단 근거. 근거가 확정돼 보여도 유지자 승인 전에 정본에 넣지
   않고, 승인받은 계획의 전제가 뒤집히면 다시 확인받는다.
