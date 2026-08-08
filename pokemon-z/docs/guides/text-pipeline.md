@@ -26,10 +26,13 @@ dat 포맷 문제를 만났을 때.
 이름표 `translate/canon/canon.jsonl`(PKHeX 산 — verify가 전수 대조. 이름만 같은 별개
 대상은 canon/exceptions.jsonl, 구세대 스페인어명은 canon/aliases.jsonl)과 **문장 코퍼스
 `translate/canon/messages.jsonl.gz`**(163,106쌍, es·en 병용 — 설명문·전투 문구·UI 문장의
-본가 자구가 여기 있다. probe.py·fixgui.py가 조회). ⚠ 자동 대조가 걸린 범위는 이름 절
-다섯과 리본뿐이고 **문장 쪽은 조회 전용**이다 — 본가 자구와 다른 1,909행이 Z-2로 열려
-있고, 절별 수치와 대조 방법은
-[corpus-coverage](../log/research/2026-08-07-corpus-coverage.md).
+본가 자구가 여기 있다. probe.py·fixgui.py가 조회), 그리고 **분류 대조표
+`translate/canon/genera.jsonl`**(종번호 → 도감 분류, verify가 상시 대조).
+절 단위 코퍼스 대조는 `uv run translate/canon_sweep.py <절이름>` — ⚠ 코퍼스의 줄바꿈은
+글자 그대로의 백슬래시+n 두 글자라 도구가 공백으로 편다(직접 대조를 새로 짜지 마라).
+⚠ 자동 대조가 걸린 범위는 이름 절 다섯·리본·분류이고 **문장 쪽은 조회 전용**이다 —
+짧은 낱말은 딴 도메인 오탐이 흔하니 출처 파일 태그를 보고 가른다. 절별 수치와 대조
+방법은 [corpus-coverage](../log/research/2026-08-07-corpus-coverage.md).
 **(B) 창작 요소 → glossary.md 판정.**
 **(C) 문체·어투 → voices.md.** 전거 서열은 glossary.md 머리.
 
