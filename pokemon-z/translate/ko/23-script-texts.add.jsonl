@@ -50,3 +50,33 @@
 {"k": "¡{1} ha sufrido los efectos de Otra Vez!", "v": "{1}\\j[은,는] 앙코르를 받았다!", "src": "앙코르 문구 수술(patch_intl) — 본가 자구"}
 {"k": "Piénsatelo bien, tus Pokémon pueden tener habilidades ocultas muy interesantes.", "v": "잘 생각해 보세요. 포켓몬이 아주 흥미로운 숨겨진 특성을 가지고 있을지도 모릅니다.", "src": "Cambia Habilidades"}
 {"k": "Tu Pokémon ya posee esa habilidad.", "v": "그 포켓몬은 이미 그 특성을 가지고 있습니다.", "src": "Cambia Habilidades"}
+{"k": "Configurar random", "v": "랜덤 설정", "src": "RandomMain"}
+{"k": "Elegir modo de randomizar habilidades", "v": "특성 랜덤 방식 선택", "src": "RandomMain"}
+{"k": "Elige las generaciones para el random", "v": "랜덤에 포함할 세대 선택", "src": "RandomMain"}
+{"k": "Elija el modo para las habilidades random", "v": "특성 랜덤 방식을 선택하세요", "src": "RandomMain"}
+{"k": "Terminar", "v": "완료", "src": "RandomMain"}
+{"k": "[ ] Full Random", "v": "[ ] 풀 랜덤", "src": "RandomMain"}
+{"k": "[X] Full Random", "v": "[X] 풀 랜덤", "src": "RandomMain"}
+{"k": "[ ] Mapeo de habilidades", "v": "[ ] 특성 매핑", "src": "RandomMain"}
+{"k": "[X] Mapeo de habilidades", "v": "[X] 특성 매핑", "src": "RandomMain"}
+{"k": "[ ] Sin randomizar", "v": "[ ] 랜덤 없음", "src": "RandomMain"}
+{"k": "[X] Sin randomizar", "v": "[X] 랜덤 없음", "src": "RandomMain"}
+{"k": "[  ] Evoluciones random", "v": "[  ] 진화 랜덤", "src": "RandomMain"}
+{"k": "[X] Evoluciones random", "v": "[X] 진화 랜덤", "src": "RandomMain"}
+{"k": "[  ] Evoluciones random con BST similar", "v": "[  ] 비슷한 종족값 진화 랜덤", "src": "RandomMain"}
+{"k": "[X] Evoluciones random con BST similar", "v": "[X] 비슷한 종족값 진화 랜덤", "src": "RandomMain"}
+{"k": "[  ] Modo Semi Random", "v": "[  ] 세미 랜덤 모드", "src": "RandomMain"}
+{"k": "[X] Modo Semi Random", "v": "[X] 세미 랜덤 모드", "src": "RandomMain"}
+{"k": "[  ] Movimientos random", "v": "[  ] 기술 랜덤", "src": "RandomMain"}
+{"k": "[X] Movimientos random", "v": "[X] 기술 랜덤", "src": "RandomMain"}
+{"k": "[  ] Random progresivo", "v": "[  ] 점진적 랜덤", "src": "RandomMain"}
+{"k": "[X] Random progresivo", "v": "[X] 점진적 랜덤", "src": "RandomMain"}
+{"k": "[  ] Randomizar compatibilidad con MTs", "v": "[  ] 기술머신 호환 랜덤화", "src": "RandomMain"}
+{"k": "[X] Randomizar compatibilidad con MTs", "v": "[X] 기술머신 호환 랜덤화", "src": "RandomMain"}
+{"k": "[  ] Randomizar objetos", "v": "[  ] 도구 랜덤화", "src": "RandomMain"}
+{"k": "[X] Randomizar objetos", "v": "[X] 도구 랜덤화", "src": "RandomMain"}
+{"k": "[  ] Randomizar objetos de salvajes", "v": "[  ] 야생 포켓몬 도구 랜덤화", "src": "RandomMain"}
+{"k": "[X] Randomizar objetos de salvajes", "v": "[X] 야생 포켓몬 도구 랜덤화", "src": "RandomMain"}
+{"k": "[  ] Randomizar tipos", "v": "[  ] 타입 랜덤화", "src": "RandomMain"}
+{"k": "[X] Randomizar tipos", "v": "[X] 타입 랜덤화", "src": "RandomMain"}
+{"k": "......\\wt[5] ......\\1", "v": "......\\wt[5] ......\\1", "src": "PScreen_Phone"}
