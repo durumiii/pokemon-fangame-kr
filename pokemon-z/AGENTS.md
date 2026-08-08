@@ -15,7 +15,7 @@
 | 가이드 | 다루는 것 |
 |---|---|
 | [events-and-speech](docs/guides/events-and-speech.md) | 이벤트·텍스트의 종류, 화자 판정, 말투 배정 |
-| [text-pipeline](docs/guides/text-pipeline.md) | 텍스트가 어디 살고 어떻게 고치고 빌드하나 |
+| [text-pipeline](docs/guides/text-pipeline.md) | 텍스트가 어디 살고 어떻게 고치고 빌드하나, 본가 자구 조회 |
 | [names-terms](docs/guides/names-terms.md) | 고유명·용어 표기, 전수 치환 |
 | [retranslation](docs/guides/retranslation.md) | LLM 배치 재번역, 프롬프트 규약 |
 | [reports](docs/guides/reports.md) | 유저 제보 시트, 웹 스튜디오 |

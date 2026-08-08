@@ -22,9 +22,15 @@ dat 포맷 문제를 만났을 때.
 | ⑤ 로직-문자열 결합(기능 버그) | 〃 | 〃 (예: 부적 18종) |
 | ⑥ 그림에 그려 넣은 글자 (PNG 베이크) | Graphics/Pictures (.orig 짝 = 한글화본) | PIL 재렌더. 텍스트 층 전수 미스면 이 층 의심. 상태이상 아이콘 띠는 `tools/status_icon.py` |
 
-값 판정은 셋뿐: **(A) 본가에 있다 → 판정하지 않고 조회한다**(`translate/canon/canon.jsonl`,
-PKHeX 산 — verify가 전수 대조. 이름만 같은 별개 대상은 canon/exceptions.jsonl, 구세대
-스페인어명은 canon/aliases.jsonl). **(B) 창작 요소 → glossary.md 판정.**
+값 판정은 셋뿐: **(A) 본가에 있다 → 판정하지 않고 조회한다.** 조회처는 둘이다 —
+이름표 `translate/canon/canon.jsonl`(PKHeX 산 — verify가 전수 대조. 이름만 같은 별개
+대상은 canon/exceptions.jsonl, 구세대 스페인어명은 canon/aliases.jsonl)과 **문장 코퍼스
+`translate/canon/messages.jsonl.gz`**(163,106쌍, es·en 병용 — 설명문·전투 문구·UI 문장의
+본가 자구가 여기 있다. probe.py·fixgui.py가 조회). ⚠ 자동 대조가 걸린 범위는 이름 절
+다섯과 리본뿐이고 **문장 쪽은 조회 전용**이다 — 본가 자구와 다른 1,909행이 Z-2로 열려
+있고, 절별 수치와 대조 방법은
+[corpus-coverage](../log/research/2026-08-07-corpus-coverage.md).
+**(B) 창작 요소 → glossary.md 판정.**
 **(C) 문체·어투 → voices.md.** 전거 서열은 glossary.md 머리.
 
 ## 정본과 빌드
