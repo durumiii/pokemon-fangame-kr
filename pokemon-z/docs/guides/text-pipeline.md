@@ -22,9 +22,15 @@ dat 포맷 문제를 만났을 때.
 | ⑤ 로직-문자열 결합(기능 버그) | 〃 | 〃 (예: 부적 18종) |
 | ⑥ 그림에 그려 넣은 글자 (PNG 베이크) | Graphics/Pictures (.orig 짝 = 한글화본) | PIL 재렌더. 텍스트 층 전수 미스면 이 층 의심. 상태이상 아이콘 띠는 `tools/status_icon.py` |
 
-값 판정은 셋뿐: **(A) 본가에 있다 → 판정하지 않고 조회한다**(`translate/canon/canon.jsonl`,
-PKHeX 산 — verify가 전수 대조. 이름만 같은 별개 대상은 canon/exceptions.jsonl, 구세대
-스페인어명은 canon/aliases.jsonl). **(B) 창작 요소 → glossary.md 판정.**
+값 판정은 셋뿐: **(A) 본가에 있다 → 판정하지 않고 조회한다.** 조회처는 둘이다 —
+이름표 `translate/canon/canon.jsonl`(PKHeX 산 — verify가 전수 대조. 이름만 같은 별개
+대상은 canon/exceptions.jsonl, 구세대 스페인어명은 canon/aliases.jsonl)과 **문장 코퍼스
+`translate/canon/messages.jsonl.gz`**(163,106쌍, es·en 병용 — 설명문·전투 문구·UI 문장의
+본가 자구가 여기 있다. probe.py·fixgui.py가 조회). ⚠ 자동 대조가 걸린 범위는 이름 절
+다섯과 리본뿐이고 **문장 쪽은 조회 전용**이다 — 본가 자구와 다른 1,909행이 Z-2로 열려
+있고, 절별 수치와 대조 방법은
+[corpus-coverage](../log/research/2026-08-07-corpus-coverage.md).
+**(B) 창작 요소 → glossary.md 판정.**
 **(C) 문체·어투 → voices.md.** 전거 서열은 glossary.md 머리.
 
 ## 정본과 빌드
@@ -32,6 +38,11 @@ PKHeX 산 — verify가 전수 대조. 이름만 같은 별개 대상은 canon/e
 **번역 정본은 `translate/ko/`다 — korean.dat는 빌드 산출물.** 절별 JSONL(한 줄 = 한 문장,
 원문 병기)이고 `build.py`가 dat로 만든다(왕복 검증 내장). 정본은 원문 하나에 한 줄이 아니라
 **(맵, 원문)마다 한 줄**이다.
+
+⚠ **`build.py`는 모드 보관소와 설치된 게임 두 곳의 `korean.dat`에 곧바로 쓴다**
+(`STORE`·`GAME` 상수, 미리보기·플래그 없음). 설치된 게임의 dat에 손수정이 남아 있는
+상태에서 빌드를 돌리면 그 수정이 회수 전에 사라진다 — 빌드 앞에 `harvest.py` 미리보기로
+회수할 것이 없는지 본다.
 
 파일 꼴은 두 가지 줄이 섞인다 — `{"map": 62, "n": 70}`은 **머리 줄**이라 여기부터 그 맵이
 시작한다는 뜻이고, `{"k": 원문, "v": 번역}`이 본문이다. 맵 번호는 줄 안에 없으므로 위에서

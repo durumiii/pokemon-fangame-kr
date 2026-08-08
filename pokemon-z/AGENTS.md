@@ -15,7 +15,7 @@
 | 가이드 | 다루는 것 |
 |---|---|
 | [events-and-speech](docs/guides/events-and-speech.md) | 이벤트·텍스트의 종류, 화자 판정, 말투 배정 |
-| [text-pipeline](docs/guides/text-pipeline.md) | 텍스트가 어디 살고 어떻게 고치고 빌드하나 |
+| [text-pipeline](docs/guides/text-pipeline.md) | 텍스트가 어디 살고 어떻게 고치고 빌드하나, 본가 자구 조회 |
 | [names-terms](docs/guides/names-terms.md) | 고유명·용어 표기, 전수 치환 |
 | [retranslation](docs/guides/retranslation.md) | LLM 배치 재번역, 프롬프트 규약 |
 | [reports](docs/guides/reports.md) | 유저 제보 시트, 웹 스튜디오 |
@@ -51,6 +51,10 @@
 
 ## 언제나 지키는 것
 
+- **도구 대부분은 설치된 게임 폴더를 직접 읽고 쓴다** — `build`·`probe`·`verify`·
+  `harvest` 등 열넷이 게임 설치본(과 모드 보관소)의 실물 경로를 상수로 잡는다. 게임이
+  그 자리에 없으면 도구가 안 돌고, `probe.py`가 아무것도 못 찾으면 「문구가 없다」와
+  「게임이 없다」부터 갈라라. 경로 자체는 기계마다 달라 저장소에 없다(에이전트 메모리 몫).
 - **조사 첫 수는 `uv run translate/probe.py "문구"`**, 수정 후 `uv run translate/verify.py`,
   재배포 전 `--strict`.
 - **정본을 고치는 도구만 쓴다** — dat를 직접 문지르는 수정은 빌드 한 번에 지워진다.

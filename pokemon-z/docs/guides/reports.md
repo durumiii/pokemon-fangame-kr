@@ -16,6 +16,8 @@ SA `z-sheet@golden-tide-361608.iam.gserviceaccount.com` impersonation(키 없음
   바꾸기. ⚠ 옛 제보의 「일괄」은 모아서 제보를 뜻한다.
 - 제출 시각은 플레이 시각이 아니다.
 - 유지자 본인의 제보자 해시: `u:911f0bab` · `u:8e2a930c`(기기·브라우저마다 늘어난다).
+  **이 해시의 제보는 제안이 곧 판정이다** — 문체 재작성이라도 「취향 차이」로 낮춰
+  잡지 말고 그대로 반영한다(대조·자리 검증은 동일하게 한다). 2026-08-09 교정.
 
 ## 제보를 정본에 넣는 절차
 
@@ -40,6 +42,9 @@ https://durumiii.github.io/z-kr-studio/ — 브라우저에서 korean.dat를 검
 - 화자 조인표 축약본은 `translate/make_speakers.py`가 speakers.json으로 생성 —
   조인표·귀속표 갱신 시 재생성 후 재배포(이벤트 자리도 이 파일에 실린다).
 - 검증은 `webapp/tests/`(pytest 실물 dat + node selfcheck). 스펙: `docs/superpowers/`(repo 루트).
+- **스튜디오 코드를 고치기 전에 [webapp/AGENTS.md](../../webapp/AGENTS.md)를 읽는다** —
+  파일 여섯의 역할표와 화면별 규약이 거기 있고, `rubywrite.py`·`vendor/rubymarshal/`이
+  **수정 금지**(저장소 정본의 사본)라는 것도 거기에만 적혀 있다.
 
 **[빌드]가 하는 일** — 고른 폴더의 `Data/korean.dat` **하나만** 바꾼다. 직전본을
 `korean.dat.prev`로 남기고(순정 원본은 폴더를 처음 열 때 `.bak`으로 1회 보존), 원본이

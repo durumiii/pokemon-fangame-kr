@@ -1010,14 +1010,14 @@
 {"k": "Recording in {1:d} second(s)...\nPress ESC to cancel.", "v": "Recording in {1:d} second(s)...\nPress ESC to cancel."}
 {"k": "NOW RECORDING\nPress ESC to stop recording.", "v": "NOW RECORDING\nPress ESC to stop recording."}
 {"k": "PLAYING BACK...", "v": "PLAYING BACK..."}
-{"k": "\\se[ItemGet]{1} found \\c[1]{2}\\c[0]!\\\nIt contained \\c[1]{3}\\c[0].\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[이,가] \\c[1]{2}\\c[0]\\j[을,를] 발견했다!\\\n안에 \\c[1]{3}\\c[0]\\j[이,가] 들어 있었다.\\wtnp[30]"}
-{"k": "\\se[ItemGet]{1} found some \\c[1]{2}\\c[0]!\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[이,가] \\c[1]{2}\\c[0]\\j[을,를] 발견했다!\\wtnp[30]"}
-{"k": "\\se[ItemGet]{1} found {2} \\c[1]{3}\\c[0]!\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[이,가] {2}개의 \\c[1]{3}\\c[0]\\j[을,를] 발견했다!\\wtnp[30]"}
-{"k": "\\se[ItemGet]{1} found one \\c[1]{2}\\c[0]!\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[이,가] \\c[1]{2}\\c[0] 1개를 발견했다!\\wtnp[30]"}
+{"k": "\\se[ItemGet]{1} found \\c[1]{2}\\c[0]!\\\nIt contained \\c[1]{3}\\c[0].\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[이,가] \\c[1]{2}\\c[0]\\j[을,를] 손에 넣었다!\\\n안에 \\c[1]{3}\\c[0]\\j[이,가] 들어 있었다.\\wtnp[30]"}
+{"k": "\\se[ItemGet]{1} found some \\c[1]{2}\\c[0]!\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[이,가] \\c[1]{2}\\c[0]\\j[을,를] 손에 넣었다!\\wtnp[30]"}
+{"k": "\\se[ItemGet]{1} found {2} \\c[1]{3}\\c[0]!\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[이,가] \\c[1]{3}\\c[0]\\j[을,를] {2}개 손에 넣었다!\\wtnp[30]"}
+{"k": "\\se[ItemGet]{1} found one \\c[1]{2}\\c[0]!\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[이,가] \\c[1]{2}\\c[0] 1개를 손에 넣었다!\\wtnp[30]"}
 {"k": "{1} put the \\c[1]{2}\\c[0]\nin the <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] Pocket.", "v": "{1}\\j[은,는] <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] 포켓에\n\\c[1]{2}\\c[0]\\j[을,를] 넣었다."}
-{"k": "{1} found \\c[1]{2}\\c[0]!\\wtnp[20]", "v": "{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를] 발견했다!\\wtnp[20]"}
+{"k": "{1} found \\c[1]{2}\\c[0]!\\wtnp[20]", "v": "{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를] 손에 넣었다!\\wtnp[20]"}
 {"k": "{1} found some \\c[1]{2}\\c[0]!\\wtnp[20]", "v": "{1} found some \\c[1]{2}\\c[0]!\\wtnp[20]"}
-{"k": "{1} found {2} \\c[1]{3}\\c[0]!\\wtnp[20]", "v": "{1}\\j[은,는] \\c[1]{3}\\c[0] {2}개를 발견했다!\\wtnp[20]"}
+{"k": "{1} found {2} \\c[1]{3}\\c[0]!\\wtnp[20]", "v": "{1}\\j[은,는] \\c[1]{3}\\c[0] {2}개를 손에 넣었다!\\wtnp[20]"}
 {"k": "{1} found one \\c[1]{2}\\c[0]!\\wtnp[20]", "v": "{1} found one \\c[1]{2}\\c[0]!\\wtnp[20]"}
 {"k": "Too bad... The Bag is full...", "v": "Too bad... The Bag is full..."}
 {"k": "\\se[ItemGet]Obtained \\c[1]{1}\\c[0]!\\\nIt contained \\c[1]{2}\\c[0].\\wtnp[30]", "v": "\\se[ItemGet]\\c[1]{1}\\c[0]\\j[을,를] 손에 넣었다!\\\n안에 \\c[1]{2}\\c[0]\\j[이,가] 들어 있었다.\\wtnp[30]"}
@@ -4227,7 +4227,7 @@
 {"k": "¡{1} robó y se comió la {2} del oponente!", "v": "{1}\\j[이,가] 상대의 {2}\\j[을,를] 빼앗아 먹었다!"}
 {"k": "¡{2} de {1} le dejó compartir su {3} con {4}!", "v": "{4}\\j[이,가] {1}\\j[으로,로]부터 {3}\\j[을,를] 받았다!"}
 {"k": "¡La {2} de {1} fue quemada!", "v": "{1}의 {2}\\j[이,가] 타버렸다!"}
-{"k": "¡{1} encontró una {2}!", "v": "{1}\\j[이,가] {2}\\j[을,를] 발견했다!"}
+{"k": "¡{1} encontró una {2}!", "v": "{1}\\j[이,가] {2}\\j[을,를] 손에 넣었다!"}
 {"k": "¡{1} lanzó {2}!", "v": "{1}\\j[은,는] {2}\\j[을,를] 던졌다!"}
 {"k": "¡{1} dejó de estar enamorado!", "v": "{1}의 헤롱헤롱 상태가 풀렸다!"}
 {"k": "¡La Mofa de {1} se terminó!", "v": "{1}의 도발이 풀렸다!"}
@@ -4602,7 +4602,7 @@
 {"k": "¡Acua Aro recuperó salud de {1}!", "v": "아쿠아링이 {1}의 HP를 회복시켰다!"}
 {"k": "¡{1} ha derrotado a {2} y {3}!", "v": "{1}\\j[이,가] {2}\\j[과,와] {3}\\j[을,를] 쓰러뜨렸다!"}
 {"k": "¡{1} ha derrotado a\n{2}!", "v": "{1}\\j[이,가]\r\n{2}\\j[을,를] 쓰러뜨렸다!"}
-{"k": "¡{1} ha obtenido ${2}\npor la victoria!", "v": "{1}\\j[은,는] 상금으로 ${2} 만큼 받았다!"}
+{"k": "¡{1} ha obtenido ${2}\npor la victoria!", "v": "{1}\\j[은,는] 상금으로 ${2}\\j[을,를] 얻었다!"}
 {"k": "¡{1} ha recogido ${2}!", "v": "{1}\\j[이,가] ${2}\\j[을,를] 주웠다!"}
 {"k": "¡{1} no tiene más Pokémon que puedan pelear!", "v": "{1}에게 더 이상 싸울 수 있는 포켓몬이 없다!"}
 {"k": "¡{1} ha perdido contra {2} y {3}!", "v": "{1}\\j[은,는] {2}\\j[과,와] {3}에게 졌다!"}
@@ -4729,15 +4729,15 @@
 {"k": "El juego detectó que la batería está baja. Debería guardar pronto para evitar la pérdida de su progreso.", "v": "배터리 잔량이 부족합니다. 진행 상황을 잃지 않도록 곧 저장해 주십시오."}
 {"k": "GRABANDO\nPresione ESC para cancelar.", "v": "녹화 중\n취소하려면 ESC 키를 누르십시오."}
 {"k": "REPRODUCIENDO...", "v": "재생 중..."}
-{"k": "\\se[ItemGet]¡{1} ha encontrado \\c[1]{2}\\c[0]!\\\nÉsta contiene \\c[1]{3}\\c[0].\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[이,가] \\c[1]{2}\\c[0]\\j[을,를] 발견했다!\\\n안에는 \\c[1]{3}\\c[0]\\j[이,가] 들어 있다.\\wtnp[30]"}
-{"k": "\\se[ItemGet]¡{1} ha encontrado unos \\c[1]{2}\\c[0]!\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[이,가] \\c[1]{2}\\c[0]\\j[을,를] 발견했다!\\wtnp[30]"}
-{"k": "\\se[ItemGet]¡{1} ha encontrado unos {2} \\c[1]{3}\\c[0]!\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[이,가] {2}개의 \\c[1]{3}\\c[0]\\j[을,를] 발견했다!\\wtnp[30]"}
-{"k": "\\se[ItemGet]¡{1} ha encontrado un \\c[1]{2}\\c[0]!\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[이,가] \\c[1]{2}\\c[0]\\j[을,를] 발견했다!\\wtnp[30]"}
+{"k": "\\se[ItemGet]¡{1} ha encontrado \\c[1]{2}\\c[0]!\\\nÉsta contiene \\c[1]{3}\\c[0].\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[이,가] \\c[1]{2}\\c[0]\\j[을,를] 손에 넣었다!\\\n안에는 \\c[1]{3}\\c[0]\\j[이,가] 들어 있다.\\wtnp[30]"}
+{"k": "\\se[ItemGet]¡{1} ha encontrado unos \\c[1]{2}\\c[0]!\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[이,가] \\c[1]{2}\\c[0]\\j[을,를] 손에 넣었다!\\wtnp[30]"}
+{"k": "\\se[ItemGet]¡{1} ha encontrado unos {2} \\c[1]{3}\\c[0]!\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[이,가] \\c[1]{3}\\c[0]\\j[을,를] {2}개 손에 넣었다!\\wtnp[30]"}
+{"k": "\\se[ItemGet]¡{1} ha encontrado un \\c[1]{2}\\c[0]!\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[이,가] \\c[1]{2}\\c[0]\\j[을,를] 손에 넣었다!\\wtnp[30]"}
 {"k": "{1} puso \\c[1]{2}\\c[0]\nen el bolsillo <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0].", "v": "{1}\\j[이,가] \\c[1]{2}\\c[0]\\j[을,를]\r\n<icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] 포켓에 넣었다."}
-{"k": "¡{1} ha encontrado \\c[1]{2}\\c[0]!\\wtnp[20]", "v": "{1}\\j[이,가] \\c[1]{2}\\c[0]\\j[을,를] 발견했다!\\wtnp[20]"}
-{"k": "¡{1} ha encontrado unos \\c[1]{2}\\c[0]!\\wtnp[20]", "v": "{1}\\j[이,가] \\c[1]{2}\\c[0]\\j[을,를] 발견했다!\\wtnp[20]"}
-{"k": "¡{1} ha encontrado {2} \\c[1]{3}\\c[0]!\\wtnp[20]", "v": "{1}\\j[이,가] {2} \\c[1]{3}\\c[0]\\j[을,를] 발견했다!\\wtnp[20]"}
-{"k": "¡{1} ha encontrado un \\c[1]{2}\\c[0]!\\wtnp[20]", "v": "{1}\\j[이,가] \\c[1]{2}\\c[0]\\j[을,를] 발견했다!\\wtnp[20]"}
+{"k": "¡{1} ha encontrado \\c[1]{2}\\c[0]!\\wtnp[20]", "v": "{1}\\j[이,가] \\c[1]{2}\\c[0]\\j[을,를] 손에 넣었다!\\wtnp[20]"}
+{"k": "¡{1} ha encontrado unos \\c[1]{2}\\c[0]!\\wtnp[20]", "v": "{1}\\j[이,가] \\c[1]{2}\\c[0]\\j[을,를] 손에 넣었다!\\wtnp[20]"}
+{"k": "¡{1} ha encontrado {2} \\c[1]{3}\\c[0]!\\wtnp[20]", "v": "{1}\\j[이,가] \\c[1]{3}\\c[0]\\j[을,를] {2}개 손에 넣었다!\\wtnp[20]"}
+{"k": "¡{1} ha encontrado un \\c[1]{2}\\c[0]!\\wtnp[20]", "v": "{1}\\j[이,가] \\c[1]{2}\\c[0]\\j[을,를] 손에 넣었다!\\wtnp[20]"}
 {"k": "Qué mal... La mochila está llena...", "v": "아쉽게도... 가방이 가득 찼다..."}
 {"k": "\\se[ItemGet]¡Ha obtenido \\c[1]{1}\\c[0]!\\\nÉsta contiene \\c[1]{2}\\c[0].\\wtnp[30]", "v": "\\se[ItemGet]\\c[1]{1}\\c[0]\\j[을,를] 획득했다!\\\n안에는 \\c[1]{2}\\c[0]\\j[이,가] 들어 있다.\\wtnp[30]"}
 {"k": "\\se[ItemGet]¡Ha obtenido unos \\c[1]{1}\\c[0]!\\wtnp[30]", "v": "\\se[ItemGet]\\c[1]{1}\\c[0]\\j[을,를] 손에 넣었다!\\wtnp[30]"}
@@ -5239,13 +5239,13 @@
 {"k": "{1} loves traveling with {2}.", "v": "{1} loves traveling with {2}."}
 {"k": "The water is dyed a deep blue... Would you like to surf?", "v": "The water is dyed a deep blue...  Would you like to surf?"}
 {"k": "You can't use that if you have someone with you.", "v": "You can’t use that if you have someone with you."}
-{"k": "\\se[]{1} found {2}!\\se[itemlevel]\\\nIt contained {3}.\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] {2}\\j[을,를] 발견했다!\\se[itemlevel]\\\n안에 {3}\\j[이,가] 들어 있었다.\\wtnp[30]"}
+{"k": "\\se[]{1} found {2}!\\se[itemlevel]\\\nIt contained {3}.\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] {2}\\j[을,를] 손에 넣었다!\\se[itemlevel]\\\n안에 {3}\\j[이,가] 들어 있었다.\\wtnp[30]"}
 {"k": "{1} put the {2}\nin the {3} Pocket.", "v": "{1}\\j[은,는] {2}\\j[을,를]\n{3} 주머니에 넣었다."}
-{"k": "\\se[]{1} found some {2}!\\se[itemlevel]\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] {2}\\j[을,를] 발견했다!\\se[itemlevel]\\wtnp[30]"}
-{"k": "\\se[]{1} found {2} {3}!\\se[itemlevel]\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] {2} {3}\\j[을,를] 발견했다!\\se[itemlevel]\\wtnp[30]"}
-{"k": "\\se[]{1} found {2} {3}s!\\se[itemlevel]\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] {2} {3}\\j[을,를] 발견했다!\\se[itemlevel]\\wtnp[30]"}
+{"k": "\\se[]{1} found some {2}!\\se[itemlevel]\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] {2}\\j[을,를] 손에 넣었다!\\se[itemlevel]\\wtnp[30]"}
+{"k": "\\se[]{1} found {2} {3}!\\se[itemlevel]\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] {3}\\j[을,를] {2}개 손에 넣었다!\\se[itemlevel]\\wtnp[30]"}
+{"k": "\\se[]{1} found {2} {3}s!\\se[itemlevel]\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] {3}\\j[을,를] {2}개 손에 넣었다!\\se[itemlevel]\\wtnp[30]"}
 {"k": "{1} put the {2}s\nin the {3} Pocket.", "v": "{1}\\j[은,는] {2}\\j[을,를]\n{3} 주머니에 넣었다."}
-{"k": "\\se[]{1} found one {2}!\\se[itemlevel]\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] {2}\\j[을,를] 하나 발견했다!\\se[itemlevel]\\wtnp[30]"}
+{"k": "\\se[]{1} found one {2}!\\se[itemlevel]\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] {2}\\j[을,를] 하나 손에 넣었다!\\se[itemlevel]\\wtnp[30]"}
 {"k": "{1} found {2}!\\wtnp[20]", "v": "{1}\\j[은,는] {2}\\j[을,를] 찾았다!\\wtnp[20]"}
 {"k": "{1} found some {2}!\\wtnp[20]", "v": "{1} found some {2}!\\wtnp[20]"}
 {"k": "{1} found {2} {3}!\\wtnp[20]", "v": "{1}\\j[은,는] {2}개의 {3}\\j[을,를] 찾았다!\\wtnp[20]"}
@@ -5565,13 +5565,13 @@
 {"k": "There are no animations to import. Put each animation in a folder within the Animations folder.", "v": "가져올 애니메이션이 없습니다. 각 애니메이션을 Animations 폴더 안의 폴더에 넣으세요."}
 {"k": "All animations were imported.", "v": "All animations were imported."}
 {"k": "¿Qué debería hacer {1}?", "v": "{1}\\j[은,는] 무엇을 해야 할까?"}
-{"k": "\\se[]{1} encontró {2}.\\se[itemlevel]\\\nContiene {3}.\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] {2}\\j[을,를] 발견했다.\\se[itemlevel]\\\n안에 {3}\\j[이,가] 들어 있다.\\wtnp[30]"}
+{"k": "\\se[]{1} encontró {2}.\\se[itemlevel]\\\nContiene {3}.\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] {2}\\j[을,를] 손에 넣었다.\\se[itemlevel]\\\n안에 {3}\\j[이,가] 들어 있다.\\wtnp[30]"}
 {"k": "{1} guarda {2}\nen {3}.", "v": "{1}\\j[이,가] {2}\\j[을,를]\r\n{3}에 보관한다."}
-{"k": "\\se[]{1} encontró {2}.\\se[itemlevel]\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] {2}\\j[을,를] 발견했다.\\se[itemlevel]\\wtnp[30]"}
-{"k": "\\se[]{1} encontró {2} {3}.\\se[itemlevel]\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] {2} {3}\\j[을,를] 발견했다.\\se[itemlevel]\\wtnp[30]"}
+{"k": "\\se[]{1} encontró {2}.\\se[itemlevel]\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] {2}\\j[을,를] 손에 넣었다.\\se[itemlevel]\\wtnp[30]"}
+{"k": "\\se[]{1} encontró {2} {3}.\\se[itemlevel]\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] {3}\\j[을,를] {2}개 손에 넣었다.\\se[itemlevel]\\wtnp[30]"}
 {"k": "{1} guarda {2}s\nen {3}.", "v": "{1}\\j[이,가] {2}\\j[을,를]\r\n{3}에 보관한다."}
-{"k": "{1} encontró {2}.\\wtnp[20]", "v": "{1}\\j[이,가] {2}\\j[을,를] 발견했다.\\wtnp[20]"}
-{"k": "{1} encontró {2} {3}.\\wtnp[20]", "v": "{1}\\j[이,가] {2} {3}\\j[을,를] 발견했다.\\wtnp[20]"}
+{"k": "{1} encontró {2}.\\wtnp[20]", "v": "{1}\\j[이,가] {2}\\j[을,를] 손에 넣었다.\\wtnp[20]"}
+{"k": "{1} encontró {2} {3}.\\wtnp[20]", "v": "{1}\\j[이,가] {3}\\j[을,를] {2}개 손에 넣었다.\\wtnp[20]"}
 {"k": "Vaya, la Mochila está llena...", "v": "이런, 가방이 가득 찼다..."}
 {"k": "¡Ajá! ¡Esto se pone interesante!", "v": "아하! 이거 점점 재미있어지는데!"}
 {"k": "¡Hora de ponerse serios!", "v": "진지해질 시간이다!"}
@@ -5637,7 +5637,7 @@
 {"k": "{1} es muy mal Pokémon.", "v": "{1}\\j[은,는] 아주 별로인 포켓몬이다."}
 {"k": "{1} es un Pokémon bastante regulero.", "v": "{1}\\j[은,는] 그저 그런 포켓몬이다."}
 {"k": "{1} es un Pokémon decentillo.", "v": "{1}\\j[은,는] 그럭저럭 괜찮은 포켓몬이다."}
-{"k": "{1} es un Pokémon bastante bueno.", "v": "{1}\\j[은,는] 꽤 좋은 포켓몬이다."}
+{"k": "{1} es un Pokémon bastante bueno.", "v": "{1}\\j[은,는] 꽤 좋은 포켓몬이지."}
 {"k": "¡{1} es un Pokémon buenísimo!", "v": "{1}\\j[은,는] 아주 좋은 포켓몬이다!"}
 {"k": "¡{1} es un Pokémon de la hostia!", "v": "{1}\\j[은,는] 끝내주는 포켓몬이다!"}
 {"k": "Hasta aquí llegamos. Vamos a ponernos serios.", "v": "여기까지다. 이제 진지하게 가볼까."}
@@ -6232,7 +6232,7 @@
 {"k": "¡{1} escapó gracias a Retirada!", "v": "{1}\\j[은,는] 회수로 빠져나갔다!"}
 {"k": "¡Se activó Retirada de {1}!", "v": "{1}의 회수가 발동했다!"}
 {"k": "Has elegido el camino del tormento, ¡será un placer indescriptible!", "v": "고통의 길을 골랐군. 말로 다 못 할 즐거움이 되겠어!"}
-{"k": "¡Eh, cuidado con mancharme el traje! Que vale más que diez veces tú.", "v": "이봐, 내 옷에 얼룩 묻히지 마! 너 열 명 값보다 비싼 거야."}
+{"k": "¡Eh, cuidado con mancharme el traje! Que vale más que diez veces tú.", "v": "내 옷에 얼룩 묻히지 마! 너보다 열 배는 비싼 거니까."}
 {"k": "Siento que me voy haciendo más fuerte a medida que el combate transcurre. ¿Me permites que desate todo el poder de este Pokémon?", "v": "배틀이 이어질수록 내가 강해지는 게 느껴진다. 이 포켓몬의 모든 힘을 해방해도 되겠나?"}
 {"k": "¡{1} ahora es hembra!", "v": "{1}\\j[은,는] 이제 암컷이다!"}
 {"k": "¡{1} ahora es macho!", "v": "{1}\\j[은,는] 이제 수컷이다!"}
@@ -6757,7 +6757,7 @@
 {"k": "¡{1} ha sobrevivido al envenenamiento!\\n¡El veneno ha desaparecido!\\1", "v": "{1}\\j[은,는] 독을 이겨냈다!\\n독이 사라졌다!\\1"}
 {"k": "Guardas {1} en\\nel bolsillo <icon=bagPocket{2}>\\c[1]{3}\\c[0].", "v": "{1}\\j[을,를] 가방의\\n<icon=bagPocket{2}>\\c[1]{3}\\c[0] 포켓에 넣었다."}
 {"k": "\\se[ItemGet]¡Has obtenido \\c[1]{1}\\c[0]!\\nÉsta contiene \\c[1]{2}\\c[0].\\wtnp[30]", "v": "\\se[ItemGet]\\c[1]{1}\\c[0]\\j[을,를] 손에 넣었다!\\n안에는 \\c[1]{2}\\c[0]\\j[이,가] 들어 있다.\\wtnp[30]"}
-{"k": "\\se[ItemGet]¡{1} ha encontrado \\c[1]{2}\\c[0]!\\nÉsta contiene \\c[1]{3}\\c[0].\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를] 발견했다!\\n안에는 \\c[1]{3}\\c[0]\\j[이,가] 들어 있다.\\wtnp[30]"}
+{"k": "\\se[ItemGet]¡{1} ha encontrado \\c[1]{2}\\c[0]!\\nÉsta contiene \\c[1]{3}\\c[0].\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를] 손에 넣었다!\\n안에는 \\c[1]{3}\\c[0]\\j[이,가] 들어 있다.\\wtnp[30]"}
 {"k": "\\se[ItemGet]¡{1} ha recibido \\c[1]{2}\\c[0]!\\nÉste contiene \\c[1]{3}\\c[0].\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를] 받았다!\\n안에는 \\c[1]{3}\\c[0]\\j[이,가] 들어 있다.\\wtnp[30]"}
 {"k": "{1} ha metido la cosecha de {2} en el Bolsillo de <icon=bagPocket1>\\c[1]Bayas\\c[0] de la Mochila.\u0001", "v": "{1}\\j[은,는] 수확한 {2}\\j[을,를] 가방의 <icon=bagPocket1>\\c[1]나무열매\\c[0] 포켓에 넣었다.\u0001"}
 {"k": "{1} ha metido la cosecha de {2} en el Bolsillo de <icon=bagPocket2>\\c[1]Bayas\\c[0] de la Mochila.\u0001", "v": "{1}\\j[은,는] 수확한 {2}\\j[을,를] 가방의 <icon=bagPocket2>\\c[1]나무열매\\c[0] 포켓에 넣었다.\u0001"}

@@ -90,7 +90,7 @@ def main():
         head, rows = (vals[0], vals[1:]) if vals else ([], [])
         if not rows:
             sys.exit("보관할 응답행이 없어요")
-        out = os.path.join(os.path.dirname(__file__), "..", "docs", "reports", tab + ".jsonl")
+        out = os.path.join(os.path.dirname(__file__), "..", "docs", "log", "reports", tab + ".jsonl")
         os.makedirs(os.path.dirname(out), exist_ok=True)
         stamp = datetime.datetime.now().isoformat(timespec="seconds")
         # 이미 보관한 것과 겹치면 건너뛴다 — 스튜디오 일괄 제보가 저장분 전체를
