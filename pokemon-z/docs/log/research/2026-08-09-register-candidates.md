@@ -8,8 +8,9 @@
 ⚠ **근거 1~2건짜리 절은 방향 자체가 판정 대상이다** — 한 자리의 교정이 그 자리 사정일 수
 있다. 방향이 굳은 것은 `prodigio`(10건)뿐이다.
 
-## `prodigio` — B3합쇼 → B2해요  (근거 10건 / 페이지 16·후보 16문안)  [x] O  [ ] X  [ ] ?
+## `prodigio` — B3합쇼 → B2해요  (근거 10건 / 페이지 16·후보 16문안)  [ ] O  [x] X  [ ] ?
 근거 예: 「동의합니다」 → 「그렇게 하죠」
+동의합니다, 그렇게 하죠는 플레이어의 대답이야. 
 
 ### 맵27(Ruta 4) ev25( prodigio) p0 · trigger 말걸기
 -   ¡Hola, soy <b>Le Prodige</b>!
@@ -309,9 +310,9 @@ lugar de tu equipo para que pueda verlo bien.
 -   ¡Ten mucho cuidado si te cruzas con ese prisionero! Creo que fue condenado por espionaje, estafa de 
   -   혹시 그 탈옥수와 마주치면 각별히 조심하렴! 스파이짓, 암호화폐 사기, 포켓몬과의 비정상적인 행위, 극심한 치사함으로 수감된 놈이거든.
 
-## `cazadorow` — B5지문평서 → B1반말  (근거 1건 / 페이지 31·후보 58문안)  [x] O  [ ] X  [ ] ?
+## `cazadorow` — B5지문평서 → B1반말  (근거 1건 / 페이지 31·후보 58문안)  [ ] O  [x] X  [ ] ?
 근거 예: 「난 내 포켓몬이 맞지 않게 하는 전문가다. 내 솜씨를 한번 구경해 보겠나?」 → 「내 포켓몬의 털끝 하나 못 건드리게 하는 게 특기지. 내 실력, 한번 구경해 보겠나?
-」
+현행은 지문평서라기보다는 딱딱한 반말에 가까워. 저 개행은 말투 수정이라기보단 '맞지 않게 하는 전문가'처럼 이상한 번역을 고친거고.
 
 ### 맵42(Pueblo Profano) ev14(EV014) p0 · trigger 말걸기
 - → Nosotros, los cazadores, tenemos mala fama. ¡Pero nuestros actos son nobles!
@@ -554,6 +555,7 @@ lugar de tu equipo para que pueda verlo bien.
 
 ## `mosqueterow` — B2해요 → B1반말  (근거 1건 / 페이지 2·후보 6문안)  [x] O  [ ] X  [ ] ?
 근거 예: 「어쩌면 놀라셨나요?」 → 「어때, 놀랍지?」
+mosqueterow는 원래 반말 아니냐? 저건 카페 맵에서 포켓몬 교환 텍스트가 고정되어버린 바람에 어쩔 수 없이 저리 바꿨던 흔적 같은데. 하지만 이젠 개별 설정으로 방향 틀었으니 수정해도 괜찮겠지.
 
 ### 맵63(Café Bohemien) ev5(EV005) p0 · trigger 말걸기
 -   Estoy buscando un Rapidash, ¿lo cambiarías por mi 
@@ -585,7 +587,7 @@ de tu equipo para que pueda verlo.
 -   Bueno, otra vez será.
   -   그렇다면 다음 기회에.
 
-## `metre` — B3합쇼 → B2해요  (근거 1건 / 페이지 23·후보 70문안)  [x] O  [ ] X  [ ] ?
+## `metre` — B3합쇼 → B2해요  (근거 1건 / 페이지 23·후보 70문안)  [ ] O  [x] X  [ ] ?
 근거 예: 「새로운 섭정인 <b>F3</b> 님이 오신 모양인데, 기록적인 속도로 전기 장벽 퍼즐을 설계하셨습니다.」 → 「새로운 섭정인 <b>F3</b> 님이 오신 모양인데, 기록적인 속도로 전기 장벽 퍼즐을 설계하셨지요.」
 
 ### 맵20(Bastión Pokémon) ev10(EV010) p0 · trigger 말걸기
@@ -814,7 +816,7 @@ de tu equipo para que pueda verlo.
 - → Perfecto, ¡mucha suerte en el bastión!
   - → 좋습니다. 요새에서 행운을 빕니다!
 
-## `anciano` — B4어른말 → B1반말  (근거 1건 / 페이지 15·후보 16문안)  [x] O  [ ] X  [ ] ?
+## `anciano` — B4어른말 → B1반말  (근거 1건 / 페이지 15·후보 16문안)  [ ] O  [x] X  [ ] ?
 근거 예: 「처형대에 서 있는 사람들은 내 평생 친구의 자식들이라네. 정말 정직한 아이들이란다!」 → 「처형대에 서 있는 사람들은 내 평생 친구의 자식들이라네. 정말 정직한 아이들인데!」
 
 ### 맵4(Casa) ev18(EV018) p1 · trigger 말걸기
@@ -923,8 +925,9 @@ de tu equipo para que pueda verlo.
 -   Los que vivimos ahora somos sus descendientes, aunque no hemos olvidado todavía algunas de sus enseñ
   -   지금 살아가는 우리는 그들의 후손이라, 그 가르침을 아직 잊지 않고 이어받고 있지.
 
-## `revolucionario` — B5지문평서 → B1반말  (근거 1건 / 페이지 5·후보 5문안)  [x] O  [ ] X  [ ] ?
+## `revolucionario` — B5지문평서 → B1반말  (근거 1건 / 페이지 5·후보 5문안)  [ ] O  [ ] X  [x] ?
 근거 예: 「권력을 쥔 자들의 편을 드는 건가? 그렇다면 너도 함께 몰락해야 한다!」 → 「권력을 쥔 자들의 편을 드는가? 그렇다면 너도 함께 몰락해라!」
+정확히는 흉흉한 시기(혁명 한창 진행될 때)만 딱딱한 반말이고, 이후에는 평범한 반말이 맞지. 그리고 근거로 든 수정은 말투에 차이를 준 게 아니야.
 
 ### 맵102(Pueblo Petroglifo) ev28(EV028) p1 · trigger 말걸기
 - → El brazo ejecutor de la corona debe pagar por las afrentas cometidas. No permitiremos más injusticia
@@ -954,7 +957,7 @@ de tu equipo para que pueda verlo.
 -   Pero la mayoría vuelve con las manos vacías.
   -   하지만 대부분은 빈손으로 돌아오지.
 
-## `nina` — B1반말 → B2해요  (근거 1건 / 페이지 16·후보 28문안)  [x] O  [ ] X  [ ] ?
+## `nina` — B1반말 → B2해요  (근거 1건 / 페이지 16·후보 28문안)  [ ] O  [x] X  [ ] ?
 근거 예: 「너... 누구야?」 → 「누구...세요?」
 
 ### 맵4(Casa) ev16(EV016) p0 · trigger 말걸기
@@ -1128,7 +1131,7 @@ de tu equipo para que pueda verlo.
 - → ¡Mi Mankey le dará un martillazo tan, pero tan fuerte al Mr.Mime que saldrá volando!
   - → 내 망키가 마임맨에게 진짜, 진짜 세게 망치질을 해서 날려 버릴 거야!
 
-## `criada` — B3합쇼 → B1반말  (근거 1건 / 페이지 3·후보 3문안)  [x] O  [ ] X  [ ] ?
+## `criada` — B3합쇼 → B1반말  (근거 1건 / 페이지 3·후보 3문안)  [ ] O  [x] X  [ ] ?
 근거 예: 「들리는 말로는, <b>6번도로</b> 강물 위를 달리는 낯선 포켓몬을 보았다고 합니다.」 → 「누군가 <b>6번도로</b> 강물 위를 달리는 낯선 포켓몬을 보았대.」
 
 ### 맵13(Chateau Merlot) ev21(EV021) p0 · trigger 말걸기
@@ -1149,10 +1152,11 @@ de tu equipo para que pueda verlo.
 -   Los Pokémon me han traído las mayores alegrías, también las mayores tristezas.
   -   포켓몬은 제게 가장 큰 기쁨을 주기도 했지만, 가장 큰 슬픔을 안겨주기도 했어요.
 - → Todo lo que soy ahora, se lo debo a ellos.
-  - → 지금의 제가 있는 건 모두 그 아이들 덕분이랍니다.
+  - → 지금의 제가 있는 건 모두 그 아이들 덕분이랍니다. 
 
-## `brujita` — B4어른말 → B1반말  (근거 1건 / 페이지 19·후보 26문안)  [x] O  [ ] X  [ ] ?
+## `brujita` — B4어른말 → B1반말  (근거 1건 / 페이지 19·후보 26문안)  [ ] O  [x] X  [ ] ?
 근거 예: 「악당을 잡았으니 총사 병영으로 돌아가서 보상을 받거라.」 → 「악당을 체포했으니, 총사 본부로 돌아가 보상을 받자.」
+근거 예시는 brujita가 말한 게 아니라 시스템 메세지다. 그 스프라이트와 대화 직후에 나와서 포함됐나본데.
 
 ### 맵44(Pantano Profano) ev7(EV007) p1 · trigger 말걸기
 - → Si alguna vez visitas <b>Pueblo Vanitas</b>, comprobarás los resultados de mi embrujo. ¡Ju, ju!
@@ -1278,7 +1282,7 @@ de tu equipo para que pueda verlo.
 - → La Regente <b>Anturia</b> te espera en la... Sala del <b>Gran Caldero Pokémon</b>.
   - → 섭정 <b>안투리아</b>님께서... <b>포켓몬 대가마솥</b>의 방에서 기다리고 계시느니라.
 
-## `burguesaow` — B3합쇼 → B2해요  (근거 1건 / 페이지 18·후보 18문안)  [x] O  [ ] X  [ ] ?
+## `burguesaow` — B3합쇼 → B2해요  (근거 1건 / 페이지 18·후보 18문안)  [ ] O  [x] X  [ ] ?
 근거 예: 「<b>칼로스</b> 역사상 가장 인기 많았던 전설의 <b>프리물라</b> 여왕께서 바로 이 마을 출신이십니다.」 → 「<b>칼로스</b> 역사상 가장 인기 많았던 전설의 <b>프리물라</b> 여왕께서 바로 이 마을 출신이세요.」
 
 ### 맵9(Pueblo Vinilo) ev18(EV018) p0 · trigger 말걸기
