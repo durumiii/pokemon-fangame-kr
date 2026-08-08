@@ -79,8 +79,9 @@ def test_chips_and_event(tmp):
             {"map": 2, "n": 1}, {"k": "Hola amigo", "v": "안녕 동무"}]
     (tmp / "a.jsonl").write_text(
         "\n".join(json.dumps(r, ensure_ascii=False) for r in rows) + "\n", encoding="utf-8")
+    fixgui._mapko = {1: "마을", 2: "동굴"}   # 맵 이름은 절21(한국어)이 먼저다
     fixgui._ctx = {
-        "row": {}, "mapname": {1: "마을", 2: "동굴"},
+        "row": {}, "mapname": {1: "Aldea", 2: "Cueva"},
         "spots": {(1, "Hola amigo"): [[7, 0, 3, "촌장"], [9, 0, 1, "경비"]]},
         "page": {(1, 7, 0): [[3, "Hola amigo", "촌장", "npc"], [1, "Adios", "촌장", "npc"]]},
     }

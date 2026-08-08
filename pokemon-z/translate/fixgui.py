@@ -86,7 +86,7 @@ def chips(hits):
             others.setdefault(k, set()).add(r["map"])
     for h in hits:
         k = norm(h["es"])
-        h["mapname"] = c["mapname"].get(h["map"], "")
+        h["mapname"] = map_label(h["map"])
         h["spots"] = c["spots"].get((h["map"], k), [])
         h["omaps"] = len(others.get(k, ())) - 1
     return hits
@@ -109,7 +109,7 @@ def same_es(es, mp):
     """같은 원문이 선 다른 맵의 자리 — 정본은 (맵,원문)마다 별개 줄이라 값이 갈린다."""
     k = norm(es)
     c = ctx()
-    return [{**r, "mapname": c["mapname"].get(r["map"], "")}
+    return [{**r, "mapname": map_label(r["map"])}
             for r in iter_rows() if norm(r["es"]) == k and r["map"] != mp]
 
 
@@ -169,6 +169,37 @@ def map_ko():
     return _mapko
 
 
+def map_label(m):
+    """화면에 뜨는 맵 이름 — 한국어가 있으면 그것, 없으면 스페인어."""
+    return map_ko().get(m) or ctx()["mapname"].get(m, "")
+
+
+_persona = None
+
+
+def persona():
+    """스프라이트 → 사람이 읽는 한 줄(`persona-table.jsonl`의 페르소나 칸)."""
+    global _persona
+    if _persona is None:
+        _persona = {}
+        pt = HERE / "persona-table.jsonl"
+        if pt.exists():
+            for line in pt.read_text(encoding="utf-8").splitlines():
+                d = json.loads(line)
+                if d.get("페르소나"):
+                    _persona[d["sprite"]] = d["페르소나"]
+    return _persona
+
+
+# 분류(sprite-groups.json)에는 무리가 아닌 갈래가 섞여 있다 — 그대로 두면 목록이 안 읽힌다
+GROUP_LABEL = {"voices": "주연 — 말투 정본(voices.md)이 따로 있는 인물",
+               "내용판정": "미분류 — 대사 내용으로 판정할 자리",
+               "사물지문": "사물·지문 — 사람이 아닌 화자",
+               "포켓몬특수": "포켓몬·특수 화자",
+               "?": "분류 없음"}
+NOBODY = {"(없음)", "?"}   # 화자 그림이 없거나 못 가른 행 — 목록 끝으로 보낸다
+
+
 def parse_query(q):
     """`분류:도구 맵:12 화자:간호사 상태:수정 자유어` → 갈래별 값 목록."""
     f = {v: [] for v in TAGS.values()} | {"text": []}
@@ -200,7 +231,11 @@ def row_match(r, f, c, edited, memoed):
             return False
     if f["spk"]:
         info = c["row"].get((r["map"], r["es"]))
-        if not info or not any(x in info["sprite"] or x in info["group"] for x in f["spk"]):
+        if not info:
+            return False
+        # 그림 이름은 스페인어라 한국어로 찾으려면 페르소나 한 줄까지 봐야 한다
+        hay = [info["sprite"], info["group"], persona().get(info["sprite"], "")]
+        if not any(any(x in h for h in hay) for x in f["spk"]):
             return False
     if not all(t in r["es"] for t in f["k"]):
         return False
@@ -244,8 +279,12 @@ def tag_values(tag, part):
                 out.append({"v": str(m), "label": f"{m} · {ko or es or '(이름 없음)'}"})
         return out[:12]
     if tag == "화자":
+        pz = persona()
         vals = {i[k] for i in c["row"].values() for k in ("sprite", "group")}
-        return [{"v": v, "label": v} for v in sorted(vals) if part in v][:12]
+        out = [{"v": v, "label": f"{v} · {pz[v]}" if v in pz else GROUP_LABEL.get(v, v)}
+               for v in sorted(vals) if part in v or part in pz.get(v, "")]
+        out.sort(key=lambda x: (x["v"] not in pz, x["v"]))
+        return out[:12]
     return []
 
 
@@ -417,10 +456,19 @@ def browse(by):
         elif by == "group":
             cnt[r["group"]] += 1
     if by == "map":
-        return [{"key": str(k), "label": f"맵 {k} · {c['mapname'].get(k, '')}",
+        return [{"key": str(k), "label": f"맵 {k} · {map_label(k)}",
                  "count": n} for k, n in sorted(cnt.items(), key=lambda x: x[0] or 0)]
-    return [{"key": str(k), "label": str(k), "count": n}
-            for k, n in cnt.most_common()]
+    if by == "group":
+        return [{"key": str(k), "label": GROUP_LABEL.get(str(k), str(k)), "count": n}
+                for k, n in cnt.most_common()]
+    # 화자별 — 그림 이름만으로는 누구인지 모른다. 페르소나 한 줄을 붙이고,
+    # 화자를 못 가른 묶음((없음)·?)은 아무리 커도 끝으로 보낸다.
+    pz = persona()
+    out = [{"key": str(k), "count": n,
+            "label": f"{k} · {pz[str(k)]}" if str(k) in pz else str(k)}
+           for k, n in cnt.most_common()]
+    out.sort(key=lambda g: (g["key"] in NOBODY, str(g["key"]) not in pz, -g["count"]))
+    return out
 
 
 def listing(by, key):
