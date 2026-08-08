@@ -94,3 +94,11 @@ UI Text KR이 키보드 기준으로 적고 저쪽 `004_PadLabels`가 덮는다.
   모드 폴더가 유일본이다. 자산을 지우거나 다시 만들려 하기 전에
   [출처 조사](../research/)를 본다. `mod.json`의 설명 문구는 실제 자산 목록과
   어긋나는 자리가 있다.
+
+## modkit과의 접점
+
+`share/make_package.py`가 MODKIT_HOME(기본 `~/workspace/claude-native/sketches/essentials-modkit`)
+에서 modkit을 임포트해 변형마다 `manifest.json`을 동봉한다. 기준 지문은
+`share/make_manifest_full.py`가 뜨고, Z 고유 제외 목록(Constants·MapChecker·LastSave 등)은
+이 스크립트 몫이다(코어 기본값은 2게임 이상 실측만). 모드 배포는 그쪽 repo
+(`durumiii/essentials-modkit`, mods-z-v2)가 정본이다.
