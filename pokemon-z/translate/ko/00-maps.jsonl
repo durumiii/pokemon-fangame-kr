@@ -10765,7 +10765,7 @@
 {"k": "¡Engañaré a otros seres humanos para que me construyan una nueva arma! ¡Y algún día...!", "v": "다른 인간들을 속여서 새 병기를 만들게 할 테다! 그리고 언젠가는...!"}
 {"k": "\\c[6]<b>Aure:</b>\\c[0] ¡Mi... mis buenos señores! Yo solo... ¡Solo estaba jugando un poco!", "v": "\\c[6]<b>아우레:</b>\\c[0] 위... 위대한 분들이시여! 저는 그저... 장난을 좀 쳤을 뿐입니다!"}
 {"k": "¡Por favor! ¡Misericordia!", "v": "제발! 자비를 베풀어 주십시오!"}
-{"k": "¡No me encarceléis! ¡Quiero vivir en libertad!", "v": "가두지 마세요! 자유롭게 살고 싶단 말입니다!"}
+{"k": "¡No me encarceléis! ¡Quiero vivir en libertad!", "v": "가두지 마십시오! 자유롭게 살고 싶단 말입니다!"}
 {"k": "¿Quieres meterte en el ataud?", "v": "관 속에 들어가고 싶나?"}
 {"k": "Sí", "v": "네"}
 {"k": "No", "v": "아니요"}
@@ -13456,7 +13456,7 @@
 {"k": "\\c[9]<b>Alca:</b>\\c[0] En eso no se equivoca. Tenemos un problema si usan a Zygarde contra nosotros.", "v": "\\c[9]<b>알카:</b>\\c[0] 그 말은 틀리지 않았도다. 저들이 지가르데를 우리에게 사용한다면 골치 아파지겠지."}
 {"k": "Tengo a mis reyes preparados en <b>Ciudad Yantra</b> para atacar por sorpresa, pero puede no ser suficiente.", "v": "<b>사라시티</b>에서 기습하도록 내 왕들을 준비시켜 두었으나, 그걸로는 부족할지도 모르겠구나."}
 {"k": "\\c[6]<b>Aure:</b>\\c[0] ¡Cla-claro, humana sabia! ¡Y ahí es donde entro yo!", "v": "\\c[6]<b>아우레:</b>\\c[0] 그-그렇고말고요, 현명한 인간이시여! 그래서 내가 나서겠다는 겁니다!"}
-{"k": "Me convertiré en un valioso socio de vuestra compañía para inclinar la batalla a nuestro favor.", "v": "내가 귀사의 귀중한 동반자가 되어 전세를 우리 쪽으로 기울여 드리겠습니다."}
+{"k": "Me convertiré en un valioso socio de vuestra compañía para inclinar la batalla a nuestro favor.", "v": "제가 그대들 일행의 귀중한 동반자가 되어 전세를 우리 쪽으로 기울여 드리겠습니다."}
 {"k": "\\c[9]<b>Alca:</b>\\c[0] No. Socio no.", "v": "\\c[9]<b>알카:</b>\\c[0] 아니. 조력자가 아니다."}
 {"k": "Te convertirás en mi Pokémon.", "v": "너는 내 포켓몬이 되는 것이다."}
 {"k": "\\c[6]<b>Aure:</b>\\c[0] No... ¡No! ¡Cualquier cosa menos eso! ¡No podéis degradarme así!", "v": "\\c[6]<b>아우레:</b>\\c[0] 안 돼… 안 된다! 다른 건 몰라도 그것만은 안 돼! 날 그렇게 깎아내릴 순 없다!"}
@@ -13464,7 +13464,7 @@
 {"k": "\\c[9]<b>Alca:</b>\\c[0] ¿Cuánto tiempo te queda? ¿Días? Tu fuerza vital se desvanece con grandes zancadas mientras hablamos.", "v": "\\c[9]<b>알카:</b>\\c[0] 남은 시간이 얼마나 되느냐? 며칠이냐? 우리가 말하는 이 순간에도 네 생명력은 크게 줄어들고 있다만."}
 {"k": "\\c[9]<b>Alca:</b>\\c[0] Si te conviertes en mi Pokémon, me encargaré de que revivas usando el <b>Arma Definitiva</b>.", "v": "\\c[9]<b>알카:</b>\\c[0] 내 포켓몬이 된다면, <b>최종병기</b>를 사용해 너를 다시 살려주마."}
 {"k": "Pero me servirás sin tribulaciones hasta que me llegue mi propio final.", "v": "하지만 내 생이 끝날 때까지 번뇌 없이 나를 섬겨야 할 것이다."}
-{"k": "\\c[6]<b>Aure:</b>\\c[0] Oh... Si es hasta que te llegue el final, podría aceptar esa propuesta.", "v": "\\c[6]<b>아우레:</b>\\c[0] 오… 당신의 생이 끝날 때까지라면, 그 제안을 받아들일 수도 있겠군요."}
+{"k": "\\c[6]<b>Aure:</b>\\c[0] Oh... Si es hasta que te llegue el final, podría aceptar esa propuesta.", "v": "\\c[6]<b>아우레:</b>\\c[0] 오… 그 생이 끝나실 때까지라면, 그 제안을 받아들일 수도 있겠군요."}
 {"map": 457, "n": 1}
 {"k": "\\c[1]<b>Ferrofaz:</b>\\c[0] ¿Todavía estás aquí, \\PN?", "v": "\\c[1]<b>페로파스:</b>\\c[0] 아직도 여기 있나, \\PN?"}
 {"map": 458, "n": 7}
@@ -14124,7 +14124,7 @@
 {"k": "Puedes seguir jugando de forma normal, pero recuerda que has fracasado.", "v": "일반 모드로 계속 플레이할 수는 있지만, 실패했다는 사실은 변하지 않는다."}
 {"k": "\\c[4]<b>Prímula:</b>\\c[0] ¿Eh? ¡Mira eso, \\PN!", "v": "\\c[4]<b>프리물라:</b>\\c[0] 어? 저거 좀 봐요, \\PN!"}
 {"k": "\\c[6]<b>Aure:</b>\\c[0] ¡Criaturas nauseabundas e insignifcantes!", "v": "\\c[6]<b>아우레:</b>\\c[0] 역겹고 하찮은 생물 같으니!"}
-{"k": "¡Esta es la última vez que me la jugáis!", "v": "나한테 수작을 부리는 것도 이번이 마지막이에요!"}
+{"k": "¡Esta es la última vez que me la jugáis!", "v": "나한테 수작을 부리는 것도 이번이 마지막이다!"}
 {"k": "¡A mí, <b>Aure</b>, el legítimo regente de todo este mundo!", "v": "이 온 세상의 정당한 섭정인 나, <b>아우레</b>에게 말이다!"}
 {"k": "\\c[6]<b>Aure:</b>\\c[0] Me ocultaré y trazaré mi próximo plan maestro para someteros. ¡Y será más efectivo que nunca! ¡Ja, ja, ja!", "v": "\\c[6]<b>아우레:</b>\\c[0] 몸을 숨긴 채 너희를 굴복시킬 다음 대작전을 도모할 것이다. 그 어느 때보다 효과적인 계획을! 하하하!"}
 {"k": "\\c[4]<b>Prímula:</b>\\c[0] Ese tipo, aunque parezca un hombre, en realidad es un Pokémon. ¿<i>Oui</i>?", "v": "\\c[4]<b>프리물라:</b>\\c[0] 저 자, 사람처럼 보이지만 사실은 포켓몬이에요. <i>Oui</i>?"}
