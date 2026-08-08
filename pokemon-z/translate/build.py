@@ -123,7 +123,15 @@ def main():
                     changed += 1
         else:
             keys, values = inner_of(obj)
-            assert len(rows) == len(keys), f"{path.name}: {len(rows)}줄 ≠ dat {len(keys)}"
+            # 지난 빌드가 덧붙인 추가분 키는 꼬리에 남아 있다 — 전부 추가분 소속이면
+            # 정상이다(아니면 구조가 어긋난 것). 이 허용이 없으면 제 산출물로 두 번째
+            # 빌드가 죽는다(2026-08-09 실사고).
+            tail_ok = set()
+            if sec in adds:
+                tail_ok = {string_to_key(r["k"]).encode("utf-8") for r in read_jsonl(adds[sec])}
+            strays = [k for k in keys[len(rows):] if bytes(k) not in tail_ok]
+            assert len(keys) >= len(rows) and not strays, \
+                f"{path.name}: {len(rows)}줄 ≠ dat {len(keys)} (추가분 밖 꼬리 {len(strays)}개)"
             dirty = False
             for j, row in enumerate(rows):
                 assert row["k"] == keys[j].decode("utf-8", "replace"), f"{path.name}[{j}]: 키 불일치"
@@ -140,14 +148,18 @@ def main():
         obj = d[sec]
         assert not isinstance(obj, list) and sec != 0, f"{path.name}: 추가분은 해시 절에만"
         keys, values = inner_of(obj)
-        existing = {bytes(k) for k in keys}
+        index = {bytes(k): i for i, k in enumerate(keys)}
         for row in read_jsonl(path):
             kb = string_to_key(row["k"]).encode("utf-8")
-            if kb in existing:
+            nv = row["v"].encode("utf-8")
+            if kb in index:                    # 지난 빌드가 넣은 키 — 값만 따라간다
+                if bytes(values[index[kb]]) != nv:
+                    values[index[kb]] = nv
+                    added += 1
                 continue
-            existing.add(kb)
+            index[kb] = len(keys)
             keys.append(kb)
-            values.append(row["v"].encode("utf-8"))
+            values.append(nv)
             added += 1
         obj._private_data = rubywrite.dumps([keys, values])
 

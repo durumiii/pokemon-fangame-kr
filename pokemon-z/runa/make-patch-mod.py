@@ -66,16 +66,19 @@ def main() -> None:
         print("   …")
         return
 
-    if STORE.exists():
-        shutil.rmtree(STORE)
+    # 옆(.new)에 다 지은 뒤 갈아 끼운다 — SOURCE와 STORE가 같은 폴더라(제자리 재조립)
+    # 지우고 복사하면 원본부터 사라진다. 자산 151개는 이 폴더가 유일본이다.
+    stage = STORE.with_name(STORE.name + ".new")
+    if stage.exists():
+        shutil.rmtree(stage)
     for src, rel in zip(picked, rels):
-        target = STORE / rel
+        target = stage / rel
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(src, target)
 
     # 번역표만은 사본이 아니라 정본에서 새로 굽는다.
     built = subprocess.run(
-        ["uv", "run", "translate/build.py", f"--out={STORE / dat}"],
+        ["uv", "run", "translate/build.py", f"--out={stage / dat}"],
         cwd=REPO, check=True, capture_output=True, text=True)
     print(built.stdout.strip())
 
@@ -91,7 +94,25 @@ def main() -> None:
     card["assets"] = assets
     card["touches"] = {"methods": [], "files": [a["install_to"] for a in assets]}
     CARD.write_text(json.dumps(card, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    shutil.copy2(CARD, STORE / "mod.json")
+    shutil.copy2(CARD, stage / "mod.json")
+
+    # 수술 백업(.bak·.pre-*)은 새 폴더로 넘긴 뒤에야 옛 폴더를 지운다.
+    def backup_file(p: Path) -> bool:
+        return p.name.endswith(SKIP_SUFFIX) or ".bak-" in p.name or ".pre-" in p.name
+
+    if STORE.exists():
+        for src in (p for p in STORE.rglob("*") if p.is_file() and backup_file(p)):
+            target = stage / src.relative_to(STORE)
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(src, target)
+        old = STORE.with_name(STORE.name + ".old")
+        if old.exists():
+            shutil.rmtree(old)
+        STORE.rename(old)
+        stage.rename(STORE)
+        shutil.rmtree(old)
+    else:
+        stage.rename(STORE)
 
     crc = sum("replaces_crc" in a for a in assets)
     print(f"{STORE} — 에셋 {len(assets)}개 · 그중 순정을 덮는 자리 {crc}개")
