@@ -1039,7 +1039,7 @@
 {"k": "This rock appears to be breakable. Would you like to use Rock Smash?", "v": "This rock appears to be breakable. Would you like to use Rock Smash?"}
 {"k": "{1} used Rock Smash!", "v": "{1} used Rock Smash!"}
 {"k": "It's a rugged rock, but a Pokémon may be able to smash it.", "v": "울퉁불퉁한 바위다. 포켓몬이라면 부술 수 있을지도 모른다."}
-{"k": "Strength made it possible to move boulders around.", "v": "Strength made it possible to move boulders around."}
+{"k": "Strength made it possible to move boulders around.", "v": "괴력 덕분에 바위를 밀어 움직일 수 있다!"}
 {"k": "It's a big boulder, but a Pokémon may be able to push it aside.", "v": "커다란 바위다. 포켓몬이라면 밀어낼 수 있을지도 모른다."}
 {"k": "Would you like to use Strength?", "v": "Would you like to use Strength?"}
 {"k": "{1} used Strength!\u0001", "v": "{1} used Strength!\u0001"}
@@ -1054,7 +1054,7 @@
 {"k": "No surfing here!", "v": "여기선 파도타기를 쓸 수 없다!"}
 {"k": "It's a large waterfall. Would you like to use Waterfall?", "v": "It’s a large waterfall. Would you like to use Waterfall?"}
 {"k": "{1} used Waterfall.", "v": "{1} used Waterfall."}
-{"k": "A wall of water is crashing down with a mighty roar.", "v": "A wall of water is crashing down with a mighty roar."}
+{"k": "A wall of water is crashing down with a mighty roar.", "v": "큰 소리를 내며 물이 흘러 떨어진다!"}
 {"k": "The sea is deep here. Would you like to use Dive?", "v": "The sea is deep here. Would you like to use Dive?"}
 {"k": "{1} used Dive.", "v": "{1} used Dive."}
 {"k": "The sea is deep here. A Pokémon may be able to go underwater.", "v": "이 근처는 바다가 깊다. 포켓몬이라면 잠수할 수 있을지도 모른다."}
@@ -1063,7 +1063,7 @@
 {"k": "This is in use already.", "v": "This is in use already."}
 {"k": "Want to return to the healing spot used last in {1}?", "v": "Want to return to the healing spot used last in {1}?"}
 {"k": "Want to escape from here and return to {1}?", "v": "Want to escape from here and return to {1}?"}
-{"k": "The sweet scent faded for some reason...", "v": "The sweet scent faded for some reason..."}
+{"k": "The sweet scent faded for some reason...", "v": "무슨 이유에선지 달콤한향기는 사라졌다..."}
 {"k": "There appears to be nothing here...", "v": "There appears to be nothing here..."}
 {"k": "Encounter type out of range", "v": "Encounter type out of range"}
 {"k": "It's soft, earthy soil.", "v": "It’s soft, earthy soil."}
@@ -3575,7 +3575,7 @@
 {"k": "Acceso a los Dex", "v": "도감 접근"}
 {"k": "Activar Revanchas del Celular", "v": "휴대전화 재대결 활성화"}
 {"k": "Gestionar Regalos Misteriosos", "v": "이상한 기프트 관리"}
-{"k": "Opciones de la Guardería", "v": "기르미집 설정"}
+{"k": "Opciones de la Guardería", "v": "키우미집 설정"}
 {"k": "Eclosión rápida", "v": "빠른 부화"}
 {"k": "Estado de los Pokémon errantes", "v": "배회 포켓몬 상태"}
 {"k": "Avanzar errantes", "v": "배회 포켓몬 이동"}
@@ -4781,7 +4781,7 @@
 {"k": "{1:s} (Nv{2:d})", "v": "{1:s} (Lv.{2:d})"}
 {"k": "Cancelar", "v": "그만둔다"}
 {"k": "No se puede guardar el huevo", "v": "알은 맡길 수 없다"}
-{"k": "Pareja de la Guardería", "v": "기르미집의 짝"}
+{"k": "Pareja de la Guardería", "v": "키우미집의 짝"}
 {"k": "Es un suelo blando y fértil.", "v": "부드럽고 기름진 흙이다."}
 {"k": "Fertilizar", "v": "비료주기"}
 {"k": "Plantar Baya", "v": "열매 심기"}
@@ -4913,7 +4913,7 @@
 {"k": "Esta roca se podría romper. ¿Quieres usar Golpe roca?", "v": "이 바위는 부술 수 있을 것 같다. 바위깨기를 쓸까?"}
 {"k": "¡{1} ha usado Golpe roca!", "v": "{1}\\j[은,는] 바위깨기를 썼다!"}
 {"k": "Es una roca resistente, pero un Pokémon podría destrozarla.", "v": "단단한 바위지만 포켓몬이라면 부술 수 있을지도 모른다."}
-{"k": "Fuerza permite desplazar rocas.", "v": "괴력은 바위를 밀어 움직일 수 있습니다."}
+{"k": "Fuerza permite desplazar rocas.", "v": "괴력 덕분에 바위를 밀어 움직일 수 있다!"}
 {"k": "Es una roca enorme, pero un Pokémon podría ser capaz de desplazarla.", "v": "거대한 바위지만 포켓몬이라면 밀어낼 수 있을지도 모른다."}
 {"k": "¿Quieres utilizar Fuerza", "v": "괴력을 쓸까"}
 {"k": "¡{1} ha usado Fuerza!\u0001", "v": "{1}\\j[은,는] 괴력을 썼다!\u0001"}
@@ -4938,7 +4938,7 @@
 {"k": "Ya se está utilizando.", "v": "이미 사용 중이다."}
 {"k": "¿Quieres regresar al último lugar de curación en {1}?", "v": "{1}에서 마지막으로 회복했던 장소로 돌아갈까?"}
 {"k": "¿Quieres escapar de aquí y regresar a {1}?", "v": "여기서 빠져나가 {1}\\j[으로,로] 돌아갈까?"}
-{"k": "El dulce aroma se desvaneció por alguna razón...", "v": "달콤한향기가 어째서인지 사라졌다..."}
+{"k": "El dulce aroma se desvaneció por alguna razón...", "v": "무슨 이유에선지 달콤한향기는 사라졌다..."}
 {"k": "Parece que no hay nada aquí...", "v": "여기에는 아무것도 없는 것 같다..."}
 {"k": "Tipo de encuentro fuera de rango", "v": "인카운터 타입이 범위를 벗어남"}
 {"k": "El Repelente dejó de tener efecto...", "v": "스프레이의 효과가 떨어졌다..."}
@@ -5144,7 +5144,7 @@
 {"k": "Combate", "v": "배틀"}
 {"k": "ÁRBITRO: ¡{1} VS {2}!\n¡Que comience el combate!\\wtnp[20]", "v": "심판: {1} VS {2}!\n배틀 시작!\\wtnp[20]"}
 {"k": "Hay unas espinas demasiado peligrosas como para pasar.\u0001", "v": "지나가기엔 너무 위험한 가시가 있다.\u0001"}
-{"k": "¿Quieres usar Corte?", "v": "거합베기를 쓸까?"}
+{"k": "¿Quieres usar Corte?", "v": "풀베기를 쓸까?"}
 {"k": "Hay unas espinas demasiado peligrosas como para pasar.", "v": "지나가기엔 너무 위험한 가시가 있다."}
 {"k": "Por alguna razón, no se pudo regresar el objeto a la mochila.", "v": "어째선지 도구를 가방으로 되돌리지 못했다."}
 {"k": "?Quieres plantar una Baya?", "v": "나무열매를 심을까?"}
