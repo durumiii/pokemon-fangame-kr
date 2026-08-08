@@ -29,6 +29,7 @@ NOTES = HERE / "fixnotes.jsonl"
 JOIN = HERE / "data" / "map-speaker-join.jsonl.gz"
 ATTR = HERE / "data" / "speaker-attr.jsonl.gz"
 GROUPS = HERE / "sprite-groups.json"
+ICON = HERE.parent / "webapp" / "favicon.png"   # 배포판 스튜디오와 같은 아이콘
 
 _ctx = None  # 조인표·귀속표 지연 로드
 
@@ -488,6 +489,13 @@ class H(BaseHTTPRequestHandler):
             qs = urllib.parse.parse_qs(u.query)
             hits, trunc = search(qs.get("q", [""])[0], qs.get("file", [""])[0])
             self._json({"hits": chips(hits), "truncated": trunc})
+        elif u.path == "/favicon.png":
+            body = ICON.read_bytes()
+            self.send_response(200)
+            self.send_header("Content-Type", "image/png")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
         elif u.path == "/tagvals":
             qs = urllib.parse.parse_qs(u.query)
             self._json({"vals": tag_values(qs.get("tag", [""])[0],
@@ -572,8 +580,22 @@ class H(BaseHTTPRequestHandler):
 
 def main():
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8787
-    print(f"http://localhost:{port}  (중지: Ctrl+C)", flush=True)
-    ThreadingHTTPServer(("127.0.0.1", port), H).serve_forever()
+    url = f"http://localhost:{port}"
+    try:                              # 자리를 잡은 뒤에 알린다 — 죽은 주소로 창을 열지 않게
+        srv = ThreadingHTTPServer(("127.0.0.1", port), H)
+    except OSError as e:
+        sys.exit(f"{port}번 포트를 열 수 없습니다({e}) — 이미 떠 있는 스튜디오가 있는지 보세요.")
+    print(f"{url}  (중지: Ctrl+C)", flush=True)
+    # 바탕화면 바로가기로 띄우면 브라우저까지 열린다. ⚠ 이 WSL은 PATH에 윈도우 경로를
+    # 안 붙이므로(appendWindowsPath 꺼짐) powershell.exe는 절대경로여야 잡힌다.
+    PS = "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe"
+    if "--no-open" not in sys.argv and Path(PS).exists():
+        try:
+            subprocess.Popen([PS, "-NoProfile", "-Command", f"Start-Process '{url}'"],
+                             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        except OSError:
+            pass                      # WSL 밖(리눅스 데스크톱·원격)에서는 그냥 넘어간다
+    srv.serve_forever()
 
 
 if __name__ == "__main__":

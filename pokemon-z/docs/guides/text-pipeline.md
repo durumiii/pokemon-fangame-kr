@@ -84,6 +84,23 @@ dat 포맷 문제를 만났을 때.
 `build.py`까지 돌린다. **정본을 직접 고치므로 회수(`harvest.py`)가 필요 없다** — dat를
 고치는 웹 스튜디오([reports](reports.md))와 갈리는 자리가 여기다.
 
+띄우면 브라우저가 따라 열린다(`--no-open`으로 끈다). ⚠ 이 WSL은 PATH에 윈도우 경로를
+안 붙이므로 `powershell.exe`를 **절대경로**로 부른다 — 짧은 이름으로 바꾸면 조용히
+안 열린다. 포트가 이미 쓰이면 뜨기 전에 그 자리에서 멈추고 알린다.
+
+**쓰는 법은 도구 안 [도구] → [도움말]이 정본이다** — 저장·빌드가 무엇을 건드리는지,
+태그 문법, 칩 읽는 법, 되돌리기 규칙이 한 화면에 있다. 이 절은 그 화면이 어디서 오는지만
+적는다.
+
+바탕화면 바로가기(`C:\Users\durumii\Desktop\Z 번역 스튜디오.lnk`, 이 기계에만 있다)는
+`wsl.exe -d Ubuntu -- bash -lc "cd <저장소>/pokemon-z && exec ~/.local/bin/uv run
+translate/fixgui.py"`를 최소화 창으로 띄운다. 아이콘은 배포판과 같은 그림
+(`webapp/favicon.png` → `translate/fixgui.ico`, 윈도우 쪽 사본 `C:\Users\durumii\fixgui.ico`
+— 바로가기 아이콘은 UNC 경로에서 빈칸으로 뜰 때가 있어 사본을 쓴다). 다시 만들려면
+`uv run --with pillow python -c "from PIL import Image;
+Image.open('webapp/favicon.png').convert('RGBA').save('translate/fixgui.ico',
+sizes=[(16,16),(32,32),(48,48),(64,64),(128,128),(192,192)])"`.
+
 **검색은 태그를 받는다** — `분류:도구 맵:리엔소 화자:접객 상태:수정 자유어`. 같은 태그를
 여럿 주면 OR, 다른 태그끼리는 AND다(배포판 스튜디오와 같은 문법). 태그 이름을 치면 값
 후보가 뜨고 Tab으로 채운다. 값은 이렇게 맞춘다 — 분류는 절 번호·절 이름·파일명, 맵은
