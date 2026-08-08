@@ -93,7 +93,7 @@ dat를 직접 문지르는 스크립트를 부득이 쓰면 직후에 `export.py
 
 경로는 **llmgateway + gemini-3.6-flash + reasoning_effort=minimal**로 확정됐고,
 실측 비용은 **전량 초벌 ~$8(상한 $10)**이다. 산정 근거·설정·범위는 실행 승인 문서
-[`z-batch-run-proposal.md`](z-batch-run-proposal.md)가 정본이다. 애초 이 자리에 있던
+[`z-batch-run-proposal.md`](2026-08-02-batch-run-proposal.md)가 정본이다. 애초 이 자리에 있던
 Anthropic Batch API 기준 표($4~19)는 그 결정 이전의 산정이라 지웠다 — 씽킹 과금
 발견과 effort 실측이 그 표를 무효로 만들었다(같은 문서 4절).
 
@@ -147,7 +147,7 @@ Haiku 4.5 / 저가 게이트웨이 모델)로 돌려 나란히 놓고 사용자�
    프롬프트 v1(`prompt.md`) · 검증기 7종(`validate.py`, 파일럿 산출로 보정 —
    Fable 판정관이 잡은 #72를 스스로 잡음).
 7. **초벌 배치 — 됐다(2026-08-02).** 실행 계획서
-   [`z-batch-run-proposal.md`](z-batch-run-proposal.md) 승인 후 발사.
+   [`z-batch-run-proposal.md`](2026-08-02-batch-run-proposal.md) 승인 후 발사.
    14,242행·597청크·gemini-3.6-flash(reasoning minimal — 씽킹은 존재 강제이나
    양은 조절됨, 실측 A/B로 품질 동급·비용 3.2배 확인). 러너는 `batch.py`
    (재개·ETA·redo·apply). 결과: 통과 14,206(변경 12,265 반영) · 반려 재시도 후

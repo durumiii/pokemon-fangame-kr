@@ -5,7 +5,7 @@
 이 둘은 사람 말이라 재번역 사정권에 들어가는데 말투표(`translate/voices.md`)에는
 고정 인물로 올릴 수 없다. 그래서 자리마다 장면을 읽어 실제 화자를 가려 표로 남긴다.
 
-기계가 읽는 정본은 [`2026-08-06-anon-speakers.jsonl`](2026-08-06-anon-speakers.jsonl)
+기계가 읽는 정본은 [`2026-08-06-anon-speakers.jsonl`](../../../translate/data/2026-08-06-anon-speakers.jsonl)
 (한 줄 = 한 자리, 256줄). 이 문서는 그 표의 갈래별 정리와 판정 근거다.
 
 ## 규모 — 지시서의 수치와 실측이 다르다

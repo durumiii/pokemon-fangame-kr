@@ -3,7 +3,7 @@
 LLM 전량 재번역 배치를 설계하기 위한 기초 실측이다. 「번역 대상이 정확히 무엇이고
 얼마나 되는가」를 수치로 못박는 것이 목적이고, 모든 수에 세는 방법을 붙였다.
 
-집계 스크립트는 [`mod/z/translate/survey.py`](../../mod/z/translate/survey.py)다
+집계 스크립트는 [`mod/z/translate/survey.py`](../../../translate/survey.py)다
 (`uv run survey.py`, `--json`으로 원시 값). 절 성격 분류·상태 판정·마크업 정규식이
 전부 그 한 파일 안에 있다. 아래 표는 그 산출을 옮긴 것이다.
 

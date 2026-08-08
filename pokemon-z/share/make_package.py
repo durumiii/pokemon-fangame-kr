@@ -31,6 +31,7 @@ usage: uv run make_package.py [--variant runa|debug|clean|mods] [--font dppt|gal
 """
 import json
 import os
+import re
 import shutil
 import sys
 from pathlib import Path
@@ -78,6 +79,15 @@ if not (_FANLIB_HOME / "fanlib" / "modstore.py").exists():
     sys.exit(f"fangame-library를 찾지 못했습니다: {_FANLIB_HOME} — FANGAME_LIBRARY 환경변수로 경로를 주세요")
 sys.path.insert(0, str(_FANLIB_HOME))
 from fanlib import modstore  # noqa: E402
+
+
+def _flatten_repo_links(text: str) -> str:
+    """저장소 안을 가리키는 마크다운 링크를 글자만 남긴다.
+
+    대장은 repo 문서라 서로를 상대경로로 가리키는데, 묶음에는 docs/가 안 들어가서
+    받는 쪽에서는 전부 죽은 링크가 된다. 바깥 주소(http)와 앵커는 그대로 둔다.
+    """
+    return re.sub(r"\[([^\]]+)\]\((?!https?://|#)[^)]*\)", r"\1", text)
 
 
 def _embed_card(final: Path, name: str, variant: str):
@@ -388,7 +398,9 @@ def main():
                   "speaker-aliases.json", "persona-table.jsonl", "sprite-groups.json"):
         shutil.copy2(TRANSLATE / fname, kit / fname)
     for fname in ("glossary.md", "voices.md"):   # 판정 대장은 docs/ledger에 산다
-        shutil.copy2(TRANSLATE.parent / "docs" / "ledger" / fname, kit / fname)
+        src = TRANSLATE.parent / "docs" / "ledger" / fname
+        (kit / fname).write_text(_flatten_repo_links(src.read_text(encoding="utf-8")),
+                                 encoding="utf-8")
     for fname in ("canon.jsonl", "aliases.jsonl", "exceptions.jsonl", "messages.jsonl.gz"):
         src = TRANSLATE / "canon" / fname
         if src.exists():  # aliases는 아직 빈 개념일 수 있다

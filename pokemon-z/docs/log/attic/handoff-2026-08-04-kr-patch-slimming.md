@@ -23,7 +23,7 @@ modkit 실기 세션에서 결정된 방향을 넘긴다. **한글패치 통합 
 ## 작업 내용
 
 > **작업 1 완료 (2026-08-04, 이 프로젝트 세션)** — 분류 정본은
-> [`docs/design/z-kr-core-section-triage.md`](design/z-kr-core-section-triage.md).
+> [`docs/design/z-kr-core-section-triage.md`](../2026-08-04-kr-core-section-triage.md).
 > 요약: 한글패치는 혼자 작동해야 하므로 `Scripts.rxdata`는 계속 싣되, 수정 자리를
 > 6섹션(27줄)+조사 109줄로 줄인다. 22섹션 68줄은 UI Text KR로 이관하고, 보간 수술
 > 6줄은 치환표가 대신해 없어진다. 성격 25종 1줄은 훅이 못 잡아 번역표로 올리는 편이

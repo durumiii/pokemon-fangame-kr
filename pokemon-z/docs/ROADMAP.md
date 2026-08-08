@@ -24,7 +24,7 @@
 | Z-16 | 언어 선택 시 `RandomObjects` NameError 크래시 — 코어는 순정과 동일(실측), Z-15와 같은 설치 결손 유력. 제보자에게 `Data` 파일 수를 묻는다 | P-1 | 작음 | [보관분](log/reports/설문지%20응답%20시트2.jsonl) |
 | Z-11 | Z-GUI 상태이상 아이콘 배포 경로 — 「쇠락」 아이콘이 패치 zip에 없다 | P-2 | 작음 | [Z-11](tickets/Z-11.md) |
 | Z-12 | 실기 확인 묶음 — 앙코르 · `\j[` 노출 · 「옛 고목내마을열쇠」 잘림 · 맵21:17 화자 상속 | P-1 | 중간 | [Z-12](tickets/Z-12.md) |
-| Z-13 | modkit 복제 설치본 사고 후속 — 제거 앞 소유 확인 문, fanlib 로깅 연결 | P-3 | 중간 | [핸드오프](../../sketches/essentials-modkit/docs/handoff-2026-08-07-clone-install-wipe.md) |
+| Z-13 | modkit 복제 설치본 사고 후속 — 제거 앞 소유 확인 문, fanlib 로깅 연결 | P-3 | 중간 | [Z-13](tickets/Z-13.md) |
 | Z-28 | 중복 원문의 번역 갈림 — 주연 305개, 같은 원문이 자리마다 다르게 번역돼 있다 | P-3 | 중간 | [Z-28](tickets/Z-28.md) |
 | Z-29 | 말투표 잔여 — 이름 키 불일치 2건과 격 판정 도구의 호칭 오판 | P-2 | 작음 | [Z-29](tickets/Z-29.md) |
 | Z-30 | 소소 셋 — 맵16 지명 갈림 · 카놀라 `Sacrebleu` · 위치표 영어 잔존 40행 | P-3 | 작음 | [Z-30](tickets/Z-30.md) |

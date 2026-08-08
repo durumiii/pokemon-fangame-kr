@@ -3,10 +3,10 @@
 2026-08-02. 이 문서는 배경 지식이 전혀 없는 독자를 전제로 쓴다. 이 작업의 대상이
 무엇이고, 어떤 구조 위에서, 어떤 순서로 진행되어, 무엇을 남기는지를 처음부터 끝까지
 적는다. 수치와 코드 근거는 같은 날의 조사 문서 둘에서 온다 —
-[말뭉치 전수 조사](../research/2026-08-02-z-corpus-survey.md)와
-[텍스트 적용 구조 조사](../research/2026-08-02-z-intl-architecture.md).
-모델 선정 근거는 [파일럿 비교](../research/2026-08-02-z-pilot-comparison.md)와
-[파일럿 판정](../research/2026-08-02-z-pilot-adjudication.md)이다.
+[말뭉치 전수 조사](research/2026-08-02-z-corpus-survey.md)와
+[텍스트 적용 구조 조사](research/2026-08-02-z-intl-architecture.md).
+모델 선정 근거는 [파일럿 비교](research/2026-08-02-z-pilot-comparison.md)와
+[파일럿 판정](research/2026-08-02-z-pilot-adjudication.md)이다.
 
 ## 1. 대상이 무엇인가
 
