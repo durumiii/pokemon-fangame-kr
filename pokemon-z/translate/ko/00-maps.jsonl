@@ -2547,8 +2547,8 @@
 {"map": 65, "n": 14}
 {"k": "¡<i>Bonjour</i>! Trataré de ser breve. Soy <b>Lèa Olivier</b>, la <b>Profesora Olivier</b> para ti.", "v": "<i>Bonjour</i>! 길게 말하진 않을게. 나는 <b>레아 올리비에</b>, 너에겐 <b>올리비에 박사</b>란다."}
 {"k": "<b>Olivier:</b> Me dedico a la investigación Pokémon en la región de <b>Kalos</b>. En concreto, soy especialista en el campo de la Alquimia Pokémon.", "v": "<b>올리비에:</b> 나는 <b>칼로스</b> 지방에서 포켓몬을 연구하고 있어. 정확히는 포켓몬 연금술 분야의 전문가란다."}
-{"k": "Si estás leyendo esto, es porque te he admitido en mi programa de alumnado para jóvenes promesas. Te congratulo.", "v": "이 편지를 읽고 있다면, 그건 네가 내 유망주 육성 프로그램에 선발되었다는 뜻이야. 축하를 보내마.\n"}
-{"k": "Es necesario, por tanto, que te desplaces hasta <b>Kalos</b> desde la región vecina en la que resides.", "v": "그러니, 넌 네가 살고 있는 이웃 지방에서 <b>칼로스</b>지방으로 와 주어야 한단다.\n"}
+{"k": "Si estás leyendo esto, es porque te he admitido en mi programa de alumnado para jóvenes promesas. Te congratulo.", "v": "이 편지를 읽고 있다면, 그건 네가 내 유망주 육성 프로그램에 선발되었다는 뜻이야. 축하를 보내마."}
+{"k": "Es necesario, por tanto, que te desplaces hasta <b>Kalos</b> desde la región vecina en la que resides.", "v": "그러니, 넌 네가 살고 있는 이웃 지방에서 <b>칼로스</b>지방으로 와 주어야 한단다."}
 {"k": "¡Ah! No te preocupes por los costes, que el viaje está pagado por el rey.", "v": "아! 여비는 국왕 폐하께서 부담하시니 비용 걱정은 하지 마렴."}
 {"k": "<b>Olivier:</b> Los Pokémon son criaturas curiosísimas llenas de propiedades increíbles. La Alquimia Pokémon consiste en usar estas propiedades para el beneficio de todos.", "v": "<b>올리비에:</b> 포켓몬은 놀라운 능력으로 가득 찬 아주 흥미로운 생물이야. 포켓몬 연금술이란 이런 능력을 모두의 이익을 위해 활용하는 것이란다."}
 {"k": "¡Pero también sirven para combatir y hasta para tenerlos de amigos! Todos ellos están deseando conocerte.", "v": "하지만 배틀을 할 수도 있고, 친구가 될 수도 있지! 포켓몬들 모두 널 정말 만나고 싶어 해."}
@@ -6788,7 +6788,7 @@
 {"k": "Uno de vosotros deberá cruzar el umbral y desafiarles, sin descanso.", "v": "너희들 중 한 명이 문턱을 넘어 쉬지 않고 그들에게 도전해야 해."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] Ya veo. El que cruce esa puerta ya no podrá salir hasta derrotar a esos 4 caballeros.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 그렇다면, 저 문을 넘어선 사람은 네 명의 기사를 쓰러뜨릴 때까지 벗어날 수 없다는거죠."}
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] ¡Ah! ¡Es como una de esas <b>Ligas Pokémon</b> que se han puesto de moda en algunos lugares!", "v": "\\c[6]<b>미라:</b>\\c[0] 아! 요즘 일부 지역에서 유행한다는 그 <b>포켓몬리그</b> 같은 거군!"}
-{"k": "\\c[3]<b>Crisanto:</b>\\c[0] No quería caer en una analogía tan obvia, pero entiendo que es similar a eso.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 그렇게 뻔한 비유를 들고 싶진 않았지만, 뭐 비슷한 거라고 보면 되겠군요.\n"}
+{"k": "\\c[3]<b>Crisanto:</b>\\c[0] No quería caer en una analogía tan obvia, pero entiendo que es similar a eso.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 그렇게 뻔한 비유를 들고 싶진 않았지만, 뭐 비슷한 거라고 보면 되겠군요."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] \\PN, tú eres sin duda alguna el más fuerte de los tres. Si alguien puede superar la prueba, eres tú.", "v": "\\c[3]<b>크리산토:</b>\\c[0] \\PN, 너는 의심할 여지 없이 우리 셋 중 가장 강해. 이 시련을 돌파할 사람이 있다면 오직 너뿐이야!"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] \\PN, tú eres sin duda alguna la más fuerte de los tres. Si alguien puede superar la prueba, eres tú.", "v": "\\c[3]<b>크리산토:</b>\\c[0] \\PN, 너는 의심할 여지 없이 우리 셋 중 가장 강해. 이 시련을 돌파할 사람이 있다면 오직 너뿐이야!"}
 {"k": "Pero, ¿cargarías con esa responsabilidad?", "v": "하지만 그 책임을 짊어져 줄 수 있겠어?"}
@@ -8997,7 +8997,7 @@
 {"k": "Por haber quemado el Incienso, solo puedes continuar con 5 Pokémon como máximo en tu equipo.", "v": "향을 태웠으므로, 지닌 포켓몬을 최대 5마리까지만 두고 진행할 수 있습니다."}
 {"k": "Por haber quemado los Inciensos, solo puedes continuar con 4 Pokémon como máximo en tu equipo.", "v": "향을 태웠으므로, 지닌 포켓몬을 최대 4마리까지만 두고 진행할 수 있습니다."}
 {"k": "¡Somos las nietas de las brujas que no conseguisteis quemar! No... Espera... La bruja soy yo. ¡Soy la abuela de las nietas de las brujas que no conseguisteis quemar!", "v": "“우리는 너희가 태워 죽이지 못한 마녀들의 손녀다!” 아니… 잠깐… 마녀는 바로 나잖아. “나는 너희가 태워 죽이지 못한 마녀들의 손녀들의 할머니다!”"}
-{"k": "Anturia... ¡he hecho todo lo que he podido! ¡Lo siento!", "v": "안투리아님... 제가 할 수 있는 건 다 해봤어요! 죄송해요!\n"}
+{"k": "Anturia... ¡he hecho todo lo que he podido! ¡Lo siento!", "v": "안투리아님... 제가 할 수 있는 건 다 해봤어요! 죄송해요!"}
 {"k": "Quien mucho abarca, poco aprieta. Está claro que no todas podemos destacar en la brujería y con los Pokémon como la gran Anturia.", "v": "욕심이 과하면 일을 그르치는 법이니라! 위대한 안투리아님처럼 우리 모두가 마법과 포켓몬 모두에 뛰어날 수는 없는 법이지."}
 {"k": "¿A qué casa te ha enviado el Sombrero Seleccionador? A mí me ha enviado a Slytherin.", "v": "분류모자가 널 어느 기숙사로 보냈느냐? 난 슬리데린으로 보내주던걸."}
 {"k": "¡Aaah! ¡Que sepas que he perdido porque Saturno estaba alineado con la constelación de Gogoat!", "v": "아아! 내가 진 건 토성이 고고트자리와 일직선상에 있었기 때문이라는 걸 알아둬!"}
