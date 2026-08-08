@@ -3192,8 +3192,8 @@
 {"k": "Cambio", "v": "교체"}
 {"k": "Mantener", "v": "유지"}
 {"k": "Tecla Correr", "v": "달리기 키"}
-{"k": "Sostener", "v": "들기"}
-{"k": "Pulsar", "v": "누르기"}
+{"k": "Sostener", "v": "홀드"}
+{"k": "Pulsar", "v": "토글"}
 {"k": "Marco de diálogo", "v": "대화창 테두리"}
 {"k": "Marco del menú", "v": "메뉴 테두리"}
 {"k": "Estilo de fuente", "v": "글꼴 스타일"}
@@ -6407,7 +6407,7 @@
 {"k": "¡Tu equipo está rodeado de púas!", "v": "아군 팀 주위에 압정이 깔렸다!"}
 {"k": "¡{1} prepara una Lanza Relámpago!", "v": "{1}\\j[이,가] 번개창을 준비한다!"}
 {"k": "Vsync", "v": "수직동기화"}
-{"k": "Ocultar icono turbo", "v": "배속 아이콘 숨기기"}
+{"k": "Ocultar icono turbo", "v": "배속 아이콘"}
 {"k": "¿Qué objeto deseas buscar?", "v": "어떤 도구를 찾을까?"}
 {"k": "Puedes registrar objetos de la Bolsa para usarlos con esta tecla.", "v": "가방의 도구를 등록해 이 키로 쓸 수 있습니다."}
 {"k": ">99", "v": ">99"}
