@@ -6175,14 +6175,14 @@
 {"k": "Hay un ingrediente o cantidad de ingredientes no válido.", "v": "올바르지 않은 재료이거나 재료의 양이 잘못되었습니다."}
 {"k": "¡El {1} se ha debilitado!", "v": "{1}\\j[은,는] 쓰러졌다!"}
 {"k": "¡El {1} salvaje dejó\ncaer {2} <icon=bagPocket#{pocket}>!", "v": "야생 {1}\\j[이,가]\n{2} <icon=bagPocket#{pocket}>\\j[을,를] 떨어뜨렸다!"}
-{"k": "caduco", "v": "쇠락"}
+{"k": "caduco", "v": "쇠약"}
 {"k": "¡La luz ha vuelto en {1} gracias a la {2}!", "v": "{2} 덕분에 {1}의 빛이 돌아왔다!"}
 {"k": "¡{1} está perdiendo luz!", "v": "{1}\\j[이,가] 빛을 잃어가고 있다!"}
 {"k": "¡{1} ha recuperado su luz!", "v": "{1}\\j[이,가] 빛을 되찾았다!"}
-{"k": "{1} ya tiene estado Caduco.", "v": "{1}\\j[은,는] 이미 쇠락 상태다."}
+{"k": "{1} ya tiene estado Caduco.", "v": "{1}\\j[은,는] 이미 쇠약 상태다."}
 {"k": "¡{1} está perdiendo su luz!", "v": "{1}\\j[이,가] 빛을 잃어가고 있다!"}
-{"k": "¡{2} de {1} ha infligido estado Caduco a {3}!", "v": "{1}의 {2}\\j[이,가] {3}\\j[을,를] 쇠락 상태로 만들었다!"}
-{"k": "Estado: Caduco", "v": "상태: 쇠락"}
+{"k": "¡{2} de {1} ha infligido estado Caduco a {3}!", "v": "{1}의 {2}\\j[이,가] {3}\\j[을,를] 쇠약 상태로 만들었다!"}
+{"k": "Estado: Caduco", "v": "상태: 쇠약"}
 {"k": "¿Quieres añadir a {1} a tu equipo?", "v": "{1}\\j[을,를] 파티에 넣을까?"}
 {"k": "¿Por cuál lo quieres remplazar?", "v": "어느 것과 바꿀까?"}
 {"k": "{1} fue añadido a tu equipo.", "v": "{1}\\j[을,를] 파티에 넣었다."}
@@ -6289,7 +6289,7 @@
 {"k": "La Velocidad de {1} se ha incrementado mucho.", "v": "{1}의 스피드가 크게 올랐다."}
 {"k": "¡{1} entra a combatir con furia desmedida!", "v": "{1}\\j[이,가] 걷잡을 수 없는 분노로 배틀에 들어섰다!"}
 {"k": "¡{1} tintinea como una campana!", "v": "{1}\\j[이,가] 종처럼 울린다!"}
-{"k": "¡{1} se curó del estado Caduco!", "v": "{1}의 쇠락 상태가 나았다!"}
+{"k": "¡{1} se curó del estado Caduco!", "v": "{1}의 쇠약 상태가 나았다!"}
 {"k": "¿Cuántas unidades de {1} quieres usar?", "v": "{1}\\j[을,를] 몇 개 쓸까?"}
 {"k": "El nivel de {1} no ha subido.", "v": "{1}의 레벨은 오르지 않았다."}
 {"k": "Espacio", "v": "스페이스"}

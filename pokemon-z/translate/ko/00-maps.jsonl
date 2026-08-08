@@ -1895,10 +1895,10 @@
 {"k": "Nuestra Alquimista Jefa está estudiando las propiedades del bosque, ¡no dejaré que nadie interrumpa su labor intelectual!", "v": "우리 수석 연금술사님께서 숲의 성질을 연구하는 중이거든. 그 지적인 활동을 누구도 방해하게 두지 않겠다!"}
 {"k": "¿Pero de dónde has salido tú? ¡Acabas de cometer un grave error!", "v": "근데 넌 도대체 어디서 나타난 거야? 방금 큰 실수를 저질렀어!"}
 {"k": "Acabas de cometer un grave error, ¿eh? ¡La Alquimista Jefa te pondrá en tu sitio!", "v": "방금 엄청난 실수를 저질렀지, 응? 수석 연금술사님께서 널 제자리에 가져다 놓으실 거다!"}
-{"k": "Pone \"Observaciones del Team Azoth sobre el estado Caduco\". ¿Quieres leerlo?", "v": "제목이 “쇠락 상태에 대한 아조스단의 관찰 기록”이라고 되어 있네요. 읽어보시겠어요?"}
-{"k": "\"Cuando un Pokémon sufra el estado alterado Caduco, siempre que su salud esté por debajo de la mitad, recibirá un 50% más de daño.\"", "v": "“포켓몬이 쇠락 상태 이상이 되었을 때, 체력이 절반 미만인 경우 50% 더 많은 데미지를 입습니다.”"}
-{"k": "\"Algunos movimientos que pueden causar el estado Caduco son Luz Decadente y Luz Aniquiladora.\"", "v": "“쇠락 상태를 유발할 수 있는 기술로는 ‘쇠퇴의빛’과 ‘섬멸의빛’이 있습니다.”"}
-{"k": "\"La Baya Enigma es uno de los pocos remedios conocidos para revertir el estado Caduco, siempre que no sea demasiado tarde.\"", "v": "“의문열매는 쇠락 상태를 되돌릴 수 있는 몇 안 되는 알려진 치료법 중 하나이지만, 너무 늦지 않은 경우에 한한다.”"}
+{"k": "Pone \"Observaciones del Team Azoth sobre el estado Caduco\". ¿Quieres leerlo?", "v": "제목이 “쇠약 상태에 대한 아조스단의 관찰 기록”이라고 되어 있네요. 읽어보시겠어요?"}
+{"k": "\"Cuando un Pokémon sufra el estado alterado Caduco, siempre que su salud esté por debajo de la mitad, recibirá un 50% más de daño.\"", "v": "“포켓몬이 쇠약 상태 이상이 되었을 때, 체력이 절반 미만인 경우 50% 더 많은 데미지를 입습니다.”"}
+{"k": "\"Algunos movimientos que pueden causar el estado Caduco son Luz Decadente y Luz Aniquiladora.\"", "v": "“쇠약 상태를 유발할 수 있는 기술로는 ‘쇠퇴의빛’과 ‘섬멸의빛’이 있습니다.”"}
+{"k": "\"La Baya Enigma es uno de los pocos remedios conocidos para revertir el estado Caduco, siempre que no sea demasiado tarde.\"", "v": "“의문열매는 쇠약 상태를 되돌릴 수 있는 몇 안 되는 알려진 치료법 중 하나이지만, 너무 늦지 않은 경우에 한한다.”"}
 {"k": "Un pequeño arbusto bloquea el paso. Tal vez se podría cortar con algo...", "v": "작은 관목이 길을 막고 있다. 뭔가 가지고 잘라낼 수 있을지도 모르겠다..."}
 {"k": "¡La Hachuela Endeble corta el arbusto como si fuera mantequilla!", "v": "약한손도끼는 마치 버터처럼 덤불을 싹둑 잘라버립니다!"}
 {"k": "La Hachuela Endeble se ha roto...", "v": "약한손도끼가 고장 났습니다..."}
@@ -3803,7 +3803,7 @@
 {"k": "Ya has registrado esta caja.", "v": "이 상자는 이미 조사했다."}
 {"k": "Día 87 de la investigación.", "v": "수사 87일째."}
 {"k": "Los componentes que hemos traído del pantano han permitido crear un suero que acaba con la vida del Pokémon, pero genera <i>energía vital</i> durante el proceso.", "v": "늪지대에서 가져온 성분을 이용해, 포켓몬의 생명을 앗아 가는 한편 그 과정에서 <i>생명 에너지</i>를 생성하는 혈청을 만들어 냈다."}
-{"k": "Los Pokémon que sobreviven al suero entran en estado Caduco, degradándose y falleciendo a los pocos días.", "v": "혈청 투여 후에도 살아남은 포켓몬은 쇠락 상태에 빠지며, 신체가 점차 무너져 며칠 안에 죽는다."}
+{"k": "Los Pokémon que sobreviven al suero entran en estado Caduco, degradándose y falleciendo a los pocos días.", "v": "혈청 투여 후에도 살아남은 포켓몬은 쇠약 상태에 빠지며, 신체가 점차 무너져 며칠 안에 죽는다."}
 {"k": "Seguiremos investigando, ya que la energía vital extraída es de baja calidad y se descompone rápidamente.", "v": "추출한 생명 에너지는 품질이 낮고 빠르게 분해되는 만큼, 연구를 계속할 예정이다."}
 {"k": "¡Una barrera eléctrica corta el paso!", "v": "전기 장벽이 길을 막고 있다!"}
 {"k": "...", "v": "......"}
@@ -4861,7 +4861,7 @@
 {"k": "¡Era una Pokéball trampa!", "v": "함정 몬스터볼이었잖아!"}
 {"k": "Un Pokémon de tu equipo ha sido envenenado.", "v": "지닌 포켓몬 중 한 마리가 독 상태가 되었습니다."}
 {"k": "Se ruega no perturbar a los Cazadores mientras hacen su ronda.", "v": "순찰 중인 사냥꾼들을 방해하지 말아 주십시오."}
-{"k": "¿Has visto a los Pokémon en estado Caduco? Impresiona, ¿eh?", "v": "쇠락 상태의 포켓몬을 본 적 있나? 끝내주지, 어?"}
+{"k": "¿Has visto a los Pokémon en estado Caduco? Impresiona, ¿eh?", "v": "쇠약 상태의 포켓몬을 본 적 있나? 끝내주지, 어?"}
 {"k": "Gracias a los avances del <b>Team Azoth</b>, cada vez somos capaces de extraer la esencia vital de un mayor volumen de criaturas.", "v": "<b>아조스단</b>의 발전 덕분에, 우리는 더 많은 포켓몬에게서 생명 정수를 추출할 수 있게 됐거든."}
 {"k": "Con toda esa esencia, podremos llevar a buen término nuestros propósitos.", "v": "그 모든 정수가 있다면 우리의 목적을 성공적으로 완수할 수 있지."}
 {"k": "...", "v": "......"}
@@ -4898,9 +4898,9 @@
 {"k": "¿Quieres saber cómo llegar a Pueblo Vánitas? Pero todo tiene un precio...", "v": "고목내마을로 가는 길을 알고 싶나? 하지만 세상에 공짜는 없다..."}
 {"k": "El tesón de tus Pokémon ha pagado con creces.", "v": "네 포켓몬들의 끈기가 값진 결과를 냈구나."}
 {"k": "Hay una puerta que conduce a Pueblo Vánitas, pero el mecanismo de apertura está oculto en un lugar profundo. ¿Y si tomas una ruta de descenso?", "v": "고목내마을로 이어지는 문이 있지만, 개폐 장치는 깊은 곳에 숨겨져 있다. 아래로 내려가는 길을 찾아보는 건 어떤가?"}
-{"k": "Los Pokémon se están consumiendo por culpa del estado Caduco, ¿qué podemos hacer ante tal desgracia? Solo nos queda luchar.", "v": "포켓몬들이 쇠락으로 인해 죽어가고 있다. 이 비극 앞에서 뭘 할 수 있겠나? 싸우는 수밖에!"}
+{"k": "Los Pokémon se están consumiendo por culpa del estado Caduco, ¿qué podemos hacer ante tal desgracia? Solo nos queda luchar.", "v": "포켓몬들이 쇠약으로 인해 죽어가고 있다. 이 비극 앞에서 뭘 할 수 있겠나? 싸우는 수밖에!"}
 {"k": "¿Qué puede hacer el hombre ante tanta maldad?", "v": "이토록 거대한 악 앞에서 인간은 무엇을 할 수 있는가?"}
-{"k": "¿Cómo podemos revertir el estado Caduco? Tenemos que encontrar la cura a toda costa.", "v": "쇠락 상태를 어떻게 해결해야 하지? 무슨 수를 써서라도 치료법을 찾아야 한다."}
+{"k": "¿Cómo podemos revertir el estado Caduco? Tenemos que encontrar la cura a toda costa.", "v": "쇠약 상태를 어떻게 해결해야 하지? 무슨 수를 써서라도 치료법을 찾아야 한다."}
 {"k": "No habrás pisado una de nuestras trampas de cazador, ¿no? Te contaré cómo distinguirlas si me vences.", "v": "설마 우리 사냥꾼의 덫을 밟은 건 아니겠지? 나한테 이기면 덫을 구별하는 방법을 가르쳐주마."}
 {"k": "No pareces de los que cae fácilmente en una trampa.", "v": "쉽게 덫에 걸려들 위인은 아닌 것 같군."}
 {"k": "Si ves una Pokéball en el suelo, asegúrate de que no sea de un tono ligeramente morado. Esas Pokéball son trampas que hemos dejado para las brujas.", "v": "바닥에 몬스터볼이 보이거든 보랏빛이 살짝 돌지 않는지 잘 확인해라. 그런 몬스터볼은 우리가 마녀들을 위해 놓아둔 덫이다."}
@@ -4916,7 +4916,7 @@
 {"k": "\\c[9]<b>???:</b>\\c[0] ...", "v": "\\c[9]<b>???:</b>\\c[0] ..."}
 {"k": "No tienes pinta de cazador. ¿Seguro que este es el lugar en el que quieres estar?", "v": "사냥꾼처럼 보이진 않는데. 정말 이곳에 있고 싶은 건가?"}
 {"k": "No tienes pinta de cazadora. ¿Seguro que este es el lugar en el que quieres estar?", "v": "사냥꾼처럼 보이진 않는데. 정말 이곳에 있고 싶은 건가?"}
-{"k": "Incluso mis más veteranos compañeros de batalla están enloqueciendo ante la presencia continuada de Pokémon Caduco.", "v": "가장 베테랑인 내 전우들조차 쇠락 상태인 포켓몬이 계속 나타나자 미쳐가고 있다."}
+{"k": "Incluso mis más veteranos compañeros de batalla están enloqueciendo ante la presencia continuada de Pokémon Caduco.", "v": "가장 베테랑인 내 전우들조차 쇠약 상태인 포켓몬이 계속 나타나자 미쳐가고 있다."}
 {"k": "Sed indulgentes con ellos, por favor. Lo están haciendo lo mejor que pueden.", "v": "부디 그들을 너그러이 이해해주기를. 그들도 최선을 다할 뿐이니."}
 {"k": "Soy <b>Belladona</b>, la Regente de <b>Pueblo Vánitas</b>.", "v": "나는 <b>고목내마을</b>의 섭정인 <b>벨라도나</b>다."}
 {"k": "<b>Belladona:</b> La oscuridad y miseria que estás viendo en esta zona es obra del <b>Team Azoth</b>.", "v": "<b>벨라도나:</b> 이 지역에서 네가 보고 있는 모든 어둠과 비참함은 바로 <b>아조스단</b>의 소행이지."}
@@ -4999,7 +4999,7 @@
 {"k": "¿Revisar Hall de Fama?", "v": "명예의 전당을 살펴볼까?"}
 {"k": "Has perdido el reto Nuzlocke, has fallado a todos los Pokémon que te han acompañado durante la aventura.", "v": "너는 너즐록 챌린지에서 패배했고, 모험을 함께해 온 모든 포켓몬을 실망시켰다."}
 {"k": "Puedes seguir jugando de forma normal, pero recuerda que has fracasado.", "v": "게임을 계속할 수는 있지만, 네가 실패했다는 사실을 명심해라."}
-{"k": "La regente <b>Belladona</b> busca afanosamente una cura para el estado Caduco.", "v": "<b>벨라도나</b> 섭정은 쇠락 상태의 치료법을 필사적으로 찾고 있다."}
+{"k": "La regente <b>Belladona</b> busca afanosamente una cura para el estado Caduco.", "v": "<b>벨라도나</b> 섭정은 쇠약 상태의 치료법을 필사적으로 찾고 있다."}
 {"k": "Cuando no está en su Bastión, podrás encontrarla trabajando en el <b>Hospicio Caduco</b>, nuestro principal taller de alquimia.", "v": "요새에 없을 때는 우리 주요 연금술 작업장인 <b>카두코 구호소</b>에서 일하고 있을 거다."}
 {"k": "Esos pérfidos villanos del <b>Team Azoth</b>... no solo me derrotaron en combate cinco contra uno, sino que me robaron a mi Pokémon después de ello.", "v": "<b>아조스단</b>의 악독한 녀석들... 5 대 1 배틀로 날 쓰러뜨린 것도 모자라 내 포켓몬까지 훔쳐 갔다."}
 {"k": "Hay una oscura plaza en el infierno reservada para cada uno de ellos.", "v": "지옥에 그 녀석들 몫의 어두운 자리가 하나씩 준비되어 있을 거다."}
@@ -5136,13 +5136,13 @@
 {"k": "\\c[5]<b>Melia:</b>\\c[0] Esto va a terminar mal, \\PN.", "v": "\\c[5]<b>멜리아:</b>\\c[0] 이거 분위기가 안 좋게 돌아가는데, \\PN."}
 {"k": "Estamos tentando a la suerte demasiadas veces ya...", "v": "요새 너무 아슬아슬하게 운에만 기대는 것 같아..."}
 {"k": "¡Por favor, libéranos del <b>Team Azoth</b>!", "v": "제발, 저희를 <b>아조스단</b>에게서 구해주세요!"}
-{"k": "Estamos tratando de descubrir una cura contra el estado <b>Caduco</b>, para cesar con el sufrimiento de los pobres Pokémon.", "v": "저희는 불쌍한 포켓몬들의 고통을 덜어주고자 <b>쇠락</b> 상태의 치료법을 찾으려는 것뿐이에요."}
+{"k": "Estamos tratando de descubrir una cura contra el estado <b>Caduco</b>, para cesar con el sufrimiento de los pobres Pokémon.", "v": "저희는 불쌍한 포켓몬들의 고통을 덜어주고자 <b>쇠약</b> 상태의 치료법을 찾으려는 것뿐이에요."}
 {"k": "Pero el <b>Team Azoth</b> no se lo ha tomado bien, ¡creen que queremos robarles sus investigaciones!", "v": "하지만 <b>아조스단</b>은 이걸 곱게 보지 않고, 자신들의 연구를 훔치려 한다고 생각해요!"}
 {"k": "¿Por qué íbamos a querer robar un conocimiento tan cruel?", "v": "저희가 왜 그런 잔인한 지식을 훔치려 하겠어요?"}
 {"k": "Es muy valiente lo que has hecho. Todo el hospicio está en deuda contigo.", "v": "정말 용감한 일을 해주셨어요. 구호소 모두가 당신에게 큰 빚을 졌네요."}
 {"k": "Afortundamente, solo ha perdido el conocimiento.", "v": "다행히 그저 정신을 잃었을 뿐이다."}
 {"k": "<b>Recluta Azoth:</b> ¡El <b>Hospicio Caduco</b> es nuestro! ¡Lárgate o lo lamentarás profundamente!", "v": "<b>아조스단 신병:</b> ‘<b>카두코 구호소</b>’는 이제 우리 거다! 당장 꺼지지 않으면 뼈저리게 후회할 거다!"}
-{"k": "Nuestros procedimientos habituales de Alquimia Pokémon no hacen nada contra el estado <b>Caduco</b>, tampoco las transfusiones de sangre...", "v": "평소의 포켓몬 연금술 시술로는 <b>쇠락</b> 상태에 아무 효과가 없고, 수혈도 마찬가지예요..."}
+{"k": "Nuestros procedimientos habituales de Alquimia Pokémon no hacen nada contra el estado <b>Caduco</b>, tampoco las transfusiones de sangre...", "v": "평소의 포켓몬 연금술 시술로는 <b>쇠약</b> 상태에 아무 효과가 없고, 수혈도 마찬가지예요..."}
 {"k": "Hay un componente, un ingrediente secreto en todo esto...", "v": "이 모든 것에는 어떤 성분, 즉 비밀 재료가 하나 들어있는데..."}
 {"k": "Si lo halláramos, hallaríamos también el remedio.", "v": "그것만 찾아낸다면 치료법도 밝혀낼 수 있을 텐데요."}
 {"k": "<i>Monsieur</i> <b>Lanto</b> tiene asuntos diplomáticos que tratar con los alquimistas de este hospicio, ¿por qué no das media vuelta y te largas?", "v": "<i>무슈</i> <b>란토</b>께서 이 구호소의 연금술사들과 외교를 나누시는 중이다. 얼른 돌아서서 꺼져!"}
@@ -5161,7 +5161,7 @@
 {"k": "¡He perdido, pero de forma magnífica!", "v": "졌지만, 정말 장렬하게 졌다!"}
 {"k": "Seguiré fingiendo que hago guardia, aunque mis Pokémon estén debilitados. ¡No vayas a chivarte!", "v": "포켓몬들이 기절했어도 계속 경비 서는 척은 할 거다. 절대 일러바치지 마라!"}
 {"k": "\\c[2]<b>Lanto:</b>\\c[0] ¡Veo que seguís teniendo un pésimo gusto por la decoración en estos lares, regente <b>Belladona</b>!", "v": "\\c[2]<b>란토:</b>\\c[0] <b>벨라도나</b> 섭정, 이쪽 동네 인테리어 취향은 여전히 끔찍하기 짝이 없군요!"}
-{"k": "Ha llegado a mis oídos que sus alquimistas están investigando a los Pokémon de estado <b>Caduco</b>.", "v": "당신들의 연금술사들이 <b>쇠락</b> 상태의 포켓몬을 조사하고 있다는 소문이 내 귀에 들어와서 말이죠."}
+{"k": "Ha llegado a mis oídos que sus alquimistas están investigando a los Pokémon de estado <b>Caduco</b>.", "v": "당신들의 연금술사들이 <b>쇠약</b> 상태의 포켓몬을 조사하고 있다는 소문이 내 귀에 들어와서 말이죠."}
 {"k": "\\c[2]<b>Lanto:</b>\\c[0] No pretenderéis robarnos nuestros valiosos hallazgos alquímicos, ¿verdad?", "v": "\\c[2]<b>란토:</b>\\c[0] 설마 우리의 귀중한 연금술적 발견을 훔치려는 건 아니시겠죠?"}
 {"k": "<b>Belladona:</b> ...", "v": "<b>벨라도나:</b> ..."}
 {"k": "Qué desagradable se me hace tu voz, <b>Lanto</b>.", "v": "네 목소리는 들을 때마다 정말 불쾌하구나, <b>란토</b>."}
@@ -5247,7 +5247,7 @@
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] Formando una extraña pareja, está <i>monsieur</i> <b>Lanto</b>.", "v": "\\c[6]<b>미라:</b>\\c[0] <i>무슈</i> <b>란토</b>는 그자와 기묘한 짝을 이루고 있다."}
 {"k": "Parece que su función es proporcionar dinero infinito a la causa porque se aburre mucho.", "v": "단순히 지루하다는 이유로 이 대업에 무한한 자금을 대는 역할을 맡은 듯하다."}
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] Después tenemos a <b>Núbila</b>, quien parece estar al mando de los experimentos alquímicos que están desarrollando con los Pokémon.", "v": "\\c[6]<b>미라:</b>\\c[0] 다음으로 <b>누빌라</b>가 있다. 포켓몬을 상대로 한 연금술 실험을 지휘하는 인물로 보인다."}
-{"k": "Dichos experimentos han llevado a propagar una enfermedad en los Pokémon conocida como \"estado caduco\", causándoles un enorme sufrimiento.", "v": "그 실험은 포켓몬들에게 “쇠락 상태”라 불리는 병을 퍼뜨려, 포켓몬들에게 엄청난 고통을 주고 있지."}
+{"k": "Dichos experimentos han llevado a propagar una enfermedad en los Pokémon conocida como \"estado caduco\", causándoles un enorme sufrimiento.", "v": "그 실험은 포켓몬들에게 “쇠약 상태”라 불리는 병을 퍼뜨려, 포켓몬들에게 엄청난 고통을 주고 있지."}
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] Y también está <b>Wolfram</b>, un mequetrefe que ha servido de enlace para que el <b>Team Azoth</b> tenga acceso a documentos secretos de la <b>Academia de Alquimistas de Kalos</b>.", "v": "\\c[6]<b>미라:</b>\\c[0] 그리고 <b>아조스단</b>이 <b>칼로스 연금술 아카데미</b>의 기밀 문서에 접근할 수 있도록 다리를 놓아준 보잘것없는 피라미, <b>볼프람</b>."}
 {"k": "Gracias a dichos documentos, han logrado avanzar en sus experimentos y traer a la vida a ciertos Pokémon. Aunque de forma inestable.", "v": "그 문서 덕분에 그들은 실험을 진척시켜... 불완전한 상태로나마 포켓몬을 되살려낼 수 있었다."}
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] ...", "v": "\\c[6]<b>미라:</b>\\c[0] ..."}
@@ -5390,7 +5390,7 @@
 {"k": "Oh, entiendo... es un objeto demasiado valioso para desprenderse de él.", "v": "아, 이해해요... 쉽게 선뜻 넘겨줄 수 있는 물건이 아니죠."}
 {"k": "En ese caso, mi Pokémon y yo aguardaremos solemnemente el final.", "v": "그그렇다면 저와 제 포켓몬은 조용히 마지막 순간을 기다리겠습니다."}
 {"k": "<b>Jara:</b> Gracias. Ahora mi Pokémon podrá reponerse.", "v": "<b>하라:</b> 고마워요. 이제 제 포켓몬이 기력을 회복할 수 있겠어요."}
-{"k": "Este Furret está gravemente enfermo. El estado Caduco ha avanzado demasiado en él.", "v": "이 다꼬리는 심각한 병에 걸려 있다. 쇠락 상태가 너무 진행되었다."}
+{"k": "Este Furret está gravemente enfermo. El estado Caduco ha avanzado demasiado en él.", "v": "이 다꼬리는 심각한 병에 걸려 있다. 쇠약 상태가 너무 진행되었다."}
 {"k": "El Furret parece encontrarse mejor.", "v": "다꼬리의 상태가 좀 나아진 것 같다."}
 {"k": "Aquí solo hay basura.", "v": "여기엔 쓰레기밖에 없다."}
 {"k": "Aquí solo hay basura...", "v": "여기엔 쓰레기밖에 없다..."}
@@ -5831,10 +5831,10 @@
 {"k": "No", "v": "아니요"}
 {"map": 166, "n": 58}
 {"k": "¡Por favor, libéranos del <b>Team Azoth</b>!", "v": "제발, <b>아조스단</b>에게서 우리를 구해주세요!"}
-{"k": "Estamos tratando de descubrir una cura contra el estado <b>Caduco</b>, para cesar con el sufrimiento de los pobres Pokémon.", "v": "불쌍한 포켓몬들의 고통을 줄여주려고 <b>쇠락</b> 상태의 치료법을 찾고 있어요."}
+{"k": "Estamos tratando de descubrir una cura contra el estado <b>Caduco</b>, para cesar con el sufrimiento de los pobres Pokémon.", "v": "불쌍한 포켓몬들의 고통을 줄여주려고 <b>쇠약</b> 상태의 치료법을 찾고 있어요."}
 {"k": "Pero el <b>Team Azoth</b> no se lo ha tomado bien, ¡creen que queremos robarles sus investigaciones?", "v": "하지만 <b>아조스단</b>은 이걸 나쁘게 보고, 자기네 연구를 훔치려 한다고 믿고 있어요!"}
 {"k": "¿Por qué íbamos a querer robar un conocimiento tan cruel?", "v": "우리가 왜 그런 잔혹한 지식을 훔치고 싶어 하겠어요?"}
-{"k": "Nuestros procedimientos habituales de Alquimia Pokémon no hacen nada contra el estado <b>Caduco</b>, tampoco las transfusiones de sangre...", "v": "포켓몬 연금술의 일반적인 방법으로는 <b>쇠락</b> 상태에 아무 효과가 없고, 수혈도 소용이 없더군요..."}
+{"k": "Nuestros procedimientos habituales de Alquimia Pokémon no hacen nada contra el estado <b>Caduco</b>, tampoco las transfusiones de sangre...", "v": "포켓몬 연금술의 일반적인 방법으로는 <b>쇠약</b> 상태에 아무 효과가 없고, 수혈도 소용이 없더군요..."}
 {"k": "Hay un componente, un ingrediente secreto en todo esto...", "v": "이 모든 문제에는 어떤 핵심 성분, 비밀 재료가 숨어 있어요..."}
 {"k": "Si lo halláramos, hallaríamos también el remedio.", "v": "그것만 찾아낸다면 분명 치료법도 찾아낼 수 있을 거예요."}
 {"k": "<i>Monsieur</i> <b>Lanto</b> tiene asuntos diplomáticos que tratar con los alquimistas de este hospicio, ¿por qué no das media vuelta y te largas?", "v": "<i>무슈</i> <b>란토</b>께서 이 구호소의 연금술사들과 외교를 나누시는 중이다. 얼른 돌아서서 꺼져!"}
@@ -6726,7 +6726,7 @@
 {"k": "Aquí encontrarás refugio para descansar, pero no te aconsejo subir a la planta de arriba.", "v": "이곳에서 쉬어갈 수는 있겠지만, 위층으로 올라가는 건 권하지 않아요."}
 {"k": "Estamos siendo invadidos por el <b>Team Azoth</b>, y vienen con todo.", "v": "지금 <b>아조스단</b>이 쳐들어오고 있어서, 아주 총력을 다해 덤벼드는 중이거든요."}
 {"k": "Aquí siempre tendrás un refugio para descansar, ¡te estamos muy agradecidas!", "v": "이곳은 언제나 편히 쉬어갈 수 있는 안식처가 되어 줄 거예요. 정말 감사해요!"}
-{"k": "Un estado <b>Caduco</b> muy avanzado solo puede curarse con la Baya Enigma, pero esta rara vez crece de forma natural.", "v": "심하게 진행된 <b>쇠락</b> 상태는 의문열매로만 치료할 수 있지만, 자생하는 경우는 매우 드뭅니다."}
+{"k": "Un estado <b>Caduco</b> muy avanzado solo puede curarse con la Baya Enigma, pero esta rara vez crece de forma natural.", "v": "심하게 진행된 <b>쇠약</b> 상태는 의문열매로만 치료할 수 있지만, 자생하는 경우는 매우 드뭅니다."}
 {"k": "Si encontráramos las condiciones necesarias para su cultivo...", "v": "재배에 필요한 조건만 마련할 수 있다면 좋을 텐데요..."}
 {"k": "Te ofreceré toda la ayuda de la que sea capaz, ¿necesitas curar a tus Pokémon?", "v": "제가 도울 수 있는 건 뭐든 도와드릴게요. 포켓몬을 치료하시겠습니까?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
@@ -6842,7 +6842,7 @@
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] ¡Le has dado! ¡Buen disparo!", "v": "\\c[6]<b>미라:</b>\\c[0] 맞았다! 제대로 들어갔어!"}
 {"k": "\\c[9]<b>Alca:</b>\\c[0] ...", "v": "\\c[9]<b>알카:</b>\\c[0] ..."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] Su cuerpo... ¡está reaccionando a la sustancia!", "v": "\\c[3]<b>크리산토:</b>\\c[0] 저자의 몸이... 물질에 반응하고 있어!"}
-{"k": "¡Parece que el estado <b>Caduco</b> puede afectar también a humanos!", "v": "<b>쇠락</b> 상태가 인간에게도 영향을 주는 모양이야!"}
+{"k": "¡Parece que el estado <b>Caduco</b> puede afectar también a humanos!", "v": "<b>쇠약</b> 상태가 인간에게도 영향을 주는 모양이야!"}
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] Resulta irónico, ¿no?", "v": "\\c[6]<b>미라:</b>\\c[0] 정말 아이러니하군."}
 {"k": "Ahora sufrirá en sus carnes la misma enfermedad que le ha provocado a miles de Pokémon.", "v": "수천 마리의 포켓몬에게 안겨준 바로 그 병을 제 몸으로 겪게 되다니."}
 {"k": "¿Qué se siente, <b>Alca</b>? ¿Notas cómo tus órganos se van pudriendo lentamente?", "v": "기분이 어떠냐, <b>알카</b>? 네 장기가 서서히 썩어가는 게 느껴지나?"}
@@ -9378,7 +9378,7 @@
 {"k": "\\c[9]<b>Alca:</b>\\c[0] \\PN, ha pasado mucho tiempo...", "v": "\\c[9]<b>알카:</b>\\c[0] \\PN, 정말 오래되었구나..."}
 {"k": "\\c[9]<b>Alca:</b>\\c[0] Aunque, en realidad, hemos seguido hablando. ¿No? Aquellas noches solitarias en la <b>Prisión del Olvido</b>, por ejemplo...", "v": "\\c[9]<b>알카:</b>\\c[0] 하기야 우리는 계속 대화를 나누어 왔지 않느냐? 예컨대 <b>망각의 감옥</b>에서 보낸 그 외로운 밤들에서도..."}
 {"k": "\\c[9]<b>Alca:</b>\\c[0] Observarás que no tengo el aspecto que recuerdas de mí.", "v": "\\c[9]<b>알카:</b>\\c[0] 내가 네 기억 속의 모습과 다르다는 걸 알아보겠지."}
-{"k": "Reconozco que salí muy mal parada de nuestro último encuentro donde tus amigos me contagiaron el estado Caduco.", "v": "지난번 만남에서 네 동료들이 내게 쇠락 상태를 감염시켰을 때 꽤나 몰렸음을 인정하마."}
+{"k": "Reconozco que salí muy mal parada de nuestro último encuentro donde tus amigos me contagiaron el estado Caduco.", "v": "지난번 만남에서 네 동료들이 내게 쇠약 상태를 감염시켰을 때 꽤나 몰렸음을 인정하마."}
 {"k": "Han sido unos años de intenso dolor y sufrimiento, mi cuerpo no aguantará mucho más.", "v": "극심한 고통과 고난의 세월이었으니, 내 육신도 오래 버티지 못할 터."}
 {"k": "¡¡¡GRRRRIAAAAAAM!!!", "v": "우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우"}
 {"k": "\\c[9]<b>Alca:</b>\\c[0] Mi fuerza en combate Pokémon ha menguado, pero debería bastar para enterrarte en la nieve aquí y ahora.", "v": "\\c[9]<b>알카:</b>\\c[0] 포켓몬 배틀에서 내 힘은 쇠약해졌으나, 지금 당장 너를 설원에 묻어 버리기엔 충분할 것이다."}
@@ -10431,7 +10431,7 @@
 {"k": "¿No os habíamos derrotado ya para siempre?", "v": "지난번에 완전히 무찌른 게 아니었어?"}
 {"k": "\\c[9]<b>Alca:</b>\\c[0] \\PN...", "v": "\\c[9]<b>알카:</b>\\c[0] \\PN..."}
 {"k": "No... No me queda mucho tiempo.", "v": "아니... 내게 남은 시간이 얼마 없구나."}
-{"k": "La enfermedad del... estado Caduco está a punto de acabar conmigo...", "v": "쇠락이라는 병이 날 거의 집어삼키고 있으니..."}
+{"k": "La enfermedad del... estado Caduco está a punto de acabar conmigo...", "v": "쇠약이라는 병이 날 거의 집어삼키고 있으니..."}
 {"k": "\\c[9]<b>Alca:</b>\\c[0] Pero me quedan las fuerzas suficientes para derrotarte... y activar el <b>Arma Definitiva</b>.", "v": "\\c[9]<b>알카:</b>\\c[0] 하지만 널 꺾고... <b>최종병기</b>를 가동할 힘은 아직 남아 있다."}
 {"k": "Al dominar el poder de la Megaevolución... has llegado hasta donde muy poca gente ha llegado. Pero el poder que yo persigo... es el poder definitivo.", "v": "메가진화의 힘을 마스터하여... 지극히 일부만이 도달한 경지에 이르렀구나. 하나 내가 추구하는 힘은... 바로 궁극의 힘이다."}
 {"k": "\\c[5]<b>Melia:</b>\\c[0] ¡Toma ya! ¡Nadie puede con nosotros!", "v": "\\c[5]<b>멜리아:</b>\\c[0] 좋았어! 아무도 우리를 막을 순 없어!"}
