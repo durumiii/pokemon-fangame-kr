@@ -7,13 +7,17 @@
 자리와 전후 문맥을 뽑는다. 맵 대사는 `맵번호:순번`(00-maps.jsonl의 블록 구조),
 그 밖의 절은 줄 번호로 가리킨다. 새 표기를 함께 주면 그 등장 수도 센다.
 
+새 표기를 주면 **깨진 말더듬**도 찾는다 — 통짜 치환이 「교-교수님」의 뒤쪽만 갈아
+「교-박사님」(옛 첫 음절+구분자+새 표기)을 남기는 꼴(names-terms.md 참조).
+
 ⚠ 매칭은 단순 부분 문자열이라 조사·합성어가 섞인다 — 문맥을 보고 사람이 거른다.
-잔존이 있으면 종료 코드 1(후속 스크립트·CI 게이트용).
+잔존(깨진 말더듬 포함)이 있으면 종료 코드 1(후속 스크립트·CI 게이트용).
 
 usage: uv run translate/termcheck.py 궁극병기 [최종병기]
        uv run translate/termcheck.py --selftest
 """
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -46,21 +50,31 @@ def excerpt(v, term):
     return ("…" if lo else "") + v[lo:hi] + ("…" if hi < len(v) else "")
 
 
+def stutter_pat(old, new):
+    """깨진 말더듬 — 옛 첫 음절 + 구분자(-, ,, …, .) + 새 표기. 새 첫 음절 꼴은 정상이라 뺀다."""
+    if not new or old[0] == new[0]:
+        return None
+    return re.compile(re.escape(old[0]) + r"[-–—,.… ]{1,4}" + re.escape(new))
+
+
 def scan(old, new):
     hits = new_count = 0
+    pat = stutter_pat(old, new)
     for path in sorted((HERE / "ko").glob("*.jsonl")):
         for at, r in spots(path):
             v = r.get("v") or ""
             if new:
                 new_count += v.count(new)
-            if old not in v:
+            m = pat.search(v) if pat else None
+            if old not in v and not m:
                 continue
             hits += 1
             where = at
             if at.startswith("맵"):
                 nm = mapname.ko(int(at[1:].split(":")[0]))
                 where = f"{at}({nm})" if nm else at
-            print(f"{path.name} {where}  {excerpt(v, old)!r}")
+            tag = " [깨진 말더듬]" if (m and old not in v) else ""
+            print(f"{path.name} {where}{tag}  {excerpt(v, m.group(0) if m else old)!r}")
     return hits, new_count
 
 
@@ -70,6 +84,12 @@ def selftest():
     assert first[0] == "맵0:0", first[0]
     assert "v" in first[1], first[1]
     assert excerpt("가나다라마바사", "다라") == "가나다라마바사"
+    pat = stutter_pat("박사님", "교수님")
+    assert pat.search("박-교수님이 오셨다")
+    assert pat.search("박... 교수님?")
+    assert not pat.search("교-교수님")   # 새 첫 음절 말더듬은 정상
+    assert not pat.search("박사님과 교수님")  # 구분자 아닌 본문이 사이에 있으면 정상
+    assert stutter_pat("박사님", "박물관장") is None  # 첫 음절이 같으면 검사 불가
     print("selftest OK")
 
 
