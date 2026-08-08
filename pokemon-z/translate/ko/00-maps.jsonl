@@ -3459,14 +3459,14 @@
 {"k": "Tenemos que dejar estos jardines como los chorros del oro antes de que venga <i>monsieur</i> <b>Lanto</b>. ¡Vuelve más tarde!", "v": "<i>무슈</i> <b>란토</b>가 오기 전에 이 정원을 아주 싹 치워놓아야 해. 나중에 다시 와!"}
 {"k": "<b>PISTA DE ENTRENADOR:</b> La habilidad Iluminación ha sido modificada y ahora baja la Precisión del oponente. ¡Úsala sabiamente!", "v": "<b>트레이너 팁:</b> 특성 발광이 변경되어 이제 상대의 명중률을 낮춥니다. 현명하게 사용하세요!"}
 {"k": "Has entrado en los terrenos de Monsieur Lanto, ¿lo sabías? ¡Cuidado con pisar las flores!", "v": "너 지금 무슈 란토의 사유지에 들어와있는 건 알고 있니? 꽃을 밟지 않게 조심해!"}
-{"k": "¡Ups! Creo que me he pasado cortando ese seto.", "v": "앗! 그 산울타리를 너무 많이 잘라버린 것 같은데."}
+{"k": "¡Ups! Creo que me he pasado cortando ese seto.", "v": "앗! 그 가지를 너무 많이 잘라버렸어!"}
 {"k": "¿Crees que estoy haciendo un buen trabajo recortando estos setos? ¡Por favor, si ves a Monsieur Lanto háblale bien de mí!", "v": "내가 이 울타리를 잘 잘라놓은 것 같아? 혹시 무슈 란토를 보면 내 칭찬 좀 잘해 줘!"}
 {"k": "<b>PISTA DE ENTRENADOR:</b> Los Repelentes no funcionarán si el primer Pokémon de tu equipo tiene un nivel inferior al de los Pokémon salvajes.", "v": "<b>트레이너 팁:</b> 지닌 포켓몬 맨 앞의 포켓몬 레벨이 야생 포켓몬보다 낮으면 스프레이류가 작동하지 않습니다."}
 {"k": "¡Uf, puf! ¡Me paso el día cuidando de estos jardines para Monsieur Lanto!", "v": "휴, 헉! 하루 종일 무슈 란토를 위해 이 정원을 가꾸고 있다니까!"}
 {"k": "Debería afiliarme a un sindicato.", "v": "노동조합이라도 가입해야겠어."}
 {"k": "No es que Monsieur Lanto pague mal a su personal, pero su carácter puede ser muy... iracundo. Es mejor no hacerle enfadar.", "v": "무슈 란토가 고용인들에게 보수를 짜게 주는 건 아닌데, 성격이 꽤... 다혈질이시거든. 그분을 화나게 하지 않는 게 좋아."}
 {"k": "¿Disfrutas de la majestuosidad de estos jardines? Tienen un nombre especial en nuestro gremio.", "v": "이 웅장한 정원을 즐기고 있니? 우리 정원사들 사이에서는 이 정원을 부르는 특별한 이름이 있어."}
-{"k": "Mi técnica de corte es bastante mejorable.", "v": "내 가위질 솜씨는 아직 갈 길이 먼 것 같아."}
+{"k": "Mi técnica de corte es bastante mejorable.", "v": "내 가위질 솜씨는 아직 갈 길이 멀었구나!"}
 {"k": "Por lo general, se conoce este tipo de jardines como parterres, pero entre los profesionales preferimos usar el término \"jardines formales\".", "v": "보통 이런 정원을 화단이라고 부르지만, 우리 같은 전문가들은 “정형 정원”이라고 부르는 걸 좋아하지."}
 {"map": 101, "n": 20}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] Y eso es, <i>grosso modo</i>, todo lo que nos ha acontecido.", "v": "\\c[3]<b>크리산토:</b>\\c[0] <i>대략적으로 말하자면</i>, 이게 지금까지 우리에게 일어난 전부야."}
@@ -3638,7 +3638,7 @@
 {"k": "\\sh¡Ciudadanos, tomad las armas!", "v": "\\sh시민들이여, 무기를 들어라!"}
 {"k": "\\sh¡El rey <b>Áster</b> está ahí dentro!", "v": "\\sh<b>아스테르</b> 왕이 저 안에 있다!"}
 {"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Estos son los dormitorios de los mosqueteros. Deberíamos estar a salvo aquí.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 이곳은 총사들의 침실이다. 여기라면 안전할 게야."}
-{"k": "¡<i>Sacrebleu</i>! Hace mucho frío en estas estancias. Encenderé la chimenea.", "v": "<i>Sacrebleu</i>! 이 방들은 매우 춥군. 벽난로에 불을 지피겠다."}
+{"k": "¡<i>Sacrebleu</i>! Hace mucho frío en estas estancias. Encenderé la chimenea.", "v": "<i>Sacrebleu</i>! 이 방은 매우 춥군. 벽난로에 불을 지펴야겠어."}
 {"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Sí. Mucho mejor ahora.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 그래. 이제 훨씬 낫구나."}
 {"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Ya sé lo que estarás pensando, \\PN.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 네가 무슨 생각을 하는지 이미 알고 있단다, \\PN."}
 {"k": "Menudo rey, que no es capaz de defenderse por sí solo.", "v": "자신 하나조차 지키지 못하는 왕이라니, 참 한심하겠지."}
@@ -3656,7 +3656,7 @@
 {"k": "\\sh¡Buscad, compatriotas! ¡El rey no puede haber salido de la fortaleza!", "v": "\\sh동포들이여, 수색하라! 왕이 요새 밖으로 나갔을 리 없다!"}
 {"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] En realidad no tenemos por qué caer los dos aquí.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 사실 우리 둘 다 여기서 목숨을 잃을 필요는 없네."}
 {"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Entrégame a ellos y seguro que te perdonarán. No tenemos otra salida, a fin de cuentas.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 나를 그들에게 넘기게. 그러면 그대는 살려줄 걸세. 어차피 우리에겐 달리 방법이 없지 않은가."}
-{"k": "No tenemos otra salida...", "v": "다른 방법이 없네..."}
+{"k": "No tenemos otra salida...", "v": "다른 방법이..."}
 {"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Espera, acabo de recordar... ¡<i>Mon dieu</i>! ¡Sí que tenemos otra salida!", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 잠깐, 방금 생각났네... <i>Mon dieu</i>! 다른 탈출구가 있구만!"}
 {"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] ¿Has visto esa puerta al otro lado de la habitación? Conduce a un pequeño pasillo de celdas donde se encerraban a prisioneros de guerra.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 방 건너편에 있는 저 문이 보이는가? 전쟁 포로들을 가두던 작은 감방 복도로 연결된다네."}
 {"k": "Existe una vieja leyenda. Por lo visto, un sabio loco que yacía preso logró excavar un túnel hacia el exterior desde su celda.", "v": "오래된 전설이 하나 있지. 갇혀 있던 어느 미친 현자가 감방에서 바깥으로 통하는 터널을 팠다고 하네."}
