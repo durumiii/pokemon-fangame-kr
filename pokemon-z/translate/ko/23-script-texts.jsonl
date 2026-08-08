@@ -1006,7 +1006,7 @@
 {"k": "Can't find the map 'Map{1:03d}' in the Data folder. The game will resume at the player's position.", "v": "Can‘t find the map ’Map{1:03d}‘ in the Data folder. The game will resume at the player’s position."}
 {"k": "\\w[]\\wm\\c[8]\\l[3]After the unfortunate defeat, {1} scurried home.", "v": "\\w[]\\wm\\c[8]\\l[3]After the unfortunate defeat, {1} scurried home."}
 {"k": "\\w[]\\wm\\c[8]\\l[3]{1} scurried home, protecting the exhausted and fainted Pokémon from further harm.", "v": "\\w[]\\wm\\c[8]\\l[3]{1}\\j[은,는] 지치고 쓰러진 포켓몬들이 더 다치지 않게 감싸 안고 집으로 달려갔다."}
-{"k": "The game has detected that the battery is low. You should save soon to avoid losing your progress.", "v": "배터리가 부족합니다. 진행 상황을 잃지 않도록 곧 저장하세요."}
+{"k": "The game has detected that the battery is low. You should save soon to avoid losing your progress.", "v": "배터리가 부족합니다. 진행 상황을 잃지 않도록 곧 리포트를 작성하세요."}
 {"k": "Recording in {1:d} second(s)...\nPress ESC to cancel.", "v": "Recording in {1:d} second(s)...\nPress ESC to cancel."}
 {"k": "NOW RECORDING\nPress ESC to stop recording.", "v": "NOW RECORDING\nPress ESC to stop recording."}
 {"k": "PLAYING BACK...", "v": "PLAYING BACK..."}
@@ -1709,7 +1709,7 @@
 {"k": "Delete the saved data anyway?", "v": "Delete the saved data anyway?"}
 {"k": "Deleting all data.\nDon't turn off the power.\\wtnp[0]", "v": "Deleting all data.\r\nDon’t turn off the power.\\wtnp[0]"}
 {"k": "The save file was deleted.", "v": "The save file was deleted."}
-{"k": "No save file was found.", "v": "저장 파일을 찾을 수 없습니다."}
+{"k": "No save file was found.", "v": "리포트를 찾을 수 없습니다."}
 {"k": "No starting position was set in the map editor.\u0001", "v": "맵 에디터에서 시작 위치가 설정되지 않았습니다.\u0001"}
 {"k": "The game cannot continue.", "v": "게임을 더 이상 진행할 수 없습니다."}
 {"k": "The save file is corrupt. The previous save file will be loaded.", "v": "The save file is corrupt.  The previous save file will be loaded."}
@@ -1735,15 +1735,15 @@
 {"k": "Badges<r><c3={1}>{2}</c3><br>", "v": "배지<r><c3={1}>{2}</c3><br>"}
 {"k": "Pokédex<r><c3={1}>{2}/{3}</c3>", "v": "도감<r><c3={1}>{2}/{3}</c3>"}
 {"k": "The script is taking too long. The game will restart.", "v": "The script is taking too long.  The game will restart."}
-{"k": "\\se[]The game was saved.\\se[save]\\wtnp[30]", "v": "\\se[]게임을 저장했다.\\se[save]\\wtnp[30]"}
-{"k": "\\se[]Save failed.\\wtnp[30]", "v": "\\se[]저장 실패.\\wtnp[30]"}
+{"k": "\\se[]The game was saved.\\se[save]\\wtnp[30]", "v": "\\se[]리포트를 꼼꼼히 기록했다!\\se[save]\\wtnp[30]"}
+{"k": "\\se[]Save failed.\\wtnp[30]", "v": "\\se[]리포트를 기록하지 못했습니다.\\wtnp[30]"}
 {"k": "Would you like to save the game?", "v": "Would you like to save the game?"}
 {"k": "WARNING!", "v": "WARNING!"}
 {"k": "There is a different game file that is already saved.", "v": "There is a different game file that is already saved."}
-{"k": "If you save now, the other file's adventure, including items and Pokémon, will be entirely lost.", "v": "지금 저장하면 다른 파일의 모험이 도구와 포켓몬까지 모두 사라집니다."}
+{"k": "If you save now, the other file's adventure, including items and Pokémon, will be entirely lost.", "v": "지금 리포트를 기록하면 다른 파일의 모험이 도구와 포켓몬까지 모두 사라집니다."}
 {"k": "Are you sure you want to save now and overwrite the other save file?", "v": "Are you sure you want to save now and overwrite the other save file?"}
 {"k": "There is already a saved file. Is it OK to overwrite it?", "v": "There is already a saved file.  Is it OK to overwrite it?"}
-{"k": "\\se[]{1} saved the game.\\se[save]\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] 게임을 저장했다.\\se[save]\\wtnp[30]"}
+{"k": "\\se[]{1} saved the game.\\se[save]\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] 리포트를 꼼꼼히 기록했다!\\se[save]\\wtnp[30]"}
 {"k": "Speech frame {1}.", "v": "Speech frame {1}."}
 {"k": "Music Volume", "v": "Music Volume"}
 {"k": "SE Volume", "v": "효과음 볼륨"}
@@ -3142,17 +3142,17 @@
 {"k": "Iniciado", "v": "시작"}
 {"k": "Medallas:", "v": "배지:"}
 {"k": "Tiempo:", "v": "시간:"}
-{"k": "¿Borrar todos los datos guardados?", "v": "저장 데이터를 전부 삭제할까?"}
+{"k": "¿Borrar todos los datos guardados?", "v": "리포트를 전부 삭제할까?"}
 {"k": "Una vez que los datos sean borrados, no hay forma de recuperarlos.\u0001", "v": "데이터를 지우면 되돌릴 방법이 없습니다.\u0001"}
-{"k": "¿Borrar los datos guardados de todos modos?", "v": "그래도 저장 데이터를 삭제할까?"}
+{"k": "¿Borrar los datos guardados de todos modos?", "v": "그래도 리포트를 삭제할까?"}
 {"k": "Borrando todos los datos.\nNo apagues la consola.\\wtnp[0]", "v": "모든 데이터를 지우는 중.\r\n전원을 끄지 마세요.\\wtnp[0]"}
-{"k": "El archivo guardado fue borrado.", "v": "저장 파일을 삭제했다."}
-{"k": "No se encontró ningún archivo guardado.", "v": "저장 파일을 찾을 수 없다."}
+{"k": "El archivo guardado fue borrado.", "v": "리포트를 삭제했다."}
+{"k": "No se encontró ningún archivo guardado.", "v": "리포트를 찾을 수 없다."}
 {"k": "No se estableció una posición inicial en el mapa.\u0001", "v": "맵에 시작 위치가 설정되지 않았습니다.\u0001"}
 {"k": "El juego no puede continuar.", "v": "게임을 계속할 수 없습니다."}
-{"k": "El archivo guardado está corrupto. Se cargará el archivo guardado previo.", "v": "저장 파일이 손상되었습니다. 이전 저장 파일을 불러옵니다."}
-{"k": "El archivo guardado está corrupto o es incompatible con este juego.", "v": "저장 파일이 손상되었거나 이 게임과 호환되지 않습니다."}
-{"k": "¿Quieres borrar el archivo guardado para iniciar uno nuevo?", "v": "저장 파일을 지우고 새로 시작할까?"}
+{"k": "El archivo guardado está corrupto. Se cargará el archivo guardado previo.", "v": "리포트가 손상되었습니다. 이전 리포트를 불러옵니다."}
+{"k": "El archivo guardado está corrupto o es incompatible con este juego.", "v": "리포트가 손상되었거나 이 게임과 호환되지 않습니다."}
+{"k": "¿Quieres borrar el archivo guardado para iniciar uno nuevo?", "v": "리포트를 지우고 새로 시작할까?"}
 {"k": "Continuar", "v": "계속한다"}
 {"k": "Partida Nueva", "v": "새로 시작"}
 {"k": "Regalo Misterioso", "v": "이상한 소포"}
@@ -3171,15 +3171,15 @@
 {"k": "Tiempo<r><c3={1:s}>{2:02d}:{3:02d}</c3><br>", "v": "플레이 시간<r><c3={1:s}>{2:02d}:{3:02d}</c3><br>"}
 {"k": "Medallas<r><c3={1}>{2}</c3><br>", "v": "배지<r><c3={1}>{2}</c3><br>"}
 {"k": "El script está tomando demasiado tiempo. Se reiniciará el juego.", "v": "스크립트 처리에 시간이 너무 오래 걸립니다. 게임을 다시 시작합니다."}
-{"k": "\\se[]Se guardó la partida.\\se[save]\\wtnp[30]", "v": "\\se[]게임을 저장했습니다.\\se[save]\\wtnp[30]"}
-{"k": "\\se[]Error al guardar.\\wtnp[30]", "v": "\\se[]저장 중 오류.\\wtnp[30]"}
+{"k": "\\se[]Se guardó la partida.\\se[save]\\wtnp[30]", "v": "\\se[]리포트를 꼼꼼히 기록했다!\\se[save]\\wtnp[30]"}
+{"k": "\\se[]Error al guardar.\\wtnp[30]", "v": "\\se[]리포트를 기록하지 못했습니다.\\wtnp[30]"}
 {"k": "¿Quieres guardar la partida?", "v": "여기까지의 모험을 리포트에 기록하겠습니까?"}
 {"k": "¡ADVERTENCIA!", "v": "경고!"}
-{"k": "Hay guardado un archivo de un juego diferente.", "v": "다른 게임의 저장 파일이 있습니다."}
-{"k": "Si guardas ahora, la aventura del archivo, incluyendo los objetos y Pokémon, se perderá completamente.", "v": "지금 저장하면 도구와 포켓몬을 포함해 해당 파일의 모험 데이터가 모두 사라집니다."}
-{"k": "¿Está segur@ de guardar ahora y sobrescribir el otro archivo?", "v": "지금 저장하여 다른 파일을 덮어쓰시겠습니까?"}
-{"k": "Ya hay una partida guardada. ¿Quieres sobrescribirla?", "v": "이미 저장된 데이터가 있습니다. 덮어쓰시겠습니까?"}
-{"k": "\\se[]{1} guardó la partida.\\se[save]\\wtnp[30]", "v": "\\se[]{1}\\j[은,는] 게임을 저장했다.\\se[save]\\wtnp[30]"}
+{"k": "Hay guardado un archivo de un juego diferente.", "v": "다른 게임의 리포트가 있습니다."}
+{"k": "Si guardas ahora, la aventura del archivo, incluyendo los objetos y Pokémon, se perderá completamente.", "v": "지금 리포트를 기록하면 도구와 포켓몬을 포함해 해당 파일의 모험 데이터가 모두 사라집니다."}
+{"k": "¿Está segur@ de guardar ahora y sobrescribir el otro archivo?", "v": "지금 리포트를 기록하여 다른 파일을 덮어쓰시겠습니까?"}
+{"k": "Ya hay una partida guardada. ¿Quieres sobrescribirla?", "v": "이미 기록된 리포트가 있습니다. 덮어쓰시겠습니까?"}
+{"k": "\\se[]{1} guardó la partida.\\se[save]\\wtnp[30]", "v": "\\se[]{1}\\j[은,는] 리포트를 꼼꼼히 기록했다!\\se[save]\\wtnp[30]"}
 {"k": "Marco de diálogo {1}.", "v": "대화창 테두리 {1}."}
 {"k": "Volumen Música", "v": "음악 볼륨"}
 {"k": "Volumen Efec. Esp.", "v": "효과음 음량"}
@@ -4726,7 +4726,7 @@
 {"k": "No se pudo encontrar el mapa 'Map{1:03d}' en la carpeta Data. El juego continuará en la posición del jugador.", "v": "Data 폴더에서 ‘Map{1:03d}’ 맵을 찾을 수 없습니다. 현재 플레이어 위치에서 게임을 계속합니다."}
 {"k": "\\w[]\\wm\\c[8]\\l[3]Tras la desafortunada derrota, {1} ha salido corriendo a casa.", "v": "\\w[]\\wm\\c[8]\\l[3]안타까운 패배 후, {1}\\j[은,는] 서둘러 집으로 달려갔다."}
 {"k": "\\w[]\\wm\\c[8]\\l[3]{1} ha salido corriendo a casa para que su cansado y debilitado equipo Pokémon no sufra más daños...", "v": "\\w[]\\wm\\c[8]\\l[3]{1}\\j[은,는] 지치고 쓰러진 포켓몬들이 더 이상 피해를 입지 않도록 서둘러 집으로 달려갔다..."}
-{"k": "El juego detectó que la batería está baja. Debería guardar pronto para evitar la pérdida de su progreso.", "v": "배터리 잔량이 부족합니다. 진행 상황을 잃지 않도록 곧 저장해 주십시오."}
+{"k": "El juego detectó que la batería está baja. Debería guardar pronto para evitar la pérdida de su progreso.", "v": "배터리 잔량이 부족합니다. 진행 상황을 잃지 않도록 곧 리포트를 작성해 주십시오."}
 {"k": "GRABANDO\nPresione ESC para cancelar.", "v": "녹화 중\n취소하려면 ESC 키를 누르십시오."}
 {"k": "REPRODUCIENDO...", "v": "재생 중..."}
 {"k": "\\se[ItemGet]¡{1} ha encontrado \\c[1]{2}\\c[0]!\\\nÉsta contiene \\c[1]{3}\\c[0].\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[이,가] \\c[1]{2}\\c[0]\\j[을,를] 손에 넣었다!\\\n안에는 \\c[1]{3}\\c[0]\\j[이,가] 들어 있다.\\wtnp[30]"}
@@ -5327,28 +5327,28 @@
 {"k": "Pokédex<r><c3={1}>{2}/{3}</c3><br>", "v": "도감<r><c3={1}>{2}/{3}</c3><br>"}
 {"k": "Save File:<r><c3={1}>{2}</c3><br>", "v": "Save File:<r><c3={1}>{2}</c3><br>"}
 {"k": "Save File:<r><c3={1}>1</c3><br>", "v": "Save File:<r><c3={1}>1</c3><br>"}
-{"k": "¿Borrar la partida?", "v": "저장 데이터를 삭제하시겠습니까?"}
+{"k": "¿Borrar la partida?", "v": "리포트를 삭제하시겠습니까?"}
 {"k": "Si sigues adelante, no podrás recuperarla.\u0001", "v": "계속 진행하면 되돌릴 수 없습니다.\u0001"}
 {"k": "¿Borrar de todos modos?", "v": "그래도 삭제할까?"}
-{"k": "Borrando partida...\nNo cierres el juego...\\wtnp[0]", "v": "저장 데이터를 삭제하는 중...\r\n게임을 끄지 마세요...\\wtnp[0]"}
-{"k": "Se ha borrado esta partida.", "v": "이 저장 데이터를 삭제했습니다."}
-{"k": "No se han encontrado partidas.", "v": "저장 데이터를 찾을 수 없습니다."}
+{"k": "Borrando partida...\nNo cierres el juego...\\wtnp[0]", "v": "리포트를 삭제하는 중...\r\n게임을 끄지 마세요...\\wtnp[0]"}
+{"k": "Se ha borrado esta partida.", "v": "이 리포트를 삭제했습니다."}
+{"k": "No se han encontrado partidas.", "v": "리포트를 찾을 수 없습니다."}
 {"k": "Continar", "v": "Continar"}
 {"k": "Nuevo Juego", "v": "Nuevo Juego"}
-{"k": "Otras partidas", "v": "다른 세이브"}
-{"k": "Borrar esta partida", "v": "이 세이브 삭제"}
-{"k": "¿Quieres borrar esta partida?", "v": "이 저장 데이터를 삭제하시겠습니까?"}
+{"k": "Otras partidas", "v": "다른 리포트"}
+{"k": "Borrar esta partida", "v": "이 리포트 삭제"}
+{"k": "¿Quieres borrar esta partida?", "v": "이 리포트를 삭제하시겠습니까?"}
 {"k": "Se perderá todo el progreso, ¿estás seguro?", "v": "진행 상황이 모두 사라집니다. 정말 진행하시겠습니까?"}
-{"k": "No tienes más partidas.", "v": "저장 데이터가 더 이상 없습니다."}
+{"k": "No tienes más partidas.", "v": "리포트가 더 이상 없습니다."}
 {"k": "Faltan algunos tipos de letras en tu ordenador.\u0001", "v": "컴퓨터에 일부 글꼴이 없습니다.\u0001"}
 {"k": "Puedes jugar sin problemas, aunque habrá algunos fallos gráficos..\u0001", "v": "플레이에는 문제없지만 일부 그래픽 오류가 발생할 수 있습니다..\u0001"}
 {"k": "Se han instalado algunos tipos de letra.\u0001", "v": "일부 글꼴을 설치했습니다.\u0001"}
 {"k": "Para instalar los tipos de letra, copia los archivos de Fonts en la carpeta Fonts en el Panel de Control.", "v": "글꼴을 설치하려면 Fonts 폴더의 파일을 제어판의 Fonts 폴더에 복사하세요."}
 {"k": "Se han instalado los tipos de letra.\u0001", "v": "글꼴을 설치했습니다.\u0001"}
 {"k": "¿Quieres aplicar los cambios?", "v": "변경사항을 적용하시겠습니까?"}
-{"k": "Se ha corrompido la partida, se cargará una anterior.", "v": "저장 데이터가 손상되어 이전 데이터를 불러옵니다."}
-{"k": "Se ha corrompido la partida.", "v": "저장 데이터가 손상되었습니다."}
-{"k": "¿Quieres borrar esta partida y empezar una nueva?", "v": "이 저장 데이터를 삭제하고 새로 시작하시겠습니까?"}
+{"k": "Se ha corrompido la partida, se cargará una anterior.", "v": "리포트가 손상되어 이전 리포트를 불러옵니다."}
+{"k": "Se ha corrompido la partida.", "v": "리포트가 손상되었습니다."}
+{"k": "¿Quieres borrar esta partida y empezar una nueva?", "v": "이 리포트를 삭제하고 새로 시작하시겠습니까?"}
 {"k": "Se ha borrado la partida.", "v": "리포트의 내용이 사라져 버렸다!"}
 {"k": "Nuevo juego", "v": "새로 시작"}
 {"k": "Elige un Pokémon y confirma.", "v": "포켓몬을 선택하고 결정하세요."}
@@ -5356,10 +5356,10 @@
 {"k": "Elige el apodo que más te guste.", "v": "마음에 드는 별명을 고르세요."}
 {"k": "¿Apodo de {1}?", "v": "{1}의 별명은?"}
 {"k": "Un script está fallando, el juego se va a reiniciar. Vuelve a descargar el juego si este error se repite.", "v": "스크립트 오류로 게임을 다시 시작합니다. 이 오류가 반복되면 게임을 다시 받으세요."}
-{"k": "\\se[]Se ha guardado la partida.\\se[save]\\wtnp[30]", "v": "\\se[]게임을 저장했습니다.\\se[save]\\wtnp[30]"}
-{"k": "\\se[]Ha habido un error en el guardado.\\wtnp[30]", "v": "\\se[]저장 중 오류가 발생했습니다.\\wtnp[30]"}
-{"k": "¿Sobrescribir la partida anterior?", "v": "이전 저장 데이터에 덮어쓰시겠습니까?"}
-{"k": "\\se[]{1} ha guardado la partida.\\se[save]\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] 게임을 저장했다.\\se[save]\\wtnp[30]"}
+{"k": "\\se[]Se ha guardado la partida.\\se[save]\\wtnp[30]", "v": "\\se[]리포트를 꼼꼼히 기록했다!\\se[save]\\wtnp[30]"}
+{"k": "\\se[]Ha habido un error en el guardado.\\wtnp[30]", "v": "\\se[]리포트를 기록하지 못했습니다.\\wtnp[30]"}
+{"k": "¿Sobrescribir la partida anterior?", "v": "이전 리포트에 덮어쓰시겠습니까?"}
+{"k": "\\se[]{1} ha guardado la partida.\\se[save]\\wtnp[30]", "v": "\\se[]{1}\\j[이,가] 리포트를 꼼꼼히 기록했다!\\se[save]\\wtnp[30]"}
 {"k": "{1} está pensando en el Pokemon que habéis visto antes.", "v": "{1}\\j[은,는] 아까 본 포켓몬을 생각하고 있다."}
 {"k": "Set Ally Position", "v": "Set Ally Position"}
 {"k": "Set Enemy Position", "v": "Set Enemy Position"}
@@ -6717,7 +6717,7 @@
 {"k": "<c3=404040,B0B0B0>Un extraño Huevo Pokémon hallado por <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.\\n", "v": "<c3=404040,B0B0B0><c3=F83820,E09890>{1}<c3=404040,B0B0B0>\\j[이,가] 발견한 신기한 포켓몬 알.\\n"}
 {"k": "<c3=404040,B0B0B0>\\\"Estado del Huevo\\\"\\n", "v": "<c3=404040,B0B0B0>\\“알의 상태\\”\\n"}
 {"k": "<c3=F83820,E09890>Faraway place\\n", "v": "<c3=F83820,E09890>머나먼 곳"}
-{"k": "Borrando partida...\\r\\nNo cierres el juego...\\\\wtnp[0]", "v": "세이브를 삭제하는 중...\\r\\n게임을 끄지 마세요...\\wtnp[0]"}
+{"k": "Borrando partida...\\r\\nNo cierres el juego...\\\\wtnp[0]", "v": "리포트를 삭제하는 중...\\r\\n게임을 끄지 마세요...\\wtnp[0]"}
 {"k": "Capturado: Ninguno\\nBalls: {1}", "v": "잡은 수: 없음\\n볼: {1}"}
 {"k": "Capturado: {1}\\nNivel: {2}\\nBalls: {3}", "v": "잡은 수: {1}\\n레벨: {2}\\n볼: {3}"}
 {"k": "Dinero:\\n<ar>{1}</ar>", "v": "소지금:\\n<ar>{1}</ar>"}
@@ -6738,7 +6738,7 @@
 {"k": "Se han instalado los tipos de letra.\\1", "v": "글꼴을 설치했습니다.\\1"}
 {"k": "Si sigues adelante, no podrás recuperarla.\\1", "v": "계속 진행하면 되돌릴 수 없습니다.\\1"}
 {"k": "Tirar\\nobjeto", "v": "도구\\n버리기"}
-{"k": "\\\\se[]Ha habido un error en el guardado.\\\\wtnp[30]", "v": "\\\\se[]저장 중 오류가 발생했습니다.\\\\wtnp[30]"}
+{"k": "\\\\se[]Ha habido un error en el guardado.\\\\wtnp[30]", "v": "\\\\se[]리포트를 기록하지 못했습니다.\\\\wtnp[30]"}
 {"k": "\\\\se[]{1} ha guardado la partida.\\\\se[save]\\\\wtnp[30]", "v": "\\\\se[]{1}\\j[은,는] 리포트를 꼼꼼히 기록했다!\\\\se[save]\\\\wtnp[30]"}
 {"k": "\\\\se[accesspc]Accedió al PC de {1}.", "v": "\\\\se[accesspc]{1}의 PC에 접속했다."}
 {"k": "\\\\se[accesspc]Acceso al Sistema de Almacenamiento de Pokémon concedido.", "v": "\\\\se[accesspc]포켓몬 보관 시스템에 접속했습니다."}
