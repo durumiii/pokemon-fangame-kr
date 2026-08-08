@@ -151,17 +151,39 @@ def attribute(msgs, sprite="", objects=frozenset()):
         yield cmdi, ind, kind, text, who, how, sorted(cast), prompt
 
 
+TRIGGER = {0: "말걸기", 1: "플레이어접촉", 2: "이벤트접촉", 3: "자동실행", 4: "병렬처리"}
+
+
+def scene(trigger, n_msg):
+    """이 페이지가 「스토리 장면」인가 「지나가며 거는 말」인가.
+
+    RPG Maker XP의 `@trigger`가 1차 근거다 — 자동실행·병렬처리·접촉은 플레이어가
+    고르지 않았는데 시작되는 자리라 컷신이고, 말걸기는 NPC 앞에 서서 버튼을 눌러야
+    나온다. 말걸기 중에도 주연과의 긴 대화가 있으므로 **메시지 수**를 함께 본다
+    (`n_msg`도 그대로 싣는다 — 경계를 다시 그을 때 이 수를 보고 정하면 된다).
+    """
+    if trigger < 0:
+        return "공통"
+    if trigger in (3, 4):
+        return "컷신"
+    if trigger in (1, 2):
+        return "접촉"
+    return "대화" if n_msg > 6 else "잡담"
+
+
 def scan():
     rows = []
     objects = object_sprites()
     infos = load(open(GAME / "MapInfos.rxdata", "rb"))
     names = {k: b2s(v.attributes["@name"]) for k, v in infos.items()}
 
-    def emit(mid, mname, eid, ename, page, sprite, cmdlist):
+    def emit(mid, mname, eid, ename, page, sprite, cmdlist, trigger=-1):
         msgs = page_messages(cmdlist)
+        n_msg = sum(1 for _, _, kind, _ in msgs if kind == "text")
         for cmdi, ind, kind, text, who, how, cast, prompt in attribute(msgs, sprite, objects):
             rows.append({"map": mid, "map_name": mname, "event": eid, "event_name": ename,
                          "page": page, "cmd": cmdi, "ind": ind, "sprite": sprite,
+                         "trigger": trigger, "n_msg": n_msg, "scene": scene(trigger, n_msg),
                          "kind": kind, "who": who, "how": how, "cast": cast,
                          "prompt": prompt, "k": text})
 
@@ -179,7 +201,8 @@ def scan():
             for pi, page in enumerate(ea["@pages"]):
                 g = page.attributes["@graphic"].attributes
                 emit(mid, names.get(mid, ""), ea["@id"], b2s(ea["@name"]), pi,
-                     b2s(g["@character_name"]), page.attributes["@list"])
+                     b2s(g["@character_name"]), page.attributes["@list"],
+                     page.attributes["@trigger"])
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     with gzip.open(OUT, "wt", encoding="utf-8") as f:
