@@ -734,7 +734,7 @@
 {"k": "Wild battles with more than two Pokémon are not allowed.", "v": "야생 배틀에는 포켓몬을 2마리보다 많이 낼 수 없습니다."}
 {"k": "The foe {1}", "v": "The foe {1}"}
 {"k": "Mega Net", "v": "메가볼"}
-{"k": "Mega Ring", "v": "Mega Ring"}
+{"k": "Mega Ring", "v": "메가링"}
 {"k": "There's no PP left for this move!", "v": "이 기술의 PP가 남아 있지 않다!"}
 {"k": "The effects of the {1} prevent status moves from being used!", "v": "The effects of the {1} prevent status moves from being used!"}
 {"k": "{1} allows the use of only {2}!", "v": "{1} allows the use of only {2}!"}
@@ -946,20 +946,20 @@
 {"k": "Ball", "v": "볼"}
 {"k": "Bait", "v": "먹이"}
 {"k": "Rock", "v": "바위"}
-{"k": "Run", "v": "도망치기"}
+{"k": "Run", "v": "도망간다"}
 {"k": "What will\n{1} do?", "v": "What will\n{1} do?"}
 {"k": "Fight", "v": "싸운다"}
 {"k": "Bag", "v": "가방"}
 {"k": "Pokémon", "v": "포켓몬"}
 {"k": "Call", "v": "전화"}
-{"k": "Cancel", "v": "취소"}
+{"k": "Cancel", "v": "그만둔다"}
 {"k": "Use", "v": "사용"}
 {"k": "{1} is selected.", "v": "{1} is selected."}
 {"k": "Use on which Pokémon?", "v": "어느 포켓몬에게 쓸까?"}
 {"k": "No targets somehow...", "v": "어째선지 대상이 없다..."}
 {"k": "Choose a Pokémon.", "v": "포켓몬을 선택하세요."}
 {"k": "Switch In", "v": "Switch In"}
-{"k": "Summary", "v": "요약"}
+{"k": "Summary", "v": "상태를 본다"}
 {"k": "Do what with {1}?", "v": "Do what with {1}?"}
 {"k": "Max. HP<r>+{1}\nAttack<r>+{2}\nDefense<r>+{3}\nSp. Atk<r>+{4}\nSp. Def<r>+{5}\nSpeed<r>+{6}", "v": "Max. HP<r>+{1}\r\nAttack<r>+{2}\r\nDefense<r>+{3}\r\nSp. Atk<r>+{4}\r\nSp. Def<r>+{5}\r\nSpeed<r>+{6}"}
 {"k": "Max. HP<r>{1}\nAttack<r>{2}\nDefense<r>{3}\nSp. Atk<r>{4}\nSp. Def<r>{5}\nSpeed<r>{6}", "v": "Max. HP<r>{1}\r\nAttack<r>{2}\r\nDefense<r>{3}\r\nSp. Atk<r>{4}\r\nSp. Def<r>{5}\r\nSpeed<r>{6}"}
@@ -1290,7 +1290,7 @@
 {"k": "Pokégear", "v": "포켓기어"}
 {"k": "Balls: {1}", "v": "볼: {1}"}
 {"k": "Steps: {1}/{2}\nBalls: {3}", "v": "Steps: {1}/{2}\nBalls: {3}"}
-{"k": "Quit", "v": "종료"}
+{"k": "Quit", "v": "그만둔다"}
 {"k": "Caught: {1}\nLevel: {2}\nBalls: {3}", "v": "Caught: {1}\nLevel: {2}\nBalls: {3}"}
 {"k": "Caught: None\nBalls: {1}", "v": "Caught: None\nBalls: {1}"}
 {"k": "Quit Contest", "v": "Quit Contest"}
@@ -1411,7 +1411,7 @@
 {"k": "The {1} was taken and replaced with the {2}.", "v": "The {1} was taken and replaced with the {2}."}
 {"k": "Took the Pokémon's {1} and gave it the {2}.", "v": "포켓몬에게서 {1}\\j[을,를] 받고 {2}\\j[을,를] 줬다."}
 {"k": "The Pokémon is now holding the {1}.", "v": "포켓몬이 {1}\\j[을,를] 지니게 됐다."}
-{"k": "Give to which Pokémon?", "v": "어느 포켓몬에게 줄까?"}
+{"k": "Give to which Pokémon?", "v": "어느 포켓몬에게 건네줄까?"}
 {"k": "This Pokémon is holding an item. It can't hold mail.", "v": "이 포켓몬은 도구를 지니고 있어 편지를 지닐 수 없습니다."}
 {"k": "Eggs can't hold mail.", "v": "Eggs can’t hold mail."}
 {"k": "Mail was transferred from the Mailbox.", "v": "Mail was transferred from the Mailbox."}
@@ -1426,7 +1426,7 @@
 {"k": "FOURTH", "v": "네 번째"}
 {"k": "FIFTH", "v": "FIFTH"}
 {"k": "SIXTH", "v": "SIXTH"}
-{"k": "Choose Pokémon and confirm.", "v": "포켓몬을 선택하고 확인하세요."}
+{"k": "Choose Pokémon and confirm.", "v": "포켓몬을 선택하고 결정"}
 {"k": "Entry", "v": "도감설명"}
 {"k": "No Entry", "v": "출입 금지"}
 {"k": "No more than {1} Pokémon may enter.", "v": "포켓몬은 {1}마리까지만 참가할 수 있습니다."}
@@ -1451,7 +1451,7 @@
 {"k": "Shadow Pokémon", "v": "그림자포켓몬"}
 {"k": "Make Mystery Gift", "v": "이상한 선물 만들기"}
 {"k": "Duplicate", "v": "복제"}
-{"k": "Delete", "v": "삭제"}
+{"k": "Delete", "v": "삭제한다"}
 {"k": "Set HP", "v": "HP 설정"}
 {"k": "Status: Sleep", "v": "Status: Sleep"}
 {"k": "Status: Poison", "v": "Status: Poison"}
@@ -1632,8 +1632,8 @@
 {"k": "Hates to lose.", "v": "Hates to lose."}
 {"k": "Somewhat stubborn.", "v": "Somewhat stubborn."}
 {"k": "SKILLS", "v": "능력"}
-{"k": "Sp. Atk", "v": "Sp. Atk"}
-{"k": "Sp. Def", "v": "Sp. Def"}
+{"k": "Sp. Atk", "v": "특수공격"}
+{"k": "Sp. Def", "v": "특수방어"}
 {"k": "MOVES", "v": "기술"}
 {"k": "PP", "v": "PP"}
 {"k": "CATEGORY", "v": "분류"}
@@ -1661,8 +1661,8 @@
 {"k": "There's no room to store items.", "v": "도구를 보관할 공간이 없습니다."}
 {"k": "Deposited {1} {2}.", "v": "Deposited {1} {2}."}
 {"k": "Toss", "v": "버린다"}
-{"k": "Deselect", "v": "Deselect"}
-{"k": "Register", "v": "등록"}
+{"k": "Deselect", "v": "리셋"}
+{"k": "Register", "v": "등록한다"}
 {"k": "Invalid pocket: {1}", "v": "Invalid pocket: {1}"}
 {"k": "The item number is invalid.", "v": "The item number is invalid."}
 {"k": "Close storage.", "v": "Close storage."}
@@ -1715,7 +1715,7 @@
 {"k": "The save file is corrupt. The previous save file will be loaded.", "v": "The save file is corrupt.  The previous save file will be loaded."}
 {"k": "The save file is corrupt, or is incompatible with this game.", "v": "The save file is corrupt, or is incompatible with this game."}
 {"k": "Do you want to delete the save file and start anew?", "v": "Do you want to delete the save file and start anew?"}
-{"k": "Continue", "v": "이어하기"}
+{"k": "Continue", "v": "계속한다"}
 {"k": "New Game", "v": "처음부터"}
 {"k": "Mystery Gift", "v": "이상한 소포"}
 {"k": "Language", "v": "언어"}
@@ -1833,14 +1833,14 @@
 {"k": "Box name?", "v": "Box name?"}
 {"k": "Exit from the Box?", "v": "Exit from the Box?"}
 {"k": "Continue Box operations?", "v": "Continue Box operations?"}
-{"k": "Select", "v": "선택"}
+{"k": "Select", "v": "선택한다"}
 {"k": "Mark", "v": "마크"}
 {"k": "Store", "v": "맡긴다"}
 {"k": "Which one will you take?", "v": "Which one will you take?"}
 {"k": "Release", "v": "놓아준다"}
 {"k": "You're holding a Pokémon!", "v": "포켓몬을 들고 있다!"}
 {"k": "Shift", "v": "교체"}
-{"k": "Place", "v": "놓는다"}
+{"k": "Place", "v": "배치한다"}
 {"k": "The duplicated Pokémon was moved to your party.", "v": "복제한 포켓몬을 파티로 옮겼습니다."}
 {"k": "All boxes are full.", "v": "All boxes are full."}
 {"k": "The duplicated Pokémon was moved to box \"{1}.\"", "v": "복제한 포켓몬을 박스 “{1}”\\j[으로,로] 옮겼습니다."}
@@ -1875,7 +1875,7 @@
 {"k": "Someone's PC", "v": "Someone’s PC"}
 {"k": "\\se[accesspc]The Pokémon Storage System was opened.", "v": "\\se[accesspc]포켓몬 보관 시스템을 열었다."}
 {"k": "Withdraw Pokémon", "v": "포켓몬 꺼내기"}
-{"k": "Deposit Pokémon", "v": "포켓몬 맡기기"}
+{"k": "Deposit Pokémon", "v": "포켓몬을 맡긴다"}
 {"k": "Move Pokémon", "v": "포켓몬 이동"}
 {"k": "See ya!", "v": "또 봐!"}
 {"k": "Move Pokémon stored in Boxes to your party.", "v": "박스에 보관된 포켓몬을 파티로 옮깁니다."}
@@ -1906,7 +1906,7 @@
 {"k": "This {1} is ready to open its heart. However, there must be at least one regular Pokémon in the set to perform a purification ceremony.", "v": "이 {1}\\j[은,는] 마음을 열 준비가 됐습니다. 다만 정화 의식을 치르려면 일반 포켓몬이 최소 한 마리 있어야 합니다."}
 {"k": "MOVE", "v": "이동"}
 {"k": "SUMMARY", "v": "상태"}
-{"k": "WITHDRAW", "v": "지니고 간다"}
+{"k": "WITHDRAW", "v": "데리고 간다"}
 {"k": "EXCHANGE", "v": "EXCHANGE"}
 {"k": "PLACE", "v": "PLACE"}
 {"k": "ROTATE", "v": "ROTATE"}
@@ -1939,11 +1939,11 @@
 {"k": "{1}?\nHow many would you like to sell?", "v": "{1}?\r\nHow many would you like to sell?"}
 {"k": "Turned over the {1} and received ${2}.", "v": "{1}\\j[을,를] 건네고 {2}포켓프랑을 받았습니다."}
 {"k": "Buy", "v": "구입"}
-{"k": "Sell", "v": "판매"}
+{"k": "Sell", "v": "판다"}
 {"k": "Welcome!\nHow may I serve you?", "v": "Welcome!\r\nHow may I serve you?"}
 {"k": "Please come again!", "v": "또 오세요~!"}
 {"k": "Is there anything else I can help you with?", "v": "더 필요하신 것은 없나요?"}
-{"k": "Faraway place", "v": "아주 먼 곳"}
+{"k": "Faraway place", "v": "먼 곳"}
 {"k": "[Custom]", "v": "「Custom」"}
 {"k": "Choose a phrase to be where the gift Pokémon was obtained from.", "v": "선물 포켓몬을 얻은 장소로 쓸 문구를 선택하세요."}
 {"k": "Enter a phrase.", "v": "Enter a phrase."}
@@ -1966,7 +1966,7 @@
 {"k": "Couldn't save the gifts to MysteryGift.txt.", "v": "Couldn’t save the gifts to MysteryGift.txt."}
 {"k": "Toggle on/offline", "v": "온/오프라인 전환"}
 {"k": "Edit", "v": "편집"}
-{"k": "Receive", "v": "수령"}
+{"k": "Receive", "v": "받는다"}
 {"k": "Are you sure you want to delete this gift?", "v": "Are you sure you want to delete this gift?"}
 {"k": "{1:s} {2:d}: {3:s} ({4:s})", "v": "{1:s} {2:d}: {3:s} ({4:s})"}
 {"k": "Export selected to file", "v": "Export selected to file"}
@@ -2342,7 +2342,7 @@
 {"k": "Flip:", "v": "반전:"}
 {"k": "False", "v": "거짓"}
 {"k": "True", "v": "참"}
-{"k": "Back", "v": "뒤"}
+{"k": "Back", "v": "돌아간다"}
 {"k": "Front", "v": "앞"}
 {"k": "Behind focus", "v": "포커스 뒤"}
 {"k": "Above focus", "v": "포커스 위"}
@@ -2857,7 +2857,7 @@
 {"k": "Elije un Pokémon y confirma.", "v": "포켓몬을 선택하고 확인하세요."}
 {"k": "Participa", "v": "참가"}
 {"k": "No participa", "v": "참가하지 않음"}
-{"k": "Datos", "v": "정보"}
+{"k": "Datos", "v": "능력치를 본다"}
 {"k": "¿Qué hacer con {1}?", "v": "{1}\\j[을,를] 어떻게 할까?"}
 {"k": "No pueden participar más de {1} Pokémon.", "v": "포켓몬은 {1}마리를 초과해 참가할 수 없습니다."}
 {"k": "PUEDE", "v": "가능"}
@@ -2868,7 +2868,7 @@
 {"k": "PS/Estado", "v": "HP/상태"}
 {"k": "Nivel", "v": "레벨"}
 {"k": "Especie", "v": "종족"}
-{"k": "Movimientos", "v": "기술"}
+{"k": "Movimientos", "v": "기술을 본다"}
 {"k": "Género", "v": "성별"}
 {"k": "Habilidad", "v": "특성"}
 {"k": "Naturaleza", "v": "성격"}
@@ -2876,12 +2876,12 @@
 {"k": "Felicidad", "v": "친밀도"}
 {"k": "EO", "v": "어버이"}
 {"k": "Apodo", "v": "별명"}
-{"k": "Cintas", "v": "리본"}
+{"k": "Cintas", "v": "리본을 본다"}
 {"k": "Huevo", "v": "알"}
 {"k": "Pokémon Oscuro", "v": "다크 포켓몬"}
 {"k": "Hacer Reg. Mist.", "v": "이상한선물 받기"}
 {"k": "Duplicar", "v": "복제"}
-{"k": "Borrar", "v": "삭제"}
+{"k": "Borrar", "v": "삭제한다"}
 {"k": "Setear PS", "v": "HP 설정"}
 {"k": "Estado: Dormido", "v": "상태: 잠듦"}
 {"k": "Estado: Envenenado", "v": "상태: 독"}
@@ -2889,7 +2889,7 @@
 {"k": "Estado: Paralizado", "v": "상태: 마비"}
 {"k": "Estado: Congelado", "v": "상태: 얼음"}
 {"k": "Debilitar", "v": "기절시키기"}
-{"k": "Curar", "v": "회복"}
+{"k": "Curar", "v": "회복한다"}
 {"k": "Establecer los PS del Pokémon (máx. {1}).", "v": "포켓몬의 HP를 설정합니다 (최대 {1})."}
 {"k": "Los PS de {1} se establecieron en {2}.", "v": "{1}의 HP를 {2}\\j[으로,로] 설정했다."}
 {"k": "Establecer el contador de sueño del Pokémon.", "v": "포켓몬의 수면 턴 수를 설정합니다."}
@@ -2991,7 +2991,7 @@
 {"k": "El Pokémon fue duplicado.", "v": "포켓몬을 복제했다."}
 {"k": "¿Estás seguro de que quieres borrar este Pokémon?", "v": "정말 이 포켓몬을 삭제할까?"}
 {"k": "El Pokémon fue borrado.", "v": "포켓몬을 삭제했다."}
-{"k": "Cambiar", "v": "교체"}
+{"k": "Cambiar", "v": "포켓몬을 교체한다"}
 {"k": "Carta", "v": "편지"}
 {"k": "Objeto", "v": "도구"}
 {"k": "No tiene PS suficientes...", "v": "HP가 부족하다..."}
@@ -3000,15 +3000,15 @@
 {"k": "¡{1} no puede usarse en un Huevo!", "v": "{1}\\j[은,는] 알에게 쓸 수 없다!"}
 {"k": "{1} no puede usarse en ese Pokémon.", "v": "{1}\\j[은,는] 그 포켓몬에게 쓸 수 없다."}
 {"k": "{1} recuperó {2} puntos de salud.", "v": "{1}\\j[은,는] 체력을 {2}만큼 회복했다."}
-{"k": "Elige un Pokémon.", "v": "포켓몬을 선택하세요."}
+{"k": "Elige un Pokémon.", "v": "포켓몬을 선택해 주십시오!"}
 {"k": "Elige un Pokémon o cancela.", "v": "포켓몬을 선택하거나 취소하세요."}
 {"k": "¿A qué posición mover?", "v": "어느 위치로 옮길까?"}
 {"k": "¿Qué quieres hacer con la carta?", "v": "편지를 어떻게 할까?"}
 {"k": "Leer", "v": "읽기"}
-{"k": "Quitar", "v": "빼기"}
-{"k": "Usar", "v": "사용"}
-{"k": "Dar", "v": "주기"}
-{"k": "Mover", "v": "이동"}
+{"k": "Quitar", "v": "없앤다"}
+{"k": "Usar", "v": "사용한다"}
+{"k": "Dar", "v": "건네준다"}
+{"k": "Mover", "v": "교체"}
 {"k": "¿Qué quieres hacer con él?", "v": "이걸 어떻게 할까?"}
 {"k": "¿A qué Pokémon quieres darle {1}?", "v": "어느 포켓몬에게 {1}\\j[을,를] 줄까?"}
 {"k": "Un Huevo no puede llevar un objeto.", "v": "알은 도구를 지닐 수 없다."}
@@ -3092,7 +3092,7 @@
 {"k": "¿Cuántas {1} quieres tirar?", "v": "{1}\\j[을,를] 몇 개 버릴까?"}
 {"k": "¿Seguro que quieres tirar {1} {2}?", "v": "정말 {1} {2}\\j[을,를] 버릴까?"}
 {"k": "¡Has tirado {1} {2}!", "v": "{1} {2}\\j[을,를] 버렸다!"}
-{"k": "Retirar", "v": "꺼내기"}
+{"k": "Retirar", "v": "볼에 넣는다"}
 {"k": "Has seleccionado {1}.", "v": "{1}\\j[을,를] 선택했다."}
 {"k": "¿Cuántos quieres retirar?", "v": "몇 개를 꺼낼까?"}
 {"k": "No hay más espacio en la Mochila.", "v": "가방에 자리가 없다."}
@@ -3102,9 +3102,9 @@
 {"k": "¿Cuántos quieres depositar?", "v": "몇 개를 맡길까?"}
 {"k": "No hay espacio para guardar objetos.", "v": "도구를 보관할 공간이 없다."}
 {"k": "Se depositó {1} {2}(s).", "v": "{1} {2}\\j[을,를] 맡겼다."}
-{"k": "Tirar", "v": "버리기"}
-{"k": "Deseleccionar", "v": "선택 해제"}
-{"k": "Registrar", "v": "등록"}
+{"k": "Tirar", "v": "버린다"}
+{"k": "Deseleccionar", "v": "리셋"}
+{"k": "Registrar", "v": "등록한다"}
 {"k": "No se puede llevar {1}.", "v": "{1}\\j[은,는] 지닐 수 없다."}
 {"k": "¿Cuántos {1} quieres tirar?", "v": "{1}\\j[을,를] 몇 개 버릴까?"}
 {"k": "¿Entonces quieres tirar {1} {2}?", "v": "그럼 {1} {2}\\j[을,를] 버릴까?"}
@@ -3153,7 +3153,7 @@
 {"k": "El archivo guardado está corrupto. Se cargará el archivo guardado previo.", "v": "저장 파일이 손상되었습니다. 이전 저장 파일을 불러옵니다."}
 {"k": "El archivo guardado está corrupto o es incompatible con este juego.", "v": "저장 파일이 손상되었거나 이 게임과 호환되지 않습니다."}
 {"k": "¿Quieres borrar el archivo guardado para iniciar uno nuevo?", "v": "저장 파일을 지우고 새로 시작할까?"}
-{"k": "Continuar", "v": "이어하기"}
+{"k": "Continuar", "v": "계속한다"}
 {"k": "Partida Nueva", "v": "새로 시작"}
 {"k": "Regalo Misterioso", "v": "이상한 소포"}
 {"k": "Idioma", "v": "언어"}
@@ -3173,7 +3173,7 @@
 {"k": "El script está tomando demasiado tiempo. Se reiniciará el juego.", "v": "스크립트 처리에 시간이 너무 오래 걸립니다. 게임을 다시 시작합니다."}
 {"k": "\\se[]Se guardó la partida.\\se[save]\\wtnp[30]", "v": "\\se[]게임을 저장했습니다.\\se[save]\\wtnp[30]"}
 {"k": "\\se[]Error al guardar.\\wtnp[30]", "v": "\\se[]저장 중 오류.\\wtnp[30]"}
-{"k": "¿Quieres guardar la partida?", "v": "게임을 저장하시겠습니까?"}
+{"k": "¿Quieres guardar la partida?", "v": "여기까지의 모험을 리포트에 기록하겠습니까?"}
 {"k": "¡ADVERTENCIA!", "v": "경고!"}
 {"k": "Hay guardado un archivo de un juego diferente.", "v": "다른 게임의 저장 파일이 있습니다."}
 {"k": "Si guardas ahora, la aventura del archivo, incluyendo los objetos y Pokémon, se perderá completamente.", "v": "지금 저장하면 도구와 포켓몬을 포함해 해당 파일의 모험 데이터가 모두 사라집니다."}
@@ -3187,7 +3187,7 @@
 {"k": "Lenta", "v": "느림"}
 {"k": "Rápida", "v": "빠름"}
 {"k": "Animación de batalla", "v": "배틀 애니메이션"}
-{"k": "Sí", "v": "네"}
+{"k": "Sí", "v": "예"}
 {"k": "Estilo de batalla", "v": "배틀방식"}
 {"k": "Cambio", "v": "교체"}
 {"k": "Mantener", "v": "유지"}
@@ -3262,16 +3262,16 @@
 {"k": "¿Nombre de la Caja?", "v": "박스 이름은?"}
 {"k": "¿Salir de la Caja?", "v": "박스를 종료하시겠습니까?"}
 {"k": "¿Hacer más cambios?", "v": "더 변경할까?"}
-{"k": "Elegir", "v": "선택"}
-{"k": "Sacar", "v": "꺼내기"}
-{"k": "Marcar", "v": "마크"}
+{"k": "Elegir", "v": "선택한다"}
+{"k": "Sacar", "v": "데리고 간다"}
+{"k": "Marcar", "v": "마킹"}
 {"k": "{1} fue seleccionado.", "v": "{1}\\j[을,를] 선택했다."}
 {"k": "¿Cuál vas a tomar?", "v": "어느 것을 가져갈까?"}
 {"k": "Soltar", "v": "놓기"}
 {"k": "¡Estás sosteniendo un Pokémon!", "v": "포켓몬을 들고 있다!"}
 {"k": "Depurar", "v": "디버그"}
-{"k": "Colocar", "v": "놓기"}
-{"k": "Dejar", "v": "맡기기"}
+{"k": "Colocar", "v": "배치한다"}
+{"k": "Dejar", "v": "배치한다"}
 {"k": "Entren. Original", "v": "최초의 트레이너"}
 {"k": "Setear el nivel del Pokémon (máx. {1}).", "v": "포켓몬의 레벨을 설정합니다 (최대 {1})."}
 {"k": "El nivel de {1} fue seteado en {2}.", "v": "{1}의 레벨을 {2}\\j[으로,로] 설정했다."}
@@ -3322,7 +3322,7 @@
 {"k": "Sin habilidad", "v": "특성 없음"}
 {"k": "Sin objeto", "v": "도구 없음"}
 {"k": "Nv.", "v": "Lv."}
-{"k": "Aceptar", "v": "확인"}
+{"k": "Aceptar", "v": "결정"}
 {"k": "Marcar tu Pokémon.", "v": "포켓몬에 마크를 단다."}
 {"k": "El jugador no está en el mapa, por lo que no se puede determinar la región.", "v": "플레이어가 맵에 없어 지역을 판단할 수 없습니다."}
 {"k": "El mapa actual no pertenece a ninguna región. Por favor, configura los metadatos MapPosition para este mapa.", "v": "현재 맵이 어느 지역에도 속하지 않습니다. 이 맵의 MapPosition 메타데이터를 설정하세요."}
@@ -3349,9 +3349,9 @@
 {"k": "\\se[accesspc]Accedió al PC de {1}.", "v": "\\se[accesspc]{1}의 PC에 접속했다."}
 {"k": "PC de Alguien", "v": "누군가의 PC"}
 {"k": "\\se[accesspc]Acceso al Sistema de Almacenamiento de Pokémon concedido.", "v": "\\se[accesspc]포켓몬 보관 시스템 접속이 허가됐다."}
-{"k": "Sacar Pokémon", "v": "포켓몬 꺼내기"}
-{"k": "Dejar Pokémon", "v": "포켓몬 맡기기"}
-{"k": "Mover Pokémon", "v": "포켓몬 이동"}
+{"k": "Sacar Pokémon", "v": "포켓몬 내보내기"}
+{"k": "Dejar Pokémon", "v": "맡긴다"}
+{"k": "Mover Pokémon", "v": "포켓몬 교체"}
 {"k": "¡Nos vemos!", "v": "또 보자!"}
 {"k": "Pasar un Pokémon guardado en una Caja a tu equipo.", "v": "박스에 맡긴 포켓몬을 지닌포켓몬으로 옮깁니다."}
 {"k": "Guardar un Pokémon de tu equipo en una Caja.", "v": "지닌포켓몬을 박스에 맡깁니다."}
@@ -3437,7 +3437,7 @@
 {"k": "No se pudieron guardar los regalos en MysteryGift.txt.", "v": "선물을 MysteryGift.txt에 저장하지 못했다."}
 {"k": "Cambiar en/fuera de línea", "v": "온라인/오프라인 전환"}
 {"k": "Editar", "v": "편집"}
-{"k": "Recibir", "v": "받기"}
+{"k": "Recibir", "v": "받는다"}
 {"k": "¿Estas seguro de querer borrar este regalo?", "v": "정말 이 선물을 삭제하시겠습니까?"}
 {"k": "Exportar selec. a archivo", "v": "선택 항목 파일로 내보내기"}
 {"k": "Buscando regalos.\nEspere un momento...\\wtnp[0]", "v": "선물을 찾는 중.\n잠시만 기다려 주세요...\\wtnp[0]"}
@@ -3475,8 +3475,8 @@
 {"k": "No hay Pokémon salvajes en el mapa {1}, por lo que se cancela el concurso.", "v": "맵 {1}에 야생 포켓몬이 없어 대회를 취소합니다."}
 {"k": "Muy pocos concursantes cazando bichos.", "v": "벌레잡기 대회 참가자가 너무 적다."}
 {"k": "Compet Balls: {1}", "v": "콤페볼: {1}"}
-{"k": "Luchar", "v": "싸운다"}
-{"k": "Huir", "v": "도망치다"}
+{"k": "Luchar", "v": "싸운다!"}
+{"k": "Huir", "v": "도망간다"}
 {"k": "Ya has capturado un {1}.", "v": "이미 {1}\\j[을,를] 잡았다."}
 {"k": "POKéMON ANTERIOR:\n{1} Nv{2} MáxPS: {3}\nESTE POKÉMON:\n{4} Nv{5} MáxPS: {6}", "v": "이전 포켓몬:\n {1} Lv{2} 최대HP: {3}\n이 포켓몬:\n {4} Lv{5} 최대HP: {6}"}
 {"k": "¿Cambiar Pokémon?", "v": "포켓몬을 교체할까?"}
@@ -4779,7 +4779,7 @@
 {"k": "{1:s} (♂, Nv{2:d})", "v": "{1:s} (♂, Lv.{2:d})"}
 {"k": "{1:s} (♀, Nv{2:d})", "v": "{1:s} (♀, Lv.{2:d})"}
 {"k": "{1:s} (Nv{2:d})", "v": "{1:s} (Lv.{2:d})"}
-{"k": "Cancelar", "v": "취소"}
+{"k": "Cancelar", "v": "그만둔다"}
 {"k": "No se puede guardar el huevo", "v": "알은 맡길 수 없다"}
 {"k": "Pareja de la Guardería", "v": "기르미집의 짝"}
 {"k": "Es un suelo blando y fértil.", "v": "부드럽고 기름진 흙이다."}
@@ -5349,7 +5349,7 @@
 {"k": "Se ha corrompido la partida, se cargará una anterior.", "v": "저장 데이터가 손상되어 이전 데이터를 불러옵니다."}
 {"k": "Se ha corrompido la partida.", "v": "저장 데이터가 손상되었습니다."}
 {"k": "¿Quieres borrar esta partida y empezar una nueva?", "v": "이 저장 데이터를 삭제하고 새로 시작하시겠습니까?"}
-{"k": "Se ha borrado la partida.", "v": "저장 데이터를 삭제했습니다."}
+{"k": "Se ha borrado la partida.", "v": "리포트의 내용이 사라져 버렸다!"}
 {"k": "Nuevo juego", "v": "새로 시작"}
 {"k": "Elige un Pokémon y confirma.", "v": "포켓몬을 선택하고 결정하세요."}
 {"k": "Este Pokémon no es tuyo.\nSu nombre es lo único que le queda de su antiguo Entrenador.", "v": "이 포켓몬은 네 것이 아니다.\n이름만이 예전 트레이너에게서 남은 전부다."}
@@ -6338,9 +6338,9 @@
 {"k": "¡{2} de {1} paralizó a {3}!", "v": "{1}의 {2} 때문에 {3}\\j[은,는] 마비되어 기술이 나오기 어려워졌다!"}
 {"k": "¡Es muy eficaz!", "v": "효과가 굉장했다!"}
 {"k": "¡{1} ha roto su baguette de tanta fuerza!", "v": "{1}\\j[이,가] 힘을 너무 준 나머지 바게트를 부러뜨렸다!"}
-{"k": "Volver", "v": "돌아가기"}
+{"k": "Volver", "v": "돌아간다"}
 {"k": "Elige la tecla.", "v": "키를 선택하세요."}
-{"k": "Asignar", "v": "Asignar"}
+{"k": "Asignar", "v": "등록"}
 {"k": "Desasignar", "v": "Desasignar"}
 {"k": "¡Su forma principesca le da velocidad!", "v": "왕자다운 모습이 속도를 더해준다!"}
 {"k": "¡Vuelve a ser un sapo gordo y lento!", "v": "다시 굼뜨고 뚱뚱한 두꺼비로 돌아간다!"}
@@ -6821,7 +6821,7 @@
 {"k": "Elegir modo de randomizar habilidades", "v": "특성 랜덤 방식 선택"}
 {"k": "Elige las generaciones para el random", "v": "랜덤에 포함할 세대 선택"}
 {"k": "Elija el modo para las habilidades random", "v": "특성 랜덤 방식을 선택하세요"}
-{"k": "Terminar", "v": "완료"}
+{"k": "Terminar", "v": "끝낸다"}
 {"k": "[ ] Full Random", "v": "[ ] 풀 랜덤"}
 {"k": "[X] Full Random", "v": "[X] 풀 랜덤"}
 {"k": "[ ] Mapeo de habilidades", "v": "[ ] 특성 매핑"}
