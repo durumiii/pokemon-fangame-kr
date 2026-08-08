@@ -23,8 +23,11 @@
 - 도구: 딱지 붙은 dat 판독을 `vendor/datread.py` 한 자리로(멎어 있던 build·probe·verify
   복구) · dat 손수정 회수 `harvest.py` 신설 · 조사 판정의 낫표 건너뛰기 루비 1.9+ 결함
   수리(현행 배포 문장에는 걸리는 자리 없음 — 다음 코어 굽기에 실린다).
-- 문서: 네 층 재편(게이트 AGENTS · 지침 guides · 대장 ledger · 기록 research) —
-  events-and-speech 신설, mods를 packaging·release로 분할, ledger에 glossary·voices·quality.
+- 문서: 네 층 재편(게이트 AGENTS · 지침 `docs/guides/` · 대장 `docs/ledger/` · 기록
+  `docs/log/`) — events-and-speech 신설, mods를 packaging·release로 분할.
+  이어서 대장을 근거 전용으로 좁혔다(08-09): 현행 규칙은 지침으로, 열린 일감은 로드맵과
+  티켓 파일로 갈라 원장이 24k에서 8k 토큰이 됐다. 고아 폴더 `docs/design`을 없애고
+  깨진 링크 열여섯을 고쳤다.
 
 ## v5.2.1 (2026-08-07, 자산 교체 2026-08-07)
 

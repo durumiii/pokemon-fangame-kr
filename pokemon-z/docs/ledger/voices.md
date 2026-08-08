@@ -1,5 +1,14 @@
 # 말투표 초안 — Pokémon Z 재번역 배치용
 
+**범위** — 이름표가 붙는 인물의 확정 말투와 그 근거. 잡담 NPC의 격을 가른 판정도 여기.
+**여는 때** — 인물의 어투를 정하거나 뒤집을 때 · 말투가 어긋난다는 제보의 근거를 볼 때 ·
+배치 프롬프트에 동봉할 때.
+**다루지 않는 것** — 말투를 **배정하는 규칙**([../guides/events-and-speech.md](../guides/events-and-speech.md)) ·
+스프라이트별 개성(`translate/persona-table.jsonl`) · 표기([glossary.md](glossary.md)).
+**전제** — 이벤트와 텍스트의 부류, 화자 판정. 낯설면 events-and-speech를 먼저 연다.
+
+⚠ 이 파일은 배포 묶음에도 실린다(`share/make_package.py`).
+
 2026-08-02 작성. 화자 태그 병합(별칭표 `speaker-aliases.json`) 뒤 15행 이상 인물
 전원 + 행수 무관 중요 역을 다뤘다. 근거는 인물당 표본 대사 24줄
 (스크래치패드 `voices-samples.md`, 전체 대사에서 고르게 추출).

@@ -21,6 +21,7 @@
 | [reports](docs/guides/reports.md) | 유저 제보 시트, 웹 스튜디오 |
 | [packaging](docs/guides/packaging.md) | 모드 조립·주입, 글꼴 모드 |
 | [release](docs/guides/release.md) | 릴리스 노트, 자산 진열 |
+| [reuse-playbook](docs/guides/reuse-playbook.md) | 다른 팬게임에 이 방식을 다시 밟는 순서 |
 
 ⚠ **`translate/ko/*.jsonl`(번역 정본)은 events-and-speech를 읽기 전에 고치지 않는다.**
 제보를 그대로 옮겨 넣는 작업도 예외가 아니다 — 제보가 건드리는 것이 말투일 때
