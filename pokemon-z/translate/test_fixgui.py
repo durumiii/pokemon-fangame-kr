@@ -98,8 +98,33 @@ def test_chips_and_event(tmp):
     assert [(r["map"], r["v"]) for r in other] == [(2, "안녕 동무")]
 
 
+def test_tags():
+    """태그 문법 — 같은 태그는 OR, 다른 태그끼리는 AND(배포판 스튜디오와 같은 규칙)."""
+    f = fixgui.parse_query('분류:도구 맵:12 화자:간호사 상태:수정 "두 낱말" 자유어')
+    assert f["sec"] == ["도구"] and f["map"] == ["12"] and f["spk"] == ["간호사"]
+    assert f["state"] == ["수정"] and f["text"] == ["두 낱말", "자유어"]
+    assert fixgui.parse_query("맵:1 맵:2")["map"] == ["1", "2"]      # 같은 태그 누적
+    assert fixgui.parse_query("그냥말")["text"] == ["그냥말"]
+
+    c = {"mapname": {12: "고목내마을"}, "row": {(12, "Hola"): {"sprite": "nurse", "group": "간호사"}}}
+    row = {"file": "09-item-descs.jsonl", "line": 3, "map": 12, "es": "Hola", "v": "안녕"}
+    go = lambda q, **kw: fixgui.row_match(row, fixgui.parse_query(q), c,
+                                          kw.get("edited", set()), kw.get("memoed", []))
+    assert go("분류:도구")                  # 09 → 「도구 설명」 절 이름에 걸린다
+    assert go("분류:9") and go("분류:item")  # 번호·파일명으로도
+    assert not go("분류:기술")
+    assert go("맵:12") and go("맵:고목") and not go("맵:1")   # 숫자는 정확, 이름은 부분
+    assert go("화자:간호사") and go("화자:nurse") and not go("화자:점원")
+    assert go("원문:Hola 번역:안녕") and not go("원문:Adios")
+    assert go("맵:12 안녕") and not go("맵:12 없는말")        # 태그 + 자유어는 AND
+    assert not go("상태:수정")
+    assert go("상태:수정", edited={("09-item-descs.jsonl", 3)})
+    assert go("상태:메모", memoed=["안녕"]) and not go("상태:메모", memoed=["딴말"])
+
+
 if __name__ == "__main__":
     test_plan()
+    test_tags()
     with tempfile.TemporaryDirectory() as d:
         test_bulk_and_revert(Path(d))
     with tempfile.TemporaryDirectory() as d:

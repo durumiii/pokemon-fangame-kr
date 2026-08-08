@@ -49,6 +49,10 @@
  .menu .mi-t{display:flex;flex-direction:column;gap:1px;min-width:0}
  .menu .mi-d{font-size:11.5px;color:var(--sub);white-space:normal}
  .menu hr{border:none;border-top:1px solid var(--line);margin:5px 4px}
+ .sugg{top:calc(100% + 6px);left:0;right:0;min-width:0}
+ .sugg button b{color:var(--acc);font-weight:600}
+ .sugg button.on{background:var(--card)}
+ .sugg .hint{font-size:11.5px;color:var(--sub);padding:4px 10px 6px}
  main{max-width:1100px;margin:20px auto;padding:0 22px 80px}
  .meta{color:var(--sub);font-size:13px;margin:6px 2px 16px}
  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;
@@ -82,11 +86,12 @@
  <div class=logo onclick=goHome() title="홈으로">Z <b>번역 스튜디오</b></div>
  <div class=searchwrap>
   <input type=text id=q autocomplete=off spellcheck=false autofocus
-    placeholder="문구 검색 — 한국어 번역 또는 스페인어 원문">
+    placeholder="문구 검색 — 분류:도구 맵:리엔소 화자:접객 상태:수정 태그도 돼요">
   <button class=primary onclick=search()>
    <svg width=14 height=14 viewBox="0 0 16 16" fill=none stroke=currentColor stroke-width=1.8 stroke-linecap=round><circle cx=7 cy=7 r="4.5"/><path d="M10.5 10.5 14 14"/></svg>검색</button>
   <button class=ghost id=browsebtn data-menubtn onclick="togglePanel('browse',this)" title="맵·화자·분류·파일별로 훑어봐요">
    <svg width=14 height=14 viewBox="0 0 16 16" fill=none stroke=currentColor stroke-width=1.6 stroke-linecap=round style="color:var(--es)"><path d="M2 3.5h12M2 8h12M2 12.5h12"/><circle cx=4 cy=3.5 r=1.3 fill=currentColor stroke="none"/><circle cx=8 cy=8 r=1.3 fill=currentColor stroke="none"/><circle cx=12 cy=12.5 r=1.3 fill=currentColor stroke="none"/></svg>찾아보기</button>
+  <div id=sugg class="menu sugg" hidden></div>
  </div>
  <div id=browse class=menu hidden>
   <button onclick="pickBrowse('map')"><span class=mi-t>맵별<span class=mi-d>맵 하나의 대사를 통째로</span></span></button>
@@ -124,16 +129,66 @@
 <div id=toast></div>
 <script>
 const $=id=>document.getElementById(id);
-let HITS=[],ALL=[],SHOWN=0,DIRTY=0,FILE='',QRY='',TRUNC=false;const STEP=50;
-$('q').addEventListener('keydown',e=>{if(e.key==='Enter')search()});
+let HITS=[],ALL=[],PEND=[],SHOWN=0,DIRTY=0,FILE='',QRY='',TRUNC=false;const STEP=50;
+// ─ 검색 태그 자동완성 — 값 후보는 서버(/tagvals)가 낸다 ─
+const TAGKEYS=['분류','맵','화자','원문','번역','상태'];
+const TAG_RE=new RegExp('^('+TAGKEYS.join('|')+'):(.*)$');
+const unq=s=>s.replace(/^"([^"]*)"?$/,'$1');
+let SUGN=-1;
+async function suggest(){
+ const q=$('q'),upto=q.value.slice(0,q.selectionStart??q.value.length);
+ const word=upto.split(/\s+/).pop(),m=word.match(TAG_RE);
+ let items=[];
+ if(m){
+  const r=await fetch(`/tagvals?tag=${encodeURIComponent(m[1])}&part=${encodeURIComponent(unq(m[2]))}`);
+  items=(await r.json()).vals.map(x=>({
+   ins:`${m[1]}:${/\s/.test(x.v)?`"${x.v}"`:x.v} `,label:`<b>${m[1]}:</b>${esc(x.label)}`}));
+ }else if(word){
+  items=TAGKEYS.filter(t=>t.startsWith(word)).map(t=>({ins:`${t}:`,
+   label:`<b>${t}:</b><span class=mi-d style="margin-left:6px">태그로 좁혀요</span>`}));
+ }
+ SUGN=-1;
+ const sg=$('sugg');
+ if(!items.length){sg.hidden=true;return}
+ sg._items=items;
+ sg.innerHTML=items.map((it,i)=>
+  `<button class=si tabindex=-1 onmousedown="event.preventDefault();acceptSugg(${i})">${it.label}</button>`).join('')
+  +'<div class=hint>Tab·클릭으로 채우고 Enter로 검색해요</div>';
+ sg.hidden=false;
+}
+function acceptSugg(i){
+ const it=$('sugg')._items?.[i]; if(!it)return;
+ const q=$('q'),pos=q.selectionStart??q.value.length;
+ const upto=q.value.slice(0,pos),word=upto.split(/\s+/).pop();
+ q.value=upto.slice(0,upto.length-word.length)+it.ins+q.value.slice(pos);
+ const at=upto.length-word.length+it.ins.length;
+ q.setSelectionRange(at,at); q.focus(); suggest();
+}
+$('q').addEventListener('input',suggest);
+$('q').addEventListener('focus',suggest);
+$('q').addEventListener('keydown',e=>{
+ const sg=$('sugg');
+ if(!sg.hidden&&(e.key==='ArrowDown'||e.key==='ArrowUp')){
+  e.preventDefault(); const n=sg._items.length;
+  SUGN=(SUGN+(e.key==='ArrowDown'?1:n-1)+n)%n;
+  [...sg.querySelectorAll('.si')].forEach((b,i)=>b.classList.toggle('on',i===SUGN));
+  return;
+ }
+ if(!sg.hidden&&(e.key==='Tab'||(e.key==='Enter'&&SUGN>=0))){
+  e.preventDefault(); acceptSugg(SUGN>=0?SUGN:0); return;
+ }
+ if(e.key==='Enter'){sg.hidden=true;search()}
+});
 function toast(m,ms=2200){const t=$('toast');t.textContent=m;t.classList.add('show');
  clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),ms)}
-function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
+// 속성값 자리에도 그대로 쓰므로 따옴표까지 막는다
+function esc(s){const d=document.createElement('div');d.textContent=s??'';
+ return d.innerHTML.replace(/"/g,'&quot;')}
 function dirty(n){DIRTY+=n;const d=$('dirty');
  if(DIRTY>0){d.style.display='inline-block';d.textContent=`저장 ${DIRTY}건 — 빌드 필요`}
  else d.style.display='none'}
 // 드롭다운 패널 — 열림/닫힘과 자리만 여기서, 내용은 마크업에 있다
-const PANELS=['tools','browse'];
+const PANELS=['tools','browse','sugg'];
 function closePanels(){for(const id of PANELS){const p=$(id);if(p)p.hidden=true}}
 function togglePanel(id,btn){
  const p=$(id),wasOpen=!p.hidden;
@@ -144,14 +199,41 @@ function togglePanel(id,btn){
  if(br.left-hr.left+p.offsetWidth>hr.width-12)p.style.right=Math.max(8,hr.right-br.right)+'px';
  else p.style.left=(br.left-hr.left)+'px';
 }
-addEventListener('click',e=>{if(!e.target.closest?.('.menu,[data-menubtn]'))closePanels()});
+addEventListener('click',e=>{if(!e.target.closest?.('.menu,[data-menubtn],#q'))closePanels()});
 addEventListener('keydown',e=>{if(e.key==='Escape')closePanels()});
-function goHome(){
- closePanels();$('q').value='';FILE='';ALL=[];HITS=[];
- $('meta').innerHTML='검색어를 입력하세요. 저장 <kbd>Ctrl+Enter</kbd> · 검색 <kbd>Enter</kbd>';
- $('out').innerHTML='<div class=empty>어색한 문구를 발견하면 여기서 찾아 바로 고치세요.<br>'
-  +'확신이 없으면 메모로 남겨 두면 됩니다 — 나중에 한꺼번에 처리해요.</div>';
+// 홈 — 빈 화면 대신 지금 상태를 세워 둔다(어디서 이어 할지가 여기서 보여야 한다)
+async function goHome(){
+ closePanels();$('q').value='';FILE='';ALL=[];HITS=[];QRY='';
+ $('meta').innerHTML='검색어를 입력하세요 — 태그도 돼요(<b>분류:</b>도구 · <b>맵:</b>리엔소 · <b>화자:</b>접객 · '
+  +'<b>원문:</b>Hola · <b>상태:</b>수정). 태그 이름을 치면 값 후보가 떠요. '
+  +'저장 <kbd>Ctrl+Enter</kbd> · 검색 <kbd>Enter</kbd>';
+ $('out').innerHTML='<div class=meta>불러오는 중...</div>';
+ const [files,ops,notes]=await Promise.all([
+  fetch('/browse?by=file').then(r=>r.json()),
+  fetch('/history').then(r=>r.json()),
+  fetch('/notes').then(r=>r.json())]);
+ const total=files.groups.reduce((a,g)=>a+g.count,0);
+ const pend=notes.notes.filter(n=>!n.done);
+ const sec=(t,body,foot='')=>`<div class=card><b>${t}</b>${body}${foot}</div>`;
+ $('out').innerHTML=
+  sec(`정본 ${total.toLocaleString()}행`,
+   `<div class=rowbar>${files.groups.map(g=>
+     `<span class="chip act" onclick="openGroup('file','${esc(g.key)}')">${esc(g.key)} ${g.count}</span>`).join('')}</div>`)
+  +sec(pend.length?`손볼 메모 ${pend.length}건`:'손볼 메모 없음',
+   (PEND=pend).slice(0,5).map((n,i)=>`<div class=rowbar>
+     <span class="chip act" onclick="gotoNote(PEND[${i}].query)">찾아가기</span>
+     <span class=nv>「${esc(n.query)}」 — ${esc(n.note)}</span></div>`).join('')
+    ||'<div class=meta>어색한 자리를 만나면 카드의 [메모]로 쌓아 두세요.</div>',
+   pend.length>5?`<div class=rowbar><button class=ghost onclick=notes()>메모 전부 보기</button></div>`:'')
+  +sec('최근 고친 자리',
+   ops.ops.slice(0,3).map(o=>`<div class=rowbar>
+     <span class=chip>${KIND[o.kind]||o.kind}</span><span class=chip>${o.rows.length}행</span>
+     <span class="chip act" onclick="openLine('${esc(o.rows[0].file)}',${o.rows[0].line})">${esc(o.rows[0].file)}:${o.rows[0].line}</span>
+     <span class=nv>${esc(o.rows[0].new.slice(0,60))}</span></div>`).join('')
+    ||'<div class=meta>아직 고친 자리가 없습니다.</div>',
+   `<div class=rowbar><button class=ghost onclick=histView()>이력 전부 보기</button></div>`);
 }
+addEventListener('DOMContentLoaded',goHome);
 function pickBrowse(by){closePanels();doBrowse(by)}
 // 이스케이프한 조각 사이에만 강조를 끼운다 — 원문이 태그로 살아나지 않게
 function hl(s){return QRY&&s.includes(QRY)

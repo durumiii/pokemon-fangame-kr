@@ -134,14 +134,118 @@ def iter_rows(only_file=""):
                    "es": d.get("k") or d.get("es") or "", "v": v}
 
 
+# 검색 태그 — 배포판 스튜디오(webapp/app.js)와 같은 문법. 「반영」 상태는 없다:
+# 로컬은 저장이 곧 정본이라 「빌드 전/후」 구분이 행에 남지 않는다.
+TAGS = {"분류": "sec", "맵": "map", "화자": "spk", "원문": "k", "번역": "v", "상태": "state"}
+STATE_VALS = ["수정", "메모"]
+TOKEN_RE = re.compile(r'[^\s:"]+:(?:"[^"]*"?|\S*)|"[^"]*"?|\S+')
+TAG_RE = re.compile(r"^(%s):(.*)$" % "|".join(TAGS))
+UNQ_RE = re.compile(r'^"([^"]*)"?$')
+SEC_LABEL = {0: "맵 대사", 1: "포켓몬 이름", 2: "분류", 3: "도감 설명", 4: "폼",
+             5: "기술 이름", 6: "기술 설명", 7: "도구 이름", 8: "도구 복수형",
+             9: "도구 설명", 10: "특성 이름", 11: "특성 설명", 12: "타입",
+             13: "트레이너 직함", 14: "트레이너 이름", 15: "대전 시작 대사",
+             16: "승리 대사", 17: "패배 대사", 18: "지방", 19: "장소 이름",
+             20: "장소 설명", 21: "맵 이름", 22: "전화", 23: "시스템 문구"}
+
+
+def sec_of(file):
+    return int(file[:2]) if file[:2].isdigit() else -1
+
+
+_mapko = None
+
+
+def map_ko():
+    """맵 이름 한국어판 — 조인표의 이름은 스페인어라 절21을 얹어야 「마을」로 찾는다."""
+    global _mapko
+    if _mapko is None:
+        _mapko = {}
+        for line in (KO / "21-map-names.jsonl").read_text(encoding="utf-8").splitlines():
+            d = json.loads(line)
+            if d.get("v"):
+                _mapko[d["i"]] = d["v"]
+    return _mapko
+
+
+def parse_query(q):
+    """`분류:도구 맵:12 화자:간호사 상태:수정 자유어` → 갈래별 값 목록."""
+    f = {v: [] for v in TAGS.values()} | {"text": []}
+    unq = lambda s: (UNQ_RE.match(s).group(1) if UNQ_RE.match(s) else s)
+    for part in TOKEN_RE.findall(q):
+        m = TAG_RE.match(part)
+        if not m:
+            t = unq(part)
+            if t:
+                f["text"].append(t)
+            continue
+        val = unq(m.group(2))
+        if val:
+            f[TAGS[m.group(1)]].append(val)
+    return f
+
+
+def row_match(r, f, c, edited, memoed):
+    """같은 태그를 여럿 주면 OR, 다른 태그끼리는 AND — 웹과 같은 규칙."""
+    if f["sec"]:
+        sec, lab = sec_of(r["file"]), SEC_LABEL.get(sec_of(r["file"]), "")
+        if not any(s == str(sec) or s in lab or s in r["file"] for s in f["sec"]):
+            return False
+    if f["map"]:
+        names = [c["mapname"].get(r["map"], ""), map_ko().get(r["map"], "")]
+        if r["map"] is None or not any(
+                str(r["map"]) == m if m.isdigit() else any(n and m in n for n in names)
+                for m in f["map"]):
+            return False
+    if f["spk"]:
+        info = c["row"].get((r["map"], r["es"]))
+        if not info or not any(x in info["sprite"] or x in info["group"] for x in f["spk"]):
+            return False
+    if not all(t in r["es"] for t in f["k"]):
+        return False
+    if not all(t in r["v"] for t in f["v"]):
+        return False
+    for st in f["state"]:
+        if st.startswith("수정") and (r["file"], r["line"]) not in edited:
+            return False
+        if st.startswith("메모") and not any(m and m in r["v"] for m in memoed):
+            return False
+    return all(t in r["v"] or t in r["es"] for t in f["text"])
+
+
 def search(q, only_file=""):
+    f = parse_query(q)
+    c = ctx() if (f["map"] or f["spk"]) else {"mapname": {}, "row": {}}
+    edited = {(x["file"], x["line"]) for x in log_rows()} if f["state"] else set()
+    memoed = [n["query"] for n in load_notes() if not n.get("done")] if f["state"] else []
     hits = []
     for r in iter_rows(only_file):
-        if q in r["v"] or q in r["es"]:
+        if row_match(r, f, c, edited, memoed):
             hits.append(r)
             if len(hits) >= 500:
                 return hits, True
     return hits, False
+
+
+def tag_values(tag, part):
+    """제안 드롭다운의 값 후보 — 태그마다 나오는 데가 다르다."""
+    c = ctx()
+    if tag == "분류":
+        return [{"v": str(s), "label": f"{s:02d} · {lab}"}
+                for s, lab in SEC_LABEL.items() if part in lab or part == str(s)][:12]
+    if tag == "상태":
+        return [{"v": v, "label": v} for v in STATE_VALS if v.startswith(part)]
+    if tag == "맵":
+        out = []
+        for m, es in sorted(c["mapname"].items()):
+            ko = map_ko().get(m, "")
+            if str(m) == part if part.isdigit() else (part in ko or part in (es or "")):
+                out.append({"v": str(m), "label": f"{m} · {ko or es or '(이름 없음)'}"})
+        return out[:12]
+    if tag == "화자":
+        vals = {i[k] for i in c["row"].values() for k in ("sprite", "group")}
+        return [{"v": v, "label": v} for v in sorted(vals) if part in v][:12]
+    return []
 
 
 def plan_replace(rows, find, repl, src=""):
@@ -384,6 +488,10 @@ class H(BaseHTTPRequestHandler):
             qs = urllib.parse.parse_qs(u.query)
             hits, trunc = search(qs.get("q", [""])[0], qs.get("file", [""])[0])
             self._json({"hits": chips(hits), "truncated": trunc})
+        elif u.path == "/tagvals":
+            qs = urllib.parse.parse_qs(u.query)
+            self._json({"vals": tag_values(qs.get("tag", [""])[0],
+                                           qs.get("part", [""])[0])})
         elif u.path == "/event":
             qs = urllib.parse.parse_qs(u.query)
             g = lambda k: int(qs.get(k, ["0"])[0])
