@@ -27,3 +27,4 @@
 {"sec": "PScreen_Options", "line": 708, "old": "[_INTL(\"Sí\"), _INTL(\"No\")]", "new": "[\"켜기\",\"끄기\"]", "why": "〃"}
 {"sec": "PScreen_Options", "line": 753, "old": "‘누르기’로 두면 Z키로 계속 달릴 수 있다.", "new": "‘토글’로 두면 Z키로 계속 달릴 수 있다.", "why": "달리기 키 값 개명(홀드/토글)에 맞춘 설명"}
 {"sec": "Diploma Nuz2", "line": 7, "old": "하드 너즐록을", "new": "영웅 너즐록을", "why": "원문 «nuzlocke heroico», 정본 영웅 계열(영웅상장·영웅 너즐록·영웅 모드) 일관 — 유지자 판정 2026-08-09 (Z-30)"}
+{"sec": "PScreen_Storage", "line": 1095, "old": "[_INTL(\"Macho\"),_INTL(\"Hembra\"),_INTL(\"Desconocido\")]", "new": "[_INTL(\"Masculino\"),_INTL(\"Femenino\"),_INTL(\"Desconocido\")]", "why": "어버이(OT) 성별 표시 — Macho/Hembra는 도감 폼 목록 7곳과 공용 키라 값을 못 바꾼다. 어버이 전용 키로 갈아 끼워 번역표가 계속 관리하게 한다 (Z-39, 유지자 판정 2026-08-09)"}

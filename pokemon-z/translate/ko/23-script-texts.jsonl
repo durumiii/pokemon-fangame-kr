@@ -2953,8 +2953,8 @@
 {"k": "Dar grado aleatorio", "v": "랜덤 등급 부여"}
 {"k": "Hacer no infectado", "v": "미감염으로 설정"}
 {"k": "Limpiar Pokérus", "v": "포케루스 제거"}
-{"k": "Masculino", "v": "수컷"}
-{"k": "Femenino", "v": "암컷"}
+{"k": "Masculino", "v": "남자"}
+{"k": "Femenino", "v": "여자"}
 {"k": "Desconocido", "v": "알 수 없음"}
 {"k": "Pokémon del jugador\n{1}\n{2}\n{3} ({4})", "v": "플레이어의 포켓몬\n{1}\n{2}\n{3} ({4})"}
 {"k": "Pokémon extranjero\n{1}\n{2}\n{3} ({4})", "v": "외국 포켓몬\n{1}\n{2}\n{3} ({4})"}
