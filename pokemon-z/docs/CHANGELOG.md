@@ -23,6 +23,12 @@
 - 굵은 한글 그리기가 모바일 실행기(Runa·RPG Player)에서 튕기던 것을 고쳤다(Z-31) —
   `getbyte` 없는 1.9계 실행기에서 String 대 정수 비교가 되던 자리를 `unpack`으로.
   코어 재굽기 전엔 유저에게 안 닿는다.
+- 코어에 신형 루비 호환 층을 넣었다(Z-32) — 맨 앞 심 섹션(없는 API만 채움:
+  `nitems`·`Thread.critical`·`File.exists?`·`Fixnum`·`getbyte`)과 1.8 전용 구문
+  수술(`when N:` 콜론 23곳·rescue 밖 `retry` 1곳). 모바일(mkxp-z, 루비 3.1+)에서
+  원작 1.8 코드가 즉사하던 지뢰밭 정리 — 몬스터볼 제보의 유력 원인(파티 만석 +
+  `nitems`)도 여기 덮인다. 도구 `share/patch_ruby_compat.py`·감사
+  `share/qa-ruby-compat.py`.
 - 도구: 딱지 붙은 dat 판독을 `vendor/datread.py` 한 자리로(멎어 있던 build·probe·verify
   복구) · dat 손수정 회수 `harvest.py` 신설 · 조사 판정의 낫표 건너뛰기 루비 1.9+ 결함
   수리(현행 배포 문장에는 걸리는 자리 없음 — 다음 코어 굽기에 실린다).
