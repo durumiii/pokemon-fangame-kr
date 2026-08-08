@@ -123,6 +123,16 @@ def main() -> None:
     trim.populate(unicodes=keep)
     trim.subset(base)
 
+    # 갈무리의 ?!는 라틴 기준선(74) 위 10픽셀이라 꼭대기(824)가 한글(792)을 넘어
+    # 떠 보인다(유지자 실기 제보 2026-08-09). 바닥을 한글과 같은 0으로 내린다.
+    base_map = cmap_of(base)
+    for ch in "?!":
+        g = base["glyf"][base_map[ord(ch)]]
+        g.expand(base["glyf"])
+        if g.numberOfContours > 0 and g.yMin > 0:
+            g.coordinates.translate((0, -g.yMin))
+            g.recalcBounds(base["glyf"])
+
     # 라틴·숫자는 BW에서 통째로(악센트 눈금 사고 수리 + 스타일 통일),
     # 그 밖에 갈무리에 없는 글자는 DPPt에서 가져온다.
     bw = TTFont(BW)
