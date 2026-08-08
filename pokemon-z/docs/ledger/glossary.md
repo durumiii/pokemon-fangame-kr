@@ -298,6 +298,7 @@ Ciudad Gres는 그레스시티. 시설은 절21 표기를 정본으로(세뇨리
   (Diploma Heroico) · 영웅 너즐록(nuzlocke heroico). 원문이 일관되게 heroico이고
   정본도 영웅 계열이었으며, 유일한 이탈이던 스크립트 박힌 상장 본문(Diploma Nuz2)의
   「하드 너즐록」을 치환표(share/baked-korean-fixes.jsonl)로 「영웅 너즐록」에 맞췄다.
-- **Modo Radical은 「라디칼 모드」 현행 유지** — 절23의 «Modo Radical» 회복 도구
-  차단 문구는 «Modo Heroico» 문구와 사실상 같은 내용이지만, 별개 모드일 가능성을
-  남겨 유지자 판정으로 통일하지 않았다. 스크립트 트리거 조사 뒤 재판정.
+- **Modo Radical은 「라디칼 모드」 현행 유지 — 죽은 문자열** — 절23의 «Modo Radical»
+  회복 도구 차단 문구는 설치본(V2.18) 스크립트 271절 전수 실측에서 0건, 살아 있는
+  코드는 «Modo Heroico» 26곳(`$game_switches[666]` 분기)뿐이라 게임에 표시될 길이
+  없다. 실익이 없어 통일하지 않고 둔다(유지자 재판정 2026-08-09).
