@@ -97,6 +97,44 @@ REGEX_EDITS = [
 ]
 
 
+def _proc_return_to_next(src: str) -> tuple[str, int]:
+    """최상위 `proc { ... }` 안의 `return`을 `next`로 바꾼다.
+
+    1.8의 `proc`은 `lambda`와 같은 물건이라 블록 안 `return`이 그 블록에서 돌아왔다.
+    1.9+에서는 `proc`이 비-lambda라 같은 자리가 LocalJumpError(unexpected return)다 —
+    이벤트 핸들러가 대부분 `Events.onXxx+=proc{...}` 꼴이라 배틀 종료 같은 자리에서
+    통째로 터진다. `next`는 1.8·3.x 양쪽에서 「이 블록에서 값을 들고 나간다」로 같다.
+    (중첩 `def`가 든 proc 블록은 이 코어에 없다 — 2026-08-09 전수 확인.)
+    """
+    out = []
+    pos = 0
+    changed = 0
+    for m in re.finditer(r"proc\s*\{", src):
+        if m.start() < pos:
+            continue
+        i = m.end() - 1
+        depth = 0
+        while i < len(src):
+            if src[i] == "{":
+                depth += 1
+            elif src[i] == "}":
+                depth -= 1
+                if depth == 0:
+                    break
+            i += 1
+        block = src[m.start():i]
+        new_block, n = re.subn(r"(?m)^(\s*)return\b", r"\1next", block)
+        if n:
+            out.append(src[pos:m.start()])
+            out.append(new_block)
+            pos = i
+            changed += n
+    if not changed:
+        return src, 0
+    out.append(src[pos:])
+    return "".join(out), changed
+
+
 def patch_file(path: Path) -> None:
     secs = load(open(path, "rb"))
     changed = []
@@ -126,6 +164,19 @@ def patch_file(path: Path) -> None:
             break
         else:
             sys.exit(f"중단: {path}에 '{hint}' 섹션이 없다 — 코어 구성이 바뀌었는지 확인")
+
+    # ③ proc 안의 return → next (전 절)
+    n_pr = 0
+    for sec in secs:
+        if bytes(sec[1]) == SECTION_NAME:
+            continue
+        src = zlib.decompress(bytes(sec[2])).decode("utf-8")
+        src2, n = _proc_return_to_next(src)
+        if n:
+            sec[2] = zlib.compress(src2.encode("utf-8"))
+            n_pr += n
+    if n_pr:
+        changed.append(f"proc 안 return→next: {n_pr}곳")
 
     if changed:
         bak = path.with_suffix(".rxdata.pre-compat.bak")
