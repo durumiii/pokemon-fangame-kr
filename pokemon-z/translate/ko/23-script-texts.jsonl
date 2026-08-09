@@ -1773,81 +1773,81 @@
 {"k": "Full", "v": "전체 화면"}
 {"k": "Screen Border", "v": "Screen Border"}
 {"k": "Box {1:d}", "v": "박스 {1:d}"}
-{"k": "You can't release an Egg.", "v": "You can’t release an Egg."}
-{"k": "Please remove the mail.", "v": "Please remove the mail."}
+{"k": "You can't release an Egg.", "v": "알은 놓아줄 수 없다."}
+{"k": "Please remove the mail.", "v": "먼저 편지를 떼어내야 합니다."}
 {"k": "That's your last Pokémon!", "v": "마지막 포켓몬이다!"}
-{"k": "Release this Pokémon?", "v": "이 포켓몬을 놓아줄까?"}
-{"k": "{1} was released.", "v": "{1} was released."}
-{"k": "Bye-bye, {1}!", "v": "Bye-bye, {1}!"}
-{"k": "Can't deposit from box...", "v": "Can’t deposit from box..."}
-{"k": "Please remove the Mail.", "v": "Please remove the Mail."}
-{"k": "Deposit in which Box?", "v": "Deposit in which Box?"}
+{"k": "Release this Pokémon?", "v": "이 포켓몬을 놓아주시겠습니까?"}
+{"k": "{1} was released.", "v": "{1}\\j[을,를] 놓아줬다."}
+{"k": "Bye-bye, {1}!", "v": "잘 가, {1}!"}
+{"k": "Can't deposit from box...", "v": "박스에서는 맡길 수 없습니다..."}
+{"k": "Please remove the Mail.", "v": "먼저 편지를 떼어내야 합니다."}
+{"k": "Deposit in which Box?", "v": "어느 박스에 맡기시겠습니까?"}
 {"k": "The Box is full.", "v": "이 박스는 가득 찼습니다!"}
-{"k": "Can't withdraw from party...", "v": "Can’t withdraw from party..."}
-{"k": "Your party's full!", "v": "Your party’s full!"}
-{"k": "Position {1},{2} is empty...", "v": "Position {1},{2} is empty..."}
-{"k": "Position {1},{2} is not empty...", "v": "Position {1},{2} is not empty..."}
-{"k": "Take this {1}?", "v": "Take this {1}?"}
-{"k": "Can't store the {1}.", "v": "Can’t store the {1}."}
-{"k": "Took the {1}.", "v": "Took the {1}."}
-{"k": "{1} is now being held.", "v": "{1} is now being held."}
+{"k": "Can't withdraw from party...", "v": "파티에서 뺄 수 없다..."}
+{"k": "Your party's full!", "v": "파티가 가득 찼다!"}
+{"k": "Position {1},{2} is empty...", "v": "위치 {1},{2}\\j[은,는] 비어 있다..."}
+{"k": "Position {1},{2} is not empty...", "v": "위치 {1},{2}\\j[은,는] 비어 있지 않습니다..."}
+{"k": "Take this {1}?", "v": "{1}\\j[을,를] 가져갈까?"}
+{"k": "Can't store the {1}.", "v": "{1}\\j[은,는] 저장할 수 없다."}
+{"k": "Took the {1}.", "v": "{1}\\j[을,를] 받았다."}
+{"k": "{1} is now being held.", "v": "이제 {1}\\j[을,를] 지니고 있다!"}
 {"k": "WITHDRAW POKéMON", "v": "포켓몬 꺼내기"}
 {"k": "DEPOSIT POKéMON", "v": "포켓몬 맡기기"}
 {"k": "MOVE POKéMON", "v": "포켓몬 이동"}
-{"k": "MOVE ITEMS", "v": "MOVE ITEMS"}
-{"k": "SEE YA!", "v": "또 봐!"}
-{"k": "Move Pokémon stored in boxes to your party.", "v": "박스에 보관된 포켓몬을 파티로 옮깁니다."}
-{"k": "Store Pokémon in your party in Boxes.", "v": "파티의 포켓몬을 박스에 맡깁니다."}
-{"k": "Organize the Pokémon in Boxes and in your party.", "v": "박스와 파티의 포켓몬을 정리합니다."}
-{"k": "Move items held by any Pokémon in a Box and your party.", "v": "박스와 파티의 포켓몬이 지닌 도구를 옮깁니다."}
-{"k": "Return to the previous menu.", "v": "Return to the previous menu."}
+{"k": "MOVE ITEMS", "v": "도구 옮기기"}
+{"k": "SEE YA!", "v": "연결 끊기"}
+{"k": "Move Pokémon stored in boxes to your party.", "v": "박스의 포켓몬을 지닌 포켓몬으로 옮깁니다."}
+{"k": "Store Pokémon in your party in Boxes.", "v": "지닌 포켓몬을 박스에 맡깁니다."}
+{"k": "Organize the Pokémon in Boxes and in your party.", "v": "박스와 지닌 포켓몬을 정리합니다."}
+{"k": "Move items held by any Pokémon in a Box and your party.", "v": "박스와 지닌 포켓몬이 지닌 도구를 옮깁니다."}
+{"k": "Return to the previous menu.", "v": "이전 메뉴로 돌아갑니다."}
 {"k": "Jump", "v": "점프"}
-{"k": "Wallpaper", "v": "Wallpaper"}
-{"k": "What do you want to do?", "v": "What do you want to do?"}
-{"k": "Jump to which Box?", "v": "Jump to which Box?"}
+{"k": "Wallpaper", "v": "벽지"}
+{"k": "What do you want to do?", "v": "무엇을 할까?"}
+{"k": "Jump to which Box?", "v": "어느 박스로 이동하시겠습니까?"}
 {"k": "Forest", "v": "숲"}
 {"k": "City", "v": "도시"}
 {"k": "Desert", "v": "사막"}
 {"k": "Savanna", "v": "사바나"}
-{"k": "Crag", "v": "Crag"}
+{"k": "Crag", "v": "산"}
 {"k": "Volcano", "v": "화산"}
-{"k": "Snow", "v": "설원"}
+{"k": "Snow", "v": "눈"}
 {"k": "Cave", "v": "동굴"}
 {"k": "Beach", "v": "바닷가"}
-{"k": "Seafloor", "v": "Seafloor"}
+{"k": "Seafloor", "v": "바다"}
 {"k": "River", "v": "강"}
 {"k": "Sky", "v": "하늘"}
 {"k": "Poké Center", "v": "포켓몬센터"}
 {"k": "Machine", "v": "금속"}
-{"k": "Checks", "v": "체크"}
+{"k": "Checks", "v": "타일"}
 {"k": "Simple", "v": "심플"}
 {"k": "Heart", "v": "하트"}
-{"k": "Soul", "v": "소울"}
+{"k": "Soul", "v": "영혼"}
 {"k": "Retro", "v": "레트로"}
-{"k": "Compete", "v": "대회"}
-{"k": "Trio", "v": "Trio"}
+{"k": "Compete", "v": "콘테스트"}
+{"k": "Trio", "v": "트리오"}
 {"k": "Pika", "v": "피카츄"}
-{"k": "Kimono Girl", "v": "Kimono Girl"}
-{"k": "Rocket", "v": "로켓"}
-{"k": "Pick the wallpaper.", "v": "Pick the wallpaper."}
-{"k": "Box name?", "v": "Box name?"}
-{"k": "Exit from the Box?", "v": "Exit from the Box?"}
-{"k": "Continue Box operations?", "v": "Continue Box operations?"}
+{"k": "Kimono Girl", "v": "기모노 소녀"}
+{"k": "Rocket", "v": "로켓단 로고"}
+{"k": "Pick the wallpaper.", "v": "어느 벽지로 하겠습니까?"}
+{"k": "Box name?", "v": "박스 이름은?"}
+{"k": "Exit from the Box?", "v": "박스를 종료하시겠습니까?"}
+{"k": "Continue Box operations?", "v": "더 변경할까?"}
 {"k": "Select", "v": "선택한다"}
-{"k": "Mark", "v": "마크"}
+{"k": "Mark", "v": "마킹"}
 {"k": "Store", "v": "맡긴다"}
-{"k": "Which one will you take?", "v": "Which one will you take?"}
+{"k": "Which one will you take?", "v": "어느 것을 가져갈까?"}
 {"k": "Release", "v": "놓아준다"}
 {"k": "You're holding a Pokémon!", "v": "포켓몬을 들고 있다!"}
 {"k": "Shift", "v": "교체"}
-{"k": "Place", "v": "배치한다"}
+{"k": "Place", "v": "이동한다"}
 {"k": "The duplicated Pokémon was moved to your party.", "v": "복제한 포켓몬을 파티로 옮겼습니다."}
-{"k": "All boxes are full.", "v": "All boxes are full."}
+{"k": "All boxes are full.", "v": "모든 박스가 가득 찼습니다!"}
 {"k": "The duplicated Pokémon was moved to box \"{1}.\"", "v": "복제한 포켓몬을 박스 “{1}”\\j[으로,로] 옮겼습니다."}
 {"k": "No ability", "v": "특성 없음"}
 {"k": "No item", "v": "도구 없음"}
 {"k": "Lv.", "v": "Lv."}
-{"k": "Mark your Pokemon.", "v": "Mark your Pokemon."}
+{"k": "Mark your Pokemon.", "v": "마킹해주세요"}
 {"k": "{1:s} ({2:d}/{3:d})", "v": "{1:s} ({2:d}/{3:d})"}
 {"k": "The player is not on a map, so the region could not be determined.", "v": "The player is not on a map, so the region could not be determined."}
 {"k": "The current map has no region set. Please set the MapPosition metadata setting for this map.", "v": "현재 맵에 지역이 설정되어 있지 않습니다. 이 맵의 MapPosition 메타데이터를 설정하세요."}
@@ -3213,7 +3213,7 @@
 {"k": "¡Adiós, {1}!", "v": "잘 가, {1}!"}
 {"k": "No se puede dejar desde la Caja...", "v": "박스에서는 맡길 수 없습니다..."}
 {"k": "¿En qué Caja dejarlo?", "v": "어느 박스에 맡기시겠습니까?"}
-{"k": "La Caja está llena.", "v": "박스가 가득 찼다."}
+{"k": "La Caja está llena.", "v": "이 박스는 가득 찼습니다!"}
 {"k": "No se puede retirar del equipo...", "v": "파티에서 뺄 수 없다..."}
 {"k": "¡Tu equipo está completo!", "v": "파티가 가득 찼다!"}
 {"k": "Posición {1},{2} está vacía...", "v": "위치 {1},{2}\\j[은,는] 비어 있다..."}
@@ -3232,8 +3232,8 @@
 {"k": "Organiza los Pokémon de las Cajas y tu equipo.", "v": "박스와 지닌 포켓몬을 정리합니다."}
 {"k": "Mueve los objetos que llevan los Pokémon de la Cajas y tu equipo.", "v": "박스와 지닌 포켓몬이 지닌 도구를 옮깁니다."}
 {"k": "Regresar al menú anterior.", "v": "이전 메뉴로 돌아갑니다."}
-{"k": "Saltar", "v": "건너뛰기"}
-{"k": "Paisaje", "v": "풍경"}
+{"k": "Saltar", "v": "점프"}
+{"k": "Paisaje", "v": "벽지"}
 {"k": "¿Qué deseas hacer?", "v": "무엇을 할까?"}
 {"k": "¿Ir a qué Caja?", "v": "어느 박스로 이동하시겠습니까?"}
 {"k": "Bosque", "v": "숲"}
@@ -3267,11 +3267,11 @@
 {"k": "Marcar", "v": "마킹"}
 {"k": "{1} fue seleccionado.", "v": "{1}\\j[을,를] 선택했다."}
 {"k": "¿Cuál vas a tomar?", "v": "어느 것을 가져갈까?"}
-{"k": "Soltar", "v": "놓기"}
+{"k": "Soltar", "v": "놓아준다"}
 {"k": "¡Estás sosteniendo un Pokémon!", "v": "포켓몬을 들고 있다!"}
 {"k": "Depurar", "v": "디버그"}
-{"k": "Colocar", "v": "배치한다"}
-{"k": "Dejar", "v": "배치한다"}
+{"k": "Colocar", "v": "이동한다"}
+{"k": "Dejar", "v": "맡긴다"}
 {"k": "Entren. Original", "v": "최초의 트레이너"}
 {"k": "Setear el nivel del Pokémon (máx. {1}).", "v": "포켓몬의 레벨을 설정합니다 (최대 {1})."}
 {"k": "El nivel de {1} fue seteado en {2}.", "v": "{1}의 레벨을 {2}\\j[으로,로] 설정했다."}
