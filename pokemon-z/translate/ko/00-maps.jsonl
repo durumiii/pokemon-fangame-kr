@@ -2506,7 +2506,7 @@
 {"k": "Sí", "v": "예"}
 {"k": "No", "v": "아니요"}
 {"map": 63, "n": 18}
-{"k": "Estoy buscando un Rapidash, ¿lo cambiarías por mi Charmander?", "v": "날쌩마를 찾고 있습니다. 제 파이리와 바꾸지 않겠습니까?"}
+{"k": "Estoy buscando un Rapidash, ¿lo cambiarías por mi Charmander?", "v": "날쌩마를 찾고 있는데, 내 파이리랑 바꾸지 않을래?"}
 {"k": "¡Cúidalo muy bien!", "v": "귀여워해 줘!"}
 {"k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 갖고 있지 않네."}
 {"k": "Si te haces con un Rapidash, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "날쌩마를 손에 넣으면 볼 수 있게 선두에 세워서 보여 줘."}
@@ -5317,7 +5317,7 @@
 {"k": "Esto es una habitación reservada.", "v": "이곳은 예약된 방이야."}
 {"k": "Si no quieres meterte en problemas, puedes dar por terminada esta conversación.", "v": "귀찮은 일에 휘말리고 싶지 않다면, 대화는 이쯤에서 끝내는 게 좋겠군."}
 {"k": "¡Viva la Revolución...! ¡Hic! ¡Viva la voluntad de los pueblos!", "v": "혁명 만세...! 딸꾹! 민중의 의지 만세!"}
-{"k": "Puede que ahora no me conozca nadie, pero cuando seamos una República... ¡me haré con el control de toda esta ciudad! ¡Hic!", "v": "지금은 아무도 나를 모를지 몰라도, 우리가 공화국이 되면... 이 도시 전체를 내가 지배하겠다! 히킥!"}
+{"k": "Puede que ahora no me conozca nadie, pero cuando seamos una República... ¡me haré con el control de toda esta ciudad! ¡Hic!", "v": "지금이야 아무도 날 모르지만, 우리가 공화국이 되면... 이 도시는 통째로 내 차지야! 히킥!"}
 {"k": "Aquí todavía se sirve Pokémon para comer, es uno de los pocos lugares de <b>Kalos</b> que lo permite.", "v": "흠... 그렇군... 여전히 포켓몬을 식용으로 내놓는군. <b>칼로스</b>에서 이런 걸 허용하는 곳도 몇 없지."}
 {"k": "Eso sí, solo Magikarp. La gente no ha desarrollado una especial sensibilidad por este Pokémon.", "v": "물론 잉어킹뿐이다. 이 포켓몬에 특별한 정을 품는 사람은 없으니까."}
 {"k": "¿Te gusta la exploración? Tengo una información jugosa para ti.", "v": "탐험 좋아해? 아주 솔깃한 정보를 알고 있는데."}
@@ -6097,7 +6097,7 @@
 {"k": "Sí", "v": "예"}
 {"k": "No", "v": "아니요"}
 {"map": 178, "n": 22}
-{"k": "Estoy buscando un Chandelure, ¿lo cambiarías por mi Litten?", "v": "샹델라를 찾고 있습니다. 제 냐오불이랑 바꾸지 않겠습니까?"}
+{"k": "Estoy buscando un Chandelure, ¿lo cambiarías por mi Litten?", "v": "샹델라를 찾고 있는데, 내 냐오불이랑 바꾸지 않을래?"}
 {"k": "¡Cúidalo muy bien!", "v": "귀여워해 줘!"}
 {"k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 갖고 있지 않네."}
 {"k": "Si te haces con un Chandelure, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "샹델라를 손에 넣으면 볼 수 있게 선두에 세워서 보여 줘."}
@@ -9879,7 +9879,7 @@
 {"k": "¡Je, je! ¡Mira lo que me he encontrado entre las piedras de la ciudad!", "v": "어머나! 내가 도시 돌 틈에서 뭘 찾았는지 좀 봐!"}
 {"k": "Si existen los relojes de sol, ¿existirán también los relojes de luna?", "v": "해시계가 있다면, 달시계도 있지 않을까?"}
 {"k": "¿Qué hay debajo de esa sombra del lago? ¿Un gran tesoro? Si tuviera un Pokémon de Agua con el que surfear...", "v": "호수의 저 그림자 아래에는 뭐가 있을까? 엄청난 보물일까? 파도타기를 할 수 있는 물타입 포켓몬이 있다면 좋을 텐데..."}
-{"k": "¿Sabías que hay Pokémon que proceden del espacio exterior? Como Clefairy o Elgyem.", "v": "우주에서 온 포켓몬이 있다는 사실을 아는가? 삐삐나 리그레 같은 녀석들 말이다."}
+{"k": "¿Sabías que hay Pokémon que proceden del espacio exterior? Como Clefairy o Elgyem.", "v": "우주에서 온 포켓몬이 있다는 거 알아? 삐삐나 리그레 같은 녀석들 말이야."}
 {"k": "¿Cuántos Pokémon distintos habrá fuera de este mundo? ¿Miles? ¿Millones?", "v": "이 세상 밖에는 얼마나 많은 포켓몬이 존재할까? 수천? 아니면 수백만 마리일까?"}
 {"k": "¿Habrá también más seres humanos?", "v": "과연 인간도 더 존재할 것인가?"}
 {"k": "Pareces alguien con cierta maña en la fabricación de Pokéball. Voy a proponerte un lucrativo negocio.", "v": "몬스터볼을 만드는 데 꽤 수완이 있으시군요. 짭짤한 거래를 제안해 드리죠."}
@@ -10110,7 +10110,7 @@
 {"k": "\\c[2]<b>Olivier:</b>\\c[0] Sumergirse en el lago, encontrar las ruinas druídicas en lo más profundo, y buscar allí información sobre las medallas.", "v": "\\c[2]<b>올리비에:</b>\\c[0] 호수 깊숙이 잠수해서 드루이드 유적을 찾고, 그곳에서 배지에 관한 정보를 수집한다."}
 {"k": "Parece que tenemos trabajo que hacer, \\PN. Empieza buscando algún sitio de la ciudad en el que sumergirte.", "v": "할 일이 생긴 것 같네, \\PN. 우선 도시 안에서 잠수할 만한 곳부터 찾아봐."}
 {"map": 306, "n": 11}
-{"k": "Los rumores sobre la <b>Cueva Desenlace</b> han hecho que muchos entrenadores aventureros se adentren en sus profundidades.", "v": "<b>끝의 동굴</b> 소문 때문에 모험심 넘치는 트레이너들이 너도나도 깊은 곳까지 발을 들여놓는다."}
+{"k": "Los rumores sobre la <b>Cueva Desenlace</b> han hecho que muchos entrenadores aventureros se adentren en sus profundidades.", "v": "<b>끝의 동굴</b> 소문 때문에 모험심 넘치는 트레이너들이 너도나도 깊은 곳까지 들어가고 있어."}
 {"k": "Pero la mayoría vuelve con las manos vacías.", "v": "하지만 대부분은 빈손으로 돌아오지."}
 {"k": "Aquí solo hay basura.", "v": "여기엔 쓰레기밖에 없다."}
 {"k": "¡Uy! ¡Je, je, je! ¡Pero qué guapo eres!", "v": "앗! 헤헤헤! 참으로 훤칠하구먼!"}
