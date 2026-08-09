@@ -24,7 +24,8 @@ usage: uv run make_package.py [--variant runa|debug|clean|mods] [--font dppt|gal
   mods  — 스크립트 모드 묶음: 완성 Scripts.rxdata(수술+UI Text) 단품.
           clean 위에 덮어쓰면 통 패치(디버그 제외)와 같아진다.
 
-  runa  — 합본(v5.2.1~): 한글패치 코어 + UI Text KR + Z-GUI + DPPT Font를
+  runa  — 합본(v5.2.1~): 한글패치 코어 + UI Text KR + Z-GUI + DPPT Font +
+          Type Matchup(v5.3~)을
           한 벌로 묶는다. 번역표에 UTF-8 인코딩 딱지가 붙어 있어 최신 루비
           실행기에서도 돈다. `--font`로 한글 글꼴을 골라 세 벌을 낸다 —
           담기는 글꼴은 라틴·부호가 모두 DPPt이고 한글 음절만 다르다.
@@ -53,7 +54,10 @@ DIST = HERE / "dist"
 
 # ─ 합본(runa) 전용 ───────────────────────────────────────────────────────────
 RUNA_MOD = STORE / "Pokemon Z Fangame" / "한글패치 코어"
-RUNA_INJECT = ["UI Text KR", "DPPT Font"]
+RUNA_INJECT = ["UI Text KR", "DPPT Font", "Type Matchup"]
+# 카드의 `expects`가 순정 기준으로 뜬 모드 — 스테이징은 패치판이라 늘 어긋난다.
+# 기준선 재대조가 없어 `force`로 넘긴다(packaging 가이드 「mod.json의 expects」 절).
+FORCE_INJECT = {"Type Matchup"}
 RUNA_ASSET_MODS = ["Z-GUI"]                       # 파일만 얹는 모드 — 번역 자산 뒤에 덮는다
 # 원본 배포판의 실행 설정을 한 판만 함께 싣는다. v5.1·v5.2가 넣었던 `fontSub`(글꼴 이름
 # 14종을 Galmuri11로 꺾는 표)를 걷어 내려는 것 — v5.2.1부터는 글꼴 파일이 그 이름을 직접
@@ -126,8 +130,8 @@ def _embed_card(final: Path, name: str, variant: str):
         # 옛 이름(`한글패치 통합-Runa`)도 남긴다 — 그 이름으로 받아 둔 사람의 서랍에서도
         # 이중 설치를 막아야 한다. 이름이 바뀌어도 물건은 같다.
         card["conflicts"] = {one: swallowed for one in
-                             ("DPPT Font", "UI Text KR", "Z-GUI", "한글패치 코어",
-                              "한글패치 통합", "한글패치 통합-Runa")}
+                             ("DPPT Font", "UI Text KR", "Z-GUI", "Type Matchup",
+                              "한글패치 코어", "한글패치 통합", "한글패치 통합-Runa")}
     (final / "mod.json").write_text(
         json.dumps(card, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"mod.json 동봉: 에셋 {len(assets)}개 (모드로도 설치된다)")
@@ -278,10 +282,11 @@ def _bundle_extras(stage: Path, font: str):
     print("원본 mkxp.json 동봉 — 옛 판의 fontSub를 걷는다(다음 판에서 뺄 것)")
 
 
-def _run_patch_debug(scripts_path: Path):
+def _run_patch_debug(scripts_path: Path, only: str = None):
     import subprocess
     r = subprocess.run(
-        ["uv", "run", str(HERE / "patch_debug.py"), str(scripts_path)],
+        ["uv", "run", str(HERE / "patch_debug.py"), str(scripts_path)]
+        + (["--only", only] if only else []),
         capture_output=True, text=True)
     print(r.stdout.strip())
     if r.returncode != 0:
@@ -301,16 +306,16 @@ def main():
     # 릴리스 화면은 자산을 **파일 이름순**으로 늘어놓는다(라벨 순서가 아니다). 받는 쪽이
     # 위에서부터 읽으면 되도록 이름에 차례를 넣는다 — 권하는 것이 맨 위다.
     asset_names = {
-        "runa": f"pokemon-z-kr-patch-v5.2.1_{FONT_ORDER[font]}-{font}",
-        "runa-debug": "pokemon-z-kr-patch-v5.2.1_4-debug-add",
+        "runa": f"pokemon-z-kr-patch-v5.3_{FONT_ORDER[font]}-{font}",
+        "runa-debug": "pokemon-z-kr-patch-v5.3_4-debug-add",
     }
     default_names = {
         "full": "포켓몬Z 한글패치 v5.2",   # 기본판 — 디버그 없는 통합
         "debug": "포켓몬Z 한글패치 v5.2 (통합+디버그)",
         "clean": "포켓몬Z 한글패치 v5.2 (순수 번역)",
         "mods": "포켓몬Z 한글패치 v5.2 (스크립트 모드 묶음)",
-        "runa": f"포켓몬Z 한글패치 v5.2.1 ({label})",
-        "runa-debug": "포켓몬Z 한글패치 v5.2.1 (디버그 추가)",
+        "runa": f"포켓몬Z 한글패치 v5.3 ({label})",
+        "runa-debug": "포켓몬Z 한글패치 v5.3 (디버그 추가)",
     }
     name = default_names[variant]
     if "--name" in sys.argv:
@@ -329,10 +334,16 @@ def main():
         core = RUNA_MOD if variant == "runa-debug" else BASE_MOD
         (stage / "Data").mkdir(parents=True)
         shutil.copy2(core / "Data" / "Scripts.rxdata", stage / "Data" / "Scripts.rxdata")
-        for mod in (RUNA_INJECT + ["디버그 모드"] if variant == "runa-debug" else INJECT_MODS):
-            r = modstore.apply(STORE / "Pokemon Z Fangame", mod, stage)
+        for mod in (RUNA_INJECT + ["Debug Toggle"] if variant == "runa-debug" else INJECT_MODS):
+            r = modstore.apply(STORE / "Pokemon Z Fangame", mod, stage,
+                               force=mod in FORCE_INJECT)
             print(f"주입: {mod} → {r['did']}")
         if variant == "runa-debug":
+            # 디버그는 켜진 채로 나가고(Main 머리의 `$DEBUG = true`), Debug Toggle이
+            # 그 위에서 W키로 끄고 켠다 — 키 폴링이 안 먹는 모바일에서도 디버그는
+            # 열려 있다(유지자 판정 2026-08-09). 회복은 Debug Toggle 쪽 조건부
+            # alias 하나뿐이라 「디버그 모드」의 무조건 회복과 겹치지 않는다.
+            _run_patch_debug(stage / "Data" / "Scripts.rxdata", only="Main")
             _settle_injections(stage / "Data" / "Scripts.rxdata")
             # 주입기가 DPPT Font의 글꼴 16벌까지 들여놓는다 — 여기서는 코어만 낸다.
             for junk in sorted(stage.rglob("*"), reverse=True):
@@ -378,7 +389,8 @@ def main():
     else:  # full(기본판)·debug(통합+디버그) — 수술판 Scripts + 전체 주입
         inject = list(INJECT_MODS)
     for mod in inject:
-        r = modstore.apply(STORE / "Pokemon Z Fangame", mod, stage)
+        r = modstore.apply(STORE / "Pokemon Z Fangame", mod, stage,
+                           force=mod in FORCE_INJECT)
         print(f"주입: {mod} → {r['did']}")
     if variant == "debug":
         _run_patch_debug(stage / "Data" / "Scripts.rxdata")

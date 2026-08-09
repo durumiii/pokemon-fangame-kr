@@ -27,8 +27,9 @@ Pokemon Z는 Essentials v16 · 루비 1.8.7 · mkxp-z 구판. 플러그인 묶�
 (`/mnt/d/GameVault/mods/Pokemon Z Fangame/<모드>/`)로 복사한 다음 그 보관소를 `--store`로 얹는다.
 
 **repo에 남는 모드는 넷이다.** `UI Text KR`(스크립트에 박힌 화면 문자열은 korean.dat로
-못 고쳐서 그리기 진입점에서 갈아 끼운다 — 텍스트 층 ③) · `Type Matchup Z`(기술 선택창
-상성 색칠) · `Debug Toggle Z`(W키로 `$DEBUG` 토글, 디버그 중 전투 후 전원 회복) ·
+못 고쳐서 그리기 진입점에서 갈아 끼운다 — 텍스트 층 ③) · `Type Matchup`(기술 선택창
+상성 색칠 — 합본 세 갈래에 기본 동봉) · `Debug Toggle`(W키로 `$DEBUG` 토글, 디버그 중
+전투 후 전원 회복 — 디버그 추가판에 실린다) ·
 `Native Tilemap`(맵 렌더러를 엔진 내장으로 — Joiplay 렌더 깨짐 우회. **합본에는 싣지
 않는 선택 모드다** — 유지자 판정, quality 「Native Tilemap은 선택 모드로 둔다」 절).
 셋은 커뮤니티 배포판에서 떼어 오거나 착안한 것이라 출처가 이 저장소의 조사에 걸려 있다
@@ -60,7 +61,7 @@ UI Text KR이 키보드 기준으로 적고 저쪽 `004_PadLabels`가 덮는다.
   카드에 넣을 순정 지문은 **게임 폴더의 `Scripts.rxdata.orig`**(modkit이 처음 덮을 때
   남긴 백업)에서 뜬다 — 보관소의 한글패치 코어에서 뜨면 패치 지문이 박힌다.
   ⚠ **기준선 폴더가 비어 있으면 그 재대조가 못 서서 `apply`가 `BaseChanged`로 멈춘다** —
-  그때는 경고 내용을 확인하고 `force`로 강행한다(2026-08-09 Type Matchup Z 설치 실측).
+  그때는 경고 내용을 확인하고 `force`로 강행한다(2026-08-09 Type Matchup 설치 실측).
   `inject.py`에는 이 우회가 아예 없어 무조건 멈추므로, 설치는 modkit으로 한다.
 - 엔진 해부: [`../research/2026-08-01-pokemon-z-fangame.md`](../log/research/2026-08-01-pokemon-z-fangame.md).
 - ⚠ 한글패치 코어(에셋)를 적용하면 게임 코어가 갈려 주입분이 지워진다 — 복구는 inject.py 재실행.

@@ -40,13 +40,19 @@ EDITS = {
 
 def main():
     if len(sys.argv) < 2:
-        sys.exit("usage: patch_debug.py <Scripts.rxdata>")
+        sys.exit("usage: patch_debug.py <Scripts.rxdata> [--only 섹션[,섹션]]")
+    only = None
+    if "--only" in sys.argv:
+        only = set(sys.argv[sys.argv.index("--only") + 1].split(","))
+        bad = only - set(EDITS)
+        if bad:
+            sys.exit(f"--only에 없는 섹션: {sorted(bad)}")
     p = Path(sys.argv[1])
     arr = load(open(p, "rb"))
     changed = 0
     for s in arr:
         name = s[1].decode("utf-8", errors="replace") if isinstance(s[1], bytes) else str(s[1])
-        if name not in EDITS:
+        if name not in EDITS or (only and name not in only):
             continue
         body = zlib.decompress(bytes(s[2])).decode("utf-8")
         orig = body
@@ -68,7 +74,7 @@ def main():
             rubywrite.dump(f, arr)
     # 사후 검증: 세 편집 전부 존재해야 성공
     arr2 = load(open(p, "rb"))
-    ok = {"Main": False, "PokeBattle_Battle": False, "Menu Mejorado": False}
+    ok = dict((k, False) for k in (only or EDITS))
     for s in arr2:
         name = s[1].decode("utf-8", errors="replace") if isinstance(s[1], bytes) else str(s[1])
         if name in ok:
@@ -81,7 +87,7 @@ def main():
                 ok[name] = '["A Curar"' in body and "[A] Curar" not in body
     if not all(ok.values()):
         sys.exit(f"검증 실패: {ok}")
-    print(f"디버그 3편집 확인 완료: {p}")
+    print(f"디버그 편집 {len(ok)}건 확인 완료: {p}")
 
 
 if __name__ == "__main__":
