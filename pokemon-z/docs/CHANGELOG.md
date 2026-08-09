@@ -32,6 +32,8 @@
   [판정 재료·결산](log/research/2026-08-09-italics-verdict-materials.md).
 - 정본에 새어든 제보 붙여넣기 꼬리 개행 4자리 제거(절23의 22자리는 게임이 기대하는
   형식이라 유지 — [조사](log/research/2026-08-09-crlf-sect23.md)).
+- 모드 `Native Tilemap`(맵 렌더러를 엔진 내장으로 — Joiplay 렌더 문제 우회). 유지자
+  Joiplay 실기에서 약한 개선 확인, 합본에는 안 싣는 선택 모드로 확정(Z-35 닫음).
 - 도구·프롬프트: 용어 잔존 전 절 검사기 `translate/termcheck.py`(깨진 말더듬 검출
   포함, names-terms 절차 등재) · 재번역 프롬프트 Naturalness rules J~Q(직역투 해소
   8규칙, 코퍼스 근거).
