@@ -61,6 +61,39 @@ def sentences(text):
     return [p.strip() for p in re.split(r"(?<=[.!?…])\s+|(?<=[.!?…])(?=[가-힣])", t) if p.strip()]
 
 
+# B1~B7 급 판정 (events-and-speech 「이름표 없는 잡담 NPC」 표가 정본, 2026-08-09 확장)
+BUCKET7 = {"합쇼": "B3합쇼", "해요": "B2해요", "해라친근": "B4어른말",
+           "하게": "B6하게", "해체": "B1반말"}
+B4_CMD = re.compile(r"(거라|렴|려무나)$")
+UNDET = {"체언기타", "비한글", "empty", "연결미완"}
+
+
+def grade(text, lenient=False):
+    """(급 B1~B7, 근거어절, 물러난 문장 수). 판정 불가면 ('', last, 0).
+
+    말줄임·나열 조각은 앞 문장으로 물러난다. lenient=True면 물러나기가
+    빈손일 때 처음 만난 해체 조각을 받는다. 표지 없는 행의 급 단정은
+    피하라 — 화자 단위 집계가 정본(지침 참조).
+    """
+    parts = sentences(text or "")
+    fallback = None
+    for back, part in enumerate(reversed(parts)):
+        b, last = classify(part)
+        if b in UNDET:
+            continue
+        if b == "명령라":
+            return ("B4어른말" if B4_CMD.search(last) else "B1반말"), last, back
+        if b == "해체" and AMBIG.search(last) and back + 1 < len(parts):
+            fallback = fallback or ("B1반말", last, back)
+            continue
+        if b == "평서다":
+            return ("B7대화단정" if speechy(text) else "B5지문평서"), last, back
+        return BUCKET7[b], last, back
+    if lenient and fallback:
+        return fallback
+    return "", "", 0
+
+
 def axis(text):
     """(축, 근거어절, 물러난 횟수) — 뒤에서부터 종결이 분명한 문장을 찾는다."""
     parts = sentences(text)
@@ -194,6 +227,15 @@ def selftest():
     assert not speechy("전기 장벽이 길을 막고 있다!")
     assert not speechy("포켓몬이 도망갔다!")
     assert not speechy("나무열매가 주렁주렁 열려 있다.")  # 「나무」의 「나」에 안 속는다
+    # B1~B7 급 판정 (2026-08-09 확장)
+    assert grade("한마디만 해 두지. 나한텐 총이 두 자루 있다네.")[0] == "B6하게"
+    assert grade("내 악비아르와 바꾸지 않겠나?")[0] == "B6하게"
+    assert grade("우리 마을은 항상 평화롭단다.")[0] == "B4어른말"
+    assert grade("나쁘게 듣진 마라, 하지만 난 너희 쪽 녀석들 손에 많은 전우를 잃었다.")[0] == "B7대화단정"
+    assert grade("전기 장벽이 길을 막고 있다!")[0] == "B5지문평서"
+    assert grade("포켓몬센터에 오신 것을 환영해요.")[0] == "B2해요"
+    assert grade("이것을 증표로 받아주십시오.")[0] == "B3합쇼"
+    assert grade("나랑 같이 가자!")[0] == "B1반말"
     print("selftest 통과")
 
 

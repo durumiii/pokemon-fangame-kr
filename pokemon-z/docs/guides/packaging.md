@@ -94,19 +94,37 @@ UI Text KR이 키보드 기준으로 적고 저쪽 `004_PadLabels`가 덮는다.
 ## 신형 루비 실행기 호환
 
 모바일 유저는 mkxp-z 계열(루비 3.1+) 실행기로 하므로 **코어는 1.8.7과 3.x 양쪽에서
-살아야 한다.** 호환 층은 둘이고, 근거 목록은
-[2026-08-09 호환 감사](../log/research/2026-08-09-ruby-compat-sweep.md)다.
+살아야 한다.** PC판 실행기도 같은 mkxp-z의 구판(32비트·루비 1.8.7)이다 — 다른 엔진이
+아니라 같은 엔진의 옛 판이라, 데스크탑 신판으로 모바일 쪽을 흉내낼 수 있다.
+
+호환 층은 둘이다.
 
 - **심 섹션 「Z-32 Ruby Compat」** — 코어 맨 앞. 없는 API만 채운다(`nitems`·
   `Thread.critical`·`File.exists?`·`Fixnum`·`getbyte` 등). 소스 정본은
-  `share/ruby-compat.rb`, 코어 반영은 `share/patch_ruby_compat.py`(멱등 — 심을 고치고
-  다시 돌리면 갈아 끼운다. 보관소 기반판·게임 설치본 양쪽이 기본 대상).
-- **문법 수술** — 1.8 전용 구문은 심으로 못 덮는다(파싱 단계에서 죽는다). 같은 도구가
-  `when N:` 콜론과 rescue 밖 `retry`를 공통 문법으로 바꿔 둔다.
+  `share/ruby-compat.rb`.
+- **소스 수술** — 파싱·의미론이 갈리는 자리는 심으로 못 덮는다. `share/patch_ruby_compat.py`가
+  코어 안에서 직접 갈아 끼운다(멱등 — 다시 돌리면 이미 된 것은 건너뛴다. 보관소 기반판·
+  게임 설치본 양쪽이 기본 대상). 지금 열두 갈래이고, 1.8 관용구가 3.x에서 깨지는 부류다:
+  1.8 전용 구문(`when N:`·rescue 밖 `retry`) · 정규식 리터럴의 높은 바이트 표기 ·
+  바이트를 `문자열[i]`로 읽는 자리 · `nil.id`·`Object#id` 전제 · `String#getbyte`
+  무조건 별칭 · `proc` 안의 `return`(1.8은 `proc`이 `lambda`였다) · 이름 입력창의
+  키 번호와 문자 입력 모드. 자리별 근거는
+  [시험대 기록](../log/research/2026-08-09-mkxpz-bench.md).
 
-코어를 새로 굽거나 스크립트를 수술했으면 `share/qa-ruby-compat.py <코어> --ruby
-<신형 루비>`로 문법 불통 0을 확인한다. 첨자 비교류는 「의심」으로만 나오니 눈으로
-가려낸다.
+**새 수술은 시험대에서 잡는다.** 정적 감사(`share/qa-ruby-compat.py`)는 패턴만 보므로
+실행 중에만 드러나는 부류를 못 본다. 시험대 세우는 법과 오류 읽는 법은 위 기록 문서에
+있고, 한 바퀴는 이 셋이다:
+
+    uv run share/patch_ruby_compat.py          # 수술을 코어·설치본에 반영
+    uv run share/make_package.py --variant runa --font dppt
+    uv run share/bench_sync.py                 # 시험대에 얹고 전용 손질 재부착
+
+⚠ **수술을 새로 넣으면 주입 모드의 `expects`가 어긋난다** — 절 전체 md5를 보는 값이라
+같은 절의 딴 자리를 고쳐도 걸린다. 훅 거는 메서드가 그대로인 것을 확인하고
+`make_package.py`의 `FORCE_INJECT`에 그 모드를 넣는다.
+
+코어를 새로 굽거나 수술했으면 `share/qa-ruby-compat.py <코어> --ruby <신형 루비>`로
+문법 불통 0을 확인한다. 첨자 비교류는 「의심」으로만 나오니 눈으로 가려낸다.
 
 ## 글꼴 모드 셋
 

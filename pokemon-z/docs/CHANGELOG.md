@@ -37,6 +37,15 @@
   [판정 재료·결산](log/research/2026-08-09-italics-verdict-materials.md).
 - 정본에 새어든 제보 붙여넣기 꼬리 개행 4자리 제거(절23의 22자리는 게임이 기대하는
   형식이라 유지 — [조사](log/research/2026-08-09-crlf-sect23.md)).
+- 신형 루비 실행기에서 죽던 열 자리 수술(Z-34 시험대) — 정규식의 높은 바이트 표기 ·
+  바이트를 문자열 첨자로 읽는 자리 · `LargePlane`의 부모 초기화 · `Errno::EISDIR` ·
+  `nil.id` 전제 · `String#getbyte` 무조건 별칭 · `StringInput#getc` · `proc` 안의
+  `return` 163곳 · 이름 입력창의 키 번호와 문자 입력 모드. 데스크탑 mkxp-z 신판
+  시험대에서 잡아 원판(루비 1.8.7)에서도 회귀 확인.
+  [시험대 기록](log/research/2026-08-09-mkxpz-bench.md).
+- 합본 v5.3 조립 준비 — Type Matchup을 세 갈래에 기본 동봉, 디버그 추가판은 켜진 채로
+  나가고 Debug Toggle이 그 위에 얹힌다. 모드 이름 끝의 `Z`를 뗐다(`Type Matchup`·
+  `Debug Toggle`). **배포는 번역 작업을 더 한 뒤로 미룸**(유지자 판단).
 - 모드 `Native Tilemap`(맵 렌더러를 엔진 내장으로 — Joiplay 렌더 문제 우회). 유지자
   Joiplay 실기에서 약한 개선 확인, 합본에는 안 싣는 선택 모드로 확정(Z-35 닫음).
 - 도구·프롬프트: 용어 잔존 전 절 검사기 `translate/termcheck.py`(깨진 말더듬 검출
