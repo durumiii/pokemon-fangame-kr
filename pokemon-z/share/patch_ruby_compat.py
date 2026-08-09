@@ -64,12 +64,29 @@ REGEX_EDITS = [
     ("SpriteWindow",
      re.compile(r"rescue Errno::ENOENT, Errno::EINVAL, Errno::EACCES(?!, Errno::EISDIR)"),
      "rescue Errno::ENOENT, Errno::EINVAL, Errno::EACCES, Errno::EISDIR"),
-    # 그림자 스프라이트가 map 없이 서면 `@map.id`가 1.8에서는 `nil.id`(옛 object_id)라
-    # 조용히 숫자를 돌려줘 「지금 맵이 아니다」로 읽혔다. 3.x에는 그 메서드가 없어 즉사한다 —
-    # nil 검사를 앞에 세워 1.8의 관측 동작을 그대로 남긴다.
+    # 그림자 스프라이트의 `@map.id==$game_map.id`. 1.8에서 `id`는 Object#id(옛 object_id)라
+    # 이 비교는 사실 「같은 Game_Map 객체인가」였다 — Game_Map에는 `id`가 없다. 3.x에는
+    # 그 메서드가 사라져 즉사하므로 같은 뜻인 `equal?`로 적는다(양쪽 동작 동일).
     ("Sombras",
-     re.compile(r"!\(@map\.id==\$game_map\.id\)"),
-     "!(!@map.nil? && @map.id==$game_map.id)"),
+     re.compile(r"!\((?:!@map\.nil\? && )?@map\.id==\$game_map\.id\)"),
+     "!(!@map.nil? && @map.equal?($game_map))"),
+    # KleinBitmap 보조 코드가 String에 `getbyte`·`setbyte`·`bytesize`를 무조건 별칭으로
+    # 건다. 1.8에서는 그게 없는 API를 채우는 것이었지만 3.x에서는 **있는 것을 덮어써서**
+    # 바이트 대신 글자를 돌려준다 — 이 게임의 다른 코드가 getbyte로 바이트를 재다 죽는
+    # 뿌리다(2026-08-09 시험대 실측: 글꼴 굵게 판정이 「String과 192 비교」로 즉사).
+    # 없을 때만 걸도록 감싼다 — 1.8에서는 지금과 똑같이 걸린다.
+    ("Map - Klein",
+     re.compile(r"class String\r?\n  alias getbyte  \[\]\r?\n  alias setbyte  \[\]=\r?\n"
+                r"  alias bytesize size\r?\nend"),
+     'class String\n'
+     '  if !"".respond_to?(:getbyte)\n'
+     '    alias getbyte  []\n'
+     '    alias setbyte  []=\n'
+     '  end\n'
+     '  if !"".respond_to?(:bytesize)\n'
+     '    alias bytesize size\n'
+     '  end\n'
+     'end'),
 ]
 
 
