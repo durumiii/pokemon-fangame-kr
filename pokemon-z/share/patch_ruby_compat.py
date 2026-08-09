@@ -87,6 +87,13 @@ REGEX_EDITS = [
      '    alias bytesize size\n'
      '  end\n'
      'end'),
+    # StringInput#getc이 `@string[@pos]`로 한 바이트를 뜬다 — 1.8은 정수, 3.x는 String.
+    # 이 스트림을 읽는 코드(dex 데이터의 `fgetb` 등)는 전부 정수를 전제로 짜여 있어,
+    # 3.x에서는 성장 속도 같은 값이 String으로 흘러 비교에서 즉사한다(시험대 실측:
+    # 스타팅 포켓몬 지급). 정수로 되돌린다 — 1.8에서는 이 줄이 아무 일도 안 한다.
+    ("SpriteWindow",
+     re.compile(r"(    ch = @string\[@pos\]\r?\n)(?!    ch = ch\.unpack)"),
+     '\\1    ch = ch.unpack("C")[0] if ch.is_a?(String)\\n'),
 ]
 
 
