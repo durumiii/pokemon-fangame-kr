@@ -1,0 +1,452 @@
+# 결함 패턴 스윕 시트 (2026-08-09)
+
+**규약: 고칠 줄에만 표시(지시나 교정문)를 단다. 표시 없는 줄은 현행 유지.**
+A절은 제안이 이미 달려 있으니 절 머리에 O 하나면 전체 반영, 빼고 싶은 줄만 X.
+
+페이크몬 옛 이름 잔존은 전수 0건으로 판명(시트의 「로열리아」는 Z-37 확정 한칭
+그 자체 — 잔존이 아니었다). 아래 세 절만 남는다.
+
+# A. 울음소리·절규 (반복 글자 74행 중 결함 판독 17행 — 제안 포함)
+
+판독 기준: 한국어 종명 기반 재생성(Naturalness P) · 미번역 · 무근거 음차.
+나머지 57행(멜리아 비명·기합·의성어·종명 기반 완료분)은 정상 판정으로 뺐다.
+
+- 맵24 `¡Kaaaanghaaaa! (¡Tengo un Huevo Pokémon para ti!)`
+  - 현행: 카앙하아아! (당신에게 줄 포켓몬알이 있어요!)
+  - 제안: 캥카아아아! (당신에게 줄 포켓몬알이 있어요!) — 종명 캥카 기반(+괄호 안 「당신」도 손질 대상)
+- 맵24 `¡Kanghaaaaa!`
+  - 현행: 강하아아아!
+  - 제안: 캥카아아아! — 종명 캥카 기반(영명 Kangha 음차였음)
+- 맵24 `¡Kanghaaaaa! (Tu \v[3] está muy bien.)`
+  - 현행: 강하아아아! (네 \v[3]\j[은,는] 아주 잘 지내고 있다.)
+  - 제안: 캥카아아아! (…) — 종명 캥카 기반
+- 맵24 `¡Kanghaaaaa! (\v[3] y \v[4] están bien.)`
+  - 현행: 강하아아아! (\v[3]\j[과,와] \v[4]\j[은,는] 잘 지내고 있다.)
+  - 제안: 캥카아아아! (…) — 종명 캥카 기반
+- 맵128 `¡WRYYYYYYYY!`
+  - 현행: WRYYYYYYYY!
+  - 제안: 크아아아악! — 미번역(다른 맵 WRY는 전부 크아아아악) -> 이건 각각 맥락 보고 재번역.
+- 맵150 `¡Drowzeeeee!`
+  - 현행: 드로우즈~!
+  - 제안: 슬리이이프~! — Drowzee 한칭 슬리프 -> 슬리이이이이!로 
+- 맵287 `¡¡¡GRRRRIAAAAAAM!!!`
+  - 현행: 우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우우
+  - 제안: 그르르리아아아암!!! — 현행이 「우」 55연타
+- 맵316 `\sh¡¡¡BLAAAAAAAST!!!`
+  - 현행: \sh거어어어어북!!!
+  - 제안: \sh거북와아아아앙!!! — 현행 「거어어어어북」이 어색 -> 현행대로.
+- 맵344 `\c[5]<b>Melia:</b>\c[0] ¡Profeeeee!`
+  - 현행: \c[5]<b>멜리아:</b>\c[0] 박사님!!!!!
+  - 제안: 박사니이이임! — 맵290 표기와 통일(현행 「박사님!!!!!」)
+- 맵344 `\sh¡GRAAAAAAAAR!`
+  - 현행: \sh¡GRAAAAAAAAR!
+  - 제안: \sh그르아아아아! — 미번역
+- 맵361 `\sh¡ZYYYYYYY!`
+  - 현행: \shZYYYYYYY!
+  - 제안: \sh지이이이가! — 미번역, 맵454 선례(지가르데) -> 지가아아아아! 로 통일.
+- 맵383 `\sh¡TAAAAAAAAAAL!`
+  - 현행: \sh맞아아아아아아아!
+  - 제안: \sh타아아아아르! — 이벨타르 울음. 현행 「맞아아아…」는 tal 오역 -> 키야아아아아! 가 본가 울음소리. 통일.
+- 맵408 `\sh¡TAAAAAAAAL!`
+  - 현행: \sh키아아아아아!
+  - 제안: \sh타아아아아르! — 맵383과 통일(현행은 무근거 「키아아」)
+- 맵429 `\sh¡ZYYYYYYY!`
+  - 현행: \shZYYYYYYY!
+  - 제안: \sh지이이이가! — 미번역
+- 맵430 `\sh¡ZYYYYYYY!`
+  - 현행: \shZYYYYYYY!
+  - 제안: \sh지이이이가! — 미번역
+- 맵431 `\sh¡ZYYYYYYY!`
+  - 현행: \shZYYYYYYY!
+  - 제안: \sh지이이이가! — 미번역
+- 맵437 `\sh¡XEEEEEEEER!`
+  - 현행: \sh와아아아아아아아!
+  - 제안: \sh제르네아아아아! — 제르네아스 울음(현행은 무근거 「와아아」) -> 키야아아아아!(이벨타르와 같음)
+
+  근거: https://m.blog.naver.com/plaseti365/221290031688
+  무조건 일본어판 음차를 따를 필요는 없으나 참고자료.
+
+# B. 원문에 없는 문두 감탄사 (기계 후보 101 → 걸러서 아래만)
+B는 정확히 뭘 어떻게 고치겠다는거야? 설명부터.
+
+뺀 것: 점술사 페이지(「흠... 그렇군...」 버릇은 페르소나 등재·유지 판정 이력) ·
+「이런+명사」(지시관형사) · es 문두 40자를 실었으니 대응어가 실제로 있으면 통과.
+
+- 맵3 [-] 자, 어서 배틀을 시작해라! 내가 지켜보며 평가할 테니.
+  - es: ¡Pero vosotros combatid! Yo os
+- 맵4 [anciano] 자, 작은 선물 하나!
+  - es: Toma, ¡un pequeño incentivo!
+- 맵7 [campesinow] 자, 여기.
+  - es: Mira, como esta.
+- 맵22 [-] 자, 이 정의의 수호자 포켓몬을 받아라.
+  - es: Por favor, acepta a este Pokém
+- 맵24 [-] 자, 여기 포켓몬을 돌려드릴게요.
+  - es: Bien, aquí tienes a tu Pokémon
+- 맵25 [acrilico5] 자, 끝났어!
+  - es: ¡Bien, hecho está!
+- 맵30 [-] 어머, 판짱을 갖고 계시네요! 바로 교환하시죠!
+  - es: ¡Bien, veo que tienes un Panch
+- 맵42 [-] 흠... 그렇군... 이 마을은 옛날 마녀들이 집회를 열던 곳이지... 이름도 거기서 유래한 것이다.
+  - es: Esta aldea tiene un pasado de 
+- 맵42 [-] 어머, 내 눈에 보이는 게 뭐야! 넌 정말 엄청나게 매력적이야, 누구도 부정하지 못할 만큼.
+  - es: ¡Y qué ven mis ojos! Tienes un
+- 맵42 [-] 흠... 그렇군... <b>프로파노마을</b>에는 섭정이 없다... 승부를 겨루고 싶다면 <b>백단시티</b>로 가야 할 것이
+  - es: No tenemos señor regente en <b
+- 맵50 [-] 흠... 그렇군... 얼마 전, 피신처를 찾아 낯선 여행자들이 찾아왔지.
+  - es: Llegaron unos extraños viajero
+- 맵52 [-] 자, 이제 스트레스도 풀었으니 드디어 푹 낮잠을 잘 수 있겠어.
+  - es: Y ahora, después de desquitarm
+- 맵70 [-] 저기 저 동굴이 보이느냐? 매우 어둡지만, 그런 곳의 어둠을 밝혀 주는 마법이 있느니라.
+  - es: ¿Ves esa cueva de ahí? Está mu
+- 맵73 [-] 자, 숨김없이 말해라! 너희는 지금 무슨 악행을 저지르고 있는 것이냐?
+  - es: Y ahora, contestad sin evasiva
+- 맵80 [-] 자, 슈퍼볼 하나를 퀵볼 하나랑 바꿔 드릴 테니 어떠신가요?
+  - es: Mira, te cambiaré una Superbal
+- 맵80 [-] 저기 저 건물 보이시나요? 바로 <b>백단 아카데미</b>입니다. 그야말로 지식의 전당이죠!
+  - es: ¿Ves ese edificio de ahí? Es l
+- 맵85 [-] 아이고, 평론가님을 너무 오래 기다리게 하면 안 돼, 제발!
+  - es: ¡No hagamos esperar mucho al c
+- 맵90 [ilustrado] 자, 끝났어!
+  - es: ¡Bien, hecho está!
+- 맵93 [-] 저기 반짝이는 상자를 벌써 털어 가셨나요? 내 것이긴 하지만 전 사유재산을 믿지 않으니, 원하신다면 얼마든지 가져가세요.
+  - es: ¿Ya has desvalijado esa caja q
+- 맵115 [-] 자, 이건 내가 오늘 아침에 직접 구운 바게트 빵이야. 혹시 딴생각이라도 했어?
+  - es: Mira, este es el pan de baguet
+- 맵116 [lenador] 자, 이것 좀 들어줄래?
+  - es: Toma, ¿me lo sujetas?
+- 맵150 [-] 흠... 그렇군... 여전히 포켓몬을 식용으로 내놓는군. <b>칼로스</b>에서 이런 걸 허용하는 곳도 몇 없지.
+  - es: Aquí todavía se sirve Pokémon 
+- 맵160 [-] 아이고! 저 <i>merde</i> 같은 꼬맹이가 방금 내 몬스터볼을 훔쳐갔어! 그것도 대낮에!
+  - es: ¡Esa niña de <i>merde</i> me a
+- 맵161 [-] 흠... 그렇군... 이 근처에 <b>프로파노 늪</b>으로 이어지는 지름길이 있을 것이다.
+  - es: Puedes encontrar un atajo al <
+- 맵161 [-] 흠... 그렇군... 마녀들이 <b>후늬시티</b>로 가는 길을 감시하고 있다는 걸 알고 있었나? 아무도 자신들의 마법의 비밀
+  - es: ¿Sabías que las brujas vigilan
+- 맵162 [-] 흠... 그렇군... <b>승리의 아치</b>에는 어떤 비밀이 숨겨져 있지.
+  - es: El <b>Arco de la Victoria</b> 
+- 맵162 [-] 어머, 정말 놀라워요! 다섯 자리가 모두 일치해요!
+  - es: ¡Qué sorpresa! ¡Coincidieron l
+- 맵180 [burguesaow] 자, 이제 그쪽 차례예요!
+  - es: Bien, ¡ahora tú!
+- 맵181 [-] 자, 그럼 어떤 스타일을 해 볼래?
+  - es: Dicho esto, ¿qué estilo le qui
+- 맵185 [-] 흠... 그렇군... 윤겔라를 가지고 있나? 내 킬리아와 교환하지 않겠나?
+  - es: ¿Tienes un Kadabra? ¿Te gustar
+- 맵185 [-] 흠... 그렇군... 단 100포켓프랑에 네 운명을 점쳐줄 수 있다. 어떠냐? 받아들이겠느냐?
+  - es: Puedo predecir lo que te aguar
+- 맵185 [-] 흠... 색이 다른 포켓몬을 마주칠 날이 생각보다 가까이 있을지도 모르겠구나...
+  - es: Tal vez el día en el que te cr
+- 맵185 [-] 흠... 그렇군... 지금 네가 데리고 있는 포켓몬 중 단 세 마리만이... 끝까지 너와 함께할 것이다.
+  - es: De los Pokémon que llevas en t
+- 맵185 [-] 흠... 예언이 필요해지면 다시 찾아오거라.
+  - es: ¡Vuelve si necesitas una predi
+- 맵187 [-] 흠... 그렇군... 바깥 세상은 요새 어찌 돌아가는지... 한동안 소식을 못 들었거든...
+  - es: ¿Qué tal va el mundo de arriba
+- 맵187 [-] 흠... 난 친구들과 내 포켓몬 곁에서 안전하게 여기 머무는 게 더 좋아...
+  - es: Yo prefiero quedarme aquí, a s
+- 맵188 [-] 아이고, 너도 이 아이들한테 물건을 도둑맞은 거야?
+  - es: ¿También te han robado los niñ
+- 맵190 [-] 자, 이제 제발 저 혁명가들을 처리해 주세요!
+  - es: Y ahora, por favor, ¡encárgate
+- 맵214 [-] 자, 다 됐습니다. 당신의 포켓몬이 그 기술을 다시 기억해 냈습니다.
+  - es: Bien, hecho está. Tu Pokémon h
+- 맵224 [-] 이봐, <i>excuse me</i>, 난 <b>가라르</b> 출신이야.
+  - es: Ey, <i>excuse me</i>, yo vengo
+- 맵226 [-] 저기... 혹시 그 철가면을 쓴 죄수는 만나봤어?
+  - es: ¿Has conocido ya a ese prision
+- 맵228 [-] 이봐, 너희가 쓰레기나 씹을 때 나한테는 맛있는 나무열매를 줬잖아. 이제 누가 웃지?
+  - es: Mira, mientras vosotros coméis
+- 맵233 [brujita] 자, 미우쓰리!
+  - es: ¡Arre, Mewthree!
+- 맵247 [-] 저기... 저 아래에 뭐가 있단다. 언덕 아래, 철로 쪽에 말이다.
+  - es: Hay... Hay algo ahí. Ladera ab
+- 맵273 [-] 자, 자! 이 할미만 믿어보거라! 헤헤헤...
+  - es: ¡Va, va! ¡Confía en mi! Je, je
+- 맵273 [-] 어머, 피죤투가 있으시네요! 어서 교환해요!
+  - es: ¡Bien, veo que tienes un Pidge
+- 맵283 [-] 저기 보이는 이상한 나무가 보이시나요? 사실은 포켓몬이에요, 바로 꼬지모라는 아이죠.
+  - es: ¿Ves ese extraño árbol de aquí
+- 맵290 [-] 흠... 그렇군... 포켓몬 없이 하늘을 나는 비행체라니! 살다 보니 별일이 다 있구나...
+  - es: ¡Un artilugio capaz de volar s
+- 맵290 [-] 흠... 그렇군... 미래에는 과연 어떤 일이 기다리고 있을까? 언젠가 밤하늘의 별에도 닿는 날이 올 것이다...
+  - es: ¿Qué nos deparará el futuro? ¿
+- 맵294 [-] 아이고! 네가 무슨 짓을 한 거니! 내 어린 루브도를 깜짝 놀라게 했잖아!
+  - es: ¡Aay! ¡Mira lo que has hecho! 
+- 맵297 [brujita] 흠... 알겠어, 알겠어...
+  - es: Humm... Ya veo, ya veo...
+- 맵297 [-] 어머나! 내가 도시 돌 틈에서 뭘 찾았는지 좀 봐!
+  - es: ¡Je, je! ¡Mira lo que me he en
+- 맵297 [-] 이런, 가진 게 아무것도 없잖습니까. 빈털터리시군!
+  - es: ¡Pero si no tienes nada, muert
+- 맵297 [-] 이런, 가진 게 아무것도 없잖습니까. 빈털터리시군!
+  - es: ¡Pero si no tienes nada, muert
+- 맵297 [-] 흠... <b>보석상</b> 안에서는 그 유명한 메가스톤을 살 수 있다지... 하지만 엄청나게 비싸다!
+  - es: Dentro de la <b>Orfebrería</b>
+- 맵297 [-] 흠... 포켓몬 트레이너라는 게 부자들만 누리는 특권일 줄이야.
+  - es: No sabía yo que esto de ser En
+- 맵303 [-] 아이고! 도대체 어떻게 내 불쌍한 루브도를 그렇게 대할 수 있니?
+  - es: ¡Aaay! ¿Pero cómo te atreves a
+- 맵308 [-] 흠... 그렇군... <b>프로파노마을</b>에 사는 내 친척이 충분히 강한 사람에게 메가스톤을 주고 있을 것이다.
+  - es: Tengo un pariente en <b>Pueblo
+- 맵314 [-] 아이고! 난 싸우고 싶지 않다고! 입대할 때 전쟁이 터질 줄은 꿈에도 몰랐단 말이야!
+  - es: ¡Aaay! ¡Yo no quiero luchar! ¡
+- 맵331 [-] 이봐. 그 지긋지긋한 트리미앙은 너랑 네 패거리가 가지든가.
+  - es: Mira, ¿sabes qué? Tú y tu comp
+- 맵360 [-] 흠... 그렇군... 여기서 코인을 멋진 포켓몬으로 바꿀 수 있을 것이다...
+  - es: ¡Aquí puedes cambiar tus ficha
+- 맵360 [-] 흠... 어떤 포켓몬 상품을 바라고 있는 거냐...?
+  - es: ¿Qué poképremio andas buscando
+- 맵360 [-] 흠... 이 상품을 얻기엔 코인이 모자라다...
+  - es: No tienes fichas suficientes p
+- 맵360 [-] 저기 있는 거대한 기계 광대들을 본 적 있어? 가끔은 정말 거칠게 굴기도 하거든.
+  - es: ¿Te has encontrado con esos gr
+- 맵360 [-] 흠... 다 되었느니라. 너의 포켓몬이 그 기술을 떠올렸다.
+  - es: Bien, hecho está. Tu Pokémon h
+- 맵360 [arlequina] 자, 선물로 드리는 작은 장난감이에요.
+  - es: Toma, un juguetito de regalo.
+- 맵392 [-] 자, 받아. 이렇게 희귀한 포켓몬을 보여준 답례야.
+  - es: Toma. Quédate con esto como pr
+- 맵392 [-] 저기 밀로틱이 보이십니까? <b>호연</b>지방이 원산지인 포켓몬입니다.
+  - es: ¿Ves ese Milotic? Es un Pokémo
+- 맵406 [-] 이봐, 내가 미르 스테이션 건설 감독 팀에 있었거든.
+  - es: Mira, he formado parte del equ
+- 맵418 [-] 자, 이제 안주라는 번데기에서 벗어날 때로다!
+  - es: ¡Ya es hora de salir de la cri
+- 맵430 [-] 저기 홀로 계신 할머니를 보셨나요? 말을 걸어보면 남편이 일터에서 돌아오길 기다리는 중이라고 하실 거예요.
+  - es: ¿Has visto a esa ancianita sol
+- 맵446 [-] 어머니가 우리를 곤란하게 하려는 건 아니겠지만, 솔직히 좀 불길하게 들리는데...
+  - es: No creo que mi madre quiera po
+- 맵454 [-] 자, 내 동료 <b>멜리아</b>가 말했듯, 이 망상을 끝내기 위해 우리를 <b>최종병기</b>까지 안내해 주시죠.
+  - es: Y ahora, como había dicho mi c
+- 맵488 [-] 자, 그럼... 넌 나한테 상대도 안 된다는 걸 잘 알고 있겠지? 온 세상이 흔들릴 정도로 거세게 몰아쳐 주마!
+  - es: Dicho esto, sabes que no tiene
+- 맵500 [-] 자, 그럼 이제 우리 차례네! 저들이 산산조각 난 지금, 이 기회를 타서 이 지방을 정복하자!
+  - es: ¡Pues esta es la nuestra! ¡Apr
+
+(후보 75행)
+
+# C. 「당신」 번역투 (전수 256행 중 이 차수는 이름표 없는 대사만)
+
+이름표 페이지 148행(크리산토·란토 등 주연 컷신)은 voices 영역이라 다음 차수로
+미룬다. usted 표시는 원문에 usted가 명시된 자리(정당할 수 있음).
+이건 재번역하는 게 좋겠지만, 기존 말투와 합치되는 부분(ex: 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요! 등 비슷한 인물 대사 여럿) 이 있으니 거기까지 스코프에 담지는 말 것.
+
+
+- 맵0 <b>23번도로</b>에 있던 술 취한 승려가 당신에게 부탁할 일이 있었다.
+  - es: Un monje borracho en la <b>Ruta 23</b> tenía una petición pa
+- 맵0 단 20,000 포켓프랑만 내시면 당신의 포켓몬 중 한 마리를 다른 지방의 모습으로 바꿔 드릴 수 있어요! 어떠신가요?
+  - es: Puedo transformar a uno de tus Pokémon a su versión exótica,
+- 맵0 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+  - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- 맵0 아닌가요? 정말로 당신 포켓몬을 다른 지방의 모습으로 바꿔보지 않으실 건가요?
+  - es: ¿No? ¿De verdad no quieres probar una versión exótica de alg
+- 맵0 단 20,000 포켓프랑만 내시면 당신의 포켓몬 중 한 마리를 원래 모습으로 바꿔 드릴 수 있어요! 어떠신가요?
+  - es: Puedo transformar a uno de tus Pokémon a su versión común, ¡
+- 맵0 그럼 당신 포켓몬 중 한 마리에게 다른 지방 모습의 색을 칠해드릴까요?
+  - es: ¿Quieres que pinte los colores de su forma exótica a uno de 
+- 맵0 그럼 당신 포켓몬 중 한 마리에게 원래 모습의 색을 칠해드릴까요?
+  - es: ¿Quieres que pinte los colores de su forma común a uno de tu
+- 맵1 당신은 어떤 모습인가요? -> 시스템 메세지. 수정 x. 이건 내가 스튜디오에서 직접 수정한 부분인데, 이런 건 좀 미리 리스트 갖고 있다가 알아서 빼 둬라.
+  - es: ¿Qué aspecto tiene tu personaje?
+- 맵1 마지막으로, 당신의 이름을 적어주시겠어요?
+  - es: Por último, ¿podrías escribir el nombre de tu personaje?
+- 맵1 당신의 이름을 적어주시겠어요?
+  - es: ¿Podrías escribir el nombre de tu personaje?
+- 맵3 <b>리엔소마을</b>, 당신만의 모험을 그려나가세요!
+  - es: <b>Pueblo Lienzo</b>, ¡comienza a pintar tu propia aventura!
+- 맵8 프렌드볼로 포획한 포켓몬은 당신에게 훨씬 더 친근하게 굴 테니까요.
+  - es: Con la Amigoball, los Pokémon que captures se volverán más a
+- 맵24 카앙하아아! (당신에게 줄 포켓몬알이 있어요!)
+  - es: ¡Kaaaanghaaaa! (¡Tengo un Huevo Pokémon para ti!)
+- 맵25 아니라고요? 그럼 당신 포켓몬들은 약골이 되고 말 텐데요.
+  - es: ¿No? Pues tus Pokémon serán unos debiluchos.
+- 맵25 제 포켓몬 팀을 연달아 물리치시면, 당신의 포켓몬은 특정 능력치 포인트를 빠르고 효율적으로 추가 획득합니다.
+  - es: Si derrotas de forma sucesiva a mis equipos Pokémon, tus Pok
+- 맵27 능력치 합계에 따라 당신의 포켓몬을 비슷한 가치를 지닌 다른 포켓몬으로 교환해 드립니다.
+  - es: Puedo cambiarte a uno de tus Pokémon por otro de valor simil
+- 맵36 당신 차례가 되었을 때도 행운이 따르길 빌게요!
+  - es: ¡Buena suerte a ti también cuando te toque!
+- 맵36 당신을 꼭 찾아낼 거예요, <i>무슈</i>! 전 정말 끈질기거든요!
+  - es: ¡Te encontraré, <i>monsieur</i>! ¡Soy muy tenaz!
+- 맵36 [usted] 당신은 참으로 결단력 있는 신사분이시군요. 당신의 포켓몬들도 무척 기뻐할 거예요.
+  - es: Es usted un caballero de lo más resuelto, sus Pokémon estará
+- 맵37 술을 좀 과하게 마셨어요... 딸꾹! 하지만 당신쯤 이기는 건 문제없어요!
+  - es: He bebido un poco de más... ¡hip! ¡Pero aún puedo ganarte si
+- 맵39 당신은 정말 예의 바른 분이시네요. 가끔 로시욘 님이 이쪽을 지나가시곤 하는데, 저희를 못 보시는 것 같아요...
+  - es: Eres una persona muy cortés. De vez en cuando se pasa el señ
+- 맵47 “<b>프리물라 여왕이시여</b>, 당신의 영혼이 우리와 함께하시어 고통과 질병으로부터 저희를 구해주소서.”
+  - es: "<b>Reina Prímula</b>, que tu espíritu nos acompañe y nos li
+- 맵52 당신이 이겼으니 고개를 당당히 드세요. 이런, 심지어 지더라도 고개는 당당하게 들고 다녀야 하는 법이죠!
+  - es: Has ganado, por lo que deberías ir con la cabeza bien alta. 
+- 맵56 변화의 바람이 당신을 내게로 이끌었으니, 이것이 바로 운명이군요.
+  - es: El viento de cambio te ha traído hasta mí, esto es el destin
+- 맵60 당신이 마음에 드니 <b>포켓투어</b>에서 꼭 우승하셨으면 해요. 부디 이것을 받아 주세요!
+  - es: Me caes bien y quiero que te corones con la victoria del <b>
+- 맵63 꼬부기는 어떤가요? 당신 말을 잘 들어야 할 텐데요!
+  - es: ¿Qué tal está Squirtle? ¡Espero que te obedezca bien!
+- 맵68 종족값 합계에 맞춰, 당신의 포켓몬 중 하나를 비슷한 가치의 다른 포켓몬으로 교환해 드립니다.
+  - es: Puedo cambiarte a uno de tus Pokémon por otro de valor simil
+- 맵68 일반적으로 게임을 계속 진행할 수는 있지만, 당신이 실패했다는 사실을 잊지 마라.
+  - es: Puedes seguir jugando de forma normal, pero recuerda que has
+- 맵91 당신 포켓몬들도... 정말 마음에 들어요!
+  - es: Tus Pokémon... ¡también me encantan!
+- 맵107 져도 상관없어요, 우린 여전히 당신보다 부자니까요!
+  - es: No nos importa perder, ¡seguimos siendo más ricos que tú!
+- 맵107 지식을 얻으려면 여행을 떠나거나 책을 읽어야 하지요. 당신은 어느 쪽을 선호하나요? 돈이 넘쳐나는 나는 여행을 훨씬 선호한다지요...
+  - es: Para saber, o viajar o leer. ¿Cuál prefieres tú? Yo que teng
+- 맵122 당신… 우연히 여기 온 건 아니죠? 무언가가 당신을 이끈 거예요!
+  - es: Tú... no has llegado aquí por casualidad, ¿verdad? Algo te h
+- 맵122 모든 일에는 이유가 있는 법이죠. 당신의 포켓몬 하나하나와 만난 건 이미 운명에 정해져 있었던 거예요. 너희의 발걸음이 어디로 향할지는 오직 운
+  - es: Todo ocurre por una razón. Tú tenías escrito en tu destino e
+- 맵128 “<b>프리물라 여왕이시여</b>, 당신의 영혼이 우리와 함께하시어 고통과 질병으로부터 우리를 구원하소서.”
+  - es: "<b>Reina Prímula</b>, que tu espíritu nos acompañe y nos li
+- 맵137 엄청난 과부하네요! 이 분야에 대한 당신의 지식에 놀랐습니다.
+  - es: ¡Menuda sobrecarga! Tu conocimiento en la materia me sorpren
+- 맵137 능력치 합계에 맞춰, 당신의 포켓몬 중 하나를 비슷한 가치의 다른 포켓몬으로 교환해 드립니다.
+  - es: Puedo cambiarte a uno de tus Pokémon por otro de valor simil
+- 맵140 이 비참한 곳에는 무슨 일로 오셨나요? 설마 이 하수도를 당신만의 묘지로 만들 셈인가요?
+  - es: ¿Qué te trae a este desdichado lugar? ¿Es que acaso quieres 
+- 맵140 제 약이 정말 효과적이죠? 당신의 마음속에도 선의가 싹트길 바라요!
+  - es: ¿A que son eficaces mis medicinas? ¡Que la buena voluntad na
+- 맵140 알겠어요, 당신의 포켓몬들이 죽지 않기를 바랄게요!
+  - es: Ya veo, ¡espero que tus Pokémon no mueran!
+- 맵146 행운이 당신 편이군요, 후보생! 당신의 포켓몬을 치료해 주겠습니다.
+  - es: ¡La fortuna está de tu lado, Aspirante! Permíteme sanar a tu
+- 맵146 지금까지는 행운이 당신 편이었어요. 하지만 방심하면 안 돼요!
+  - es: Por ahora, la fortuna ha estado de tu lado. ¡Pero no te conf
+- 맵146 각 문턱 뒤에서 당신을 기다리는 운명은 미지수입니다.
+  - es: El destino que te aguarda tras cada uno de ellos es una incó
+- 맵146 하지만 각 문턱 뒤에서 당신을 기다리는 운명은 미지수지요.
+  - es: Sin embargo, el destino que te aguarda tras cada uno de ello
+- 맵147 정말 용감한 일을 해주셨어요. 구호소 모두가 당신에게 큰 빚을 졌네요.
+  - es: Es muy valiente lo que has hecho. Todo el hospicio está en d
+- 맵147 당신도 할 일을 해주세요. 그 괴물 같은 자들을 꼭 처단하세요!
+  - es: Tú aún puedes hacer tu parte, ¡asegúrate de acabar con esos 
+- 맵163 당신은 마그마 파인가요, 에레브 파인가요? 학창 시절에는 늘 두 파로 갈라지곤 했던 게 기억나네요!
+  - es: ¿Tú eres más de Magmar o de Electabuzz? ¡Recuerdo que en el 
+- 맵166 우리 단체는 7년 전 란토 님과 알카 님이 설립했어요. 당신 힘으론 우리의 유산을 당해낼 수 없어요!
+  - es: Nuestra sociedad fue fundada por Lanto y Alca hace ya 7 años
+- 맵176 어머나! 그렇다면 당신은 신화와 전설에 아주 박식한 분이시겠군요.
+  - es: ¡Oh! Entonces debes de ser una persona muy versada en mitos 
+- 맵182 포켓몬이 당신을 지켜주기를 바랍니다! 신체를 보호할 겸 이것도 받으십시오.
+  - es: ¡Que los Pokémon te protejan! Y quédate con esto, para un po
+- 맵182 포켓몬이 당신을 지켜주기를 바랍니다! 포켓몬이 삶에 함께하지 않는다면 우리는 완전할 수 없습니다.
+  - es: ¡Que los Pokémon te protejan! No estamos completos cuando no
+- 맵185 이해해요... 결국 제가 당신에게 무언가를 부탁할 자격이 있겠어요?
+  - es: Lo entiendo... Al fin y al cabo, ¿quién soy yo para pedirte 
+- 맵188 진심으로 감사드립니다. 세 신의 축복이 당신의 여정에 함께하기를.
+  - es: Te lo agradezco de corazón. Que la bendición de los Tres guí
+- 맵188 당신의 너그러운 기부 덕분에 수많은 생명, 특히 스스로를 돌볼 수 없는 생명들을 구할 수 있을 겁니다.
+  - es: Tu generosa contribución salvará muchas vidas, especialmente
+- 맵191 당신, 옛날이야기에 관심이 좀 있으신가요?
+  - es: ¡Je, je! ¿Te gustan las viejas historias?
+- 맵214 자, 다 됐습니다. 당신의 포켓몬이 그 기술을 다시 기억해 냈습니다.
+  - es: Bien, hecho está. Tu Pokémon ha recordado ese movimiento.
+- 맵233 도, 도와주세요! 당신 포켓몬을 잘 다루시죠?
+  - es: ¡A-ayuda! A ti se te dan bien los Pokémon, ¿no?
+- 맵233 당신들이 다루는 연금술도 마찬가지예요. 모든 것은 우주의 원소적 힘과 포켓몬에서 비롯된 순수한 과학이죠.
+  - es: Al igual que ocurre con la alquimia que practicáis algunos. 
+- 맵234 제가 졌을지는 몰라도, 여전히 당신보다 잘생겼어요.
+  - es: Habré perdido, pero sigo siendo más guapo que tú.
+- 맵237 더 늦기 전에 혼인할 상대를 찾고 있답니다... 혹시 당신이 제 알맞은 짝일까요?
+  - es: Estoy buscando un pretendiente para contraer matrimonio ante
+- 맵237 어머! 당신은 정말 특별한 분이시네요!
+  - es: ¡Uy! ¡Pues sí que eres especial!
+- 맵243 당신의 포켓몬 파티가 얼음 상태가 되었다!
+  - es: ¡Tu equipo Pokémon se ha quedado Helado!
+- 맵244 유령 같은 존재가 당신을 지켜보고 있다...
+  - es: Una presencia fantasmal te observa...
+- 맵245 당신의 포켓몬 파티가 얼어붙어 버렸다!
+  - es: ¡Tu equipo Pokémon se ha quedado Helado!
+- 맵255 <b>F3</b>는 당신의 도움이 필요합니다.
+  - es: <b>F3</b> necesita tu ayuda.
+- 맵255 제 도움이 필요하신가요? 당신이 어디서 왔든, 과거에 무엇을 했든 신경 쓰지 않아요.
+  - es: ¿Necesites de mis servicios? No me importa tu procedencia ni
+- 맵255 기꺼이 당신의 포켓몬을 치료해 드리겠습니다.
+  - es: Con mucho gusto curaré a tus Pokémon.
+- 맵255 제 약, 정말 효과적이죠? 당신의 마음속에 선의가 싹트기를 바랄게요!
+  - es: ¿A que son eficaces mis medicinas? ¡Que la buena voluntad na
+- 맵255 그렇군요, 당신의 포켓몬들이 쓰러지지 않길 바라요!
+  - es: Ya veo, ¡espero que tus Pokémon no mueran!
+- 맵257 당신의 신원은 충분히 확인되었습니다!
+  - es: ¡Tu identidad ha quedado más que clara!
+- 맵258 종족값 합계에 따라 당신의 포켓몬을 비슷한 가치의 다른 포켓몬으로 교환해 드릴 수 있습니다.
+  - es: Puedo cambiarte a uno de tus Pokémon por otro de valor simil
+- 맵264 세상의 베일 뒤에서 고동치는 진실을 보았어... 당신에게 말해주지. 색깔들은 노래할 뿐만 아니라 비명을 지르고 있어! 그리고 그 불협화음이 내 
+  - es: He visto las verdades que laten tras el velo del mundo, y te
+- 맵270 저는 좋아하는 포켓몬 인형이나 피규어를 모아서 마음대로 가지고 노는 걸 정말 좋아해요. 당신은 어떠세요?
+  - es: Me encanta coleccionar peluches y figuras de mis Pokémon fav
+- 맵277 안녕하세요, 후보생님! 섭정 <b>안투리아<b> 님께서 섭정으로서 당신과 배틀하기를 원하십니다.
+  - es: ¡Hola, Aspirante! La Regente <b>Anturia<b> desea combatir co
+- 맵284 당신은 어떤가요? 어떤 타입 포켓몬을 가장 좋아하시나요? 불꽃, 드래곤, 고스트타입만 아니면 좋겠습니다만...
+  - es: ¿Y a ti? ¿Qué tipo de Pokémon te gusta más? Espero que no se
+- 맵284 종족값 합계에 맞춰 당신의 포켓몬 중 하나를 비슷한 가치의 다른 포켓몬으로 바꿔 드릴 수 있어요.
+  - es: Puedo cambiarte a uno de tus Pokémon por otro de valor simil
+- 맵286 <b>멜리아</b>는 당신들이 풍차 위쪽으로 올라오길 바라고 있다.
+  - es: <b>Melia</b> quiere que subáis a la parte superior del molin
+- 맵290 “당신 앞에 미래의 모든 포켓몬 트레이너를 위한 궁극의 도구가 있습니다. 바로 현대식 포켓몬도감입니다.”
+  - es: "Ante ti tienes la herramienta definitiva de todo Entrenador
+- 맵290 그나저나, 이 근처에서 반짝이는 돌을 당신도 보셨나요?
+  - es: Por cierto, ¿tú también has visto esa piedra que brilla, cer
+- 맵299 아조스단이 이설시티 근처에서 다시 어슬렁거리는 모양인데, 설마 당신도 그자들과 한패는 아니겠지요?
+  - es: Se ha visto al Team Azoth merodeando de nuevo cerca de Ciuda
+- 맵299 숨겨진 온천 이야기, 들어보셨나요? 산속에 있는 아주 특별한 휴양지랍니다. 배롱마을에서 기차를 타면 갈 수 있죠... 당신이 그곳에 어울리는 신
+  - es: ¿Has oído hablar del Balneario Oculto? Se trata de un destin
+- 맵301 제 약, 정말 효과적이죠? 당신의 마음속에 선의가 싹트기를 바랄게요!
+  - es: ¿A que son eficaces mis medicinas? ¡Que la buena voluntad na
+- 맵301 그렇군요. 당신의 포켓몬들이 죽지 않기를 바랄게요!
+  - es: Ya veo, ¡espero que tus Pokémon no mueran!
+- 맵313 추억거리를 많이 가져왔답니다. 이제 당신의 것이 된 이것처럼요. 이러면 당신도 이번 만남을 기억하시겠죠!
+  - es: Me llevé muchos recuerdos. Como este, que ahora te pertenece
+- 맵313 추억거리를 많이 가져왔답니다. 당신도 이번 만남을 기억해 주시면 좋겠네요!
+  - es: Me llevé muchos recuerdos. ¡Espero que tú también recuerdes 
+- 맵314 당신 포켓몬을 딱 한 번 치료해 드릴 수는 있지만, 그 뒤엔 떠나셔야 해요.
+  - es: Puedo curar a tus Pokémon una sola vez, pero después tendrás
+- 맵321 <b>센데라</b> 대장이 이끄는 프랙탈 병사들이 당신에게 얼음 같은 분노를 모조리 퍼부을 것입니다.
+  - es: Liderados por la Capitana <b>Cendera</b>, los soldados fract
+- 맵330 “<b>프리물라 여왕이시여</b>, 당신의 영혼이 저희와 함께하시어 고통과 질병으로부터 구원하소서.”
+  - es: "<b>Reina Prímula</b>, que tu espíritu nos acompañe y nos li
+- 맵345 당신의 방이다. 들어가서 잘까, 아니면 먼저 다른 방에 들를까?
+  - es: Es tu habitación. ¿Quieres entrar en ella y dormir o quieres
+- 맵358 당신에게 행복을 전달하기 위해 배치되었습니다. 부디 설탕을 급여하게 해 주십시오.
+  - es: Estoy aquí para proveerte de felicidad. Por favor, déjame al
+- 맵359 왜 그렇게 진지한 표정을 짓고 있나요? 당신 얼굴에 웃음을 그려드릴게요...
+  - es: ¿A dónde vas con esa cara tan seria? Déjame dibujarte una so
+- 맵359 운명의 실이 팽팽하게 당겨진다! 상기노 서커스가 당신을 부르고 있어요. 그 부름을 외면하지 마세요!
+  - es: Los hilos del destino se tensan. El Circo Sanguino te está l
+- 맵360 당신의 목소리도 똑같이 낼 수 있어요, 맞죠? 그나저나 목소리가 참 예쁘시네요.
+  - es: Hasta me sale muy bien tu voz, ¿verdad? Tienes una voz bonit
+- 맵361 <i>Oh, la la</i>! 당신 얼굴을 보니 포켓몬 배틀에서 비할 데 없는 힘을 얻으셨군요.
+  - es: ¡<i>Oh, la la</i>! Puedo ver en tu rostro que has adquirido 
+- 맵375 능력치 총합을 기준으로 가치가 비슷한 다른 포켓몬과 당신의 포켓몬을 교환해 드립니다.
+  - es: Puedo cambiarte a uno de tus Pokémon por otro de valor simil
+- 맵392 당신, \PN 아닌가요? 분명 죽은 줄 알았는데?
+  - es: ¿Tú no eres \PN? ¿No habías muerto?
+- 맵398 그 포켓몬이 당신 곁에서 행복해지기를 바랍니다.
+  - es: Ojalá la criatura encuentre la felicidad a tu lado.
+- 맵401 “<b>프리물라 여왕이시여</b>, 당신의 영혼이 우리와 함께하시어 고통과 질병으로부터 저희를 구원하소서.”
+  - es: "<b>Reina Prímula</b>, que tu espíritu nos acompañe y nos li
+- 맵409 당신에게 시간을 내어주는 이를 소중히 여기십시오. 결코 되돌릴 수 없는 삶의 한 조각을 내어주고 있는 것입니다.
+  - es: Valora a aquellos que te dedican su tiempo, pues te están da
+- 맵410 정말 그게 당신의 대답인가요?
+  - es: ¿Seguro que esa es tu respuesta?
+- 맵410 하지만 당신이 우라오스의 힘을 다스려 지니고 다닐 수 있게 된다면, 다양한 배틀 스타일을 익히도록 도울 수 있습니다.
+  - es: Pero si tú logras dominar el poder de Urshifu y llevarlo en 
+- 맵418 내 마음속 빙산을 깨부수다니 칭찬할 만합니다. 대적자로서 당신을 인정하겠습니다.
+  - es: Resquebrajar el iceberg que tengo por corazón es muy meritor
+- 맵421 좋습니다, 완료되었습니다. 당신의 포켓몬이 그 기술을 떠올렸습니다.
+  - es: Bien, hecho está. Tu Pokémon ha recordado ese movimiento.
+- 맵430 능력치 합계에 맞춰, 당신의 포켓몬 중 하나를 비슷한 가치를 지닌 다른 포켓몬으로 교환해 드립니다.
+  - es: Puedo cambiarte a uno de tus Pokémon por otro de valor simil
+- 맵445 좋습니다, 다 됐어요. 당신의 포켓몬이 그 기술을 기억해 냈습니다.
+  - es: Bien, hecho está. Tu Pokémon ha recordado ese movimiento.
+- 맵482 좋습니다, 다 되었습니다. 당신의 포켓몬이 그 기술을 되살려냈습니다.
+  - es: Bien, hecho está. Tu Pokémon ha recordado ese movimiento.
+- 맵486 연속으로 배틀이 진행되며, 매 배틀이 끝날 때마다 당신의 포켓몬 팀이 회복됩니다.
+  - es: Serán combates secuenciales en los que tu equipo Pokémon ser
+- 맵488 신의 거처에서조차 신에게 감히 도전하다니, 당신의 오만함은 어디까지입니까? 너희 인간들은 비열하기 짝이 없으니 심연 속으로 던져져야 마땅합니다!
+  - es: ¿Hasta dónde llega tu arrogancia que te permites incluso des
+- 맵503 <b>당신의 첫 포켓몬을 수거하고</b> 선택한 타입의 새로운 첫 포켓몬 3마리를 드립니다. 이미 해당 타입의 첫 포켓몬을 갖고 계신 경우가 아
+  - es: <b>Te quitaré a tu Pokémon inicial</b> y te ofreceré tres in
+
+(후보 108행)
