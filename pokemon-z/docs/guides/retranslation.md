@@ -98,8 +98,15 @@ reasoning_effort=minimal. **작은 표본으로 파라미터를 판정하지 마
 `기계 반려` 플래그가 비친 것이니 품질 신호로 읽지 마라. 선별기의 힘은 원장 두께에
 비례한다 — 새 이름이 나오면 원장부터.
 
+프롬프트 본문의 「Naturalness rules」(J~Q)는 유지자 손수정 코퍼스에서 추출한
+직역투 해소 규칙이다 — 문두 연결 부사구 삭제 · 관용구 대 관용구 · 명사구 사슬
+해체 · 잉여 지시사 억제 · 확인창 자문형 · 본가 정형구 우선 · 울음소리 한국어
+종명 재생성 · 관계절 범위. 규칙을 고치면 **파일럿(`--pilot`)으로 먼저 재고**
+전량을 돌린다.
+
 ## 근거 문서
 
+- Naturalness rules의 코퍼스 근거: [`../research/2026-08-09-suggestion-lens2-style.md`](../log/research/2026-08-09-suggestion-lens2-style.md)
 - 선행 연구 대조: [`../research/2026-08-06-translation-prompting-research.md`](../log/research/2026-08-06-translation-prompting-research.md)
 - 판별자(LLM-as-judge) 실측·재시도 설계: [`../research/2026-08-06-discriminator-pilot.md`](../log/research/2026-08-06-discriminator-pilot.md)
 - 파일럿 설계와 비용 산정: [`../log/2026-08-08-quality-plan-and-progress.md`](../log/2026-08-08-quality-plan-and-progress.md)

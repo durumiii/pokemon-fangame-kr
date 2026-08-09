@@ -59,6 +59,37 @@ I. The player character (\PN) has no fixed gender or age. Never invent gendered 
    age-based address terms (「오빠/누나/언니/아가씨/총각」). Use only titles present
    in the source.
 
+### Naturalness rules (Korean that does not read as translated)
+
+J. Sentence-initial connective adverbials (`En concreto,` `De hecho,` `Por lo
+   visto,`) usually vanish in Korean dialogue — context already links the
+   sentences. Fold the nuance into the ending or drop it:
+   `En concreto, sientes la presencia…` → 「아주 강력한 …의 기운이 느껴진다.」
+K. Translate idiom with idiom. When the Spanish uses a set phrase, reach for the
+   Korean set phrase with the same meaning before rendering the image word by
+   word: `bailar al son de la flauta de X` → 「X의 장단에 놀아나다」,
+   `el largo y férreo estoque de la ley` → 「법의 철퇴」. Only when no
+   counterpart exists, unfold the meaning in plain words.
+L. Unwind noun-chain calques into verb endings: 「~하는 것은 위험합니다」 →
+   「~는 건 위험하다」, 「~한 상태로」 → 「~한 채로」. Counts follow Korean habit
+   in prose: `solo 1 Pokémon` → 「포켓몬이 하나뿐」.
+M. Spanish demonstratives and intensifiers (`ese/esta`, `completa`, `realmente`)
+   that only fill rhythm read as translationese — render the sentence without
+   them when they carry no information. (That is not dropping a fact.)
+N. Confirm-box questions and choice labels are the player's own voice, not an
+   NPC asking the player: `¿Quieres abrir la puerta?` at a locked door →
+   「잠긴 문을 열까?」; a choice `Acepto` → 「그렇게 하죠」. Self-question
+   endings, dialogue-style buttons.
+O. For stock situations the series-canon phrasing wins over a literal rendering:
+   `¡Pero no tuvo ningún efecto!` → 「그러나 아무 일도 일어나지 않았다!」;
+   item pickup `ha encontrado`/`found` → 「얻었다」. When the official Korean
+   games have a fixed line for the situation, use it.
+P. A Pokémon's cry echoes its own species name — rebuild it from the Korean
+   name, not the Spanish (`Luuuull…` of Morelull → 「자마아…」 of 자마슈).
+Q. Mind relative-clause scope: in `que …, pero …` the `pero` may still be inside
+   the relative clause. Check what the second verb attaches to before rendering,
+   or the meaning flips.
+
 ### Preservation rules (violations are auto-rejected by machine validation)
 
 1. Preserve meaning and information exactly. `es` is authoritative. Do not add or
@@ -148,6 +179,37 @@ H. Do not invent interjections, laughter or self-titles that are absent from the
 I. The player character (\PN) has no fixed gender or age. Never invent gendered or
    age-based address terms (「오빠/누나/언니/아가씨/총각」). Use only titles present
    in the source.
+
+### Naturalness rules (Korean that does not read as translated)
+
+J. Sentence-initial connective adverbials (`En concreto,` `De hecho,` `Por lo
+   visto,`) usually vanish in Korean dialogue — context already links the
+   sentences. Fold the nuance into the ending or drop it:
+   `En concreto, sientes la presencia…` → 「아주 강력한 …의 기운이 느껴진다.」
+K. Translate idiom with idiom. When the Spanish uses a set phrase, reach for the
+   Korean set phrase with the same meaning before rendering the image word by
+   word: `bailar al son de la flauta de X` → 「X의 장단에 놀아나다」,
+   `el largo y férreo estoque de la ley` → 「법의 철퇴」. Only when no
+   counterpart exists, unfold the meaning in plain words.
+L. Unwind noun-chain calques into verb endings: 「~하는 것은 위험합니다」 →
+   「~는 건 위험하다」, 「~한 상태로」 → 「~한 채로」. Counts follow Korean habit
+   in prose: `solo 1 Pokémon` → 「포켓몬이 하나뿐」.
+M. Spanish demonstratives and intensifiers (`ese/esta`, `completa`, `realmente`)
+   that only fill rhythm read as translationese — render the sentence without
+   them when they carry no information. (That is not dropping a fact.)
+N. Confirm-box questions and choice labels are the player's own voice, not an
+   NPC asking the player: `¿Quieres abrir la puerta?` at a locked door →
+   「잠긴 문을 열까?」; a choice `Acepto` → 「그렇게 하죠」. Self-question
+   endings, dialogue-style buttons.
+O. For stock situations the series-canon phrasing wins over a literal rendering:
+   `¡Pero no tuvo ningún efecto!` → 「그러나 아무 일도 일어나지 않았다!」;
+   item pickup `ha encontrado`/`found` → 「얻었다」. When the official Korean
+   games have a fixed line for the situation, use it.
+P. A Pokémon's cry echoes its own species name — rebuild it from the Korean
+   name, not the Spanish (`Luuuull…` of Morelull → 「자마아…」 of 자마슈).
+Q. Mind relative-clause scope: in `que …, pero …` the `pero` may still be inside
+   the relative clause. Check what the second verb attaches to before rendering,
+   or the meaning flips.
 
 ### Preservation rules (violations are auto-rejected by machine validation)
 
