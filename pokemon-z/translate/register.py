@@ -41,6 +41,15 @@ LOW = {"평서다", "해라친근", "명령라", "하게", "해체"}
 # 「…느니」·「…는데」·「…지」로 끊긴 조각에 속지 않으려고 뒤 문장으로 물러난다.
 AMBIG = re.compile(r"(니|지|까|데|든|고|며|면|서|나)$")
 
+# 「~다」 종결이라도 1·2인칭 표지가 있으면 지문이 아니라 청자를 앞에 둔 딱딱한
+# 반말이다(사냥꾼·군인 단정체). 표지가 없으면 지문평서로 남는다.
+SPEECHY = re.compile(r"(?<![가-힣])(나|난|내|내가|나도|우리|너|너희|네가|네게|네겐|넌|널|니가|당신|자네|그대)(?![가-힣])")
+
+
+def speechy(text):
+    """지문 꼴 문장이 실은 대화인가 — 1·2인칭 표지 유무."""
+    return bool(SPEECHY.search(clean(text or "")))
+
 # 상대에 따라 급을 바꾸는 것이 정체성인 인물들. 어미만으로 어긋남을 말할 수 없다.
 DUAL = {"Lanto", "Crisanto", "Melia", "Olivier", "Aure", "Merlot",
         "Hisopo", "Cendera", "Pinot"}
@@ -180,6 +189,11 @@ def selftest():
     assert classify("서둘러!")[0] == "해체"
     # 종결어미 없는 정형구는 그대로 판정 보류
     assert axis("그렇다면 다음 기회에.")[0] == ""
+    # 「~다」 지문 꼴의 대화 판별 — 인칭 표지
+    assert speechy("나쁘게 듣진 마라, 하지만 난 너희 쪽 녀석들 손에 많은 전우를 잃었다.")
+    assert not speechy("전기 장벽이 길을 막고 있다!")
+    assert not speechy("포켓몬이 도망갔다!")
+    assert not speechy("나무열매가 주렁주렁 열려 있다.")  # 「나무」의 「나」에 안 속는다
     print("selftest 통과")
 
 
