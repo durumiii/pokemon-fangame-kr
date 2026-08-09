@@ -58,7 +58,10 @@ def final_chunk(t):
 MENU = {'네', '예', '응', '아니', '아뇨', '아니오', '으응', '아냐', '취소', '그만두기'}
 
 # 강한 하게체 표지 (어미 자체로 확정)
-HAGE_STRONG = re.compile(r'(걸세|ㄹ세|일세|게나|구먼|구만|시게|보게|주게|하게|나그려)$')
+HAGE_STRONG = re.compile(r'(걸세|ㄹ세|일세|게나|구먼|구만|시게|보게|주게|하게|나그려|겠나|다네|라네)$')
+
+# 문미 호칭 「…, 크리산토 군?」 — 종결어미가 아니라 부름말이다. 떼고 앞을 다시 본다.
+VOCATIVE_KUN = re.compile(r',\s*[가-힣]{1,6}\s*군\??$')
 # 약한 표지: 자네/그대 호칭이 같은 줄에 있을 때만 하게체
 HAGE_WEAK = re.compile(r'(는가|은가|인가|런가)$')
 HAGE_ADDR = re.compile(r'(자네|그대|자당|여보게)')
@@ -83,8 +86,13 @@ def classify(text):
     fc = final_chunk(c)
     if not fc:
         return 'empty', ''
+    if VOCATIVE_KUN.search(fc):
+        fc = VOCATIVE_KUN.sub('', fc).strip()
+        if not fc:
+            return 'empty', ''
     if fc in MENU:
         return '체언기타', fc
+    exclaim = c.rstrip().endswith('!')
     last = fc.split()[-1] if fc.split() else fc
     last = last.rstrip('~-,'"'\"")
     if not re.search(r'[가-힣]', last):
@@ -101,7 +109,12 @@ def classify(text):
         return ('하게' if HAGE_ADDR.search(c) else '해체'), last
     for name, rx in RULES:
         if rx.search(last):
+            # 느낌표로 끝난 명령·외침은 연결어미 꼴이라도 해체다 (「서둘러!」)
+            if name == '연결미완' and exclaim and re.search(r'[라러아어자]$', last):
+                return '해체', last
             return name, last
+    if exclaim and re.search(r'[라러]$', last):
+        return '해체', last   # 「한 손을 골라!」 — 명령라 표에 없는 ㄹ-축약 명령
     return '체언기타', last
 
 def load(path):

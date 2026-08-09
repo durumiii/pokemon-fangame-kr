@@ -101,6 +101,19 @@ REGEX_EDITS = [
     ("TextEntry",
      re.compile(r"if Input\.repeatex\?\(i\)(?! \|\|)"),
      "if Input.repeatex?(i) || Input.repeatex?(i.chr.to_sym)"),
+    # 이름·별명 입력창은 `Input.gets`로 글자를 받는데, 신판 mkxp-z는 문자 입력 모드가
+    # 기본으로 꺼져 있어 아무것도 안 들어온다(시험대 실측: `Input.text_input`이 false).
+    # 창을 열 때 켜고 닫을 때 끈다. 그 API가 없는 옛 실행기에서는 한 줄도 안 걸린다.
+    ("TextEntry",
+     re.compile(r"    @initial = true(\r?\n)  end\1(?!\1?  def dispose)"),
+     "    @initial = true\\1"
+     "    Input.text_input = true if Input.respond_to?(:text_input=)\\1"
+     "  end\\1"
+     "\\1"
+     "  def dispose\\1"
+     "    Input.text_input = false if Input.respond_to?(:text_input=)\\1"
+     "    super\\1"
+     "  end\\1"),
 ]
 
 

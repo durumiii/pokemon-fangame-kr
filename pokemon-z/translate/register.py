@@ -47,9 +47,9 @@ DUAL = {"Lanto", "Crisanto", "Melia", "Olivier", "Aure", "Merlot",
 
 
 def sentences(text):
-    """문장 단위로 자른다. reg.final_chunk와 같은 기준."""
+    """문장 단위로 자른다. 종결부호를 남긴다 — classify가 느낌표 명령을 알아보게."""
     t = clean(text).strip()
-    return [p.strip() for p in re.split(r"[.!?…]+\s*", t) if p.strip()]
+    return [p.strip() for p in re.split(r"(?<=[.!?…])\s+|(?<=[.!?…])(?=[가-힣])", t) if p.strip()]
 
 
 def axis(text):
@@ -171,6 +171,15 @@ def selftest():
     assert axis("포켓몬 도감을 받았다!")[0] == "하대"
     # 물러나기는 마지막 문장이 조각일 때만
     assert axis("고마워!")[2] == 0
+    # 2026-08-09 보강: 문미 호칭 「군」은 종결어미가 아니다 (구 Z-29)
+    assert axis("아, 혹시 체육 관련 분야를 공부했나요, 크리산토 군?")[0] == "존대"
+    # 하게체 의문 「~겠나」
+    assert classify("내 악비아르와 바꾸지 않겠나?")[0] == "하게"
+    # 느낌표 명령의 연결어미 꼴·ㄹ-축약 명령
+    assert axis("서둘러! 한 손을 골라!")[0] == "하대"
+    assert classify("서둘러!")[0] == "해체"
+    # 종결어미 없는 정형구는 그대로 판정 보류
+    assert axis("그렇다면 다음 기회에.")[0] == ""
     print("selftest 통과")
 
 
