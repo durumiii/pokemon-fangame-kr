@@ -57,7 +57,10 @@ RUNA_MOD = STORE / "Pokemon Z Fangame" / "한글패치 코어"
 RUNA_INJECT = ["UI Text KR", "DPPT Font", "Type Matchup"]
 # 카드의 `expects`가 순정 기준으로 뜬 모드 — 스테이징은 패치판이라 늘 어긋난다.
 # 기준선 재대조가 없어 `force`로 넘긴다(packaging 가이드 「mod.json의 expects」 절).
-FORCE_INJECT = {"Type Matchup"}
+# UI Text KR도 같은 처지가 됐다 — 호환 수술이 `SpriteWindow` 절의 다른 클래스
+# (`LargePlane`)를 건드려 절 전체 md5가 어긋난다. 이 모드가 훅 거는 자리는 그 클래스가
+# 아니다(2026-08-09 확인).
+FORCE_INJECT = {"Type Matchup", "UI Text KR", "DPPT Font"}
 RUNA_ASSET_MODS = ["Z-GUI"]                       # 파일만 얹는 모드 — 번역 자산 뒤에 덮는다
 # 원본 배포판의 실행 설정을 한 판만 함께 싣는다. v5.1·v5.2가 넣었던 `fontSub`(글꼴 이름
 # 14종을 Galmuri11로 꺾는 표)를 걷어 내려는 것 — v5.2.1부터는 글꼴 파일이 그 이름을 직접

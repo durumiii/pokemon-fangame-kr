@@ -42,6 +42,34 @@ DEFAULT_TARGETS = [
 REGEX_EDITS = [
     ("AudioUtilities", re.compile(r"when (\d+):"), r"when \1 then"),
     ("PScreen_Load", re.compile(r"\bretry if deleting==false"), "next if deleting==false"),
+    # 정규식 리터럴 안의 `\x7f`~`\x9f`는 루비 3.x가 파싱에서 거부한다("invalid multibyte
+    # escape") — 그 바이트 하나로는 올바른 UTF-8 글자가 못 되기 때문이다. POSIX 문자
+    # 클래스로 바꾼다: 1.8·3.x 양쪽이 알아듣고, 제어문자를 거른다는 뜻도 그대로다.
+    ("PSystem_Utilities NUEVO", re.compile(r"\\x00-\\x1f\\x7f-\\x9f"), "[:cntrl:]"),
+    # 바이트를 `문자열[i]`로 읽는 1.8 관용구 — 1.9+에서는 String이 나와, 비교는 즉사하고
+    # 산술은 NoMethodError다. `unpack`은 양쪽에서 같은 정수를 준다.
+    ("AudioUtilities", re.compile(r"file\.read\(1\)\[0\] rescue 0"),
+     'file.read(1).unpack("C")[0] rescue 0'),
+    ("AudioUtilities", re.compile(r"\brstr\[0\]==0xFB"), 'rstr.unpack("C3")[0]==0xFB'),
+    ("AudioUtilities", re.compile(r"\brstr\[1\]"), 'rstr.unpack("C3")[1]'),
+    # `LargePlane < Plane`이 initialize에서 super를 안 불러 네이티브 Plane이 안 선다.
+    # 구판 mkxp-z는 넘어갔지만 신판은 dispose의 super에서 MKXPError로 죽는다
+    # (「No instance data for variable」). 초기화에서 부모를 세워 준다 — 구판에서도
+    # 평범한 Plane 생성이라 동작이 같다.
+    ("SpriteWindow",
+     re.compile(r"(def initialize\(viewport=nil\)\r?\n)(\s+)(@__sprite=Sprite\.new\(viewport\))"),
+     r"\1\2super(viewport)\n\2\3"),
+    # 빈 이름의 오토타일을 열면 경로가 폴더가 된다. 1.8은 그냥 넘어갔지만 3.x는
+    # `Errno::EISDIR`을 던지는데 이 rescue 목록에 그것이 없다 — 목록에 더한다.
+    ("SpriteWindow",
+     re.compile(r"rescue Errno::ENOENT, Errno::EINVAL, Errno::EACCES(?!, Errno::EISDIR)"),
+     "rescue Errno::ENOENT, Errno::EINVAL, Errno::EACCES, Errno::EISDIR"),
+    # 그림자 스프라이트가 map 없이 서면 `@map.id`가 1.8에서는 `nil.id`(옛 object_id)라
+    # 조용히 숫자를 돌려줘 「지금 맵이 아니다」로 읽혔다. 3.x에는 그 메서드가 없어 즉사한다 —
+    # nil 검사를 앞에 세워 1.8의 관측 동작을 그대로 남긴다.
+    ("Sombras",
+     re.compile(r"!\(@map\.id==\$game_map\.id\)"),
+     "!(!@map.nil? && @map.id==$game_map.id)"),
 ]
 
 
