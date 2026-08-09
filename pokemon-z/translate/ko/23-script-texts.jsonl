@@ -750,7 +750,7 @@
 {"k": "{1} can't be switched out!", "v": "{1} can’t be switched out!"}
 {"k": "{1}'s {2} prevents switching!", "v": "{1}’s {2} prevents switching!"}
 {"k": "{1} is about to send in {2}.", "v": "{1} is about to send in {2}."}
-{"k": "Will {1} change Pokémon?", "v": "{1}\\j[은,는] 포켓몬을 교체할까?"}
+{"k": "Will {1} change Pokémon?", "v": "포켓몬을 교체할까?"}
 {"k": "{1}, that's enough! Come back!", "v": "{1}, that’s enough! Come back!"}
 {"k": "Use next Pokémon?", "v": "다음 포켓몬을 낼까?"}
 {"k": "Go! {1}!", "v": "가라! {1}!"}
@@ -4481,7 +4481,7 @@
 {"k": "¡{1} no puede ser remplazado!", "v": "{1}\\j[은,는] 교체할 수 없다!"}
 {"k": "¡La habilidad {2} de {1} impide el cambio!", "v": "{1}의 특성 {2}\\j[이,가] 교체를 막았다!"}
 {"k": "{1} está por enviar a {2}.", "v": "{1}\\j[은,는] {2}\\j[을,를] 내보내려 한다."}
-{"k": "{1}, ¿quieres cambiar de Pokémon?", "v": "{1}, 포켓몬을 교체할까?"}
+{"k": "{1}, ¿quieres cambiar de Pokémon?", "v": "포켓몬을 교체할까?"}
 {"k": "¡{1}, es suficiente! ¡Regresa!", "v": "{1}, 그 정도면 됐어! 돌아와!"}
 {"k": "¿Quieres cambiar de Pokémon?", "v": "포켓몬을 교체할까?"}
 {"k": "¡Adelante! ¡{1}!", "v": "가랏! {1}!"}
