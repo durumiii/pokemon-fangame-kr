@@ -94,6 +94,13 @@ def test_chips_and_event(tmp):
     ev = fixgui.event_page(1, 7, 0)
     assert [r["cmd"] for r in ev] == [1, 3]          # 명령 순서대로
     assert [r["v"] for r in ev] == ["잘 가", "안녕 친구"]
+    # 검색 결과와 같은 꼴이라야 같은 편집 카드가 그려진다
+    assert all({"file", "line", "map", "es", "v"} <= set(r) for r in ev)
+    assert [r["line"] for r in ev] == [3, 2]
+    # 번역표에 없는 자리는 line 0으로 와서 읽기 전용이 된다
+    fixgui._ctx["page"][(1, 8, 0)] = [[0, "No existe", "촌장", "npc"]]
+    miss = fixgui.event_page(1, 8, 0)[0]
+    assert (miss["line"], miss["v"]) == (0, "")
 
     other = fixgui.same_es("Hola\namigo", 1)
     assert [(r["map"], r["v"]) for r in other] == [(2, "안녕 동무")]

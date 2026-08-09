@@ -93,15 +93,19 @@ def chips(hits):
 
 
 def event_page(mp, event, page):
-    """한 이벤트-페이지의 대사를 명령 순서대로 — 현행 번역을 붙여서."""
+    """한 이벤트-페이지의 대사를 명령 순서대로.
+
+    검색 결과와 **같은 꼴**로 돌려준다 — 화면이 같은 카드를 그려 그 자리에서
+    고칠 수 있어야 한다. 번역표에 없는 자리는 line 0으로 와서 읽기 전용이 된다.
+    """
     rows = sorted(ctx()["page"].get((mp, event, page), []), key=lambda p: p[0])
     cur = {norm(r["es"]): r for r in iter_rows() if r["map"] == mp}
     out = []
     for cmd, k, name, sprite in rows:
         r = cur.get(k)
-        out.append({"cmd": cmd, "es": k, "sprite": sprite, "name": name,
+        out.append({"cmd": cmd, "es": k, "sprite": sprite, "name": name, "map": mp,
                     "file": r["file"] if r else "", "line": r["line"] if r else 0,
-                    "v": r["v"] if r else "(번역표에 없음)"})
+                    "v": r["v"] if r else ""})
     return out
 
 
@@ -551,7 +555,7 @@ class H(BaseHTTPRequestHandler):
         elif u.path == "/event":
             qs = urllib.parse.parse_qs(u.query)
             g = lambda k: int(qs.get(k, ["0"])[0])
-            self._json({"rows": event_page(g("map"), g("event"), g("page"))})
+            self._json({"rows": chips(event_page(g("map"), g("event"), g("page")))})
         elif u.path == "/line":
             qs = urllib.parse.parse_qs(u.query)
             f, ln = qs.get("file", [""])[0], int(qs.get("line", ["0"])[0])
