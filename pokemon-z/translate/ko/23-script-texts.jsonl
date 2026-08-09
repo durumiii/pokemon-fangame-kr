@@ -1854,74 +1854,74 @@
 {"k": "Withdraw Item", "v": "도구 꺼내기"}
 {"k": "Deposit Item", "v": "도구 맡기기"}
 {"k": "Toss Item", "v": "도구 버리기"}
-{"k": "Take out items from the PC.", "v": "Take out items from the PC."}
-{"k": "Store items in the PC.", "v": "Store items in the PC."}
-{"k": "Throw away items stored in the PC.", "v": "Throw away items stored in the PC."}
-{"k": "Go back to the previous menu.", "v": "Go back to the previous menu."}
+{"k": "Take out items from the PC.", "v": "PC에서 도구를 꺼낸다."}
+{"k": "Store items in the PC.", "v": "PC에 도구를 보관한다."}
+{"k": "Throw away items stored in the PC.", "v": "PC에 보관된 도구를 버린다."}
+{"k": "Go back to the previous menu.", "v": "이전 메뉴로 돌아간다."}
 {"k": "There are no items.", "v": "도구가 없습니다."}
 {"k": "There's no Mail here.", "v": "여기에는 편지가 없다."}
-{"k": "What do you want to do with {1}'s Mail?", "v": "What do you want to do with {1}’s Mail?"}
-{"k": "Move to Bag", "v": "Move to Bag"}
-{"k": "The message will be lost. Is that OK?", "v": "The message will be lost. Is that OK?"}
-{"k": "The Mail was returned to the Bag with its message erased.", "v": "The Mail was returned to the Bag with its message erased."}
+{"k": "What do you want to do with {1}'s Mail?", "v": "{1}의 편지를 어떻게 할까?"}
+{"k": "Move to Bag", "v": "가방으로 옮기기"}
+{"k": "The message will be lost. Is that OK?", "v": "메시지가 사라집니다. 괜찮겠습니까?"}
+{"k": "The Mail was returned to the Bag with its message erased.", "v": "편지가 내용이 지워진 채 가방으로 돌아왔다."}
 {"k": "The Bag is full.", "v": "가방이 가득 찼습니다!"}
-{"k": "Item Storage", "v": "Item Storage"}
-{"k": "Mailbox", "v": "메일박스"}
-{"k": "Turn Off", "v": "Turn Off"}
-{"k": "Log Off", "v": "Log Off"}
+{"k": "Item Storage", "v": "도구 보관함"}
+{"k": "Mailbox", "v": "우편함"}
+{"k": "Turn Off", "v": "접속 해제"}
+{"k": "Log Off", "v": "접속 해제"}
 {"k": "\\se[computeropen]{1} booted up the PC.", "v": "\\se[computeropen]{1}\\j[은,는] PC의 전원을 켰다."}
 {"k": "{1}'s PC", "v": "{1}의 PC"}
 {"k": "\\se[accesspc]Accessed {1}'s PC.", "v": "\\se[accesspc]{1}의 PC에 접속했다."}
-{"k": "Someone's PC", "v": "Someone’s PC"}
+{"k": "Someone's PC", "v": "누군가의 PC"}
 {"k": "\\se[accesspc]The Pokémon Storage System was opened.", "v": "\\se[accesspc]포켓몬 보관 시스템을 열었다."}
 {"k": "Withdraw Pokémon", "v": "포켓몬 꺼내기"}
-{"k": "Deposit Pokémon", "v": "포켓몬을 맡긴다"}
+{"k": "Deposit Pokémon", "v": "포켓몬 맡기기"}
 {"k": "Move Pokémon", "v": "포켓몬 이동"}
-{"k": "See ya!", "v": "또 봐!"}
+{"k": "See ya!", "v": "연결 끊기"}
 {"k": "Move Pokémon stored in Boxes to your party.", "v": "박스에 보관된 포켓몬을 파티로 옮깁니다."}
 {"k": "Your party is full!", "v": "지닌 포켓몬이 가득합니다!"}
 {"k": "Can't deposit the last Pokémon!", "v": "마지막 포켓몬은 맡길 수 없다!"}
 {"k": "Which PC should be accessed?", "v": "어느 PC에 접속해서 통신할까요?"}
 {"k": "\\se[]{1} hatched from the Egg!\\wt[80]", "v": "\\se[]알에서 {1}\\j[이,가] 태어났다!\\wt[80]"}
-{"k": "Would you like to nickname the newly hatched {1}?", "v": "Would you like to nickname the newly hatched {1}?"}
-{"k": "Huh?\u0001", "v": "Huh?\u0001"}
+{"k": "Would you like to nickname the newly hatched {1}?", "v": "태어난 {1}에게 별명을 붙이겠습니까?"}
+{"k": "Huh?\u0001", "v": "이건 뭐지?"}
 {"k": "...\u0001", "v": "...\u0001"}
 {"k": "... .... .....\u0001", "v": "... .... .....\u0001"}
-{"k": "{1} hatched from the Egg!", "v": "{1} hatched from the Egg!"}
+{"k": "{1} hatched from the Egg!", "v": "알에서 {1}\\j[이,가] 태어났다!"}
 {"k": "{1:s}\nID: {2:05d} OT: {3:s}\\wtnp[0]", "v": "{1:s}\nID: {2:05d} 어버이: {3:s}\\wtnp[0]"}
 {"k": "For {1}'s {2},\n{3} sends {4}.\u0001", "v": "{1}의 {2}\\j[이,가] 오고,\n{3}\\j[이,가] {4}\\j[을,를] 보냈다.\u0001"}
-{"k": "{1} bids farewell to {2}.", "v": "{1} bids farewell to {2}."}
+{"k": "{1} bids farewell to {2}.", "v": "{1}\\j[은,는] {2}에게 작별을 고한다."}
 {"k": "{1:s}\nID: {2:05d} OT: {3:s}\u0001", "v": "{1:s}\nID: {2:05d} 어버이: {3:s}\u0001"}
-{"k": "Take good care of {1}.", "v": "Take good care of {1}."}
-{"k": "Species does not exist ({1}).", "v": "Species does not exist ({1})."}
-{"k": "Teach which move?", "v": "Teach which move?"}
-{"k": "Give up trying to teach a new move to {1}?", "v": "Give up trying to teach a new move to {1}?"}
+{"k": "Take good care of {1}.", "v": "{1}\\j[을,를] 잘 돌봐줘."}
+{"k": "Species does not exist ({1}).", "v": "{1} 종류가 존재하지 않습니다."}
+{"k": "Teach which move?", "v": "어느 기술을 가르치겠습니까?"}
+{"k": "Give up trying to teach a new move to {1}?", "v": "{1}\\j[이,가] 새 기술을 배우지 않게 할까?"}
 {"k": "Teach {1}?", "v": "{1}\\j[을,를] 가르치겠습니까?"}
-{"k": "Your {1} in the Purify Chamber is ready for purification!", "v": "Your {1} in the Purify Chamber is ready for purification!"}
-{"k": "Purify Chamber", "v": "정화의 챔버"}
+{"k": "Your {1} in the Purify Chamber is ready for purification!", "v": "당신의 {1}\\j[이,가] 정화의 방에서 정화될 준비를 마쳤다!"}
+{"k": "Purify Chamber", "v": "정화의 방"}
 {"k": "\\se[accesspc]Accessed the Purify Chamber.", "v": "\\se[accesspc]정화의 방에 접속했다."}
-{"k": "Can't place an egg there.", "v": "Can’t place an egg there."}
+{"k": "Can't place an egg there.", "v": "거기에는 알을 놓을 수 없습니다."}
 {"k": "Only a Shadow Pokémon can go there.", "v": "거기에는 그림자 포켓몬만 들어갈 수 있습니다."}
 {"k": "Can't place a Shadow Pokémon there.", "v": "거기에는 그림자 포켓몬을 놓을 수 없습니다."}
 {"k": "This {1} is ready to open its heart. However, there must be at least one regular Pokémon in the set to perform a purification ceremony.", "v": "이 {1}\\j[은,는] 마음을 열 준비가 됐습니다. 다만 정화 의식을 치르려면 일반 포켓몬이 최소 한 마리 있어야 합니다."}
 {"k": "MOVE", "v": "이동"}
 {"k": "SUMMARY", "v": "상태"}
-{"k": "WITHDRAW", "v": "데리고 간다"}
-{"k": "EXCHANGE", "v": "EXCHANGE"}
-{"k": "PLACE", "v": "PLACE"}
-{"k": "ROTATE", "v": "ROTATE"}
-{"k": "REPLACE", "v": "REPLACE"}
-{"k": "What shall I do with this {1}?", "v": "What shall I do with this {1}?"}
+{"k": "WITHDRAW", "v": "꺼내기"}
+{"k": "EXCHANGE", "v": "교환"}
+{"k": "PLACE", "v": "놓기"}
+{"k": "ROTATE", "v": "회전"}
+{"k": "REPLACE", "v": "교체"}
+{"k": "What shall I do with this {1}?", "v": "{1}\\j[을,를] 어떻게 할까?"}
 {"k": "That Pokémon can't be placed there.", "v": "그 포켓몬은 거기에 놓을 수 없습니다."}
-{"k": "There is a Pokemon that is ready to open its heart!\u0001", "v": "There is a Pokemon that is ready to open its heart!\u0001"}
-{"k": "There is another Pokemon that is ready to open its heart!", "v": "There is another Pokemon that is ready to open its heart!"}
+{"k": "There is a Pokemon that is ready to open its heart!\u0001", "v": "마음을 열 준비가 된 포켓몬이 있다!"}
+{"k": "There is another Pokemon that is ready to open its heart!", "v": "마음을 열 준비가 된 또 다른 포켓몬이 있다!"}
 {"k": "EDIT", "v": "편집"}
 {"k": "SWITCH", "v": "교체"}
 {"k": "{1:d}", "v": "{1:d}"}
 {"k": "{1} Lv{2} {3}", "v": "{1} Lv{2} {3}"}
 {"k": "{1} Lv{2} {3}/{4}", "v": "{1} Lv{2} {3}/{4}"}
 {"k": "FLOW", "v": "플로우"}
-{"k": "TEMPO", "v": "템포"}
+{"k": "TEMPO", "v": "리듬"}
 {"k": "$ {1:d}", "v": "{1:d}포켓프랑"}
 {"k": "Quit shopping.", "v": "Quit shopping."}
 {"k": "Money:\n<r>${1}", "v": "소지금:\n<r>{1}포켓프랑"}
@@ -3349,13 +3349,13 @@
 {"k": "\\se[accesspc]Accedió al PC de {1}.", "v": "\\se[accesspc]{1}의 PC에 접속했다."}
 {"k": "PC de Alguien", "v": "누군가의 PC"}
 {"k": "\\se[accesspc]Acceso al Sistema de Almacenamiento de Pokémon concedido.", "v": "\\se[accesspc]포켓몬 보관 시스템 접속이 허가됐다."}
-{"k": "Sacar Pokémon", "v": "포켓몬 내보내기"}
-{"k": "Dejar Pokémon", "v": "맡긴다"}
-{"k": "Mover Pokémon", "v": "포켓몬 교체"}
-{"k": "¡Nos vemos!", "v": "그만둔다"}
-{"k": "Pasar un Pokémon guardado en una Caja a tu equipo.", "v": "박스에 맡긴 포켓몬을 지닌포켓몬으로 옮깁니다."}
-{"k": "Guardar un Pokémon de tu equipo en una Caja.", "v": "지닌포켓몬을 박스에 맡깁니다."}
-{"k": "Mover los Pokémon de las Cajas y tu equipo.", "v": "박스와 지닌포켓몬 사이에서 포켓몬을 옮깁니다."}
+{"k": "Sacar Pokémon", "v": "포켓몬 꺼내기"}
+{"k": "Dejar Pokémon", "v": "포켓몬 맡기기"}
+{"k": "Mover Pokémon", "v": "포켓몬 이동"}
+{"k": "¡Nos vemos!", "v": "연결 끊기"}
+{"k": "Pasar un Pokémon guardado en una Caja a tu equipo.", "v": "박스에 맡긴 포켓몬을 지닌 포켓몬으로 옮깁니다."}
+{"k": "Guardar un Pokémon de tu equipo en una Caja.", "v": "지닌 포켓몬을 박스에 맡깁니다."}
+{"k": "Mover los Pokémon de las Cajas y tu equipo.", "v": "박스와 지닌 포켓몬 사이에서 포켓몬을 옮깁니다."}
 {"k": "¡No puedes dejar a tu último Pokémon!", "v": "마지막 포켓몬은 맡길 수 없다!"}
 {"k": "¿A qué PC quieres acceder?", "v": "어느 PC에 접속해서 통신할까요?"}
 {"k": "\\se[]¡{1} ha salido del huevo!\\wt[80]", "v": "\\se[]알에서 {1}\\j[이,가] 태어났다!\\wt[80]"}
@@ -3368,10 +3368,10 @@
 {"k": "{1:s}\nID: {2:05d} EO: {3:s}\u0001", "v": "{1:s}\nID: {2:05d} 어버이: {3:s}\u0001"}
 {"k": "Cuida bien de {1}.", "v": "{1}\\j[을,를] 잘 돌봐줘."}
 {"k": "?Qué movimiento quieres que ense?e?", "v": "어느 기술을 가르치겠습니까?"}
-{"k": "CATEGOR?A", "v": "CATEGOR?A"}
-{"k": "PRECISI?N", "v": "PRECISI?N"}
+{"k": "CATEGOR?A", "v": "분류"}
+{"k": "PRECISI?N", "v": "명중률"}
 {"k": "?Prefieres que{1} no aprende un movimiento nuevo?", "v": "{1}\\j[이,가] 새 기술을 배우지 않게 할까?"}
-{"k": "?Ense?ar {1}?", "v": "?Ense?ar {1}?"}
+{"k": "?Ense?ar {1}?", "v": "{1}\\j[을,를] 가르치겠습니까?"}
 {"k": "¡Tu {1} está en la Cámara de Purificación listo para ser purificado!", "v": "당신의 {1}\\j[이,가] 정화의 방에서 정화될 준비를 마쳤다!"}
 {"k": "Cámara de Purificación", "v": "정화의 방"}
 {"k": "\\se[accesspc]Acceso a la Cámara de Purificación concedido.", "v": "\\se[accesspc]정화의 방 접속이 허가됐다."}
