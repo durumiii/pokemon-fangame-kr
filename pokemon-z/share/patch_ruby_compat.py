@@ -94,6 +94,13 @@ REGEX_EDITS = [
     ("SpriteWindow",
      re.compile(r"(    ch = @string\[@pos\]\r?\n)(?!    ch = ch\.unpack)"),
      '\\1    ch = ch.unpack("C")[0] if ch.is_a?(String)\\n'),
+    # 이름 입력창의 글자·숫자 키가 윈도 가상키 번호(65~90·48~57)로만 물어본다. 신판
+    # mkxp-z는 그 번호를 다르게 읽어(SDL 스캔코드) 글자가 하나도 안 들어온다 —
+    # 시험대 실측. 같은 화면이 이미 `:BACKSPACE` 꼴 기호를 쓰므로 기호도 함께 묻는다
+    # (지원 안 하는 엔진에서는 그냥 거짓이라 옛 판 동작이 그대로다).
+    ("TextEntry",
+     re.compile(r"if Input\.repeatex\?\(i\)(?! \|\|)"),
+     "if Input.repeatex?(i) || Input.repeatex?(i.chr.to_sym)"),
 ]
 
 
