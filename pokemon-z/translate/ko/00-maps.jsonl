@@ -2247,7 +2247,7 @@
 {"k": "No importa. Dejaré que mi Pokémon me guíe.", "v": "상관없어요. 제 포켓몬이 저를 이끌어 줄 테니까요."}
 {"k": "Como soy muy buena memorizando información, podría ganarme la vida ayudando a los Pokémon a recordar sus movimientos.", "v": "저는 정보를 잘 외우니까 포켓몬이 기술을 기억해 내도록 도우며 살 수 있을지도 몰라요."}
 {"k": "¡Muchas gracias por tu ayuda! Espero que nos volvamos a ver.", "v": "도와주셔서 정말 감사해요! 다시 만날 수 있기를 바랄게요."}
-{"k": "Entiendo, no te preocupes. La gente cada vez tiene menos tiempo libre que puede prestar a las personas desfavorecidas como yo.", "v": "알겠어요, 걱정 마세요. 요새는 저처럼 어려운 사람에게 내어줄 시간 여유가 다들 부족하니까요."}
+{"k": "Entiendo, no te preocupes. La gente cada vez tiene menos tiempo libre que puede prestar a las personas desfavorecidas como yo.", "v": "알겠어요, 걱정 마세요. 요새는 저처럼 어려운 사람에게 내어줄 여유가 다들 부족하니까요."}
 {"k": "<b>Tornasola, la Reina Fundadora</b>", "v": "<b>건국여왕 토르나솔라</b>"}
 {"k": "De origen incierto, lideró a un grupo de peregrinos que viajaban exiliados de una tierra lejana.", "v": "출신은 불분명하나, 먼 땅에서 추방되어 여정을 떠난 순례자 무리를 이끌었다."}
 {"k": "Hasta llegó a esta tierra que hoy conocemos como <b>Kalos</b>, a través de las montañas orientales, y quedó maravillada por su belleza y exhuberancia.", "v": "동쪽 산맥을 거쳐 오늘날 <b>칼로스</b>라 불리는 이 땅에 이르렀고, 그 아름다움과 풍요로움에 감탄했다."}
@@ -2268,11 +2268,11 @@
 {"k": "Los Pokémon legendarios", "v": "전설의 포켓몬"}
 {"k": "Los 12 Regentes", "v": "12명의 섭정"}
 {"k": "No se sabe", "v": "알 수 없다"}
-{"k": "De Galar", "v": "가라르에서"}
-{"k": "De Paldea", "v": "팔데아에서"}
-{"k": "El Melancólico", "v": "‘우울한 자’"}
-{"k": "El Preparado", "v": "준비물"}
-{"k": "El Deprimido", "v": "우울한 사람"}
+{"k": "De Galar", "v": "가라르"}
+{"k": "De Paldea", "v": "팔데아"}
+{"k": "El Melancólico", "v": "비애의 왕"}
+{"k": "El Preparado", "v": "준비된 왕"}
+{"k": "El Deprimido", "v": "우울왕"}
 {"map": 59, "n": 109}
 {"k": "Oye, ¿no te interesa una pista sobre la estrategia de combate del regente <b>Hisopo</b>?", "v": "이봐, 섭정 <b>히소포</b>의 배틀 전략에 관한 힌트 하나 들어볼 생각 있어?"}
 {"k": "Te soltaré un chivatazo por 2000 pokécuartos.", "v": "2000 포켓프랑만 주면 고급 정보 하나 불어주지."}
@@ -2425,12 +2425,12 @@
 {"k": "¿Vas a audicionar para el papel principal? ¡Buena suerte!", "v": "주연 역할 오디션을 보러 가시나요? 행운을 빌어요!"}
 {"k": "<b>Hisopo:</b> Pongámonos a trabajar, ¿vale? Quiero que practiquéis la escena romántica del segundo acto.", "v": "<b>히소포:</b> 자, 연습에 들어가자! 2막의 로맨틱한 장면을 연기해 봐라!"}
 {"k": "Mostradme vuestras dotes de improvisación. ¡Dejad que las musas del arte invadan todo vuestro ser!", "v": "어디 너희의 즉흥 연기 실력을 보여다오. 예술의 뮤즈가 온몸을 지배하도록 만드는 거다!"}
-{"k": "<b>Actriz:</b> No hay felicidad o infelicidad en este mundo, solo la comparación entre distintos estados de ánimo.", "v": "<b>여배우:</b> 이 세상에 행복이나 불행 따위는 없다. 그저 서로 다른 감정 상태를 비교할 뿐."}
-{"k": "Así pues, ¿solo el que ha deseado morir conoce realmente lo bueno que es vivir?", "v": "그렇다면 죽기를 열망했던 자만이 삶이 얼마나 아름다운지 진정으로 알 수 있단 말인가?"}
-{"k": "¿Qué representa para vos la vida, al fin y al cabo?", "v": "당신에게 삶이란 결국 무엇을 의미하는 것이오?"}
+{"k": "<b>Actriz:</b> No hay felicidad o infelicidad en este mundo, solo la comparación entre distintos estados de ánimo.", "v": "<b>여배우:</b> 이 세상에 행복이나 불행이란 없어요. 그저 서로 다른 마음의 상태를 비교할 뿐이죠."}
+{"k": "Así pues, ¿solo el que ha deseado morir conoce realmente lo bueno que es vivir?", "v": "그렇다면 죽음을 바라 본 사람만이, 삶이 얼마나 좋은 것인지 진정으로 알 수 있는 걸까요?"}
+{"k": "¿Qué representa para vos la vida, al fin y al cabo?", "v": "결국 당신에게 삶이란 무엇인가요?"}
 {"k": "<b>Hisopo:</b> ¿Cómo? ¡Qué falta de talento! ¡De pasión! ¡De garra!", "v": "<b>히소포:</b> 뭐라고? 재능도, 열정도, 패기도 이렇게나 부족하다니!"}
-{"k": "¿Es que no te corre sangre por las venas o qué?", "v": "혈관에 피는 타고 흐르고 있는 거냐?"}
-{"k": "¡Te mandaré directamente a las tinieblas!", "v": "너를 곧장 칠흑 같은 어둠 속으로 보내 주마!"}
+{"k": "¿Es que no te corre sangre por las venas o qué?", "v": "혈관에 피는 제대로 흐르고 있는 거냐?"}
+{"k": "¡Te mandaré directamente a las tinieblas!", "v": "너를 곧장 칠흑 같은 어둠 속으로 처박아주마!"}
 {"k": "No puedes pasar por aquí sin el permiso del regente, Aspirante.", "v": "후보생님, 섭정의 허락 없이는 이곳을 지나갈 수 없습니다."}
 {"k": "<b>Hisopo:</b> ¡Estoy rodeado de mequetrefes de una mediocridad supina!", "v": "<b>히소포:</b> 몹시도 평범하고 하찮은 놈들뿐이로구나!"}
 {"k": "¿Vienes a combatir, Aspirante? Pues ponte a la cola, porque no pienso aceptar más desafíos hasta que mi ópera quede totalmente planificada.", "v": "배틀을 하러 왔나, 후보생? 그렇다면 줄을 서라! 내 오페라 구상이 끝날 때까지 그 어떤 도전도 받지 않을 테니!"}
