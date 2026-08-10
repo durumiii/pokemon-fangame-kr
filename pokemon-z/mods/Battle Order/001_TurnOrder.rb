@@ -419,6 +419,8 @@ class PokeBattle_Battler
   # 것이 옳은 수술이지만 그건 이 모드 범위 밖이다(Z-42).
   alias bo_pbSpeed pbSpeed
   def pbSpeed
+    # 사파리존은 PokeBattle_Battle을 안 물려받는 딴 클래스다 — 물어보고 쓴다.
+    return bo_pbSpeed if !@battle.respond_to?(:bo_quiet_speed)
     return bo_pbSpeed if !@battle.bo_quiet_speed
     saved=@turncount
     @turncount=2 if saved==0

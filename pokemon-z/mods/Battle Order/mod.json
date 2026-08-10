@@ -19,13 +19,15 @@
       "script_name": "003_Leftovers.rb"
     }
   ],
-  "touches": [
-    "PokeBattle_Battle#pbPriority",
-    "PokeBattle_Battle#pbAttackPhase",
-    "PokeBattle_Battle#pbEndOfRoundPhase",
-    "PokeBattle_Battler#pbBerryCureCheck",
-    "PokeBattle_Battler#pbSpeed"
-  ],
+  "touches": {
+    "methods": [
+      "PokeBattle_Battle#pbPriority",
+      "PokeBattle_Battle#pbAttackPhase",
+      "PokeBattle_Battle#pbEndOfRoundPhase",
+      "PokeBattle_Battler#pbBerryCureCheck",
+      "PokeBattle_Battler#pbSpeed"
+    ]
+  },
   "expects": {
     "PokeBattle_Battle": "2c10dfd901591016504038c20b5be4d3",
     "PokeBattle_Battler": "ba6ecd368d7fafee3bb515b2e6c6cc09"
