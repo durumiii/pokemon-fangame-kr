@@ -26,12 +26,15 @@ Pokemon Z는 Essentials v16 · 루비 1.8.7 · mkxp-z 구판. 플러그인 묶�
 돌려도 게임에는 잘 얹히지만, 라이브러리는 보관소만 본다. 저장소에서 짓고 보관소
 (`/mnt/d/GameVault/mods/Pokemon Z Fangame/<모드>/`)로 복사한 다음 그 보관소를 `--store`로 얹는다.
 
-**repo에 남는 모드는 넷이다.** `UI Text KR`(스크립트에 박힌 화면 문자열은 korean.dat로
+**repo에 남는 모드는 다섯이다.** `UI Text KR`(스크립트에 박힌 화면 문자열은 korean.dat로
 못 고쳐서 그리기 진입점에서 갈아 끼운다 — 텍스트 층 ③) · `Type Matchup`(기술 선택창
 상성 색칠 — 합본 세 갈래에 기본 동봉) · `Debug Toggle`(W키로 `$DEBUG` 토글, 디버그 중
 전투 후 전원 회복 — 디버그 추가판에 실린다) ·
 `Native Tilemap`(맵 렌더러를 엔진 내장으로 — Joiplay 렌더 깨짐 우회. **합본에는 싣지
-않는 선택 모드다** — 유지자 판정, quality 「Native Tilemap은 선택 모드로 둔다」 절).
+않는 선택 모드다** — 유지자 판정, quality 「Native Tilemap은 선택 모드로 둔다」 절) ·
+`Battle Order`(배틀 처리 순서를 본가 8·9세대 기준으로 — 행동마다 순서 재계산, 라운드
+종료 연출 순서. **원본 메서드 넷을 통째로 다시 정의하므로** 같은 메서드를 잡는 모드와
+함께 못 선다. 무엇을 어디서 떠 왔는지는 그 폴더의 `README.md`가 정본).
 셋은 커뮤니티 배포판에서 떼어 오거나 착안한 것이라 출처가 이 저장소의 조사에 걸려 있다
 ([커뮤니티 수정판 조사](../log/research/2026-08-09-community-mods-triage.md) ①·②).
 새 주입형 모드의 소스는 이 저장소 `mods/`에 둔다(유지자 판정 2026-08-09).
