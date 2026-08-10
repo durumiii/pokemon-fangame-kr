@@ -116,7 +116,7 @@
   <hr>
   <button onclick="closePanels();notes()">
    <svg width=15 height=15 viewBox="0 0 16 16" fill=none stroke=currentColor stroke-width=1.6 stroke-linecap=round stroke-linejoin=round style="color:var(--warn)"><path d="m11 2.5 2.5 2.5L6 12.5l-3.2.7.7-3.2z"/></svg>
-   <span class=mi-t>메모<span class=mi-d>나중에 손볼 자리를 쌓아 두고 다시 찾아가요</span></span></button>
+   <span class=mi-t>메모<span class=mi-d>손볼 자리를 쌓아 두고 다시 찾아가요 · 문구에 매이지 않는 전반 지적도 여기</span></span></button>
   <button onclick="closePanels();histView()">
    <svg width=15 height=15 viewBox="0 0 16 16" fill=none stroke=currentColor stroke-width=1.6 stroke-linecap=round style="color:var(--es)"><circle cx=8 cy=8 r="5.8"/><path d="M8 4.8V8l2.3 1.6"/></svg>
    <span class=mi-t>이력<span class=mi-d>동작 묶음으로 보고 묶음째 되돌려요</span></span></button>
@@ -226,8 +226,9 @@ async function goHome(){
      `<span class="chip act" onclick="openGroup('file','${esc(g.key)}')">${esc(g.key)} ${g.count}</span>`).join('')}</div>`)
   +sec(pend.length?`손볼 메모 ${pend.length}건`:'손볼 메모 없음',
    (PEND=pend).slice(0,5).map((n,i)=>`<div class=rowbar>
-     <span class="chip act" onclick="gotoNote(PEND[${i}].query)">찾아가기</span>
-     <span class=nv>「${esc(n.query)}」 — ${esc(n.note)}</span></div>`).join('')
+     ${n.query?`<span class="chip act" onclick="gotoNote(PEND[${i}].query)">찾아가기</span>`
+       :'<span class=chip>전반</span>'}
+     <span class=nv>${n.query?`「${esc(n.query)}」 — `:''}${esc(n.note)}</span></div>`).join('')
     ||'<div class=meta>어색한 자리를 만나면 카드의 [메모]로 쌓아 두세요.</div>',
    pend.length>5?`<div class=rowbar><button class=ghost onclick=notes()>메모 전부 보기</button></div>`:'')
   +sec('최근 고친 자리',
@@ -295,6 +296,12 @@ function help(){
     <b>\\wt[숫자]</b>·<b>\\wtnp[숫자]</b> 대기(뒤엣것은 멈춤 없이).</div>
    <div class=nv>그 밖에 <b>\\1</b>·<b>\\.</b>·<b>\\|</b>·<b>\\^</b>·<b>\\sh</b>·<b>\\b</b> 같은 부호도 나옵니다 —
     대사 흐름을 조종하는 것들이니 <b>손대지 말고 자리만 지켜</b> 주세요.</div>`)
+  +card('메모 — 나중에 손볼 것을 쌓아 둔다',`
+   <div class=nv>카드의 [메모]는 <b>그 문구에 붙는</b> 메모예요. [도구] → [메모] 화면 맨 위의
+    <b>전반 메모</b>는 문구에 매이지 않는 지적을 받습니다 — 어떤 인물의 말투가 들쭉날쭉하다,
+    어떤 화면이 깨져 보인다 같은 것.</div>
+   <div class=nv>둘 다 <b>translate/fixnotes.jsonl</b> 한 곳에 쌓이고, 에이전트가 작업을 받을 때
+    <b>완료 표시가 없는 줄</b>을 일감으로 읽습니다. 처리했으면 [완료 처리]를 눌러 주세요.</div>`)
   +card('일괄 바꾸기와 되돌리기',`
    <div class=nv>[도구] → [바꾸기]는 미리보기로 대상을 다 세운 뒤 <b>체크한 자리만</b> 적용합니다.
     원문 조건에 걸려 빠진 행도 목록으로 보여줘요.</div>
@@ -423,16 +430,31 @@ async function notes(){
  const r=await fetch('/notes');const js=await r.json();
  const pend=js.notes.filter(n=>!n.done).length;
  $('meta').textContent=`메모 — 미결 ${pend}건 / 전체 ${js.notes.length}건`;
- $('out').innerHTML=js.notes.map((n,i)=>`
+ // 문구에 매이지 않는 지적도 여기서 남긴다(「전반」 메모 — query가 빈 줄)
+ $('out').innerHTML=`<div class=card>
+   <b>전반 메모</b>
+   <div class=meta>특정 문구에 매이지 않는 지적을 남겨요 — 어떤 인물의 말투가 들쭉날쭉하다,
+    어떤 화면이 깨져 보인다 같은 것. 카드에서 남기는 메모와 같은 곳에 쌓입니다.</div>
+   <textarea id=gnote placeholder="예: 크리산토 대사가 전반적으로 과장돼 있어요 — 한 번 훑어야 할 듯"></textarea>
+   <div class=rowbar><button class=primary onclick=addNote()>메모 남기기</button></div>
+  </div>`
+  +js.notes.map((n,i)=>`
   <div class="card notecard ${n.done?'done':''}">
-   <span class=chip>${i+1}</span> 「${esc(n.query)}」
+   <span class=chip>${i+1}</span>${n.query?`「${esc(n.query)}」`:'<span class=chip>전반</span>'}
    <div class=es>${esc(n.note)}</div>
    <div class=rowbar>
-    <button onclick=gotoNote(${JSON.stringify(n.query).replace(/"/g,'&quot;')})>대상 찾아가기</button>
+    ${n.query?`<button onclick=gotoNote(${JSON.stringify(n.query).replace(/"/g,'&quot;')})>대상 찾아가기</button>`:''}
     <button onclick=doneNote(${i+1},${n.done?'false':'true'})>${n.done?'완료 취소':'완료 처리'}</button>
     <button class=ghost onclick=delNote(${i+1})>삭제</button>
    </div>
   </div>`).join('')||'<div class=empty>메모가 없습니다.</div>';
+}
+async function addNote(){
+ const note=$('gnote').value.trim();
+ if(!note){toast('적을 내용을 넣어 주세요');return}
+ await fetch('/note',{method:'POST',headers:{'Content-Type':'application/json'},
+   body:JSON.stringify({query:'',note})});
+ toast('전반 메모에 쌓아 뒀어요'); notes();
 }
 function gotoNote(q){$('q').value=q;search()}
 async function doneNote(i,done){

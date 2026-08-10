@@ -590,7 +590,8 @@ class H(BaseHTTPRequestHandler):
         elif self.path == "/note":
             b = self._body()
             notes = load_notes()
-            notes.append({"query": b["query"], "note": b["note"]})
+            # query가 비면 문구에 매이지 않는 「전반」 메모다
+            notes.append({"query": b.get("query", ""), "note": b["note"]})
             save_notes(notes)
             self._json({"ok": True})
         elif self.path == "/done":
