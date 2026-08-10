@@ -1,0 +1,36 @@
+{
+  "name": "Battle Order",
+  "game": "Pokemon Z Fangame",
+  "description": "배틀의 처리 순서를 본가(8·9세대) 기준으로 맞추는 모드예요.\n\n① 행동 순서를 행동마다 다시 계산합니다. 원래 이 게임은 공격 페이즈가 시작될 때 순서를 한 번 정하고 그 라운드 내내 그대로 쓰기 때문에, 턴 도중에 걸린 마비나 교체로 들어온 포켓몬의 등장 특성이 깐 트릭룸·날씨가 그 턴에 반영되지 않았어요. 8세대 이후 본가처럼 한 명이 움직일 때마다 남은 순서를 다시 매깁니다. 우선도 브래킷은 그대로 두고 같은 브래킷 안의 스피드 순서만 바꿔요.\n\n② 선제의발톱·구애열매 메시지를 그 포켓몬이 실제로 움직이기 직전에 보여 줍니다. 원래는 아무도 행동하기 전인 순서 계산 시점에 몰아서 나왔어요. 판정 자체는 라운드에 한 번만 굴리므로 실제 순서는 달라지지 않아요.\n\n③ 라운드 끝의 지속 데미지에서 연출과 메시지를 체력 변화보다 먼저 냅니다. 독·화상·얼음·모래바람·저주·악몽·조이기 기술·끈적끈적바늘·태양의힘·먹밥·검은먹밥이 대상이에요.\n\n원본 메서드 넷을 통째로 다시 정의하므로, 같은 메서드를 건드리는 다른 모드와는 함께 쓸 수 없어요. 무엇을 어디서 떠 와 어디를 바꿨는지는 이 폴더의 AGENTS.md에 줄 단위로 적어 두었습니다.",
+  "engine": "essentials-v16",
+  "install": "inject",
+  "created_at": "2026-08-10",
+  "scripts": [
+    {
+      "file": "001_TurnOrder.rb",
+      "script_name": "001_TurnOrder.rb"
+    },
+    {
+      "file": "002_EndOfRound.rb",
+      "script_name": "002_EndOfRound.rb"
+    },
+    {
+      "file": "003_Leftovers.rb",
+      "script_name": "003_Leftovers.rb"
+    }
+  ],
+  "touches": {
+    "methods": [
+      "PokeBattle_Battle#pbPriority",
+      "PokeBattle_Battle#pbAttackPhase",
+      "PokeBattle_Battle#pbEndOfRoundPhase",
+      "PokeBattle_Battler#pbBerryCureCheck",
+      "PokeBattle_Battler#pbSpeed"
+    ]
+  },
+  "expects": {
+    "PokeBattle_Battle": "2c10dfd901591016504038c20b5be4d3",
+    "PokeBattle_Battler": "ba6ecd368d7fafee3bb515b2e6c6cc09"
+  },
+  "summary": "배틀 행동 순서와 라운드 종료 연출 순서를 본가 기준으로 맞춥니다"
+}
