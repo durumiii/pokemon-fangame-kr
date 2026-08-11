@@ -448,7 +448,7 @@ def plan(pilot=False, npc=False):
 
     chunks = dedupe(chunks)
     if pilot:
-        chunks = pick_pilot(chunks)
+        chunks = pick_pilot(chunks, npc)
     if npc and npc_skipped:
         print(f"페르소나표 밖 스프라이트로 빠진 행: {npc_skipped} — 사람 스프라이트라면 표에 등재 후 재plan")
     out = chunks_path(pilot, npc)
@@ -511,7 +511,7 @@ def route(c):
     return "a" if any(r.get("approved") for r in c["rows"]) else "b"
 
 
-def pick_pilot(chunks):
+def pick_pilot(chunks, npc=False):
     """표본 20페이지 — 초반부에서, 말투표가 실리는 장면으로, 화자를 골고루.
 
     초반부만 뽑는 이유는 유지자가 실제로 지나온 구간이라야 판정할 수 있어서다
@@ -539,13 +539,14 @@ def pick_pilot(chunks):
                 used_ev.add((c["map"], c["event"]))
                 picked.append(c)
                 break
-    if PILOT2:                       # 지정 표본이 있으면 그것만
-        byid = {c["cid"]: c for c in chunks}
-        return [byid[cid] for cid in PILOT2 if cid in byid]
-    for cid in PILOT_EXTRA:          # 유지자가 지정한 장면
-        c = next((x for x in chunks if x["cid"] == cid), None)
-        if c and c not in picked:
-            picked.append(c)
+    if not npc:                      # 지정 표본은 주연 파일럿 회차의 것 — npc 갈래는 안 탄다
+        if PILOT2:                   # 지정 표본이 있으면 그것만
+            byid = {c["cid"]: c for c in chunks}
+            return [byid[cid] for cid in PILOT2 if cid in byid]
+        for cid in PILOT_EXTRA:      # 유지자가 지정한 장면
+            c = next((x for x in chunks if x["cid"] == cid), None)
+            if c and c not in picked:
+                picked.append(c)
     return sorted(picked, key=lambda c: (c["map"], c["event"], c["page"]))
 
 
@@ -891,6 +892,8 @@ def report(pilot=False, npc=False):
     md = ["# 재번역 파일럿 — 현행과 신판 나란히", ""]
     tot = same = rej = 0
     for p in sorted(out_dir.glob("*.jsonl")):
+        if p.stem not in chunks:     # 선별 산출물(screen*.jsonl)은 장면이 아니다
+            continue
         c = chunks[p.stem]
         md += [f"## {c['map_name']}(맵{c['map']}) · 이벤트 「{c['event_name']}」 — `{p.stem}`", "",
                "화자: " + " · ".join(x["name"] for x in c["cast"]), "",
@@ -908,7 +911,10 @@ def report(pilot=False, npc=False):
             cell = lambda s: (s or "").replace("|", "\\|").replace("\n", "<br>")
             md.append(f"| {d['who']} | {cell(d['es'])} | {cell(d['old'])} | {cell(new)} |")
         md.append("")
-    dst = HERE.parent / "docs/log/research/2026-08-06-retranslate-pilot.md"
+    # ⚠ 기록층은 박제다 — 갈래·회차마다 제 파일에 쓴다(2026-08-11: npc report가
+    # 옛 파일럿 박제를 덮은 사고 후 분리).
+    dst = HERE.parent / ("docs/log/research/2026-08-11-npc-retranslate-pilot.md" if npc
+                         else "docs/log/research/2026-08-06-retranslate-pilot.md")
     md.insert(2, f"행 {tot} · 그대로 둔 행 {same} · 기계 반려 {rej}\n")
     dst.write_text("\n".join(md), encoding="utf-8")
     print(f"{tot}행 (그대로 {same} · 반려 {rej}) → {dst}")
