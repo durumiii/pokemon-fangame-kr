@@ -13,6 +13,11 @@
     uv run translate/batch_pages.py run [--pilot] [--limit N]
     uv run translate/batch_pages.py report [--pilot]   # 원문·현행·신판 나란히 (md)
 
+`--npc`를 붙이면 사정권이 **이름표 없는 컷신·대화**(Z-4 3갈래)로 바뀐다 — 이름표가
+한 줄도 없는 페이지의 스프라이트 귀속(how='그림') 행만 담고, 화자·말투는 페르소나표
+(sprite 키)가 정본이다. 산출은 batch/npc[-pilot]-chunks.jsonl · batch/npc-out[-pilot]/.
+페르소나표에 없는 스프라이트(포켓몬 번호·연출물)는 행째 빠진다 — 그 수는 plan이 찍는다.
+
 산출: batch/page-out[-pilot]/<cid>.jsonl — {"id","who","es","old","new","ok","why"}
 """
 
@@ -350,18 +355,41 @@ def excluded_pages(pg):
     return ex
 
 
-def plan(pilot=False):
+def chunks_path(pilot, npc):
+    stem = ("npc-pilot-chunks" if npc and pilot else "npc-chunks" if npc
+            else "pilot-chunks" if pilot else "page-chunks")
+    return BATCH / (stem + ".jsonl")
+
+
+def plan(pilot=False, npc=False):
     pg = pages()
     ex = excluded_pages(pg)
     ko = ko_index()
     vlines, names, anon = voice_lines(), ko_names(), anon_index()
     approved = approved_set()
+    per = personas() if npc else {}
+    npc_skipped = 0
     chunks = []
     for key in sorted(pg):
         if key in ex:
             continue
         rows, take = pg[key], []
+        if npc and (rows[0].get("scene") not in ("컷신", "대화")
+                    or any(x.get("how") == "태그" for x in rows)):
+            continue                     # 이름표가 한 줄이라도 있으면 주연 갈래 몫
         for r in rows:
+            if npc:
+                if r["kind"] != "text" or r["how"] != "그림":
+                    continue
+                sprite = r.get("sprite") or ""
+                if sprite not in per:    # 사람 아님(포켓몬 번호·연출물) 또는 미등재
+                    npc_skipped += 1
+                    continue
+                cur = ko.get((r["map"], fold(r["k"])))
+                if cur is None:
+                    continue
+                take.append((r, sprite, cur, ""))
+                continue
             if r["kind"] != "text" or r["how"] not in ("태그", "상속"):
                 continue
             who = r.get("who") or ""
@@ -401,7 +429,11 @@ def plan(pilot=False):
             seen_cast[name] = {"name": name, "voice": voice,
                                **({"hint": hints[who]} if hints.get(who) else {})}
             cast.append(seen_cast[name])
-        attach_personas(cast, take, names)
+        if npc:
+            for x in cast:               # 스프라이트 페르소나가 곧 말투 정본
+                x["voice"] = npc_line(per[x["name"]])
+        else:
+            attach_personas(cast, take, names)
         m, e, p = key
         chunks.append({
             "cid": f"p{m:03d}-{e}-{p}",
@@ -417,7 +449,9 @@ def plan(pilot=False):
     chunks = dedupe(chunks)
     if pilot:
         chunks = pick_pilot(chunks)
-    out = BATCH / ("pilot-chunks.jsonl" if pilot else "page-chunks.jsonl")
+    if npc and npc_skipped:
+        print(f"페르소나표 밖 스프라이트로 빠진 행: {npc_skipped} — 사람 스프라이트라면 표에 등재 후 재plan")
+    out = chunks_path(pilot, npc)
     out.parent.mkdir(exist_ok=True)
     out.write_text("\n".join(json.dumps(c, ensure_ascii=False) for c in chunks) + "\n",
                    encoding="utf-8")
@@ -756,10 +790,11 @@ def render(c, fresh=False):
             + "\n\n" + scene_header(c))
 
 
-def run(pilot=False, limit=None, workers=4, fresh=False, effort="minimal"):
-    src = BATCH / ("pilot-chunks.jsonl" if pilot else "page-chunks.jsonl")
-    out_dir = BATCH / (("page-out-pilot" if pilot else "page-out")
-                       + ("-fresh" if fresh else ""))
+def run(pilot=False, limit=None, workers=4, fresh=False, effort="minimal", npc=False):
+    src = chunks_path(pilot, npc)
+    base = ("npc-out-pilot" if npc and pilot else "npc-out" if npc
+            else "page-out-pilot" if pilot else "page-out")
+    out_dir = BATCH / (base + ("-fresh" if fresh else ""))
     out_dir.mkdir(parents=True, exist_ok=True)
     chunks = [json.loads(l) for l in src.read_text(encoding="utf-8").splitlines() if l]
     pending = [c for c in chunks if not (out_dir / (c["cid"] + ".jsonl")).exists()]
@@ -847,9 +882,10 @@ def run(pilot=False, limit=None, workers=4, fresh=False, effort="minimal"):
     print(f"끝. {st['rows']}행 · 반려 {st['rej']} · 실비용 ${st['cost']:.3f}")
 
 
-def report(pilot=False):
-    src = BATCH / ("pilot-chunks.jsonl" if pilot else "page-chunks.jsonl")
-    out_dir = BATCH / ("page-out-pilot" if pilot else "page-out")
+def report(pilot=False, npc=False):
+    src = chunks_path(pilot, npc)
+    out_dir = BATCH / ("npc-out-pilot" if npc and pilot else "npc-out" if npc
+                       else "page-out-pilot" if pilot else "page-out")
     chunks = {json.loads(l)["cid"]: json.loads(l)
               for l in src.read_text(encoding="utf-8").splitlines() if l}
     md = ["# 재번역 파일럿 — 현행과 신판 나란히", ""]
@@ -884,13 +920,14 @@ if __name__ == "__main__":
     pilot = "--pilot" in args
     limit = int(args[args.index("--limit") + 1]) if "--limit" in args else None
     fresh = "--fresh" in args
+    npc = "--npc" in args
     if cmd == "plan":
-        plan(pilot)
+        plan(pilot, npc)
     elif cmd == "run":
         effort = args[args.index("--effort") + 1] if "--effort" in args else "minimal"
-        run(pilot, limit, fresh=fresh, effort=effort)
+        run(pilot, limit, fresh=fresh, effort=effort, npc=npc)
     elif cmd == "report":
-        report(pilot)
+        report(pilot, npc)
     elif cmd == "samples":
         s = approved_samples()
         who = args[1] if len(args) > 1 and not args[1].startswith("--") else None
