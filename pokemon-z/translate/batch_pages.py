@@ -791,7 +791,7 @@ def render(c, fresh=False):
             + "\n\n" + scene_header(c))
 
 
-def run(pilot=False, limit=None, workers=4, fresh=False, effort="minimal", npc=False):
+def run(pilot=False, limit=None, workers=4, fresh=False, effort="low", npc=False):
     src = chunks_path(pilot, npc)
     base = ("npc-out-pilot" if npc and pilot else "npc-out" if npc
             else "page-out-pilot" if pilot else "page-out")
@@ -930,7 +930,7 @@ if __name__ == "__main__":
     if cmd == "plan":
         plan(pilot, npc)
     elif cmd == "run":
-        effort = args[args.index("--effort") + 1] if "--effort" in args else "minimal"
+        effort = args[args.index("--effort") + 1] if "--effort" in args else "low"
         run(pilot, limit, fresh=fresh, effort=effort, npc=npc)
     elif cmd == "report":
         report(pilot, npc)

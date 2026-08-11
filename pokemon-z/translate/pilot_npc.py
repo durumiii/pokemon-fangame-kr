@@ -95,7 +95,7 @@ def build_prompt():
     return body.replace("[용어 규칙 — glossary.md 본문 삽입]", gloss)
 
 
-def ask_npc(key, model, prompt, reqrows, attempt=0, effort="minimal"):
+def ask_npc(key, model, prompt, reqrows, attempt=0, effort="low"):
     """batch.ask의 npc 필드 포함판(원본은 speaker/es/ko만 직렬화한다)."""
     system = prompt
     if "openrouter" in URL:

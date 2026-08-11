@@ -8,7 +8,9 @@
 
 단위는 **이벤트 페이지**(장면 하나). `plan [--pilot]` · `run [--pilot] [--fresh]` ·
 `samples <이름>`(본보기 확인) · `report`. 배치 모델은 gemini-3.6-flash +
-reasoning_effort=minimal. **작은 표본으로 파라미터를 판정하지 마라.**
+**reasoning_effort=low**(페이지 단위 배치의 정본 — 근거는 quality.md 「페이지 배치
+effort는 low」; minimal은 옛 맵 단위 배치의 판정이다). **작은 표본으로 파라미터를
+판정하지 마라.**
 
 ## 사정권과 갈래
 
