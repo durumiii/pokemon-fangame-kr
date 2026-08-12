@@ -1,0 +1,14 @@
+{"id": "56:17:0:1", "who": "anciano", "es": "¡Ah, eres tú! Hemos ido a mirar a tus Pokémon, \n¡y nos hemos encontrado un huevo! Aquí ha habido \ntema...", "old": "아, 너구나! 네 포켓몬을 보러 갔다가 알을 발견했다네! 둘 사이에 무슨 일이 있었나 보구먼...", "new": "아, 자네로군! 자네 포켓몬을 보러 갔다가 알을 발견했다네! 둘 사이에 무슨 일이 있었나 보구먼...", "ok": true, "why": null}
+{"id": "56:17:0:4", "who": "anciano", "es": "¿Te gustaría quedártelo?", "old": "이 알을 가져가겠느냐?", "new": "이 알을 가져가겠나?", "ok": true, "why": null}
+{"id": "56:17:0:9", "who": "anciano", "es": "No tienes espacio en tu equipo para guardarlo.", "old": "지닌포켓몬에 알을 받을 자리가 없구나.", "new": "지닌포켓몬에 알을 받을 자리가 없구먼.", "ok": true, "why": null}
+{"id": "56:17:0:13", "who": "anciano", "es": "\\PN recibió un huevo.", "old": "\\PN 달걀 하나를 받았다.", "new": "\\PN\\j[은,는] 알을 하나 받았다.", "ok": false, "why": "검증:절0에 \\j 신규 삽입"}
+{"id": "56:17:0:19", "who": "anciano", "es": "No tengo problema en quedármelo, ¿pero estás \nseguro de que no lo quieres?", "old": "내가 맡아도 상관은 없다만, 정말 안 가져가도 괜찮겠느냐?", "new": "내가 맡아도 상관은 없다만, 정말 안 가져가도 괜찮겠나?", "ok": true, "why": null}
+{"id": "56:17:0:26", "who": "anciano", "es": "Vale, lo cuidaré muy bien, ¡muchas gracias!", "old": "그래, 정성껏 잘 돌보마. 참으로 고맙구나!", "new": "그래, 정성껏 잘 돌보마. 참으로 고맙네!", "ok": true, "why": null}
+{"id": "56:17:0:37", "who": "anciano", "es": "Soy el encargado de la Guardería, aquí puedes \ndejar a tus Pokémon para que los cuidemos.", "old": "나는 키우미집 관리인이란다. 잘 돌봐줄 테니 언제든 포켓몬을 맡기렴.", "new": "나는 키우미집 관리인이란다. 잘 돌봐줄 테니 언제든 포켓몬을 맡기게나.", "ok": true, "why": null}
+{"id": "56:17:0:39", "who": "anciano", "es": "Habla con mi mujer si quieres dejarnos alguno de \ntus Pokémon. Y ni se te ocurra intentar \ndescubrir como se reproducen.", "old": "포켓몬을 맡기고 싶다면 내 아내에게 말을 걸어보게. 그리고 포켓몬이 어떻게 번식하는지는 괜히 밝혀내려 하지 말게나.", "new": "포켓몬을 맡기고 싶다면 내 아내에게 말을 걸어보게. 그리고 포켓몬이 어떻게 번식하는지는 괜히 알아내려 하지 말게나.", "ok": true, "why": null}
+{"id": "56:17:0:46", "who": "anciano", "es": "¡Ah, eres tú! Tu \\v[3] está muy bien.", "old": "아, 너구나! 네 \\v[3]\\j[은,는] 아주 잘 지내고 있단다.", "new": "아, 자네로군! 자네 \\v[3]\\j[은,는] 아주 잘 지내고 있단다.", "ok": true, "why": null}
+{"id": "56:17:0:53", "who": "anciano", "es": "¡Ah, eres tú! \\v[3] y \\v[4] están bien.", "old": "아, 너구나! \\v[3]\\j[과,와] \\v[4]\\j[은,는] 잘 지내고 있단다.", "new": "아, 자네로군! \\v[3]\\j[과,와] \\v[4]\\j[은,는] 잘 지내고 있단다.", "ok": true, "why": null}
+{"id": "56:17:0:55", "who": "anciano", "es": "Aunque no les gusta estar juntos.", "old": "서로 같이 있는 건 별로 안 좋아하는 것 같지만 말일세.", "new": "서로 같이 있는 건 별로 안 좋아하는 것 같지만 말일세.", "ok": true, "why": null}
+{"id": "56:17:0:59", "who": "anciano", "es": "Parece que no se llevan demasiado bien.", "old": "둘이 별로 사이가 안 좋은 것 같구먼.", "new": "둘이 별로 사이가 안 좋은 것 같구먼.", "ok": true, "why": null}
+{"id": "56:17:0:63", "who": "anciano", "es": "Parece que se gustan un poco.", "old": "둘이 조금은 호감이 있는 모양이란다.", "new": "둘이 조금은 호감이 있는 모양이란다.", "ok": true, "why": null}
+{"id": "56:17:0:67", "who": "anciano", "es": "Están juntos todo el tiempo.", "old": "둘이 항상 붙어 있더구나.", "new": "둘이 항상 붙어 있더구나.", "ok": true, "why": null}

@@ -198,6 +198,20 @@ def run(out_dir, write=False, events_only=False):
     if events_only:
         print(f"판정 끝난 이벤트 {len(keep)}개 · 먼저 반영할 수선 행 {len(rows_ok)}개")
 
+    # 접힌 복제 자리(covers) — 같은 화자의 같은 원문은 한 번만 번역되고, 판정은
+    # 접힌 전 맵에 함께 반영된다(batch_pages.dedupe가 대표 행에 맵 목록을 남긴다).
+    covers = {}
+    stem = d.name.replace("-fresh", "")
+    chunks_name = {"page-out": "page-chunks", "page-out-pilot": "pilot-chunks",
+                   "npc-out": "npc-chunks", "npc-out-pilot": "npc-pilot-chunks"}.get(stem)
+    cf = d.parent / (chunks_name + ".jsonl") if chunks_name else None
+    if cf and cf.exists():
+        for line in cf.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                for r in json.loads(line)["rows"]:
+                    if r.get("covers"):
+                        covers[r["id"]] = r["covers"]
+
     plan, why, olds = {}, {}, {}
     clash, stat = [], {}
     for fp in sorted(d.glob("*.jsonl")):
@@ -220,6 +234,12 @@ def run(out_dir, write=False, events_only=False):
                 continue
             plan[key], why[key] = new, tag
             olds[key] = r.get("old") or ""
+            for m2 in covers.get(r["id"], []):    # 접힌 복제 맵에도 같은 판이 간다
+                k2 = (m2, key[1])
+                if plan.get(k2, new) != new:
+                    clash.append((k2, why.get(k2), plan[k2], tag + "(covers)", new))
+                    continue
+                plan[k2], why[k2] = new, tag + "(covers)"
 
     for tag, n in sorted(stat.items(), key=lambda x: -x[1]):
         print(f"  {tag}: {n}행")

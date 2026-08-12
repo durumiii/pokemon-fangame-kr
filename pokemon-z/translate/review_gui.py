@@ -64,6 +64,7 @@ function makeCard(r, sc){
       card.innerHTML=`<div class="hd"><span class="who">${esc(r.who)}</span>
           <span class="rid">${r.id}</span>
           ${r.approved?'<span class="chip" title="유지자가 이미 판정한 줄">승인 줄</span>':''}
+          ${r.covers?`<span class="chip" title="같은 화자의 같은 원문이 접힌 자리 — 판정이 맵 ${r.covers.join(', ')}에 함께 반영돼요">복제 ${r.covers.length}맵 함께</span>`:''}
           <button class="ctxbtn" style="margin-left:auto">문맥</button></div>
         <div class="why">${(r.why||[]).map(w=>`<div><b>${esc(w['유형'])}</b>
           <span class="lay">· ${esc(w['층'])}</span>${w['근거']?' — '+esc(w['근거']):''}</div>`).join('')}</div>
@@ -340,6 +341,22 @@ def append_verdict(p, rec):
     tmp.replace(p)
 
 
+def covers_map(out_dir):
+    """id → 접힌 복제 맵 목록 — plan 청크 파일에서 읽는다(산출 파일에는 없다)."""
+    stem = Path(out_dir).name.replace("-fresh", "")
+    name = {"page-out": "page-chunks", "page-out-pilot": "pilot-chunks",
+            "npc-out": "npc-chunks", "npc-out-pilot": "npc-pilot-chunks"}.get(stem)
+    cf = Path(out_dir).parent / (name + ".jsonl") if name else None
+    out = {}
+    if cf and cf.exists():
+        for line in cf.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                for r in json.loads(line)["rows"]:
+                    if r.get("covers"):
+                        out[r["id"]] = r["covers"]
+    return out
+
+
 def alt_map(alt_dir):
     """대조 산출(다른 effort 등)의 id → 신판. 없으면 빈 사전."""
     out = {}
@@ -388,11 +405,14 @@ def handler(out_dir, vpath, all_rows=False, alt=None):
             elif u.path == "/data":
                 # 매번 다시 읽는다 — 선별을 다시 돌리고 새로고침하면 바로 반영된다
                 sc = collect(out_dir, all_rows=all_rows)
+                cov = covers_map(out_dir)
                 for s in sc:                     # 대조 산출이 다른 답을 낸 행에 alt를 얹는다
                     for r in s["rows"]:
                         a = alt.get(r["id"])
                         if a and a != r["new"]:
                             r["alt"] = a
+                        if r["id"] in cov:
+                            r["covers"] = cov[r["id"]]
                 v = load_verdicts(vpath)
                 self._json({"scenes": sc, "verdicts": v,
                             "stat": progress(out_dir, sc, v, all_rows)})

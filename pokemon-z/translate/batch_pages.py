@@ -508,26 +508,38 @@ def dedupe(chunks):
 
     **통일 원문(여러 맵 복제·전 맵 동일)은 맵 경계 너머로도 한 번만 번역한다** —
     자리마다 따로 물으면 통일이 도로 갈라진다(2026-08-12 파일럿 실사고: 27개 맵
-    동일하던 「안녕, 후보생!」을 맵68에서만 갈랐다). 의도된 갈림은 전 맵 동일이
-    아니므로 이 접기에 안 걸려 자리마다 제 문맥으로 번역된다.
+    동일하던 「안녕, 후보생!」을 맵68에서만 갈랐다).
+
+    **의도된 갈림도 최소 (화자/원문) 단위로 접는다**(유지자 방침 2026-08-12: 「최소한
+    (스프라이트/원문) 단위로」) — 기술 떠올리기 정형구처럼 여러 맵에 복제된 그룹을
+    자리마다 물으면 파일럿·전량이 같은 장면 복제로 채워진다. 같은 화자(npc 갈래에선
+    스프라이트)의 같은 원문은 한 번만 묻고, 접힌 자리들은 대표 행의 `covers`(맵 목록)
+    로 남아 반영 때 함께 간다(apply_verdicts).
     """
     uni = unified_originals()
-    best = {}
+    best, members = {}, defaultdict(set)
+    def key_of_row(c, r):
+        kf = fold(r["es"])
+        if kf in uni:
+            return kf
+        return (kf, r.get("who") or c["map"])   # 화자 없는 행만 맵 단위로 남는다
     for c in chunks:
         for r in c["rows"]:
-            kf = fold(r["es"])
-            k = kf if kf in uni else (c["map"], kf)
+            k = key_of_row(c, r)
+            members[k].add(c["map"])
             if k not in best or len(c["rows"]) > best[k][1]:
                 best[k] = (c["cid"], len(c["rows"]))
     out, seen = [], set()
     for c in chunks:
         rows = []
         for r in c["rows"]:
-            kf = fold(r["es"])
-            k = kf if kf in uni else (c["map"], kf)
+            k = key_of_row(c, r)
             if best[k][0] != c["cid"] or k in seen:   # 같은 페이지 안의 반복도 한 번만
                 continue
             seen.add(k)
+            spread = sorted(members[k] - {c["map"]})
+            if spread:
+                r = {**r, "covers": spread}
             rows.append(r)
         if not rows:
             continue
