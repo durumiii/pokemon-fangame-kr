@@ -132,6 +132,7 @@
 {"es": "Un Morpeko se dirige a la sala de rituales.", "ko": "모르페코가 의식실로 향한다.", "맵수": 3, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "Firmemente cerrada.", "ko": "단단히 닫혀 있다.", "맵수": 3, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "<b>Ciudad Yantra</b>, la ciudad del despertar.", "ko": "<b>사라시티</b>, 각성의 도시.", "맵수": 3, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
+{"es": "¡Qué guay! ¡Pues a intercambiar se ha dicho!", "ko": "신난다! 그럼 당장 교환하자!", "맵수": 3, "src": "sync"}
 {"es": "Unas horas después...", "ko": "몇 시간 뒤...", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "Una estatua de Sawsbuck, esculpida con frío invernal.", "ko": "겨울의 차가운 기운 속에 조각된 바라철록 동상이다.", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "<b>PISTA DE ENTRENADOR:</b> Puedes encontrar el save de tu partida en Mi PC->Disco Local->usuarios->Tu usuario->Juegos guardados", "ko": "<b>트레이너 팁:</b> 저장 파일 위치: 내 PC → 로컬 디스크 → 사용자 → 사용자 이름 → 저장된 게임", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
@@ -389,3 +390,8 @@
 {"es": "\\c[5]<b>Melia:</b>\\c[0] ¿El... el <b>Juicio de Yveltal</b>?", "ko": "\\c[5]<b>멜리아:</b>\\c[0] 그... <b>이벨타르의 심판</b>이라고?", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "No creo que mi madre quiera ponernos en ningún apuro, pero la verdad es que suena un poco siniestro...", "ko": "우리 어머니께서 우리를 위험에 빠뜨리려 하진 않으시겠지만, 솔직히 조금 불길하게 들리긴 하네...", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "<b>Oeste:</b> A Pueblo Cromlech", "ko": "<b>서쪽:</b> 옥유마을 방향", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
+{"es": "Creo que es una transacción generosa, pero allá tú.", "ko": "제법 후한 거래라 생각하는데, 거절하시겠다면 할 수 없죠.", "맵수": 2, "src": "sync"}
+{"es": "¿Estás bien?", "ko": "괜찮아?", "맵수": 2, "src": "sync"}
+{"es": "La silla central de la fila de arriba de la mesa larga está maldita, según las supersticiones.", "ko": "전해오는 속설에 따르면 긴 식탁 윗줄 중앙의 의자에는 저주가 서려 있다고 하지.", "맵수": 2, "src": "sync"}
+{"es": "Definitivamente tú... tienes que ser tú. Nos serás de mucha ayuda. Je, je, je...", "ko": "틀림없이 너구나... 너여야만 해. 우리에게 큰 도움이 될 것이니라. 히히히...", "맵수": 2, "src": "sync"}
+{"es": "Con mucho gusto curaré a tus Pokémon.", "ko": "기꺼이 당신의 포켓몬을 치료해 드리겠습니다.", "맵수": 2, "src": "sync"}
