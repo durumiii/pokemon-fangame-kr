@@ -57,6 +57,9 @@
   「게임이 없다」부터 갈라라. 경로 자체는 기계마다 달라 저장소에 없다(에이전트 메모리 몫).
 - **조사 첫 수는 `uv run translate/probe.py "문구"`**, 수정 후 `uv run translate/verify.py`,
   재배포 전 `--strict`.
+- **여러 맵에 복제된 같은 원문의 번역은 하나로 관리한다** — 통일판은
+  `translate/data/unified-phrases.jsonl`이 원문 키로 자체 저장하고 verify가 지킨다.
+  갈리면 `unified.py restore`(실수) 또는 판정 등재가 길이다(text-pipeline 「정본과 빌드」).
 - **정본을 고치는 도구만 쓴다** — dat를 직접 문지르는 수정은 빌드 한 번에 지워진다.
   웹 스튜디오로 dat를 고쳤으면 `uv run translate/harvest.py`(미리보기) → `--write`로
   정본에 회수하고 `build.py`로 다시 내려보낸다. ⚠ 회수를 `export.py`로 하지 마라 —
