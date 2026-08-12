@@ -363,6 +363,26 @@ def excluded_pages(pg):
     return ex
 
 
+def divergence_settled():
+    """(접은 원문, 맵) → 갈래 정본 값. 갈림 허용 목록의 판정이 앉은 자리다.
+
+    정본 값이 이것과 일치하면 그 자리는 이미 판정이 끝난 것 — 배치가 다시 묻지
+    않는다. 안 걸면 창구류 복제 페이지가 접기 주인 회전으로 계획에 계속 남는다
+    (2026-08-13 Z-4 마감에서 실측: 이벤트를 승인해도 다음 복제가 올라온다)."""
+    p = HERE / "data" / "divergence-allowed.jsonl"
+    if not p.exists():
+        return {}
+    out = {}
+    for line in p.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        r = json.loads(line)
+        for g in r.get("갈래", []):
+            for m in g.get("maps", []):
+                out[(fold(r["es"]), m)] = g["ko"]
+    return out
+
+
 def chunks_path(pilot, npc):
     stem = ("npc-pilot-chunks" if npc and pilot else "npc-chunks" if npc
             else "pilot-chunks" if pilot else "page-chunks")
@@ -376,7 +396,8 @@ def plan(pilot=False, npc=False):
     vlines, names, anon = voice_lines(), ko_names(), anon_index()
     approved = approved_set()
     per = personas() if npc else {}
-    npc_skipped = 0
+    settled = divergence_settled()
+    npc_skipped = settled_skipped = 0
     chunks = []
     for key in sorted(pg):
         if key in ex:
@@ -395,6 +416,9 @@ def plan(pilot=False, npc=False):
                     continue
                 cur = ko.get((r["map"], fold(r["k"])))
                 if cur is None:
+                    continue
+                if settled.get((fold(r["k"]), r["map"])) == cur:
+                    settled_skipped += 1   # 갈래 정본과 일치 — 판정이 끝난 자리라 묻지 않는다
                     continue
                 take.append((r, sprite, cur, ""))
                 continue
@@ -459,6 +483,8 @@ def plan(pilot=False, npc=False):
         chunks = pick_pilot(chunks, npc)
     if npc and npc_skipped:
         print(f"페르소나표 밖 스프라이트로 빠진 행: {npc_skipped} — 사람 스프라이트라면 표에 등재 후 재plan")
+    if npc and settled_skipped:
+        print(f"갈래 정본과 일치해 뺀 행: {settled_skipped}")
     out = chunks_path(pilot, npc)
     out.parent.mkdir(exist_ok=True)
     out.write_text("\n".join(json.dumps(c, ensure_ascii=False) for c in chunks) + "\n",
