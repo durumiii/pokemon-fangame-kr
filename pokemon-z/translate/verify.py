@@ -290,6 +290,8 @@ def check_unified(strict):
     """
     allowed = {r["es"] for r in rows(HERE / "data" / "divergence-allowed.jsonl")} \
         if (HERE / "data" / "divergence-allowed.jsonl").exists() else set()
+    led = {r["es"]: r["ko"] for r in rows(HERE / "data" / "unified-phrases.jsonl")} \
+        if (HERE / "data" / "unified-phrases.jsonl").exists() else {}
     groups = {}
     cur = None
     for n, r in enumerate(rows(HERE / "ko" / "00-maps.jsonl"), 1):
@@ -298,15 +300,23 @@ def check_unified(strict):
             continue
         k = re.sub(r"\s+", " ", r.get("k") or "").strip()
         groups.setdefault(k, []).append((cur, r.get("v"), n))
-    bad = 0
+    bad = drift = 0
     for k, g in groups.items():
-        if len({m for m, _, _ in g}) <= 1 or len({v for _, v, _ in g}) <= 1 or k in allowed:
+        maps = sorted({m for m, _, _ in g})
+        # 원장 등재분 — 통일판 자체가 저장돼 있으니 값까지 대조한다. 어긋나면
+        # unified.py restore(실수 복원) 또는 sync --write(의도적 변경 등재)로 푼다.
+        if k in led:
+            if {v for _, v, _ in g} != {led[k]}:
+                drift += 1
+                report("FAIL" if strict else "WARN",
+                       f"통일 원장 불일치 {k[:50]!r} — 맵 {maps} (unified.py restore/sync)")
+            continue
+        if len(maps) <= 1 or len({v for _, v, _ in g}) <= 1 or k in allowed:
             continue
         bad += 1
-        maps = sorted({m for m, _, _ in g})
         report("FAIL" if strict else "WARN",
-               f"통일 원문 갈림 (미허용) {k[:50]!r} — 맵 {maps}")
-    print(f"통일 원문: 복제 그룹 검사, 허용 예외 {len(allowed)} · 미허용 갈림 {bad}")
+               f"통일 원문 갈림 (미허용·미등재) {k[:50]!r} — 맵 {maps}")
+    print(f"통일 원문: 원장 {len(led)}건(불일치 {drift}) · 허용 예외 {len(allowed)} · 미등재 갈림 {bad}")
 
 
 def main():

@@ -474,6 +474,8 @@ def unified_originals():
     Z-28이 통일한 상태의 정의이자 verify `check_unified`가 지키는 불변량. 이 집합은
     맵 경계 너머 한 번만 번역하고, 반영은 전 자리에 퍼진다(apply_verdicts).
     의도된 갈림(data/divergence-allowed.jsonl)은 애초에 「전 맵 동일」이 아니라 안 잡힌다.
+    통일판 원장(data/unified-phrases.jsonl) 등재분은 정본이 실수로 갈려 있어도 관리
+    단위이므로 합집합으로 든다.
     """
     groups = defaultdict(set)
     seen = defaultdict(set)
@@ -488,7 +490,12 @@ def unified_originals():
         k = fold(r["k"])
         groups[k].add(r["v"])
         seen[k].add(cur)
-    return {k for k, vs in groups.items() if len(vs) == 1 and len(seen[k]) > 1}
+    out = {k for k, vs in groups.items() if len(vs) == 1 and len(seen[k]) > 1}
+    led = HERE / "data" / "unified-phrases.jsonl"
+    if led.exists():
+        out |= {json.loads(l)["es"] for l in led.read_text(encoding="utf-8").splitlines()
+                if l.strip()}
+    return out
 
 
 def dedupe(chunks):
