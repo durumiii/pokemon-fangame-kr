@@ -395,3 +395,16 @@
 {"es": "La silla central de la fila de arriba de la mesa larga está maldita, según las supersticiones.", "ko": "전해오는 속설에 따르면 긴 식탁 윗줄 중앙의 의자에는 저주가 서려 있다고 하지.", "맵수": 2, "src": "sync"}
 {"es": "Definitivamente tú... tienes que ser tú. Nos serás de mucha ayuda. Je, je, je...", "ko": "틀림없이 너구나... 너여야만 해. 우리에게 큰 도움이 될 것이니라. 히히히...", "맵수": 2, "src": "sync"}
 {"es": "Con mucho gusto curaré a tus Pokémon.", "ko": "기꺼이 당신의 포켓몬을 치료해 드리겠습니다.", "맵수": 2, "src": "sync"}
+{"es": "Te soltaré un chivatazo por 2000 pokécuartos.", "ko": "2000 포켓프랑만 내면 고급 정보 하나를 넘기지.", "맵수": 2, "src": "sync"}
+{"es": "La información puede ser un bien muy valioso, no la subestimes tan a la ligera.", "ko": "정보는 아주 귀중한 자산이 될 수 있으니 가볍게 여기지 마라.", "맵수": 2, "src": "sync"}
+{"es": "Te explico. En una partida de Blackjack cada jugador va recibiendo cartas de forma aleatoria.", "ko": "설명해 줄게. 블랙잭 게임에서는 각 플레이어가 무작위로 카드를 한 장씩 받는다.", "맵수": 2, "src": "sync"}
+{"es": "Cada vez que se reparta una carta, el jugador podrá decidir si quiere o no quiere recibir más cartas.", "ko": "카드가 배분될 때마다, 플레이어는 카드를 더 받을지 말지 결정할 수 있어.", "맵수": 2, "src": "sync"}
+{"es": "El objetivo es sumar lo más cerca posible de 21 con las cartas acumuladas.", "ko": "목표는 모은 카드의 합을 21에 가장 가깝게 만드는 거다.", "맵수": 2, "src": "sync"}
+{"es": "Si se recibe un as, el jugador puede decidir si contarlo como 1 o como 13.", "ko": "에이스를 뽑으면 이를 1로 칠지 13으로 칠지 맘대로 정할 수 있지.", "맵수": 2, "src": "sync"}
+{"es": "¡Eh, eh! Que no pretendo estafarte, me gusta jugar limpio.", "ko": "이봐, 이봐! 널 속이려는 게 아냐, 난 정당하게 겨루는 걸 좋아한다고.", "맵수": 2, "src": "sync"}
+{"es": "Te ha tocado un as, ¿que valor le asignas? Recuerda que tienes que intentar sumar 21.", "ko": "에이스가 나왔군. 이 카드를 몇으로 치겠어? 합계가 21이 되도록 해야 한다는 걸 잊지 마라.", "맵수": 2, "src": "sync"}
+{"es": "Has recibido un \\v[135]. Recuerda que debes intentar sumar 21.", "ko": "\\v[135]\\j[을,를] 받았다. 합계가 21이 되도록 해야 한다는 걸 잊지 마라.", "맵수": 2, "src": "sync"}
+{"es": "¿Quieres recibir otra carta?", "ko": "카드를 한 장 더 받겠어?", "맵수": 2, "src": "sync"}
+{"es": "<b>Contrincante:</b> ¡Bien! ¡Veamos quién ha ganado!", "ko": "<b>상대방:</b> 좋아! 누가 이겼는지 확인해 보자고!", "맵수": 2, "src": "sync"}
+{"es": "¡Tu contrincante gana la partida!", "ko": "상대방의 승리다!", "맵수": 2, "src": "sync"}
+{"es": "<b>Contrincante:</b> ¡Ja! Pues parece que ninguno nos llevamos nada esta vez.", "ko": "<b>상대방:</b> 하! 이번에는 둘 다 아무것도 못 챙겼네.", "맵수": 2, "src": "sync"}
