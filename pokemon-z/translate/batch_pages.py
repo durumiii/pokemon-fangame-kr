@@ -961,10 +961,10 @@ def report(pilot=False, npc=False):
             cell = lambda s: (s or "").replace("|", "\\|").replace("\n", "<br>")
             md.append(f"| {d['who']} | {cell(d['es'])} | {cell(d['old'])} | {cell(new)} |")
         md.append("")
-    # ⚠ 기록층은 박제다 — 갈래·회차마다 제 파일에 쓴다(2026-08-11: npc report가
-    # 옛 파일럿 박제를 덮은 사고 후 분리).
-    dst = HERE.parent / ("docs/log/research/2026-08-11-npc-retranslate-pilot.md" if npc
-                         else "docs/log/research/2026-08-06-retranslate-pilot.md")
+    # 이 대조표는 회차마다 덮어쓰는 **작업 산출**이라 batch/에 산다 — 기록층(docs/log)은
+    # 박제라 덮어쓰는 파일을 두지 않는다(2026-08-11 npc report가 옛 박제를 덮은 사고,
+    # 2026-08-12 회차 덮어쓰기 재발로 자리 이동). 박제가 필요하면 회차 결산 때 복사한다.
+    dst = BATCH / ("npc-report.md" if npc else "page-report.md")
     md.insert(2, f"행 {tot} · 그대로 둔 행 {same} · 기계 반려 {rej}\n")
     dst.write_text("\n".join(md), encoding="utf-8")
     print(f"{tot}행 (그대로 {same} · 반려 {rej}) → {dst}")

@@ -6,6 +6,11 @@
 ([../ledger/voices.md](../ledger/voices.md)).
 **전제** — 화자·말투 개념([events-and-speech.md](events-and-speech.md)).
 
+**유료 실행은 정보 가치부터 적는다** — run·screen_llm을 돌리기 전에 「이 실행이 새로
+사는 정보가 무엇인가, 기존 산출·plan 단언 검사로 대체되지 않는가」를 한 줄로 답한다.
+run은 이미 있는 페이지 산출을 건너뛰므로 **산출 폴더를 통째로 대피시키지 마라** —
+바뀐 행만 다시 묻는 것이 기본이다(2026-08-12: 같은 표본을 세 번 결제한 사고).
+
 단위는 **이벤트 페이지**(장면 하나). `plan [--pilot]` · `run [--pilot] [--fresh]` ·
 `samples <이름>`(본보기 확인) · `report`. 배치 모델은 gemini-3.6-flash +
 **reasoning_effort=low**(페이지 단위 배치의 정본 — 근거는 quality.md 「페이지 배치
