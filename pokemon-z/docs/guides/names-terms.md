@@ -18,9 +18,9 @@
 4. 한 자리를 고치면 **같은 종류를 전수 대조한다** — 지명 하나가 어긋났다면 다른
    지명도 어긋나 있다(실제로 열 곳 더 나왔다).
 
-**고유명 표기 정본은 `translate/canon/names.jsonl`(원장)이다.** 검사는
+**고유명 표기 정본은 `translate/canon/names.jsonl`(표기 목록)이다.** 검사는
 `uv run tools/names.py check`(작업 중)와 `verify.py`(재배포 게이트 — 변이 잔존은 FAIL).
-표기 변경은 **`tools/names.py rename <원문> <새표기>`**로 정본과 원장을 함께 고친다
+표기 변경은 **`tools/names.py rename <원문> <새표기>`**로 정본과 목록을 함께 고친다
 (받침이 달라지면 조사 경고). 판정 근거는 `docs/ledger/glossary.md`에 적는다.
 프롬프트용 용어 정본은 `translate/term-pairs.jsonl`.
 

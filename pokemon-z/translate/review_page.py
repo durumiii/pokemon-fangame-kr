@@ -243,7 +243,7 @@ dialog::backdrop{{background:rgba(0,0,0,.6)}}
 <div id="body"></div></main>
 <dialog id="ctx"><div class="dh"><h3 id="ctxT"></h3><span class="meta" id="ctxM"></span>
   <button onclick="ctx.close()">닫기</button></div><div class="db" id="ctxB"></div></dialog>
-<dialog id="out"><div class="dh"><h3>판정 TSV (예비 — 정본은 저장 원장)</h3>
+<dialog id="out"><div class="dh"><h3>판정 TSV (예비 — 정본은 저장된 판정 기록)</h3>
   <span class="meta">id · 판정 · 화자 · 텍스트 · 메모</span>
   <button onclick="out.close()">닫기</button></div>
   <div class="db"><textarea id="txt" rows="18"></textarea>

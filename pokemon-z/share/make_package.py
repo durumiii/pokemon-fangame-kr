@@ -412,7 +412,7 @@ def main():
     for fname in ("prompt.md", "prompt-npc.md",
                   "speaker-aliases.json", "persona-table.jsonl", "sprite-groups.json"):
         shutil.copy2(TRANSLATE / fname, kit / fname)
-    for fname in ("glossary.md", "voices.md"):   # 판정 대장은 docs/ledger에 산다
+    for fname in ("glossary.md", "voices.md"):   # 판정 대장은 docs/ledger에 있다
         src = TRANSLATE.parent / "docs" / "ledger" / fname
         (kit / fname).write_text(_flatten_repo_links(src.read_text(encoding="utf-8")),
                                  encoding="utf-8")

@@ -9,7 +9,7 @@
 (실측 2026-08-06: 104행 중 104행).
 
     uv run translate/mend_newlines.py <out-dir>          # 미리보기
-    uv run translate/mend_newlines.py <out-dir> --write  # 판정 원장에 「직접」으로 채움
+    uv run translate/mend_newlines.py <out-dir> --write  # 판정 기록에 「직접」으로 채움
 
 채워 넣을 뿐 감추지 않는다 — 검수 화면에 그대로 서고, 고쳐 누르면 그쪽이 이긴다.
 이미 판정이 있는 자리는 건드리지 않는다.

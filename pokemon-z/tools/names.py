@@ -1,27 +1,27 @@
 # /// script
 # requires-python = ">=3.12"
 # ///
-"""고유명 표기 원장 — 흩어진 표기를 한 곳에서 관리한다.
+"""고유명 표기 목록 — 흩어진 표기를 한 곳에서 관리한다.
 
 같은 인물·조직·용어가 번역 정본 곳곳에서 다르게 적히는 사고가 반복됐다
 (아스터/아스테르 · 샤핀/사핀 · 프리물라/프리뮬라 · 팀 아조스/아조스단).
-사람 눈으로 잡으면 늘 늦으니, 정본 표기를 원장에 적어 두고 기계가 훑는다.
+사람 눈으로 잡으면 늘 늦으니, 정본 표기를 표기 목록에 적어 두고 기계가 훑는다.
 
-원장: translate/canon/names.jsonl — 한 줄이 이름 하나다.
+목록: translate/canon/names.jsonl — 한 줄이 이름 하나다.
     {"es": 원문, "ko": 정본 표기, "변이": [틀린 표기…], "쪽지": 판정 근거,
      "생략허용": true}   # 원문에 있어도 번역에서 이름을 안 쓸 수 있는 자리
 
 usage:
   uv run tools/names.py check              변이 잔존과 표기 빠짐을 훑는다
-  uv run tools/names.py rename <es> <새표기>  정본을 훑어 바꾸고 원장을 고친다
+  uv run tools/names.py rename <es> <새표기>  정본을 훑어 바꾸고 목록을 고친다
                                             (옛 표기는 변이 목록으로 내려간다)
-  uv run tools/names.py add <es> <ko> [쪽지]  원장에 새 이름을 올린다
-  uv run tools/names.py sweep [--all] [--tsv]  원장을 안 보고 정본에서 갈림을 캐낸다
+  uv run tools/names.py add <es> <ko> [쪽지]  표기 목록에 새 이름을 올린다
+  uv run tools/names.py sweep [--all] [--tsv]  목록을 안 보고 정본에서 갈림을 캐낸다
 
 `check`는 verify.py에도 같은 검사가 들어 있다(재배포 게이트). 이 도구는 작업
 중에 바로 돌려 보는 쪽이다.
 
-`check`가 아는 것은 원장에 적힌 변이뿐이라, 모르는 갈림은 애초에 검사 대상이
+`check`가 아는 것은 표기 목록에 적힌 변이뿐이라, 모르는 갈림은 애초에 검사 대상이
 아니었다. `sweep`은 반대로 간다 — 정본에서 원문↔번역 쌍을 직접 캐서 한 원문이
 여러 한국어로 적힌 자리를 찾아낸다. 규칙과 한계는
 docs/log/research/2026-08-06-names-sweep.md.
@@ -108,7 +108,7 @@ def cmd_rename(es, new):
     ledger = load_ledger()
     row = next((r for r in ledger if r["es"] == es), None)
     if row is None:
-        sys.exit(f"원장에 없는 이름이에요: {es} — 먼저 add로 올려주세요")
+        sys.exit(f"표기 목록에 없는 이름이에요: {es} — 먼저 add로 올려주세요")
     old = row["ko"]
     if old == new:
         sys.exit(f"이미 {new!r}예요")
@@ -154,7 +154,7 @@ def cmd_rename(es, new):
     row["ko"] = new
     row["변이"] = sorted(set(row.get("변이", [])) | {old})
     save_ledger(ledger)
-    print(f"{changed}행을 {old!r} → {new!r}로 고치고 원장을 갱신했어요 "
+    print(f"{changed}행을 {old!r} → {new!r}로 고치고 표기 목록을 갱신했어요 "
           f"(옛 표기는 변이 목록으로 내려갔어요)")
     print("빌드해서 게임에 반영하세요: uv run translate/build.py")
 
@@ -162,13 +162,13 @@ def cmd_rename(es, new):
 def cmd_add(es, ko, note=""):
     ledger = load_ledger()
     if any(r["es"] == es for r in ledger):
-        sys.exit(f"이미 원장에 있어요: {es}")
+        sys.exit(f"이미 표기 목록에 있어요: {es}")
     ledger.append({"es": es, "ko": ko, "변이": [], "쪽지": note})
     save_ledger(ledger)
-    print(f"원장에 올렸어요: {es} → {ko}")
+    print(f"표기 목록에 올렸어요: {es} → {ko}")
 
 
-# ── sweep — 원장을 안 보고 정본에서 갈림을 캐낸다 ──────────────────────────
+# ── sweep — 표기 목록을 안 보고 정본에서 갈림을 캐낸다 ──────────────────────────
 EMPH = re.compile(r"<b>(.*?)</b>", re.S)
 TRIM = " \t　.,!?¡¿…·:;~\"'“”‘’「」『』()[]{}*<>/\\"
 # 원문 칸이 통째로 이름인 절들 (도구·도구 복수형·트레이너 직함·트레이너 이름·지명·맵 이름)
@@ -186,7 +186,7 @@ def is_name_candidate(es):
 
     `<b>` 강조는 이름 말고 문장 강조에도 쓰인다(`<b>no</b>`, `<b>mucho</b>`).
     소문자로 시작하는 것과 긴 어구를 버리면 그 잡음이 대부분 빠진다.
-    놓치는 것: 소문자로 시작하는 고유명(원장의 `maese`·`chateau`가 그렇다).
+    놓치는 것: 소문자로 시작하는 고유명(목록의 `maese`·`chateau`가 그렇다).
     """
     m = re.search(r"[^\W\d_]", es, re.UNICODE)
     return bool(m) and m.group().isupper() and len(es) <= 30
@@ -299,7 +299,7 @@ def cmd_sweep(argv):
         print(f"\n=== {kind} {len(buckets[kind])}개 " +
               ("(사람이 판정할 자리)" if kind == "갈림" else "(오탐 — 포함관계)"))
         for es in sorted(buckets[kind], key=lambda e: -sum(by_es[e].values())):
-            mark = "원장" if es in ledger else "밖"
+            mark = "목록" if es in ledger else "밖"
             print(f"\n[{mark}] {es}")
             for ko, n in by_es[es].most_common():
                 print(f"    {n:5d}  {ko:<24} {where[(es, ko)]}")
@@ -313,7 +313,7 @@ def cmd_sweep(argv):
           f"({' · '.join(f'{k} {v}' for k, v in sorted(stats.items()))})")
     print(f"갈린 원문 {len(split)}종 — 갈림 {len(buckets['갈림'])} · "
           f"포함(오탐) {len(buckets['포함'])} · "
-          f"원장 밖 {sum(1 for e in split if e not in ledger)}")
+          f"목록 밖 {sum(1 for e in split if e not in ledger)}")
     return 0
 
 

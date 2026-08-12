@@ -1,23 +1,23 @@
 # /// script
 # requires-python = ">=3.12"
 # ///
-"""통일 정형구 원장 — 여러 맵에 복제된 원문의 통일판을 **원문 키로** 자체 저장한다.
+"""통일 정형구 목록 — 여러 맵에 복제된 원문의 통일판을 **원문 키로** 자체 저장한다.
 
 정본(00-maps.jsonl)은 게임 판이 바뀌면 다시 뽑히고, 실수로 한 자리가 고쳐질 수도
 있다. 우리가 판정한 통일판은 좌표가 아니라 원문에 묶어 여기 남는다 — 정본이 어떤
-모양이 되든 원장에서 되살릴 수 있다(고유명의 canon/names.jsonl과 같은 격).
+모양이 되든 이 목록에서 되살릴 수 있다(고유명의 canon/names.jsonl과 같은 격).
 
-원장 둘을 다룬다:
+목록 둘을 다룬다:
 - translate/data/unified-phrases.jsonl  {"es", "ko", "맵수", "src"} — 전판 통일.
 - translate/data/divergence-allowed.jsonl {"es", "이유", "갈래": [{"ko","maps","sprites"}]}
   — 의도된 갈림. **갈래별 값까지 자체 저장**한다(유지자 방침 2026-08-12: 갈랐어도
   갈래 단위로는 하나로 관리·복원 가능해야 한다).
 
-    uv run translate/unified.py check              # 두 원장 대 정본 대조 (verify에도 실림)
-    uv run translate/unified.py restore [--write]  # 정본의 어긋난 자리를 원장 값으로 복원
-    uv run translate/unified.py sync [--write]     # 의도적 변경·새 통일·갈래 재배정을 원장에 반영
+    uv run translate/unified.py check              # 두 목록 대 정본 대조 (verify에도 실림)
+    uv run translate/unified.py restore [--write]  # 정본의 어긋난 자리를 목록 값으로 복원
+    uv run translate/unified.py sync [--write]     # 의도적 변경·새 통일·갈래 재배정을 목록에 반영
 
-restore와 sync는 방향이 반대다 — 실수로 갈렸으면 restore(원장이 이긴다),
+restore와 sync는 방향이 반대다 — 실수로 갈렸으면 restore(목록이 이긴다),
 판정으로 바꿨으면 sync(정본이 이긴다). 어느 쪽인지는 사람이 정한다.
 """
 import json
@@ -50,7 +50,7 @@ def div_ledger():
 
 
 def div_expected(div):
-    """갈림 원장 → es별 {맵: 기대값}."""
+    """갈림 허용 목록 → es별 {맵: 기대값}."""
     return {es: {m: b["ko"] for b in r.get("갈래", []) for m in b["maps"]}
             for es, r in div.items()}
 
@@ -89,7 +89,7 @@ def canon_groups():
 
 
 def check(quiet=False):
-    """(원장과 어긋난 es 목록, 정본에 없는 es 목록)을 돌려준다."""
+    """(목록과 어긋난 es 목록, 정본에 없는 es 목록)을 돌려준다."""
     led, grp = ledger(), canon_groups()
     drift, gone = [], []
     for es, e in led.items():
@@ -101,7 +101,7 @@ def check(quiet=False):
             drift.append(es)
             if not quiet:
                 vals = sorted({v for _, v in g} - {e["ko"]})
-                print(f"어긋남 {es[:46]!r}\n    원장: {e['ko'][:60]!r}\n    정본: {vals[0][:60]!r}"
+                print(f"어긋남 {es[:46]!r}\n    목록: {e['ko'][:60]!r}\n    정본: {vals[0][:60]!r}"
                       + (f" 외 {len(vals)-1}판" if len(vals) > 1 else ""))
     dd = 0
     exp = div_expected(div_ledger())
@@ -118,7 +118,7 @@ def check(quiet=False):
             if not quiet:
                 print(f"갈림 미배정 {es[:40]!r} 맵{m}: {cur[m][:40]!r}")
     if not quiet:
-        print(f"통일 원장 {len(led)}건(어긋남 {len(drift)} · 사라짐 {len(gone)}) · 갈림 원장 어긋남·미배정 {dd}")
+        print(f"통일 목록 {len(led)}건(어긋남 {len(drift)} · 사라짐 {len(gone)}) · 갈림 허용 목록 어긋남·미배정 {dd}")
     return drift, gone
 
 
@@ -149,7 +149,7 @@ def restore(write=False):
 
 
 def sync(write=False):
-    """정본의 현 상태를 원장에 반영 — 값이 바뀐 것은 갱신, 새 통일은 등재, 사라진 것은 삭제.
+    """정본의 현 상태를 목록에 반영 — 값이 바뀐 것은 갱신, 새 통일은 등재, 사라진 것은 삭제.
 
     갈려 있는 원문은 통일이 아니므로 여기서 등재하지 않는다(verify가 따로 문다).
     """
@@ -177,7 +177,7 @@ def sync(write=False):
             print(f"삭제 {es[:50]!r} — 정본에서 사라짐")
             del led[es]
             drop += 1
-    # 갈림 원장 — 갈래(값·맵·스프라이트)를 정본 현 상태로 재배정. es·이유는 보존한다.
+    # 갈림 허용 목록 — 갈래(값·맵·스프라이트)를 정본 현 상태로 재배정. es·이유는 보존한다.
     div, dchg = div_ledger(), 0
     for es, r in div.items():
         g = grp.get(es, [])

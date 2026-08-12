@@ -188,7 +188,7 @@ def voice_instruction(cell):
 
 
 def ko_names():
-    """원문 이름 → 한국어. 고유명 원장이 정본이고 옛 조인표 이름은 보충이다."""
+    """원문 이름 → 한국어. 고유명 표기 목록이 정본이고 옛 조인표 이름은 보충이다."""
     out = dict(json.loads((HERE / "names.json").read_text(encoding="utf-8"))["names"])
     for line in (HERE / "canon/names.jsonl").read_text(encoding="utf-8").splitlines():
         if line.strip():
@@ -475,7 +475,7 @@ def unified_originals():
     Z-28이 통일한 상태의 정의이자 verify `check_unified`가 지키는 불변량. 이 집합은
     맵 경계 너머 한 번만 번역하고, 반영은 전 자리에 퍼진다(apply_verdicts).
     의도된 갈림(data/divergence-allowed.jsonl)은 애초에 「전 맵 동일」이 아니라 안 잡힌다.
-    통일판 원장(data/unified-phrases.jsonl) 등재분은 정본이 실수로 갈려 있어도 관리
+    통일 목록(data/unified-phrases.jsonl) 등재분은 정본이 실수로 갈려 있어도 관리
     단위이므로 합집합으로 든다.
     """
     groups = defaultdict(set)
@@ -683,8 +683,8 @@ def _term_pairs_md():
 def ledger_pairs():
     """고유명 표기표 — 이 장면에 나오는 이름을 못박는다.
 
-    셋을 합친다: 고유명 원장(인물·조직) · 지명표(절19) · 맵 이름표(절21).
-    **지명도 고유명이다** — 원장에만 기대면 표에 없는 지명이 새 번역에서 다시
+    셋을 합친다: 고유명 표기 목록(인물·조직) · 지명표(절19) · 맵 이름표(절21).
+    **지명도 고유명이다** — 그 목록에만 기대면 표에 없는 지명이 새 번역에서 다시
     음차된다(2026-08-06 실측: 그리사야시티→그리자유시티 · 비탈 숲→라데라 숲).
     """
     out = []
@@ -802,9 +802,9 @@ TITLES = [("monsieur", "무슈"), ("madame", "마담"), ("mademoiselle", "마드
 def scene_names(rows):
     """이 장면에 나오는 고유명을 **현행 번역에서 직접 짝지어** 캔다.
 
-    원장·용어집만 보면 그 표에 없는 지명·인명이 새 번역에서 새로 음차된다
+    표기 목록·용어집만 보면 그 표에 없는 지명·인명이 새 번역에서 새로 음차된다
     (2026-08-06 실측: 「그리사야시티→그리자유시티」·「히소포→이소포」·「비탈 숲→라데라 숲」).
-    정본의 굵은 글씨는 이미 원장으로 통일돼 있으므로, 원문과 번역의 <b> 자리를
+    정본의 굵은 글씨는 이미 표기 목록으로 통일돼 있으므로, 원문과 번역의 <b> 자리를
     순서대로 맞추면 그 장면에 필요한 표기표가 공짜로 나온다. 개수가 다르면 버린다.
     """
     out = {}
@@ -1000,7 +1000,7 @@ def report(pilot=False, npc=False):
             cell = lambda s: (s or "").replace("|", "\\|").replace("\n", "<br>")
             md.append(f"| {d['who']} | {cell(d['es'])} | {cell(d['old'])} | {cell(new)} |")
         md.append("")
-    # 이 대조표는 회차마다 덮어쓰는 **작업 산출**이라 batch/에 산다 — 기록층(docs/log)은
+    # 이 대조표는 회차마다 덮어쓰는 **작업 산출**이라 batch/에 둔다 — 기록층(docs/log)은
     # 박제라 덮어쓰는 파일을 두지 않는다(2026-08-11 npc report가 옛 박제를 덮은 사고,
     # 2026-08-12 회차 덮어쓰기 재발로 자리 이동). 박제가 필요하면 회차 결산 때 복사한다.
     dst = BATCH / ("npc-report.md" if npc else "page-report.md")

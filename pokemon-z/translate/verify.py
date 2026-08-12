@@ -254,7 +254,7 @@ def check_ui_gsub():
 
 
 def check_names(strict):
-    """고유명 표기 원장(canon/names.jsonl)의 변이가 번역에 남았는지.
+    """고유명 표기 목록(canon/names.jsonl)의 변이가 번역에 남았는지.
 
     변이는 「이 표기는 틀렸다」고 판정이 난 것이라 의역 여지가 없다 —
     canon 불일치와 달리 기본이 FAIL이다.
@@ -286,9 +286,9 @@ def check_unified(strict):
 
     Z-28(2026-08-10)이 통일한 상태를 지키는 게이트. 의도된 갈림(화자별 유지·손수정)만
     `data/divergence-allowed.jsonl`에 근거와 함께 등재돼 있고, 그 밖의 갈림은 배치·손질이
-    통일을 도로 가른 것이므로 FAIL이다. 갈림을 새로 허용하려면 판정을 원장에 등재한다.
+    통일을 도로 가른 것이므로 FAIL이다. 갈림을 새로 허용하려면 판정을 갈림 허용 목록에 등재한다.
     """
-    # 갈림 원장 — 갈래별 값(ko)·자리(maps)·화자(sprites)를 자체 저장한다. 맵별 기대값을
+    # 갈림 허용 목록 — 갈래별 값(ko)·자리(maps)·화자(sprites)를 자체 저장한다. 맵별 기대값을
     # 펴서 값까지 대조한다 — 갈림이 허용됐어도 갈래 안 표류는 훼손이다.
     allowed = {}
     p = HERE / "data" / "divergence-allowed.jsonl"
@@ -308,13 +308,13 @@ def check_unified(strict):
     bad = drift = 0
     for k, g in groups.items():
         maps = sorted({m for m, _, _ in g})
-        # 원장 등재분 — 통일판 자체가 저장돼 있으니 값까지 대조한다. 어긋나면
+        # 목록 등재분 — 통일판 자체가 저장돼 있으니 값까지 대조한다. 어긋나면
         # unified.py restore(실수 복원) 또는 sync --write(의도적 변경 등재)로 푼다.
         if k in led:
             if {v for _, v, _ in g} != {led[k]}:
                 drift += 1
                 report("FAIL" if strict else "WARN",
-                       f"통일 원장 불일치 {k[:50]!r} — 맵 {maps} (unified.py restore/sync)")
+                       f"통일 목록 불일치 {k[:50]!r} — 맵 {maps} (unified.py restore/sync)")
             continue
         if k in allowed:
             exp = allowed[k]
@@ -322,18 +322,18 @@ def check_unified(strict):
                 if m not in exp:
                     drift += 1
                     report("FAIL" if strict else "WARN",
-                           f"갈림 원장 미배정 자리 {k[:44]!r} — 맵 {m} (unified.py sync로 갈래 배정)")
+                           f"갈림 허용 목록 미배정 자리 {k[:44]!r} — 맵 {m} (unified.py sync로 갈래 배정)")
                 elif v != exp[m]:
                     drift += 1
                     report("FAIL" if strict else "WARN",
-                           f"갈림 원장 불일치 {k[:44]!r} — 맵 {m} (unified.py restore/sync)")
+                           f"갈림 허용 목록 불일치 {k[:44]!r} — 맵 {m} (unified.py restore/sync)")
             continue
         if len(maps) <= 1 or len({v for _, v, _ in g}) <= 1:
             continue
         bad += 1
         report("FAIL" if strict else "WARN",
                f"통일 원문 갈림 (미허용·미등재) {k[:50]!r} — 맵 {maps}")
-    print(f"통일 원문: 통일 원장 {len(led)}건 · 갈림 원장 {len(allowed)}건 · 불일치 {drift} · 미등재 갈림 {bad}")
+    print(f"통일 원문: 통일 목록 {len(led)}건 · 갈림 허용 {len(allowed)}건 · 불일치 {drift} · 미등재 갈림 {bad}")
 
 
 def main():

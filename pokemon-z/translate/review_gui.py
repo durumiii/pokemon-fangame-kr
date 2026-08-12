@@ -13,8 +13,8 @@
   GET  /req      ?cid=<장면 파일 이름> → 그 장면이 모델에 보낸 요청 원문
   POST /verdict  {"id","판정","텍스트","메모"} → 덧붙임 저장, 같은 id는 마지막 것이 이긴다
 
-판정 원장은 `translate/batch/verdicts-<out이름>.jsonl`. 화면 오른쪽 위 「판정 TSV」는
-예비 내보내기고, 원장이 정본이다.
+판정 기록은 `translate/batch/verdicts-<out이름>.jsonl`. 화면 오른쪽 위 「판정 TSV」는
+예비 내보내기고, 그 기록이 정본이다.
 
 장면·선별 사유를 모으는 일은 `review_page.py`(정적 생성판)와 같은 코드를 쓴다.
 """
@@ -49,7 +49,7 @@ const mark=(base,cand)=>{const[p,,m,sf]=diff(base,cand);return esc(p)+'<ins>'+es
 const LABEL={cur:'현행',new:'B새번역',own:'직접',hold:'보류'};
 const ROW={};                       // id → 원자료 (저장할 때 텍스트를 뽑는다)
 const timer={};
-function post(rec){                 // 원장에 한 줄 — 이게 정본이다
+function post(rec){                 // 판정 기록에 한 줄 — 이게 정본이다
   return fetch('/verdict',{method:'POST',headers:{'Content-Type':'application/json'},
     body:JSON.stringify(rec)})
     .then(x=>{if(!x.ok) flag('저장 실패 — ' + (rec.id||rec.event));})
@@ -147,7 +147,7 @@ function render(){
     const rq=sec.querySelector('[data-req]'); if(rq) rq.onclick=()=>openReq(sc);
     sec.querySelector('[data-all]').onclick=()=>{
       setters.forEach(f=>f('new'));
-      // 승인은 이벤트 단위 — 행 판정과 별도로 원장에 한 줄 남긴다
+      // 승인은 이벤트 단위 — 행 판정과 별도로 판정 기록에 한 줄 남긴다
       post({event:`${sc.map}:${sc.event}-${sc.page}`, 판정:'승인', 텍스트:'',
             메모:`${sc.name} 이벤트 ${sc.event}-${sc.page} — ${sc.rows.length}행 일괄`});
     };
@@ -213,7 +213,7 @@ function openFlow(sc, id){
   document.getElementById('ctx').showModal();
   if(id){const el=document.getElementById('fl-'+id); if(el) el.scrollIntoView({block:'center'});}
 }
-let DONE = new Set();               // 「완료」 체크한 이벤트 — 원장에도 남는다
+let DONE = new Set();               // 「완료」 체크한 이벤트 — 판정 기록에도 남는다
 // 접는 기준은 「내가 본 데까지」다. 안 고른 행은 새 번역 채택이라 판정이 안 남으므로
 // 「모두 판정됨」으로는 읽을 수 없다 — 사람이 손댄 마지막 장면까지를 지나온 것으로 본다.
 function frontier(){
@@ -329,7 +329,7 @@ def verdict_path(out):
 
 
 def load_verdicts(p):
-    """같은 자리는 마지막 줄이 이긴다 — 덧붙임 원장이라 고쳐 쓴 자국도 그대로 남는다.
+    """같은 자리는 마지막 줄이 이긴다 — 덧붙이기만 하는 기록이라 고쳐 쓴 자국도 그대로 남는다.
 
     행 판정은 `id`로, 이벤트 일괄 승인은 `event`로 들어온다. 화면에 도로 채울 땐
     행 판정만 쓰므로 이벤트 기록은 `event:<map>:<event>` 열쇠로 따로 담는다.
@@ -352,7 +352,7 @@ def progress(out_dir, scenes, verdicts=None, all_rows=False):
     「판정한 수」로는 진도를 셀 수 없다.
 
     all_rows(전량 검수)는 정반대다 — 화면의 전 행이 물을 것이고 행이 화면에서
-    빠지지 않으므로, 진도가 곧 **판정 원장에 쌓인 수**다.
+    빠지지 않으므로, 진도가 곧 **판정 기록에 쌓인 수**다.
     """
     if all_rows:
         shown = {r["id"] for s in scenes for r in s["rows"]}
@@ -559,7 +559,7 @@ def main(argv):
     alt = alt_map(a[a.index("--alt") + 1] if "--alt" in a else None)
     v = verdict_path(out)
     n = len(load_verdicts(v))
-    print(f"http://localhost:{port}   판정 원장 {v}" + (f" (기존 {n}행)" if n else ""))
+    print(f"http://localhost:{port}   판정 기록 {v}" + (f" (기존 {n}행)" if n else ""))
     print("중지: Ctrl+C", flush=True)
     ThreadingHTTPServer(("0.0.0.0", port), handler(out, v, all_rows, alt)).serve_forever()
 

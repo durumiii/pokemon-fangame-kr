@@ -6,7 +6,7 @@
     uv run translate/apply_verdicts.py <out-dir>          # 미리보기(쓰지 않는다)
     uv run translate/apply_verdicts.py <out-dir> --write  # 정본에 반영
 
-판정 원장은 `<out-dir>`의 짝인 `verdicts-<out이름>.jsonl`. 자리마다 최종 한 줄이다.
+판정 기록은 `<out-dir>`의 짝인 `verdicts-<out이름>.jsonl`. 자리마다 최종 한 줄이다.
 
 반영 규칙 — **판정이 없으면 새 번역을 채택한다**(유지자 판정 2026-08-06: 선별 화면에서
 고르지 않은 행은 새 번역으로 간다). 그 위에 안전판 셋:
@@ -243,7 +243,7 @@ def run(out_dir, write=False, events_only=False):
 
     for tag, n in sorted(stat.items(), key=lambda x: -x[1]):
         print(f"  {tag}: {n}행")
-    print(f"판정 원장 {len(vs)}건 · 반영 대상 {len(plan)}자리 · 열쇠 충돌 {len(clash)}")
+    print(f"판정 기록 {len(vs)}건 · 반영 대상 {len(plan)}자리 · 열쇠 충돌 {len(clash)}")
     for key, t1, v1, t2, v2 in clash[:10]:
         print(f"  충돌 맵{key[0]} 「{key[1][:30]}」: {t1}={v1[:25]} / {t2}={v2[:25]}")
 

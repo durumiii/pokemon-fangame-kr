@@ -5,7 +5,7 @@
 
 담는 것은 셋이다.
 
-  번역표 `Data/korean.dat` — 정본(translate/ko/)에서 새로 굽는다. 이 갈래의 build.py는
+  번역표 `Data/korean.dat` — 정본(translate/ko/)에서 새로 만든다. 이 갈래의 build.py는
                              문자열에 UTF-8 인코딩 딱지를 붙인다(루비 1.9+ 실행기용).
   번역된 코어·맵        — 지금 배포 중인 「한글패치 코어」의 것을 그대로 가져온다.
   번역 자산(그림·소리)  — 마찬가지. 상류 배포물이 디스크에 없어 이것이 유일본이다.
@@ -31,7 +31,7 @@ CARD = REPO / "mods" / NAME / "mod.json"
 STORE = Path("/mnt/d/GameVault/mods/Pokemon Z Fangame") / NAME
 # 재료는 제 폴더다. 옛 「한글패치 코어」에서 떠 오던 것인데, 둘이 mod.json 말고는
 # 바이트까지 같아져(2026-08-07 전수 대조) 하나만 남겼다. 번역표는 어차피 정본에서
-# 새로 굽고 나머지는 그대로 옮기므로, 제자리 재조립이라도 결과가 달라지지 않는다.
+# 새로 만들고 나머지는 그대로 옮기므로, 제자리 재조립이라도 결과가 달라지지 않는다.
 SOURCE = STORE
 # 원본 지문은 **지문표**에서 뜬다. 설치본에서 뜨면 이미 얹혀 있는 모드의 자국을
 # 원본으로 새긴다 — 실제로 한 번 그랬고(2026-08-07), 호환 검사가 그것을 잡아냈다.
@@ -59,7 +59,7 @@ def main() -> None:
     dat = "Data/korean.dat"
     assert dat in rels, "번역표가 원본 모드에 없어요 — 경로를 확인해요"
 
-    print(f"가져올 파일 {len(rels)}개 (번역표는 새로 굽는다)")
+    print(f"가져올 파일 {len(rels)}개 (번역표는 새로 만든다)")
     if dry:
         for rel in rels[:5]:
             print("  ", rel)
@@ -76,7 +76,7 @@ def main() -> None:
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(src, target)
 
-    # 번역표만은 사본이 아니라 정본에서 새로 굽는다.
+    # 번역표만은 사본이 아니라 정본에서 새로 만든다.
     built = subprocess.run(
         ["uv", "run", "translate/build.py", f"--out={stage / dat}"],
         cwd=REPO, check=True, capture_output=True, text=True)

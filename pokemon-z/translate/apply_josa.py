@@ -7,8 +7,8 @@
 해석된다. 없이 이 변환만 하면 대사에 \\j[은,는]가 그대로 보인다.
 
 **정본을 고친다 — 예전 판은 korean.dat를 직접 고쳤는데(2026-08-05 이전),
-dat는 build.py가 정본에서 매번 새로 굽는 산출물이라 빌드 한 번에 되살아났다.**
-고친 뒤 `uv run translate/build.py`로 dat를 다시 구울 것.
+dat는 build.py가 정본에서 매번 새로 만드는 산출물이라 빌드 한 번에 되살아났다.**
+고친 뒤 `uv run translate/build.py`로 dat를 다시 만들 것.
 
 앞말이 변수여도 안전하다 — `\\PN`은 Messages:1313, `\\v[N]`은 Messages:1341에서
 창에 넘기기 전에 실제 값으로 바뀌고, josa.rb는 그 뒤 그리기 훅(setText)에서 돈다.
@@ -102,7 +102,7 @@ def main():
     print(f"변환: {rows}행에서 {sum(counts.values())}회 —", counts)
     for s in samples:
         print(s)
-    print("dry-run — 파일에 쓰지 않음" if dry else "정본 기록 완료 — build.py로 dat를 다시 구울 것")
+    print("dry-run — 파일에 쓰지 않음" if dry else "정본 기록 완료 — build.py로 dat를 다시 만들 것")
 
 
 if __name__ == "__main__":
