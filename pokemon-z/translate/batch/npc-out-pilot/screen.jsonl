@@ -1,3 +1,3 @@
-{"id": "30:20:0:20", "who": "campesinaw", "flags": ["중복어:싫어"], "es": "\\bNo way, I don't want to go near a Shadow \nPokémon..", "old": "\\b말도 안 돼, 그림자 포켓몬 근처에는 가기도 싫어..", "new": "\\b싫어 싫어, 그림자 포켓몬 근처에는 가기도 싫단 말이야.."}
 {"id": "49:4:0:7", "who": "acrilico1", "flags": ["격 축 불일치:acrilico1 하대(장면 다수는 존대)"], "es": "(Recibes materiales de creación)", "old": "(제작 재료를 받았다)", "new": "(제작 재료를 받았다)"}
-{"id": "56:17:0:13", "who": "anciano", "flags": ["기계 반려:검증:절0에 \\j 신규 삽입"], "es": "\\PN recibió un huevo.", "old": "\\PN 달걀 하나를 받았다.", "new": "\\PN\\j[은,는] 알을 하나 받았다."}
+{"id": "56:17:0:13", "who": "anciano", "flags": ["기계 반려:검증:절0에 \\j 신규 삽입"], "es": "\\PN recibió un huevo.", "old": "\\PN 달걀 하나를 받았다.", "new": "\\PN\\j[은,는] 알을 받았다."}
+{"id": "90:52:0:29", "who": "ilustrado", "flags": ["기계 반려:검증:개행 수: 0→1"], "es": "Puedes conseguir Mini Setas de los Paras, Shroomish, Foongus y Morelull salvajes (y sus respectivas evoluciones). \nIncluso si estás en <b>Modo Random</b>.", "old": "야생 파라스, 버섯꼬, 깜놀버슬, 자마슈(및 그 진화형들)에게서 작은버섯을 얻을 수 있답니다. <b>랜덤 모드</b>여도 마찬가지예요.", "new": "야생 파라스, 버섯꼬, 깜놀버슬, 자마슈(및 그 진화형)에게서 작은버섯을 얻을 수 있답니다. \n<b>랜덤 모드</b>라 해도 마찬가지예요."}

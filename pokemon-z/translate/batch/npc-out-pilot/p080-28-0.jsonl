@@ -1,6 +1,6 @@
 {"id": "80:28:0:0", "who": "ilustrado", "es": "¿Estás indagando en el potencial de los distintos tipos de Pokéball? No te quedes solo con las más básicas.", "old": "다양한 몬스터볼의 잠재력을 조사하고 계신가요? 가장 기본적인 볼에만 머무르지 마세요.", "new": "다양한 몬스터볼의 잠재력을 조사하고 계신가요? 가장 기본적인 볼에만 머무르지 마세요.", "ok": true, "why": null}
-{"id": "80:28:0:1", "who": "ilustrado", "es": "Mira, te cambiaré una Superball por una Velozball, ¿qué me dices?", "old": "자, 슈퍼볼 하나를 퀵볼 하나랑 바꿔 드릴 테니 어떠신가요?", "new": "자, 슈퍼볼 하나를 퀵볼 하나랑 바꿔 드릴 테니 어떠신가요?", "ok": true, "why": null}
-{"id": "80:28:0:5", "who": "ilustrado", "es": "¡Trato hecho! Aquí tienes.", "old": "거래 성사! 여기 있어.", "new": "거래 성사군요! 여기 있습니다.", "ok": true, "why": null}
+{"id": "80:28:0:1", "who": "ilustrado", "es": "Mira, te cambiaré una Superball por una Velozball, ¿qué me dices?", "old": "자, 슈퍼볼 하나를 퀵볼 하나랑 바꿔 드릴 테니 어떠신가요?", "new": "자, 슈퍼볼 하나를 퀵볼 하나와 바꿔 드릴 테니 어떠신가요?", "ok": true, "why": null}
+{"id": "80:28:0:5", "who": "ilustrado", "es": "¡Trato hecho! Aquí tienes.", "old": "거래 성사! 여기 있어.", "new": "좋습니다! 여기 있어요.", "ok": true, "why": null}
 {"id": "80:28:0:7", "who": "ilustrado", "es": "La Velozball es muy eficaz si la utilizas en el primer turno de combate contra el Pokémon salvaje.", "old": "퀵볼은 야생 포켓몬과의 배틀 첫 번째 차례에 사용하면 아주 효과적이랍니다.", "new": "퀵볼은 야생 포켓몬과의 배틀 첫 번째 차례에 사용하면 아주 효과적이랍니다.", "ok": true, "why": null}
 {"id": "80:28:0:13", "who": "ilustrado", "es": "¡Pero si no tienes Superball, por lo que veo!", "old": "앗, 하지만 보아하니 슈퍼볼을 가지고 계시지 않군요!", "new": "앗, 하지만 보아하니 슈퍼볼을 가지고 계시지 않군요!", "ok": true, "why": null}
-{"id": "80:28:0:23", "who": "ilustrado", "es": "¿No lo ves claro? Como quieras.", "old": "끌리지 않으시나요? 그렇다면 좋을 대로 하세요.", "new": "별로 내키지 않으시나요? 그럼 어쩔 수 없죠.", "ok": true, "why": null}
+{"id": "80:28:0:23", "who": "ilustrado", "es": "¿No lo ves claro? Como quieras.", "old": "끌리지 않으시나요? 그렇다면 좋을 대로 하세요.", "new": "끌리지 않으시나요? 편하신 대로 하세요.", "ok": true, "why": null}
