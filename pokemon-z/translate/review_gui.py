@@ -10,6 +10,7 @@
 
   GET  /         검수 UI
   GET  /data     {"scenes":[...], "verdicts":{id:{판정,텍스트,메모}}}
+  GET  /req      ?cid=<장면 파일 이름> → 그 장면이 모델에 보낸 요청 원문
   POST /verdict  {"id","판정","텍스트","메모"} → 덧붙임 저장, 같은 id는 마지막 것이 이긴다
 
 판정 원장은 `translate/batch/verdicts-<out이름>.jsonl`. 화면 오른쪽 위 「판정 TSV」는
@@ -19,6 +20,7 @@
 """
 
 import json
+import re
 import sys
 import time
 import urllib.parse
@@ -29,7 +31,11 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 from review_page import HEAD, approved_ids, collect  # noqa: E402
 
-BODY = r"""<style>.tag.alt{background:#7d5bd6;color:#fff}</style>
+BODY = r"""<style>.tag.alt{background:#7d5bd6;color:#fff}
+.rqh{font-size:11.5px;color:var(--sub);margin:14px 0 5px;font-weight:700}
+.rqh:first-child{margin-top:0}
+.rq{font-size:12.5px;line-height:1.5;background:var(--card);border:1px solid var(--line);
+  border-radius:8px;padding:9px 12px}</style>
 <script>
 let DATA = [], V = {}, M = {}, NOTE = {}, STAT = null;
 const HUMAN = new Set();   // 사람이 손댄 자리 — 기계 수선 채움과 가른다
@@ -131,12 +137,14 @@ function render(){
         <button data-ask="1">조사 요청</button>
         ${sc.rows.length>=sc.total?'':'<button data-open="1">이벤트 전체 보기</button>'}
         <button data-all="1">이벤트 일괄 승인</button>
-        <button data-flow="1">장면 흐름</button></span></div>`;
+        <button data-flow="1">장면 흐름</button>
+        ${sc.req?'<button data-req="1">프롬프트 전문</button>':''}</span></div>`;
     const setters=[];
     for (const r of sc.rows){
       const c=makeCard(r, sc); setters.push(c.set); sec.appendChild(c.card);
     }
     sec.querySelector('[data-flow]').onclick=()=>openFlow(sc, null);
+    const rq=sec.querySelector('[data-req]'); if(rq) rq.onclick=()=>openReq(sc);
     sec.querySelector('[data-all]').onclick=()=>{
       setters.forEach(f=>f('new'));
       // 승인은 이벤트 단위 — 행 판정과 별도로 원장에 한 줄 남긴다
@@ -180,6 +188,19 @@ function openEvent(sc, sec, btn){
       for(const r of rest) box.appendChild(makeCard(r, sc).card);
       sec.appendChild(box); btn.disabled=false; count();
     }).catch(()=>{flag('이벤트를 못 읽었어요'); btn.disabled=false;});
+}
+// 이 장면이 모델에 실제로 넘어간 요청 원문 — 문맥 모달을 그대로 빌려 쓴다
+function openReq(sc){
+  fetch('/req?cid='+encodeURIComponent(sc.file)).then(r=>r.json()).then(d=>{
+    if(d.err) return flag('프롬프트 원문이 없어요 — ' + sc.file);
+    document.getElementById('ctxT').textContent=`${sc.name} — 모델이 받은 그대로`;
+    document.getElementById('ctxM').textContent=
+      `맵 ${sc.map} · 이벤트 ${sc.event}-${sc.page} · ${sc.file}.req.json`;
+    document.getElementById('ctxB').innerHTML=
+      `<div class="rqh">시스템 프롬프트</div><div class="rq">${esc(d.system)}</div>
+       <div class="rqh">보낸 대사 묶음${d.n?` (${d.n}행)`:''}</div><div class="rq">${esc(d.user)}</div>`;
+    document.getElementById('ctx').showModal();
+  }).catch(()=>flag('프롬프트를 못 읽었어요 — ' + sc.file));
 }
 function openFlow(sc, id){
   document.getElementById('ctxT').textContent=sc.name;
@@ -281,6 +302,26 @@ def event_rows(out_dir, mapno, event):
                                 "ko": r["old"], "new": r["new"],
                                 "approved": r["id"] in ok})
     return out
+
+
+def req_path(out_dir, cid):
+    """장면이 모델에 보낸 요청 원문 파일 — `batch_pages.py`가 페이지마다 덤프한다."""
+    if not re.fullmatch(r"[A-Za-z0-9_-]+", cid or ""):     # 경로 조작 차단
+        return None
+    return Path(out_dir) / (cid + ".req.json")
+
+
+def read_req(out_dir, cid):
+    """`<cid>.req.json` → {system, user(보기 좋게 편 JSON), n}. 없으면 err."""
+    p = req_path(out_dir, cid)
+    if p is None or not p.exists():
+        return {"err": "없음"}
+    r = json.loads(p.read_text(encoding="utf-8"))
+    msgs = r.get("user", r.get("messages", []))
+    return {"system": r.get("system", ""),
+            "user": msgs if isinstance(msgs, str)
+                    else json.dumps(msgs, ensure_ascii=False, indent=1),
+            "n": 0 if isinstance(msgs, str) else len(msgs)}
 
 
 def verdict_path(out):
@@ -402,11 +443,16 @@ def handler(out_dir, vpath, all_rows=False, alt=None):
                 q = urllib.parse.parse_qs(u.query)
                 self._json({"rows": event_rows(out_dir, q.get("map", [""])[0],
                                                q.get("event", [""])[0])})
+            elif u.path == "/req":
+                q = urllib.parse.parse_qs(u.query)
+                self._json(read_req(out_dir, q.get("cid", [""])[0]))
             elif u.path == "/data":
                 # 매번 다시 읽는다 — 선별을 다시 돌리고 새로고침하면 바로 반영된다
                 sc = collect(out_dir, all_rows=all_rows)
                 cov = covers_map(out_dir)
                 for s in sc:                     # 대조 산출이 다른 답을 낸 행에 alt를 얹는다
+                    p = req_path(out_dir, s["file"])
+                    s["req"] = bool(p and p.exists())   # 없으면 버튼을 안 낸다
                     for r in s["rows"]:
                         a = alt.get(r["id"])
                         if a and a != r["new"]:
@@ -474,6 +520,15 @@ def selftest():
         assert ev[1]["ko"] == "잘 가" and ev[1]["new"] == "잘 가요"
         assert [r["approved"] for r in ev] == [False, False]
         assert json.load(urllib.request.urlopen(base + "/event?map=x&event=y"))["rows"] == []
+        # 프롬프트 전문 — 파일이 있는 장면만 열리고, 없는 자리는 err로 닫힌다
+        (d / "p999-99-0.req.json").write_text(
+            json.dumps({"system": "SYS", "user": [{"id": "999:99:0:0", "es": "Hola"}]},
+                       ensure_ascii=False), encoding="utf-8")
+        rq = json.load(urllib.request.urlopen(base + "/req?cid=p999-99-0"))
+        assert rq["system"] == "SYS" and rq["n"] == 1 and "Hola" in rq["user"], rq
+        assert json.load(urllib.request.urlopen(base + "/req?cid=nope"))["err"]
+        assert json.load(urllib.request.urlopen(base + "/req?cid=../x"))["err"]
+        assert json.load(urllib.request.urlopen(base + "/data"))["scenes"][0]["req"] is True
         urllib.request.urlopen(urllib.request.Request(
             base + "/verdict", method="POST",
             data=json.dumps({"id": "999:99:0:0", "판정": "B새번역",

@@ -36,6 +36,7 @@ HERE = Path(__file__).parent
 LEDGER = HERE.parent / "docs" / "ledger"   # 판정 대장 (glossary·voices)
 sys.path.insert(0, str(HERE))
 import mapname  # noqa: E402
+from mend_newlines import mend  # noqa: E402
 from pilot_npc import ask_npc, key_of, npc_line  # noqa: E402
 from validate import check  # noqa: E402
 
@@ -903,6 +904,11 @@ def run(pilot=False, limit=None, workers=4, fresh=False, effort="low", npc=False
             if new is None:
                 why = "누락"
             else:
+                # 개행만 어긋난 자리는 여기서 수선한다 — 검수까지 안 세운다(유지자 2026-08-12).
+                # 회차마다 mend_newlines를 따로 돌리는 방식은 빠뜨리기 쉬웠다(3차 실측).
+                m = mend(r["ko"], new)
+                if m is not None and not check(r["ko"], m, 0):
+                    new = m
                 bad = check(r["ko"], new, 0)
                 if bad:
                     why = "검증:" + bad[0][:40]
