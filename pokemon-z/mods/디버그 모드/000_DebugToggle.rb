@@ -11,6 +11,12 @@
 # 아무 기능도 안 걸려 있다(실측: `Scene_Map` 섹션에 `Input::Y`·`Input::Z` 호출 0 —
 # 둘은 가방·일시정지 메뉴·전투 화면에서만 쓰인다).
 #
+# 디버그 **메뉴**를 여는 원작 키(F9)도 패드 배정이 없어서 RB 단독으로 받는다. 필드에서
+# 원작이 안 쓰는 가상 버튼이 Y·Z 둘뿐이라 다른 자리가 없다. 우리 훅은 깃발을 세우는
+# 것만 되고 원작이 세운 깃발은 못 지우는데, 원작이 메뉴 깃발을 디버그 깃발보다 먼저
+# 처리하므로 취소 버튼 계열은 애초에 못 쓴다.
+# ⚠ RB를 먼저 누르고 LB를 나중에 누르면 메뉴가 먼저 열린다. 조합은 LB부터 누른다.
+#
 # 훅은 `Events.onMapUpdate`다. `Scene_Map#update` 별칭을 쓰지 않으므로 그 메서드를
 # 잡는 다른 모드·원작 코드(따라다니는 포켓몬 등 다섯 자리)와 순서를 다투지 않는다.
 module DebugToggleKey
@@ -30,12 +36,27 @@ module DebugToggleKey
            (Input.trigger?(b) && Input.press?(a))
   end
 
+  # 디버그 메뉴를 여는 패드 버튼. 원작은 F9인데 패드 배정이 없다.
+  # 조합키(LB+RB)와 가르려고 **LB를 함께 누르고 있지 않을 때만** 연다.
+  PAD_MENU = Input::Z
+
+  def self.menu?
+    return false if !$DEBUG
+    return false if !Input.trigger?(PAD_MENU)
+    return false if Input.press?(PAD_COMBO[0])
+    return true
+  end
+
   def self.update
     # 대사창이 떠 있는 동안에는 무시한다 — 메시지가 겹쳐 뜨는 것을 막는다.
     return if $game_temp && $game_temp.message_window_showing
-    return if !keyboard? && !pad?
-    $DEBUG = !$DEBUG
-    Kernel.pbMessage($DEBUG ? "디버그 모드 ON" : "디버그 모드 OFF")
+    if keyboard? || pad?
+      $DEBUG = !$DEBUG
+      Kernel.pbMessage($DEBUG ? "디버그 모드 ON" : "디버그 모드 OFF")
+      return
+    end
+    # 깃발만 세운다 — 원작 Scene_Map#update가 이 훅 바로 뒤에서 받아 연다.
+    $game_temp.debug_calling = true if menu? && $game_temp
   end
 end
 
