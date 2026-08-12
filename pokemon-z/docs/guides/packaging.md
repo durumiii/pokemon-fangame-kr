@@ -28,7 +28,7 @@ Pokemon Z는 Essentials v16 · 루비 1.8.7 · mkxp-z 구판. 플러그인 묶�
 
 **repo에 남는 모드는 다섯이다.** `UI Text KR`(스크립트에 박힌 화면 문자열은 korean.dat로
 못 고쳐서 그리기 진입점에서 갈아 끼운다 — 텍스트 층 ③) · `Type Matchup`(기술 선택창
-상성 색칠 — 합본 세 갈래에 기본 동봉) · `Debug Toggle`(W키로 `$DEBUG` 토글, 디버그 중
+상성 색칠 — 합본 세 갈래에 기본 동봉) · `디버그 모드`(P키로 `$DEBUG` 토글, 디버그 중
 전투 후 전원 회복 — 디버그 추가판에 실린다) ·
 `Native Tilemap`(맵 렌더러를 엔진 내장으로 — Joiplay 렌더 깨짐 우회. **합본에는 싣지
 않는 선택 모드다** — 유지자 판정, quality 「Native Tilemap은 선택 모드로 둔다」 절) ·
