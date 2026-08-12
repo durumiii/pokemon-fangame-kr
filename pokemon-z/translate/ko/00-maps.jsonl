@@ -988,7 +988,7 @@
 {"k": "<b>Isidora:</b> Estoy segura de que podremos convertir este desolado paraje en un hogar para los Pokémon, \\PN.", "v": "<b>이시도라:</b> 이 황량한 곳을 포켓몬들의 보금자리로 바꿀 수 있을 거라고 확신해요, \\PN."}
 {"k": "¿Quieres dejar alguno de tus Pokémon conmigo?", "v": "포켓몬을 맡기고 가시겠어요?"}
 {"k": "No puedes quedarte sin Pokemon.", "v": "지닌 포켓몬이 없으면 안 돼요."}
-{"k": "¿Cuál quieres dejar?", "v": "어느 포켓몬을 맡기겠니?"}
+{"k": "¿Cuál quieres dejar?", "v": "어느 포켓몬을 맡기시겠어요?"}
 {"k": "Bien, vuelve cuando lo necesites.", "v": "네, 필요할 때 언제든 다시 오세요."}
 {"k": "Genial, cuidaremos bien de \\v[3], vuelve más tarde.", "v": "좋아요, \\v[3]\\j[을,를] 잘 보살펴 둘 테니 나중에 다시 오세요."}
 {"k": "Creo que puedo encargarme de otro Pokemon, ¿te gustaría dejar alguno más?", "v": "포켓몬 한 마리는 더 돌볼 수 있을 것 같은데, 하나 더 맡기시겠어요?"}
@@ -1002,7 +1002,7 @@
 {"k": "No tienes suficiente dinero.", "v": "돈이 부족해요."}
 {"k": "Bien, aquí tienes a tu Pokémon de vuelta.", "v": "자, 여기 포켓몬을 돌려드릴게요."}
 {"k": "\\PN saca \\v[3] de la Guardería.", "v": "\\PN\\j[은,는] 키우미집에서 \\v[3]\\j[을,를] 데려왔다."}
-{"k": "¿Quieres al otro también?", "v": "그 사람도 원해?"}
+{"k": "¿Quieres al otro también?", "v": "다른 아이도 데려가시겠어요?"}
 {"k": "Has capturado \\v[226] Pokémon de 1018.", "v": "1018마리 중 \\v[226]마리의 포켓몬을 잡았습니다."}
 {"k": "Captura más Pokémon.", "v": "포켓몬을 더 잡으세요."}
 {"k": "¡Kaaaanghaaaa! (¡Tengo un Huevo Pokémon para ti!)", "v": "캥카아아아! (당신에게 줄 포켓몬알이 있어요!)"}
@@ -1976,7 +1976,7 @@
 {"k": "No tienes suficiente dinero.", "v": "돈이 부족하네요."}
 {"k": "Bien, aquí tienes a tu Pokemon de vuelta.", "v": " 그래, 여기 맡겼던 포켓몬이란다."}
 {"k": "\\PN saca \\v[3] de la Guardería.", "v": "\\PN\\j[은,는] 키우미집에서 \\v[3]\\j[을,를] 데려왔다."}
-{"k": "¿Quieres al otro también?", "v": "그 사람도 원해?"}
+{"k": "¿Quieres al otro también?", "v": "다른 아이도 데려가겠니?"}
 {"k": "¿Sabías que si llevas a un Pokemon con la habilidad Cuerpo Llama o Escudo Magma en el equipo, los huevos tardarán la mitad en abrirse?", "v": "파티에 ‘불꽃몸’이나 ‘마그마의무장’ 특성을 가진 포켓몬이 있으면 알이 부화하는 시간이 절반으로 줄어든다는 거 알고 있어?"}
 {"k": "Yo por eso no me despego de mi Slugma, aunque en verano no veas cómo sudo.", "v": "그래서 난 항상 마그마그를 데리고 다니는데, 여름엔 아주 땀범벅이 된다니까."}
 {"k": "Una vez vi a un Machamp poner huevos. Fue una experiencia bastante perturbadora.", "v": "나 전에 괴력몬이 알 낳는 걸 본 적 있거든? 진짜 충격적인 경험이었어."}
@@ -2805,8 +2805,8 @@
 {"k": "¿Necesitas que cure a tus Pokémon? Aunque primero habría que cansarlos un poco con un buen combate.", "v": "포켓몬 치료가 필요한가? 허나 먼저 제대로 된 배틀로 녀석들을 지치게 만들어야 한다."}
 {"k": "¡Mis habilidades medicinales están a tu servicio!", "v": "내 의술은 언제든 준비돼 있다!"}
 {"k": "¿Quieres que cure a tu equipo con mis hierbas medicinales? Solo te cobraré 500 pokécuartos de nada.", "v": "내 약초로 네 포켓몬을 치료해 줄까? 겨우 500 포켓프랑이면 된단다."}
-{"k": "¿A que son eficaces mis medicinas? ¡Que la buena voluntad nazca en tu interior!", "v": "제 약, 정말 효과적이죠? 당신의 마음속에 선의가 싹트기를 바랄게요!"}
-{"k": "Ya veo, ¡espero que tus Pokémon no mueran!", "v": "그렇군요. 당신의 포켓몬들이 죽지 않기를 바랄게요!"}
+{"k": "¿A que son eficaces mis medicinas? ¡Que la buena voluntad nazca en tu interior!", "v": "내 약 정말 잘 듣지? 네 마음속에 선의가 싹트기를 바랄게!"}
+{"k": "Ya veo, ¡espero que tus Pokémon no mueran!", "v": "그렇구나. 네 포켓몬들이 죽지 않기를 빌게!"}
 {"k": "Esta cueva será tu perdición, ¡no es nada personal! Llevo días sin comer.", "v": "이 동굴이 네 무덤이 될 거다. 감정은 없어! 며칠 동안 아무것도 못 먹었거든."}
 {"k": "¡Esto se ha vuelto muy personal!", "v": "이제 정말 개인적인 문제가 되었군!"}
 {"k": "Mmm, tal vez pueda acercarme al albergue más cercano para comer algo caliente.", "v": "흠, 가장 가까운 구호소에 가서 따뜻한 거라도 좀 먹어야겠어."}
@@ -6134,9 +6134,9 @@
 {"k": "Estoy buscando un Wormadam, ¿lo cambiarías por mi Snivy?", "v": "도롱마담을 찾고 있다네, 내 주리비얀과 바꾸지 않겠나?"}
 {"k": "Ver a tantos jóvenes darlo todo por una pasión, en este caso los combates Pokémon, me hace darme cuenta de que el futuro está en buenas manos.", "v": "이렇게 많은 젊은이들이 포켓몬 배틀이라는 열정에 모든 걸 바치는 걸 보니, 미래는 참 밝구먼."}
 {"k": "Eso sí, ¡os ibais a enterar si os tocara combatir conmigo!", "v": "그건 그렇고, 나랑 겨루게 된다면 아주 혼쭐이 날 게야!"}
-{"k": "¿Quieres una crêpe de <b>Ciudad Luminalia</b>? Están exquisitas y solo valen 200 pokécuartos.", "v": "<b>미르시티</b> 크레페 하나 먹어볼래? 정말 맛있는데 단돈 200포켓프랑이야."}
-{"k": "Mmm... Deberías volver con más dinero encima.", "v": "음... 돈을 좀 더 챙겨서 다시 오는 게 좋겠어."}
-{"k": "¿Seguro? Que se agotan muy rápido...", "v": "정말? 이거 금방 다 팔리는데..."}
+{"k": "¿Quieres una crêpe de <b>Ciudad Luminalia</b>? Están exquisitas y solo valen 200 pokécuartos.", "v": "<b>미르시티</b> 크레페 하나 드셔 보시겠어요? 정말 맛있는데 단돈 200포켓프랑이에요."}
+{"k": "Mmm... Deberías volver con más dinero encima.", "v": "음... 돈을 좀 더 챙겨서 다시 오시는 게 좋겠어요."}
+{"k": "¿Seguro? Que se agotan muy rápido...", "v": "정말요? 이거 금방 다 팔리는데..."}
 {"k": "Sí", "v": "예"}
 {"k": "No", "v": "아니요"}
 {"map": 180, "n": 23}
@@ -9954,8 +9954,8 @@
 {"k": "¿Curar a tus Pokémon? Bueno, depende de cómo te portes en el siguiente combate...", "v": "포켓몬을 치료해 줄까? 글쎄, 다음 배틀에서 네 행동에 달린 일이다..."}
 {"k": "Parece que este año te has portado bastante bien.", "v": "올해는 네가 꽤 착하게 잘 지낸 것 같구나."}
 {"k": "¿Quieres que cure a tu equipo con mis hierbas medicinales? Solo te cobraré 500 pokécuartos de nada.", "v": "내 약초로 네 포켓몬을 치료해 줄까? 겨우 500 포켓프랑이면 된단다."}
-{"k": "¿A que son eficaces mis medicinas? ¡Que la buena voluntad nazca en tu interior!", "v": "제 약, 정말 효과적이죠? 당신의 마음속에 선의가 싹트기를 바랄게요!"}
-{"k": "Ya veo, ¡espero que tus Pokémon no mueran!", "v": "그렇군요. 당신의 포켓몬들이 죽지 않기를 바랄게요!"}
+{"k": "¿A que son eficaces mis medicinas? ¡Que la buena voluntad nazca en tu interior!", "v": "내 약 정말 잘 듣지? 네 마음속에 선의가 싹트기를 바랄게!"}
+{"k": "Ya veo, ¡espero que tus Pokémon no mueran!", "v": "그렇구나. 네 포켓몬들이 죽지 않기를 빌게!"}
 {"k": "¡Esta cueva oculta más secretos de los que puedo imaginar! He recorrido muchos lugares así y estoy segura de que el Pokémon de las profundidades será mío.", "v": "이 동굴에는 내 상상을 뛰어넘는 비밀이 숨겨져 있어! 이런 곳을 수없이 다녀본 내가 장담하는데, 깊은 곳에 있는 포켓몬은 반드시 내 차지가 되겠다."}
 {"k": "Parece que aquí acaban mis aventuras de espeleología.", "v": "여기서 내 동굴 탐험도 끝인 것 같네."}
 {"k": "Este combate me ha dejado mucho en lo que pensar. Tal vez no estoy preparada para manejar a un Pokémon legendario.", "v": "이번 배틀은 생각할 거리를 꽤 많이 남겨 주는군. 어쩌면 내가 전설의 포켓몬을 다룰 준비가 아직 안 된 건지도 모르겠다."}
@@ -12891,8 +12891,8 @@
 {"k": "¡Espera! ¿Eres \\PN? ¿El entrenador legendario que luchó en la guerra junto al capitán <b>Crisanto</b>?", "v": "잠깐. 혹시 \\PN인가? <b>크리산토</b> 대장과 함께 전쟁에서 싸웠던 그 전설의 트레이너?"}
 {"k": "¡Espera! ¿Eres \\PN? ¿La entrenadora legendaria que luchó en la guerra junto al capitán <b>Crisanto</b>?", "v": "잠깐. 혹시 \\PN인가? <b>크리산토</b> 대장과 함께 전쟁에서 싸웠던 그 전설의 트레이너?"}
 {"k": "Vaya. Entonces no tengo mucho que hacer aquí, si tengo que medirme con personas de tu enjundia.", "v": "거참. 너 같은 실력자와 겨뤄야 한다면 내가 여기서 할 수 있는 일은 없겠군."}
-{"k": "¡Menudo escándalo! Al parecer, el hotel quiere contar con ex-Regentes como <b>Hibis</b> y <b>Cendera</b>, ambos acusados de graves crímenes, para formar parte de los desafíos.", "v": "엄청난 스캔들이야! 호텔 측에서 중죄 혐의를 받는 전직 섭정 <b>히비스</b>와 <b>센데라</b>를 이 도전에 참가시키려 한다는군."}
-{"k": "¡Se diría que causar el mal sale gratis cuando eres alguien relevante!", "v": "지위가 높은 사람이라면 악행을 저질러도 아무 대가가 없는 모양이야!"}
+{"k": "¡Menudo escándalo! Al parecer, el hotel quiere contar con ex-Regentes como <b>Hibis</b> y <b>Cendera</b>, ambos acusados de graves crímenes, para formar parte de los desafíos.", "v": "엄청난 스캔들이에요! 호텔 측에서 중죄 혐의를 받는 전직 섭정 <b>히비스</b>와 <b>센데라</b>를 이 도전에 참가시키려 한다는군요."}
+{"k": "¡Se diría que causar el mal sale gratis cuando eres alguien relevante!", "v": "지위가 높은 사람이라면 악행을 저질러도 아무 대가가 없는 모양이에요!"}
 {"k": "¡Buenos días! ¿Quieres cambiar tus <b>Puntos Batalla</b> por alguno de estos fantásticos premios?", "v": "좋은 아침이에요! <b>배틀포인트</b>를 이 멋진 상품 중 하나로 교환하시겠어요?"}
 {"k": "No tienes puntos suficientes. ¡Sigue combatiendo, que lo conseguirás!", "v": "포인트가 부족하네요. 계속 배틀하다 보면 분명 얻을 수 있을 거예요!"}
 {"k": "¡Vuelve cuando quieras!", "v": "원할 때 언제든지 다시 오세요!"}

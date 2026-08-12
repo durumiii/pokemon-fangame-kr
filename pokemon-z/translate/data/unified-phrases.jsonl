@@ -70,8 +70,6 @@
 {"es": "\\c[9]<b>Alca:</b>\\c[0] \\PN...", "ko": "\\c[9]<b>알카:</b>\\c[0] \\PN...", "맵수": 5, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "¿Quieres emerger del agua?", "ko": "물 밖으로 나갈까?", "맵수": 5, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "\\c[2]<b>Malvo:</b>\\c[0] ...", "ko": "\\c[2]<b>말보:</b>\\c[0] ...", "맵수": 5, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
-{"es": "Ya veo, ¡espero que tus Pokémon no mueran!", "ko": "그렇군요. 당신의 포켓몬들이 죽지 않기를 바랄게요!", "맵수": 5, "src": "sync"}
-{"es": "¿A que son eficaces mis medicinas? ¡Que la buena voluntad nazca en tu interior!", "ko": "제 약, 정말 효과적이죠? 당신의 마음속에 선의가 싹트기를 바랄게요!", "맵수": 5, "src": "sync"}
 {"es": "Has capturado a un malhechor, vuelve al Cuartel Mosquetero para recibir tu recompensa.", "ko": "악당을 체포했으니, 총사 본부로 돌아가 보상을 받자.", "맵수": 4, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "La puerta parece estar bloqueada con dos interruptores.", "ko": "문은 스위치 2개로 잠겨 있는 것 같다.", "맵수": 4, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "¡Has obtenido una <b>Mejora del Pokévial</b>!", "ko": "<b>포켓몬약병 강화</b>를 획득했다!", "맵수": 4, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
@@ -119,9 +117,6 @@
 {"es": "\"¡No si no portas la <b>Llave del Palacio</b>!\"", "ko": "“<b>궁전열쇠</b>를 가지고 있지 않다면 안 된다!”", "맵수": 3, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "No decir nada", "ko": "아무 말도 하지 않는다", "맵수": 3, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "Interrogar", "ko": "질문한다", "맵수": 3, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
-{"es": "¿Quieres una crêpe de <b>Ciudad Luminalia</b>? Están exquisitas y solo valen 200 pokécuartos.", "ko": "<b>미르시티</b> 크레페 하나 먹어볼래? 정말 맛있는데 단돈 200포켓프랑이야.", "맵수": 3, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
-{"es": "Mmm... Deberías volver con más dinero encima.", "ko": "음... 돈을 좀 더 챙겨서 다시 오는 게 좋겠어.", "맵수": 3, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
-{"es": "¿Seguro? Que se agotan muy rápido...", "ko": "정말? 이거 금방 다 팔리는데...", "맵수": 3, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "\\c[6]<b>Aure:</b>\\c[0] ...", "ko": "\\c[6]<b>아우레:</b>\\c[0] ...", "맵수": 3, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "Hace mucho frío y no llevas nada en la bolsa que desprenda calor...", "ko": "날씨가 매우 추운데 가방 속에 온기를 낼 만한 물건이 하나도 없다...", "맵수": 3, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "¡Tu equipo Pokémon se ha quedado Helado!", "ko": "지닌 포켓몬이 얼어붙었다!", "맵수": 3, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
@@ -177,11 +172,9 @@
 {"es": "Mejor no", "ko": "그만두자", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "Gengar", "ko": "팬텀", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "Tendré que capturar más Pokémon para cubrir los tipos que se me dan mal, no queda otra.", "ko": "내가 약한 타입을 보완하려면 포켓몬을 더 잡아야겠어. 별수 없지.", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
-{"es": "¿Cuál quieres dejar?", "ko": "어느 포켓몬을 맡기겠니?", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "Tu equipo está lleno.", "ko": "팀 정원이 찼습니다.", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "¿Cuál quieres de vuelta?", "ko": "어느 포켓몬을 데려가시겠어요?", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "\\PN saca \\v[3] de la Guardería.", "ko": "\\PN\\j[은,는] 키우미집에서 \\v[3]\\j[을,를] 데려왔다.", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
-{"es": "¿Quieres al otro también?", "ko": "그 사람도 원해?", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "\\PN recibió un huevo.", "ko": "\\PN 달걀 하나를 받았다.", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "¿Quieres cambiar la habilidad de uno de los Pokémon que llevas en el equipo?", "ko": "지니고 계신 포켓몬 중 하나의 특성을 바꾸시겠어요?", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "¡Bien, hecho está!", "ko": "자, 다 되었어요!", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
@@ -375,8 +368,6 @@
 {"es": "¡Espera! ¿Eres \\PN? ¿El entrenador legendario que luchó en la guerra junto al capitán <b>Crisanto</b>?", "ko": "잠깐. 혹시 \\PN인가? <b>크리산토</b> 대장과 함께 전쟁에서 싸웠던 그 전설의 트레이너?", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "¡Espera! ¿Eres \\PN? ¿La entrenadora legendaria que luchó en la guerra junto al capitán <b>Crisanto</b>?", "ko": "잠깐. 혹시 \\PN인가? <b>크리산토</b> 대장과 함께 전쟁에서 싸웠던 그 전설의 트레이너?", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "Vaya. Entonces no tengo mucho que hacer aquí, si tengo que medirme con personas de tu enjundia.", "ko": "거참. 너 같은 실력자와 겨뤄야 한다면 내가 여기서 할 수 있는 일은 없겠군.", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
-{"es": "¡Menudo escándalo! Al parecer, el hotel quiere contar con ex-Regentes como <b>Hibis</b> y <b>Cendera</b>, ambos acusados de graves crímenes, para formar parte de los desafíos.", "ko": "엄청난 스캔들이야! 호텔 측에서 중죄 혐의를 받는 전직 섭정 <b>히비스</b>와 <b>센데라</b>를 이 도전에 참가시키려 한다는군.", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
-{"es": "¡Se diría que causar el mal sale gratis cuando eres alguien relevante!", "ko": "지위가 높은 사람이라면 악행을 저질러도 아무 대가가 없는 모양이야!", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "La furia de Zygarde caerá sobre esta ciudad tarde o temprano. No podemos adueñarnos de todos los ecosistemas y pretender que estos no se rebelen.", "ko": "지가르데의 분노가 조만간 이 도시에 떨어질 거예요. 모든 생태계를 무단으로 차지해 놓고 아무 일도 없을 거라 바랄 수는 없죠.", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "<b>Canola:</b> ¿Eres tú, \\PN? ¡Han pasado años!", "ko": "<b>카놀라:</b> 너인가, \\PN? 정말 오랜만이구나!", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "¿Te has vuelto más fuerte desde que te ganaste mi primera medalla de Regente?", "ko": "내 첫 섭정 배지를 가져간 뒤로 더 강해졌느냐?", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
