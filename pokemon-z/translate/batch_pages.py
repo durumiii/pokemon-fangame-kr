@@ -342,9 +342,16 @@ def approved_events():
 
 
 def excluded_pages(pg):
-    """재번역이 건드리면 안 되는 페이지 — 보호·승인 이벤트·극초반·인트로."""
+    """재번역이 건드리면 안 되는 페이지 — 보호·승인 이벤트·극초반·인트로·지문시스템.
+
+    data/z4-excluded.jsonl은 인물 대사 풀에서 골라낸 지문·시스템 페이지
+    (2026-08-13 풀 정제 판독, Z-4 티켓 「전량의 선행 단계」)."""
     ex = {tuple(json.loads(l)[k] for k in ("map", "event", "page"))
           for l in PROTECTED.read_text(encoding="utf-8").splitlines() if l.strip()}
+    z4ex = HERE / "data/z4-excluded.jsonl"
+    if z4ex.exists():
+        ex |= {tuple(json.loads(l)[k] for k in ("map", "event", "page"))
+               for l in z4ex.read_text(encoding="utf-8").splitlines() if l.strip()}
     done = approved_events()
     for key, rows in pg.items():
         if (key[0], key[1]) in done:                       # 판정 끝난 이벤트
