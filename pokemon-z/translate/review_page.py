@@ -69,10 +69,17 @@ def approved_ids(chunks=None):
             for r in json.loads(line).get("rows", []) if r.get("approved")}
 
 
-def scene_of(fp, why, ok=frozenset()):
-    """페이지 파일 하나 → 장면 하나. 승인 줄을 뺀 뒤 걸린 행이 없으면 None."""
+def scene_of(fp, why, ok=frozenset(), all_rows=False):
+    """페이지 파일 하나 → 장면 하나. 승인 줄을 뺀 뒤 걸린 행이 없으면 None.
+
+    all_rows면 선별과 무관하게 **전 행**을 싣는다 — 파일럿처럼 사람이 전량을
+    보는 자리용. 신판이 없는(그대로) 행은 현행을 신판 칸에 그대로 세운다.
+    """
     rows = read_jsonl(fp)
-    hit = [r for r in rows if r["id"] in why and r.get("new") and r["id"] not in ok]
+    if all_rows:
+        hit = [r for r in rows if r["id"] not in ok]
+    else:
+        hit = [r for r in rows if r["id"] in why and r.get("new") and r["id"] not in ok]
     if not hit:
         return None
     # 파일 이름은 p<맵>-<이벤트>-<페이지>(주연) 또는 t<맵>-<이벤트>(트레이너) 꼴이다
@@ -88,7 +95,8 @@ def scene_of(fp, why, ok=frozenset()):
         # 걸렸지만 승인 줄이라 숨긴 행 수 — 장면 머리에 알린다
         "hidden": sum(1 for r in rows if r["id"] in why and r.get("new") and r["id"] in ok),
         "rows": [{"id": r["id"], "who": r["who"], "es": r["es"], "ko": r["old"],
-                  "new": r["new"], "why": why[r["id"]]} for r in hit],
+                  "new": r.get("new") or r["old"], "why": why.get(r["id"], [])}
+                 for r in hit],
         # 문맥은 장면 전부 — 현행 번역으로 읽어야 흐름이 잡힌다
         "flow": [{"id": r["id"], "who": r["who"], "ko": r["old"], "es": r["es"],
                   "hit": r["id"] in why} for r in rows],
@@ -113,7 +121,7 @@ def applied_rows(path=None):
             if l.strip()}
 
 
-def collect(d, ok=None, done=None):
+def collect(d, ok=None, done=None, all_rows=False):
     d = Path(d)
     why = reasons(d)
     ok = (approved_ids() | applied_rows()) if ok is None else ok
@@ -122,7 +130,7 @@ def collect(d, ok=None, done=None):
     for fp in sorted(d.glob("*.jsonl")):
         if fp.name.startswith("screen"):
             continue
-        sc = scene_of(fp, why, ok)
+        sc = scene_of(fp, why, ok, all_rows)
         if sc and (sc["map"], int(sc["event"])) not in done:
             out.append(sc)
     return out
