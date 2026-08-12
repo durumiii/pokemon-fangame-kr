@@ -198,7 +198,7 @@ def run(out_dir, write=False, events_only=False):
     if events_only:
         print(f"판정 끝난 이벤트 {len(keep)}개 · 먼저 반영할 수선 행 {len(rows_ok)}개")
 
-    plan, why = {}, {}
+    plan, why, olds = {}, {}, {}
     clash, stat = [], {}
     for fp in sorted(d.glob("*.jsonl")):
         if fp.name.startswith("screen"):     # 산출 파일 이름은 p…(주연)·t…(트레이너)
@@ -219,6 +219,7 @@ def run(out_dir, write=False, events_only=False):
                 clash.append((key, why[key], plan[key], tag, new))
                 continue
             plan[key], why[key] = new, tag
+            olds[key] = r.get("old") or ""
 
     for tag, n in sorted(stat.items(), key=lambda x: -x[1]):
         print(f"  {tag}: {n}행")
@@ -226,11 +227,25 @@ def run(out_dir, write=False, events_only=False):
     for key, t1, v1, t2, v2 in clash[:10]:
         print(f"  충돌 맵{key[0]} 「{key[1][:30]}」: {t1}={v1[:25]} / {t2}={v2[:25]}")
 
+    # 통일 전파 — 같은 원문이 다른 맵에서 **같은 현행**으로 서 있으면 함께 간다.
+    # 통일 원문은 한 자리만 번역되므로(batch_pages.dedupe) 여기서 안 퍼지면 대표
+    # 자리만 새 판이 되어 통일이 도로 갈라진다(verify check_unified가 문다).
+    # 값 일치 조건이 안전판이다 — 의도된 갈림(현행이 다른 자리)은 절대 안 건드린다.
+    spread = {}
+    for key, new in plan.items():
+        es, old = key[1], olds.get(key, "")
+        if not old or new == old:
+            continue
+        if es in spread and spread[es] != (old, new):
+            spread.pop(es)                    # 맵마다 딴 판정 — 퍼뜨리지 않는다
+            continue
+        spread[es] = (old, new)
+
     if not write:
         print("미리보기만 — 반영하려면 --write")
         return
 
-    out, hit, cur = [], 0, None
+    out, hit, sp_hit, cur = [], 0, 0, None
     for line in MAPS.read_text(encoding="utf-8").splitlines():
         if not line.strip():
             out.append(line)
@@ -239,12 +254,15 @@ def run(out_dir, write=False, events_only=False):
         if "map" in r:
             cur = r["map"]
         else:
-            new = plan.get((cur, fold(r["k"])))
+            kf = fold(r["k"])
+            new = plan.get((cur, kf))
             if new and new != r["v"]:
                 r["v"], hit = new, hit + 1
+            elif not new and kf in spread and r["v"] == spread[kf][0]:
+                r["v"], sp_hit = spread[kf][1], sp_hit + 1
         out.append(json.dumps(r, ensure_ascii=False))
     MAPS.write_text("\n".join(out) + "\n", encoding="utf-8")
-    print(f"정본 {MAPS.name}: {hit}행 고침")
+    print(f"정본 {MAPS.name}: {hit}행 고침 · 통일 전파 {sp_hit}행")
     if events_only and keep:
         print(f"승인 이벤트 등재: {len(record_applied(keep))}개 새로 올림")
     if events_only and rows_ok:

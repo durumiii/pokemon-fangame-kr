@@ -70,7 +70,7 @@ function makeCard(r, sc){
         <div class="es">${esc(r.es)}</div>
         <div class="opt"><span class="tag cur">현행</span><span class="txt" data-v="cur">${esc(r.ko)}</span></div>
         <div class="opt"><span class="tag new">새</span><span class="txt" data-v="new">${mark(r.ko,r.new)}</span></div>
-        ${r.alt?`<div class="opt"><span class="tag alt">minimal</span><span class="txt">${mark(r.ko,r.alt)}</span></div>`:''}
+        ${r.alt?`<div class="opt"><span class="tag alt">minimal</span><span class="txt" data-alt="1" title="누르면 「직접」 판정에 이 문안이 채워져요">${mark(r.ko,r.alt)}</span></div>`:''}
         <div class="tools"><button data-v="own">직접</button><button data-v="hold">보류</button>
           <button data-memo="1">메모</button></div>
         <div class="mine"><textarea rows="2" placeholder="고친 문장을 여기에"></textarea>
@@ -83,14 +83,20 @@ function makeCard(r, sc){
       ta.value=M[r.id]||''; na.value=NOTE[r.id]||'';
       if(na.value) memo.classList.add('open');
       const paint=()=>{
-        card.querySelectorAll('.txt').forEach(x=>x.classList.toggle('sel',x.dataset.v===V[r.id]));
+        // V가 비면(미판정) 아무 줄도 고르지 않는다 — undefined===undefined 매칭이
+        // 값 없는 줄(alt)을 기본 선택처럼 칠했던 사고(2026-08-12)
+        card.querySelectorAll('.txt[data-v]').forEach(x=>x.classList.toggle('sel',!!V[r.id]&&x.dataset.v===V[r.id]));
         card.querySelectorAll('.tools button[data-v]').forEach(x=>x.classList.toggle('on',x.dataset.v===V[r.id]));
         mine.classList.toggle('open',V[r.id]==='own');
         card.classList.toggle('done',!!V[r.id]&&!(V[r.id]==='own'&&!ta.value.trim()));
       };
       const set=(v,force)=>{V[r.id]=(!force&&V[r.id]===v)?undefined:v; paint(); count(); refold(); save(r.id);};
       card.querySelector('.ctxbtn').onclick=()=>openFlow(sc, r.id);
-      card.querySelectorAll('.txt').forEach(el=>el.onclick=()=>set(el.dataset.v));
+      card.querySelectorAll('.txt[data-v]').forEach(el=>el.onclick=()=>set(el.dataset.v));
+      const altEl=card.querySelector('.txt[data-alt]');
+      if(altEl) altEl.onclick=()=>{           // minimal 채택 = 「직접」 판정 + 그 문안
+        ta.value=r.alt; M[r.id]=ta.value; set('own',true);
+      };
       card.querySelectorAll('.tools button[data-v]').forEach(el=>el.onclick=()=>set(el.dataset.v));
       card.querySelector('[data-memo]').onclick=e=>{
         memo.classList.toggle('open'); e.target.classList.toggle('on',memo.classList.contains('open'));
@@ -122,7 +128,7 @@ function render(){
       <span class="act" style="margin-left:auto">
         <label class="donelbl"><input type="checkbox" class="donebox"> 완료</label>
         <button data-ask="1">조사 요청</button>
-        <button data-open="1">이벤트 전체 보기</button>
+        ${sc.rows.length>=sc.total?'':'<button data-open="1">이벤트 전체 보기</button>'}
         <button data-all="1">이벤트 일괄 승인</button>
         <button data-flow="1">장면 흐름</button></span></div>`;
     const setters=[];
@@ -153,7 +159,7 @@ function render(){
         post({event:key, 판정:'', 텍스트:'', 메모:'완료 표시 해제'}); }
       refold();
     };
-    sec.querySelector('[data-open]').onclick=e=>openEvent(sc, sec, e.target);
+    const ob=sec.querySelector('[data-open]'); if(ob) ob.onclick=e=>openEvent(sc, sec, e.target);
     body.appendChild(sec);
   }
 }
@@ -212,7 +218,7 @@ function count(){
   const st=STAT||{}, done=st['끝남']||0, all=st['물을것']||tot;
   const pct=all?Math.round(done*100/all):0;
   document.getElementById('cnt').innerHTML=
-    `끝마침 <b>${done}</b> / ${all}행 (${pct}%) · 남은 ${tot}행 · ` +
+    `끝마침 <b>${done}</b> / ${all}행 (${pct}%) · 남은 ${st['남음']??tot}행 · ` +
     `이 화면 판정 ${Object.values(V).filter(Boolean).length} ` +
     `(현행 ${t.cur} · 직접 ${t.own} · 보류 ${t.hold} · 새번역 ${t.new}) · 메모 ${notes}`;
 }
@@ -308,7 +314,9 @@ def progress(out_dir, scenes, verdicts=None, all_rows=False):
     """
     if all_rows:
         shown = {r["id"] for s in scenes for r in s["rows"]}
-        done = len(shown & set(verdicts or {}))
+        # 눌렀다 해제한 빈 레코드는 끝난 것이 아니다 — 내용 있는 판정·메모만 센다
+        done = sum(1 for i, x in (verdicts or {}).items() if i in shown
+                   and any((x.get(k) or "").strip() for k in ("판정", "텍스트", "메모")))
         return {"전체": len(shown), "승인줄": 0, "물을것": len(shown),
                 "남음": len(shown) - done, "끝남": done}
     from review_page import applied_rows, approved_ids, reasons

@@ -468,6 +468,29 @@ def plan(pilot=False, npc=False):
                                 sorted(cast_n.items(), key=lambda x: -x[1])[:10]))
 
 
+def unified_originals():
+    """여러 맵에 복제됐고 현재 전 맵 동일한 원문 — **하나로 관리하는 단위다**.
+
+    Z-28이 통일한 상태의 정의이자 verify `check_unified`가 지키는 불변량. 이 집합은
+    맵 경계 너머 한 번만 번역하고, 반영은 전 자리에 퍼진다(apply_verdicts).
+    의도된 갈림(data/divergence-allowed.jsonl)은 애초에 「전 맵 동일」이 아니라 안 잡힌다.
+    """
+    groups = defaultdict(set)
+    seen = defaultdict(set)
+    cur = None
+    for line in MAPS.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        r = json.loads(line)
+        if "map" in r:
+            cur = r["map"]
+            continue
+        k = fold(r["k"])
+        groups[k].add(r["v"])
+        seen[k].add(cur)
+    return {k for k, vs in groups.items() if len(vs) == 1 and len(seen[k]) > 1}
+
+
 def dedupe(chunks):
     """같은 (맵, 원문)은 정본에 **한 줄뿐**이라 한 번만 번역한다.
 
@@ -475,18 +498,26 @@ def dedupe(chunks):
     복제가 만드는 여분은 실측 1,730행(전체의 26%)이고, 복제된 자리끼리 화자가
     갈리는 것은 4개뿐이다(셋은 「...」, 하나는 남/여 짝) — 어차피 정본이 한 줄이라
     갈래를 살릴 수도 없다.
+
+    **통일 원문(여러 맵 복제·전 맵 동일)은 맵 경계 너머로도 한 번만 번역한다** —
+    자리마다 따로 물으면 통일이 도로 갈라진다(2026-08-12 파일럿 실사고: 27개 맵
+    동일하던 「안녕, 후보생!」을 맵68에서만 갈랐다). 의도된 갈림은 전 맵 동일이
+    아니므로 이 접기에 안 걸려 자리마다 제 문맥으로 번역된다.
     """
+    uni = unified_originals()
     best = {}
     for c in chunks:
         for r in c["rows"]:
-            k = (c["map"], fold(r["es"]))
+            kf = fold(r["es"])
+            k = kf if kf in uni else (c["map"], kf)
             if k not in best or len(c["rows"]) > best[k][1]:
                 best[k] = (c["cid"], len(c["rows"]))
     out, seen = [], set()
     for c in chunks:
         rows = []
         for r in c["rows"]:
-            k = (c["map"], fold(r["es"]))
+            kf = fold(r["es"])
+            k = kf if kf in uni else (c["map"], kf)
             if best[k][0] != c["cid"] or k in seen:   # 같은 페이지 안의 반복도 한 번만
                 continue
             seen.add(k)

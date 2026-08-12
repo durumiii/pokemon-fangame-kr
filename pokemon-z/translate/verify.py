@@ -281,12 +281,41 @@ def check_names(strict):
     print(f"고유명: 이름 {len(ledger)}개, 변이 잔존 {bad}")
 
 
+def check_unified(strict):
+    """여러 맵에 복제된 같은 원문은 한 판이어야 한다 — 통일은 관리 단위 선언이다.
+
+    Z-28(2026-08-10)이 통일한 상태를 지키는 게이트. 의도된 갈림(화자별 유지·손수정)만
+    `data/divergence-allowed.jsonl`에 근거와 함께 등재돼 있고, 그 밖의 갈림은 배치·손질이
+    통일을 도로 가른 것이므로 FAIL이다. 갈림을 새로 허용하려면 판정을 원장에 등재한다.
+    """
+    allowed = {r["es"] for r in rows(HERE / "data" / "divergence-allowed.jsonl")} \
+        if (HERE / "data" / "divergence-allowed.jsonl").exists() else set()
+    groups = {}
+    cur = None
+    for n, r in enumerate(rows(HERE / "ko" / "00-maps.jsonl"), 1):
+        if "map" in r:
+            cur = r["map"]
+            continue
+        k = re.sub(r"\s+", " ", r.get("k") or "").strip()
+        groups.setdefault(k, []).append((cur, r.get("v"), n))
+    bad = 0
+    for k, g in groups.items():
+        if len({m for m, _, _ in g}) <= 1 or len({v for _, v, _ in g}) <= 1 or k in allowed:
+            continue
+        bad += 1
+        maps = sorted({m for m, _, _ in g})
+        report("FAIL" if strict else "WARN",
+               f"통일 원문 갈림 (미허용) {k[:50]!r} — 맵 {maps}")
+    print(f"통일 원문: 복제 그룹 검사, 허용 예외 {len(allowed)} · 미허용 갈림 {bad}")
+
+
 def main():
     strict = "--strict" in sys.argv
     check_canon(strict)
     check_ribbons(strict)
     check_kinds(strict)
     check_names(strict)
+    check_unified(strict)
     check_dat_and_sentinels()
     check_scripts()
     check_ui_gsub()
