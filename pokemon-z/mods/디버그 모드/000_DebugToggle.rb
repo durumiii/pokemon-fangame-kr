@@ -47,9 +47,19 @@ module DebugToggleKey
     return true
   end
 
+  # 이 훅이 필드에서만 도는 게 아니다 — 대사창과 일시정지 메뉴도 `pbUpdateSceneMap`을
+  # 거쳐 맵을 갱신하므로 그 안에서도 돈다. 그쪽에서는 LB·RB에 이미 임자가 있다
+  # (이동·나침반, 가방의 정렬·검색). 그대로 두면 나침반을 열 때마다 디버그 메뉴가
+  # 딸려 열린다. 그래서 두 자리를 다 막는다.
+  def self.field?
+    return false if !$game_temp
+    return false if $game_temp.message_window_showing
+    return false if $game_temp.in_menu
+    return true
+  end
+
   def self.update
-    # 대사창이 떠 있는 동안에는 무시한다 — 메시지가 겹쳐 뜨는 것을 막는다.
-    return if $game_temp && $game_temp.message_window_showing
+    return if !field?
     if keyboard? || pad?
       $DEBUG = !$DEBUG
       Kernel.pbMessage($DEBUG ? "디버그 모드 ON" : "디버그 모드 OFF")
