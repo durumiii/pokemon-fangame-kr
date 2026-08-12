@@ -29,7 +29,8 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 from review_page import HEAD, approved_ids, collect  # noqa: E402
 
-BODY = r"""<script>
+BODY = r"""<style>.tag.alt{background:#7d5bd6;color:#fff}</style>
+<script>
 let DATA = [], V = {}, M = {}, NOTE = {}, STAT = null;
 const HUMAN = new Set();   // 사람이 손댄 자리 — 기계 수선 채움과 가른다
 const esc = s => (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])).replace(/\n/g,'<br>');
@@ -69,11 +70,13 @@ function makeCard(r, sc){
         <div class="es">${esc(r.es)}</div>
         <div class="opt"><span class="tag cur">현행</span><span class="txt" data-v="cur">${esc(r.ko)}</span></div>
         <div class="opt"><span class="tag new">새</span><span class="txt" data-v="new">${mark(r.ko,r.new)}</span></div>
+        ${r.alt?`<div class="opt"><span class="tag alt">minimal</span><span class="txt">${mark(r.ko,r.alt)}</span></div>`:''}
         <div class="tools"><button data-v="own">직접</button><button data-v="hold">보류</button>
           <button data-memo="1">메모</button></div>
         <div class="mine"><textarea rows="2" placeholder="고친 문장을 여기에"></textarea>
           <p class="fill">넣기: <button type="button" data-fill="cur">현행</button>
-            <button type="button" data-fill="new">새 번역</button></p></div>
+            <button type="button" data-fill="new">새 번역</button>${
+            r.alt?` <button type="button" data-fill="alt">minimal</button>`:''}</p></div>
         <div class="memo"><textarea rows="2" placeholder="메모 — 무엇을 골랐든 따로 남아요"></textarea></div>`;
       const mine=card.querySelector('.mine'), ta=mine.querySelector('textarea');
       const memo=card.querySelector('.memo'), na=memo.querySelector('textarea');
@@ -96,7 +99,7 @@ function makeCard(r, sc){
       ta.oninput=()=>{M[r.id]=ta.value; paint(); count(); later(r.id);};
       na.oninput=()=>{NOTE[r.id]=na.value; count(); later(r.id);};
       mine.querySelectorAll('[data-fill]').forEach(b=>b.onclick=()=>{
-        ta.value=b.dataset.fill==='cur'?r.ko:r.new;
+        ta.value=b.dataset.fill==='cur'?r.ko:b.dataset.fill==='alt'?r.alt:r.new;
         M[r.id]=ta.value; ta.focus(); paint(); count(); later(r.id);
       });
       paint();
@@ -112,7 +115,9 @@ function render(){
     sec.innerHTML=`<div class="scene"><h2>${esc(sc.name)}</h2>
       <span class="fin" style="display:none">완료</span>
       <span class="meta">맵 ${sc.map} · 이벤트 ${esc(sc.event)}-${esc(sc.page)} ·
-        ${esc(sc.cast.join(' · '))} · 장면 ${sc.total}행 중 <b>${sc.rows.length}행 선별</b>${
+        ${esc(sc.cast.join(' · '))} · ${sc.rows.length>=sc.total
+          ?`<b>전 행 ${sc.total}행</b>`
+          :`장면 ${sc.total}행 중 <b>${sc.rows.length}행 선별</b>`}${
         sc.hidden?` · 승인 줄 ${sc.hidden}행 숨김`:''}</span>
       <span class="act" style="margin-left:auto">
         <label class="donelbl"><input type="checkbox" class="donebox"> 완료</label>
@@ -291,13 +296,21 @@ def load_verdicts(p):
     return out
 
 
-def progress(out_dir, scenes):
+def progress(out_dir, scenes, verdicts=None, all_rows=False):
     """검수가 어디까지 왔나 — 처음 선별된 행 가운데 화면에서 빠진 것이 끝난 것이다.
 
     빠지는 길은 셋이다: 이벤트가 반영돼 승인·보호로 갔거나, 수선 행이 먼저 반영됐거나,
     승인 줄이라 애초에 물을 것이 아니었거나. 판정을 안 눌러도 새 번역 채택으로 끝나므로
     「판정한 수」로는 진도를 셀 수 없다.
+
+    all_rows(전량 검수)는 정반대다 — 화면의 전 행이 물을 것이고 행이 화면에서
+    빠지지 않으므로, 진도가 곧 **판정 원장에 쌓인 수**다.
     """
+    if all_rows:
+        shown = {r["id"] for s in scenes for r in s["rows"]}
+        done = len(shown & set(verdicts or {}))
+        return {"전체": len(shown), "승인줄": 0, "물을것": len(shown),
+                "남음": len(shown) - done, "끝남": done}
     from review_page import applied_rows, approved_ids, reasons
     d = Path(out_dir)
     ids = set(reasons(d))                       # 두 층이 처음 걸러 낸 자리 전부
@@ -319,7 +332,24 @@ def append_verdict(p, rec):
     tmp.replace(p)
 
 
-def handler(out_dir, vpath, all_rows=False):
+def alt_map(alt_dir):
+    """대조 산출(다른 effort 등)의 id → 신판. 없으면 빈 사전."""
+    out = {}
+    if not alt_dir:
+        return out
+    for fp in sorted(Path(alt_dir).glob("*.jsonl")):
+        if fp.name.startswith("screen"):
+            continue
+        for line in fp.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                r = json.loads(line)
+                if r.get("new"):
+                    out[r["id"]] = r["new"]
+    return out
+
+
+def handler(out_dir, vpath, all_rows=False, alt=None):
+    alt = alt or {}
     page = (HEAD.format(title=f"선별분 검수 — {Path(out_dir).name}",
                         ledger=f"판정 저장 중 → {vpath}") + BODY).encode()
 
@@ -350,8 +380,14 @@ def handler(out_dir, vpath, all_rows=False):
             elif u.path == "/data":
                 # 매번 다시 읽는다 — 선별을 다시 돌리고 새로고침하면 바로 반영된다
                 sc = collect(out_dir, all_rows=all_rows)
-                self._json({"scenes": sc, "verdicts": load_verdicts(vpath),
-                            "stat": progress(out_dir, sc)})
+                for s in sc:                     # 대조 산출이 다른 답을 낸 행에 alt를 얹는다
+                    for r in s["rows"]:
+                        a = alt.get(r["id"])
+                        if a and a != r["new"]:
+                            r["alt"] = a
+                v = load_verdicts(vpath)
+                self._json({"scenes": sc, "verdicts": v,
+                            "stat": progress(out_dir, sc, v, all_rows)})
             else:
                 self._json({"err": "?"}, 404)
 
@@ -437,11 +473,12 @@ def main(argv):
         print(__doc__)
         return
     all_rows = "--all" in a          # 선별 무관 전 행 — 파일럿 전량 검수용
+    alt = alt_map(a[a.index("--alt") + 1] if "--alt" in a else None)
     v = verdict_path(out)
     n = len(load_verdicts(v))
     print(f"http://localhost:{port}   판정 원장 {v}" + (f" (기존 {n}행)" if n else ""))
     print("중지: Ctrl+C", flush=True)
-    ThreadingHTTPServer(("0.0.0.0", port), handler(out, v, all_rows)).serve_forever()
+    ThreadingHTTPServer(("0.0.0.0", port), handler(out, v, all_rows, alt)).serve_forever()
 
 
 if __name__ == "__main__":
