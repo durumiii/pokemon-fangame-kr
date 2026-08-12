@@ -1661,7 +1661,7 @@
 {"k": "There's no room to store items.", "v": "도구를 보관할 공간이 없습니다."}
 {"k": "Deposited {1} {2}.", "v": "Deposited {1} {2}."}
 {"k": "Toss", "v": "버린다"}
-{"k": "Deselect", "v": "리셋"}
+{"k": "Deselect", "v": "등록 해제"}
 {"k": "Register", "v": "등록한다"}
 {"k": "Invalid pocket: {1}", "v": "Invalid pocket: {1}"}
 {"k": "The item number is invalid.", "v": "The item number is invalid."}
@@ -3103,7 +3103,7 @@
 {"k": "No hay espacio para guardar objetos.", "v": "도구를 보관할 공간이 없다."}
 {"k": "Se depositó {1} {2}(s).", "v": "{1} {2}\\j[을,를] 맡겼다."}
 {"k": "Tirar", "v": "버린다"}
-{"k": "Deseleccionar", "v": "리셋"}
+{"k": "Deseleccionar", "v": "등록 해제"}
 {"k": "Registrar", "v": "등록한다"}
 {"k": "No se puede llevar {1}.", "v": "{1}\\j[은,는] 지닐 수 없다."}
 {"k": "¿Cuántos {1} quieres tirar?", "v": "{1}\\j[을,를] 몇 개 버릴까?"}
