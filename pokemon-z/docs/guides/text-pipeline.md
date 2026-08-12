@@ -60,10 +60,11 @@ dat 포맷 문제를 만났을 때.
   저장. 정본이 훼손·재추출돼도 여기서 되살린다. 도구는 `uv run translate/unified.py`:
   `check`(대조) · `restore --write`(실수 복원 — 원장이 이긴다) · `sync --write`
   (의도적 변경·새 통일 등재 — 정본이 이긴다). 방향은 사람이 정한다.
-- `verify.py`의 통일 검사 — 원장 등재분은 **값까지** 대조해 어긋나면 FAIL(--strict),
-  미등재 복제 원문의 갈림도 FAIL. 의도된 갈림(화자별 유지·손수정)만
-  `translate/data/divergence-allowed.jsonl`에 근거와 함께 등재돼 있다. 갈림을 새로
-  허용하려면 이 원장에 판정을 등재하는 것이 유일한 길이다.
+- `verify.py`의 통일 검사 — 두 원장 다 **값까지** 대조해 어긋나면 FAIL(--strict),
+  미등재 복제 원문의 갈림도 FAIL. 의도된 갈림은 `translate/data/divergence-allowed.jsonl`
+  이 **갈래별 값·자리·화자까지 자체 저장**한다(`갈래: [{ko, maps, sprites}]`) — 갈랐어도
+  갈래 단위로는 하나로 관리·복원된다. 갈림을 새로 허용하려면 이 원장에 판정을
+  등재하는 것이 유일한 길이다.
 - 배치 재번역은 통일 원문을 **맵 경계 너머 한 번만** 번역한다(`batch_pages.dedupe`).
 - 반영(`apply_verdicts`)은 값이 같던 전 자리에 새 판을 전파한다 — 현행이 다른 자리
   (의도된 갈림)는 값 불일치라 절대 안 퍼진다. 반영 뒤 `unified.py sync --write`로

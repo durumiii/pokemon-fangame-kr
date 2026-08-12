@@ -7,12 +7,15 @@
 있다. 우리가 판정한 통일판은 좌표가 아니라 원문에 묶어 여기 남는다 — 정본이 어떤
 모양이 되든 원장에서 되살릴 수 있다(고유명의 canon/names.jsonl과 같은 격).
 
-원장: translate/data/unified-phrases.jsonl  {"es": 접은 원문, "ko": 통일판, "맵수", "src"}
-의도된 갈림은 data/divergence-allowed.jsonl — 그쪽 원문은 이 원장에 안 올린다.
+원장 둘을 다룬다:
+- translate/data/unified-phrases.jsonl  {"es", "ko", "맵수", "src"} — 전판 통일.
+- translate/data/divergence-allowed.jsonl {"es", "이유", "갈래": [{"ko","maps","sprites"}]}
+  — 의도된 갈림. **갈래별 값까지 자체 저장**한다(유지자 방침 2026-08-12: 갈랐어도
+  갈래 단위로는 하나로 관리·복원 가능해야 한다).
 
-    uv run translate/unified.py check              # 원장 대 정본 대조 (verify에도 실림)
+    uv run translate/unified.py check              # 두 원장 대 정본 대조 (verify에도 실림)
     uv run translate/unified.py restore [--write]  # 정본의 어긋난 자리를 원장 값으로 복원
-    uv run translate/unified.py sync [--write]     # 의도적 변경·새 통일을 원장에 반영
+    uv run translate/unified.py sync [--write]     # 의도적 변경·새 통일·갈래 재배정을 원장에 반영
 
 restore와 sync는 방향이 반대다 — 실수로 갈렸으면 restore(원장이 이긴다),
 판정으로 바꿨으면 sync(정본이 이긴다). 어느 쪽인지는 사람이 정한다.
@@ -37,6 +40,38 @@ def ledger():
         return {}
     return {r["es"]: r for r in
             (json.loads(l) for l in LEDGER.read_text(encoding="utf-8").splitlines() if l.strip())}
+
+
+def div_ledger():
+    if not ALLOWED.exists():
+        return {}
+    return {r["es"]: r for r in
+            (json.loads(l) for l in ALLOWED.read_text(encoding="utf-8").splitlines() if l.strip())}
+
+
+def div_expected(div):
+    """갈림 원장 → es별 {맵: 기대값}."""
+    return {es: {m: b["ko"] for b in r.get("갈래", []) for m in b["maps"]}
+            for es, r in div.items()}
+
+
+_ATTR_CACHE = None
+
+
+def _sprites(m, es):
+    """(맵, 원문)의 스프라이트들 — 갈래 기록용(사람이 갈래를 읽을 때의 좌표)."""
+    global _ATTR_CACHE
+    if _ATTR_CACHE is None:
+        import gzip
+        _ATTR_CACHE = {}
+        p = HERE / "data" / "speaker-attr.jsonl.gz"
+        if p.exists():
+            with gzip.open(p, "rt", encoding="utf-8") as f:
+                for line in f:
+                    r = json.loads(line)
+                    _ATTR_CACHE.setdefault((r["map"], fold(r["k"])), set()).add(
+                        r.get("sprite") or "?")
+    return _ATTR_CACHE.get((m, es), set())
 
 
 def canon_groups():
@@ -68,13 +103,28 @@ def check(quiet=False):
                 vals = sorted({v for _, v in g} - {e["ko"]})
                 print(f"어긋남 {es[:46]!r}\n    원장: {e['ko'][:60]!r}\n    정본: {vals[0][:60]!r}"
                       + (f" 외 {len(vals)-1}판" if len(vals) > 1 else ""))
+    dd = 0
+    exp = div_expected(div_ledger())
+    grp2 = {k: dict(g) for k, g in ((k, {m: v for m, v in g}) for k, g in grp.items())}
+    for es, mp in exp.items():
+        cur = grp2.get(es, {})
+        for m, want in mp.items():
+            if m in cur and cur[m] != want:
+                dd += 1
+                if not quiet:
+                    print(f"갈림 어긋남 {es[:40]!r} 맵{m}: {cur[m][:40]!r} ≠ {want[:40]!r}")
+        for m in set(cur) - set(mp):
+            dd += 1
+            if not quiet:
+                print(f"갈림 미배정 {es[:40]!r} 맵{m}: {cur[m][:40]!r}")
     if not quiet:
-        print(f"원장 {len(led)}건 · 어긋남 {len(drift)} · 정본에서 사라짐 {len(gone)}")
+        print(f"통일 원장 {len(led)}건(어긋남 {len(drift)} · 사라짐 {len(gone)}) · 갈림 원장 어긋남·미배정 {dd}")
     return drift, gone
 
 
 def restore(write=False):
     led = ledger()
+    exp = div_expected(div_ledger())
     out, hit, cur = [], 0, None
     for line in MAPS.read_text(encoding="utf-8").splitlines():
         if not line.strip():
@@ -84,12 +134,14 @@ def restore(write=False):
         if "map" in r:
             cur = r["map"]
         else:
-            e = led.get(fold(r["k"]))
-            if e and r["v"] != e["ko"]:
+            kf = fold(r["k"])
+            e = led.get(kf)
+            want = e["ko"] if e else exp.get(kf, {}).get(cur)
+            if want and r["v"] != want:
                 hit += 1
-                print(f"맵{cur} {r['v'][:40]!r} → {e['ko'][:40]!r}")
+                print(f"맵{cur} {r['v'][:40]!r} → {want[:40]!r}")
                 if write:
-                    r["v"] = e["ko"]
+                    r["v"] = want
         out.append(json.dumps(r, ensure_ascii=False))
     if write:
         MAPS.write_text("\n".join(out) + "\n", encoding="utf-8")
@@ -125,11 +177,28 @@ def sync(write=False):
             print(f"삭제 {es[:50]!r} — 정본에서 사라짐")
             del led[es]
             drop += 1
+    # 갈림 원장 — 갈래(값·맵·스프라이트)를 정본 현 상태로 재배정. es·이유는 보존한다.
+    div, dchg = div_ledger(), 0
+    for es, r in div.items():
+        g = grp.get(es, [])
+        buckets = {}
+        for m, v in sorted(g):
+            buckets.setdefault(v, []).append(m)
+        new = [{"ko": v, "maps": ms, "sprites": sorted({s for m in ms for s in _sprites(m, es)})}
+               for v, ms in sorted(buckets.items(), key=lambda x: -len(x[1]))]
+        old = r.get("갈래", [])
+        if [(b["ko"], b["maps"]) for b in new] != [(b["ko"], b["maps"]) for b in old]:
+            dchg += 1
+            print(f"갈래 재배정 {es[:44]!r}: {len(old)}→{len(new)}갈래")
+            r["갈래"] = new
     if write:
         rows = sorted(led.values(), key=lambda r: -r.get("맵수", 0))
         LEDGER.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows),
                           encoding="utf-8")
-    print(f"갱신 {upd} · 등재 {add} · 삭제 {drop}" + ("" if write else " — 반영하려면 --write"))
+        ALLOWED.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n"
+                                   for r in div.values()), encoding="utf-8")
+    print(f"통일 갱신 {upd} · 등재 {add} · 삭제 {drop} · 갈래 재배정 {dchg}"
+          + ("" if write else " — 반영하려면 --write"))
 
 
 if __name__ == "__main__":

@@ -288,8 +288,13 @@ def check_unified(strict):
     `data/divergence-allowed.jsonl`에 근거와 함께 등재돼 있고, 그 밖의 갈림은 배치·손질이
     통일을 도로 가른 것이므로 FAIL이다. 갈림을 새로 허용하려면 판정을 원장에 등재한다.
     """
-    allowed = {r["es"] for r in rows(HERE / "data" / "divergence-allowed.jsonl")} \
-        if (HERE / "data" / "divergence-allowed.jsonl").exists() else set()
+    # 갈림 원장 — 갈래별 값(ko)·자리(maps)·화자(sprites)를 자체 저장한다. 맵별 기대값을
+    # 펴서 값까지 대조한다 — 갈림이 허용됐어도 갈래 안 표류는 훼손이다.
+    allowed = {}
+    p = HERE / "data" / "divergence-allowed.jsonl"
+    if p.exists():
+        for r in rows(p):
+            allowed[r["es"]] = {m: b["ko"] for b in r.get("갈래", []) for m in b["maps"]}
     led = {r["es"]: r["ko"] for r in rows(HERE / "data" / "unified-phrases.jsonl")} \
         if (HERE / "data" / "unified-phrases.jsonl").exists() else {}
     groups = {}
@@ -311,12 +316,24 @@ def check_unified(strict):
                 report("FAIL" if strict else "WARN",
                        f"통일 원장 불일치 {k[:50]!r} — 맵 {maps} (unified.py restore/sync)")
             continue
-        if len(maps) <= 1 or len({v for _, v, _ in g}) <= 1 or k in allowed:
+        if k in allowed:
+            exp = allowed[k]
+            for m, v, _ in g:
+                if m not in exp:
+                    drift += 1
+                    report("FAIL" if strict else "WARN",
+                           f"갈림 원장 미배정 자리 {k[:44]!r} — 맵 {m} (unified.py sync로 갈래 배정)")
+                elif v != exp[m]:
+                    drift += 1
+                    report("FAIL" if strict else "WARN",
+                           f"갈림 원장 불일치 {k[:44]!r} — 맵 {m} (unified.py restore/sync)")
+            continue
+        if len(maps) <= 1 or len({v for _, v, _ in g}) <= 1:
             continue
         bad += 1
         report("FAIL" if strict else "WARN",
                f"통일 원문 갈림 (미허용·미등재) {k[:50]!r} — 맵 {maps}")
-    print(f"통일 원문: 원장 {len(led)}건(불일치 {drift}) · 허용 예외 {len(allowed)} · 미등재 갈림 {bad}")
+    print(f"통일 원문: 통일 원장 {len(led)}건 · 갈림 원장 {len(allowed)}건 · 불일치 {drift} · 미등재 갈림 {bad}")
 
 
 def main():
