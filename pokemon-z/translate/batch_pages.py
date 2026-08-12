@@ -703,6 +703,36 @@ def ledger_pairs():
     return out
 
 
+# 아이템·기술·종족·특성의 정본 표기. 용어집·<b> 짝만 캐면 이 표가 프롬프트에 안 실려,
+# 선별층이 정식 표기를 오역으로 짚는다(2026-08-09 「Pokétoxinas→독주머니」 오탐).
+# 표가 3천 줄이라 장면 원문에 실제로 나오는 것만 정규식 하나로 골라낸다.
+CANON_SECTIONS = ("01-species.jsonl", "05-moves.jsonl", "07-items.jsonl",
+                  "08-item-plurals.jsonl", "10-abilities.jsonl")
+CANON_MIN = 5     # 짧은 이름은 일반명사와 겹친다 (Rayo·Robo·Vuelo·Más·Palo …)
+_canon = None
+
+
+def canon_names():
+    """(정규식, {원문: 표기}). 대소문자 그대로·낱말 경계로만 맞춘다 — 고유명은 원문에서
+    대문자로 서므로 문장 속 동음 일반명사(rayo·carga)를 그것만으로 상당수 걸러낸다."""
+    global _canon
+    if _canon is None:
+        pairs = {}
+        for sec in CANON_SECTIONS:
+            for line in (HERE / "ko" / sec).read_text(encoding="utf-8").splitlines():
+                if not line.strip():
+                    continue
+                r = json.loads(line)
+                es, ko = (r.get("es") or "").strip(), (r.get("v") or "").strip()
+                if ko and es != ko and CANON_MIN <= len(es) < 40:
+                    pairs.setdefault(es, ko)
+        # ponytail: 대문자·길이 가드뿐이라 문두에 선 동음 일반명사는 걸린다(실측:
+        # 실제 장면 176개 중 1건 「Experto」). 잦아지면 문두 매치를 빼는 것이 다음 수.
+        _canon = (re.compile(r"(?<!\w)(?:%s)(?!\w)" % "|".join(
+            re.escape(k) for k in sorted(pairs, key=len, reverse=True))), pairs)
+    return _canon
+
+
 BOLD = re.compile(r"<b>(.*?)</b>", re.S)
 # 줄머리 화자 표기 — 「\c[3]<b>이름:</b>\c[0] 」. 뜻이 없는 장식이라 모델이 잘 흘린다.
 HEAD = re.compile(r"^(?:\\c\[\d+\])?<b>[^<]{1,40}:</b>(?:\\c\[\d+\])?\s*")
@@ -798,6 +828,9 @@ def glossary_for(rows):
         keys = [k.strip().lower() for k in re.split(r"[/·]", a) if k.strip()]
         if any(k in es_all for k in keys) or b.split("(")[0].strip() in ko_all:
             hits.append(f"- {a} → {b}")
+    rx, canon = canon_names()                 # 아이템·기술·종족·특성 정본 표기
+    for m in rx.findall(" ".join(r["es"] for r in rows)):
+        hits.append(f"- {m} → {canon[m]}")
     for a, b in TITLES:                       # 호칭은 프롬프트 본문에도 있지만 잘 샌다
         if a in es_all:
             hits.append(f"- {a} → {b}")
@@ -990,6 +1023,19 @@ if __name__ == "__main__":
         run(pilot, limit, fresh=fresh, effort=effort, npc=npc)
     elif cmd == "report":
         report(pilot, npc)
+    elif cmd == "selftest":
+        # 정본 표의 고유명이 장면 발췌에 실리는가 — 안 실리면 선별층이 정식 표기를
+        # 오역으로 짚는다(2026-08-09 「Pokétoxinas→독주머니」).
+        cs = [json.loads(l) for l in
+              (BATCH / "npc-pilot-chunks.jsonl").read_text(encoding="utf-8").splitlines()
+              if l.strip()]
+        c = next(x for x in cs if x["cid"] == "p044-7-0")
+        s = render(c)
+        assert "Pokétoxina" in s and "독주머니" in s, "정본 아이템 짝이 안 실렸다"
+        base = len(CORE_TERMS.splitlines())
+        for x in cs[:6]:
+            print(f"{x['cid']} 발췌 {len(glossary_for(x['rows']).splitlines()) - base}항목")
+        print("selftest OK")
     elif cmd == "samples":
         s = approved_samples()
         who = args[1] if len(args) > 1 and not args[1].startswith("--") else None
