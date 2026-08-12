@@ -7,9 +7,8 @@
 스페인산 팬게임 Pokémon Z의 한글패치. 
 기존 한글패치를 기반으로 전면 재번역(LLM 배치 + 사람 검수)했습니다.
 
-- 배포판은 [Releases](../../releases)
+- [Releases](../../releases)
 - 번역 정본은 [`pokemon-z/translate/ko/`](pokemon-z/translate/ko/)
-  `korean.dat`는 `build.py`가 만드는 빌드 산출물입니다. 오역 제보·수정 PR은 이 파일들로.
 - 번역 방식·용어 결정의 기록은 [`pokemon-z/docs/`](pokemon-z/docs/)
 - 하드코딩된 문자열 등 번역표에 포함되지 않는 텍스트들은 [`pokemon-z/mods/UI Text KR`](pokemon-z/mods/)
 
