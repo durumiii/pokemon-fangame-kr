@@ -481,9 +481,13 @@ def unified_originals():
 
     Z-28이 통일한 상태의 정의이자 verify `check_unified`가 지키는 불변량. 이 집합은
     맵 경계 너머 한 번만 번역하고, 반영은 전 자리에 퍼진다(apply_verdicts).
-    의도된 갈림(data/divergence-allowed.jsonl)은 애초에 「전 맵 동일」이 아니라 안 잡힌다.
     통일 목록(data/unified-phrases.jsonl) 등재분은 정본이 실수로 갈려 있어도 관리
     단위이므로 합집합으로 든다.
+
+    의도된 갈림(data/divergence-allowed.jsonl) 등재분은 **값이 아직 전 맵 동일해도
+    뺀다** — 갈래 등재가 통일 판별을 이긴다. 「현재 전 맵 동일」 경험 기준은 「갈라야
+    하는데 아직 안 가른 것」을 통일로 오인해, 한 페르소나 판이 맵 경계 너머로 접히고
+    전파되는 사고를 냈다(2026-08-13 전량 1차의 열쇠 충돌 88자리).
     """
     groups = defaultdict(set)
     seen = defaultdict(set)
@@ -502,6 +506,10 @@ def unified_originals():
     led = HERE / "data" / "unified-phrases.jsonl"
     if led.exists():
         out |= {json.loads(l)["es"] for l in led.read_text(encoding="utf-8").splitlines()
+                if l.strip()}
+    div = HERE / "data" / "divergence-allowed.jsonl"
+    if div.exists():
+        out -= {fold(json.loads(l)["es"]) for l in div.read_text(encoding="utf-8").splitlines()
                 if l.strip()}
     return out
 
