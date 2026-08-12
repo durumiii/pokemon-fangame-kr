@@ -15,3 +15,6 @@ pokemon-z/mods/DPPT Font/Fonts/
 
 # 세션 인수인계 스크래치 — repo 지식이 아니다
 .refresh-guides/
+
+# 자동 추출 교훈 낱 md — 스킬 로드 대상이 아니다. 남길 지식은 docs로 이관한다 (2026-08-13 정리)
+.claude/skills/learned/
