@@ -11229,7 +11229,7 @@
 {"k": "¡Hola! ¿Qué necesitas?", "v": "안녕하세요! 무엇을 도와드릴까요?"}
 {"k": "¿Qué Pokémon debería recordar un movimiento?", "v": "어떤 포켓몬에게 기술을 떠올리게 하시겠습니까?"}
 {"k": "Vale, ¡vuelve cuando lo necesites!", "v": "좋아요, 필요할 때 언제든 다시 오세요!"}
-{"k": "Eso es un huevo, pedazo de inútil.", "v": "그건 알이잖아, 이 멍청이야."}
+{"k": "Eso es un huevo, pedazo de inútil.", "v": "그건 알이잖아요, 이런 멍청이 같으니."}
 {"k": "\\bNo way, I don't want to go near a Shadow Pokémon..", "v": "\\b말도 안 돼, 그림자 포켓몬 근처에는 절대 가고 싶지 않은데..."}
 {"k": "Hmm... parece que no puedo enseñarle nada a tú \\v[3].", "v": "흠... 당신의 \\v[3]에게는 아무것도 가르쳐 줄 수 없을 것 같네요."}
 {"k": "¿Qué debería recordar \\v[3]?", "v": "\\v[3]에게 어떤 기술을 떠올리게 하시겠습니까?"}
@@ -12307,7 +12307,7 @@
 {"k": "El experimento salió más o menos bien, pero... la criatura se ha vuelto demasiado indomable. Necesita de alguien con experiencia en la crianza de Pokémon.", "v": "실험은 그럭저럭 잘 되었습니다만... 그 포켓몬이 너무 다루기 힘들어졌습니다. 포켓몬 육성에 경험이 있는 분이 필요합니다."}
 {"k": "¿Te interesa quedarte con ese Pokémon?", "v": "그 포켓몬을 거두어 주시겠습니까?"}
 {"k": "Ojalá la criatura encuentre la felicidad a tu lado.", "v": "그 포켓몬이 당신 곁에서 행복해지기를 바랍니다."}
-{"k": "¡Oh, vaya! No tienes espacio en tu equipo.", "v": "오, 이런! 지닌 포켓몬에 자리가 없습니다."}
+{"k": "¡Oh, vaya! No tienes espacio en tu equipo.", "v": "오, 이런! 지닌포켓몬에 자리가 없습니다."}
 {"k": "¡Entendible! Es mucha responsabilidad para una persona.", "v": "이해합니다! 한 사람이 맡기에는 너무나 큰 책임이지요."}
 {"k": "Entiendo. Guardar secretos es algo que conlleva mucha presión.", "v": "이해합니다. 비밀을 간직한다는 건 큰 부담이 따르는 법이지요."}
 {"k": "Los seres humanos tenemos que conocer bien nuestro lugar en el orden natural del universo.", "v": "우리 인간은 우주의 자연스러운 질서 속에서 자신의 위치를 잘 알아야 해."}
