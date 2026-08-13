@@ -1,0 +1,2 @@
+{"id": "176:9:0:0", "who": "hombre1", "es": "Creo que hoy tendré un día nefasto, me he levantado con el pie izquierdo.", "old": "오늘은 재수 없는 날이 될 것 같군. 아침부터 꼬였거든.", "new": "오늘은 재수 없는 날이 될 것 같군. 아침부터 왼발부터 들어 일으켰거든.", "ok": true, "why": "[reject] 관용구 오역 — me he levantado con el pie izquierdo(재수 없는 하루로 시작했다)를 축자 직역해 뜻이 통하지 않는 한국어가 됐다"}
+{"id": "176:9:0:1", "who": "hombre1", "es": "No sé, me siento muy negativo.", "old": "글쎄, 기분이 영 꿀꿀하네.", "new": "글쎄, 기분이 영 부정적이네.", "ok": true, "why": "[reject] 「기분이 영 부정적이네」는 직역투(glossary 「문체 일반 — 직역투 제거의 기준」). hombre1의 무뚝뚝한 냉소도 죽는다"}
