@@ -215,7 +215,7 @@
 {"k": "Os deseo suerte a los dos. Veréis que el laboratorio no tiene mucha pérdida.", "v": "두 사람 모두에게 행운이 함께하기를. 연구소는 그리 어렵지 않게 찾을 수 있을 게야."}
 {"k": "¿Eres de <b>Paldea</b>? ¿No estuvimos en guerra con vosotros hace unas décadas?", "v": "너 <b>팔데아</b>에서 왔어? 수십 년 전에 우리가 너희와 전쟁을 치르지 않았나?"}
 {"k": "Ya después de tantos conflictos, a una le cuesta recordarlos todos.", "v": "싸움이 워낙 많았어야지, 이제는 일일이 기억하기도 힘들구나."}
-{"k": "¡Hola! Estoy contratada por la parroquia del pueblo, ¿quieres curar a tu equipo?", "v": "안녕하세요! 저는 마을 교구의 지원을 받고 있어요. 포켓몬들을 치료해 드릴까요?"}
+{"k": "¡Hola! Estoy contratada por la parroquia del pueblo, ¿quieres curar a tu equipo?", "v": "안녕하세요! 저는 마을 교구의 지원을 받고 있어요. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
@@ -353,7 +353,7 @@
 {"k": "Está vacío. Por ahora.", "v": "비어 있다. 아직은."}
 {"k": "¿Introducir el <b>Embrión M</b>?", "v": "<b>M배아</b>를 넣겠습니까?"}
 {"k": "¡El embrión empieza a crecer de forma descontrolada!", "v": "배아가 통제할 수 없을 정도로 자라기 시작합니다!"}
-{"k": "Curar Pokémon", "v": "포켓몬 치료하기"}
+{"k": "Curar Pokémon", "v": "포켓몬 회복하기"}
 {"k": "Acceder al Rancho", "v": "목장에 들어가기"}
 {"k": "Recordar Movs", "v": "기술 떠올리기"}
 {"k": "Nada", "v": "아무것도 없음"}
@@ -365,11 +365,11 @@
 {"map": 7, "n": 19}
 {"k": "<b>PISTA DE ENTRENADOR:</b> Puedes consultar el método de evolución de un Pokémon que hayas capturado en la Pokédex.", "v": "<b>트레이너 팁:</b> 포켓몬도감에서 잡은 포켓몬의 진화 방법을 확인할 수 있습니다."}
 {"k": "El rey obligó a subir los salarios a los campesinos, y entonces empezamos a contratar Pokémon. Salía más barato.", "v": "국왕이 농민들 임금을 올리라 강요하는 바람에, 하는 수 없이 포켓몬을 고용하기 시작했죠. 그 편이 훨씬 절약되니까요."}
-{"k": "Pero entonces los Pokémon se unieron y nos atacaron. Muchas vidas se perdieron y huesos fueron rotos aquel día.", "v": "하지만 포켓몬들이 뭉쳐서 우리를 공격하더군요. 그날 얼마나 많은 이가 목숨을 잃고 뼈가 부러졌는지!"}
+{"k": "Pero entonces los Pokémon se unieron y nos atacaron. Muchas vidas se perdieron y huesos fueron rotos aquel día.", "v": "하지만 얼마 안 가 포켓몬들이 패거리를 지어 날 공격하더군요. 그날 얼마나 많은 이가 목숨을 잃고 뼈가 부러졌는지!"}
 {"k": "Ahora hemos vuelto a contratar a personas, ¡espero que nunca aprendan de los Pokémon!", "v": "이제 다시 사람을 쓰고 있는데, 제발 그 녀석들이 포켓몬한테 나쁜 짓을 배우지 않기만을 바랄 뿐이에요!"}
 {"k": "He vivido una larga vida...", "v": "나도 나름 오래 살았지..."}
 {"k": "Para que no se nos cuelen Pokémon en los viñedos, usamos unas flores especiales para repelerlos.", "v": "포도밭에 포켓몬들이 슬그머니 기어들지 못하게, 퇴치 효과가 있는 특별한 꽃을 심어 뒀어."}
-{"k": "Mira, como esta.", "v": "자, 이거 봐."}
+{"k": "Mira, como esta.", "v": "자, 여기."}
 {"k": "El olor de las flores repelentes solo resulta desagradable para los Pokémon, para nosotros son flores normales.", "v": "이 퇴치용 꽃 향기는 포켓몬들한테만 지독할 뿐, 우리 사람한테는 그냥 평범한 꽃이야."}
 {"k": "¡Es un arbusto de bayas!", "v": "나무열매 관목이다!"}
 {"k": "Ya has arrancado las bayas de este arbusto.", "v": "이 관목에서는 이미 나무열매를 다 땄다."}
@@ -498,7 +498,7 @@
 {"k": "Bien, hecho está. Tu Pokémon ha recordado ese movimiento.", "v": "됐어, 다 끝났어! 네 포켓몬이 그 기술을 떠올렸어."}
 {"k": "Quiero comprar Pokéball para no quedarme nunca sin existencias, ¡pero es que son carísimas! ¡Qué rabia!", "v": "떨어지는 일 없게 몬스터볼을 사 두고 싶은데, 너무 비싸단 말이지! 정말 짜증 나!"}
 {"k": "Ojalá pudiera fabricarlas por mi cuenta de alguna manera.", "v": "어떻게든 직접 만들 수 있으면 좋을 텐데."}
-{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
@@ -649,7 +649,7 @@
 {"k": "Oye, tengo un negocio que proponerte. ¿No te gustaría tener tu propio Gogoat para montar?", "v": "이봐, 제안할 솔깃한 거래가 하나 있는데. 타고 다닐 자신만의 고고트를 갖고 싶지 않아?"}
 {"k": "Estoy buscando un raro objeto para regalárselo a mi mujer, se llama <b>Llave Mercúrica</b> y permite sellar puertas de forma especial.", "v": "아내한테 선물할 희귀한 물건을 찾고 있거든. <b>수은열쇠</b>라고 해서 문을 특별하게 잠글 수 있는 물건이지."}
 {"k": "Si en algún momento te haces con una, ven a verme y te la cambiaré gustoso por una <b>Montura Gogoat</b>.", "v": "혹시 하나 구하게 되면 날 찾아와. 기꺼이 <b>고고트라이드</b>와 바꿔 줄 테니까."}
-{"k": "¡Ah! Veo que estás en posesión de una <b>Llave Mercúrica</b>.", "v": "아! <b>수은열쇠</b>를 갖고 있잖아!"}
+{"k": "¡Ah! Veo que estás en posesión de una <b>Llave Mercúrica</b>.", "v": "아! <b>수은열쇠</b>를 갖고 있구나!"}
 {"k": "¿Me la cambiarías por una Montura Gogoat? Te ayudará a cruzar paredes escarpadas.", "v": "고고트라이드와 바꾸지 않을래? 험준한 절벽을 넘을 때 도움이 될 거야."}
 {"k": "¡Espero que te lleves bien con tu nueva montura! Recuerda que solo puedes usarla en el exterior.", "v": "새 탈것과 잘 지내길 바라! 야외에서만 이용할 수 있다는 걸 잊지 마."}
 {"k": "Bien, lo entiendo. Es un objeto muy valioso.", "v": "그래, 이해해. 워낙 귀중한 물건이니까."}
@@ -748,7 +748,7 @@
 {"k": "¿Qué Pokémon debería recordar un movimiento?", "v": "어떤 포켓몬에게 기술을 떠올리게 할래?"}
 {"k": "Vale, ¡vuelve cuando lo necesites!", "v": "그래, 필요하면 언제든 또 와!"}
 {"k": "Eso es un huevo, pedazo de inútil.", "v": "그건 알이잖아, 이 바보야."}
-{"k": "\\bNo way, I don't want to go near a Shadow Pokémon..", "v": "\\b말도 안 돼, 그림자 포켓몬 근처엔 가기도 싫어..."}
+{"k": "\\bNo way, I don't want to go near a Shadow Pokémon..", "v": "\\b말도 안 돼, 그림자 포켓몬 근처엔 가고 싶지도 않아..."}
 {"k": "Hmm... parece que no puedo enseñarle nada a tú \\v[3].", "v": "흠... 너의 \\v[3]한테는 가르쳐 줄 수 있는 게 없어 보여."}
 {"k": "¿Qué debería recordar \\v[3]?", "v": "\\v[3]에게 어떤 기술을 떠올리게 할까?"}
 {"k": "Bien, hecho está. Tu Pokémon ha recordado ese movimiento.", "v": "좋아, 다 됐다! 네 포켓몬이 그 기술을 떠올렸어."}
@@ -757,7 +757,7 @@
 {"k": "Me preocupan mucho los robos de Pokémon que se están produciendo últimamente.", "v": "요즘 자꾸 일어나는 포켓몬 도난 사건 때문에 걱정이 많다네."}
 {"k": "La vida era más dura en mis años mozos, pero no recuerdo que las personas llegasen a esos extremos de vileza.", "v": "내 젊은 시절에도 살기는 참 팍팍했다만, 사람이 그 정도로 비열해지진 않았는데 말이야."}
 {"k": "¿Vas a retar a la regente <b>Canola</b>? Vive en el enorme palacio de la parte alta de la ciudad.", "v": "<b>카놀라</b> 섭정님한테 도전할 거야? 그분은 도시 윗길에 있는 커다란 궁전에 살아."}
-{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
@@ -841,7 +841,7 @@
 {"k": "Como miembro de las tropas guerreras de <b>Canola</b>, ¡combatiré con la presteza de un río bravo!", "v": "<b>카놀라</b> 님의 전사 부대원으로서, 거센 강물처럼 신속하게 싸우겠습니다!"}
 {"k": "¡Todos para uno! ¡Uno para todos!", "v": "모두를 위한 하나, 하나를 위한 모두!"}
 {"k": "<b>Mosquetero:</b> ¿Es el tipo Agua muy eficaz contra el tipo Lucha?", "v": "<b>총사:</b> 물타입은 격투타입에 효과가 굉장합니까?"}
-{"k": "<b>Mosquetero:</b> ¿Cuál de estos tipos elementales es capaz de vencer con facilidad al tipo Lucha?", "v": "<b>총사:</b> 이 타입들 중 격투타입을 손쉽게 상대할 수 있는 상성은 무엇입니까?"}
+{"k": "<b>Mosquetero:</b> ¿Cuál de estos tipos elementales es capaz de vencer con facilidad al tipo Lucha?", "v": "<b>총사:</b> 이 타입들 중 격투타입을 손쉽게 이길 수 있는 것은 무엇인가?"}
 {"k": "Elige sabiamente... ¡o tendrás que enfrentarte a una versión más temible de mí!", "v": "현명하게 선택해라... 그렇지 않으면 더 무서운 내 모습을 마주하게 될 테니!"}
 {"k": "<b>Mosquetera:</b> ¿Es el tipo Dragón muy eficaz contra el tipo Lucha?", "v": "<b>총사:</b> 드래곤타입은 격투타입에 효과가 굉장합니까?"}
 {"k": "<b>Canola:</b> Tu siguiente parada del <b>PokéTour</b> es en <b>Ciudad Óleo</b> donde reside el regente <b>Hisopo</b>.", "v": "<b>카놀라:</b> 네 <b>포켓투어</b>의 다음 목적지는 섭정 <b>히소포</b>가 계신 <b>올레오시티</b>다."}
@@ -851,14 +851,14 @@
 {"k": "Como miembro de las tropas guerreras de <b>Canola</b>, ¡combatiré con la presteza de un río bravo! Pero sin pasarme...", "v": "<b>카놀라</b> 님의 전사 부대원으로서, 거센 강물처럼 신속하게 싸우겠습니다! 선은 넘지 않겠지만 말입니다..."}
 {"k": "<b>Mosquetero:</b> ¿Es el tipo Bicho muy eficaz contra el tipo Lucha?", "v": "<b>총사:</b> 벌레타입은 격투타입에 효과가 굉장합니까?"}
 {"k": "Como miembro de las tropas guerreras de <b>Canola</b>, ¡combatiré con la energía de un fuego ardiente!", "v": "<b>카놀라</b> 님의 전사 부대원으로서, 타오르는 불꽃 같은 기세로 싸우겠습니다!"}
-{"k": "<b>Mosquetera:</b> ¿Cuál de estos tipos elementales es capaz de vencer con facilidad al tipo Lucha?", "v": "<b>총사:</b> 이 타입들 중 격투타입을 손쉽게 상대할 수 있는 상성은 무엇입니까?"}
+{"k": "<b>Mosquetera:</b> ¿Cuál de estos tipos elementales es capaz de vencer con facilidad al tipo Lucha?", "v": "<b>총사:</b> 이 타입들 중 격투타입을 손쉽게 이길 수 있는 것은 무엇인가?"}
 {"k": "<b>Mosquetero:</b> ¿Es el tipo Roca muy eficaz contra el tipo Lucha?", "v": "<b>총사:</b> 바위타입은 격투타입에 효과가 굉장합니까?"}
 {"k": "¡Hola, Aspirante! Este bastión se especializa en el tipo Lucha.", "v": "어서 오십시오, 후보생님! 이 요새는 격투타입을 전문으로 다룹니다."}
-{"k": "Antes de enfrentarte a <b>Canola</b>, los mosqueteros querrán ponerte a prueba. ¡Te aconsejo encarecidamente que no los subestimes!", "v": "<b>카놀라</b> 님과 겨루기 전에 총사들이 후보생님을 시험할 것입니다. 부디 방심하지 마시길 바랍니다!"}
+{"k": "Antes de enfrentarte a <b>Canola</b>, los mosqueteros querrán ponerte a prueba. ¡Te aconsejo encarecidamente que no los subestimes!", "v": "<b>카놀라</b> 님과 맞서기 전에 총사들이 후보생님을 시험하고자 합니다. 절대 얕보지 마시길 강력히 권합니다!"}
 {"k": "Toma esto, podría venirte bien.", "v": "이것을 받으십시오. 도움이 될 것입니다."}
 {"k": "¡Buena suerte en tu primer reto del <b>PokéTour</b>!", "v": "<b>포켓투어</b>의 첫 번째 도전에 행운이 함께하기를 바랍니다!"}
 {"k": "¡Hola, Aspirante! Este gimnasio se especializa en el tipo Lucha.", "v": "어서 오세요, 후보생님! 이 체육관은 격투타입 전문입니다."}
-{"k": "¿Necesitas que cure a tus Pokémon?", "v": "포켓몬을 치료하시겠습니까?"}
+{"k": "¿Necesitas que cure a tus Pokémon?", "v": "포켓몬을 회복시켜 드릴까요?"}
 {"k": "Perfecto, ¡mucha suerte en el bastión!", "v": "좋습니다. 요새에서 행운을 빕니다!"}
 {"k": "Sí", "v": "예"}
 {"k": "No", "v": "아니요"}
@@ -1151,7 +1151,7 @@
 {"k": "<b>Nácar:</b> ¡Hola de nuevo, \\PN! El negocio va mejor de lo que esperaba.", "v": "<b>나카르:</b> 안녕하세요, \\PN! 사업이 생각했던 것보다 잘 풀리고 있어요."}
 {"k": "<b>Nácar:</b> ¡Hola de nuevo, \\PN! ¡Veo que tu aspecto ha cambiado! Aquí el negocio va prosperando.", "v": "<b>나카르:</b> 안녕하세요, \\PN! 모습이 달라졌네요! 이쪽 사업도 번창하는 중이랍니다."}
 {"k": "La probabilidad de Pokémon shiny es de 0.15%.", "v": "색이 다른(Shiny) 포켓몬이 등장할 확률은 0.15%입니다."}
-{"k": "Te estamos muy agradecidos por ayudar a reconstruir este pueblo. ¿Necesitas curar a tus Pokémon?", "v": "이 마을을 재건하는 데 도움을 주셔서 정말 감사해요. 포켓몬을 치료하시겠습니까?"}
+{"k": "Te estamos muy agradecidos por ayudar a reconstruir este pueblo. ¿Necesitas curar a tus Pokémon?", "v": "이 마을을 재건하는 데 도움을 주셔서 정말 감사해요. 포켓몬을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Y recuerda que si en tus viajes encuentras a alguien desamparado, puedes hablarle de este pueblo.", "v": "그리고 여행 중에 의지할 곳 없는 사람을 만나거든, 이 마을에 대해 이야기해 주는 것도 잊지 마세요."}
@@ -1254,7 +1254,7 @@
 {"k": "Búscame en otros lugares del mundo para seguir haciendo intercambios.", "v": "다른 곳에서 저를 다시 만나면 계속 교환해 드릴게요."}
 {"k": "<b>PISTA DE ENTRENADOR:</b> Las estrellitas que aparecen en la pantalla de estadísticas de tus Pokémon representan los Valores Individuales (IVs), es decir, el potencial de ese Pokémon en esa estadística.", "v": "<b>트레이너 팁:</b> 포켓몬의 능력치 화면에 표시되는 작은 별표는 개체값(IV)을 나타내며, 해당 능력치에서 포켓몬이 가진 잠재력을 의미합니다."}
 {"k": "¡Este Skitty ha aprendido Enfermería Pokémon!", "v": "이 에나비가 포켓몬 간호를 배웠습니다!"}
-{"k": "¿Quieres curar a tus Pokémon?", "v": "포켓몬을 치료하시겠습니까?"}
+{"k": "¿Quieres curar a tus Pokémon?", "v": "포켓몬을 회복시켜 드릴까요?"}
 {"k": "¡Me encanta dar paseos matutinos! Y si puedo derrotar a alguien por el camino, ¡es aún más satisfactorio!", "v": "아침 산책은 정말 즐겁지요! 가는 길에 누군가를 쓰러뜨릴 수 있다면 더더욱 만족스럽고요!"}
 {"k": "¡Qué falta de respeto hacia una mujer con tanta clase como yo!", "v": "저처럼 품격 있는 여성한테 이렇게 무례하다니요!"}
 {"k": "Pasear sola de vez en cuando no está nada mal, pero ahora mismo me encantaría hacerlo en la compañía de un buen galán.", "v": "가끔은 혼자 산책하는 것도 나쁘지 않지만, 지금은 근사한 신사분의 호위를 받으며 거닐고 싶군요."}
@@ -1354,7 +1354,7 @@
 {"k": "Hmm... parece que no puedo enseñarle nada a tú \\v[3].", "v": "흠... 네 \\v[3]한테는 가르쳐 줄 수 있는 게 없는 것 같아."}
 {"k": "¿Qué debería recordar \\v[3]?", "v": "\\v[3]한테 어떤 기술을 떠올리게 할까?"}
 {"k": "Bien, hecho está. Tu Pokémon ha recordado ese movimiento.", "v": "됐어, 다 끝났어! 네 포켓몬이 그 기술을 떠올렸어."}
-{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
@@ -1437,7 +1437,7 @@
 {"k": "Así que esto es <b>Chateau Rosillon</b>... reconozco que no está nada mal. Pero he estado en casas mejores.", "v": "여기가 바로 <b>로시욘 저택</b>이군요... 꽤 괜찮다는 건 인정하죠. 하지만 난 더 좋은 저택도 가봤답니다."}
 {"k": "Me mantendré alerta. No quiero que nadie cometa ninguna fechoría aquí dentro.", "v": "경계를 게을리하지 않겠다. 이곳에서 누군가 악행을 저지르는 꼴은 못 보니까."}
 {"k": "Estas fiestas siempre son buenas para conocer gente interesante. ¿Estará por aquí mi futura mujer?", "v": "이런 연회는 늘 흥미로운 사람들을 만나기 좋은 자리죠. 혹시 제 미래의 아내가 여기 있을까요?"}
-{"k": "¡Hola! Estoy contratada por el servicio de la casa, ¿quieres curar a tu equipo?", "v": "안녕하세요! 저는 이 저택에 고용된 간호사예요. 포켓몬들을 치료해 드릴까요?"}
+{"k": "¡Hola! Estoy contratada por el servicio de la casa, ¿quieres curar a tu equipo?", "v": "안녕하세요! 저는 이 저택에 고용된 간호사예요. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
@@ -1765,7 +1765,7 @@
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] Mientras tanto, ¡rumbo a <b>Ciudad Novarte</b>!", "v": "\\c[3]<b>크리산토:</b>\\c[0] 그동안, 우리는 <b>백단시티</b>로 향하자!"}
 {"k": "Nuestro tercer señor Regente nos espera.", "v": "우리의 세 번째 섭정께서 기다리고 계시니 말이야."}
 {"k": "Esta aldea tiene un pasado de aquelarres de brujas, de ahí debe su nombre.", "v": "흠... 그렇군... 이 마을은 옛날 마녀들이 집회를 열던 곳이지... 이름도 거기서 유래한 것이다."}
-{"k": "Por culpa de ese pasado, hemos estado constantemente vigilados por los mosqueteros.", "v": "그런 과거 때문에, 총사들이 끊임없이 우리를 감시해 온 것이다..."}
+{"k": "Por culpa de ese pasado, hemos estado constantemente vigilados por los mosqueteros.", "v": "그런 어두운 과거 때문에, 총사들이 끊임없이 우리를 감시해 온 것이다..."}
 {"k": "...", "v": "......"}
 {"k": "¡Ju, ju, ju! ¿Cuánto tiempo llevaba sin contactarme alguien mortal?", "v": "후, 후, 후! 필멸자가 나한테 연락한 지 얼마나 된 걸까?"}
 {"k": "¡Y qué ven mis ojos! Tienes un grandísimo atractivo, que nadie te diga lo contrario.", "v": "어머, 내 눈에 보이는 게 뭐야! 넌 정말 엄청나게 매력적이야, 누구도 부정하지 못할 만큼."}
@@ -2167,7 +2167,7 @@
 {"k": "No", "v": "아니요"}
 {"map": 57, "n": 11}
 {"k": "¡Este Illumise ha aprendido Enfermería Pokémon!", "v": "이 네오비트가 ‘포켓몬 간호’를 배웠다!"}
-{"k": "¿Quieres curar a tus Pokémon?", "v": "포켓몬을 치료하시겠습니까?"}
+{"k": "¿Quieres curar a tus Pokémon?", "v": "포켓몬을 회복시켜 드릴까요?"}
 {"k": "¡Jejeje! ¿Pero qué hace alguien como tú en nuestra tierra encantada?", "v": "히히히! 그런데 너 같은 녀석이 우리 마법의 땅에서 뭘 하고 있느냐?"}
 {"k": "Entiendo, estás de visita. ¿No?", "v": "알겠다, 놀러 온 게로구나. 그렇지?"}
 {"k": "Cualquier persona dispuesta a aprender es bienvenida a nuestro aquelarre, ¡no te cortes y pregunta lo que desees!", "v": "배우려는 마음이 있다면 누구나 우리 집회에 오는 걸 환영하느니라. 주저하지 말고 원하는 걸 물어보거라!"}
@@ -2403,12 +2403,12 @@
 {"k": "En este <b>Tablón de Misiones</b> encontrarás algunos encargos pendientes con los que te hayas topado en tu aventura.", "v": "<b>의뢰 게시판</b>에서는 모험 도중 마주쳤던 미완료 의뢰를 확인할 수 있습니다."}
 {"k": "Mmm, ¡el precio de las Pokéball es inasumible incluso para alguien como yo!", "v": "음, 몬스터볼 가격이 나 정도 되는 사람에게도 터무니없이 비싸군요!"}
 {"k": "Creo que trataré de fabricar mis propias Pokéball.", "v": "아무래도 내가 직접 몬스터볼을 만들어 봐야겠어요."}
-{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
 {"k": "Zzzz...", "v": "Zzzz..."}
-{"k": "... ¡Uy! ¡<i>Bonsoir</i>!Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "... 어머나! <i>Bonsoir</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "... ¡Uy! ¡<i>Bonsoir</i>!Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "... 어머나! <i>Bonsoir</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Recordar movimiento", "v": "기술 떠올리기"}
 {"k": "Niveles de los líderes", "v": "섭정의 레벨"}
 {"k": "Exportar equipo", "v": "쇼다운 파일로 내보내기"}
@@ -2419,7 +2419,7 @@
 {"k": "El regente <b>Hisopo</b> está buscando actores y actrices para su siguiente ópera, ¿por qué no audicionas para el papel principal?", "v": "섭정 <b>히소포</b> 님께서 다음 오페라에 출연할 배우를 찾고 계시는데, 주연 역할 오디션에 도전해 보시겠습니까?"}
 {"k": "Toma esto, podría venirte bien.", "v": "이것을 받으십시오. 도움이 될 것입니다."}
 {"k": "¡Buena suerte en tu segundo reto del <b>PokéTour</b>!", "v": "<b>포켓투어</b>의 두 번째 도전에서도 선전을 기원합니다!"}
-{"k": "¿Necesitas que cure a tus Pokémon?", "v": "포켓몬을 치료하시겠습니까?"}
+{"k": "¿Necesitas que cure a tus Pokémon?", "v": "포켓몬을 회복시켜 드릴까요?"}
 {"k": "Perfecto, ¡mucha suerte en el bastión!", "v": "좋습니다. 요새에서 행운을 빕니다!"}
 {"k": "¿Vienes a audicionar para la ópera? Habla con el regente <b>Hisopo</b> primero.", "v": "오페라 오디션을 보러 오셨나요? 먼저 섭정 <b>히소포</b> 님과 이야기해 보세요."}
 {"k": "¿Vas a audicionar para el papel principal? ¡Buena suerte!", "v": "주연 역할 오디션을 보러 가시나요? 행운을 빌어요!"}
@@ -2604,7 +2604,7 @@
 {"k": "Bien, hecho está. Tu Pokémon ha recordado ese movimiento.", "v": "흠... 다 되었다. 네 포켓몬이 그 기술을 떠올렸다."}
 {"k": "¡Es una caja con materiales!", "v": "재료가 들어 있는 상자다!"}
 {"k": "Ya has registrado esta caja.", "v": "이 상자는 이미 확인했다."}
-{"k": "¡<i>Bonjour</i>! ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 지닌 포켓몬을 치료하시겠어요?"}
+{"k": "¡<i>Bonjour</i>! ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 지닌 포켓몬을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
@@ -2802,9 +2802,9 @@
 {"k": "La magia del universo también radica en sus misterios, pero el empeño del ser humano por desvelarlos es inacabable. ¿Será ese el auténtico sentido de nuestra existencia?", "v": "우주의 마법 또한 그 신비함에서 나오는 법이지만, 그걸 밝혀내려는 인간의 집념도 끝이 없지. 과연 그게 우리 존재의 진정한 의미일까?"}
 {"k": "¿Usar <b>Polvo Explosivo</b>?", "v": "<b>폭발가루</b>를 사용할까?"}
 {"k": "¡Es un cúmulo de piedrecitas!", "v": "작은 돌멩이들이 잔뜩 쌓여 있다!"}
-{"k": "¿Necesitas que cure a tus Pokémon? Aunque primero habría que cansarlos un poco con un buen combate.", "v": "포켓몬 치료가 필요한가? 허나 먼저 제대로 된 배틀로 녀석들을 지치게 만들어야 한다."}
+{"k": "¿Necesitas que cure a tus Pokémon? Aunque primero habría que cansarlos un poco con un buen combate.", "v": "포켓몬 회복이 필요한가? 허나 먼저 제대로 된 배틀로 녀석들을 지치게 만들어야 한다."}
 {"k": "¡Mis habilidades medicinales están a tu servicio!", "v": "내 의술은 언제든 준비돼 있다!"}
-{"k": "¿Quieres que cure a tu equipo con mis hierbas medicinales? Solo te cobraré 500 pokécuartos de nada.", "v": "내 약초로 네 포켓몬을 치료해 줄까? 겨우 500 포켓프랑이면 된단다."}
+{"k": "¿Quieres que cure a tu equipo con mis hierbas medicinales? Solo te cobraré 500 pokécuartos de nada.", "v": "내 약초로 네 포켓몬을 회복시켜 줄까? 겨우 500 포켓프랑이면 된단다."}
 {"k": "¿A que son eficaces mis medicinas? ¡Que la buena voluntad nazca en tu interior!", "v": "내 약이 잘 듣지 않니? 네 마음속에 선의가 싹트기를 빈단다!"}
 {"k": "Ya veo, ¡espero que tus Pokémon no mueran!", "v": "그렇구나. 네 포켓몬들이 죽지 않기를 빌어 주마."}
 {"k": "Esta cueva será tu perdición, ¡no es nada personal! Llevo días sin comer.", "v": "이 동굴이 네 무덤이 될 거다. 감정은 없어! 며칠 동안 아무것도 못 먹었거든."}
@@ -2858,7 +2858,7 @@
 {"k": "Y a ti, que me has hecho algo de compañía, me gustaría darte esto.", "v": "그리고 나와 말벗이 되어 준 자네에게 이걸 주고 싶군."}
 {"k": "Aquellos que no se rigen por este principio sufrirán un oscuro destino.", "v": "이 원리를 따르지 않는 자들에게는 어두운 운명이 기다릴 뿐이라네."}
 {"k": "Academia Novarte", "v": "백단 아카데미"}
-{"k": "El bastión está cerrado. ¿No te has enterado, Aspirante? El regente de la ciudad falleció la semana pasada.", "v": "요새는 폐쇄되었다. 소식 못 들었나, 후보생? 도시의 섭정께서 지난주에 세상을 떠나셨다."}
+{"k": "El bastión está cerrado. ¿No te has enterado, Aspirante? El regente de la ciudad falleció la semana pasada.", "v": "요새는 폐쇄되었다! 소식 못 들었나, 후보생? 도시의 섭정께서 지난주에 세상을 떠나셨다."}
 {"k": "¿Por qué no te pasas por la <b>Academia Novarte</b> para que te orienten sobre cómo continuar?", "v": "<b>백단 아카데미</b>에 들러서 앞으로 어떻게 해야 할지 안내를 받아 봐라."}
 {"k": "Esta noche he quedado con un caballero para batirme en duelo, ya que ofendió al honor de mi familia.", "v": "오늘 밤 한 신사와 결투하기로 했어. 우리 가문의 명예를 더럽혔거든."}
 {"k": "¡Menos mal que los duelos se libran con Pokémon! Existen regiones lejanas en las que aún no hay entrenadores Pokémon. ¡Ahí los duelos son a espada!", "v": "다행히 결투는 포켓몬으로 치르지. 아직 포켓몬 트레이너가 없는 먼 지방에서는 결투를 칼로 한다더군!"}
@@ -2949,12 +2949,12 @@
 {"k": "¿Será verdad que hay fantasmas en el taller del Regente <b>Sapin</b>?", "v": "<b>사핀</b> 섭정의 공방에 정말 유령이 나온다는 게 사실인가요?"}
 {"k": "Nunca lo sabremos, pues la puerta está sellada con trucos alquímicos.", "v": "문이 연금술 속임수로 봉인되어 있으니 영영 알 수 없겠네요."}
 {"k": "Los Pokémon pueden ayudarnos a construir un mundo próspero y feliz. Ellos son la clave de todo.", "v": "포켓몬은 우리가 번영하고 행복한 세상을 만드는 데 도움을 줄 수 있어요. 그들이야말로 모든 것의 열쇠랍니다."}
-{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
 {"k": "Zzzz...", "v": "Zzzz..."}
-{"k": "... ¡Uy! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "... 어머나! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "... ¡Uy! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "... 어머나! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Recordar movimiento", "v": "기술 떠올리기"}
 {"k": "Niveles de los líderes", "v": "섭정의 레벨"}
 {"k": "Exportar equipo", "v": "쇼다운 파일로 내보내기"}
@@ -3054,7 +3054,7 @@
 {"k": "Parece que tenemos un nuevo regente, <b>F3</b>, y ha diseñado en tiempo récord un acertijo de barreras eléctricas.", "v": "새로운 섭정인 <b>F3</b> 님이 오신 모양입니다. 게다가 순식간에 전기 장벽 퍼즐까지 만들어 놓으셨지요."}
 {"k": "Toma esto, podría venirte bien.", "v": "이것을 받으십시오. 도움이 될 것입니다."}
 {"k": "¡Buena suerte en tu tercer reto del <b>PokéTour</b>!", "v": "<b>포켓투어</b>의 세 번째 도전에서도 행운이 함께하기를 바랍니다!"}
-{"k": "¿Necesitas que cure a tus Pokémon?", "v": "포켓몬을 치료하시겠습니까?"}
+{"k": "¿Necesitas que cure a tus Pokémon?", "v": "포켓몬을 회복시켜 드릴까요?"}
 {"k": "Perfecto, ¡mucha suerte en el bastión!", "v": "좋습니다. 요새에서 행운을 빕니다!"}
 {"k": "¿Qué te parecen nuestras barreras eléctricas? ¿A que son lo más?", "v": "우리 전기 장벽은 어떤가? 정말 근사하지 않은가?"}
 {"k": "Tengo mal perder...", "v": "난 지는 걸 잘 못 참아..."}
@@ -3577,12 +3577,12 @@
 {"k": "¿No te parece increíble el descubrimiento de los fósiles? Si lo que dicen los investigadores es cierto, los Pokémon serían criaturas mucho más antiguas de lo imaginábamos.", "v": "화석이 발견된 게 정말 놀랍지 않아? 연구자들 말이 사실이라면, 포켓몬은 우리가 상상한 것보다 훨씬 오래전부터 살던 생물일걸."}
 {"k": "Aunque una Pokéball es de lo más cómoda, nunca está de más caminar junto a tu compañero Pokémon fuera de ella.", "v": "몬스터볼이 아무리 편리해도, 볼 밖에서 파트너 포켓몬하고 같이 걸어보는 것도 참 좋아."}
 {"k": "¡Fíjate en tu Pokémon! Parece feliz de caminar a tu lado.", "v": "네 포켓몬을 잘 봐! 네 곁을 따라 걷는 게 정말 즐거워 보인다."}
-{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
 {"k": "Zzzz...", "v": "Zzzz..."}
-{"k": "... ¡Uy! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "... 어머나! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "... ¡Uy! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "... 어머나! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "¡Hola, Aspirante! ¿Qué necesitas?", "v": "안녕, 후보생! 뭐가 필요해?"}
 {"k": "¿Qué Pokémon debería recordar un movimiento?", "v": "어떤 포켓몬한테 기술을 떠올리게 할까?"}
 {"k": "Vale, ¡vuelve cuando lo necesites!", "v": "좋아, 필요할 때 언제든 또 와!"}
@@ -4009,12 +4009,12 @@
 {"k": "En este <b>Tablón de Misiones</b> encontrarás algunos encargos pendientes con los que te hayas topado en tu aventura.", "v": "<b>의뢰 게시판</b>에서는 모험 도중 마주쳤던 미완료 의뢰를 확인할 수 있습니다."}
 {"k": "Algo huele a chamusquina con <i>monsieur</i> <b>Lanto</b>. Hace un tiempo vino aquí para invitar a los campesinos más pobres a una fiesta privada en su mansión.", "v": "<i>무슈</i> <b>란토</b>한테서 구린내가 나. 얼마 전에 가난한 농민들을 자기 저택의 비공개 파티에 초대하더니만."}
 {"k": "Todavía no han vuelto.", "v": "아직도 안 돌아왔어."}
-{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
 {"k": "Zzzz...", "v": "Zzzz..."}
-{"k": "... ¡Uy! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "... 어머나! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "... ¡Uy! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "... 어머나! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Cuanto más tiempo pases con tus Pokémon, más te querrán.", "v": "포켓몬하고 오래 시간을 보낼수록 널 더 따르는 법이지."}
 {"k": "También puedes acelerar el proceso de captación de amor dándoles de comer ciertas bayas.", "v": "특정 나무열매를 먹여서 친해지는 속도를 더 올릴 수도 있고."}
 {"k": "Recordar movimiento", "v": "기술 떠올리기"}
@@ -4057,7 +4057,7 @@
 {"k": "Para avanzar no solo tendrás que demostrar tu habilidad en combate, ¡también tus habilidades culinarias!", "v": "앞으로 나아가시려면 배틀 실력뿐만 아니라 요리 실력도 증명하셔야 합니다!"}
 {"k": "Toma esto, podría venirte bien.", "v": "이것을 받으십시오. 도움이 될 것입니다."}
 {"k": "¡Buena suerte en tu cuarto reto del <b>PokéTour</b>!", "v": "<b>포켓투어</b> 네 번째 도전에서 행운을 빕니다!"}
-{"k": "¿Necesitas que cure a tus Pokémon?", "v": "포켓몬을 치료하시겠습니까?"}
+{"k": "¿Necesitas que cure a tus Pokémon?", "v": "포켓몬을 회복시켜 드릴까요?"}
 {"k": "Perfecto, ¡mucha suerte en el bastión!", "v": "좋습니다. 요새에서 행운을 빕니다!"}
 {"k": "<b>Zafra:</b> ¡Aaaaaaay!", "v": "<b>사프라:</b> 꺄아아아악!"}
 {"k": "El crítico culinario <b>Eneldo</b> ha llegado al pueblo, ¡y quiere una prueba de nuestros platos! ¡Ayayay!", "v": "미식 평론가 <b>에넬도</b> 씨가 마을에 도착했는데, 우리 요리를 맛보고 싶대! 아이고!"}
@@ -4447,7 +4447,7 @@
 {"k": "Ninguna persona es imprescindible, pero el alma del pueblo es inmortal.", "v": "대체할 수 없는 사람은 없지만, 민중의 영혼은 불멸이다."}
 {"k": "Después de ver nuestros derechos y los de nuestros Pokémon siendo pisoteados, la insurrección se ha vuelto un deber sagrado.", "v": "우리와 우리 포켓몬의 권리가 짓밟히는 것을 본 이상, 봉기는 신성한 의무다."}
 {"k": "¿Estás escoltando al rey? ¡Permíteme serte de ayuda!", "v": "국왕 폐하를 호위하는 중인가? 내가 도움을 주겠다!"}
-{"k": "Curar Pokémon", "v": "포켓몬 치료하기"}
+{"k": "Curar Pokémon", "v": "포켓몬 회복하기"}
 {"k": "Acceder al Rancho", "v": "목장에 들어가기"}
 {"k": "Nada", "v": "아무것도 없음"}
 {"map": 126, "n": 16}
@@ -4460,7 +4460,7 @@
 {"k": "No tengo más Pokémon que ofrecerte por ahora.", "v": "지금은 더 교환해 드릴 포켓몬이 없네요."}
 {"k": "Búscame en otros lugares del mundo para seguir haciendo intercambios.", "v": "다른 곳에서 저를 다시 만나면 계속 교환해 드릴게요."}
 {"k": "¿Activar palanca?", "v": "레버를 당길까?"}
-{"k": "Curar Pokémon", "v": "포켓몬 치료하기"}
+{"k": "Curar Pokémon", "v": "포켓몬 회복하기"}
 {"k": "Acceder al Rancho", "v": "목장에 들어가기"}
 {"k": "Nada", "v": "아무것도 없음"}
 {"k": "Acepto", "v": "그렇게 하죠"}
@@ -4704,12 +4704,12 @@
 {"k": "No me fío del <b>Team Azoth</b> ni de esa <b>Alca</b>. Las cosas que se cuentan sobre los experimentos que han llevado a cabo son muy turbios.", "v": "전 <b>아조스단</b>도, 그 <b>알카</b>라는 자도 믿지 않아요. 그들이 진행했다는 실험에 대해 떠도는 소문은 아주 수상쩍거든요."}
 {"k": "Se rumorea que están detrás de la plaga que arrasó con parte de <b>Pueblo Vánitas</b>.", "v": "<b>고목내마을</b> 일부를 쓸어버린 전염병의 배후에 그들이 있다는 소문이 돌고 있죠."}
 {"k": "Los mayores secretos del mundo se esconden en el fondo del mar, de eso estoy completamente seguro.", "v": "세상에서 가장 큰 비밀은 바다 깊은 곳에 숨겨져 있다고 난 장담하거든."}
-{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
 {"k": "Zzzz...", "v": "Zzzz..."}
-{"k": "... ¡Uy! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "... 어머나! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "... ¡Uy! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "... 어머나! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Recordar movimiento", "v": "기술 떠올리기"}
 {"k": "Niveles de los líderes", "v": "섭정의 레벨"}
 {"k": "Exportar equipo", "v": "쇼다운 파일로 내보내기"}
@@ -4846,7 +4846,7 @@
 {"k": "No me interesa", "v": "관심 없어요"}
 {"k": "Sí", "v": "예"}
 {"k": "No", "v": "아니요"}
-{"k": "Curar Pokémon", "v": "포켓몬 치료하기"}
+{"k": "Curar Pokémon", "v": "포켓몬 회복하기"}
 {"k": "Acceder al Rancho", "v": "목장에 들어가기"}
 {"k": "Recordar Movs", "v": "기술 떠올리기"}
 {"k": "Nada", "v": "아무것도 없음"}
@@ -4910,7 +4910,7 @@
 {"k": "¿Qué te trae a este desdichado lugar? ¿Es que acaso quieres convertir estas alcantarillas en tu cripta particular?", "v": "이 비참한 곳에는 무슨 일로 오셨나요? 설마 이 하수도를 당신만의 묘지로 만들 셈인가요?"}
 {"k": "¡No! ¡Mi pobre Hypno!", "v": "안 돼! 불쌍한 내 슬리퍼!"}
 {"k": "¿Has visto a esos Duosion que pululan por aquí? Se trata de una mutación del Pokémon original fruto de los residuos alquímicos.", "v": "이 근처를 돌아다니는 듀오란들을 보셨나요? 연금술 잔여물 때문에 발생한 원종 포켓몬의 돌연변이랍니다."}
-{"k": "Por cierto, ¿quieres que cure a tu equipo y te rellene el Pokévial? Solo te cobraré 5000 pokécuartos de nada.", "v": "그건 그렇고, 동행 포켓몬을 치료하고 포켓몬약병을 채워드릴까요? 5000포켓프랑이면 돼요."}
+{"k": "Por cierto, ¿quieres que cure a tu equipo y te rellene el Pokévial? Solo te cobraré 5000 pokécuartos de nada.", "v": "그건 그렇고, 동행 포켓몬을 회복시키고 포켓몬약병을 채워드릴까요? 5000 포켓프랑이면 돼요."}
 {"k": "¿A que son eficaces mis medicinas? ¡Que la buena voluntad nazca en tu interior!", "v": "제 약, 정말 효과적이죠? 당신의 마음속에 선의가 싹트기를 바랄게요!"}
 {"k": "Ya veo, ¡espero que tus Pokémon no mueran!", "v": "그렇군요. 당신의 포켓몬들이 죽지 않기를 바랄게요!"}
 {"k": "\\c[9]<b>???:</b>\\c[0] ...", "v": "\\c[9]<b>???:</b>\\c[0] ..."}
@@ -5003,12 +5003,12 @@
 {"k": "Cuando no está en su Bastión, podrás encontrarla trabajando en el <b>Hospicio Caduco</b>, nuestro principal taller de alquimia.", "v": "요새에 안 계실 때는 우리 주요 연금술 작업장인 <b>카두코 구호소</b>에서 일하고 계실 거다."}
 {"k": "Esos pérfidos villanos del <b>Team Azoth</b>... no solo me derrotaron en combate cinco contra uno, sino que me robaron a mi Pokémon después de ello.", "v": "<b>아조스단</b>의 악독한 악당 녀석들... 5 대 1 배틀로 날 쓰러뜨린 것도 모자라 내 포켓몬까지 훔쳐 갔다."}
 {"k": "Hay una oscura plaza en el infierno reservada para cada uno de ellos.", "v": "지옥에 그 녀석들 몫의 어두운 자리가 하나씩 준비되어 있을 거다."}
-{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
 {"k": "Zzzz...", "v": "Zzzz..."}
-{"k": "... ¡Uy! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "... 어머나! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "... ¡Uy! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "... 어머나! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "¡Hola, Aspirante! ¿Qué necesitas?", "v": "안녕, 후보생! 뭐가 필요해?"}
 {"k": "¿Qué Pokémon debería recordar un movimiento?", "v": "어떤 포켓몬한테 기술을 떠올리게 할까?"}
 {"k": "Vale, ¡vuelve cuando lo necesites!", "v": "좋아, 필요할 때 언제든 또 와!"}
@@ -5029,7 +5029,7 @@
 {"k": "¡Ah, dos cosas más! Este barco guarda una doble sorpresa, ya que a sus entrenadores les gusta usar tanto Pokémon de tipo Agua como de tipo Volador. Además, el capitán <b>Loto</b> es un entusiasta de los combates dobles.", "v": "아, 두 가지 더 말씀드리겠습니다! 이 배는 놀라움도 두 배입니다. 이곳 트레이너들은 물타입과 비행타입 포켓몬을 모두 즐겨 사용하거든요. 게다가 <b>로토</b> 선장님은 더블 배틀의 열렬한 팬이십니다."}
 {"k": "Y nada más, que me enrollo más que las persianas. ¡Buena suerte!", "v": "그럼 이만 줄이겠습니다. 더 말하다간 끝이 없겠군요. 행운을 빕니다!"}
 {"k": "¡Ah, dos cosas más! Este barco guarda una doble sorpresa, ya que a sus entrenadores les gusta usar tanto Pokémon de tipo Agua como de tipo Volador. Además, el capitán <b>Loto</b> es un entusiaste de los combates dobles.", "v": "아, 두 가지 더 말씀드리겠습니다! 이 배는 놀라움도 두 배입니다. 이곳 트레이너들은 물타입과 비행타입 포켓몬을 모두 즐겨 사용하거든요. 게다가 <b>로토</b> 선장님은 더블 배틀의 열렬한 팬이십니다."}
-{"k": "¿Necesitas que cure a tus Pokémon?", "v": "포켓몬을 치료하시겠습니까?"}
+{"k": "¿Necesitas que cure a tus Pokémon?", "v": "포켓몬을 회복시켜 드릴까요?"}
 {"k": "Perfecto, ¡mucha suerte en el bastión!", "v": "좋습니다. 요새에서 행운을 빕니다!"}
 {"k": "<b>Capitán Loto:</b> Con diez cañones por banda, viento en popa a toda vela...", "v": "<b>로토 선장:</b> 양쪽에 대포 열 문씩 싣고, 꽁무니바람에 돛을 가득 올려..."}
 {"k": "No corta el mar, si no vuela...", "v": "바다를 가르는 게 아니라, 날아가는구나..."}
@@ -5101,7 +5101,7 @@
 {"k": "La prueba te resultará peculiar, pues tendrás que avanzar por una serie de puertas, cada una aguardando un desafío aleatorio.", "v": "이 시련은 제법 독특합니다. 일련의 문을 지나가야 하며 각 문 뒤에는 무작위 도전이 기다리고 있습니다."}
 {"k": "Toma esto, podría venirte bien.", "v": "이것을 받으십시오. 도움이 될 것입니다."}
 {"k": "¡Buena suerte en tu sexto reto del <b>PokéTour</b>!", "v": "<b>포켓투어</b> 여섯 번째 시련에 행운이 함께하기를 바랍니다!"}
-{"k": "¿Necesitas que cure a tus Pokémon?", "v": "포켓몬을 치료하시겠습니까?"}
+{"k": "¿Necesitas que cure a tus Pokémon?", "v": "포켓몬을 회복시켜 드릴까요?"}
 {"k": "Perfecto, ¡mucha suerte en el bastión!", "v": "좋습니다. 요새에서 행운을 빕니다!"}
 {"k": "Una vez cruzado el umbral, no podrás volver atrás hasta que llegues a la Regente.", "v": "한 번 문턱을 넘으면 섭정에게 도달할 때까지 되돌아올 수 없습니다."}
 {"k": "¿Quieres continuar?", "v": "계속하시겠습니까?"}
@@ -5333,22 +5333,22 @@
 {"k": "No soy una entusiaste de los combates Pokémon. Ahora, me encanta el Blackjack.", "v": "난 포켓몬 배틀에는 관심 없어. 대신 블랙잭이라면 환장하지."}
 {"k": "¿Te apetece echar una partidita rápida?", "v": "잠깐 게임 한 판 할래?"}
 {"k": "Te explico. En una partida de Blackjack cada jugador va recibiendo cartas de forma aleatoria.", "v": "이봐, 설명해 줄게. 블랙잭은 카드 한 장씩 무작위로 받는 거야."}
-{"k": "Cada vez que se reparta una carta, el jugador podrá decidir si quiere o no quiere recibir más cartas.", "v": "이봐, 카드가 나올 때마다 더 받을지 말지 결정하면 되는 거지."}
+{"k": "Cada vez que se reparta una carta, el jugador podrá decidir si quiere o no quiere recibir más cartas.", "v": "카드가 배분될 때마다, 플레이어는 카드를 더 받을지 말지 결정할 수 있어."}
 {"k": "El objetivo es sumar lo más cerca posible de 21 con las cartas acumuladas.", "v": "목표는 모은 카드의 합을 21에 최대한 가깝게 맞추는 거야."}
-{"k": "Si se recibe un as, el jugador puede decidir si contarlo como 1 o como 13.", "v": "에이스가 나오면 1로 쓸지 13으로 쓸지 네가 정할 수 있지."}
+{"k": "Si se recibe un as, el jugador puede decidir si contarlo como 1 o como 13.", "v": "에이스를 뽑으면 이를 1로 칠지 13으로 칠지 맘대로 정할 수 있지."}
 {"k": "Explicado esto, ¡comencemos! Nos jugamos 1.000 pokécuartos.", "v": "설명은 끝났으니 시작하자고! 판돈은 1,000포켓프랑이다."}
-{"k": "¡Eh, eh! Que no pretendo estafarte, me gusta jugar limpio.", "v": "이봐, 이봐! 속이려는 게 아니라고. 난 정당하게 겨루는 걸 좋아해."}
+{"k": "¡Eh, eh! Que no pretendo estafarte, me gusta jugar limpio.", "v": "이봐, 이봐! 널 속이려는 게 아냐, 난 정당하게 겨루는 걸 좋아한다고."}
 {"k": "\\PN recibe una carta.", "v": "\\PN\\j[이,가] 카드를 한 장 받는다."}
 {"k": "Te ha tocado un as, ¿que valor le asignas? Recuerda que tienes que intentar sumar 21.", "v": "에이스가 나왔군. 몇으로 계산할래? 합을 21에 맞추려고 해봐."}
 {"k": "Has recibido un \\v[135]. Recuerda que debes intentar sumar 21.", "v": "\\v[135]를 받았어. 합이 21에 가까워져야 한다는 걸 잊지 마."}
 {"k": "<b>Contrincante:</b> Mmm...", "v": "<b>상대방:</b> 음..."}
-{"k": "¿Quieres recibir otra carta?", "v": "카드를 한 장 더 받을래?"}
+{"k": "¿Quieres recibir otra carta?", "v": "카드를 한 장 더 받겠어?"}
 {"k": "<b>Contrincante:</b> ¡Bien! ¡Veamos quién ha ganado!", "v": "<b>상대방:</b> 좋아! 누가 이겼는지 확인해 보자고!"}
 {"k": "La suma total de \\PN es \\v[136], la de tu contrincante es \\v[137].", "v": "\\PN의 합계는 \\v[136], 상대방의 합계는 \\v[137]이다."}
 {"k": "¡\\PN gana la partida!", "v": "\\PN가 승리했다!"}
 {"k": "<b>Contrincante:</b> ¿Tienes experiencia en esto o es la suerte del principiante?", "v": "<b>상대방:</b> 여기에 일가견이 있는 거야, 아니면 초보자의 행운인가?"}
 {"k": "En fin, pues te llevas 1.000 pokécuartos, ¡pero no tientes demasiado a la suerte!", "v": "어쨌든 1,000포켓프랑은 네 몫이다만, 운을 너무 과신하진 마라!"}
-{"k": "¡Tu contrincante gana la partida!", "v": "상대방이 승리했다!"}
+{"k": "¡Tu contrincante gana la partida!", "v": "상대방의 승리다!"}
 {"k": "<b>Contrincante:</b> ¡Ja! ¡Si es que soy toda una maestra en esto!", "v": "<b>상대방:</b> 하! 난 이 분야의 대가라고!"}
 {"k": "Como hemos acordado, me llevo 1.000 pokécuartos. ¡Te deseo mejor suerte la próxima vez!", "v": "약속대로 1,000포켓프랑은 내가 가져가지. 다음엔 운이 더 따르길 비마!"}
 {"k": "La partida ha resultado en empate.", "v": "무승부로 끝났다."}
@@ -5805,12 +5805,12 @@
 {"k": "Además de ser bellísimo, tiene la capacidad de potenciarse si recibe ataques de fuego, a pesar de ser de tipo Planta.", "v": "아름다울 뿐만 아니라, 풀타입인데도 불꽃타입 공격을 받으면 위력이 올라가는 능력이 있답니다."}
 {"k": "Los enemigos de <i>monsieur</i> <b>Lanto</b> afirman que bebe la sangre de Pokémon fuertes y doncellas jóvenes para mantenerse bello.", "v": "<i>무슈</i> <b>란토</b>의 적들은 그 양반이 아름다움을 유지하려고 강한 포켓몬이랑 젊은 처녀의 피를 마신다고 하더라고."}
 {"k": "Pero, ¿quién podría creerse un disparate semejante?", "v": "하지만 그런 터무니없는 말을 누가 믿겠어?"}
-{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
 {"k": "Zzzz...", "v": "Zzzz..."}
-{"k": "... ¡Uy! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "... 어머나! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "... ¡Uy! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "... 어머나! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "¡Hola, Aspirante! ¿Qué necesitas?", "v": "안녕, 후보생! 뭐가 필요해?"}
 {"k": "¿Qué Pokémon debería recordar un movimiento?", "v": "어떤 포켓몬한테 기술을 떠올리게 할까?"}
 {"k": "Vale, ¡vuelve cuando lo necesites!", "v": "좋아, 필요할 때 언제든 또 와!"}
@@ -6013,12 +6013,12 @@
 {"k": "¿Has oído hablar de las <b>Catacumbas de Luminalia</b>?", "v": "너 <b>미르 지하묘지</b>라고 들어는 봤어?"}
 {"k": "Se trata de una parte oculta y subterránea de la ciudad donde los marginados y malhechores se esconden.", "v": "소외된 녀석들이랑 범죄자들이 숨어 지내는 도시 아래의 숨겨진 지하 공간이지."}
 {"k": "No tengo ni idea de cómo entrar, pero los rumores apuntan a que la entrada podría encontrarse cerca de la <b>Galería de Arte</b>.", "v": "어떻게 들어가는지는 전혀 모르겠는데, 소문에 의하면 입구가 <b>미술관</b> 근처에 있다는 것 같더라고."}
-{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
 {"k": "Zzzz...", "v": "Zzzz..."}
-{"k": "... ¡Uy! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "... 어머나! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "... ¡Uy! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "... 어머나! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Recordar movimiento", "v": "기술 떠올리기"}
 {"k": "Niveles de los líderes", "v": "섭정의 레벨"}
 {"k": "Exportar equipo", "v": "쇼다운 파일로 내보내기"}
@@ -6041,12 +6041,12 @@
 {"k": "Pero yo no lo creo, pienso que están esperando a la señal adecuada para volver a aparecer.", "v": "하지만 전 그렇게 생각하지 않아요. 언젠가 돌아오기 적절한 때를 기다리고 있을 뿐이라고 봐요."}
 {"k": "Suelo fiarme de la gente en función de lo bien o mal que traten a sus Pokémon.", "v": "저는 사람들이 자신의 포켓몬을 얼마나 잘 대하는지에 따라 그 사람을 신뢰하곤 해요."}
 {"k": "En este caso, creo que es un prejuicio de lo más acertado.", "v": "이 경우만큼은 아주 적절한 편견이 아닐까 싶네요."}
-{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
 {"k": "Zzzz...", "v": "Zzzz..."}
-{"k": "... ¡Uy! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "... 어머나! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "... ¡Uy! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "... 어머나! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Recordar movimiento", "v": "기술 떠올리기"}
 {"k": "Niveles de los líderes", "v": "섭정의 레벨"}
 {"k": "Exportar equipo", "v": "쇼다운 파일로 내보내기"}
@@ -6371,7 +6371,7 @@
 {"k": "Te doy la bienvenida al hogar de los desamparados.", "v": "갈 곳 없는 이들의 안식처에 온 걸 환영하네."}
 {"k": "Ningún mal puede alcanzarte en este refugio. Pero, por favor, no reveles a nadie el camino a través de las criptas.", "v": "이 피난처에서는 어떤 악의도 네게 미치지 못하지. 하지만 지하 묘지로 통하는 길은 아무에게도 말하지 말아 다오."}
 {"k": "Tu corazón parece angustiado por algo, me lo dice tu mirada.", "v": "네 눈빛을 보니 무언가 때문에 마음이 괴로운 모양이구나."}
-{"k": "Sé que no solucionará tu pesar, ¿pero necesitas que cure a tus Pokémon?", "v": "이걸로 네 슬픔이 다 가라앉진 않겠지만, 포켓몬을 치료해 줄까?"}
+{"k": "Sé que no solucionará tu pesar, ¿pero necesitas que cure a tus Pokémon?", "v": "이걸로 네 슬픔이 다 가라앉진 않겠지만, 포켓몬을 회복시켜 줄까?"}
 {"k": "Rezaré para que seas capaz de perdonarte algún día.", "v": "언젠가 네가 스스로를 용서할 수 있게 되기를 기도하마."}
 {"k": "De acuerdo. Rezaré para que seas capaz de perdonarte algún día.", "v": "알았다. 언젠가 네가 스스로를 용서할 수 있게 되기를 기도하마."}
 {"k": "He fabricado un nuevo tipo de ball con todo lo que sé, ¿me la comprarías por 5000 pokécuartos?", "v": "내가 아는 지식을 쥐어짜서 새 볼을 하나 만들었는데, 5000 포켓프랑에 사지 않을래?"}
@@ -6697,7 +6697,7 @@
 {"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Purgad esa maraña de oscuridad.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 저 뒤엉킨 어둠을 정화하라."}
 {"k": "Confío especialmente en ti, \\PN. Ya me demostraste mucho la vez pasada.", "v": "\\PN, 자네를 특별히 신뢰한다... 지난번에도 많은 것을 보여주었지."}
 {"k": "Con la llave que te he dado, podrás moverte mejor por el palacio.", "v": "내가 준 열쇠가 있다면 궁전을 더 편히 움직일 수 있다..."}
-{"k": "Te ofreceré toda la ayuda de la que sea capaz, ¿necesitas curar a tus Pokémon?", "v": "제가 도울 수 있는 건 뭐든 도와드릴게요. 포켓몬을 치료하시겠습니까?"}
+{"k": "Te ofreceré toda la ayuda de la que sea capaz, ¿necesitas curar a tus Pokémon?", "v": "제가 도울 수 있는 건 뭐든 도와드릴게요. 포켓몬을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
@@ -6713,7 +6713,7 @@
 {"k": "En casa estamos solos mi madre y yo. Y ella no goza de muy buena salud.", "v": "집에는 어머니와 저 단둘뿐인데, 어머니께서는 건강이 그리 좋지 않으십니다."}
 {"k": "He tratado de esforzarme todo lo posible para que pudiéramos tener una vida plena. Trabajar, estudiar...", "v": "저희가 부족함 없는 삶을 살 수 있도록 최선을 다해 노력했습니다. 일도 하고, 공부도 하면서요..."}
 {"k": "Y mi esfuerzo se vio recompensado, pues la oportunidad llegó.", "v": "그리고 마침내 기회가 찾아오면서 제 노력도 결실을 맺었죠."}
-{"k": "En aquellos días, <b>Lanto</b> patrocinaba un programa para que jóvenes sin recursos pudieran formarse como entrenadores Pokémon en la academia.", "v": "그 무렵 <b>란토</b>는 형편이 어려운 청년들이 아카데미에서 포켓몬 트레이너로 성장할 수 있도록 지원하는 프로그램을 후원하고 있었습니다."}
+{"k": "En aquellos días, <b>Lanto</b> patrocinaba un programa para que jóvenes sin recursos pudieran formarse como entrenadores Pokémon en la academia.", "v": "당시 <i>무슈</i> <b>란토</b>께서 형편이 어려운 청소년들이 아카데미에서 포켓몬 트레이너 교육을 받을 수 있도록 후원 프로그램을 운영하고 계셨거든요."}
 {"k": "Fui uno de los afortunados.", "v": "저는 그 행운을 얻은 사람 중 하나였습니다."}
 {"map": 195, "n": 5}
 {"k": "La mañana en la que me disponía a viajar a la ciudad para estudiar... la recuerdo como la más feliz de mi vida.", "v": "공부하러 도시로 떠나려던 그 아침… 내 삶에서 가장 행복했던 순간이었지요."}
@@ -6728,7 +6728,7 @@
 {"k": "Aquí siempre tendrás un refugio para descansar, ¡te estamos muy agradecidas!", "v": "이곳은 언제나 편히 쉬어갈 수 있는 안식처가 되어 줄 거예요. 정말 감사해요!"}
 {"k": "Un estado <b>Caduco</b> muy avanzado solo puede curarse con la Baya Enigma, pero esta rara vez crece de forma natural.", "v": "심하게 진행된 <b>쇠약</b> 상태는 의문열매로만 치료할 수 있지만, 자생하는 경우는 매우 드물어요."}
 {"k": "Si encontráramos las condiciones necesarias para su cultivo...", "v": "재배에 필요한 조건만 찾아낼 수 있다면 좋을 텐데요..."}
-{"k": "Te ofreceré toda la ayuda de la que sea capaz, ¿necesitas curar a tus Pokémon?", "v": "제가 도울 수 있는 건 뭐든 도와드릴게요. 포켓몬을 치료하시겠습니까?"}
+{"k": "Te ofreceré toda la ayuda de la que sea capaz, ¿necesitas curar a tus Pokémon?", "v": "제가 도울 수 있는 건 뭐든 도와드릴게요. 포켓몬을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
@@ -6765,7 +6765,7 @@
 {"k": "¿Has venido a por el arma secreta que se esconde en el palacio? Pues te vas a llevar una decepción cuando te eche de aquí.", "v": "궁전에 숨겨진 비밀 무기를 가지러 왔나? 그럼 내가 쫓아내 줄 테니 실망이나 하라고."}
 {"k": "No debieron darme tantas responsabilidades.", "v": "나한테 그렇게 막중한 책임을 맡기지 말았어야 했는데."}
 {"k": "Aún tengo que seguir entrenando a mis Pokémon, ¡los malos también tenemos que esforzarnos!", "v": "아직 포켓몬들을 더 단련해야겠어. 악당도 노력이 필요한 법이라고!"}
-{"k": "Curar Pokémon", "v": "포켓몬 치료하기"}
+{"k": "Curar Pokémon", "v": "포켓몬 회복하기"}
 {"k": "Acceder al Rancho", "v": "목장에 들어가기"}
 {"k": "Recordar Movs", "v": "기술 떠올리기"}
 {"k": "Nada", "v": "아무것도 없음"}
@@ -7038,7 +7038,7 @@
 {"k": "¿Quieres dibujarle algo gracioso en la cara?", "v": "얼굴에 웃긴 그림이라도 그려볼까?"}
 {"k": "Has perdido el reto Nuzlocke, has fallado a todos los Pokémon que te han acompañado durante la aventura.", "v": "당신은 너즐록 챌린지에서 패배했다. 모험을 함께해 온 모든 포켓몬을 실망시키고 말았다."}
 {"k": "Puedes seguir jugando de forma normal, pero recuerda que has fracasado.", "v": "일반 모드로 게임을 계속할 수는 있지만, 당신이 실패했다는 사실을 잊지 마라."}
-{"k": "Curar Pokémon", "v": "포켓몬 치료하기"}
+{"k": "Curar Pokémon", "v": "포켓몬 회복하기"}
 {"k": "Acceder al Rancho", "v": "목장에 들어가기"}
 {"k": "Recordar Movs", "v": "기술 떠올리기"}
 {"k": "Nada", "v": "아무것도 없음"}
@@ -7051,7 +7051,7 @@
 {"k": "Ya os advertí de que el esfuerzo era inútil. Vuestra civilización tendría que avanzar al menos otros 500 años.", "v": "그 노력은 부질없다고 이미 경고했을 텐데. 그대의 문명은 적어도 500년은 더 나아가야 할 게야."}
 {"k": "\\c[2]<b>Rey Malvo:</b>\\c[0] ...", "v": "\\c[2]<b>말보 왕:</b>\\c[0] ..."}
 {"k": "\\c[6]<b>Aure:</b>\\c[0] Por un momento llegué a pensar que vuestras manos humanas lograrían construir aquello que yo no puedo.", "v": "\\c[6]<b>아우레:</b>\\c[0] 잠시나마 그대들 인간의 손으로 내가 이루지 못한 것을 만들어내리라 여겼거늘."}
-{"k": "Pero no sois digno. Vuestro reinado, en el gran esquema de las cosas, solo será recordado por haber provocado un poco de ruido.", "v": "하지만 그대에겐 그럴 자격이 없네. 거대한 흐름 속에서 보면, 그대의 치세는 고작 잠깐의 소란으로 기억될 뿐이야."}
+{"k": "Pero no sois digno. Vuestro reinado, en el gran esquema de las cosas, solo será recordado por haber provocado un poco de ruido.", "v": "하지만 그대는 자격이 없네. 거대한 역사의 흐름 속에서 그대의 치세는 그저 약간의 소음을 일으킨 것으로 기억될 뿐이지."}
 {"k": "\\c[6]<b>Aure:</b>\\c[0] Qué curioso puede llegar a ser el ruido de la humanidad...", "v": "\\c[6]<b>아우레:</b>\\c[0] 인간이 빚어내는 소란이란 참 흥미로운 것이지..."}
 {"k": "\\c[6]<b>Aure:</b>\\c[0] Siempre he encontrado a los seres humanos demasiado interesantes, a pesar de ser tan inservibles.", "v": "\\c[6]<b>아우레:</b>\\c[0] 내게 인간은 늘 흥미로웠어. 그토록 쓸모없는 존재인데도 말이야."}
 {"k": "\\c[6]<b>Aure:</b>\\c[0] Vos, rey <b>Malvo</b>... Habéis arrasado naciones enteras para conservar vuestro poder.", "v": "\\c[6]<b>아우레:</b>\\c[0] <b>말보</b> 왕이여... 그대는 제 권력을 지키자고 나라 전체를 잿더미로 만들었지."}
@@ -7067,7 +7067,7 @@
 {"k": "\\c[6]<b>Aure:</b>\\c[0] Tenéis un valor...\\| insignificante.", "v": "\\c[6]<b>아우레:</b>\\c[0] 너희는 참으로...\\| 하찮으니."}
 {"k": "\\c[6]<b>Aure:</b>\\c[0] ...", "v": "\\c[6]<b>아우레:</b>\\c[0] ..."}
 {"k": "\\c[6]<b>Aure:</b>\\c[0] Me... me sorprendéis, mi rey.", "v": "\\c[6]<b>아우레:</b>\\c[0] 나를... 놀라게 하는군."}
-{"k": "He subestimado con gran yerro vuestro instinto para la destrucción.", "v": "너희의 파괴적인 본능을 내가 크게 과소평가했어."}
+{"k": "He subestimado con gran yerro vuestro instinto para la destrucción.", "v": "너희의 파괴적인 본능을 내가 크게 과소평가했군."}
 {"k": "Pero os habéis equivocado.", "v": "하지만 네 생각이 틀렸다."}
 {"k": "\\c[6]<b>Aure:</b>\\c[0] Yo no moriré tan fácilmente. Pero vos, mortal...", "v": "\\c[6]<b>아우레:</b>\\c[0] 나는 그리 쉽게 죽지 않는다. 하지만 필멸자인 너는..."}
 {"k": "Hallaréis pronto el final de vuestro reinado.", "v": "머지않아 너의 치세도 끝을 맞이하리라."}
@@ -7278,8 +7278,8 @@
 {"k": "¡Je, je! Supongo que este es el lugar en el que todos debemos acabar...", "v": "헤헤! 우리 같은 놈들이 다다르는 곳은 결국 여기인가 보군..."}
 {"k": "¡Y pensar que me tragué ese cuento del <b>Team Azoth</b> de que nunca más tendríamos que temer a la muerte!", "v": "더 이상 죽음을 두려워할 필요가 없다던 <b>아조스단</b>의 그 말도 안 되는 소리에 껌뻑 넘어가 버리다니!"}
 {"k": "Es verdad que ahora ya no la temo, ¡pero porque la he aceptado en su totalidad!", "v": "뭐, 이제 죽음이 두렵지 않은 건 사실이야. 하지만 그건 죽음을 완전히 받아들였기 때문이지!"}
-{"k": "Ahora que nos hemos librado de la carga de la familia real, el siguiente paso es que <b>Kalos</b> sea una región libre de malhechores.", "v": "왕실이라는 짐덩어리를 치워버린 지금, 다음 단계는 <b>칼로스</b>를 범죄자 없는 깨끗한 지방으로 만드는 것이다."}
-{"k": "Tu presencia aquí permite que los ciudadanos de <b>Kalos</b> se sientan más seguros. ¡Haberlo pensado mejor antes de tomar ciertas acciones!", "v": "네놈들이 여기 갇혀 있는 덕분에 <b>칼로스</b> 시민들이 마음 편히 사는 거지. 헛짓거리하기 전에 생각을 했어야지!"}
+{"k": "Ahora que nos hemos librado de la carga de la familia real, el siguiente paso es que <b>Kalos</b> sea una región libre de malhechores.", "v": "짐덩어리 왕실을 치워버렸으니, 다음 단계는 <b>칼로스</b>를 범죄자 없는 지방으로 만드는 일이다."}
+{"k": "Tu presencia aquí permite que los ciudadanos de <b>Kalos</b> se sientan más seguros. ¡Haberlo pensado mejor antes de tomar ciertas acciones!", "v": "네놈들이 여기 갇혀 있는 덕분에 <b>칼로스</b> 시민들이 안심할 수 있는 거야. 문제를 저지르기 전에 생각했어야지!"}
 {"k": "Tengo la sensación de que todos estos Vullaby y Mandibuzz de la zona solo están esperando a que caigamos rendidos al suelo.", "v": "이 근처의 벌차이랑 버랜지나들이 우리가 기운이 빠져 쓰러지기만을 기다리는 것 같아."}
 {"k": "Dicen que en el corazón de esta isla hay una caverna de fuego donde vive un Pokémon muy destructivo.", "v": "이 섬 중심부에 불의 동굴이 있는데, 엄청 파괴적인 포켓몬이 산다고들 해..."}
 {"k": "¿A quién se le ocurre construir una cárcel en un lugar así? ¡Hay que ser inútiles!", "v": "이런 곳에 감옥을 지을 생각을 하다니, 진짜 쓸모없는 놈들이라니까!"}
@@ -7305,15 +7305,15 @@
 {"k": "¿Te han requisado a tus Pokémon?", "v": "너도 포켓몬을 압수당했냐?"}
 {"k": "¡Pues claro, menuda pregunta! Como a todos nosotros.", "v": "당연한 걸 뭘 물어! 우리라고 별수 있었겠냐."}
 {"k": "Creo que guardan todos los Pokémon de los prisioneros dentro de sus Pokéball en un almacén, cerca del pequeño puerto de esta isla.", "v": "죄수들 포켓몬은 죄다 몬스터볼에 넣어서 이 섬의 작은 항구 근처 창고에 가둬 둔 모양이더라고."}
-{"k": "Ah, ¿en serio? Pues ya estás tardando en escapar.", "v": "아, 진짜냐? 그럼 멍하니 있지 말고 얼른 탈출해 봐."}
+{"k": "Ah, ¿en serio? Pues ya estás tardando en escapar.", "v": "아, 진짜냐? 그럼 멍하니 있지 말고 빨리 탈출해 봐."}
 {"k": "Ey, <i>excuse me</i>, yo vengo de <b>Galar</b>.", "v": "이봐, <i>excuse me</i>, 난 <b>가라르</b> 출신이야."}
 {"k": "Me dedicaba a espiar para mi <i>king</i> antes de que me atraparan. ¡<i>What a bad luck</i>!", "v": "붙잡히기 전까진 내 <i>king</i>을 위해 스파이 짓을 하고 있었지. <i>What a bad luck</i>!"}
 {"k": "Además, en mi <i>home</i> siempre está lloviendo o hace frío. ¡No logro acostumbrarme a este <i>shitty weather</i>!", "v": "게다가 내 <i>home</i>은 항상 비가 오거나 춥기만 했단 말야. 이 <i>shitty weather</i>에는 도무지 적응이 안 돼!"}
 {"k": "<b>Alcaide Pinot:</b> Te veo con mucha energía últimamente, nº34. ¿Te está empezando a gustar tu estancia en prisión?", "v": "<b>피노 소장:</b> 요즘 34번, 네가 꽤 활기차 보이는데. 감옥 생활이 점점 마음에 들기 시작하는 건가?"}
 {"k": "Te has acomodado demasiado y tendré que hacer algo al respecto. ¡Por ejemplo, meterte en una celda sin ventanas! ¡ja, ja, ja!", "v": "너무 편하게 적응해 버려서 손을 좀 써야겠군, 이 쓰레기가! 예를 들면 창문 하나 없는 감방에 가둬버린다거나 말이야! 하하하!"}
 {"k": "Dicen que el capitán <b>Crisanto</b> demostró una gran estrategia militar en su primera batalla, ¡fue todo un éxito y casi nadie salió herido!", "v": "<b>크리산토</b> 대장님이 첫 전투에서 뛰어난 전술을 펼치셨다고 해요. 부상자도 거의 없이 대성공을 거뒀다더라고요!"}
-{"k": "Oye, pórtate bien y no le digas al alcaide <b>Pinot</b> que me estoy tomando un descansito, ¿eh?", "v": "이봐, <b>피노</b> 소장님한테 나 농땡이 피우는 거 말하면 안 된다, 알았지?"}
-{"k": "¡Menuda disciplina tan exagerada que gasta! Imagino que por eso fue tan favorecido por el Legislador <b>Mirra</b>.", "v": "어쩜 저렇게 군기를 지나치게 잡는지! 그러니까 입법관 <b>미라</b> 님의 총애를 한몸에 받았겠지만요."}
+{"k": "Oye, pórtate bien y no le digas al alcaide <b>Pinot</b> que me estoy tomando un descansito, ¿eh?", "v": "이봐, <b>피노</b> 소장님한테 내가 몰래 쉬고 있다고 말하면 안 된다, 알았지?"}
+{"k": "¡Menuda disciplina tan exagerada que gasta! Imagino que por eso fue tan favorecido por el Legislador <b>Mirra</b>.", "v": "어쩜 저렇게 규율이 빡빡한지! 그러니까 입법관 <b>미라</b> 님 눈에 쏙 들었겠지만."}
 {"k": "¿Que si conozco algún pasaje secreto para salir de aquí?", "v": "내가 여기서 빠져나갈 비밀 통로라도 알고 있냐고?"}
 {"k": "¡Nada de nada! ¡Me habría escapado hace tiempo entonces!", "v": "전혀 몰라! 알았으면 진작에 튀었지!"}
 {"k": "Sí", "v": "예"}
@@ -7403,14 +7403,14 @@
 {"k": "¡No tienes a dónde correr! ¡Mi Pokémon te atrapará antes de que des un paso más!", "v": "도망칠 곳은 없다! 한 걸음만 더 움직여도 내 포켓몬이 널 잡을 거다!"}
 {"k": "Emo sido engañado.", "v": "나는 속았다."}
 {"k": "Si te preguntan, yo no te he visto, ¿eh? ¡Es mi primerito día en esta prisión!", "v": "누가 물어보면 난 널 못 본 거다, 알겠지? 이 교도소에 들어온 건 오늘이 진짜 첫날이라고!"}
-{"k": "Llevo aquí muchos más años que tú, joven. Déjame darte un consejo.", "v": "이봐, 난 너보다 훨씬 오래전부터 여기 갇혀 있었어. 조언 하나 해 주지."}
-{"k": "Fueras quien fueras antes de llegar aquí, olvídate de eso.", "v": "여기 끌려오기 전에 뭘 했던 놈이든 다 잊어버려."}
+{"k": "Llevo aquí muchos más años que tú, joven. Déjame darte un consejo.", "v": "난 너보다 훨씬 오래 전부터 여기 갇혀 있었어. 조언 하나 해주지."}
+{"k": "Fueras quien fueras antes de llegar aquí, olvídate de eso.", "v": "여기 끌려오기 전에 무슨 일을 했든 다 잊어버려."}
 {"k": "Ahora eres una persona nueva con el objetivo de sobrevivir, ¡cada día! Si llegas al final del día con vida habrás ganado a estos malnacidos que nos han encerrado.", "v": "이제 넌 오직 살아남는 것만 생각하는 놈이야. 매일 말이지! 오늘 하루를 살아남으면 우리를 가둔 저 개자식들에게 이기는 거라고!"}
 {"k": "Mi Pokémon sabe cómo tratar a los leales al rey como tú, ¡será mejor que no me provoques!", "v": "내 포켓몬은 너처럼 국왕파 놈들을 다루는 법을 잘 알지. 날 자극하지 않는 게 좋을 거다!"}
 {"k": "El Legislador <b>Mirra</b> hará alguna reforma en esta prisión, ¿verdad?", "v": "<b>미라</b> 입법관님이 이 감옥을 좀 바꿔주시겠지?"}
 {"k": "No se puede permitir que el ser humano viva en condiciones tan miserables, ¡es uno de los valores por los que la Revolución de <b>Kalos</b> luchó!", "v": "사람을 이런 비참한 꼴로 살게 내버려 둘 순 없잖아. 그게 <b>칼로스</b> 혁명이 피 흘리며 싸운 이유 중 하나인데 말이야!"}
 {"k": "¿Qué estará pasando fuera mientras nosotros seguimos aquí?", "v": "우리가 여기 갇혀 있는 동안 밖은 어떻게 돌아가고 있을까?"}
-{"k": "El mundo cambia cada vez más deprisa... no me extrañaría que no fuéramos capaces de reconocer nada si llegáramos a salir.", "v": "세상은 갈수록 빠르게 변하는데... 어쩌다 나간다 해도 아무것도 알아보지 못할지도 몰라."}
+{"k": "El mundo cambia cada vez más deprisa... no me extrañaría que no fuéramos capaces de reconocer nada si llegáramos a salir.", "v": "세상이 하도 빠르게 변하니까 나중에 나간다 해도 아무것도 알아보지 못하겠어."}
 {"k": "He dado escarmiento a mucha basura como tú, ¡aprenderás por las malas lo que les pasa a los que intentan escapar!", "v": "너 같은 쓰레기는 수없이 겪어봤다! 도망치려던 놈들 말로가 어떻게 되는지 뼈저리게 알게 해주마!"}
 {"k": "Ya podrían haberme dado mejores Pokémon para lidiar contigo.", "v": "너 하나 상대하라고 더 좋은 포켓몬을 줄 수도 있었을 텐데."}
 {"k": "Esto me pasa por no entrenar a mis Pokémon por mi propia cuenta. ¿Me enseñarás como se hace cuando todo esto termine?", "v": "내 포켓몬을 직접 단련시키지 않아서 이 지경이 됐네요. 나중에 다 정리되면 가르쳐 주실래요?"}
@@ -7524,7 +7524,7 @@
 {"k": "\\c[1]<b>Ferrofaz:</b>\\c[0] ¿Qué me dices? Será una tarea titánica. Tardaremos. Pero disponemos de todas las noches para entrenar.", "v": "\\c[1]<b>페로파스:</b>\\c[0] 어떤가? 엄청난 과제가 될 걸세. 시간은 걸리겠지. 하지만 우리에겐 단련할 밤이 얼마든지 있다네."}
 {"k": "¿Acaso tienes algo mejor que hacer?", "v": "혹시 더 중요한 일이라도 있는가?"}
 {"k": "Ya ha oscurecido, ¿quieres ir a la celda de <b>Ferrofaz</b>?", "v": "이미 어두워졌다. <b>페로파스</b>의 감방으로 가겠습니까?"}
-{"k": "¿Quieres meditar para curar a tus Pokémon?", "v": "명상하여 포켓몬을 치료하시겠습니까?"}
+{"k": "¿Quieres meditar para curar a tus Pokémon?", "v": "명상하여 포켓몬을 회복시켜 드릴까요?"}
 {"k": "Una especie de diario en el que poder anotar cosas.", "v": "무언가를 적어둘 수 있는 일종의 일기장이다."}
 {"k": "Parece la única muestra de piedad de este lugar para impedir que los prisioneros se vuelvan locos.", "v": "죄수들이 미쳐버리지 않도록 배려한 이곳의 유일한 자비로 보인다."}
 {"k": "Tal vez pueda ser útil en el futuro.", "v": "앞으로 도움이 될지도 모른다."}
@@ -7642,31 +7642,31 @@
 {"k": "¿Ah, no? Pensaba que habías sido Aspirante antes de acabar aquí.", "v": "아, 아니야? 여기 갇히기 전에 후보생이었던 줄 알았는데."}
 {"k": "Aunque esta prisión pueda parecer mala, hay lugares peores para el destino de ciertos prisioneros.", "v": "이 감옥이 끔찍해 보일지 몰라도, 어떤 죄수들에게는 이보다 더한 곳이 기다리고 있어."}
 {"k": "¿Has oído hablar de la <b>Torre Oscura</b>? Es un lugar perdido en las montañas nevadas donde hacen experimentos con los reos. ¡Es escalofriante!", "v": "<b>어둠의 탑</b> 이야기 들어봤어? 눈 덮인 산속 깊숙이 숨겨진 곳인데, 거기서 죄수들을 데리고 실험을 한대. 정말 소름 끼친다니까!"}
-{"k": "No voy a darte más bayas, pero podemos procurar nuestro divertimento con otra partida de Blackjack, ¿qué dices?", "v": "나무열매를 더 주진 않겠지만, 블랙잭이나 한 판 더 하면서 즐기는 건 어때?"}
+{"k": "No voy a darte más bayas, pero podemos procurar nuestro divertimento con otra partida de Blackjack, ¿qué dices?", "v": "나무열매를 더 주진 않겠지만 블랙잭이나 한 판 더 하면서 노는 건 어때?"}
 {"k": "¡Soy el chivato oficial de la prisión!", "v": "난 이 감옥의 공식 끄나풀이라고!"}
 {"k": "Me llevo palizas todas las semanas, sí, ¡pero a cambio los guardias me dan un trato especial!", "v": "매주 두들겨 맞긴 해도, 대신 간수들이 특별 대우를 해준단 말씀이야!"}
 {"k": "Mira, mientras vosotros coméis basura, a mí me han dado unas deliciosas bayas. ¿Quién se ríe ahora?", "v": "이봐, 너희가 쓰레기나 먹을 때 나한테는 맛있는 나무열매를 줬거든. 이제 누가 웃을 수 있을까?"}
-{"k": "Como me pillas de buen humor, ¿qué tal si comparto algo de mi buenaventura contigo? Pero antes, ¡tendrás que ganarme una partidita de Blackjack!", "v": "마침 기분이 좋으니까 이 행운을 좀 나눠줄까 하는데, 어때? 대신 날 블랙잭으로 이겨야 해!"}
+{"k": "Como me pillas de buen humor, ¿qué tal si comparto algo de mi buenaventura contigo? Pero antes, ¡tendrás que ganarme una partidita de Blackjack!", "v": "마침 기분이 좋으니 내 행운을 좀 나눠줄까? 대신 날 블랙잭으로 이겨야 해!"}
 {"k": "Te explico. En una partida de Blackjack cada jugador va recibiendo cartas de forma aleatoria.", "v": "이봐, 설명해 줄게. 블랙잭은 카드 한 장씩 무작위로 받는 거야."}
-{"k": "Cada vez que se reparta una carta, el jugador podrá decidir si quiere o no quiere recibir más cartas.", "v": "이봐, 카드가 나올 때마다 더 받을지 말지 결정하면 되는 거지."}
+{"k": "Cada vez que se reparta una carta, el jugador podrá decidir si quiere o no quiere recibir más cartas.", "v": "카드가 배분될 때마다, 플레이어는 카드를 더 받을지 말지 결정할 수 있어."}
 {"k": "El objetivo es sumar lo más cerca posible de 21 con las cartas acumuladas.", "v": "목표는 모은 카드의 합을 21에 최대한 가깝게 맞추는 거야."}
-{"k": "Si se recibe un as, el jugador puede decidir si contarlo como 1 o como 13.", "v": "에이스가 나오면 1로 쓸지 13으로 쓸지 네가 정할 수 있지."}
+{"k": "Si se recibe un as, el jugador puede decidir si contarlo como 1 o como 13.", "v": "에이스를 뽑으면 이를 1로 칠지 13으로 칠지 맘대로 정할 수 있지."}
 {"k": "Explicado esto, ¡comencemos! Si me ganas, te daré una Baya Meloc.", "v": "설명은 됐고, 시작하자고! 날 이기면 복슝열매를 하나 주지."}
-{"k": "¡Eh, eh! Que no pretendo estafarte, me gusta jugar limpio.", "v": "이봐, 이봐! 속이려는 게 아니라고. 난 정당하게 겨루는 걸 좋아해."}
+{"k": "¡Eh, eh! Que no pretendo estafarte, me gusta jugar limpio.", "v": "이봐, 이봐! 널 속이려는 게 아냐, 난 정당하게 겨루는 걸 좋아한다고."}
 {"k": "\\PN recibe una carta.", "v": "\\PN\\j[이,가] 카드를 한 장 받는다."}
 {"k": "Te ha tocado un as, ¿que valor le asignas? Recuerda que tienes que intentar sumar 21.", "v": "에이스가 나왔군. 몇으로 계산할래? 합을 21에 맞추려고 해봐."}
 {"k": "Has recibido un \\v[135]. Recuerda que debes intentar sumar 21.", "v": "\\v[135]를 받았어. 합이 21에 가까워져야 한다는 걸 잊지 마."}
 {"k": "<b>Contrincante:</b> Mmm...", "v": "<b>상대방:</b> 음..."}
-{"k": "¿Quieres recibir otra carta?", "v": "카드를 한 장 더 받을래?"}
+{"k": "¿Quieres recibir otra carta?", "v": "카드를 한 장 더 받겠어?"}
 {"k": "<b>Contrincante:</b> ¡Bien! ¡Veamos quién ha ganado!", "v": "<b>상대방:</b> 좋아! 누가 이겼는지 확인해 보자고!"}
 {"k": "La suma total de \\PN es \\v[136], la de tu contrincante es \\v[137].", "v": "\\PN의 합계는 \\v[136], 상대방의 합계는 \\v[137]이다."}
 {"k": "¡\\PN gana la partida!", "v": "\\PN가 승리했다!"}
 {"k": "<b>Contrincante:</b> ¿Tienes experiencia en esto o es la suerte del principiante?", "v": "<b>상대방:</b> 여기에 일가견이 있는 거야, 아니면 초보자의 행운인가?"}
-{"k": "No voy a darte más bayas, obviamente. ¡Confórmate con el dulce sabor de la victoria!", "v": "더 이상 열매는 없다, 당연한 소리지만! 승리의 달콤한 맛으로 만족하라고!"}
-{"k": "Como te prometí, te haré entrega de una de mis mejores bayas.", "v": "약속대로 내 최고의 나무열매 중 하나를 주마."}
-{"k": "¡Tu contrincante gana la partida!", "v": "상대방이 승리했다!"}
+{"k": "No voy a darte más bayas, obviamente. ¡Confórmate con el dulce sabor de la victoria!", "v": "더 이상 열매는 없어, 당연한 소리지만! 승리의 달콤한 맛으로 만족하라고!"}
+{"k": "Como te prometí, te haré entrega de una de mis mejores bayas.", "v": "약속대로 내 최고의 나무열매 중 하나를 줄게."}
+{"k": "¡Tu contrincante gana la partida!", "v": "상대방의 승리다!"}
 {"k": "<b>Contrincante:</b> ¡Ja! ¡Si es que soy todo un maestro en esto!", "v": "<b>상대방:</b> 하! 내가 바로 이 분야의 대가라니까!"}
-{"k": "Ya sé que no tienes nada que darme. Me conformo con arrancarte un pedacito de tu dignidad.", "v": "내게 줄 게 아무것도 없다는 건 안다. 네 자존심을 조금 짓밟은 것으로 만족하마."}
+{"k": "Ya sé que no tienes nada que darme. Me conformo con arrancarte un pedacito de tu dignidad.", "v": "내게 줄 게 아무것도 없다는 건 알아. 네 자존심을 조금 짓밟은 걸로 만족할게."}
 {"k": "La partida ha resultado en empate.", "v": "무승부로 끝났다."}
 {"k": "<b>Contrincante:</b> ¡Ja! Pues parece que ninguno nos llevamos nada esta vez.", "v": "<b>상대방:</b> 하! 이번에는 둘 다 아무것도 못 챙겼네."}
 {"k": "¡Pero estaré dispuesto a echar una partida siempre que quieras!", "v": "하지만 네가 원할 때면 언제든 한 판 받아주지!"}
@@ -7704,7 +7704,7 @@
 {"k": "¿Quieres sacar un libro? ¡Así me gusta, que te culturices!", "v": "책을 빌리려는 건가요? 교양을 쌓겠다니 보기 좋군요!"}
 {"k": "Mira, me acaban de devolver estos tres. ¿Alguno despierta tu interés?", "v": "여기 보세요, 방금 이 세 권이 반납되었어요. 마음에 드는 게 있으신가요?"}
 {"k": "(Te quedas con este libro)", "v": "(이 책을 빌린다)"}
-{"k": "(Devuelves el anterior libro y te quedas con este)", "v": "(이전 책을 반납하고 이 책을 빌렸다)"}
+{"k": "(Devuelves el anterior libro y te quedas con este)", "v": "(이전 책을 반납하고 이 책을 빌린다)"}
 {"k": "¡Espera, primero tienes que devolverme el que ya habías sacado!", "v": "잠깐만요! 먼저 이미 빌려 가신 책부터 반납하셔야 해요!"}
 {"k": "Sí", "v": "예"}
 {"k": "No", "v": "아니요"}
@@ -7895,7 +7895,7 @@
 {"k": "¡Es una caja con materiales!", "v": "재료가 들어 있는 상자다!"}
 {"k": "Ya has registrado esta caja.", "v": "이 상자는 이미 확인했다."}
 {"k": "¡Este Klang ha aprendido Enfermería Pokémon!", "v": "이 기기어르가 포켓몬 간호를 습득했다!"}
-{"k": "¿Quieres curar a tus Pokémon?", "v": "포켓몬을 치료하시겠습니까?"}
+{"k": "¿Quieres curar a tus Pokémon?", "v": "포켓몬을 회복시켜 드릴까요?"}
 {"k": "Estamos llevando a cabo una lucha sindical para igualar los salarios de los humanos con los de los Pokémon. Es decir, que ambos cobremos un cuenco de comida. ¿Te unes?", "v": "우리는 인간이랑 포켓몬 임금을 맞추려고 노동운동 중이야. 쉽게 말해 둘 다 밥 한 그릇씩 받자는 거지. 너도 같이 안 할래?"}
 {"k": "¡Se me ha aflojado una pieza! Pero no te preocupes, la próxima vez, todo estará bien ajustado.", "v": "나사가 하나 풀려버렸네요! 하지만 걱정 마세요. 다음번엔 확실하게 조여둘 테니까요."}
 {"k": "El jefe nos ha amenazado con importar trabajadores paldeanos si nos seguimos quejando...", "v": "계속 투덜대면 팔데아 노동자들을 데려오겠다고 공장장이 협박하더라고..."}
@@ -7938,7 +7938,7 @@
 {"k": "Solíamos tener un Regente especialista en Pokémon de tipo Hielo por aquí, pero movieron el bastión a <b>Ciudad Fractal</b> por estar mejor comunicada.", "v": "예전엔 이 근처에 얼음타입 전문 섭정이 있었는데, 교통이 더 편리한 <b>이설시티</b>로 거점을 옮겼어."}
 {"k": "Yo creo que un pueblo tan importante como el nuestro se merece algo más de consideración.", "v": "우리 마을처럼 중요한 곳이면 대우를 좀 더 해 줘야 한다고 생각해."}
 {"k": "De todos modos, la familia de ese Regente cayó durante la Revolución. Creo que ahora han puesto a la Capitana <b>Cendera</b> a hacer su función.", "v": "어차피 그 섭정 가문은 혁명 때 몰락했지. 지금은 <b>센데라</b> 대장이 그 직무를 대신하고 있나 봐."}
-{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
@@ -7990,9 +7990,9 @@
 {"k": "¡Es un cúmulo de piedrecitas!", "v": "작은 돌멩이들이 잔뜩 쌓여 있다!"}
 {"k": "Hace mucho frío y no llevas nada en la bolsa que desprenda calor...", "v": "날씨가 매우 추운데 가방 속에 온기를 낼 만한 물건이 하나도 없다..."}
 {"k": "¡Tu equipo Pokémon se ha quedado Helado!", "v": "지닌 포켓몬이 얼어붙었다!"}
-{"k": "Aún en este paraje, puedo curar a tu equipo y rellenarte el vial... pero solo si me derrotas.", "v": "이런 곳에서도 지니신 포켓몬을 치료하고 약병을 채워드릴 수는 있어요... 하지만 절 승리해야만 하죠."}
-{"k": "Con mucho gusto curaré a tus Pokémon.", "v": "기꺼이 당신의 포켓몬을 치료해 드리겠습니다."}
-{"k": "¿Quieres que cure a tu equipo y te rellene el Pokévial? Solo te cobraré 5000 pokécuartos de nada.", "v": "포켓몬들을 치료하고 포켓몬약병을 채워드릴까요? 단돈 5000 포켓프랑이면 충분합니다."}
+{"k": "Aún en este paraje, puedo curar a tu equipo y rellenarte el vial... pero solo si me derrotas.", "v": "이런 곳에서도 지니신 포켓몬을 회복시키고 약병을 채워드릴 수는 있어요... 하지만 절 승리해야만 하죠."}
+{"k": "Con mucho gusto curaré a tus Pokémon.", "v": "기꺼이 당신의 포켓몬을 회복시켜 드리겠습니다."}
+{"k": "¿Quieres que cure a tu equipo y te rellene el Pokévial? Solo te cobraré 5000 pokécuartos de nada.", "v": "포켓몬들을 회복시키고 포켓몬약병을 채워드릴까요? 단돈 5000 포켓프랑이면 충분합니다."}
 {"k": "¿A que son eficaces mis medicinas? ¡Que la buena voluntad nazca en tu interior!", "v": "제 약, 정말 효과적이죠? 당신의 마음속에 선의가 싹트기를 바랄게요!"}
 {"k": "Ya veo, ¡espero que tus Pokémon no mueran!", "v": "그렇군요. 당신의 포켓몬들이 죽지 않기를 바랄게요!"}
 {"k": "Cuanto peor mejor para todos y cuanto peor para todos mejor, mejor para mí el suyo beneficio Pokémon.", "v": "나쁠수록 모두에게 좋고, 모두에게 나쁠수록 더 좋으니, 결국 제 포켓몬에게 이득이라는 말이에요."}
@@ -8170,7 +8170,7 @@
 {"k": "¿Quieres sacar un libro? ¡Así me gusta, que te culturices!", "v": "책을 빌리려는 건가요? 교양을 쌓겠다니 보기 좋군요!"}
 {"k": "Mira, me acaban de devolver estos tres. ¿Alguno despierta tu interés?", "v": "여기 보세요, 방금 이 세 권이 반납되었어요. 마음에 드는 게 있으신가요?"}
 {"k": "(Te quedas con este libro)", "v": "(이 책을 빌린다)"}
-{"k": "(Devuelves el anterior libro y te quedas con este)", "v": "(이전 책을 반납하고 이 책을 빌렸다)"}
+{"k": "(Devuelves el anterior libro y te quedas con este)", "v": "(이전 책을 반납하고 이 책을 빌린다)"}
 {"k": "¡Espera, primero tienes que devolverme el que ya habías sacado!", "v": "잠깐만요! 먼저 이미 빌려 가신 책부터 반납하셔야 해요!"}
 {"k": "\\c[1]<b>Ferrofaz:</b>\\c[0] Para un buen entrenador Pokémon, cualquier lugar es un espacio de entrenamiento.", "v": "\\c[1]<b>페로파스:</b>\\c[0] 훌륭한 포켓몬 트레이너에게는 어떤 장소든 단련의 장소가 되는 법이라네."}
 {"k": "\\c[1]<b>Ferrofaz:</b>\\c[0] Con el tiempo, a medida que el vínculo con tu Pokémon se vaya fortaleciendo...", "v": "\\c[1]<b>페로파스:</b>\\c[0] 시간이 지나 포켓몬과의 유대가 더욱 깊어지면..."}
@@ -8299,8 +8299,8 @@
 {"k": "Entre usted y yo, evite Ciudad Batik. Se están empezando a hacer experimentos muy... misteriosos en ese lugar. Parece que reine la locura.", "v": "우리끼리 이야기지만, 기남시티는 피하세요. 그곳에서는 아주... 수상한 실험들이 시작되고 있어요. 광기가 지배하는 것 같더군요."}
 {"k": "<b>F3</b> necesita tu ayuda.", "v": "<b>F3</b>는 당신의 도움이 필요합니다."}
 {"k": "¿Necesites de mis servicios? No me importa tu procedencia ni lo que hayas hecho en el pasado.", "v": "제 도움이 필요하신가요? 당신이 어디서 왔든, 과거에 무엇을 했든 신경 쓰지 않아요."}
-{"k": "Con mucho gusto curaré a tus Pokémon.", "v": "기꺼이 당신의 포켓몬을 치료해 드리겠습니다."}
-{"k": "¿Quieres que cure a tu equipo y te rellene el Pokévial? Solo te cobraré 5000 pokécuartos de nada.", "v": "포켓몬들을 치료하고 포켓몬약병을 채워드릴까요? 단돈 5000 포켓프랑이면 충분합니다."}
+{"k": "Con mucho gusto curaré a tus Pokémon.", "v": "기꺼이 당신의 포켓몬을 회복시켜 드리겠습니다."}
+{"k": "¿Quieres que cure a tu equipo y te rellene el Pokévial? Solo te cobraré 5000 pokécuartos de nada.", "v": "포켓몬들을 회복시키고 포켓몬약병을 채워드릴까요? 단돈 5000 포켓프랑이면 충분합니다."}
 {"k": "¿A que son eficaces mis medicinas? ¡Que la buena voluntad nazca en tu interior!", "v": "제 약, 정말 효과적이죠? 당신의 마음속에 선의가 싹트기를 바랄게요!"}
 {"k": "Ya veo, ¡espero que tus Pokémon no mueran!", "v": "그렇군요. 당신의 포켓몬들이 죽지 않기를 바랄게요!"}
 {"k": "¿Vas a Ciudad Batik? Pues me temo que tu viaje ha sido interrumpido por un imprevisto. ¡Entrégame todos tus Pokémon!", "v": "기남시티로 가냐? 안됐지만 네 여정은 여기서 끝이다. 포켓몬을 전부 내놔!"}
@@ -8404,7 +8404,7 @@
 {"k": "Bien, hecho está. Tu Pokémon ha recordado ese movimiento.", "v": "됐어, 다 끝났어! 네 포켓몬이 그 기술을 떠올렸어."}
 {"k": "...", "v": "......"}
 {"k": "¡Ah, <i>bonjour</i>!", "v": "아, <i>봉주르</i>!"}
-{"k": "Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
@@ -8572,7 +8572,7 @@
 {"k": "Sí", "v": "예"}
 {"k": "No", "v": "아니요"}
 {"map": 264, "n": 23}
-{"k": "\\c[6]<b>F3:</b>\\c[0] ¿Necesitas curar a tus Pokémon o acceder al Rancho Pokémon?", "v": "\\c[6]<b>F3:</b>\\c[0] 포켓몬을 치료하거나 포켓몬 목장에 접속하시겠습니까?"}
+{"k": "\\c[6]<b>F3:</b>\\c[0] ¿Necesitas curar a tus Pokémon o acceder al Rancho Pokémon?", "v": "\\c[6]<b>F3:</b>\\c[0] 포켓몬을 회복시키거나 포켓몬 목장에 접속하시겠습니까?"}
 {"k": "¡Por favor, ayúdame! ¡No... no soy yo! ¡No... combatas conmigo!", "v": "제발 도와줘요! 아니... 내가 아니야! 나랑... 배틀하지 마!"}
 {"k": "¡Te lo suplico! ¡Libérame!", "v": "제발! 날 풀어줘!"}
 {"k": "¡Lo... lo siento! ¡Mis Pokémon no querían...! ¡No querían combatir! Fue cosa del profesor.", "v": "죄... 죄송해요! 제 포켓몬들은 그럴 생각으로...! 배틀하고 싶지 않았어! 교수님 탓이에요."}
@@ -8585,14 +8585,14 @@
 {"k": "\\c[6]<b>F3:</b>\\c[0] Tu improvisado plan parece haber dado resultado, te encuentras donde querías.", "v": "\\c[6]<b>F3:</b>\\c[0] 당신의 즉흥적인 계획이 효과를 본 것 같습니다. 원하시던 곳에 와 계십니다."}
 {"k": "<i>Mademoiselle</i> <b>Olivier</b> se encuentra en algún lugar de esta edificación.", "v": "<i>마드모아젤</i> <b>올리비에</b>는 이 건물 어딘가에 있습니다."}
 {"k": "\\c[6]<b>F3:</b>\\c[0] Mientras dormías, he aprovechado para descargar los protocolos de Centro Pokémon que estaban guardados en mi memoria indirecta.", "v": "\\c[6]<b>F3:</b>\\c[0] 당신께서 주무시는 동안, 제 간접 메모리에 저장되어 있던 포켓몬센터 프로토콜을 다운로드해 두었습니다."}
-{"k": "Si necesitas curar a tus Pokémon o acceder al Rancho Pokémon, cuenta conmigo.", "v": "포켓몬을 치료하거나 포켓몬 목장을 이용하셔야 한다면 제게 말씀하십시오."}
+{"k": "Si necesitas curar a tus Pokémon o acceder al Rancho Pokémon, cuenta conmigo.", "v": "포켓몬을 회복시키거나 포켓몬 목장을 이용하셔야 한다면 제게 말씀하십시오."}
 {"k": "¿Que por qué me internaron aquí? Sigo albergando esperanzas de que salga el Silksong...", "v": "내가 왜 여기에 수용되었냐고? 난 아직도 실크송이 나올 거라는 희망을 품고 있거든..."}
 {"k": "Para mí los martes locos son solo martes.", "v": "나한테 ‘광란의 화요일’은 그저 화요일일 뿐이야."}
 {"k": "¿Qué crees que va a salir antes? ¿El Silksong o Vientos de Invierno?", "v": "어느 쪽이 먼저 나올 것 같아? 실크송이랑 겨울의 바람 중에?"}
 {"k": "¿Tú también escuchas la voz del profesor en tu cabeza? Se volverá más fácil si obedeces...", "v": "너도 머릿속에서 교수님의 목소리가 들려? 순순히 따르면 훨씬 편해질 거야..."}
 {"k": "¡Por favor, deja de gritarme!", "v": "제발 나한테 소리 좀 지르지 마!"}
 {"k": "Si te sometes a la voz del profesor, todo será más fácil. No tendrás que angustiarte nunca más por tomar decisiones.", "v": "교수님 목소리에 복종하면 다 쉬워져! 더 이상 무언가를 결정하려고 괴로워하지 않아도 된다고!"}
-{"k": "Curar Pokémon", "v": "포켓몬 치료하기"}
+{"k": "Curar Pokémon", "v": "포켓몬 회복하기"}
 {"k": "Acceder al Rancho", "v": "목장에 들어가기"}
 {"k": "Nada", "v": "아무것도 없음"}
 {"map": 265, "n": 23}
@@ -8716,7 +8716,7 @@
 {"k": "La habitación donde se encuentra la Profesora <b>Olivier</b> está por aquí.", "v": "<b>올리비에</b> 박사님이 계신 방은 이쪽입니다."}
 {"k": "¡La <b>Llave de Habitación</b> abre la puerta!", "v": "<b>객실열쇠</b>로 문을 열었다!"}
 {"k": "Está cerrada.", "v": "닫혀 있습니다."}
-{"k": "\\c[6]<b>F3:</b>\\c[0] ¿Necesitas curar a tus Pokémon o acceder al Rancho Pokémon?", "v": "\\c[6]<b>F3:</b>\\c[0] 포켓몬을 치료하거나 포켓몬 목장에 접속하시겠습니까?"}
+{"k": "\\c[6]<b>F3:</b>\\c[0] ¿Necesitas curar a tus Pokémon o acceder al Rancho Pokémon?", "v": "\\c[6]<b>F3:</b>\\c[0] 포켓몬을 회복시키거나 포켓몬 목장에 접속하시겠습니까?"}
 {"k": "Un trabajo de investigación titulado \"¿Puede el cerebro humano insertarse en un cuerpo mecánico?\"", "v": "“인간의 뇌를 기계 몸에 이식할 수 있을까?”라는 제목의 연구 논문이다."}
 {"k": "Está lleno de cálculos y términos científicos. Te gustaría llegar a entenderlos algún día.", "v": "계산식과 과학 용어로 가득하다. 언젠가 이해할 수 있게 되면 좋겠다."}
 {"k": "\\c[2]<b>Olivier:</b>\\c[0] Hay que ir a <b>Ciudad Romantis</b> para dar con <b>Crisanto</b>, \\PN.", "v": "\\c[2]<b>올리비에:</b>\\c[0] <b>크리산토</b>를 찾으려면 <b>후늬시티</b>로 가야겠구나, \\PN."}
@@ -8760,7 +8760,7 @@
 {"k": "Un trabajo de investigación titulado \"¿Pueden los sentidos engañarnos y ocultarnos algo que está frente a nosotros?\".", "v": "“감각은 우리를 속여 바로 앞에 있는 것을 감출 수 있는가?”라는 제목의 연구 논문이다."}
 {"k": "Luchemos", "v": "함께 싸웁시다"}
 {"k": "Dame tiempo", "v": "시간 좀 줘"}
-{"k": "Curar Pokémon", "v": "포켓몬 치료하기"}
+{"k": "Curar Pokémon", "v": "포켓몬 회복하기"}
 {"k": "Acceder al Rancho", "v": "목장에 들어가기"}
 {"k": "Nada", "v": "아무것도 없음"}
 {"map": 267, "n": 5}
@@ -8947,7 +8947,7 @@
 {"k": "Es un poco una metáfora de la vida, a veces las personas por mucho que cambien no mejoran.", "v": "인생의 은유 같은 거죠. 사람은 아무리 변해도 나아지지 않을 때가 있잖아요."}
 {"k": "¿Revisar Hall de Fama?", "v": "명예의 전당을 확인할까?"}
 {"k": "En este <b>Tablón de Misiones</b> encontrarás algunos encargos pendientes con los que te hayas topado en tu aventura.", "v": "<b>의뢰 게시판</b>에서는 모험 도중 마주쳤던 미완료 의뢰를 확인할 수 있습니다."}
-{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
@@ -9023,7 +9023,7 @@
 {"k": "Ella y sus brujas son todas unas maestras del tipo Fuego.", "v": "그분과 마녀들은 모두 불꽃타입의 대가이십니다."}
 {"k": "Además, tendrás que encontrar la forma de llegar hasta la sala de la Regente a través de las baldosas teletransportadoras.", "v": "또한, 순간이동 타일을 지나 섭정의 방까지 도달하는 길을 찾아내셔야 합니다."}
 {"k": "¡Buena suerte en tu octavo reto del <b>PokéTour</b>!", "v": "<b>포켓투어</b>의 여덟 번째 도전, 행운을 빕니다!"}
-{"k": "¿Necesitas que cure a tus Pokémon?", "v": "포켓몬을 치료하시겠습니까?"}
+{"k": "¿Necesitas que cure a tus Pokémon?", "v": "포켓몬을 회복시켜 드릴까요?"}
 {"k": "Perfecto, ¡mucha suerte en el bastión!", "v": "좋습니다. 요새에서 행운을 빕니다!"}
 {"k": "¡Te doy la bienvenida al corazón de mi aquelarre, Aspirante!", "v": "내 마녀집회의 중심에 온 것을 환영한다, 후보생!"}
 {"k": "Soy <b>Anturia</b>, la Regente de <b>Ciudad Romantis</b>.", "v": "나는 <b>후늬시티</b>의 섭정인 <b>안투리아</b>다."}
@@ -9115,7 +9115,7 @@
 {"k": "Demasiado caliente para funcionar.", "v": "너무 뜨거워서 작동하지 않는다."}
 {"map": 282, "n": 14}
 {"k": "¡Este Gurdurr ha aprendido Enfermería Pokémon!", "v": "이 토쇠골은 ‘포켓몬 간호’를 배웠다!"}
-{"k": "¿Quieres curar a tus Pokémon?", "v": "포켓몬을 치료하시겠습니까?"}
+{"k": "¿Quieres curar a tus Pokémon?", "v": "포켓몬을 회복시켜 드릴까요?"}
 {"k": "¡Aaah! ¡<i>Mamma mia</i>! ¿Cómo has logrado dar con nuestra sala secreta de descanso?", "v": "아아! 맘마미아! 어떻게 우리 비밀 휴게실을 찾아낸 거지?"}
 {"k": "La habíamos escondido mediante procedimientos alquímicos complicadísimos...", "v": "엄청나게 복잡한 연금술로 숨겨 두었던 곳인데..."}
 {"k": "Somos los hermanos <b>Mariano</b> y <b>Luciano</b>, ¡y creemos que nos merecemos una buena siesta después de horas y horas forjando Pokéball!", "v": "우리는 <b>마리아노</b>와 <b>루시아노</b> 형제다! 몇 시간이나 몬스터볼을 만들었으니, 제대로 낮잠 좀 잘 자격이 있잖아!"}
@@ -9418,7 +9418,7 @@
 {"k": "Solo quiero que lo tengas presente.", "v": "그 점을 명심해 두기 바라네."}
 {"k": "<b>PISTA DE ENTRENADOR:</b> El movimiento Ventisca no fallará nunca si está nevando en combate.", "v": "<b>트레이너 팁:</b> 배틀 중 눈이 내리고 있을 때는 ‘눈보라’ 기술이 절대 실패하지 않습니다."}
 {"k": "¡Este Grumpig ha aprendido Enfermería Pokémon!", "v": "이 피그킹은 포켓몬 간호를 배웠다!"}
-{"k": "¿Quieres curar a tus Pokémon?", "v": "포켓몬을 치료하시겠습니까?"}
+{"k": "¿Quieres curar a tus Pokémon?", "v": "포켓몬을 회복시켜 드릴까요?"}
 {"k": "¡Has encontrado otra página de Alquimia Pokémon! ¡Qué emocionante!", "v": "새로운 연금술 제작법을 찾았다! 정말 신난다!"}
 {"k": "Tu catálogo de creación se ha ampliado.", "v": "제작할 수 있는 조합법이 늘어났다!"}
 {"k": "Tienes un mal presentimiento...", "v": "불길한 예감이 든다..."}
@@ -9763,7 +9763,7 @@
 {"k": "¿Qué debería recordar \\v[3]?", "v": "\\v[3]한테 어떤 기술을 떠올리게 할까?"}
 {"k": "Bien, hecho está. Tu Pokémon ha recordado ese movimiento.", "v": "됐어, 다 끝났어! 네 포켓몬이 그 기술을 떠올렸어."}
 {"k": "Imagínate haber llegado hasta aquí y no saber todavía para qué sirve la taza de los Centros Pokémon. Je, je...", "v": "여기까지 오고도 포켓몬센터 머그컵이 무슨 용도인지 모르는 녀석도 있겠지. 헤헤..."}
-{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
@@ -9951,9 +9951,9 @@
 {"k": "¡Es un cúmulo de piedrecitas!", "v": "작은 돌멩이들이 잔뜩 쌓여 있다!"}
 {"map": 301, "n": 11}
 {"k": "¡Es un cúmulo de piedrecitas!", "v": "작은 돌멩이들이 잔뜩 쌓여 있다!"}
-{"k": "¿Curar a tus Pokémon? Bueno, depende de cómo te portes en el siguiente combate...", "v": "포켓몬을 치료해 줄까? 글쎄, 다음 배틀에서 네 행동에 달린 일이다..."}
+{"k": "¿Curar a tus Pokémon? Bueno, depende de cómo te portes en el siguiente combate...", "v": "포켓몬을 회복시켜 줄까? 글쎄, 다음 배틀에서 네 행동에 달린 일이다..."}
 {"k": "Parece que este año te has portado bastante bien.", "v": "올해는 네가 꽤 착하게 잘 지낸 것 같구나."}
-{"k": "¿Quieres que cure a tu equipo con mis hierbas medicinales? Solo te cobraré 500 pokécuartos de nada.", "v": "내 약초로 네 포켓몬을 치료해 줄까? 겨우 500 포켓프랑이면 된단다."}
+{"k": "¿Quieres que cure a tu equipo con mis hierbas medicinales? Solo te cobraré 500 pokécuartos de nada.", "v": "내 약초로 네 포켓몬을 회복시켜 줄까? 겨우 500 포켓프랑이면 된단다."}
 {"k": "¿A que son eficaces mis medicinas? ¡Que la buena voluntad nazca en tu interior!", "v": "내 약이 잘 듣지 않니? 네 마음속에 선의가 싹트기를 빈단다!"}
 {"k": "Ya veo, ¡espero que tus Pokémon no mueran!", "v": "그렇구나. 네 포켓몬들이 죽지 않기를 빌어 주마."}
 {"k": "¡Esta cueva oculta más secretos de los que puedo imaginar! He recorrido muchos lugares así y estoy segura de que el Pokémon de las profundidades será mío.", "v": "이 동굴에는 내 상상을 뛰어넘는 비밀이 숨겨져 있어! 이런 곳을 수없이 다녀본 내가 장담하는데, 깊은 곳에 있는 포켓몬은 반드시 내 차지가 되겠다."}
@@ -10153,7 +10153,7 @@
 {"k": "¿Has llegado a usar a uno de esos Marowak? Por lo visto, portan restos de Steelix a modo de armadura.", "v": "저 텅구리들을 써본 적이 있나요? 보아하니 강철톤의 잔해를 갑옷처럼 두르고 있더군요."}
 {"k": "Además, si llevan equipado el objeto Cola Plúmbea, atacarán con mucha más fuerza.", "v": "게다가 느림보꼬리를 지니게 하면 훨씬 더 강력하게 공격하게 될 거예요."}
 {"k": "En este <b>Tablón de Misiones</b> encontrarás algunos encargos pendientes con los que te hayas topado en tu aventura.", "v": "<b>의뢰 게시판</b>에서는 모험 도중 마주쳤던 미완료 의뢰를 확인할 수 있습니다."}
-{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
@@ -10254,7 +10254,7 @@
 {"k": "¿No le encuentras uso a la espada que te vendí? Como si fuera mi problema...", "v": "내가 판 검을 어디 써야 할지 모르겠다고? 내 알 바 아니다..."}
 {"k": "Como me pillas generoso, te diré que encontré esa espada en un lugar cercano de la <b>Ruta 5</b>. Tal vez allí encuentres más información.", "v": "특별히 기분이다, 그 검은 <b>5번도로</b> 근처에서 주웠다. 거기 가면 뭐라도 더 알 수 있겠지."}
 {"k": "¿Revisar Hall de Fama?", "v": "명예의 전당을 확인할까?"}
-{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
@@ -10475,7 +10475,7 @@
 {"k": "\\sh¡ZUT ZUT ZUT!", "v": "\\sh쯧쯧쯧!"}
 {"map": 318, "n": 22}
 {"k": "¡Este Carbink ha aprendido Enfermería Pokémon!", "v": "이 멜리시가 ‘포켓몬 간호’를 배웠다!"}
-{"k": "¿Quieres curar a tus Pokémon?", "v": "포켓몬을 치료하시겠습니까?"}
+{"k": "¿Quieres curar a tus Pokémon?", "v": "포켓몬을 회복시켜 드릴까요?"}
 {"k": "¿Quieres volver a <b>Ciudad Fluxus</b>? (Abrirás un atajo que te permitirá teletransportarte entre la ciudad y este punto de la mazmorra)", "v": "<b>향전시티</b>로 돌아가시겠습니까? (도시와 이 던전 지점 사이를 순간이동할 수 있는 숏컷이 열립니다)"}
 {"k": "Archidruida Ficus... ¿sigue con vida tu cuerpo, oculto en las profundidades?", "v": "대드루이드 피쿠스… 깊은 곳에 숨겨진 그대의 육신은 아직 살아 있는가?"}
 {"k": "Debí haberme tomado la poción de Panoramix.", "v": "파노라믹스의 묘약을 마셨어야 했는데."}
@@ -10533,7 +10533,7 @@
 {"k": "Eso por no mencionar los puzzles y trampas que tendrás que sortear.", "v": "헤쳐나가야 할 퍼즐과 함정은 말할 것도 없지요."}
 {"k": "Toma esto, podría venirte bien.", "v": "이것을 받으십시오. 도움이 될 것입니다."}
 {"k": "¡Buena suerte combatiendo contra el ejército de la Condesa de Invierno!", "v": "‘겨울의 백작부인’의 군대와 맞서는 배틀에 행운이 함께하기를 바랍니다!"}
-{"k": "¿Necesitas que cure a tus Pokémon?", "v": "포켓몬을 치료하시겠습니까?"}
+{"k": "¿Necesitas que cure a tus Pokémon?", "v": "포켓몬을 회복시켜 드릴까요?"}
 {"k": "Perfecto, ¡mucha suerte en el bastión!", "v": "좋습니다. 요새에서 행운을 빕니다!"}
 {"k": "Al venir aquí has caído en nuestra trampa. ¡Ahora combates en nuestro frío terreno!", "v": "여기까지 제 발로 온 건 우리의 함정에 빠진 거다. 이제 차가운 우리 영토에서 싸워라!"}
 {"k": "Te desenvuelves bien en el hielo. ¿No has considerado unirte a nuestras filas?", "v": "얼음 위에서 꽤 잘 움직이는군. 우리 군에 들어올 생각은 없나?"}
@@ -10976,7 +10976,7 @@
 {"k": "De ser así, esta batalla está más que justificada.", "v": "만약 그렇다면 이 배틀은 싸울 명분이 충분하겠어."}
 {"k": "¿Quieres iniciar el evento <b>Batalla de Kalos Este</b>? Solo podrás salir a curar y a recomponerte entre distintas \"fases\" de la batalla.", "v": "<b>칼로스 동부 전투</b> 이벤트를 시작하시겠습니까? 배틀의 각 “단계” 사이에서만 포켓몬을 치료하고 정비할 수 있습니다."}
 {"k": "¿Retomar el evento <b>Batalla de Kalos Este</b>?", "v": "<b>칼로스 동부 전투</b> 이벤트를 재개하시겠습니까?"}
-{"k": "Tengo muchos suministros de enfermería. ¿Necesitas que cure a tu equipo?", "v": "간호 용품이 넉넉하게 있어요. 포켓몬들을 치료해 드릴까요?"}
+{"k": "Tengo muchos suministros de enfermería. ¿Necesitas que cure a tu equipo?", "v": "간호 용품이 넉넉하게 있어요. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estoy a tu servicio.", "v": "언제든 말씀만 하세요."}
@@ -11203,7 +11203,7 @@
 {"k": "Una bonita casa en el campo junto a nuestros Pokémon. Poco más podría pedirle a la vida.", "v": "우리 포켓몬들과 함께할 시골의 아늑한 집이라니, 이보다 더 바랄 게 없겠지."}
 {"k": "Solo si quieres, claro.", "v": "물론, 네가 원할 때만 말이야."}
 {"k": "Pasas un tiempo más en la habitación de <b>Crisanto</b> antes de irte.", "v": "떠나기 전에 <b>크리산토</b>의 방에서 잠시 시간을 더 보냈다."}
-{"k": "Te doy la bienvenida al Balneario Oculto. ¿Quieres curar a tu equipo?", "v": "비밀 온천에 오신 것을 환영해요. 포켓몬들을 치료하시겠습니까?"}
+{"k": "Te doy la bienvenida al Balneario Oculto. ¿Quieres curar a tu equipo?", "v": "비밀 온천에 오신 것을 환영해요. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
@@ -11489,12 +11489,12 @@
 {"k": "He visto a un autómata deambular por aquí. ¿Se les habrá escapado de <b>Ciudad Novarte</b>?", "v": "이 근처를 돌아다니는 자동인형을 봤어요. 혹시 <b>백단시티</b>에서 빠져나온 걸까요?"}
 {"k": "¡Espero que no cause problemas!", "v": "문제를 일으키지 않아야 할 텐데요!"}
 {"k": "¿Revisar Hall de Fama?", "v": "명예의 전당을 확인할까?"}
-{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
 {"k": "Zzzz...", "v": "Zzzz..."}
-{"k": "... ¡Uy! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "... 어머나! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "... ¡Uy! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "... 어머나! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "¡Hola, Aspirante! ¿Qué necesitas?", "v": "안녕, 후보생! 뭐가 필요해?"}
 {"k": "¿Qué Pokémon debería recordar un movimiento?", "v": "어떤 포켓몬한테 기술을 떠올리게 할까?"}
 {"k": "Vale, ¡vuelve cuando lo necesites!", "v": "좋아, 필요할 때 언제든 또 와!"}
@@ -11592,7 +11592,7 @@
 {"k": "¡Rápido! ¡Elige una mano!", "v": "서둘러! 한 손을 골라!"}
 {"k": "¡Mala suerte! No era esa. Pero desafortunado en el juego, afortunado en el amor. Eso se dice.", "v": "운이 없었네! 그 카드가 아니었어. 대신 도박운이 없으면 애정운이 넘친다잖아?"}
 {"k": "Desafortunado en el juego afortunado en el amor. Por eso yo siempre estoy ganando en mis apuestas...", "v": "도박 운이 없으면 연애운이 좋다지. 그래서 내가 내기할 때마다 맨날 이기나 봐..."}
-{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
@@ -11772,7 +11772,7 @@
 {"k": "A veces el uso de la fuerza bruta parece inevitable.", "v": "때로는 무력을 쓰는 것이 불가피해 보일 때도 있습니다."}
 {"k": "¿Llegará un día en el que todos los humanos y Pokémon podamos entendernos y solucionar nuestras diferencias sin combatir? No dejo de pensar en ello.", "v": "언젠가 모든 인간과 포켓몬이 서로를 이해하고 싸우지 않고 갈등을 해결할 수 있는 날이 올까요? 끊임없이 그 생각이 듭니다."}
 {"k": "¡Este Medicham ha aprendido Enfermería Pokémon!", "v": "이 요가램이 포켓몬 간호를 배웠습니다!"}
-{"k": "¿Quieres curar a tus Pokémon?", "v": "포켓몬을 치료하시겠습니까?"}
+{"k": "¿Quieres curar a tus Pokémon?", "v": "포켓몬을 회복시켜 드릴까요?"}
 {"k": "¡Es un <b>Nido Alfa</b>! En él vive un Pokémon muy fuerte.", "v": "<b>우두머리 둥지</b>다! 안에는 아주 강한 포켓몬이 살고 있다."}
 {"k": "En concreto, sientes la presencia de un Pokémon Dragón tremendamente poderoso.", "v": "아주 강력한 드래곤타입 포켓몬의 기운이 느껴진다."}
 {"k": "¿Quieres hacerlo salir?", "v": "다가가 볼까?"}
@@ -11988,7 +11988,7 @@
 {"k": "Si has logrado leer nuestros corazones, sabrás que hemos venido a calmar a <b>Xerneas</b> e impedir que sea capturado por manos malvadas.", "v": "우리의 진심을 읽으셨다면 잘 아실 겁니다. 저희는 <b>제르네아스</b>를 진정시키고 악한 자들의 손에 넘어가지 않도록 막으러 온 것입니다."}
 {"k": "\\c[3]<b>Arrayán:</b>\\c[0] <b>Xerneas</b> intentará usar su poder para hacer brotar la vida de forma descontrolada. <b>Kalos</b> entera se convertirá en un bosque salvaje y hostil si no hacemos algo.", "v": "\\c[3]<b>아라얀:</b>\\c[0] <b>제르네아스</b>는 그 힘을 써서 생명을 걷잡을 수 없이 분출시키려 할 걸세. 이대로 두면 <b>칼로스</b> 전체가 거칠고 위험한 숲으로 변해버릴 터."}
 {"k": "Yo solo ya no soy capaz de contenerlo, así que toda ayuda es bienvenida.", "v": "나 혼자 힘으로는 더 이상 억누를 수 없으니, 힘을 보태준다면 마다할 이유가 없지."}
-{"k": "Curar Pokémon", "v": "포켓몬 치료하기"}
+{"k": "Curar Pokémon", "v": "포켓몬 회복하기"}
 {"k": "Acceder al Rancho", "v": "목장에 들어가기"}
 {"k": "Nada", "v": "아무것도 없음"}
 {"map": 385, "n": 4}
@@ -12016,7 +12016,7 @@
 {"k": "¡WRYYYYYYY!", "v": "크아아아악!"}
 {"k": "¿Usar <b>Polvo Explosivo</b>?", "v": "<b>폭발가루</b>를 사용할까?"}
 {"k": "Deja que cure a tus Pokémon antes de continuar.", "v": "계속 가기 전에 네 포켓몬을 치료해 줄게."}
-{"k": "Curar Pokémon", "v": "포켓몬 치료하기"}
+{"k": "Curar Pokémon", "v": "포켓몬 회복하기"}
 {"k": "Acceder al Rancho", "v": "목장에 들어가기"}
 {"k": "Nada", "v": "아무것도 없음"}
 {"k": "Sí", "v": "예"}
@@ -12024,7 +12024,7 @@
 {"map": 389, "n": 5}
 {"k": "¿Usar <b>Polvo Explosivo</b>?", "v": "<b>폭발가루</b>를 사용할까?"}
 {"k": "¡Este Gurdurr ha aprendido Enfermería Pokémon!", "v": "이 토쇠골은 ‘포켓몬 간호’를 배웠다!"}
-{"k": "¿Quieres curar a tus Pokémon?", "v": "포켓몬을 치료하시겠습니까?"}
+{"k": "¿Quieres curar a tus Pokémon?", "v": "포켓몬을 회복시켜 드릴까요?"}
 {"k": "Sí", "v": "예"}
 {"k": "No", "v": "아니요"}
 {"map": 390, "n": 73}
@@ -12198,7 +12198,7 @@
 {"k": "¿Qué debería recordar \\v[3]?", "v": "\\v[3]한테 어떤 기술을 떠올리게 할까?"}
 {"k": "Bien, hecho está. Tu Pokémon ha recordado ese movimiento.", "v": "됐어, 다 끝났어! 네 포켓몬이 그 기술을 떠올렸어."}
 {"k": "¿Revisar Hall de Fama?", "v": "명예의 전당을 확인할까?"}
-{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
@@ -12339,7 +12339,7 @@
 {"k": "¿Qué debería recordar \\v[3]?", "v": "\\v[3]한테 어떤 기술을 떠올리게 할까?"}
 {"k": "Bien, hecho está. Tu Pokémon ha recordado ese movimiento.", "v": "됐어, 다 끝났어! 네 포켓몬이 그 기술을 떠올렸어."}
 {"k": "¿Revisar Hall de Fama?", "v": "명예의 전당을 확인할까?"}
-{"k": "Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
@@ -12404,7 +12404,7 @@
 {"k": "¡Pero no hay roca que resista un buen mamporro de mi martillo! Tú y yo volveremos a enfrentarnos pronto.", "v": "하지만 내 망치의 제대로 된 한 방을 견딜 바위는 없죠! 너와 나는 곧 다시 맞붙게 될 거예요."}
 {"k": "Si logras 4 victorias seguidas en los combates aleatorios, se te obsequiará con objetos muy valiosos.", "v": "무작위 배틀에서 4연승을 달성하면 아주 귀중한 도구를 받을 수 있거든."}
 {"k": "He visto como esta mañana descargaban cajas llenas de <b>Pociones Brillantes</b>. Así que te puedes hacer una idea.", "v": "오늘 아침에 <b>반짝상처약</b>이 가득 든 상자를 내리는 걸 봤거든. 대충 감이 오지?"}
-{"k": "Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
@@ -12746,7 +12746,7 @@
 {"k": "El gran AZ consiguió hallar el último ingrediente del Arma Definitiva: un corazón fuerte. ¡Y ahora su resplandor es eterno!", "v": "위대한 AZ 님이 최종병기의 마지막 재료인 강한 마음을 찾아내셨지! 이제 그 광채는 영원할 거다!"}
 {"k": "Sí", "v": "예"}
 {"k": "No", "v": "아니요"}
-{"k": "Curar Pokémon", "v": "포켓몬 치료하기"}
+{"k": "Curar Pokémon", "v": "포켓몬 회복하기"}
 {"k": "Acceder al Rancho", "v": "목장에 들어가기"}
 {"k": "Recordar Movs", "v": "기술 떠올리기"}
 {"k": "Nada", "v": "아무것도 없음"}
@@ -12881,7 +12881,7 @@
 {"k": "¡Pero no hay roca que resista un buen mamporro de mi martillo! Tú y yo volveremos a enfrentarnos pronto.", "v": "하지만 내 망치의 제대로 된 한 방을 견딜 바위는 없죠! 너와 나는 곧 다시 맞붙게 될 거예요."}
 {"k": "Si logras 7 victorias seguidas en los combates aleatorios, se te obsequiará con objetos muy valiosos.", "v": "무작위 배틀에서 7연승을 달성하면 엄청 귀중한 도구를 받을 수 있어."}
 {"k": "He visto como esta mañana descargaban cajas llenas de <b>Pociones Brillantes</b>. Así que te puedes hacer una idea.", "v": "오늘 아침에 <b>반짝상처약</b>이 가득 든 상자를 내리는 걸 봤거든. 대충 감이 오지?"}
-{"k": "Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
@@ -13088,7 +13088,7 @@
 {"k": "<b>Reclutas Flare:</b> El <b>Team Flare</b> es la conjunción de los antiguos conocimientos de Alquimia Pokémon con la tecnología del mundo moderno, ¡y por eso heredaremos el nuevo mundo!", "v": "<b>플레어단 신병들:</b> <b>플레어단</b>은 고대 포켓몬 연금술의 지식과 현대 세계의 기술이 결합된 결정체, 그렇기에 우리가 새로운 세계를 물려받는 것이다!"}
 {"k": "¿Qué pasaría si pudiéramos cargar el <b>Arma Definitiva</b> con los 3 Pokémon legendarios? Lástima que solo tengamos a <b>Xerneas</b>...", "v": "전설의 포켓몬 3마리로 <b>최종병기</b>를 충전할 수 있다면 어떻게 될까? 아쉽게도 우리에게 있는 건 <b>제르네아스</b>뿐이지만..."}
 {"k": "Con los 3 Pokémon legendarios, tal vez se podría alcanzar un poder semejante al de un dios.", "v": "전설의 포켓몬 3마리가 모두 있다면 신에 준하는 힘을 손에 넣을 수도 있을 거다."}
-{"k": "Curar Pokémon", "v": "포켓몬 치료하기"}
+{"k": "Curar Pokémon", "v": "포켓몬 회복하기"}
 {"k": "Acceder al PC", "v": "PC에 접속하기"}
 {"k": "Nada", "v": "아무것도 없음"}
 {"map": 442, "n": 28}
@@ -13208,7 +13208,7 @@
 {"k": "(Puedes prepararte hablando con los destellos de la izquierda)", "v": "(왼쪽의 반짝임과 대화하여 준비할 수 있습니다)"}
 {"k": "\\c[5]<b>Melia:</b>\\c[0] ¿El... el <b>Juicio de Yveltal</b>?", "v": "\\c[5]<b>멜리아:</b>\\c[0] 그... <b>이벨타르의 심판</b>이라고?"}
 {"k": "No creo que mi madre quiera ponernos en ningún apuro, pero la verdad es que suena un poco siniestro...", "v": "우리 어머니께서 우리를 위험에 빠뜨리려 하진 않으시겠지만, 솔직히 조금 불길하게 들리긴 하네..."}
-{"k": "Curar Pokémon", "v": "포켓몬 치료하기"}
+{"k": "Curar Pokémon", "v": "포켓몬 회복하기"}
 {"k": "Acceder al Rancho", "v": "목장에 들어가기"}
 {"k": "Nada", "v": "아무것도 없음"}
 {"k": "Recordar movimientos", "v": "기술 떠올리기"}
@@ -13297,7 +13297,7 @@
 {"k": "Después de todo lo que hemos pasado. Tanto los buenos momentos como los malos... ¡Especialmente tú, que has tenido una buena ración de malos momentos!", "v": "우리가 지금까지 경험해 온 그 모든 일들을 떠올려 보면 말이다. 좋은 일도, 나쁜 일도 많았지... 특히 너는 나쁜 일을 꽤나 듬뿍 겪지 않았더냐!"}
 {"k": "Cuesta creer que el resultado de todo se decidirá pronto y que por ahora somos incapaces de predecir lo que va a pasar.", "v": "모든 것의 결과가 곧 결정될 텐데, 정작 앞으로 무슨 일이 벌어질지는 전혀 예측할 수 없다는 게 믿기지 않는구나."}
 {"k": "\\c[2]<b>Olivier:</b>\\c[0] Pero como ya he dicho, te tenemos a ti, ¿no?", "v": "\\c[2]<b>올리비에:</b>\\c[0] 하지만 방금 말했듯이, 우리에겐 네가 있지 않느냐?"}
-{"k": "¡\\PN! ¡La joven promesa que ha conocido a tantos Pokémon y dominado tantas megaevoluciones!", "v": "¡\\PN! 수많은 포켓몬을 만나고 그 많은 메가진화를 능숙히 다루게 된 유망한 젊은이여!"}
+{"k": "¡\\PN! ¡La joven promesa que ha conocido a tantos Pokémon y dominado tantas megaevoluciones!", "v": "\\PN! 수많은 포켓몬을 만나고 그 많은 메가진화를 능숙히 다루게 된 유망한 젊은이여!"}
 {"k": "\\c[2]<b>Olivier:</b>\\c[0] ¿Sabes? Los Pokémon salvajes más fuertes de toda <b>Kalos</b> están por los alrededores de <b>Ciudad Yantra</b>.", "v": "\\c[2]<b>올리비에:</b>\\c[0] 알고 있느냐? <b>칼로스</b> 전체에서 가장 강한 야생 포켓몬들이 <b>사라시티</b> 주변에 서식하고 있단다."}
 {"k": "Seguro que aún podrás sacar un rato para hacer nuevos y capaces compañeros para tu equipo.", "v": "너라면 분명 시간을 조금 내어 네 팀에 넣을 유능하고 새로운 동료들을 더 만들어낼 수 있을 게다."}
 {"k": "¡Estoy desean-!\\^", "v": "정말 기대되는-!\\^"}
@@ -13350,7 +13350,7 @@
 {"k": "¿Qué debería recordar \\v[3]?", "v": "\\v[3]한테 어떤 기술을 떠올리게 할까?"}
 {"k": "Bien, hecho está. Tu Pokémon ha recordado ese movimiento.", "v": "됐어, 다 끝났어! 네 포켓몬이 그 기술을 떠올렸어."}
 {"k": "En este <b>Tablón de Misiones</b> encontrarás algunos encargos pendientes con los que te hayas topado en tu aventura.", "v": "<b>의뢰 게시판</b>에서는 모험 도중 마주쳤던 미완료 의뢰를 확인할 수 있습니다."}
-{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
@@ -13509,7 +13509,7 @@
 {"k": "<b>Sur:</b> Ruta 25", "v": "<b>남쪽:</b> 25번도로"}
 {"k": "Sí", "v": "예"}
 {"k": "No", "v": "아니요"}
-{"k": "Curar Pokémon", "v": "포켓몬 치료하기"}
+{"k": "Curar Pokémon", "v": "포켓몬 회복하기"}
 {"k": "Acceder al Rancho", "v": "목장에 들어가기"}
 {"k": "Recordar Movs", "v": "기술 떠올리기"}
 {"k": "Nada", "v": "아무것도 없음"}
@@ -13523,7 +13523,7 @@
 {"k": "Hay mucho trabajo que hacer en esta ciudad ahora mismo. Es una oportunidad de oro para todos, Pokémon y personas.", "v": "지금 이 도시엔 할 일이 넘쳐나거든. 사람한테나 포켓몬한테나 엄청난 기회지."}
 {"k": "Has perdido el reto Nuzlocke, has fallado a todos los Pokémon que te han acompañado durante la aventura.", "v": "당신은 너즐록 챌린지에서 패배했다. 모험을 함께해 온 모든 포켓몬을 실망시키고 말았다."}
 {"k": "Puedes seguir jugando de forma normal, pero recuerda que has fracasado.", "v": "일반 모드로 게임을 계속할 수는 있지만, 당신이 실패했다는 사실을 잊지 마라."}
-{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 치료하시겠습니까?"}
+{"k": "¡<i>Bonjour</i>! Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "v": "<i>Bonjour</i>! 포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
@@ -13667,7 +13667,7 @@
 {"k": "¿Quieres volver a <b>Pueblo Cromlech</b>?", "v": "<b>옥유마을</b>로 돌아가시겠습니까?"}
 {"k": "Has perdido el reto Nuzlocke, has fallado a todos los Pokémon que te han acompañado durante la aventura.", "v": "당신은 너즐록 챌린지에서 패배했다. 모험을 함께해 온 모든 포켓몬을 실망시키고 말았다."}
 {"k": "Puedes seguir jugando de forma normal, pero recuerda que has fracasado.", "v": "일반 모드로 게임을 계속할 수는 있지만, 당신이 실패했다는 사실을 잊지 마라."}
-{"k": "Curar Pokémon", "v": "포켓몬 치료하기"}
+{"k": "Curar Pokémon", "v": "포켓몬 회복하기"}
 {"k": "Acceder al Rancho", "v": "목장에 들어가기"}
 {"k": "Recordar Movs", "v": "기술 떠올리기"}
 {"k": "Nada", "v": "아무것도 없음"}
@@ -13767,7 +13767,7 @@
 {"k": "¿No te has dignado tan siquiera a traer un ejército o qué?", "v": "군대라도 이끌고 올 엄두조차 내지 못한 것이냐?"}
 {"k": "\\sh<b>Team Azoth:</b> ¡Los... los Pokémon se han liberado!", "v": "\\sh<b>아조스단:</b> 포... 포켓몬들이 풀려났다!"}
 {"k": "¡Re-retirada! ¡Todos a <b>Pueblo Cromlech</b>!", "v": "후-후퇴! 모두 <b>옥유마을</b>로!"}
-{"k": "Curar Pokémon", "v": "포켓몬 치료하기"}
+{"k": "Curar Pokémon", "v": "포켓몬 회복하기"}
 {"k": "Acceder al Rancho", "v": "목장에 들어가기"}
 {"k": "Recordar Movs", "v": "기술 떠올리기"}
 {"k": "Nada", "v": "아무것도 없음"}
@@ -13808,7 +13808,7 @@
 {"k": "Muy bien, ¡vuelve cuando lo tengas todo listo!", "v": "좋아요, 모든 준비가 되면 다시 오세요!"}
 {"k": "Has perdido el reto Nuzlocke, has fallado a todos los Pokémon que te han acompañado durante la aventura.", "v": "당신은 너즐록 챌린지에서 패배했다. 모험을 함께해 온 모든 포켓몬을 실망시키고 말았다."}
 {"k": "Puedes seguir jugando de forma normal, pero recuerda que has fracasado.", "v": "일반 모드로 게임을 계속할 수는 있지만, 당신이 실패했다는 사실을 잊지 마라."}
-{"k": "Curar Pokémon", "v": "포켓몬 치료하기"}
+{"k": "Curar Pokémon", "v": "포켓몬 회복하기"}
 {"k": "Acceder al Rancho", "v": "목장에 들어가기"}
 {"k": "Recordar Movs", "v": "기술 떠올리기"}
 {"k": "Nada", "v": "아무것도 없음"}
@@ -13959,7 +13959,7 @@
 {"k": "Hmm... parece que no puedo enseñarle nada a tú \\v[3].", "v": "흠... 너의 \\v[3]에게는 가르쳐 줄 수 있는 게 없는 것 같구나."}
 {"k": "¿Qué debería recordar \\v[3]?", "v": "\\v[3]에게 어떤 기술을 떠올리게 할까...?"}
 {"k": "Bien, hecho está. Tu Pokémon ha recordado ese movimiento.", "v": "좋다, 끝났다. 너의 포켓몬이 그 기술을 되살려냈다."}
-{"k": "Curar Pokémon", "v": "포켓몬 치료하기"}
+{"k": "Curar Pokémon", "v": "포켓몬 회복하기"}
 {"k": "Acceder al Rancho", "v": "목장에 들어가기"}
 {"k": "Recordar Movs", "v": "기술 떠올리기"}
 {"k": "Nada", "v": "아무것도 없음"}
@@ -14212,7 +14212,7 @@
 {"k": "<b>Barquero:</b> ¡Para servirle a usted siempre! ¡Je, je, je!", "v": "<b>뱃사공:</b> 언제든 모시겠습니다! 헤헤헤!"}
 {"k": "¿Quieres navegar a la <b>Prisión del Olvido</b>?", "v": "배를 타고 <b>망각의 감옥</b>으로 가시렵니까?"}
 {"k": "De aquí no me moveré, ¡je, je, je!", "v": "전 여기서 꼼짝도 안 할 겁니다, 헤헤헤!"}
-{"k": "¡Hola! Estoy contratada por la parroquia del pueblo, ¿quieres curar a tu equipo?", "v": "안녕하세요! 저는 마을 교구의 지원을 받고 있어요. 포켓몬들을 치료해 드릴까요?"}
+{"k": "¡Hola! Estoy contratada por la parroquia del pueblo, ¿quieres curar a tu equipo?", "v": "안녕하세요! 저는 마을 교구의 지원을 받고 있어요. 포켓몬들을 회복시켜 드릴까요?"}
 {"k": "Esto llevará un rato.", "v": "잠시만 기다려 주세요."}
 {"k": "Misión cumplida, ¡vuelve cuando lo necesites!", "v": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!"}
 {"k": "Estamos a tu servicio.", "v": "언제든 정성껏 모시겠습니다."}
