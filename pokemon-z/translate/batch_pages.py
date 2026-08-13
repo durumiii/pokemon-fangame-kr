@@ -143,13 +143,15 @@ def voice_prompts():
 def personas():
     """스프라이트 → 페르소나표 행. 말투 지시가 아예 없는 조연에게 쓰는 보충이다.
 
-    사람 NPC 스프라이트 64종만 올라 있다는 점이 그대로 안전장치다. 화살표
-    (`flecha`)나 포켓몬 번호(`199`·`477`)처럼 사람이 아닌 스프라이트는 표에
-    없으니 붙지 않는다 — 2026-08-06 실측에서 Bruja의 14행이 `flecha`였다.
+    사람 NPC 스프라이트만 담는 것이 그대로 안전장치다 — 화살표(`flecha`)나 포켓몬
+    번호(`199`·`477`)에 붙으면 안 된다(2026-08-06 실측: Bruja의 14행이 `flecha`).
+    표에는 「제외」 버킷의 판정 기록 행도 살지만(flecha, 유지자 판정 2026-08-09),
+    그런 행은 여기서 걸러 매핑에 안 올린다.
     """
     return {r["sprite"]: r for r in
             (json.loads(l) for l in
-             PERSONAS.read_text(encoding="utf-8").splitlines() if l.strip())}
+             PERSONAS.read_text(encoding="utf-8").splitlines() if l.strip())
+            if not str(r.get("버킷", "")).startswith("제외")}
 
 
 def attach_personas(cast, take, names):
