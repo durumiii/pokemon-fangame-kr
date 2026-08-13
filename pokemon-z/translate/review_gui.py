@@ -32,8 +32,6 @@ sys.path.insert(0, str(HERE))
 from review_page import HEAD, approved_ids, collect  # noqa: E402
 
 BODY = r"""<style>.tag.alt{background:#7d5bd6;color:#fff}
-del{background:rgba(229,100,75,.22);color:var(--err);text-decoration:line-through;
-  border-radius:3px;padding:0 2px}
 .rqh{font-size:11.5px;color:var(--sub);margin:14px 0 5px;font-weight:700}
 .rqh:first-child{margin-top:0}
 .rq{font-size:12.5px;line-height:1.5;background:var(--card);border:1px solid var(--line);
@@ -47,9 +45,7 @@ function diff(a,b){
   let e=0; while(e<a.length-s&&e<b.length-s&&a[a.length-1-e]===b[b.length-1-e])e++;
   return [a.slice(0,s),a.slice(s,a.length-e),b.slice(s,b.length-e),a.slice(a.length-e)];
 }
-// 현행에서 빠지는 조각은 <del>, 새로 드는 조각은 <ins> — 지움만 있는 수정도 보이게
-const mark=(base,cand)=>{const[p,dm,m,sf]=diff(base,cand);
-  return esc(p)+(dm?'<del>'+esc(dm)+'</del>':'')+(m?'<ins>'+esc(m)+'</ins>':'')+esc(sf);};
+const mark=(base,cand)=>{const[p,,m,sf]=diff(base,cand);return esc(p)+'<ins>'+esc(m)+'</ins>'+esc(sf);};
 const LABEL={cur:'현행',new:'B새번역',own:'직접',hold:'보류'};
 const ROW={};                       // id → 원자료 (저장할 때 텍스트를 뽑는다)
 const timer={};
@@ -209,10 +205,10 @@ function openReq(sc){
 function openFlow(sc, id){
   document.getElementById('ctxT').textContent=sc.name;
   document.getElementById('ctxM').textContent=
-    `맵 ${sc.map} · 이벤트 ${sc.event}-${sc.page} · ${sc.total}행 — 현행 번역으로 읽는 장면`;
+    `맵 ${sc.map} · 이벤트 ${sc.event}-${sc.page} · ${sc.total}행 — 장면 흐름 (고쳐진 자리는 지움·새김 표시)`;
   document.getElementById('ctxB').innerHTML=sc.flow.map(r=>
     `<div class="line${r.id===id?' here':''}" id="fl-${r.id}">
-       <span class="nm">${esc(r.who)}${r.hit?' ●':''}</span><span>${esc(r.ko)}</span>
+       <span class="nm">${esc(r.who)}${r.hit?' ●':''}</span><span>${r.new?mark(r.ko,r.new):esc(r.ko)}</span>
        <span class="sp">${esc(r.es)}</span></div>`).join('');
   document.getElementById('ctx').showModal();
   if(id){const el=document.getElementById('fl-'+id); if(el) el.scrollIntoView({block:'center'});}
