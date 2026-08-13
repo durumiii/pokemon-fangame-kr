@@ -1175,7 +1175,7 @@ def run(pilot=False, limit=None, workers=4, fresh=False, effort="low", npc=False
           f" → 요청 {len(packs)}개 (묶음 예산 {pack_rows}행)")
     key = key_of()
     lock = threading.Lock()
-    st = {"n": 0, "rows": 0, "cost": 0.0, "rej": 0, "demote": 0}
+    st = {"n": 0, "rows": 0, "cost": 0.0, "rej": 0, "demote": 0, "t0": time.time()}
 
     def work(pack):
         prep = {c["cid"]: prepare(c, fresh) for c in pack}
@@ -1211,9 +1211,11 @@ def run(pilot=False, limit=None, workers=4, fresh=False, effort="low", npc=False
         with lock:
             st["n"] += 1
             st["cost"] += cost
+            left = (time.time() - st["t0"]) / st["n"] * (len(packs) - st["n"])
             print(f"[{st['n']}/{len(packs)}] {pack[0]['cid']}+{len(pack) - 1} "
                   f"누적 {st['rows']}행 반려 {st['rej']} 강등 {st['demote']} "
-                  f"${st['cost']:.3f}")
+                  f"${st['cost']:.3f} 남은 ~{int(left // 60)}분{int(left % 60):02d}초",
+                  flush=True)
 
     threads = []
     for p in packs:

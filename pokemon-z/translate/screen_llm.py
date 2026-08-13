@@ -128,9 +128,10 @@ def scene_system(fp):
 
 def run(d, model, effort):
     key, out, total = key_of(), [], 0.0
-    for fp in sorted(Path(d).glob("*.jsonl")):
-        if fp.name.startswith("screen"):
-            continue
+    files = [fp for fp in sorted(Path(d).glob("*.jsonl"))
+             if not fp.name.startswith("screen")]
+    todo, done, t0 = len(files), 0, time.time()
+    for fp in files:
         rows = [json.loads(l) for l in fp.read_text(encoding="utf-8").splitlines() if l.strip()]
         ask_rows = [{"id": r["id"], "who": r["who"], "es": r["es"],
                      "ko": r.get("new") or r["old"]} for r in rows if r.get("new")]
@@ -140,7 +141,10 @@ def run(d, model, effort):
         total += cost
         ids = {r["id"] for r in ask_rows}
         out += [h for h in hits if h["id"] in ids]
-        print(f"  {fp.name}: {len(ask_rows)}행 → {len(hits)}행 지적 (${cost:.4f})")
+        done += 1
+        left = (time.time() - t0) / done * (todo - done)
+        print(f"  [{done}/{todo}] {fp.name}: {len(ask_rows)}행 → {len(hits)}행 지적 "
+              f"(${cost:.4f}) 남은 ~{int(left // 60)}분{int(left % 60):02d}초", flush=True)
     p = Path(d) / "screen-llm.jsonl"
     p.write_text("".join(json.dumps(h, ensure_ascii=False) + "\n" for h in out),
                  encoding="utf-8")
