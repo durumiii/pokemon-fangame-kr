@@ -1,0 +1,300 @@
+{"map": 0, "map_name": "(공통 이벤트)", "event": 53, "page": 0, "라벨": "X", "이유": "돈 받고 폼을 바꿔주는 서비스 NPC — 기능 시설", "발췌": "¡Hola, soy el Transformador Exótico!", "라운드": 1}
+{"map": 2, "map_name": "Pirineos de Kalos", "event": 3, "page": 1, "라벨": "M", "이유": "오프닝 눈밭 조난 장면의 스타팅 선택 — 반드시 지나는 마디", "발췌": "¿Escoges a Charmander, Pokémon de tipo Fuego?", "라운드": 1}
+{"map": 2, "map_name": "Pirineos de Kalos", "event": 3, "page": 3, "라벨": "M", "이유": "같은 오프닝 스타팅 선택지의 다른 갈래", "발췌": "¿Escoges a Torchic, Pokémon de tipo Fuego?", "라운드": 1}
+{"map": 2, "map_name": "Pirineos de Kalos", "event": 9, "page": 5, "라벨": "M", "이유": "같은 오프닝 스타팅 선택지의 다른 갈래", "발췌": "¿Escoges a Snivy, Pokémon de tipo Planta?", "라운드": 1}
+{"map": 2, "map_name": "Pirineos de Kalos", "event": 9, "page": 7, "라벨": "M", "이유": "같은 오프닝 스타팅 선택지의 다른 갈래", "발췌": "¿Escoges a Grookey, Pokémon de tipo Planta?", "라운드": 1}
+{"map": 2, "map_name": "Pirineos de Kalos", "event": 11, "page": 0, "라벨": "M", "이유": "오프닝에서 조난자가 도움을 청하며 첫 포켓몬을 쥐게 하는 자리", "발췌": "¡Seas quien seas, por favor, usa una de las Pokéball que he dejado caer!", "라운드": 1}
+{"map": 2, "map_name": "Pirineos de Kalos", "event": 15, "page": 4, "라벨": "M", "이유": "같은 오프닝 스타팅 선택지의 다른 갈래", "발췌": "¿Escoges a Piplup, Pokémon de tipo Agua?", "라운드": 1}
+{"map": 3, "map_name": "Pueblo Lienzo", "event": 15, "page": 0, "라벨": "X", "이유": "세이브 파일 위치를 알려주는 시스템 안내", "발췌": "PISTA DE ENTRENADOR: Puedes encontrar el save de tu partida", "라운드": 1}
+{"map": 3, "map_name": "Pueblo Lienzo", "event": 28, "page": 1, "라벨": "M", "이유": "주연 크리산토·올리비에가 다음 목적지(1번도로·비닐로마을)를 지시하는 장면", "발췌": "¿Puedo confiar en que no pereceréis por el camino atravesando la Ruta 1?", "라운드": 1}
+{"map": 3, "map_name": "Pueblo Lienzo", "event": 30, "page": 0, "라벨": "X", "이유": "교구 소속 회복 서비스 NPC", "발췌": "¿quieres curar a tu equipo?", "라운드": 1}
+{"map": 3, "map_name": "Pueblo Lienzo", "event": 33, "page": 0, "라벨": "X", "이유": "모노타입 챌린지 모드 활성화 장치", "발췌": "¡Hola! Soy el Activador del Reto Monotype.", "라운드": 1}
+{"map": 3, "map_name": "Pueblo Lienzo", "event": 48, "page": 0, "라벨": "X", "이유": "너즐록 실패 시스템 알림", "발췌": "Has perdido el reto Nuzlocke", "라운드": 1}
+{"map": 4, "map_name": "Casa", "event": 16, "page": 0, "라벨": "X", "이유": "포켓몬을 보고 놀라는 행인 잡담", "발췌": "¿Eso es un \\v[66]? ¡Nunca había visto uno!", "라운드": 1}
+{"map": 4, "map_name": "Casa", "event": 27, "page": 0, "라벨": "X", "이유": "조사하면 나오는 사물 문구", "발췌": "Aquí solo hay basura.", "라운드": 1}
+{"map": 5, "map_name": "Laboratorio Flare", "event": 5, "page": 0, "라벨": "M", "이유": "연구소 첫 방문 — 올리비에·크리산토와 초반 스타팅 배분, 평가 배틀로 이어짐", "발췌": "Bienvenidos al Laboratorio Flare", "라운드": 1}
+{"map": 5, "map_name": "Laboratorio Flare", "event": 18, "page": 0, "라벨": "M", "이유": "흑막 알카가 주인공에게 잃어버린 세월을 묻는 독백 장면", "발췌": "Alca: ¿Qué va a ser de ti, \\PN?", "라운드": 1}
+{"map": 7, "map_name": "Ruta 1", "event": 4, "page": 0, "라벨": "X", "이유": "종족값 재조정을 알리는 시스템 안내판", "발췌": "PISTA DE ENTRENADOR: Muchos Pokémon débiles han sido rebalanceados", "라운드": 1}
+{"map": 9, "map_name": "Pueblo Vinilo", "event": 8, "page": 0, "라벨": "X", "이유": "명명 조연이지만 사건 진행 없이 서서 걱정을 읊는 자리", "발췌": "Confío en que mademoiselle Olivier sabrá cuidar de Melia, pero...", "라운드": 1}
+{"map": 9, "map_name": "Pueblo Vinilo", "event": 39, "page": 0, "라벨": "X", "이유": "길 막은 덤불을 도구로 자르는 장치 문구", "발췌": "Un pequeño arbusto bloquea el paso.", "라운드": 1}
+{"map": 11, "map_name": "Casa", "event": 13, "page": 0, "라벨": "X", "이유": "비밀 통로 소문을 흘리는 행인", "발췌": "Si vas a la casa del señor Merlot y consigues acceder a su bodega", "라운드": 1}
+{"map": 11, "map_name": "Casa", "event": 23, "page": 1, "라벨": "X", "이유": "조사하면 나오는 사물 문구", "발췌": "Aquí solo hay basura.", "라운드": 1}
+{"map": 13, "map_name": "Chateau Merlot", "event": 17, "page": 0, "라벨": "X", "이유": "전투 요령을 늘어놓는 행인", "발췌": "¿Sabes cómo gano yo mis combates Pokémon?", "라운드": 1}
+{"map": 15, "map_name": "Granja Gogoat", "event": 5, "page": 1, "라벨": "X", "이유": "노인의 신세 한탄 잡담", "발췌": "Algún día no estaré y dejaré de ocupar espacio en este hogar.", "라운드": 1}
+{"map": 17, "map_name": "Ciudad Grisalla", "event": 15, "page": 0, "라벨": "X", "이유": "6마리 제한 불평 잡담", "발췌": "Tener que llevar como máximo 6 Pokémon es lo peor.", "라운드": 1}
+{"map": 18, "map_name": "Centro Pokémon", "event": 22, "page": 0, "라벨": "X", "이유": "포켓몬센터 기술 기억 서비스", "발췌": "¡Hola, Aspirante! ¿Qué necesitas?", "라운드": 1}
+{"map": 19, "map_name": "Casa", "event": 15, "page": 0, "라벨": "X", "이유": "포켓투어 소원 이야기 잡담", "발췌": "Si ganas el PokéTour y le pides un deseo al rey", "라운드": 1}
+{"map": 21, "map_name": "Bastión Pokémon", "event": 20, "page": 0, "라벨": "M", "이유": "멜리아·섭정 카놀라가 포켓투어 규칙과 첫 임무를 주는 장 진입 장면", "발췌": "Soy Canola, regente del Bastión Pokémon de Ciudad Grisalla.", "라운드": 1}
+{"map": 22, "map_name": "Cuartel Mosquetero", "event": 10, "page": 0, "라벨": "X", "이유": "상자 습득 문구", "발췌": "¡Es una caja con materiales!", "라운드": 1}
+{"map": 24, "map_name": "Pueblo Acrílico", "event": 31, "page": 0, "라벨": "X", "이유": "고고트 탑승 확인창", "발췌": "¿Quieres usar la Montura Gogoat?", "라운드": 1}
+{"map": 24, "map_name": "Pueblo Acrílico", "event": 38, "page": 0, "라벨": "X", "이유": "교역·잡담 NPC(에스피노)의 상점 겸 소문", "발췌": "Comerciar / Hablar", "라운드": 1}
+{"map": 24, "map_name": "Pueblo Acrílico", "event": 55, "page": 0, "라벨": "X", "이유": "도전과제 안내 석상 문구", "발췌": "Revisa la estatua si algún día consigues todos los logros.", "라운드": 1}
+{"map": 25, "map_name": "Pueblo Acrílico", "event": 24, "page": 0, "라벨": "X", "이유": "기술 기억 서비스 NPC(아자하라)", "발췌": "¿Necesitas de mis servicios?", "라운드": 1}
+{"map": 25, "map_name": "Pueblo Acrílico", "event": 33, "page": 0, "라벨": "X", "이유": "특성 변경 서비스 NPC(덴드로)", "발췌": "Puedo cambiar la habilidad del primer Pokémon de tu equipo.", "라운드": 1}
+{"map": 27, "map_name": "Ruta 4", "event": 11, "page": 1, "라벨": "X", "이유": "도로 위 훈수 잡담", "발췌": "Ganar o perder no lo es todo", "라운드": 1}
+{"map": 30, "map_name": "Centro Pokémon", "event": 4, "page": 0, "라벨": "X", "이유": "포켓몬센터 회복 정형구", "발췌": "¿Quieres curar a tu equipo?", "라운드": 1}
+{"map": 30, "map_name": "Centro Pokémon", "event": 20, "page": 0, "라벨": "X", "이유": "기술 기억 서비스 정형구", "발췌": "¡Hola, Aspirante! ¿Qué necesitas?", "라운드": 1}
+{"map": 36, "map_name": "Chateau Rosillon", "event": 16, "page": 0, "라벨": "X", "이유": "란토에 대한 소문을 흘리는 파티 손님 잡담", "발췌": "¿Has conocido a monsieur Lanto? Pues ten mucho cuidado con él.", "라운드": 1}
+{"map": 36, "map_name": "Chateau Rosillon", "event": 35, "page": 1, "라벨": "?", "이유": "본편 파티 장면 안이지만 올리비에의 한 줄뿐이라 진행 여부를 못 가름", "발췌": "Olivier: Siéntate lejos de Lanto, por favor.", "라운드": 1}
+{"map": 40, "map_name": "Vieja Biblioteca", "event": 17, "page": 0, "라벨": "M", "이유": "미라와 첫 대면·최종병기 원고를 둘러싼 대립 — 줄거리의 핵", "발췌": "Mirra: podría usarse como... un Arma Definitiva.", "라운드": 1}
+{"map": 42, "map_name": "Pueblo Profano", "event": 13, "page": 0, "라벨": "X", "이유": "마녀·사냥꾼 소동을 투덜대는 주민", "발췌": "¿No pueden ir a pelearse a otra parte?", "라운드": 1}
+{"map": 42, "map_name": "Pueblo Profano", "event": 45, "page": 0, "라벨": "M", "이유": "알카 습격 직후 주연들의 정리와 다음 도시 이동 선언", "발췌": "Crisanto: Mientras tanto, ¡rumbo a Ciudad Novarte!", "라운드": 1}
+{"map": 53, "map_name": "Ruta 3", "event": 16, "page": 0, "라벨": "?", "이유": "섭정이 준 필수 임무의 단서인지 지엽 심부름 소품인지 한 줄로는 못 가름", "발췌": "¡Podrían ser las huellas de un Furfrou!", "라운드": 1}
+{"map": 54, "map_name": "Cueva Grisalla", "event": 2, "page": 0, "라벨": "X", "이유": "폭발가루 사용 확인창", "발췌": "¿Usar Polvo Explosivo?", "라운드": 1}
+{"map": 54, "map_name": "Cueva Grisalla", "event": 12, "page": 0, "라벨": "X", "이유": "폭발가루 사용 확인창", "발췌": "¿Usar Polvo Explosivo?", "라운드": 1}
+{"map": 54, "map_name": "Cueva Grisalla", "event": 33, "page": 0, "라벨": "X", "이유": "폭발가루 사용 확인창", "발췌": "¿Usar Polvo Explosivo?", "라운드": 1}
+{"map": 55, "map_name": "Ruta 5", "event": 16, "page": 0, "라벨": "X", "이유": "길가 주민의 정취 잡담", "발췌": "Los espíritus de los reyes nos observan desde las colinas", "라운드": 1}
+{"map": 55, "map_name": "Ruta 5", "event": 44, "page": 0, "라벨": "X", "이유": "고고트 탑승 확인창", "발췌": "¿Quieres usar la Montura Gogoat?", "라운드": 1}
+{"map": 55, "map_name": "Ruta 5", "event": 51, "page": 0, "라벨": "X", "이유": "사물 조사 문구", "발췌": "¡Es un cúmulo de piedrecitas!", "라운드": 1}
+{"map": 59, "map_name": "Ciudad Óleo", "event": 51, "page": 0, "라벨": "M", "이유": "원고 회수 뒤 올리비에의 정리와 멜리아가 왕의 숨긴 딸임이 드러나는 자리", "발췌": "Eres la famosa \"hija escondida\" del rey Áster Zephir, ¿verdad?", "라운드": 1}
+{"map": 59, "map_name": "Ciudad Óleo", "event": 57, "page": 0, "라벨": "X", "이유": "광장 포고꾼의 세태 소식(개그)", "발췌": "Pregonero: ¡Se hace saber, se hace saber!", "라운드": 1}
+{"map": 60, "map_name": "Centro Pokémon", "event": 19, "page": 0, "라벨": "X", "이유": "의뢰 게시판 기능 안내", "발췌": "En este Tablón de Misiones encontrarás algunos encargos pendientes", "라운드": 1}
+{"map": 61, "map_name": "Bastión Pokémon", "event": 23, "page": 0, "라벨": "M", "이유": "섭정 히소포 공략·배지 수여 — 포켓투어 본선 진행 마디", "발췌": "Te hago entrega de mi medalla, la Medalla Espectro.", "라운드": 1}
+{"map": 62, "map_name": "Casa", "event": 21, "page": 1, "라벨": "X", "이유": "배우의 신세 잡담", "발췌": "se me entumecen las articulaciones", "라운드": 1}
+{"map": 63, "map_name": "Café Bohemien", "event": 5, "page": 0, "라벨": "X", "이유": "포켓몬 교환 NPC", "발췌": "¿lo cambiarías por mi Charmander?", "라운드": 1}
+{"map": 63, "map_name": "Café Bohemien", "event": 6, "page": 1, "라벨": "X", "이유": "교환 뒤 안부 한 줄", "발췌": "¿Qué tal está Squirtle?", "라운드": 1}
+{"map": 75, "map_name": "Pueblo Profano", "event": 1, "page": 0, "라벨": "M", "이유": "메를로 대장이 알카에게 패퇴하는 사건 — 팀 아조스 등장의 분수령", "발췌": "Alca: ¡No habrá una segunda advertencia!", "라운드": 1}
+{"map": 76, "map_name": "Ruta 7 Norte", "event": 8, "page": 0, "라벨": "X", "이유": "시스템 전투 요령 안내판", "발췌": "PISTA DE ENTRENADOR: A los Pokémon de tipo Planta", "라운드": 1}
+{"map": 76, "map_name": "Ruta 7 Norte", "event": 24, "page": 0, "라벨": "X", "이유": "열매 나무 조사 문구", "발췌": "¡Es un arbusto de bayas!", "라운드": 1}
+{"map": 81, "map_name": "Taller Quemado", "event": 34, "page": 0, "라벨": "M", "이유": "자동인형(F3) 해방 직후 올리비에가 동행을 지시하는 자리", "발췌": "Acabamos de liberar a un autómata", "라운드": 1}
+{"map": 82, "map_name": "Centro Pokémon", "event": 4, "page": 0, "라벨": "X", "이유": "포켓몬센터 회복 정형구", "발췌": "¿Quieres curar a tu equipo?", "라운드": 1}
+{"map": 82, "map_name": "Centro Pokémon", "event": 7, "page": 0, "라벨": "X", "이유": "너즐록 실패 시스템 알림", "발췌": "Has perdido el reto Nuzlocke", "라운드": 1}
+{"map": 83, "map_name": "Casa", "event": 8, "page": 0, "라벨": "X", "이유": "포켓몬 교환 NPC", "발췌": "¡Te lo cambio por mi Lickitung!", "라운드": 1}
+{"map": 86, "map_name": "Chateau Lanto", "event": 18, "page": 0, "라벨": "X", "이유": "저택 퍼즐용 사물 문구", "발췌": "Tal vez habría que vertir este vino en algún recipiente...", "라운드": 1}
+{"map": 88, "map_name": "Chateau Lanto", "event": 10, "page": 0, "라벨": "X", "이유": "저택 안 실험 옹호 행인 한 줄", "발췌": "Me da igual si los Pokémon sufren por nuestros experimentos", "라운드": 1}
+{"map": 89, "map_name": "Bastión Pokémon", "event": 3, "page": 0, "라벨": "X", "이유": "섭정 교체를 두고 한마디 하는 제자 잡담", "발췌": "¿Entonces tenemos Regente nuevo?", "라운드": 1}
+{"map": 89, "map_name": "Bastión Pokémon", "event": 43, "page": 0, "라벨": "X", "이유": "길 막는 장치 문구", "발췌": "¡Una barrera eléctrica corta el paso!", "라운드": 1}
+{"map": 90, "map_name": "Academia Novarte", "event": 35, "page": 2, "라벨": "M", "이유": "볼프람의 배신·문서가 팀 아조스로 넘어가는 사건과 F3의 임시 섭정 선언", "발췌": "¡Menos cháchara y andando! Voy a encargarme de que la justicia te encierre", "라운드": 1}
+{"map": 90, "map_name": "Academia Novarte", "event": 40, "page": 2, "라벨": "M", "이유": "같은 배신 장면의 복제 페이지", "발췌": "Recluta Azoth: Cuando el Team Azoth tome el control", "라운드": 1}
+{"map": 90, "map_name": "Academia Novarte", "event": 41, "page": 0, "라벨": "M", "이유": "신임 학장 볼프람이 사팽의 문서 회수를 맡기며 다음 목적지를 지정", "발췌": "Te daré la llave para que entres en el taller, en Colina de Tormenta", "라운드": 1}
+{"map": 91, "map_name": "Ruta 8 Oeste", "event": 15, "page": 1, "라벨": "X", "이유": "아이의 란토 저택 잡담", "발췌": "Monsieur Lanto dice que podré entrar en su casa cuando cumpla 5 años más.", "라운드": 1}
+{"map": 91, "map_name": "Ruta 8 Oeste", "event": 18, "page": 0, "라벨": "M", "이유": "크리산토와의 재대결 뒤 란토가 저택 만찬에 초대 — 다음 장으로 넘기는 자리", "발췌": "Lanto: quería invitaros a mi chateau", "라운드": 1}
+{"map": 91, "map_name": "Ruta 8 Oeste", "event": 25, "page": 0, "라벨": "X", "이유": "길을 막고 방향을 알리는 안내문", "발췌": "Monsieur Lanto te espera en su casa. No es por aquí.", "라운드": 1}
+{"map": 96, "map_name": "Ruta 10", "event": 19, "page": 0, "라벨": "X", "이유": "폭발가루 사용 확인창", "발췌": "¿Usar Polvo Explosivo?", "라운드": 1}
+{"map": 97, "map_name": "Ruta 9", "event": 4, "page": 0, "라벨": "M", "이유": "일행이 다시 모여 뱃삯을 치르고 강을 건너는 필수 이동 장면", "발췌": "Melia: ¿Has averiguado más cosas del Team Azoth?", "라운드": 1}
+{"map": 98, "map_name": "Casa", "event": 12, "page": 0, "라벨": "X", "이유": "화석 발굴 안내 잡담", "발췌": "puedes ayudar en las excavaciones de la Petrocueva", "라운드": 1}
+{"map": 100, "map_name": "Ruta 8 Este", "event": 22, "page": 0, "라벨": "X", "이유": "미로 관련 도발 잡담", "발췌": "¿Has sabido orientarte por nuestros laberintos?", "라운드": 1}
+{"map": 100, "map_name": "Ruta 8 Este", "event": 28, "page": 0, "라벨": "X", "이유": "손수건을 찾아 달라는 서브퀘스트(이시도라)", "발췌": "¿podrías traérmelo de vuelta?", "라운드": 1}
+{"map": 102, "map_name": "Pueblo Petroglifo", "event": 30, "page": 0, "라벨": "X", "이유": "왕의 정의를 비판하는 주민 잡담", "발췌": "¿Este es el concepto de justicia del rey?", "라운드": 1}
+{"map": 102, "map_name": "Pueblo Petroglifo", "event": 32, "page": 0, "라벨": "X", "이유": "화석 바위 조사 문구", "발췌": "Una roca cubierta de fósiles.", "라운드": 1}
+{"map": 106, "map_name": "Fort Leviatán", "event": 23, "page": 0, "라벨": "M", "이유": "국왕 아스테르가 안젤린을 회고하고 함께 탈출로를 찾는 장면", "발췌": "Áster Zephir: ¡Démonos prisa, \\PN!", "라운드": 1}
+{"map": 108, "map_name": "Chateau Lanto", "event": 11, "page": 0, "라벨": "M", "이유": "란토의 정체가 드러난 뒤 크리산토의 흔들림과 일행의 재정비", "발췌": "No me puedo creer que hayamos bailado al son de la flauta del Team Azoth", "라운드": 1}
+{"map": 108, "map_name": "Chateau Lanto", "event": 12, "page": 1, "라벨": "M", "이유": "미라와의 동맹 제안·보데곤마을 행 지시 — 다음 장 지정", "발췌": "Si vais a Pueblo Bodegón tal vez podáis hablar con él.", "라운드": 1}
+{"map": 110, "map_name": "Ruta 11", "event": 29, "page": 0, "라벨": "X", "이유": "석상으로 폼을 바꾸는 장치", "발췌": "¿Quieres acercar a tu Sawsbuck a la estatua?", "라운드": 1}
+{"map": 111, "map_name": "Chateau Lanto", "event": 24, "page": 0, "라벨": "X", "이유": "실험 흔적을 알리는 사물 조사 문구", "발췌": "Han estado experimentando con este Pokémon", "라운드": 1}
+{"map": 114, "map_name": "Centro Pokémon", "event": 24, "page": 0, "라벨": "X", "이유": "명예의 전당 확인창", "발췌": "¿Revisar Hall de Fama?", "라운드": 1}
+{"map": 115, "map_name": "Bastión Pokémon", "event": 2, "page": 0, "라벨": "X", "이유": "도장 입구 안내 NPC의 환영 정형구", "발췌": "Te doy una cálida bienvenida a nuestro Bastión-Cocina", "라운드": 1}
+{"map": 115, "map_name": "Bastión Pokémon", "event": 28, "page": 0, "라벨": "X", "이유": "요리 퍼즐의 열매 고르기 장치", "발췌": "¿Qué baya quieres coger?", "라운드": 1}
+{"map": 115, "map_name": "Bastión Pokémon", "event": 31, "page": 0, "라벨": "X", "이유": "요리 퍼즐의 조리 확인창", "발췌": "Receta: El plato estará formado por 2 Bayas.", "라운드": 1}
+{"map": 115, "map_name": "Bastión Pokémon", "event": 36, "page": 1, "라벨": "X", "이유": "요리 퍼즐의 조리 확인창", "발췌": "Receta: No curará ningún Estado Alterado", "라운드": 1}
+{"map": 115, "map_name": "Bastión Pokémon", "event": 39, "page": 0, "라벨": "X", "이유": "요리 퍼즐의 열매 고르기 장치", "발췌": "¿Qué baya quieres coger?", "라운드": 1}
+{"map": 115, "map_name": "Bastión Pokémon", "event": 40, "page": 0, "라벨": "X", "이유": "요리 퍼즐의 조리 확인창", "발췌": "Receta: Curará la Quemadura y será de color turquesa", "라운드": 1}
+{"map": 115, "map_name": "Bastión Pokémon", "event": 40, "page": 2, "라벨": "X", "이유": "요리 퍼즐의 조리 확인창", "발췌": "Receta: Curará el Veneno, pero no los PS", "라운드": 1}
+{"map": 121, "map_name": "Ruta 9", "event": 6, "page": 0, "라벨": "X", "이유": "이브이 진화 관련 시스템 안내판", "발췌": "PISTA DE ENTRENADOR: ¿Tienes ya a Eevee?", "라운드": 1}
+{"map": 123, "map_name": "Isla Certijo", "event": 4, "page": 0, "라벨": "X", "이유": "수수께끼 넷을 내는 지엽 도전 이벤트", "발췌": "¿te atreverías a aceptar mi desafío de los Cuatro Acertijos?", "라운드": 1}
+{"map": 125, "map_name": "Fort Leviatán", "event": 19, "page": 1, "라벨": "X", "이유": "혁명파 병사의 구호 한 줄", "발췌": "combatiremos también por tus derechos", "라운드": 1}
+{"map": 130, "map_name": "Estación de Servicio", "event": 10, "page": 0, "라벨": "X", "이유": "케이블카 이동 서비스", "발췌": "¿Quieres que te lleve a Ciudad Batik?", "라운드": 1}
+{"map": 135, "map_name": "Casa", "event": 8, "page": 1, "라벨": "X", "이유": "포켓몬관을 읊는 집 안 행인", "발췌": "Los Pokémon son nuestros compañeros del alma, no herramientas.", "라운드": 1}
+{"map": 135, "map_name": "Casa", "event": 11, "page": 0, "라벨": "X", "이유": "진화·도구 요령을 알려주는 행인", "발췌": "¿Clamperl te parece un Pokémon débil?", "라운드": 1}
+{"map": 137, "map_name": "Ruta 12", "event": 12, "page": 0, "라벨": "X", "이유": "포켓몬 교환 서비스 NPC", "발췌": "¡Hola, soy Le Prodige!", "라운드": 1}
+{"map": 137, "map_name": "Ruta 12", "event": 13, "page": 0, "라벨": "X", "이유": "알파 둥지 조우 장치", "발췌": "¡Es un Nido Alfa!", "라운드": 1}
+{"map": 137, "map_name": "Ruta 12", "event": 16, "page": 0, "라벨": "X", "이유": "도로 위 트레이너 자랑 한 줄", "발췌": "Aprovecho la energía elemental de mis Pokémon para estudiar la ciencia", "라운드": 1}
+{"map": 138, "map_name": "Viejo Vánitas", "event": 32, "page": 0, "라벨": "X", "이유": "사냥꾼 길드 신입에게 훈수하는 트레이너", "발췌": "te daré un consejo de principiante si me derrotas", "라운드": 1}
+{"map": 141, "map_name": "Pueblo Vánitas", "event": 13, "page": 1, "라벨": "X", "이유": "사냥꾼 마을의 연금술 자랑 잡담", "발췌": "practicamos nuestra propia especialización de alquimia", "라운드": 1}
+{"map": 141, "map_name": "Pueblo Vánitas", "event": 14, "page": 0, "라벨": "X", "이유": "카두코 구호소를 설명하는 안내 잡담", "발췌": "Se trata del Hospicio Caduco.", "라운드": 1}
+{"map": 142, "map_name": "Centro Pokémon", "event": 14, "page": 0, "라벨": "X", "이유": "팀 아조스에게 당했다는 피해 하소연 잡담", "발췌": "no solo me derrotaron en combate cinco contra uno", "라운드": 1}
+{"map": 146, "map_name": "Bastión Pokémon", "event": 3, "page": 0, "라벨": "X", "이유": "되돌아갈 수 없다는 진입 확인창", "발췌": "¿Quieres continuar?", "라운드": 1}
+{"map": 146, "map_name": "Bastión Pokémon", "event": 4, "page": 0, "라벨": "X", "이유": "도장 갈림길 힌트 안내", "발췌": "Tendrás que cruzar más umbrales hasta llegar a la Regente Belladona.", "라운드": 1}
+{"map": 146, "map_name": "Bastión Pokémon", "event": 6, "page": 3, "라벨": "X", "이유": "도장 통과 뒤 격려 한 줄", "발췌": "te deseo una larga y fructífera cacería", "라운드": 1}
+{"map": 147, "map_name": "Hospicio Caduco", "event": 27, "page": 0, "라벨": "M", "이유": "란토가 구호소를 습격하고 일행이 그 현장을 목격하는 사건", "발췌": "¿Van a asaltar el Hospicio Caduco?", "라운드": 1}
+{"map": 153, "map_name": "Casa", "event": 7, "page": 0, "라벨": "X", "이유": "병든 포켓몬을 알리는 사물 조사 문구", "발췌": "Este Furret está gravemente enfermo.", "라운드": 1}
+{"map": 154, "map_name": "Casa", "event": 5, "page": 1, "라벨": "X", "이유": "조사 사물 문구", "발췌": "Aquí solo hay basura.", "라운드": 1}
+{"map": 156, "map_name": "Huerto Vánitas", "event": 15, "page": 1, "라벨": "X", "이유": "열매 채집 문구", "발췌": "Ya has arrancado las bayas de este arbusto.", "라운드": 1}
+{"map": 157, "map_name": "Ruta 13", "event": 2, "page": 0, "라벨": "X", "이유": "길을 막고 조건을 알리는 문지기 안내", "발췌": "Hemos cerrado la ruta hacia Ciudad Luminalia", "라운드": 1}
+{"map": 159, "map_name": "Ruta 13", "event": 12, "page": 0, "라벨": "X", "이유": "총사의 자기소개 잡담", "발췌": "Los mosqueteros somos la espada del rey.", "라운드": 1}
+{"map": 160, "map_name": "Ciudad Luminalia - Sur", "event": 49, "page": 0, "라벨": "X", "이유": "배터리 재료를 모아 오면 인공 포켓몬을 깨워 주는 서브퀘스트", "발췌": "necesitaré 3 Brasas Candentes y 3 Aguas Vitales", "라운드": 1}
+{"map": 161, "map_name": "Ciudad Luminalia - Este", "event": 17, "page": 0, "라벨": "X", "이유": "도시 유래를 읊는 행인", "발췌": "Dicen que Ciudad Luminalia se fundó con el propósito", "라운드": 1}
+{"map": 163, "map_name": "Ciudad Luminalia - Norte", "event": 6, "page": 0, "라벨": "X", "이유": "포켓몬 교환 서비스 NPC", "발췌": "¡Hola, soy Le Prodige!", "라운드": 1}
+{"map": 163, "map_name": "Ciudad Luminalia - Norte", "event": 41, "page": 0, "라벨": "X", "이유": "출입 제한 안내문", "발췌": "Solo el personal autorizado puede entrar", "라운드": 1}
+{"map": 164, "map_name": "Centro Pokémon", "event": 21, "page": 0, "라벨": "X", "이유": "기술 기억 서비스 정형구", "발췌": "¡Hola, Aspirante! ¿Qué necesitas?", "라운드": 1}
+{"map": 173, "map_name": "Bastión Pokémon", "event": 16, "page": 0, "라벨": "?", "이유": "본선 섭정의 말이지만 사건 진행 없이 남은 여정을 일러 주는 한 자리", "발췌": "Debo prevenirte de que los 6 Regentes que te faltan residen en los dominios más... inhóspitos", "라운드": 1}
+{"map": 175, "map_name": "Centro Pokémon", "event": 4, "page": 1, "라벨": "X", "이유": "졸다 깬 포켓몬센터 회복 정형구", "발췌": "¿Quieres curar a tu equipo?", "라운드": 1}
+{"map": 180, "map_name": "Casa", "event": 15, "page": 0, "라벨": "X", "이유": "열매 상식 퀴즈 잡담 NPC", "발췌": "¿Qué baya se utiliza para curarles el sueño?", "라운드": 1}
+{"map": 181, "map_name": "Salón Furfrou", "event": 11, "page": 0, "라벨": "X", "이유": "트리밍 서비스 시설", "발췌": "Aquí aplicamos distintos estilos a Furfrou", "라운드": 1}
+{"map": 183, "map_name": "Catedral Señorial", "event": 10, "page": 0, "라벨": "X", "이유": "종지기 풍습을 읊는 행인", "발췌": "Pronto será la hora de tocar las campanas.", "라운드": 1}
+{"map": 184, "map_name": "Galería de Arte", "event": 41, "page": 0, "라벨": "X", "이유": "갤러리 그림의 작가 표기", "발췌": "Autora: rinkuuart", "라운드": 1}
+{"map": 188, "map_name": "Orfanato", "event": 3, "page": 1, "라벨": "X", "이유": "고아원 기부에 대한 감사 한 자리", "발췌": "Tu generosa contribución salvará muchas vidas", "라운드": 1}
+{"map": 190, "map_name": "Palacio Luminalia", "event": 21, "page": 0, "라벨": "M", "이유": "궁 잠입 — 미라·크리산토와 말보 왕의 비밀실 수색 작전 개시", "발췌": "Hay que encontrar pistas de dónde puede esconderse esa cámara secreta", "라운드": 1}
+{"map": 191, "map_name": "Palacio Luminalia", "event": 16, "page": 0, "라벨": "?", "이유": "본편 궁 수색의 심문 대상이라 단서를 주지만 형식은 행인 잡담", "발췌": "Mi abuela me contaba de pequeño la existencia de una Regadera Mágica", "라운드": 1}
+{"map": 192, "map_name": "Palacio Luminalia", "event": 18, "page": 0, "라벨": "X", "이유": "마법 물뿌리개로 꽃을 적시는 장치 문구", "발췌": "¿Quieres regarla con la Regadera Mágica?", "라운드": 1}
+{"map": 197, "map_name": "Hospicio Caduco", "event": 4, "page": 0, "라벨": "X", "이유": "구호소 회복 서비스", "발췌": "¿necesitas curar a tus Pokémon?", "라운드": 1}
+{"map": 207, "map_name": "Cámaras de Reflexión", "event": 5, "page": 0, "라벨": "X", "이유": "귀환 확인창", "발췌": "¿Quieres volter al Palacio Luminalia?", "라운드": 1}
+{"map": 208, "map_name": "Cámaras de Reflexión", "event": 5, "page": 0, "라벨": "M", "이유": "말보의 비밀실 발견과 왕의 시련(고위 기사 넷) 개시 — 장 전환", "발췌": "Dusknoir: ¡uno de vosotros deberá someterse a la Prueba Real!", "라운드": 1}
+{"map": 208, "map_name": "Cámaras de Reflexión", "event": 12, "page": 0, "라벨": "X", "이유": "시련 방 진입 확인창", "발췌": "Estancia de la Alta Dama Malva", "라운드": 1}
+{"map": 208, "map_name": "Cámaras de Reflexión", "event": 13, "page": 0, "라벨": "X", "이유": "시련 방 진입 확인창", "발췌": "Estancia del Alto Caballero Tileo", "라운드": 1}
+{"map": 225, "map_name": "Prisión del Olvido", "event": 10, "page": 0, "라벨": "X", "이유": "건드리지 말라는 사물 문구", "발췌": "(Mejor no molestar a este prisionero)", "라운드": 1}
+{"map": 225, "map_name": "Prisión del Olvido", "event": 32, "page": 0, "라벨": "M", "이유": "감옥 장에서 옥중 스승이 포켓몬을 고르게 하는 자리", "발췌": "Ferrofaz: Acercaos a uno de ellos, sin vacilar.", "라운드": 1}
+{"map": 226, "map_name": "Prisión del Olvido", "event": 40, "page": 0, "라벨": "X", "이유": "감옥 간수의 도발 한 줄", "발췌": "¡No tienes a dónde correr!", "라운드": 1}
+{"map": 227, "map_name": "Prisión del Olvido", "event": 3, "page": 2, "라벨": "?", "이유": "감옥 탈출용 포켓볼 제작 지시서 — 필수 절차인지 지엽 수집인지 대사만으론 못 가름", "발췌": "Para fabricar una Pokéball, necesitas los siguientes ingredientes.", "라운드": 1}
+{"map": 228, "map_name": "Prisión del Olvido", "event": 11, "page": 0, "라벨": "X", "이유": "철가면 죄수의 정체를 흘리는 죄수 소문 — 형식은 잡담", "발췌": "creo que pertenecía a la familia real de Áster Zephir", "라운드": 1}
+{"map": 228, "map_name": "Prisión del Olvido", "event": 22, "page": 0, "라벨": "X", "이유": "감옥 식사 농담 잡담", "발췌": "¿Que la comida de esta prisión es mala?", "라운드": 1}
+{"map": 233, "map_name": "Ciudad Romantis", "event": 35, "page": 0, "라벨": "X", "이유": "공장 앞 행인 잡담", "발췌": "¿Vas a la Fábrica de Pokéball?", "라운드": 1}
+{"map": 233, "map_name": "Ciudad Romantis", "event": 43, "page": 0, "라벨": "X", "이유": "도발 한 줄", "발췌": "¿Por qué vas solo con 1 Pokémon saludable?", "라운드": 1}
+{"map": 234, "map_name": "Ruta 15", "event": 16, "page": 0, "라벨": "X", "이유": "트레이너 너스레 잡담", "발췌": "solo me he metido en esto para poder mostrarle a las chicas Rangers", "라운드": 1}
+{"map": 235, "map_name": "Fábrica de Pokéball", "event": 4, "page": 0, "라벨": "X", "이유": "공장 직원 자랑 잡담 + 배틀", "발췌": "estamos trabajando en un modelo infalible de Pokéball", "라운드": 1}
+{"map": 236, "map_name": "Fábrica de Pokéball", "event": 9, "page": 0, "라벨": "X", "이유": "상자 습득 문구", "발췌": "¡Es una caja con materiales!", "라운드": 1}
+{"map": 238, "map_name": "Gruta Helada", "event": 27, "page": 0, "라벨": "X", "이유": "트레이너 도발", "발췌": "¿Quieres ver cómo aplico esa fuerza en un combate Pokémon?", "라운드": 1}
+{"map": 241, "map_name": "Casa", "event": 5, "page": 0, "라벨": "X", "이유": "도구를 찾아 주면 보답하는 서브퀘스트(안드레아)", "발췌": "¡Mis herramientas, las has recuperado!", "라운드": 1}
+{"map": 242, "map_name": "Ruta 17", "event": 2, "page": 0, "라벨": "X", "이유": "조언을 미끼로 거는 트레이너", "발췌": "a cambio de un combate Pokémon", "라운드": 1}
+{"map": 242, "map_name": "Ruta 17", "event": 24, "page": 0, "라벨": "X", "이유": "알파 둥지 장치", "발췌": "¡Es un Nido Alfa!", "라운드": 1}
+{"map": 244, "map_name": "Casa", "event": 9, "page": 0, "라벨": "X", "이유": "유령 사냥 소문 잡담", "발췌": "hay otro fantasma cerca de la Fábrica de Pokéball", "라운드": 1}
+{"map": 246, "map_name": "Casa", "event": 23, "page": 1, "라벨": "X", "이유": "조사 사물 문구", "발췌": "Aquí solo hay basura.", "라운드": 1}
+{"map": 247, "map_name": "Ciudad Batik", "event": 10, "page": 0, "라벨": "X", "이유": "마을 분위기를 전하는 주민 한 줄", "발췌": "La nieve nunca se derrite aquí", "라운드": 1}
+{"map": 247, "map_name": "Ciudad Batik", "event": 18, "page": 0, "라벨": "X", "이유": "탈옥 소문을 옮기는 행인 잡담", "발췌": "Hace poco hubo una gran fuga de prisioneros", "라운드": 1}
+{"map": 247, "map_name": "Ciudad Batik", "event": 19, "page": 0, "라벨": "X", "이유": "세뇌된 주민의 배경 묘사 잡담", "발췌": "Soy feliz, el Regente dice que soy feliz.", "라운드": 1}
+{"map": 247, "map_name": "Ciudad Batik", "event": 45, "page": 0, "라벨": "M", "이유": "동행 F3가 도시·어둠의 탑·히비스를 설명하고 올리비에 구출 계획을 짚는 자리", "발췌": "Analizando tu idea de colarte para rescatar a mademoiselle Olivier", "라운드": 1}
+{"map": 247, "map_name": "Ciudad Batik", "event": 46, "page": 0, "라벨": "M", "이유": "같은 F3 브리핑의 복제 페이지", "발췌": "Su nombre es monsieur Hibis.", "라운드": 1}
+{"map": 248, "map_name": "Escena Liga", "event": 2, "page": 1, "라벨": "M", "이유": "국왕이 소원을 묻고 주인공이 초대 챔피언이 되는 장면", "발췌": "¡\\PN se convierte en el primer Campeón de la región de Kalos!", "라운드": 1}
+{"map": 249, "map_name": "Escena Entrenamiento 1", "event": 3, "page": 0, "라벨": "M", "이유": "옥중 스승 페로파스의 수련 장면 — 최고의 유대·수련기 서사", "발췌": "Todo esto es lo que significa el Vínculo Supremo.", "라운드": 1}
+{"map": 252, "map_name": "Escena Mega 1", "event": 1, "page": 0, "라벨": "M", "이유": "소장 피노의 고문과 메가진화 각성으로 이어지는 회상 컷신", "발췌": "Necesitarás una última cosa para dominar la Megaevolución", "라운드": 1}
+{"map": 255, "map_name": "Pirineos de Kalos", "event": 10, "page": 0, "라벨": "X", "이유": "고고트 탑승 확인창", "발췌": "¿Quieres usar la Montura Gogoat?", "라운드": 1}
+{"map": 255, "map_name": "Pirineos de Kalos", "event": 30, "page": 1, "라벨": "X", "이유": "돈 받고 회복해 주는 서비스 NPC", "발췌": "Solo te cobraré 5000 pokécuartos", "라운드": 1}
+{"map": 256, "map_name": "Pirineos de Kalos", "event": 21, "page": 0, "라벨": "X", "이유": "산길 감시원의 검문 잡담", "발췌": "Fui contratado por el regente Hibis para vigilar estos caminos", "라운드": 1}
+{"map": 257, "map_name": "Pirineos de Kalos", "event": 22, "page": 0, "라벨": "X", "이유": "탈것 고고트 사물 설명", "발췌": "Un Gogoat sin familia ni hogar", "라운드": 1}
+{"map": 259, "map_name": "Centro Pokémon", "event": 8, "page": 0, "라벨": "X", "이유": "기술 기억 서비스 정형구", "발췌": "¡Hola, Aspirante! ¿Qué necesitas?", "라운드": 1}
+{"map": 261, "map_name": "Hostal Batik", "event": 14, "page": 0, "라벨": "X", "이유": "동료 실종을 흘리는 숙소 직원 잡담", "발췌": "Han desaparecido un par de compañeros de trabajo", "라운드": 1}
+{"map": 262, "map_name": "Torre Oscura P2", "event": 19, "page": 1, "라벨": "X", "이유": "탑 안 환자가 흘리는 공략 힌트", "발췌": "¡Ta-también afecta al Hombre del Saco!", "라운드": 1}
+{"map": 263, "map_name": "Torre Oscura P0", "event": 5, "page": 0, "라벨": "X", "이유": "납치 지시가 적힌 배경 문서", "발췌": "Trae solo a hombres y mujeres de clase baja", "라운드": 1}
+{"map": 266, "map_name": "Torre Oscura", "event": 11, "page": 0, "라벨": "M", "이유": "동행 F3가 몸을 되찾고 섭정전 직전 위험을 경고하는 자리", "발췌": "Si vas tras el Regente, tus probabilidades de vencerle son muy reducidas.", "라운드": 1}
+{"map": 266, "map_name": "Torre Oscura", "event": 15, "page": 0, "라벨": "M", "이유": "같은 F3 장면의 복제 페이지", "발췌": "Puedo servirme de uno de los cuerpos", "라운드": 1}
+{"map": 266, "map_name": "Torre Oscura", "event": 16, "page": 1, "라벨": "M", "이유": "미라와 히비스의 회담 — 미라의 진의와 올리비에 감금이 드러남", "발췌": "Mi gobierno es solo una transición hasta que logre arrebatar el poder", "라운드": 1}
+{"map": 266, "map_name": "Torre Oscura", "event": 34, "page": 0, "라벨": "X", "이유": "방향을 알리는 안내 문구", "발췌": "La habitación donde se encuentra la Profesora Olivier está por aquí.", "라운드": 1}
+{"map": 266, "map_name": "Torre Oscura", "event": 37, "page": 0, "라벨": "M", "이유": "올리비에 구출과 크리산토를 찾아 로만티스로 향하라는 다음 목표 지정", "발췌": "Hay que ir a Ciudad Romantis para dar con Crisanto, \\PN.", "라운드": 1}
+{"map": 269, "map_name": "Ruta 14", "event": 6, "page": 0, "라벨": "X", "이유": "고고트 탑승 확인창", "발췌": "¿Quieres usar la Montura Gogoat?", "라운드": 1}
+{"map": 274, "map_name": "Transición", "event": 13, "page": 1, "라벨": "X", "이유": "조사 사물 문구", "발췌": "Aquí solo hay basura.", "라운드": 1}
+{"map": 276, "map_name": "Bastión Pokémon", "event": 46, "page": 0, "라벨": "X", "이유": "도장 규칙 안내 문구", "발췌": "solo puedes continuar con 5 Pokémon como máximo", "라운드": 1}
+{"map": 277, "map_name": "Bastión Pokémon", "event": 6, "page": 0, "라벨": "?", "이유": "목적지를 지시하는 짧은 속삭임 — 본편 지시인지 지엽 연쇄인지 못 가름", "발췌": "Ve... a la Fábrica de Pokéball...", "라운드": 1}
+{"map": 277, "map_name": "Bastión Pokémon", "event": 8, "page": 0, "라벨": "?", "이유": "징벌의 항아리를 암시하는 짧은 속삭임 — 본편인지 지엽인지 못 가름", "발췌": "La Vasija Castigo... abrirá la puerta del infierno...", "라운드": 1}
+{"map": 282, "map_name": "Fábrica de Pokéball", "event": 3, "page": 0, "라벨": "X", "이유": "숨은 휴게실의 형제 트레이너 배틀 삽화", "발췌": "Somos los hermanos Mariano y Luciano", "라운드": 1}
+{"map": 283, "map_name": "Pueblo Fresco", "event": 21, "page": 0, "라벨": "X", "이유": "돈 받고 파는 공략 힌트 NPC", "발췌": "¿Quieres que te suelte una pista por 2.000 pokéfrancos?", "라운드": 1}
+{"map": 283, "map_name": "Pueblo Fresco", "event": 22, "page": 0, "라벨": "X", "이유": "관광객 험담 잡담", "발췌": "vi deambular a una anciana siniestra y decrépita", "라운드": 1}
+{"map": 284, "map_name": "Ruta 16", "event": 24, "page": 0, "라벨": "X", "이유": "폭발가루 사용 확인창", "발췌": "¿Usar Polvo Explosivo?", "라운드": 1}
+{"map": 287, "map_name": "Ruta 18", "event": 25, "page": 0, "라벨": "X", "이유": "야생 그랑블루가 대신 회복해 주는 장치", "발췌": "¡Este Grumpig ha aprendido Enfermería Pokémon!", "라운드": 1}
+{"map": 288, "map_name": "Ruta 18", "event": 26, "page": 0, "라벨": "X", "이유": "다음 대결 자리를 알리는 진행 유도 안내문 — 같은 갈래의 다른 안내문(#297 등)과 같은 기준으로 X (망설임 있었음)", "발췌": "Melia quiere combatir contigo antes de ir a Ciudad Fluxus.", "라운드": 1}
+{"map": 288, "map_name": "Ruta 18", "event": 27, "page": 0, "라벨": "X", "이유": "고고트 탑승 확인창", "발췌": "¿Quieres usar la Montura Gogoat?", "라운드": 1}
+{"map": 288, "map_name": "Ruta 18", "event": 28, "page": 0, "라벨": "X", "이유": "고고트 탑승 확인창", "발췌": "¿Quieres usar la Montura Gogoat?", "라운드": 1}
+{"map": 290, "map_name": "Pueblo Mosaico", "event": 5, "page": 0, "라벨": "X", "이유": "기념사진 서비스 잡담", "발췌": "¿Quieres una fotografía junto a tus Pokémon?", "라운드": 1}
+{"map": 290, "map_name": "Pueblo Mosaico", "event": 12, "page": 0, "라벨": "X", "이유": "특수 열쇠로 여는 문 장치", "발췌": "¿Quieres usar una Llave Mercúrica?", "라운드": 1}
+{"map": 290, "map_name": "Pueblo Mosaico", "event": 39, "page": 0, "라벨": "X", "이유": "비행 기계를 보고 감탄하는 행인", "발췌": "¡Un artilugio capaz de volar sin la necesidad de Pokémon!", "라운드": 1}
+{"map": 290, "map_name": "Pueblo Mosaico", "event": 48, "page": 0, "라벨": "X", "이유": "로토무 폼 변경 장치", "발췌": "¿Quieres acercar a Rotom a este electrodoméstico?", "라운드": 1}
+{"map": 290, "map_name": "Pueblo Mosaico", "event": 56, "page": 1, "라벨": "M", "이유": "스승 올리비에가 페로파스의 가르침을 되짚으며 대련을 청하는 자리", "발췌": "me gustaría tener la oportunidad de que combatiéramos tú y yo", "라운드": 1}
+{"map": 290, "map_name": "Pueblo Mosaico", "event": 56, "page": 3, "라벨": "M", "이유": "멜리아 합류·크리산토의 반란과 최종병기 발동 위험이 드러나는 작전 회의", "발췌": "Hay que prevenir a Crisanto cuanto antes para que no entre en batalla.", "라운드": 1}
+{"map": 291, "map_name": "Balneario Oculto", "event": 8, "page": 0, "라벨": "X", "이유": "온천 왕복 뱃길 서비스", "발췌": "¿Volvemos a Kalos, señor?", "라운드": 1}
+{"map": 296, "map_name": "Casa", "event": 7, "page": 0, "라벨": "X", "이유": "연금술 규제를 설명하는 주민 잡담", "발췌": "Las nuevas leyes del Legislador Mirra han perseguido numerosos tipos de alquimia", "라운드": 1}
+{"map": 297, "map_name": "Ciudad Fluxus", "event": 55, "page": 0, "라벨": "X", "이유": "잠수 확인창", "발췌": "¿Quieres sumergirte en el lago?", "라운드": 1}
+{"map": 297, "map_name": "Ciudad Fluxus", "event": 59, "page": 0, "라벨": "X", "이유": "볼 교환 거래 NPC", "발췌": "¿Me cambiarías una Ultra Ball Casera por una Ocaso Ball?", "라운드": 1}
+{"map": 298, "map_name": "Antigua Forja Inundada", "event": 43, "page": 1, "라벨": "?", "이유": "본편 동행 중 올리비에의 한 줄 — 사건 진행 없이 분위기만", "발췌": "Sea lo que sea lo que habite en estas ruinas, se habrá despertado.", "라운드": 1}
+{"map": 303, "map_name": "Cueva Desenlace", "event": 13, "page": 0, "라벨": "X", "이유": "폭발가루 사용 확인창", "발췌": "¿Usar Polvo Explosivo?", "라운드": 1}
+{"map": 303, "map_name": "Cueva Desenlace", "event": 29, "page": 0, "라벨": "X", "이유": "폭발가루 사용 확인창", "발췌": "¿Usar Polvo Explosivo?", "라운드": 1}
+{"map": 305, "map_name": "Bastión Pokémon", "event": 2, "page": 3, "라벨": "M", "이유": "섭정 루피코에게 메달의 정체를 전하고 메달·배틀로 이어지는 본편 진행", "발췌": "¿Así que ese es el origen de los símbolos que hemos estado inscribiendo en las 12 medallas?", "라운드": 1}
+{"map": 305, "map_name": "Bastión Pokémon", "event": 11, "page": 0, "라벨": "M", "이유": "센데라가 메달 주형 파괴를 확인하는 장면 — 메달을 둘러싼 본줄기", "발췌": "¿Habéis destruido los moldes para fabricar medallas?", "라운드": 1}
+{"map": 308, "map_name": "Casa", "event": 15, "page": 0, "라벨": "X", "이유": "조사 사물 문구", "발췌": "Aquí solo hay basura.", "라운드": 1}
+{"map": 315, "map_name": "Isla Montesanto", "event": 21, "page": 0, "라벨": "X", "이유": "금전 획득 문구", "발췌": "¡Has conseguido 5.000 pokécuartos!", "라운드": 1}
+{"map": 316, "map_name": "Batalla de Kalos Este", "event": 60, "page": 0, "라벨": "M", "이유": "알카가 카두코 병으로 시한부임을 밝히고 최종병기 발동을 예고하는 대면", "발췌": "me quedan las fuerzas suficientes para derrotarte... y activar el Arma Definitiva", "라운드": 1}
+{"map": 317, "map_name": "Caverna Atlas", "event": 1, "page": 0, "라벨": "X", "이유": "동굴 퍼즐의 수수께끼 문구", "발췌": "Lleva al Rey de Hielo el primero", "라운드": 1}
+{"map": 320, "map_name": "Escena", "event": 10, "page": 0, "라벨": "M", "이유": "크리산토가 지휘하는 회전 컷신 — 내전 국면", "발췌": "¡Escuadra número 4, lanzad 3 ráfagas de artillería a 70 grados!", "라운드": 1}
+{"map": 321, "map_name": "Bastión Pokémon", "event": 54, "page": 0, "라벨": "X", "이유": "도장 안 병사의 자랑 잡담", "발췌": "nosotros somos mucho más fuertes que esos chicos ricos de la capital", "라운드": 1}
+{"map": 321, "map_name": "Bastión Pokémon", "event": 60, "page": 0, "라벨": "X", "이유": "센데라를 두고 떠드는 병사 잡담", "발췌": "La Capitana Cendera viene de una región muy al norte", "라운드": 1}
+{"map": 322, "map_name": "Bastión Pokémon", "event": 25, "page": 0, "라벨": "M", "이유": "센데라 친위대 돌파 — 프랙탈시 점령이라는 본줄기 마디", "발췌": "¡Comprobemos de una vez qué ejército está más preparado!", "라운드": 1}
+{"map": 329, "map_name": "Escena 2", "event": 10, "page": 0, "라벨": "M", "이유": "크리산토가 최종병기 위험을 듣고 소수 정예 작전을 명하며 다음 목표를 지정", "발췌": "puedes entrar en Ciudad Fractal y ayudar a mis soldados a derrotar a la Capitana Cendera", "라운드": 1}
+{"map": 332, "map_name": "Sala de Mando", "event": 9, "page": 0, "라벨": "M", "이유": "프랙탈시 함락 뒤 군사 회의와 미라의 협상 제안 — 장 전환", "발췌": "El ejército de Ciudad Luminalia con el mismísimo Legislador Mirra en persona pide negociar.", "라운드": 1}
+{"map": 336, "map_name": "Fondo Marino", "event": 13, "page": 0, "라벨": "X", "이유": "폭발가루 사용 확인창", "발췌": "¿Usar Polvo Explosivo?", "라운드": 1}
+{"map": 338, "map_name": "Campamento de Crisanto", "event": 29, "page": 1, "라벨": "X", "이유": "이벤트 재개 확인창", "발췌": "¿Retomar el evento Batalla de Kalos Este?", "라운드": 1}
+{"map": 340, "map_name": "Escena Discurso Crisanto", "event": 7, "page": 0, "라벨": "M", "이유": "크리산토의 출정 연설과 양군 충돌 — 내전 결전 개시", "발췌": "¡Soldados! ¡Mis compañeros! Hoy tengo que convocaros a la única batalla", "라운드": 1}
+{"map": 345, "map_name": "Balneario Oculto", "event": 14, "page": 0, "라벨": "X", "이유": "기술 기억 서비스 정형구", "발췌": "¿Qué necesitas?", "라운드": 1}
+{"map": 346, "map_name": "Laboratorio Flare", "event": 10, "page": 0, "라벨": "M", "이유": "전설 셋의 위치를 공개하고 최종 국면의 목표를 정하는 회합", "발췌": "¡La ubicación de cada uno de los 3 Pokémon!", "라운드": 1}
+{"map": 354, "map_name": "Ruta 23", "event": 14, "page": 0, "라벨": "X", "이유": "고고트 탑승 확인창", "발췌": "¿Quieres usar la Montura Gogoat?", "라운드": 1}
+{"map": 356, "map_name": "Villa Pokemon", "event": 7, "page": 1, "라벨": "X", "이유": "기술 기억 서비스 정형구", "발췌": "¿Qué necesitas?", "라운드": 1}
+{"map": 356, "map_name": "Villa Pokemon", "event": 9, "page": 1, "라벨": "X", "이유": "마을 성격을 설명하는 안내 잡담", "발췌": "Villa Pokémon es un refugio que acoge a todos los Pokémon abandonados", "라운드": 1}
+{"map": 356, "map_name": "Villa Pokemon", "event": 10, "page": 1, "라벨": "X", "이유": "할아버지와 제르네아스 내력을 읊는 배경 잡담", "발췌": "El abuelo descendió hasta lo más profundo del pozo de arañas", "라운드": 1}
+{"map": 356, "map_name": "Villa Pokemon", "event": 10, "page": 3, "라벨": "X", "이유": "같은 배경 잡담의 다른 페이지", "발췌": "Si no fuera por él, los poderes de Xerneas provocarían un crecimiento desmesurado", "라운드": 1}
+{"map": 356, "map_name": "Villa Pokemon", "event": 27, "page": 0, "라벨": "M", "이유": "현자 야도킹이 제르네아스로 가는 길과 아라얀의 처지를 알려 주는 자리", "발췌": "Necesitamos llegar hasta Xerneas. Abandonar no es una opción.", "라운드": 1}
+{"map": 358, "map_name": "Ruta 22", "event": 9, "page": 0, "라벨": "X", "이유": "방향 표지판", "발췌": "Este: Estación de Servicio, Oeste: Pueblo Sanguino", "라운드": 1}
+{"map": 358, "map_name": "Ruta 22", "event": 16, "page": 0, "라벨": "X", "이유": "덤불 절단 장치 문구", "발췌": "Un pequeño arbusto bloquea el paso.", "라운드": 1}
+{"map": 360, "map_name": "Pueblo Sanguino", "event": 12, "page": 0, "라벨": "X", "이유": "미니게임 권유", "발췌": "¡Venga, a ver qué tal te desenvuelves en el Gira-Voltorb!", "라운드": 1}
+{"map": 360, "map_name": "Pueblo Sanguino", "event": 28, "page": 0, "라벨": "X", "이유": "색이 다른 포켓몬 취향 잡담", "발췌": "¿Cuál es tu Pokémon varicolor favorito?", "라운드": 1}
+{"map": 360, "map_name": "Pueblo Sanguino", "event": 33, "page": 0, "라벨": "X", "이유": "포켓몬 교환 서비스 NPC", "발췌": "¡Hola, soy Le Prodige!", "라운드": 1}
+{"map": 360, "map_name": "Pueblo Sanguino", "event": 47, "page": 0, "라벨": "X", "이유": "교환소 경품 창구", "발췌": "¡Aquí puedes cambiar tus fichas por Pokemon fabulosos!", "라운드": 1}
+{"map": 362, "map_name": "Expansiones de Luminalia - Centro", "event": 11, "page": 0, "라벨": "X", "이유": "프리즘타워 건설 소식을 옮기는 행인", "발췌": "la construcción de la Torre Prisma se debe a que Kalos va a ser la sede", "라운드": 1}
+{"map": 363, "map_name": "Transición", "event": 7, "page": 0, "라벨": "X", "이유": "다음 대결 자리를 알리는 진행 유도 안내문 — 같은 갈래의 다른 안내문(#297 등)과 같은 기준으로 X (망설임 있었음)", "발췌": "Crisanto te espera en el centro de Pueblo Collage para combatir.", "라운드": 1}
+{"map": 370, "map_name": "Bosque Errante", "event": 4, "page": 1, "라벨": "X", "이유": "숲의 영혼이 남긴 짧은 한 줄 — 소속 장면을 못 가르나 진행은 없음", "발췌": "Papi... Papi. Ahora estoy bien.", "라운드": 1}
+{"map": 373, "map_name": "Ruta 23", "event": 17, "page": 0, "라벨": "X", "이유": "알파 둥지 장치", "발췌": "¡Es un Nido Alfa!", "라운드": 1}
+{"map": 373, "map_name": "Ruta 23", "event": 30, "page": 1, "라벨": "X", "이유": "전설 포켓몬 소문 잡담", "발췌": "¿Es verdad que los Pokémon legendarios de Kalos vuelven a caminar entre nosotros?", "라운드": 1}
+{"map": 374, "map_name": "Pesadilla del Circo", "event": 2, "page": 0, "라벨": "X", "이유": "모르페코를 소개하는 잡담", "발췌": "¿Te intrigan los Morpeko?", "라운드": 1}
+{"map": 381, "map_name": "Ciudad Yantra", "event": 5, "page": 0, "라벨": "X", "이유": "고고트 탑승 확인창", "발췌": "¿Quieres usar la Montura Gogoat?", "라운드": 1}
+{"map": 383, "map_name": "Cielo Nocturno", "event": 1, "page": 0, "라벨": "M", "이유": "이벨타르 포획을 두고 부활한 옛 왕들과 충돌하는 장면", "발췌": "¡Sois las esbirras de Alca! ¡Las que fueron revividas con el Arma Definitiva!", "라운드": 1}
+{"map": 386, "map_name": "Torre Prisma", "event": 32, "page": 1, "라벨": "X", "이유": "크리산토를 두고 뒷말하는 병사 잡담", "발췌": "Cuando exilien a Crisanto de la región de Kalos", "라운드": 1}
+{"map": 390, "map_name": "Torre Prisma", "event": 20, "page": 1, "라벨": "X", "이유": "전황을 읊는 병사 잡담", "발췌": "Primero el Team Azoth y ahora el grupo traidor", "라운드": 1}
+{"map": 390, "map_name": "Torre Prisma", "event": 32, "page": 0, "라벨": "M", "이유": "지가르데가 기다리는 탑 꼭대기로 향하라는 크리산토의 지시", "발췌": "Ahora mismo Zygarde nos espera en la cima de la torre.", "라운드": 1}
+{"map": 391, "map_name": "Expansiones de Luminalia - Oeste", "event": 14, "page": 0, "라벨": "X", "이유": "안전 주의 잡담", "발췌": "Ni se te ocurra subirte a los edificios", "라운드": 1}
+{"map": 391, "map_name": "Expansiones de Luminalia - Oeste", "event": 16, "page": 0, "라벨": "X", "이유": "화가 행인 잡담", "발췌": "Pintar el atardecer en el río junto a mi querido Pokémon.", "라운드": 1}
+{"map": 392, "map_name": "Expansiones de Luminalia - Este", "event": 7, "page": 1, "라벨": "X", "이유": "상자 등록 완료 문구", "발췌": "Ya has registrado esta caja.", "라운드": 1}
+{"map": 394, "map_name": "Centro Pokémon", "event": 2, "page": 0, "라벨": "X", "이유": "지가르데 상식을 늘어놓는 행인", "발췌": "¿Te cuento todo lo que sé sobre Zygarde?", "라운드": 1}
+{"map": 394, "map_name": "Centro Pokémon", "event": 14, "page": 0, "라벨": "X", "이유": "명예의 전당 확인창", "발췌": "¿Revisar Hall de Fama?", "라운드": 1}
+{"map": 395, "map_name": "Café Galanes", "event": 5, "page": 1, "라벨": "X", "이유": "신축 주택을 기대하는 주민 잡담", "발췌": "muchas personas de pueblos más pobres podremos establecernos aquí", "라운드": 1}
+{"map": 397, "map_name": "Torre Maestra", "event": 17, "page": 0, "라벨": "X", "이유": "옛 가르침을 읊는 수도자 잡담", "발췌": "se van olvidando de las enseñanzas más antiguas", "라운드": 1}
+{"map": 397, "map_name": "Torre Maestra", "event": 26, "page": 0, "라벨": "M", "이유": "얀트라 교단 수장 콘콤부르와의 대면 — 메가진화를 넘는 힘으로 가는 장 진입", "발췌": "os mostraremos los secretos de un nuevo poder que trasciende incluso al de la propia Megaevolución", "라운드": 1}
+{"map": 399, "map_name": "Centro Pokémon", "event": 3, "page": 0, "라벨": "X", "이유": "기술 기억 서비스 정형구", "발췌": "¡Hola, Aspirante! ¿Qué necesitas?", "라운드": 1}
+{"map": 401, "map_name": "Catacumbas Occidentales", "event": 8, "page": 0, "라벨": "X", "이유": "레버 조작 확인창", "발췌": "¿Activar palanca?", "라운드": 1}
+{"map": 401, "map_name": "Catacumbas Occidentales", "event": 9, "page": 0, "라벨": "X", "이유": "레버 조작 확인창", "발췌": "¿Activar palanca?", "라운드": 1}
+{"map": 404, "map_name": "Barco Encallado", "event": 6, "page": 0, "라벨": "X", "이유": "금전 획득 문구", "발췌": "¡Has conseguido 5.000 pokécuartos!", "라운드": 1}
+{"map": 405, "map_name": "Gran Hotel Luminalia", "event": 24, "page": 1, "라벨": "X", "이유": "배틀 시설의 도전 메뉴", "발췌": "¿En qué reto te gustaría participar?", "라운드": 1}
+{"map": 405, "map_name": "Gran Hotel Luminalia", "event": 28, "page": 0, "라벨": "X", "이유": "배틀 포인트 교환 창구", "발췌": "¿Quieres cambiar tus Puntos Batalla?", "라운드": 1}
+{"map": 405, "map_name": "Gran Hotel Luminalia", "event": 29, "page": 0, "라벨": "X", "이유": "배틀 포인트 교환 창구", "발췌": "Heatranita, 12 PB", "라운드": 1}
+{"map": 408, "map_name": "Pesadilla del Circo", "event": 23, "page": 0, "라벨": "M", "이유": "서커스에 사슬로 묶인 이벨타르와 시엠프레비바 대결 — 전설 확보 국면", "발췌": "¿No es ese Yveltal, el Pokémon que buscamos?", "라운드": 1}
+{"map": 410, "map_name": "Biblioteca Yantra", "event": 8, "page": 0, "라벨": "X", "이유": "세 정령 수수께끼 관문 퍼즐", "발췌": "¿Quién de los Tres Espíritus dice la verdad?", "라운드": 1}
+{"map": 414, "map_name": "Ruta 25", "event": 8, "page": 0, "라벨": "X", "이유": "광신도 행인의 외침", "발췌": "El gran salto evolutivo de la humanidad está a punto de producirse", "라운드": 1}
+{"map": 418, "map_name": "Gran Hotel Luminalia", "event": 19, "page": 1, "라벨": "X", "이유": "호텔 재대결 시설의 섭정 대사 묶음", "발췌": "Estoy preparando una ópera de carácter interregional", "라운드": 1}
+{"map": 418, "map_name": "Gran Hotel Luminalia", "event": 19, "page": 2, "라벨": "X", "이유": "호텔 재대결 시설의 섭정 대사 묶음", "발췌": "Tengo todos los componentes listos para recibir otra descarga", "라운드": 1}
+{"map": 418, "map_name": "Gran Hotel Luminalia", "event": 19, "page": 3, "라벨": "X", "이유": "호텔 재대결 시설의 섭정 대사 묶음", "발췌": "No esperaba tener que salir de mi región para atender a estas frivolidades.", "라운드": 1}
+{"map": 419, "map_name": "Catedral Señorial", "event": 8, "page": 0, "라벨": "X", "이유": "성직자 로스마리노와의 인연 서브퀘스트", "발췌": "¿Tú... me darías el honor de combatir conmigo?", "라운드": 1}
+{"map": 421, "map_name": "Ruta 25", "event": 13, "page": 0, "라벨": "X", "이유": "수상한 돌을 두고 쫓아내는 행인", "발췌": "¿Has visto estas curiosas piedras con Pokémon dentro?", "라운드": 1}
+{"map": 421, "map_name": "Ruta 25", "event": 14, "page": 1, "라벨": "X", "이유": "AZ 전승을 읊는 행인", "발췌": "El gran AZ consiguió hallar el último ingrediente del Arma Definitiva", "라운드": 1}
+{"map": 422, "map_name": "Pueblo Cromlech", "event": 24, "page": 0, "라벨": "X", "이유": "복구된 마을 풍경 잡담", "발췌": "¡El verdor ha vuelto a esta zona de la región!", "라운드": 1}
+{"map": 422, "map_name": "Pueblo Cromlech", "event": 28, "page": 0, "라벨": "X", "이유": "마을 재건을 이야기하는 주민 잡담", "발췌": "Este pueblo persistirá gracias a la buena voluntad de la gente.", "라운드": 1}
+{"map": 422, "map_name": "Pueblo Cromlech", "event": 29, "page": 0, "라벨": "X", "이유": "호텔 도전 소식을 옮기는 행인", "발췌": "El Gran Hotel Luminalia ha abierto sus puertas", "라운드": 1}
+{"map": 423, "map_name": "Torre Maestra", "event": 10, "page": 0, "라벨": "X", "이유": "전황을 걱정하는 수도자 잡담", "발췌": "¿Estará bien todo por ahí?", "라운드": 1}
+{"map": 426, "map_name": "Escena Aster 3", "event": 1, "page": 0, "라벨": "M", "이유": "왕가 비사 — 왕의 동생 유폐와 멜리아의 출생을 밝히는 서술 컷신", "발췌": "Tiempo después, el hermano del rey sufrió un ataque de locura.", "라운드": 1}
+{"map": 430, "map_name": "Estación Luminalia", "event": 13, "page": 0, "라벨": "X", "이유": "폭발가루 사용 확인창", "발췌": "¿Usar Polvo Explosivo?", "라운드": 1}
+{"map": 430, "map_name": "Estación Luminalia", "event": 22, "page": 0, "라벨": "?", "이유": "지가르데가 사라지는 짧은 컷 — 본줄기 추격인지 지엽 조우인지 못 가름", "발췌": "¡Zygarde desaparece bajo la tierra!", "라운드": 1}
+{"map": 437, "map_name": "Manantial Profundo", "event": 1, "page": 2, "라벨": "M", "이유": "제르네아스 진정 직후 말보의 기습과 포획 — 최종병기 국면 진행", "발췌": "¡Xerneas ha sido capturado por Malvo!", "라운드": 1}
+{"map": 437, "map_name": "Manantial Profundo", "event": 9, "page": 0, "라벨": "M", "이유": "제르네아스 대면 직전 올리비에·아라얀의 지시와 경고", "발췌": "No es momento de vacilar ahora. Presiento que el enemigo nos está pisando los talones.", "라운드": 1}
+{"map": 444, "map_name": "Costa Sanguina", "event": 7, "page": 0, "라벨": "M", "이유": "이벨타르를 빼앗기고 얀트라시로 목표가 넘어가는 자리 — 멜리아의 각오", "발췌": "Revisa el mapa para encontrar tu siguiente destino, Ciudad Yantra.", "라운드": 1}
+{"map": 446, "map_name": "Otro Lugar", "event": 9, "page": 0, "라벨": "M", "이유": "죽은 왕비 안젤린과의 대면 — AZ의 진심과 이벨타르의 심판으로 이어짐", "발췌": "Acompañadme para que pueda mostraros el Juicio de Yveltal.", "라운드": 1}
+{"map": 461, "map_name": "Ciudad Yantra", "event": 4, "page": 0, "라벨": "X", "이유": "고고트 탑승 확인창", "발췌": "¿Quieres usar la Montura Gogoat?", "라운드": 1}
+{"map": 461, "map_name": "Ciudad Yantra", "event": 7, "page": 1, "라벨": "X", "이유": "회복·기술 기억 서비스 창구", "발췌": "¿Qué necesitas? Curar Pokémon", "라운드": 1}
+{"map": 465, "map_name": "Cueva de los Reflejos", "event": 10, "page": 0, "라벨": "X", "이유": "사물 조사 문구", "발췌": "¡Es un cúmulo de piedrecitas!", "라운드": 1}
+{"map": 466, "map_name": "Ruta 25", "event": 8, "page": 0, "라벨": "X", "이유": "덤불 절단 장치 문구", "발췌": "Un pequeño arbusto bloquea el paso.", "라운드": 1}
+{"map": 467, "map_name": "Ruta 25", "event": 11, "page": 0, "라벨": "X", "이유": "고고트 탑승 확인창", "발췌": "¿Quieres usar la Montura Gogoat?", "라운드": 1}
+{"map": 467, "map_name": "Ruta 25", "event": 12, "page": 0, "라벨": "X", "이유": "고고트 탑승 확인창", "발췌": "¿Quieres usar la Montura Gogoat?", "라운드": 1}
+{"map": 468, "map_name": "Balneario Oculto", "event": 22, "page": 0, "라벨": "X", "이유": "온천 주인의 수수께끼 놀이 이벤트", "발췌": "¡Acertijos! ¡Me apasionan los acertijos!", "라운드": 1}
+{"map": 468, "map_name": "Balneario Oculto", "event": 22, "page": 2, "라벨": "X", "이유": "같은 수수께끼 놀이의 다음 문제", "발췌": "Soy alta y vivaz durante mi juventud.", "라운드": 1}
+{"map": 471, "map_name": "El Arma Definitiva", "event": 51, "page": 0, "라벨": "X", "이유": "길을 여는 장치 문구", "발췌": "¡Floette canaliza el poder del Arma Definitiva para abrir camino!", "라운드": 1}
+{"map": 471, "map_name": "El Arma Definitiva", "event": 62, "page": 0, "라벨": "X", "이유": "안전 경고 시스템 문구", "발췌": "No es seguro continuar llevando solo 1 Pokémon saludable", "라운드": 1}
+{"map": 474, "map_name": "El Arma Definitiva", "event": 49, "page": 0, "라벨": "X", "이유": "길 막는 아바타 격파 진행 문구", "발췌": "¡Una manifestación del Arma Definitiva corta el paso!", "라운드": 1}
+{"map": 475, "map_name": "El Arma Definitiva", "event": 10, "page": 0, "라벨": "X", "이유": "최종 던전 안 행인의 설명 잡담", "발췌": "El Arma Definitiva es una entidad viva en sí misma.", "라운드": 1}
+{"map": 478, "map_name": "Casa", "event": 8, "page": 0, "라벨": "X", "이유": "포켓몬 교환 NPC", "발췌": "Estoy buscando un Annihilape", "라운드": 1}
+{"map": 484, "map_name": "Ruta 25", "event": 8, "page": 1, "라벨": "X", "이유": "열매 채집 문구", "발췌": "Ya has arrancado las bayas de este arbusto.", "라운드": 1}
+{"map": 485, "map_name": "Ruta 25", "event": 14, "page": 0, "라벨": "X", "이유": "고고트 탑승 확인창", "발췌": "¿Quieres usar la Montura Gogoat?", "라운드": 1}
+{"map": 486, "map_name": "El Arma Definitiva", "event": 6, "page": 0, "라벨": "X", "이유": "최종 연전 진입 안내·확인창", "발췌": "tendrás que enfrentarte a los 4 Reyes y Reinas", "라운드": 1}
+{"map": 487, "map_name": "Ruta 26", "event": 7, "page": 0, "라벨": "X", "이유": "길 위의 트레이너 에릭과의 인연 배틀", "발췌": "Si combatiéramos, podrías añadir una línea más a tu diario", "라운드": 1}
+{"map": 488, "map_name": "El Arma Definitiva", "event": 29, "page": 0, "라벨": "M", "이유": "최종 던전 관문의 프리물라 대면 — 영원을 내세우는 적측 논리", "발췌": "¡abracemos la eternidad!", "라운드": 1}
+{"map": 488, "map_name": "El Arma Definitiva", "event": 41, "page": 1, "라벨": "M", "이유": "사슬에 묶인 AZ와 재회하고 최후의 열쇠로 반전을 꾀하는 자리", "발췌": "¡Ti-tienes una Llave Definitiva!", "라운드": 1}
+{"map": 491, "map_name": "Corazón del Arma", "event": 5, "page": 0, "라벨": "M", "이유": "최종병기의 심장에서 알카가 결착을 인정하는 장면", "발췌": "No queríamos un final así para nuestra contienda.", "라운드": 1}
+{"map": 496, "map_name": "Escena 3", "event": 1, "page": 0, "라벨": "M", "이유": "AZ의 역발사와 일행 합류, 알카의 폭주 — 최종 대결", "발췌": "Acabo de usar el Arma Definitiva para revertir el último disparo.", "라운드": 1}
+{"map": 500, "map_name": "Escenas Finales", "event": 3, "page": 0, "라벨": "M", "이유": "알카 격파 뒤 올리비에의 희생과 칼로스 재건 선언 — 결말", "발췌": "La región de Kalos no va a tener nunca más reyes ni legisladores.", "라운드": 1}
+{"map": 504, "map_name": "Pueblo Lienzo", "event": 4, "page": 0, "라벨": "X", "이유": "너즐록 종료 시스템 알림", "발췌": "El Reto Nuzlocke ha terminado.", "라운드": 1}
+{"map": 504, "map_name": "Pueblo Lienzo", "event": 16, "page": 0, "라벨": "X", "이유": "세이브 위치 시스템 안내", "발췌": "PISTA DE ENTRENADOR: Puedes encontrar el save", "라운드": 1}
+{"map": 504, "map_name": "Pueblo Lienzo", "event": 23, "page": 0, "라벨": "X", "이유": "다음 목적지를 알리는 진행 유도 안내문", "발췌": "Deberías buscar a la Profesora Olivier en el Laboratorio Flare.", "라운드": 1}
+{"map": 504, "map_name": "Pueblo Lienzo", "event": 30, "page": 0, "라벨": "X", "이유": "교구 회복 서비스 정형구", "발췌": "¿quieres curar a tu equipo?", "라운드": 1}
+{"map": 506, "map_name": "Epílogo 2", "event": 12, "page": 0, "라벨": "M", "이유": "에필로그 — 전후의 멜리아와 가족 사진 약속", "발췌": "¡He quedado para hacerme una de esas nuevas cosas llamadas \"fotografías\"!", "라운드": 1}
