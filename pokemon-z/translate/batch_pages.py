@@ -225,13 +225,21 @@ TITLE = ("Capitán", "Capitana", "Alcaide", "Archidruida", "Enfermera", "Enferme
 
 NUMBERED = re.compile(r"^(아조스단 신병|Recluta Azoth)\s*\d+호?$")
 
+# 이름표가 없는 화자의 표시 이름. 빈 이름으로 두면 cast 절이 「- : …」로 나가고
+# 장면 목록의 speakers가 빈 값이 돼, 어느 지시가 누구 것인지 이어지지 않는다.
+ANON_NAME = "(화자 미상)"
+
 
 def resolve(who, names):
     """이름표에서 한국어 이름을 찾는다 — 직함이 앞에 붙은 이름표가 흔하다.
 
     아조스단 신병 1·2·3호는 매번 다른 사람이지만 **말투는 한 벌**이라 이름 하나로
     접는다(유지자 판정 2026-08-06) — 갈라 두면 본보기 풀만 얇아진다.
+
+    풀 입력에는 이름표가 빈 화자가 있다(사람이 자리만 골라 왔다) — 표시 이름을 준다.
     """
+    if not (who or "").strip():
+        return ANON_NAME
     if NUMBERED.match(who):
         who = "아조스단 신병"
     if who in names:
@@ -675,7 +683,9 @@ def dedupe(chunks):
         kf = fold(r["es"])
         if kf in uni:
             return kf
-        return (kf, r.get("who") or c["map"])   # 화자 없는 행만 맵 단위로 남는다
+        who = r.get("who")
+        # 화자 미상 행만 맵 단위로 남는다 — 누군지 모르니 맵 너머로 접을 수 없다
+        return (kf, who if who and who != ANON_NAME else c["map"])
     for c in chunks:
         for r in c["rows"]:
             k = key_of_row(c, r)
@@ -983,7 +993,16 @@ def glossary_for(rows):
     rx, canon = canon_names()                 # 아이템·기술·종족·특성 정본 표기
     for m in rx.findall(" ".join(r["es"] for r in rows)):
         hits.append(f"- {m} → {canon[m]}")
-    return CORE_TERMS + ("\n" + "\n".join(dict.fromkeys(hits)) if hits else "")
+    # 대소문자만 다른 같은 쌍은 한 번만. 실제로 샌 자리(2026-08-13 회차 1,144요청 중
+    # 352건 「Regente/regente → 섭정」)는 TITLES 삭제로 이미 막혔고, 장면 표기표가
+    # 원문 자구 그대로 캐는 한 같은 꼴이 다시 날 수 있어 여기서 접는다.
+    seen, uniq = set(), []
+    for h in hits:
+        if h.casefold() not in seen:
+            seen.add(h.casefold())
+            uniq.append(h)
+    hits = uniq
+    return CORE_TERMS + ("\n" + "\n".join(hits) if hits else "")
 
 
 def build_prompt(fresh=False):
@@ -1290,6 +1309,13 @@ if __name__ == "__main__":
         assert "Pokétoxina" in s and "독주머니" in s, "정본 아이템 짝이 안 실렸다"
         s = glossary_for([{"es": "Bonjour, monsieur. ¿Y el profesor?", "ko": "안녕하세요."}])
         assert "무슈" in s and "박사(올리비에)" in s, "호칭 정본이 안 실렸다"
+        # 대소문자만 다른 같은 쌍은 한 줄로 접힌다 — 원문 굵은 글씨가 소문자로 서면
+        # 장면 표기표가 정본 표기와 짝이 되어 규칙이 둘로 실렸다.
+        s = glossary_for([{"es": "El <b>regente</b> y el <b>Regente</b>.",
+                           "ko": "<b>섭정</b>과 <b>섭정</b>."}])
+        assert s.lower().count("→ 섭정") == 1, s
+        # 이름표 없는 화자도 이름을 얻어 cast 절과 장면 목록이 이어진다
+        assert resolve("", {}) == ANON_NAME and resolve("  ", {}) == ANON_NAME
         base = len(CORE_TERMS.splitlines())
         for x in cs[:6]:
             print(f"{x['cid']} 발췌 {len(glossary_for(x['rows']).splitlines()) - base}항목")

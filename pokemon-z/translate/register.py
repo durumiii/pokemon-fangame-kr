@@ -62,10 +62,24 @@ def sentences(text):
 
 
 # B1~B7 급 판정 (events-and-speech 「이름표 없는 잡담 NPC」 표가 정본, 2026-08-09 확장)
-BUCKET7 = {"합쇼": "B3합쇼", "해요": "B2해요", "해라친근": "B4어른말",
-           "하게": "B6하게", "해체": "B1반말"}
+# 코드↔이름의 정본은 이 표 하나다 — 라벨을 다른 파일에 다시 적지 마라.
+BUCKET_NAMES = {"B1": "반말", "B2": "해요", "B3": "합쇼", "B4": "어른말",
+                "B5": "지문평서", "B6": "하게", "B7": "대화단정"}
+B = {k: k + v for k, v in BUCKET_NAMES.items()}      # "B1" → "B1반말"
+BUCKET7 = {"합쇼": B["B3"], "해요": B["B2"], "해라친근": B["B4"],
+           "하게": B["B6"], "해체": B["B1"]}
+BCODE = re.compile(r"B([1-7])(?:" + "|".join(BUCKET_NAMES.values()) + r")?")
 B4_CMD = re.compile(r"(거라|렴|려무나)$")
 UNDET = {"체언기타", "비한글", "empty", "연결미완"}
+
+
+def spell(text):
+    """버킷 표기의 B코드를 이름으로 편다 — 프롬프트를 읽는 모델은 내부 코드를 모른다.
+
+    「B1(어른 상대만 B2)」 → 「반말(어른 상대만 해요)」. 이름이 이미 붙은 「B6하게」는
+    이름 하나로 접는다. 코드가 없는 표기(「인물 정본」·「제외(사물 …)」)는 그대로.
+    """
+    return BCODE.sub(lambda m: BUCKET_NAMES["B" + m.group(1)], text or "")
 
 
 def grade(text, lenient=False):
@@ -82,12 +96,12 @@ def grade(text, lenient=False):
         if b in UNDET:
             continue
         if b == "명령라":
-            return ("B4어른말" if B4_CMD.search(last) else "B1반말"), last, back
+            return (B["B4"] if B4_CMD.search(last) else B["B1"]), last, back
         if b == "해체" and AMBIG.search(last) and back + 1 < len(parts):
-            fallback = fallback or ("B1반말", last, back)
+            fallback = fallback or (B["B1"], last, back)
             continue
         if b == "평서다":
-            return ("B7대화단정" if speechy(text) else "B5지문평서"), last, back
+            return (B["B7"] if speechy(text) else B["B5"]), last, back
         return BUCKET7[b], last, back
     if lenient and fallback:
         return fallback
@@ -236,6 +250,11 @@ def selftest():
     assert grade("포켓몬센터에 오신 것을 환영해요.")[0] == "B2해요"
     assert grade("이것을 증표로 받아주십시오.")[0] == "B3합쇼"
     assert grade("나랑 같이 가자!")[0] == "B1반말"
+    # 버킷 표기 펴기 — 프롬프트에 B코드가 새지 않는다
+    assert spell("B1(어른 상대만 B2)") == "반말(어른 상대만 해요)"
+    assert spell("B6하게(배틀 도발·혼잣말은 B1)") == "하게(배틀 도발·혼잣말은 반말)"
+    assert spell("B1+B7(총사 계열)") == "반말+대화단정(총사 계열)"
+    assert spell("제외(사물 — 잠긴 문 안내는 지문 규칙)").startswith("제외")
     print("selftest 통과")
 
 

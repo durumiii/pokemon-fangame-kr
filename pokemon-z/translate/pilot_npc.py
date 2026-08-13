@@ -24,6 +24,7 @@ HERE = Path(__file__).parent
 LEDGER = HERE.parent / "docs" / "ledger"   # 판정 대장 (glossary·voices)
 sys.path.insert(0, str(HERE))
 from batch import URL, key_of, or_extras, worth_rewriting  # noqa: E402
+from register import spell  # noqa: E402  (B코드↔이름의 정본은 register)
 
 JOIN = HERE / "data/map-speaker-join.jsonl.gz"
 PERSONA = HERE / "persona-table.jsonl"
@@ -85,7 +86,9 @@ def plan():
 
 
 def npc_line(p):
-    return f"{p['페르소나']} [어미: {p['버킷']}]"
+    """페르소나표 한 행 → 프롬프트 한 줄. B코드는 **이름으로 펴서** 싣는다 — B1~B7은
+    우리 내부 표기라 모델은 정의를 못 본다. 페르소나 설명에도 섞여 있어 줄 전체를 편다."""
+    return spell(f"{p['페르소나']} [어미: {p['버킷']}]")
 
 
 def build_prompt():
