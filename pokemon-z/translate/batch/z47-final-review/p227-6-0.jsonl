@@ -1,1 +1,5 @@
-{"id": "227:6:0:29", "who": "경관", "es": "<b>Carabinero:</b> ¡Eh, tú! ¡Número 34! ¡Ya basta de remolonear!", "old": "<b>경관:</b> 이봐, 너! 34번! 농땡이 치지 마!", "new": "<b>경관:</b> 어이, 너! 34번! 그만 꿈떵거려!", "ok": true, "why": "[reject] 없는 말 — 「꿈떵거려」(꾸물거리다/꿈지럭거리다)"}
+{"id": "227:6:0:4", "who": "경관", "es": "No hay nada más que hacer por ahora, salvo confiar y esperar.", "old": "지금은 그저 믿고 기다리는 수밖에 없다.", "new": "지금은 그저 믿고 기다리는 수밖에 없다.", "ok": true, "why": null}
+{"id": "227:6:0:5", "who": "경관", "es": "Sabes muy bien que tus amigos vendrán al rescate, cueste lo que cueste.", "old": "친구들이 무슨 일이 있어도 반드시 구하러 올 거라는 걸 알고 있다.", "new": "네 녀석 동료들이 무슨 수를 써서라도 구하러 올 거라는 건 아주 잘 알고 있겠지.", "ok": true, "why": null}
+{"id": "227:6:0:10", "who": "경관", "es": "Unas cuantas semanas después...", "old": "몇 주 후...", "new": "몇 주 후...", "ok": true, "why": null}
+{"id": "227:6:0:29", "who": "경관", "es": "<b>Carabinero:</b> ¡Eh, tú! ¡Número 34! ¡Ya basta de remolonear!", "old": "<b>경관:</b> 이봐, 너! 34번! 농땡이 치지 마!", "new": "<b>경관:</b> 어이, 너! 34번! 그만 꿈떵거려!", "ok": true, "why": null}
+{"id": "227:6:0:30", "who": "경관", "es": "Tienes turno de trabajo en la <b>Cantera</b>, ¿recuerdas? ¡Ponte en marcha ahora mismo!", "old": "<b>채석장</b> 교대 시간인 거 잊었나? 당장 움직여!", "new": "<b>채석장</b> 작업 교대 시간인 거 잊었냐? 당장 움직여!", "ok": true, "why": null}

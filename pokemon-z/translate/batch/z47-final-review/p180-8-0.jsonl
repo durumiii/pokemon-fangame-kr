@@ -1,1 +1,5 @@
-{"id": "180:8:0:4", "who": "mujer2", "es": "¡Bien, veo que tienes un Slurpuff! ¡Hagamos el intercambio!", "old": "어, 나루림을 갖고 있네! 그럼 나랑 교환하자!", "new": "어, 프레프티르를 갖고 있네! 그럼 나랑 교환하자!", "ok": true, "why": "[reject] 용어 위반 — canon.jsonl에서 Slurpuff=「나루림」, 「프레프티르」는 Aromatisse다(전거 서열 1위)"}
+{"id": "180:8:0:0", "who": "mujer2", "es": "Me encanta Aromatisse, ¿lo cambiarías por mi Slurpuff?", "old": "난 프레프티르가 정말 좋던데, 혹시 내 나루림이랑 바꿀래?", "new": "난 프레프티르가 정말 좋던데, 혹시 내 나루림이랑 바꿀래?", "ok": true, "why": null}
+{"id": "180:8:0:4", "who": "mujer2", "es": "¡Bien, veo que tienes un Slurpuff! ¡Hagamos el intercambio!", "old": "어, 나루림을 갖고 있네! 그럼 나랑 교환하자!", "new": "어, 프레프티르를 갖고 있네! 그럼 나랑 교환하자!", "ok": true, "why": null}
+{"id": "180:8:0:8", "who": "mujer2", "es": "¡Gracias! ¡Qué bonito es mi nuevo y flamante Aromatisse!", "old": "고마워! 새로 생긴 내 멋진 프레프티르, 정말 예쁘다!", "new": "고마워! 새로 생긴 내 멋진 프레프티르, 정말 예쁘다!", "ok": true, "why": null}
+{"id": "180:8:0:12", "who": "mujer2", "es": "Si tienes un Aromatisse, ponlo en el primer lugar de tu equipo para que pueda verlo bien.", "old": "프레프티르가 있다면 잘 볼 수 있게 선두에 놓아줘.", "new": "프레프티르가 있다면 잘 볼 수 있게 선두에 놓아줘.", "ok": true, "why": null}
+{"id": "180:8:0:17", "who": "mujer2", "es": "¡Vaya, qué lástima! ¿Y cómo me hago con ese precioso Pokémon?", "old": "아이쿠, 아쉬워라! 그럼 저 예쁜 포켓몬은 어떻게 구해야 하지?", "new": "아이쿠, 아쉬워라! 그럼 저 예쁜 포켓몬은 어떻게 구해야 하지?", "ok": true, "why": null}

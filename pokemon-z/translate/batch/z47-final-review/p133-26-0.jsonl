@@ -1,1 +1,7 @@
-{"id": "133:26:0:6", "who": "anciano", "es": "Pues sí que es grande y hermoso, sí.", "old": "정말 듣던 대로 크고 웅장하구나, 암.", "new": "과연 크고 아름답구먼, 암.", "ok": true, "why": "[reject] 「크고 아름답구먼」은 한국어에서 굳어진 밈으로 읽혀 노인의 감탄이 겉돈다. 현행도 원문에 없는 「듣던 대로」를 넣은 문제가 있다."}
+{"id": "133:26:0:0", "who": "anciano", "es": "Soy nuevo en estas costas y el otro día vi un Pokémon que me dejó boquiabierto.", "old": "이 해안에는 얼마 전에 처음 와봤는데, 며칠 전에 아주 기가 막힌 포켓몬을 보았다네.", "new": "이 해안에는 얼마 전에 처음 와봤는데, 며칠 전에 아주 기가 막힌 포켓몬을 보았다네.", "ok": true, "why": null}
+{"id": "133:26:0:1", "who": "anciano", "es": "Era enorme, el más grande que he visto en mi vida.", "old": "어찌나 크던지, 내 평생 본 포켓몬 중 가장 거대하더구먼.", "new": "어찌나 크던지, 내 평생 본 포켓몬 중 가장 거대하더구먼.", "ok": true, "why": null}
+{"id": "133:26:0:2", "who": "anciano", "es": "¡Y podía nadar tanto por el mar como por el cielo!", "old": "게다가 바다뿐만 아니라 하늘까지 헤엄쳐 다니지 않겠나!", "new": "게다가 바다뿐만 아니라 하늘까지 헤엄쳐 다니지 않겠나!", "ok": true, "why": null}
+{"id": "133:26:0:3", "who": "anciano", "es": "Si pudiese volver a ver a un Pokémon así... me haría bastante feliz, la verdad.", "old": "그런 포켓몬을 다시 볼 수만 있다면 정말 행복할 텐데 말이다...", "new": "그런 포켓몬을 다시 볼 수만 있다면 정말 행복할 것 같구먼...", "ok": true, "why": null}
+{"id": "133:26:0:5", "who": "anciano", "es": "¡Anda! ¡Es precisamente el Pokémon que llevas junto a ti!", "old": "어이쿠! 방금 내가 말한 바로 그 포켓몬을 데리고 있구나!", "new": "어이쿠! 방금 내가 말한 바로 그 포켓몬을 데리고 있구나!", "ok": true, "why": null}
+{"id": "133:26:0:6", "who": "anciano", "es": "Pues sí que es grande y hermoso, sí.", "old": "정말 듣던 대로 크고 웅장하구나, 암.", "new": "과연 크고 아름답구먼, 암.", "ok": true, "why": null}
+{"id": "133:26:0:7", "who": "anciano", "es": "Gracias por mostrármelo, acepta esto.", "old": "직접 보여주어서 고맙다. 받아두려무나.", "new": "직접 보여주어서 고맙네. 받아두게나.", "ok": true, "why": null}
