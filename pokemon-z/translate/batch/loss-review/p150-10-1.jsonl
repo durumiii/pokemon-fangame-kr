@@ -1,5 +1,5 @@
 {"id": "150:10:1:2", "who": "Contrincante", "es": "\\PN recibe una carta.", "old": "\\PN\\j[이,가] 카드를 한 장 받는다.", "new": "\\PN\\j[이,가] 카드를 한 장 받는다.", "ok": true}
-{"id": "150:10:1:7", "who": "Contrincante", "es": "Te ha tocado un as, ¿que valor le asignas? \nRecuerda que tienes que intentar sumar 21.", "old": "에이스가 나왔군. 몇으로 계산할래? 합을 21에 맞추려고 해봐.", "new": "에이스가 나왔군. 몇으로 계산할래? 합을 21에 맞추려고 해봐.", "ok": true}
+{"id": "150:10:1:7", "who": "Contrincante", "es": "Te ha tocado un as, ¿que valor le asignas? \nRecuerda que tienes que intentar sumar 21.", "old": "에이스가 나왔군. 몇으로 계산할래? 합을 21에 맞추려고 해봐.", "new": "에이스가 나왔군. 이 카드를 몇으로 치겠어? 합계가 21이 되도록 해야 한다는 걸 잊지 마라.", "ok": true}
 {"id": "150:10:1:9.0", "who": "", "es": "1", "old": "1", "new": "1", "ok": true}
 {"id": "150:10:1:9.01", "who": "", "es": "13", "old": "13", "new": "13", "ok": true}
 {"id": "150:10:1:20", "who": "Contrincante", "es": "Has recibido un \\v[135]. Recuerda que debes \nintentar sumar 21.", "old": "\\v[135]를 받았어. 합이 21에 가까워져야 한다는 걸 잊지 마.", "new": "\\v[135]를 받았어. 합이 21에 가까워져야 한다는 걸 잊지 마.", "ok": true}
