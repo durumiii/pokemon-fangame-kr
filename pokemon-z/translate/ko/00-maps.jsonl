@@ -298,7 +298,7 @@
 {"k": "Hmm... parece que no puedo enseñarle nada a tú \\v[3].", "v": "흠... 당신의 \\v[3]에게는 가르쳐 드릴 수 있는 기술이 없는 것 같습니다."}
 {"k": "¿Qué debería recordar \\v[3]?", "v": "\\v[3]에게 어떤 기술을 떠올리게 해 드릴까요?"}
 {"k": "Bien, hecho está. Tu Pokémon ha recordado ese movimiento.", "v": "처리가 완료되었습니다. 포켓몬이 그 기술을 떠올렸습니다."}
-{"k": "\\c[6]<b>F3:</b>\\c[0] Me ocuparé de mantener el <b>Laboratorio Flare</b> a salvo ahora que la <i>madame</i> profesora no está, \\PN.", "v": "\\c[6]<b>F3:</b>\\c[0] <i>올리비에</i> 박사님이 자리를 비우셨으니, 이제 <b>플레어 연구소</b>는 제가 지키겠습니다, \\PN."}
+{"k": "\\c[6]<b>F3:</b>\\c[0] Me ocuparé de mantener el <b>Laboratorio Flare</b> a salvo ahora que la <i>madame</i> profesora no está, \\PN.", "v": "\\c[6]<b>F3:</b>\\c[0] 올리비에 교수님께서 부재하는 동안, <i>플레어 연구소</i>를 안전하게 지키는 일은 제가 맡겠습니다, \\PN 님."}
 {"k": "Tal vez encuentres alguna pista sobre la profesora en esta estancia.", "v": "어쩌면 이 방에서 박사님에 관한 단서를 찾을 수 있을지도 모른다."}
 {"k": "Si vas a ir a <b>Pueblo Batik</b>, deberías ataviarte de forma más apropiada. Esta ropa ya no sirve.", "v": "<b>기남마을</b>에 갈 거라면 더 적절한 옷을 입는 게 좋아. 이 옷은 이제 안 되거든."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡Vaya! Pues parece que no hay nadie. ¿Hemos llegado demasiado pronto?", "v": "\\c[3]<b>크리산토:</b>\\c[0] 이런! 아무도 없는 것 같네. 우리가 너무 일찍 온 걸까?"}
@@ -810,12 +810,12 @@
 {"k": "Sí", "v": "예"}
 {"map": 20, "n": 53}
 {"k": "La sabiduría humana se encierra por entero en estas dos palabras: ¡Confiar y esperar!", "v": "인간의 모든 지혜는 이 두 단어에 담겨 있습니다. 바로 ‘믿음’과 ‘기다림’입니다!"}
-{"k": "<b>Mosquetero:</b> ¿Es el tipo Psíquico muy eficaz contra el tipo Lucha?", "v": "<b>총사:</b> 에스퍼타입은 격투타입에 효과가 굉장합니까?"}
+{"k": "<b>Mosquetero:</b> ¿Es el tipo Psíquico muy eficaz contra el tipo Lucha?", "v": "<b>총사:</b> 에스퍼타입은 격투타입에 효과가 굉장한가?"}
 {"k": "Has elegido... ¡bien!", "v": "정답입니다!"}
 {"k": "Como miembro de las tropas guerreras de <b>Canola</b>, ¡combatiré con la energía de un fuego ardiente! Pero sin pasarme...", "v": "<b>카놀라</b> 님의 전사 부대원으로서, 타오르는 불꽃 같은 기세로 싸우겠습니다! 선은 넘지 않겠지만 말입니다..."}
 {"k": "He podido medirme con el acero de tus Pokéball. Qué gran honor.", "v": "네 몬스터볼의 강인함과 직접 겨뤄볼 수 있다니 참으로 영광이구나."}
 {"k": "Bien hecho, Aspirante. Pero quiero que recuerdes algo.", "v": "훌륭합니다, 후보생님. 하지만 한 가지 명심하십시오."}
-{"k": "<b>Mosquetero:</b> ¿Es el tipo Veneno muy eficaz contra el tipo Lucha?", "v": "<b>총사:</b> 독타입은 격투타입에 효과가 굉장합니까?"}
+{"k": "<b>Mosquetero:</b> ¿Es el tipo Veneno muy eficaz contra el tipo Lucha?", "v": "<b>총사:</b> 독타입은 격투타입에 효과가 굉장한가?"}
 {"k": "Has elegido... mal.", "v": "틀린... 답입니다."}
 {"k": "Como miembro de las tropas guerreras de <b>Canola</b>, ¡combatiré con la fuerza de un gran tifón!", "v": "<b>카놀라</b> 님의 전사로서 거대한 태풍과도 같은 힘으로 상대해 드리겠습니다!"}
 {"k": "¡Te manejas bien en el campo de batalla!", "v": "전장에서 정말 잘 싸우는구나!"}
@@ -836,23 +836,23 @@
 {"k": "Tu siguiente parada del <b>PokéTour</b> es en <b>Ciudad Óleo</b> donde reside el regente <b>Hisopo</b>.", "v": "그대의 다음 <b>포켓투어</b> 목적지는 <b>히소포</b> 섭정이 있는 <b>올레오시티</b>다."}
 {"k": "Sigue haciéndote fuerte como hasta ahora y llegará el día en que nadie podrá hacerte frente. ¡<i>Au revoir</i>!", "v": "지금처럼 계속해서 강해지거라. 그리하면 그 누구도 그대를 막아서지 못할 날이 올 테니. <i>Au revoir</i>!"}
 {"k": "Si aún no te has preparado lo suficiente, date prisa. Tengo otros asuntos que atender luego.", "v": "아직 준비가 덜 되었다면 서두르거라. 나중에 따로 처리해야 할 업무가 있으니."}
-{"k": "¡La pluma y la tinta son igual o más poderosas que la espada y la pokéball!", "v": "펜과 잉크는 검과 몬스터볼만큼이나, 아니 그보다 더 강력합니다!"}
-{"k": "<b>Mosquetera:</b> ¿Es el tipo Fantasma muy eficaz contra el tipo Lucha?", "v": "<b>총사:</b> 고스트타입은 격투타입에 효과가 굉장합니까?"}
+{"k": "¡La pluma y la tinta son igual o más poderosas que la espada y la pokéball!", "v": "펜과 잉크는 검과 몬스터볼만큼이나, 아니 그보다 더 강력하다!"}
+{"k": "<b>Mosquetera:</b> ¿Es el tipo Fantasma muy eficaz contra el tipo Lucha?", "v": "<b>총사:</b> 고스트타입은 격투타입에 효과가 굉장한가?"}
 {"k": "Como miembro de las tropas guerreras de <b>Canola</b>, ¡combatiré con la presteza de un río bravo!", "v": "<b>카놀라</b> 님의 전사 부대원으로서, 거센 강물처럼 신속하게 싸우겠습니다!"}
 {"k": "¡Todos para uno! ¡Uno para todos!", "v": "모두를 위한 하나, 하나를 위한 모두!"}
-{"k": "<b>Mosquetero:</b> ¿Es el tipo Agua muy eficaz contra el tipo Lucha?", "v": "<b>총사:</b> 물타입은 격투타입에 효과가 굉장합니까?"}
+{"k": "<b>Mosquetero:</b> ¿Es el tipo Agua muy eficaz contra el tipo Lucha?", "v": "<b>총사:</b> 물타입은 격투타입에 효과가 굉장한가?"}
 {"k": "<b>Mosquetero:</b> ¿Cuál de estos tipos elementales es capaz de vencer con facilidad al tipo Lucha?", "v": "<b>총사:</b> 이 타입들 중 격투타입을 손쉽게 이길 수 있는 것은 무엇인가?"}
 {"k": "Elige sabiamente... ¡o tendrás que enfrentarte a una versión más temible de mí!", "v": "현명하게 선택해라... 그렇지 않으면 더 무서운 내 모습을 마주하게 될 테니!"}
-{"k": "<b>Mosquetera:</b> ¿Es el tipo Dragón muy eficaz contra el tipo Lucha?", "v": "<b>총사:</b> 드래곤타입은 격투타입에 효과가 굉장합니까?"}
+{"k": "<b>Mosquetera:</b> ¿Es el tipo Dragón muy eficaz contra el tipo Lucha?", "v": "<b>총사:</b> 드래곤타입은 격투타입에 효과가 굉장한가?"}
 {"k": "<b>Canola:</b> Tu siguiente parada del <b>PokéTour</b> es en <b>Ciudad Óleo</b> donde reside el regente <b>Hisopo</b>.", "v": "<b>카놀라:</b> 네 <b>포켓투어</b>의 다음 목적지는 섭정 <b>히소포</b>가 계신 <b>올레오시티</b>다."}
-{"k": "<b>Mosquetero:</b> ¿Es el tipo Volador muy eficaz contra el tipo Lucha?", "v": "<b>총사:</b> 비행타입은 격투타입에 효과가 굉장합니까?"}
+{"k": "<b>Mosquetero:</b> ¿Es el tipo Volador muy eficaz contra el tipo Lucha?", "v": "<b>총사:</b> 비행타입은 격투타입에 효과가 굉장한가?"}
 {"k": "Como miembro de las tropas guerreras de <b>Canola</b>, ¡combatiré con la fuerza de un gran tifón! Pero sin pasarme...", "v": "<b>카놀라</b> 님의 전사 부대원으로서, 거대한 태풍 같은 힘으로 싸우겠다! 선은 넘지 않겠지만..."}
-{"k": "<b>Mosquetera:</b> ¿Es el tipo Hada muy eficaz contra el tipo Lucha?", "v": "<b>총사:</b> 페어리타입은 격투타입에 효과가 굉장합니까?"}
+{"k": "<b>Mosquetera:</b> ¿Es el tipo Hada muy eficaz contra el tipo Lucha?", "v": "<b>총사:</b> 페어리타입은 격투타입에 효과가 굉장한가?"}
 {"k": "Como miembro de las tropas guerreras de <b>Canola</b>, ¡combatiré con la presteza de un río bravo! Pero sin pasarme...", "v": "<b>카놀라</b> 님의 전사 부대원으로서, 거센 강물처럼 신속하게 싸우겠습니다! 선은 넘지 않겠지만 말입니다..."}
-{"k": "<b>Mosquetero:</b> ¿Es el tipo Bicho muy eficaz contra el tipo Lucha?", "v": "<b>총사:</b> 벌레타입은 격투타입에 효과가 굉장합니까?"}
+{"k": "<b>Mosquetero:</b> ¿Es el tipo Bicho muy eficaz contra el tipo Lucha?", "v": "<b>총사:</b> 벌레타입은 격투타입에 효과가 굉장한가?"}
 {"k": "Como miembro de las tropas guerreras de <b>Canola</b>, ¡combatiré con la energía de un fuego ardiente!", "v": "<b>카놀라</b> 님의 전사 부대원으로서, 타오르는 불꽃 같은 기세로 싸우겠습니다!"}
 {"k": "<b>Mosquetera:</b> ¿Cuál de estos tipos elementales es capaz de vencer con facilidad al tipo Lucha?", "v": "<b>총사:</b> 이 타입들 중 격투타입을 손쉽게 이길 수 있는 것은 무엇인가?"}
-{"k": "<b>Mosquetero:</b> ¿Es el tipo Roca muy eficaz contra el tipo Lucha?", "v": "<b>총사:</b> 바위타입은 격투타입에 효과가 굉장합니까?"}
+{"k": "<b>Mosquetero:</b> ¿Es el tipo Roca muy eficaz contra el tipo Lucha?", "v": "<b>총사:</b> 바위타입은 격투타입에 효과가 뛰어난가?"}
 {"k": "¡Hola, Aspirante! Este bastión se especializa en el tipo Lucha.", "v": "어서 오십시오, 후보생님! 이 요새는 격투타입을 전문으로 다룹니다."}
 {"k": "Antes de enfrentarte a <b>Canola</b>, los mosqueteros querrán ponerte a prueba. ¡Te aconsejo encarecidamente que no los subestimes!", "v": "<b>카놀라</b> 님과 맞서기 전에 총사들이 후보생님을 시험하고자 합니다. 절대 얕보지 마시길 강력히 권합니다!"}
 {"k": "Toma esto, podría venirte bien.", "v": "이것을 받으십시오. 도움이 될 것입니다."}
@@ -2509,7 +2509,7 @@
 {"k": "Estoy buscando un Rapidash, ¿lo cambiarías por mi Charmander?", "v": "날쌩마를 찾고 있는데, 내 파이리랑 바꾸지 않겠나?"}
 {"k": "¡Cúidalo muy bien!", "v": "귀여워해 주세요!"}
 {"k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 갖고 계시지 않네요."}
-{"k": "Si te haces con un Rapidash, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "날쌩마를 손에 넣으면 볼 수 있게 선두에 세워서 보여 줘."}
+{"k": "Si te haces con un Rapidash, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "날쌩마를 손에 넣으시면 볼 수 있게 선두에 세워서 보여 주세요."}
 {"k": "Bueno, otra vez será.", "v": "그렇다면 다음 기회에."}
 {"k": "Ya era hora de deshacerme de ese Charmander, es un Pokémon tremendamente sobrevalorado.", "v": "그 파이리를 처분할 때가 되긴 했다. 정말 엄청나게 과대평가된 포켓몬이라니까."}
 {"k": "Estoy buscando un Clawitzer, ¿lo cambiarías por mi Squirtle?", "v": "블로스터를 찾고 있어요. 제 꼬부기와 바꾸시지 않겠어요?"}
@@ -2563,7 +2563,7 @@
 {"k": "Has perdido el reto Nuzlocke, has fallado a todos los Pokémon que te han acompañado durante la aventura.", "v": "당신은 너즐록 챌린지에서 패배했다. 모험을 함께해 온 모든 포켓몬을 실망시키고 말았다."}
 {"k": "Puedes seguir jugando de forma normal, pero recuerda que has fracasado.", "v": "일반 모드로 게임을 계속할 수는 있지만, 당신이 실패했다는 사실을 잊지 마라."}
 {"k": "<b>Olivier:</b> \"Espero que esta carta no se pierda por el camino y que tu traslado desde <b>Paldea</b> resulte apacible.\"", "v": "<b>올리비에:</b> “이 편지가 도중에 분실되지 않기를, 그리고 <b>팔데아</b>에서 오는 길이 편안하기를 바란단다.”"}
-{"k": "\"Nos veremos pronto.\\n Un cordial saludo, la <b>Profesora Olivier</b>.\"", "v": "“곧 만나자꾸나. 안부를 전하며, <b>올리비에 박사</b>가.”"}
+{"k": "\"Nos veremos pronto.\\n Un cordial saludo, la <b>Profesora Olivier</b>.\"", "v": "\"곧 만나자꾸나.\\n <b>올리비에 교수</b>로부터.\""}
 {"k": "¿Quieres activar el <b>MODO RANDOM</b>? Esto podrá randomizar los Pokémon salvajes, Pokémon de entrenadores, movimientos, habilidades, objetos...", "v": "<b>랜덤 모드</b>를 활성화하시겠습니까? 야생 포켓몬, 트레이너의 포켓몬, 기술, 특성, 아이템 등을 무작위로 변경할 수 있습니다..."}
 {"k": "El <b>MODO RANDOM</b> ha sido activado.", "v": "<b>랜덤 모드</b>가 활성화되었습니다."}
 {"k": "¿Quieres que el <b>MODO RANDOM</b> sea progresivo?", "v": "<b>랜덤 모드</b>를 점진적으로 적용하시겠습니까?"}
@@ -5339,13 +5339,13 @@
 {"k": "Explicado esto, ¡comencemos! Nos jugamos 1.000 pokécuartos.", "v": "설명은 끝났으니 시작하자고! 판돈은 1,000포켓프랑이다."}
 {"k": "¡Eh, eh! Que no pretendo estafarte, me gusta jugar limpio.", "v": "이봐, 이봐! 널 속이려는 게 아냐, 난 정당하게 겨루는 걸 좋아한다고."}
 {"k": "\\PN recibe una carta.", "v": "\\PN\\j[이,가] 카드를 한 장 받는다."}
-{"k": "Te ha tocado un as, ¿que valor le asignas? Recuerda que tienes que intentar sumar 21.", "v": "에이스가 나왔군. 몇으로 계산할래? 합을 21에 맞추려고 해봐."}
+{"k": "Te ha tocado un as, ¿que valor le asignas? Recuerda que tienes que intentar sumar 21.", "v": "에이스가 나왔군. 이 카드를 몇으로 치겠어? 합계가 21이 되도록 해야 한다는 걸 잊지 마라."}
 {"k": "Has recibido un \\v[135]. Recuerda que debes intentar sumar 21.", "v": "\\v[135]를 받았어. 합이 21에 가까워져야 한다는 걸 잊지 마."}
 {"k": "<b>Contrincante:</b> Mmm...", "v": "<b>상대방:</b> 음..."}
 {"k": "¿Quieres recibir otra carta?", "v": "카드를 한 장 더 받겠어?"}
 {"k": "<b>Contrincante:</b> ¡Bien! ¡Veamos quién ha ganado!", "v": "<b>상대방:</b> 좋아! 누가 이겼는지 확인해 보자고!"}
 {"k": "La suma total de \\PN es \\v[136], la de tu contrincante es \\v[137].", "v": "\\PN의 합계는 \\v[136], 상대방의 합계는 \\v[137]이다."}
-{"k": "¡\\PN gana la partida!", "v": "\\PN가 승리했다!"}
+{"k": "¡\\PN gana la partida!", "v": "\\PN\\j[이,가] 승리했다!"}
 {"k": "<b>Contrincante:</b> ¿Tienes experiencia en esto o es la suerte del principiante?", "v": "<b>상대방:</b> 여기에 일가견이 있는 거야, 아니면 초보자의 행운인가?"}
 {"k": "En fin, pues te llevas 1.000 pokécuartos, ¡pero no tientes demasiado a la suerte!", "v": "어쨌든 1,000포켓프랑은 네 몫이다만, 운을 너무 과신하진 마라!"}
 {"k": "¡Tu contrincante gana la partida!", "v": "상대방의 승리다!"}
@@ -6100,7 +6100,7 @@
 {"k": "Estoy buscando un Chandelure, ¿lo cambiarías por mi Litten?", "v": "샹델라를 찾고 있는데, 내 냐오불이랑 바꾸지 않겠나?"}
 {"k": "¡Cúidalo muy bien!", "v": "귀여워해 주세요!"}
 {"k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 갖고 계시지 않네요."}
-{"k": "Si te haces con un Chandelure, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "샹델라를 손에 넣으면 볼 수 있게 선두에 세워서 보여 줘."}
+{"k": "Si te haces con un Chandelure, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "샹델라를 손에 넣으시면 볼 수 있게 선두에 세워서 보여 주세요."}
 {"k": "Bueno, otra vez será.", "v": "그렇다면 다음 기회에."}
 {"k": "Ya era hora de deshacerme de ese Litten, es un Pokémon tremendamente sobrevalorado.", "v": "그 냐오불은 진작 치워버리길 잘했어. 정말 터무니없이 과대평가된 포켓몬이라니까."}
 {"k": "Estoy buscando un Sharpedo, ¿lo cambiarías por mi Popplio?", "v": "샤크니아를 찾고 있답니다. 제 누리공과 교환하지 않으시겠어요?"}
@@ -7067,7 +7067,7 @@
 {"k": "\\c[6]<b>Aure:</b>\\c[0] Tenéis un valor...\\| insignificante.", "v": "\\c[6]<b>아우레:</b>\\c[0] 너희는 참으로...\\| 하찮으니."}
 {"k": "\\c[6]<b>Aure:</b>\\c[0] ...", "v": "\\c[6]<b>아우레:</b>\\c[0] ..."}
 {"k": "\\c[6]<b>Aure:</b>\\c[0] Me... me sorprendéis, mi rey.", "v": "\\c[6]<b>아우레:</b>\\c[0] 나를... 놀라게 하는군."}
-{"k": "He subestimado con gran yerro vuestro instinto para la destrucción.", "v": "너희의 파괴적인 본능을 내가 크게 과소평가했군."}
+{"k": "He subestimado con gran yerro vuestro instinto para la destrucción.", "v": "너희의 파괴적인 본능을 내가 크게 과소평가했어."}
 {"k": "Pero os habéis equivocado.", "v": "하지만 네 생각이 틀렸다."}
 {"k": "\\c[6]<b>Aure:</b>\\c[0] Yo no moriré tan fácilmente. Pero vos, mortal...", "v": "\\c[6]<b>아우레:</b>\\c[0] 나는 그리 쉽게 죽지 않는다. 하지만 필멸자인 너는..."}
 {"k": "Hallaréis pronto el final de vuestro reinado.", "v": "머지않아 너의 치세도 끝을 맞이하리라."}
@@ -7654,13 +7654,13 @@
 {"k": "Explicado esto, ¡comencemos! Si me ganas, te daré una Baya Meloc.", "v": "설명은 됐고, 시작하자고! 날 이기면 복슝열매를 하나 주지."}
 {"k": "¡Eh, eh! Que no pretendo estafarte, me gusta jugar limpio.", "v": "이봐, 이봐! 널 속이려는 게 아냐, 난 정당하게 겨루는 걸 좋아한다고."}
 {"k": "\\PN recibe una carta.", "v": "\\PN\\j[이,가] 카드를 한 장 받는다."}
-{"k": "Te ha tocado un as, ¿que valor le asignas? Recuerda que tienes que intentar sumar 21.", "v": "에이스가 나왔군. 몇으로 계산할래? 합을 21에 맞추려고 해봐."}
+{"k": "Te ha tocado un as, ¿que valor le asignas? Recuerda que tienes que intentar sumar 21.", "v": "에이스가 나왔군. 이 카드를 몇으로 치겠어? 합계가 21이 되도록 해야 한다는 걸 잊지 마라."}
 {"k": "Has recibido un \\v[135]. Recuerda que debes intentar sumar 21.", "v": "\\v[135]를 받았어. 합이 21에 가까워져야 한다는 걸 잊지 마."}
 {"k": "<b>Contrincante:</b> Mmm...", "v": "<b>상대방:</b> 음..."}
 {"k": "¿Quieres recibir otra carta?", "v": "카드를 한 장 더 받겠어?"}
 {"k": "<b>Contrincante:</b> ¡Bien! ¡Veamos quién ha ganado!", "v": "<b>상대방:</b> 좋아! 누가 이겼는지 확인해 보자고!"}
 {"k": "La suma total de \\PN es \\v[136], la de tu contrincante es \\v[137].", "v": "\\PN의 합계는 \\v[136], 상대방의 합계는 \\v[137]이다."}
-{"k": "¡\\PN gana la partida!", "v": "\\PN가 승리했다!"}
+{"k": "¡\\PN gana la partida!", "v": "\\PN\\j[이,가] 승리했다!"}
 {"k": "<b>Contrincante:</b> ¿Tienes experiencia en esto o es la suerte del principiante?", "v": "<b>상대방:</b> 여기에 일가견이 있는 거야, 아니면 초보자의 행운인가?"}
 {"k": "No voy a darte más bayas, obviamente. ¡Confórmate con el dulce sabor de la victoria!", "v": "더 이상 열매는 없어, 당연한 소리지만! 승리의 달콤한 맛으로 만족하라고!"}
 {"k": "Como te prometí, te haré entrega de una de mis mejores bayas.", "v": "약속대로 내 최고의 나무열매 중 하나를 줄게."}
@@ -7701,8 +7701,8 @@
 {"k": "¡Menuda bazofia de comida! Ni los Pokémon Veneno se zamparían esto.", "v": "이 꿀꿀이죽은 진짜 못 먹겠네! 독 포켓몬도 이건 거들떠도 안 보겠어."}
 {"k": "¿Esto es lo que voy a comer el resto de mi vida?", "v": "내가 남은 평생 이런 것만 처먹어야 한다는 거야?"}
 {"k": "Y luego tienes a ese preso sentado en la mesa de póker, que siempre lleva bayas encima. Tal vez le pida alguna para limpiar el estómago.", "v": "게다가 포커 테이블에 앉아 있는 저 녀석은 늘 나무열매를 챙겨 다니더라고. 속이라도 쓸어내리게 하나 달라고 해볼까."}
-{"k": "¿Quieres sacar un libro? ¡Así me gusta, que te culturices!", "v": "책을 빌리려는 건가요? 교양을 쌓겠다니 보기 좋군요!"}
-{"k": "Mira, me acaban de devolver estos tres. ¿Alguno despierta tu interés?", "v": "여기 보세요, 방금 이 세 권이 반납되었어요. 마음에 드는 게 있으신가요?"}
+{"k": "¿Quieres sacar un libro? ¡Así me gusta, que te culturices!", "v": "책을 빌리고 싶은가? 교양을 쌓는 건 아주 바람직한 자세지!"}
+{"k": "Mira, me acaban de devolver estos tres. ¿Alguno despierta tu interés?", "v": "방금 이 세 권이 반납되었다. 마음에 드는 게 있나?"}
 {"k": "(Te quedas con este libro)", "v": "(이 책을 빌린다)"}
 {"k": "(Devuelves el anterior libro y te quedas con este)", "v": "(이전 책을 반납하고 이 책을 빌린다)"}
 {"k": "¡Espera, primero tienes que devolverme el que ya habías sacado!", "v": "잠깐만요! 먼저 이미 빌려 가신 책부터 반납하셔야 해요!"}
@@ -7992,7 +7992,7 @@
 {"k": "¡Tu equipo Pokémon se ha quedado Helado!", "v": "지닌 포켓몬이 얼어붙었다!"}
 {"k": "Aún en este paraje, puedo curar a tu equipo y rellenarte el vial... pero solo si me derrotas.", "v": "이런 곳에서도 지니신 포켓몬을 회복시키고 약병을 채워드릴 수는 있어요... 하지만 절 승리해야만 하죠."}
 {"k": "Con mucho gusto curaré a tus Pokémon.", "v": "기꺼이 당신의 포켓몬을 회복시켜 드리겠습니다."}
-{"k": "¿Quieres que cure a tu equipo y te rellene el Pokévial? Solo te cobraré 5000 pokécuartos de nada.", "v": "포켓몬들을 회복시키고 포켓몬약병을 채워드릴까요? 단돈 5000 포켓프랑이면 충분합니다."}
+{"k": "¿Quieres que cure a tu equipo y te rellene el Pokévial? Solo te cobraré 5000 pokécuartos de nada.", "v": "지닌 포켓몬을 회복시키고 포켓몬약병을 채우시겠어요? 단돈 5000 포켓프랑이면 돼요."}
 {"k": "¿A que son eficaces mis medicinas? ¡Que la buena voluntad nazca en tu interior!", "v": "제 약, 정말 효과적이죠? 당신의 마음속에 선의가 싹트기를 바랄게요!"}
 {"k": "Ya veo, ¡espero que tus Pokémon no mueran!", "v": "그렇군요. 당신의 포켓몬들이 죽지 않기를 바랄게요!"}
 {"k": "Cuanto peor mejor para todos y cuanto peor para todos mejor, mejor para mí el suyo beneficio Pokémon.", "v": "나쁠수록 모두에게 좋고, 모두에게 나쁠수록 더 좋으니, 결국 제 포켓몬에게 이득이라는 말이에요."}
@@ -8167,8 +8167,8 @@
 {"k": "Y luego tienes a ese preso sentado en la mesa de póker, que siempre lleva bayas encima. Tal vez le pida alguna para limpiar el estómago.", "v": "게다가 포커 테이블에 앉아 있는 저 녀석은 늘 나무열매를 챙겨 다니더라고. 속이라도 쓸어내리게 하나 달라고 해볼까."}
 {"k": "Aunque esta prisión pueda parecer mala, hay lugares peores para el destino de ciertos prisioneros.", "v": "이 감옥이 끔찍해 보일지 몰라도, 어떤 죄수들에게는 이보다 더한 곳이 기다리고 있어."}
 {"k": "¿Has oído hablar de la <b>Torre Oscura</b>? Es un lugar perdido en las montañas nevadas donde hacen experimentos con los reos. ¡Es escalofriante!", "v": "<b>어둠의 탑</b> 이야기 들어봤어? 눈 덮인 산속 깊숙이 숨겨진 곳인데, 거기서 죄수들을 데리고 실험을 한대. 정말 소름 끼친다니까!"}
-{"k": "¿Quieres sacar un libro? ¡Así me gusta, que te culturices!", "v": "책을 빌리려는 건가요? 교양을 쌓겠다니 보기 좋군요!"}
-{"k": "Mira, me acaban de devolver estos tres. ¿Alguno despierta tu interés?", "v": "여기 보세요, 방금 이 세 권이 반납되었어요. 마음에 드는 게 있으신가요?"}
+{"k": "¿Quieres sacar un libro? ¡Así me gusta, que te culturices!", "v": "책을 빌리고 싶은가? 교양을 쌓는 건 아주 바람직한 자세지!"}
+{"k": "Mira, me acaban de devolver estos tres. ¿Alguno despierta tu interés?", "v": "방금 이 세 권이 반납되었다. 마음에 드는 게 있나?"}
 {"k": "(Te quedas con este libro)", "v": "(이 책을 빌린다)"}
 {"k": "(Devuelves el anterior libro y te quedas con este)", "v": "(이전 책을 반납하고 이 책을 빌린다)"}
 {"k": "¡Espera, primero tienes que devolverme el que ya habías sacado!", "v": "잠깐만요! 먼저 이미 빌려 가신 책부터 반납하셔야 해요!"}
@@ -11032,7 +11032,7 @@
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡Guardad a todos vuestros Pokémon en las Pokéball ahora mismo!", "v": "\\c[3]<b>크리산토:</b>\\c[0] 지금 당장 지니고 계신 포켓몬을 모두 몬스터볼에 넣으십시오!"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡Todos! ¡Tanto los de un bando como los de otro!", "v": "\\c[3]<b>크리산토:</b>\\c[0] 모두 다 말입니다! 어느 쪽 진영이든 상관없이 전부!"}
 {"k": "¡Poned a vuestros Pokémon a salvo!", "v": "너희 포켓몬들을 대피시켜라!"}
-{"k": "\\sh\\c[3]<b>Crisanto:</b>\\c[0] ¡¡¡GUARDADLOOOS!!!", "v": "\\sh\\c[3]<b>크리산토:</b>\\c[0] 어서 볼에 넣어라!!!"}
+{"k": "\\sh\\c[3]<b>Crisanto:</b>\\c[0] ¡¡¡GUARDADLOOOS!!!", "v": "\\sh\\c[3]<b>크리산토:</b>\\c[0] 들여보내라니까!!!"}
 {"k": "\\c[5]<b>Melia:</b>\\c[0] ¡Papá, <i>s'il vous plait</i>!", "v": "\\c[5]<b>멜리아:</b>\\c[0] 아버지, <i>제발요</i>!"}
 {"k": "<b>Soldados:</b> Ese es el arma principal del enemigo, ¿verdad? ¡Y parece que van a activarla! ¡Hay que impedírselo!", "v": "<b>병사들:</b> 저게 적의 최종병기지, 그렇지? 가동하려는 것 같다! 막아야 해!"}
 {"k": "\\sh<b>Soldados:</b> ¡Clawitzer, dispara una Hidrobomba con intención de abatir al enemigo!", "v": "\\sh<b>병사들:</b> 블로스터, 적을 무력화하기 위해 하이드로펌프를 쏴라!"}

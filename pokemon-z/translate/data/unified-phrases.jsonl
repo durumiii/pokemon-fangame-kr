@@ -246,7 +246,7 @@
 {"es": "\\PN recibe una carta.", "ko": "\\PN\\j[이,가] 카드를 한 장 받는다.", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "<b>Contrincante:</b> Mmm...", "ko": "<b>상대방:</b> 음...", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "La suma total de \\PN es \\v[136], la de tu contrincante es \\v[137].", "ko": "\\PN의 합계는 \\v[136], 상대방의 합계는 \\v[137]이다.", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
-{"es": "¡\\PN gana la partida!", "ko": "\\PN가 승리했다!", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
+{"es": "¡\\PN gana la partida!", "ko": "\\PN\\j[이,가] 승리했다!", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "<b>Contrincante:</b> ¿Tienes experiencia en esto o es la suerte del principiante?", "ko": "<b>상대방:</b> 여기에 일가견이 있는 거야, 아니면 초보자의 행운인가?", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "La partida ha resultado en empate.", "ko": "무승부로 끝났다.", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "1", "ko": "1", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
@@ -289,8 +289,8 @@
 {"es": "¡Menuda bazofia de comida! Ni los Pokémon Veneno se zamparían esto.", "ko": "이 꿀꿀이죽은 진짜 못 먹겠네! 독 포켓몬도 이건 거들떠도 안 보겠어.", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "¿Esto es lo que voy a comer el resto de mi vida?", "ko": "내가 남은 평생 이런 것만 처먹어야 한다는 거야?", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "Y luego tienes a ese preso sentado en la mesa de póker, que siempre lleva bayas encima. Tal vez le pida alguna para limpiar el estómago.", "ko": "게다가 포커 테이블에 앉아 있는 저 녀석은 늘 나무열매를 챙겨 다니더라고. 속이라도 쓸어내리게 하나 달라고 해볼까.", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
-{"es": "¿Quieres sacar un libro? ¡Así me gusta, que te culturices!", "ko": "책을 빌리려는 건가요? 교양을 쌓겠다니 보기 좋군요!", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
-{"es": "Mira, me acaban de devolver estos tres. ¿Alguno despierta tu interés?", "ko": "여기 보세요, 방금 이 세 권이 반납되었어요. 마음에 드는 게 있으신가요?", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
+{"es": "¿Quieres sacar un libro? ¡Así me gusta, que te culturices!", "ko": "책을 빌리고 싶은가? 교양을 쌓는 건 아주 바람직한 자세지!", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
+{"es": "Mira, me acaban de devolver estos tres. ¿Alguno despierta tu interés?", "ko": "방금 이 세 권이 반납되었다. 마음에 드는 게 있나?", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "(Te quedas con este libro)", "ko": "(이 책을 빌린다)", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "(Devuelves el anterior libro y te quedas con este)", "ko": "(이전 책을 반납하고 이 책을 빌린다)", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "¡Espera, primero tienes que devolverme el que ya habías sacado!", "ko": "잠깐만요! 먼저 이미 빌려 가신 책부터 반납하셔야 해요!", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
@@ -306,7 +306,6 @@
 {"es": "<b>Brujita:</b> Ju, ju, ju, ju...", "ko": "<b>꼬마마녀:</b> 후, 후, 후, 후...", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "He oído que hay otro fantasma cerca de la <b>Fábrica de Pokéball</b>, donde los setos.", "ko": "<b>몬스터볼 공장</b> 근처 울타리 쪽에 또 다른 유령이 나타난다는 말을 들었습니다.", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "¡Te lo digo por si te gusta dedicarte a esto de cazar fantasmas!", "ko": "혹시 유령을 퇴치하는 일에 관심이 있다면 가보세요!", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
-{"es": "¿Quieres que cure a tu equipo y te rellene el Pokévial? Solo te cobraré 5000 pokécuartos de nada.", "ko": "포켓몬들을 회복시키고 포켓몬약병을 채워드릴까요? 단돈 5000 포켓프랑이면 충분합니다.", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "\\PN...", "ko": "\\PN...", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "¡Aaaah! ¡Pe-pero lo necesito! ¡Brillante y blandito Fluido Onírico!", "ko": "아아아! 하-하지만 필요하단 말이야! 반짝거리고 말랑말랑한 꿈의액체!", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "Necesitas más Fluido Onírico.", "ko": "꿈의액체가 더 필요하다.", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
@@ -393,7 +392,7 @@
 {"es": "El objetivo es sumar lo más cerca posible de 21 con las cartas acumuladas.", "ko": "목표는 모은 카드의 합을 21에 최대한 가깝게 맞추는 거야.", "맵수": 2, "src": "sync"}
 {"es": "Si se recibe un as, el jugador puede decidir si contarlo como 1 o como 13.", "ko": "에이스를 뽑으면 이를 1로 칠지 13으로 칠지 맘대로 정할 수 있지.", "맵수": 2, "src": "sync"}
 {"es": "¡Eh, eh! Que no pretendo estafarte, me gusta jugar limpio.", "ko": "이봐, 이봐! 널 속이려는 게 아냐, 난 정당하게 겨루는 걸 좋아한다고.", "맵수": 2, "src": "sync"}
-{"es": "Te ha tocado un as, ¿que valor le asignas? Recuerda que tienes que intentar sumar 21.", "ko": "에이스가 나왔군. 몇으로 계산할래? 합을 21에 맞추려고 해봐.", "맵수": 2, "src": "sync"}
+{"es": "Te ha tocado un as, ¿que valor le asignas? Recuerda que tienes que intentar sumar 21.", "ko": "에이스가 나왔군. 이 카드를 몇으로 치겠어? 합계가 21이 되도록 해야 한다는 걸 잊지 마라.", "맵수": 2, "src": "sync"}
 {"es": "Has recibido un \\v[135]. Recuerda que debes intentar sumar 21.", "ko": "\\v[135]를 받았어. 합이 21에 가까워져야 한다는 걸 잊지 마.", "맵수": 2, "src": "sync"}
 {"es": "¿Quieres recibir otra carta?", "ko": "카드를 한 장 더 받겠어?", "맵수": 2, "src": "sync"}
 {"es": "<b>Contrincante:</b> ¡Bien! ¡Veamos quién ha ganado!", "ko": "<b>상대방:</b> 좋아! 누가 이겼는지 확인해 보자고!", "맵수": 2, "src": "sync"}
