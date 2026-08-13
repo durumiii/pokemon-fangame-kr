@@ -61,9 +61,21 @@ def story_var_pages():
 # 고친 근거가 그 라벨에서 나왔으면 새 라운드를 뽑아야 한다.
 
 def signals(rows, key, flags_reg, story):
+    """플롯 신호는 **자리로 정해진다** — 값 하나가 아니라 그 페이지의 등재 값 전부를 본다.
+
+    - `임시 플래그`는 장면 안에서만 도는 보조라 세지 않는다. 다만 **그 페이지의 등재
+      플래그가 그것뿐이면** 그 플래그가 페이지 전체의 대표이므로 본편으로 본다
+      (`Escena*` 컷신이 보조 하나만 켜는 자리가 그렇다).
+    - `서브퀘스트`·`모드`는 메인스토리가 아니라 플롯 신호에서 뺀다. 값은 데이터에
+      남으니 나중에 번역 프롬프트 재료로 쓴다.
+
+    ⚠ 「단독인가」를 등재에 박지 마라 — 다른 플래그의 값이 바뀌면 동반이던 것이 단독이
+    된다. 여기서 매번 다시 센다.
+    """
     person = any(r["cls"] == "PS" for r in rows)
     fl = {f for r in rows for f in r["flags"]}
-    plot = "플롯 진행" in {flags_reg.get(f) for f in fl}
+    vals = {v for f in fl if (v := flags_reg.get(f))}
+    plot = "메인스토리" in vals or vals == {"임시 플래그"}
     return {"인물": person, "플롯플래그": plot, "본편변수": key in story}
 
 

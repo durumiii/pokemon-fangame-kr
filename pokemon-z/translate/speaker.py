@@ -42,6 +42,7 @@ usage:
   flags  이 페이지가 켜는 전역 스위치 중 **어딘가의 페이지 조건으로 쓰이는 것**
 """
 import collections
+import functools
 import gzip
 import json
 import re
@@ -74,7 +75,12 @@ KNOWN = [
 # 행수가 50 미만이라 옛 규칙이 떨어뜨렸고, 뒤 둘은 어간 충돌로 정본 인물이 되던 무명 단원이다.
 KNOWN_CLS = [("who", "Anturia", "PS"), ("who", "Capitán Merlot", "PS"),
              ("who", "Barquero", "PS"), ("who", "Nácar", "PS"), ("who", "Mimi", "PS"),
-             ("sprite", "flareow", "PC"), ("sprite", "flaraow", "PC")]
+             ("sprite", "flareow", "PC"), ("sprite", "flaraow", "PC"),
+             # 대문자 이름표 둘과 그것을 막던 안내판 딱지 — `person_tag`의 세 걸음이
+             # 순서대로 서야 셋이 동시에 맞는다(2026-08-14).
+             ("who", "F3", "PS"), ("who", "AZ", "PS"),
+             ("who", "PISTA DE ENTRENADOR", "N"),
+             ("sprite", "f3ow", "PS")]   # 어간을 한 단계씩 맞추지 않으면 `f`까지 깎인다
 
 # 1회 소비 판정의 정답 자리 — `docs/log/research/2026-08-13-audit-cells.jsonl`의 「1회소비」 값.
 KNOWN_ONCE = [((22, 3, 7), True), ((2, 1, 0), True), ((163, 44, 1), False), ((3, 47, 0), False)]
@@ -125,6 +131,18 @@ def stem(s):
     while s != prev:
         prev, s = s, STEM.sub("", s)
     return s
+
+
+def stem_steps(s):
+    """어간을 **긴 것부터** 한 단계씩 내놓는다(원시 이름은 뺀다).
+
+    끝까지 깎은 것 하나만 맞춰 보면 답을 지나친다 — `f3ow` → `f3`(목록에 있다) →
+    `f`로 한 번 더 깎여 F3가 사라졌다. 맞춰 보는 쪽이 처음 걸리는 데서 멈춘다.
+    """
+    s = s or ""
+    while (nxt := STEM.sub("", s)) != s:
+        s = nxt
+        yield s
 
 
 def voice_sprites():
@@ -200,8 +218,10 @@ def voice_sprite(sprite, voices):
         return False
     if sprite in voices:
         return True
-    s = stem(sprite)
-    return s in voices and s not in STEM_CONFLICT
+    for s in stem_steps(sprite):          # 가장 긴 일치에서 멈춘다
+        if s in voices:
+            return s not in STEM_CONFLICT
+    return False
 
 
 def stem_conflicts(sprites, voices, tags=frozenset()):
@@ -216,10 +236,13 @@ def stem_conflicts(sprites, voices, tags=frozenset()):
     lower = {t.lower() for t in tags}
     out = {}
     for sp in sprites:
-        s = stem(sp)
-        if sp and sp not in voices and s in voices \
-                and not vmap.get(s) and s.lower() not in lower:
-            out.setdefault(s, []).append(sp)
+        if not sp or sp in voices:
+            continue
+        for s in stem_steps(sp):                 # `voice_sprite`와 같은 걸음으로 본다
+            if s in voices:
+                if not vmap.get(s) and s.lower() not in lower:
+                    out.setdefault(s, []).append(sp)
+                break
     return out
 
 
@@ -240,15 +263,40 @@ def canon_names(rows, threshold=50):
            {w for w in tagged if resolve(w, names) in names_roster}
 
 
-COMPASS = frozenset({"Norte", "Sur", "Este", "Oeste"})
-# 방위 이름표는 표지판 안내다. 색 낱말(Naranja·Lila·Menta)은 빼지 않는다 —
-# 그 셋은 수수께끼 정령의 이름이고 실제로 말한다(2026-08-13 감사 §2 E2).
+# 방위 이름표(Norte·Sur·Este·Oeste)는 표지판 안내라 `batch_pages.SYS`에 들어 있다.
+# 색 낱말(Naranja·Lila·Menta)은 빼지 않는다 — 그 셋은 수수께끼 정령의 이름이고
+# 실제로 말한다(2026-08-13 감사 §2 E2).
 NONPERSON = ("trchar", "rayos")
 
 
+@functools.cache
+def tag_lists():
+    """이름표를 가르는 두 명단 — 비인물 배제와 정본 인물 화이트리스트.
+
+    배제 명단은 **`batch_pages.SYS`가 정본이다.** 여기에 따로 세우면 명단이 둘이 되고
+    「어느 쪽이 이기나」 규칙이 따라 붙는다. 화이트리스트는 `roster()`(voices.md 넉 칸
+    인물표)뿐이다 — 두 칸짜리 집단 화자표를 쓰면 시민·총사 같은 무리가 정본 인물이 된다.
+    """
+    from batch_pages import SYS, ko_names, resolve
+    return SYS, ko_names(), roster(), resolve
+
+
 def person_tag(name):
-    """사람 이름 이름표인가 — 전부 대문자는 표지·안내 딱지(`AVISO`·`PISTA DE …`)다."""
-    return bool(name) and not name.isupper() and name not in COMPASS
+    """사람 이름 이름표인가 — 배제 목록 → 화이트리스트 → 대문자 가드 순으로 본다.
+
+    대문자 가드만 두면 `F3`·`AZ`가 인물 목록 만드는 첫 줄에서 사라진다(둘 다
+    `isupper()`가 참이다). 그렇다고 가드부터 풀면 안 된다 — `canon_names()`의 50행
+    문턱이 `PISTA DE ENTRENADOR`(트레이너 안내판, 이름표 51행)를 이미 정본 인물
+    명단에 넣어 두었고 지금은 이 가드만이 그것을 막고 있다. 그래서 순서가 전부다.
+    """
+    if not name:
+        return False
+    sysnames, names, ros, resolve = tag_lists()
+    if name in sysnames:                    # 안내판·표지 딱지
+        return False
+    if resolve(name, names) in ros:         # 말투 정본 인물표에 있으면 사람이다
+        return True
+    return not name.isupper()
 
 
 def person_sprite(sprite, objects):
