@@ -46,6 +46,7 @@ import gzip
 import json
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 HERE = Path(__file__).parent
@@ -132,6 +133,55 @@ def voice_sprites():
     return set(g.get("voices", []))
 
 
+VOICES_STRIP = re.compile(r"(Montado|Montada|Reventada|Caduca|Vestido|Monigote|Pose|"
+                          r"Pechamen|Dormido|Final|Salamence|Lira|Capucha|Herido|"
+                          r"Cabeza|Borracha|Mapa|Musica|Baln|TS)")
+VOICES_SPECIAL = {"az": "AZ", "f3": "F3", "druidaFicus": "대드루이드 피쿠스"}
+
+
+def deacc(s):
+    return unicodedata.normalize("NFD", s).encode("ascii", "ignore").decode().lower()
+
+
+def voices_map():
+    """voices 그룹 스프라이트 이름 → 한국어 인물명 (names.json 조인).
+
+    이름으로 이어지는 그림인지만 본다 — `stem_conflicts`가 「어간만 걸리고 이름은
+    어디에도 없는」 그림을 가려내는 데 쓴다.
+    """
+    names = json.loads((HERE / "names.json").read_text(encoding="utf-8"))["names"]
+    out = {}
+    groups = json.loads((HERE / "sprite-groups.json").read_text(encoding="utf-8"))["groups"]
+    for s in groups["voices"]:
+        base = VOICES_STRIP.sub("", s)
+        if base in VOICES_SPECIAL or s in VOICES_SPECIAL:
+            out[s] = VOICES_SPECIAL.get(s, VOICES_SPECIAL.get(base))
+            continue
+        ds = deacc(base)
+        hit = next((ko for es, ko in names.items()
+                    if deacc(es) == ds or (len(ds) >= 4 and (deacc(es).startswith(ds)
+                                                             or ds.startswith(deacc(es))))), None)
+        out[s] = hit
+    return out
+
+
+def roster():
+    """말투 정본 인물 명단 — `voices.md`의 **인물표(넉 칸)만** 읽는다.
+
+    ⚠ `batch_pages.voice_lines`를 여기에 쓰면 안 된다 — 그쪽은 프롬프트에 실을
+    말투를 모으느라 두 칸짜리 집단 화자표(시민·총사·아자하라 …)까지 읽는다.
+    그 명단으로 층을 가르면 잔부·집단 화자가 정본 인물(PS)로 승격한다.
+    """
+    table = {}
+    for line in (HERE.parent / "docs" / "ledger" / "voices.md").read_text(
+            encoding="utf-8").splitlines():
+        cells = [c.strip() for c in line.split("|")]
+        if len(cells) >= 5 and cells[1] and cells[1] not in ("인물", "갈래", "태그") \
+                and not cells[1].startswith("-"):
+            table[cells[1]] = cells[-2]
+    return table
+
+
 # 어간 축약이 이름 없는 그림을 정본 인물 명단으로 끌어올리는 자리. `stem("flareow")`가
 # `flare`가 되어 voices에 걸리는데(`flaraow`도 같다) 플레어단 무명 단원의 그림이고,
 # `luigiow`는 페르소나표가 다스리는 카메오다 — 셋 다 고유명 표기 목록에도 이름표에도
@@ -162,8 +212,7 @@ def stem_conflicts(sprites, voices, tags=frozenset()):
     쪽으로도 안 이어진다는 것은 「이름 없는 그림이 이름 있는 인물 자리에
     들어왔다」는 뜻이고, 그것이 `STEM_CONFLICT`에 박히는 근거다.
     """
-    from batch_npc import voices_map              # 어간 → 한국어 인물명 조인(정본 규칙)
-    vmap = voices_map()
+    vmap = voices_map()                          # 어간 → 한국어 인물명 조인(정본 규칙)
     lower = {t.lower() for t in tags}
     out = {}
     for sp in sprites:
@@ -184,12 +233,11 @@ def canon_names(rows, threshold=50):
     쓰면 행인이 정본 인물이 된다. 이름표는 스페인어에 직함이 붙어 오므로
     `batch_pages.resolve`로 한국어 인물명까지 풀어 맞춘다.
     """
-    from batch_npc import voice_lines                # 말투 정본 인물 명단(voices.md)
     from batch_pages import ko_names, resolve        # 이름표 → 한국어 인물명
-    names, roster = ko_names(), voice_lines()
+    names, names_roster = ko_names(), roster()
     tagged = collections.Counter(r["who"] for r in rows if r["how"] == "태그")
     return {w for w, n in tagged.items() if n >= threshold} | \
-           {w for w in tagged if resolve(w, names) in roster}
+           {w for w in tagged if resolve(w, names) in names_roster}
 
 
 COMPASS = frozenset({"Norte", "Sur", "Este", "Oeste"})

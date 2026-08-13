@@ -3,10 +3,11 @@
 # ///
 """주연 대사 재번역 배치 — 이벤트 페이지 단위.
 
-`batch_npc.py`와 갈라지는 점 셋:
-  1. 대상이 **이름표가 붙거나 물려받은 줄**(주연 대사)이지 무태그 NPC가 아니다.
-  2. 화자를 옛 조인표가 아니라 **화자 귀속표**(speaker.py scan 산출)에서 읽는다.
-  3. 묶음이 맵+40행이 아니라 **이벤트 페이지 하나**다 — 모델이 장면을 온전히 본다.
+배치 재번역은 이 도구 하나로 돈다(Z-47에서 `batch_npc.py` 은퇴 — 계획 경로가 겹쳤고,
+그쪽은 화자를 옛 조인표에서 읽어 Z-46 층 수선이 닿지 않았다). 요는 셋이다:
+  1. 화자를 **화자 귀속표**(speaker.py scan 산출)에서 읽는다 — 이름표·상속·그림 근거별로.
+  2. 묶음이 **이벤트 페이지 하나**다 — 모델이 장면을 온전히 본다.
+  3. 반영은 `apply_verdicts.py <산출폴더>`가 한다(복제·통일 자리 전파 포함).
 
     uv run translate/batch_pages.py plan          # 사정권 전량 → batch/page-chunks.jsonl
     uv run translate/batch_pages.py plan --pilot  # 표본 20페이지 → batch/pilot-chunks.jsonl
@@ -492,8 +493,9 @@ def plan(pilot=False, npc=False):
     n = sum(len(c["rows"]) for c in chunks)
     sizes = sorted(len(c["rows"]) for c in chunks)
     print(f"{len(chunks)}페이지 · {n}행 → {out}")
-    print(f"페이지 크기: 중앙 {sizes[len(sizes)//2]}행 · 최대 {sizes[-1]}행 · "
-          f"1행짜리 {sum(1 for s in sizes if s == 1)}개")
+    if sizes:      # 사정권이 다 소진되면 빈 계획이 정상 결과다
+        print(f"페이지 크기: 중앙 {sizes[len(sizes)//2]}행 · 최대 {sizes[-1]}행 · "
+              f"1행짜리 {sum(1 for s in sizes if s == 1)}개")
     cast_n = defaultdict(int)
     for c in chunks:
         for x in c["cast"]:
