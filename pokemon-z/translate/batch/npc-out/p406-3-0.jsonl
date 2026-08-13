@@ -1,0 +1,4 @@
+{"id": "406:3:0:0", "who": "rangera", "es": "¡Me muero de sed! ¿No tendrás una Limonada en tu bolsa?", "old": "목말라 죽겠어! 혹시 가방에 맛있는미네랄사이다 없어?", "new": "목말라 죽겠어! 혹시 가방에 후르츠밀크 없어?", "ok": true, "why": null}
+{"id": "406:3:0:1", "who": "rangera", "es": "Imagino que deben venderla en el <b>Gran Hotel Luminalia</b>.", "old": "<b>미르 그랜드 호텔</b>에서 팔고 있을 것 같은데.", "new": "<b>미르 그랜드 호텔</b>에서 팔고 있을 것 같은데.", "ok": true, "why": null}
+{"id": "406:3:0:3", "who": "rangera", "es": "¡Uy! ¡Tienes Limonada!", "old": "앗! 맛있는미네랄사이다가 있잖아!", "new": "앗! 후르츠밀크가 있잖아!", "ok": true, "why": null}
+{"id": "406:3:0:4", "who": "rangera", "es": "¡<i>Merci</i>! A cambio, te la cambio por esto.", "old": "<i>Merci</i>! 고마우니까 이거랑 바꿔 줄게.", "new": "<i>Merci</i>! 고마우니까 이거랑 바꿔 줄게.", "ok": true, "why": null}

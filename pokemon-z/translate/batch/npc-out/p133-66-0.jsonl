@@ -1,0 +1,5 @@
+{"id": "133:66:0:0", "who": "campesinaw", "es": "¿Te suena un Pokémon llamado Lycanroc?", "old": "‘루가루암’이라는 포켓몬 들어본 적 있어?", "new": "‘루가루암’이라는 포켓몬 들어본 적 있어?", "ok": true, "why": null}
+{"id": "133:66:0:1", "who": "campesinaw", "es": "Si me muestras uno en el primer lugar de tu equipo, puedo cambiarlo a varias formas.", "old": "지닌 포켓몬의 첫 번째 자리에 보여주면 여러 가지 모습으로 바꿔줄 수 있어.", "new": "지닌 포켓몬의 첫 번째 자리에 보여주면 여러 가지 모습으로 바꿔줄 수 있어.", "ok": true, "why": null}
+{"id": "133:66:0:16", "who": "campesinaw", "es": "\\v[1] ha adquirido su forma diurna.", "old": "\\v[1]\\j[은,는] 한낮의 모습이 되었다.", "new": "\\v[1]\\j[은,는] 한낮의 모습이 되었다.", "ok": true, "why": null}
+{"id": "133:66:0:29", "who": "campesinaw", "es": "\\v[1] ha adquirido su forma nocturna.", "old": "\\v[1]\\j[은,는] 한밤중의 모습이 되었다.", "new": "\\v[1]\\j[은,는] 한밤중의 모습이 되었다.", "ok": true, "why": null}
+{"id": "133:66:0:42", "who": "campesinaw", "es": "\\v[1] ha adquirido su forma crepuscular.", "old": "\\v[1]\\j[은,는] 황혼의 모습이 되었다.", "new": "\\v[1]\\j[은,는] 황혼의 모습이 되었다.", "ok": true, "why": null}

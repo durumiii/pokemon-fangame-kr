@@ -126,29 +126,61 @@ def scene_system(fp):
     return PROMPT + "\n\n---\n참고 — 이 장면을 번역할 때 준 지시:\n" + head
 
 
-def run(d, model, effort):
-    key, out, total = key_of(), [], 0.0
+def run(d, model, effort, workers=4):
+    """페이지마다 부분 파일(screen-llm.partial.jsonl)에 바로 적는다 — 중단해도
+    거기까지는 남고, 재실행이 그 페이지들을 건너뛴다(재개). 워커 4 병렬."""
+    import threading
+    key, total = key_of(), 0.0
+    part = Path(d) / "screen-llm.partial.jsonl"
+    done_pages = set()
+    if part.exists():
+        for l in part.read_text(encoding="utf-8").splitlines():
+            if l.strip():
+                done_pages.add(json.loads(l)["page"])
     files = [fp for fp in sorted(Path(d).glob("*.jsonl"))
-             if not fp.name.startswith("screen")]
-    todo, done, t0 = len(files), 0, time.time()
-    for fp in files:
+             if not fp.name.startswith("screen") and fp.name not in done_pages]
+    todo, st, t0 = len(files), {"n": 0, "cost": 0.0}, time.time()
+    if done_pages:
+        print(f"재개: 부분 파일에 {len(done_pages)}페이지 완료 — {todo}페이지 남음")
+    lock = threading.Lock()
+
+    def work(fp):
         rows = [json.loads(l) for l in fp.read_text(encoding="utf-8").splitlines() if l.strip()]
         ask_rows = [{"id": r["id"], "who": r["who"], "es": r["es"],
                      "ko": r.get("new") or r["old"]} for r in rows if r.get("new")]
-        if not ask_rows:
-            continue
-        hits, cost = ask(key, model, effort, scene_system(fp), ask_rows)
-        total += cost
+        hits, cost = ([], 0.0) if not ask_rows else ask(key, model, effort, scene_system(fp), ask_rows)
         ids = {r["id"] for r in ask_rows}
-        out += [h for h in hits if h["id"] in ids]
-        done += 1
-        left = (time.time() - t0) / done * (todo - done)
-        print(f"  [{done}/{todo}] {fp.name}: {len(ask_rows)}행 → {len(hits)}행 지적 "
-              f"(${cost:.4f}) 남은 ~{int(left // 60)}분{int(left % 60):02d}초", flush=True)
+        rec = {"page": fp.name, "cost": cost,
+               "hits": [h for h in hits if h["id"] in ids]}
+        with lock:
+            st["n"] += 1
+            st["cost"] += cost
+            with part.open("a", encoding="utf-8") as fh:
+                fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
+            left = (time.time() - t0) / st["n"] * (todo - st["n"])
+            print(f"  [{st['n']}/{todo}] {fp.name}: {len(ask_rows)}행 → {len(rec['hits'])}행 지적 "
+                  f"(${cost:.4f}) 남은 ~{int(left // 60)}분{int(left % 60):02d}초", flush=True)
+
+    threads = []
+    for fp in files:
+        while sum(t.is_alive() for t in threads) >= workers:
+            time.sleep(0.2)
+        t = threading.Thread(target=work, args=(fp,))
+        t.start()
+        threads.append(t)
+    for t in threads:
+        t.join()
+
+    out = []
+    for l in part.read_text(encoding="utf-8").splitlines():
+        if l.strip():
+            rec = json.loads(l)
+            total += rec["cost"]
+            out += rec["hits"]
     p = Path(d) / "screen-llm.jsonl"
     p.write_text("".join(json.dumps(h, ensure_ascii=False) + "\n" for h in out),
                  encoding="utf-8")
-    print(f"{d}: {len(out)}행 → {p}  합계 ${total:.4f}")
+    print(f"{d}: {len(out)}행 → {p}  합계 ${total:.4f} (부분 파일 유지: {part.name})")
 
 
 if __name__ == "__main__":

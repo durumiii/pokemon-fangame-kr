@@ -1,0 +1,135 @@
+{
+ "system": "\n\nYou rewrite Korean dialogue for a Pokémon fangame set in a monarchic Kalos\n(Spanish original). Input is a JSON array; each item is {\"id\", \"who\", \"es\", \"ko\"}.\n`who` is the speaker's name, `es` is the Spanish source (authoritative for meaning),\n`ko` is the current Korean translation — usually correct in meaning but often wrong\nin speech level, because it was translated without knowing who was speaking.\n\n**The items are one complete event page, in game order — a single scene.** A scene\nheader at the end of this prompt lists the speakers present and how each one talks.\n\nRewrite each `ko` in the speech style that fits its speaker.\n\n### Speech-level rules\n\nA. Follow the per-speaker style in the scene header, but **rewrite the sentence\n   whole** — swapping only the ending kills the rhythm. For 반말, use living\n   spoken forms (「~어/~야/~지/~잖아/~거든」); a string of narrative 「~다.」 is wrong.\nB. **Many characters change speech level by addressee.** When the header gives\n   branches (\"존대 to A, 반말 to B\"), decide **who the line is spoken to** from the\n   scene — the surrounding lines, who answers, what vocative is used. A character\n   who turns to a different listener changes level mid-scene.\nC. **The Spanish register is the final authority.** Check how the source addresses\n   the listener: `tú` (familiar sg) · `usted` (formal sg) · `vosotros` (familiar pl)\n   · `vos` (archaic formal sg).\n   - `usted` is more often *unmarked as a word*: it shows only through `le`/`su` and\n     3rd-person verbs (`Puede estar tranquilo`, `Como le he dicho`). Absence of the\n     word is not evidence of familiarity.\n   - `vos`-family endings (`-áis`/`-éis`/`os`/`vuestro`) are **usually plural**\n     (addressing the party). They are the archaic honorific only when the same line\n     carries singular evidence — a singular vocative (`Maese Hibis`, `maese Crisanto`)\n     or a singular adjective (`Vos sois responsable`). That honorific is court/knightly\n     etiquette between ranking figures and is **independent of hostility**.\nD. A 존대 speaker may mix 해요체 and 합쇼체 by function: greetings, invitations and\n   feeling in 해요체; declarations, procedure and reports in 합쇼체.\nE. A 존대 speaker may drop to 반말 in exactly four places: talking to themselves,\n   exclamation or realization (「~구나!」「~다니!」), echoing a question back\n   (「~다고?」), and song or quotation. Nowhere else. **Consecutive lines to the same\n   listener must not wobble between levels.**\nF. Korean has many natural endings for one speech level. Don't normalize them —\n   short exclamations in 「~다」, assertive 「~거다」, 「~구나」, 「~는걸」 all belong to\n   ordinary 반말 and should survive.\nG. Male/female variant pairs of one line (`un intruso` / `una intrusa`) keep their\n   distinction, and **must not disagree in speech level** with each other.\nH. Do not invent interjections, laughter or self-titles that are absent from the\n   source, and do not drop ones that are there. Follow the source. Render\n   onomatopoeia by the standard Korean convention (`*Ejem*`→`*에헴*`) — do not\n   substitute a different sound of your own.\nI. The player character (\\PN) has no fixed gender or age. Never invent gendered or\n   age-based address terms (「오빠/누나/언니/아가씨/총각」). Use only titles present\n   in the source.\n\n### Naturalness rules (Korean that does not read as translated)\n\nJ. Sentence-initial connective adverbials (`En concreto,` `De hecho,` `Por lo\n   visto,`) usually vanish in Korean dialogue — context already links the\n   sentences. Fold the nuance into the ending or drop it:\n   `En concreto, sientes la presencia…` → 「아주 강력한 …의 기운이 느껴진다.」\nK. Translate idiom with idiom. When the Spanish uses a set phrase, reach for the\n   Korean set phrase with the same meaning before rendering the image word by\n   word: `bailar al son de la flauta de X` → 「X의 장단에 놀아나다」,\n   `el largo y férreo estoque de la ley` → 「법의 철퇴」. Only when no\n   counterpart exists, unfold the meaning in plain words.\nL. Unwind noun-chain calques into verb endings: 「~하는 것은 위험합니다」 →\n   「~는 건 위험하다」, 「~한 상태로」 → 「~한 채로」. Counts follow Korean habit\n   in prose: `solo 1 Pokémon` → 「포켓몬이 하나뿐」.\nM. Spanish demonstratives and intensifiers (`ese/esta`, `completa`, `realmente`)\n   that only fill rhythm read as translationese — render the sentence without\n   them when they carry no information. (That is not dropping a fact.)\nN. Confirm-box questions and choice labels are the player's own voice, not an\n   NPC asking the player: `¿Quieres abrir la puerta?` at a locked door →\n   「잠긴 문을 열까?」; a choice `Acepto` → 「그렇게 하죠」. Self-question\n   endings, dialogue-style buttons.\nO. For stock situations the series-canon phrasing wins over a literal rendering:\n   `¡Pero no tuvo ningún efecto!` → 「그러나 아무 일도 일어나지 않았다!」;\n   item pickup `ha encontrado`/`found` → 「얻었다」. When the official Korean\n   games have a fixed line for the situation, use it.\nP. A Pokémon's cry echoes its own species name — rebuild it from the Korean\n   name, not the Spanish (`Luuuull…` of Morelull → 「자마아…」 of 자마슈).\nQ. Mind relative-clause scope: in `que …, pero …` the `pero` may still be inside\n   the relative clause. Check what the second verb attaches to before rendering,\n   or the meaning flips.\n\n### Preservation rules (violations are auto-rejected by machine validation)\n\n1. Preserve meaning and information exactly. `es` is authoritative. Do not add or\n   drop facts, numbers or names; do not add modifiers absent from the source; do not\n   change a verb to a different sense.\n2. **Formatting tags and speaker prefixes have been removed before you see this\n   text, and are restored mechanically afterwards. Write plain Korean — never add\n   `<b>`, `<i>`, `\\c[n]`, or a `이름:` prefix of your own.** Placeholders that carry\n   meaning are still present and must be kept exactly as they appear, in the same\n   count: \\PN, \\v[n], \\se[..], \\wt[..], \\m, \\TP, \\TE, \\TM, <icon=..>, <r>,\n   \\j[받침형,무받침형], {1}-style slots, and a trailing \\x01.\n3. Keep proper nouns and game terms exactly as the term rules below give them.\n   French/Russian *exclamations and interjections* in the source stay in the Latin\n   script (`alors`, `d'accord`, `Mon Dieu!`, `Sacrebleu!`, `Merci beaucoup!`).\n   But a French phrase *woven into the sentence* as an ordinary word (a polite\n   `s'il vous plait` mid-sentence) is translated into Korean like any other word.\n   **Address titles are always Korean: monsieur→무슈, madame→마담,\n   mademoiselle→마드모아젤. Never turn 무슈 back into `monsieur`.**\n4. Length at most 1.4× the current `ko` (text box width). Do not add or remove\n   newline characters.\n5. **If a line is already correct and natural, return its `ko` unchanged.** This is\n   targeted correction, not wholesale replacement. An idiomatic, freely-worded\n   current translation is a strength, not an error — closeness to the Spanish\n   wording is not the goal, and rewriting a lively line into a more literal one\n   makes it worse.\n\nOutput only a JSON array: [{\"id\": \"<id as given>\", \"ko\": \"<rewritten Korean>\"}, …]\nInclude every input item. No prose, no comments, no code fences.\n\n### Term rules (apply exactly)\n\n- Never touch proper nouns: person, place, species, move, item and ability names keep\n  their current Korean spelling even if the transliteration looks odd.\n- damage is 「데미지」 (not 대미지). Franchise vocabulary: 배틀 · 트레이너 · 체육관 ·\n  기술머신 · 몬스터볼 · 도감. Status: 독/맹독/화상/마비/잠듦/얼음.\n- The currency pokécuartos/pokéfrancos is 「포켓프랑」.\n- Setting is monarchic Kalos: keep rank address (폐하·전하·경·마담·무슈); do not\n  modernize. French/Russian exclamations stay Latin (Mon Dieu!, Sacrebleu!,\n  Merci beaucoup!, Blyat); phrases woven into the sentence (a mid-sentence\n  s'il vous plait) are translated. Address titles are transliterated:\n  monsieur→무슈, madame→마담, mademoiselle→마드모아젤. Italian `Mamma mia`→「맘마미아」.\n- máscara → 마스크 (not 가면).\n- Kill translationese: 「~에 대해」→ object particle; 「~하는 것이 가능하다」→\n  「~할 수 있다」; no double passive 「~되어진다」; ¡Qué …! becomes 「정말 ~구나!」\n  not 「얼마나 ~한가!」.\n- Alquimia Pokémon → 포켓몬 연금술\n- Alca → 알카\n- Pueblo Vanitas → 고목내마을\n- Pueblo Vánitas → 고목내마을\n- Árbol Eterno → 영원한 나무\n- Clan Corrosión → 부식 클랜\n- Corrosión → 부식\n- Esfuerzo → 죽기살기\n- Arcanine → 윈디\n\n\n\n\n**This request carries several scenes.** The user message is a JSON array of scenes:\n[{\"scene\": \"<scene id>\", \"rows\": [ …items in the shape described above… ]}, …].\nEach `rows` array is one complete event page in game order — one scene. Treat the\nscenes separately: never carry context, addressee or speech level from one scene\ninto another. The scene list below says which speakers stand in each scene.\nOutput remains ONE flat JSON array of {\"id\", \"ko\"} covering every item of every\nscene, in the order given. Do **not** group the output by scene and do not echo\nthe `scene` key — the `id` of each item already says which scene it belongs to.\n\nSpeakers and how each talks (「본보기」 lines are approved translations — match their texture):\n- hombre1: 평범한 중년 남자. 무뚝뚝하고 말수 적은 반말, 냉소 한 스푼 [어미: B1]\n- cazadorow: 포켓몬 사냥꾼. 낮고 무뚝뚝한 반말, 단정 「~다」 기본, 짧게 끊어 말함 [어미: B1변형]\n- mujer1: 마을 아낙. 담백한 반말 [어미: B1]\n- hombre2: 멋 부린 젊은 남자. 편한 반말로 자기 취향을 늘어놓고 남의 사정에 훈수를 둔다 [어미: B1]\n- burguesaow: 사교계 귀부인. 정중한 해요체, 어휘는 은근히 오만(「~하시죠」「~인가 보네요」) [어미: B2(사실·시설 설명 문장만 B3)]\n\nScenes in this request (in the order the user message gives them):\n- [p154-3-0] 집 (map 154), event 「EV003」 — speakers: hombre1\n- [p154-3-1] 집 (map 154), event 「EV003」 — speakers: hombre1\n- [p154-3-2] 집 (map 154), event 「EV003」 — speakers: hombre1\n- [p154-6-0] 집 (map 154), event 「 」 — speakers: cazadorow\n- [p154-7-0] 집 (map 154), event 「EV007」 — speakers: mujer1\n- [p155-5-0] 훈련소 (map 155), event 「EV005」 — speakers: cazadorow\n- [p155-8-0] 훈련소 (map 155), event 「EV008」 — speakers: hombre2\n- [p155-9-0] 훈련소 (map 155), event 「EV009」 — speakers: burguesaow\n",
+ "user": [
+  {
+   "scene": "p154-3-0",
+   "rows": [
+    {
+     "id": "154:3:0:0",
+     "who": "hombre1",
+     "es": "Soy una escoria humana, ¡lo peor de lo peor!",
+     "ko": "난 인간 쓰레기야. 최악 중의 최악이지."
+    },
+    {
+     "id": "154:3:0:1",
+     "who": "hombre1",
+     "es": "Mi pobre hijita ha quedado atrapada en Pueblo Vánitas y, por más que intento llegar hasta ella, los Pokémon salvajes de la zona\nme superan.",
+     "ko": "내 불쌍한 딸애가 고목내마을에 갇혔는데, 어떻게든 가 보려고 해도 근처 야생 포켓몬을 이길 수가 없더군."
+    },
+    {
+     "id": "154:3:0:3",
+     "who": "hombre1",
+     "es": "¿Qué dignidad le queda a un padre que no puede ni dar la vida por su progenie?",
+     "ko": "제 자식을 위해 목숨 하나 못 거는 아비한테 무슨 염치가 남아 있겠어?"
+    }
+   ]
+  },
+  {
+   "scene": "p154-3-1",
+   "rows": [
+    {
+     "id": "154:3:1:0",
+     "who": "hombre1",
+     "es": "Mi hija está a salvo... ¡gracias al Árbol Eterno! ¡Y a ti por traerla!",
+     "ko": "딸애는 무사해... 영원한 나무 덕분이지! 아이를 데려와 준 너한테도 고맙다!"
+    },
+    {
+     "id": "154:3:1:1",
+     "who": "hombre1",
+     "es": "No tengo mucho, pero esto te puede venir bien para los futuros combates que tengas por delante.",
+     "ko": "가진 게 별로 없지만, 앞으로 치를 배틀에서 쓰면 도움이 될 거다."
+    }
+   ]
+  },
+  {
+   "scene": "p154-3-2",
+   "rows": [
+    {
+     "id": "154:3:2:1",
+     "who": "hombre1",
+     "es": "No tengo mucho, pero lo daré todo para que ningún mal pueda alcanzarla.",
+     "ko": "가진 건 별로 없지만, 어떤 위협도 아이에게 미치지 못하게 내 모든 걸 바쳐 지킬 거다."
+    }
+   ]
+  },
+  {
+   "scene": "p154-6-0",
+   "rows": [
+    {
+     "id": "154:6:0:0",
+     "who": "cazadorow",
+     "es": "A los cazadores de Pueblo Vánitas también se nos conoce a veces como Clan Corrosión, debido a que somos capaces de emponzoñar\nincluso a los Pokémon que resisten el veneno.",
+     "ko": "고목내마을 사냥꾼은 부식 클랜이라 불리기도 한다. 독을 견디는 포켓몬마저 중독시키기 때문이지."
+    }
+   ]
+  },
+  {
+   "scene": "p154-7-0",
+   "rows": [
+    {
+     "id": "154:7:0:0",
+     "who": "mujer1",
+     "es": "Antes de que caiga el rey, me pregunto si sabremos algo sobre ese hermano secreto suyo que se volvió loco.",
+     "ko": "왕이 몰락하기 전에 미쳐버렸다는 그 비밀스러운 형제 이야길 들을 수 있을지 모르겠어."
+    },
+    {
+     "id": "154:7:0:1",
+     "who": "mujer1",
+     "es": "Dicen que su locura estuvo relacionada con un experimento de Alquimia Pokémon.",
+     "ko": "그 미쳐버린 게 포켓몬 연금술 실험 때문이라는 소문이 있더라고."
+    }
+   ]
+  },
+  {
+   "scene": "p155-5-0",
+   "rows": [
+    {
+     "id": "155:5:0:1",
+     "who": "cazadorow",
+     "es": "¿Quieres iniciar un super-entrenamiento de Puntos de Esfuerzo?",
+     "ko": "노력치 슈퍼트레이닝을 시작하겠나?"
+    },
+    {
+     "id": "155:5:0:40",
+     "who": "cazadorow",
+     "es": "Si además equipas a tu Pokémon con uno de los objetos que vende el hombre a la izquierda, el entrenamiento será aún más\nproductivo.",
+     "ko": "왼쪽에 있는 남자가 파는 도구를 지니게 하면 트레이닝이 더 효과적일 거다."
+    }
+   ]
+  },
+  {
+   "scene": "p155-8-0",
+   "rows": [
+    {
+     "id": "155:8:0:0",
+     "who": "hombre2",
+     "es": "He estado haciendo cálculos y he llegado a la conclusión de que haciendo una tanda de 3 combates\nen una estadística en específico es suficiente para alcanzar el máximo potencial de mi Pokémon en dicha estadística.",
+     "ko": "내가 계산을 좀 해봤는데 말이지, 특정 능력치로 연속 배틀을 3번 치르면 포켓몬의 잠재력을 최대로 끌어올릴 수 있더라고."
+    },
+    {
+     "id": "155:8:0:2",
+     "who": "hombre2",
+     "es": "Eso sí, he tenido que comprarle unos cuantos objetos a ese hombre de la mesa, y son bastante caros. ¡Anda que no son pillos aquí!\nPero el resultado ha valido la pena.",
+     "ko": "물론 저 테이블의 남자한테 도구를 몇 개 사야 했는데, 제법 비싸단 말이지. 하여간 장사꾼이라니까! 그래도 그만한 가치는 있었어."
+    }
+   ]
+  },
+  {
+   "scene": "p155-9-0",
+   "rows": [
+    {
+     "id": "155:9:0:0",
+     "who": "burguesaow",
+     "es": "La diferencia entre un Pokémon que ha recibido entrenamiento en Puntos de Esfuerzo y uno que no puede llegar a ser muy notable.",
+     "ko": "노력치 훈련을 받은 포켓몬과 받지 않은 포켓몬의 차이는 꽤나 벌어지는 법이지요."
+    },
+    {
+     "id": "155:9:0:1",
+     "who": "burguesaow",
+     "es": "Por ejemplo, mi Arcanine aumentó en 30 puntos su estadística de Ataque tras unas pocas sesiones de entrenamiento.",
+     "ko": "예를 들어 제 윈디는 몇 번 훈련을 받았을 뿐인데 공격 능력치가 30포인트나 올라갔답니다."
+    }
+   ]
+  }
+ ]
+}

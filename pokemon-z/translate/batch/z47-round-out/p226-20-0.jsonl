@@ -1,0 +1,2 @@
+{"id": "226:20:0:0", "who": "carabinerow", "es": "¿Es que no sabes llegar a la <b>Cantera</b>? ¿Se te ha cocido la cabeza?", "old": "<b>채석장</b>으로 가는 길도 모르는 거냐? 머리가 어떻게 되기라도 한 거야?", "new": "<b>채석장</b>으로 가는 길도 모르는 건가? 더위라도 먹었나?", "ok": true, "why": null}
+{"id": "226:20:0:1", "who": "carabinerow", "es": "Sal del recinto de celdas hacia el patio exterior. Después toma el camino hacia la izquierda.", "old": "감방 구역을 나가서 바깥 뜰로 가라. 그러고 나서 왼쪽 길로 가면 된다.", "new": "감방 구역을 나가서 안뜰로 가라. 그러고 나서 왼쪽 길로 들어서면 된다.", "ok": true, "why": null}
