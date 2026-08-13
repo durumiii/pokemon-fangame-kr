@@ -23,7 +23,7 @@ from pathlib import Path
 HERE = Path(__file__).parent
 LEDGER = HERE.parent / "docs" / "ledger"   # 판정 대장 (glossary·voices)
 sys.path.insert(0, str(HERE))
-from batch import URL, key_of, worth_rewriting  # noqa: E402
+from batch import URL, key_of, or_extras, worth_rewriting  # noqa: E402
 
 JOIN = HERE / "data/map-speaker-join.jsonl.gz"
 PERSONA = HERE / "persona-table.jsonl"
@@ -95,6 +95,26 @@ def build_prompt():
     return body.replace("[용어 규칙 — glossary.md 본문 삽입]", gloss)
 
 
+def harvest(arr, out=None):
+    """답에서 (행 id → 번역)만 캔다 — **어떤 항목 하나도 답 전체를 버리게 하지 않는다.**
+
+    묶음 요청(batch_pages --pack)에선 입력이 장면별로 묶여 나가는데, 모델이 그 꼴을
+    따라 `[{"scene": …, "rows": [{"id","ko"}, …]}, …]`로 답하는 회차가 있다. 「id 없는
+    항목이면 KeyError」였던 옛 판은 그럴 때 세 번 재시도하고 빈손으로 돌아왔고, 한
+    요청에 실린 열여섯 페이지가 통째로 단독 요청 강등됐다(2026-08-13 실측). 꼴을
+    가리지 말고 캐되, 못 캔 행은 호출한 쪽이 누락으로 셈한다.
+    """
+    out = {} if out is None else out
+    for a in arr if isinstance(arr, list) else []:
+        if not isinstance(a, dict):
+            continue
+        if isinstance(a.get("rows"), list):        # 장면으로 묶어 답한 판
+            harvest(a["rows"], out)
+        elif a.get("id") is not None and isinstance(a.get("ko"), str):
+            out[str(a["id"])] = a["ko"]
+    return out
+
+
 def ask_npc(key, model, prompt, reqrows, attempt=0, effort="low"):
     """batch.ask의 npc 필드 포함판(원본은 speaker/es/ko만 직렬화한다)."""
     system = prompt
@@ -110,7 +130,7 @@ def ask_npc(key, model, prompt, reqrows, attempt=0, effort="low"):
                "messages": [
                    {"role": "system", "content": system},
                    {"role": "user", "content": json.dumps(reqrows, ensure_ascii=False)}],
-               **({"usage": {"include": True}} if "openrouter" in URL else {})}
+               **or_extras()}
     req = urllib.request.Request(URL, data=json.dumps(payload).encode(),
                                  headers={"Authorization": "Bearer " + key,
                                           "Content-Type": "application/json"})
@@ -120,8 +140,7 @@ def ask_npc(key, model, prompt, reqrows, attempt=0, effort="low"):
         text = body["choices"][0]["message"]["content"]
         cost = float(body.get("usage", {}).get("cost") or 0)
         arr = json.loads(_re.search(r"\[.*\]", text, _re.S).group(0))
-        return {str(a["id"]): a["ko"] for a in arr
-                if isinstance(a, dict) and isinstance(a.get("ko"), str)}, cost
+        return harvest(arr), cost
     except Exception as e:
         if getattr(e, "code", None) == 402:
             # 크레딧 소진 — 재시도 무의미. 계속 돌면 전 행 「누락」 쓰레기 페이지가

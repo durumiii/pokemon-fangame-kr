@@ -48,6 +48,39 @@ if os.environ.get("Z_BACKEND") == "openrouter":
     KEY_NAME = "OPENROUTER_API_KEY"
 CHUNK_ROWS = 40  # 한 요청의 행 수. 60 이하 맵은 통째로 간다(장면 유지)
 
+# openrouter 전용 요청 곁가지 — 실비용 회신과 처리 티어. **저가 티어는 여기 한 곳에서**
+# 정해 모든 도구(배치·선별·판별)가 함께 탄다.
+#
+# `service_tier: "flex"`는 같은 모델을 같은 provider에서 **정가의 절반**으로 판다
+# (google/gemini-3.6-flash 기준 in 1.5→0.75 · out 7.5→3.75 $/M, 모델 endpoints API의
+# `google-ai-studio/flex` 태그). 실측 2026-08-13(같은 요청 전문 5,401+1,2xx토큰):
+# 기본 $0.016982 → flex $0.008641(정확히 절반) · 지연 7.1s→7.2s · 응답 정상.
+# 값을 안 내는 다른 길도 함께 쟀다 — `provider: {"sort": "price"}` $0.017717 ·
+# 모델 `:floor` 접미사 $0.017540(둘 다 토큰 단가가 그대로다. 이 모델은 provider가
+# Google 하나뿐이라 가격 정렬이 고를 것이 없다). `…:batch` 모델은 동률(절반)이지만
+# 동기 호출을 404로 막고 `/api/beta/batches`(비동기)를 요구해 배선하지 않았다.
+#
+# 공식 문서(openrouter.ai/docs/guides/features/service-tiers)도 같은 말을 한다 —
+# 「the flex tier offers a 50% discount in exchange for **higher latency and lower
+# availability**」. 값은 `flex`·`priority`(별칭 `fast`)이고 Google AI Studio·Vertex가
+# 지원 provider에 든다. **싼 대신 덜 받아 준다는 뜻이니**, 긴 실행에서 누락·오류가
+# 늘면 티어부터 의심하고 `Z_TIER=`(빈 값)로 끄면 정가 경로로 돌아간다. 다른 값을
+# 주면 그대로 실린다.
+#
+# 참고: `provider: {"max_price": {...}}`도 실재한다($/M 단위). 실측에서 404
+# 「No endpoints found that satisfy the max price」가 난 것은 파라미터가 없어서가
+# 아니라 천장을 정가 밑으로 걸어 고를 endpoint가 없었기 때문이다 — 값을 내리는
+# 길이긴 하나 service_tier가 곧바르다.
+SERVICE_TIER = os.environ.get("Z_TIER", "flex")
+
+
+def or_extras():
+    """openrouter일 때만 붙는 요청 키. llmgateway 경로는 예전 그대로 빈 dict."""
+    if "openrouter" not in URL:
+        return {}
+    return {"usage": {"include": True},
+            **({"service_tier": SERVICE_TIER} if SERVICE_TIER else {})}
+
 sys.path.insert(0, str(HERE))
 from validate import check  # noqa: E402  (7종 검사 재사용)
 
@@ -180,7 +213,7 @@ def ask(key, prompt, rows, attempt=0):
         {"role": "system", "content": prompt},
         {"role": "user", "content": json.dumps(
             [{"id": r["id"], "speaker": r["speaker"], "es": r["es"], "ko": r["ko"]} for r in rows],
-            ensure_ascii=False)}]}
+            ensure_ascii=False)}], **or_extras()}
     req = urllib.request.Request(URL, data=json.dumps(payload).encode(),
                                  headers={"Authorization": "Bearer " + key,
                                           "Content-Type": "application/json"})

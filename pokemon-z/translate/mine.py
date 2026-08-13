@@ -34,7 +34,7 @@ PASSES = [("luna1", "gpt-5.6-luna"), ("luna2", "gpt-5.6-luna"), ("glm1", "glm-5.
 
 sys.path.insert(0, str(HERE))
 from batch import (CHUNK_ROWS, HAN, SPK, frozen_keys, key_of,  # noqa: E402
-                   read_jsonl, worth_rewriting)
+                   or_extras, read_jsonl, worth_rewriting)
 
 # 재현율 측정으로 보정된 점검표 프롬프트(pilot/recall_probe.py PROMPT_CHECKLIST와
 # 동일 본문). 열린 질문 대비 luna 재현이 4/10 → 7/10.
@@ -110,7 +110,8 @@ def spent() -> float:
 def ask(key, model, rows, attempt=0):
     payload = {"model": model, "temperature": 0.0,
                "messages": [{"role": "system", "content": PROMPT},
-                            {"role": "user", "content": json.dumps(rows, ensure_ascii=False)}]}
+                            {"role": "user", "content": json.dumps(rows, ensure_ascii=False)}],
+               **or_extras()}
     req = urllib.request.Request(URL, data=json.dumps(payload).encode(),
                                  headers={"Authorization": "Bearer " + key,
                                           "Content-Type": "application/json"})

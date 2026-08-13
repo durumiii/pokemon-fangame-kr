@@ -30,7 +30,7 @@ from pathlib import Path
 
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
-from batch import MODEL, URL, key_of  # noqa: E402
+from batch import MODEL, URL, key_of, or_extras  # noqa: E402
 
 PROMPT = """\
 너는 스페인어 원문과 그 한국어 번역을 대조해 **손볼 곳이 있는 행만** 골라내는 검수자다.
@@ -87,7 +87,8 @@ def ask(key, model, effort, system, rows, attempt=0):
     payload = {"model": model, "temperature": 0, "reasoning_effort": effort,
                "messages": [{"role": "system", "content": system},
                             {"role": "user",
-                             "content": json.dumps(rows, ensure_ascii=False)}]}
+                             "content": json.dumps(rows, ensure_ascii=False)}],
+               **or_extras()}
     req = urllib.request.Request(
         URL, data=json.dumps(payload).encode(),
         headers={"Authorization": "Bearer " + key, "Content-Type": "application/json"})

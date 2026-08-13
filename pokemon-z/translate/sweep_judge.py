@@ -18,7 +18,7 @@ from pathlib import Path
 
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
-from batch import URL, key_of  # noqa: E402
+from batch import URL, key_of, or_extras  # noqa: E402
 
 OUT = HERE / "batch" / "npc-out"
 CHUNKS = HERE / "batch" / "npc-chunks.jsonl"
@@ -45,7 +45,8 @@ new는 화자 지침(npc)을 반영한 재번역이다.
 def ask(key, rows, attempt=0):
     payload = {"model": MODEL, "temperature": 0.0, "reasoning_effort": "minimal",
                "messages": [{"role": "system", "content": PROMPT},
-                            {"role": "user", "content": json.dumps(rows, ensure_ascii=False)}]}
+                            {"role": "user", "content": json.dumps(rows, ensure_ascii=False)}],
+               **or_extras()}
     req = urllib.request.Request(URL, data=json.dumps(payload).encode(),
                                  headers={"Authorization": "Bearer " + key,
                                           "Content-Type": "application/json"})

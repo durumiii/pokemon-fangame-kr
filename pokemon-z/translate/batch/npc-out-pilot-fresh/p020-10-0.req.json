@@ -1,0 +1,230 @@
+{
+ "system": "\n\nYou translate a Pokémon fangame (Spanish original, monarchic Kalos setting) into\nKorean. Input is a JSON array; each item is {\"id\", \"who\", \"es\"}. `who` is the\nspeaker's name, `es` is the Spanish source.\n\n**The items are one complete event page, in game order — a single scene.** A scene\nheader at the end of this prompt lists the speakers present and how each one talks.\n\nTranslate every `es` into Korean dialogue for the game's text box. Write it as the\nKorean release of this game would read — not as a gloss of the Spanish.\n\n### Speech-level rules\n\nA. Follow the per-speaker style in the scene header, but **rewrite the sentence\n   whole** — swapping only the ending kills the rhythm. For 반말, use living\n   spoken forms (「~어/~야/~지/~잖아/~거든」); a string of narrative 「~다.」 is wrong.\nB. **Many characters change speech level by addressee.** When the header gives\n   branches (\"존대 to A, 반말 to B\"), decide **who the line is spoken to** from the\n   scene — the surrounding lines, who answers, what vocative is used. A character\n   who turns to a different listener changes level mid-scene.\nC. **The Spanish register is the final authority.** Check how the source addresses\n   the listener: `tú` (familiar sg) · `usted` (formal sg) · `vosotros` (familiar pl)\n   · `vos` (archaic formal sg).\n   - `usted` is more often *unmarked as a word*: it shows only through `le`/`su` and\n     3rd-person verbs (`Puede estar tranquilo`, `Como le he dicho`). Absence of the\n     word is not evidence of familiarity.\n   - `vos`-family endings (`-áis`/`-éis`/`os`/`vuestro`) are **usually plural**\n     (addressing the party). They are the archaic honorific only when the same line\n     carries singular evidence — a singular vocative (`Maese Hibis`, `maese Crisanto`)\n     or a singular adjective (`Vos sois responsable`). That honorific is court/knightly\n     etiquette between ranking figures and is **independent of hostility**.\nD. A 존대 speaker may mix 해요체 and 합쇼체 by function: greetings, invitations and\n   feeling in 해요체; declarations, procedure and reports in 합쇼체.\nE. A 존대 speaker may drop to 반말 in exactly four places: talking to themselves,\n   exclamation or realization (「~구나!」「~다니!」), echoing a question back\n   (「~다고?」), and song or quotation. Nowhere else. **Consecutive lines to the same\n   listener must not wobble between levels.**\nF. Korean has many natural endings for one speech level. Don't normalize them —\n   short exclamations in 「~다」, assertive 「~거다」, 「~구나」, 「~는걸」 all belong to\n   ordinary 반말 and should survive.\nG. Male/female variant pairs of one line (`un intruso` / `una intrusa`) keep their\n   distinction, and **must not disagree in speech level** with each other.\nH. Do not invent interjections, laughter or self-titles that are absent from the\n   source, and do not drop ones that are there. Follow the source. Render\n   onomatopoeia by the standard Korean convention (`*Ejem*`→`*에헴*`) — do not\n   substitute a different sound of your own.\nI. The player character (\\PN) has no fixed gender or age. Never invent gendered or\n   age-based address terms (「오빠/누나/언니/아가씨/총각」). Use only titles present\n   in the source.\n\n### Naturalness rules (Korean that does not read as translated)\n\nJ. Sentence-initial connective adverbials (`En concreto,` `De hecho,` `Por lo\n   visto,`) usually vanish in Korean dialogue — context already links the\n   sentences. Fold the nuance into the ending or drop it:\n   `En concreto, sientes la presencia…` → 「아주 강력한 …의 기운이 느껴진다.」\nK. Translate idiom with idiom. When the Spanish uses a set phrase, reach for the\n   Korean set phrase with the same meaning before rendering the image word by\n   word: `bailar al son de la flauta de X` → 「X의 장단에 놀아나다」,\n   `el largo y férreo estoque de la ley` → 「법의 철퇴」. Only when no\n   counterpart exists, unfold the meaning in plain words.\nL. Unwind noun-chain calques into verb endings: 「~하는 것은 위험합니다」 →\n   「~는 건 위험하다」, 「~한 상태로」 → 「~한 채로」. Counts follow Korean habit\n   in prose: `solo 1 Pokémon` → 「포켓몬이 하나뿐」.\nM. Spanish demonstratives and intensifiers (`ese/esta`, `completa`, `realmente`)\n   that only fill rhythm read as translationese — render the sentence without\n   them when they carry no information. (That is not dropping a fact.)\nN. Confirm-box questions and choice labels are the player's own voice, not an\n   NPC asking the player: `¿Quieres abrir la puerta?` at a locked door →\n   「잠긴 문을 열까?」; a choice `Acepto` → 「그렇게 하죠」. Self-question\n   endings, dialogue-style buttons.\nO. For stock situations the series-canon phrasing wins over a literal rendering:\n   `¡Pero no tuvo ningún efecto!` → 「그러나 아무 일도 일어나지 않았다!」;\n   item pickup `ha encontrado`/`found` → 「얻었다」. When the official Korean\n   games have a fixed line for the situation, use it.\nP. A Pokémon's cry echoes its own species name — rebuild it from the Korean\n   name, not the Spanish (`Luuuull…` of Morelull → 「자마아…」 of 자마슈).\nQ. Mind relative-clause scope: in `que …, pero …` the `pero` may still be inside\n   the relative clause. Check what the second verb attaches to before rendering,\n   or the meaning flips.\n\n### Preservation rules (violations are auto-rejected by machine validation)\n\n1. Translate the meaning exactly. Do not add or drop facts, numbers or names; do not\n   add modifiers absent from the source; do not change a verb to a different sense.\n2. **Formatting tags and speaker prefixes have been removed before you see this\n   text, and are restored mechanically afterwards. Write plain Korean — never add\n   `<b>`, `<i>`, `\\c[n]`, or a `이름:` prefix of your own.** Placeholders that carry\n   meaning are still present and must be kept exactly as they appear, in the same\n   count: \\PN, \\v[n], \\se[..], \\wt[..], \\m, \\TP, \\TE, \\TM, <icon=..>, <r>,\n   \\j[받침형,무받침형], {1}-style slots, and a trailing \\x01.\n   Keep the same number of newline characters as `es`.\n3. Keep proper nouns and game terms exactly as the term rules below give them.\n   French/Russian *exclamations and interjections* stay in the Latin script\n   (`alors`, `d'accord`, `Mon Dieu!`, `Sacrebleu!`, `Merci beaucoup!`). But a\n   French phrase *woven into the sentence* as an ordinary word (a polite\n   `s'il vous plait` mid-sentence) is translated into Korean like any other word.\n   **Address titles are transliterated: monsieur→무슈, madame→마담,\n   mademoiselle→마드모아젤.**\n4. Keep it inside a text box — roughly the length of the Spanish line, never padded\n   out with explanation.\n5. Write dialogue, not subtitles. Contractions, particles and rhythm that a Korean\n   player would read aloud naturally.\n\nOutput only a JSON array: [{\"id\": \"<id as given>\", \"ko\": \"<Korean translation>\"}, …]\nInclude every input item. No prose, no comments, no code fences.\n\n### Term rules (apply exactly)\n\n- Never touch proper nouns: person, place, species, move, item and ability names keep\n  their current Korean spelling even if the transliteration looks odd.\n- damage is 「데미지」 (not 대미지). Franchise vocabulary: 배틀 · 트레이너 · 체육관 ·\n  기술머신 · 몬스터볼 · 도감. Status: 독/맹독/화상/마비/잠듦/얼음.\n- The currency pokécuartos/pokéfrancos is 「포켓프랑」.\n- Setting is monarchic Kalos: keep rank address (폐하·전하·경·마담·무슈); do not\n  modernize. French/Russian exclamations stay Latin (Mon Dieu!, Sacrebleu!,\n  Merci beaucoup!, Blyat); phrases woven into the sentence (a mid-sentence\n  s'il vous plait) are translated. Address titles are transliterated:\n  monsieur→무슈, madame→마담, mademoiselle→마드모아젤. Italian `Mamma mia`→「맘마미아」.\n- máscara → 마스크 (not 가면).\n- Kill translationese: 「~에 대해」→ object particle; 「~하는 것이 가능하다」→\n  「~할 수 있다」; no double passive 「~되어진다」; ¡Qué …! becomes 「정말 ~구나!」\n  not 「얼마나 ~한가!」.\n- Regente → 섭정\n- Poketour → 포켓투어\n- Aspirante → 후보생\n- Rosillon → 로시욘\n- chateau → 저택\n- Mosquetero → 총사\n- Mosquetera → 총사\n- Lanto → 란토\n- Canola → 카놀라\n- Menta → 민트\n- Ruta 3 → 3번도로\n- Ciudad Yantra → 사라시티\n- Casa → 집\n- Chateau Rosillon → 로시욘 저택\n- Kalos → 칼로스\n- 12 Regentes → 12명의 섭정\n- PokéTour → 포켓투어\n- Incubadora → 부화기\n- Machamp → 괴력몬\n- monsieur → 무슈\n- regente → 섭정\n\n\n**This request carries several scenes.** The user message is a JSON array of scenes:\n[{\"scene\": \"<scene id>\", \"rows\": [ …items in the shape described above… ]}, …].\nEach `rows` array is one complete event page in game order — one scene. Treat the\nscenes separately: never carry context, addressee or speech level from one scene\ninto another. The scene list below says which speakers stand in each scene.\nOutput remains ONE flat JSON array of {\"id\", \"ko\"} covering every item of every\nscene, in the order given. Do **not** group the output by scene and do not echo\nthe `scene` key — the `id` of each item already says which scene it belongs to.\n\nSpeakers and how each talks (「본보기」 lines are approved translations — match their texture):\n- nina: 시골 여자아이. 또래엔 반말, 낯선 어른에게는 해요체 [어미: B1(어른 상대만 B2)]\n- anciana: 할머니. 어른말로 다정하게(「~란다」「~겠니」) [어미: B4]\n- mosqueteraw: 여성 총사. 거침없는 반말에 호승심이 강하고, 경고할 땐 「~겠다」로 단정한다 [어미: B1변형]\n- campesinaw: 시골 아낙 차림의 젊은 여자. 스스럼없고 살가운 반말 [어미: B1]\n- campesinow: 시골 청년. 허물없는 반말, 소심하고 솔직한 결 [어미: B1]\n- anciano: 인심 좋은 백발 노인. 어른말 기본(「~라네」「~구먼」「~단다」), 손아랫사람에게 다정 [어미: B4]\n- metre: 요새·체육관 안내를 맡은 집사장. 절도 있는 합쇼체가 기본이고 손님을 맞을 때만 해요로 누그러진다. 「후보생님」 호칭을 쓴다 [어미: B3+B2]\n- 총사: 보고체 합쇼체. 상관 호칭(대장님) 정확히 — 해적 선원만 선장님\n    · 본보기(존대): 악기를 다루는 저 놀라운 재능은 언제나 온 마을 사람들을 매료시킨다니까요!\n    · 본보기(존대): 다시 한번 송구합니다만, <i>무슈</i>, 마차가 점점 가까워지고 있습니다.\n- : 화자 미상 — 장면의 다른 대사 결에 맞추고, 새 개성·말버릇을 만들지 않는다. 격은 현행을 유지한다.\n- burguesow: 백발 가발의 중년 신사. 정중하지만 오만한 해요체, 신분·재산 과시 어휘 [어미: B2(설명·선언은 B3, 자기 과시 대목은 반말 「~거다」 허용)]\n- burguesaow: 사교계 귀부인. 정중한 해요체, 어휘는 은근히 오만(「~하시죠」「~인가 보네요」) [어미: B2(사실·시설 설명 문장만 B3)]\n- cantanteow: 무대 가수. 들뜬 해요체, 감탄이 잦음 [어미: B2]\n- hombre2: 멋 부린 젊은 남자. 편한 반말로 자기 취향을 늘어놓고 남의 사정에 훈수를 둔다 [어미: B1]\n- criada: 저택 하녀. 공손한 합쇼체, 사담에서는 해요체로 누그러짐 [어미: B3+B2]\n- mosqueterow: 왕실 총사. 시원시원한 반말에 군대식 단정 「~다」가 섞인다. 임무·법 집행을 말할 때만 격식을 갖춘다 [어미: B1변형(공무·통보 문장은 B3)]\n- mujer2: 살림하는 마을 아낙. 담백한 반말 [어미: B1]\n\nScenes in this request (in the order the user message gives them):\n- [p004-16-1] 집 (map 4), event 「EV016」 — speakers: nina\n- [p004-19-0] 집 (map 4), event 「EV019」 — speakers: anciana\n- [p004-22-0] 집 (map 4), event 「EV022」 — speakers: mosqueteraw\n- [p007-8-0] 1번도로 (map 7), event 「EV008」 — speakers: campesinaw\n- [p012-22-0] 메를로 저택 (map 12), event 「EV022」 — speakers: campesinow\n- [p018-14-0] 포켓몬센터 (map 18), event 「EV014」 — speakers: anciano\n- [p020-10-0] 포켓몬 요새 (map 20), event 「EV010」 — speakers: metre\n- [p020-15-0] 포켓몬 요새 (map 20), event 「EV015」 — speakers: 총사\n- [p023-7-0] 3번도로 (map 23), event 「size(1,4)」 — speakers: \n- [p035-24-0] 로시욘 저택 (map 35), event 「EV024」 — speakers: burguesow\n- [p035-25-0] 로시욘 저택 (map 35), event 「EV025」 — speakers: burguesaow\n- [p036-16-0] 로시욘 저택 (map 36), event 「EV016」 — speakers: cantanteow\n- [p036-41-0] 로시욘 저택 (map 36), event 「EV041」 — speakers: hombre2\n- [p037-26-1] 로시욘 저택 (map 37), event 「EV026」 — speakers: criada\n- [p037-27-0] 로시욘 저택 (map 37), event 「EV027」 — speakers: mosqueterow\n- [p048-4-0] 포켓몬키우미집 (map 48), event 「EV004」 — speakers: mujer2\n",
+ "user": [
+  {
+   "scene": "p004-16-1",
+   "rows": [
+    {
+     "id": "4:16:1:0",
+     "who": "nina",
+     "es": "¡Guau! ¡Tu Pokémon inicial ha evolucionado! Eso significa que ya debe de quererte mucho."
+    },
+    {
+     "id": "4:16:1:1",
+     "who": "nina",
+     "es": "Un Pokémon no puede hacerse más fuerte si no confía en su entrenador, me explicaron mis padres."
+    }
+   ]
+  },
+  {
+   "scene": "p004-19-0",
+   "rows": [
+    {
+     "id": "4:19:0:0",
+     "who": "anciana",
+     "es": "Ahí van un par de cosas importantes que tienes que saber sobre Kalos."
+    },
+    {
+     "id": "4:19:0:1",
+     "who": "anciana",
+     "es": "Ahora mismo, el rey es Áster Zephir II. Un hombre bastante sabio, pero de escaso coraje en opinión de muchos."
+    },
+    {
+     "id": "4:19:0:2",
+     "who": "anciana",
+     "es": "Pero por debajo de él hay 12 señores y señoras regentes que gobiernan distintos feudos."
+    },
+    {
+     "id": "4:19:0:3",
+     "who": "anciana",
+     "es": "Les llamamos los 12 Regentes, sin más."
+    }
+   ]
+  },
+  {
+   "scene": "p004-22-0",
+   "rows": [
+    {
+     "id": "4:22:0:0",
+     "who": "mosqueteraw",
+     "es": "Si bajas a la playa del pueblo, verás los restos de una antigua torre de guardia."
+    },
+    {
+     "id": "4:22:0:1",
+     "who": "mosqueteraw",
+     "es": "La puerta está sellada con una extraña tecnología de Ciudad Yantra, ¿es que hay algo peligroso dentro?"
+    }
+   ]
+  },
+  {
+   "scene": "p007-8-0",
+   "rows": [
+    {
+     "id": "7:8:0:0",
+     "who": "campesinaw",
+     "es": "¡Uf, puf! Tardaremos un poco en quitar a estos Pokémon de en medio, danos algo de tiempo."
+    }
+   ]
+  },
+  {
+   "scene": "p012-22-0",
+   "rows": [
+    {
+     "id": "12:22:0:0",
+     "who": "campesinow",
+     "es": "Existe un Pokémon capaz de producir vino de forma natural."
+    },
+    {
+     "id": "12:22:0:1",
+     "who": "campesinow",
+     "es": "Si usáramos más a ese Pokémon, no tendríamos que cultivar tantas vides y podríamos aprovechar el terreno para otra cosa."
+    }
+   ]
+  },
+  {
+   "scene": "p018-14-0",
+   "rows": [
+    {
+     "id": "18:14:0:0",
+     "who": "anciano",
+     "es": "Me preocupan mucho los robos de Pokémon que se están produciendo últimamente."
+    },
+    {
+     "id": "18:14:0:1",
+     "who": "anciano",
+     "es": "La vida era más dura en mis años mozos, pero no recuerdo que las personas llegasen a esos extremos de vileza."
+    }
+   ]
+  },
+  {
+   "scene": "p020-10-0",
+   "rows": [
+    {
+     "id": "20:10:0:0",
+     "who": "metre",
+     "es": "¡Hola, Aspirante! Este bastión se especializa en el tipo Lucha."
+    },
+    {
+     "id": "20:10:0:1",
+     "who": "metre",
+     "es": "Antes de enfrentarte a Canola, los mosqueteros querrán ponerte a prueba. ¡Te aconsejo encarecidamente que no los subestimes!"
+    },
+    {
+     "id": "20:10:0:4",
+     "who": "metre",
+     "es": "¡Buena suerte en tu primer reto del PokéTour!"
+    }
+   ]
+  },
+  {
+   "scene": "p020-15-0",
+   "rows": [
+    {
+     "id": "20:15:0:3",
+     "who": "총사",
+     "es": "¿Es el tipo Roca muy eficaz contra el tipo Lucha?"
+    }
+   ]
+  },
+  {
+   "scene": "p023-7-0",
+   "rows": [
+    {
+     "id": "23:7:0:1",
+     "who": "",
+     "es": "La Ruta 3 es peligrosa para alguien tan principiante como tú."
+    },
+    {
+     "id": "23:7:0:2",
+     "who": "",
+     "es": "¿Por qué no vas primero al encuentro de la regente Canola?"
+    }
+   ]
+  },
+  {
+   "scene": "p035-24-0",
+   "rows": [
+    {
+     "id": "35:24:0:0",
+     "who": "burguesow",
+     "es": "¿Crees que los Pokémon de tipo Agua utilizan su sudor para atacar? ¿O algún otro tipo de fluido corporal?"
+    }
+   ]
+  },
+  {
+   "scene": "p035-25-0",
+   "rows": [
+    {
+     "id": "35:25:0:0",
+     "who": "burguesaow",
+     "es": "Así que esto es Chateau Rosillon... reconozco que no está nada mal. Pero he estado en casas mejores."
+    }
+   ]
+  },
+  {
+   "scene": "p036-16-0",
+   "rows": [
+    {
+     "id": "36:16:0:0",
+     "who": "cantanteow",
+     "es": "¿Has conocido a monsieur Lanto? Pues ten mucho cuidado con él."
+    },
+    {
+     "id": "36:16:0:1",
+     "who": "cantanteow",
+     "es": "Tiene unos apetitos muy... extraños. Circulan rumores perturbadores sobre sus actividades de ocio."
+    }
+   ]
+  },
+  {
+   "scene": "p036-41-0",
+   "rows": [
+    {
+     "id": "36:41:0:0",
+     "who": "hombre2",
+     "es": "Practico el baile con mis Pokémon, ¡he adquirido cierta destreza!"
+    }
+   ]
+  },
+  {
+   "scene": "p037-26-1",
+   "rows": [
+    {
+     "id": "37:26:1:0",
+     "who": "criada",
+     "es": "Supongo que a la gente tan rica le da bastante igual perder las cosas a no ser que tengan un gran valor sentimental."
+    }
+   ]
+  },
+  {
+   "scene": "p037-27-0",
+   "rows": [
+    {
+     "id": "37:27:0:0",
+     "who": "mosqueterow",
+     "es": "¿Que los Pokémon no pueden ser violentos? Mi abuelo perdió un brazo echándole un pulso a un Machamp..."
+    }
+   ]
+  },
+  {
+   "scene": "p048-4-0",
+   "rows": [
+    {
+     "id": "48:4:0:0",
+     "who": "mujer2",
+     "es": "¿Te interesa criar Pokémon? Entonces necesitarás esto."
+    },
+    {
+     "id": "48:4:0:3",
+     "who": "mujer2",
+     "es": "Con la Incubadora, podrás almacenar Huevos Pokémon de forma segura sin usar huecos de tu equipo."
+    },
+    {
+     "id": "48:4:0:4",
+     "who": "mujer2",
+     "es": "Ahora, ¡a caminar mucho para hacerlos eclosionar!"
+    }
+   ]
+  }
+ ]
+}
