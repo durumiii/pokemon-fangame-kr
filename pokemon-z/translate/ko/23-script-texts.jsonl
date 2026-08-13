@@ -3093,7 +3093,7 @@
 {"k": "¿Seguro que quieres tirar {1} {2}?", "v": "정말 {1} {2}\\j[을,를] 버릴까?"}
 {"k": "¡Has tirado {1} {2}!", "v": "{1} {2}\\j[을,를] 버렸다!"}
 {"k": "Retirar", "v": "볼에 넣는다"}
-{"k": "Has seleccionado {1}.", "v": "{1}\\j[을,를] 선택했다."}
+{"k": "Has seleccionado {1}.", "v": "{1}\\j[을,를] 어떻게 할까?"}
 {"k": "¿Cuántos quieres retirar?", "v": "몇 개를 꺼낼까?"}
 {"k": "No hay más espacio en la Mochila.", "v": "가방에 자리가 없다."}
 {"k": "Retiraste {1} {2}(s).", "v": "{1}의 {2}\\j[을,를] 꺼냈다."}
@@ -3103,7 +3103,7 @@
 {"k": "No hay espacio para guardar objetos.", "v": "도구를 보관할 공간이 없다."}
 {"k": "Se depositó {1} {2}(s).", "v": "{1} {2}\\j[을,를] 맡겼다."}
 {"k": "Tirar", "v": "버린다"}
-{"k": "Deseleccionar", "v": "리셋"}
+{"k": "Deseleccionar", "v": "해제"}
 {"k": "Registrar", "v": "등록한다"}
 {"k": "No se puede llevar {1}.", "v": "{1}\\j[은,는] 지닐 수 없다."}
 {"k": "¿Cuántos {1} quieres tirar?", "v": "{1}\\j[을,를] 몇 개 버릴까?"}
@@ -3974,7 +3974,7 @@
 {"k": "Cebo", "v": "먹이"}
 {"k": "Piedra", "v": "돌"}
 {"k": "Llamar", "v": "Llamar"}
-{"k": "{1} está seleccionado.", "v": "{1}\\j[이,가] 선택되어 있다."}
+{"k": "{1} está seleccionado.", "v": "{1}\\j[을,를] 어떻게 할까?"}
 {"k": "¿En qué Pokémon usarlo?", "v": "어느 포켓몬에게 쓸까?"}
 {"k": "Sin objetivo por alguna razón...", "v": "어째선지 대상이 없다..."}
 {"k": "PS Máx.<r>+{1}\nAtaque<r>+{2}\nDefensa<r>+{3}\nAt. Esp<r>+{4}\nDef. Esp<r>+{5}\nVelocidad<r>+{6}", "v": "최대HP<r>+{1}\r\n공격<r>+{2}\r\n방어<r>+{3}\r\n특수공격<r>+{4}\r\n특수방어<r>+{5}\r\n스피드<r>+{6}"}

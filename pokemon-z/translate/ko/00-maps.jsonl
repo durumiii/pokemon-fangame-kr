@@ -1793,7 +1793,7 @@
 {"k": "Además, ¡la profe estará orgullosa de nosotros si lo hacemos!", "v": "게다가 이렇게 하면 박사님도 우리를 자랑스러워하실 거야!"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡O-otra vez casi le pasa una desgracia a esta chica sin que se haya dado cuenta!", "v": "\\c[3]<b>크리산토:</b>\\c[0] 또, 또 자기도 모르는 사이에 큰일 날 뻔했잖아!"}
 {"k": "¿Es que tiene un imán para estas cosas o qué? ¡Debería andarse con más ojo!", "v": "이런 일에 자석이라도 달린 건가? 좀 더 조심해야지!"}
-{"k": "No tenemos señor regente en <b>Pueblo Profano</b>. Tendrás que dirigirte a <b>Ciudad Novarte</b> si quieres desafiar a uno.", "v": "흠... 그렇군... <b>프로파노마을</b>에는 섭정이 없다... 승부를 겨루고 싶다면 <b>백단시티</b>로 가야 할 것이다."}
+{"k": "No tenemos señor regente en <b>Pueblo Profano</b>. Tendrás que dirigirte a <b>Ciudad Novarte</b> si quieres desafiar a uno.", "v": "흠... 그렇군... <b>프로파노마을</b>에는 섭정이 없어... 승부를 겨루고 싶다면 <b>백단시티</b>로 가야 할 것이야."}
 {"k": "Yo viví el reinado del padre del <b>Rey Áster</b>.", "v": "나는 <b>아스테르</b> 왕의 부왕 시절을 직접 겪은 사람이라네."}
 {"k": "Era un rey de fuerte carácter, pero derrochador y frívolo. Dejó una región prácticamente arruinada.", "v": "성품은 강인했으나 사치스럽고 경박했지... 결국 지방을 거의 폐허로 만들어 놓았다네."}
 {"k": "Creo que su hijo <b>Áster</b> está pagando el precio de su desastroso legado.", "v": "그 아들인 <b>아스테르</b> 왕이 참담한 유산의 대가를 치르고 있는 셈이지."}
@@ -2819,12 +2819,12 @@
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] ¡Vaya! <i>Monsieur</i> \\PN, de nuevo.", "v": "\\c[6]<b>미라:</b>\\c[0] 와! <i>무슈</i> \\PN, 또 만났네."}
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] ¡Vaya! <i>Mademoiselle</i> \\PN, de nuevo.", "v": "\\c[6]<b>미라:</b>\\c[0] 와! 또 <i>마드모아젤</i> \\PN이구나."}
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] Esta zona de <b>Kalos</b> ha quedado libre de las alimañas del <b>Team Azoth</b>.", "v": "\\c[6]<b>미라:</b>\\c[0] <b>칼로스</b>의 이 지역은 <b>아조스단</b>의 해충들로부터 해방되었다."}
-{"k": "\\c[6]<b>Mirra:</b>\\c[0] Aunque, según me he enterado, tus esfuerzos han contribuido enormemente a ello.", "v": "\\c[6]<b>미라:</b>\\c[0] 하지만 내가 듣기로는, 당신의 노력이 그에 크게 기여했다고 한다."}
+{"k": "\\c[6]<b>Mirra:</b>\\c[0] Aunque, según me he enterado, tus esfuerzos han contribuido enormemente a ello.", "v": "\\c[6]<b>미라:</b>\\c[0] 하지만 내가 듣기로는, 네 노력이 그에 크게 기여했다고 한다."}
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] Dime, \\PN. Como Aspirante, ¿tu amor por los Pokémon es incondicional?", "v": "\\c[6]<b>미라:</b>\\c[0] \\PN, 말해 봐. ‘도전자’로서, 포켓몬을 향한 네 사랑에는 조건이 없니?"}
-{"k": "No esperaba menos. Acabarás desarrollando un gran vínculo con ellos si sigues recorriendo esta senda.", "v": "그럴 줄 알았어요. 이 길을 계속 걷다 보면 그들과 깊은 유대를 쌓게 될 거예요."}
-{"k": "Entiendo. Sin embargo, te aseguro que acabarás desarrollando un gran vínculo con ellos si sigues recorriendo esta senda.", "v": "알겠습니다. 하지만 이 길을 계속 걷다 보면 분명 그들과 깊은 유대를 쌓게 될 겁니다."}
+{"k": "No esperaba menos. Acabarás desarrollando un gran vínculo con ellos si sigues recorriendo esta senda.", "v": "그럴 줄 알았다. 이 길을 계속 걷다 보면 그들과 깊은 유대를 쌓게 될 것이다."}
+{"k": "Entiendo. Sin embargo, te aseguro que acabarás desarrollando un gran vínculo con ellos si sigues recorriendo esta senda.", "v": "알겠다. 하지만 이 길을 계속 걷다 보면 분명 그들과 깊은 유대를 쌓게 될 것이다."}
 {"k": "Tú y yo perseguimos lo mismo: castigar a aquellos que profanan y oprimen tanto a las personas como a los Pokémon.", "v": "너와 나는 같은 목적을 좇고 있다. 바로 사람과 포켓몬을 모독하고 억압하는 자들을 처벌하는 것이다."}
-{"k": "Quédate con esto como gesto de una potencial alianza entre nosotros dos.", "v": "이것을 우리 둘의 동맹 가능성을 나타내는 증표로 받아주십시오."}
+{"k": "Quédate con esto como gesto de una potencial alianza entre nosotros dos.", "v": "이것을 우리 둘의 동맹 가능성을 나타내는 증표로 받아 두어라."}
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] Tengo un asentamiento en <b>Pueblo Bodegón</b>, al sur de aquí.", "v": "\\c[6]<b>미라:</b>\\c[0] 이곳에서 남쪽으로 <b>보데곤마을</b>에 정착지가 하나 있다."}
 {"k": "Si necesitas auxilio para seguir combatiendo al <b>Team Azoth</b>, búscame y trabajaremos juntos.", "v": "<b>아조스단</b>과 계속 싸워나가기 위해 도움이 필요하다면, 나를 찾아와. 함께 힘을 합치자."}
 {"k": "¡Has encontrado otra página de Alquimia Pokémon! ¡Qué emocionante!", "v": "새로운 연금술 제작법을 찾았다! 정말 신난다!"}
