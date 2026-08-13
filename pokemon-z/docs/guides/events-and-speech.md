@@ -103,7 +103,7 @@ RPG Maker 이벤트는 겉모양이 같아도 플레이어가 겪는 방식이 �
 
 정답표와 등재는 `translate/data/scene/`에 있다 — `labels.jsonl`(라운드째로 쌓인다) ·
 `flag-register.jsonl`(스위치 433종) · `var-register.jsonl`(변수 191종) ·
-`flag-recheck-80.jsonl`(등재 독립 재판정) · `function-npc.jsonl`(기능 창구 357페이지,
+`flag-recheck-80.jsonl`(등재 독립 재판정) · `counter-pages.jsonl`(기능 창구 357페이지,
 채점 게이트가 이것을 뺀다) · `lost-flag-labels.jsonl`(2026-08-14 등재 수선으로 플롯 신호를
 잃은 47페이지 전수 라벨 — 그중 메인스토리는 1건이었다).
 

@@ -6,7 +6,7 @@
 라벨은 `data/scene/labels.jsonl`에 라운드째로 쌓인다. 표본을 새로 뽑을 때
 이미 라벨된 자리를 빼므로, 라운드를 거듭해도 같은 페이지를 두 번 안 준다.
 
-    uv run translate/scene_eval.py sample 200 --round 2   # 블라인드 시트 만들기
+    uv run translate/scene_eval.py sample 200 --round 4   # 블라인드 시트 만들기
     uv run translate/scene_eval.py score                  # 쌓인 라벨로 신호 채점
     uv run translate/scene_eval.py score --pool 버림      # 버리는 층만
 
@@ -43,14 +43,14 @@ def load_register(name, verdict_key="판정"):
     return {r["id"]: r[verdict_key] for r in map(json.loads, path.open(encoding="utf-8"))}
 
 
-def function_npc_pages():
+def counter_pages():
     """창구 노릇이 그 페이지의 일인 자리 — 이벤트 명령의 기능 호출로 판정된다.
 
     이름표가 붙어도 상점·회복·보관·교환은 메인스토리가 아니다. 라벨 91건 대조에서
     이 목록 안에 메인스토리가 0건이라, 빼도 잃는 것이 없다(2026-08-14).
     """
     return {(r["map"], r["event"], r["page"])
-            for r in map(json.loads, (SCENE / "function-npc.jsonl").open(encoding="utf-8"))}
+            for r in map(json.loads, (SCENE / "counter-pages.jsonl").open(encoding="utf-8"))}
 
 
 def story_var_pages():
@@ -144,7 +144,7 @@ def cmd_score(args):
     pages, labels = load_pages(), read_labels()
     if not labels:
         sys.exit("라벨이 없다 — 먼저 sample로 시트를 만들어 라벨을 붙여라.")
-    fr, st, func = load_register("flag-register.jsonl"), story_var_pages(), function_npc_pages()
+    fr, st, func = load_register("flag-register.jsonl"), story_var_pages(), counter_pages()
 
     pop = Counter(stratum(k, v) for k, v in pages.items())
     samp = Counter(stratum(k, pages[k]) for k in labels if k in pages)
@@ -193,7 +193,7 @@ def cmd_score(args):
         rc = tp / (tp + fn_) if tp + fn_ else 0
         print(f"{name:34s} {pr:6.2f} {rc:6.2f} {fn_:7.0f} {missed:8d}")
     print("\n★ 이것이 현행 게이트다 — 신호 셋 중 하나라도 서되, 상점·회복·보관 같은 창구"
-          "\n  (`function-npc.jsonl`)는 뺀다. 바로 위 줄이 빼기 전 값이니 견주면 실효가 보인다.")
+          "\n  (`counter-pages.jsonl`)는 뺀다. 바로 위 줄이 빼기 전 값이니 견주면 실효가 보인다.")
     print("\n⚠ 「놓친M」은 모집단 추정치다. 옆의 「표본놓침」이 그 추정을 떠받치는 실제 관측 수이고,"
           "\n  그 수가 한 자리면 재현율은 사실상 안 재인 것이다.")
 
@@ -205,7 +205,7 @@ def main():
     s = sub.add_parser("sample", help="블라인드 시트를 뽑는다 (좌표+원문만)")
     s.add_argument("n", type=int)
     s.add_argument("--seed", type=int, default=20260814)
-    s.add_argument("--round", type=int, default=2)
+    s.add_argument("--round", type=int, default=4)
     s.add_argument("--floor", type=int, default=20, help="층마다 최소 몇 개")
     s.add_argument("--pool", choices=["전체", "버림"], default="전체")
     s.set_defaults(fn=cmd_sample)
