@@ -261,10 +261,10 @@
 {"k": "Acerca del random", "v": "랜덤에 대하여"}
 {"k": "Problemas de Joiplay", "v": "Joiplay 관련 문제"}
 {"map": 4, "n": 26}
-{"k": "¿Eso es un \\v[66]? ¡Nunca había visto uno!", "v": "그게 \\v[66]이에요? 한 번도 본 적 없어요!"}
+{"k": "¿Eso es un \\v[66]? ¡Nunca había visto uno!", "v": "그게 \\v[66]이야? 한 번도 본 적 없어!"}
 {"k": "Pensaba que ese Pokémon solo existía en los cuentos.", "v": "그런 포켓몬은 동화 속에만 나오는 줄 알았는데."}
 {"k": "¡Guau! ¡Tu Pokémon inicial ha evolucionado! Eso significa que ya debe de quererte mucho.", "v": "와! 첫 포켓몬이 진화했네! 그만큼 너를 많이 따르게 됐다는 뜻인가 봐."}
-{"k": "Un Pokémon no puede hacerse más fuerte si no confía en su entrenador, me explicaron mis padres.", "v": "포켓몬은 트레이너를 신뢰하지 않으면 더 강해질 수 없다고 우리 부모님이 그랬어요."}
+{"k": "Un Pokémon no puede hacerse más fuerte si no confía en su entrenador, me explicaron mis padres.", "v": "포켓몬은 트레이너를 신뢰하지 않으면 더 강해질 수 없다고 우리 부모님이 그랬어."}
 {"k": "Aquí solo hay basura.", "v": "여기엔 쓰레기밖에 없다."}
 {"k": "Si bajas a la playa del pueblo, verás los restos de una antigua torre de guardia.", "v": "마을 해변으로 내려가면 옛 감시탑 유적이 보일 거다."}
 {"k": "La puerta está sellada con una extraña tecnología de <b>Ciudad Yantra</b>, ¿es que hay algo peligroso dentro?", "v": "문이 <b>사라시티</b>의 기이한 기술로 봉인되어 있는데, 안에 위험한 거라도 있는 건가?"}
@@ -2781,7 +2781,7 @@
 {"k": "Si volvéis a contrariarnos...", "v": "또다시 우리를 거스른다면..."}
 {"k": "¡No dejaremos señor ni rey con cabeza!", "v": "어떤 영주도, 어떤 왕도 살아남지 못할 것이다!"}
 {"map": 76, "n": 5}
-{"k": "Estamos investigando la zona en busca de miembros del <b>Team Azoth</b>. ¿Podrías volver más tarde?", "v": "저희는 <b>아조스단원</b>을 찾으려 이 지역을 수색하고 있습니다. 나중에 다시 와 주시겠어요?"}
+{"k": "Estamos investigando la zona en busca de miembros del <b>Team Azoth</b>. ¿Podrías volver más tarde?", "v": "지금 <b>아조스단원</b>을 찾아 이 지역을 수색하는 중이다. 나중에 다시 와 줘."}
 {"k": "<b>PISTA DE ENTRENADOR:</b> De nada te servirá usar Repelentes si el primer Pokémon de tu equipo tiene un nivel bajo.", "v": "<b>트레이너 팁:</b> 지니고 있는 첫 번째 포켓몬의 레벨이 낮다면 스프레이를 사용해도 아무 소용이 없습니다."}
 {"k": "¡Es un arbusto de bayas!", "v": "나무열매 관목이다!"}
 {"k": "Ya has arrancado las bayas de este arbusto.", "v": "이 관목에서는 이미 나무열매를 다 땄다."}
