@@ -147,7 +147,7 @@ def run(d, model, effort, workers=4):
     def work(fp):
         rows = [json.loads(l) for l in fp.read_text(encoding="utf-8").splitlines() if l.strip()]
         ask_rows = [{"id": r["id"], "who": r["who"], "es": r["es"],
-                     "ko": r.get("new") or r["old"]} for r in rows if r.get("new")]
+                     "ko": r["new"]} for r in rows if r.get("new") and r["new"] != r["old"]]
         hits, cost = ([], 0.0) if not ask_rows else ask(key, model, effort, scene_system(fp), ask_rows)
         ids = {r["id"] for r in ask_rows}
         rec = {"page": fp.name, "cost": cost,
