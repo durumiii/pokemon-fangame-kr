@@ -949,9 +949,6 @@ def split_head(s):
     """줄머리 화자 표기를 떼어 (앞머리, 본문)으로. 없으면 앞머리는 빈 문자열."""
     m = HEAD.match(s or "")
     return (m.group(0), s[m.end():]) if m else ("", s or "")
-TITLES = [("monsieur", "무슈"), ("madame", "마담"), ("mademoiselle", "마드모아젤"),
-          ("profesora", "교수"), ("profesor", "교수"), ("maese", "선생"),
-          ("capitán", "대장"), ("capitana", "대장"), ("regente", "섭정")]
 
 
 def scene_names(rows):
@@ -986,9 +983,6 @@ def glossary_for(rows):
     rx, canon = canon_names()                 # 아이템·기술·종족·특성 정본 표기
     for m in rx.findall(" ".join(r["es"] for r in rows)):
         hits.append(f"- {m} → {canon[m]}")
-    for a, b in TITLES:                       # 호칭은 프롬프트 본문에도 있지만 잘 샌다
-        if a in es_all:
-            hits.append(f"- {a} → {b}")
     return CORE_TERMS + ("\n" + "\n".join(dict.fromkeys(hits)) if hits else "")
 
 
@@ -1108,7 +1102,8 @@ def prepare(c, fresh):
     지어 붙였다). 원문 쪽 표시를 기억해 뒀다가 답에 도로 입힌다.
     """
     scene = dict(scene_names(c["rows"]))
-    scene.update({"monsieur": "무슈", "madame": "마담", "mademoiselle": "마드모아젤"})
+    # 표기 정본에서 1:1 쌍만 — 분기 판정(「대장 / 선장(…)」)은 찾을 글자가 아니다.
+    scene.update({a: b for a, b in term_pairs() if "/" not in a and "(" not in b})
     heads, marks, reqrows = {}, {}, []
     for r in c["rows"]:
         he, es = split_head(r["es"])
@@ -1289,14 +1284,12 @@ if __name__ == "__main__":
         cs = [json.loads(l) for l in
               (BATCH / "npc-pilot-chunks.jsonl").read_text(encoding="utf-8").splitlines()
               if l.strip()]
-        c = next((x for x in cs if x["cid"] == "p044-7-0"), None)
-        if c is None:      # 파일럿을 다시 계획하면 그 장면이 표본에서 빠진다 — 전량에서 집는다
-            c = next(x for x in (json.loads(l) for l in
-                                 (BATCH / "npc-chunks.jsonl").read_text(encoding="utf-8")
-                                 .splitlines() if l.strip())
-                     if x["cid"] == "p044-7-0")
-        s = render(c)
+        # 계획한 장면을 cid로 집으면 다시 계획할 때 그 장면이 사정권에서 빠져 시험이
+        # 통째로 멈춘다(2026-08-13 실측). 발췌 규칙만 보므로 줄을 지어서 본다.
+        s = glossary_for([{"es": "Tengo unas Pokétoxinas por aquí.", "ko": "여기 있어."}])
         assert "Pokétoxina" in s and "독주머니" in s, "정본 아이템 짝이 안 실렸다"
+        s = glossary_for([{"es": "Bonjour, monsieur. ¿Y el profesor?", "ko": "안녕하세요."}])
+        assert "무슈" in s and "박사(올리비에)" in s, "호칭 정본이 안 실렸다"
         base = len(CORE_TERMS.splitlines())
         for x in cs[:6]:
             print(f"{x['cid']} 발췌 {len(glossary_for(x['rows']).splitlines()) - base}항목")
