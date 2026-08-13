@@ -19,6 +19,12 @@
 (sprite 키)가 정본이다. 산출은 batch/npc[-pilot]-chunks.jsonl · batch/npc-out[-pilot]/.
 페르소나표에 없는 스프라이트(포켓몬 번호·연출물)는 행째 빠진다 — 그 수는 plan이 찍는다.
 
+`plan --npc --pool <파일.jsonl>`(여러 번 겹쳐 줄 수 있다)은 사정권을 **그 파일이
+적은 자리로** 바꾼다 — 사람이 층별로 판정해 골라 온 풀이라, 후보를 고르는 범용
+관문(승인 이벤트 배제·장면/이름표 조건·스프라이트 귀속)은 안 걸고 자리마다 적힌
+화자를 그대로 쓴다. 지키는 것은 보호·정본 존재·갈래 정착·복제 정리다. freedom 3
+(정형구)은 재작성 대상이 아니라 빠진다. 관문별 제외 수는 plan이 찍는다.
+
 산출: batch/page-out[-pilot]/<cid>.jsonl — {"id","who","es","old","new","ok","why"}
 """
 
@@ -344,18 +350,27 @@ def approved_events():
             for l in p.read_text(encoding="utf-8").splitlines() if l.strip()}
 
 
-def excluded_pages(pg):
+def protected_pages():
+    """보호(재번역 금지) 페이지 — 유지자 판정이라 어떤 입력보다 세다."""
+    return {tuple(json.loads(l)[k] for k in ("map", "event", "page"))
+            for l in PROTECTED.read_text(encoding="utf-8").splitlines() if l.strip()}
+
+
+def excluded_pages(pg, skip_approved=True):
     """재번역이 건드리면 안 되는 페이지 — 보호·승인 이벤트·극초반·인트로·지문시스템.
 
     data/z4-excluded.jsonl은 인물 대사 풀에서 골라낸 지문·시스템 페이지
-    (2026-08-13 풀 정제 판독, Z-4 티켓 「전량의 선행 단계」)."""
-    ex = {tuple(json.loads(l)[k] for k in ("map", "event", "page"))
-          for l in PROTECTED.read_text(encoding="utf-8").splitlines() if l.strip()}
+    (2026-08-13 풀 정제 판독, Z-4 티켓 「전량의 선행 단계」).
+
+    `skip_approved=False`는 **풀 입력 전용** — 승인 이벤트 배제는 범용 재스캔이
+    같은 자리를 또 묻지 않으려는 장치라, 사람이 층별로 판정해 골라 온 풀에는
+    안 맞는다(실측 2026-08-13: 풀 1,488행 중 1,081행이 이 관문에서 빠졌다)."""
+    ex = protected_pages()
     z4ex = HERE / "data/z4-excluded.jsonl"
     if z4ex.exists():
         ex |= {tuple(json.loads(l)[k] for k in ("map", "event", "page"))
                for l in z4ex.read_text(encoding="utf-8").splitlines() if l.strip()}
-    done = approved_events()
+    done = approved_events() if skip_approved else set()
     for key, rows in pg.items():
         if (key[0], key[1]) in done:                       # 판정 끝난 이벤트
             ex.add(key)
@@ -386,30 +401,87 @@ def divergence_settled():
     return out
 
 
+def load_pool(paths):
+    """`--pool` 입력 — 사람이 층별로 판정해 골라 온 보충 풀.
+
+    행 스키마 둘을 다 받는다: 층별 풀(layer/map/event/page/sprite/who/k/v/freedom)과
+    모호 해소(map/event/page/k/resolve/freedom). 자리(맵·이벤트·페이지·접은 원문)로
+    접으므로 여러 파일을 겹쳐 줘도 되고, 층③이 층①의 복제인 것도 여기서 접힌다.
+
+    **freedom 3(정형구)은 재작성 대상이 아니다** — 받되 세어서 빼고, 그 수는 plan이
+    찍는다. 반환은 (자리 → 화자 이름표, 관문별 셈).
+    """
+    out, ct = {}, collections.Counter()
+    for p in paths:
+        for line in Path(p).read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            r = json.loads(line)
+            ct["읽은 줄"] += 1
+            if r.get("freedom") not in (1, 2):
+                ct["freedom3(정형구)"] += 1
+                continue
+            key = (r["map"], r["event"], r["page"], fold(r["k"]))
+            if key in out:
+                ct["같은 자리 중복(층③·파일 겹침)"] += 1
+                continue
+            out[key] = r.get("who") or ""
+    return out, ct
+
+
 def chunks_path(pilot, npc):
     stem = ("npc-pilot-chunks" if npc and pilot else "npc-chunks" if npc
             else "pilot-chunks" if pilot else "page-chunks")
     return BATCH / (stem + ".jsonl")
 
 
-def plan(pilot=False, npc=False):
+def plan(pilot=False, npc=False, pool_paths=()):
     pg = pages()
-    ex = excluded_pages(pg)
+    pool, pool_ct = load_pool(pool_paths) if pool_paths else (None, collections.Counter())
+    ex = excluded_pages(pg, skip_approved=pool is None)
+    prot = protected_pages() if pool else set()
     ko = ko_index()
     vlines, names, anon = voice_lines(), ko_names(), anon_index()
     approved = approved_set()
     per = personas() if npc else {}
     settled = divergence_settled()
     npc_skipped = settled_skipped = 0
+    def in_pool(r):
+        return pool.get((r["map"], r["event"], r["page"], fold(r["k"])))
     chunks = []
     for key in sorted(pg):
         if key in ex:
+            if pool:      # 관문별 제외 수를 찍으려면 여기서 세야 한다
+                n = sum(1 for r in pg[key] if in_pool(r) is not None)
+                pool_ct["보호(protected)" if key in prot else "그 밖 제외 페이지"] += n
             continue
         rows, take = pg[key], []
-        if npc and (rows[0].get("scene") not in ("컷신", "대화")
-                    or any(x.get("how") == "태그" for x in rows)):
+        if npc and not pool and (rows[0].get("scene") not in ("컷신", "대화")
+                                 or any(x.get("how") == "태그" for x in rows)):
             continue                     # 이름표가 한 줄이라도 있으면 주연 갈래 몫
         for r in rows:
+            if pool is not None:
+                # 풀 입력 갈래 — 무엇을 재작성할지는 사람이 이미 판정했다. 스프라이트
+                # 귀속(how='그림')·장면 조건은 범용 재스캔의 후보 고르기 장치라 여기선
+                # 안 건다. 남기는 것은 정본 존재·갈래 정착·유지자 확정 어투뿐이다.
+                who = in_pool(r)
+                if who is None:
+                    continue
+                if r["kind"] != "text":
+                    pool_ct["kind≠text"] += 1
+                    continue
+                if who in SYS or who in VOICE_FIXED:
+                    pool_ct["어투 확정·비인물 화자"] += 1
+                    continue
+                cur = ko.get((r["map"], fold(r["k"])))
+                if cur is None:
+                    pool_ct["정본에 없음"] += 1
+                    continue
+                if settled.get((fold(r["k"]), r["map"])) == cur:
+                    pool_ct["갈래 정착"] += 1
+                    continue
+                take.append((r, who, cur, ""))
+                continue
             if npc:
                 if r["kind"] != "text" or r["how"] != "그림":
                     continue
@@ -464,10 +536,12 @@ def plan(pilot=False, npc=False):
             seen_cast[name] = {"name": name, "voice": voice,
                                **({"hint": hints[who]} if hints.get(who) else {})}
             cast.append(seen_cast[name])
-        if npc:
+        if npc and pool is None:
             for x in cast:               # 스프라이트 페르소나가 곧 말투 정본
                 x["voice"] = npc_line(per[x["name"]])
         else:
+            # 풀 갈래도 여기로 온다 — 화자를 사람이 판정해 왔으니 말투는 주연 갈래와
+            # 같은 순서로 붙인다: 말투표 → (비면) 그 자리 스프라이트의 페르소나.
             attach_personas(cast, take, names)
         m, e, p = key
         chunks.append({
@@ -481,7 +555,23 @@ def plan(pilot=False, npc=False):
                      for r, w, cur, _ in take],
         })
 
+    before_dedupe = sum(len(c["rows"]) for c in chunks)
     chunks = dedupe(chunks)
+    if pool is not None:
+        # 관문 셈은 표본 추출(--pilot) **앞에서** 닫는다 — 파일럿은 관문이 아니라 표집이다
+        n_out = sum(len(c["rows"]) for c in chunks)
+        read = pool_ct.pop("읽은 줄")
+        pool_ct["복제 정리(dedupe)"] = before_dedupe - n_out
+        print("풀 입력 관문별 제외:",
+              " · ".join(f"{k} {v}" for k, v in pool_ct.items() if v))
+        assert read == n_out + sum(pool_ct.values()), "관문별 제외 수 합이 안 맞는다"
+        print(f"  합: 읽은 줄 {read} = 계획 {n_out} + 제외 {sum(pool_ct.values())}")
+        # 말투 지시가 어느 쪽으로도 안 붙은 화자 — 조용히 흘리면 그 인물만 평평해진다
+        vp = voice_prompts()
+        mute = {x["name"] for c in chunks for x in c["cast"]
+                if not x["voice"] and not x.get("persona") and x["name"] not in vp}
+        print(f"말투 지시 없는 화자: {len(mute)}명"
+              + (" — " + ", ".join(sorted(mute)[:12]) if mute else ""))
     if pilot:
         chunks = pick_pilot(chunks, npc)
     if npc and npc_skipped:
@@ -1061,8 +1151,9 @@ if __name__ == "__main__":
     limit = int(args[args.index("--limit") + 1]) if "--limit" in args else None
     fresh = "--fresh" in args
     npc = "--npc" in args
+    pool_paths = [args[i + 1] for i, a in enumerate(args) if a == "--pool"]
     if cmd == "plan":
-        plan(pilot, npc)
+        plan(pilot, npc, pool_paths)
     elif cmd == "run":
         effort = args[args.index("--effort") + 1] if "--effort" in args else "low"
         run(pilot, limit, fresh=fresh, effort=effort, npc=npc)
