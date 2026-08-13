@@ -43,6 +43,16 @@ def load_register(name, verdict_key="판정"):
     return {r["id"]: r[verdict_key] for r in map(json.loads, path.open(encoding="utf-8"))}
 
 
+def function_npc_pages():
+    """창구 노릇이 그 페이지의 일인 자리 — 이벤트 명령의 기능 호출로 판정된다.
+
+    이름표가 붙어도 상점·회복·보관·교환은 메인스토리가 아니다. 라벨 91건 대조에서
+    이 목록 안에 메인스토리가 0건이라, 빼도 잃는 것이 없다(2026-08-14).
+    """
+    return {(r["map"], r["event"], r["page"])
+            for r in map(json.loads, (SCENE / "function-npc.jsonl").open(encoding="utf-8"))}
+
+
 def story_var_pages():
     """본편 장면 카운터가 걸린 페이지 좌표."""
     out = set()
@@ -76,7 +86,9 @@ def signals(rows, key, flags_reg, story):
     fl = {f for r in rows for f in r["flags"]}
     vals = {v for f in fl if (v := flags_reg.get(f))}
     plot = "메인스토리" in vals or vals == {"임시 플래그"}
-    return {"인물": person, "플롯플래그": plot, "본편변수": key in story}
+    return {"정본인물이 말한다": person,
+            "본편플래그를 켠다": plot,
+            "장면카운터가 걸렸다": key in story}
 
 
 def stratum(key, rows):
@@ -132,7 +144,7 @@ def cmd_score(args):
     pages, labels = load_pages(), read_labels()
     if not labels:
         sys.exit("라벨이 없다 — 먼저 sample로 시트를 만들어 라벨을 붙여라.")
-    fr, st = load_register("flag-register.jsonl"), story_var_pages()
+    fr, st, func = load_register("flag-register.jsonl"), story_var_pages(), function_npc_pages()
 
     pop = Counter(stratum(k, v) for k, v in pages.items())
     samp = Counter(stratum(k, pages[k]) for k in labels if k in pages)
@@ -153,21 +165,23 @@ def cmd_score(args):
         print(f"{name:34s} {c['M']:7.0f} {c['X']:7.0f} {c['?']:5.0f}"
               f"   {r['M']}/{sum(r.values())}")
 
+    P, F, V = "정본인물이 말한다", "본편플래그를 켠다", "장면카운터가 걸렸다"
     combos = {
-        "인물": lambda s: s["인물"],
-        "플롯플래그": lambda s: s["플롯플래그"],
-        "본편변수": lambda s: s["본편변수"],
-        "셋 OR": lambda s: any(s.values()),
-        "인물 AND (플래그 OR 변수)": lambda s: s["인물"] and (s["플롯플래그"] or s["본편변수"]),
+        "정본인물만 본다": lambda s, k: s[P],
+        "본편플래그만 본다": lambda s, k: s[F],
+        "장면카운터만 본다": lambda s, k: s[V],
+        "셋 중 하나라도 서면": lambda s, k: any(s.values()),
+        "★ 셋 중 하나 + 창구는 뺀다": lambda s, k: any(s.values()) and k not in func,
+        "인물이 있고 플래그나 카운터도": lambda s, k: s[P] and (s[F] or s[V]),
     }
-    print(f"\n{'조합':28s} {'정밀도':>6s} {'재현율':>6s} {'놓친M':>7s} {'표본놓침':>8s}")
+    print(f"\n{'게이트 규칙':34s} {'정밀도':>6s} {'재현율':>6s} {'놓친M':>7s} {'표본놓침':>8s}")
     for name, fn in combos.items():
         tp = fp = fn_ = 0.0
         missed = 0
         for k, lb in labels.items():
             if k not in pages or lb == "?":
                 continue
-            ww, hit = w[stratum(k, pages[k])], fn(signals(pages[k], k, fr, st))
+            ww, hit = w[stratum(k, pages[k])], fn(signals(pages[k], k, fr, st), k)
             if lb == "M" and hit:
                 tp += ww
             elif hit:
@@ -177,7 +191,9 @@ def cmd_score(args):
                 missed += 1
         pr = tp / (tp + fp) if tp + fp else 0
         rc = tp / (tp + fn_) if tp + fn_ else 0
-        print(f"{name:28s} {pr:6.2f} {rc:6.2f} {fn_:7.0f} {missed:8d}")
+        print(f"{name:34s} {pr:6.2f} {rc:6.2f} {fn_:7.0f} {missed:8d}")
+    print("\n★ 이것이 현행 게이트다 — 신호 셋 중 하나라도 서되, 상점·회복·보관 같은 창구"
+          "\n  (`function-npc.jsonl`)는 뺀다. 바로 위 줄이 빼기 전 값이니 견주면 실효가 보인다.")
     print("\n⚠ 「놓친M」은 모집단 추정치다. 옆의 「표본놓침」이 그 추정을 떠받치는 실제 관측 수이고,"
           "\n  그 수가 한 자리면 재현율은 사실상 안 재인 것이다.")
 
