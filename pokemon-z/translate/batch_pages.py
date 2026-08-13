@@ -69,10 +69,15 @@ PILOT2 = ("p024-43-0", "p024-51-0", "p025-20-0", "p036-45-0", "p040-17-0",
 SYS = {"PISTA DE ENTRENADOR", "Notas del Team Azoth", "\\PN", "AVISO", "Oeste",
        "Sur", "Este", "Norte", "Movimientos de patada", "Movimientos de viento",
        "ATENCIÓN", "Gran Hotel Luminalia", "1ºRegente",
-       "Contrincante"}   # 블랙잭 미니게임의 진행 문구다 — 사람 대사가 아니다
+       "Contrincante",  # 블랙잭 미니게임의 진행 문구다 — 사람 대사가 아니다
+       "portonCerrado"}  # 잠긴 문 안내 — 사물, 지문 규칙(Z-47 보강 판정)
 # 유지자가 어투를 이미 확정한 인물 — 재번역이 덮으면 안 된다
 VOICE_FIXED = {"Barquero", "Zafra", "Núbila", "Camarero",
                "cocineroOW"}   # 요리사 — 사프라와 같은 자리에서 함께 판정됐다
+# 풀 갈래에서 말투표·페르소나 어느 쪽도 안 붙는 화자(빈 이름 등)에 붙는 기본 지시
+# — 지시가 아예 없으면 모델이 그 인물만 개성을 지어낸다(유지자 승인 2026-08-13)
+POOL_DEFAULT = ("화자 미상 — 장면의 다른 대사 결에 맞추고, 새 개성·말버릇을 "
+                "만들지 않는다. 격은 현행을 유지한다.")
 
 
 def fold(s):
@@ -566,14 +571,19 @@ def plan(pilot=False, npc=False, pool_paths=()):
               " · ".join(f"{k} {v}" for k, v in pool_ct.items() if v))
         assert read == n_out + sum(pool_ct.values()), "관문별 제외 수 합이 안 맞는다"
         print(f"  합: 읽은 줄 {read} = 계획 {n_out} + 제외 {sum(pool_ct.values())}")
-        # 말투 지시가 어느 쪽으로도 안 붙은 화자 — 조용히 흘리면 그 인물만 평평해진다
+        # 말투 지시가 어느 쪽으로도 안 붙은 화자 — 조용히 흘리면 그 인물만 평평해진다.
+        # 남는 화자는 기본 지시로 덮는다(무지시 프롬프트 금지 — 유지자 승인 2026-08-13)
         vp = voice_prompts()
         mute = {x["name"] for c in chunks for x in c["cast"]
                 if not x["voice"] and not x.get("persona") and x["name"] not in vp}
-        print(f"말투 지시 없는 화자: {len(mute)}명"
-              + (" — " + ", ".join(sorted(mute)[:12]) if mute else ""))
+        for c in chunks:
+            for x in c["cast"]:
+                if x["name"] in mute and not x["voice"] and not x.get("persona"):
+                    x["voice"] = POOL_DEFAULT
+        print(f"말투 지시 없는 화자 {len(mute)}명 — 기본 지시로 덮음"
+              + (": " + ", ".join(sorted(mute)[:12]) if mute else ""))
     if pilot:
-        chunks = pick_pilot(chunks, npc)
+        chunks = pick_pilot(chunks, npc, from_pool=pool is not None)
     if npc and npc_skipped:
         print(f"페르소나표 밖 스프라이트로 빠진 행: {npc_skipped} — 사람 스프라이트라면 표에 등재 후 재plan")
     if npc and settled_skipped:
@@ -697,17 +707,20 @@ def route(c):
     return "a" if any(r.get("approved") for r in c["rows"]) else "b"
 
 
-def pick_pilot(chunks, npc=False):
+def pick_pilot(chunks, npc=False, from_pool=False):
     """표본 20페이지 — 초반부에서, 말투표가 실리는 장면으로, 화자를 골고루.
 
     초반부만 뽑는 이유는 유지자가 실제로 지나온 구간이라야 판정할 수 있어서다
     (진행 순서의 대용은 맵 번호 — 조사에서 순위상관 0.988).
+    풀 입력(--pool)은 잡담이라 페이지가 짧다(중앙 2행) — 행수 문턱을 걸면 표본이
+    안 선다(실측 2페이지). 그쪽은 행수 무관, 페르소나 지시가 붙은 장면도 받는다
+    (유지자 승인 2026-08-13).
     """
     random.seed(20260806)
     pool = [c for c in chunks
-            if len(c["rows"]) >= 5
+            if (from_pool or len(c["rows"]) >= 5)
             and c["map"] <= PILOT_MAP_MAX
-            and any(x["voice"] for x in c["cast"])]   # 말투표가 실리는 장면
+            and any(x["voice"] or x.get("persona") for x in c["cast"])]
     by_lead = defaultdict(list)
     for c in pool:
         by_lead[c["cast"][0]["name"]].append(c)
