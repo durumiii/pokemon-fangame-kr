@@ -430,7 +430,7 @@ def alt_map(alt_dir):
     return out
 
 
-def handler(out_dir, vpath, all_rows=False, alt=None):
+def handler(out_dir, vpath, all_rows=False, alt=None, no_skip=False):
     alt = alt or {}
     page = (HEAD.format(title=f"선별분 검수 — {Path(out_dir).name}",
                         ledger=f"판정 저장 중 → {vpath}") + BODY).encode()
@@ -464,7 +464,10 @@ def handler(out_dir, vpath, all_rows=False, alt=None):
                 self._json(read_req(out_dir, q.get("cid", [""])[0]))
             elif u.path == "/data":
                 # 매번 다시 읽는다 — 선별을 다시 돌리고 새로고침하면 바로 반영된다
-                sc = collect(out_dir, all_rows=all_rows)
+                # no_skip: 승인·보호에 걸린 자리도 그대로 보인다 — 유실 재검처럼
+                # 이미 승인된 이벤트 안의 자리를 일부러 다시 보는 검수용
+                sc = collect(out_dir, ok=set() if no_skip else None,
+                             done=set() if no_skip else None, all_rows=all_rows)
                 cov = covers_map(out_dir)
                 for s in sc:                     # 대조 산출이 다른 답을 낸 행에 alt를 얹는다
                     p = req_path(out_dir, s["file"])
@@ -575,12 +578,13 @@ def main(argv):
         print(__doc__)
         return
     all_rows = "--all" in a          # 선별 무관 전 행 — 파일럿 전량 검수용
+    no_skip = "--no-skip" in a       # 승인·보호 자리도 표시 — 유실 재검용
     alt = alt_map(a[a.index("--alt") + 1] if "--alt" in a else None)
     v = verdict_path(out)
     n = len(load_verdicts(v))
     print(f"http://localhost:{port}   판정 기록 {v}" + (f" (기존 {n}행)" if n else ""))
     print("중지: Ctrl+C", flush=True)
-    ThreadingHTTPServer(("0.0.0.0", port), handler(out, v, all_rows, alt)).serve_forever()
+    ThreadingHTTPServer(("0.0.0.0", port), handler(out, v, all_rows, alt, no_skip)).serve_forever()
 
 
 if __name__ == "__main__":

@@ -1,0 +1,50 @@
+{"id": "150:10:1:2", "who": "Contrincante", "es": "\\PN recibe una carta.", "old": "\\PN\\j[이,가] 카드를 한 장 받는다.", "new": "\\PN\\j[이,가] 카드를 한 장 받는다.", "ok": true}
+{"id": "150:10:1:7", "who": "Contrincante", "es": "Te ha tocado un as, ¿que valor le asignas? \nRecuerda que tienes que intentar sumar 21.", "old": "에이스가 나왔군. 몇으로 계산할래? 합을 21에 맞추려고 해봐.", "new": "에이스가 나왔군. 몇으로 계산할래? 합을 21에 맞추려고 해봐.", "ok": true}
+{"id": "150:10:1:9.0", "who": "", "es": "1", "old": "1", "new": "1", "ok": true}
+{"id": "150:10:1:9.01", "who": "", "es": "13", "old": "13", "new": "13", "ok": true}
+{"id": "150:10:1:20", "who": "Contrincante", "es": "Has recibido un \\v[135]. Recuerda que debes \nintentar sumar 21.", "old": "\\v[135]를 받았어. 합이 21에 가까워져야 한다는 걸 잊지 마.", "new": "\\v[135]를 받았어. 합이 21에 가까워져야 한다는 걸 잊지 마.", "ok": true}
+{"id": "150:10:1:25", "who": "Contrincante", "es": "<b>Contrincante:</b> Mmm...", "old": "<b>상대방:</b> 음...", "new": "<b>상대방:</b> 음...", "ok": true}
+{"id": "150:10:1:27", "who": "Contrincante", "es": "¿Quieres recibir otra carta?", "old": "카드를 한 장 더 받을래?", "new": "카드를 한 장 더 받을래?", "ok": true}
+{"id": "150:10:1:28.0", "who": "", "es": "Sí", "old": "예", "new": "예", "ok": true}
+{"id": "150:10:1:28.01", "who": "", "es": "No", "old": "아니요", "new": "아니요", "ok": true}
+{"id": "150:10:1:35", "who": "Contrincante", "es": "<b>Contrincante:</b> ¡Bien! ¡Veamos quién ha ganado!", "old": "<b>상대방:</b> 좋아! 누가 이겼는지 확인해 보자고!", "new": "<b>상대방:</b> 좋아! 누가 이겼는지 확인해 보자고!", "ok": true}
+{"id": "150:10:1:41", "who": "Contrincante", "es": "La suma total de \\PN es \\v[136], la de tu contrincante es \\v[137].", "old": "\\PN의 합계는 \\v[136], 상대방의 합계는 \\v[137]이다.", "new": "\\PN의 합계는 \\v[136], 상대방의 합계는 \\v[137]이다.", "ok": true}
+{"id": "150:10:1:42", "who": "Contrincante", "es": "¡\\PN gana la partida!", "old": "\\PN가 승리했다!", "new": "\\PN\\j[이,가] 승리했다!", "ok": true}
+{"id": "150:10:1:44", "who": "Contrincante", "es": "<b>Contrincante:</b> ¿Tienes experiencia en esto o es la suerte del principiante?", "old": "<b>상대방:</b> 여기에 일가견이 있는 거야, 아니면 초보자의 행운인가?", "new": "<b>상대방:</b> 여기에 일가견이 있는 거야, 아니면 초보자의 행운인가?", "ok": true}
+{"id": "150:10:1:45", "who": "Contrincante", "es": "En fin, pues te llevas 1.000 pokécuartos, ¡pero no tientes demasiado a la suerte!", "old": "어쨌든 1,000포켓프랑은 네 몫이다만, 운을 너무 과신하진 마라!", "new": "어쨌든 1,000포켓프랑은 네 몫이다만, 운을 너무 과신하진 마라!", "ok": true}
+{"id": "150:10:1:53", "who": "Contrincante", "es": "La suma total de \\PN es \\v[136], la de tu contrincante es \\v[137].", "old": "\\PN의 합계는 \\v[136], 상대방의 합계는 \\v[137]이다.", "new": "\\PN의 합계는 \\v[136], 상대방의 합계는 \\v[137]이다.", "ok": true}
+{"id": "150:10:1:54", "who": "Contrincante", "es": "¡Tu contrincante gana la partida!", "old": "상대방이 승리했다!", "new": "상대방이 승리했다!", "ok": true}
+{"id": "150:10:1:56", "who": "Contrincante", "es": "<b>Contrincante:</b> ¡Ja! ¡Si es que soy toda una maestra en esto!", "old": "<b>상대방:</b> 하! 난 이 분야의 대가라고!", "new": "<b>상대방:</b> 하! 난 이 분야의 대가라고!", "ok": true}
+{"id": "150:10:1:57", "who": "Contrincante", "es": "Como hemos acordado, me llevo 1.000 pokécuartos. ¡Te deseo mejor suerte la próxima vez!", "old": "약속대로 1,000포켓프랑은 내가 가져가지. 다음엔 운이 더 따르길 비마!", "new": "약속대로 1,000포켓프랑은 내가 가져가지. 다음엔 운이 더 따르길 비마!", "ok": true}
+{"id": "150:10:1:72", "who": "Contrincante", "es": "La suma total de \\PN es \\v[136], la de tu contrincante es \\v[137].", "old": "\\PN의 합계는 \\v[136], 상대방의 합계는 \\v[137]이다.", "new": "\\PN의 합계는 \\v[136], 상대방의 합계는 \\v[137]이다.", "ok": true}
+{"id": "150:10:1:73", "who": "Contrincante", "es": "¡\\PN gana la partida!", "old": "\\PN가 승리했다!", "new": "\\PN가 승리했다!", "ok": true}
+{"id": "150:10:1:75", "who": "Contrincante", "es": "<b>Contrincante:</b> ¿Tienes experiencia en esto o es la suerte del principiante?", "old": "<b>상대방:</b> 여기에 일가견이 있는 거야, 아니면 초보자의 행운인가?", "new": "<b>상대방:</b> 여기에 일가견이 있는 거야, 아니면 초보자의 행운인가?", "ok": true}
+{"id": "150:10:1:76", "who": "Contrincante", "es": "En fin, pues te llevas 1.000 pokécuartos, ¡pero no tientes demasiado a la suerte!", "old": "어쨌든 1,000포켓프랑은 네 몫이다만, 운을 너무 과신하진 마라!", "new": "어쨌든 1,000포켓프랑은 네 몫이다만, 운을 너무 과신하진 마라!", "ok": true}
+{"id": "150:10:1:85", "who": "Contrincante", "es": "La suma total de \\PN es \\v[136], la de tu contrincante es \\v[137].", "old": "\\PN의 합계는 \\v[136], 상대방의 합계는 \\v[137]이다.", "new": "\\PN의 합계는 \\v[136], 상대방의 합계는 \\v[137]이다.", "ok": true}
+{"id": "150:10:1:86", "who": "Contrincante", "es": "La partida ha resultado en empate.", "old": "무승부로 끝났다.", "new": "무승부로 끝났다.", "ok": true}
+{"id": "150:10:1:88", "who": "Contrincante", "es": "<b>Contrincante:</b> ¡Ja! Pues parece que ninguno nos llevamos nada esta vez.", "old": "<b>상대방:</b> 하! 이번에는 둘 다 아무것도 못 챙겼네.", "new": "<b>상대방:</b> 하! 이번에는 둘 다 아무것도 못 챙겼네.", "ok": true}
+{"id": "150:10:1:89", "who": "Contrincante", "es": "¡Pero estaré dispuesta a echar una partida siempre que quieras!", "old": "하지만 네가 원한다면 언제든 한 판 더 상대해 주지!", "new": "하지만 네가 원한다면 언제든 한 판 더 상대해 주지!", "ok": true}
+{"id": "150:10:1:96", "who": "Contrincante", "es": "La suma total de \\PN es \\v[136], la de tu contrincante es \\v[137].", "old": "\\PN의 합계는 \\v[136], 상대방의 합계는 \\v[137]이다.", "new": "\\PN의 합계는 \\v[136], 상대방의 합계는 \\v[137]이다.", "ok": true}
+{"id": "150:10:1:97", "who": "Contrincante", "es": "¡Tu contrincante gana la partida!", "old": "상대방이 승리했다!", "new": "상대방이 승리했다!", "ok": true}
+{"id": "150:10:1:99", "who": "Contrincante", "es": "<b>Contrincante:</b> ¡Ja! ¡Si es que soy toda una maestra en esto!", "old": "<b>상대방:</b> 하! 난 이 분야의 대가라고!", "new": "<b>상대방:</b> 하! 난 이 분야의 대가라고!", "ok": true}
+{"id": "150:10:1:100", "who": "Contrincante", "es": "Como hemos acordado, me llevo 1.000 pokécuartos. ¡Te deseo mejor suerte la próxima vez!", "old": "약속대로 1,000포켓프랑은 내가 가져가지. 다음엔 운이 더 따르길 비마!", "new": "약속대로 1,000포켓프랑은 내가 가져가지. 다음엔 운이 더 따르길 비마!", "ok": true}
+{"id": "150:10:1:116", "who": "Contrincante", "es": "La suma total de \\PN es \\v[136], la de tu contrincante es \\v[137].", "old": "\\PN의 합계는 \\v[136], 상대방의 합계는 \\v[137]이다.", "new": "\\PN의 합계는 \\v[136], 상대방의 합계는 \\v[137]이다.", "ok": true}
+{"id": "150:10:1:117", "who": "Contrincante", "es": "¡\\PN gana la partida!", "old": "\\PN가 승리했다!", "new": "\\PN가 승리했다!", "ok": true}
+{"id": "150:10:1:119", "who": "Contrincante", "es": "<b>Contrincante:</b> ¿Tienes experiencia en esto o es la suerte del principiante?", "old": "<b>상대방:</b> 여기에 일가견이 있는 거야, 아니면 초보자의 행운인가?", "new": "<b>상대방:</b> 여기에 일가견이 있는 거야, 아니면 초보자의 행운인가?", "ok": true}
+{"id": "150:10:1:120", "who": "Contrincante", "es": "En fin, pues te llevas 1.000 pokécuartos, ¡pero no tientes demasiado a la suerte!", "old": "어쨌든 1,000포켓프랑은 네 몫이다만, 운을 너무 과신하진 마라!", "new": "어쨌든 1,000포켓프랑은 네 몫이다만, 운을 너무 과신하진 마라!", "ok": true}
+{"id": "150:10:1:128", "who": "Contrincante", "es": "La suma total de \\PN es \\v[136], la de tu contrincante es \\v[137].", "old": "\\PN의 합계는 \\v[136], 상대방의 합계는 \\v[137]이다.", "new": "\\PN의 합계는 \\v[136], 상대방의 합계는 \\v[137]이다.", "ok": true}
+{"id": "150:10:1:129", "who": "Contrincante", "es": "¡Tu contrincante gana la partida!", "old": "상대방이 승리했다!", "new": "상대방이 승리했다!", "ok": true}
+{"id": "150:10:1:131", "who": "Contrincante", "es": "<b>Contrincante:</b> ¡Ja! ¡Si es que soy toda una maestra en esto!", "old": "<b>상대방:</b> 하! 난 이 분야의 대가라고!", "new": "<b>상대방:</b> 하! 난 이 분야의 대가라고!", "ok": true}
+{"id": "150:10:1:132", "who": "Contrincante", "es": "Como hemos acordado, me llevo 1.000 pokécuartos. ¡Te deseo mejor suerte la próxima vez!", "old": "약속대로 1,000포켓프랑은 내가 가져가지. 다음엔 운이 더 따르길 비마!", "new": "약속대로 1,000포켓프랑은 내가 가져가지. 다음엔 운이 더 따르길 비마!", "ok": true}
+{"id": "150:10:1:147", "who": "Contrincante", "es": "La suma total de \\PN es \\v[136], la de tu contrincante es \\v[137].", "old": "\\PN의 합계는 \\v[136], 상대방의 합계는 \\v[137]이다.", "new": "\\PN의 합계는 \\v[136], 상대방의 합계는 \\v[137]이다.", "ok": true}
+{"id": "150:10:1:148", "who": "Contrincante", "es": "¡\\PN gana la partida!", "old": "\\PN가 승리했다!", "new": "\\PN가 승리했다!", "ok": true}
+{"id": "150:10:1:150", "who": "Contrincante", "es": "<b>Contrincante:</b> ¿Tienes experiencia en esto o es la suerte del principiante?", "old": "<b>상대방:</b> 여기에 일가견이 있는 거야, 아니면 초보자의 행운인가?", "new": "<b>상대방:</b> 여기에 일가견이 있는 거야, 아니면 초보자의 행운인가?", "ok": true}
+{"id": "150:10:1:151", "who": "Contrincante", "es": "En fin, pues te llevas 1.000 pokécuartos, ¡pero no tientes demasiado a la suerte!", "old": "어쨌든 1,000포켓프랑은 네 몫이다만, 운을 너무 과신하진 마라!", "new": "어쨌든 1,000포켓프랑은 네 몫이다만, 운을 너무 과신하진 마라!", "ok": true}
+{"id": "150:10:1:160", "who": "Contrincante", "es": "La suma total de \\PN es \\v[136], la de tu contrincante es \\v[137].", "old": "\\PN의 합계는 \\v[136], 상대방의 합계는 \\v[137]이다.", "new": "\\PN의 합계는 \\v[136], 상대방의 합계는 \\v[137]이다.", "ok": true}
+{"id": "150:10:1:161", "who": "Contrincante", "es": "La partida ha resultado en empate.", "old": "무승부로 끝났다.", "new": "무승부로 끝났다.", "ok": true}
+{"id": "150:10:1:163", "who": "Contrincante", "es": "<b>Contrincante:</b> ¡Ja! Pues parece que ninguno nos llevamos nada esta vez.", "old": "<b>상대방:</b> 하! 이번에는 둘 다 아무것도 못 챙겼네.", "new": "<b>상대방:</b> 하! 이번에는 둘 다 아무것도 못 챙겼네.", "ok": true}
+{"id": "150:10:1:164", "who": "Contrincante", "es": "¡Pero estaré dispuesta a echar una partida siempre que quieras!", "old": "하지만 네가 원한다면 언제든 한 판 더 상대해 주지!", "new": "하지만 네가 원한다면 언제든 한 판 더 상대해 주지!", "ok": true}
+{"id": "150:10:1:171", "who": "Contrincante", "es": "La suma total de \\PN es \\v[136], la de tu contrincante es \\v[137].", "old": "\\PN의 합계는 \\v[136], 상대방의 합계는 \\v[137]이다.", "new": "\\PN의 합계는 \\v[136], 상대방의 합계는 \\v[137]이다.", "ok": true}
+{"id": "150:10:1:172", "who": "Contrincante", "es": "¡Tu contrincante gana la partida!", "old": "상대방이 승리했다!", "new": "상대방이 승리했다!", "ok": true}
+{"id": "150:10:1:174", "who": "Contrincante", "es": "<b>Contrincante:</b> ¡Ja! ¡Si es que soy toda una maestra en esto!", "old": "<b>상대방:</b> 하! 난 이 분야의 대가라고!", "new": "<b>상대방:</b> 하! 난 이 분야의 대가라고!", "ok": true}
+{"id": "150:10:1:175", "who": "Contrincante", "es": "Como hemos acordado, me llevo 1.000 pokécuartos. ¡Te deseo mejor suerte la próxima vez!", "old": "약속대로 1,000포켓프랑은 내가 가져가지. 다음엔 운이 더 따르길 비마!", "new": "약속대로 1,000포켓프랑은 내가 가져가지. 다음엔 운이 더 따르길 비마!", "ok": true}
