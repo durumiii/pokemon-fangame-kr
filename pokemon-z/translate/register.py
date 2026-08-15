@@ -55,6 +55,13 @@ DUAL = {"Lanto", "Crisanto", "Melia", "Olivier", "Aure", "Merlot",
         "Hisopo", "Cendera", "Pinot"}
 
 
+def is_dual(who):
+    """귀속표의 이름표는 직함을 달고 온다 — `Alcaide Pinot`·`Capitán Merlot`·
+    `Capitana Cendera`·`Auretosk`. 맨이름으로만 맞추면 160행이 검사에 샌다
+    (2026-08-16 실측)."""
+    return any(n in (who or "") for n in DUAL)
+
+
 def sentences(text):
     """문장 단위로 자른다. 종결부호를 남긴다 — classify가 느낌표 명령을 알아보게."""
     t = clean(text).strip()
@@ -161,7 +168,7 @@ def scan():
         who = r["who"]
         if r["kind"] != "text" or r["how"] not in ("태그", "상속") or not who:
             continue
-        if who in DUAL:
+        if is_dual(who):
             skipped["이중말투"] += 1
             continue
         v = ko.get(ko_key(r["k"]))
