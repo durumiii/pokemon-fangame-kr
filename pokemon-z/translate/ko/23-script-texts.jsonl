@@ -5626,7 +5626,7 @@
 {"k": "Dime, joven, ¿tienes el valor suficiente para enfrentarte a un monstruo del pantano?", "v": "말해보게, 젊은이. 늪지의 괴물에 맞설 담력이 있는가?"}
 {"k": "Bien, así que has usado ese truco. Intentaré fijarme.", "v": "좋아, 그런 수법을 썼군. 잘 지켜보도록 하지."}
 {"k": "Hasta aquí. Vamos a ponernos serios.", "v": "여기까지다. 진지하게 나가볼까."}
-{"k": "¡No lo has atrapado ni de coña!", "v": "잡기는커녕 어림도 없었어!"}
+{"k": "¡No lo has atrapado ni de coña!", "v": "잡기는커녕 어림도 없었다!"}
 {"k": "¡Vaya! ¡Parecía que lo tenías!", "v": "와! 거의 잡은 것 같았는데!"}
 {"k": "¡Agh! ¡Por muy poco!", "v": "윽! 아깝다!"}
 {"k": "¡Va! ¡Ha faltado poquísimo!", "v": "아! 정말 아깝다!"}
@@ -6095,10 +6095,10 @@
 {"k": "Había una vez un Pokémon Princesa que se hizo muuuuuuy fuerte...", "v": "옛날 옛적에 아주아주 강해진 공주 포켓몬이 있었대..."}
 {"k": "Estás a punto de desatar un calor infernal, ¿lo has pensado bien?", "v": "지옥 같은 열기를 해방하려는 참인데, 잘 생각해 보았나?"}
 {"k": "No puedes viajar aquí.", "v": "여기서는 공중날기를 할 수 없다."}
-{"k": "El Pokévial está vacío. Recárgalo en el Centro Pokémon.", "v": "포켓몬약병이 비었습니다. 포켓몬센터에서 채워 주세요."}
-{"k": "¿Curar a tu equipo con el Pokévial?", "v": "포켓몬약병으로 파티를 회복시키겠습니까?"}
-{"k": "¿Curar a tu equipo con el Pokévial? Le quedan {1} usos de {2}", "v": "포켓몬약병으로 파티를 회복시키겠습니까? {2}회 중 {1}회 남음"}
-{"k": "¿Quieres curar a tu equipo con el Pokévial? Le quedan {1} usos de {2}.", "v": "포켓몬약병으로 파티를 회복시키겠습니까? {2}회 중 {1}회 남았습니다."}
+{"k": "El Pokévial está vacío. Recárgalo en el Centro Pokémon.", "v": "포켓몬약병이 비었다. 포켓몬센터에서 채울 수 있다."}
+{"k": "¿Curar a tu equipo con el Pokévial?", "v": "포켓몬약병으로 파티를 회복시킬까?"}
+{"k": "¿Curar a tu equipo con el Pokévial? Le quedan {1} usos de {2}", "v": "포켓몬약병으로 파티를 회복시킬까? {2}회 중 {1}회 남았다."}
+{"k": "¿Quieres curar a tu equipo con el Pokévial? Le quedan {1} usos de {2}.", "v": "포켓몬약병으로 파티를 회복시킬까? {2}회 중 {1}회 남았다."}
 {"k": "El agua parece tranquila, ¿quieres navegar?", "v": "수면이 잔잔해 보인다. 파도타기를 할까?"}
 {"k": "¡{1} usó Montura Surf!", "v": "{1}\\j[은,는] 파도타기라이드를 썼다!"}
 {"k": "¡{2} de {1} provocó una nevada!", "v": "{1}의 {2}\\j[이,가] 눈을 내리게 했다!"}
