@@ -91,6 +91,13 @@ def main():
     adds = {int(p.name[:2]): p for p in KO.glob("*.add.jsonl")}
     changed = 0
 
+    # 맵 절 추가분은 줄마다 어느 맵에 붙는지를 `map`으로 들고 다닌다. 전이 뒤 대사가
+    # 도착 맵 열쇠로 조회되는 자리(Z-61)를 맵0(전역 폴백)에 얹는 데 쓴다.
+    map_adds = {}
+    if 0 in adds:
+        for r in read_jsonl(adds[0]):
+            map_adds.setdefault(r["map"], []).append(r)
+
     for sec, path in sorted(files.items()):
         rows = read_jsonl(path)
         obj = d[sec]
@@ -100,9 +107,13 @@ def main():
                 head = next(it)
                 assert head.get("map") == mi, f"{path.name}: 맵 {mi} 헤더가 아니라 {head}"
                 keys, values = inner_of(oh)
-                assert head["n"] == len(keys), f"맵 {mi}: 줄 수 {head['n']} ≠ dat {len(keys)}"
+                # 지난 빌드가 덧붙인 추가분 키는 꼬리에 남는다 — 해시 절의 tail_ok와 같은 꼴.
+                tail_ok = {string_to_key(r["k"]).encode("utf-8") for r in map_adds.get(mi, ())}
+                strays = [k for k in keys[head["n"]:] if bytes(k) not in tail_ok]
+                assert len(keys) >= head["n"] and not strays, \
+                    f"맵 {mi}: 줄 수 {head['n']} ≠ dat {len(keys)} (추가분 밖 꼬리 {len(strays)}개)"
                 dirty = False
-                for j in range(len(keys)):
+                for j in range(head["n"]):
                     row = next(it)
                     assert row["k"] == keys[j].decode("utf-8", "replace"), \
                         f"맵 {mi}[{j}]: 키 불일치"
@@ -144,17 +155,13 @@ def main():
                 obj._private_data = rubywrite.dumps([keys, values])
 
     added = 0
-    for sec, path in sorted(adds.items()):
-        obj = d[sec]
-        assert not isinstance(obj, list) and sec != 0, f"{path.name}: 추가분은 해시 절에만"
-        keys, values = inner_of(obj)
+
+    def append_rows(oh, rows, folded):
+        """해시 껍데기 하나에 (키, 값) 쌍을 덧붙인다. 이미 접힌 키는 base가 이긴다."""
+        nonlocal added
+        keys, values = inner_of(oh)
         index = {bytes(k): i for i, k in enumerate(keys)}
-        # export.py가 base jsonl로 접어 넣은 키는 base가 정본이다 — 추가분은 그 뒤로
-        # 손이 안 가 낡으므로, 여기서 값을 따라가면 매 빌드가 정본을 옛 값으로 되돌린다
-        # (2026-08-16 실사고: 트레이너 메모 성격 줄이 그렇게 콜론형으로 되살아났다).
-        folded = {string_to_key(r["k"]).encode("utf-8")
-                  for r in read_jsonl(files[sec])} if sec in files else set()
-        for row in read_jsonl(path):
+        for row in rows:
             kb = string_to_key(row["k"]).encode("utf-8")
             nv = row["v"].encode("utf-8")
             if kb in folded:                   # 이미 접힌 키 — base가 이긴다
@@ -168,7 +175,31 @@ def main():
             keys.append(kb)
             values.append(nv)
             added += 1
-        obj._private_data = rubywrite.dumps([keys, values])
+        oh._private_data = rubywrite.dumps([keys, values])
+
+    def map_base_keys():
+        """맵마다 정본에 이미 있는 키 — 맵 절 추가분의 folded 몫."""
+        it = iter(read_jsonl(files[0]))
+        out = {}
+        for mi in range(len(d[0])):
+            head = next(it)
+            out[mi] = {string_to_key(next(it)["k"]).encode("utf-8") for _ in range(head["n"])}
+        return out
+
+    for sec, path in sorted(adds.items()):
+        # export.py가 base jsonl로 접어 넣은 키는 base가 정본이다 — 추가분은 그 뒤로
+        # 손이 안 가 낡으므로, 여기서 값을 따라가면 매 빌드가 정본을 옛 값으로 되돌린다
+        # (2026-08-16 실사고: 트레이너 메모 성격 줄이 그렇게 콜론형으로 되살아났다).
+        if sec == 0:
+            base = map_base_keys()
+            for mi, rows in sorted(map_adds.items()):
+                append_rows(d[0][mi], rows, base.get(mi, set()))
+            continue
+        obj = d[sec]
+        assert not isinstance(obj, list), f"{path.name}: 추가분은 해시 절에만"
+        folded = {string_to_key(r["k"]).encode("utf-8")
+                  for r in read_jsonl(files[sec])} if sec in files else set()
+        append_rows(obj, read_jsonl(path), folded)
 
     # 웹 스튜디오 제보용 버전 표식 — 게임은 이 키를 조회하지 않는다
     from datetime import date
