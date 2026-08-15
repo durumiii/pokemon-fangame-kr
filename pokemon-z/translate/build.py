@@ -149,9 +149,16 @@ def main():
         assert not isinstance(obj, list) and sec != 0, f"{path.name}: 추가분은 해시 절에만"
         keys, values = inner_of(obj)
         index = {bytes(k): i for i, k in enumerate(keys)}
+        # export.py가 base jsonl로 접어 넣은 키는 base가 정본이다 — 추가분은 그 뒤로
+        # 손이 안 가 낡으므로, 여기서 값을 따라가면 매 빌드가 정본을 옛 값으로 되돌린다
+        # (2026-08-16 실사고: 트레이너 메모 성격 줄이 그렇게 콜론형으로 되살아났다).
+        folded = {string_to_key(r["k"]).encode("utf-8")
+                  for r in read_jsonl(files[sec])} if sec in files else set()
         for row in read_jsonl(path):
             kb = string_to_key(row["k"]).encode("utf-8")
             nv = row["v"].encode("utf-8")
+            if kb in folded:                   # 이미 접힌 키 — base가 이긴다
+                continue
             if kb in index:                    # 지난 빌드가 넣은 키 — 값만 따라간다
                 if bytes(values[index[kb]]) != nv:
                     values[index[kb]] = nv

@@ -92,7 +92,9 @@ dat 포맷 문제를 만났을 때.
   충돌로 알린다. ⚠ **`export.py`로 하지 마라** — 통째 덮기라 정본이 옛 값으로 돌아간다
   (2026-08-08 실측 282행). export는 절 구조를 처음 만들거나 `*.add.jsonl`을 접어 넣는 자리다.
 - **`*.add.jsonl`로 새 키를 얹었으면 빌드 뒤 `export.py`로 base jsonl에 접어 넣어라** —
-  안 그러면 verify의 절23 미러 대조가 어긋난다.
+  안 그러면 verify의 절23 미러 대조가 어긋난다. 접힌 뒤로는 **base가 정본이고 추가분의
+  값은 낡은 사본**이다(`build.py`가 접힌 키를 건너뛴다). 추가분 파일을 고쳐 값을 바꾸려
+  들지 마라 — 고칠 자리는 base다.
 - 수정 후 `uv run translate/verify.py`, 재배포 전 `--strict`.
 
 ### 로컬 스튜디오 — `translate/fixgui.py`
