@@ -8659,10 +8659,10 @@
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] Pues ya tenéis algo en lo que dedicar más vuestra atención en lugar de otros experimentos.", "v": "\\c[6]<b>미라:</b>\\c[0] 그렇다면 다른 실험보다는 거기에 더 집중하면 되겠소."}
 {"k": "Y no os demoréis, pues es muy posible que pronto llegue un aliado de la profesora en su búsqueda.", "v": "그리고 지체하지 마시오. 박사를 찾으려는 그녀의 동료가 곧 도착할지도 모르니."}
 {"k": "Y no os demoréis, pues es muy posible que pronto llegue una aliada de la profesora en su búsqueda.", "v": "그리고 지체하지 마시오. 박사를 찾으려는 그녀의 동료가 곧 도착할지도 모르니."}
-{"k": "\\c[9]<b>Hibis:</b>\\c[0] ¿Te refieres a ese tal \\PN?", "v": "\\c[9]<b>히비스:</b>\\c[0] \\PN이라는 자를 말씀하시는 겁니까?"}
+{"k": "\\c[9]<b>Hibis:</b>\\c[0] ¿Te refieres a ese tal \\PN?", "v": "\\c[9]<b>히비스:</b>\\c[0] \\PN\\j[이라는,라는] 자를 말씀하시는 겁니까?"}
 {"k": "Puede estar tranquilo, tengo ojos por toda la <b>Torre Oscura</b> y sabré de la presencia de un intruso como ese.", "v": "안심하십시오, <b>어둠의 탑</b> 전역에 제 눈이 미치고 있으니 그런 침입자가 나타나면 바로 알게 될 겁니다."}
 {"k": "Como ya le he dicho, cada uno con su terreno y sin meterse en el del otro.", "v": "이미 말씀드렸듯이, 서로의 영역을 침범하지 않고 각자의 일에 전념하면 되는 겁니다."}
-{"k": "\\c[9]<b>Hibis:</b>\\c[0] ¿Te refieres a esa tal \\PN?", "v": "\\c[9]<b>히비스:</b>\\c[0] \\PN이라는 자를 말씀하시는 겁니까?"}
+{"k": "\\c[9]<b>Hibis:</b>\\c[0] ¿Te refieres a esa tal \\PN?", "v": "\\c[9]<b>히비스:</b>\\c[0] \\PN\\j[이라는,라는] 자를 말씀하시는 겁니까?"}
 {"k": "Puede estar tranquilo, tengo ojos por toda la <b>Torre Oscura</b> y sabré de la presencia de una intrusa como esa.", "v": "안심하십시오, <b>어둠의 탑</b> 전역에 제 눈이 미치고 있으니 그런 침입자가 나타나면 바로 알게 될 겁니다."}
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] <i>Bon</i>, y sobre todo cuidaos de que no os arrebate vuestra medalla de Regente.", "v": "\\c[6]<b>미라:</b>\\c[0] <i>Bon</i>, 그리고 무엇보다 그자가 당신의 섭정 배지를 빼앗지 못하도록 조심하시오."}
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] Maestro <b>Aure</b>, podemos irnos.", "v": "\\c[6]<b>미라:</b>\\c[0] <b>아우레</b> 스승님, 이제 가시지요."}
@@ -9054,7 +9054,7 @@
 {"k": "Pondremos rumbo hacia allí inmediatamente.", "v": "즉시 그곳으로 향하겠습니다."}
 {"k": "\\c[2]<b>Anturia:</b>\\c[0] La deuda está saldada entonces.", "v": "\\c[2]<b>안투리아:</b>\\c[0] 그럼 빚은 청산된 셈이구나."}
 {"k": "Si sirve de algo, me gustaría advertiros del enorme peligro que corréis. Tiempos aciagos os han tocado vivir.", "v": "도움이 될지 모르겠지만, 너희가 직면한 거대한 위험에 대해 경고하고 싶구나. 참으로 험난한 시대를 살게 되었어."}
-{"k": "\\c[3]<b>Crisanto:</b>\\c[0] Llegados a este punto, dudo que exista Pokémon o ser humano que pueda atemorizarnos a \\PN o a mí.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 여기까지 왔는데, 이제 \\PN나 나를 겁먹게 할 포켓몬이나 인간이 어디 있겠습니까."}
+{"k": "\\c[3]<b>Crisanto:</b>\\c[0] Llegados a este punto, dudo que exista Pokémon o ser humano que pueda atemorizarnos a \\PN o a mí.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 여기까지 왔는데, 이제 \\PN\\j[이나,나] 나를 겁먹게 할 포켓몬이나 인간이 어디 있겠습니까."}
 {"k": "Y hablando de Pokémon, <i>madame</i>...", "v": "그리고 포켓몬 이야기가 나와서 말입니다만, <i>마담</i>..."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] Sé que la construcción de la <b>Fábrica de Pokéball</b> ha traído un gran pesar a los Pokémon de la zona.", "v": "\\c[3]<b>크리산토:</b>\\c[0] <b>몬스터볼 공장</b> 건설이 이 지역 포켓몬들에게 얼마나 큰 슬픔을 주었는지는 잘 알고 있습니다."}
 {"k": "Ahora que se ha incendiado y que su apertura se va a retrasar, me gustaría comprometerme a modificar su funcionamiento.", "v": "이제 불이 나서 개장이 연기된 만큼, 공장 운영 방식을 개혁하겠다고 약속드리고 싶습니다."}
@@ -9268,18 +9268,18 @@
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¿Eso es... es un cráneo?", "v": "\\c[3]<b>크리산토:</b>\\c[0] 저것이... 정녕 두개골이란 말인가?"}
 {"k": "¿Con una corona y rodeado de ofrendas?", "v": "왕관을 쓰고 제물에 둘러싸여 있다니?"}
 {"k": "<b>Mujer:</b> Hola, viajeros. ¿Habéis venido a presentarle vuestros respetos a la Reina Fundadora?", "v": "<b>아낙:</b> 어서 오시게, 여행자들이여. 건국 여왕님께 경의를 표하러 오셨는가?"}
-{"k": "<b>Mujer:</b> El cráneo que tenéis delante es el de <b>Tornasola</b>, la mujer que fundó el reino de <b>Kalos</b> y fue su primera gobernante, tiempo ha.", "v": "<b>여성:</b> 앞에 있는 두골은 먼 옛날 <b>토르나솔라</b>의 것이라네. <b>칼로스</b> 왕국을 세우고 첫 번째로 나라를 다스렸던 여성의 것이지."}
+{"k": "<b>Mujer:</b> El cráneo que tenéis delante es el de <b>Tornasola</b>, la mujer que fundó el reino de <b>Kalos</b> y fue su primera gobernante, tiempo ha.", "v": "<b>아낙:</b> 앞에 있는 두골은 먼 옛날 <b>토르나솔라</b>의 것이라네. <b>칼로스</b> 왕국을 세우고 첫 번째로 나라를 다스렸던 여성의 것이지."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡<i>Sacrebleu</i>! ¡El cráneo de <b>Tornasola</b>!", "v": "\\c[3]<b>크리산토:</b>\\c[0] <i>Sacrebleu</i>! <b>토르나솔라</b>의 해골이라고요?!"}
 {"k": "Difícil de creer. El paradero de los restos de la antigua reina es desconocido, y su muerte se produjo hace más de 1000 años.", "v": "믿기 힘든 일이야. 고대 여왕의 유해가 어디 있는지는 알려지지 않았고, 서거하신 지도 1000년이 넘었건만."}
-{"k": "<b>Mujer:</b> Si no queréis creerlo, es vuestro problema. El cráneo apareció en una montaña cercana durante el deshielo.", "v": "<b>여성:</b> 믿지 않겠다면 자네들 사정이지만. 그 두개골은 얼음이 녹을 무렵 근처 산에서 나타났다네."}
-{"k": "<b>Mujer:</b> Cuenta la tradición que <b>Pueblo Fresco</b> fue el primer asentamiento de <b>Kalos</b>. La Reina Fundadora se aseguró de que fuera una aldea donde humanos y Pokémon conviviesen en paz.", "v": "<b>여성:</b> 전해 내려오는 말에 따르면 <b>버들비마을</b>은 <b>칼로스</b>의 첫 정착지였다고 해. 건국 여왕님은 이곳을 인간과 포켓몬이 평화롭게 공존하는 마을로 만드셨지."}
+{"k": "<b>Mujer:</b> Si no queréis creerlo, es vuestro problema. El cráneo apareció en una montaña cercana durante el deshielo.", "v": "<b>아낙:</b> 믿지 않겠다면 자네들 사정이지만. 그 두개골은 얼음이 녹을 무렵 근처 산에서 나타났다네."}
+{"k": "<b>Mujer:</b> Cuenta la tradición que <b>Pueblo Fresco</b> fue el primer asentamiento de <b>Kalos</b>. La Reina Fundadora se aseguró de que fuera una aldea donde humanos y Pokémon conviviesen en paz.", "v": "<b>아낙:</b> 전해 내려오는 말에 따르면 <b>버들비마을</b>은 <b>칼로스</b>의 첫 정착지였다고 해. 건국 여왕님은 이곳을 인간과 포켓몬이 평화롭게 공존하는 마을로 만드셨지."}
 {"k": "Tiene sentido que haya aparecido aquí, en el lugar al que ella tenía más cariño.", "v": "여왕께서 가장 아끼시던 이곳에 나타난 거라면 납득이 가네."}
-{"k": "<b>Mujer:</b> Pronto celebraremos el <b>Festival del Invierno</b>. Si presentáis una ofrenda a la reina y pedís un deseo, este se os cumplirá.", "v": "<b>여성:</b> 곧 <b>겨울 축제</b>가 열릴 예정이라네. 여왕님께 공물을 바치고 소원을 빌면 이루어진다지."}
+{"k": "<b>Mujer:</b> Pronto celebraremos el <b>Festival del Invierno</b>. Si presentáis una ofrenda a la reina y pedís un deseo, este se os cumplirá.", "v": "<b>아낙:</b> 곧 <b>겨울 축제</b>가 열릴 예정이라네. 여왕님께 공물을 바치고 소원을 빌면 이루어진다지."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] Le agradezco que comparta la tradición de su pueblo con nosotros, <i>madame</i>.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 마을의 전통을 들려주셔서 감사합니다, <i>마담</i>."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] Pero si de mí depende, aunaré todos mis esfuerzos en materializar los deseos de la gente con cambios reales en la región.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 하지만 제게 달린 일이라면, 이 지역에 실질적인 변화를 가져와 사람들의 바람을 이루어 내는 데 온 힘을 다하겠습니다."}
-{"k": "<b>Mujer:</b> ¡Ja! Tú eres un capitán del gobierno, ¿verdad?", "v": "<b>여자:</b> 하! 자네는 정부 쪽 대장이지, 맞지?"}
+{"k": "<b>Mujer:</b> ¡Ja! Tú eres un capitán del gobierno, ¿verdad?", "v": "<b>아낙:</b> 하! 자네는 정부 쪽 대장이지, 맞지?"}
 {"k": "Ya nos prometisteis el paraíso y al final solo habéis mantenido la miseria.", "v": "낙원을 만들어 주겠다더니, 결국 남은 건 이 비참한 꼴뿐이잖아."}
-{"k": "<b>Mujer:</b> No infravaloréis la esperanza de un pueblo, por muy ingenua que parezca.", "v": "<b>여성:</b> 아무리 순진해 보일지라도, 민중의 희망을 과소평가하지 말게나."}
+{"k": "<b>Mujer:</b> No infravaloréis la esperanza de un pueblo, por muy ingenua que parezca.", "v": "<b>아낙:</b> 아무리 순진해 보일지라도, 민중의 희망을 과소평가하지 말게나."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ...", "v": "\\c[3]<b>크리산토:</b>\\c[0] ..."}
 {"k": "La región de <b>Kalos</b> está llena de bellas personas, de bellos Pokémon...", "v": "<b>칼로스</b> 지방은 아름다운 사람들과 아름다운 포켓몬으로 가득합니다..."}
 {"k": "Todos ellos se merecen algo mejor.", "v": "그들 모두 더 나은 삶을 누릴 자격이 있습니다."}
