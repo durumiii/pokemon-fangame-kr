@@ -221,6 +221,17 @@ rubymarshal로 열어 섹션별 zlib 해제 후 `_INTL("키")` 정확 일치로 
   앵커라 `\r\n`은 공백이 아니라 `\n`으로 접히고, 키가 그 모양이 아니면 **조용히
   스페인어가 나온다**(예외도 로그도 없다). 정의는 `build.py string_to_key`(포터블 루비
   오라클로 전량 검증) — 의심되면 probe.py가 이 정규화로 조회해 준다.
+- **루비 오라클 돌리는 법** — dat가 게임에서 어떻게 읽히는지 판정할 때는 파이썬 재현이
+  아니라 루비 실물로 잰다. sudo 없이 tar 하나로 끝난다:
+  ```
+  curl -sL -o pr.tar.gz https://github.com/Homebrew/homebrew-portable-ruby/releases/download/3.4.5/portable-ruby-3.4.5.x86_64_linux.bottle.tar.gz
+  tar xzf pr.tar.gz -C rb && ./rb/portable-ruby/3.4.5/bin/ruby -v
+  ```
+  클래스 정의는 **흉내 내지 말고 게임 스크립트에서 줄째 잘라 쓴다**(`Intl_Messages`의
+  `OrderedHash`·`Messages`). `Marshal.load`는 모르는 클래스에서 죽으니 먼저 정의하고,
+  RGSS 함수 `Kernel.pbRgssOpen`은 `File.open`으로 채운다. **대조군을 함께 돌려라** —
+  손 안 댄 dat에서 원문이 나오는 것까지 봐야 판정이 선다. 남는 미확인 하나는 루비 판
+  차이다(시험 3.x / 게임 RGSS 1.8).
 - 스크립트 리터럴의 루비 보간(`#{...}`)은 번역표가 원천 불가 — `share/patch_intl.py`
   소스 수술(멱등)에 EDITS로 얹는다. 이름 「동등 비교」가 로직에 박힌 자리도 같은 도구 몫.
 - 조사 자동 선택(`\j[받침형,무받침형]`)은 모드가 아니라 **한글패치 코어의 본문 섹션**이다.
