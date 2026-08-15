@@ -82,6 +82,7 @@
 {"es": "Te doy la bienvenida al Centro Pokémon, hacemos milagros sanitarios. ¿Quieres curar a tu equipo?", "ko": "포켓몬센터에 오신 것을 환영해요. 저희는 건강의 기적을 만들어낸답니다. 포켓몬들을 회복시켜 드릴까요?", "맵수": 4, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "\\c[1]<b>AZ:</b>\\c[0] ...", "ko": "\\c[1]<b>AZ:</b>\\c[0] ...", "맵수": 4, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "\\sh¡ZYYYYYYY!", "ko": "\\sh지가아아아아!", "맵수": 4, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
+{"es": "Si te haces con ese Pokémon, ponlo en el primer lugar de tu equipo para que pueda verlo.", "ko": "그 포켓몬을 손에 넣거든 볼 수 있게 선두에 세워서 보여 줘.", "맵수": 4, "src": "Z-27 갈림 해제(2026-08-16)"}
 {"es": "Izquierda", "ko": "왼쪽", "맵수": 3, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "Derecha", "ko": "오른쪽", "맵수": 3, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "¡Hola! Soy el Activador del <b>Reto Monotype</b>.", "ko": "안녕하세요! 저는 <b>모노타입 챌린지</b>를 안내해 드리는 사람이에요.", "맵수": 3, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
@@ -398,4 +399,3 @@
 {"es": "<b>Contrincante:</b> ¡Bien! ¡Veamos quién ha ganado!", "ko": "<b>상대방:</b> 좋아! 누가 이겼는지 확인해 보자고!", "맵수": 2, "src": "sync"}
 {"es": "¡Tu contrincante gana la partida!", "ko": "상대방의 승리다!", "맵수": 2, "src": "sync"}
 {"es": "<b>Contrincante:</b> ¡Ja! Pues parece que ninguno nos llevamos nada esta vez.", "ko": "<b>상대방:</b> 하! 이번에는 둘 다 아무것도 못 챙겼네.", "맵수": 2, "src": "sync"}
-{"es": "Si te haces con ese Pokémon, ponlo en el primer lugar de tu equipo para que pueda verlo.", "ko": "그 포켓몬을 손에 넣거든 볼 수 있게 선두에 세워서 보여 줘.", "맵수": 4, "src": "Z-27 갈림 해제(2026-08-16)"}

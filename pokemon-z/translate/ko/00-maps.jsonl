@@ -1105,10 +1105,10 @@
 {"map": 25, "n": 92}
 {"k": "<b>Movimientos de patada:</b> Megapatada, Patada Baja, Patada Giro, Patada Salto/Salto Alta, Doble Patada, Triple Áxel, Patada Ígnea, Triplepatada, Patada Tropical.", "v": "<b>발차기 동작:</b> 메가톤킥, 안다리걸기, 돌려차기, 점프킥/무릎차기, 두번차기, 트리플악셀, 블레이즈킥, 트리플킥, 트로피컬킥."}
 {"k": "¡<i>Bonjourno</i>! ¿Quieres iniciar un super-entrenamiento de Puntos de Esfuerzo?", "v": "<i>Bonjourno</i>! 노력치 슈퍼 트레이닝을 시작해 볼래?"}
-{"k": "¿Qué entrenamiento te gustaría hacer?", "v": "어떤 훈련을 하고 싶으신가요?"}
-{"k": "¡Mamma mia! ¡Buen entrenamiento!", "v": "맘마미아! 정말 좋은 훈련이었네요!"}
-{"k": "¿No? Pues tus Pokémon serán unos debiluchos.", "v": "아니라고요? 그럼 당신 포켓몬들은 약골이 되고 말 텐데요."}
-{"k": "Si derrotas de forma sucesiva a mis equipos Pokémon, tus Pokémon ganarán puntos extra en una característica determinada de forma rápida y eficiente.", "v": "제 포켓몬 팀을 연달아 물리치시면, 당신의 포켓몬은 특정 능력치 포인트를 빠르고 효율적으로 추가 획득합니다."}
+{"k": "¿Qué entrenamiento te gustaría hacer?", "v": "어떤 훈련을 하고 싶어?"}
+{"k": "¡Mamma mia! ¡Buen entrenamiento!", "v": "맘마미아! 정말 좋은 훈련이었어!"}
+{"k": "¿No? Pues tus Pokémon serán unos debiluchos.", "v": "아니라고? 그럼 네 포켓몬들은 약골이 되고 말 텐데."}
+{"k": "Si derrotas de forma sucesiva a mis equipos Pokémon, tus Pokémon ganarán puntos extra en una característica determinada de forma rápida y eficiente.", "v": "내 포켓몬 팀을 연달아 물리치면, 네 포켓몬은 특정 능력치 포인트를 빠르고 효율적으로 추가 획득해."}
 {"k": "En concreto, cada combate conmigo aumentará la estadística deseada en 36 <b>Puntos de Esfuerzo</b>, también conocido como EVs.", "v": "나랑 배틀할 때마다 원하는 능력치가 36 <b>노력치</b>(EV)만큼 올라간다구."}
 {"k": "Si equipas a tu Pokémon con objetos como Pesa Recia, Lente Recia... acelerarás el proceso de entrenamiento.", "v": "포켓몬에게 파워웨이트, 파워렌즈 같은 도구를 지니게 하면 훈련 속도를 더 올릴 수 있지."}
 {"k": "<b>Enfermera Pokémon:</b> ¡Aaahhh! ¿E-eres un espíritu? ¿O eres real?", "v": "<b>포켓몬 간호사:</b> 으아아악! 유-유령이야? 아니면 진짜 사람이야?"}
@@ -8997,7 +8997,7 @@
 {"k": "Por haber quemado el Incienso, solo puedes continuar con 5 Pokémon como máximo en tu equipo.", "v": "향을 태웠으므로, 지닌 포켓몬을 최대 5마리까지만 두고 진행할 수 있습니다."}
 {"k": "Por haber quemado los Inciensos, solo puedes continuar con 4 Pokémon como máximo en tu equipo.", "v": "향을 태웠으므로, 지닌 포켓몬을 최대 4마리까지만 두고 진행할 수 있습니다."}
 {"k": "¡Somos las nietas de las brujas que no conseguisteis quemar! No... Espera... La bruja soy yo. ¡Soy la abuela de las nietas de las brujas que no conseguisteis quemar!", "v": "“우리는 너희가 태워 죽이지 못한 마녀들의 손녀다!” 아니… 잠깐… 마녀는 바로 나잖아. “나는 너희가 태워 죽이지 못한 마녀들의 손녀들의 할머니다!”"}
-{"k": "Anturia... ¡he hecho todo lo que he podido! ¡Lo siento!", "v": "안투리아님... 제가 할 수 있는 건 다 해봤어요! 죄송해요!"}
+{"k": "Anturia... ¡he hecho todo lo que he podido! ¡Lo siento!", "v": "안투리아님... 할 수 있는 건 다 해봤느니라! 면목이 없구나!"}
 {"k": "Quien mucho abarca, poco aprieta. Está claro que no todas podemos destacar en la brujería y con los Pokémon como la gran Anturia.", "v": "욕심이 과하면 일을 그르치는 법이니라! 위대한 안투리아님처럼 우리 모두가 마법과 포켓몬 모두에 뛰어날 수는 없는 법이지."}
 {"k": "¿A qué casa te ha enviado el Sombrero Seleccionador? A mí me ha enviado a Slytherin.", "v": "분류모자가 널 어느 기숙사로 보냈느냐? 난 슬리데린으로 보내주던걸."}
 {"k": "¡Aaah! ¡Que sepas que he perdido porque Saturno estaba alineado con la constelación de Gogoat!", "v": "아아! 내가 진 건 토성이 고고트자리와 일직선상에 있었기 때문이라는 걸 알아둬!"}
