@@ -111,13 +111,16 @@ def worth_rewriting(v: str) -> bool:
 
 
 def frozen_keys() -> set:
-    """걸음 3~4에서 손으로 확정한 절23 키 — 다시 태우면 퇴행 위험이라 동결."""
+    """손으로 확정한 절23 키 — 다시 태우면 퇴행 위험이라 동결.
+
+    출처 둘: 동결 목록(data/frozen-keys.jsonl)과 전투 표현 대장(그쪽은 손댄 자리를
+    적는 것이 본업이라 키를 옮겨 오지 않고 여기서 읽는다 — 대장이 자라면 동결도 따라 는다).
+    """
     led = json.loads((HERE / "battle-expr-replacements.json").read_text(encoding="utf-8"))
     entries = led if isinstance(led, list) else next(
         v for v in led.values() if isinstance(v, list))
     keys = {e["es"] for e in entries if isinstance(e, dict) and "es" in e}
-    keys |= {json.loads(l)["k"]
-             for l in (HERE / "ko" / "23-script-texts.add.jsonl").read_text(encoding="utf-8").splitlines() if l}
+    keys |= {r["es"] for r in read_jsonl(HERE / "data" / "frozen-keys.jsonl")}
     return keys
 
 

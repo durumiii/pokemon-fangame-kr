@@ -6,8 +6,9 @@
 
 루비 보간이 _INTL 리터럴 안에 있으면 런타임 문자열이 매번 달라져 번역표 키와
 영원히 안 맞는다(제보 목록의 「루비 보간 리터럴 12곳」). 이 도구는 원문 소스를
-정확 일치로 치환해 정상 템플릿 경로에 합류시킨다. 대응 번역은
-translate/ko/23-script-texts.add.jsonl (「보간 수술」 src 행들).
+정확 일치로 치환해 정상 템플릿 경로에 합류시킨다. 대응 번역은 정본
+translate/ko/23-script-texts.jsonl에 있다(동결 목록 data/frozen-keys.jsonl의
+「보간 수술」 src 행들이 그 자리를 가리킨다).
 
 12곳 중 수술 대상은 6곳 — 주머니 번호 보간 5곳은 런타임 키(bagPocket1~8)가
 이미 dat에 번역돼 있어 손댈 필요가 없고, 1곳(166 타일퍼즐)은 그래픽 경로다.
@@ -69,7 +70,7 @@ EDITS += [
 # 진짜 저주 자리는 PokeBattle_Battle의 턴 종료 처리에 따로 있고 그쪽은 정상이다.
 # 두 자리가 같은 리터럴을 쓰므로 번역표로는 원리상 분리할 수 없다 — 소스에서 가른다.
 # 새 문자열은 본가 스페인어판 자구(공식 코퍼스 실측: "¡… ha sufrido los efectos de
-# Otra Vez!" → 「… 앙코르를 받았다!」), 짝 번역은 23-script-texts.add.jsonl.
+# Otra Vez!" → 「… 앙코르를 받았다!」), 짝 번역은 23-script-texts.jsonl.
 # 옛 문자열이 저주 쪽과 안 겹치는 근거: 인자가 다르다(여기는 opponent.pbThis, 저주는 i.pbThis).
 EDITS += [
     ("PokeBattle_MoveEffects",
