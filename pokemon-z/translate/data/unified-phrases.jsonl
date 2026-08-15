@@ -8,6 +8,7 @@
 {"es": "¡Has encontrado otra página de Alquimia Pokémon! ¡Qué emocionante!", "ko": "새로운 연금술 제작법을 찾았다! 정말 신난다!", "맵수": 44, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "Tu catálogo de creación se ha ampliado.", "ko": "제작할 수 있는 조합법이 늘어났다!", "맵수": 44, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "¿Usar <b>Polvo Explosivo</b>?", "ko": "<b>폭발가루</b>를 사용할까?", "맵수": 41, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
+{"es": "¿Qué Pokémon debería recordar un movimiento?", "ko": "어떤 포켓몬에게 기술을 떠올리게 할까?", "맵수": 41, "src": "Z-28/Z-43 갈림 해제(2026-08-16)"}
 {"es": "Misión cumplida, ¡vuelve cuando lo necesites!", "ko": "맡겨 두신 포켓몬이 모두 건강해졌습니다! 또 이용해 주세요!", "맵수": 36, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "Esto llevará un rato.", "ko": "잠시만 기다려 주세요.", "맵수": 35, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "Estamos a tu servicio.", "ko": "언제든 정성껏 모시겠습니다.", "맵수": 34, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
@@ -292,7 +293,7 @@
 {"es": "Mira, me acaban de devolver estos tres. ¿Alguno despierta tu interés?", "ko": "방금 이 세 권이 반납되었다. 마음에 드는 게 있나?", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "(Te quedas con este libro)", "ko": "(이 책을 빌린다)", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "(Devuelves el anterior libro y te quedas con este)", "ko": "(이전 책을 반납하고 이 책을 빌린다)", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
-{"es": "¡Espera, primero tienes que devolverme el que ya habías sacado!", "ko": "잠깐만요! 먼저 이미 빌려 가신 책부터 반납하셔야 해요!", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
+{"es": "¡Espera, primero tienes que devolverme el que ya habías sacado!", "ko": "잠깐! 먼저 이미 빌려 간 책부터 반납해야지!", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "Vale", "ko": "알겠어", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "\"Asesinato en un barco\"", "ko": "“선상 살인 사건”", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "\"La magia de los elfos\"", "ko": "“엘프의 마법”", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
@@ -397,4 +398,3 @@
 {"es": "<b>Contrincante:</b> ¡Bien! ¡Veamos quién ha ganado!", "ko": "<b>상대방:</b> 좋아! 누가 이겼는지 확인해 보자고!", "맵수": 2, "src": "sync"}
 {"es": "¡Tu contrincante gana la partida!", "ko": "상대방의 승리다!", "맵수": 2, "src": "sync"}
 {"es": "<b>Contrincante:</b> ¡Ja! Pues parece que ninguno nos llevamos nada esta vez.", "ko": "<b>상대방:</b> 하! 이번에는 둘 다 아무것도 못 챙겼네.", "맵수": 2, "src": "sync"}
-{"es": "¿Qué Pokémon debería recordar un movimiento?", "ko": "어떤 포켓몬에게 기술을 떠올리게 할까?", "맵수": 41, "src": "Z-28/Z-43 갈림 해제(2026-08-16)"}
