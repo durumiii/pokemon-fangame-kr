@@ -291,9 +291,9 @@
 {"k": "\\c[6]<b>F3:</b>\\c[0] Me ocuparé de mantener el <b>Laboratorio Flare</b> a salvo mientras la <i>madame</i> profesora no está, \\PN.", "v": "\\c[6]<b>F3:</b>\\c[0] <b>마담</b> 께서 부재하는 동안, <i>플레어 연구소</i>를 안전하게 지키는 일은 제가 맡겠습니다, \\PN 님."}
 {"k": "No permitiré que todo el trabajo que yace aquí dentro caiga en malas manos.", "v": "이곳에 축적된 모든 연구 성과가 그릇된 손에 들어가는 일은 허용하지 않겠습니다."}
 {"k": "¿Necesitas algo?", "v": "필요하신 것이 있으십니까?"}
-{"k": "¿Qué Pokémon debería recordar un movimiento?", "v": "어떤 포켓몬에게 기술을 떠올리게 하시겠습니까?"}
+{"k": "¿Qué Pokémon debería recordar un movimiento?", "v": "어떤 포켓몬에게 기술을 떠올리게 할까?"}
 {"k": "Vale, ¡vuelve cuando lo necesites!", "v": "알겠습니다. 필요하실 때 언제든 다시 찾아주십시오!"}
-{"k": "Eso es un huevo, pedazo de inútil.", "v": "그것은 알입니다. 비합리적인 요청입니다..."}
+{"k": "Eso es un huevo, pedazo de inútil.", "v": "그것은 알입니다. 쓸모없는 인간이군요."}
 {"k": "\\bNo way, I don't want to go near a Shadow Pokémon..", "v": "\\b말도 안 됩니다. 그림자 포켓몬 근처에는 가고 싶지 않습니다..."}
 {"k": "Hmm... parece que no puedo enseñarle nada a tú \\v[3].", "v": "흠... 당신의 \\v[3]에게는 가르쳐 드릴 수 있는 기술이 없는 것 같습니다."}
 {"k": "¿Qué debería recordar \\v[3]?", "v": "\\v[3]에게 어떤 기술을 떠올리게 해 드릴까요?"}
@@ -6077,9 +6077,9 @@
 {"k": "No", "v": "아니요"}
 {"map": 177, "n": 20}
 {"k": "Estoy buscando un Clamperl, ¿lo cambiarías por mi Piplup?", "v": "내가 진주몽을 하나 찾고 있는데, 내 팽도리랑 바꾸지 않을래?"}
-{"k": "¡Cúidalo muy bien!", "v": "귀여워해 주세요!"}
-{"k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 갖고 계시지 않네요."}
-{"k": "Si te haces con ese Pokémon, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "그 포켓몬을 손에 넣으시면 볼 수 있게 선두에 세워서 보여 주세요."}
+{"k": "¡Cúidalo muy bien!", "v": "귀여워해 줘!"}
+{"k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 갖고 있지 않네."}
+{"k": "Si te haces con ese Pokémon, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "그 포켓몬을 손에 넣거든 볼 수 있게 선두에 세워서 보여 줘."}
 {"k": "Bueno, otra vez será.", "v": "그렇다면 다음 기회에."}
 {"k": "Las cafeterías se volvieron muy populares desde que empezaron a traer café desde el nuevo mundo.", "v": "신대륙에서 커피를 들여오기 시작하면서 카페가 아주 인기를 끌게 됐지."}
 {"k": "Antes no se llamaban cafeterías, claro. Podían llamarse creperías, o pastelerías...", "v": "물론 예전엔 카페라고 부르지 않았어. 크레페 가게나 제과점이라고 불렀으려나..."}
@@ -6090,7 +6090,7 @@
 {"k": "¿Quieres una crêpe de <b>Ciudad Luminalia</b>? Están exquisitas y solo valen 200 pokécuartos.", "v": "<b>미르시티</b> 크레페 하나 먹어볼래? 정말 맛있는데 단돈 200포켓프랑이야."}
 {"k": "Mmm... Deberías volver con más dinero encima.", "v": "음... 돈을 좀 더 챙겨서 다시 오는 게 좋겠어."}
 {"k": "¿Seguro? Que se agotan muy rápido...", "v": "정말? 이거 금방 다 팔리는데..."}
-{"k": "Estoy buscando un Misdreavus, ¿lo cambiarías por mi Chimchar?", "v": "무우마를 찾고 있는데, 제 불꽃숭이와 교환하지 않을래요?"}
+{"k": "Estoy buscando un Misdreavus, ¿lo cambiarías por mi Chimchar?", "v": "무우마를 찾고 있는데, 내 불꽃숭이와 교환하지 않을래?"}
 {"k": "Las cafeterías son una buena forma de socializar en un mundo cada vez más centrado en trabajar y producir.", "v": "일과 생산이 점점 중시되는 세상에서 카페는 사교를 나누기에 아주 좋은 공간이죠."}
 {"k": "¡Has encontrado otra página de Alquimia Pokémon! ¡Qué emocionante!", "v": "새로운 연금술 제작법을 찾았다! 정말 신난다!"}
 {"k": "Tu catálogo de creación se ha ampliado.", "v": "제작할 수 있는 조합법이 늘어났다!"}
@@ -6121,10 +6121,10 @@
 {"k": "No", "v": "아니요"}
 {"map": 179, "n": 19}
 {"k": "Las estrellas solo brillan por la noche. Por eso yo nunca trabajo durante el día. ¡Je, je!", "v": "별은 밤에만 빛나는 법이죠. 그래서 전 낮에는 절대 일하지 않아요. 헤헤!"}
-{"k": "Estoy buscando un Rapidash, ¿lo cambiarías por mi Tepig?", "v": "날쌩마를 찾고 있는데, 제 뚜꾸리와 교환할래요?"}
-{"k": "¡Cúidalo muy bien!", "v": "귀여워해 주세요!"}
-{"k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 갖고 계시지 않네요."}
-{"k": "Si te haces con ese Pokémon, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "그 포켓몬을 손에 넣으시면 볼 수 있게 선두에 세워서 보여 주세요."}
+{"k": "Estoy buscando un Rapidash, ¿lo cambiarías por mi Tepig?", "v": "날쌩마를 찾고 있는데, 내 뚜꾸리랑 교환할래?"}
+{"k": "¡Cúidalo muy bien!", "v": "귀여워해 줘!"}
+{"k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 갖고 있지 않네."}
+{"k": "Si te haces con ese Pokémon, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "그 포켓몬을 손에 넣거든 볼 수 있게 선두에 세워서 보여 줘."}
 {"k": "Bueno, otra vez será.", "v": "그렇다면 다음 기회에."}
 {"k": "Hay tantos modos de ver la vida como personas hay en el mundo.", "v": "세상에 사람이 있는 만큼이나 삶을 바라보는 방식도 다양한 법이죠."}
 {"k": "Eso es lo que he aprendido en esta cafetería, conociendo a muchas personas de otras partes del mundo.", "v": "세계 각지에서 온 수많은 사람을 이 카페에서 만나며 깨달은 게 바로 그거랍니다."}
