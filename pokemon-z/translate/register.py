@@ -8,7 +8,8 @@
 그래서 뒤에서부터 **종결형이 분명한 문장**을 찾아 그것으로 판정한다.
 
 화자는 `speaker.py`의 귀속표를 쓴다. 이름표가 붙은 줄로 그 인물의 평소 급을
-정하고, 확정된 줄(태그+상속)이 그 급과 어긋나는지 본다.
+정하고, 확정된 줄(태그+상속+전투호출)이 그 급과 어긋나는지 본다. 전투 호출 줄은
+**검사만 받고 평소 급 계산에는 안 들어간다**(`CHECKED` 옆 주석).
 
 ⚠ 어긋남은 관측이지 처방이 아니다. 어미를 고칠 자리와 귀속이 틀린 자리가
 섞여 있어 사람이 갈라야 한다.
@@ -145,8 +146,14 @@ def load():
     return rows, ko
 
 
+# 검사는 하되 **평소 급 계산에는 안 넣는** 근거. 전투 호출(`pbTrainerBattle`)의 대사는
+# 화자가 호출 인자로 확정되지만, 트레이너 이름 322종 중 38종이 기존 이름표와 같은
+# 문자열이라 평소 급 표에 섞으면 확정된 인물의 급이 흔들린다(Z-60).
+CHECKED = ("태그", "상속", "전투호출")
+
+
 def dominant(rows, ko):
-    """이름표가 붙은 줄로 각 인물의 평소 급을 정한다."""
+    """이름표가 붙은 줄로 각 인물의 평소 급을 정한다 — `how="태그"`만 센다."""
     tally = defaultdict(Counter)
     for r in rows:
         if r["how"] != "태그" or not r["who"]:
@@ -166,7 +173,7 @@ def scan():
     out, skipped = [], Counter()
     for r in rows:
         who = r["who"]
-        if r["kind"] != "text" or r["how"] not in ("태그", "상속") or not who:
+        if r["kind"] not in ("text", "battle") or r["how"] not in CHECKED or not who:
             continue
         if is_dual(who):
             skipped["이중말투"] += 1

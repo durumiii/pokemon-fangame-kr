@@ -20,7 +20,7 @@ usage:
   uv run translate/speaker.py stats         판정 근거별 집계
   uv run translate/speaker.py selftest      정답을 아는 자리로 채점한다
 
-귀속 근거(`how`)는 다섯이다:
+귀속 근거(`how`)는 아래와 같다:
   태그        그 줄에 이름표가 붙어 있다 — 확실
   상속        같은 페이지·같은 분기 깊이에서 앞 이름표를 물려받았다
   분기다름    분기 깊이를 넘어 물려받았다 — 미더운 정도가 떨어진다
@@ -29,6 +29,12 @@ usage:
   지문        그림이 사물·연출(표지판·책·화살표)이다 — 화자가 없고 평서 지문이 정답
   미상        이름표도 그림도 없다 — 지문이거나 시스템 문구
   선택지      주인공의 선택지. 주인공은 대사를 하지 않아 이름표가 붙지 않는다
+  전투호출    `pbTrainerBattle`의 셋째 인자 — 같은 호출의 직함·이름이 곧 화자다. 확실
+  스크립트    스크립트의 `_I("…")`인데 화자를 뽑을 인자가 없다(육아방 `pbDayCareChoose`)
+
+뒤 둘은 메시지 명령이 아니라 **스크립트 명령**(355/655, 조건 분기 111 type 12)에서
+온다. `kind="battle"`로 따로 서고 이름표 상속에 끼지 않는다 — 물려받지도 물려주지도
+않고 `cast`·`n_msg`에도 안 들어간다. 직함 상수는 `tclass` 칸에 실린다.
 
 `prompt` 칸이 참이면 **바로 뒤가 선택지인 메시지**다. 인물의 물음일 수도 시스템
 안내일 수도 있으니 어투를 갈기 전에 사람이 본다 — 이 도구는 「누구에게 붙어
@@ -71,6 +77,12 @@ KNOWN = [
     ("¿Y <b>Lanto</b> es quien ha financiado", "Crisanto", "맵111 제보"),
 ]
 
+# 전투 호출(`pbTrainerBattle`) 갈래의 정답 자리 — (맵, 이벤트, 기대 화자, 기대 근거).
+# 셋째는 육아방 `pbDayCareChoose`다. 인자가 `_I` 하나뿐이라 **화자 없음이 정답**이고,
+# 전투 호출과 같은 규칙으로 처리하면 안 된다.
+KNOWN_BATTLE = [(90, 35, "Wolfram", "전투호출"), (20, 11, "Alexandre", "전투호출"),
+                (48, 5, "", "스크립트")]
+
 # 층 판정의 정답 자리 — 2026-08-13 감사 §3③④. 앞 다섯은 말투 정본 등재인데 이름표
 # 행수가 50 미만이라 옛 규칙이 떨어뜨렸고, 뒤 둘은 어간 충돌로 정본 인물이 되던 무명 단원이다.
 KNOWN_CLS = [("who", "Anturia", "PS"), ("who", "Capitán Merlot", "PS"),
@@ -90,30 +102,115 @@ def b2s(v):
     return v.decode("utf-8", errors="replace") if isinstance(v, bytes) else str(v)
 
 
+def call_args(s, i):
+    """`(` 바로 뒤 i에서 시작해 짝이 맞는 `)`까지, 최상위 콤마로 자른 인자 목록.
+
+    돌려주는 것은 (시작 오프셋, 원문 조각) 쌍이다 — 인자 안의 문자열이 원본
+    어디에 있었는지를 알아야 `_I(…)`가 셋째 인자인지 가릴 수 있다. 괄호 깊이와
+    따옴표 상태를 함께 추적한다. 「문자열 앞의 가장 가까운 호출」 휴리스틱은
+    이 코퍼스에서 우연히 맞을 뿐 구조가 보장하지 않는다.
+    """
+    args, depth, start, q, esc = [], 0, i, None, False
+    for j in range(i, len(s)):
+        c = s[j]
+        if esc:
+            esc = False
+        elif q:
+            if c == "\\":
+                esc = True
+            elif c == q:
+                q = None
+        elif c in "\"'":
+            q = c
+        elif c in "([{":
+            depth += 1
+        elif c in ")]}":
+            if depth == 0:
+                args.append((start, s[start:j]))
+                return args
+            depth -= 1
+        elif c == "," and depth == 0:
+            args.append((start, s[start:j]))
+            start = j + 1
+    return args                            # 괄호가 안 닫힌다 — 마지막 조각은 버린다
+
+
+ILIT = re.compile(r'_I\(\s*"((?:[^"\\]|\\.)*)"\s*\)')
+SLIT = re.compile(r'^\s*"((?:[^"\\]|\\.)*)"\s*$')
+PBCLASS = re.compile(r"PBTrainers::(\w+)")
+BATTLE_CALL = re.compile(r"\bpbTrainerBattle\s*\(")
+
+
+def unquote(s):
+    return s.replace('\\"', '"').replace("\\\\", "\\")
+
+
+def script_battles(s):
+    """`pbTrainerBattle` 호출의 셋째 인자 `_I(…)` 위치 → (직함 상수, 트레이너 이름)."""
+    out = {}
+    for m in BATTLE_CALL.finditer(s):
+        args = call_args(s, m.end())
+        if len(args) < 3:
+            continue
+        cls, name = PBCLASS.search(args[0][1]), SLIT.match(args[1][1])
+        lit = ILIT.search(args[2][1])
+        if not (cls and name and lit):
+            continue
+        out[args[2][0] + lit.start()] = (cls.group(1), unquote(name.group(1)))
+    return out
+
+
+def script_rows(s, i, indent):
+    """스크립트 한 덩이 안의 `_I("…")` 전부 — 전투 호출의 것이면 화자를 달아서.
+
+    `_I`는 게임이 화면에 띄우는 문자열이라 메시지 명령과 같은 번역 대상인데,
+    명령 101/401에 안 실려 있어 옛 `scan`이 통째로 놓쳤다(Z-60).
+    """
+    battles = script_battles(s)
+    return [(i if j == 0 else i + j / 100, indent, "battle",
+             unquote(m.group(1)), *battles.get(m.start(), ("", "")))
+            for j, m in enumerate(ILIT.finditer(s))]
+
+
 def page_messages(cmdlist):
-    """(cmd, indent, kind, text) — 101/401은 한 메시지로 잇고 102는 선택지로 편다.
+    """(cmd, indent, kind, text, 직함, 이름) — 101/401은 한 메시지로 잇고 102는 선택지로 편다.
 
     cmd는 명령 인덱스, indent는 조건 분기 깊이다. 이 둘이 화자 상속의 전부다.
+    스크립트 명령(355/655와 조건 분기 111 type 12)의 `_I("…")`는 `kind="battle"`로
+    따로 나온다 — 상속의 흐름에 끼면 안 되는 자리다(`attribute` 참조).
+    직함·이름은 그 갈래에서만 차고 나머지는 빈 문자열이다.
     """
     out, buf, bi, bd = [], None, None, 0
+    sbuf, si, sd = None, None, 0                  # 355 + 655…로 이어지는 스크립트 한 덩이
     for i, cmd in enumerate(cmdlist):
         ca = cmd.attributes
         code, params = ca["@code"], ca["@parameters"]
+        if code != 655 and sbuf is not None:
+            out.extend(script_rows(sbuf, si, sd))
+            sbuf = None
         if code == 101:
             if buf is not None:
-                out.append((bi, bd, "text", buf))
+                out.append((bi, bd, "text", buf, "", ""))
             buf, bi, bd = b2s(params[0]), i, ca["@indent"]
         elif code == 401 and buf is not None:
             buf += "\n" + b2s(params[0])
         else:
             if buf is not None:
-                out.append((bi, bd, "text", buf))
+                out.append((bi, bd, "text", buf, "", ""))
                 buf = None
             if code == 102:
                 for j, c in enumerate(params[0]):
-                    out.append((i + j / 100, ca["@indent"], "choice", b2s(c)))
+                    out.append((i + j / 100, ca["@indent"], "choice", b2s(c), "", ""))
+            elif code == 355:
+                sbuf, si, sd = b2s(params[0]), i, ca["@indent"]
+            elif code == 655 and sbuf is not None:
+                sbuf += "\n" + b2s(params[0])
+            elif code == 111 and params and params[0] == 12:
+                out.extend(script_rows(b2s(params[1]), i, ca["@indent"]))
     if buf is not None:
-        out.append((bi, bd, "text", buf))
+        out.append((bi, bd, "text", buf, "", ""))
+    if sbuf is not None:
+        out.extend(script_rows(sbuf, si, sd))
     return out
 
 
@@ -377,10 +474,12 @@ def attribute(msgs, sprite="", objects=frozenset()):
     - `how="지문"` — 그림이 사물·연출(표지판·책·화살표 등)이다. 화자가 없고
       평서 지문이 정답인 자리다.
     """
-    cast = {m for _, _, _, t in msgs if (m := (TAG.match(t).group(1) if TAG.match(t) else None))}
+    battles = [m for m in msgs if m[2] == "battle"]
+    msgs = [m for m in msgs if m[2] != "battle"]
+    cast = {m for _, _, _, t, *_ in msgs if (m := (TAG.match(t).group(1) if TAG.match(t) else None))}
     obj = stem(sprite) in objects
     cur = cur_ind = None
-    for i, (cmdi, ind, kind, text) in enumerate(msgs):
+    for i, (cmdi, ind, kind, text, *_) in enumerate(msgs):
         nxt = msgs[i + 1] if i + 1 < len(msgs) else None
         prompt = bool(kind == "text" and nxt and nxt[2] == "choice" and abs(nxt[0] - cmdi) < 3)
         m = TAG.match(text)
@@ -399,7 +498,15 @@ def attribute(msgs, sprite="", objects=frozenset()):
             who, how = ("", "지문") if obj else (sprite, "그림")
         else:
             who, how = "", "미상"
-        yield cmdi, ind, kind, text, who, how, sorted(cast), prompt
+        yield cmdi, ind, kind, text, who, how, sorted(cast), prompt, ""
+
+    # 전투 호출의 대사는 **상속의 흐름 밖**이다 — 같은 페이지의 이름표를 물려받지도
+    # 물려주지도 않고(`cur`를 안 건드린다), `cast`에도 안 들어간다. 화자는 호출
+    # 인자가 직접 말해 준다. `cast`는 페이지 것을 그대로 실어 층 판정을 나머지 줄과
+    # 맞춘다 — 이 줄만 다른 층으로 갈라지면 안 되니까.
+    for cmdi, ind, kind, text, tclass, name in battles:
+        yield cmdi, ind, kind, text, name, "전투호출" if name else "스크립트", \
+            sorted(cast), False, tclass
 
 
 TRIGGER = {0: "말걸기", 1: "플레이어접촉", 2: "이벤트접촉", 3: "자동실행", 4: "병렬처리"}
@@ -450,17 +557,19 @@ def scan():
 
     def emit(mid, mname, eid, ename, page, sprite, cmdlist, trigger=-1, once=False):
         msgs = page_messages(cmdlist)
-        n_msg = sum(1 for _, _, kind, _ in msgs if kind == "text")
+        n_msg = sum(1 for _, _, kind, *_ in msgs if kind == "text")
         codes = {c.attributes["@code"] for c in cmdlist}
-        has_tag = any(TAG.match(t) for _, _, kind, t in msgs if kind == "text")
+        has_tag = any(TAG.match(m[3]) for m in msgs if m[2] == "text")
         sc = scene(trigger, n_msg, ename, codes, has_tag)
         on = sorted(page_sets(cmdlist)[0])
-        for cmdi, ind, kind, text, who, how, cast, prompt in attribute(msgs, sprite, objects):
+        for cmdi, ind, kind, text, who, how, cast, prompt, tclass in attribute(
+                msgs, sprite, objects):
             rows.append({"map": mid, "map_name": mname, "event": eid, "event_name": ename,
                          "page": page, "cmd": cmdi, "ind": ind, "sprite": sprite,
                          "trigger": trigger, "n_msg": n_msg, "scene": sc,
                          "kind": kind, "who": who, "how": how, "cast": cast,
-                         "prompt": prompt, "once": once, "flags": on, "k": text})
+                         "prompt": prompt, "once": once, "flags": on, "k": text,
+                         "tclass": tclass})
 
     for ce in load(open(GAME / "CommonEvents.rxdata", "rb")):
         if ce is None:
@@ -579,6 +688,15 @@ def main():
             bad += hit["who"] != want
             print(f"[{mark}] {want:10s} ← {hit['who']:10s} ({hit['how']}) "
                   f"맵{hit['map']} ev{hit['event']} · {src}")
+
+        for mid, eid, want, want_how in KNOWN_BATTLE:
+            hit = next((r for r in rows if r["kind"] == "battle"
+                        and (r["map"], r["event"]) == (mid, eid)), None)
+            got = (hit["who"], hit["how"]) if hit else ("(못찾음)", "")
+            mark = "O" if got == (want, want_how) else "X"
+            ok, bad = ok + (got == (want, want_how)), bad + (got != (want, want_how))
+            print(f"[{mark}] 전투 맵{mid} ev{eid} {want or '화자없음'}({want_how}) "
+                  f"← {got[0] or '화자없음'}({got[1]})")
 
         for field, val, want in KNOWN_CLS:
             got = sorted({r["cls"] for r in rows if r[field] == val})
