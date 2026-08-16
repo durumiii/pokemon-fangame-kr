@@ -98,6 +98,21 @@ class Window_UnformattedTextPokemon
   end
 end
 
+# 배지 이름은 Fancy Badges(절 190)가 FANCY_BADGE_NAMES의 원문을 pbDrawOutlineText로
+# 바로 그려서 위 세 진입점을 안 지난다. 게임 본체 절은 MOD 절보다 먼저 실리므로
+# 상수 재대입 없이 원소만 제자리에서 갈아 끼운다(Z-62 판정: 길 3).
+# 값은 위 TABLE 한 곳에만 산다 — 여기서 이름을 다시 적지 않는다.
+if defined?(FANCY_BADGE_NAMES) && FANCY_BADGE_NAMES.is_a?(Array)
+  if FANCY_BADGE_NAMES.length != 12
+    # 이 길의 유일한 약점이 조용한 실패다 — 배지가 늘거나 이름이 바뀌면 원문으로
+    # 돌아간다. 그때 시끄럽게 만드는 것이 이 줄의 몫($DEBUG 콘솔).
+    echoln("[UI Text KR] FANCY_BADGE_NAMES 길이 #{FANCY_BADGE_NAMES.length} (12 아님) — 배지 이름 치환표를 다시 맞춰라")
+  end
+  FANCY_BADGE_NAMES.each_with_index do |badge_name, i|
+    FANCY_BADGE_NAMES[i] = UiTextKR.fix(badge_name)
+  end
+end
+
 alias uitkr_pbDrawTextPositions pbDrawTextPositions
 def pbDrawTextPositions(bitmap, textpos)
   fixed = textpos.map do |t|
