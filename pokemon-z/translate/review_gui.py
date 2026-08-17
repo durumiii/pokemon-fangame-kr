@@ -145,18 +145,34 @@ function render(){
           <span class="txt" style="white-space:pre-wrap">${esc(q.split)}</span></div>`:''}
         ${q.rec?`<div class="opt"><span class="tag new">추천</span>
           <span class="txt" style="white-space:pre-wrap">${esc(q.rec)}</span></div>`:''}
+        ${(q.keep||[]).length?`<div class="opt"><span class="tag cur">손대지 않는 자리</span>
+          <span class="txt" style="white-space:pre-wrap">${esc(q.keep.join('\n'))}</span></div>`:''}
         <div class="tools"><button data-b="승인">승인</button>
           <button data-b="기각">기각</button><button data-b="보류">보류</button>
+          ${q.rows&&q.rows.length?`<button data-only="1">이 건의 자리만 (${q.rows.length})</button>`:''}
           <button data-bmemo="1">메모</button></div>
+        <div class="mine open"><textarea rows="2" placeholder="답 — 등재할 한 줄이나 고른 갈래를 여기에"></textarea></div>
         <div class="memo"><textarea rows="2" placeholder="판정 메모 — 왜 그렇게 정했나"></textarea></div>`;
       const chip=c.querySelector('.verdict'), memo=c.querySelector('.memo');
       const ta=memo.querySelector('textarea');
+      const ans=c.querySelector('.mine textarea');
+      if(ans){ans.value=M[id]||'';
+        ans.oninput=()=>{M[id]=ans.value; clearTimeout(timer[id]);
+          timer[id]=setTimeout(()=>post({id, 판정:(V[id]||''), 텍스트:ans.value,
+                                         메모:(NOTE[id]||'')}), 600);};}
+      const only=c.querySelector('[data-only]');
+      if(only) only.onclick=()=>{
+        const want=new Set(q.rows);
+        const kept=DATA.map(sc=>({...sc, rows:sc.rows.filter(r=>want.has(r.id))}))
+                       .filter(sc=>sc.rows.length);
+        const all=DATA; DATA=kept; render(); count(); DATA=all;
+      };
       const paint=()=>{chip.textContent=V[id]?('판정 '+V[id]):''};
       if(NOTE[id]){ta.value=NOTE[id]; memo.classList.add('open');}
       paint();
       c.querySelectorAll('[data-b]').forEach(btn=>btn.onclick=()=>{
         V[id]=btn.dataset.b; paint();
-        post({id, 판정:btn.dataset.b, 텍스트:'', 메모:(NOTE[id]||'')});
+        post({id, 판정:btn.dataset.b, 텍스트:(M[id]||''), 메모:(NOTE[id]||'')});
       });
       c.querySelector('[data-bmemo]').onclick=()=>memo.classList.toggle('open');
       ta.oninput=()=>{NOTE[id]=ta.value;
@@ -319,7 +335,7 @@ fetch('/data').then(r=>r.json()).then(d=>{
   for(const [id,x] of Object.entries(d.verdicts||{})){
     if(x['판정']) V[id]=id.startsWith('bucket:')?x['판정']:BACK[x['판정']];
     if(x['ts']!=='auto') HUMAN.add(id);
-    if(x['판정']==='직접') M[id]=x['텍스트']||'';
+    if(x['판정']==='직접'||id.startsWith('bucket:')) M[id]=x['텍스트']||'';
     if(x['메모']) NOTE[id]=x['메모'];
   }
   STAT=d.stat||null; BRIEF=d.brief||null;

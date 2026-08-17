@@ -195,6 +195,18 @@ def context_cut(g, n):
 
 # ── 입력 ─────────────────────────────────────────────────────────────────────
 def groups_from_args(ctx, a):
+    if a.who:
+        hits = [r for r in ctx.rows if (r.get("who") or "") == a.who]
+        if not hits:
+            names = sorted({r["who"] for r in ctx.rows if r.get("who")
+                            and a.who in r["who"]})[:8]
+            sys.exit(f"그 화자의 자리가 없다: {a.who!r}"
+                     + (f" — 비슷한 이름: {', '.join(names)}" if names else ""))
+        seen = {}
+        for r in hits:
+            seen.setdefault((r["map"], r["event"]), set()).add(r["id"])
+        return [ctx.group(mp, ev, ids, title=f"화자 {a.who}")
+                for (mp, ev), ids in seen.items()]
     if a.map is not None and a.event is not None:
         return [ctx.group(a.map, a.event, set())]
     if a.phrase:
@@ -311,6 +323,11 @@ def write_brief(out_dir, brief_path, groups, nhit):
     b = json.loads(Path(brief_path).read_text(encoding="utf-8")) if brief_path else {}
     b["scenes"] = len({(g["map"], g["event"]) for g in groups})
     b["hits"] = nhit
+    for q in b.get("asks", []):
+        if q.get("bucket"):      # 묶음 이름이 같은 자리를 그 건에 묶는다
+            q["rows"] = [f'{g["map"]}:{g["event"]}:{r["page"]}:{r["cmd"]}'
+                         for g in groups if g["title"] == q["bucket"]
+                         for r, cand, _ in g["seq"] if cand or r["id"] in g["prop"]]
     (Path(out_dir) / "brief.json").write_text(
         json.dumps(b, ensure_ascii=False, indent=1), encoding="utf-8")
     return len(b.get("asks", []))
@@ -404,6 +421,7 @@ def selftest():
 def main():
     a = argparse.ArgumentParser(description=__doc__)
     a.add_argument("--ids"), a.add_argument("--phrase")
+    a.add_argument("--who", help="화자 한 사람의 자리 전부 — 말투 판정의 단위")
     a.add_argument("--map", type=int), a.add_argument("--event", type=int)
     a.add_argument("--context", type=int, help="후보 앞뒤 N줄만")
     a.add_argument("-o", "--out", help="사람·에이전트가 읽을 md")
@@ -416,8 +434,8 @@ def main():
     a = a.parse_args()
     if a.selftest:
         return selftest()
-    if not (a.ids or a.phrase or (a.map is not None and a.event is not None)):
-        sys.exit("--ids · --phrase · (--map과 --event) 중 하나가 필요하다")
+    if not (a.ids or a.phrase or a.who or (a.map is not None and a.event is not None)):
+        sys.exit("--ids · --phrase · --who · (--map과 --event) 중 하나가 필요하다")
     ctx = Ctx(proposals(a.proposals))
     groups = [context_cut(g, a.context) for g in groups_from_args(ctx, a)]
     text = md(groups)
