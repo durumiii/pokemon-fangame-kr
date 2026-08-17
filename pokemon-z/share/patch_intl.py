@@ -286,6 +286,102 @@ EDITS += [
      '\r\n'
      'def _MAPINTL(mapid,*arg)\r\n'),
 
+    # 상점 점원 문구의 갈래 조회(Z-73, 유지자 판정 2026-08-18). 절23에 좌표를 안 붙인다는
+    # 판정은 그대로다 — 여기서 세우는 것은 자리별 값이 아니라 **갈래**이고, 좌표는 값이
+    # 아니라 갈래 배정에만 쓴다. 배정 `krmart-at:<맵>:<이벤트>` → 갈래 이름, 값
+    # `krmart:<갈래>|<정규화 원문>`. 둘 다 절23(전역 조회)이라 새 절을 안 만든다.
+    # 상점을 더 가르는 데 소스 수술이 다시 필요하지 않은 것이 이 꼴을 고른 이유다.
+    # 이벤트 번호는 `pbMapInterpreter`(게임에 이미 있는 전역 도우미)로 집는다. `Interpreter`에
+    # 접근자가 없어 `instance_variable_get`으로 읽는다 — 접근자를 새로 다는 것보다 수술이 작다.
+    # 공통 이벤트에서 열리는 상점은 0건이라 이벤트 번호가 0으로 지워지는 함정은 없다.
+    # 기본 갈래(존대)는 열쇠를 안 탄다 — 절23 현행값이 곧 기본값이다. 루비 1.8 문법.
+    ("Intl_Messages",
+     '  def self.getFromHash(type,key)\r\n'
+     '    @@messages.getFromHash(type,key)\r\n'
+     '  end\r\n'
+     '\r\n'
+     '  def self.getFromMapHash(type,key)\r\n',
+     '  def self.getFromHash(type,key)\r\n'
+     '    @@messages.getFromHash(type,key)\r\n'
+     '  end\r\n'
+     '\r\n'
+     '  # 상점 점원 문구의 갈래 조회(Z-73) — 못 찾으면 nil, 부르는 쪽이 옛 조회로 떨어진다.\r\n'
+     '  def self.krMart(str)\r\n'
+     '    it=pbMapInterpreter\r\n'
+     '    return nil if !it\r\n'
+     '    mp=it.instance_variable_get("@map_id")\r\n'
+     '    ev=it.instance_variable_get("@event_id")\r\n'
+     '    return nil if !mp || !ev\r\n'
+     '    at="krmart-at:#{mp}:#{ev}"\r\n'
+     '    br=@@messages.getFromHash(MessageTypes::ScriptTexts,at)\r\n'
+     '    return nil if br==at\r\n'
+     '    key="krmart:#{br}|"+Messages.stringToKey(str)\r\n'
+     '    hit=@@messages.getFromHash(MessageTypes::ScriptTexts,key)\r\n'
+     '    return hit==key ? nil : hit\r\n'
+     '  end\r\n'
+     '\r\n'
+     '  def self.getFromMapHash(type,key)\r\n'),
+
+    # `_INTL`과 같은 꼴이되 갈래 열쇠를 먼저 본다. 끝 변수 이름을 `s`로 둔 것은 멱등 때문이다
+    # — `return string\r\nend`로 닫으면 옛 앵커가 새 소스의 부분 문자열이 되어 두 번 얹힌다.
+    ("Intl_Messages",
+     '  return string\r\n'
+     'end\r\n'
+     '\r\n'
+     'def _I(str)\r\n',
+     '  return string\r\n'
+     'end\r\n'
+     '\r\n'
+     '# 상점 점원 문구(Z-73) — 갈래 열쇠 먼저, 없으면 지금 조회 그대로.\r\n'
+     'def _MART(*arg)\r\n'
+     '  hit=MessageTypes.krMart(arg[0])\r\n'
+     '  return _INTL(*arg) if !hit\r\n'
+     '  s=hit.clone\r\n'
+     '  for i in 1...arg.length\r\n'
+     '    s.gsub!(/\\{#{i}\\}/,"#{arg[i]}")\r\n'
+     '  end\r\n'
+     '  return s\r\n'
+     'end\r\n'
+     '\r\n'
+     'def _I(str)\r\n'),
+
+    # 점원 문구 열두 자리를 `_MART`로 돌린다(문안 열한 종 — 「돈이 모자란다」가 두 자리다).
+    # 지문 셋(가방 참·매각 결과·프리미어볼)과 선택지 셋은 안 건드린다 — 선택지는 주인공의
+    # 말이라 갈래를 안 탄다(유지자 지시 2026-08-18).
+    ("PScreen_Mart",
+     'pbDisplayPaused(_INTL("No tienes el dinero suficiente."))',
+     'pbDisplayPaused(_MART("No tienes el dinero suficiente."))'),
+    ("PScreen_Mart",
+     '_INTL("{1} es una buena elección.\\r\\nTe costará ${2}. ¿De acuerdo?",itemname,price)',
+     '_MART("{1} es una buena elección.\\r\\nTe costará ${2}. ¿De acuerdo?",itemname,price)'),
+    ("PScreen_Mart",
+     '_INTL("¿{1}? Buena elección.\\r\\n¿Cuántas unidades quieres?",itemname)',
+     '_MART("¿{1}? Buena elección.\\r\\n¿Cuántas unidades quieres?",itemname)'),
+    ("PScreen_Mart",
+     '_INTL("{1}... Y quieres {2}.\\r\\nTe costará ${3}. ¿De acuerdo?",itemname,quantity,price)',
+     '_MART("{1}... Y quieres {2}.\\r\\nTe costará ${3}. ¿De acuerdo?",itemname,quantity,price)'),
+    ("PScreen_Mart",
+     'pbDisplayPaused(_INTL("¡Aquí tienes!\\r\\n¡Gracias!"))',
+     'pbDisplayPaused(_MART("¡Aquí tienes!\\r\\n¡Gracias!"))'),
+    ("PScreen_Mart",
+     '_INTL("¿{1}? ¡Oh, no!\\r\\nNo puedo comprar eso.",itemname)',
+     '_MART("¿{1}? ¡Oh, no!\\r\\nNo puedo comprar eso.",itemname)'),
+    ("PScreen_Mart",
+     '_INTL("¿{1}?\\r\\n¿Cuántas unidades quieres vender?",itemname)',
+     '_MART("¿{1}?\\r\\n¿Cuántas unidades quieres vender?",itemname)'),
+    ("PScreen_Mart",
+     '_INTL("Puedo pagarte ${1}.\\r\\n¿Te parece bien?",price)',
+     '_MART("Puedo pagarte ${1}.\\r\\n¿Te parece bien?",price)'),
+    ("PScreen_Mart",
+     'speech ? speech : _INTL("¿Te interesa algo de lo que tengo?")',
+     'speech ? speech : _MART("¿Te interesa algo de lo que tengo?")'),
+    ("PScreen_Mart",
+     'Kernel.pbMessage(_INTL("¡Vuelve cuando quieras!"))',
+     'Kernel.pbMessage(_MART("¡Vuelve cuando quieras!"))'),
+    ("PScreen_Mart",
+     '_INTL("¿En qué más puedo ayudarte?"),commands,cmdQuit+1)',
+     '_MART("¿En qué más puedo ayudarte?"),commands,cmdQuit+1)'),
+
     # 홀로 선 선택지(command_102). 앞의 pbMessage(...,nil)이 Interpreter 쪽 표식이다.
     ("Messages",
      '      Kernel.pbMessage(message+messageend,nil)\r\n'

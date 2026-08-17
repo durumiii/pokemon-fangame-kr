@@ -400,6 +400,51 @@ def check_natures():
     print(f"성격 활용형: 25종 · 명사형 어긋남 {drift}")
 
 
+def mart_sites():
+    """수술이 갈래 조회를 거는 점원 문구가 몇 종인가 — `share/patch_intl.py`가 정본이다."""
+    src = (HERE.parent / "share" / "patch_intl.py").read_text(encoding="utf-8")
+    return len(re.findall(r'"PScreen_Mart",\n\s*\'[^\']*_INTL\(', src))
+
+
+def check_mart():
+    """상점 점원 문구의 갈래가 온전한가 (Z-73).
+
+    갈래에 줄이 빠지면 게임이 **조용히** 기본 갈래(존대)로 떨어진다 — 화면만 봐서는
+    빠뜨린 것인지 그렇게 정한 것인지 구분이 안 되므로 여기서 센다. 원문은 base 정본의
+    키와 글자까지 같아야 하고(다르면 조회가 미스), 배정이 가리키는 갈래는 실재해야 한다.
+    """
+    path = HERE / "ko" / "23-script-texts.add.jsonl"
+    if not path.exists():
+        return
+    base = {r["k"] for r in rows(HERE / "ko" / "23-script-texts.jsonl") if "k" in r}
+    vals, at, bad = {}, {}, 0
+    for r in rows(path):
+        k = r.get("k", "")
+        if k.startswith("krmart:"):
+            br, _, src = k[len("krmart:"):].partition("|")
+            vals.setdefault(br, set()).add(src)
+            if src not in base:
+                bad += 1
+                report("FAIL", f"상점 갈래 「{br}」의 원문이 절23 정본에 없다 — {src[:40]!r}")
+        elif k.startswith("krmart-at:"):
+            at[k] = r["v"]
+    if not vals and not at:
+        return
+    # 기대 줄 수는 수술 쪽이 정본이다 — 게임이 갈래 조회를 거는 자리가 곧 그 수다.
+    # 갈래끼리만 견주면 **모든 갈래에서 같이 빠진 줄**을 못 잡는다.
+    want = mart_sites()
+    for br, srcs in sorted(vals.items()):
+        if want and len(srcs) != want:
+            bad += 1
+            report("FAIL", f"상점 갈래 「{br}」가 {len(srcs)}줄 — 수술이 거는 자리는 {want}줄이다"
+                           " (빠진 줄은 조용히 기본 갈래로 떨어진다)")
+    for k, br in sorted(at.items()):
+        if br not in vals:
+            bad += 1
+            report("FAIL", f"상점 배정 {k}가 없는 갈래 「{br}」를 가리킨다")
+    print(f"상점 갈래: {len(vals)}갈래 × {want}줄(수술 자리 기준) · 배정 {len(at)}곳 · 어긋남 {bad}")
+
+
 def main():
     strict = "--strict" in sys.argv
     check_canon(strict)
@@ -409,6 +454,7 @@ def main():
     check_unified(strict)
     check_loc()
     check_natures()
+    check_mart()
     check_dat_and_sentinels()
     check_scripts()
     check_ui_gsub()
