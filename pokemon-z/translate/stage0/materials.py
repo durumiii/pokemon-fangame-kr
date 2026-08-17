@@ -3,9 +3,18 @@
 # ///
 """판정 재료 생성 — 자리 목록을 받아 유지자에게 올릴 재료를 기계로 갖춘다.
 
-싣는 것: 맵 이름 · 화자(그림+페르소나+버킷+그룹) · 층 · 겪는 순서의 전 대사(원문·번역
-병기, cmd 오름차순) · 같은 원문의 다른 자리 · 유지자 손이 지나간 표시(fixlog·register-ok).
-한국어 문안은 만들지 않는다 — 실물만 나른다.
+싣는 것: 맵 이름 · 화자(이름표+그림+페르소나+버킷+그룹) · 층 · 겪는 순서의 전 대사
+(원문·번역 병기, cmd 오름차순) · 같은 원문의 다른 자리 · 유지자 손이 지나간 표시
+(fixlog·register-ok). 한국어 문안은 만들지 않는다 — 실물만 나른다.
+
+화자는 **이름표(`who`)가 먼저이고 그림은 그다음이다** — 그림은 이벤트에 하나뿐이라
+스토리 장면처럼 화자가 여럿인 자리를 한 이름으로 뭉갠다.
+
+⚠ 이름표 상속도 틀리는 자리가 있다(장면 끝의 내레이션을 앞 화자가 물고 가는 꼴).
+**틀린 자리는 `translate/stage0/overrides.jsonl`에 한 줄로 고친다** — 이 도구는
+overrides를 얹어 읽으므로 gen 재생성 없이 곧바로 반영되고, 고친 줄에는 표시가 붙는다.
+
+  {"id":"m213.e4.p0.c88","set":{"who":""},"why":"장면 끝 내레이션","by":"사람/2026-08-18"}
 
 usage:
   uv run translate/stage0/materials.py --map 141 --event 33
@@ -21,7 +30,8 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common import DATA, OUT, ROOT, norm, read_jsonl  # noqa: E402
+from common import (DATA, OUT, ROOT, apply_overrides, norm, read_jsonl,  # noqa: E402
+                    read_overrides)
 
 sys.path.insert(0, str(ROOT))
 import mapname  # noqa: E402
@@ -33,8 +43,17 @@ STEM_RE = re.compile(r"(ow|OW|TS|w)?\d*$")
 
 # ── 실물 로드 ────────────────────────────────────────────────────────────────
 def load():
+    """sites·messages를 읽고 **사람 수정(overrides)을 얹어** 돌려준다.
+
+    gen을 다시 돌리지 않아도 화자 손지정이 곧바로 재료에 반영되게 하려는 것이다.
+    함께 돌려주는 집합은 화자 칸을 사람이 지정한 자리 — 출력에 표시가 붙는다.
+    """
     sites = read_jsonl(OUT / "sites.jsonl")
-    msgs = {m["id"]: m["val"] for m in read_jsonl(OUT / "messages.jsonl")}
+    msg_rows = read_jsonl(OUT / "messages.jsonl")
+    ovr = read_overrides()
+    sites, msg_rows = apply_overrides(sites, msg_rows, ovr)
+    who_set = {o["id"] for o in ovr if {"who", "speaker"} & set(o["set"])}
+    msgs = {m["id"]: m["val"] for m in msg_rows}
 
     def val(sid):
         v, seen = msgs.get(sid), set()
@@ -51,7 +70,12 @@ def load():
         mp, ev, pg, cmd = (int(x) for x in m.groups())
         rows.append({**s, "map": mp, "event": ev, "page": pg, "cmd": cmd,
                      "ko": val(s["id"]), "nk": norm(s.get("src", ""))})
-    return rows
+    return rows, who_set
+
+
+def naming(r):
+    """한 줄의 화자 표시 — 이름표가 먼저, 없으면 그림, 둘 다 없으면 표시 없음."""
+    return r.get("who") or r.get("speaker") or "(화자 없음)"
 
 
 def personas():
@@ -86,7 +110,7 @@ def ok_hit(ok, row):
 # ── 재료 조립 ────────────────────────────────────────────────────────────────
 class Ctx:
     def __init__(self):
-        self.rows = load()
+        self.rows, self.who_set = load()
         self.persona = personas()
         self.s2g = sprite_groups()
         self.fix, self.ok = marks()
@@ -96,15 +120,16 @@ class Ctx:
             self.by_ev.setdefault((r["map"], r["event"]), []).append(r)
             self.by_src.setdefault(r["nk"], []).append(r)
 
-    def speaker(self, sprite):
-        if not sprite:
-            return "(그림 없음)", "", "", ""
-        bucket, per = self.persona.get(sprite, ("", ""))
-        grp = self.s2g.get(STEM_RE.sub("", sprite) or "(없음)", "?")
-        return sprite, grp, bucket, per
+    def speaker(self, who, sprite):
+        """머리에 서는 화자 한 줄 — 이름표가 이름이고, 그림은 페르소나를 여는 열쇠다."""
+        bucket, per = self.persona.get(sprite, ("", "")) if sprite else ("", "")
+        grp = self.s2g.get(STEM_RE.sub("", sprite) or "(없음)", "?") if sprite else "?"
+        return who or "(이름표 없음)", sprite, grp, bucket, per
 
     def flags(self, r):
         f = []
+        if r["id"] in self.who_set:
+            f.append("화자 손지정(overrides)")
         if r["nk"] in self.fix:
             f.append("유지자 손수정(fixlog)")
         for why in ok_hit(self.ok, r):
@@ -115,9 +140,9 @@ class Ctx:
         """한 (맵, 이벤트) 묶음의 재료 — 머리 · 페이지별 시퀀스 · 같은 원문의 다른 자리."""
         seq = sorted(self.by_ev.get((mp, ev), []), key=lambda r: (r["page"], r["cmd"]))
         cands = [r for r in seq if r["id"] in cand_ids] or seq
-        sprites, layers = {}, {}
+        casts, layers = {}, {}
         for r in seq:
-            sprites[r.get("speaker", "")] = None
+            casts[(r.get("who", ""), r.get("speaker", ""))] = None
             layers[r.get("layer", "")] = None
         # 같은 원문의 다른 자리 — 원문마다 한 번, 흔한 정형구는 잘라서 수만 알린다
         dups, seen_nk = [], set()
@@ -136,7 +161,7 @@ class Ctx:
         return {
             "map": mp, "event": ev, "map_ko": mapname.ko(mp) or "(이름 없음)",
             "title": title, "note": note,
-            "speakers": [self.speaker(s) for s in sprites],
+            "speakers": [self.speaker(w, s) for w, s in casts],
             "layers": [l for l in layers if l],
             "seq": [(r, r["id"] in cand_ids, self.flags(r)) for r in seq],
             "dups": dups,
@@ -202,8 +227,10 @@ def groups_from_ids(ctx, path):
 # ── 출력 ─────────────────────────────────────────────────────────────────────
 def head_lines(g):
     out = []
-    for sprite, grp, bucket, per in g["speakers"]:
-        bits = [sprite]
+    for who, sprite, grp, bucket, per in g["speakers"]:
+        bits = [who]
+        if sprite:
+            bits.append(f"그림 {sprite}")
         if grp and grp != "?":
             bits.append(f"그룹 {grp}")
         if bucket:
@@ -234,7 +261,7 @@ def md(groups):
                 page = r["page"]
                 L.append(f"### 겪는 순서 — 페이지 {page}")
             mark = "»" if cand else " "
-            tag = f"{r.get('speaker') or '(그림 없음)'}|{r.get('layer', '?')}"
+            tag = f"{naming(r)}|{r.get('layer', '?')}"
             flag = ("  ⚑ " + " · ".join(fs)) if fs else ""
             L.append(f"{mark} `[{r['cmd']}]` **{tag}**{flag}")
             L.append(f"    - ES: {r.get('src', '')}")
@@ -248,7 +275,7 @@ def md(groups):
                 for o in spots:
                     L.append(f"| {esc_cell(r.get('src', ''))} | 맵{o['map']} "
                              f"{mapname.ko(o['map'])} {o['event']}·{o['cmd']} | "
-                             f"{o.get('speaker') or '(없음)'} | {o.get('layer', '?')} | "
+                             f"{naming(o)} | {o.get('layer', '?')} | "
                              f"{esc_cell(o['ko'])} |")
                 if total > len(spots):
                     L.append(f"| {esc_cell(r.get('src', ''))} | …외 {total - len(spots)}자리 "
@@ -303,7 +330,7 @@ def to_html(groups):
             flag = ("<span class=chip>⚑ " + e(" · ".join(fs)) + "</span>") if fs else ""
             P.append(
                 f"<div class='line{" hit" if cand else ""}'>"
-                f"<span class=cmd>[{r['cmd']}] {e(r.get('speaker') or '(그림 없음)')}"
+                f"<span class=cmd>[{r['cmd']}] {e(naming(r))}"
                 f"|{e(r.get('layer', '?'))}</span> {flag}"
                 f"<div class=es>{e(r.get('src', ''))}</div><div>{e(r['ko'])}</div></div>")
         if g["dups"]:
@@ -313,7 +340,7 @@ def to_html(groups):
                 for o in spots:
                     P.append(f"<tr><td>{e(r.get('src', ''))}<td>맵{o['map']} "
                              f"{e(mapname.ko(o['map']))} {o['event']}·{o['cmd']}"
-                             f"<td>{e(o.get('speaker') or '(없음)')}<td>{e(o.get('layer', '?'))}"
+                             f"<td>{e(naming(o))}<td>{e(o.get('layer', '?'))}"
                              f"<td>{e(o['ko'])}")
                 if total > len(spots):
                     P.append(f"<tr><td>{e(r.get('src', ''))}<td colspan=4 class=es>"
@@ -338,6 +365,18 @@ def selftest():
     p = ctx.group(63, 4, {r["id"] for r in ctx.by_src[norm("Bueno, otra vez será.")]
                           if r["map"] == 63 and r["event"] == 4})
     assert p["dups"], "같은 원문의 다른 자리가 안 잡혔다"
+    # 화자는 이름표가 먼저다 — 그림 하나에 화자 둘인 장면에서 갈려야 한다
+    assert naming({"who": "Olivier", "speaker": "rupicow2"}) == "Olivier"
+    assert naming({"who": "", "speaker": "rupicow2"}) == "rupicow2"
+    two = ctx.group(305, 2, set())
+    whos = {naming(r) for r, _, _ in two["seq"]}
+    assert {"Rúpico", "Olivier"} <= whos, whos
+    assert len(two["speakers"]) >= 2, two["speakers"]
+    # 사람 손지정은 gen 재생성 없이 곧바로 얹힌다
+    sid = "m305.e2.p1.c58"
+    s2, _ = apply_overrides([{"id": sid, "who": "Rúpico"}], [],
+                            [{"id": sid, "set": {"who": "올리비에"}}])
+    assert s2[0]["who"] == "올리비에", s2
     print("selftest ok — 맵141 이벤트33 {}행 · 맵63 중복 자리 {}건".format(
         len(g["seq"]), len(p["dups"])))
 
