@@ -189,9 +189,20 @@ def from_reports():
             continue
         try:
             mid, i = (int(x) for x in e["자리"].split(":"))
-            keys.add((mid, fold(per[mid][i]["k"])))
         except Exception:
             continue
+        # 앵커는 제보의 원문 문자열이 먼저다 — 순번은 「현재」 줄 순서라 정본에 줄이
+        # 끼거나 빠지면 옛 제보가 딴 줄을 가리킨다(2026-08-18 실측: 여태 이력에선
+        # 드리프트 0/946이지만 구조 위험은 남는다. 원문 앵커는 946건 전부 유일했다).
+        src = fold(e.get("원문") or "")
+        hits = {fold(r["k"]) for r in per.get(mid, ()) if fold(r["k"]) == src} if src else set()
+        if len(hits) == 1:
+            keys.add((mid, next(iter(hits))))
+        else:
+            try:
+                keys.add((mid, fold(per[mid][i]["k"])))   # 원문이 비었거나 못 찾음 — 옛 길
+            except Exception:
+                continue
     return keys, dropped
 
 

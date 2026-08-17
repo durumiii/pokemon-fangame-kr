@@ -98,6 +98,11 @@ KNOWN_CLS = [("who", "Anturia", "PS"), ("who", "Capitán Merlot", "PS"),
              ("sprite", "cazadorHerido", "PC"), ("sprite", "115", "PC"),
              ("sprite", "242", "PC")]
 
+# 분기 합류 꼬리의 정답 자리 (2026-08-18) — 닫힌 가지들의 이름표가 여럿이면 물려받지
+# 않고(맵418 재도전 창구), 성별 분기처럼 한 사람이면 잇는다(맵97 뱃사공).
+KNOWN_JOIN = [((418, 19), "Recibes 3", "", "미상"),
+              ((97, 4), "persona acaudalada", "Barquero", "분기다름")]
+
 # 1회 소비 판정의 정답 자리 — `docs/log/research/2026-08-13-audit-cells.jsonl`의 「1회소비」 값.
 KNOWN_ONCE = [((22, 3, 7), True), ((2, 1, 0), True), ((163, 44, 1), False), ((3, 47, 0), False)]
 
@@ -509,6 +514,7 @@ def attribute(msgs, sprite="", objects=frozenset()):
     cast = {m for _, _, _, t, *_ in msgs if (m := (TAG.match(t).group(1) if TAG.match(t) else None))}
     obj = stem(sprite) in objects
     cur = cur_ind = None
+    hist = []          # (이름표인가, 깊이, 이름) — 분기 합류 판정이 되짚는다
     for i, (cmdi, ind, kind, text, *_) in enumerate(msgs):
         nxt = msgs[i + 1] if i + 1 < len(msgs) else None
         prompt = bool(kind == "text" and nxt and nxt[2] == "choice" and abs(nxt[0] - cmdi) < 3)
@@ -520,14 +526,39 @@ def attribute(msgs, sprite="", objects=frozenset()):
             who, how = "", "선택지"
         elif cur is not None and ind == cur_ind:
             who, how = cur, "상속"
-        elif cur is not None:
+        elif cur is not None and ind > cur_ind:
+            # 이름표보다 깊은 줄 — 같은 화자가 조건 안에서 말을 잇는 자리라 물려받되
+            # 낮은 확신 표시를 단다.
             who, how = cur, "분기다름"
-        elif len(cast) == 1:
-            who, how = next(iter(cast)), "명단1"
-        elif not cast and sprite:
-            who, how = ("", "지문") if obj else (sprite, "그림")
         else:
-            who, how = "", "미상"
+            if cur is not None:
+                # 이름표보다 얕은 줄 — 이름표가 살던 분기가 닫혔다. 방금 닫힌 가지들의
+                # 이름표가 **한 사람**이면 성별 분기류라 그 사람이 말을 잇는 것이고
+                # (맵97 뱃사공), 여럿이면 딴 화자 가지들의 합류 꼬리라 물려받으면
+                # 사고다(맵418 ev19: 도전자 분기 뒤 창구 문구 네 줄이 도전자 이름을
+                # 받았다, 2026-08-18). 가지 경계는 「이 깊이 이하의 마지막 메시지」까지.
+                names = set()
+                for was_tag, d, nm in reversed(hist):
+                    if d <= ind and not was_tag:
+                        break
+                    if was_tag and d > ind:
+                        names.add(nm)
+                if len(names) == 1:
+                    cur, cur_ind = names.pop(), ind
+                    who, how = cur, "분기다름"
+                else:
+                    cur = cur_ind = None
+                    who = None
+            else:
+                who = None
+            if who is None:
+                if len(cast) == 1:
+                    who, how = next(iter(cast)), "명단1"
+                elif not cast and sprite:
+                    who, how = ("", "지문") if obj else (sprite, "그림")
+                else:
+                    who, how = "", "미상"
+        hist.append((bool(m), ind, m.group(1) if m else None))
         yield cmdi, ind, kind, text, who, how, sorted(cast), prompt, ""
 
     # 전투 호출의 대사는 **상속의 흐름 밖**이다 — 같은 페이지의 이름표를 물려받지도
@@ -726,6 +757,15 @@ def main():
             mark = "O" if got == (want, want_how) else "X"
             ok, bad = ok + (got == (want, want_how)), bad + (got != (want, want_how))
             print(f"[{mark}] 전투 맵{mid} ev{eid} {want or '화자없음'}({want_how}) "
+                  f"← {got[0] or '화자없음'}({got[1]})")
+
+        for (mid, eid), frag, want, want_how in KNOWN_JOIN:
+            hit = next((r for r in rows if (r["map"], r["event"]) == (mid, eid)
+                        and frag in r["k"]), None)
+            got = (hit["who"], hit["how"]) if hit else ("(못찾음)", "")
+            mark = "O" if got == (want, want_how) else "X"
+            ok, bad = ok + (got == (want, want_how)), bad + (got != (want, want_how))
+            print(f"[{mark}] 합류 맵{mid} ev{eid} {want or '화자없음'}({want_how}) "
                   f"← {got[0] or '화자없음'}({got[1]})")
 
         for field, val, want in KNOWN_CLS:
