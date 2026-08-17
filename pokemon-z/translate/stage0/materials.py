@@ -308,19 +308,30 @@ def review_out(groups, out_dir):
     페이지마다 `p<맵>-<이벤트>-<페이지>.jsonl`(id·who·es·old[·new])을 쓰고, 제안이 붙은
     자리의 사유를 `screen-llm.jsonl`에 모은다. 이 도구는 화면을 만들지 않는다 —
     한 저장소에 검수 화면이 둘이면 판정이 어디 쌓였는지부터 갈린다.
+
+    ⚠ 검수 스튜디오의 장면 열쇠는 (맵, 이벤트, 페이지)라 **묶음 이름이 파일에 안 담긴다.**
+    `--phrase`·`--ids`처럼 자리를 자유롭게 고른 판정은 여러 장면에 흩어지므로, 묶음 이름과
+    메모를 각 줄의 **사유**에 실어 어느 판정에 속한 자리인지 화면에서 읽히게 한다.
     """
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
     screen, pages = [], {}
     for g in groups:
-        for r, _, _ in g["seq"]:
+        for r, cand, _ in g["seq"]:
             # 배치 파이프라인의 자리 열쇠는 맵:이벤트:페이지:명령이다 — apply_verdicts가 그 꼴을 읽는다
             bid = f'{g["map"]}:{g["event"]}:{r["page"]}:{r["cmd"]}'
             row = {"id": bid, "who": naming(r), "es": r.get("src", ""), "old": r["ko"]}
             pr = g["prop"].get(r["id"])
             if pr:
                 row["new"] = pr[1]
-                screen.append({"id": r["id"], "유형": "말투", "근거": pr[0]})
+            elif cand:
+                row["new"] = r["ko"]      # 문안 없이 자리만 지목한 판정 — 현행을 그대로 세운다
+            if pr or cand:
+                why = " · ".join(x for x in (g["title"], g["note"],
+                                             pr[0] if pr else "") if x)
+                screen.append({"id": bid,
+                               "유형": g["title"] or ("제안" if pr else "판정 자리"),
+                               "근거": why})
             pages.setdefault((g["map"], g["event"], r["page"]), []).append(row)
     for (mp, ev, pg), rows in sorted(pages.items()):
         (out / f"p{mp}-{ev}-{pg}.jsonl").write_text(
@@ -357,6 +368,20 @@ def selftest():
     s2, _ = apply_overrides([{"id": sid, "who": "Rúpico"}], [],
                             [{"id": sid, "set": {"who": "올리비에"}}])
     assert s2[0]["who"] == "올리비에", s2
+    import tempfile
+    with tempfile.TemporaryDirectory() as td:
+        ctx2 = Ctx({f"m141.e33.p0.c{g['seq'][0][0]['cmd']}": ("시험", "새 문안")})
+        g2 = ctx2.group(141, 33, set())
+        npg, nhit = review_out([g2], td)
+        rows = [json.loads(x) for x in (Path(td) / "p141-33-0.jsonl").read_text(
+            encoding="utf-8").splitlines()]
+        scr = [json.loads(x) for x in (Path(td) / "screen-llm.jsonl").read_text(
+            encoding="utf-8").splitlines()]
+        ids = {r["id"] for r in rows}
+        # 배치 꼴(맵:이벤트:페이지:명령)이라야 apply_verdicts가 읽는다
+        assert all(i.count(":") == 3 for i in ids), sorted(ids)[:3]
+        # 사유의 id가 행의 id와 같은 꼴이라야 검수 화면에 장면이 뜬다(안 그러면 0장면)
+        assert all(x["id"] in ids for x in scr), (scr[:2], sorted(ids)[:3])
     print("selftest ok — 맵141 이벤트33 {}행 · 맵63 중복 자리 {}건".format(
         len(g["seq"]), len(p["dups"])))
 
@@ -383,6 +408,9 @@ def main():
     if a.out:
         Path(a.out).write_text(text, encoding="utf-8")
     if a.review:
+        if a.context is not None:
+            print("⚠ --context는 --review에서 무시한다 — 검수 화면의 문맥은 장면 전문이다")
+            groups = groups_from_args(ctx, a)
         npg, nhit = review_out(groups, a.review)
         print(f"검수 스튜디오 입력 {npg}장면 · 제안 {nhit}줄 → {a.review}")
         if a.serve:
