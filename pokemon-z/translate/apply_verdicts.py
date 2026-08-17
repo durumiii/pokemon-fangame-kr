@@ -20,6 +20,7 @@
 """
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -28,6 +29,8 @@ sys.path.insert(0, str(HERE))
 from batch_pages import BATCH, MAPS, fold  # noqa: E402
 
 CHUNKS = BATCH / "page-chunks.jsonl"
+# 맵 자리 열쇠는 맵:이벤트[:페이지:명령] — 맵 번호와 이벤트가 앞에 서는 것이 이 도구의 전제다
+BATCH_ID_RE = re.compile(r"^\d+:\d+")
 
 
 def approved_ids():
@@ -213,7 +216,7 @@ def run(out_dir, write=False, events_only=False):
                         covers[r["id"]] = r["covers"]
 
     plan, why, olds = {}, {}, {}
-    clash, stat = [], {}
+    clash, stat, offmap = [], {}, 0
     for fp in sorted(d.glob("*.jsonl")):
         if fp.name.startswith("screen"):     # 산출 파일 이름은 p…(주연)·t…(트레이너)
             continue
@@ -221,6 +224,11 @@ def run(out_dir, write=False, events_only=False):
             if not line.strip():
                 continue
             r = json.loads(line)
+            # 맵 밖 자리(절23 스크립트 문구 등)는 열쇠 꼴이 다르고 반영 경로도 다르다 —
+            # 세어서 알리고 건너뛴다. 사람이 읽고 그 절의 정본에 넣는 자리다.
+            if not BATCH_ID_RE.match(r["id"]):
+                offmap += 1
+                continue
             m, e = (int(x) for x in r["id"].split(":")[:2])
             if keep is not None and (m, e) not in keep and r["id"] not in rows_ok:
                 continue
@@ -264,7 +272,8 @@ def run(out_dir, write=False, events_only=False):
     for tag, n in sorted(stat.items(), key=lambda x: -x[1]):
         print(f"  {tag}: {n}행")
     print(f"판정 기록 {len(vs)}건 · 반영 대상 {len(plan)}자리 · 열쇠 충돌 {len(clash)} · "
-          f"낡은 스냅숏 제외 {len(stale)}")
+          f"낡은 스냅숏 제외 {len(stale)}"
+          + (f" · 맵 밖 자리 건너뜀 {offmap}(사람이 반영한다)" if offmap else ""))
     for k, o, c, n in stale[:10]:
         print(f"  낡음 맵{k[0]} 「{k[1][:30]}」: 배치때={o[:20]} / 지금={c[:20]} / 새판={n[:20]}")
     for key, t1, v1, t2, v2 in clash[:10]:

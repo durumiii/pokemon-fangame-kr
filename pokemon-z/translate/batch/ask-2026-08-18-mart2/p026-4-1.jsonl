@@ -1,0 +1,19 @@
+{"id": "26:4:1:1", "who": "Plumanegra", "es": "<b>Plumanegra:</b> ¡Eh, tú! ¿Dónde te has metido todo este tiempo?", "old": "<b>검은깃털:</b> 어이, 너! 그동안 어디 있었던 거야?"}
+{"id": "26:4:1:2", "who": "Plumanegra", "es": "Te traigo buenas noticias. He encontrado la llave para acceder a las catacumbas bajo <b>Pueblo Acrílico</b>. Estaban debajo de una baldosa.", "old": "좋은 소식이 있어. <b>아크릴리코마을</b> 지하 카타콤으로 들어가는 열쇠를 찾았거든. 타일 밑에 있더라고."}
+{"id": "26:4:1:3", "who": "Plumanegra", "es": "Mis días de saqueo y ocultación llegaron a su fin. Solo quiero hacerme viejo aquí, tal vez formar una familia...", "old": "약탈하고 숨어 지내던 시절도 끝이다. 난 그저 여기서 늙어가고 싶어, 어쩌면 가정도 꾸리고..."}
+{"id": "26:4:1:4", "who": "Plumanegra", "es": "Así que, en cuanto a la llave, tuya es.", "old": "그러니 열쇠는 네가 가져라."}
+{"id": "26:4:1:11", "who": "Plumanegra", "es": "Si vas a molestarme, espero que sea para algo provechoso.", "old": "귀찮게 할 거라면 뭔가 득이 되는 일이어야 할 거다."}
+{"id": "26:4:1:21", "who": "Plumanegra", "es": "Las catacumbas bajo este pueblo... No son las únicas que hay en la región.", "old": "이 마을 아래의 카타콤이... 이 지역에 있는 전부가 아니야."}
+{"id": "26:4:1:22", "who": "Plumanegra", "es": "Existen cuatro grandes catacumbas excavadas en diversos puntos de la geografía de <b>Kalos</b>.", "old": "<b>칼로스</b> 곳곳에 거대한 카타콤이 네 군데 파여 있지."}
+{"id": "26:4:1:23", "who": "Plumanegra", "es": "Y en todas ellas te encuentras con la misma estatua de esa antigua reina...", "old": "그리고 그 모든 곳에서 그 옛 여왕의 똑같은 동상을 마주하게 돼..."}
+{"id": "s23.k720e7216@m26.e4", "who": "(화자 없음)", "es": "¿Te interesa algo de lo que tengo?", "old": "마음에 드는 물건이 있나요?", "new": "마음에 드는 물건이라도 있어?"}
+{"id": "s23.k7bb394fa@m26.e4", "who": "(화자 없음)", "es": "¿{1}? Buena elección.\n¿Cuántas unidades quieres?", "old": "{1}? 좋은 선택이야.\r\n몇 개 필요해?", "new": "{1}? 좋은 선택이야.\r\n몇 개 필요해?"}
+{"id": "s23.k161942bb@m26.e4", "who": "(화자 없음)", "es": "{1}... Y quieres {2}.\nTe costará ${3}. ¿De acuerdo?", "old": "{1}... 그리고 {2}\\j[이,가] 필요하군.\r\n${3}인데 괜찮겠어?", "new": "{1}... 그리고 {2}\\j[이,가] 필요하군.\r\n${3}인데 괜찮겠어?"}
+{"id": "s23.k3201e96d@m26.e4", "who": "(화자 없음)", "es": "{1} es una buena elección.\nTe costará ${2}. ¿De acuerdo?", "old": "{1}, 좋은 선택이야.\r\n${2}인데 괜찮겠어?", "new": "{1}, 좋은 선택이야.\r\n${2}인데 괜찮겠어?"}
+{"id": "s23.ke8debbd9@m26.e4", "who": "(화자 없음)", "es": "¡Aquí tienes!\n¡Gracias!", "old": "네, 여기 있습니다!\r\n대단히 감사합니다!", "new": "자, 여기 있어!\r\n고마워!"}
+{"id": "s23.k03aa6c9a@m26.e4", "who": "(화자 없음)", "es": "No tienes el dinero suficiente.", "old": "돈이 부족하군요.", "new": "돈이 모자라잖아."}
+{"id": "s23.k62d4bafa@m26.e4", "who": "(화자 없음)", "es": "¿En qué más puedo ayudarte?", "old": "더 도와드릴 일이 있으신가요?", "new": "더 필요한 거 있어?"}
+{"id": "s23.kcae7ab4f@m26.e4", "who": "(화자 없음)", "es": "¿{1}?\n¿Cuántas unidades quieres vender?", "old": "{1}?\r\n몇 개를 팔까?", "new": "{1}?\r\n몇 개 팔 건데?"}
+{"id": "s23.k28f86508@m26.e4", "who": "(화자 없음)", "es": "Puedo pagarte ${1}.\n¿Te parece bien?", "old": "${1}에 사줄게.\r\n괜찮겠어?", "new": "${1}에 사 줄게.\r\n괜찮겠어?"}
+{"id": "s23.k0196e5b8@m26.e4", "who": "(화자 없음)", "es": "¿{1}? ¡Oh, no!\nNo puedo comprar eso.", "old": "{1}? 이런!\r\n그건 살 수 없어.", "new": "{1}? 이런!\r\n그건 살 수 없어."}
+{"id": "s23.k591909ba@m26.e4", "who": "(화자 없음)", "es": "¡Vuelve cuando quieras!", "old": "또 오세요!", "new": "생각나면 또 와!"}

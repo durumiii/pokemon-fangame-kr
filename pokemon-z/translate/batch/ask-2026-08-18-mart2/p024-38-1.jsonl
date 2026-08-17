@@ -1,0 +1,20 @@
+{"id": "24:38:1:0", "who": "Espino", "es": "<b>Espino:</b> ¡Largo tiempo ha pasado, ilustre \\PN! El viento marino del lugar me ha sentado de maravilla y estoy listo para ayudaros.", "old": "<b>에스피노:</b> 정말 오랜만입니다, 훌륭하신 \\PN! 이곳의 바닷바람이 제게 아주 잘 맞아서, 언제든 도와드릴 준비가 되어 있습니다."}
+{"id": "24:38:1:1", "who": "Espino", "es": "¿Qué es lo que queréis?", "old": "무엇을 원하시나요?"}
+{"id": "24:38:1:7", "who": "Espino", "es": "¿Has subido a la colina de este pueblo? Desde aquí veo unos extraños pedestales.", "old": "이 마을의 언덕에 올라가 보셨습니까? 여기서 보니 이상한 대좌들이 보이는군요."}
+{"id": "24:38:1:8", "who": "Espino", "es": "Me pregunto si servirán para algo. Lo comprobaría yo mismo, pero mi espalda ya no es la que era y no me sentaría bien el ascenso. ¡Ay!", "old": "무슨 용도인지 궁금하네요. 직접 확인해 보고 싶지만, 허리가 예전 같지 않아 올라가기가 부담스럽군요. 아이고!"}
+{"id": "24:38:1:11", "who": "Espino", "es": "Si viajas por <b>Kalos</b> viviendo aventuras, hay algo que debéis saber.", "old": "<b>칼로스</b>를 여행하며 모험을 하신다면, 꼭 알아두셔야 할 것이 있습니다."}
+{"id": "24:38:1:12", "who": "Espino", "es": "Hace un tiempo, fui derrotado por un tramposo sicario llamado <b>Plumanegra</b>.", "old": "얼마 전, 저는 <b>검은깃털</b>이라는 비열한 자객에게 패배했습니다."}
+{"id": "24:38:1:13", "who": "Espino", "es": "Teníamos que batirnos en un duelo honorable, pero me atacó por detrás empleando venenos. Ahora, con mis heridas, nunca más podré volver a luchar como antes.", "old": "명명백백 결투를 벌여야 했으나, 그 자는 독을 써서 저를 뒤에서 공격했지요. 이 상처 때문에 이제 저는 예전처럼 싸울 수 없게 되었습니다."}
+{"id": "24:38:1:15", "who": "Espino", "es": "Lo último que supe de <b>Plumanegra</b> es que se escondió en las profundidades de <b>Ciudad Luminalia</b>, en un lugar rodeado de tinieblas.", "old": "<b>검은깃털</b>에 대해 마지막으로 들은 소식은, <b>미르시티</b> 깊숙한 곳, 어둠에 둘러싸인 장소에 숨어들었다는 것이었습니다."}
+{"id": "24:38:1:21", "who": "Espino", "es": "Ya no soy muy útil luchando, pero puedo compartirte mis bayas de entrenamiento.", "old": "이제 싸움에는 별 도움이 되지 못하지만, 제 훈련용 열매를 나눠드릴 수는 있습니다."}
+{"id": "s23.k720e7216@m24.e38", "who": "(화자 없음)", "es": "¿Te interesa algo de lo que tengo?", "old": "마음에 드는 물건이 있나요?", "new": "마음에 드는 물건이 있나요?"}
+{"id": "s23.k7bb394fa@m24.e38", "who": "(화자 없음)", "es": "¿{1}? Buena elección.\n¿Cuántas unidades quieres?", "old": "{1}? 좋은 선택이야.\r\n몇 개 필요해?", "new": "{1}? 좋은 선택이에요.\r\n몇 개 드릴까요?"}
+{"id": "s23.k161942bb@m24.e38", "who": "(화자 없음)", "es": "{1}... Y quieres {2}.\nTe costará ${3}. ¿De acuerdo?", "old": "{1}... 그리고 {2}\\j[이,가] 필요하군.\r\n${3}인데 괜찮겠어?", "new": "{1}... 그리고 {2}\\j[이,가] 필요하시군요.\r\n${3}인데 괜찮으시겠어요?"}
+{"id": "s23.k3201e96d@m24.e38", "who": "(화자 없음)", "es": "{1} es una buena elección.\nTe costará ${2}. ¿De acuerdo?", "old": "{1}, 좋은 선택이야.\r\n${2}인데 괜찮겠어?", "new": "{1}, 좋은 선택이에요.\r\n${2}인데 괜찮으시겠어요?"}
+{"id": "s23.ke8debbd9@m24.e38", "who": "(화자 없음)", "es": "¡Aquí tienes!\n¡Gracias!", "old": "네, 여기 있습니다!\r\n대단히 감사합니다!", "new": "네, 여기 있습니다!\r\n대단히 감사합니다!"}
+{"id": "s23.k03aa6c9a@m24.e38", "who": "(화자 없음)", "es": "No tienes el dinero suficiente.", "old": "돈이 부족하군요.", "new": "돈이 부족하군요."}
+{"id": "s23.k62d4bafa@m24.e38", "who": "(화자 없음)", "es": "¿En qué más puedo ayudarte?", "old": "더 도와드릴 일이 있으신가요?", "new": "더 도와드릴 일이 있으신가요?"}
+{"id": "s23.kcae7ab4f@m24.e38", "who": "(화자 없음)", "es": "¿{1}?\n¿Cuántas unidades quieres vender?", "old": "{1}?\r\n몇 개를 팔까?", "new": "{1}?\r\n몇 개 파시겠어요?"}
+{"id": "s23.k28f86508@m24.e38", "who": "(화자 없음)", "es": "Puedo pagarte ${1}.\n¿Te parece bien?", "old": "${1}에 사줄게.\r\n괜찮겠어?", "new": "${1}에 사 드릴게요.\r\n괜찮으시겠어요?"}
+{"id": "s23.k0196e5b8@m24.e38", "who": "(화자 없음)", "es": "¿{1}? ¡Oh, no!\nNo puedo comprar eso.", "old": "{1}? 이런!\r\n그건 살 수 없어.", "new": "{1}? 이런!\r\n그건 살 수 없어요."}
+{"id": "s23.k591909ba@m24.e38", "who": "(화자 없음)", "es": "¡Vuelve cuando quieras!", "old": "또 오세요!", "new": "또 오세요!"}
