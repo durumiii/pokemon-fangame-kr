@@ -222,10 +222,21 @@ def main():
     dump_jsonl(OUT / "sites.jsonl", sites)
     dump_jsonl(OUT / "messages.jsonl", msgs)
 
-    # groups — 페르소나 표 + 스프라이트 묶음. 기계 이관이라 격 판정을 새로 만들지 않는다.
+    # groups — 말투 프롬프트 + 페르소나 표 + 스프라이트 묶음. 기계 이관이라 격 판정을
+    # 새로 만들지 않는다 — 지시는 자유문 그대로 옮기고 구조화(register·to·forbid)는
+    # 사람 몫으로 남긴다(설계 3절 groups의 최종 꼴).
     sprite_groups = json.loads((ROOT / "sprite-groups.json").read_text(encoding="utf-8"))
     write_yaml(OUT / "groups.yaml", {
-        "_source": ["translate/persona-table.jsonl", "translate/sprite-groups.json"],
+        "_source": ["translate/voice-prompts.jsonl", "translate/persona-table.jsonl",
+                    "translate/sprite-groups.json"],
+        "voices": [
+            {"group": r["name"], "match": {"name": r["name"]},
+             "instruction": r["지시"],
+             "samples": [{"register": s.get("격", "—"), "text": s["글"]}
+                         for s in r.get("본보기", [])],
+             "source": "translate/voice-prompts.jsonl"}
+            for r in read_jsonl(ROOT / "voice-prompts.jsonl")
+        ],
         "groups": [
             {"group": r["sprite"], "match": {"speaker": r["sprite"]},
              "rows": r["rows"], "bucket": r["버킷"], "persona": r["페르소나"],
