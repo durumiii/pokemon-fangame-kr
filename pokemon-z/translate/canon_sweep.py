@@ -29,6 +29,13 @@ def norm(s):
     return re.sub(r"\s+", " ", s).strip()
 
 
+def put_lines(edits):
+    """0단계 정본에 앉히고 ko를 역생성한다 — 창구는 stage0/edit.py 하나다."""
+    sys.path.insert(0, str(HERE / "stage0"))
+    from edit import put_lines as _put
+    return _put(edits)
+
+
 def main():
     args = [a for a in sys.argv[1:] if a != "--write"]
     if not args:
@@ -50,6 +57,7 @@ def main():
         p = next(iter((HERE / "ko").glob(f"{sec}*.jsonl")))
     rows = [json.loads(l) for l in p.read_text(encoding="utf-8").splitlines()]
     n = applied = 0
+    edits = []
     for idx, r in enumerate(rows):
         src = r.get("es") or r.get("k")
         if not src or not by.get(norm(src)):
@@ -61,7 +69,7 @@ def main():
         n += 1
         if approved is not None:
             if idx in approved:
-                r["v"] = ko
+                edits.append((p.name, idx + 1, ko))
                 applied += 1
             continue
         files = sorted({c["src"] + ":" + c["file"] for c in by[norm(src)]})
@@ -70,9 +78,10 @@ def main():
         print(f"    본가 {ko[:74]!r} {files[:3]}")
     print(f"== 대상 {n}행" + (f" · 반영 {applied}행" if approved is not None else ""))
     if approved is not None:
-        with open(p, "w", encoding="utf-8") as f:
-            for r in rows:
-                f.write(json.dumps(r, ensure_ascii=False) + "\n")
+        err = put_lines(edits)
+        if err:
+            print("멈춤 —", err)
+            return
         print(f"기록: {p}")
 
 

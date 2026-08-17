@@ -107,6 +107,13 @@ def canon_rows(sec):
     return lines, pos
 
 
+def put_lines(edits):
+    """0단계 정본에 앉히고 ko를 역생성한다 — 창구는 stage0/edit.py 하나다."""
+    sys.path.insert(0, str(HERE / "stage0"))
+    from edit import put_lines as _put
+    return _put(edits)
+
+
 def main():
     args = sys.argv[1:]
     if "--selftest" in args:
@@ -123,7 +130,7 @@ def main():
     for (sec, mi, j), v in touched.items():
         by_sec.setdefault(sec, []).append(((mi, j), v))
 
-    total, already = 0, 0
+    total, already, edits = 0, 0, []
     for sec, items in sorted(by_sec.items()):
         lines, pos = canon_rows(sec)
         if lines is None:
@@ -147,15 +154,17 @@ def main():
             if verdict == "빈값":
                 blank.append((sec, key, r["v"]))
                 continue
-            r["v"] = v
-            lines[ln] = json.dumps(r, ensure_ascii=False)
+            edits.append((SEC_FILE[sec].name, ln + 1, v))
             n += 1
-        if n and write:
-            SEC_FILE[sec].write_text("\n".join(lines) + "\n", encoding="utf-8")
         if n:
             print(f"  {SEC_FILE[sec].name}: {n}행")
         total += n
 
+    if write:
+        err = put_lines(edits)
+        if err:
+            print("멈춤 —", err)
+            return
     print(f"\n회수 {total}행 · 이미 정본에 있던 것 {already}행 · 충돌 {len(clash)}행")
     for sec, key, was, v, cur in clash:
         print(f"  ⚠ 충돌 절{sec} {key} — 손대지 않았어요\n"

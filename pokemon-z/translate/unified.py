@@ -122,29 +122,36 @@ def check(quiet=False):
     return drift, gone
 
 
+def put_lines(edits):
+    """0단계 정본에 앉히고 ko를 역생성한다 — 창구는 stage0/edit.py 하나다."""
+    sys.path.insert(0, str(HERE / "stage0"))
+    from edit import put_lines as _put
+    return _put(edits)
+
+
 def restore(write=False):
     led = ledger()
     exp = div_expected(div_ledger())
-    out, hit, cur = [], 0, None
-    for line in MAPS.read_text(encoding="utf-8").splitlines():
+    edits, hit, cur = [], 0, None
+    for ln, line in enumerate(MAPS.read_text(encoding="utf-8").splitlines(), 1):
         if not line.strip():
-            out.append(line)
             continue
         r = json.loads(line)
         if "map" in r:
             cur = r["map"]
-        else:
-            kf = fold(r["k"])
-            e = led.get(kf)
-            want = e["ko"] if e else exp.get(kf, {}).get(cur)
-            if want and r["v"] != want:
-                hit += 1
-                print(f"맵{cur} {r['v'][:40]!r} → {want[:40]!r}")
-                if write:
-                    r["v"] = want
-        out.append(json.dumps(r, ensure_ascii=False))
+            continue
+        kf = fold(r["k"])
+        e = led.get(kf)
+        want = e["ko"] if e else exp.get(kf, {}).get(cur)
+        if want and r["v"] != want:
+            hit += 1
+            print(f"맵{cur} {r['v'][:40]!r} → {want[:40]!r}")
+            edits.append((MAPS.name, ln, want))
     if write:
-        MAPS.write_text("\n".join(out) + "\n", encoding="utf-8")
+        err = put_lines(edits)
+        if err:
+            print("멈춤 —", err)
+            return
     print(f"복원 {'반영' if write else '대상'} {hit}행" + ("" if write else " — 반영하려면 --write"))
 
 
