@@ -1,0 +1,291 @@
+# 기니아 전 대사 — 인물 전체 재검토 재료 (2026-08-17)
+
+대장 등재: 「상냥한 해요체 접객. **한 장면 안에서 급을 흔들지 마라.** 근거: 현행 존대 122·하대 7」
+
+귀속표에 잡힌 137행을 맵·이벤트·페이지·명령 차례로 늘어놓았다.
+
+## 맵0 ev55 p0 — 64행
+- cmd1 · 그럼 당신 포켓몬 중 한 마리에게 다른 지방 모습의 색을 칠해드릴까요?
+    - es: ¿Quieres que pinte los colores de su forma exótica a uno de tus Pokémon entonces?
+- cmd5 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd14 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd21 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd30 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd37 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd46 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd53 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd62 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd69 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd78 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd85 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd94 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd101 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd110 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd117 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd126 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd133 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd142 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd149 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd158 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd165 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd174 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd181 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd190 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd197 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd206 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd213 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd222 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd229 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd238 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd245 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd254 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd261 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd270 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd277 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd286 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd293 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd302 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd309 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd318 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd325 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd334 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd341 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd350 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd357 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd366 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd373 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd382 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd389 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd398 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd405 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd414 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd421 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd430 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd437 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd446 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd453 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd462 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd468 · 이 포켓몬 중 하나를 지닌 포켓몬의 첫 번째 자리에 놓아야 합니다.
+    - es: Tienes que poner a uno de estos Pokémon en el 1ºpuesto de tu equipo.
+- cmd469 · 라이츄, 고지, 나인테일, 딱구리, 날쌩마, 질뻐기, 나시, 텅구리, 또도가스, 불비달마, 야도란, 야도킹, 레트라, 닥트리오, 페르시온, 윈디, 붐볼, 조로아크, 블레이범, 독파리, 코리갑, 워글, 모크나이퍼, 대검귀, 메더, 딜리버드, 하리뭉, 크레베이스, 미끄래곤.
+    - es: Raichu, Sandslash, Ninetales, Golem, Rapidash, Muk, Exeggutor, Marowak, Weezing, Darmanitan, Slowbro, Slowking, Raticate, Dugtrio, Persian,
+Arcanine, Electrode, Zoroark, Typhlosion, Tentacruel, Donphan, Braviary, Decidueye, Samurott, Stunfisk, Delibird, Hariyama, Avalugg y Goodra.
+- cmd474 · 아닌가요? 정말로 당신 포켓몬을 다른 지방의 모습으로 바꿔보지 않으실 건가요?
+    - es: ¿No? ¿De verdad no quieres probar una versión exótica de alguno de tus Pokémon?
+- cmd478 · 지닌 포켓몬의 첫 번째 자리에 보여주시는 포켓몬 중 어느 것이든 모습을 바꿔 드릴 수 있습니다:
+    - es: Puedo transformarte a cualquiera de estos Pokémon que me muestres en el 1ºlugar de tu equipo:
+- cmd479 · 라이츄, 고지, 나인테일, 딱구리, 날쌩마, 질뻐기, 나시, 텅구리, 또도가스, 불비달마, 야도란, 야도킹, 레트라, 닥트리오, 페르시온, 윈디, 붐볼, 조로아크, 블레이범, 독파리, 코리갑, 워글, 모크나이퍼, 대검귀, 메더, 딜리버드, 하리뭉, 크레베이스, 미끄래곤.
+    - es: Raichu, Sandslash, Ninetales, Golem, Rapidash, Muk, Exeggutor, Marowak, Weezing, Darmanitan, Slowbro, Slowking, Raticate, Dugtrio, Persian,
+Arcanine, Electrode, Zoroark, Typhlosion, Tentacruel, Donphan, Braviary, Decidueye, Samurott, Stunfisk, Delibird, Hariyama, Avalugg y Goodra.
+
+## 맵0 ev56 p0 — 64행
+- cmd1 · 그럼 당신 포켓몬 중 한 마리에게 원래 모습의 색을 칠해드릴까요?
+    - es: ¿Quieres que pinte los colores de su forma común a uno de tus Pokémon entonces?
+- cmd5 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd14 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd21 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd30 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd37 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd46 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd53 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd62 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd69 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd78 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd85 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd94 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd101 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd110 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd117 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd126 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd133 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd142 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd149 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd158 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd165 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd174 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd181 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd190 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd197 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd206 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd213 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd222 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd229 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd238 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd245 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd254 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd261 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd270 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd277 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd286 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd293 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd302 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd309 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd318 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd325 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd334 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd341 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd350 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd357 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd366 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd373 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd382 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd389 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd398 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd405 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd414 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd421 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd430 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd437 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd446 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd453 · 좋아요, 그럼 당신의 포켓몬을 다른 지방의 모습으로 바꿔 드릴게요!
+    - es: ¡Bien, pues transformaré a tu Pokémon en su forma exótica!
+- cmd462 · <b>기니아:</b> 이 새로운 색이 정말 기막히게 잘 어울리네요!
+    - es: <b>Ginia:</b> ¡Estos nuevos colores le sientan de fábula!
+- cmd468 · 이 포켓몬 중 하나를 지닌 포켓몬의 첫 번째 자리에 놓아야 합니다.
+    - es: Tienes que poner a uno de estos Pokémon en el 1ºpuesto de tu equipo.
+- cmd469 · 라이츄, 고지, 나인테일, 딱구리, 날쌩마, 질뻐기, 나시, 텅구리, 또도가스, 불비달마, 야도란, 야도킹, 레트라, 닥트리오, 페르시온, 윈디, 붐볼, 조로아크, 블레이범, 독파리, 코리갑, 워글, 모크나이퍼, 대검귀, 메더, 딜리버드, 하리뭉, 크레베이스, 미끄래곤.
+    - es: Raichu, Sandslash, Ninetales, Golem, Rapidash, Muk, Exeggutor, Marowak, Weezing, Darmanitan, Slowbro, Slowking, Raticate, Dugtrio, Persian,
+Arcanine, Electrode, Zoroark, Typhlosion, Tentacruel, Donphan, Braviary, Decidueye, Samurott, Stunfisk, Delibird, Hariyama, Avalugg y Goodra.
+- cmd474 · 평범한 것에도 나름의 매력이 있잖아요, 그렇죠? 잊지 마세요!
+    - es: Lo común también tiene su encanto, ¿eh? ¡No lo olvides!
+- cmd478 · 지닌 포켓몬의 첫 번째 자리에 보여주시는 포켓몬 중 어느 것이든 모습을 바꿔 드릴 수 있습니다:
+    - es: Puedo transformarte a cualquiera de estos Pokémon que me muestres en el 1ºlugar de tu equipo:
+- cmd479 · 라이츄, 고지, 나인테일, 딱구리, 날쌩마, 질뻐기, 나시, 텅구리, 또도가스, 불비달마, 야도란, 야도킹, 레트라, 닥트리오, 페르시온, 윈디, 붐볼, 조로아크, 블레이범, 독파리, 코리갑, 워글, 모크나이퍼, 대검귀, 메더, 딜리버드, 하리뭉, 크레베이스, 미끄래곤.
+    - es: Raichu, Sandslash, Ninetales, Golem, Rapidash, Muk, Exeggutor, Marowak, Weezing, Darmanitan, Slowbro, Slowking, Raticate, Dugtrio, Persian,
+Arcanine, Electrode, Zoroark, Typhlosion, Tentacruel, Donphan, Braviary, Decidueye, Samurott, Stunfisk, Delibird, Hariyama, Avalugg y Goodra.
+
+## 맵24 ev43 p0 — 7행
+- cmd0 · <b>기니아:</b> 안녕하세요, \PN! 여긴 영감을 얻어서 그림을 그리기 정말 좋은 곳이에요.
+    - es: <b>Ginia:</b> ¡Hola, \PN! Este es un lugar precioso para encontrar la inspiración y pintar.
+- cmd2 · 원하신다면 포켓몬에게 새로운 색을 칠해서 색다르게 바꿔 드릴 수 있어요.
+    - es: Si quieres, puedo pintar nuevos colores en tus Pokémon y transformarlos.
+- cmd3 · 그림 재료비로 딱 10,000포켓프랑만 받을게요. 관심 있으신가요?
+    - es: Te cobro solo 10.000 pokéfrancos por el coste de los materiales de pintura. ¿Te interesa?
+- cmd7 · 어떤 색으로 칠해 드릴까요?
+    - es: ¿Qué tipo de colores quieres que pinte?
+- cmd16 · <b>기니아:</b> 아닌가요? 정말 포켓몬에게 새로운 색을 칠해 보고 싶지 않으신가요?
+    - es: <b>Ginia:</b> ¿No? ¿De verdad no quieres probar nuevos colores en tus Pokémon?
+- cmd21 · <b>기니아:</b> 돈이 부족하네요.
+    - es: <b>Ginia:</b> No tienes suficiente dinero.
+- cmd26 · <b>기니아:</b> 아닌가요? 정말 포켓몬에게 새로운 색을 칠해 보고 싶지 않으신가요?
+    - es: <b>Ginia:</b> ¿No? ¿De verdad no quieres probar nuevos colores en tus Pokémon?
+
+## 맵303 ev44 p0 — 2행
+- cmd36 · 아이고! 도대체 어떻게 내 불쌍한 루브도를 그렇게 대할 수 있나요?
+    - es: ¡Aaay! ¿Pero cómo te atreves a tratar así a mis pobres Smeargle?
+- cmd44 · 아이고! 도대체 어떻게 내 불쌍한 루브도를 그렇게 대할 수 있나요?
+    - es: ¡Aaay! ¿Pero cómo te atreves a tratar así a mis pobres Smeargle?
