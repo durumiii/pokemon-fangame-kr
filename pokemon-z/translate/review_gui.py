@@ -136,8 +136,7 @@ function render(){
       const id='bucket:'+q.id;
       const c=document.createElement('div'); c.className='card';
       c.innerHTML=`<div class="hd"><span class="who">${esc(q.title||q.id)}</span>
-          <span class="rid">${id}</span>
-          ${q.rows?`<span class="chip">자리 ${q.rows}</span>`:''}
+          ${q.rows&&q.rows.length?`<span class="chip">자리 ${q.rows.length}</span>`:''}
           <span class="chip verdict" style="margin-left:auto"></span></div>
         ${q.ask?`<div class="opt"><span class="tag cur">정해 달라는 것</span>
           <span class="txt" style="white-space:pre-wrap">${esc(q.ask)}</span></div>`:''}
@@ -520,6 +519,7 @@ def handler(out_dir, vpath, all_rows=False, alt=None, no_skip=False):
             if u.path == "/":
                 self.send_response(200)
                 self.send_header("Content-Type", "text/html; charset=utf-8")
+                self.send_header("Cache-Control", "no-store")   # 낡은 화면이 남지 않게
                 self.send_header("Content-Length", str(len(page)))
                 self.end_headers()
                 self.wfile.write(page)
