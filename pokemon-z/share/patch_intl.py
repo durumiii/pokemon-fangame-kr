@@ -55,8 +55,11 @@ EDITS = [
 # 이벤트 선택지(command_102) — 선택지 문자열이 번역 조회 없이 pbShowCommands로
 # 직행해 Sí/No가 스페인어로 노출되는 기능 버그(제보 목록 「제보 6건」의 첫 건).
 # Messages 절이 Interpreter/Game_Interpreter 양쪽에 같은 본문을 정의하므로
-# 한 EDIT이 2곳을 치환한다. 조회는 게임의 정규 사슬(현재 맵 해시 → 맵0 공통
-# 이벤트 폴백)을 그대로 탄다. 루비 1.8 문법 유의.
+# 한 EDIT이 2곳을 치환한다. 조회는 게임의 정규 사슬(맵 해시 → 맵0 폴백)을 그대로 탄다.
+# 루비 1.8 문법 유의.
+# ⚠ 아래 좌표 조회 EDIT이 **산 클래스 쪽만** 다시 덮어 기준 맵을 @map_id로 바꾼다 —
+# 여기 남는 $game_map.map_id는 죽은 Game_Interpreter 쪽 사본이다. 그 죽은 복제를 언젠가
+# 걷어내면 이 EDIT의 멱등도 함께 깨진다(치환된 사본이 하나도 안 남아 「옛/새 모두 없음」).
 EDITS += [
     ("Messages",
      "command=Kernel.pbShowCommands(nil,@list[@index].parameters[0],@list[@index].parameters[1])",
@@ -176,16 +179,24 @@ EDITS += [
 ]
 
 # 좌표 조회 1단(Z-73) — 맵 대사·선택지를 (맵, 이벤트, 명령 인덱스) + 원문으로 먼저 찾고,
-# 없으면 지금까지의 사슬(현재 맵 → 맵0 → 원문)로 그대로 떨어진다. 좌표 항목이 있는 줄만
-# 새 경로를 타므로 기존 동작은 안 바뀌고, 맵0 우회(Z-61)와도 안 부딪힌다.
+# 없으면 원문 사슬(그 맵 → 맵0 → 원문 그대로)로 떨어진다. 좌표 항목이 있는 줄만 새 경로를
+# 타므로 그 밖의 줄은 값이 안 바뀐다.
+#
+# **조회의 기준 맵은 이벤트 소속 맵(@map_id)이다 — 폴백까지 그렇다.** 정본의 열쇠는 그
+# 대사가 적힌 이벤트가 놓인 맵인데 폴백만 대사가 뜨는 순간의 현재 맵($game_map.map_id)을
+# 봐서, 한 이벤트가 플레이어를 전이시킨 뒤 말하면 둘이 갈려 열쇠를 못 찾고 스페인어가
+# 떴다(67행 — translate/xfer_text.py가 목록을 다시 낸다). @map_id는 Interpreter#setup이
+# 이벤트 소속 맵으로 박아 두는 값이고(셋째 인자, 안 주면 현재 맵), 셀프 스위치와 이벤트
+# 변수도 이미 이 값을 이벤트의 정체성으로 쓴다. 공통 이벤트는 셋째 인자를 안 넘겨
+# @map_id가 현재 맵이 되므로 동작이 그대로다.
+# ⚠ 2026-08-17판(폴백만 $game_map.map_id)이 깔린 파일에 이 도구를 돌리면 옛/새 어느
+# 쪽도 못 찾아 멈춘다. 그때는 Scripts.rxdata.pre-intl.bak을 되돌리고 다시 돌린다.
 #
 # 열쇠 꼴 "krloc:<맵>:<이벤트>:<명령>|<정규화한 원문>" 은 translate/build.py와 한 글자도
 # 어긋나면 안 된다 — 그래서 조립을 MessageTypes.krLoc 한 자리에 모으고 부르는 쪽은
 # 한 줄씩만 얹는다. 원문에 stringToKey를 미리 걸어 두므로 getFromMapHash 안에서 한 번
 # 더 걸려도 결과가 같다(정규화가 멱등이고 접두에는 공백이 없다).
 #
-# ⚠ 맵 번호는 이벤트 소속 맵 @map_id를 쓴다($game_map.map_id가 아니다 — 전이 뒤 대사에서
-# 둘이 갈린다). 폴백 경로는 지금 값 그대로 둔다.
 # 도는 인터프리터는 Interpreter 하나뿐이라(Game_Interpreter는 죽은 코드) 수술 자리도
 # 그쪽뿐이다. 옛 소스가 두 클래스에 복제돼 있으므로 앵커에 Interpreter 쪽에만 있는
 # 줄(firstText·주석·pbMessage의 nil 인자)을 물려 한쪽만 갈린다. 루비 1.8 문법.
@@ -228,12 +239,12 @@ EDITS += [
      '        cmdlist.push(_MAPINTL($game_map.map_id,cmd))\r\n'
      '      end\r\n',
      '    krHit=MessageTypes.krLoc(@map_id,@event_id,krIndex,message)\r\n'
-     '    message=krHit ? krHit : _MAPINTL($game_map.map_id,message)\r\n'
+     '    message=krHit ? krHit : _MAPINTL(@map_id,message)\r\n'
      '    if commands\r\n'
      '      cmdlist=[]\r\n'
      '      for cmd in commands[0]\r\n'
      '        krHit=MessageTypes.krLoc(@map_id,@event_id,@index,cmd)\r\n'
-     '        cmdlist.push(krHit ? krHit : _MAPINTL($game_map.map_id,cmd))\r\n'
+     '        cmdlist.push(krHit ? krHit : _MAPINTL(@map_id,cmd))\r\n'
      '      end\r\n'),
 
     # 홀로 선 선택지(command_102). 앞의 pbMessage(...,nil)이 Interpreter 쪽 표식이다.
@@ -259,7 +270,7 @@ EDITS += [
      '    @message_waiting=true\r\n'
      '    command=Kernel.pbShowCommands(nil,@list[@index].parameters[0].collect{|c| '
      'MessageTypes.krLoc(@map_id,@event_id,@index,c) || '
-     'MessageTypes.getFromMapHash($game_map ? $game_map.map_id : 0,c)},'
+     'MessageTypes.getFromMapHash(@map_id,c)},'
      '@list[@index].parameters[1])\r\n'),
 ]
 

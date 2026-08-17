@@ -2,12 +2,17 @@
 # requires-python = ">=3.12"
 # dependencies = ["rubymarshal"]
 # ///
-"""전이 뒤에 뜨는 대사를 전수로 캔다 — Z-61의 재료.
+"""전이 뒤에 뜨는 대사를 전수로 캔다 — Z-61의 재료, 지금은 회귀 시험대.
 
-게임은 맵 대사를 **그 순간 플레이어가 서 있는 맵 id**로 조회하는데(Messages.rb의
-`getFromMapHash($game_map.map_id, …)`), 정본은 그 대사가 적힌 이벤트가 놓인 맵에
-등재돼 있다. 이벤트가 플레이어를 다른 맵으로 옮긴 뒤 말을 걸면 두 맵이 갈려 열쇠가
-없고, 원문이 그대로 화면에 뜬다.
+⚠ **이 도구가 세는 「도착 맵 정본 없음」은 2026-08-18부터 결함이 아니다.** 그때 조회
+기준이 이벤트 소속 맵(`@map_id`)으로 바뀌어 이 줄들은 제 맵에서 찾아진다(Z-73 잔여,
+`share/patch_intl.py`). 지금 이 수는 「전이 뒤에 말하는 자리가 몇이나 되나」를 재는
+것이고, 고칠 자리의 수가 아니다. 값이 실제로 닿는지는 `정본_출발`이 답한다 — 그 칸이
+거짓인 줄이 생기면 그것이 결함이다.
+
+옛 병이 무엇이었나: 게임이 맵 대사를 **그 순간 플레이어가 서 있는 맵 id**로 조회하는데
+정본은 그 대사가 적힌 이벤트가 놓인 맵에 등재돼 있어, 이벤트가 플레이어를 다른 맵으로
+옮긴 뒤 말을 걸면 두 맵이 갈려 열쇠가 없고 원문이 그대로 화면에 떴다.
 
 전 맵의 이벤트 페이지를 명령 순서대로 훑어, 다른 맵으로 가는 전이(코드 201) 뒤에 오는
 대사·선택지(코드 101·401·102)를 모아 도착 맵에 정본 줄이 있는지 대조한다.
@@ -81,7 +86,10 @@ def main():
                                         "정본_도착": (dest, k) in canon})
     miss = [r for r in out if r["정본_출발"] and not r["정본_도착"]]
     pages = {(r["src_map"], r["event"], r["page"]) for r in miss}
-    print(f"전이 뒤 대사 {len(out)}행 · 도착 맵 정본 없음 {len(miss)}행 · 이벤트 페이지 {len(pages)}개")
+    orphan = [r for r in out if not r["정본_출발"]]
+    print(f"전이 뒤 대사 {len(out)}행 · 도착 맵 정본 없음 {len(miss)}행(결함 아님, 머리말 참조)"
+          f" · 이벤트 페이지 {len(pages)}개")
+    print(f"⚠ 출발 맵에도 정본이 없는 줄: {len(orphan)}행 — 이 수가 0이 아니면 결함이다")
     for s, d, e, p in sorted({(r["src_map"], r["dest_map"], r["event"], r["page"]) for r in miss}):
         cnt = sum(1 for r in miss
                   if (r["src_map"], r["dest_map"], r["event"], r["page"]) == (s, d, e, p))

@@ -11,7 +11,9 @@ export.py로 재동기화부터 한다.
 
 왕복 검증 통과 후 보관소·게임 양쪽에 쓴다.
 
-usage: uv run build.py [--dry-run]
+usage: uv run build.py [--dry-run] [--prune] [--out=<경로>]
+  --prune  정본에서 걷어낸 맵 절 키를 dat에서도 떨어낸다(무엇을 떨어냈는지 찍는다).
+           평소에는 정본·dat 어긋남으로 보고 멈추는 자리라 붙일 때만 돈다.
 """
 import io
 import json
@@ -75,6 +77,7 @@ def string_to_key(s):
 
 def main():
     dry = "--dry-run" in sys.argv
+    prune = "--prune" in sys.argv
     d = load(open(STORE, "rb"))
     # 지난 빌드가 남긴 __kr_patch__ 표식을 떼고 시작한다 — 안 떼면 다음 빌드의
     # 줄 수 검증이 1개 차이로 죽는다(2026-08-04 실사고). 끝에서 다시 심는다.
@@ -91,8 +94,10 @@ def main():
     adds = {int(p.name[:2]): p for p in KO.glob("*.add.jsonl")}
     changed = 0
 
-    # 맵 절 추가분은 줄마다 어느 맵에 붙는지를 `map`으로 들고 다닌다. 전이 뒤 대사가
-    # 도착 맵 열쇠로 조회되는 자리(Z-61)를 맵0(전역 폴백)에 얹는 데 쓴다.
+    # 맵 절 추가분은 줄마다 어느 맵에 붙는지를 `map`으로 들고 다닌다. 게임 스크립트에는
+    # 있는데 그 맵 절에 키가 아예 없는 대사를 얹는 길이다. ⚠ 지금 이 파일은 없다 —
+    # 전이 뒤 대사를 맵0에 얹던 Z-61 우회가 2026-08-18에 걷혔다(조회 기준이 이벤트 소속
+    # 맵으로 내려가 제 맵에서 찾아진다). 길만 남겨 둔다.
     map_adds = {}
     if 0 in adds:
         for r in read_jsonl(adds[0]):
@@ -125,9 +130,9 @@ def main():
                            for r in map_adds.get(mi, ())}
                 tail_ok |= {r["k"].encode("utf-8") for r in map_locs.get(mi, ())}
                 strays = [k for k in keys[head["n"]:] if bytes(k) not in tail_ok]
-                assert len(keys) >= head["n"] and not strays, \
-                    f"맵 {mi}: 줄 수 {head['n']} ≠ dat {len(keys)} (추가분 밖 꼬리 {len(strays)}개)"
                 dirty = False
+                assert len(keys) >= head["n"], \
+                    f"맵 {mi}: 줄 수 {head['n']} > dat {len(keys)}"
                 for j in range(head["n"]):
                     row = next(it)
                     assert row["k"] == keys[j].decode("utf-8", "replace"), \
@@ -137,6 +142,25 @@ def main():
                         values[j] = nv
                         dirty = True
                         changed += 1
+                # 정본에서 줄을 걷어내면 그 키가 dat에 남는다 — 값만 갈아 끼우는 이 도구는
+                # 평소 그것을 정본·dat 어긋남으로 보고 멈춘다. --prune 이 붙었을 때만
+                # 떨어내고, 무엇을 떨어냈는지 반드시 찍는다(조용히 지우면 사고가 된다).
+                # ⚠ **머리 구간 키 대조를 통과한 뒤에** 떨어낸다 — 정본 한가운데서 줄이
+                # 빠지면 밀려난 마지막 키가 꼬리로 잡혀, 먼저 떨어내면 멀쩡한 줄을
+                # 「떨어냄」으로 찍는다(그 뒤 키 대조가 죽지만 진단이 거짓이 된다).
+                if strays and prune:
+                    stray_set = {bytes(k) for k in strays}
+                    for j in reversed(range(head["n"], len(keys))):
+                        if bytes(keys[j]) in stray_set:
+                            keys.pop(j)
+                            values.pop(j)
+                    for k in strays:
+                        print(f"  맵 {mi}: 꼬리 키 떨어냄 — {bytes(k).decode('utf-8', 'replace')[:60]}")
+                    strays = []
+                    dirty = True
+                assert not strays, \
+                    f"맵 {mi}: 줄 수 {head['n']} ≠ dat {len(keys)} (추가분 밖 꼬리 {len(strays)}개)" \
+                    " — 정본에서 뺀 줄이면 --prune"
                 if dirty:
                     oh._private_data = rubywrite.dumps([keys, values])
             assert next(it, None) is None, f"{path.name}: 남는 줄"
@@ -157,7 +181,8 @@ def main():
                 tail_ok = {string_to_key(r["k"]).encode("utf-8") for r in read_jsonl(adds[sec])}
             strays = [k for k in keys[len(rows):] if bytes(k) not in tail_ok]
             assert len(keys) >= len(rows) and not strays, \
-                f"{path.name}: {len(rows)}줄 ≠ dat {len(keys)} (추가분 밖 꼬리 {len(strays)}개)"
+                f"{path.name}: {len(rows)}줄 ≠ dat {len(keys)} (추가분 밖 꼬리 {len(strays)}개)" \
+                " — 해시 절은 --prune이 안 먹는다(맵 절 전용). 줄인 것이 맞으면 export.py로 재동기화"
             dirty = False
             for j, row in enumerate(rows):
                 assert row["k"] == keys[j].decode("utf-8", "replace"), f"{path.name}[{j}]: 키 불일치"
