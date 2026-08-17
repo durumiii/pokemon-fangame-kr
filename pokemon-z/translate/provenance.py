@@ -222,8 +222,8 @@ def build():
     OUT.write_text("\n".join(json.dumps(
         {"map": m, "event": e, "page": p}, ensure_ascii=False)
         for m, e, p in sorted(ev)) + "\n", encoding="utf-8")
-    # 행 단위 원장 — stage0 gen이 읽어 값에 state·by를 찍는다(Z-53 주도권 이전).
-    # 페이지 목록(OUT)은 이 원장의 파생이다.
+    # 행 단위 출처 목록 — stage0 gen이 읽어 값에 state·by를 찍는다(Z-53 주도권 이전).
+    # 페이지 목록(OUT)은 이 목록의 파생이다.
     rows = [{"map": m, "es": k, "by": f"human/{solo[(m, k)]}"} for m, k in sorted(git_keys)]
     rows += [{"map": m, "es": k, "by": "human/report"}
              for m, k in sorted(rep_keys - git_keys)]

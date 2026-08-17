@@ -7,8 +7,9 @@
 사람 판정은 하나도 넣지 않는다. 지금 값을 그대로 옮긴다. 출처(`translate/ko/`,
 `translate/data/`)는 읽기만 한다.
 
-산출: translate/stage0/{sites.jsonl,messages.jsonl,groups.yaml,terms.yaml,axes.yaml}
-되돌려 대조하는 쪽은 diff.py.
+산출: translate/stage0/{sites.jsonl,messages.jsonl,groups.yaml,axes.yaml}
+되돌려 대조하는 쪽은 diff.py. voices.yaml·terms.yaml은 **사람 소유 정본**이라
+gen이 만들지도 다시 쓰지도 않는다(2026-08-18 강등).
 
 usage: uv run translate/stage0/gen.py
 """
@@ -62,7 +63,7 @@ def load_meta():
     al = {(r["map"], norm(r["es"])): r for r in read_jsonl(DATA / "approved-lines.jsonl")}
     ae = {(r["map"], r["event"]): r for r in read_jsonl(DATA / "approved-events.jsonl")}
     fk = {r["es"] for r in read_jsonl(DATA / "frozen-keys.jsonl")}
-    # 행 단위 출처 원장(provenance.py build 산출) — 사람 낱건 이력의 누적.
+    # 행 단위 출처 목록(provenance.py build 산출) — 사람 낱건 이력의 누적.
     pv = {(r["map"], norm(r["es"])): r["by"]
           for r in read_jsonl(DATA / "provenance-lines.jsonl")} \
         if (DATA / "provenance-lines.jsonl").exists() else {}
@@ -117,7 +118,7 @@ def map_sites(attr, al, ae, pv):
                 if "본보기" in line:      # 명시만 옮긴다 — 없음(자동 선별)과 False(명시 제외)는 다르다
                     vm["sample"] = line["본보기"]
             elif (mi, nk) in pv:
-                # 출처 원장 — 사람 낱건이 닿은 값. 승인 줄이 더 구체적이라 그쪽이 우선.
+                # 출처 목록 — 사람 낱건이 닿은 값. 승인 줄이 더 구체적이라 그쪽이 우선.
                 stats["prov"] += 1
                 vm.update(state="reviewed", by=pv[(mi, nk)])
             # 승인 이벤트 — 이벤트 단위 판정이라 자리별 항목에 찍는다(공유 값 누출 방지).
@@ -288,7 +289,7 @@ def main():
     n_frozen = sum(1 for m in smsgs if m.get("by") == "human/frozen-keys")
     print(f"판정 메타: 승인 줄 {stats['line_ok']:,}(원본 {len(al):,}) · "
           f"승인 이벤트 자리 {stats['ev_ok']:,} · 동결 {n_frozen}(원본 {len(fk)}) · "
-          f"출처 원장 {stats['prov']:,}(원본 {len(pv):,})")
+          f"출처 목록 {stats['prov']:,}(원본 {len(pv):,})")
 
 
 if __name__ == "__main__":

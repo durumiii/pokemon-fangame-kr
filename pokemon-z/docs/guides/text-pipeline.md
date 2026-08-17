@@ -127,7 +127,9 @@ dat 포맷 문제를 만났을 때.
 승인분(`approved-lines.jsonl`·`approved-events.jsonl`) · **동결 목록
 (`frozen-keys.jsonl`) — 손으로 확정해 배치 재번역에 다시 안 태우는 절23 키.
 `batch.py`가 전투 표현 대장(`battle-expr-replacements.json`)의 키와 합쳐 읽는다** ·
-어미 급 판정분(`register-ok.jsonl`) — 검사에 걸렸으나 어긋남이 아니라고 판정한 자리.
+어미 급 판정분(`register-ok.jsonl`) — 검사에 걸렸으나 어긋남이 아니라고 판정한 자리 ·
+행 단위 출처 목록(`provenance-lines.jsonl`) — 사람 낱건이 닿은 (맵, 원문)의 누적,
+`provenance.py build`가 만들고 보호 목록은 이것의 파생이다(stage0 gen이 state·by로 흡수).
 **기록층(`docs/log/`)에 두지 않는다** —
 박제와 살아 있는 데이터는 생명주기가 다르다.
 
@@ -262,6 +264,48 @@ rubymarshal로 열어 섹션별 zlib 해제 후 `_INTL("키")` 정확 일치로 
 짧은 라벨을 번역하기 전에 그 문자열이 열쇠로 쓰이는지 사용처에서 확인하고, 손댄 뒤에는
 그 절의 `_INTL` 리터럴을 뽑아 **번역값의 중복을 세라**(0이어야 한다). 판정 근거는
 [quality](../ledger/quality.md) 「번역이 해시 키로 쓰이는 자리는 원문 그대로 둔다」 절.
+
+## 판정 재료와 판정 요청 — `translate/stage0/materials.py`
+
+유지자에게 무엇을 물을 때 **재료를 손으로 갖추지 않는다.** 이 도구가 자리를 골라
+겪는 순서·화자·등재·같은 원문의 다른 자리·사람 손이 지나간 표시까지 붙여 내고,
+보는 자리는 검수 스튜디오(`review_gui.py`)다. **재료 볼 화면을 새로 만들지 마라** —
+검수 화면이 둘이면 판정이 어디 쌓였는지부터 갈린다.
+
+**자리를 고르는 길 넷.** 요청의 단위가 곧 고르는 길이다.
+
+| 고르는 길 | 단위 | 쓰는 자리 |
+|---|---|---|
+| `--map 305 --event 2` | 한 이벤트 | 장면 하나를 통째로 볼 때 |
+| `--who Rúpico` | 한 화자 | 말투 판정 — 그 사람의 자리 전부 |
+| `--phrase "Bueno, otra vez será."` | 한 원문 | 여러 맵에 복제된 정형구 |
+| `--ids 목록.jsonl` | 임의 묶음 | `{map,event[,cmd],bucket,note}` — 건이 여럿일 때 |
+
+**내는 길 둘.** `-o <파일.md>`는 읽을 산문이고, `--review <폴더>`가 검수 스튜디오
+입력이다. `--proposals <제안.jsonl>`(`{id,new,why}`)로 문안을 얹으면 자리마다 현행 밑에
+제안이 서고, `--brief <요청.json>`으로 문안 아닌 판정(규칙·표기·수술)을 건 단위로 올린다.
+
+    uv run translate/stage0/materials.py --ids ask.jsonl --brief ask.json \
+        --review translate/batch/ask-<날짜>
+    uv run translate/review_gui.py --out translate/batch/ask-<날짜> --port 8793 --no-skip
+
+브리핑 한 건은 `{id, title, ask, split, rec, keep[], bucket}`이다 — 각각 **무엇을 정할
+것인가 · 어느 쪽이든 무엇이 바뀌나 · 추천 · 손대지 않는 자리**로 화면 맨 위에 서고,
+`bucket`이 같은 자리들이 그 건의 재료로 묶인다. 판정은 `bucket:<id>` 열쇠로 판정 기록에
+쌓이고 답(등재할 한 줄·고른 갈래)은 텍스트 칸에 담긴다.
+
+**행 단위 문안 판정의 반영은 `apply_verdicts.py`가 한다** — 미리보기 뒤 `--write`.
+건 단위 판정은 사람이 읽고 지침·대장·코드에 반영한다(반영 도구가 없다).
+
+함정 넷.
+- **이미 승인된 이벤트는 기본 실행에서 안 뜬다**(`data/approved-events.jsonl`). 다시 보려면
+  `--no-skip`. 빈 화면이 뜨면 화면이 이 사정을 알려 준다.
+- 자리 열쇠는 배치 꼴 `맵:이벤트:페이지:명령`이다. 사유(screen)와 행의 열쇠 꼴이 갈리면
+  **오류 없이 0장면**이 된다 — `materials.py --selftest`가 그 자리를 지킨다.
+- 파일 이름의 맵 번호는 세 자리로 채운다(`p026-4-0.jsonl`). 「이벤트 전체 보기」가 그
+  꼴로 찾는다.
+- **화면을 고쳤으면 `translate/test_review_ui.mjs`를 돌린다** — 엔드포인트가 답하는 것과
+  화면이 도는 것은 다르다. 준비·실행법은 그 파일 머리에 있다.
 
 ## dat 포맷의 함정들
 
