@@ -166,8 +166,10 @@ def compare(built, owner, tainted=frozenset(), write_to=None, show=5):
             print(f"          역생성={json.dumps(a, ensure_ascii=False)[:160]}")
             print(f"          현행  ={json.dumps(b, ensure_ascii=False)[:160]}")
         # 쓰기는 대조 뒤에 — 먼저 쓰면 제 산출과 대조해 「차이 0」으로 찍힌다
-        # (2026-08-18 emit --write 첫 실전에서 실측).
-        if write_to:
+        # (2026-08-18 emit --write 첫 실전에서 실측). 정본 자리에 바이트가 같은 것을
+        # 다시 앉히지는 않는다 — 손 안 댄 절까지 매번 재작성되는 것을 없앤다.
+        # 다른 디렉터리로 낼 때는 그 디렉터리가 온전해야 하므로 전부 쓴다.
+        if write_to and not (same_bytes and write_to == KO):
             (write_to / name).write_text(made, encoding="utf-8")
     return from_ovr, other
 

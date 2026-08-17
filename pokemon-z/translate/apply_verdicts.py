@@ -207,23 +207,22 @@ def record_rows(ids):
 def stage0_ready():
     """stage0에 값을 앉혀도 되는 상태인가 — 아니면 사유를 적고 False.
 
-    ko 미커밋 수정은 emit이 덮어 지운다. stage0가 ko보다 낡았으면 emit이 그 자리를
-    옛 값으로 되돌린다 — 둘 다 전환기 규약(설계 「전환기의 임시 규약」)이 막는 사고다.
+    ko 미커밋 수정은 emit이 덮어 지운다. 둘이 어긋나 있으면 어느 쪽이 앞선 것인지에
+    따라 할 일이 정반대라 방향은 emit.advice()가 git 상태로 가린다.
     """
     dirty = emit.dirty_ko()
     if dirty:
         print("멈춤 — translate/ko/에 미커밋 수정이 있다. emit이 덮으면 그 수정이 사라진다.")
         for ln in dirty[:10]:
             print(f"  {ln}")
-        print("커밋하거나 harvest로 회수한 뒤 다시 돌려라.")
+        print(f"  {emit.advice()}")
         return False
     with contextlib.redirect_stdout(io.StringIO()):
         built, owner, msgs = rebuild()
         _, other = compare(built, owner, tainted_ids(msgs, read_overrides()), show=0)
     if other:
-        print(f"멈춤 — stage0가 ko보다 {other}건 낡았다(overrides 유래 아님). "
-              "그대로 쓰면 emit이 그 자리를 옛 값으로 되돌린다.")
-        print("  uv run translate/stage0/gen.py 로 재흡수하고 커밋한 뒤 다시 돌려라.")
+        print(f"멈춤 — stage0와 ko가 {other}건 어긋난다(overrides 유래 아님).")
+        print(f"  {emit.advice()}")
         return False
     return True
 
@@ -351,7 +350,10 @@ def run(out_dir, write=False, events_only=False):
             sp_hit += 1
     ed.save()
     print(f"정본 messages.jsonl: {hit}행 고침 · 통일 전파 {sp_hit}행")
-    emit.main(["--write"])
+    if emit.main(["--write"]):
+        # ko가 안 바뀌었는데 승인·보호를 잠그면 그 이벤트가 다시 안 열린다.
+        print("멈춤 — emit이 ko를 못 냈다. 승인 이벤트·보호 등재는 하지 않는다.")
+        return
     if events_only and keep:
         print(f"승인 이벤트 등재: {len(record_applied(keep))}개 새로 올림")
     if events_only and rows_ok:

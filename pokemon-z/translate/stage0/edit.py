@@ -47,16 +47,21 @@ class Messages:
 
     def local(self, sid):
         """자리 → 그 맵 안에서 값이 실제로 사는 항목. 공유 항목까지만 따라간다."""
+        seen = set()
         while True:
             v = self.msgs[self.idx[sid]]["val"]
             if not (isinstance(v, dict) and SHARED_RE.match(v.get("ref", ""))):
                 return sid
+            assert sid not in seen, f"참조 순환: {sid}"
+            seen.add(sid)
             sid = v["ref"]
 
     def value(self, mid):
         """지금 보이는 문자열 — 참조를 끝까지 따라간다(diff.resolve와 같은 셈)."""
-        v = self.msgs[self.idx[mid]]["val"]
+        v, seen = self.msgs[self.idx[mid]]["val"], set()
         while isinstance(v, dict) and "ref" in v:
+            assert v["ref"] not in seen, f"참조 순환: {v['ref']}"
+            seen.add(v["ref"])
             v = self.msgs[self.idx[v["ref"]]]["val"]
         return v
 

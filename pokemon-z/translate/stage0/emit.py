@@ -19,17 +19,38 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common import KO, ROOT, read_overrides  # noqa: E402
+from common import KO, OUT, ROOT, read_overrides  # noqa: E402
 from diff import compare, rebuild, tainted_ids  # noqa: E402
 
 
-def dirty_ko():
-    """git이 보는 translate/ko/의 미커밋 수정 — 스테이지 여부와 무관하게 다 센다."""
+def dirty(*paths):
+    """git이 보는 미커밋 수정 — 스테이지 여부와 무관하게 다 센다."""
     out = subprocess.run(
-        ["git", "status", "--porcelain", "--", str(KO)],
+        ["git", "status", "--porcelain", "--", *(str(p) for p in paths)],
         cwd=ROOT.parent, capture_output=True, text=True, check=True,
     ).stdout
     return [ln for ln in out.splitlines() if ln.strip()]
+
+
+def dirty_ko():
+    return dirty(KO)
+
+
+def advice():
+    """차이가 났을 때 **어느 쪽이 앞선 것인지**와 할 일 — 방향은 git 상태로 가린다.
+
+    방향을 안 가리면 stage0가 앞선 상태(값을 앉히고 emit 전에 끊긴 자리)에서
+    재흡수를 안내하게 되고, 그러면 방금 앉힌 값이 옛 ko 값으로 조용히 되돌아간다.
+    """
+    if dirty_ko():
+        return ("ko가 앞섰다 — 그 수정을 커밋한 뒤 "
+                "uv run translate/stage0/gen.py 로 재흡수하고 다시 돌려라.")
+    if dirty(OUT / "sites.jsonl", OUT / "messages.jsonl"):
+        return ("stage0가 앞섰다(반영이 emit 전에 끊겼을 수 있다) — "
+                "uv run translate/stage0/emit.py --write 로 마저 밀어내라. "
+                "⚠ 여기서 gen을 돌리면 앉힌 값이 옛 ko 값으로 되돌아간다.")
+    return ("둘 다 커밋 상태인데 어긋난다 — "
+            "uv run translate/stage0/gen.py 로 재흡수하고 커밋한 뒤 다시 돌려라.")
 
 
 def main(argv=None):
@@ -51,7 +72,7 @@ def main(argv=None):
     print(f"\n{'써 냄' if write else 'dry-run'} — 차이 {from_ovr + other}건 "
           f"(overrides 유래 {from_ovr} · 그 밖 {other})")
     if not write and from_ovr + other:
-        print("--write로 정본에 반영한다.")
+        print(advice())
     return 0
 
 
