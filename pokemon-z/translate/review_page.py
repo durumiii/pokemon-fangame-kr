@@ -219,6 +219,16 @@ section.folded .scene{{border-bottom-style:dashed}}
 .ask .tools button{{font-size:14px;padding:9px 18px}}
 .ask textarea{{font-size:15px;min-height:60px}}
 .ask .verdict{{font-size:13px}}
+.ask[data-v="승인"]{{border-left-color:var(--ok)}}
+.ask[data-v="기각"]{{border-left-color:var(--err)}}
+.ask[data-v="보류"]{{border-left-color:var(--warn)}}
+.ask .tools button.on{{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:700}}
+.ask .tools button.on[data-b="승인"]{{background:var(--ok);border-color:var(--ok);color:#10281d}}
+.ask .tools button.on[data-b="기각"]{{background:var(--err);border-color:var(--err);color:#2a100c}}
+.ask .tools button.on[data-b="보류"]{{background:var(--warn);border-color:var(--warn);color:#2a1f08}}
+.ask .st{{font-size:13px;font-weight:600;margin-left:4px;align-self:center}}
+.ask .st.ok{{color:var(--ok)}} .ask .st.warn{{color:var(--warn)}} .ask .st.err{{color:var(--err)}}
+.ask .st.fade{{opacity:0;transition:opacity .8s}}
 .tag{{font-size:11px;font-weight:700;border-radius:5px;padding:2px 7px;margin-top:2px;flex:none;
   border:1px solid var(--line);background:var(--panel);color:var(--sub)}}
 .tag.new{{color:var(--ok);border-color:rgba(76,195,138,.4);background:rgba(76,195,138,.1)}}
