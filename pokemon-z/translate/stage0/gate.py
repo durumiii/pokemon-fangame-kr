@@ -1,6 +1,6 @@
 # /// script
 # requires-python = ">=3.12"
-# dependencies = ["rubymarshal"]
+# dependencies = ["rubymarshal", "pyyaml"]
 # ///
 """Z-53 검사 게이트 — 자리마다 오라클을 선언하고 검사가 한 자리에서 돈다.
 
@@ -16,19 +16,23 @@
   3. pbs    — PBS가 가진 원문이 정본에 다 들어와 있는가(빠진 쪽이 화면에 스페인어로 뜬다).
   4. untr   — 미번역. **기준 둘을 다 센다**(지침 text-pipeline 「미번역 기준 둘」):
               ① 값이 원문과 완전히 같다 ② 한국어가 한 글자도 없다(빈 값 제외).
+  6. emit   — 역생성이 지금 translate/ko/와 같은가. overrides 유래가 아닌 차이는 **FAIL** —
+              승격 뒤로는 ko가 산출물이라 이 검사가 그 관계를 상시로 지킨다.
   5. div    — 미등재 갈림. 같은 원문인데 통일 참조를 안 가리면서 값이 갈리고 `why`도 없는 자리.
 
-종료 코드는 1·2번만 물린다. 4·5번은 묵은 짐이 산더미라 집계만 낸다 — 게이트를 처음부터
+종료 코드는 1·2·6번만 물린다. 4·5번은 묵은 짐이 산더미라 집계만 낸다 — 게이트를 처음부터
 빨간불로 만들면 아무도 안 본다.
 
 산출: translate/stage0/findings/*.jsonl (검사별 위반 목록, 재실행 시 덮어씀)
 
 usage: uv run translate/stage0/gate.py [--dir <0단계 디렉터리>] [--quiet] [--selftest]
 """
+import contextlib
 import io
 import json
 import re
 import sys
+import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -340,6 +344,26 @@ def check_untr(sites, msgs):
     return bad, stat
 
 
+def check_emit(d):
+    """역생성 ↔ 현행 ko — (그 밖 차이 수, overrides 유래 수, 파일별 차이 목록).
+
+    계산은 diff.py 것을 그대로 부른다(대조 로직 두 벌 금지). compare가 절마다
+    찍는 것은 게이트 출력에 안 어울려 삼키고 수만 받는다.
+    """
+    sys.path.insert(0, str(ROOT / "stage0"))
+    from diff import compare, rebuild, tainted_ids
+    import emit
+
+    built, owner, msgs = rebuild(d)
+    tainted = tainted_ids(msgs, read_overrides(d / "overrides.jsonl"))
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        from_ovr, other = compare(built, owner, tainted, show=0)
+    rows = [{"kind": "emit 차이", "줄": ln} for ln in buf.getvalue().splitlines()
+            if ln.startswith("차이")]
+    return other, from_ovr, rows, emit
+
+
 def check_div(sites, msgs):
     """미등재 갈림 — 같은 원문인데 통일 참조를 안 가리면서 값이 갈리고 why도 없다."""
     by_id = {m["id"]: m for m in msgs}
@@ -398,6 +422,28 @@ def selftest(sites, lists, hashes, maps):
     assert all("번호 밀림" in b["kind"] for b in bad), bad
     print(f"selftest: 절05 자리 셋의 원문을 한 칸 밀자 {len(bad)}건 검출 — 번호 밀림 검사가 산다")
     print(f"          {bad[0]['id']}: 정본 {bad[0]['정본']!r} ≠ 오라클 {bad[0]['오라클']!r}")
+    selftest_emit()
+
+
+def selftest_emit():
+    """emit 검사가 사는가 — 0단계 사본의 값 하나를 갈아 차이가 잡히는지 본다.
+
+    정본을 건드리지 않으려고 임시 폴더에 sites·messages·axes·overrides를 복사해 돌린다.
+    ko는 진짜 자리를 보므로(compare가 KO를 읽는다) 값을 갈면 그 줄만 차이로 선다.
+    """
+    import shutil
+    import tempfile
+    with tempfile.TemporaryDirectory() as td:
+        td = Path(td)
+        for n in ("sites.jsonl", "messages.jsonl", "axes.yaml"):
+            shutil.copy(OUT / n, td / n)
+        rows = read_jsonl(td / "messages.jsonl")
+        i = next(i for i, m in enumerate(rows) if isinstance(m["val"], str) and m["val"])
+        rows[i] = {**rows[i], "val": rows[i]["val"] + "(셀프테스트)"}
+        dump_jsonl(td / "messages.jsonl", rows)
+        other, from_ovr, _, _ = check_emit(td)
+    assert other >= 1, f"값을 갈았는데 emit 차이가 {other}건이다"
+    print(f"selftest: 0단계 사본의 값 한 줄을 갈자 emit 차이 {other}건 — emit 검사가 산다")
 
 
 def main():
@@ -469,8 +515,18 @@ def main():
     for r in div_rows[:5]:
         print(f"        {r['src'][:60]!r} 맵 {r['maps'][:6]} 값 {r['값'][:2]}")
 
-    print(f"\n산출: {findings}/{{overrides,refs,src,pbs,untranslated,divergence}}.jsonl")
-    return 1 if (ovr_bad or refs or src_bad) else 0
+    t0 = time.time()
+    emit_other, emit_ovr, emit_rows, emit_mod = check_emit(d)
+    dump_jsonl(findings / "emit.jsonl", emit_rows)
+    print(f"[{'FAIL' if emit_other else ' OK '}] 6. emit 차이 — 그 밖 {emit_other}건 · "
+          f"overrides 유래 {emit_ovr}건 ({time.time() - t0:.1f}초)")
+    for r in emit_rows[:5]:
+        print(f"        {r['줄']}")
+    if emit_other:
+        print(f"        {emit_mod.advice()}")
+
+    print(f"\n산출: {findings}/{{overrides,refs,src,pbs,untranslated,divergence,emit}}.jsonl")
+    return 1 if (ovr_bad or refs or src_bad or emit_other) else 0
 
 
 if __name__ == "__main__":
