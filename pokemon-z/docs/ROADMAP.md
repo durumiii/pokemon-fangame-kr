@@ -23,10 +23,11 @@
   하드코딩 이관(CORE_TERMS·UiText 표) → 판정 메타 일곱 파일 흡수 → 프롬프트 빌드 →
   조회 밖 텍스트 sites 등재 → 주도권 이전.
 - **줄기 B(좌표·수술)**: `share/patch_intl.py` · `translate/ko/00-maps.loc.jsonl` ·
-  `verify.py` 소유. **남은 것 셋** — 전투 호출 krloc(화자 갈림 판정에 달렸다) ·
-  `_NATURE_ADJ` 이관(막는 것 없음, 줄기 A가 `uitext.jsonl`+생성기 꼴을 세워 뒀다) ·
-  화자 갈림 판정 반영(첫 덩이 반영 완료, **남은 42묶음은 2026-08-18에 자리를 열어
-  판정 한 건만 남기고 닫았다** — [닫음 기록](log/research/2026-08-18-speaker-split-closed.md)).
+  `verify.py` 소유. **남은 것은 전투 호출 krloc 하나**이고 그것은 화자 갈림 판정에
+  달렸다. `_NATURE_ADJ` 이관은 2026-08-18에 섰고(`translate/data/nature-adj.jsonl`,
+  stage0 등재만 줄기 A 몫으로 남았다), 화자 갈림도 첫 덩이 반영에 이어 **남은 42묶음을
+  자리로 열어 판정 한 건만 남기고 닫았다**
+  ([닫음 기록](log/research/2026-08-18-speaker-split-closed.md)).
   2026-08-18에 셋이 빠졌다 — Z-61 우회 정리는 끝났고, 공통 이벤트 좌표와 배틀시설 875
   수술은 잴수록 일감이 아니었다([공통 이벤트](log/research/2026-08-18-common-events.md) ·
   [배틀시설](log/research/2026-08-18-tower-875.md)).

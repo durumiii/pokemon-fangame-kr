@@ -368,6 +368,38 @@ def check_loc():
     print(f"좌표 열쇠: {len(rows(path))}줄 · 원문 미발견 {bad}")
 
 
+def check_natures():
+    """성격 활용형 25종이 명사형 정본과 짝을 유지하는가.
+
+    요약 화면만 「얌전」 대신 「얌전한」을 쓰므로 활용형이 코드 수술로 들어간다
+    (`share/patch_intl.py`). 값은 `data/nature-adj.jsonl`이 정본이고 명사형은 절23이라
+    **두 곳이 갈릴 수 있다** — 성격 표기 판정이 바뀌면 절23만 고쳐지고 활용형은 조용히
+    낡는다. 각 줄이 적어 둔 명사형 사본 `n`을 절23 현행값과 견줘 그때 알린다.
+    """
+    path = HERE / "data" / "nature-adj.jsonl"
+    if not path.exists():
+        return
+    nat = [r for r in rows(path) if "adj" in r]
+    if [r["i"] for r in sorted(nat, key=lambda r: r["i"])] != list(range(25)):
+        report("FAIL", f"성격 활용형의 자리가 0~24로 서지 않는다 — {path.name}")
+        return
+    sec23 = {}
+    for r in rows(HERE / "ko" / "23-script-texts.jsonl"):
+        if "k" in r and r["k"] not in sec23:
+            sec23[r["k"]] = r["v"]
+    drift = 0
+    for r in nat:
+        cur = sec23.get(r["es"])
+        if cur is None:
+            drift += 1
+            report("FAIL", f"성격 명사형이 절23에 없다 — {r['es']} (nature-adj.jsonl i={r['i']})")
+        elif cur != r["n"]:
+            drift += 1
+            report("FAIL", f"성격 명사형이 바뀌었다 {r['es']}: {r['n']!r} → {cur!r} — "
+                           f"활용형 {r['adj']!r}도 함께 고치고 nature-adj.jsonl의 n을 맞춰라")
+    print(f"성격 활용형: 25종 · 명사형 어긋남 {drift}")
+
+
 def main():
     strict = "--strict" in sys.argv
     check_canon(strict)
@@ -376,6 +408,7 @@ def main():
     check_names(strict)
     check_unified(strict)
     check_loc()
+    check_natures()
     check_dat_and_sentinels()
     check_scripts()
     check_ui_gsub()
