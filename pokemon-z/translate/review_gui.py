@@ -134,39 +134,37 @@ function render(){
       ${BRIEF.note?`<div class="card"><div class="es" style="white-space:pre-wrap">${esc(BRIEF.note)}</div></div>`:''}`;
     for(const q of (BRIEF.asks||[])){
       const id='bucket:'+q.id;
-      const c=document.createElement('div'); c.className='card';
-      c.innerHTML=`<div class="hd"><span class="who">${esc(q.title||q.id)}</span>
-          ${q.rows&&q.rows.length?`<span class="chip">자리 ${q.rows.length}</span>`:''}
-          <span class="chip verdict" style="margin-left:auto"></span></div>
-        ${q.ask?`<div class="opt"><span class="tag cur">정해 달라는 것</span>
-          <span class="txt" style="white-space:pre-wrap">${esc(q.ask)}</span></div>`:''}
-        ${q.split?`<div class="opt"><span class="tag alt">갈림</span>
-          <span class="txt" style="white-space:pre-wrap">${esc(q.split)}</span></div>`:''}
-        ${q.rec?`<div class="opt"><span class="tag new">추천</span>
-          <span class="txt" style="white-space:pre-wrap">${esc(q.rec)}</span></div>`:''}
-        ${(q.keep||[]).length?`<div class="opt"><span class="tag cur">손대지 않는 자리</span>
-          <span class="txt" style="white-space:pre-wrap">${esc(q.keep.join('\n'))}</span></div>`:''}
+      const c=document.createElement('div'); c.className='ask';
+      c.innerHTML=`<h2>${esc(q.title||q.id)}</h2>
+        <div class="sub">${q.rows&&q.rows.length?`재료 ${q.rows.length}자리`:''}
+          <span class="verdict"></span></div>
+        ${q.ask?`<section><h3>무엇을 정할 것인가</h3><p>${esc(q.ask)}</p></section>`:''}
+        ${q.split?`<section><h3>어느 쪽이든 무엇이 바뀌나</h3><p>${esc(q.split)}</p></section>`:''}
+        ${q.rec?`<section class="rec"><h3>추천</h3><p>${esc(q.rec)}</p></section>`:''}
+        ${(q.keep||[]).length?`<section class="keep"><h3>손대지 않는 자리</h3>
+          <p>${esc(q.keep.join('\n'))}</p></section>`:''}
         <div class="tools"><button data-b="승인">승인</button>
           <button data-b="기각">기각</button><button data-b="보류">보류</button>
-          ${q.rows&&q.rows.length?`<button data-only="1">이 건의 자리만 (${q.rows.length})</button>`:''}
+          ${q.rows&&q.rows.length?`<button data-only="1">재료 보기 (${q.rows.length}자리)</button>`:''}
           <button data-bmemo="1">메모</button></div>
-        <div class="mine open"><textarea rows="2" placeholder="답 — 등재할 한 줄이나 고른 갈래를 여기에"></textarea></div>
+        <section><h3>답 — 등재할 한 줄이나 고른 갈래</h3>
+          <textarea rows="2" class="ansbox"></textarea></section>
         <div class="memo"><textarea rows="2" placeholder="판정 메모 — 왜 그렇게 정했나"></textarea></div>`;
       const chip=c.querySelector('.verdict'), memo=c.querySelector('.memo');
-      const ta=memo.querySelector('textarea');
-      const ans=c.querySelector('.mine textarea');
-      if(ans){ans.value=M[id]||'';
-        ans.oninput=()=>{M[id]=ans.value; clearTimeout(timer[id]);
-          timer[id]=setTimeout(()=>post({id, 판정:(V[id]||''), 텍스트:ans.value,
-                                         메모:(NOTE[id]||'')}), 600);};}
+      const ta=memo.querySelector('textarea'), ans=c.querySelector('.ansbox');
+      ans.value=M[id]||'';
+      ans.oninput=()=>{M[id]=ans.value; clearTimeout(timer[id]);
+        timer[id]=setTimeout(()=>post({id, 판정:(V[id]||''), 텍스트:ans.value,
+                                       메모:(NOTE[id]||'')}), 600);};
       const only=c.querySelector('[data-only]');
       if(only) only.onclick=()=>{
         const want=new Set(q.rows);
-        const kept=DATA.map(sc=>({...sc, rows:sc.rows.filter(r=>want.has(r.id))}))
-                       .filter(sc=>sc.rows.length);
-        const all=DATA; DATA=kept; render(); count(); DATA=all;
+        const all=DATA;
+        DATA=DATA.map(sc=>({...sc, rows:sc.rows.filter(r=>want.has(r.id))}))
+                 .filter(sc=>sc.rows.length);
+        render(); count(); DATA=all;
       };
-      const paint=()=>{chip.textContent=V[id]?('판정 '+V[id]):''};
+      const paint=()=>{chip.textContent=V[id]?(' · 판정 '+V[id]):''};
       if(NOTE[id]){ta.value=NOTE[id]; memo.classList.add('open');}
       paint();
       c.querySelectorAll('[data-b]').forEach(btn=>btn.onclick=()=>{
@@ -176,7 +174,7 @@ function render(){
       c.querySelector('[data-bmemo]').onclick=()=>memo.classList.toggle('open');
       ta.oninput=()=>{NOTE[id]=ta.value;
         clearTimeout(timer[id]); timer[id]=setTimeout(()=>
-          post({id, 판정:(V[id]||''), 텍스트:'', 메모:ta.value}), 600);};
+          post({id, 판정:(V[id]||''), 텍스트:(M[id]||''), 메모:ta.value}), 600);};
       b.appendChild(c);
     }
     body.appendChild(b);
@@ -338,6 +336,10 @@ fetch('/data').then(r=>r.json()).then(d=>{
     if(x['메모']) NOTE[id]=x['메모'];
   }
   STAT=d.stat||null; BRIEF=d.brief||null;
+  const intro=document.getElementById('intro');
+  if(intro) intro.innerHTML=BRIEF
+    ? '건마다 <b>승인·기각·보류</b>를 누르고, 필요하면 답을 적어 주세요. 「재료 보기」는 그 건에 걸린 자리만 남깁니다.'
+    : intro.innerHTML;
   for(const [k,x] of Object.entries(d.verdicts||{}))     // event:<맵>:<이벤트> 열쇠
     if(k.startsWith('event:') && x['판정']==='완료') DONE.add(k.slice(6));
   render(); count(); refold();

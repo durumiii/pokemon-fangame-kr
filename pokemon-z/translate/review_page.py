@@ -205,6 +205,20 @@ section.folded .scene{{border-bottom-style:dashed}}
 .why .lay{{color:var(--sub);font-weight:400}}
 .es{{color:var(--es);font-size:13px;line-height:1.55;margin:9px 0 7px;white-space:pre-wrap}}
 .opt{{display:flex;gap:8px;align-items:flex-start;margin:4px 0}}
+.ask{{border:1px solid rgba(91,141,239,.45);border-left:4px solid var(--acc);
+  border-radius:12px;padding:20px 24px;margin:0 0 18px;background:var(--card)}}
+.ask h2{{font-size:22px;line-height:1.35;margin:0 0 4px;font-weight:700}}
+.ask .sub{{font-size:12.5px;color:var(--sub);margin-bottom:14px}}
+.ask section{{margin:16px 0}}
+.ask h3{{font-size:12px;letter-spacing:.09em;color:var(--acc);margin:0 0 6px;
+  font-weight:700;text-transform:none}}
+.ask p{{font-size:16px;line-height:1.8;margin:0;white-space:pre-wrap}}
+.ask .rec p{{color:var(--ok)}}
+.ask .keep p{{font-size:14px;color:var(--sub)}}
+.ask .tools{{margin-top:18px;gap:10px}}
+.ask .tools button{{font-size:14px;padding:9px 18px}}
+.ask textarea{{font-size:15px;min-height:60px}}
+.ask .verdict{{font-size:13px}}
 .tag{{font-size:11px;font-weight:700;border-radius:5px;padding:2px 7px;margin-top:2px;flex:none;
   border:1px solid var(--line);background:var(--panel);color:var(--sub)}}
 .tag.new{{color:var(--ok);border-color:rgba(76,195,138,.4);background:rgba(76,195,138,.1)}}
@@ -239,7 +253,7 @@ dialog::backdrop{{background:rgba(0,0,0,.6)}}
   <span class="act"><button id="fold">끝낸 이벤트 접기</button>
     <button id="dump">판정 TSV</button></span></header>
 <main>
-<p class="intro">선별 두 층에 걸린 행만 실려 있어요. 각 행에 <b>왜 걸렸는지</b>가 붙고,
+<p class="intro" id="intro">선별 두 층에 걸린 행만 실려 있어요. 각 행에 <b>왜 걸렸는지</b>가 붙고,
 「문맥」을 열면 그 장면 전체를 현행 번역으로 읽을 수 있어요. 장면 머리의
 <b>이벤트 일괄 승인</b>은 그 장면의 걸린 행을 모두 새 번역으로 잡아요 — 승인은
 이벤트 단위라서요.</p>
