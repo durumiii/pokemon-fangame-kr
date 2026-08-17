@@ -51,10 +51,24 @@ def load_verdicts():
     return unified, div
 
 
-def map_sites(attr):
+def load_meta():
+    """판정 메타 → 값에 찍을 state·by·sample. 원본 파일들은 주도권 이전까지 배치
+    도구의 원천으로 남고, 여기서는 stage0 값에 유래를 함께 찍을 뿐이다.
+
+    승인 줄은 (맵, 원문) 단위라 값 항목에, 승인 이벤트는 이벤트 단위라 자리별 항목에
+    찍는다 — 공유 값이 승인 안 된 다른 자리로 새지 않게. 줄 승인이 이벤트 승인보다
+    구체적이므로 먼저 찍힌 줄 승인을 이벤트 승인이 덮지 않는다.
+    """
+    al = {(r["map"], norm(r["es"])): r for r in read_jsonl(DATA / "approved-lines.jsonl")}
+    ae = {(r["map"], r["event"]): r for r in read_jsonl(DATA / "approved-events.jsonl")}
+    fk = {r["es"] for r in read_jsonl(DATA / "frozen-keys.jsonl")}
+    return al, ae, fk
+
+
+def map_sites(attr, al, ae):
     """맵 절 — 자리와 값. 한 (맵, norm 원문)에 자리가 여럿이면 값은 공유 항목에 둔다."""
     sites, msgs = [], []
-    stats = {"rows": 0, "sites": 0, "shared": 0, "no_attr": 0}
+    stats = {"rows": 0, "sites": 0, "shared": 0, "no_attr": 0, "line_ok": 0, "ev_ok": 0}
     unified, div = load_verdicts()
     used_unified = {}
     for mi, rows in read_maps():
@@ -81,13 +95,30 @@ def map_sites(attr):
                 used_unified[slug] = row["v"]
                 val = {"ref": slug}
 
+            # 승인 줄 — (맵, 원문) 단위 판정이라 값 항목에 찍는다.
+            line = al.get((mi, nk))
             if len(ids) > 1:
                 stats["shared"] += 1
                 shared = f"m{mi}.s{seq}"
-                msgs.append(_msg(shared, val, why))
+                vm = _msg(shared, val, why)
+                msgs.append(vm)
                 body = [_msg(i, {"ref": shared}, None) for i in ids]
             else:
                 body = [_msg(ids[0], val, why)]
+                vm = body[0]
+            if line:
+                stats["line_ok"] += 1
+                vm.update(state="reviewed", by=f"human/{line['src']}")
+                if "본보기" in line:      # 명시만 옮긴다 — 없음(자동 선별)과 False(명시 제외)는 다르다
+                    vm["sample"] = line["본보기"]
+            # 승인 이벤트 — 이벤트 단위 판정이라 자리별 항목에 찍는다(공유 값 누출 방지).
+            # 줄 승인이 이미 찍힌 값 항목(단독 자리)은 그대로 둔다.
+            for bm, meta in zip(body, metas):
+                if meta and (mi, meta["event"]) in ae and "state" not in bm:
+                    stats["ev_ok"] += 1
+                    # src가 없는 행(노트만)은 파일 이름을 유래로 적는다.
+                    tag = ae[(mi, meta["event"])].get("src", "approved-events")
+                    bm.update(state="reviewed", by=f"human/{tag}")
             msgs.extend(body)
 
             for sid, meta in zip(ids, metas):
@@ -138,8 +169,8 @@ def ui_sites():
     return sites, msgs
 
 
-def section_sites():
-    """리스트 절(apply=index)과 해시 절(apply=global)."""
+def section_sites(fk):
+    """리스트 절(apply=index)과 해시 절(apply=global). 동결 절23 키는 reviewed로 찍는다."""
     sites, msgs = [], []
     for sec in LIST_SECS:
         for r in read_jsonl(ko_file(sec)):
@@ -153,7 +184,10 @@ def section_sites():
         for r in read_jsonl(ko_file(sec)):
             sid = f"s{sec}.k{h8(r['k'])}"
             sites.append({"id": sid, "src": r["k"], "apply": "global"})
-            msgs.append(_msg(sid, r["v"], None))
+            m = _msg(sid, r["v"], None)
+            if sec == 23 and r["k"] in fk:
+                m.update(state="reviewed", by="human/frozen-keys")
+            msgs.append(m)
     return sites, msgs
 
 
@@ -166,9 +200,10 @@ def write_yaml(path, obj):
 
 def main():
     attr = load_attr()
-    msites, mmsgs, used_unified, stats = map_sites(attr)
+    al, ae, fk = load_meta()
+    msites, mmsgs, used_unified, stats = map_sites(attr, al, ae)
     lsites, lmsgs = loc_sites()
-    ssites, smsgs = section_sites()
+    ssites, smsgs = section_sites(fk)
     usites, umsgs = ui_sites()
 
     sites = msites + lsites + ssites + usites
@@ -228,6 +263,9 @@ def main():
     print(f"맵 절: 정본 {stats['rows']:,}줄 → 자리 {stats['sites']:,}개 "
           f"(값 공유 묶음 {stats['shared']:,} · 귀속표 밖 {stats['no_attr']:,})")
     print(f"통일 참조 {len(used_unified):,}건 · overrides {len(ovr):,}줄")
+    n_frozen = sum(1 for m in smsgs if m.get("by") == "human/frozen-keys")
+    print(f"판정 메타: 승인 줄 {stats['line_ok']:,}(원본 {len(al):,}) · "
+          f"승인 이벤트 자리 {stats['ev_ok']:,} · 동결 {n_frozen}(원본 {len(fk)})")
 
 
 if __name__ == "__main__":
