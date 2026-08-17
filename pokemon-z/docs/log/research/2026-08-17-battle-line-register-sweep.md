@@ -34,8 +34,9 @@ Z-60으로 시야에 든 `pbTrainerBattle` 셋째 인자 대사를 **전수로 �
 하나가 이것을 「전투 앞 연설이 통째로 미번역」으로 보고했으나 정본 조회로 반증했다. 공백을
 접어 맞추도록 고친 뒤 구멍은 0이고, 구멍을 안은 채 돌았던 묶음 하나는 다시 돌렸다.
 
-재현: 재료 생성기는 세션 스크래치패드의 `dump_battle_materials.py`, 확인은
-`uv run translate/probe.py "<스페인어 조각>"`.
+재현: `uv run translate/battle_materials.py <나갈 경로.jsonl>`로 재료를 다시 뽑고,
+낱줄 확인은 `uv run translate/probe.py "<스페인어 조각>"`.
+⚠ 재료 스냅숏은 금방 낡는다 — 유지자가 스튜디오에서 계속 고치므로 반영 직전에 다시 뽑는다.
 
 ## 집계
 
