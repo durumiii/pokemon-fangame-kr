@@ -20,7 +20,7 @@ import yaml
 sys.path.insert(0, str(__import__("pathlib").Path(__file__).resolve().parent))
 from common import (  # noqa: E402
     DATA, EMPTY_SECS, HASH_SECS, KO, LIST_SECS, OUT, ROOT,
-    dump_jsonl, h8, ko_file, norm, read_jsonl, read_maps,
+    apply_overrides, dump_jsonl, h8, ko_file, norm, read_jsonl, read_maps, read_overrides,
 )
 
 # 귀속표에서 자리로 옮기는 칸 — (귀속표 이름, 자리 이름)
@@ -158,6 +158,10 @@ def main():
     mids = [m["id"] for m in msgs]
     assert len(set(mids)) == len(mids), "값 id가 겹친다"
 
+    # 사람 수정은 재생성을 지우지 않는다 — 마지막에 얹는다(설계 「이행 1단계」 overrides 절).
+    ovr = read_overrides()
+    sites, msgs = apply_overrides(sites, msgs, ovr)
+
     dump_jsonl(OUT / "sites.jsonl", sites)
     dump_jsonl(OUT / "messages.jsonl", msgs)
 
@@ -201,7 +205,7 @@ def main():
     print(f"sites {len(sites):,} · messages {len(msgs):,}")
     print(f"맵 절: 정본 {stats['rows']:,}줄 → 자리 {stats['sites']:,}개 "
           f"(값 공유 묶음 {stats['shared']:,} · 귀속표 밖 {stats['no_attr']:,})")
-    print(f"통일 참조 {len(used_unified):,}건")
+    print(f"통일 참조 {len(used_unified):,}건 · overrides {len(ovr):,}줄")
 
 
 if __name__ == "__main__":

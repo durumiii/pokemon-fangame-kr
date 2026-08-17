@@ -7,7 +7,8 @@
 절마다 따로 붙는 검사가 SoT 미완의 증상이었다(Z-69: verify가 24절 중 여덟만 절 지정으로
 보고 열셋에는 아무 검사도 없다). 0단계가 섰으니 절 단위가 아니라 여기서 한 번 돈다.
 
-검사 다섯:
+검사 여섯:
+  0. overrides — 사람 수정 층이 성립하는가(id 실재 · 칸 이름 · why·by). **FAIL**
   1. refs   — 참조 무결(자리 id 유일 · 값 id 유일 · 모든 ref가 실재 · 고아 값 없음). **FAIL**
   2. src    — 자리의 원문을 오라클(messages.dat)과 대조. 리스트 절은 인덱스별 원문이라
               **번호가 밀리면 여기서 걸린다**(지금 빌드는 길이만 본다) — 이쪽만 **FAIL**.
@@ -32,7 +33,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import (  # noqa: E402
-    EMPTY_SECS, HASH_SECS, LIST_SECS, OUT, ROOT, dump_jsonl, norm, read_jsonl,
+    EMPTY_SECS, HASH_SECS, LIST_SECS, MSG_FIELDS, OUT, ROOT, SITE_FIELDS,
+    dump_jsonl, norm, read_jsonl, read_overrides,
 )
 
 sys.path.insert(0, str(ROOT.parent / "vendor"))
@@ -193,6 +195,37 @@ def check_refs(sites, msgs):
                 continue
             if not isinstance(val, str):
                 bad.append({"kind": "값이 문자열이 아니다", "id": sid})
+    return bad
+
+
+def check_overrides(ovr, sites, msgs):
+    """사람 수정 층이 성립하는가 — id 실재 · 칸 이름 · 유래(why·by).
+
+    overrides는 gen이 지우지 않는 유일한 사람 손이라 여기서 안 걸리면 조용히 안 먹는다.
+    """
+    bad = []
+    sset, mset = {s["id"] for s in sites}, {m["id"] for m in msgs}
+    for n, o in enumerate(ovr):
+        where = {"줄": n + 1, "id": o.get("id")}
+        if not o.get("id"):
+            bad.append({**where, "kind": "id가 없다"})
+            continue
+        st = o.get("set")
+        if not isinstance(st, dict) or not st:
+            bad.append({**where, "kind": "set이 비었다"})
+            continue
+        for k in st:
+            if k in SITE_FIELDS:
+                if o["id"] not in sset:
+                    bad.append({**where, "kind": "실재하지 않는 자리 id", "칸": k})
+            elif k in MSG_FIELDS:
+                if o["id"] not in mset:
+                    bad.append({**where, "kind": "실재하지 않는 값 id", "칸": k})
+            else:
+                bad.append({**where, "kind": "스키마에 없는 칸", "칸": k})
+        for f in ("why", "by"):
+            if not o.get(f):
+                bad.append({**where, "kind": f"{f}가 없다"})
     return bad
 
 
@@ -364,6 +397,14 @@ def main():
         print_table()
     print(f"\n0단계: {d} — 자리 {len(sites):,} · 값 {len(msgs):,}\n")
 
+    ovr = read_overrides(d / "overrides.jsonl")
+    ovr_bad = check_overrides(ovr, sites, msgs)
+    dump_jsonl(findings / "overrides.jsonl", ovr_bad)
+    print(f"[{'FAIL' if ovr_bad else ' OK '}] 0. overrides 사람 수정 층 — "
+          f"{len(ovr):,}줄 중 위반 {len(ovr_bad)}건")
+    for r in ovr_bad[:5]:
+        print(f"        {r}")
+
     refs = check_refs(sites, msgs)
     dump_jsonl(findings / "refs.jsonl", refs)
     print(f"[{'FAIL' if refs else ' OK '}] 1. refs 참조 무결 — 위반 {len(refs)}건")
@@ -412,8 +453,8 @@ def main():
     for r in div_rows[:5]:
         print(f"        {r['src'][:60]!r} 맵 {r['maps'][:6]} 값 {r['값'][:2]}")
 
-    print(f"\n산출: {findings}/{{refs,src,pbs,untranslated,divergence}}.jsonl")
-    return 1 if (refs or src_bad) else 0
+    print(f"\n산출: {findings}/{{overrides,refs,src,pbs,untranslated,divergence}}.jsonl")
+    return 1 if (ovr_bad or refs or src_bad) else 0
 
 
 if __name__ == "__main__":
