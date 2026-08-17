@@ -3,20 +3,34 @@
 # ///
 """주연 대사 재번역 배치 — 이벤트 페이지 단위.
 
-`batch_npc.py`와 갈라지는 점 셋:
-  1. 대상이 **이름표가 붙거나 물려받은 줄**(주연 대사)이지 무태그 NPC가 아니다.
-  2. 화자를 옛 조인표가 아니라 **화자 귀속표**(speaker.py scan 산출)에서 읽는다.
-  3. 묶음이 맵+40행이 아니라 **이벤트 페이지 하나**다 — 모델이 장면을 온전히 본다.
+배치 재번역은 이 도구 하나로 돈다(Z-47에서 `batch_npc.py` 은퇴 — 계획 경로가 겹쳤고,
+그쪽은 화자를 옛 조인표에서 읽어 Z-46 층 수선이 닿지 않았다). 요는 셋이다:
+  1. 화자를 **화자 귀속표**(speaker.py scan 산출)에서 읽는다 — 이름표·상속·그림 근거별로.
+  2. 묶음이 **이벤트 페이지 하나**다 — 모델이 장면을 온전히 본다.
+  3. 반영은 `apply_verdicts.py <산출폴더>`가 한다(복제·통일 자리 전파 포함).
 
     uv run translate/batch_pages.py plan          # 사정권 전량 → batch/page-chunks.jsonl
     uv run translate/batch_pages.py plan --pilot  # 표본 20페이지 → batch/pilot-chunks.jsonl
-    uv run translate/batch_pages.py run [--pilot] [--limit N]
+    uv run translate/batch_pages.py run [--pilot] [--limit N] [--pack N]
     uv run translate/batch_pages.py report [--pilot]   # 원문·현행·신판 나란히 (md)
+
+`--pack N`(기본 30)은 **페이지 여러 개를 요청 하나에** 담는다 — 프롬프트 본문·용어
+규칙이 요청마다 다시 실리는 고정비가 잡담처럼 짧은 페이지(중앙 2행)에서 비용의
+거의 전부이기 때문이다. 페이지는 쪼개지 않고 행수 예산 N을 넘을 때 묶음을 끊으며,
+장면은 프롬프트에서 장면 id로 구획되고 화자 지시는 묶음 안에서 한 번만 실린다.
+답은 행 id로 갈라 예전과 같은 꼴의 `<cid>.jsonl`에 나눠 적는다. `--pack 1`이면
+페이지당 한 요청(예전 동작)이고, 묶음에서 행이 빠진 페이지는 단독 요청으로 강등된다.
 
 `--npc`를 붙이면 사정권이 **이름표 없는 컷신·대화**(Z-4 3갈래)로 바뀐다 — 이름표가
 한 줄도 없는 페이지의 스프라이트 귀속(how='그림') 행만 담고, 화자·말투는 페르소나표
 (sprite 키)가 정본이다. 산출은 batch/npc[-pilot]-chunks.jsonl · batch/npc-out[-pilot]/.
 페르소나표에 없는 스프라이트(포켓몬 번호·연출물)는 행째 빠진다 — 그 수는 plan이 찍는다.
+
+`plan --npc --pool <파일.jsonl>`(여러 번 겹쳐 줄 수 있다)은 사정권을 **그 파일이
+적은 자리로** 바꾼다 — 사람이 층별로 판정해 골라 온 풀이라, 후보를 고르는 범용
+관문(승인 이벤트 배제·장면/이름표 조건·스프라이트 귀속)은 안 걸고 자리마다 적힌
+화자를 그대로 쓴다. 지키는 것은 보호·정본 존재·갈래 정착·복제 정리다. freedom 3
+(정형구)은 재작성 대상이 아니라 빠진다. 관문별 제외 수는 plan이 찍는다.
 
 산출: batch/page-out[-pilot]/<cid>.jsonl — {"id","who","es","old","new","ok","why"}
 """
@@ -37,7 +51,7 @@ LEDGER = HERE.parent / "docs" / "ledger"   # 판정 대장 (glossary·voices)
 sys.path.insert(0, str(HERE))
 import mapname  # noqa: E402
 from mend_newlines import mend  # noqa: E402
-from pilot_npc import ask_npc, key_of, npc_line  # noqa: E402
+from pilot_npc import ask_npc, harvest, key_of, npc_line  # noqa: E402
 from validate import check  # noqa: E402
 
 ATTR = HERE / "data/speaker-attr.jsonl.gz"
@@ -62,10 +76,15 @@ PILOT2 = ("p024-43-0", "p024-51-0", "p025-20-0", "p036-45-0", "p040-17-0",
 SYS = {"PISTA DE ENTRENADOR", "Notas del Team Azoth", "\\PN", "AVISO", "Oeste",
        "Sur", "Este", "Norte", "Movimientos de patada", "Movimientos de viento",
        "ATENCIÓN", "Gran Hotel Luminalia", "1ºRegente",
-       "Contrincante"}   # 블랙잭 미니게임의 진행 문구다 — 사람 대사가 아니다
+       "Contrincante",  # 블랙잭 미니게임의 진행 문구다 — 사람 대사가 아니다
+       "portonCerrado"}  # 잠긴 문 안내 — 사물, 지문 규칙(Z-47 보강 판정)
 # 유지자가 어투를 이미 확정한 인물 — 재번역이 덮으면 안 된다
 VOICE_FIXED = {"Barquero", "Zafra", "Núbila", "Camarero",
                "cocineroOW"}   # 요리사 — 사프라와 같은 자리에서 함께 판정됐다
+# 풀 갈래에서 말투표·페르소나 어느 쪽도 안 붙는 화자(빈 이름 등)에 붙는 기본 지시
+# — 지시가 아예 없으면 모델이 그 인물만 개성을 지어낸다(유지자 승인 2026-08-13)
+POOL_DEFAULT = ("화자 미상 — 장면의 다른 대사 결에 맞추고, 새 개성·말버릇을 "
+                "만들지 않는다. 격은 현행을 유지한다.")
 
 
 def fold(s):
@@ -142,13 +161,15 @@ def voice_prompts():
 def personas():
     """스프라이트 → 페르소나표 행. 말투 지시가 아예 없는 조연에게 쓰는 보충이다.
 
-    사람 NPC 스프라이트 64종만 올라 있다는 점이 그대로 안전장치다. 화살표
-    (`flecha`)나 포켓몬 번호(`199`·`477`)처럼 사람이 아닌 스프라이트는 표에
-    없으니 붙지 않는다 — 2026-08-06 실측에서 Bruja의 14행이 `flecha`였다.
+    사람 NPC 스프라이트만 담는 것이 그대로 안전장치다 — 화살표(`flecha`)나 포켓몬
+    번호(`199`·`477`)에 붙으면 안 된다(2026-08-06 실측: Bruja의 14행이 `flecha`).
+    표에는 「제외」 버킷의 판정 기록 행도 살지만(flecha, 유지자 판정 2026-08-09),
+    그런 행은 여기서 걸러 매핑에 안 올린다.
     """
     return {r["sprite"]: r for r in
             (json.loads(l) for l in
-             PERSONAS.read_text(encoding="utf-8").splitlines() if l.strip())}
+             PERSONAS.read_text(encoding="utf-8").splitlines() if l.strip())
+            if not str(r.get("버킷", "")).startswith("제외")}
 
 
 def attach_personas(cast, take, names):
@@ -204,13 +225,21 @@ TITLE = ("Capitán", "Capitana", "Alcaide", "Archidruida", "Enfermera", "Enferme
 
 NUMBERED = re.compile(r"^(아조스단 신병|Recluta Azoth)\s*\d+호?$")
 
+# 이름표가 없는 화자의 표시 이름. 빈 이름으로 두면 cast 절이 「- : …」로 나가고
+# 장면 목록의 speakers가 빈 값이 돼, 어느 지시가 누구 것인지 이어지지 않는다.
+ANON_NAME = "(화자 미상)"
+
 
 def resolve(who, names):
     """이름표에서 한국어 이름을 찾는다 — 직함이 앞에 붙은 이름표가 흔하다.
 
     아조스단 신병 1·2·3호는 매번 다른 사람이지만 **말투는 한 벌**이라 이름 하나로
     접는다(유지자 판정 2026-08-06) — 갈라 두면 본보기 풀만 얇아진다.
+
+    풀 입력에는 이름표가 빈 화자가 있다(사람이 자리만 골라 왔다) — 표시 이름을 준다.
     """
+    if not (who or "").strip():
+        return ANON_NAME
     if NUMBERED.match(who):
         who = "아조스단 신병"
     if who in names:
@@ -341,11 +370,27 @@ def approved_events():
             for l in p.read_text(encoding="utf-8").splitlines() if l.strip()}
 
 
-def excluded_pages(pg):
-    """재번역이 건드리면 안 되는 페이지 — 보호·승인 이벤트·극초반·인트로."""
-    ex = {tuple(json.loads(l)[k] for k in ("map", "event", "page"))
-          for l in PROTECTED.read_text(encoding="utf-8").splitlines() if l.strip()}
-    done = approved_events()
+def protected_pages():
+    """보호(재번역 금지) 페이지 — 유지자 판정이라 어떤 입력보다 세다."""
+    return {tuple(json.loads(l)[k] for k in ("map", "event", "page"))
+            for l in PROTECTED.read_text(encoding="utf-8").splitlines() if l.strip()}
+
+
+def excluded_pages(pg, skip_approved=True):
+    """재번역이 건드리면 안 되는 페이지 — 보호·승인 이벤트·극초반·인트로·지문시스템.
+
+    data/z4-excluded.jsonl은 인물 대사 풀에서 골라낸 지문·시스템 페이지
+    (2026-08-13 풀 정제 판독, Z-4 티켓 「전량의 선행 단계」).
+
+    `skip_approved=False`는 **풀 입력 전용** — 승인 이벤트 배제는 범용 재스캔이
+    같은 자리를 또 묻지 않으려는 장치라, 사람이 층별로 판정해 골라 온 풀에는
+    안 맞는다(실측 2026-08-13: 풀 1,488행 중 1,081행이 이 관문에서 빠졌다)."""
+    ex = protected_pages()
+    z4ex = HERE / "data/z4-excluded.jsonl"
+    if z4ex.exists():
+        ex |= {tuple(json.loads(l)[k] for k in ("map", "event", "page"))
+               for l in z4ex.read_text(encoding="utf-8").splitlines() if l.strip()}
+    done = approved_events() if skip_approved else set()
     for key, rows in pg.items():
         if (key[0], key[1]) in done:                       # 판정 끝난 이벤트
             ex.add(key)
@@ -356,29 +401,107 @@ def excluded_pages(pg):
     return ex
 
 
+def divergence_settled():
+    """(접은 원문, 맵) → 갈래 정본 값. 갈림 허용 목록의 판정이 앉은 자리다.
+
+    정본 값이 이것과 일치하면 그 자리는 이미 판정이 끝난 것 — 배치가 다시 묻지
+    않는다. 안 걸면 창구류 복제 페이지가 접기 주인 회전으로 계획에 계속 남는다
+    (2026-08-13 Z-4 마감에서 실측: 이벤트를 승인해도 다음 복제가 올라온다)."""
+    p = HERE / "data" / "divergence-allowed.jsonl"
+    if not p.exists():
+        return {}
+    out = {}
+    for line in p.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        r = json.loads(line)
+        for g in r.get("갈래", []):
+            for m in g.get("maps", []):
+                out[(fold(r["es"]), m)] = g["ko"]
+    return out
+
+
+def load_pool(paths):
+    """`--pool` 입력 — 사람이 층별로 판정해 골라 온 보충 풀.
+
+    행 스키마 둘을 다 받는다: 층별 풀(layer/map/event/page/sprite/who/k/v/freedom)과
+    모호 해소(map/event/page/k/resolve/freedom). 자리(맵·이벤트·페이지·접은 원문)로
+    접으므로 여러 파일을 겹쳐 줘도 되고, 층③이 층①의 복제인 것도 여기서 접힌다.
+
+    **freedom 3(정형구)은 재작성 대상이 아니다** — 받되 세어서 빼고, 그 수는 plan이
+    찍는다. 반환은 (자리 → 화자 이름표, 관문별 셈).
+    """
+    out, ct = {}, collections.Counter()
+    for p in paths:
+        for line in Path(p).read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            r = json.loads(line)
+            ct["읽은 줄"] += 1
+            if r.get("freedom") not in (1, 2):
+                ct["freedom3(정형구)"] += 1
+                continue
+            key = (r["map"], r["event"], r["page"], fold(r["k"]))
+            if key in out:
+                ct["같은 자리 중복(층③·파일 겹침)"] += 1
+                continue
+            out[key] = r.get("who") or ""
+    return out, ct
+
+
 def chunks_path(pilot, npc):
     stem = ("npc-pilot-chunks" if npc and pilot else "npc-chunks" if npc
             else "pilot-chunks" if pilot else "page-chunks")
     return BATCH / (stem + ".jsonl")
 
 
-def plan(pilot=False, npc=False):
+def plan(pilot=False, npc=False, pool_paths=()):
     pg = pages()
-    ex = excluded_pages(pg)
+    pool, pool_ct = load_pool(pool_paths) if pool_paths else (None, collections.Counter())
+    ex = excluded_pages(pg, skip_approved=pool is None)
+    prot = protected_pages() if pool else set()
     ko = ko_index()
     vlines, names, anon = voice_lines(), ko_names(), anon_index()
     approved = approved_set()
     per = personas() if npc else {}
-    npc_skipped = 0
+    settled = divergence_settled()
+    npc_skipped = settled_skipped = 0
+    def in_pool(r):
+        return pool.get((r["map"], r["event"], r["page"], fold(r["k"])))
     chunks = []
     for key in sorted(pg):
         if key in ex:
+            if pool:      # 관문별 제외 수를 찍으려면 여기서 세야 한다
+                n = sum(1 for r in pg[key] if in_pool(r) is not None)
+                pool_ct["보호(protected)" if key in prot else "그 밖 제외 페이지"] += n
             continue
         rows, take = pg[key], []
-        if npc and (rows[0].get("scene") not in ("컷신", "대화")
-                    or any(x.get("how") == "태그" for x in rows)):
+        if npc and not pool and (rows[0].get("scene") not in ("컷신", "대화")
+                                 or any(x.get("how") == "태그" for x in rows)):
             continue                     # 이름표가 한 줄이라도 있으면 주연 갈래 몫
         for r in rows:
+            if pool is not None:
+                # 풀 입력 갈래 — 무엇을 재작성할지는 사람이 이미 판정했다. 스프라이트
+                # 귀속(how='그림')·장면 조건은 범용 재스캔의 후보 고르기 장치라 여기선
+                # 안 건다. 남기는 것은 정본 존재·갈래 정착·유지자 확정 어투뿐이다.
+                who = in_pool(r)
+                if who is None:
+                    continue
+                if r["kind"] != "text":
+                    pool_ct["kind≠text"] += 1
+                    continue
+                if who in SYS or who in VOICE_FIXED:
+                    pool_ct["어투 확정·비인물 화자"] += 1
+                    continue
+                cur = ko.get((r["map"], fold(r["k"])))
+                if cur is None:
+                    pool_ct["정본에 없음"] += 1
+                    continue
+                if settled.get((fold(r["k"]), r["map"])) == cur:
+                    pool_ct["갈래 정착"] += 1
+                    continue
+                take.append((r, who, cur, ""))
+                continue
             if npc:
                 if r["kind"] != "text" or r["how"] != "그림":
                     continue
@@ -388,6 +511,9 @@ def plan(pilot=False, npc=False):
                     continue
                 cur = ko.get((r["map"], fold(r["k"])))
                 if cur is None:
+                    continue
+                if settled.get((fold(r["k"]), r["map"])) == cur:
+                    settled_skipped += 1   # 갈래 정본과 일치 — 판정이 끝난 자리라 묻지 않는다
                     continue
                 take.append((r, sprite, cur, ""))
                 continue
@@ -430,10 +556,12 @@ def plan(pilot=False, npc=False):
             seen_cast[name] = {"name": name, "voice": voice,
                                **({"hint": hints[who]} if hints.get(who) else {})}
             cast.append(seen_cast[name])
-        if npc:
+        if npc and pool is None:
             for x in cast:               # 스프라이트 페르소나가 곧 말투 정본
                 x["voice"] = npc_line(per[x["name"]])
         else:
+            # 풀 갈래도 여기로 온다 — 화자를 사람이 판정해 왔으니 말투는 주연 갈래와
+            # 같은 순서로 붙인다: 말투표 → (비면) 그 자리 스프라이트의 페르소나.
             attach_personas(cast, take, names)
         m, e, p = key
         chunks.append({
@@ -447,11 +575,34 @@ def plan(pilot=False, npc=False):
                      for r, w, cur, _ in take],
         })
 
+    before_dedupe = sum(len(c["rows"]) for c in chunks)
     chunks = dedupe(chunks)
+    if pool is not None:
+        # 관문 셈은 표본 추출(--pilot) **앞에서** 닫는다 — 파일럿은 관문이 아니라 표집이다
+        n_out = sum(len(c["rows"]) for c in chunks)
+        read = pool_ct.pop("읽은 줄")
+        pool_ct["복제 정리(dedupe)"] = before_dedupe - n_out
+        print("풀 입력 관문별 제외:",
+              " · ".join(f"{k} {v}" for k, v in pool_ct.items() if v))
+        assert read == n_out + sum(pool_ct.values()), "관문별 제외 수 합이 안 맞는다"
+        print(f"  합: 읽은 줄 {read} = 계획 {n_out} + 제외 {sum(pool_ct.values())}")
+        # 말투 지시가 어느 쪽으로도 안 붙은 화자 — 조용히 흘리면 그 인물만 평평해진다.
+        # 남는 화자는 기본 지시로 덮는다(무지시 프롬프트 금지 — 유지자 승인 2026-08-13)
+        vp = voice_prompts()
+        mute = {x["name"] for c in chunks for x in c["cast"]
+                if not x["voice"] and not x.get("persona") and x["name"] not in vp}
+        for c in chunks:
+            for x in c["cast"]:
+                if x["name"] in mute and not x["voice"] and not x.get("persona"):
+                    x["voice"] = POOL_DEFAULT
+        print(f"말투 지시 없는 화자 {len(mute)}명 — 기본 지시로 덮음"
+              + (": " + ", ".join(sorted(mute)[:12]) if mute else ""))
     if pilot:
-        chunks = pick_pilot(chunks, npc)
+        chunks = pick_pilot(chunks, npc, from_pool=pool is not None)
     if npc and npc_skipped:
         print(f"페르소나표 밖 스프라이트로 빠진 행: {npc_skipped} — 사람 스프라이트라면 표에 등재 후 재plan")
+    if npc and settled_skipped:
+        print(f"갈래 정본과 일치해 뺀 행: {settled_skipped}")
     out = chunks_path(pilot, npc)
     out.parent.mkdir(exist_ok=True)
     out.write_text("\n".join(json.dumps(c, ensure_ascii=False) for c in chunks) + "\n",
@@ -459,8 +610,9 @@ def plan(pilot=False, npc=False):
     n = sum(len(c["rows"]) for c in chunks)
     sizes = sorted(len(c["rows"]) for c in chunks)
     print(f"{len(chunks)}페이지 · {n}행 → {out}")
-    print(f"페이지 크기: 중앙 {sizes[len(sizes)//2]}행 · 최대 {sizes[-1]}행 · "
-          f"1행짜리 {sum(1 for s in sizes if s == 1)}개")
+    if sizes:      # 사정권이 다 소진되면 빈 계획이 정상 결과다
+        print(f"페이지 크기: 중앙 {sizes[len(sizes)//2]}행 · 최대 {sizes[-1]}행 · "
+              f"1행짜리 {sum(1 for s in sizes if s == 1)}개")
     cast_n = defaultdict(int)
     for c in chunks:
         for x in c["cast"]:
@@ -474,9 +626,13 @@ def unified_originals():
 
     Z-28이 통일한 상태의 정의이자 verify `check_unified`가 지키는 불변량. 이 집합은
     맵 경계 너머 한 번만 번역하고, 반영은 전 자리에 퍼진다(apply_verdicts).
-    의도된 갈림(data/divergence-allowed.jsonl)은 애초에 「전 맵 동일」이 아니라 안 잡힌다.
     통일 목록(data/unified-phrases.jsonl) 등재분은 정본이 실수로 갈려 있어도 관리
     단위이므로 합집합으로 든다.
+
+    의도된 갈림(data/divergence-allowed.jsonl) 등재분은 **값이 아직 전 맵 동일해도
+    뺀다** — 갈래 등재가 통일 판별을 이긴다. 「현재 전 맵 동일」 경험 기준은 「갈라야
+    하는데 아직 안 가른 것」을 통일로 오인해, 한 페르소나 판이 맵 경계 너머로 접히고
+    전파되는 사고를 냈다(2026-08-13 전량 1차의 열쇠 충돌 88자리).
     """
     groups = defaultdict(set)
     seen = defaultdict(set)
@@ -495,6 +651,10 @@ def unified_originals():
     led = HERE / "data" / "unified-phrases.jsonl"
     if led.exists():
         out |= {json.loads(l)["es"] for l in led.read_text(encoding="utf-8").splitlines()
+                if l.strip()}
+    div = HERE / "data" / "divergence-allowed.jsonl"
+    if div.exists():
+        out -= {fold(json.loads(l)["es"]) for l in div.read_text(encoding="utf-8").splitlines()
                 if l.strip()}
     return out
 
@@ -523,7 +683,9 @@ def dedupe(chunks):
         kf = fold(r["es"])
         if kf in uni:
             return kf
-        return (kf, r.get("who") or c["map"])   # 화자 없는 행만 맵 단위로 남는다
+        who = r.get("who")
+        # 화자 미상 행만 맵 단위로 남는다 — 누군지 모르니 맵 너머로 접을 수 없다
+        return (kf, who if who and who != ANON_NAME else c["map"])
     for c in chunks:
         for r in c["rows"]:
             k = key_of_row(c, r)
@@ -562,17 +724,20 @@ def route(c):
     return "a" if any(r.get("approved") for r in c["rows"]) else "b"
 
 
-def pick_pilot(chunks, npc=False):
+def pick_pilot(chunks, npc=False, from_pool=False):
     """표본 20페이지 — 초반부에서, 말투표가 실리는 장면으로, 화자를 골고루.
 
     초반부만 뽑는 이유는 유지자가 실제로 지나온 구간이라야 판정할 수 있어서다
     (진행 순서의 대용은 맵 번호 — 조사에서 순위상관 0.988).
+    풀 입력(--pool)은 잡담이라 페이지가 짧다(중앙 2행) — 행수 문턱을 걸면 표본이
+    안 선다(실측 2페이지). 그쪽은 행수 무관, 페르소나 지시가 붙은 장면도 받는다
+    (유지자 승인 2026-08-13).
     """
     random.seed(20260806)
     pool = [c for c in chunks
-            if len(c["rows"]) >= 5
+            if (from_pool or len(c["rows"]) >= 5)
             and c["map"] <= PILOT_MAP_MAX
-            and any(x["voice"] for x in c["cast"])]   # 말투표가 실리는 장면
+            and any(x["voice"] or x.get("persona") for x in c["cast"])]
     by_lead = defaultdict(list)
     for c in pool:
         by_lead[c["cast"][0]["name"]].append(c)
@@ -794,9 +959,6 @@ def split_head(s):
     """줄머리 화자 표기를 떼어 (앞머리, 본문)으로. 없으면 앞머리는 빈 문자열."""
     m = HEAD.match(s or "")
     return (m.group(0), s[m.end():]) if m else ("", s or "")
-TITLES = [("monsieur", "무슈"), ("madame", "마담"), ("mademoiselle", "마드모아젤"),
-          ("profesora", "교수"), ("profesor", "교수"), ("maese", "선생"),
-          ("capitán", "대장"), ("capitana", "대장"), ("regente", "섭정")]
 
 
 def scene_names(rows):
@@ -831,10 +993,16 @@ def glossary_for(rows):
     rx, canon = canon_names()                 # 아이템·기술·종족·특성 정본 표기
     for m in rx.findall(" ".join(r["es"] for r in rows)):
         hits.append(f"- {m} → {canon[m]}")
-    for a, b in TITLES:                       # 호칭은 프롬프트 본문에도 있지만 잘 샌다
-        if a in es_all:
-            hits.append(f"- {a} → {b}")
-    return CORE_TERMS + ("\n" + "\n".join(dict.fromkeys(hits)) if hits else "")
+    # 대소문자만 다른 같은 쌍은 한 번만. 실제로 샌 자리(2026-08-13 회차 1,144요청 중
+    # 352건 「Regente/regente → 섭정」)는 TITLES 삭제로 이미 막혔고, 장면 표기표가
+    # 원문 자구 그대로 캐는 한 같은 꼴이 다시 날 수 있어 여기서 접는다.
+    seen, uniq = set(), []
+    for h in hits:
+        if h.casefold() not in seen:
+            seen.add(h.casefold())
+            uniq.append(h)
+    hits = uniq
+    return CORE_TERMS + ("\n" + "\n".join(hits) if hits else "")
 
 
 def build_prompt(fresh=False):
@@ -845,9 +1013,25 @@ def build_prompt(fresh=False):
     return body.split("## 시스템 프롬프트 본문", 1)[1].split("## 시스템 프롬프트 본문 (새로 번역)")[0]
 
 
-def scene_header(c):
+CAST_HEAD = ("Speakers and how each talks (「본보기」 lines are approved translations — "
+             "match their texture):")
+# 여러 장면을 한 요청에 담을 때만 실리는 안내. 입력 꼴이 바뀌므로 본문(prompt-pages.md)의
+# 「items are one complete event page」를 여기서 덮어쓴다.
+PACK_NOTE = """\
+**This request carries several scenes.** The user message is a JSON array of scenes:
+[{"scene": "<scene id>", "rows": [ …items in the shape described above… ]}, …].
+Each `rows` array is one complete event page in game order — one scene. Treat the
+scenes separately: never carry context, addressee or speech level from one scene
+into another. The scene list below says which speakers stand in each scene.
+Output remains ONE flat JSON array of {"id", "ko"} covering every item of every
+scene, in the order given. Do **not** group the output by scene and do not echo
+the `scene` key — the `id` of each item already says which scene it belongs to."""
+
+
+def cast_block(c):
+    """이 장면 화자들의 지시·본보기 줄 — 화자 이름 → 줄 목록."""
     vp, fallback = voice_prompts(), approved_samples()
-    lines = []
+    out = {}
     for x in c["cast"]:
         rec = vp.get(x["name"])
         if rec:
@@ -858,24 +1042,139 @@ def scene_header(c):
         else:
             instr = voice_instruction(x["voice"]) if x["voice"] else ""
             samples = fallback.get(x["name"], [])
-        lines.append(f"- {x['name']}: "
-                     + (instr or x.get("persona")
-                        or "not in the style guide — keep the current level"))
-        for ax, ex in samples:
-            lines.append(f"    · 본보기({ax}): {ex}")
-    return (f"Scene: {c['map_name']} (map {c['map']}), event 「{c['event_name']}」\n"
-            f"Speakers and how each talks (「본보기」 lines are approved translations — "
-            f"match their texture):\n" + "\n".join(lines) + "\n")
+        lines = [f"- {x['name']}: "
+                 + (instr or x.get("persona")
+                    or "not in the style guide — keep the current level")]
+        lines += [f"    · 본보기({ax}): {ex}" for ax, ex in samples]
+        out.setdefault(x["name"], []).extend(lines)
+    return out
 
 
-def render(c, fresh=False):
-    """요청 하나의 시스템 프롬프트 — 본문 + 이 장면의 용어 + 장면 머리말."""
-    return (build_prompt(fresh).replace("[용어 규칙 — 장면별 발췌 삽입]",
-                                        glossary_for(c["rows"]))
-            + "\n\n" + scene_header(c))
+def scene_where(c):
+    return f"{c['map_name']} (map {c['map']}), event 「{c['event_name']}」"
 
 
-def run(pilot=False, limit=None, workers=4, fresh=False, effort="low", npc=False):
+def scene_header(c):
+    lines = [l for block in cast_block(c).values() for l in block]
+    return (f"Scene: {scene_where(c)}\n" + CAST_HEAD + "\n" + "\n".join(lines) + "\n")
+
+
+def pack_header(pack):
+    """묶음 머리말 — 화자 지시는 **묶음 안에서 한 번만**, 장면은 id로 구획한다.
+
+    같은 화자가 여러 장면에 서면 지시가 그만큼 되풀이돼 묶음으로 아낀 것을 도로
+    까먹는다. 지시는 이름으로 접고, 어느 장면에 누가 서는지는 장면 목록이 잇는다.
+    """
+    blocks, scenes = {}, []
+    for c in pack:
+        cb = cast_block(c)
+        for name, lines in cb.items():
+            blocks.setdefault(name, [])
+            if lines not in blocks[name]:      # 같은 이름에 다른 지시면 둘 다 싣는다
+                blocks[name].append(lines)
+        line = f"- [{c['cid']}] {scene_where(c)}"
+        scenes.append(line + " — speakers: " + " · ".join(cb) if cb else line)
+    lines = [l for variants in blocks.values() for block in variants for l in block]
+    return (CAST_HEAD + "\n" + "\n".join(lines)
+            + "\n\nScenes in this request (in the order the user message gives them):\n"
+            + "\n".join(scenes) + "\n")
+
+
+def render(pack, fresh=False):
+    """요청 하나의 시스템 프롬프트 — 본문 + 실린 장면들의 용어 + 장면 머리말.
+
+    묶음이 한 장면이면 예전과 같은 글이 나온다 — 회귀를 막으려고 갈래를 남겼다.
+    """
+    if isinstance(pack, dict):
+        pack = [pack]
+    rows = [r for c in pack for r in c["rows"]]
+    body = build_prompt(fresh).replace("[용어 규칙 — 장면별 발췌 삽입]", glossary_for(rows))
+    if len(pack) == 1:
+        return body + "\n\n" + scene_header(pack[0])
+    return body + "\n\n" + PACK_NOTE + "\n\n" + pack_header(pack)
+
+
+PACK_ROWS = 30     # 한 요청에 담는 행수 예산(--pack). 잡담 페이지 중앙 2행 기준 15페이지쯤
+
+
+def packs_of(chunks, pack_rows):
+    """페이지를 쪼개지 않고 행수 예산까지 묶는다. 계획 순서(맵·이벤트)를 지킨다."""
+    out, cur, n = [], [], 0
+    for c in chunks:
+        if cur and n + len(c["rows"]) > pack_rows:
+            out.append(cur)
+            cur, n = [], 0
+        cur.append(c)
+        n += len(c["rows"])
+    if cur:
+        out.append(cur)
+    return out
+
+
+def prepare(c, fresh):
+    """장면 하나의 요청 행과 되입힘 재료 — (요청행, 앞머리, 표시).
+
+    줄머리 화자 표기는 **보내지 않는다** — 색 코드는 뜻이 없어 새로 쓰는 쪽이
+    잘 흘린다(실측: B 반려 26행 중 9행이 앞머리). 답을 받은 뒤 그대로 도로 붙인다.
+    서식 태그(<b>·<i>·줄 안 \\c[n])도 **보내지 않는다** — 뜻이 없는 자리라 모델이
+    빠뜨리거나 없던 곳에 새로 붙인다(실측: 새 번역이 「후보생」·「무슈」에 강조를
+    지어 붙였다). 원문 쪽 표시를 기억해 뒀다가 답에 도로 입힌다.
+    """
+    scene = dict(scene_names(c["rows"]))
+    # 표기 정본에서 1:1 쌍만 — 분기 판정(「대장 / 선장(…)」)은 찾을 글자가 아니다.
+    scene.update({a: b for a, b in term_pairs() if "/" not in a and "(" not in b})
+    heads, marks, reqrows = {}, {}, []
+    for r in c["rows"]:
+        he, es = split_head(r["es"])
+        hk, ko = split_head(r["ko"])
+        heads[r["id"]] = hk or he
+        es_plain, es_spans = unmark(es)
+        ko_plain, ko_spans = unmark(ko)
+        # 표기는 **그 줄 자신의 현행 번역**에서 먼저 가져온다 — 자리 수가 맞으면
+        # 순서대로 짝지으면 되고, 장면 표기표는 그것이 어긋날 때의 보조다.
+        pairs = dict(scene)
+        if len(es_spans) == len(ko_spans):
+            pairs.update({a[1].strip(): b[1].strip() for a, b in zip(es_spans, ko_spans)})
+        marks[r["id"]] = (es_spans, pairs)
+        reqrows.append({"id": r["id"], "who": r["who"], "es": es_plain,
+                        **({} if fresh else {"ko": ko_plain})})
+    return reqrows, heads, marks
+
+
+def finalize(c, got, heads, marks, out_dir):
+    """받은 답을 이 장면 몫으로 갈라 <cid>.jsonl에 적는다. 반환은 (행수, 반려수)."""
+    lines, rej = [], 0
+    for r in c["rows"]:
+        new, why = got.get(r["id"]), None
+        if new is not None:
+            spans, pairs = marks[r["id"]]
+            new = remark(unmark(new)[0], spans, pairs)
+            head = heads[r["id"]]
+            if head:                       # 떼어 둔 앞머리를 도로 붙인다
+                new = head + strip_fake_head(split_head(new)[1], r["who"])
+        if new is None:
+            why = "누락"
+        else:
+            # 개행만 어긋난 자리는 여기서 수선한다 — 검수까지 안 세운다(유지자 2026-08-12).
+            # 회차마다 mend_newlines를 따로 돌리는 방식은 빠뜨리기 쉬웠다(3차 실측).
+            m = mend(r["ko"], new)
+            if m is not None and not check(r["ko"], m, 0):
+                new = m
+            bad = check(r["ko"], new, 0)
+            if bad:
+                why = "검증:" + bad[0][:40]
+        if why:
+            rej += 1
+        lines.append({"id": r["id"], "who": r["who"], "es": r["es"],
+                      "old": r["ko"], "new": new, "ok": not why, "why": why})
+    (out_dir / (c["cid"] + ".jsonl")).write_text(
+        "\n".join(json.dumps(x, ensure_ascii=False) for x in lines) + "\n",
+        encoding="utf-8")
+    return len(lines), rej
+
+
+def run(pilot=False, limit=None, workers=4, fresh=False, effort="low", npc=False,
+        pack_rows=PACK_ROWS):
     src = chunks_path(pilot, npc)
     base = ("npc-out-pilot" if npc and pilot else "npc-out" if npc
             else "page-out-pilot" if pilot else "page-out")
@@ -885,91 +1184,64 @@ def run(pilot=False, limit=None, workers=4, fresh=False, effort="low", npc=False
     pending = [c for c in chunks if not (out_dir / (c["cid"] + ".jsonl")).exists()]
     if limit:
         pending = pending[:limit]
-    print(f"대기 {len(pending)}/{len(chunks)}페이지 · {sum(len(c['rows']) for c in pending)}행")
+    packs = packs_of(pending, pack_rows)
+    print(f"대기 {len(pending)}/{len(chunks)}페이지 · {sum(len(c['rows']) for c in pending)}행"
+          f" → 요청 {len(packs)}개 (묶음 예산 {pack_rows}행)")
     key = key_of()
     lock = threading.Lock()
-    st = {"n": 0, "rows": 0, "cost": 0.0, "rej": 0}
+    st = {"n": 0, "rows": 0, "cost": 0.0, "rej": 0, "demote": 0, "t0": time.time()}
 
-    def work(c):
-        # 줄머리 화자 표기는 **보내지 않는다** — 색 코드는 뜻이 없어 새로 쓰는 쪽이
-        # 잘 흘린다(실측: B 반려 26행 중 9행이 앞머리). 답을 받은 뒤 그대로 도로 붙인다.
-        # 서식 태그(<b>·<i>·줄 안 \c[n])도 **보내지 않는다** — 뜻이 없는 자리라 모델이
-        # 빠뜨리거나 없던 곳에 새로 붙인다(실측: 새 번역이 「후보생」·「무슈」에 강조를
-        # 지어 붙였다). 원문 쪽 표시를 기억해 뒀다가 답에 도로 입힌다.
-        scene = dict(scene_names(c["rows"]))
-        scene.update({"monsieur": "무슈", "madame": "마담", "mademoiselle": "마드모아젤"})
-        heads, marks = {}, {}
-        reqrows = []
-        for r in c["rows"]:
-            he, es = split_head(r["es"])
-            hk, ko = split_head(r["ko"])
-            heads[r["id"]] = hk or he
-            es_plain, es_spans = unmark(es)
-            ko_plain, ko_spans = unmark(ko)
-            # 표기는 **그 줄 자신의 현행 번역**에서 먼저 가져온다 — 자리 수가 맞으면
-            # 순서대로 짝지으면 되고, 장면 표기표는 그것이 어긋날 때의 보조다.
-            pairs = dict(scene)
-            if len(es_spans) == len(ko_spans):
-                pairs.update({a[1].strip(): b[1].strip()
-                              for a, b in zip(es_spans, ko_spans)})
-            marks[r["id"]] = (es_spans, pairs)
-            reqrows.append({"id": r["id"], "who": r["who"], "es": es_plain,
-                            **({} if fresh else {"ko": ko_plain})})
-        sys_prompt = render(c, fresh)
-        (out_dir / (c["cid"] + ".req.json")).write_text(
-            json.dumps({"system": sys_prompt, "user": reqrows},
-                       ensure_ascii=False, indent=1), encoding="utf-8")
-        got, cost = ask_npc(key, MODEL, sys_prompt, reqrows, effort=effort)
-        missing = [r for r in reqrows if r["id"] not in got]
-        if missing:
-            got2, c2 = ask_npc(key, MODEL, sys_prompt, missing, effort=effort)
-            got.update(got2)
-            cost += c2
-        lines, rej = [], 0
-        for r in c["rows"]:
-            new, why = got.get(r["id"]), None
-            if new is not None:
-                spans, pairs = marks[r["id"]]
-                new = remark(unmark(new)[0], spans, pairs)
-                head = heads[r["id"]]
-                if head:                       # 떼어 둔 앞머리를 도로 붙인다
-                    new = head + strip_fake_head(split_head(new)[1], r["who"])
-            if new is None:
-                why = "누락"
-            else:
-                # 개행만 어긋난 자리는 여기서 수선한다 — 검수까지 안 세운다(유지자 2026-08-12).
-                # 회차마다 mend_newlines를 따로 돌리는 방식은 빠뜨리기 쉬웠다(3차 실측).
-                m = mend(r["ko"], new)
-                if m is not None and not check(r["ko"], m, 0):
-                    new = m
-                bad = check(r["ko"], new, 0)
-                if bad:
-                    why = "검증:" + bad[0][:40]
-            if why:
-                rej += 1
-            lines.append({"id": r["id"], "who": r["who"], "es": r["es"],
-                          "old": r["ko"], "new": new, "ok": not why, "why": why})
-        (out_dir / (c["cid"] + ".jsonl")).write_text(
-            "\n".join(json.dumps(x, ensure_ascii=False) for x in lines) + "\n",
-            encoding="utf-8")
+    def work(pack):
+        prep = {c["cid"]: prepare(c, fresh) for c in pack}
+        sys_prompt = render(pack, fresh)
+        user = (prep[pack[0]["cid"]][0] if len(pack) == 1 else
+                [{"scene": c["cid"], "rows": prep[c["cid"]][0]} for c in pack])
+        req = json.dumps({"system": sys_prompt, "user": user},
+                         ensure_ascii=False, indent=1)
+        got, cost = ask_npc(key, MODEL, sys_prompt, user, effort=effort)
+        for c in pack:
+            reqrows, heads, marks = prep[c["cid"]]
+            (out_dir / (c["cid"] + ".req.json")).write_text(req, encoding="utf-8")
+            missing = [r for r in reqrows if r["id"] not in got]
+            if missing:
+                # 묶음에서 행이 빠진 페이지는 **단독 요청으로 강등**한다 — 그 페이지만
+                # 제 장면 프롬프트로 통째 다시 묻는 편이 섞인 나머지를 다시 태우는 것보다
+                # 싸고, 강등된 요청이 곧 그 페이지의 요청 전문이 된다.
+                single = render(c, fresh) if len(pack) > 1 else sys_prompt
+                ask = reqrows if len(pack) > 1 else missing
+                got2, cost2 = ask_npc(key, MODEL, single, ask, effort=effort)
+                got.update(got2)
+                cost += cost2
+                if len(pack) > 1:
+                    (out_dir / (c["cid"] + ".req.json")).write_text(
+                        json.dumps({"system": single, "user": reqrows},
+                                   ensure_ascii=False, indent=1), encoding="utf-8")
+                    with lock:
+                        st["demote"] += 1
+            n, rej = finalize(c, got, heads, marks, out_dir)
+            with lock:
+                st["rows"] += n
+                st["rej"] += rej
         with lock:
             st["n"] += 1
-            st["rows"] += len(lines)
             st["cost"] += cost
-            st["rej"] += rej
-            print(f"[{st['n']}/{len(pending)}] {c['cid']} {len(lines)}행 "
-                  f"누적 {st['rows']}행 반려 {st['rej']} ${st['cost']:.3f}")
+            left = (time.time() - st["t0"]) / st["n"] * (len(packs) - st["n"])
+            print(f"[{st['n']}/{len(packs)}] {pack[0]['cid']}+{len(pack) - 1} "
+                  f"누적 {st['rows']}행 반려 {st['rej']} 강등 {st['demote']} "
+                  f"${st['cost']:.3f} 남은 ~{int(left // 60)}분{int(left % 60):02d}초",
+                  flush=True)
 
     threads = []
-    for c in pending:
+    for p in packs:
         while sum(t.is_alive() for t in threads) >= workers:
             time.sleep(0.2)
-        t = threading.Thread(target=work, args=(c,))
+        t = threading.Thread(target=work, args=(p,))
         t.start()
         threads.append(t)
     for t in threads:
         t.join()
-    print(f"끝. {st['rows']}행 · 반려 {st['rej']} · 실비용 ${st['cost']:.3f}")
+    print(f"끝. {st['rows']}행 · 반려 {st['rej']} · 강등 {st['demote']}페이지"
+          f" · 실비용 ${st['cost']:.3f}")
 
 
 def report(pilot=False, npc=False):
@@ -1016,11 +1288,13 @@ if __name__ == "__main__":
     limit = int(args[args.index("--limit") + 1]) if "--limit" in args else None
     fresh = "--fresh" in args
     npc = "--npc" in args
+    pool_paths = [args[i + 1] for i, a in enumerate(args) if a == "--pool"]
     if cmd == "plan":
-        plan(pilot, npc)
+        plan(pilot, npc, pool_paths)
     elif cmd == "run":
         effort = args[args.index("--effort") + 1] if "--effort" in args else "low"
-        run(pilot, limit, fresh=fresh, effort=effort, npc=npc)
+        pack_rows = int(args[args.index("--pack") + 1]) if "--pack" in args else PACK_ROWS
+        run(pilot, limit, fresh=fresh, effort=effort, npc=npc, pack_rows=pack_rows)
     elif cmd == "report":
         report(pilot, npc)
     elif cmd == "selftest":
@@ -1029,12 +1303,50 @@ if __name__ == "__main__":
         cs = [json.loads(l) for l in
               (BATCH / "npc-pilot-chunks.jsonl").read_text(encoding="utf-8").splitlines()
               if l.strip()]
-        c = next(x for x in cs if x["cid"] == "p044-7-0")
-        s = render(c)
+        # 계획한 장면을 cid로 집으면 다시 계획할 때 그 장면이 사정권에서 빠져 시험이
+        # 통째로 멈춘다(2026-08-13 실측). 발췌 규칙만 보므로 줄을 지어서 본다.
+        s = glossary_for([{"es": "Tengo unas Pokétoxinas por aquí.", "ko": "여기 있어."}])
         assert "Pokétoxina" in s and "독주머니" in s, "정본 아이템 짝이 안 실렸다"
+        s = glossary_for([{"es": "Bonjour, monsieur. ¿Y el profesor?", "ko": "안녕하세요."}])
+        assert "무슈" in s and "박사(올리비에)" in s, "호칭 정본이 안 실렸다"
+        # 대소문자만 다른 같은 쌍은 한 줄로 접힌다 — 원문 굵은 글씨가 소문자로 서면
+        # 장면 표기표가 정본 표기와 짝이 되어 규칙이 둘로 실렸다.
+        s = glossary_for([{"es": "El <b>regente</b> y el <b>Regente</b>.",
+                           "ko": "<b>섭정</b>과 <b>섭정</b>."}])
+        assert s.lower().count("→ 섭정") == 1, s
+        # 이름표 없는 화자도 이름을 얻어 cast 절과 장면 목록이 이어진다
+        assert resolve("", {}) == ANON_NAME and resolve("  ", {}) == ANON_NAME
         base = len(CORE_TERMS.splitlines())
         for x in cs[:6]:
             print(f"{x['cid']} 발췌 {len(glossary_for(x['rows']).splitlines()) - base}항목")
+
+        # 묶음(--pack) — 페이지가 쪼개지지 않고, 한 장면 묶음은 예전 글 그대로이며,
+        # 여러 장면 묶음은 장면 id로 구획되고 화자 지시가 한 번만 실린다.
+        for budget in (1, 5, 30, 999):
+            ps = packs_of(cs, budget)
+            assert [c["cid"] for p in ps for c in p] == [c["cid"] for c in cs], budget
+            assert all(sum(len(c["rows"]) for c in p) <= budget or len(p) == 1
+                       for p in ps), budget
+        assert len(packs_of(cs, 1)) == len(cs), "--pack 1은 페이지당 한 요청"
+        one = render(cs[0])
+        assert one == render([cs[0]]) and PACK_NOTE not in one and "Scene: " in one
+        pack = packs_of(cs, 30)[0]
+        s = render(pack)
+        assert PACK_NOTE in s and all(f"[{c['cid']}]" in s for c in pack)
+        rep = next((x["name"] for x in pack[0]["cast"]), None)
+        if rep and sum(1 for c in pack for x in c["cast"] if x["name"] == rep) > 1:
+            assert s.count(f"- {rep}: ") == 1, "화자 지시가 묶음 안에서 겹쳤다"
+        ids = [r["id"] for c in pack for r in c["rows"]]
+        assert len(ids) == len(set(ids)), "행 id가 겹치면 묶음을 되가를 수 없다"
+        # 답의 꼴 — 평평한 배열도, 장면으로 묶어 답한 판도, 뒤섞인 판도 다 캔다.
+        # 항목 하나가 성해도 답 전체를 버리지 않는다(옛 판은 KeyError로 통째 강등).
+        flat = [{"id": "1:2:3:0", "ko": "가"}, {"id": "1:2:3:1", "ko": "나"}]
+        assert harvest(flat) == {"1:2:3:0": "가", "1:2:3:1": "나"}
+        grouped = [{"scene": "p001-2-3", "rows": flat}]
+        assert harvest(grouped) == harvest(flat)
+        assert harvest([{"ko": "id 없음"}, {"id": "x", "ko": 7}, "글자", *flat]) == harvest(flat)
+        print(f"묶음: {len(cs)}페이지 → {len(packs_of(cs, 30))}요청 · "
+              f"프롬프트 {len(one):,}자(단독) → {len(s):,}자({len(pack)}장면)")
         print("selftest OK")
     elif cmd == "samples":
         s = approved_samples()

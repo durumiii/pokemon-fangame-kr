@@ -1,0 +1,54 @@
+{"sec": 23, "es": "La caja \"{1}\" está llena.\\1", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "Incubadora"}
+{"sec": 23, "es": "¡No hay espacio para el Pokémon!\\1", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "Incubadora+PSystem_Utilities NUEVO+RandomObjects"}
+{"sec": 23, "es": "Altavoz: ¡Ding-dong!\\1", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "PBattle_Safari"}
+{"sec": 23, "es": "{1} ha metido la cosecha de {2} en el Bolsillo de <icon=bagPocket#{BERRYPOCKET}>\\c[1]Bayas\\c[0] de la Mochila.\\1", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "PField_BerryPlants"}
+{"sec": 23, "es": "{1} ha metido la cosecha de {2} en el Bolsillo de <icon=bagPocket#{pocket}>\\c[1]Bayas\\c[0] de la Mochila.\\1", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "PField_BerryPlants"}
+{"sec": 23, "es": "El suelo se ha vuelto blando y fértil de nuevo.\\1", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "PField_BerryPlants"}
+{"sec": 23, "es": "El suelo se ha vuelto blando y arcilloso de nuevo.\\1", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "PField_BerryPlants"}
+{"sec": 23, "es": "¡A {1} no le queda ningún Pokémon!\\1", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "PField_Field"}
+{"sec": 23, "es": "Hay unas espinas demasiado peligrosas como para pasar.\\1", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "PField_HiddenMoves"}
+{"sec": 23, "es": "¡{1} ha usado Fuerza!\\1", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "PField_HiddenMoves"}
+{"sec": 23, "es": "¡{1} ha usado {2}!\\1", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "PField_HiddenMoves"}
+{"sec": 23, "es": "¡El {1} indica algo justo bajo los pies!\\1", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "PItem_ItemEffects"}
+{"sec": 23, "es": "¡Alto!\n¡El {1} está respondiendo!\\1", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "PItem_ItemEffects"}
+{"sec": 23, "es": "Ésta contiene {1}.\\1", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "PItem_Items"}
+{"sec": 23, "es": "¿Y ésto?\\1", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "PScreen_EggHatching"}
+{"sec": 23, "es": "No starting position was set in the map editor.\\1", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "PScreen_Load"}
+{"sec": 23, "es": "¡{1} ha recibido {2}!\\se[ItemGet]\\1", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "PScreen_MysteryGift"}
+{"sec": 23, "es": "¡Hay un Pokémon que está listo para abrir su corazón!\\1", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "PScreen_PurifyChamber"}
+{"sec": 23, "es": "El Corral \"{1}\" del Rancho de {2} está lleno.\\1", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "PSystem_Utilities NUEVO"}
+{"sec": 23, "es": "La Corral \"{1}\" del Rancho está lleno.\\1", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "PSystem_Utilities NUEVO"}
+{"sec": 23, "es": "{1} fue transferido al Rancho.\\1", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "PSystem_Utilities NUEVO"}
+{"sec": 23, "es": "¡{1} ha obtenido un {2}!\\se[PokemonGet]\\1", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "PSystem_Utilities NUEVO"}
+{"sec": 23, "es": "{1} ha recibido un Pokémon de {2}.\\se[PokemonGet]\\1", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "PSystem_Utilities NUEVO"}
+{"sec": 23, "es": "{1} ha recibido un Pokémon.\\se[PokemonGet]\\1", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "PSystem_Utilities NUEVO"}
+{"sec": 23, "es": "\\se[]1,\\wt[4] 2,\\wt[4] y...\\wt[8] ...\\wt[8] ...\\wt[8] ¡Puf!\\se[balldrop]\\1", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "Pokemon_MultipleForms"}
+{"sec": 23, "es": "Y...\\1", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "Pokemon_MultipleForms"}
+{"sec": 23, "es": "¡Solo puedes capturar Pokémon de tipo {1}!", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "보간 수술: 084 모노타입 챌린지"}
+{"sec": 23, "es": "{1} está debilitado.\nApenas puede tenerse en pie...", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "보간 수술: 187 동행 포켓몬"}
+{"sec": 23, "es": "Sin duda, tienes el mejor {1} del mundo.", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "보간 수술: 187 동행 포켓몬"}
+{"sec": 23, "es": "¿Qué habilidad quieres para {1}?", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "보간 수술: 244 특성 변경 NPC"}
+{"sec": 23, "es": "¡{1} ha sufrido los efectos de Otra Vez!", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "앙코르 문구 수술(patch_intl) — 본가 자구"}
+{"sec": 23, "es": "Piénsatelo bien, tus Pokémon pueden tener habilidades ocultas muy interesantes.", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "Cambia Habilidades"}
+{"sec": 23, "es": "Tu Pokémon ya posee esa habilidad.", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "Cambia Habilidades"}
+{"sec": 23, "es": "Configurar random", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "RandomMain"}
+{"sec": 23, "es": "Elegir modo de randomizar habilidades", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "RandomMain"}
+{"sec": 23, "es": "Elige las generaciones para el random", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "RandomMain"}
+{"sec": 23, "es": "Elija el modo para las habilidades random", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "RandomMain"}
+{"sec": 23, "es": "Terminar", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "RandomMain"}
+{"sec": 23, "es": "[ ] Full Random", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "RandomMain"}
+{"sec": 23, "es": "[X] Full Random", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "RandomMain"}
+{"sec": 23, "es": "[ ] Mapeo de habilidades", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "RandomMain"}
+{"sec": 23, "es": "[X] Mapeo de habilidades", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "RandomMain"}
+{"sec": 23, "es": "[ ] Sin randomizar", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "RandomMain"}
+{"sec": 23, "es": "[X] Sin randomizar", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "RandomMain"}
+{"sec": 23, "es": "[X] Evoluciones random", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "RandomMain"}
+{"sec": 23, "es": "[X] Evoluciones random con BST similar", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "RandomMain"}
+{"sec": 23, "es": "[X] Modo Semi Random", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "RandomMain"}
+{"sec": 23, "es": "[X] Movimientos random", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "RandomMain"}
+{"sec": 23, "es": "[X] Random progresivo", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "RandomMain"}
+{"sec": 23, "es": "[X] Randomizar compatibilidad con MTs", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "RandomMain"}
+{"sec": 23, "es": "[X] Randomizar objetos", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "RandomMain"}
+{"sec": 23, "es": "[X] Randomizar objetos de salvajes", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "RandomMain"}
+{"sec": 23, "es": "[X] Randomizar tipos", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "RandomMain"}
+{"sec": 23, "es": "......\\wt[5] ......\\1", "이유": "손으로 확정한 절23 문구 — 배치 재번역에 다시 태우면 퇴행", "src": "PScreen_Phone"}

@@ -28,7 +28,7 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 from batch import MODEL  # noqa: E402  (Z_BACKEND 전환을 함께 탄다)
 from batch_pages import fold, ko_index  # noqa: E402
-from pilot_npc import ask_npc, build_prompt, key_of, load_personas  # noqa: E402
+from pilot_npc import ask_npc, build_prompt, key_of, load_personas, npc_line  # noqa: E402
 from validate import check  # noqa: E402
 
 ATTR = HERE / "data/speaker-attr.jsonl.gz"
@@ -42,7 +42,7 @@ def persona_of(sprite, personas):
     p = personas.get(sprite)
     if not p:
         return f"[스프라이트 {sprite}] 말투 지침 없음 — 현행 격을 지킨다"
-    return f"{p['페르소나']} [어미: {p['버킷']}]"
+    return npc_line(p)
 
 
 def plan():

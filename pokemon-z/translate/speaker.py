@@ -20,7 +20,7 @@ usage:
   uv run translate/speaker.py stats         판정 근거별 집계
   uv run translate/speaker.py selftest      정답을 아는 자리로 채점한다
 
-귀속 근거(`how`)는 다섯이다:
+귀속 근거(`how`)는 아래와 같다:
   태그        그 줄에 이름표가 붙어 있다 — 확실
   상속        같은 페이지·같은 분기 깊이에서 앞 이름표를 물려받았다
   분기다름    분기 깊이를 넘어 물려받았다 — 미더운 정도가 떨어진다
@@ -29,15 +29,31 @@ usage:
   지문        그림이 사물·연출(표지판·책·화살표)이다 — 화자가 없고 평서 지문이 정답
   미상        이름표도 그림도 없다 — 지문이거나 시스템 문구
   선택지      주인공의 선택지. 주인공은 대사를 하지 않아 이름표가 붙지 않는다
+  전투호출    `pbTrainerBattle`의 셋째 인자 — 같은 호출의 직함·이름이 곧 화자다. 확실
+  스크립트    스크립트의 `_I("…")`인데 화자를 뽑을 인자가 없다(육아방 `pbDayCareChoose`)
+
+뒤 둘은 메시지 명령이 아니라 **스크립트 명령**(355/655, 조건 분기 111 type 12)에서
+온다. `kind="battle"`로 따로 서고 이름표 상속에 끼지 않는다 — 물려받지도 물려주지도
+않고 `cast`·`n_msg`에도 안 들어간다. 직함 상수는 `tclass` 칸에 실린다.
 
 `prompt` 칸이 참이면 **바로 뒤가 선택지인 메시지**다. 인물의 물음일 수도 시스템
 안내일 수도 있으니 어투를 갈기 전에 사람이 본다 — 이 도구는 「누구에게 붙어
 있나」를 계산할 뿐 「사람 말인가」를 판정하지 않는다.
+
+화자 귀속과 **축이 다른** 세 칸을 함께 싣는다. 전부 원본에서 재계산되고 사람 판정을
+안 탄다(근거: `docs/log/research/2026-08-13-scene-signal-survey.md`·`-scene-kind-survey.md`).
+
+  cls    PS 정본 인물 · PC 이름표 없는 인물 · N 지문·시스템 (페이지 단위)
+  once   이 페이지를 실행하면 같은 이벤트의 더 높은 번호 페이지 조건이 채워지나
+  flags  이 페이지가 켜는 전역 스위치 중 **어딘가의 페이지 조건으로 쓰이는 것**
 """
+import collections
+import functools
 import gzip
 import json
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 HERE = Path(__file__).parent
@@ -61,35 +77,140 @@ KNOWN = [
     ("¿Y <b>Lanto</b> es quien ha financiado", "Crisanto", "맵111 제보"),
 ]
 
+# 전투 호출(`pbTrainerBattle`) 갈래의 정답 자리 — (맵, 이벤트, 기대 화자, 기대 근거).
+# 셋째는 육아방 `pbDayCareChoose`다. 인자가 `_I` 하나뿐이라 **화자 없음이 정답**이고,
+# 전투 호출과 같은 규칙으로 처리하면 안 된다.
+KNOWN_BATTLE = [(90, 35, "Wolfram", "전투호출"), (20, 11, "Alexandre", "전투호출"),
+                (48, 5, "", "스크립트")]
+
+# 층 판정의 정답 자리 — 2026-08-13 감사 §3③④. 앞 다섯은 말투 정본 등재인데 이름표
+# 행수가 50 미만이라 옛 규칙이 떨어뜨렸고, 뒤 둘은 어간 충돌로 정본 인물이 되던 무명 단원이다.
+KNOWN_CLS = [("who", "Anturia", "PS"), ("who", "Capitán Merlot", "PS"),
+             ("who", "Barquero", "PS"), ("who", "Nácar", "PS"), ("who", "Mimi", "PS"),
+             ("sprite", "flareow", "PC"), ("sprite", "flaraow", "PC"),
+             # 대문자 이름표 둘과 그것을 막던 안내판 딱지 — `person_tag`의 세 걸음이
+             # 순서대로 서야 셋이 동시에 맞는다(2026-08-14).
+             ("who", "F3", "PS"), ("who", "AZ", "PS"),
+             ("who", "PISTA DE ENTRENADOR", "N"),
+             ("sprite", "f3ow", "PS")]   # 어간을 한 단계씩 맞추지 않으면 `f`까지 깎인다
+
+# 1회 소비 판정의 정답 자리 — `docs/log/research/2026-08-13-audit-cells.jsonl`의 「1회소비」 값.
+KNOWN_ONCE = [((22, 3, 7), True), ((2, 1, 0), True), ((163, 44, 1), False), ((3, 47, 0), False)]
+
 
 def b2s(v):
     return v.decode("utf-8", errors="replace") if isinstance(v, bytes) else str(v)
 
 
+def call_args(s, i):
+    """`(` 바로 뒤 i에서 시작해 짝이 맞는 `)`까지, 최상위 콤마로 자른 인자 목록.
+
+    돌려주는 것은 (시작 오프셋, 원문 조각) 쌍이다 — 인자 안의 문자열이 원본
+    어디에 있었는지를 알아야 `_I(…)`가 셋째 인자인지 가릴 수 있다. 괄호 깊이와
+    따옴표 상태를 함께 추적한다. 「문자열 앞의 가장 가까운 호출」 휴리스틱은
+    이 코퍼스에서 우연히 맞을 뿐 구조가 보장하지 않는다.
+    """
+    args, depth, start, q, esc = [], 0, i, None, False
+    for j in range(i, len(s)):
+        c = s[j]
+        if esc:
+            esc = False
+        elif q:
+            if c == "\\":
+                esc = True
+            elif c == q:
+                q = None
+        elif c in "\"'":
+            q = c
+        elif c in "([{":
+            depth += 1
+        elif c in ")]}":
+            if depth == 0:
+                args.append((start, s[start:j]))
+                return args
+            depth -= 1
+        elif c == "," and depth == 0:
+            args.append((start, s[start:j]))
+            start = j + 1
+    return args                            # 괄호가 안 닫힌다 — 마지막 조각은 버린다
+
+
+ILIT = re.compile(r'_I\(\s*"((?:[^"\\]|\\.)*)"\s*\)')
+SLIT = re.compile(r'^\s*"((?:[^"\\]|\\.)*)"\s*$')
+PBCLASS = re.compile(r"PBTrainers::(\w+)")
+BATTLE_CALL = re.compile(r"\bpbTrainerBattle\s*\(")
+
+
+def unquote(s):
+    return s.replace('\\"', '"').replace("\\\\", "\\")
+
+
+def script_battles(s):
+    """`pbTrainerBattle` 호출의 셋째 인자 `_I(…)` 위치 → (직함 상수, 트레이너 이름)."""
+    out = {}
+    for m in BATTLE_CALL.finditer(s):
+        args = call_args(s, m.end())
+        if len(args) < 3:
+            continue
+        cls, name = PBCLASS.search(args[0][1]), SLIT.match(args[1][1])
+        lit = ILIT.search(args[2][1])
+        if not (cls and name and lit):
+            continue
+        out[args[2][0] + lit.start()] = (cls.group(1), unquote(name.group(1)))
+    return out
+
+
+def script_rows(s, i, indent):
+    """스크립트 한 덩이 안의 `_I("…")` 전부 — 전투 호출의 것이면 화자를 달아서.
+
+    `_I`는 게임이 화면에 띄우는 문자열이라 메시지 명령과 같은 번역 대상인데,
+    명령 101/401에 안 실려 있어 옛 `scan`이 통째로 놓쳤다(Z-60).
+    """
+    battles = script_battles(s)
+    return [(i if j == 0 else i + j / 100, indent, "battle",
+             unquote(m.group(1)), *battles.get(m.start(), ("", "")))
+            for j, m in enumerate(ILIT.finditer(s))]
+
+
 def page_messages(cmdlist):
-    """(cmd, indent, kind, text) — 101/401은 한 메시지로 잇고 102는 선택지로 편다.
+    """(cmd, indent, kind, text, 직함, 이름) — 101/401은 한 메시지로 잇고 102는 선택지로 편다.
 
     cmd는 명령 인덱스, indent는 조건 분기 깊이다. 이 둘이 화자 상속의 전부다.
+    스크립트 명령(355/655와 조건 분기 111 type 12)의 `_I("…")`는 `kind="battle"`로
+    따로 나온다 — 상속의 흐름에 끼면 안 되는 자리다(`attribute` 참조).
+    직함·이름은 그 갈래에서만 차고 나머지는 빈 문자열이다.
     """
     out, buf, bi, bd = [], None, None, 0
+    sbuf, si, sd = None, None, 0                  # 355 + 655…로 이어지는 스크립트 한 덩이
     for i, cmd in enumerate(cmdlist):
         ca = cmd.attributes
         code, params = ca["@code"], ca["@parameters"]
+        if code != 655 and sbuf is not None:
+            out.extend(script_rows(sbuf, si, sd))
+            sbuf = None
         if code == 101:
             if buf is not None:
-                out.append((bi, bd, "text", buf))
+                out.append((bi, bd, "text", buf, "", ""))
             buf, bi, bd = b2s(params[0]), i, ca["@indent"]
         elif code == 401 and buf is not None:
             buf += "\n" + b2s(params[0])
         else:
             if buf is not None:
-                out.append((bi, bd, "text", buf))
+                out.append((bi, bd, "text", buf, "", ""))
                 buf = None
             if code == 102:
                 for j, c in enumerate(params[0]):
-                    out.append((i + j / 100, ca["@indent"], "choice", b2s(c)))
+                    out.append((i + j / 100, ca["@indent"], "choice", b2s(c), "", ""))
+            elif code == 355:
+                sbuf, si, sd = b2s(params[0]), i, ca["@indent"]
+            elif code == 655 and sbuf is not None:
+                sbuf += "\n" + b2s(params[0])
+            elif code == 111 and params and params[0] == 12:
+                out.extend(script_rows(b2s(params[1]), i, ca["@indent"]))
     if buf is not None:
-        out.append((bi, bd, "text", buf))
+        out.append((bi, bd, "text", buf, "", ""))
+    if sbuf is not None:
+        out.extend(script_rows(sbuf, si, sd))
     return out
 
 
@@ -109,6 +230,233 @@ def stem(s):
     return s
 
 
+def stem_steps(s):
+    """어간을 **긴 것부터** 한 단계씩 내놓는다(원시 이름은 뺀다).
+
+    끝까지 깎은 것 하나만 맞춰 보면 답을 지나친다 — `f3ow` → `f3`(목록에 있다) →
+    `f`로 한 번 더 깎여 F3가 사라졌다. 맞춰 보는 쪽이 처음 걸리는 데서 멈춘다.
+    """
+    s = s or ""
+    while (nxt := STEM.sub("", s)) != s:
+        s = nxt
+        yield s
+
+
+def voice_sprites():
+    """정본 인물 스프라이트 어간 목록(`sprite-groups.json`의 voices)."""
+    g = json.loads((HERE / "sprite-groups.json").read_text(encoding="utf-8"))["groups"]
+    return set(g.get("voices", []))
+
+
+VOICES_STRIP = re.compile(r"(Montado|Montada|Reventada|Caduca|Vestido|Monigote|Pose|"
+                          r"Pechamen|Dormido|Final|Salamence|Lira|Capucha|Herido|"
+                          r"Cabeza|Borracha|Mapa|Musica|Baln|TS)")
+VOICES_SPECIAL = {"az": "AZ", "f3": "F3", "druidaFicus": "대드루이드 피쿠스"}
+
+
+def deacc(s):
+    return unicodedata.normalize("NFD", s).encode("ascii", "ignore").decode().lower()
+
+
+def voices_map():
+    """voices 그룹 스프라이트 이름 → 한국어 인물명 (names.json 조인).
+
+    이름으로 이어지는 그림인지만 본다 — `stem_conflicts`가 「어간만 걸리고 이름은
+    어디에도 없는」 그림을 가려내는 데 쓴다.
+    """
+    names = json.loads((HERE / "names.json").read_text(encoding="utf-8"))["names"]
+    out = {}
+    groups = json.loads((HERE / "sprite-groups.json").read_text(encoding="utf-8"))["groups"]
+    for s in groups["voices"]:
+        base = VOICES_STRIP.sub("", s)
+        if base in VOICES_SPECIAL or s in VOICES_SPECIAL:
+            out[s] = VOICES_SPECIAL.get(s, VOICES_SPECIAL.get(base))
+            continue
+        ds = deacc(base)
+        hit = next((ko for es, ko in names.items()
+                    if deacc(es) == ds or (len(ds) >= 4 and (deacc(es).startswith(ds)
+                                                             or ds.startswith(deacc(es))))), None)
+        out[s] = hit
+    return out
+
+
+def roster():
+    """말투 정본 인물 명단 — `voices.md`의 **인물표(넉 칸)만** 읽는다.
+
+    ⚠ `batch_pages.voice_lines`를 여기에 쓰면 안 된다 — 그쪽은 프롬프트에 실을
+    말투를 모으느라 두 칸짜리 집단 화자표(시민·총사·아자하라 …)까지 읽는다.
+    그 명단으로 층을 가르면 잔부·집단 화자가 정본 인물(PS)로 승격한다.
+    """
+    table = {}
+    for line in (HERE.parent / "docs" / "ledger" / "voices.md").read_text(
+            encoding="utf-8").splitlines():
+        cells = [c.strip() for c in line.split("|")]
+        if len(cells) >= 5 and cells[1] and cells[1] not in ("인물", "갈래", "태그") \
+                and not cells[1].startswith("-"):
+            table[cells[1]] = cells[-2]
+    return table
+
+
+# 어간 축약이 이름 없는 그림을 정본 인물 명단으로 끌어올리는 자리. `stem("flareow")`가
+# `flare`가 되어 voices에 걸리는데(`flaraow`도 같다) 플레어단 무명 단원의 그림이고,
+# `luigiow`는 페르소나표가 다스리는 카메오다 — 셋 다 고유명 표기 목록에도 이름표에도
+# 그 이름이 없다. 전 스프라이트 전수 검사(`stem_conflicts`)로 고른 목록이고
+# `selftest`가 같은 검사를 다시 돌려 새 충돌이 생기면 떨어뜨린다.
+STEM_CONFLICT = frozenset({"flare", "flara", "luigi"})
+
+
+def voice_sprite(sprite, voices):
+    """이 그림이 정본 인물의 것인가 — **원시 이름 정확 일치가 먼저**다.
+
+    어간 일치는 그다음이고 충돌 목록을 통과한 것만 인정한다. 어간을 먼저 보면
+    `flareow`(무명 단원)가 `flare`로 접혀 정본 인물이 된다(2026-08-13 감사 §3④).
+    """
+    if not sprite:
+        return False
+    if sprite in voices:
+        return True
+    for s in stem_steps(sprite):          # 가장 긴 일치에서 멈춘다
+        if s in voices:
+            return s not in STEM_CONFLICT
+    return False
+
+
+def stem_conflicts(sprites, voices, tags=frozenset()):
+    """어간으로만 voices에 걸리는데 **이름이 어디에도 없는** 스프라이트 전수.
+
+    원시 이름이 목록에 없고 어간만 걸리는 자리를 모아, 그 어간이 고유명 표기
+    목록(names.json)으로도 이름표(`tags`)로도 이어지지 않는 것만 남긴다. 어느
+    쪽으로도 안 이어진다는 것은 「이름 없는 그림이 이름 있는 인물 자리에
+    들어왔다」는 뜻이고, 그것이 `STEM_CONFLICT`에 박히는 근거다.
+    """
+    vmap = voices_map()                          # 어간 → 한국어 인물명 조인(정본 규칙)
+    lower = {t.lower() for t in tags}
+    out = {}
+    for sp in sprites:
+        if not sp or sp in voices:
+            continue
+        for s in stem_steps(sp):                 # `voice_sprite`와 같은 걸음으로 본다
+            if s in voices:
+                if not vmap.get(s) and s.lower() not in lower:
+                    out.setdefault(s, []).append(sp)
+                break
+    return out
+
+
+def canon_names(rows, threshold=50):
+    """정본 인물 이름 — **말투 정본 등재가 행수 문턱보다 우선한다.**
+
+    문턱(이름표 50행)은 대용품이라 등재 인물을 떨어뜨렸다(2026-08-13 감사 §3③:
+    Anturia · Capitán Merlot · Barquero · Nácar · Mimi가 행수 미달로 잡담 층에
+    갔다). 등재 명단은 **`docs/ledger/voices.md`의 인물 표**다 — `voice-prompts.jsonl`
+    쪽은 `Aldeana`·`Gente`처럼 무리 이름표에 붙이는 말투 지시까지 담고 있어 명단으로
+    쓰면 행인이 정본 인물이 된다. 이름표는 스페인어에 직함이 붙어 오므로
+    `batch_pages.resolve`로 한국어 인물명까지 풀어 맞춘다.
+    """
+    from batch_pages import ko_names, resolve        # 이름표 → 한국어 인물명
+    names, names_roster = ko_names(), roster()
+    tagged = collections.Counter(r["who"] for r in rows if r["how"] == "태그")
+    return {w for w, n in tagged.items() if n >= threshold} | \
+           {w for w in tagged if resolve(w, names) in names_roster}
+
+
+# 방위 이름표(Norte·Sur·Este·Oeste)는 표지판 안내라 `batch_pages.SYS`에 들어 있다.
+# 색 낱말(Naranja·Lila·Menta)은 빼지 않는다 — 그 셋은 수수께끼 정령의 이름이고
+# 실제로 말한다(2026-08-13 감사 §2 E2).
+NONPERSON = ("trchar", "rayos")
+
+
+@functools.cache
+def tag_lists():
+    """이름표를 가르는 두 명단 — 비인물 배제와 정본 인물 화이트리스트.
+
+    배제 명단은 **`batch_pages.SYS`가 정본이다.** 여기에 따로 세우면 명단이 둘이 되고
+    「어느 쪽이 이기나」 규칙이 따라 붙는다. 화이트리스트는 `roster()`(voices.md 넉 칸
+    인물표)뿐이다 — 두 칸짜리 집단 화자표를 쓰면 시민·총사 같은 무리가 정본 인물이 된다.
+    """
+    from batch_pages import SYS, ko_names, resolve
+    return SYS, ko_names(), roster(), resolve
+
+
+def person_tag(name):
+    """사람 이름 이름표인가 — 배제 목록 → 화이트리스트 → 대문자 가드 순으로 본다.
+
+    대문자 가드만 두면 `F3`·`AZ`가 인물 목록 만드는 첫 줄에서 사라진다(둘 다
+    `isupper()`가 참이다). 그렇다고 가드부터 풀면 안 된다 — `canon_names()`의 50행
+    문턱이 `PISTA DE ENTRENADOR`(트레이너 안내판, 이름표 51행)를 이미 정본 인물
+    명단에 넣어 두었고 지금은 이 가드만이 그것을 막고 있다. 그래서 순서가 전부다.
+    """
+    if not name:
+        return False
+    sysnames, names, ros, resolve = tag_lists()
+    if name in sysnames:                    # 안내판·표지 딱지
+        return False
+    if resolve(name, names) in ros:         # 말투 정본 인물표에 있으면 사람이다
+        return True
+    return not name.isupper()
+
+
+def person_sprite(sprite, objects):
+    """그림이 사람인가 — 숫자(포켓몬 번호)·전투 그림·사물 어간을 뺀다."""
+    return bool(sprite) and not sprite.startswith(NONPERSON) \
+        and not sprite[0].isdigit() and stem(sprite) not in objects
+
+
+def classify(cast, sprite, objects, canon, voices):
+    """페이지의 층 — PS 정본 인물 · PC 이름표 없는 인물 · N 지문·시스템.
+
+    신호는 둘뿐이다(표본 126페이지 모집단 가중 정확도 0.991): **그림이 사람인가**와
+    **사람 이름 이름표가 붙었는가.** 대사 줄 수·연출 명령은 이 축에서 아무 일도 안 한다.
+    """
+    people = [c for c in cast if person_tag(c)]
+    if not people and not person_sprite(sprite, objects):
+        return "N"
+    if any(c in canon for c in people) or voice_sprite(sprite, voices):
+        return "PS"
+    return "PC"
+
+
+def page_sets(cmdlist):
+    """이 페이지가 켜는 것 — (전역 스위치 id, 셀프스위치 문자, 변수 id). 값 0이 ON이다."""
+    sw, selfsw, var = set(), set(), set()
+    for c in cmdlist:
+        a = c.attributes
+        code, p = a["@code"], a["@parameters"]
+        if code == 121 and p[2] == 0:
+            sw.update(range(p[0], p[1] + 1))
+        elif code == 123 and p[1] == 0:
+            selfsw.add(b2s(p[0]))
+        elif code == 122:
+            var.update(range(p[0], p[1] + 1))
+    return sw, selfsw, var
+
+
+def page_cond(page):
+    """페이지 조건 — (스위치 id 집합, 셀프스위치 문자 또는 None, 변수 id 또는 None)."""
+    c = page.attributes["@condition"].attributes
+    sw = {c[f"@switch{i}_id"] for i in (1, 2) if c[f"@switch{i}_valid"]}
+    return (sw,
+            b2s(c["@self_switch_ch"]) if c["@self_switch_valid"] else None,
+            c["@variable_id"] if c["@variable_valid"] else None)
+
+
+def one_shot(pages, pi):
+    """이 페이지가 한 번 쓰이고 덮이나.
+
+    RPG Maker XP는 조건을 만족하는 페이지 중 **번호가 가장 큰 것**을 띄운다. 그래서
+    1회성의 기계 정의는 「실행하면 더 높은 번호 페이지의 조건이 채워지는가」다
+    (2026-08-13 장면 종류 조사 §3.2 — 이 신호 하나로 1회성/상시 2치 정확도 0.94).
+
+    ⚠ 변수 조건은 id만 맞춰 본다 — `@variable_value` 이상인지까지는 안 센다.
+    """
+    sw, selfsw, var = page_sets(pages[pi].attributes["@list"])
+    for later in pages[pi + 1:]:
+        csw, cself, cvar = page_cond(later)
+        if (csw & sw) or (cself and cself in selfsw) or (cvar and cvar in var):
+            return True
+    return False
+
+
 def attribute(msgs, sprite="", objects=frozenset()):
     """페이지 하나의 메시지 목록에 화자를 붙인다. msgs는 cmd 순으로 정렬돼 있어야 한다.
 
@@ -126,10 +474,12 @@ def attribute(msgs, sprite="", objects=frozenset()):
     - `how="지문"` — 그림이 사물·연출(표지판·책·화살표 등)이다. 화자가 없고
       평서 지문이 정답인 자리다.
     """
-    cast = {m for _, _, _, t in msgs if (m := (TAG.match(t).group(1) if TAG.match(t) else None))}
+    battles = [m for m in msgs if m[2] == "battle"]
+    msgs = [m for m in msgs if m[2] != "battle"]
+    cast = {m for _, _, _, t, *_ in msgs if (m := (TAG.match(t).group(1) if TAG.match(t) else None))}
     obj = stem(sprite) in objects
     cur = cur_ind = None
-    for i, (cmdi, ind, kind, text) in enumerate(msgs):
+    for i, (cmdi, ind, kind, text, *_) in enumerate(msgs):
         nxt = msgs[i + 1] if i + 1 < len(msgs) else None
         prompt = bool(kind == "text" and nxt and nxt[2] == "choice" and abs(nxt[0] - cmdi) < 3)
         m = TAG.match(text)
@@ -148,7 +498,15 @@ def attribute(msgs, sprite="", objects=frozenset()):
             who, how = ("", "지문") if obj else (sprite, "그림")
         else:
             who, how = "", "미상"
-        yield cmdi, ind, kind, text, who, how, sorted(cast), prompt
+        yield cmdi, ind, kind, text, who, how, sorted(cast), prompt, ""
+
+    # 전투 호출의 대사는 **상속의 흐름 밖**이다 — 같은 페이지의 이름표를 물려받지도
+    # 물려주지도 않고(`cur`를 안 건드린다), `cast`에도 안 들어간다. 화자는 호출
+    # 인자가 직접 말해 준다. `cast`는 페이지 것을 그대로 실어 층 판정을 나머지 줄과
+    # 맞춘다 — 이 줄만 다른 층으로 갈라지면 안 되니까.
+    for cmdi, ind, kind, text, tclass, name in battles:
+        yield cmdi, ind, kind, text, name, "전투호출" if name else "스크립트", \
+            sorted(cast), False, tclass
 
 
 TRIGGER = {0: "말걸기", 1: "플레이어접촉", 2: "이벤트접촉", 3: "자동실행", 4: "병렬처리"}
@@ -192,22 +550,26 @@ def scene(trigger, n_msg, event_name="", codes=frozenset(), has_tag=False):
 
 def scan():
     rows = []
-    objects = object_sprites()
+    objects, voices = object_sprites(), voice_sprites()
+    cond_sw = set()                 # 어딘가의 페이지 조건으로 쓰이는 전역 스위치
     infos = load(open(GAME / "MapInfos.rxdata", "rb"))
     names = {k: b2s(v.attributes["@name"]) for k, v in infos.items()}
 
-    def emit(mid, mname, eid, ename, page, sprite, cmdlist, trigger=-1):
+    def emit(mid, mname, eid, ename, page, sprite, cmdlist, trigger=-1, once=False):
         msgs = page_messages(cmdlist)
-        n_msg = sum(1 for _, _, kind, _ in msgs if kind == "text")
+        n_msg = sum(1 for _, _, kind, *_ in msgs if kind == "text")
         codes = {c.attributes["@code"] for c in cmdlist}
-        has_tag = any(TAG.match(t) for _, _, kind, t in msgs if kind == "text")
+        has_tag = any(TAG.match(m[3]) for m in msgs if m[2] == "text")
         sc = scene(trigger, n_msg, ename, codes, has_tag)
-        for cmdi, ind, kind, text, who, how, cast, prompt in attribute(msgs, sprite, objects):
+        on = sorted(page_sets(cmdlist)[0])
+        for cmdi, ind, kind, text, who, how, cast, prompt, tclass in attribute(
+                msgs, sprite, objects):
             rows.append({"map": mid, "map_name": mname, "event": eid, "event_name": ename,
                          "page": page, "cmd": cmdi, "ind": ind, "sprite": sprite,
                          "trigger": trigger, "n_msg": n_msg, "scene": sc,
                          "kind": kind, "who": who, "how": how, "cast": cast,
-                         "prompt": prompt, "k": text})
+                         "prompt": prompt, "once": once, "flags": on, "k": text,
+                         "tclass": tclass})
 
     for ce in load(open(GAME / "CommonEvents.rxdata", "rb")):
         if ce is None:
@@ -220,11 +582,20 @@ def scan():
         m = load(open(p, "rb"))
         for ev in m.attributes["@events"].values():
             ea = ev.attributes
-            for pi, page in enumerate(ea["@pages"]):
+            pages = ea["@pages"]
+            for pi, page in enumerate(pages):
+                cond_sw |= page_cond(page)[0]
                 g = page.attributes["@graphic"].attributes
                 emit(mid, names.get(mid, ""), ea["@id"], b2s(ea["@name"]), pi,
                      b2s(g["@character_name"]), page.attributes["@list"],
-                     page.attributes["@trigger"])
+                     page.attributes["@trigger"], one_shot(pages, pi))
+
+    # 층과 플래그는 전량을 본 뒤에 정해진다 — 이름표 행수는 코퍼스 전체를 세야 나오고,
+    # 「진행 플래그」는 다른 맵의 페이지 조건에 쓰이는지로 갈린다.
+    canon = canon_names(rows)
+    for r in rows:
+        r["cls"] = classify(r["cast"], r["sprite"], objects, canon, voices)
+        r["flags"] = [i for i in r["flags"] if i in cond_sw]
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     with gzip.open(OUT, "wt", encoding="utf-8") as f:
@@ -317,6 +688,39 @@ def main():
             bad += hit["who"] != want
             print(f"[{mark}] {want:10s} ← {hit['who']:10s} ({hit['how']}) "
                   f"맵{hit['map']} ev{hit['event']} · {src}")
+
+        for mid, eid, want, want_how in KNOWN_BATTLE:
+            hit = next((r for r in rows if r["kind"] == "battle"
+                        and (r["map"], r["event"]) == (mid, eid)), None)
+            got = (hit["who"], hit["how"]) if hit else ("(못찾음)", "")
+            mark = "O" if got == (want, want_how) else "X"
+            ok, bad = ok + (got == (want, want_how)), bad + (got != (want, want_how))
+            print(f"[{mark}] 전투 맵{mid} ev{eid} {want or '화자없음'}({want_how}) "
+                  f"← {got[0] or '화자없음'}({got[1]})")
+
+        for field, val, want in KNOWN_CLS:
+            got = sorted({r["cls"] for r in rows if r[field] == val})
+            mark = "O" if got == [want] else "X"
+            ok, bad = ok + (got == [want]), bad + (got != [want])
+            print(f"[{mark}] {field}={val:16s} {want} ← {'·'.join(got) or '없음'}")
+
+        for (mid, eid, pi), want in KNOWN_ONCE:
+            hit = next((r for r in rows
+                        if (r["map"], r["event"], r["page"]) == (mid, eid, pi)), None)
+            got = hit and hit["once"]
+            mark = "O" if got == want else "X"
+            ok, bad = ok + (got == want), bad + (got != want)
+            print(f"[{mark}] once 맵{mid} ev{eid} p{pi} {want} ← {got}")
+
+        # 어간 충돌은 목록을 박아 두는 것이라, 원본이 바뀌면 새 충돌이 조용히 샌다.
+        conflicts = stem_conflicts({r["sprite"] for r in rows}, voice_sprites(),
+                                   {r["who"] for r in rows if r["how"] == "태그"})
+        leaked = {s: v for s, v in conflicts.items() if s not in STEM_CONFLICT}
+        print(f"[{'O' if not leaked else 'X'}] 어간 충돌 목록 밖 {leaked or '없음'}"
+              f" (전수 {sorted(conflicts)})")
+        bad += bool(leaked)
+        ok += not leaked
+
         print(f"\n채점 {ok}/{ok + bad}")
         sys.exit(1 if bad else 0)
     else:

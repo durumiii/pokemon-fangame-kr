@@ -1,0 +1,10 @@
+{"id": "150:10:0:0", "who": "pirata", "es": "No soy una entusiaste de los combates Pokémon. Ahora, me encanta el Blackjack.", "old": "난 포켓몬 배틀에는 관심 없어. 대신 블랙잭이라면 환장하지.", "new": "난 포켓몬 배틀에는 관심 없어. 대신 블랙잭이라면 환장하지.", "ok": true}
+{"id": "150:10:0:1", "who": "pirata", "es": "¿Te apetece echar una partidita rápida?", "old": "잠깐 게임 한 판 할래?", "new": "잠깐 게임 한 판 할래?", "ok": true}
+{"id": "150:10:0:2.0", "who": "pirata", "es": "Sí", "old": "예", "new": "예", "ok": true}
+{"id": "150:10:0:2.01", "who": "pirata", "es": "No", "old": "아니요", "new": "아니요", "ok": true}
+{"id": "150:10:0:14", "who": "pirata", "es": "Te explico. En una partida de Blackjack cada jugador va recibiendo cartas de forma aleatoria.", "old": "이봐, 설명해 줄게. 블랙잭은 카드 한 장씩 무작위로 받는 거야.", "new": "설명해 줄게. 블랙잭 게임에서는 각 플레이어가 무작위로 카드를 한 장씩 받는다.", "ok": true}
+{"id": "150:10:0:15", "who": "pirata", "es": "Cada vez que se reparta una carta, el jugador podrá decidir si quiere\no no quiere recibir más cartas.", "old": "카드가 배분될 때마다, 플레이어는 카드를 더 받을지 말지 결정할 수 있어.", "new": "카드가 배분될 때마다, 플레이어는 카드를 더 받을지 말지 결정할 수 있어.", "ok": true}
+{"id": "150:10:0:17", "who": "pirata", "es": "El objetivo es sumar lo más cerca posible de 21 con las cartas acumuladas.", "old": "목표는 모은 카드의 합을 21에 최대한 가깝게 맞추는 거야.", "new": "목표는 모은 카드의 합을 21에 가장 가깝게 만드는 거다.", "ok": true}
+{"id": "150:10:0:18", "who": "pirata", "es": "Si se recibe un as, el jugador puede decidir si contarlo como 1 o como 13.", "old": "에이스를 뽑으면 이를 1로 칠지 13으로 칠지 맘대로 정할 수 있지.", "new": "에이스를 뽑으면 이를 1로 칠지 13으로 칠지 맘대로 정할 수 있지.", "ok": true}
+{"id": "150:10:0:19", "who": "pirata", "es": "Explicado esto, ¡comencemos! Nos jugamos 1.000 pokécuartos.", "old": "설명은 끝났으니 시작하자고! 판돈은 1,000포켓프랑이다.", "new": "설명은 끝났으니 시작하자고! 판돈은 1,000포켓프랑이다.", "ok": true}
+{"id": "150:10:0:23", "who": "pirata", "es": "¡Eh, eh! Que no pretendo estafarte, me gusta jugar limpio.", "old": "이봐, 이봐! 널 속이려는 게 아냐, 난 정당하게 겨루는 걸 좋아한다고.", "new": "이봐, 이봐! 널 속이려는 게 아냐, 난 정당하게 겨루는 걸 좋아한다고.", "ok": true}

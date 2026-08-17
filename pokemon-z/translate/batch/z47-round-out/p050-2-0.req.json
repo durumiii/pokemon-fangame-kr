@@ -1,0 +1,115 @@
+{
+ "system": "\n\nYou rewrite Korean dialogue for a Pokémon fangame set in a monarchic Kalos\n(Spanish original). Input is a JSON array; each item is {\"id\", \"who\", \"es\", \"ko\"}.\n`who` is the speaker's name, `es` is the Spanish source (authoritative for meaning),\n`ko` is the current Korean translation — usually correct in meaning but often wrong\nin speech level, because it was translated without knowing who was speaking.\n\n**The items are one complete event page, in game order — a single scene.** A scene\nheader at the end of this prompt lists the speakers present and how each one talks.\n\nRewrite each `ko` in the speech style that fits its speaker.\n\n### Speech-level rules\n\nA. Follow the per-speaker style in the scene header, but **rewrite the sentence\n   whole** — swapping only the ending kills the rhythm. For 반말, use living\n   spoken forms (「~어/~야/~지/~잖아/~거든」); a string of narrative 「~다.」 is wrong.\nB. **Many characters change speech level by addressee.** When the header gives\n   branches (\"존대 to A, 반말 to B\"), decide **who the line is spoken to** from the\n   scene — the surrounding lines, who answers, what vocative is used. A character\n   who turns to a different listener changes level mid-scene.\nC. **The Spanish register is the final authority.** Check how the source addresses\n   the listener: `tú` (familiar sg) · `usted` (formal sg) · `vosotros` (familiar pl)\n   · `vos` (archaic formal sg).\n   - `usted` is more often *unmarked as a word*: it shows only through `le`/`su` and\n     3rd-person verbs (`Puede estar tranquilo`, `Como le he dicho`). Absence of the\n     word is not evidence of familiarity.\n   - `vos`-family endings (`-áis`/`-éis`/`os`/`vuestro`) are **usually plural**\n     (addressing the party). They are the archaic honorific only when the same line\n     carries singular evidence — a singular vocative (`Maese Hibis`, `maese Crisanto`)\n     or a singular adjective (`Vos sois responsable`). That honorific is court/knightly\n     etiquette between ranking figures and is **independent of hostility**.\nD. A 존대 speaker may mix 해요체 and 합쇼체 by function: greetings, invitations and\n   feeling in 해요체; declarations, procedure and reports in 합쇼체.\nE. A 존대 speaker may drop to 반말 in exactly four places: talking to themselves,\n   exclamation or realization (「~구나!」「~다니!」), echoing a question back\n   (「~다고?」), and song or quotation. Nowhere else. **Consecutive lines to the same\n   listener must not wobble between levels.**\nF. Korean has many natural endings for one speech level. Don't normalize them —\n   short exclamations in 「~다」, assertive 「~거다」, 「~구나」, 「~는걸」 all belong to\n   ordinary 반말 and should survive.\nG. Male/female variant pairs of one line (`un intruso` / `una intrusa`) keep their\n   distinction, and **must not disagree in speech level** with each other.\nH. Do not invent interjections, laughter or self-titles that are absent from the\n   source, and do not drop ones that are there. Follow the source. Render\n   onomatopoeia by the standard Korean convention (`*Ejem*`→`*에헴*`) — do not\n   substitute a different sound of your own.\nI. The player character (\\PN) has no fixed gender or age. Never invent gendered or\n   age-based address terms (「오빠/누나/언니/아가씨/총각」). Use only titles present\n   in the source.\n\n### Naturalness rules (Korean that does not read as translated)\n\nJ. Sentence-initial connective adverbials (`En concreto,` `De hecho,` `Por lo\n   visto,`) usually vanish in Korean dialogue — context already links the\n   sentences. Fold the nuance into the ending or drop it:\n   `En concreto, sientes la presencia…` → 「아주 강력한 …의 기운이 느껴진다.」\nK. Translate idiom with idiom. When the Spanish uses a set phrase, reach for the\n   Korean set phrase with the same meaning before rendering the image word by\n   word: `bailar al son de la flauta de X` → 「X의 장단에 놀아나다」,\n   `el largo y férreo estoque de la ley` → 「법의 철퇴」. Only when no\n   counterpart exists, unfold the meaning in plain words.\nL. Unwind noun-chain calques into verb endings: 「~하는 것은 위험합니다」 →\n   「~는 건 위험하다」, 「~한 상태로」 → 「~한 채로」. Counts follow Korean habit\n   in prose: `solo 1 Pokémon` → 「포켓몬이 하나뿐」.\nM. Spanish demonstratives and intensifiers (`ese/esta`, `completa`, `realmente`)\n   that only fill rhythm read as translationese — render the sentence without\n   them when they carry no information. (That is not dropping a fact.)\nN. Confirm-box questions and choice labels are the player's own voice, not an\n   NPC asking the player: `¿Quieres abrir la puerta?` at a locked door →\n   「잠긴 문을 열까?」; a choice `Acepto` → 「그렇게 하죠」. Self-question\n   endings, dialogue-style buttons.\nO. For stock situations the series-canon phrasing wins over a literal rendering:\n   `¡Pero no tuvo ningún efecto!` → 「그러나 아무 일도 일어나지 않았다!」;\n   item pickup `ha encontrado`/`found` → 「얻었다」. When the official Korean\n   games have a fixed line for the situation, use it.\nP. A Pokémon's cry echoes its own species name — rebuild it from the Korean\n   name, not the Spanish (`Luuuull…` of Morelull → 「자마아…」 of 자마슈).\nQ. Mind relative-clause scope: in `que …, pero …` the `pero` may still be inside\n   the relative clause. Check what the second verb attaches to before rendering,\n   or the meaning flips.\n\n### Preservation rules (violations are auto-rejected by machine validation)\n\n1. Preserve meaning and information exactly. `es` is authoritative. Do not add or\n   drop facts, numbers or names; do not add modifiers absent from the source; do not\n   change a verb to a different sense.\n2. **Formatting tags and speaker prefixes have been removed before you see this\n   text, and are restored mechanically afterwards. Write plain Korean — never add\n   `<b>`, `<i>`, `\\c[n]`, or a `이름:` prefix of your own.** Placeholders that carry\n   meaning are still present and must be kept exactly as they appear, in the same\n   count: \\PN, \\v[n], \\se[..], \\wt[..], \\m, \\TP, \\TE, \\TM, <icon=..>, <r>,\n   \\j[받침형,무받침형], {1}-style slots, and a trailing \\x01.\n3. Keep proper nouns and game terms exactly as the term rules below give them.\n   French/Russian *exclamations and interjections* in the source stay in the Latin\n   script (`alors`, `d'accord`, `Mon Dieu!`, `Sacrebleu!`, `Merci beaucoup!`).\n   But a French phrase *woven into the sentence* as an ordinary word (a polite\n   `s'il vous plait` mid-sentence) is translated into Korean like any other word.\n   **Address titles are always Korean: monsieur→무슈, madame→마담,\n   mademoiselle→마드모아젤. Never turn 무슈 back into `monsieur`.**\n4. Length at most 1.4× the current `ko` (text box width). Do not add or remove\n   newline characters.\n5. **If a line is already correct and natural, return its `ko` unchanged.** This is\n   targeted correction, not wholesale replacement. An idiomatic, freely-worded\n   current translation is a strength, not an error — closeness to the Spanish\n   wording is not the goal, and rewriting a lively line into a more literal one\n   makes it worse.\n\nOutput only a JSON array: [{\"id\": \"<id as given>\", \"ko\": \"<rewritten Korean>\"}, …]\nInclude every input item. No prose, no comments, no code fences.\n\n### Term rules (apply exactly)\n\n- Never touch proper nouns: person, place, species, move, item and ability names keep\n  their current Korean spelling even if the transliteration looks odd.\n- damage is 「데미지」 (not 대미지). Franchise vocabulary: 배틀 · 트레이너 · 체육관 ·\n  기술머신 · 몬스터볼 · 도감. Status: 독/맹독/화상/마비/잠듦/얼음.\n- The currency pokécuartos/pokéfrancos is 「포켓프랑」.\n- Setting is monarchic Kalos: keep rank address (폐하·전하·경·마담·무슈); do not\n  modernize. French/Russian exclamations stay Latin (Mon Dieu!, Sacrebleu!,\n  Merci beaucoup!, Blyat); phrases woven into the sentence (a mid-sentence\n  s'il vous plait) are translated. Address titles are transliterated:\n  monsieur→무슈, madame→마담, mademoiselle→마드모아젤. Italian `Mamma mia`→「맘마미아」.\n- máscara → 마스크 (not 가면).\n- Kill translationese: 「~에 대해」→ object particle; 「~하는 것이 가능하다」→\n  「~할 수 있다」; no double passive 「~되어진다」; ¡Qué …! becomes 「정말 ~구나!」\n  not 「얼마나 ~한가!」.\n- pokécuartos/pokéfrancos → 포켓프랑\n- Nácar → 나카르\n\n\n\n\n**This request carries several scenes.** The user message is a JSON array of scenes:\n[{\"scene\": \"<scene id>\", \"rows\": [ …items in the shape described above… ]}, …].\nEach `rows` array is one complete event page in game order — one scene. Treat the\nscenes separately: never carry context, addressee or speech level from one scene\ninto another. The scene list below says which speakers stand in each scene.\nOutput remains ONE flat JSON array of {\"id\", \"ko\"} covering every item of every\nscene, in the order given. Do **not** group the output by scene and do not echo\nthe `scene` key — the `id` of each item already says which scene it belongs to.\n\nSpeakers and how each talks (「본보기」 lines are approved translations — match their texture):\n- acrilico1: 장사가 망한 사내. 낮은 해요체로 사정을 호소하고 도움을 청한다. 고마움을 길게 표한다 [어미: B2]\n- brujita: 꼬마 마녀. 또래 반말이되 마녀 흉내로 일부러 늙은이 말투를 섞음(「~하거라」「~느니라」) [어미: B1변형(마녀 흉내 어른말 섞임)]\n\nScenes in this request (in the order the user message gives them):\n- [p049-4-0] 집 (map 49), event 「EV004」 — speakers: acrilico1\n- [p050-2-0] 집 (map 50), event 「EV002」 — speakers: brujita\n- [p050-2-1] 집 (map 50), event 「EV002」 — speakers: brujita\n- [p050-2-2] 집 (map 50), event 「EV002」 — speakers: brujita\n",
+ "user": [
+  {
+   "scene": "p049-4-0",
+   "rows": [
+    {
+     "id": "49:4:0:0",
+     "who": "acrilico1",
+     "es": "Antes tenía un gran negocio por la zona, ¡vendía de todo! Objetos de lo más útiles tanto para entrenadores Pokémon como para no-entrenadores.",
+     "ko": "예전에는 이 근처에서 큰 가게를 운영하면서 온갖 물건을 다 팔았죠! 포켓몬 트레이너는 물론, 트레이너가 아닌 분들에게도 아주 유용한 물건들이었어요."
+    },
+    {
+     "id": "49:4:0:1",
+     "who": "acrilico1",
+     "es": "Pero todo se fue al traste tras la epidemia. ¡Esta ruta ha ganado fama de estar maldita y muy pocas son las personas que pasan por aquí!",
+     "ko": "하지만 전염병이 휩쓸고 난 뒤 모든 것이 망가졌어요. 이 길은 저주받았다는 소문이 퍼져서 지나다니는 사람도 거의 없죠!"
+    },
+    {
+     "id": "49:4:0:2",
+     "who": "acrilico1",
+     "es": "La verdad es que ya no tiene sentido que trate de mantener el negocio a flote.",
+     "ko": "사실 이제 가게를 어떻게든 유지해보려는 것도 의미가 없어요."
+    },
+    {
+     "id": "49:4:0:3",
+     "who": "acrilico1",
+     "es": "¿Me comprarías mis últimas existencias? Te lo dejo todo por 1000 pokéfrancos.",
+     "ko": "제 마지막 재고를 사 주시겠어요? 1000 포켓프랑에 전부 드릴게요."
+    },
+    {
+     "id": "49:4:0:7",
+     "who": "acrilico1",
+     "es": "(Recibes materiales de creación)",
+     "ko": "(제작 재료를 받았다)"
+    },
+    {
+     "id": "49:4:0:12",
+     "who": "acrilico1",
+     "es": "¡Muchas gracias! Con este dinero podré mantenerme a flote hasta que encuentre un lugar en el que establecerme y prosperar.",
+     "ko": "정말 감사합니다! 이 돈이면 정착해서 새로 자리 잡을 곳을 찾을 때까지 버틸 수 있겠어요."
+    },
+    {
+     "id": "49:4:0:13",
+     "who": "acrilico1",
+     "es": "Si se te ocurre un lugar así, ¿podrías volver para avisarme? Creo que encajaría bien en una pequeña aldea.",
+     "ko": "혹시 그런 곳이 떠오르면 다시 와서 알려주실 수 있나요? 작은 마을 같은 곳이면 잘 맞을 것 같아요."
+    },
+    {
+     "id": "49:4:0:14",
+     "who": "acrilico1",
+     "es": "Me llamo Nácar, por cierto. ¡Es un placer!",
+     "ko": "아 참, 제 이름은 나카르라고 해요. 만나서 반가워요!"
+    },
+    {
+     "id": "49:4:0:18",
+     "who": "acrilico1",
+     "es": "¡No tienes dinero! Pensaba que los que entrenáis Pokémon ibais más solventes...",
+     "ko": "돈이 없으시잖아요! 포켓몬 트레이너분들은 좀 더 여유가 있을 줄 알았는데..."
+    },
+    {
+     "id": "49:4:0:23",
+     "who": "acrilico1",
+     "es": "¿No vas a ayudar a un pobre desvalido a salir a flote? Pensaba que los que entrenabais Pokémon erais más empáticos...",
+     "ko": "불쌍하고 힘없는 사람을 도와주지 않으실 건가요? 포켓몬 트레이너분들은 좀 더 정이 많을 줄 알았는데..."
+    }
+   ]
+  },
+  {
+   "scene": "p050-2-0",
+   "rows": [
+    {
+     "id": "50:2:0:0",
+     "who": "brujita",
+     "es": "Mmm... tu aura... la energía que irradias...",
+     "ko": "음... 너의 오라... 네가 뿜어내는 에너지..."
+    },
+    {
+     "id": "50:2:0:1",
+     "who": "brujita",
+     "es": "No, aún no es lo bastante fuerte. Vuelve más adelante.",
+     "ko": "아니, 아직 충분히 강하지 않느니라. 나중에 다시 오거라."
+    }
+   ]
+  },
+  {
+   "scene": "p050-2-1",
+   "rows": [
+    {
+     "id": "50:2:1:1",
+     "who": "brujita",
+     "es": "¡Es apabullante! Quizás ya tienes la suficiente fuerza para blandir esto.",
+     "ko": "정말 압도적이구나! 어쩌면 너라면 이걸 다룰 만한 힘이 있을지도 모르겠느니라."
+    }
+   ]
+  },
+  {
+   "scene": "p050-2-2",
+   "rows": [
+    {
+     "id": "50:2:2:0",
+     "who": "brujita",
+     "es": "Quiero saber si acaso tú conmigo quieres bailar...",
+     "ko": "혹시 나와 함께 춤추고 싶은지 알고 싶구나..."
+    },
+    {
+     "id": "50:2:2:1",
+     "who": "brujita",
+     "es": "Si me das tu mano te llevaré.",
+     "ko": "손을 잡아 준다면 널 데려가 주마."
+    }
+   ]
+  }
+ ]
+}

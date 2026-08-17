@@ -8,13 +8,17 @@
 그래서 뒤에서부터 **종결형이 분명한 문장**을 찾아 그것으로 판정한다.
 
 화자는 `speaker.py`의 귀속표를 쓴다. 이름표가 붙은 줄로 그 인물의 평소 급을
-정하고, 확정된 줄(태그+상속)이 그 급과 어긋나는지 본다.
+정하고, 확정된 줄(태그+상속+전투호출)이 그 급과 어긋나는지 본다. 전투 호출 줄은
+**검사만 받고 평소 급 계산에는 안 들어간다**(`CHECKED` 옆 주석).
 
 ⚠ 어긋남은 관측이지 처방이 아니다. 어미를 고칠 자리와 귀속이 틀린 자리가
 섞여 있어 사람이 갈라야 한다.
 
 usage:
-  uv run translate/register.py scan            어긋난 자리를 표로 뽑는다
+  uv run translate/register.py scan [출력경로] [--dual]
+                                               어긋난 자리를 표로 뽑는다
+                                               (기본: docs/log/research/<오늘>-register-mismatch.md)
+                                               --dual: 이중 말투 인물도 검사에 넣는다(SCAN_DUAL 주석 참조)
   uv run translate/register.py who <이름>       한 인물의 급 분포
   uv run translate/register.py selftest
 """
@@ -23,6 +27,7 @@ import json
 import re
 import sys
 from collections import Counter, defaultdict
+from datetime import date
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -31,7 +36,16 @@ from reg import classify, clean  # noqa: E402
 HERE = Path(__file__).parent
 ATTR = HERE / "data/speaker-attr.jsonl.gz"
 KO_MAPS = HERE / "ko/00-maps.jsonl"
-OUT = HERE.parent / "docs/log/research/2026-08-06-register-mismatch.md"
+RESEARCH = HERE.parent / "docs/log/research"
+
+
+def out_path(argv):
+    """기록층은 날짜 박제다 — 돌릴 때마다 그날 파일로 낸다. 상수로 잡아 두면
+    2026-08-06 판을 덮어썼다(2026-08-17에 실측·수선)."""
+    rest = [a for a in argv[2:] if not a.startswith("--")]
+    if rest:
+        return Path(rest[0])
+    return RESEARCH / f"{date.today():%Y-%m-%d}-register-mismatch.md"
 
 # 존대 / 하대 두 축. 나머지는 판정 보류.
 HIGH = {"합쇼", "해요"}
@@ -50,9 +64,46 @@ def speechy(text):
     """지문 꼴 문장이 실은 대화인가 — 1·2인칭 표지 유무."""
     return bool(SPEECHY.search(clean(text or "")))
 
-# 상대에 따라 급을 바꾸는 것이 정체성인 인물들. 어미만으로 어긋남을 말할 수 없다.
+# 상대에 따라 급을 바꾸는 것이 정체성인 인물들. 기본값은 **검사에서 뺀다**.
+#
+# 「청자를 모르는 것은 이들만의 사정이 아니니 일단 잡고 아닌 자리는 판정으로 내린다」는
+# 길이 있고, `scan --dual`로 그 길을 갈 수 있다(그때는 빼는 대신 `(이중)` 표시만 붙는다).
+# 다만 이 도구가 아직 채점을 안 거쳐(혼잣말·말흐림·세부 어미·청자 미고려 오탐) 넓히면
+# 오탐이 같이 늘므로, 켜는 것은 유지자 판정을 받고 이 상수를 뒤집는다.
+# 넓혔을 때의 델타는 docs/log/research/2026-08-17-register-dual-delta.md.
+SCAN_DUAL = False
+
 DUAL = {"Lanto", "Crisanto", "Melia", "Olivier", "Aure", "Merlot",
         "Hisopo", "Cendera", "Pinot"}
+
+OK = HERE / "data/register-ok.jsonl"
+
+
+def is_dual(who):
+    """귀속표의 이름표는 직함을 달고 온다 — `Alcaide Pinot`·`Capitán Merlot`·
+    `Capitana Cendera`·`Auretosk`. 맨이름으로만 맞추면 160행이 샌다
+    (2026-08-16 실측)."""
+    return any(n in (who or "") for n in DUAL)
+
+
+def load_ok(path=None):
+    """어긋남이 아니라고 판정된 자리들. 줄마다 `map`은 필수, `event`·`page`·`cmd`·`who`는
+    있는 것만 맞춘다 — 이벤트 통째·페이지 통째·명령 하나를 같은 꼴로 적는다.
+    ⚠ 한 이벤트에 화자가 여럿 서는 자리가 흔하니(맵90 ev35는 볼프람과 올리비에가
+    같이 선다) 이벤트 통째로 적을 때는 `who`를 함께 적어 남의 줄까지 덮지 마라.
+    `이유` 칸은 필수로 읽지는 않지만 근거 없는 제외가 쌓이지 않게 비워 두지 마라."""
+    p = Path(path) if path else OK
+    if not p.exists():
+        return []
+    return [json.loads(l) for l in p.read_text(encoding="utf-8").splitlines() if l.strip()]
+
+
+def judged(r, oks):
+    """이 행이 등재된 자리에 걸리면 그 줄을 돌려준다."""
+    for o in oks:
+        if all(o.get(f) in (None, r[f]) for f in ("map", "event", "page", "cmd", "who")):
+            return o
+    return None
 
 
 def sentences(text):
@@ -62,10 +113,24 @@ def sentences(text):
 
 
 # B1~B7 급 판정 (events-and-speech 「이름표 없는 잡담 NPC」 표가 정본, 2026-08-09 확장)
-BUCKET7 = {"합쇼": "B3합쇼", "해요": "B2해요", "해라친근": "B4어른말",
-           "하게": "B6하게", "해체": "B1반말"}
+# 코드↔이름의 정본은 이 표 하나다 — 라벨을 다른 파일에 다시 적지 마라.
+BUCKET_NAMES = {"B1": "반말", "B2": "해요", "B3": "합쇼", "B4": "어른말",
+                "B5": "지문평서", "B6": "하게", "B7": "대화단정"}
+B = {k: k + v for k, v in BUCKET_NAMES.items()}      # "B1" → "B1반말"
+BUCKET7 = {"합쇼": B["B3"], "해요": B["B2"], "해라친근": B["B4"],
+           "하게": B["B6"], "해체": B["B1"]}
+BCODE = re.compile(r"B([1-7])(?:" + "|".join(BUCKET_NAMES.values()) + r")?")
 B4_CMD = re.compile(r"(거라|렴|려무나)$")
 UNDET = {"체언기타", "비한글", "empty", "연결미완"}
+
+
+def spell(text):
+    """버킷 표기의 B코드를 이름으로 편다 — 프롬프트를 읽는 모델은 내부 코드를 모른다.
+
+    「B1(어른 상대만 B2)」 → 「반말(어른 상대만 해요)」. 이름이 이미 붙은 「B6하게」는
+    이름 하나로 접는다. 코드가 없는 표기(「인물 정본」·「제외(사물 …)」)는 그대로.
+    """
+    return BCODE.sub(lambda m: BUCKET_NAMES["B" + m.group(1)], text or "")
 
 
 def grade(text, lenient=False):
@@ -82,12 +147,12 @@ def grade(text, lenient=False):
         if b in UNDET:
             continue
         if b == "명령라":
-            return ("B4어른말" if B4_CMD.search(last) else "B1반말"), last, back
+            return (B["B4"] if B4_CMD.search(last) else B["B1"]), last, back
         if b == "해체" and AMBIG.search(last) and back + 1 < len(parts):
-            fallback = fallback or ("B1반말", last, back)
+            fallback = fallback or (B["B1"], last, back)
             continue
         if b == "평서다":
-            return ("B7대화단정" if speechy(text) else "B5지문평서"), last, back
+            return (B["B7"] if speechy(text) else B["B5"]), last, back
         return BUCKET7[b], last, back
     if lenient and fallback:
         return fallback
@@ -124,8 +189,14 @@ def load():
     return rows, ko
 
 
+# 검사는 하되 **평소 급 계산에는 안 넣는** 근거. 전투 호출(`pbTrainerBattle`)의 대사는
+# 화자가 호출 인자로 확정되지만, 트레이너 이름 322종 중 38종이 기존 이름표와 같은
+# 문자열이라 평소 급 표에 섞으면 확정된 인물의 급이 흔들린다(Z-60).
+CHECKED = ("태그", "상속", "전투호출")
+
+
 def dominant(rows, ko):
-    """이름표가 붙은 줄로 각 인물의 평소 급을 정한다."""
+    """이름표가 붙은 줄로 각 인물의 평소 급을 정한다 — `how="태그"`만 센다."""
     tally = defaultdict(Counter)
     for r in rows:
         if r["how"] != "태그" or not r["who"]:
@@ -139,15 +210,16 @@ def dominant(rows, ko):
     return tally
 
 
-def scan():
+def scan(scan_dual=SCAN_DUAL):
     rows, ko = load()
     tally = dominant(rows, ko)
+    oks = load_ok()
     out, skipped = [], Counter()
     for r in rows:
         who = r["who"]
-        if r["kind"] != "text" or r["how"] not in ("태그", "상속") or not who:
+        if r["kind"] not in ("text", "battle") or r["how"] not in CHECKED or not who:
             continue
-        if who in DUAL:
+        if is_dual(who) and not scan_dual:
             skipped["이중말투"] += 1
             continue
         v = ko.get(ko_key(r["k"]))
@@ -169,24 +241,32 @@ def scan():
         if share < 0.7:
             skipped["평소 급이 갈림"] += 1
             continue
-        out.append(dict(map=r["map"], event=r["event"], cmd=r["cmd"], who=who,
+        if judged(r, oks):
+            skipped["판정됨"] += 1
+            continue
+        out.append(dict(map=r["map"], event=r["event"], page=r["page"], cmd=r["cmd"],
+                        who=who, dual=is_dual(who),
                         how=r["how"], now=a, usual=usual, last=last, back=back,
                         share=round(share, 2), n=sum(c.values()), ko=v))
-    out.sort(key=lambda x: (-x["share"], x["map"], x["event"], x["cmd"]))
+    out.sort(key=lambda x: (-x["share"], x["map"], x["event"], x["page"], x["cmd"]))
     return out, skipped, tally
 
 
-def write(out, skipped, tally):
-    L = ["# 어미 급이 어긋난 자리 (2026-08-06 재생성)", "",
+def write(out, skipped, tally, path, dual=False):
+    L = [f"# 어미 급이 어긋난 자리 ({date.today():%Y-%m-%d} 생성)", "",
          "화자의 평소 급은 **이름표가 붙은 줄**로 정하고, 확정된 줄이 그와 어긋나는지 본다.",
          "⚠ 어긋남은 관측이지 처방이 아니다 — 어미를 고칠 자리와 귀속이 틀린 자리가 섞여 있다.",
-         "이중 말투가 정체성인 인물 아홉은 판정에서 뺐다.", "",
+         ("상대에 따라 격을 갈아입는 인물 아홉도 검사에 넣었다 — 화자 칸의 **(이중)** 표시가 그것이다."
+          if dual else "상대에 따라 격을 갈아입는 인물 아홉은 판정에서 뺐다(`scan --dual`로 넣을 수 있다)."),
+         "어긋남이 아니라고 판정한 자리는 `translate/data/register-ok.jsonl`에 근거와 함께 등재하면",
+         "다음 실행부터 목록에서 빠지고 「판정됨」으로 세어진다.", "",
          f"어긋난 자리 **{len(out)}곳**. 세지 않은 것: " +
          " · ".join(f"{k} {v}" for k, v in skipped.most_common()), "",
-         "| 맵:이벤트:명령 | 화자 | 귀속 | 지금 | 평소 | 평소 비율 | 근거 어절 | 현행 번역 |",
+         "| 맵:이벤트:페이지:명령 | 화자 | 귀속 | 지금 | 평소 | 평소 비율 | 근거 어절 | 현행 번역 |",
          "|---|---|---|---|---|--:|---|---|"]
     for r in out:
-        L.append(f"| {r['map']}:{r['event']}:{r['cmd']} | {r['who']} | {r['how']} | "
+        L.append(f"| {r['map']}:{r['event']}:{r['page']}:{r['cmd']} | "
+                 f"{r['who']}{' (이중)' if r['dual'] else ''} | {r['how']} | "
                  f"{r['now']} | {r['usual']} | {r['share']} ({r['n']}줄) | {r['last']} | "
                  f"{r['ko'][:120].replace('|', '｜')} |")
     L += ["", "## 인물별 급 분포 (이름표 줄 기준, 10줄 이상)", "",
@@ -195,8 +275,8 @@ def write(out, skipped, tally):
         if sum(c.values()) < 10:
             continue
         L.append(f"| {who} | {c['존대']} | {c['하대']} | {c.most_common(1)[0][0]} |")
-    OUT.write_text("\n".join(L) + "\n", encoding="utf-8")
-    print(f"{len(out)}곳 → {OUT}")
+    path.write_text("\n".join(L) + "\n", encoding="utf-8")
+    print(f"{len(out)}곳 → {path}")
 
 
 def selftest():
@@ -236,6 +316,29 @@ def selftest():
     assert grade("포켓몬센터에 오신 것을 환영해요.")[0] == "B2해요"
     assert grade("이것을 증표로 받아주십시오.")[0] == "B3합쇼"
     assert grade("나랑 같이 가자!")[0] == "B1반말"
+    # 버킷 표기 펴기 — 프롬프트에 B코드가 새지 않는다
+    assert spell("B1(어른 상대만 B2)") == "반말(어른 상대만 해요)"
+    assert spell("B6하게(배틀 도발·혼잣말은 B1)") == "하게(배틀 도발·혼잣말은 반말)"
+    assert spell("B1+B7(총사 계열)") == "반말+대화단정(총사 계열)"
+    assert spell("제외(사물 — 잠긴 문 안내는 지문 규칙)").startswith("제외")
+    # 출력 경로 — 기본은 오늘 날짜, 인자가 있으면 그것
+    assert out_path(["register.py", "scan"]).name == f"{date.today():%Y-%m-%d}-register-mismatch.md"
+    assert out_path(["register.py", "scan", "/tmp/x.md"]) == Path("/tmp/x.md")
+    assert out_path(["register.py", "scan", "--dual"]).name.endswith("-register-mismatch.md")
+    assert out_path(["register.py", "scan", "--dual", "/tmp/x.md"]) == Path("/tmp/x.md")
+    # 판정 등재는 자리 단위 — 적은 칸만 맞추고 안 적은 칸은 통째로 걸린다
+    row = dict(map=112, event=4, page=0, cmd=254, who="Lanto")
+    assert judged(row, [{"map": 112, "event": 4, "page": 0, "cmd": 254}])
+    assert judged(row, [{"map": 90, "event": 35}]) is None
+    assert judged(row, [{"map": 112, "event": 4}])            # 이벤트 통째
+    assert judged(row, [{"map": 112, "event": 4, "page": 0}])  # 페이지 통째
+    assert judged(row, [{"map": 112, "event": 4, "cmd": 9}]) is None
+    # 화자 칸은 한 이벤트에 여럿이 설 때 남의 줄을 안 덮게 한다
+    assert judged(row, [{"map": 112, "event": 4, "who": "Crisanto"}]) is None
+    assert judged(row, [{"map": 112, "event": 4, "who": "Lanto"}])
+    # 실제 등재분이 읽히고 이유 칸이 비어 있지 않은가
+    real = load_ok()
+    assert real and all(o.get("이유") and o.get("map") is not None for o in real)
     print("selftest 통과")
 
 
@@ -246,7 +349,8 @@ def main():
     if cmd == "selftest":
         selftest()
     elif cmd == "scan":
-        write(*scan())
+        dual = "--dual" in sys.argv
+        write(*scan(dual or SCAN_DUAL), out_path(sys.argv), dual=dual or SCAN_DUAL)
     elif cmd == "who" and len(sys.argv) > 2:
         rows, ko = load()
         t = dominant(rows, ko)

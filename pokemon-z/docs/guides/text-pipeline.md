@@ -22,6 +22,19 @@ dat 포맷 문제를 만났을 때.
 | ⑤ 로직-문자열 결합(기능 버그) | 〃 | 〃 (예: 부적 18종) |
 | ⑥ 그림에 그려 넣은 글자 (PNG 베이크) | Graphics/Pictures (.orig 짝 = 한글화본) | PIL 재렌더. 텍스트 층 전수 미스면 이 층 의심. 상태이상 아이콘 띠는 `tools/status_icon.py` |
 
+⚠ **이름이라고 다 번역표를 타지는 않는다.** 트레이너 이름은 `pbGetMessageFromHash`를
+거치지만 **포켓몬 별명에는 그 포장이 없어**(`PTrainer_NPCTrainers`의 `pokemon.name=poke[14]`)
+`trainers.dat`의 값이 그대로 화면에 뜬다. 보스 이름을 코드가 직접 대입하는 자리도 있다
+(`PField_EncounterModifiers`의 `pokemon.name="..."`). 둘 다 `_INTL` 포장이 없어 어느 절에도
+담기지 않으니 **④층과 같은 소스 수술(`share/patch_intl.py` EDITS)로 간다**. 이름이 원문으로
+뜬다는 제보를 받으면 절을 뒤지기 전에 대입 자리부터 봐라 — `grep '\.name *= *"'`.
+
+⚠ **PBS 텍스트(`PBS/*.txt`)는 고치지 마라.** 게임은 평시에 PBS를 읽지 않는다 — 컴파일이
+`Compiler` 절의 `if $DEBUG` 블록 안에 있다. 그런데 재컴파일 여부가 「PBS 최신 수정시각 ≥
+Data 최신 수정시각」으로 정해지고, 서면 `Data/`의 21개 dat를 **먼저 지우고** PBS에서 전부
+다시 굽는다. 지금 설치본은 Data가 더 새것이라 안 걸리지만, PBS를 한 번 고치면 그 균형이
+뒤집혀 누군가 디버그로 실행하는 순간 우리가 얹은 것이 원본 내용으로 되돌아간다.
+
 값 판정은 셋뿐: **(A) 본가에 있다 → 판정하지 않고 조회한다.** 조회처는 둘이다 —
 이름표 `translate/canon/canon.jsonl`(PKHeX 산 — verify가 전수 대조. 이름만 같은 별개
 대상은 canon/exceptions.jsonl, 구세대 스페인어명은 canon/aliases.jsonl)과 **문장 코퍼스
@@ -75,6 +88,16 @@ dat 포맷 문제를 만났을 때.
 아래로 읽으며 마지막 머리 줄을 기억해야 한다. `k`에는 **줄바꿈이 박혀 있다**(원문이 화면
 너비로 접힌 자리) — 다른 표와 이을 때는 양쪽 다 `re.sub(r"\s+", " ", s).strip()`로 줄여라.
 
+**게임의 조회 사슬은 셋이다** — 대사가 뜨는 순간의 **현재 맵** 해시를 먼저 보고, 없으면
+**맵0**을 보고, 그래도 없으면 원문을 그대로 띄운다(`Intl_Messages`의 `getFromMapHash`).
+맵0은 상류가 공통 이벤트 대사를 넣는 칸이자 **전역 폴백**이라, 어느 맵에서 조회될지
+모르는 대사는 여기 얹으면 잡힌다(맵 절 추가분 `translate/ko/00-maps.add.jsonl`). 맵별
+등재가 먼저 이기므로 맵0에 얹어도 기존 번역을 덮지 않는다.
+
+⚠ **「이름만 한글이고 문장은 스페인어」는 번역이 반쯤 된 것이 아니라 조회가 통째로
+실패한 자리다.** `UI Text KR` 모드가 화면에 뜨는 모든 문자열에 인물 이름 24개를 gsub하는데
+그것이 번역 조회보다 뒤에 걸리기 때문이다. 제보를 읽을 때 이 꼴을 놓치지 마라.
+
 이 구조의 함의 하나가 번역 판단을 좌우한다. **같은 원문이 맵마다 별개 줄로 복제돼 있어
 자리마다 다른 값을 넣을 수 있지만, 한 맵 안에서는 한 값을 공유한다.** 격이 다른 화자
 여럿이 한 맵에서 같은 문구를 쓰면 나눌 수 없다([events-and-speech](events-and-speech.md)의
@@ -82,8 +105,18 @@ dat 포맷 문제를 만났을 때.
 
 코드가 읽고 쓰는 데이터는 `translate/data/`에 있다 — 귀속표(`speaker-attr.jsonl.gz`) ·
 조인표(`map-speaker-join.jsonl.gz`) · 익명 화자 판정본 · 보호 목록(`protected.jsonl`) ·
-승인분(`approved-lines.jsonl`·`approved-events.jsonl`). **기록층(`docs/log/`)에 두지 않는다** —
+승인분(`approved-lines.jsonl`·`approved-events.jsonl`) · **동결 목록
+(`frozen-keys.jsonl`) — 손으로 확정해 배치 재번역에 다시 안 태우는 절23 키.
+`batch.py`가 전투 표현 대장(`battle-expr-replacements.json`)의 키와 합쳐 읽는다** ·
+어미 급 판정분(`register-ok.jsonl`) — 검사에 걸렸으나 어긋남이 아니라고 판정한 자리.
+**기록층(`docs/log/`)에 두지 않는다** —
 박제와 살아 있는 데이터는 생명주기가 다르다.
+
+⚠ **기록층에 산출을 내는 도구는 출력 경로를 상수로 잡지 마라 — 돌릴 때마다 그날 날짜
+파일로 낸다.** 상수 경로는 지난 날짜의 박제를 조용히 덮고, 덮인 파일이 기준선처럼
+읽힌다. `register.py scan`이 그 꼴이다: 기본 경로가
+`docs/log/research/<오늘>-register-mismatch.md`이고, 다른 자리에 내려면 경로를 인자로
+준다(`uv run translate/register.py scan <경로>`).
 
 - **정본을 고치는 도구만 쓴다** — dat를 직접 문지르는 수정은 빌드 한 번에 지워진다.
   부득이 dat를 직접 고쳤으면(웹 스튜디오 등) **`harvest.py`로 회수한다**:
@@ -92,7 +125,10 @@ dat 포맷 문제를 만났을 때.
   충돌로 알린다. ⚠ **`export.py`로 하지 마라** — 통째 덮기라 정본이 옛 값으로 돌아간다
   (2026-08-08 실측 282행). export는 절 구조를 처음 만들거나 `*.add.jsonl`을 접어 넣는 자리다.
 - **`*.add.jsonl`로 새 키를 얹었으면 빌드 뒤 `export.py`로 base jsonl에 접어 넣어라** —
-  안 그러면 verify의 절23 미러 대조가 어긋난다.
+  안 그러면 verify의 절23 미러 대조가 어긋난다. 접힌 뒤로는 **base가 정본이고 추가분의
+  값은 낡은 사본**이다(`build.py`가 접힌 키를 건너뛴다). 추가분 파일을 고쳐 값을 바꾸려
+  들지 마라 — 고칠 자리는 base다. **접은 줄은 추가분 파일에서 지운다** — 아무 일도 안
+  하면서 낡은 값을 들고 있어 다음 사람이 그것을 정본으로 읽는다.
 - 수정 후 `uv run translate/verify.py`, 재배포 전 `--strict`.
 
 ### 로컬 스튜디오 — `translate/fixgui.py`
@@ -206,6 +242,21 @@ rubymarshal로 열어 섹션별 zlib 해제 후 `_INTL("키")` 정확 일치로 
   앵커라 `\r\n`은 공백이 아니라 `\n`으로 접히고, 키가 그 모양이 아니면 **조용히
   스페인어가 나온다**(예외도 로그도 없다). 정의는 `build.py string_to_key`(포터블 루비
   오라클로 전량 검증) — 의심되면 probe.py가 이 정규화로 조회해 준다.
+- **루비 오라클 돌리는 법** — dat가 게임에서 어떻게 읽히는지 판정할 때는 파이썬 재현이
+  아니라 루비 실물로 잰다. sudo 없이 tar 하나로 끝난다:
+  ```
+  curl -sL -o pr.tar.gz https://github.com/Homebrew/homebrew-portable-ruby/releases/download/3.4.5/portable-ruby-3.4.5.x86_64_linux.bottle.tar.gz
+  tar xzf pr.tar.gz -C rb && ./rb/portable-ruby/3.4.5/bin/ruby -v
+  ```
+  클래스 정의는 **흉내 내지 말고 게임 스크립트에서 줄째 잘라 쓴다**(`Intl_Messages`의
+  `OrderedHash`·`Messages`). `Marshal.load`는 모르는 클래스에서 죽으니 먼저 정의하고,
+  RGSS 함수 `Kernel.pbRgssOpen`은 `File.open`으로 채운다. **대조군을 함께 돌려라** —
+  원문이 나오는 판까지 봐야 판정이 선다. 게임 설치본은 빌드가 이미 들어가 대조군이 못
+  되니 `share/dist/`의 배포본을 쓴다.
+  **구판이 궁금하면 1.8.7도 도커로 받는다** — `docker run --rm -v "<작업>:/w:ro" -w /w
+  ollijh/ruby1.8:stretch-slim ruby -I. <시험>.rb`. 1.8에는 `String#encoding`이 없으니
+  키·기댓값을 바이트 리터럴로 적어 두 판이 같은 것을 비교하게 하라. 남는 미확인은 RGSS
+  내장 루비가 1.8.1이라는 것뿐이다.
 - 스크립트 리터럴의 루비 보간(`#{...}`)은 번역표가 원천 불가 — `share/patch_intl.py`
   소스 수술(멱등)에 EDITS로 얹는다. 이름 「동등 비교」가 로직에 박힌 자리도 같은 도구 몫.
 - 조사 자동 선택(`\j[받침형,무받침형]`)은 모드가 아니라 **한글패치 코어의 본문 섹션**이다.

@@ -1,0 +1,2 @@
+{"id": "190:11:0:1", "who": "", "es": "¿Has hablado con el capitán <b>Merlot</b> para recibir las órdenes?", "old": "<b>메를로</b> 대장에게 명령을 전달받았나?", "new": "<b>메를로</b> 대장님께 임무는 전달받았나?", "ok": true, "why": null}
+{"id": "190:11:0:2", "who": "", "es": "¡Preséntate ante él si no lo has hecho!", "old": "아직 안 받았다면 당장 가서 보고하도록 해!", "new": "아직 안 받았다면 가서 보고해라!", "ok": true, "why": null}

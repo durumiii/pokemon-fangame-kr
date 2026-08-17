@@ -1176,9 +1176,9 @@
 {"k": "Shadow Pokémon can't be taught any moves.", "v": "그림자 포켓몬에게는 어떤 기술도 가르칠 수 없습니다."}
 {"k": "{1} and {2} are not compatible.", "v": "{1} and {2} are not compatible."}
 {"k": "{1} can't be learned.", "v": "{1} can’t be learned."}
-{"k": "\\se[accesspc]Booted up an HM.", "v": "\\se[accesspc]비전머신을 기동시켰다."}
+{"k": "\\se[accesspc]Booted up an HM.", "v": "\\se[accesspc]비전머신을 켰다!"}
 {"k": "It contained {1}.\u0001", "v": "It contained {1}.\u0001"}
-{"k": "\\se[accesspc]Booted up a TM.", "v": "\\se[accesspc]기술머신을 기동시켰다."}
+{"k": "\\se[accesspc]Booted up a TM.", "v": "\\se[accesspc]기술머신을 켰다!"}
 {"k": "Teach {1} to {2}?", "v": "{2}에게 {1}\\j[을,를] 가르치겠습니까?"}
 {"k": "You used your last {1}.", "v": "You used your last {1}."}
 {"k": "Can't use that on {1}.", "v": "Can’t use that on {1}."}
@@ -1661,7 +1661,7 @@
 {"k": "There's no room to store items.", "v": "도구를 보관할 공간이 없습니다."}
 {"k": "Deposited {1} {2}.", "v": "Deposited {1} {2}."}
 {"k": "Toss", "v": "버린다"}
-{"k": "Deselect", "v": "등록 해제"}
+{"k": "Deselect", "v": "해제"}
 {"k": "Register", "v": "등록한다"}
 {"k": "Invalid pocket: {1}", "v": "Invalid pocket: {1}"}
 {"k": "The item number is invalid.", "v": "The item number is invalid."}
@@ -3005,7 +3005,7 @@
 {"k": "¿A qué posición mover?", "v": "어느 위치로 옮길까?"}
 {"k": "¿Qué quieres hacer con la carta?", "v": "편지를 어떻게 할까?"}
 {"k": "Leer", "v": "읽기"}
-{"k": "Quitar", "v": "없앤다"}
+{"k": "Quitar", "v": "가져온다"}
 {"k": "Usar", "v": "사용한다"}
 {"k": "Dar", "v": "건네준다"}
 {"k": "Mover", "v": "교체"}
@@ -3093,7 +3093,7 @@
 {"k": "¿Seguro que quieres tirar {1} {2}?", "v": "정말 {1} {2}\\j[을,를] 버릴까?"}
 {"k": "¡Has tirado {1} {2}!", "v": "{1} {2}\\j[을,를] 버렸다!"}
 {"k": "Retirar", "v": "볼에 넣는다"}
-{"k": "Has seleccionado {1}.", "v": "{1}\\j[을,를] 선택했다."}
+{"k": "Has seleccionado {1}.", "v": "{1}\\j[을,를] 어떻게 할까?"}
 {"k": "¿Cuántos quieres retirar?", "v": "몇 개를 꺼낼까?"}
 {"k": "No hay más espacio en la Mochila.", "v": "가방에 자리가 없다."}
 {"k": "Retiraste {1} {2}(s).", "v": "{1}의 {2}\\j[을,를] 꺼냈다."}
@@ -3103,7 +3103,7 @@
 {"k": "No hay espacio para guardar objetos.", "v": "도구를 보관할 공간이 없다."}
 {"k": "Se depositó {1} {2}(s).", "v": "{1} {2}\\j[을,를] 맡겼다."}
 {"k": "Tirar", "v": "버린다"}
-{"k": "Deseleccionar", "v": "등록 해제"}
+{"k": "Deseleccionar", "v": "해제"}
 {"k": "Registrar", "v": "등록한다"}
 {"k": "No se puede llevar {1}.", "v": "{1}\\j[은,는] 지닐 수 없다."}
 {"k": "¿Cuántos {1} quieres tirar?", "v": "{1}\\j[을,를] 몇 개 버릴까?"}
@@ -3974,7 +3974,7 @@
 {"k": "Cebo", "v": "먹이"}
 {"k": "Piedra", "v": "돌"}
 {"k": "Llamar", "v": "Llamar"}
-{"k": "{1} está seleccionado.", "v": "{1}\\j[이,가] 선택되어 있다."}
+{"k": "{1} está seleccionado.", "v": "{1}\\j[을,를] 어떻게 할까?"}
 {"k": "¿En qué Pokémon usarlo?", "v": "어느 포켓몬에게 쓸까?"}
 {"k": "Sin objetivo por alguna razón...", "v": "어째선지 대상이 없다..."}
 {"k": "PS Máx.<r>+{1}\nAtaque<r>+{2}\nDefensa<r>+{3}\nAt. Esp<r>+{4}\nDef. Esp<r>+{5}\nVelocidad<r>+{6}", "v": "최대HP<r>+{1}\r\n공격<r>+{2}\r\n방어<r>+{3}\r\n특수공격<r>+{4}\r\n특수방어<r>+{5}\r\n스피드<r>+{6}"}
@@ -4124,7 +4124,7 @@
 {"k": "¡{1} intercambió todos los cambios de Ataque y Ataque Especial con el objetivo!", "v": "{1}\\j[이,가] 상대와 공격·특수공격 변화를 모두 맞바꿨다!"}
 {"k": "¡{1} intercambió todos los cambios de Defensa y Defensa Especial con el objetivo!", "v": "{1}\\j[이,가] 상대와 방어·특수방어 변화를 모두 맞바꿨다!"}
 {"k": "¡{1} intercambió los cambios de características con el objetivo!", "v": "{1}\\j[이,가] 상대와 능력 변화를 맞바꿨다!"}
-{"k": "¡{1} copió las nuevas características de {2}!", "v": "{1}\\j[이,가] {2}의 새 능력을 복사했다!"}
+{"k": "¡{1} copió las nuevas características de {2}!", "v": "{1}\\j[이,가] {2}의 능력 변화를 복사했다!"}
 {"k": "¡Neblina ha cubierto a tu equipo!", "v": "우리 편은 흰안개에 둘러싸였다!"}
 {"k": "¡Neblina ha cubierto al equipo enemigo!", "v": "상대는 흰안개에 둘러싸였다!"}
 {"k": "¡{1} cambió su Ataque y Defensa!", "v": "{1}\\j[은,는] 자신의 공격과 방어를 맞바꿨다!"}
@@ -4887,9 +4887,9 @@
 {"k": "\\se[]{1} ha olvidado cómo usar {2}. Y... ¡{1} ha aprendido {3}!\\se[MoveLearnt]", "v": "\\se[]{1}\\j[은,는] {2}의 사용법을 잊었다! 그리고... {1}\\j[은,는] {3}\\j[을,를] 배웠다!\\se[MoveLearnt]"}
 {"k": "No se le puede enseñar ningún movimiento a un Pokémon Oscuro.", "v": "그림자 포켓몬에게는 기술을 가르칠 수 없다."}
 {"k": "{1} y {2} no son compatibles.", "v": "{1}\\j[과,와] {2}\\j[은,는] 맞지 않는다."}
-{"k": "\\se[accesspc]MO iniciada.", "v": "\\se[accesspc]비전머신 시작."}
+{"k": "\\se[accesspc]MO iniciada.", "v": "\\se[accesspc]비전머신을 켰다!"}
 {"k": "Ésta contiene {1}.\u0001", "v": "여기에는 {1}\\j[이,가] 들어 있다.\u0001"}
-{"k": "\\se[accesspc]MT iniciada.", "v": "\\se[accesspc]기술머신 시작."}
+{"k": "\\se[accesspc]MT iniciada.", "v": "\\se[accesspc]기술머신을 켰다!"}
 {"k": "¿Quieres enseñarle {1} a {2}?", "v": "{2}에게 {1}\\j[을,를] 가르칠까?"}
 {"k": "Has usado el último {1}.", "v": "마지막 {1}\\j[을,를] 다 썼다."}
 {"k": "No se puede usar eso en {1}.", "v": "그건 {1}에게 쓸 수 없다."}
@@ -5626,7 +5626,7 @@
 {"k": "Dime, joven, ¿tienes el valor suficiente para enfrentarte a un monstruo del pantano?", "v": "말해보게, 젊은이. 늪지의 괴물에 맞설 담력이 있는가?"}
 {"k": "Bien, así que has usado ese truco. Intentaré fijarme.", "v": "좋아, 그런 수법을 썼군. 잘 지켜보도록 하지."}
 {"k": "Hasta aquí. Vamos a ponernos serios.", "v": "여기까지다. 진지하게 나가볼까."}
-{"k": "¡No lo has atrapado ni de coña!", "v": "잡기는커녕 어림도 없었어!"}
+{"k": "¡No lo has atrapado ni de coña!", "v": "잡기는커녕 어림도 없었다!"}
 {"k": "¡Vaya! ¡Parecía que lo tenías!", "v": "와! 거의 잡은 것 같았는데!"}
 {"k": "¡Agh! ¡Por muy poco!", "v": "윽! 아깝다!"}
 {"k": "¡Va! ¡Ha faltado poquísimo!", "v": "아! 정말 아깝다!"}
@@ -6059,7 +6059,7 @@
 {"k": "Ha desaparecido la extraña sensación que había en el terreno de combate.", "v": "배틀 필드에 감돌던 기묘한 기운이 사라졌다."}
 {"k": "¡La sensación extraña desapareció del campo!", "v": "기묘한 기운이 필드에서 사라졌다!"}
 {"k": "¡{1} megaevoluciona gracias al vínculo con {3}!", "v": "{3}\\j[과,와]의 유대 덕분에 {1}\\j[이,가] 메가진화했다!"}
-{"k": "¡Las dimensiones han vuelto a la normalidad!", "v": "뒤틀어진 시공이 원래대로 돌아왔다!"}
+{"k": "¡Las dimensiones han vuelto a la normalidad!", "v": "뒤틀린 시공이 원래대로 되돌아왔다!"}
 {"k": "¡La corriente eléctrica ha desaparecido del campo de batalla!", "v": "일렉트릭필드가 배틀 필드에서 사라졌다!"}
 {"k": "¡El campo de hierba ha desaparecido del campo de batalla!", "v": "그래스필드가 배틀 필드에서 사라졌다!"}
 {"k": "¡La niebla se ha desvanecido del campo de batalla!", "v": "미스트필드가 배틀 필드에서 사라졌다!"}
@@ -6095,10 +6095,10 @@
 {"k": "Había una vez un Pokémon Princesa que se hizo muuuuuuy fuerte...", "v": "옛날 옛적에 아주아주 강해진 공주 포켓몬이 있었대..."}
 {"k": "Estás a punto de desatar un calor infernal, ¿lo has pensado bien?", "v": "지옥 같은 열기를 해방하려는 참인데, 잘 생각해 보았나?"}
 {"k": "No puedes viajar aquí.", "v": "여기서는 공중날기를 할 수 없다."}
-{"k": "El Pokévial está vacío. Recárgalo en el Centro Pokémon.", "v": "포켓몬약병이 비었습니다. 포켓몬센터에서 채워 주세요."}
-{"k": "¿Curar a tu equipo con el Pokévial?", "v": "포켓몬약병으로 파티를 회복시키겠습니까?"}
-{"k": "¿Curar a tu equipo con el Pokévial? Le quedan {1} usos de {2}", "v": "포켓몬약병으로 파티를 회복시키겠습니까? {2}회 중 {1}회 남음"}
-{"k": "¿Quieres curar a tu equipo con el Pokévial? Le quedan {1} usos de {2}.", "v": "포켓몬약병으로 파티를 회복시키겠습니까? {2}회 중 {1}회 남았습니다."}
+{"k": "El Pokévial está vacío. Recárgalo en el Centro Pokémon.", "v": "포켓몬약병이 비었다. 포켓몬센터에서 채울 수 있다."}
+{"k": "¿Curar a tu equipo con el Pokévial?", "v": "포켓몬약병으로 파티를 회복시킬까?"}
+{"k": "¿Curar a tu equipo con el Pokévial? Le quedan {1} usos de {2}", "v": "포켓몬약병으로 파티를 회복시킬까? {2}회 중 {1}회 남았다."}
+{"k": "¿Quieres curar a tu equipo con el Pokévial? Le quedan {1} usos de {2}.", "v": "포켓몬약병으로 파티를 회복시킬까? {2}회 중 {1}회 남았다."}
 {"k": "El agua parece tranquila, ¿quieres navegar?", "v": "수면이 잔잔해 보인다. 파도타기를 할까?"}
 {"k": "¡{1} usó Montura Surf!", "v": "{1}\\j[은,는] 파도타기라이드를 썼다!"}
 {"k": "¡{2} de {1} provocó una nevada!", "v": "{1}의 {2}\\j[이,가] 눈을 내리게 했다!"}
@@ -6366,7 +6366,7 @@
 {"k": "Autoguardado Completado", "v": "Autoguardado Completado"}
 {"k": "", "v": ""}
 {"k": "¡{2} de {1} confundió a {3}!", "v": "{1}의 {2}\\j[이,가] {3}\\j[을,를] 혼란시켰다!"}
-{"k": "¡#{pbThis} alteró las dimensiones!", "v": "#{pbThis}\\j[이,가] 차원을 뒤틀었다!"}
+{"k": "¡#{pbThis} alteró las dimensiones!", "v": "#{pbThis}\\j[은,는] 시공을 뒤틀었다!"}
 {"k": "hemorragia", "v": "출혈"}
 {"k": "¡{1} se curó de la Hemorragia!", "v": "{1}의 출혈이 멎었다!"}
 {"k": "¡{1} está sangrando, recibirá más golpes críticos!", "v": "{1}\\j[이,가] 피를 흘리고 있다. 급소를 더 자주 맞게 된다!"}
@@ -6400,7 +6400,7 @@
 {"k": "¡Entra en razón, por favor! ¡Ni el más feroz de los ejércitos enemigos me dio tanta guerra!", "v": "제발 정신 좀 차려! 가장 사나운 적군도 나를 이만큼 애먹이진 않았다고!"}
 {"k": "¡Observa lo que está a punto de suceder! ¡Un maleficio forjado en el crisol de las llamas!", "v": "이제 무슨 일이 벌어질지 잘 봐라! 불길의 도가니 속에서 벼려낸 저주다!"}
 {"k": "¡{1} sufre una terrible pesadilla!", "v": "{1}\\j[은,는] 끔찍한 악몽에 시달린다!"}
-{"k": "Antes era un hombre débil. ¡Pero de ese hombre débil resurgió un auténtico gigante con voluntad inquebrantable!", "v": "예전엔 약한 사내였지. 하지만 그 약한 사내에게서 꺾이지 않는 의지를 가진 진짜 거인이 태어났다!"}
+{"k": "Antes era un hombre débil. ¡Pero de ese hombre débil resurgió un auténtico gigante con voluntad inquebrantable!", "v": "예전의 나는 나약한 인간이었다. 하지만 그 나약함을 딛고, 불굴의 의지를 지닌 진정한 거인으로 다시 일어섰다!"}
 {"k": "¡Mira! ¡Mira ahora! No te lo pierdas, ¿eh?", "v": "봐! 지금 봐! 놓치지 마, 알겠지?"}
 {"k": "El enemigo ya esta rodeado de púas", "v": "상대는 이미 압정에 둘러싸여 있다"}
 {"k": "¡El equipo enemigo está rodeado de púas!", "v": "상대 팀 주위에 압정이 깔렸다!"}
@@ -6797,7 +6797,7 @@
 {"k": "¡{1} ha recibido {2}!\\se[ItemGet]\\1", "v": "{1}\\j[은,는] {2}\\j[을,를] 받았다!\\se[ItemGet]\\1"}
 {"k": "¡Hay un Pokémon que está listo para abrir su corazón!\\1", "v": "마음을 열 준비가 된 포켓몬이 있다!\\1"}
 {"k": "{1:s} ID: {2:05d} EO: {3:s}\\1", "v": "{1:s}\r\nID: {2:05d}   어버이: {3:s}\\1"}
-{"k": "Por el {2} de {1}, {3} envía a {4}.\\1", "v": "{1}의 {2}\\j[와,과] 맞바꾸어\r\n{3}\\j[이,가] {4}\\j[을,를] 보내왔다.\\1"}
+{"k": "Por el {2} de {1}, {3} envía a {4}.\\1", "v": "{1}의 {2}\\j[과,와] 맞바꾸어\r\n{3}\\j[이,가] {4}\\j[을,를] 보내왔다.\\1"}
 {"k": "El Corral \"{1}\" del Rancho de {2} está lleno.\\1", "v": "{2}의 목장 우리 “{1}”\\j[이,가] 가득 찼다.\\1"}
 {"k": "La Corral \"{1}\" del Rancho está lleno.\\1", "v": "목장 우리 “{1}”\\j[이,가] 가득 찼다.\\1"}
 {"k": "{1} fue transferido al Rancho.\\1", "v": "{1}\\j[은,는] 목장으로 옮겨졌다.\\1"}
@@ -6808,7 +6808,7 @@
 {"k": "{1} ha olvidado cómo usar {2}.\\1", "v": "{1}\\j[은,는] {2} 쓰는 법을\r\n깔끔하게 잊어버렸다.\\1"}
 {"k": "Y...\\1", "v": "그리고...\\1"}
 {"k": "{1:s}\nID: {2:05d} EO: {3:s}\\1", "v": "{1:s}\r\nID: {2:05d}   어버이: {3:s}\\1"}
-{"k": "Por el {2} de {1},\n{3} envía a {4}.\\1", "v": "{1}의 {2}\\j[와,과] 맞바꾸어\r\n{3}\\j[이,가] {4}\\j[을,를] 보내왔다.\\1"}
+{"k": "Por el {2} de {1},\n{3} envía a {4}.\\1", "v": "{1}의 {2}\\j[과,와] 맞바꾸어\r\n{3}\\j[이,가] {4}\\j[을,를] 보내왔다.\\1"}
 {"k": "{1} ha olvidado cómo\nusar {2}.\\1", "v": "{1}\\j[은,는] {2} 쓰는 법을\r\n깔끔하게 잊어버렸다.\\1"}
 {"k": "¡Solo puedes capturar Pokémon de tipo {1}!", "v": "{1}타입 포켓몬만 잡을 수 있다!"}
 {"k": "{1} está debilitado.\nApenas puede tenerse en pie...", "v": "{1}\\j[은,는] 기절해 있다.\n서 있는 것조차 버거워 보인다..."}

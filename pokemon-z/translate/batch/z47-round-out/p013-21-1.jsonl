@@ -1,0 +1,3 @@
+{"id": "13:21:1:0", "who": "criada", "es": "Si consigues vencer a los <b>12 Regentes</b> tendrás derecho a un combate contra el rey.", "old": "<b>12명의 섭정</b>을 모두 물리치시면 왕과 겨룰 자격을 얻게 됩니다.", "new": "<b>12명의 섭정</b>을 모두 물리치시면 왕과 배틀할 자격을 얻게 됩니다.", "ok": true, "why": null}
+{"id": "13:21:1:1", "who": "criada", "es": "Y si logras derrotarlo, ¡este está obligado a cumplir cualquier deseo que le pidas!", "old": "그리고 왕마저 꺾는다면, 왕은 어떤 소원이든 들어주어야만 하지요!", "new": "그리고 왕마저 꺾는다면, 어떤 소원이든 들어주셔야만 하지요!", "ok": true, "why": null}
+{"id": "13:21:1:2", "who": "criada", "es": "Bueno, eso es lo que hubiera ocurrido si el rey siguiese gobernando...", "old": "뭐, 왕께서 계속 다스리고 계셨다면 그랬겠지만요...", "new": "뭐, 왕께서 계속 다스리고 계셨다면 그랬겠지만요...", "ok": true, "why": null}

@@ -1,0 +1,80 @@
+{"id": 67, "name": "Inicial escogido 2", "내판정": "플롯 진행", "이유": "인트로 크리산토 구조 컷신의 첫 명령으로 켜져 그 장(章)이 시작됐음을 표시. 소비 4곳 전부 맵2의 인트로 이벤트 페이지 교체", "근거발췌": "map2 ev17 p0 첫 줄 SW ON [67]; 이어 <b>???:</b> ¡Menos mal! …Crisanto 자기소개", "확신": "높음"}
+{"id": 68, "name": "Crisanto", "내판정": "플롯 진행", "이유": "같은 컷신 중간, 크리산토 합류 시점에 켜짐. 소비는 마을 NPC 두 페이지", "근거발췌": "SW ON [68:Crisanto] 직후 'Me presento, me llamo <b>Crisanto</b>.'", "확신": "높음"}
+{"id": 69, "name": "Carta de Crisanto", "내판정": "길트기·기능", "이유": "편지를 보여 준 직후 켜지고 소비가 'cartaFlotante' 스프라이트 이벤트 p0 하나뿐 — 장면 소품(연출) 표시", "근거발췌": "SW ON [69] 다음 '¡El viento se lleva la carta!' / 소비: map2 ev18 carta sprite cartaFlotante", "확신": "낮음"}
+{"id": 71, "name": "A Pueblo Lienzo", "내판정": "플롯 진행", "이유": "올리비에가 초기 아이템을 주고 '푸에블로 리엔소' 단계를 닫는 마디. 소비 11곳(리엔소·루타1 전역)", "근거발췌": "SW ON [71] 직전 Kernel.pbSetPokemonCenter, 올리비에 PokéTour 안내 대사", "확신": "높음"}
+{"id": 72, "name": "Melia", "내판정": "플롯 진행", "이유": "멜리아 합류·포켓덱스 수여·PokéTour 선언이 든 본편 장면 종료 표시", "근거발췌": "'<b>Melia</b>, \\PN, <b>Crisanto</b>... Encarnáis el futuro' 뒤 SW ON [72]", "확신": "높음"}
+{"id": 77, "name": "Furfrou encontrado", "내판정": "플롯 진행", "이유": "퍼프로우 보스전+미라 등장의 본편 장면 종료 표시. 소비 9곳이 도시·루트 NPC 페이지", "근거발췌": "SW ON [77] 직전 Melia 'Tenemos que volver a <b>Ciudad Grisalla</b>'", "확신": "높음"}
+{"id": 80, "name": "Primer gimnasio", "내판정": "플롯 진행", "이유": "같은 장면 끝에서 1번 체육관(바스티온) 단계를 여는 장 전환 표시", "근거발췌": "SW ON [80:Primer gimnasio] / 소비: map21 canola·metre 페이지", "확신": "높음"}
+{"id": 83, "name": "G1 I3", "내판정": "길트기·기능", "이유": "체육관 내 퀴즈 NPC 1인의 응답 기록. 소비가 자기 이벤트 p1 하나", "근거발췌": "'<b>Mosquetera:</b> ¿Cuál de estos tipos…?' 뒤 SW ON [83]", "확신": "높음"}
+{"id": 85, "name": "G1 I22", "내판정": "길트기·기능", "이유": "체육관 잡졸 트레이너 격파 기록(3개 이벤트가 같은 스위치 공유)", "근거발췌": "pbTrainerBattle(MOSQUETERO,\"Micael\") 뒤 SW ON [85]", "확신": "높음"}
+{"id": 88, "name": "Primera medalla", "내판정": "플롯 진행", "이유": "1번 배지 취득", "근거발췌": "renderBadgeAnimation(0); $Trainer.badges[0]=true 뒤 SW ON [88]", "확신": "높음"}
+{"id": 90, "name": "Azoth en Collage", "내판정": "플롯 진행", "이유": "팀 아조트 연설·알카 첫 언급의 본편 장면", "근거발췌": "'¡<b>Alca</b>!' 군중 연호 뒤 SW ON [90]", "확신": "높음"}
+{"id": 95, "name": "Segundo Lider 2", "내판정": "플롯 진행", "이유": "섭정 이소포가 결투를 승낙하는 장면 마디. 소비 6곳이 바스티온 NPC 페이지 교체", "근거발췌": "'Coge el ascensor…Te estaré esperando' 뒤 SW ON [95]", "확신": "보통"}
+{"id": 96, "name": "Segundo Lider 3", "내판정": "플롯 진행", "이유": "2번 섭정전 개시 표시(전투 분기 진입 시 켜짐). 소비에 전투 후 이소포 대사 페이지", "근거발췌": "선택지 '예' 분기 첫 명령 SW ON [96] → pbTrainerBattle(LIDER2,\"Hisopo\")", "확신": "보통"}
+{"id": 97, "name": "Segunda Medalla", "내판정": "플롯 진행", "이유": "2번 배지 취득", "근거발췌": "$Trainer.badges[1]=true 뒤 SW ON [97]", "확신": "높음"}
+{"id": 100, "name": "Vieja Biblioteca", "내판정": "플롯 진행", "이유": "비밀 서고 진입 장면 — 주연 셋의 대사, 본편 의뢰(고문서 찾기) 단계", "근거발췌": "'¡Has encontrado la biblioteca secreta!' 뒤 SW ON [100]", "확신": "높음"}
+{"id": 105, "name": "Mirra Biblioteca", "내판정": "플롯 진행", "이유": "미라와의 서고 대결·고문서 확보 장면", "근거발췌": "pbTrainerBattle(MIRRA1) 뒤 '¡Cojamos el manuscrito…!' SW ON [105]", "확신": "높음"}
+{"id": 107, "name": "PokeFlauta", "내판정": "플롯 진행", "이유": "오페라 종료 후 올리비에 장면의 마디(포켓플루트 수여 포함). 소비가 도시 NPC 다수+잠만보 사용 페이지", "근거발췌": "SW OFF[108] 뒤 SW ON [107]; 앞줄 Kernel.pbReceiveItem(:POKEFLUTE)", "확신": "보통"}
+{"id": 113, "name": "Snorlax fuera", "내판정": "길트기·기능", "이유": "포켓플루트로 잠만보를 치우는 길트기. 대사 세 줄이 조작 안내 정형구", "근거발췌": "'¡El Snorlax se está despertando!' 뒤 SW ON [113]", "확신": "높음"}
+{"id": 117, "name": "Alca en Profano 2", "내판정": "플롯 진행", "이유": "알카 습격 후일담 — 주연 셋의 대사와 다음 도시 지시", "근거발췌": "'¡rumbo a <b>Ciudad Novarte</b>!' 뒤 SW ON [117]", "확신": "높음"}
+{"id": 122, "name": "Mision Mosqueteros 22", "내판정": "길트기·기능", "이유": "총사대 현상금 곁가지 — 개별 트레이너 격파 기록. 소비는 의뢰인 보고 페이지와 자기 페이지", "근거발췌": "pbTrainerBattle(CAZADOR,\"Wulfric\") 뒤 SW ON [122]; 'vuelve al Cuartel Mosquetero para recibir tu recompensa'", "확신": "보통"}
+{"id": 124, "name": "Enfermera Acrilico", "내판정": "길트기·기능", "이유": "마을 간호사 1회성 대사 소진 기록(소비가 자기 페이지 3개뿐)", "근거발췌": "'¡Entre todos podemos revivir <b>Pueblo Acrílico</b>!' 뒤 SW ON [124]", "확신": "보통"}
+{"id": 128, "name": "Margarito 1", "내판정": "길트기·기능", "이유": "묘지기 곁가지 의뢰 개시 기록", "근거발췌": "'¿podrías ayudarme con un asunto?' 예 분기에서 SW ON [128]", "확신": "높음"}
+{"id": 148, "name": "Gym3 Rotom2", "내판정": "길트기·기능", "이유": "체육관 난이도 스위치(선택). 안내문이 조작 설명", "근거발췌": "'\"¿Quieres encenderlo?\"' 예 분기 SW ON [148]", "확신": "높음"}
+{"id": 177, "name": "Animación Intro 2", "내판정": "플롯 진행", "이유": "오프닝 편지 내레이션의 두 번째 마디 — 본편 도입", "근거발췌": "올리비에 편지 낭독 뒤 SW ON [177] → 맵66으로 전이", "확신": "보통"}
+{"id": 211, "name": "Cuarta medalla", "내판정": "플롯 진행", "이유": "4번 배지 취득", "근거발췌": "$Trainer.badges[3]=true 뒤 SW ON [211]", "확신": "높음"}
+{"id": 232, "name": "Rey Acertijo vencido", "내판정": "길트기·기능", "이유": "곁가지 수수께끼 왕 격파 기록. 소비는 자기 후속 페이지 둘", "근거발췌": "pbTrainerBattle(REYACERTIJOS) 뒤 SW ON [232] + setLogro(14,3)", "확신": "보통"}
+{"id": 257, "name": "Dendro Acrílico", "내판정": "길트기·기능", "이유": "덴드로 이주 곁가지 완료 — 마을 재건 계열 NPC 배치 기록(VAR 111 증가)", "근거발췌": "'¡Abandonaré mi puesto…!' 뒤 VAR[111] 증가, SW ON [257]", "확신": "높음"}
+{"id": 260, "name": "Restaur Tarea1", "내판정": "길트기·기능", "이유": "식당 쥐 퇴치 잡일 의뢰 개시", "근거발췌": "'¿podrías encargarte de ellos…?' 뒤 SW ON [260]", "확신": "높음"}
+{"id": 264, "name": "Fort Auxiliar", "내판정": "플롯 진행", "이유": "혁명군의 요새 습격 개시 — 장면 전이와 함께 요새 전 페이지를 바꾸는 장 전환", "근거발췌": "'¡Esta noche tomaremos <b>Fort Leviatán</b>!' → TRANSFER → SW ON [264]", "확신": "보통"}
+{"id": 309, "name": "Lanto en Relieve", "내판정": "플롯 진행", "이유": "란토·알카의 대중 연설 본편 장면", "근거발췌": "'¡Marcharemos unidos hasta <b>Ciudad Luminalia</b>!' 뒤 SW ON [309]", "확신": "높음"}
+{"id": 314, "name": "Quinto lider", "내판정": "플롯 진행", "이유": "5번 섭정전 개시 표시", "근거발췌": "선택지 예 분기 SW ON [314] → pbTrainerBattle(LIDER5,\"Loto\")", "확신": "보통"}
+{"id": 330, "name": "Montura Surf", "내판정": "길트기·기능", "이유": "파도타기 탈것 지급 — 이동 수단 해금. 소비가 루타11 막힘 페이지와 자기 페이지", "근거발췌": "Kernel.pbItemBall(PBItems::SURFMONTURA) 뒤 SW ON [330]", "확신": "보통"}
+{"id": 343, "name": "Genos Vanitas", "내판정": "플롯 진행", "이유": "헤노스(팀 아조트 고위) 습격 본편 장면", "근거발췌": "pbTrainerBattle(GENOS1) 포함, 장면 끝 SW ON [340:A Pueblo Vanitas]", "확신": "높음"}
+{"id": 358, "name": "Bruja Gym6", "내판정": "길트기·기능", "이유": "6번 체육관 무작위 조우 기계장치의 한 갈래(마녀). 같은 페이지가 여러 스위치를 껐다 켬", "근거발췌": "페이지 첫머리 SW OFF [358]…[368] 뒤 VAR 분기로 SW ON [358]", "확신": "높음"}
+{"id": 363, "name": "Puerta Luminalia", "내판정": "길트기·기능", "이유": "열쇠로 문 열기", "근거발췌": "'Usas la llave para abrir la puerta.' + pbDeleteItem(:LLAVELUMINALIA)", "확신": "높음"}
+{"id": 386, "name": "Crisanto Lanto Aux", "내판정": "플롯 진행", "이유": "크리산토 회상 장면의 단계 표시(Aux). 소비가 회상 뒷부분 페이지", "근거발췌": "'mi madre me hizo prometer dos cosas' 뒤 SW ON [386] → 회상 다음 맵 전이", "확신": "보통"}
+{"id": 415, "name": "Dracena", "내판정": "플롯 진행", "이유": "'회상의 방' 사천왕격 드라세나 격파 — 왕의 기억 열람을 여는 본편 던전 단계", "근거발췌": "pbTrainerBattle(ALTOMANDO2,\"Drácena\") 뒤 SW ON [415]; 소비에 '기억이 울린다' 페이지", "확신": "낮음"}
+{"id": 419, "name": "Malvo Escena 1 Aux", "내판정": "플롯 진행", "이유": "말보 왕 회상 1장의 단계 표시", "근거발췌": "'¡Lo llevaremos a <b>Ciudad Luminalia</b>…!' 뒤 SW ON [419]", "확신": "보통"}
+{"id": 423, "name": "Combate Final AZ", "내판정": "플롯 진행", "이유": "아스테르 제피르와의 최종 전투 장면", "근거발췌": "pbTrainerBattle(AZ1,\"Áster Zephir\") 뒤 SW ON [423]", "확신": "높음"}
+{"id": 426, "name": "Munchlax Huerto 2", "내판정": "길트기·기능", "이유": "나무열매 미끼로 먹보 포켓몬을 유인하는 장치. 대사가 조작 안내", "근거발췌": "'Llena la caja con 5 Bayas Zidra…' → pbWildBattle(MUNCHLAX) 뒤 SW ON [426]", "확신": "보통"}
+{"id": 438, "name": "Item Prision 3", "내판정": "길트기·기능", "이유": "감옥 대장장이에게 책 빌려주는 곁가지", "근거발췌": "'¿Me lo prestarías?' 예 분기 SW ON [438]", "확신": "높음"}
+{"id": 448, "name": "A Pueblo Batik", "내판정": "플롯 진행", "이유": "성인기 도약(복장 교체·알카 대면)의 장 전환", "근거발췌": "$Trainer.outfit=5, SW ON [445:ADULTEZ] 같은 페이지, 끝에 SW ON [448]", "확신": "높음"}
+{"id": 468, "name": "Hibis Gimnasio", "내판정": "플롯 진행", "이유": "7번 섭정 이비스 대면 단계(도전 보류 시). 소비가 어두운 탑 전역 페이지", "근거발췌": "'Te estaré esperando, \\PN.' 뒤 SW ON [468]", "확신": "낮음"}
+{"id": 469, "name": "Septimo Lider", "내판정": "플롯 진행", "이유": "7번 섭정전 개시 표시", "근거발췌": "선택지 '싸우자' 분기 SW ON [469] → pbTrainerBattle(LIDER7,\"Hibis\")", "확신": "보통"}
+{"id": 470, "name": "Septima Medalla", "내판정": "플롯 진행", "이유": "7번 배지 취득", "근거발췌": "$Trainer.badges[6]=true 뒤 SW ON [470]", "확신": "높음"}
+{"id": 473, "name": "Puerta Secreta Torre", "내판정": "길트기·기능", "이유": "열쇠로 비밀 방 문 열기", "근거발췌": "pbQuantity(LLAVESECRETATORRE)>0 분기 '¡La <b>Llave de Habitación</b> abre la puerta!' 뒤 SW ON [473]", "확신": "높음"}
+{"id": 485, "name": "Int2 Fabrica", "내판정": "길트기·기능", "이유": "공장 레버 조작 상태", "근거발췌": "'¿Mover palanca?' 예 분기 SW ON [485]", "확신": "높음"}
+{"id": 490, "name": "Incendio Fabrica 2", "내판정": "플롯 진행", "이유": "포켓볼 공장 화재·크리산토 재회의 본편 장면", "근거발췌": "'¡No puedes ser \\PN! ¡Tú… habías muerto!' 포함, 장면 중 SW ON [489]", "확신": "높음"}
+{"id": 491, "name": "Incendio Fabrica 3", "내판정": "플롯 진행", "이유": "크리산토와의 결착 장면", "근거발췌": "pbTrainerBattle(CRISANTO5) 뒤 SW ON [491]", "확신": "높음"}
+{"id": 523, "name": "Tormento Aure", "내판정": "플롯 진행", "이유": "아우레 고문 회상 장면의 연출 단계(장면 안에서 켜고 끄기를 반복해 인물 배치를 바꿈)", "근거발췌": "SW ON [523] … SW OFF [523] … 네 번 반복; 소비는 cab1/cab2 스프라이트 페이지", "확신": "낮음"}
+{"id": 525, "name": "Rescate Olivier Aux 2", "내판정": "플롯 진행", "이유": "올리비에 구출 장면의 연출 단계(Aux). 장면 안에서 켜졌다 곧 꺼짐", "근거발췌": "SW ON [525] 뒤 대사 넷, 이어 SW ON [526]·SW OFF [525]", "확신": "낮음"}
+{"id": 526, "name": "Rescate Olivier Aux 3", "내판정": "플롯 진행", "이유": "같은 구출 장면의 다음 연출 단계", "근거발췌": "SW ON [526] 뒤 올리비에 사과 대사", "확신": "낮음"}
+{"id": 534, "name": "Prisionero Acrilico", "내판정": "길트기·기능", "이유": "감옥 죄수 단델리오 곁가지 개시(마을 재건 계열)", "근거발췌": "'Me llamo <b>Dandelio</b>…' 뒤 SW ON [649:MSDandelio]·[534]", "확신": "높음"}
+{"id": 535, "name": "Prisionero Acrilico 2", "내판정": "길트기·기능", "이유": "같은 곁가지 완료 — 단델리오가 아크릴리코 마을로 이주(VAR 111 증가)", "근거발췌": "'Iremos a <b>Pueblo Acrílico</b>' 뒤 VAR[111] 증가, SW ON [535]", "확신": "높음"}
+{"id": 539, "name": "Robo Fluxus", "내판정": "길트기·기능", "이유": "노파에게서 절도 선택 기록(분기 상태)", "근거발췌": "'¿Quieres robarle…?' 예 분기 GOLD +2000 뒤 SW ON [539]", "확신": "높음"}
+{"id": 568, "name": "G10 Soldado 3", "내판정": "길트기·기능", "이유": "체육관에서 병사 구출(선택) — 이후 지원 병력 상태", "근거발췌": "'¿Quieres rescatar a este soldado?' 예 분기 SW ON [568]", "확신": "높음"}
+{"id": 590, "name": "Mision Rotom 3", "내판정": "길트기·기능", "이유": "로톰 유령 퇴치 곁가지 단계", "근거발췌": "'¿Has espantado al Pokémon fantasmal?' 뒤 SW ON [590]", "확신": "높음"}
+{"id": 596, "name": "Decima medalla", "내판정": "플롯 진행", "이유": "10번 배지 취득(+전황 장면)", "근거발췌": "$Trainer.badges[9]=true, 크리산토 장면 뒤 SW ON [596]", "확신": "높음"}
+{"id": 599, "name": "A la Ruta 21", "내판정": "플롯 진행", "이유": "루타21 결전 결정 회의 장면", "근거발췌": "'Vayamos a la <b>Ruta 21</b>' 뒤 SW ON [599] → 전이", "확신": "높음"}
+{"id": 600, "name": "Corrientes Manaphy", "내판정": "길트기·기능", "이유": "해류를 없애는 길트기(보스전 포함하나 결과는 통행)", "근거발췌": "'La corriente marina de la zona ha desaparecido.' 뒤 SW ON [600]", "확신": "높음"}
+{"id": 608, "name": "Regigas", "내판정": "길트기·기능", "이유": "레지기가스 해금 퍼즐(파티 순서 조건)", "근거발췌": "'Lleva al Rey de Hielo el primero…' 조건 충족 시 SW ON [608]", "확신": "높음"}
+{"id": 613, "name": "Espadachines Misticos", "내판정": "길트기·기능", "이유": "검 봉헌으로 전설 3인방 배치 — 곁가지 해금", "근거발췌": "pbDeleteItem(:ESPADAREYOLVIDADO) 뒤 SW ON [612]·[613]", "확신": "높음"}
+{"id": 614, "name": "Espadachines Misticos 2", "내판정": "길트기·기능", "이유": "같은 봉헌이 켜는 두 번째 해금 플래그(각지 전설 출현)", "근거발췌": "'Los espadachines místicos han vuelto a <b>Kalos</b>' 뒤 SW ON [614]; 소비 8곳이 전설 스폰 페이지", "확신": "높음"}
+{"id": 615, "name": "Reyes Antiguos", "내판정": "플롯 진행", "이유": "부활한 옛 왕들 등장의 본편 클라이맥스 장면", "근거발췌": "'¡he traído de vuelta a los entrenadores…!' 뒤 SW ON [615]", "확신": "높음"}
+{"id": 616, "name": "Olivier vs Alca", "내판정": "플롯 진행", "이유": "프리물라·토르나솔라전과 올리비에 등장 장면", "근거발췌": "pbTrainerBattle(PRIMULATORNASOLA) 뒤 SW ON [616]", "확신": "높음"}
+{"id": 635, "name": "BKECar7", "내판정": "길트기·기능", "이유": "'칼로스 동부 전투' 이벤트의 개별 병사 격파 기록", "근거발췌": "createTrainer(130,…)/customTrainerBattle 반복, 소비는 자기 페이지", "확신": "높음"}
+{"id": 637, "name": "BKECar9", "내판정": "길트기·기능", "이유": "같은 전투 이벤트의 다른 병사 격파 기록", "근거발췌": "createTrainer(129,…) 반복, 소비는 자기 페이지", "확신": "높음"}
+{"id": 645, "name": "Puerta Ruta 15", "내판정": "길트기·기능", "이유": "수은 열쇠로 루타15 문 열기", "근거발췌": "'Usas una Llave Mercúrica para romper el sello' 뒤 SW ON [645]", "확신": "높음"}
+{"id": 683, "name": "AncianitaAcrilica", "내판정": "길트기·기능", "이유": "반지 찾아주기 곁가지 — 노부인이 아크릴리코로 이주(VAR 111)", "근거발췌": "'<i>Madame</i> <b>Caléndula</b> se marcha a <b>Pueblo Acrílico</b>' 뒤 SW ON [683]", "확신": "높음"}
+{"id": 697, "name": "Mimi en Acrilico", "내판정": "길트기·기능", "이유": "타로점술사 미미 곁가지 — 격파 후 이주(VAR 111)", "근거발췌": "pbTrainerBattle(TAROTISTA,\"Mimi\") 뒤 'se marcha a <b>Pueblo Acrílico</b>' SW ON [697]", "확신": "높음"}
+{"id": 701, "name": "LEGENDARIOS EN KALOS", "내판정": "길트기·기능", "이유": "전설 포켓몬 58자리를 한꺼번에 여는 세계 상태 플래그(같은 페이지의 758과 역할이 갈린다)", "근거발췌": "SW ON [701] / 소비 58곳 전부 pbPlayCry(전설) 스폰 페이지", "확신": "보통"}
+{"id": 702, "name": "Flashback Aster aux", "내판정": "플롯 진행", "이유": "아스테르 회상 3장의 단계 표시(Aux)", "근거발췌": "'Y en cuanto a <b>Melia</b>…' 뒤 SW ON [702] → 회상 다음 맵", "확신": "보통"}
+{"id": 730, "name": "Lysson vencido", "내판정": "플롯 진행", "이유": "미래 세계 라이슨(플레어) 격파 본편 장면", "근거발췌": "pbTrainerBattle(LYSSON) 뒤 SW ON [730]", "확신": "높음"}
+{"id": 732, "name": "Xerneas terminado", "내판정": "플롯 진행", "이유": "제르네아스 편 종료 — 배지 애니메이션과 다음 목적지(얀트라) 지정", "근거발췌": "renderBadgeAnimation(11), 'Revisa el mapa… <b>Ciudad Yantra</b>' 뒤 SW ON [732]", "확신": "높음"}
+{"id": 758, "name": "Arma Definitiva Culminada", "내판정": "플롯 진행", "이유": "궁극병기 발동 이후의 세계 상태(장 전환). 소비 15곳이 도시·NPC 페이지 교체", "근거발췌": "SW ON [758] 뒤 '진혼의 폐허' 내레이션과 outfit 교체", "확신": "보통"}
+{"id": 767, "name": "LIDER REVANCHA 3", "내판정": "길트기·기능", "이유": "후일담 섭정 재대결의 라운드 카운터(계속할지 선택)", "근거발췌": "'¿Quieres continuar con los combates?' 예 분기 SW ON [767]", "확신": "높음"}
+{"id": 784, "name": "Balneario cumplido", "내판정": "길트기·기능", "이유": "온천 곁가지 완료(취침 선택)", "근거발췌": "'¿Irte a dormir?' 예 분기 SW ON [784] + setLogro(17,3)", "확신": "높음"}
+{"id": 797, "name": "Flor Arma 3", "내판정": "길트기·기능", "이유": "궁극병기 던전의 아바타 3체 중 하나 격파 — 통행 해제", "근거발췌": "pbBossFight(:MISSINGNO,100) 뒤 SW ON [797], 소비가 가시·꽃 통행 페이지", "확신": "높음"}
+{"id": 799, "name": "Mazmorra Arma Def", "내판정": "플롯 진행", "이유": "플로에테가 궁극병기 내부로 길을 여는 최종 장 진입", "근거발췌": "'¡Floette ha abierto una brecha al interior del <b>Arma Definitiva</b>!' 뒤 SW ON [799]", "확신": "낮음"}
+{"id": 827, "name": "Andrea Acrilica", "내판정": "길트기·기능", "이유": "전 아조트 대원 안드레아 곁가지 — 도구 회수 후 이주(VAR 111)", "근거발췌": "pbDeleteItem(:HERRAMIENTAS) 뒤 '¡Te veré en el pueblo!' SW ON [827]", "확신": "높음"}

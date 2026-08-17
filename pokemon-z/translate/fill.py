@@ -40,7 +40,7 @@ DESC_SECS = {3: "03-entries", 6: "06-move-descs", 9: "09-item-descs",
              11: "11-ability-descs", 20: "20-place-descs"}
 
 sys.path.insert(0, str(HERE))
-from batch import HAN, key_of, read_jsonl, worth_rewriting  # noqa: E402
+from batch import HAN, key_of, or_extras, read_jsonl, worth_rewriting  # noqa: E402
 from validate import check  # noqa: E402
 
 URL = "https://api.llmgateway.io/v1/chat/completions"
@@ -158,7 +158,8 @@ def ask(key, prompt, rows, attempt=0):
     import urllib.request
     payload = {"model": MODEL, "temperature": 0.3, "reasoning_effort": "minimal",
                "messages": [{"role": "system", "content": prompt},
-                            {"role": "user", "content": json.dumps(rows, ensure_ascii=False)}]}
+                            {"role": "user", "content": json.dumps(rows, ensure_ascii=False)}],
+               **or_extras()}
     req = urllib.request.Request(URL, data=json.dumps(payload).encode(),
                                  headers={"Authorization": "Bearer " + key,
                                           "Content-Type": "application/json"})

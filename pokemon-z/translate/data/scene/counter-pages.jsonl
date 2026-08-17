@@ -1,0 +1,357 @@
+{"map": 0, "map_name": "(공통 이벤트)", "event": 53, "event_name": "Transformador Exotico", "page": 0, "호출": [".form="], "기능": ["폼 변경"], "근거": "포켓몬의 form을 대입해 바꾼다"}
+{"map": 0, "map_name": "(공통 이벤트)", "event": 54, "event_name": "Transformador Comun", "page": 0, "호출": [".form="], "기능": ["폼 변경"], "근거": "포켓몬의 form을 대입해 바꾼다"}
+{"map": 0, "map_name": "(공통 이벤트)", "event": 55, "event_name": "Transformador E Ginia", "page": 0, "호출": [".form="], "기능": ["폼 변경"], "근거": "포켓몬의 form을 대입해 바꾼다"}
+{"map": 0, "map_name": "(공통 이벤트)", "event": 56, "event_name": "Transformador C Ginia", "page": 0, "호출": [".form="], "기능": ["폼 변경"], "근거": "포켓몬의 form을 대입해 바꾼다"}
+{"map": 2, "map_name": "Pirineos de Kalos", "event": 23, "event_name": "size(2,1)", "page": 0, "호출": [".form="], "기능": ["폼 변경"], "근거": "포켓몬의 form을 대입해 바꾼다"}
+{"map": 3, "map_name": "Pueblo Lienzo", "event": 30, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 5, "map_name": "Laboratorio Flare", "event": 27, "event_name": "f3", "page": 0, "호출": ["pbRelearnMoveScreen", "pbPokeCenterPC", "cmd314"], "기능": ["PC 접속", "기술 리마인더", "회복"], "근거": "pbPokeCenterPC로 보관 PC를 연다 / pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / 코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 5, "map_name": "Laboratorio Flare", "event": 27, "event_name": "f3", "page": 1, "호출": ["pbRelearnMoveScreen", "pbPokeCenterPC", "cmd314"], "기능": ["PC 접속", "기술 리마인더", "회복"], "근거": "pbPokeCenterPC로 보관 PC를 연다 / pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / 코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 5, "map_name": "Laboratorio Flare", "event": 28, "event_name": "f3", "page": 0, "호출": ["pbRelearnMoveScreen", "pbPokeCenterPC", "cmd314"], "기능": ["PC 접속", "기술 리마인더", "회복"], "근거": "pbPokeCenterPC로 보관 PC를 연다 / pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / 코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 5, "map_name": "Laboratorio Flare", "event": 28, "event_name": "f3", "page": 1, "호출": ["pbRelearnMoveScreen", "pbPokeCenterPC", "cmd314"], "기능": ["PC 접속", "기술 리마인더", "회복"], "근거": "pbPokeCenterPC로 보관 PC를 연다 / pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / 코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 10, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 10, "map_name": "Centro Pokémon", "event": 5, "event_name": "EV005", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 10, "map_name": "Centro Pokémon", "event": 5, "event_name": "EV005", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 10, "map_name": "Centro Pokémon", "event": 8, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 10, "map_name": "Centro Pokémon", "event": 9, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 10, "map_name": "Centro Pokémon", "event": 22, "event_name": "EV022", "page": 0, "호출": ["pbHallOfFamePC"], "기능": ["명예의 전당 조회"], "근거": "pbHallOfFamePC를 연다"}
+{"map": 15, "map_name": "Granja Gogoat", "event": 4, "event_name": "EV004", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 18, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 18, "map_name": "Centro Pokémon", "event": 11, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 18, "map_name": "Centro Pokémon", "event": 18, "event_name": "EV018", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 18, "map_name": "Centro Pokémon", "event": 18, "event_name": "EV018", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 18, "map_name": "Centro Pokémon", "event": 22, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 18, "map_name": "Centro Pokémon", "event": 23, "event_name": "EV023", "page": 0, "호출": ["pbHallOfFamePC"], "기능": ["명예의 전당 조회"], "근거": "pbHallOfFamePC를 연다"}
+{"map": 20, "map_name": "Bastión Pokémon", "event": 10, "event_name": "EV010", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 24, "map_name": "Pueblo Acrílico", "event": 33, "event_name": "Day Care Lady", "page": 0, "호출": ["pbDayCare"], "기능": ["육아방"], "근거": "pbDayCare* 호출로 맡기기·찾기·알을 처리한다"}
+{"map": 24, "map_name": "Pueblo Acrílico", "event": 34, "event_name": "Day Care Man", "page": 0, "호출": ["pbDayCare"], "기능": ["육아방"], "근거": "pbDayCare* 호출로 맡기기·찾기·알을 처리한다"}
+{"map": 24, "map_name": "Pueblo Acrílico", "event": 38, "event_name": "EV038", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 24, "map_name": "Pueblo Acrílico", "event": 38, "event_name": "EV038", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 24, "map_name": "Pueblo Acrílico", "event": 57, "event_name": "NPC", "page": 0, "호출": ["pbMiningGame"], "기능": ["미니게임(발굴)"], "근거": "pbMiningGame을 띄운다"}
+{"map": 25, "map_name": "Pueblo Acrílico", "event": 18, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 25, "map_name": "Pueblo Acrílico", "event": 23, "event_name": "EV023", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 25, "map_name": "Pueblo Acrílico", "event": 23, "event_name": "EV023", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 25, "map_name": "Pueblo Acrílico", "event": 24, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 25, "map_name": "Pueblo Acrílico", "event": 25, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 25, "map_name": "Pueblo Acrílico", "event": 42, "event_name": "EV042", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 25, "map_name": "Pueblo Acrílico", "event": 44, "event_name": "EV044", "page": 0, "호출": ["tradeExpert"], "기능": ["교환(원더트레이드)"], "근거": "tradeExpert로 교환을 돌린다"}
+{"map": 25, "map_name": "Pueblo Acrílico", "event": 44, "event_name": "EV044", "page": 2, "호출": ["tradeExpert"], "기능": ["교환(원더트레이드)"], "근거": "tradeExpert로 교환을 돌린다"}
+{"map": 25, "map_name": "Pueblo Acrílico", "event": 44, "event_name": "EV044", "page": 4, "호출": ["tradeExpert"], "기능": ["교환(원더트레이드)"], "근거": "tradeExpert로 교환을 돌린다"}
+{"map": 25, "map_name": "Pueblo Acrílico", "event": 44, "event_name": "EV044", "page": 6, "호출": ["tradeExpert"], "기능": ["교환(원더트레이드)"], "근거": "tradeExpert로 교환을 돌린다"}
+{"map": 25, "map_name": "Pueblo Acrílico", "event": 46, "event_name": "EV046", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 25, "map_name": "Pueblo Acrílico", "event": 46, "event_name": "EV046", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 25, "map_name": "Pueblo Acrílico", "event": 48, "event_name": "EV048", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 25, "map_name": "Pueblo Acrílico", "event": 52, "event_name": "EV052", "page": 0, "호출": ["pbHallOfFamePC"], "기능": ["명예의 전당 조회"], "근거": "pbHallOfFamePC를 연다"}
+{"map": 26, "map_name": "Hospicio Acrílico", "event": 4, "event_name": "EV004", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 26, "map_name": "Hospicio Acrílico", "event": 4, "event_name": "EV004", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 26, "map_name": "Hospicio Acrílico", "event": 5, "event_name": "EV005", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 26, "map_name": "Hospicio Acrílico", "event": 5, "event_name": "EV005", "page": 2, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 26, "map_name": "Hospicio Acrílico", "event": 7, "event_name": "EV007", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 26, "map_name": "Hospicio Acrílico", "event": 11, "event_name": "EV011", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 27, "map_name": "Ruta 4", "event": 25, "event_name": " prodigio", "page": 0, "호출": ["tradeExpert"], "기능": ["교환(원더트레이드)"], "근거": "tradeExpert로 교환을 돌린다"}
+{"map": 27, "map_name": "Ruta 4", "event": 26, "event_name": "EV026", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 30, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 30, "map_name": "Centro Pokémon", "event": 7, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 30, "map_name": "Centro Pokémon", "event": 9, "event_name": "EV009", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 30, "map_name": "Centro Pokémon", "event": 9, "event_name": "EV009", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 30, "map_name": "Centro Pokémon", "event": 20, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 30, "map_name": "Centro Pokémon", "event": 21, "event_name": "EV021", "page": 0, "호출": ["pbHallOfFamePC"], "기능": ["명예의 전당 조회"], "근거": "pbHallOfFamePC를 연다"}
+{"map": 31, "map_name": "Aserradero", "event": 8, "event_name": "EV008", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 35, "map_name": "Chateau Rosillon", "event": 37, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 42, "map_name": "Pueblo Profano", "event": 18, "event_name": "EV018", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 42, "map_name": "Pueblo Profano", "event": 19, "event_name": "EV019", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 48, "map_name": "Guardería Pokémon", "event": 5, "event_name": "Day Care Lady", "page": 0, "호출": ["pbDayCare"], "기능": ["육아방"], "근거": "pbDayCare* 호출로 맡기기·찾기·알을 처리한다"}
+{"map": 48, "map_name": "Guardería Pokémon", "event": 9, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 56, "map_name": "Ruta 5", "event": 17, "event_name": "Day Care Man", "page": 0, "호출": ["pbDayCare"], "기능": ["육아방"], "근거": "pbDayCare* 호출로 맡기기·찾기·알을 처리한다"}
+{"map": 56, "map_name": "Ruta 5", "event": 20, "event_name": "size(1,2)", "page": 0, "호출": [".form="], "기능": ["폼 변경"], "근거": "포켓몬의 form을 대입해 바꾼다"}
+{"map": 56, "map_name": "Ruta 5", "event": 26, "event_name": "EV026", "page": 0, "호출": [".form="], "기능": ["폼 변경"], "근거": "포켓몬의 form을 대입해 바꾼다"}
+{"map": 57, "map_name": "Pantano Profano", "event": 17, "event_name": "EV017", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 60, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 60, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 60, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 2, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 60, "map_name": "Centro Pokémon", "event": 9, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 60, "map_name": "Centro Pokémon", "event": 11, "event_name": "EV011", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 60, "map_name": "Centro Pokémon", "event": 11, "event_name": "EV011", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 60, "map_name": "Centro Pokémon", "event": 23, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 60, "map_name": "Centro Pokémon", "event": 24, "event_name": "EV024", "page": 0, "호출": ["pbHallOfFamePC"], "기능": ["명예의 전당 조회"], "근거": "pbHallOfFamePC를 연다"}
+{"map": 61, "map_name": "Bastión Pokémon", "event": 5, "event_name": "EV005", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 61, "map_name": "Bastión Pokémon", "event": 11, "event_name": "EV011", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 68, "map_name": "Casa Grande", "event": 1, "event_name": " prodigio", "page": 0, "호출": ["tradeExpert"], "기능": ["교환(원더트레이드)"], "근거": "tradeExpert로 교환을 돌린다"}
+{"map": 68, "map_name": "Casa Grande", "event": 2, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 68, "map_name": "Casa Grande", "event": 5, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 68, "map_name": "Casa Grande", "event": 6, "event_name": "EV006", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 68, "map_name": "Casa Grande", "event": 7, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 78, "map_name": "Cueva Refulgente", "event": 42, "event_name": "Trainer(4)", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 82, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 82, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 82, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 2, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 82, "map_name": "Centro Pokémon", "event": 9, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 82, "map_name": "Centro Pokémon", "event": 11, "event_name": "EV011", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 82, "map_name": "Centro Pokémon", "event": 11, "event_name": "EV011", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 82, "map_name": "Centro Pokémon", "event": 22, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 82, "map_name": "Centro Pokémon", "event": 23, "event_name": "EV023", "page": 0, "호출": ["pbHallOfFamePC"], "기능": ["명예의 전당 조회"], "근거": "pbHallOfFamePC를 연다"}
+{"map": 83, "map_name": "Casa", "event": 6, "event_name": "EV006", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 86, "map_name": "Chateau Lanto", "event": 11, "event_name": "EV011", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 87, "map_name": "Bastión Pokémon", "event": 5, "event_name": "EV005", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 91, "map_name": "Ruta 8 Oeste", "event": 26, "event_name": " prodigio", "page": 0, "호출": ["tradeExpert"], "기능": ["교환(원더트레이드)"], "근거": "tradeExpert로 교환을 돌린다"}
+{"map": 104, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 104, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 104, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 2, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 104, "map_name": "Centro Pokémon", "event": 9, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 104, "map_name": "Centro Pokémon", "event": 11, "event_name": "EV011", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 104, "map_name": "Centro Pokémon", "event": 11, "event_name": "EV011", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 104, "map_name": "Centro Pokémon", "event": 21, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 104, "map_name": "Centro Pokémon", "event": 22, "event_name": "EV022", "page": 0, "호출": ["pbHallOfFamePC"], "기능": ["명예의 전당 조회"], "근거": "pbHallOfFamePC를 연다"}
+{"map": 110, "map_name": "Ruta 11", "event": 29, "event_name": "size(1,2)", "page": 0, "호출": [".form="], "기능": ["폼 변경"], "근거": "포켓몬의 form을 대입해 바꾼다"}
+{"map": 110, "map_name": "Ruta 11", "event": 30, "event_name": "size(1,2)", "page": 0, "호출": [".form="], "기능": ["폼 변경"], "근거": "포켓몬의 form을 대입해 바꾼다"}
+{"map": 113, "map_name": "Pueblo Bodegón", "event": 18, "event_name": "EV018", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 113, "map_name": "Pueblo Bodegón", "event": 19, "event_name": "EV019", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 114, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 114, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 114, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 2, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 114, "map_name": "Centro Pokémon", "event": 9, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 114, "map_name": "Centro Pokémon", "event": 11, "event_name": "EV011", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 114, "map_name": "Centro Pokémon", "event": 11, "event_name": "EV011", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 114, "map_name": "Centro Pokémon", "event": 23, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 114, "map_name": "Centro Pokémon", "event": 24, "event_name": "EV024", "page": 0, "호출": ["pbHallOfFamePC"], "기능": ["명예의 전당 조회"], "근거": "pbHallOfFamePC를 연다"}
+{"map": 115, "map_name": "Bastión Pokémon", "event": 2, "event_name": "EV002", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 125, "map_name": "Fort Leviatán", "event": 15, "event_name": "ebanoCom", "page": 0, "호출": ["pbPokeCenterPC", "cmd314"], "기능": ["PC 접속", "회복"], "근거": "pbPokeCenterPC로 보관 PC를 연다 / 코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 126, "map_name": "Fort Leviatán", "event": 13, "event_name": " prodigio", "page": 0, "호출": ["tradeExpert"], "기능": ["교환(원더트레이드)"], "근거": "tradeExpert로 교환을 돌린다"}
+{"map": 126, "map_name": "Fort Leviatán", "event": 17, "event_name": "ebanoCom", "page": 0, "호출": ["pbPokeCenterPC", "cmd314"], "기능": ["PC 접속", "회복"], "근거": "pbPokeCenterPC로 보관 PC를 연다 / 코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 130, "map_name": "Estación de Servicio", "event": 8, "event_name": "EV008", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 132, "map_name": "Petrocueva", "event": 4, "event_name": "NPC", "page": 0, "호출": ["pbMiningGame"], "기능": ["미니게임(발굴)"], "근거": "pbMiningGame을 띄운다"}
+{"map": 133, "map_name": "Ciudad Relieve", "event": 4, "event_name": "EV004", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 133, "map_name": "Ciudad Relieve", "event": 5, "event_name": "EV005", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 133, "map_name": "Ciudad Relieve", "event": 9, "event_name": "EV009", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 133, "map_name": "Ciudad Relieve", "event": 41, "event_name": "EV041", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 133, "map_name": "Ciudad Relieve", "event": 66, "event_name": "EV066", "page": 0, "호출": [".form="], "기능": ["폼 변경"], "근거": "포켓몬의 form을 대입해 바꾼다"}
+{"map": 134, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 134, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 134, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 2, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 134, "map_name": "Centro Pokémon", "event": 9, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 134, "map_name": "Centro Pokémon", "event": 11, "event_name": "EV011", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 134, "map_name": "Centro Pokémon", "event": 11, "event_name": "EV011", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 134, "map_name": "Centro Pokémon", "event": 23, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 134, "map_name": "Centro Pokémon", "event": 24, "event_name": "EV024", "page": 0, "호출": ["pbHallOfFamePC"], "기능": ["명예의 전당 조회"], "근거": "pbHallOfFamePC를 연다"}
+{"map": 137, "map_name": "Ruta 12", "event": 12, "event_name": " prodigio", "page": 0, "호출": ["tradeExpert"], "기능": ["교환(원더트레이드)"], "근거": "tradeExpert로 교환을 돌린다"}
+{"map": 137, "map_name": "Ruta 12", "event": 19, "event_name": "cazador", "page": 0, "호출": ["pbRelearnMoveScreen", "pbPokeCenterPC", "cmd314"], "기능": ["PC 접속", "기술 리마인더", "회복"], "근거": "pbPokeCenterPC로 보관 PC를 연다 / pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / 코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 140, "map_name": "Viejo Vánitas", "event": 27, "event_name": "Trainer(5)", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 140, "map_name": "Viejo Vánitas", "event": 28, "event_name": "Trainer(5)", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 142, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 142, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 142, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 2, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 142, "map_name": "Centro Pokémon", "event": 9, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 142, "map_name": "Centro Pokémon", "event": 11, "event_name": "EV011", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 142, "map_name": "Centro Pokémon", "event": 11, "event_name": "EV011", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 142, "map_name": "Centro Pokémon", "event": 21, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 142, "map_name": "Centro Pokémon", "event": 22, "event_name": "EV022", "page": 0, "호출": ["pbHallOfFamePC"], "기능": ["명예의 전당 조회"], "근거": "pbHallOfFamePC를 연다"}
+{"map": 143, "map_name": "La Tarasque", "event": 5, "event_name": "EV005", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 146, "map_name": "Bastión Pokémon", "event": 2, "event_name": "EV002", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 150, "map_name": "Gambón Rouge", "event": 12, "event_name": "EV012", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 155, "map_name": "Casa de Entrenamiento", "event": 2, "event_name": "EV002", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 155, "map_name": "Casa de Entrenamiento", "event": 3, "event_name": "EV003", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 155, "map_name": "Casa de Entrenamiento", "event": 10, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 156, "map_name": "Huerto Vánitas", "event": 4, "event_name": "EV004", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 157, "map_name": "Ruta 13", "event": 9, "event_name": "size(2,1)", "page": 0, "호출": [".form="], "기능": ["폼 변경"], "근거": "포켓몬의 form을 대입해 바꾼다"}
+{"map": 162, "map_name": "Ciudad Luminalia - Oeste", "event": 8, "event_name": "EV008", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 162, "map_name": "Ciudad Luminalia - Oeste", "event": 9, "event_name": "EV009", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 162, "map_name": "Ciudad Luminalia - Oeste", "event": 11, "event_name": "EV011", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 162, "map_name": "Ciudad Luminalia - Oeste", "event": 12, "event_name": "EV012", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 162, "map_name": "Ciudad Luminalia - Oeste", "event": 13, "event_name": "EV013", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 162, "map_name": "Ciudad Luminalia - Oeste", "event": 18, "event_name": "Lottery", "page": 0, "호출": ["pbLottery", "pbSetLotteryNumber"], "기능": ["복권"], "근거": "pbLottery를 돌린다 / pbSetLotteryNumber로 복권 번호를 준다"}
+{"map": 163, "map_name": "Ciudad Luminalia - Norte", "event": 6, "event_name": " prodigio", "page": 0, "호출": ["tradeExpert"], "기능": ["교환(원더트레이드)"], "근거": "tradeExpert로 교환을 돌린다"}
+{"map": 164, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 164, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 164, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 2, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 164, "map_name": "Centro Pokémon", "event": 9, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 164, "map_name": "Centro Pokémon", "event": 15, "event_name": "EV015", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 164, "map_name": "Centro Pokémon", "event": 15, "event_name": "EV015", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 164, "map_name": "Centro Pokémon", "event": 21, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 164, "map_name": "Centro Pokémon", "event": 22, "event_name": "EV022", "page": 0, "호출": ["pbHallOfFamePC"], "기능": ["명예의 전당 조회"], "근거": "pbHallOfFamePC를 연다"}
+{"map": 174, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 174, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 174, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 2, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 174, "map_name": "Centro Pokémon", "event": 9, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 174, "map_name": "Centro Pokémon", "event": 11, "event_name": "EV011", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 174, "map_name": "Centro Pokémon", "event": 11, "event_name": "EV011", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 174, "map_name": "Centro Pokémon", "event": 22, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 174, "map_name": "Centro Pokémon", "event": 23, "event_name": "EV023", "page": 0, "호출": ["pbHallOfFamePC"], "기능": ["명예의 전당 조회"], "근거": "pbHallOfFamePC를 연다"}
+{"map": 175, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 175, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 175, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 2, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 175, "map_name": "Centro Pokémon", "event": 9, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 175, "map_name": "Centro Pokémon", "event": 11, "event_name": "EV011", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 175, "map_name": "Centro Pokémon", "event": 11, "event_name": "EV011", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 175, "map_name": "Centro Pokémon", "event": 22, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 175, "map_name": "Centro Pokémon", "event": 23, "event_name": "EV023", "page": 0, "호출": ["pbHallOfFamePC"], "기능": ["명예의 전당 조회"], "근거": "pbHallOfFamePC를 연다"}
+{"map": 181, "map_name": "Salón Furfrou", "event": 11, "event_name": "EV011", "page": 0, "호출": [".form="], "기능": ["폼 변경"], "근거": "포켓몬의 form을 대입해 바꾼다"}
+{"map": 187, "map_name": "Criptas de Luminalia", "event": 13, "event_name": "EV013", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 193, "map_name": "Palacio Luminalia", "event": 25, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 193, "map_name": "Palacio Luminalia", "event": 28, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 197, "map_name": "Hospicio Caduco", "event": 3, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 197, "map_name": "Hospicio Caduco", "event": 4, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 206, "map_name": "Palacio Luminalia", "event": 16, "event_name": "floette", "page": 0, "호출": ["pbRelearnMoveScreen", "pbPokeCenterPC", "cmd314"], "기능": ["PC 접속", "기술 리마인더", "회복"], "근거": "pbPokeCenterPC로 보관 PC를 연다 / pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / 코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 208, "map_name": "Cámaras de Reflexión", "event": 8, "event_name": "gengar", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 214, "map_name": "Palacio Luminalia", "event": 66, "event_name": "floette", "page": 0, "호출": ["pbRelearnMoveScreen", "pbPokeCenterPC", "cmd314"], "기능": ["PC 접속", "기술 리마인더", "회복"], "근거": "pbPokeCenterPC로 보관 PC를 연다 / pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / 코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 227, "map_name": "Prisión del Olvido", "event": 23, "event_name": "EV023/noShadow/", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 236, "map_name": "Fábrica de Pokéball", "event": 8, "event_name": "EV008", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 236, "map_name": "Fábrica de Pokéball", "event": 15, "event_name": "EV015", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 239, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 239, "map_name": "Centro Pokémon", "event": 5, "event_name": "EV005", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 239, "map_name": "Centro Pokémon", "event": 5, "event_name": "EV005", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 239, "map_name": "Centro Pokémon", "event": 8, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 239, "map_name": "Centro Pokémon", "event": 9, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 239, "map_name": "Centro Pokémon", "event": 13, "event_name": "EV013", "page": 0, "호출": ["pbHallOfFamePC"], "기능": ["명예의 전당 조회"], "근거": "pbHallOfFamePC를 연다"}
+{"map": 243, "map_name": "Gruta Helada", "event": 31, "event_name": "Trainer(4)", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 254, "map_name": "Almacén de Pokémon", "event": 2, "event_name": "EV002/noShadow/", "page": 0, "호출": ["pbStoreCaught", "cmd314"], "기능": ["포켓몬 보관", "회복"], "근거": "PokemonStorage.pbStoreCaught로 포켓몬을 맡긴다 / 코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 254, "map_name": "Almacén de Pokémon", "event": 11, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 255, "map_name": "Pirineos de Kalos", "event": 30, "event_name": "Trainer(4)", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 257, "map_name": "Pirineos de Kalos", "event": 23, "event_name": "size(2,1)", "page": 0, "호출": [".form="], "기능": ["폼 변경"], "근거": "포켓몬의 form을 대입해 바꾼다"}
+{"map": 258, "map_name": "Pirineos de Kalos", "event": 28, "event_name": " prodigio", "page": 0, "호출": ["tradeExpert"], "기능": ["교환(원더트레이드)"], "근거": "tradeExpert로 교환을 돌린다"}
+{"map": 259, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 259, "map_name": "Centro Pokémon", "event": 5, "event_name": "EV005", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 259, "map_name": "Centro Pokémon", "event": 5, "event_name": "EV005", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 259, "map_name": "Centro Pokémon", "event": 8, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 259, "map_name": "Centro Pokémon", "event": 9, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 259, "map_name": "Centro Pokémon", "event": 21, "event_name": "EV021", "page": 0, "호출": ["pbHallOfFamePC"], "기능": ["명예의 전당 조회"], "근거": "pbHallOfFamePC를 연다"}
+{"map": 264, "map_name": "Torre Oscura P1", "event": 5, "event_name": "f3", "page": 1, "호출": ["pbPokeCenterPC", "cmd314"], "기능": ["PC 접속", "회복"], "근거": "pbPokeCenterPC로 보관 PC를 연다 / 코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 266, "map_name": "Torre Oscura", "event": 13, "event_name": "f3", "page": 0, "호출": ["pbPokeCenterPC", "cmd314"], "기능": ["PC 접속", "회복"], "근거": "pbPokeCenterPC로 보관 PC를 연다 / 코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 266, "map_name": "Torre Oscura", "event": 42, "event_name": "f33", "page": 1, "호출": ["pbPokeCenterPC", "cmd314"], "기능": ["PC 접속", "회복"], "근거": "pbPokeCenterPC로 보관 PC를 연다 / 코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 270, "map_name": "Ruta 15", "event": 29, "event_name": "EV029", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 273, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 273, "map_name": "Centro Pokémon", "event": 5, "event_name": "EV005", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 273, "map_name": "Centro Pokémon", "event": 5, "event_name": "EV005", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 273, "map_name": "Centro Pokémon", "event": 8, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 273, "map_name": "Centro Pokémon", "event": 9, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 273, "map_name": "Centro Pokémon", "event": 14, "event_name": "EV014", "page": 0, "호출": ["pbHallOfFamePC"], "기능": ["명예의 전당 조회"], "근거": "pbHallOfFamePC를 연다"}
+{"map": 275, "map_name": "Herbolario", "event": 1, "event_name": "EV001", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 276, "map_name": "Bastión Pokémon", "event": 48, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 277, "map_name": "Bastión Pokémon", "event": 5, "event_name": "EV005", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 282, "map_name": "Fábrica de Pokéball", "event": 5, "event_name": "EV005", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 284, "map_name": "Ruta 16", "event": 11, "event_name": " prodigio", "page": 0, "호출": ["tradeExpert"], "기능": ["교환(원더트레이드)"], "근거": "tradeExpert로 교환을 돌린다"}
+{"map": 287, "map_name": "Ruta 18", "event": 25, "event_name": "EV025", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 290, "map_name": "Pueblo Mosaico", "event": 45, "event_name": "EV045", "page": 0, "호출": [".form="], "기능": ["폼 변경"], "근거": "포켓몬의 form을 대입해 바꾼다"}
+{"map": 290, "map_name": "Pueblo Mosaico", "event": 46, "event_name": "EV046", "page": 0, "호출": [".form="], "기능": ["폼 변경"], "근거": "포켓몬의 form을 대입해 바꾼다"}
+{"map": 290, "map_name": "Pueblo Mosaico", "event": 47, "event_name": "EV047", "page": 0, "호출": [".form="], "기능": ["폼 변경"], "근거": "포켓몬의 form을 대입해 바꾼다"}
+{"map": 290, "map_name": "Pueblo Mosaico", "event": 48, "event_name": "EV048", "page": 0, "호출": [".form="], "기능": ["폼 변경"], "근거": "포켓몬의 form을 대입해 바꾼다"}
+{"map": 290, "map_name": "Pueblo Mosaico", "event": 49, "event_name": "EV049", "page": 0, "호출": [".form="], "기능": ["폼 변경"], "근거": "포켓몬의 form을 대입해 바꾼다"}
+{"map": 295, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 295, "map_name": "Centro Pokémon", "event": 5, "event_name": "EV005", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 295, "map_name": "Centro Pokémon", "event": 5, "event_name": "EV005", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 295, "map_name": "Centro Pokémon", "event": 8, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 295, "map_name": "Centro Pokémon", "event": 9, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 295, "map_name": "Centro Pokémon", "event": 13, "event_name": "EV013", "page": 0, "호출": ["pbHallOfFamePC"], "기능": ["명예의 전당 조회"], "근거": "pbHallOfFamePC를 연다"}
+{"map": 301, "map_name": "Cueva Desenlace", "event": 33, "event_name": "Trainer(5)", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 304, "map_name": "Orfebrería", "event": 5, "event_name": "EV005", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 304, "map_name": "Orfebrería", "event": 6, "event_name": "EV006", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 304, "map_name": "Orfebrería", "event": 9, "event_name": "EV009", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 304, "map_name": "Orfebrería", "event": 10, "event_name": "EV010", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 304, "map_name": "Orfebrería", "event": 11, "event_name": "EV011", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 307, "map_name": "Centro Pokémon", "event": 2, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 307, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 307, "map_name": "Centro Pokémon", "event": 5, "event_name": "EV005", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 307, "map_name": "Centro Pokémon", "event": 5, "event_name": "EV005", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 307, "map_name": "Centro Pokémon", "event": 9, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 307, "map_name": "Centro Pokémon", "event": 13, "event_name": "EV013", "page": 0, "호출": ["pbHallOfFamePC"], "기능": ["명예의 전당 조회"], "근거": "pbHallOfFamePC를 연다"}
+{"map": 311, "map_name": "Centro Pokémon", "event": 3, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 311, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 311, "map_name": "Centro Pokémon", "event": 5, "event_name": "EV005", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 311, "map_name": "Centro Pokémon", "event": 5, "event_name": "EV005", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 311, "map_name": "Centro Pokémon", "event": 9, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 311, "map_name": "Centro Pokémon", "event": 20, "event_name": "EV020", "page": 0, "호출": ["pbHallOfFamePC"], "기능": ["명예의 전당 조회"], "근거": "pbHallOfFamePC를 연다"}
+{"map": 314, "map_name": "Batalla de Kalos Este", "event": 30, "event_name": "EV030", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 314, "map_name": "Batalla de Kalos Este", "event": 35, "event_name": "EV035", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 318, "map_name": "Antigua Forja Inundada", "event": 66, "event_name": "EV066", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 321, "map_name": "Bastión Pokémon", "event": 67, "event_name": "EV067", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 331, "map_name": "Pueblo Mosaico", "event": 8, "event_name": "EV008/noShadow/", "page": 0, "호출": [".form="], "기능": ["폼 변경"], "근거": "포켓몬의 form을 대입해 바꾼다"}
+{"map": 338, "map_name": "Campamento de Crisanto", "event": 13, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 338, "map_name": "Campamento de Crisanto", "event": 15, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 345, "map_name": "Balneario Oculto", "event": 11, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 345, "map_name": "Balneario Oculto", "event": 13, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 345, "map_name": "Balneario Oculto", "event": 14, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 356, "map_name": "Villa Pokemon", "event": 4, "event_name": "EV004", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 356, "map_name": "Villa Pokemon", "event": 5, "event_name": "enfermera", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 356, "map_name": "Villa Pokemon", "event": 6, "event_name": "Move Deleter", "page": 1, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 356, "map_name": "Villa Pokemon", "event": 7, "event_name": "Move Deleter", "page": 1, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 357, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 357, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 357, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 2, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 357, "map_name": "Centro Pokémon", "event": 9, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 357, "map_name": "Centro Pokémon", "event": 11, "event_name": "EV011", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 357, "map_name": "Centro Pokémon", "event": 11, "event_name": "EV011", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 357, "map_name": "Centro Pokémon", "event": 14, "event_name": "EV014", "page": 0, "호출": ["pbHallOfFamePC"], "기능": ["명예의 전당 조회"], "근거": "pbHallOfFamePC를 연다"}
+{"map": 357, "map_name": "Centro Pokémon", "event": 21, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 360, "map_name": "Pueblo Sanguino", "event": 3, "event_name": "size(2,1)", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 360, "map_name": "Pueblo Sanguino", "event": 4, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 360, "map_name": "Pueblo Sanguino", "event": 5, "event_name": "size(2,1)", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 360, "map_name": "Pueblo Sanguino", "event": 5, "event_name": "size(2,1)", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 360, "map_name": "Pueblo Sanguino", "event": 8, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 360, "map_name": "Pueblo Sanguino", "event": 11, "event_name": "EV011", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 360, "map_name": "Pueblo Sanguino", "event": 12, "event_name": "EV012", "page": 0, "호출": ["pbVoltorbFlip"], "기능": ["미니게임(기라볼탑)"], "근거": "pbVoltorbFlip을 띄운다"}
+{"map": 360, "map_name": "Pueblo Sanguino", "event": 33, "event_name": " prodigio", "page": 0, "호출": ["tradeExpert"], "기능": ["교환(원더트레이드)"], "근거": "tradeExpert로 교환을 돌린다"}
+{"map": 373, "map_name": "Ruta 23", "event": 22, "event_name": "EV022", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 375, "map_name": "Estación Luminalia", "event": 2, "event_name": " prodigio", "page": 0, "호출": ["tradeExpert"], "기능": ["교환(원더트레이드)"], "근거": "tradeExpert로 교환을 돌린다"}
+{"map": 375, "map_name": "Estación Luminalia", "event": 3, "event_name": "EV003", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 375, "map_name": "Estación Luminalia", "event": 3, "event_name": "EV003", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 384, "map_name": "Maraña Oscura", "event": 13, "event_name": "olivier2", "page": 1, "호출": ["pbPokeCenterPC", "cmd314"], "기능": ["PC 접속", "회복"], "근거": "pbPokeCenterPC로 보관 PC를 연다 / 코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 388, "map_name": "Maraña Oscura", "event": 22, "event_name": "EV022", "page": 0, "호출": ["pbPokeCenterPC", "cmd314"], "기능": ["PC 접속", "회복"], "근거": "pbPokeCenterPC로 보관 PC를 연다 / 코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 389, "map_name": "Torre Prisma", "event": 34, "event_name": "EV034", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 394, "map_name": "Centro Pokémon", "event": 3, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 394, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 394, "map_name": "Centro Pokémon", "event": 5, "event_name": "EV005", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 394, "map_name": "Centro Pokémon", "event": 5, "event_name": "EV005", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 394, "map_name": "Centro Pokémon", "event": 9, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 394, "map_name": "Centro Pokémon", "event": 14, "event_name": "EV014", "page": 0, "호출": ["pbHallOfFamePC"], "기능": ["명예의 전당 조회"], "근거": "pbHallOfFamePC를 연다"}
+{"map": 399, "map_name": "Centro Pokémon", "event": 3, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 399, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 399, "map_name": "Centro Pokémon", "event": 5, "event_name": "EV005", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 399, "map_name": "Centro Pokémon", "event": 5, "event_name": "EV005", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 399, "map_name": "Centro Pokémon", "event": 9, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 399, "map_name": "Centro Pokémon", "event": 14, "event_name": "EV014", "page": 0, "호출": ["pbHallOfFamePC"], "기능": ["명예의 전당 조회"], "근거": "pbHallOfFamePC를 연다"}
+{"map": 405, "map_name": "Gran Hotel Luminalia", "event": 2, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 405, "map_name": "Gran Hotel Luminalia", "event": 4, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 405, "map_name": "Gran Hotel Luminalia", "event": 5, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 405, "map_name": "Gran Hotel Luminalia", "event": 7, "event_name": "EV007", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 405, "map_name": "Gran Hotel Luminalia", "event": 25, "event_name": "EV025", "page": 0, "호출": ["var225"], "기능": ["BP 창구·대전 시설"], "근거": "변수 225(PUNTOS BATALLA)를 주고받는다"}
+{"map": 405, "map_name": "Gran Hotel Luminalia", "event": 26, "event_name": "EV026", "page": 0, "호출": ["var225"], "기능": ["BP 창구·대전 시설"], "근거": "변수 225(PUNTOS BATALLA)를 주고받는다"}
+{"map": 405, "map_name": "Gran Hotel Luminalia", "event": 28, "event_name": "EV028", "page": 0, "호출": ["var225"], "기능": ["BP 창구·대전 시설"], "근거": "변수 225(PUNTOS BATALLA)를 주고받는다"}
+{"map": 405, "map_name": "Gran Hotel Luminalia", "event": 29, "event_name": "EV029", "page": 0, "호출": ["var225"], "기능": ["BP 창구·대전 시설"], "근거": "변수 225(PUNTOS BATALLA)를 주고받는다"}
+{"map": 410, "map_name": "Biblioteca Yantra", "event": 15, "event_name": "EV015", "page": 0, "호출": [".form="], "기능": ["폼 변경"], "근거": "포켓몬의 form을 대입해 바꾼다"}
+{"map": 415, "map_name": "Gran Hotel Luminalia", "event": 15, "event_name": "cara", "page": 0, "호출": ["var225"], "기능": ["BP 창구·대전 시설"], "근거": "변수 225(PUNTOS BATALLA)를 주고받는다"}
+{"map": 418, "map_name": "Gran Hotel Luminalia", "event": 19, "event_name": "carabinera", "page": 0, "호출": ["var225"], "기능": ["BP 창구·대전 시설"], "근거": "변수 225(PUNTOS BATALLA)를 주고받는다"}
+{"map": 418, "map_name": "Gran Hotel Luminalia", "event": 19, "event_name": "carabinera", "page": 1, "호출": ["var225"], "기능": ["BP 창구·대전 시설"], "근거": "변수 225(PUNTOS BATALLA)를 주고받는다"}
+{"map": 418, "map_name": "Gran Hotel Luminalia", "event": 19, "event_name": "carabinera", "page": 2, "호출": ["var225"], "기능": ["BP 창구·대전 시설"], "근거": "변수 225(PUNTOS BATALLA)를 주고받는다"}
+{"map": 418, "map_name": "Gran Hotel Luminalia", "event": 19, "event_name": "carabinera", "page": 3, "호출": ["var225"], "기능": ["BP 창구·대전 시설"], "근거": "변수 225(PUNTOS BATALLA)를 주고받는다"}
+{"map": 418, "map_name": "Gran Hotel Luminalia", "event": 19, "event_name": "carabinera", "page": 4, "호출": ["var225"], "기능": ["BP 창구·대전 시설"], "근거": "변수 225(PUNTOS BATALLA)를 주고받는다"}
+{"map": 418, "map_name": "Gran Hotel Luminalia", "event": 19, "event_name": "carabinera", "page": 5, "호출": ["var225"], "기능": ["BP 창구·대전 시설"], "근거": "변수 225(PUNTOS BATALLA)를 주고받는다"}
+{"map": 421, "map_name": "Ruta 25", "event": 19, "event_name": "floette", "page": 0, "호출": ["pbRelearnMoveScreen", "pbPokeCenterPC", "cmd314"], "기능": ["PC 접속", "기술 리마인더", "회복"], "근거": "pbPokeCenterPC로 보관 PC를 연다 / pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / 코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 429, "map_name": "Gran Hotel Luminalia", "event": 2, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 429, "map_name": "Gran Hotel Luminalia", "event": 4, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 429, "map_name": "Gran Hotel Luminalia", "event": 5, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 429, "map_name": "Gran Hotel Luminalia", "event": 7, "event_name": "EV007", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 429, "map_name": "Gran Hotel Luminalia", "event": 25, "event_name": "EV025", "page": 0, "호출": ["var225"], "기능": ["BP 창구·대전 시설"], "근거": "변수 225(PUNTOS BATALLA)를 주고받는다"}
+{"map": 429, "map_name": "Gran Hotel Luminalia", "event": 26, "event_name": "EV026", "page": 0, "호출": ["var225"], "기능": ["BP 창구·대전 시설"], "근거": "변수 225(PUNTOS BATALLA)를 주고받는다"}
+{"map": 430, "map_name": "Estación Luminalia", "event": 2, "event_name": " prodigio", "page": 0, "호출": ["tradeExpert"], "기능": ["교환(원더트레이드)"], "근거": "tradeExpert로 교환을 돌린다"}
+{"map": 430, "map_name": "Estación Luminalia", "event": 3, "event_name": "EV003", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 430, "map_name": "Estación Luminalia", "event": 3, "event_name": "EV003", "page": 1, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 441, "map_name": "Guarida Team Flare", "event": 6, "event_name": "serena", "page": 0, "호출": ["pbPokeCenterPC", "cmd314"], "기능": ["PC 접속", "회복"], "근거": "pbPokeCenterPC로 보관 PC를 연다 / 코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 445, "map_name": "Otro Lugar", "event": 11, "event_name": "EV011/noShadow/", "page": 0, "호출": ["pbPokeCenterPC", "cmd314"], "기능": ["PC 접속", "회복"], "근거": "pbPokeCenterPC로 보관 PC를 연다 / 코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 445, "map_name": "Otro Lugar", "event": 12, "event_name": "EV012/noShadow/", "page": 0, "호출": ["pbRelearnMoveScreen"], "기능": ["기술 리마인더"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다"}
+{"map": 452, "map_name": "Centro Pokémon", "event": 3, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 452, "map_name": "Centro Pokémon", "event": 4, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 452, "map_name": "Centro Pokémon", "event": 5, "event_name": "EV005", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 452, "map_name": "Centro Pokémon", "event": 5, "event_name": "EV005", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 452, "map_name": "Centro Pokémon", "event": 9, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 452, "map_name": "Centro Pokémon", "event": 13, "event_name": "EV013", "page": 0, "호출": ["pbHallOfFamePC"], "기능": ["명예의 전당 조회"], "근거": "pbHallOfFamePC를 연다"}
+{"map": 461, "map_name": "Ciudad Yantra", "event": 7, "event_name": "floette", "page": 1, "호출": ["pbRelearnMoveScreen", "pbPokeCenterPC", "cmd314"], "기능": ["PC 접속", "기술 리마인더", "회복"], "근거": "pbPokeCenterPC로 보관 PC를 연다 / pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / 코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 463, "map_name": "Centro Pokémon", "event": 8, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 463, "map_name": "Centro Pokémon", "event": 9, "event_name": "Move Deleter", "page": 0, "호출": ["pbShowdown", "pbRelearnMoveScreen"], "기능": ["기술 리마인더", "기술 삭제사"], "근거": "pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / pbShowdown(기술 삭제 화면)을 연다"}
+{"map": 463, "map_name": "Centro Pokémon", "event": 10, "event_name": "Move Deleter", "page": 0, "호출": ["pbPokeCenterPC"], "기능": ["PC 접속"], "근거": "pbPokeCenterPC로 보관 PC를 연다"}
+{"map": 463, "map_name": "Centro Pokémon", "event": 12, "event_name": "EV012", "page": 0, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 463, "map_name": "Centro Pokémon", "event": 12, "event_name": "EV012", "page": 1, "호출": ["pbPokemonMart"], "기능": ["상점"], "근거": "pbPokemonMart로 상점 창을 연다"}
+{"map": 471, "map_name": "El Arma Definitiva", "event": 44, "event_name": "floette", "page": 0, "호출": ["pbRelearnMoveScreen", "pbPokeCenterPC", "cmd314"], "기능": ["PC 접속", "기술 리마인더", "회복"], "근거": "pbPokeCenterPC로 보관 PC를 연다 / pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / 코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 482, "map_name": "Afueras de Cromlech", "event": 3, "event_name": "floette", "page": 0, "호출": ["pbRelearnMoveScreen", "pbPokeCenterPC", "cmd314"], "기능": ["PC 접속", "기술 리마인더", "회복"], "근거": "pbPokeCenterPC로 보관 PC를 연다 / pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / 코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 482, "map_name": "Afueras de Cromlech", "event": 37, "event_name": "floette2", "page": 0, "호출": ["pbRelearnMoveScreen", "pbPokeCenterPC", "cmd314"], "기능": ["PC 접속", "기술 리마인더", "회복"], "근거": "pbPokeCenterPC로 보관 PC를 연다 / pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / 코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 486, "map_name": "El Arma Definitiva", "event": 5, "event_name": "floette", "page": 0, "호출": ["pbRelearnMoveScreen", "pbPokeCenterPC", "cmd314"], "기능": ["PC 접속", "기술 리마인더", "회복"], "근거": "pbPokeCenterPC로 보관 PC를 연다 / pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / 코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 492, "map_name": "Corazón del Arma", "event": 4, "event_name": "az", "page": 1, "호출": ["pbRelearnMoveScreen", "pbPokeCenterPC", "cmd314"], "기능": ["PC 접속", "기술 리마인더", "회복"], "근거": "pbPokeCenterPC로 보관 PC를 연다 / pbRelearnMoveScreen으로 기술 재습득 화면을 연다 / 코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 504, "map_name": "Pueblo Lienzo", "event": 30, "event_name": "enfermera", "page": 0, "호출": ["cmd314"], "기능": ["회복"], "근거": "코드 314(전체 회복) + 선택지, 전투 호출 없음"}
+{"map": 507, "map_name": "Epílogo 3", "event": 3, "event_name": "EV003", "page": 0, "호출": ["pbHallOfFameEntry"], "기능": ["명예의 전당 등록"], "근거": "pbHallOfFameEntry를 부른다"}

@@ -1,0 +1,45 @@
+{"id": "66:1:0:10", "who": "Olivier", "es": "<b>Olivier:</b> \"Espero que esta carta no se pierda por el camino y que tu traslado desde <b>Paldea</b> resulte apacible.\"", "old": "<b>올리비에:</b> “이 편지가 도중에 분실되지 않기를, 그리고 <b>팔데아</b>에서 오는 길이 편안하기를 바란단다.”", "new": "<b>올리비에:</b> “이 편지가 도중에 분실되지 않기를, 그리고 <b>팔데아</b>에서 오는 길이 편안하기를 바란단다.”", "ok": true}
+{"id": "66:1:0:11", "who": "Olivier", "es": "\"Nos veremos pronto.\\n\nUn cordial saludo, la <b>Profesora Olivier</b>.\"", "old": "“곧 만나자꾸나. 안부를 전하며, <b>올리비에 박사</b>가.”", "new": "\"곧 만나자꾸나.\\n <b>올리비에 교수</b>로부터.\"", "ok": true}
+{"id": "66:1:0:23", "who": "Olivier", "es": "¿Quieres activar el <b>MODO RANDOM</b>? Esto podrá randomizar los Pokémon salvajes, Pokémon de entrenadores, movimientos, \nhabilidades, objetos...", "old": "<b>랜덤 모드</b>를 활성화하시겠습니까? 야생 포켓몬, 트레이너의 포켓몬, 기술, 특성, 아이템 등을 무작위로 변경할 수 있습니다...", "new": "<b>랜덤 모드</b>를 활성화하시겠습니까? 야생 포켓몬, 트레이너의 포켓몬, 기술, 특성, 아이템 등을 무작위로 변경할 수 있습니다...", "ok": true}
+{"id": "66:1:0:25.0", "who": "", "es": "No activar Modo Random", "old": "랜덤 모드 비활성화", "new": "랜덤 모드 비활성화", "ok": true}
+{"id": "66:1:0:25.01", "who": "", "es": "Activar Modo Random", "old": "랜덤 모드 활성화", "new": "랜덤 모드 활성화", "ok": true}
+{"id": "66:1:0:25.02", "who": "", "es": "Activar Modo Semi-Random", "old": "세미 랜덤 모드 활성화", "new": "세미 랜덤 모드 활성화", "ok": true}
+{"id": "66:1:0:30", "who": "Olivier", "es": "El <b>MODO RANDOM</b> ha sido activado.", "old": "<b>랜덤 모드</b>가 활성화되었습니다.", "new": "<b>랜덤 모드</b>가 활성화되었습니다.", "ok": true}
+{"id": "66:1:0:31", "who": "Olivier", "es": "¿Quieres que el <b>MODO RANDOM</b> sea progresivo?", "old": "<b>랜덤 모드</b>를 점진적으로 적용하시겠습니까?", "new": "<b>랜덤 모드</b>를 점진적으로 적용하시겠습니까?", "ok": true}
+{"id": "66:1:0:32.0", "who": "", "es": "Sí (Recomendado)", "old": "예 (권장)", "new": "예 (권장)", "ok": true}
+{"id": "66:1:0:32.01", "who": "", "es": "No", "old": "아니요", "new": "아니요", "ok": true}
+{"id": "66:1:0:34", "who": "Olivier", "es": "Activado el Modo Random progresivo.", "old": "점진적 랜덤 모드가 활성화되었습니다.", "new": "점진적 랜덤 모드가 활성화되었습니다.", "ok": true}
+{"id": "66:1:0:39", "who": "Olivier", "es": "Activado el Modo Random no progresivo.", "old": "비점진적 랜덤 모드가 활성화되었습니다.", "new": "비점진적 랜덤 모드가 활성화되었습니다.", "ok": true}
+{"id": "66:1:0:47", "who": "Olivier", "es": "Activado el Modo Semi-Random. Lo único que se randomizará son los Pokémon salvajes mientras todo lo demás permanecerá intacto.", "old": "세미 랜덤 모드가 활성화되었습니다. 야생 포켓몬만 무작위로 변경되며, 나머지는 모두 그대로 유지됩니다.", "new": "세미 랜덤 모드가 활성화되었습니다. 야생 포켓몬만 무작위로 변경되며, 나머지는 모두 그대로 유지됩니다.", "ok": true}
+{"id": "66:1:0:59", "who": "Olivier", "es": "Si es tu primera partida, se recomienda ir con los Pokémon iniciales de <b>Kalos</b> ya que han recibido evoluciones y megaevoluciones nuevas\nque encajan con la ambientación del juego.", "old": "처음 플레이하는 경우, 게임 분위기에 어울리는 새로운 진화와 메가진화가 추가된 <b>칼로스</b>의 스타팅 포켓몬을 선택하는 것을 추천합니다.", "new": "처음 플레이하는 경우, 게임 분위기에 어울리는 새로운 진화와 메가진화가 추가된 <b>칼로스</b>의 스타팅 포켓몬을 선택하는 것을 추천합니다.", "ok": true}
+{"id": "66:1:0:61", "who": "Olivier", "es": "¿Quieres seguir aún así con los Pokémon iniciales de <b>Kanto</b>?", "old": "그래도 <b>관동</b>의 스타팅 포켓몬으로 진행하시겠습니까?", "new": "그래도 <b>관동</b>의 스타팅 포켓몬으로 진행하시겠습니까?", "ok": true}
+{"id": "66:1:0:62.0", "who": "", "es": "Sí", "old": "예", "new": "예", "ok": true}
+{"id": "66:1:0:62.01", "who": "", "es": "No", "old": "아니요", "new": "아니요", "ok": true}
+{"id": "66:1:0:75", "who": "Olivier", "es": "Si es tu primera partida, se recomienda ir con los Pokémon iniciales de <b>Kalos</b> ya que han recibido evoluciones y megaevoluciones nuevas\nque encajan con la ambientación del juego.", "old": "처음 플레이하는 경우, 게임 분위기에 어울리는 새로운 진화와 메가진화가 추가된 <b>칼로스</b>의 스타팅 포켓몬을 선택하는 것을 추천합니다.", "new": "처음 플레이하는 경우, 게임 분위기에 어울리는 새로운 진화와 메가진화가 추가된 <b>칼로스</b>의 스타팅 포켓몬을 선택하는 것을 추천합니다.", "ok": true}
+{"id": "66:1:0:77", "who": "Olivier", "es": "¿Quieres seguir aún así con los Pokémon iniciales de <b>Johto</b>?", "old": "그래도 <b>성도</b>의 스타팅 포켓몬으로 진행하시겠습니까?", "new": "그래도 <b>성도</b>의 스타팅 포켓몬으로 진행하시겠습니까?", "ok": true}
+{"id": "66:1:0:78.0", "who": "", "es": "Sí", "old": "예", "new": "예", "ok": true}
+{"id": "66:1:0:78.01", "who": "", "es": "No", "old": "아니요", "new": "아니요", "ok": true}
+{"id": "66:1:0:91", "who": "Olivier", "es": "Si es tu primera partida, se recomienda ir con los Pokémon iniciales de <b>Kalos</b> ya que han recibido evoluciones y megaevoluciones nuevas\nque encajan con la ambientación del juego.", "old": "처음 플레이하는 경우, 게임 분위기에 어울리는 새로운 진화와 메가진화가 추가된 <b>칼로스</b>의 스타팅 포켓몬을 선택하는 것을 추천합니다.", "new": "처음 플레이하는 경우, 게임 분위기에 어울리는 새로운 진화와 메가진화가 추가된 <b>칼로스</b>의 스타팅 포켓몬을 선택하는 것을 추천합니다.", "ok": true}
+{"id": "66:1:0:93", "who": "Olivier", "es": "¿Quieres seguir aún así con los Pokémon iniciales de <b>Hoenn</b>?", "old": "그래도 <b>호연</b>의 스타팅 포켓몬으로 진행하시겠습니까?", "new": "그래도 <b>호연</b>의 스타팅 포켓몬으로 진행하시겠습니까?", "ok": true}
+{"id": "66:1:0:94.0", "who": "", "es": "Sí", "old": "예", "new": "예", "ok": true}
+{"id": "66:1:0:94.01", "who": "", "es": "No", "old": "아니요", "new": "아니요", "ok": true}
+{"id": "66:1:0:107", "who": "Olivier", "es": "Si es tu primera partida, se recomienda ir con los Pokémon iniciales de <b>Kalos</b> ya que han recibido evoluciones y megaevoluciones nuevas\nque encajan con la ambientación del juego.", "old": "처음 플레이하는 경우, 게임 분위기에 어울리는 새로운 진화와 메가진화가 추가된 <b>칼로스</b>의 스타팅 포켓몬을 선택하는 것을 추천합니다.", "new": "처음 플레이하는 경우, 게임 분위기에 어울리는 새로운 진화와 메가진화가 추가된 <b>칼로스</b>의 스타팅 포켓몬을 선택하는 것을 추천합니다.", "ok": true}
+{"id": "66:1:0:109", "who": "Olivier", "es": "¿Quieres seguir aún así con los Pokémon iniciales de <b>Sinnoh</b>?", "old": "그래도 <b>신오</b>의 스타팅 포켓몬으로 진행하시겠습니까?", "new": "그래도 <b>신오</b>의 스타팅 포켓몬으로 진행하시겠습니까?", "ok": true}
+{"id": "66:1:0:110.0", "who": "", "es": "Sí", "old": "예", "new": "예", "ok": true}
+{"id": "66:1:0:110.01", "who": "", "es": "No", "old": "아니요", "new": "아니요", "ok": true}
+{"id": "66:1:0:127", "who": "Olivier", "es": "Si es tu primera partida, se recomienda ir con los Pokémon iniciales de <b>Kalos</b> ya que han recibido evoluciones y megaevoluciones nuevas\nque encajan con la ambientación del juego.", "old": "처음 플레이하는 경우, 게임 분위기에 어울리는 새로운 진화와 메가진화가 추가된 <b>칼로스</b>의 스타팅 포켓몬을 선택하는 것을 추천합니다.", "new": "처음 플레이하는 경우, 게임 분위기에 어울리는 새로운 진화와 메가진화가 추가된 <b>칼로스</b>의 스타팅 포켓몬을 선택하는 것을 추천합니다.", "ok": true}
+{"id": "66:1:0:129", "who": "Olivier", "es": "¿Quieres seguir aún así con los Pokémon iniciales de <b>Teselia</b>?", "old": "그래도 <b>하나</b>의 스타팅 포켓몬으로 진행하시겠습니까?", "new": "그래도 <b>하나</b>의 스타팅 포켓몬으로 진행하시겠습니까?", "ok": true}
+{"id": "66:1:0:130.0", "who": "", "es": "Sí", "old": "예", "new": "예", "ok": true}
+{"id": "66:1:0:130.01", "who": "", "es": "No", "old": "아니요", "new": "아니요", "ok": true}
+{"id": "66:1:0:143", "who": "Olivier", "es": "Si es tu primera partida, se recomienda ir con los Pokémon iniciales de <b>Kalos</b> ya que han recibido evoluciones y megaevoluciones nuevas\nque encajan con la ambientación del juego.", "old": "처음 플레이하는 경우, 게임 분위기에 어울리는 새로운 진화와 메가진화가 추가된 <b>칼로스</b>의 스타팅 포켓몬을 선택하는 것을 추천합니다.", "new": "처음 플레이하는 경우, 게임 분위기에 어울리는 새로운 진화와 메가진화가 추가된 <b>칼로스</b>의 스타팅 포켓몬을 선택하는 것을 추천합니다.", "ok": true}
+{"id": "66:1:0:145", "who": "Olivier", "es": "¿Quieres seguir aún así con los Pokémon iniciales de <b>Alola</b>?", "old": "그래도 <b>알로라</b>의 스타팅 포켓몬으로 진행하시겠습니까?", "new": "그래도 <b>알로라</b>의 스타팅 포켓몬으로 진행하시겠습니까?", "ok": true}
+{"id": "66:1:0:146.0", "who": "", "es": "Sí", "old": "예", "new": "예", "ok": true}
+{"id": "66:1:0:146.01", "who": "", "es": "No", "old": "아니요", "new": "아니요", "ok": true}
+{"id": "66:1:0:159", "who": "Olivier", "es": "Si es tu primera partida, se recomienda ir con los Pokémon iniciales de <b>Kalos</b> ya que han recibido evoluciones y megaevoluciones nuevas\nque encajan con la ambientación del juego.", "old": "처음 플레이하는 경우, 게임 분위기에 어울리는 새로운 진화와 메가진화가 추가된 <b>칼로스</b>의 스타팅 포켓몬을 선택하는 것을 추천합니다.", "new": "처음 플레이하는 경우, 게임 분위기에 어울리는 새로운 진화와 메가진화가 추가된 <b>칼로스</b>의 스타팅 포켓몬을 선택하는 것을 추천합니다.", "ok": true}
+{"id": "66:1:0:161", "who": "Olivier", "es": "¿Quieres seguir aún así con los Pokémon iniciales de <b>Galar</b>?", "old": "그래도 <b>가라르</b>의 스타팅 포켓몬으로 진행하시겠습니까?", "new": "그래도 <b>가라르</b>의 스타팅 포켓몬으로 진행하시겠습니까?", "ok": true}
+{"id": "66:1:0:162.0", "who": "", "es": "Sí", "old": "예", "new": "예", "ok": true}
+{"id": "66:1:0:162.01", "who": "", "es": "No", "old": "아니요", "new": "아니요", "ok": true}
+{"id": "66:1:0:175", "who": "Olivier", "es": "Si es tu primera partida, se recomienda ir con los Pokémon iniciales de <b>Kalos</b> ya que han recibido evoluciones y megaevoluciones nuevas\nque encajan con la ambientación del juego.", "old": "처음 플레이하는 경우, 게임 분위기에 어울리는 새로운 진화와 메가진화가 추가된 <b>칼로스</b>의 스타팅 포켓몬을 선택하는 것을 추천합니다.", "new": "처음 플레이하는 경우, 게임 분위기에 어울리는 새로운 진화와 메가진화가 추가된 <b>칼로스</b>의 스타팅 포켓몬을 선택하는 것을 추천합니다.", "ok": true}
+{"id": "66:1:0:177", "who": "Olivier", "es": "¿Quieres seguir aún así con los Pokémon iniciales de <b>Paldea</b>?", "old": "그래도 <b>팔데아</b>의 스타팅 포켓몬으로 진행하시겠습니까?", "new": "그래도 <b>팔데아</b>의 스타팅 포켓몬으로 진행하시겠습니까?", "ok": true}
+{"id": "66:1:0:178.0", "who": "", "es": "Sí", "old": "예", "new": "예", "ok": true}
+{"id": "66:1:0:178.01", "who": "", "es": "No", "old": "아니요", "new": "아니요", "ok": true}

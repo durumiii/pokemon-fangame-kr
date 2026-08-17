@@ -1,1 +1,15 @@
+# 세션 인계물(소모품) — 남길 지식은 문서로 이관한다
 .refresh-guides/
+
+# 결정적으로 재생성되는 중간 산출 — plan 단계 청크·질의 목록 (2026-08-13 분류 조사.
+# 유료 API 결과물(batch/npc-out/ 등)은 재실행에 비용이 들어 계속 추적한다 — 지우지 마라)
+translate/batch/*-chunks.jsonl
+translate/batch/chunks.jsonl
+translate/batch/asks-*.jsonl
+translate/batch/npc-sweep-flags.jsonl
+translate/judge/in/
+translate/mine/candidates.jsonl
+translate/mine/chunks.jsonl
+
+# 외부 공개 저장소에서 매번 새로 받는 오프라인 캐시 (build_canon.py --offline 용)
+translate/canon/raw/

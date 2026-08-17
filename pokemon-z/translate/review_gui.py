@@ -205,10 +205,10 @@ function openReq(sc){
 function openFlow(sc, id){
   document.getElementById('ctxT').textContent=sc.name;
   document.getElementById('ctxM').textContent=
-    `맵 ${sc.map} · 이벤트 ${sc.event}-${sc.page} · ${sc.total}행 — 현행 번역으로 읽는 장면`;
+    `맵 ${sc.map} · 이벤트 ${sc.event}-${sc.page} · ${sc.total}행 — 장면 흐름 (고쳐진 자리는 지움·새김 표시)`;
   document.getElementById('ctxB').innerHTML=sc.flow.map(r=>
     `<div class="line${r.id===id?' here':''}" id="fl-${r.id}">
-       <span class="nm">${esc(r.who)}${r.hit?' ●':''}</span><span>${esc(r.ko)}</span>
+       <span class="nm">${esc(r.who)}${r.hit?' ●':''}</span><span>${r.new?mark(r.ko,r.new):esc(r.ko)}</span>
        <span class="sp">${esc(r.es)}</span></div>`).join('');
   document.getElementById('ctx').showModal();
   if(id){const el=document.getElementById('fl-'+id); if(el) el.scrollIntoView({block:'center'});}
@@ -344,31 +344,47 @@ def load_verdicts(p):
     return out
 
 
-def progress(out_dir, scenes, verdicts=None, all_rows=False):
-    """검수가 어디까지 왔나 — 처음 선별된 행 가운데 화면에서 빠진 것이 끝난 것이다.
+def judged_rows(scenes, verdicts):
+    """화면에서 끝난 행 수 — 내용 있는 행 판정, 또는 이벤트 「완료·승인」이 덮는 행.
 
-    빠지는 길은 셋이다: 이벤트가 반영돼 승인·보호로 갔거나, 수선 행이 먼저 반영됐거나,
-    승인 줄이라 애초에 물을 것이 아니었거나. 판정을 안 눌러도 새 번역 채택으로 끝나므로
-    「판정한 수」로는 진도를 셀 수 없다.
-
-    all_rows(전량 검수)는 정반대다 — 화면의 전 행이 물을 것이고 행이 화면에서
-    빠지지 않으므로, 진도가 곧 **판정 기록에 쌓인 수**다.
+    눌렀다 해제한 빈 레코드는 끝난 것이 아니다. 이벤트 표시가 있으면 그 장면의
+    전 행을 끝난 것으로 본다(개별 판정과 겹쳐 세지 않는다).
     """
+    done_ev = {k[6:] for k, x in verdicts.items()
+               if k.startswith("event:") and x.get("판정") in ("완료", "승인")}
+    n = 0
+    for s in scenes:
+        if f"{s['map']}:{s['event']}-{s['page']}" in done_ev:
+            n += len(s["rows"])
+            continue
+        n += sum(1 for r in s["rows"]
+                 if any(((verdicts.get(r["id"]) or {}).get(k) or "").strip()
+                        for k in ("판정", "텍스트", "메모")))
+    return n
+
+
+def progress(out_dir, scenes, verdicts=None, all_rows=False):
+    """검수가 어디까지 왔나 — 화면에서 빠진 행 + 화면에서 판정·완료된 행이 끝난 것이다.
+
+    화면에서 빠지는 길은 셋: 이벤트가 반영돼 승인·보호로 갔거나, 수선 행이 먼저
+    반영됐거나, 승인 줄이라 애초에 물을 것이 아니었거나. 화면에 남은 행은 판정
+    기록(행 판정·이벤트 완료)이 진도다 — 반영 전이라 행이 안 빠지는 검수(최종
+    반려 검토처럼)에서도 진도가 서게.
+    """
+    j = judged_rows(scenes, verdicts or {})
     if all_rows:
-        shown = {r["id"] for s in scenes for r in s["rows"]}
-        # 눌렀다 해제한 빈 레코드는 끝난 것이 아니다 — 내용 있는 판정·메모만 센다
-        done = sum(1 for i, x in (verdicts or {}).items() if i in shown
-                   and any((x.get(k) or "").strip() for k in ("판정", "텍스트", "메모")))
-        return {"전체": len(shown), "승인줄": 0, "물을것": len(shown),
-                "남음": len(shown) - done, "끝남": done}
+        shown = sum(len(s["rows"]) for s in scenes)
+        return {"전체": shown, "승인줄": 0, "물을것": shown,
+                "남음": shown - j, "끝남": j}
     from review_page import applied_rows, approved_ids, reasons
     d = Path(out_dir)
     ids = set(reasons(d))                       # 두 층이 처음 걸러 낸 자리 전부
     skip = ids & (approved_ids() | applied_rows())
     left = sum(len(s["rows"]) for s in scenes)
+    ask = len(ids) - len(skip)
     return {"전체": len(ids), "승인줄": len(skip),
-            "물을것": len(ids) - len(skip), "남음": left,
-            "끝남": len(ids) - len(skip) - left}
+            "물을것": ask, "남음": left - j,
+            "끝남": ask - left + j}
 
 
 def append_verdict(p, rec):
@@ -414,7 +430,7 @@ def alt_map(alt_dir):
     return out
 
 
-def handler(out_dir, vpath, all_rows=False, alt=None):
+def handler(out_dir, vpath, all_rows=False, alt=None, no_skip=False):
     alt = alt or {}
     page = (HEAD.format(title=f"선별분 검수 — {Path(out_dir).name}",
                         ledger=f"판정 저장 중 → {vpath}") + BODY).encode()
@@ -448,7 +464,10 @@ def handler(out_dir, vpath, all_rows=False, alt=None):
                 self._json(read_req(out_dir, q.get("cid", [""])[0]))
             elif u.path == "/data":
                 # 매번 다시 읽는다 — 선별을 다시 돌리고 새로고침하면 바로 반영된다
-                sc = collect(out_dir, all_rows=all_rows)
+                # no_skip: 승인·보호에 걸린 자리도 그대로 보인다 — 유실 재검처럼
+                # 이미 승인된 이벤트 안의 자리를 일부러 다시 보는 검수용
+                sc = collect(out_dir, ok=set() if no_skip else None,
+                             done=set() if no_skip else None, all_rows=all_rows)
                 cov = covers_map(out_dir)
                 for s in sc:                     # 대조 산출이 다른 답을 낸 행에 alt를 얹는다
                     p = req_path(out_dir, s["file"])
@@ -540,10 +559,13 @@ def selftest():
             data=json.dumps({"event": "24:43", "판정": "승인", "텍스트": "",
                              "메모": "일괄"}, ensure_ascii=False).encode(),
             headers={"Content-Type": "application/json"}))
-        back = json.load(urllib.request.urlopen(base + "/data"))["verdicts"]
+        got2 = json.load(urllib.request.urlopen(base + "/data"))
+        back = got2["verdicts"]
         assert back["999:99:0:0"]["판정"] == "B새번역", back   # 새로고침하면 도로 채워진다
         assert back["999:99:0:0"]["ts"]
         assert back["event:24:43"]["판정"] == "승인", back    # 이벤트 승인은 따로 남는다
+        # 진도 — 행이 화면에서 안 빠져도 판정 기록이 끝남으로 선다
+        assert got2["stat"]["끝남"] == 1 and got2["stat"]["남음"] == 0, got2["stat"]
         srv.shutdown()
     print("selftest ok")
 
@@ -556,12 +578,13 @@ def main(argv):
         print(__doc__)
         return
     all_rows = "--all" in a          # 선별 무관 전 행 — 파일럿 전량 검수용
+    no_skip = "--no-skip" in a       # 승인·보호 자리도 표시 — 유실 재검용
     alt = alt_map(a[a.index("--alt") + 1] if "--alt" in a else None)
     v = verdict_path(out)
     n = len(load_verdicts(v))
     print(f"http://localhost:{port}   판정 기록 {v}" + (f" (기존 {n}행)" if n else ""))
     print("중지: Ctrl+C", flush=True)
-    ThreadingHTTPServer(("0.0.0.0", port), handler(out, v, all_rows, alt)).serve_forever()
+    ThreadingHTTPServer(("0.0.0.0", port), handler(out, v, all_rows, alt, no_skip)).serve_forever()
 
 
 if __name__ == "__main__":

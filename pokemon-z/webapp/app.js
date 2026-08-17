@@ -249,10 +249,12 @@ function mapName(m){
   MAPNAME ??= new Map(S.rows.filter(r => r.sec === 21).map(r => [r.idx, r.v]));
   return MAPNAME.get(m) || SPK?.maps[m]?.name || '';
 }
-// 맵 대사 한 행의 화자 — [스프라이트, 분류]. 조인표에 없으면 null
+// 맵 대사 한 행의 화자 — [스프라이트, 분류]. 화자를 못 가른 행은 null
+// (자리는 있는데 화자 칸이 비는 행이 있다 — 원문이 빈 줄, 화자가 없는 것이 정답인
+//  육아방 호출 등. 여기서 안 걸러 내면 아래에서 undefined로 문자열 검사를 탄다)
 function spkOf(r){
   const e = r.sec === 0 && SPK?.maps[r.map]?.rows[r.k];
-  return e ? [SPK.sp[e[0]], SPK.gp[e[1]]] : null;
+  return e && e[0] != null ? [SPK.sp[e[0]], SPK.gp[e[1]]] : null;
 }
 
 function browseGroups(by){

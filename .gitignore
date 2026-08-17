@@ -12,3 +12,9 @@ backups/
 
 # 마스터 폰트에서 찍어 내는 16벌 — runa/stamp-fonts.py가 언제든 다시 만든다
 pokemon-z/mods/DPPT Font/Fonts/
+
+# 세션 인수인계 스크래치 — repo 지식이 아니다
+.refresh-guides/
+
+# 자동 추출 교훈 낱 md — 스킬 로드 대상이 아니다. 남길 지식은 docs로 이관한다 (2026-08-13 정리)
+**/.claude/skills/learned/

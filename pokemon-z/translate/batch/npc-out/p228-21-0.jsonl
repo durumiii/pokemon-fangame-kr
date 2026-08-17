@@ -1,0 +1,4 @@
+{"id": "228:21:0:0", "who": "carabineraow", "es": "¿Quieres sacar un libro? ¡Así me gusta, que te culturices!", "old": "책을 빌리고 싶은가? 교양을 쌓는 건 아주 바람직한 자세지!", "new": "책을 빌리고 싶으신가요? 교양을 쌓는 건 아주 좋은 자세죠!", "ok": true, "why": null}
+{"id": "228:21:0:1", "who": "carabineraow", "es": "Mira, me acaban de devolver estos tres. ¿Alguno despierta tu interés?", "old": "방금 이 세 권이 반납되었다. 마음에 드는 게 있나?", "new": "마침 방금 이 세 권이 반납되었어요. 관심이 가는 책이 있으신가요?", "ok": true, "why": null}
+{"id": "228:21:0:5", "who": "carabineraow", "es": "(Te quedas con este libro)", "old": "(이 책을 빌린다)", "new": "(이 책을 빌린다)", "ok": true, "why": null}
+{"id": "228:21:0:8", "who": "carabineraow", "es": "(Devuelves el anterior libro y te quedas con este)", "old": "(이전 책을 반납하고 이 책을 빌린다)", "new": "(이전 책을 반납하고 이 책을 빌린다)", "ok": true, "why": null}

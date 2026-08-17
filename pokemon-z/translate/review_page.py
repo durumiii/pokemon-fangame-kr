@@ -98,8 +98,11 @@ def scene_of(fp, why, ok=frozenset(), all_rows=False):
                   "new": r.get("new") or r["old"], "why": why.get(r["id"], [])}
                  for r in hit],
         # 문맥은 장면 전부 — 현행 번역으로 읽어야 흐름이 잡힌다
+        # new는 값이 달라진 행에만 싣는다 — 문맥에서 고쳐진 자리를 표시하는 데 쓴다
         "flow": [{"id": r["id"], "who": r["who"], "ko": r["old"], "es": r["es"],
-                  "hit": r["id"] in why} for r in rows],
+                  "hit": r["id"] in why,
+                  **({"new": r["new"]} if r.get("new") and r["new"] != r["old"] else {})}
+                 for r in rows],
     }
 
 
@@ -323,10 +326,10 @@ function render(){
 function openFlow(sc, id){
   document.getElementById('ctxT').textContent=sc.name;
   document.getElementById('ctxM').textContent=
-    `맵 ${sc.map} · 이벤트 ${sc.event}-${sc.page} · ${sc.total}행 — 현행 번역으로 읽는 장면`;
+    `맵 ${sc.map} · 이벤트 ${sc.event}-${sc.page} · ${sc.total}행 — 장면 흐름 (고쳐진 자리는 지움·새김 표시)`;
   document.getElementById('ctxB').innerHTML=sc.flow.map(r=>
     `<div class="line${r.id===id?' here':''}" id="fl-${r.id}">
-       <span class="nm">${esc(r.who)}${r.hit?' ●':''}</span><span>${esc(r.ko)}</span>
+       <span class="nm">${esc(r.who)}${r.hit?' ●':''}</span><span>${r.new?mark(r.ko,r.new):esc(r.ko)}</span>
        <span class="sp">${esc(r.es)}</span></div>`).join('');
   document.getElementById('ctx').showModal();
   if(id){const el=document.getElementById('fl-'+id); if(el) el.scrollIntoView({block:'center'});}

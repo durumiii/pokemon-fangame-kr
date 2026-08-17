@@ -6,8 +6,9 @@
 
 루비 보간이 _INTL 리터럴 안에 있으면 런타임 문자열이 매번 달라져 번역표 키와
 영원히 안 맞는다(제보 목록의 「루비 보간 리터럴 12곳」). 이 도구는 원문 소스를
-정확 일치로 치환해 정상 템플릿 경로에 합류시킨다. 대응 번역은
-translate/ko/23-script-texts.add.jsonl (「보간 수술」 src 행들).
+정확 일치로 치환해 정상 템플릿 경로에 합류시킨다. 대응 번역은 정본
+translate/ko/23-script-texts.jsonl에 있다(동결 목록 data/frozen-keys.jsonl의
+「보간 수술」 src 행들이 그 자리를 가리킨다).
 
 12곳 중 수술 대상은 6곳 — 주머니 번호 보간 5곳은 런타임 키(bagPocket1~8)가
 이미 dat에 번역돼 있어 손댈 필요가 없고, 1곳(166 타일퍼즐)은 그래픽 경로다.
@@ -69,7 +70,7 @@ EDITS += [
 # 진짜 저주 자리는 PokeBattle_Battle의 턴 종료 처리에 따로 있고 그쪽은 정상이다.
 # 두 자리가 같은 리터럴을 쓰므로 번역표로는 원리상 분리할 수 없다 — 소스에서 가른다.
 # 새 문자열은 본가 스페인어판 자구(공식 코퍼스 실측: "¡… ha sufrido los efectos de
-# Otra Vez!" → 「… 앙코르를 받았다!」), 짝 번역은 23-script-texts.add.jsonl.
+# Otra Vez!" → 「… 앙코르를 받았다!」), 짝 번역은 23-script-texts.jsonl.
 # 옛 문자열이 저주 쪽과 안 겹치는 근거: 인자가 다르다(여기는 opponent.pbThis, 저주는 i.pbThis).
 EDITS += [
     ("PokeBattle_MoveEffects",
@@ -121,6 +122,36 @@ EDITS += [
     ("PScreen_Summary",
      'memo+=sprintf("<c3=F83820,E09890>%s\\n",mapname)',
      'memo+=sprintf("<c3=F83820,E09890>%s",mapname)'),
+]
+
+# 트레이너가 붙인 포켓몬 별명 — 번역표가 닿지 않는 자리(Z-63). 별명은 trainers.dat에
+# 들어 있고 pbLoadTrainer가 그대로 pokemon.name에 넣는다(바로 위 트레이너 이름은
+# pbGetMessageFromHash를 통과하는데 별명에는 그 포장이 없다). 게임 전체에 별명은
+# 간수 피노의 대포무노 하나뿐이라(trainers.dat 476 트레이너 전수 셈) 표 대신 조건 하나로
+# 간다 — 늘면 그때 표로 바꾼다. 번역어는 대사 정본과 같은 「폴리」(유지자 판정 2026-08-16).
+# 루비 1.8 문법.
+EDITS += [
+    ("PTrainer_NPCTrainers",
+     'pokemon.name=poke[TPNAME] if poke[TPNAME] && poke[TPNAME]!=""',
+     'pokemon.name=(poke[TPNAME]=="Paulie" ? "폴리" : poke[TPNAME]) '
+     'if poke[TPNAME] && poke[TPNAME]!=""'),
+]
+
+# 보스 포켓몬 이름 둘 — 별명과 같은 병이다(Z-63). 코드가 pokemon.name에 리터럴을
+# 곧바로 대입하므로 _INTL 포장이 없고, 그래서 어느 절에도 담기지 않는다(messages.dat에
+# ARTIFICIO 0건). 둘 다 MISSINGNO에 폼만 갈아 끼운 보스다.
+#   ARTIFICIO(맵 286 프레스코 풍차, 폼 1) → 「수호장치」 — 대사가 이 상대를 「수호 포켓몬」
+#     이라 부른다(맵 283·286에 5줄). 유지자 판정 2026-08-17(의역).
+#   FLOR(맵 474 최종병기, 폼 2) → 「꽃」 — 원문이 보통명사를 이름으로 세운 결을 그대로.
+#     본가 공식 「영원의 꽃」은 안 쓴다: 그 말은 AZ의 플라엣테를 가리키는데 같은 장면에
+#     플라엣테가 따로 등장해 섞인다(유지자 판정 2026-08-17).
+# FLOR는 한 마리에 이름이 두 번 대입된다 — 훅(EncounterModifiers)이 먼저 넣고
+# pbBossFight 본문(Boss)이 같은 값으로 덮으므로 **두 자리를 함께 고쳐야 한다.**
+# 이름칸은 잘림 처리가 없고 다섯 글자까지 레벨 표시와 안 겹친다(실측).
+EDITS += [
+    ("PField_EncounterModifiers", 'pokemon.name="ARTIFICIO"', 'pokemon.name="수호장치"'),
+    ("PField_EncounterModifiers", 'pokemon.name="FLOR"', 'pokemon.name="꽃"'),
+    ("Boss", 'genwildpoke.name="FLOR"', 'genwildpoke.name="꽃"'),
 ]
 
 # 부적(Amuleto) 18종 — pbAmuleto(116_PItem_ItemEffects)가 번역된 아이템 이름을
