@@ -255,6 +255,9 @@ def voice_sprites():
 VOICES_STRIP = re.compile(r"(Montado|Montada|Reventada|Caduca|Vestido|Monigote|Pose|"
                           r"Pechamen|Dormido|Final|Salamence|Lira|Capucha|Herido|"
                           r"Cabeza|Borracha|Mapa|Musica|Baln|TS)")
+# ⚠ 「대드루이드 피쿠스」는 직함+이름 합성이라 names.json에 정본이 없다(Ficus 항목 부재,
+# 2026-08-18 확인) — 피쿠스 표기가 재판정되면 여기가 낡는다. names.json 396행 대조 작업
+# (Z-53 한계 항목) 때 Ficus를 등재하고 이 값을 파생으로 바꾼다.
 VOICES_SPECIAL = {"az": "AZ", "f3": "F3", "druidaFicus": "대드루이드 피쿠스"}
 
 
