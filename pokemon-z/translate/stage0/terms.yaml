@@ -1,0 +1,231 @@
+_source:
+- translate/term-pairs.jsonl
+terms:
+- term: t-1af8e339
+  ko: 최종병기
+  src: Arma Definitiva
+  source: translate/term-pairs.jsonl
+- term: t-9bacc375
+  ko: 아조스단
+  src: Team Azoth
+  source: translate/term-pairs.jsonl
+- term: t-905fccd0
+  ko: 포켓몬 연금술
+  src: Alquimia Pokémon
+  source: translate/term-pairs.jsonl
+- term: t-65ee868e
+  ko: 포켓프랑
+  src: pokécuartos/pokéfrancos
+  source: translate/term-pairs.jsonl
+- term: t-1b401b5b
+  ko: 입법관
+  src: Legislador
+  source: translate/term-pairs.jsonl
+- term: t-f2ecf48b
+  ko: '대장 / 선장(배·해적: 로토)'
+  src: Capitán/Capitana
+  source: translate/term-pairs.jsonl
+- term: t-48b19ea4
+  ko: 그림자 포켓몬 (GO 공식)
+  src: Pokémon Sombrío/Shadow
+  source: translate/term-pairs.jsonl
+- term: t-f496b951
+  ko: 포핀
+  src: Pokochos
+  source: translate/term-pairs.jsonl
+- term: t-2cf8de7d
+  ko: 별명
+  src: apodo/mote
+  source: translate/term-pairs.jsonl
+- term: t-57e1ee5c
+  ko: 명예의 전당
+  src: Hall de la Fama
+  source: translate/term-pairs.jsonl
+- term: t-d5782556
+  ko: 알파/알파 둥지 (이 게임 고유)
+  src: Alfa/Nido Alfa
+  source: translate/term-pairs.jsonl
+- term: t-0d0a4686
+  ko: 섭정
+  src: Regente
+  source: translate/term-pairs.jsonl
+- term: t-272f0b33
+  ko: 얀트라 교단
+  src: Orden Yantra
+  source: translate/term-pairs.jsonl
+- term: t-e2f84d35
+  ko: 포켓투어
+  src: Poketour
+  source: translate/term-pairs.jsonl
+- term: t-2a3ef15a
+  ko: 목장
+  src: Rancho
+  source: translate/term-pairs.jsonl
+- term: t-bf6aac75
+  ko: 쇠약
+  src: estado Caduco
+  source: translate/term-pairs.jsonl
+- term: t-ae749ded
+  ko: 카두코 구호소
+  src: Hospicio Caduco
+  source: translate/term-pairs.jsonl
+- term: t-c5e75ca6
+  ko: 출혈
+  src: Hemorragia
+  source: translate/term-pairs.jsonl
+- term: t-adb77fc8
+  ko: 다른 지방의 모습의 모습」. 일반 형용사 exótico는 그대로)
+  src: versión/forma exótica
+  source: translate/term-pairs.jsonl
+- term: t-27091ca1
+  ko: 배지
+  src: Medalla
+  source: translate/term-pairs.jsonl
+- term: t-11890671
+  ko: 의뢰 게시판
+  src: Tablón de Misiones
+  source: translate/term-pairs.jsonl
+- term: t-e1a1a9a9
+  ko: 후보생
+  src: Aspirante
+  source: translate/term-pairs.jsonl
+- term: t-90ef0e0a
+  ko: 르 프로디주
+  src: Le Prodige
+  source: translate/term-pairs.jsonl
+- term: t-3d83fb62
+  ko: 교환 게시판
+  src: Milintercambios
+  source: translate/term-pairs.jsonl
+- term: t-7ba4f909
+  ko: 콘콤부르
+  src: Cornelio
+  source: translate/term-pairs.jsonl
+- term: t-63b3bd5d
+  ko: 사핀
+  src: Sapin
+  source: translate/term-pairs.jsonl
+- term: t-b2316691
+  ko: 로시욘
+  src: Rosillon
+  source: translate/term-pairs.jsonl
+- term: t-06562003
+  ko: 프리물라
+  src: Prímula
+  source: translate/term-pairs.jsonl
+- term: t-04d3f43e
+  ko: 뱃사공
+  src: Barquero
+  source: translate/term-pairs.jsonl
+- term: t-47b62c63
+  ko: 아스테르
+  src: Áster
+  source: translate/term-pairs.jsonl
+- term: t-501d9e5a
+  ko: 사프라
+  src: Zafra
+  source: translate/term-pairs.jsonl
+- term: t-a696ab47
+  ko: 선생
+  src: maese
+  source: translate/term-pairs.jsonl
+- term: t-8af4ee78
+  ko: 무슈
+  src: monsieur
+  source: translate/term-pairs.jsonl
+- term: t-7867bbbe
+  ko: 마담
+  src: madame
+  source: translate/term-pairs.jsonl
+- term: t-1cee5c01
+  ko: 마드모아젤
+  src: mademoiselle
+  source: translate/term-pairs.jsonl
+- term: t-f71c418a
+  ko: 박사(올리비에) / 교수(어둠의 탑 교수·사핀 교수)
+  src: Profesor/Profesora
+  source: translate/term-pairs.jsonl
+- term: t-4b50702a
+  ko: 요새
+  src: bastión
+  source: translate/term-pairs.jsonl
+- term: t-a1038cbb
+  ko: 마스크
+  src: máscara
+  source: translate/term-pairs.jsonl
+- term: t-8fde2a65
+  ko: 팔데아
+  src: Paldea
+  source: translate/term-pairs.jsonl
+- term: t-fc7e0563
+  ko: 가라르
+  src: Galar
+  source: translate/term-pairs.jsonl
+- term: t-521f20a2
+  ko: 관동
+  src: Kanto
+  source: translate/term-pairs.jsonl
+- term: t-33d550a1
+  ko: 성도
+  src: Johto
+  source: translate/term-pairs.jsonl
+- term: t-58afa152
+  ko: 호연
+  src: Hoenn
+  source: translate/term-pairs.jsonl
+- term: t-c1713800
+  ko: 신오
+  src: Sinnoh
+  source: translate/term-pairs.jsonl
+- term: t-563d702b
+  ko: 알로라
+  src: Alola
+  source: translate/term-pairs.jsonl
+- term: t-d178f9aa
+  ko: 프로스트케이브
+  src: Gruta Helada
+  source: translate/term-pairs.jsonl
+- term: t-f52cc869
+  ko: 땅이음의 동굴
+  src: Gruta Tierraunida
+  source: translate/term-pairs.jsonl
+- term: t-efd64306
+  ko: 해신의 굴
+  src: Cueva Talasia
+  source: translate/term-pairs.jsonl
+- term: t-de016923
+  ko: 포켓몬키우미집
+  src: Guardería Pokémon
+  source: translate/term-pairs.jsonl
+- term: t-eb792f27
+  ko: 플레어단 비밀기지
+  src: Guarida Team Flare
+  source: translate/term-pairs.jsonl
+- term: t-c31c6f8a
+  ko: 솔레유 카페
+  src: Café Soleil
+  source: translate/term-pairs.jsonl
+- term: t-7ce1ce9a
+  ko: 파르트네르 카페
+  src: Café Concordia
+  source: translate/term-pairs.jsonl
+- term: t-db93e7cc
+  ko: 뚜뚜 카페
+  src: Café Can Can
+  source: translate/term-pairs.jsonl
+- term: t-8c4e5cee
+  ko: 사나이 카페
+  src: Café Galanes
+  source: translate/term-pairs.jsonl
+- term: t-f4d7c71a
+  ko: 튼튼밀크 오믈렛
+  src: Tortilla Mu-Mu
+  source: translate/term-pairs.jsonl
+- term: t-4f290748
+  ko: 팔데아 비밀 메뉴
+  src: Paldeano Secreto
+  source: translate/term-pairs.jsonl
+- term: t-cf80b6f0
+  ko: 포켓스파게티
+  src: Pokéspaguetis
+  source: translate/term-pairs.jsonl

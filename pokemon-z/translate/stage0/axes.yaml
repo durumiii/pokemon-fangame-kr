@@ -1,0 +1,44 @@
+axes:
+  speaker:
+    from: sites.speaker
+  to:
+    from: sites.to
+  kind:
+    values:
+    - say
+    - narration
+    - choice
+    - system
+    - ui
+precedence:
+- site
+- speaker
+- to
+- kind
+layout:
+  maps: 508
+  sections:
+    0: maps
+    1: list
+    2: list
+    3: list
+    4: list
+    5: list
+    6: list
+    7: list
+    8: list
+    9: list
+    10: list
+    11: list
+    12: list
+    13: list
+    18: list
+    21: list
+    14: hash
+    19: hash
+    20: hash
+    22: hash
+    23: hash
+    15: empty
+    16: empty
+    17: empty

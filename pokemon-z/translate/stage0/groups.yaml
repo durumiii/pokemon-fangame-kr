@@ -1,0 +1,1353 @@
+_source:
+- translate/persona-table.jsonl
+- translate/sprite-groups.json
+groups:
+- group: campesinaw
+  match:
+    speaker: campesinaw
+  rows: 302
+  bucket: B1
+  persona: 시골 아낙 차림의 젊은 여자. 스스럼없고 살가운 반말
+  appearance: 20대 여자. 물결지는 적갈색 긴 머리, 카키색 농부 원피스에 붉은 앞치마. 수수하고 활기찬 인상
+  basis: 그림+표본
+  note: 표본 6개 중 3개가 포켓몬센터 접수·기술 안내 대사다. 같은 스프라이트가 접객 NPC로도 재사용되므로, 센터/호텔 맵의 행은 B2(해요)+절차 B3로 갈라야 한다
+  source: translate/persona-table.jsonl
+- group: burguesaow
+  match:
+    speaker: burguesaow
+  rows: 239
+  bucket: B2(사실·시설 설명 문장만 B3)
+  persona: 사교계 귀부인. 정중한 해요체, 어휘는 은근히 오만(「~하시죠」「~인가 보네요」)
+  appearance: 성인 여자. 푸른 꽃과 흰 깃털을 얹은 거대한 챙모자, 파란 보디스에 크림색 드레스, 분홍 소매. 사교계 정장
+  basis: 그림+그룹방침
+  note: ''
+  source: translate/persona-table.jsonl
+- group: burguesow
+  match:
+    speaker: burguesow
+  rows: 223
+  bucket: B2(설명·선언은 B3, 자기 과시 대목은 반말 「~거다」 허용)
+  persona: 백발 가발의 중년 신사. 정중하지만 오만한 해요체, 신분·재산 과시 어휘
+  appearance: 중년 남자. 흰 분가루 가발, 보라색 프록코트에 금단추, 지팡이. 살짝 찌푸린 눈매
+  basis: 그림+표본
+  note: ''
+  source: translate/persona-table.jsonl
+- group: ilustrado
+  match:
+    speaker: ilustrado
+  rows: 181
+  bucket: B2(사실 서술은 B3 혼재)
+  persona: 계몽기 학자. 차분한 해요체로 길게 설명하고 역사·괴담을 즐겨 인용한다. 정중하되 격식은 과하지 않다
+  appearance: 젊은 남자. 밀짚빛 넓은 챙모자, 곱슬 주황 머리, 둥근 안경, 남색 코트에 노란 조끼
+  basis: 그림+표본
+  note: ''
+  source: translate/persona-table.jsonl
+- group: mosqueterow
+  match:
+    speaker: mosqueterow
+  rows: 177
+  bucket: B1변형(공무·통보 문장은 B3)
+  persona: 왕실 총사. 시원시원한 반말에 군대식 단정 「~다」가 섞인다. 임무·법 집행을 말할 때만 격식을 갖춘다
+  appearance: 성인 남자. 흰 깃털 꽂은 검정 넓은챙 모자, 십자 문양 파란 상의, 갈색 장발과 수염
+  basis: 그림+표본
+  note: ''
+  source: translate/persona-table.jsonl
+- group: hombre1
+  match:
+    speaker: hombre1
+  rows: 143
+  bucket: B1
+  persona: 평범한 중년 남자. 무뚝뚝하고 말수 적은 반말, 냉소 한 스푼
+  appearance: 중년~초로 남자. 희끗한 곱슬머리, 수염 자국, 파란 체크 상의에 갈색 바지
+  basis: 그림+그룹방침
+  note: 표본에 지문형 서술(「~습니다」로 끝나는 3인칭 설명)이 섞여 있다. 그 행은 화자 대사가 아니라 안내문일 수 있어 B5 판정을 따로 봐야 한다
+  source: translate/persona-table.jsonl
+- group: enfermera2
+  match:
+    speaker: enfermera2
+  rows: 139
+  bucket: B2+B3
+  persona: 포켓몬센터 간호사. 밝은 해요체로 맞이하고 치료 절차는 합쇼로 또박또박 안내한다
+  appearance: 젊은 여자. 흰 간호모, 진분홍 머리를 양갈래로 묶고, 갈색 유니폼에 포켓볼 문양 앞치마
+  basis: 그림+표본
+  note: ''
+  source: translate/persona-table.jsonl
+- group: mosqueteraw
+  match:
+    speaker: mosqueteraw
+  rows: 133
+  bucket: B1변형
+  persona: 여성 총사. 거침없는 반말에 호승심이 강하고, 경고할 땐 「~겠다」로 단정한다
+  appearance: 성인 여자. 총사 제복 그대로 — 흰 깃털 검정 챙모자, 파란 상의, 주황색 곱슬머리
+  basis: 그림+표본
+  note: ''
+  source: translate/persona-table.jsonl
+- group: hombre2
+  match:
+    speaker: hombre2
+  rows: 132
+  bucket: B1
+  persona: 멋 부린 젊은 남자. 편한 반말로 자기 취향을 늘어놓고 남의 사정에 훈수를 둔다
+  appearance: 청년 남자. 갈색 챙모자, 황갈색 롱코트에 파란 조끼, 청록 눈, 뒤로 묶은 머리
+  basis: 그림+표본
+  note: ''
+  source: translate/persona-table.jsonl
+- group: cazadorow
+  match:
+    speaker: cazadorow
+  rows: 121
+  bucket: B1변형
+  persona: 포켓몬 사냥꾼. 낮고 무뚝뚝한 반말, 단정 「~다」 기본, 짧게 끊어 말함
+  appearance: 성인 남자. 뿔 달린 검정 삼각모, 얼굴 아랫부분을 가린 복면, 검은 갑주풍 롱코트
+  basis: 그림+표본
+  note: 그룹은 「일반」으로 잡혔으나 그림·대사 모두 사냥꾼 길드 소속이다. 길드 홍보 대사에서는 해요체로 전환하는 표본이 있어, 초심자 안내 행만 B2로 갈라 두는 편이 낫다
+  source: translate/persona-table.jsonl
+- group: burguesaow2
+  match:
+    speaker: burguesaow2
+  rows: 120
+  bucket: B2
+  persona: 젊은 귀족 부인. 밝고 상냥한 해요체, 감탄이 잦음
+  appearance: 젊은 여자. 갈색 머리를 위로 틀어 올리고 비녀 장식, 초록 보디스에 분홍 장미, 크림색 줄무늬 치마
+  basis: 그림+그룹방침
+  note: 표본 6개 중 3개가 포켓몬센터·복권 접수 대사다. 그 행들은 접객 B2+절차 B3로 처리하면 그림과 어긋나지 않는다
+  source: translate/persona-table.jsonl
+- group: mujer2
+  match:
+    speaker: mujer2
+  rows: 106
+  bucket: B1
+  persona: 살림하는 마을 아낙. 담백한 반말
+  appearance: 성인 여자. 흰 두건 모자에 금발 앞머리, 회색 상의와 초록 앞치마
+  basis: 그림+그룹방침
+  note: 표본에 지문형 3인칭 설명(「~했다」)이 섞여 있다 — 화자 대사가 아니라 안내판·서술일 수 있다
+  source: translate/persona-table.jsonl
+- group: anciano
+  match:
+    speaker: anciano
+  rows: 102
+  bucket: B4
+  persona: 인심 좋은 백발 노인. 어른말 기본(「~라네」「~구먼」「~단다」), 손아랫사람에게 다정
+  appearance: 백발 노인 남자. 짧은 회색 곱슬머리, 활짝 웃는 입, 갈색 코트에 흰 셔츠
+  basis: 그림+그룹방침
+  note: 현행 표본은 대부분 해요·합쇼체다. B4로 옮기는 것이 방침이므로 재번역 시 어미 전면 교체가 필요하다
+  source: translate/persona-table.jsonl
+- group: brujita
+  match:
+    speaker: brujita
+  rows: 98
+  bucket: B1변형(마녀 흉내 어른말 섞임)
+  persona: 꼬마 마녀. 또래 반말이되 마녀 흉내로 일부러 늙은이 말투를 섞음(「~하거라」「~느니라」)
+  appearance: 어린 여자아이. 번개 무늬가 들어간 짙은 보라 마녀모자 겸 머리, 회보라 로브, 큰 흰자위의 또렷한 눈
+  basis: 그림+표본
+  note: 그림은 어린이인데 표본 대사는 「만나보거라」「알고 싶구나」 등 어른말이다. 어긋남이 아니라 연출로 보고 흉내 말투로 살렸다
+  source: translate/persona-table.jsonl
+- group: anciana
+  match:
+    speaker: anciana
+  rows: 91
+  bucket: B4
+  persona: 할머니. 어른말로 다정하게(「~란다」「~겠니」)
+  appearance: 노년 여자. 흰 두건 모자 아래 백발, 붉은 숄에 남색 치마
+  basis: 그림+그룹방침
+  note: ''
+  source: translate/persona-table.jsonl
+- group: alquimistaOW
+  match:
+    speaker: alquimistaOW
+  rows: 82
+  bucket: B6하게(배틀 도발·혼잣말은 B1)
+  persona: 괴짜 연금술사. 부드러운 하게체(「~라네」「~걸세」「~하게」) 기본, 배틀 도발·격앙·혼잣말은 반말 유지
+  appearance: 성인 남자. 부풀린 청록색 곱슬머리, 이마에 올린 고글, 갈색 가죽 앞치마, 덥수룩한 수염
+  basis: 그림+표본
+  note: '2026-08-04 사용자 판정: 딱딱한 단정 반말을 하게체로 전환 적용 완료. 페로파스(온화한 하게체)와 직군 결이 맞는다. 배틀 도발 행·혼잣말은 반말 그대로'
+  source: translate/persona-table.jsonl
+- group: carabinerow
+  match:
+    speaker: carabinerow
+  rows: 79
+  bucket: B2+B3(위협 시 B1변형)
+  persona: 헌병·경비병. 근무 중에는 예의 바른 해요체로 안내하고, 절차·통보는 합쇼로 딱 끊는다. 위협할 땐 반말로 돌변한다
+  appearance: 성인 남자. 금테 두른 파란 삼각모, 주황 어깨띠, 파란 제복, 갈색 장발
+  basis: 그림+표본
+  note: carabineraow와 그림이 사실상 동일하다(같은 파일 재사용으로 보임). 두 스프라이트를 성별로 구분해 쓰지 말 것
+  source: translate/persona-table.jsonl
+- group: metre
+  match:
+    speaker: metre
+  rows: 74
+  bucket: B3+B2
+  persona: 요새·체육관 안내를 맡은 집사장. 절도 있는 합쇼체가 기본이고 손님을 맞을 때만 해요로 누그러진다. 「후보생님」 호칭을 쓴다
+  appearance: 초로 남자. 잘 빗은 회색 머리, 남색 연미복에 흰 셔츠와 초록 조끼
+  basis: 그림+표본
+  note: ''
+  source: translate/persona-table.jsonl
+- group: gitana
+  match:
+    speaker: gitana
+  rows: 67
+  bucket: B1변형
+  persona: 유랑 점술사. 점괘·예언·의식 문장만 예언조 단정 「~것이다/~구나/~거라」, 일상 잡담·안내는 순한 반말 「~야/~어/~지」. 뜸을 들이는 「흠... 그렇군...」이 버릇이고 말투가 나른하다
+  appearance: 성인 여자. 금장식 꽂은 검은 올림머리, 큰 금 고리 귀걸이, 흰 블라우스에 청록 보디스, 보라 치마
+  basis: 그림+표본, 두 결 경계는 quality.md 「gitana 말투는 두 결」(2026-08-13 유지자 판정)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: prodigio
+  match:
+    speaker: prodigio
+  rows: 64
+  bucket: B2+B3
+  persona: 떠돌이 포켓몬 교환상. 부드러운 해요체로 흥정하고, 거래 조건은 합쇼로 또박또박 짚는다. 거절당하면 아쉬운 척 부추긴다
+  appearance: 성인. 꽃과 보석을 얹은 진분홍 넓은챙 모자, 짙은 붉은 코트, 지팡이, 푸른 머리. 성별은 그림으로 단정하기 어렵다
+  basis: 그림+표본
+  note: 그룹은 「학자」로 잡혔으나 표본 6개 전부가 포켓몬 교환 대사다. 직능은 상인으로 보는 편이 맞다. 그림은 col0 한 칸만 채워진 시트라 전체 시트를 열어 확인했다
+  source: translate/persona-table.jsonl
+- group: obrerow
+  match:
+    speaker: obrerow
+  rows: 64
+  bucket: B1
+  persona: 공장 노동자. 걸걸하고 소탈한 반말
+  appearance: 성인 남자. 파란 머리와 작업모, 데님 멜빵바지, 공구 벨트, 갈색 장갑
+  basis: 그림+표본
+  note: 표본에 몬스터볼 공장 견학 안내용 해요체가 섞여 있다 — 견학 안내 행만 B2
+  source: translate/persona-table.jsonl
+- group: campesinow
+  match:
+    speaker: campesinow
+  rows: 56
+  bucket: B1
+  persona: 시골 청년. 허물없는 반말, 소심하고 솔직한 결
+  appearance: 청년 남자. 붉은빛 도는 갈색 머리, 카키색 농부 작업복, 앳된 얼굴
+  basis: 그림+그룹방침
+  note: 표본 절반이 마을 안내용 해요체다. 마을 소개·성소 안내 행은 B2로 갈라 볼 것
+  source: translate/persona-table.jsonl
+- group: sanadoraow
+  match:
+    speaker: sanadoraow
+  rows: 55
+  bucket: B2(배틀 대사만 B1)
+  persona: 바니타스 치유사. 차분한 해요체로 환자를 대하고 치료 절차는 담담하게 설명한다. 배틀에 들어가면 반말로 짧게 끊는다
+  appearance: 성인 여자. 카키색 두건 후드, 길게 땋은 금발, 올리브색 로브에 붉은 앞자락
+  basis: 그림+표본
+  note: ''
+  source: translate/persona-table.jsonl
+- group: monjeYantra
+  match:
+    speaker: monjeYantra
+  rows: 51
+  bucket: B3(친근한 대목만 B1)
+  persona: 얀트라 수도승. 겸손한 합쇼체로 가르침을 전하고 자기 수행이 부족하다고 낮춘다. 비밀을 알려줄 땐 반말로 잠깐 풀어진다
+  appearance: 청년 남자. 갈색 곱슬머리, 검은 튜닉에 주황 띠, 흰 바지. 수도복 차림
+  basis: 그림+표본
+  note: 그룹방침의 「얀트라 무투승=거친 단정 ~다」에는 들어맞지 않는다. 표본 6개 중 4개가 겸양 합쇼이고 그림도 무투승이 아니라 학승·수사에 가깝다. 무투승 어투는 다른 스프라이트에 배정하는 편이 안전하다
+  source: translate/persona-table.jsonl
+- group: cantanteow
+  match:
+    speaker: cantanteow
+  rows: 49
+  bucket: B2
+  persona: 무대 가수. 들뜬 해요체, 감탄이 잦음
+  appearance: 성인 여자. 크게 부풀린 금발, 분홍 무대 드레스, 목걸이와 보석 장식
+  basis: 그림+표본
+  note: ''
+  source: translate/persona-table.jsonl
+- group: pirata
+  match:
+    speaker: pirata
+  rows: 48
+  bucket: B1
+  persona: 공중 해적. 걸걸한 반말, 허세 결
+  appearance: 성인. 진홍색 두건모자, 검은 곱슬 장발, 붉은 코트, 갈색 피부
+  basis: 그림+표본
+  note: 표본에 상냥한 해요체 물타입 안내가 하나 섞여 있다(해적선 밖 마을 NPC로 재사용된 자리)
+  source: translate/persona-table.jsonl
+- group: ninaSonadoraOW
+  match:
+    speaker: ninaSonadoraOW
+  rows: 48
+  bucket: B1(어른 상대만 B2)
+  persona: 몽상가 여자아이. 또래엔 반말, 어른에게는 해요체
+  appearance: 여자아이. 분홍 리본을 얹은 금발, 분홍 원피스
+  basis: 그림+표본
+  note: ''
+  source: translate/persona-table.jsonl
+- group: cocineroOW
+  match:
+    speaker: cocineroOW
+  rows: 47
+  bucket: B1
+  persona: 요리사. 친근한 반말이 기본이다(2026-08-06 사용자 판정 — 해요·합쇼체에서 갈아탐). 손님을 낮잡지 않고 어미만 편하게 푼다
+  appearance: 성인 남자. 흰 요리사 모자, 붉은 스카프, 회색 조리복
+  basis: 그림+표본+사용자 판정
+  note: 맵 116 르 숑크 식당의 camarero1·camarero2 이벤트는 같은 스프라이트지만 게임 안 호칭이 「웨이터/종업원」이라 반말 전환에서 뺐다 — 사용자 판정 대기
+  source: translate/persona-table.jsonl
+- group: carabineraow
+  match:
+    speaker: carabineraow
+  rows: 47
+  bucket: B2(선동·위협 대목은 B1변형)
+  persona: 헌병 제복 차림의 인물. 안내·수송 대사는 해요체, 군중 앞 구호와 위협은 반말 단정 「~다」
+  appearance: carabinerow와 동일한 그림 — 금테 두른 파란 삼각모, 주황 어깨띠, 파란 제복, 갈색 장발
+  basis: 그림+표본
+  note: 두 가지 어긋남. 첫째, carabinerow와 그림이 같아 성별 구분 근거가 없다. 둘째, 표본이 역 안내원·시위 군중·마녀 집단 권유로 흩어져 있어 한 인물로 묶이지 않는다 — 맵별로 나눠 배정할 것
+  source: translate/persona-table.jsonl
+- group: prisionero1
+  match:
+    speaker: prisionero1
+  rows: 47
+  bucket: B1
+  persona: 수감자. 거친 반말, 자조와 허세가 섞이고 후회를 툭 내뱉는다. 상대를 「이봐」로 부른다
+  appearance: 성인 남자. 검은 아프로 머리와 턱수염, 회백색 죄수복
+  basis: 그림+표본
+  note: ''
+  source: translate/persona-table.jsonl
+- group: nina
+  match:
+    speaker: nina
+  rows: 45
+  bucket: B1(어른 상대만 B2)
+  persona: 시골 여자아이. 또래엔 반말, 낯선 어른에게는 해요체
+  appearance: 여자아이. 갈색 챙모자와 갈색 원피스, 초록 눈
+  basis: 그림+표본
+  note: ''
+  source: translate/persona-table.jsonl
+- group: lenador
+  match:
+    speaker: lenador
+  rows: 45
+  bucket: B1
+  persona: 나무꾼. 투박하고 겸연쩍은 반말
+  appearance: 성인 남자. 갈색 곱슬머리와 수염, 초록 셔츠에 남색 멜빵바지
+  basis: 그림+표본
+  note: 같은 문장의 반말판과 해요판이 표본에 함께 있다(단단지 대사) — 현행 번역의 어투 흔들림이므로 재번역에서 반말로 통일
+  source: translate/persona-table.jsonl
+- group: revolucionaria
+  match:
+    speaker: revolucionaria
+  rows: 45
+  bucket: B1변형
+  persona: 혁명파 여자. 평소엔 반말이지만 대의를 말할 땐 격문투 단정 「~다」로 격상한다. 목소리가 크고 단호하다
+  appearance: campesinaw와 같은 몸·머리(적갈색 물결 머리)에 파란 원피스와 붉은 앞치마
+  basis: 그림+표본
+  note: 표본에 다정한 해요체 교환 부탁 대사가 섞여 있다 — 혁명 장면 밖에서 일반 행인으로 재사용된 자리
+  source: translate/persona-table.jsonl
+- group: curanderaow
+  match:
+    speaker: curanderaow
+  rows: 43
+  bucket: B1변형
+  persona: 늪의 주술사. 반말로 경고하고 예언은 단정 「~이다」로 맺는다. 상대를 걱정하는 듯 으스스하게 말한다
+  appearance: 성인 여자. 초록 머리띠와 검은 머리, 자줏빛 목도리, 초록 로브
+  basis: 그림+표본
+  note: ''
+  source: translate/persona-table.jsonl
+- group: druidaFicus
+  match:
+    speaker: druidaFicus
+  rows: 42
+  bucket: B3+B4(선언은 「~다」)
+  persona: 대드루이드 피쿠스. 장중한 합쇼체로 내력을 설명하고, 예언과 선언은 「~다」로 끊는다. 문장이 길고 느리다
+  appearance: 성인. 사슴뿔처럼 뻗은 나뭇가지 관, 붉은 머리, 이끼 낀 갈색 망토
+  basis: 그림+표본
+  note: 표본 전부가 컷신(Antigua Forja - Escenas)이다. 일회용 행인이 아니라 이름 있는 인물이므로 말투표 쪽과 겹치는지 확인 필요
+  source: translate/persona-table.jsonl
+- group: azothow
+  match:
+    speaker: azothow
+  rows: 39
+  bucket: B1
+  persona: 팀 아조스 조직원. 비아냥대는 반말, 도발 결
+  appearance: 성인. 부리 달린 역병의사 가면, 넓은 갈색 챙모자, 어두운 갈색 코트
+  basis: 그림+표본
+  note: ''
+  source: translate/persona-table.jsonl
+- group: monjaYantra
+  match:
+    speaker: monjaYantra
+  rows: 37
+  bucket: B3
+  persona: 얀트라 수녀. 경건한 합쇼체로 교리와 견문을 전한다. 신념을 말할 때만 「~것이다」로 단호해진다
+  appearance: 성인 여자. 금테 두른 갈색 챙모자, 갈색 곱슬머리, 회백색 수도복에 주황 띠
+  basis: 그림+그룹방침
+  note: ''
+  source: translate/persona-table.jsonl
+- group: ladrona
+  match:
+    speaker: ladrona
+  rows: 36
+  bucket: B1
+  persona: 도둑. 날 선 반말, 흥정과 협박을 오간다. 정보를 팔고 값을 매기는 말버릇
+  appearance: 성인 여자. 뻗친 진홍색 머리, 보라색 코트, 검은 장갑
+  basis: 그림+표본
+  note: ''
+  source: translate/persona-table.jsonl
+- group: lunatico
+  match:
+    speaker: lunatico
+  rows: 35
+  bucket: B1(불안정한 존대 혼재)
+  persona: 어둠의 탑 수용자. 반말과 해요체를 오가며 말이 끊긴다. 헛것을 보고 혼잣말을 하다 갑자기 상대에게 매달린다
+  appearance: 성인 남자. 민머리, 초록 눈썹, 퀭한 눈, 낡은 흰 구속복 차림
+  basis: 그림+표본
+  note: 어투가 한 화자 안에서 흔들리는 것이 이 스프라이트의 연출이다. 어투 통일 게이트에서 걸리더라도 살려 둘 것
+  source: translate/persona-table.jsonl
+- group: gitano
+  match:
+    speaker: gitano
+  rows: 34
+  bucket: B1(예언·경고는 단정 「~다」)
+  persona: 유랑 서커스단의 점술가. 붙임성 있는 반말로 말을 걸고, 경고나 예언에서는 낮게 깔린 단정 「~다」
+  appearance: 성인. 청록 두건과 검은 머리, 금 고리 귀걸이, 갈색 재킷에 청록 치마·허리띠. 그림만으로는 성별을 단정하기 어렵다
+  basis: 그림+표본
+  note: 이름은 남성형(gitano)인데 그림은 여성으로 읽힌다 — 성별 단정 어휘를 피하는 편이 안전하다 2026-08-09 유지자 승인으로 해요→반말 전환(선제 교정 1차).
+  source: translate/persona-table.jsonl
+- group: nino
+  match:
+    speaker: nino
+  rows: 33
+  bucket: B1(어른 상대만 B2)
+  persona: 고아원 남자아이. 또래엔 반말, 어른에게는 해요체
+  appearance: 남자아이. 갈색 단발, 회색 튜닉, 청록 눈
+  basis: 그림+표본
+  note: ''
+  source: translate/persona-table.jsonl
+- group: mujer1
+  match:
+    speaker: mujer1
+  rows: 31
+  bucket: B1
+  persona: 마을 아낙. 담백한 반말
+  appearance: 성인 여자. 흰 두건 모자에 검은 머리, 초록 앞치마와 남색 치마
+  basis: 그림+그룹방침
+  note: 표본 6개 중 5개가 해요·합쇼체다. 현행 번역이 존대로 기울어 있으므로 방침대로 반말로 내리면 체감 변화가 크다 — 배치 후 눈으로 확인할 자리
+  source: translate/persona-table.jsonl
+- group: azothaow
+  match:
+    speaker: azothaow
+  rows: 31
+  bucket: B1(연구·회고 대목은 B2)
+  persona: 팀 아조스 여성 조직원. 협박은 반말 단정 「~다」, 차분한 대목은 해요체
+  appearance: azothow와 같은 계열 — 부리 가면에 자줏빛 도는 넓은 챙모자, 금장식 코트
+  basis: 그림+표본
+  note: 표본이 협박조와 양심의 가책을 말하는 연구자조로 갈린다 — 맵별로 다른 인물이 같은 그림을 쓰는 것으로 보인다
+  source: translate/persona-table.jsonl
+- group: lunatica
+  match:
+    speaker: lunatica
+  rows: 28
+  bucket: B1
+  persona: 어둠의 탑 수용자. 들뜬 반말로 앞뒤 안 맞는 말을 쏟아내고, 자기가 사천왕이라거나 포켓몬이 말을 건다고 주장한다
+  appearance: 성인 여자. 초록 모자 겸 머리, 퀭한 눈, 낡은 흰 수용복
+  basis: 그림+표본
+  note: 박사에게 말할 때만 해요체로 올라간다 — 그 행은 존대로 둘 것
+  source: translate/persona-table.jsonl
+- group: payaso
+  match:
+    speaker: payaso
+  rows: 28
+  bucket: B1
+  persona: 서커스 광대. 반말로 능청스럽게 굴다가 갑자기 서늘해진다. 농담과 수수께끼를 던지고 상대를 놀린다
+  appearance: 성인. 파랑·보라 광대 모자, 하얗게 칠한 얼굴, 붉은 코, 알록달록한 옷
+  basis: 그림+표본
+  note: 표본 중 둘이 파글리아치 농담을 옮기는 3인칭 지문(「의사는 이렇게 대답한다」)이다 — 그 행은 B5 지문평서
+  source: translate/persona-table.jsonl
+- group: revolucionario
+  match:
+    speaker: revolucionario
+  rows: 27
+  bucket: B1변형(흉흉한 시기만 격문투)
+  persona: 혁명파 남자. 평범한 반말이 기본이고, 흉흉한 시기(혁명이 한창인 장면)에만 격문투 — 반말 위에 딱딱한 단정 「~다」가 얹힌다. 귀족을 향한 분노를 감추지 않는다
+  appearance: campesinow와 같은 몸(붉은 갈색 머리)에 남색 상의
+  basis: 그림+표본+유지자 판정(2026-08-09, register-candidates 보류 절)
+  note: 평시 잡담 3줄을 평범한 반말로 완화 반영(2026-08-09)
+  source: translate/persona-table.jsonl
+- group: pregonero
+  match:
+    speaker: pregonero
+  rows: 26
+  bucket: B3
+  persona: 거리의 방(榜)잡이. 광장에서 소식을 외친다. 문장마다 합쇼체 감탄으로 끝맺고(「~했습니다!」) 과장이 심하다
+  appearance: 성인. 흰 깃털 꽂은 하늘색 챙모자, 금발, 하늘색 제복. 두루마리와 나팔을 들었다
+  basis: 그림+표본
+  note: 표본 하나가 「~했다」로 끝나 어투가 흔들린다 — 재번역에서 외침 합쇼로 통일
+  source: translate/persona-table.jsonl
+- group: acrilico2
+  match:
+    speaker: acrilico2
+  rows: 26
+  bucket: B2+B3
+  persona: 아크릴리코마을의 기술 가르침꾼. 정중한 해요체로 안내하고 절차는 합쇼로 맺는다. 기억력이 좋다고 자부한다
+  appearance: 성인. 초록 머리와 초록 모자, 얼굴 윗부분을 흰 붕대 겸 가면으로 감쌌다. 회색 상의
+  basis: 그림+표본
+  note: 표본 하나(「그건 알이잖아, 이 쓸모없는 놈아」)는 육성 도우미 정형구가 흘러든 것으로 보인다 — 이 인물의 말투로 삼지 말 것
+  source: translate/persona-table.jsonl
+- group: prisionero2
+  match:
+    speaker: prisionero2
+  rows: 26
+  bucket: B1
+  persona: 고참 수감자. 아는 척하는 능글맞은 반말
+  appearance: 성인 남자. 헝클어진 갈색 머리, 회백색 죄수복
+  basis: 그림+표본
+  note: 표본 하나가 3인칭 서술(「~것이었다」)이다 — 안내문 계열일 수 있다
+  source: translate/persona-table.jsonl
+- group: alquimista2OW
+  match:
+    speaker: alquimista2OW
+  rows: 26
+  bucket: B2
+  persona: 연구에 들뜬 연금술사. 해요체로 가설을 신나게 늘어놓고 상대의 반응을 살핀다
+  appearance: alquimistaOW와 동일한 그림 — 청록 곱슬머리, 이마의 고글, 갈색 가죽 앞치마
+  basis: 그림+표본
+  note: alquimistaOW와 그림이 같다. 두 스프라이트를 외형으로 구분하지 말고 어투(반말 자랑조 vs 해요 설명조)로만 갈라 쓸 것
+  source: translate/persona-table.jsonl
+- group: acrilico4
+  match:
+    speaker: acrilico4
+  rows: 25
+  bucket: B2
+  persona: 아크릴리코마을 점원. 상냥한 해요체, 계산과 안내를 짧게 끊어 말한다. 남의 집 고용인이었다는 내력을 밝힌다
+  appearance: 젊은 여자. 옅은 하늘색 단발에 검은 머리띠, 자줏빛 원피스와 흰 앞치마
+  basis: 그림+표본
+  note: ''
+  source: translate/persona-table.jsonl
+- group: prisionera2
+  match:
+    speaker: prisionera2
+  rows: 25
+  bucket: B1
+  persona: 여성 수감자. 낮고 조심스러운 반말
+  appearance: 성인 여자. 검은 장발, 회백색 죄수복
+  basis: 그림+표본
+  note: ''
+  source: translate/persona-table.jsonl
+- group: criada
+  match:
+    speaker: criada
+  rows: 24
+  bucket: B3+B2
+  persona: 저택 하녀. 공손한 합쇼체, 사담에서는 해요체로 누그러짐
+  appearance: 젊은 여자. 흰 레이스 모자, 갈색 머리, 초록 하녀복에 흰 앞치마
+  basis: 그림+표본
+  note: 표본 하나가 3인칭 서술(「멜리아의 교육은 모범적이었다」)이다 — 지문 계열
+  source: translate/persona-table.jsonl
+- group: alma
+  match:
+    speaker: alma
+  rows: 23
+  bucket: B4변형(하오·해라 고어투)
+  persona: 떠도는 영혼. 고어투로 낮게 말함(「~하지 않느냐?」「~할 것이다」)
+  appearance: 사람이 아니다. 반투명한 청록빛 영체에 분홍 날개 형상, 주위에 반짝임이 흩어진다
+  basis: 그림+표본
+  note: 그룹은 「일반」, 이름은 사물처럼 보이지만 실제로는 유령 스프라이트다. 인간 행인 어투를 적용하면 안 된다
+  source: translate/persona-table.jsonl
+- group: eliteFractal
+  match:
+    speaker: eliteFractal
+  rows: 21
+  bucket: B1변형
+  persona: 이설시티 정예병. 도발조 반말에 명령형 「~해라」와 단정 「~다」가 얹힌다. 자기 부대의 강함을 과시한다
+  appearance: 성인 여자. 하늘색 긴 생머리, 흰·하늘색 갑주, 얼음 궁전 정예 차림
+  basis: 그림+표본
+  note: 표본 하나가 자랑스러운 해요체다 — 같은 부대의 다른 병사 자리로 보인다
+  source: translate/persona-table.jsonl
+- group: mosqueteraMontada
+  match:
+    speaker: mosqueteraMontada
+  rows: 19
+  bucket: B1+B7(총사 계열)
+  persona: 기마 총사. 총사 계열의 시원시원한 반말과 군대식 단정 「~다」. 공무 통보도 단정체로 끊는다
+  appearance: 성인 여자. 흰 깃털 검정 챙모자, 주황 곱슬머리, 흉갑을 두르고 탈것에 올라탄 모습
+  basis: 그림+표본+유지자 판정(2026-08-09)
+  note: 존대 13줄 하향 반영(2026-08-09). 맵59 결혼 축복 줄만 합쇼 유지(1차 롤백 존중 — 제3자 축복)
+  source: translate/persona-table.jsonl
+- group: prisionera1
+  match:
+    speaker: prisionera1
+  rows: 18
+  bucket: B1
+  persona: 여성 수감자. 반말로 감옥 구조와 처세를 일러 준다. 냉소적이고 농담을 섞는다
+  appearance: 성인 여자. 헝클어진 갈색 곱슬머리, 회백색 죄수복
+  basis: 그림+표본
+  note: 표본에 「~라오」와 「~하세요」가 섞여 있다 — 현행 번역의 흔들림이므로 반말로 통일
+  source: translate/persona-table.jsonl
+- group: ranger
+  match:
+    speaker: ranger
+  rows: 17
+  bucket: B2
+  persona: 레인저. 밝은 해요체
+  appearance: 성인. 파란 띠를 두른 붉은 넓은챙 모자, 붉은·남색 야외복, 짙은 피부
+  basis: 그림+표본
+  note: ''
+  source: translate/persona-table.jsonl
+- group: azothaE
+  match:
+    speaker: azothaE
+  rows: 16
+  bucket: B4변형(격앙 시 B1변형)
+  persona: 팀 아조스 간부. 아랫사람을 대하듯 「~다네」로 여유 있게 말하다가, 신성모독을 꾸짖을 땐 단정으로 날을 세운다
+  appearance: 성인. 은백색 단발, 주황빛 눈, 금테 두른 자줏빛 로브
+  basis: 그림+표본
+  note: 표본 절반이 땅파기 의뢰 해요체다 — 궁극병기 안 대사와 마을 대사가 한 그림에 섞여 있어 맵으로 갈라야 한다
+  source: translate/persona-table.jsonl
+- group: gitanoAnciano
+  match:
+    speaker: gitanoAnciano
+  rows: 16
+  bucket: B4(손님맞이만 B2)
+  persona: 유랑민 노인. 어른말이 기본이다(「~라네」「~겠지」). 옛 왕 시절을 직접 겪은 사람으로서 회고하고, 손님은 정중히 맞는다
+  appearance: 노년 남자. 초록 모자 위에 검은 챙모자, 금 고리 귀걸이, 회색 콧수염, 초록 코트
+  basis: 그림+표본
+  note: ''
+  source: translate/persona-table.jsonl
+- group: acrilico1
+  match:
+    speaker: acrilico1
+  rows: 16
+  bucket: B2
+  persona: 장사가 망한 사내. 낮은 해요체로 사정을 호소하고 도움을 청한다. 고마움을 길게 표한다
+  appearance: 성인 남자. 머리가 없는 민머리, 갈색 조끼와 초록 바지, 특징 없는 수수한 차림
+  basis: 그림+표본
+  note: ''
+  source: translate/persona-table.jsonl
+- group: druidaow
+  match:
+    speaker: druidaow
+  rows: 16
+  bucket: B4(선언은 「~다」)
+  persona: 드루이드 장로. 장중한 어른말로 훈계하고, 마을의 죄를 말할 땐 단정 「~다」로 무겁게 끊는다
+  appearance: 노년. 나뭇가지와 이끼가 뻗은 관, 잿빛 후드, 초록 망토, 주름진 얼굴
+  basis: 그림+표본
+  note: 표본에 정치 비판 합쇼체와 반말 잔소리가 함께 있다 — 장로와 젊은 드루이드가 한 그림을 나눠 쓰는 것으로 보인다
+  source: translate/persona-table.jsonl
+- group: arlequina
+  match:
+    speaker: arlequina
+  rows: 16
+  bucket: B2(무대 선언만 B1변형)
+  persona: 서커스 어릿광대. 들뜬 해요체, 무대 선언 대목만 단정 「~다」
+  appearance: 성인 여자. 보라·빨강 광대 모자에 방울, 하얗게 칠한 얼굴에 붉은 볼, 남색 곱슬머리
+  basis: 그림+표본
+  note: ''
+  source: translate/persona-table.jsonl
+- group: mariow
+  match:
+    speaker: mariow
+  rows: 15
+  bucket: B2+B3
+  persona: 이탈리아어 감탄을 섞는 훈련 도우미 형제 중 하나. 손님에겐 해요체, 훈련 절차는 합쇼체. 배틀에서는 「~다」로 짧게 단정한다
+  appearance: 성인 남자. 빨간 챙모자, 검은 콧수염, 파란 멜빵바지와 붉은 셔츠. 배관공 패러디 차림
+  basis: 그림+표본
+  note: 명백한 마리오 패러디이고 대사도 형제 2인조를 전제한다. 이탈리아어 감탄(Mamma mia, Bonjourno)은 원문 그대로 살릴 것
+  source: translate/persona-table.jsonl
+- group: automata
+  match:
+    speaker: automata
+  rows: 14
+  bucket: B3(습니다)
+  persona: 봉사용 자동인형. 기계적 습니다체, 절차·수치 어휘(「제작되었습니다」「안내해 드립니다」)
+  appearance: 자동인형(로봇). 백단시티 봉사·안내역
+  basis: 표본+사용자 판정
+  note: '2026-08-04 사용자 판정: 해요체→습니다체 전환 적용 완료. F3의 기존 어투와 통일'
+  source: translate/persona-table.jsonl
+- group: payasoAutomata
+  match:
+    speaker: payasoAutomata
+  rows: 7
+  bucket: B3(습니다)
+  persona: 광대 자동인형. 기계적 습니다체 — 격식이 오히려 섬뜩함을 살린다(「고객 인식 완료」「접수하지 않습니다」)
+  appearance: 광대 자동인형
+  basis: 표본+사용자 판정
+  note: '2026-08-04 사용자 판정: 해요체→습니다체 전환 적용 완료'
+  source: translate/persona-table.jsonl
+- group: artista
+  match:
+    speaker: artista
+  rows: 2
+  bucket: B2
+  persona: 출품에 번번이 떨어진 화가 지망생. 풀 죽은 해요체로 자기 얘기를 한다
+  appearance: 베레모에 작업복 차림의 젊은이. 팔레트를 들고 어깨가 처져 있다
+  basis: 그림+표본
+  note: 맵162 두 줄이 전부. critico(요리 평론가)는 13행 모두 이름표 인물 에넬도이거나 그 상속 줄이라 잡담 자리가 없다 — 그쪽 정본은 docs/ledger/voices.md다
+  source: translate/persona-table.jsonl
+- group: flecha
+  match:
+    speaker: flecha
+  rows: 33
+  bucket: 제외(사람 아님 — 떠 있는 인용·전언·지시문은 지문 규칙)
+  persona: (배정 없음)
+  appearance: 사람 아님 — 화살표·지시물 그림
+  basis: 유지자 판정(2026-08-09)
+  note: 말투 배치 대상에서 제외
+  source: translate/persona-table.jsonl
+- group: gitanaAnciana
+  match:
+    speaker: gitanaAnciana
+  rows: 18
+  bucket: B6+B4
+  persona: 유랑 노파. 하게·어른말을 섞어 예스럽게(「~다네」「~구먼」「~란다」)
+  appearance: 유랑민 노파
+  basis: 실측 서명(B6 9·B4 3)+유지자 판정(2026-08-09)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: soldadosCongelados
+  match:
+    speaker: soldadosCongelados
+  rows: 15
+  bucket: B5(지문 3줄)+B1(구조 후)
+  persona: 구출 이벤트의 병사. 소개·경고·확인창 3줄은 시스템 지문(B5), 구조된 뒤 대사만 본인 반말
+  appearance: 얼어붙은 병사들(집단)
+  basis: 유지자 판정(2026-08-09 — 지문 재번역 반영)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: carabineraEst
+  match:
+    speaker: carabineraEst
+  rows: 13
+  bucket: B2+B3(위협 B1)
+  persona: 헌병. 안내는 해요, 절차·통보는 합쇼, 위협은 반말
+  appearance: 역 헌병(여) — carabinerow 계열
+  basis: 유지자 판정(2026-08-09)
+  note: 전투 우위 문구는 시스템 지문으로 분리(「아군이 전투에서 우위를 점했다!」)
+  source: translate/persona-table.jsonl
+- group: carabinerEst
+  match:
+    speaker: carabinerEst
+  rows: 9
+  bucket: B2+B3(위협 B1)
+  persona: 헌병. 안내는 해요, 절차·통보는 합쇼, 위협은 반말
+  appearance: 역 헌병(남) — carabinerow 계열
+  basis: 유지자 판정(2026-08-09)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: cripto1
+  match:
+    speaker: cripto1
+  rows: 10
+  bucket: B1
+  persona: 납골당 상인. 낮게 가라앉은 반말
+  appearance: 지하 납골당 인물
+  basis: 실측 서명(B1 9)+유지자 판정(2026-08-09)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: lantow3
+  match:
+    speaker: lantow3
+  rows: 6
+  bucket: B5(지문)+확인창 자문형
+  persona: (본인 대사 없음) 조사 페이지의 서술·확인창
+  appearance: 쓰러진 란토(조사 대상)
+  basis: 유지자 판정(2026-08-09 — 「의식이 없다」 지문화)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: luigiow
+  match:
+    speaker: luigiow
+  rows: 15
+  bucket: B1(절차·수치 설명 문장만 B3)
+  persona: 이탈리아 억양의 흥 많은 훈련사. 시원시원한 반말, 감탄(Bonjourno·Mamma mia 원문 유지)
+  appearance: 성인 남자. 초록 챙모자에 갈색 머리, 파란 멜빵바지 — 배관공 형제 오마주 차림
+  basis: 그림+표본
+  note: 맵282 노력치 슈퍼 트레이닝 담당, 맵25 비밀 휴게실 장면에 재사용. 현행 존대·반말 혼재는 통일 대상
+  source: translate/persona-table.jsonl
+- group: prismaf
+  match:
+    speaker: prismaf
+  rows: 9
+  bucket: B4
+  persona: 무뚝뚝한 기술 각성사. 어른말 하대(~다/~구나), 군말 없음
+  appearance: 성인 여자. 큰 밀짚 삿갓에 남색 단발, 붉은 옷 — 은둔 온천의 수련인 차림
+  basis: 그림+표본
+  note: 첫인사 존대 1행은 하대로 통일 대상
+  source: translate/persona-table.jsonl
+- group: enfermeraG
+  match:
+    speaker: enfermeraG
+  rows: 9
+  bucket: B2(의례·축원 B3)
+  persona: 고아원을 지키는 보모. 따뜻한 해요체, 감사·축원 문장은 합쇼체
+  appearance: 성인 여자. 흰 보닛에 붉은 곱슬 양갈래, 수수한 갈색 원피스 — 보육원 보모 차림
+  basis: 그림+표본
+  note: ''
+  source: translate/persona-table.jsonl
+- group: lunatico2
+  match:
+    speaker: lunatico2
+  rows: 8
+  bucket: B1
+  persona: 어둠의 탑의 광인. 불안정한 반말 — 끊긴 문장·반복구를 유지하고 매끈하게 다듬지 않는다
+  appearance: 창백하고 둥근 몰골에 붕대를 리본처럼 감은 남자 — 병자 같은 기이한 인상
+  basis: 그림+표본
+  note: 존대 1행(「도망쳐요」)은 반말로 통일 대상
+  source: translate/persona-table.jsonl
+- group: crisantow
+  match:
+    speaker: crisantow
+  rows: 5
+  bucket: 인물 정본
+  persona: 크리산토 본인의 회상 독백(맵195) — 인물 말투 정본(voices.md 크리산토)을 따른다. 차분한 존대 회고(~지요/~었어요)
+  appearance: 금발 청년, 녹색 여행복 — 크리산토 본인
+  basis: 그림+표본
+  note: 이 스프라이트는 마부(맵2·3) 등 다른 인물에도 재사용되나 그쪽은 이름표 갈래라 이 표를 안 탄다
+  source: translate/persona-table.jsonl
+- group: kimono
+  match:
+    speaker: kimono
+  rows: 9
+  bucket: B2+B3
+  persona: 비밀 온천의 접객인. 정갈한 해요체, 절차·의례 문장은 합쇼체
+  appearance: 검은 긴 머리에 노란 기모노, 초록 오비를 두른 여인
+  basis: 그림+표본
+  note: 맵460 컷신 갈래는 서사 어조(~었어요) — 접객 정형구로 펴지 말 것
+  source: translate/persona-table.jsonl
+- group: mosqueteroMontado
+  match:
+    speaker: mosqueteroMontado
+  rows: 6
+  bucket: B1+B7(총사 계열)
+  persona: 기마 총사. 총사 계열의 시원시원한 반말과 군대식 단정 「~다」. 포고·경고도 단정체로 끊는다
+  appearance: 성인 남자. 깃털 단 검은 모자, 파란 제복에 흉갑, 말에 올라탄 모습
+  basis: 그림+표본+짝항목(mosqueteraMontada)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: azow
+  match:
+    speaker: azow
+  rows: 3
+  bucket: B5
+  persona: 내레이션 자리 — 왕의 연대기를 읽어 내려가는 3인칭 서술. 평서 「~다」, 인물 어투 금지
+  appearance: 금관을 쓴 보랏빛 장발의 왕 — 아스테르 왕의 회상 장면 모습
+  basis: 그림+표본
+  note: ''
+  source: translate/persona-table.jsonl
+- group: azow5
+  match:
+    speaker: azow5
+  rows: 2
+  bucket: B5
+  persona: 내레이션 자리 — 왕의 연대기를 읽어 내려가는 3인칭 서술. 평서 「~다」, 인물 어투 금지
+  appearance: 금관을 쓴 보랏빛 장발의 왕 — 아스테르 왕의 회상 장면 모습
+  basis: 그림+표본
+  note: azow와 같은 내레이터의 장면별 변형
+  source: translate/persona-table.jsonl
+- group: monjeYantraAnciano
+  match:
+    speaker: monjeYantraAnciano
+  rows: 11
+  bucket: B3
+  persona: 얀트라 노수도승 — 교단의 쇠락을 근심하는 차분한 격식
+  appearance: 얀트라 교단의 노수도승
+  basis: 행 실물 판독+유지자 승인(2026-08-13, Z-47 보강)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: monjaYantraAnciana
+  match:
+    speaker: monjaYantraAnciana
+  rows: 9
+  bucket: B3
+  persona: 얀트라 노수녀 — 온화한 격식, 살가운 권유
+  appearance: 얀트라 교단의 노수녀
+  basis: 행 실물 판독+유지자 승인(2026-08-13, Z-47 보강)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: lenador2
+  match:
+    speaker: lenador2
+  rows: 8
+  bucket: B1
+  persona: 제재소 나무꾼 — 투덜대면서도 야망 있는 반말
+  appearance: 제재소 나무꾼 청년
+  basis: 행 실물 판독+유지자 승인(2026-08-13, Z-47 보강)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: luchador
+  match:
+    speaker: luchador
+  rows: 8
+  bucket: B1
+  persona: 관동 출신 격투가 — 자신만만한 기백 반말
+  appearance: 관동 출신 격투가 남자
+  basis: 행 실물 판독+유지자 승인(2026-08-13, Z-47 보강)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: luchadora
+  match:
+    speaker: luchadora
+  rows: 2
+  bucket: B1
+  persona: 관동 출신 격투가 — 감탄 잘하는 반말
+  appearance: 관동 출신 격투가 여자
+  basis: 행 실물 판독+유지자 승인(2026-08-13, Z-47 보강)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: rangera
+  match:
+    speaker: rangera
+  rows: 8
+  bucket: B1
+  persona: 레인저 — 자연 예찬, 털털한 반말
+  appearance: 레인저 여성
+  basis: 행 실물 판독+유지자 승인(2026-08-13, Z-47 보강)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: clerigo
+  match:
+    speaker: clerigo
+  rows: 6
+  bucket: B3
+  persona: 대성당 성직자 — 설교조의 정중한 합쇼체
+  appearance: 대성당 성직자
+  basis: 행 실물 판독+유지자 승인(2026-08-13, Z-47 보강)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: carabineraEnow
+  match:
+    speaker: carabineraEnow
+  rows: 6
+  bucket: B1
+  persona: 전장의 적 경관 — 거친 승부사 반말
+  appearance: 전장의 적 경관 여자
+  basis: 행 실물 판독+유지자 승인(2026-08-13, Z-47 보강)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: carabinerEnow
+  match:
+    speaker: carabinerEnow
+  rows: 5
+  bucket: B1
+  persona: 전장의 노병 경관 — 능청스러운 반말
+  appearance: 전장의 노병 경관 남자
+  basis: 행 실물 판독+유지자 승인(2026-08-13, Z-47 보강)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: flaraow
+  match:
+    speaker: flaraow
+  rows: 5
+  bucket: B1
+  persona: 플레어단 단원 — 음모를 곱씹는 단정 반말
+  appearance: 플레어단 단원 여자
+  basis: 행 실물 판독+유지자 승인(2026-08-13, Z-47 보강)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: flareow
+  match:
+    speaker: flareow
+  rows: 4
+  bucket: B1
+  persona: 플레어단 단원 — 음모를 곱씹는 단정 반말
+  appearance: 플레어단 단원 남자
+  basis: 행 실물 판독+유지자 승인(2026-08-13, Z-47 보강)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: cientifica
+  match:
+    speaker: cientifica
+  rows: 3
+  bucket: B1
+  persona: 플레어단 연구원 — 사변조 단정 반말
+  appearance: 플레어단 연구원 여자
+  basis: 행 실물 판독+유지자 승인(2026-08-13, Z-47 보강)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: cientifico
+  match:
+    speaker: cientifico
+  rows: 2
+  bucket: B1
+  persona: 플레어단 연구원 — 사변조 단정 반말
+  appearance: 플레어단 연구원 남자
+  basis: 행 실물 판독+유지자 승인(2026-08-13, Z-47 보강)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: mosqueteraBorracha
+  match:
+    speaker: mosqueteraBorracha
+  rows: 3
+  bucket: B1
+  persona: 술 취한 총사 — 군인투 단정 반말
+  appearance: 술 취한 총사 여자
+  basis: 행 실물 판독+유지자 승인(2026-08-13, Z-47 보강)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: revolucionarioMontado
+  match:
+    speaker: revolucionarioMontado
+  rows: 3
+  bucket: B1
+  persona: 기마 혁명가 — 구호조 단정 반말
+  appearance: 말 탄 혁명가 남자
+  basis: 행 실물 판독+유지자 승인(2026-08-13, Z-47 보강)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: revolucionariaMontada
+  match:
+    speaker: revolucionariaMontada
+  rows: 2
+  bucket: B1
+  persona: 기마 혁명가 — 구호조 단정 반말
+  appearance: 말 탄 혁명가 여자
+  basis: 행 실물 판독+유지자 승인(2026-08-13, Z-47 보강)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: prisioneroCabeza
+  match:
+    speaker: prisioneroCabeza
+  rows: 3
+  bucket: B1
+  persona: 감옥의 광인 — 킬킬대는 중얼 반말
+  appearance: 감옥의 광인 죄수
+  basis: 행 실물 판독+유지자 승인(2026-08-13, Z-47 보강)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: prismam
+  match:
+    speaker: prismam
+  rows: 3
+  bucket: B3
+  persona: 온천 마차 안내인 — 공손한 접객
+  appearance: 온천 마차 안내인
+  basis: 행 실물 판독+유지자 승인(2026-08-13, Z-47 보강)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: clavelina
+  match:
+    speaker: clavelina
+  rows: 2
+  bucket: B1
+  persona: 도도한 여인 — 새침한 반말
+  appearance: 요새의 도도한 여인
+  basis: 행 실물 판독+유지자 승인(2026-08-13, Z-47 보강)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: lunatica2
+  match:
+    speaker: lunatica2
+  rows: 1
+  bucket: B1
+  persona: 몽롱한 몽상가 — 중얼대는 반말
+  appearance: 몽롱한 몽상가 여자
+  basis: 행 실물 판독+유지자 승인(2026-08-13, Z-47 보강)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: lunatica3
+  match:
+    speaker: lunatica3
+  rows: 1
+  bucket: B1
+  persona: 몽롱한 몽상가 — 중얼대는 반말
+  appearance: 몽롱한 몽상가 여자
+  basis: 행 실물 판독+유지자 승인(2026-08-13, Z-47 보강)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: fuego
+  match:
+    speaker: fuego
+  rows: 1
+  bucket: B1
+  persona: 다급한 피난 주민 — 급박한 외침 반말
+  appearance: 피난 중인 마을 주민
+  basis: 행 실물 판독+유지자 승인(2026-08-13, Z-47 보강)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: druidaow2
+  match:
+    speaker: druidaow2
+  rows: 1
+  bucket: B3
+  persona: 드루이드 기억 입장 안내 — 정중한 확인
+  appearance: 드루이드(기억 장면)
+  basis: 행 실물 판독+유지자 승인(2026-08-13, Z-47 보강)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: prisionero12
+  match:
+    speaker: prisionero12
+  rows: 2
+  bucket: B5
+  persona: 괄호 지문 — 서술만, 대사 아님
+  appearance: 접근 불가 수감자 남자
+  basis: 행 실물 판독+유지자 승인(2026-08-13, Z-47 보강)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: prisionera12
+  match:
+    speaker: prisionera12
+  rows: 1
+  bucket: B5
+  persona: 괄호 지문 — 서술만, 대사 아님
+  appearance: 접근 불가 수감자 여자
+  basis: 행 실물 판독+유지자 승인(2026-08-13, Z-47 보강)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: monjeYantra2
+  match:
+    speaker: monjeYantra2
+  rows: 1
+  bucket: B5
+  persona: 괄호 지문 — 서술만, 대사 아님
+  appearance: 명상 중인 수도승
+  basis: 행 실물 판독+유지자 승인(2026-08-13, Z-47 보강)
+  note: ''
+  source: translate/persona-table.jsonl
+- group: portonCerrado
+  match:
+    speaker: portonCerrado
+  rows: 1
+  bucket: 제외(사물 — 잠긴 문 안내는 지문 규칙)
+  persona: (배정 없음)
+  appearance: 사람 아님 — 잠긴 문
+  basis: 유지자 승인(2026-08-13, Z-47 보강)
+  note: 말투 배치 대상에서 제외
+  source: translate/persona-table.jsonl
+sprite_groups:
+  _comment: '스프라이트 어간 → 화자 그룹 (NPC 어투 배정용 구조 분류). 어간은 mapscan.py 규칙: 접미(ow/w/TS/숫자) 제거. 그룹별 최종 어투는 register-study(실제 게임 화법 조사) 결과로 확정한다 — 이 파일은 「누가 말하나」만 정한다. voices=명명 인물(말투표 라우팅), 사물지문=오브젝트·시스템(평서 지문이 정답), 내용판정=스프라이트 없음(행 내용으로 갈라야 함). 2026-08-03 초판. 어미 체계=버킷, 개성=원시 스프라이트별 페르소나표(persona-table) 2층 구조 — 어간 축약이 신사/귀부인/아가씨 같은 변형을 지우므로 배치에는 원시 스프라이트명을 싣는다. 상위 64종의 정본은 translate/persona-table.jsonl(그림 실측 페르소나) — 그룹·버킷과 어긋나면 페르소나표가 이긴다.'
+  groups:
+    voices:
+    - alca
+    - alcaCaduca
+    - alcaReventada
+    - angeline
+    - anturia
+    - arrayan
+    - aure
+    - az
+    - belladona
+    - calendula
+    - canola
+    - cendera
+    - clem
+    - crisant
+    - crisanto
+    - crisantoMontado
+    - crisantoTSBaln
+    - crisantoTSMapa
+    - crisantowLira
+    - dracena
+    - eric
+    - espin
+    - f3
+    - f3Cabeza
+    - f3Herido
+    - ferrofaz
+    - flara
+    - flare
+    - ginia
+    - hibis
+    - hisop
+    - jara
+    - lant
+    - lantoLunatico
+    - loto
+    - malv
+    - malva
+    - malvoMontado
+    - melia
+    - meliaFinal
+    - meliaSalamence
+    - meliaTSBaln
+    - meliaTSMusica
+    - merlot
+    - mimi
+    - mirra
+    - mirraPechamen
+    - mirraowCapucha
+    - narciso
+    - nubila
+    - olivier
+    - olivierMonigote
+    - olivierVestido
+    - pinot
+    - plumanegra
+    - primula
+    - primulaPose
+    - rosillon
+    - rosmarino
+    - rupic
+    - serena
+    - siempreviva
+    - tileo
+    - tornasola
+    - tornasolaPose
+    - urano
+    - volus
+    - wolfram
+    - zafra
+    - luigi
+    - druidaFicus
+    서민:
+    - campesin
+    - campesina
+    - obrer
+    - lenador
+    - jardinero
+    - pregonero
+    - cripto
+    귀족:
+    - burgues
+    - burguesa
+    - critico
+    - artista
+    군인:
+    - mosqueter
+    - mosquetera
+    - mosqueteraBorracha
+    - mosqueteraMontada
+    - mosqueteroCrisanto
+    - mosqueteroMirra
+    - mosqueteroMontado
+    - carabiner
+    - carabinera
+    - carabinerEn
+    - carabinerEst
+    - carabineraEn
+    - carabineraEst
+    - soldadosCongelados
+    - eliteFractal
+    - guardianForja
+    성직:
+    - monjeYantra
+    - monjaYantra
+    - monjeAcrilico
+    - monjeYantraAnciano
+    - monjaYantraAnciana
+    - clerigo
+    - druida
+    - curandera
+    - gitana
+    - gitano
+    - briof
+    학자:
+    - ilustrado
+    - cientifico
+    - cientifica
+    - alquimista
+    - alquimista2
+    - prodigio
+    접객:
+    - enfermera
+    - enfermera2G
+    - enfermeraG
+    - sanadora
+    - acrilico
+    - prismaf
+    - prismam
+    - kimono
+    - criada
+    - metre
+    - cocinero
+    - mari
+    공연:
+    - payaso
+    - arlequina
+    - cantante
+    - payasoAutomata
+    - automata
+    어린이:
+    - nino
+    - nina
+    - ninaSonadora
+    - brujita
+    노인:
+    - anciano
+    - anciana
+    - gitanaAnciana
+    - gitanoAnciano
+    일반:
+    - hombre
+    - mujer
+    - luchador
+    - luchadora
+    - ranger
+    - rangera
+    - cazador
+    - pirata
+    - clavelina
+    - cristalArbol
+    - alma
+    적대:
+    - prisionero
+    - prisionera
+    - prisioneroCabeza
+    - ladrona
+    - revolucionario
+    - revolucionaria
+    - revolucionarioMontado
+    - revolucionariaMontada
+    - azoth
+    - azotha
+    - azothaE
+    - azothoE
+    - lunatico
+    - lunatica
+    - vampir
+    - espectr
+    - fuego
+    사물지문:
+    - flecha
+    - baya
+    - arbolito
+    - cajaMateriales
+    - guijarros
+    - cartaFlotante
+    - libro
+    - puertas
+    - rayosBarrera
+    - luz
+    - huellas
+    - hoguera
+    - baldosaAscensor
+    - palancas
+    - objeto
+    - rotomGym
+    - portalHoopa
+    - lenteVerdad
+    - payasoDormido
+    - golperoca
+    - nidoIncursion
+    - cazadorHerido
+    - pokeEnfermos
+    - volcanionOff
+    - pisaUvas
+    포켓몬특수:
+    - 316s
+    - 676s
+    - '718_'
+    - trchar000_
+    - blastoiseDinamax
+    - gogoatsGrupo
+    - floetteEterno
+    - snorlaxDormido
+    - tyranitarMecanico
+    - burguesDitto
+    - homunculoG
+    - ultraumbral
+    내용판정:
+    - (없음)
+  unsure:
+    azoth*: 팀 아조스 조무래기가 기본이나 간부 개인(안드레아 등) 장면도 섞임 — 행 단위 재검 필요
+    mari: 이름 매칭(마리) vs 슈퍼 트레이닝 안내원 — 표본상 접객으로 두되 재검
+    gitana/gitano: 집시 점술사 — 성직(신비) 결로 묶었으나 공연 결일 수도
+    luigi: 이스터에그 인물로 추정(대사 3행) — voices에 두되 원문 유지 대상일 수 있음
+    automata: 로봇 어투 특수 처리 후보(합쇼체 기계식) — 공연에 묶어 두되 개별 판정
+    cristalArbol/alma: 스프라이트는 오브젝트지만 실제로는 인물 발화(숨은 사람·유령 서사) — 표본 실측으로 사물지문에서 제외, 행 단위 재검 후보
+    druidaFicus: 말투표 「대드루이드 피쿠스(경건한 합쇼체)」 실존 — voices로 이동(페르소나표 지적 반영, 2026-08-03)
+  buckets:
+    _comment: 그룹 → 어투 버킷 배정안(B1~B5는 docs/research/2026-08-03-npc-register-study.md). 물음표는 사용자 판단 대기.
+    voices: 말투표(voices.md) 라우팅 — 버킷 밖
+    서민: B1
+    귀족: 'B2(정중 해요+오만 어휘) — 단 원시 스프라이트로 쪼갬: burguesow=신사/burguesaow=귀부인/burguesaow2=아가씨 (그림 실측 2026-08-03). 개성은 페르소나표가 정본'
+    군인: B1(거친 결) + 통보문만 B3
+    성직: '3분할 수정: monjeYantra=겸손 합쇼(그림 학승+표본 4/6 실측 — 「무투승 다체」 방침은 해당 스프라이트 없음)/druida·노승=B4 장중/일반 수사·수녀=경건 합쇼'
+    학자: B1 (격식 박사 개별 B2)
+    접객: B2 + 절차 문장 B3
+    공연: B2/B3 (쇼맨십 과장)
+    어린이: B1 (어른 상대 해요 허용)
+    노인: B4
+    일반: B1 — 기본값 반말 전환 확정(사용자 2026-08-03)
+    적대: B1(거친 결)
+    사물지문: B5
+    포켓몬특수: B5 기본, 발화형은 개별
+    내용판정: 행 유형 분류 후 위 규칙
