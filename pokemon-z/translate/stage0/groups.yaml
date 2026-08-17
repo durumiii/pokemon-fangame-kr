@@ -346,6 +346,7 @@ groups:
 - group: druidaFicus
   match:
     speaker: druidaFicus
+  ko: 대드루이드 피쿠스
   rows: 42
   bucket: B3+B4(선언은 「~다」)
   persona: 대드루이드 피쿠스. 장중한 합쇼체로 내력을 설명하고, 예언과 선언은 「~다」로 끊는다. 문장이 길고 느리다

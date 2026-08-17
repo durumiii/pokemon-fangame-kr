@@ -991,17 +991,18 @@ def glossary_for(rows):
 def build_prompt(fresh=False):
     """교정판(A)은 현행 번역을 함께 주고, 새로 번역(B)은 안 준다."""
     body = (HERE / "prompt-pages.md").read_text(encoding="utf-8")
-    # 낡음 검사 — md 규칙 M이 무슈 3쌍을 자구로 담는다(정본의 세 번째 사본).
-    # 표기 정본(term-pairs)이 바뀌면 md가 조용히 낡으므로 여기서 시끄럽게 죽는다.
+    fixed = body.split("## 시스템 프롬프트 본문 (새로 번역)", 1)[1].split("---", 1)[1]
+    amend = body.split("## 시스템 프롬프트 본문", 1)[1].split("## 시스템 프롬프트 본문 (새로 번역)")[0]
+    # 낡음 검사 — md 규칙 M이 무슈 3쌍을 자구로 담는다(표기 정본의 세 번째 사본).
+    # 프롬프트 본문이 둘이라 **각각** 본다 — 통째로 훑으면 한쪽만 낡은 것을 못 잡는다.
     ko = dict(term_pairs())
-    for es in ("monsieur", "madame", "mademoiselle"):
-        want = f"{es}→{ko[es]}"
-        if want not in body:
-            raise SystemExit(f"prompt-pages.md가 낡았다 — 「{want}」이 본문에 없다. "
-                             f"term-pairs 표기가 바뀌었으면 md 규칙 M도 함께 고쳐라.")
-    if fresh:
-        return body.split("## 시스템 프롬프트 본문 (새로 번역)", 1)[1].split("---", 1)[1]
-    return body.split("## 시스템 프롬프트 본문", 1)[1].split("## 시스템 프롬프트 본문 (새로 번역)")[0]
+    for name, text in (("교정판", amend), ("새로 번역", fixed)):
+        for es in ("monsieur", "madame", "mademoiselle"):
+            want = f"{es}→{ko[es]}"
+            if want not in text:
+                raise SystemExit(f"prompt-pages.md의 {name} 본문이 낡았다 — 「{want}」이 없다. "
+                                 f"terms.yaml 표기가 바뀌었으면 md 규칙 M도 함께 고쳐라.")
+    return fixed if fresh else amend
 
 
 CAST_HEAD = ("Speakers and how each talks (「본보기」 lines are approved translations — "
