@@ -111,7 +111,9 @@ dat 포맷 문제를 만났을 때.
 승인분(`approved-lines.jsonl`·`approved-events.jsonl`) · **동결 목록
 (`frozen-keys.jsonl`) — 손으로 확정해 배치 재번역에 다시 안 태우는 절23 키.
 `batch.py`가 전투 표현 대장(`battle-expr-replacements.json`)의 키와 합쳐 읽는다** ·
-어미 급 판정분(`register-ok.jsonl`) — 검사에 걸렸으나 어긋남이 아니라고 판정한 자리.
+어미 급 판정분(`register-ok.jsonl`) — 검사에 걸렸으나 어긋남이 아니라고 판정한 자리 ·
+행 단위 출처 목록(`provenance-lines.jsonl`) — 사람 낱건이 닿은 (맵, 원문)의 누적,
+`provenance.py build`가 만들고 보호 목록은 이것의 파생이다(stage0 gen이 state·by로 흡수).
 **기록층(`docs/log/`)에 두지 않는다** —
 박제와 살아 있는 데이터는 생명주기가 다르다.
 
