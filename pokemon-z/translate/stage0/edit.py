@@ -16,6 +16,7 @@ ko까지 내리는 것은 이 모듈의 일이 아니다 — 저장 뒤 `emit.py
 """
 import re
 import sys
+import threading
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -111,6 +112,9 @@ class Messages:
 
 
 _cache = None       # (파일 지문, Messages, built, owner) — 상주 프로세스가 재사용한다
+# ponytail: 창구 전체를 재우는 자물쇠 하나. 저장이 초 단위이고 사람이 버튼을 눌러
+# 부르는 자리라 이걸로 충분하다 — 처리량이 문제가 되면 그때 잘게 나눈다.
+_lock = threading.Lock()
 
 
 def _stamp(d):
@@ -154,6 +158,11 @@ def put_lines(edits, allow_default=False):
     고치는 도구(스튜디오)만 참이고, 기계·일괄 도구는 거짓이라 거부된다. 갈래를 같이
     안 가면 한 상점 안에서 격이 섞인다.
     """
+    with _lock:               # 스튜디오는 스레드 서버다 — 저장 둘이 겹치면 캐시가 엉킨다
+        return _put_lines(edits, allow_default)
+
+
+def _put_lines(edits, allow_default):
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     import emit
 
