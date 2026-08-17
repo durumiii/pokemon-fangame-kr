@@ -19,6 +19,7 @@ translate/ko/23-script-texts.jsonl에 있다(동결 목록 data/frozen-keys.json
 usage: uv run patch_intl.py [대상 Scripts.rxdata ...]
   무인자면 보관소 기반판 + 게임 설치본 둘 다.
 """
+import json
 import sys
 import zlib
 from pathlib import Path
@@ -106,10 +107,21 @@ EDITS += [
 # 요약 화면 성격 한 줄 — 명사(얌전)를 활용형(얌전한)으로. 성격명 자체는 성격
 # 변경 목록 등에서 명사로 계속 쓰이므로 이 화면의 변수에만 25종 표를 얹는다.
 # 짝인 템플릿 번역은 절23 「{1} 성격이다.」 (translate/ko 정본). 루비 1.8 문법.
-_NATURE_ADJ = ("노력하는,외로움을 타는,용감한,고집스러운,개구쟁이,대담한,온순한,"
-               "무사태평한,장난꾸러기,촐랑거리는,겁이 많은,성급한,성실한,명랑한,"
-               "천진난만한,조심스러운,의젓한,냉정한,수줍음이 많은,덜렁거리는,"
-               "차분한,얌전한,건방진,신중한,변덕스러운").split(",")
+# 값은 translate/data/nature-adj.jsonl이 정본이다 — 명사형과 어긋나면 verify가 잡는다.
+NATURE_ADJ_PATH = HERE.parent / "translate/data/nature-adj.jsonl"
+
+
+def nature_adj():
+    """성격 25종 활용형을 PBNatures 상수값(i) 차례로 돌려준다."""
+    rows = [json.loads(x) for x in
+            NATURE_ADJ_PATH.read_text(encoding="utf-8").splitlines() if x.strip()]
+    rows = sorted((r for r in rows if "adj" in r), key=lambda r: r["i"])
+    if [r["i"] for r in rows] != list(range(25)):
+        sys.exit(f"중단: {NATURE_ADJ_PATH.name}의 자리가 0~24로 서지 않는다")
+    return [r["adj"] for r in rows]
+
+
+_NATURE_ADJ = nature_adj()
 EDITS += [
     ("PScreen_Summary",
      "naturename=PBNatures.getName(pokemon.nature)",
@@ -246,6 +258,33 @@ EDITS += [
      '        krHit=MessageTypes.krLoc(@map_id,@event_id,@index,cmd)\r\n'
      '        cmdlist.push(krHit ? krHit : _MAPINTL(@map_id,cmd))\r\n'
      '      end\r\n'),
+
+    # 전투 호출 대사(Z-73). 이 대사는 101이 아니라 **조건 분기(111)의 스크립트 인자**
+    # `pbTrainerBattle(…, _I("..."))` 안에 있고, 그 스크립트를 Interpreter#pbExecuteScript의
+    # eval이 돌린다. 그래서 _I가 불릴 때 self가 인터프리터이고 @map_id·@event_id·@index가
+    # 그 자리에서 보인다 — **루비 1.8.7 실물로 판정했다**(share/qa-trainerloc.rb:
+    # `[P] [25, 38, 7, "Interpreter"]`, @index가 정본 자리 m25.e38.p0.c7의 c와 같다).
+    # 인터프리터가 아닌 데서 불리면 @map_id가 nil이라 옛 조회로 그대로 떨어진다.
+    # 폴백의 기준 맵도 @map_id로 내린다 — 맵 대사에서 이미 그렇게 고친 자리와 같은 결함이
+    # 이 경로에 남아 있었다(전이 뒤 도착 맵으로 조회). 공통 이벤트는 setup이 셋째 인자를
+    # 안 받아 @map_id가 현재 맵이 되므로 동작이 그대로다. 루비 1.8 문법.
+    # ⚠ 얹기만 하는 수술이라 뒤따르는 _MAPINTL 정의까지 앵커에 물린다(멱등).
+    ("Intl_Messages",
+     'def _I(str)\r\n'
+     '  return _MAPINTL($game_map.map_id,str)\r\n'
+     'end\r\n'
+     '\r\n'
+     'def _MAPINTL(mapid,*arg)\r\n',
+     'def _I(str)\r\n'
+     '  # 좌표 조회(Z-73) — 전투 호출 대사가 여기로 온다.\r\n'
+     '  if @map_id && @event_id\r\n'
+     '    krHit=MessageTypes.krLoc(@map_id,@event_id,@index,str)\r\n'
+     '    return krHit ? krHit : _MAPINTL(@map_id,str)\r\n'
+     '  end\r\n'
+     '  return _MAPINTL($game_map.map_id,str)\r\n'
+     'end\r\n'
+     '\r\n'
+     'def _MAPINTL(mapid,*arg)\r\n'),
 
     # 홀로 선 선택지(command_102). 앞의 pbMessage(...,nil)이 Interpreter 쪽 표식이다.
     ("Messages",
