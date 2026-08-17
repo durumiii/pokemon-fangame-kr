@@ -38,6 +38,11 @@ dat 포맷 문제를 만났을 때.
 `translate/canon/genera.jsonl`**(종번호 → 도감 분류, verify가 상시 대조).
 절 단위 코퍼스 대조는 `uv run translate/canon_sweep.py <절이름>` — ⚠ 코퍼스의 줄바꿈은
 글자 그대로의 백슬래시+n 두 글자라 도구가 공백으로 편다(직접 대조를 새로 짜지 마라).
+⚠ **같은 원문에 세대별 자구가 갈리는 것이 흔하다** — 어느 판을 고를지 정하지 않은 즉석
+대조는 구세대 값을 「본가」로 내놓는다(2026-08-17에 헛것 76행을 낳았다:
+[경위](../log/research/2026-08-17-corpus-divergence-generational.md)). 채택 규칙은
+`canon_sweep.py`의 `SRC_RANK`(za·sv·la 순으로 최신)이고 대장 판정 「문구는 현행 세대 기준」과
+같다. 반영은 `canon_sweep.py <절> --write <승인목록>`으로 하고 승인 목록은 줄 번호 파일이다.
 ⚠ 자동 대조가 걸린 범위는 이름 절 다섯·리본·분류이고 **문장 쪽은 조회 전용**이다 —
 짧은 낱말은 딴 도메인 오탐이 흔하니 출처 파일 태그를 보고 가른다. 절별 수치와 대조
 방법은 [corpus-coverage](../log/research/2026-08-07-corpus-coverage.md).
