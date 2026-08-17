@@ -1263,6 +1263,7 @@ sprite_groups:
     - ranger
     - rangera
     - cazador
+    - cazadorHerido
     - pirata
     - clavelina
     - cristalArbol
@@ -1307,7 +1308,6 @@ sprite_groups:
     - payasoDormido
     - golperoca
     - nidoIncursion
-    - cazadorHerido
     - pokeEnfermos
     - volcanionOff
     - pisaUvas

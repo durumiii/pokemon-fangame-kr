@@ -1248,8 +1248,8 @@
 {"id": "m16.e13.p0.c0", "src": "\\c[5]<b>Melia:</b>\\c[0] ¿Entonces los Pokémon sueltan cosas al derrotarlos? ¡Uish! ¡Eso suena a que les hacemos daño!", "apply": "map", "speaker": "meliaow", "layer": "PS", "kind": "text", "scene": "잡담", "how": "태그", "who": "Melia"}
 {"id": "m16.e13.p1.c0", "src": "\\c[5]<b>Melia:</b>\\c[0] Yo ya conozco a <b>Canola</b>, es amiga de mi padre.", "apply": "map", "speaker": "meliaow", "layer": "PS", "kind": "text", "scene": "잡담", "how": "태그", "who": "Melia"}
 {"id": "m16.e13.p1.c1", "src": "Como dice la profe, es muy buena mujer.", "apply": "map", "speaker": "meliaow", "layer": "PS", "kind": "text", "scene": "잡담", "how": "상속", "who": "Melia"}
-{"id": "m16.e14.p0.c3", "src": "¿Usar <b>Polvo Explosivo</b>?", "apply": "map", "speaker": "golperoca", "layer": "PS", "kind": "text", "scene": "대화", "how": "미상"}
-{"id": "m16.e15.p0.c3", "src": "¿Usar <b>Polvo Explosivo</b>?", "apply": "map", "speaker": "golperoca", "layer": "PS", "kind": "text", "scene": "대화", "how": "미상"}
+{"id": "m16.e14.p0.c3", "src": "¿Usar <b>Polvo Explosivo</b>?", "apply": "map", "speaker": "golperoca", "layer": "N", "kind": "text", "scene": "대화", "how": "미상"}
+{"id": "m16.e15.p0.c3", "src": "¿Usar <b>Polvo Explosivo</b>?", "apply": "map", "speaker": "golperoca", "layer": "N", "kind": "text", "scene": "대화", "how": "미상"}
 {"id": "m16.e14.p0.c26", "src": "\\c[2]<b>Olivier:</b>\\c[0] <i>Très bien</i>, \\PN.", "apply": "map", "speaker": "golperoca", "layer": "PS", "kind": "text", "scene": "대화", "how": "태그", "who": "Olivier"}
 {"id": "m16.e15.p0.c26", "src": "\\c[2]<b>Olivier:</b>\\c[0] <i>Très bien</i>, \\PN.", "apply": "map", "speaker": "golperoca", "layer": "PS", "kind": "text", "scene": "대화", "how": "태그", "who": "Olivier"}
 {"id": "m16.e14.p0.c27", "src": "Aprovechad la Alquimia Pokémon para tener todos los recursos posibles en vuestro viaje.", "apply": "map", "speaker": "golperoca", "layer": "PS", "kind": "text", "scene": "대화", "how": "상속", "who": "Olivier"}
@@ -1765,19 +1765,19 @@
 {"id": "m24.e50.p0.c1", "src": "Has capturado \\v[226] Pokémon de 1018.", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
 {"id": "m24.e50.p1.c1", "src": "Has capturado \\v[226] Pokémon de 1018.", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
 {"id": "m24.e50.p0.c39", "src": "Captura más Pokémon.", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
-{"id": "m24.e34.p0.c2", "src": "¡Kaaaanghaaaa! (¡Tengo un Huevo Pokémon para ti!)", "apply": "map", "speaker": "115", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "115"}
-{"id": "m24.e34.p0.c3", "src": "(¿Te quedas con el huevo?)", "apply": "map", "speaker": "115", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "115"}
-{"id": "m24.e34.p0.c8", "src": "No tienes espacio en tu equipo para guardarlo.", "apply": "map", "speaker": "115", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "115"}
-{"id": "m24.e34.p0.c12", "src": "\\PN recibió un huevo.", "apply": "map", "speaker": "115", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "115"}
-{"id": "m24.e34.p0.c18", "src": "(¿Seguro que quieres dejarle el huevo a Kangaskhan?)", "apply": "map", "speaker": "115", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "115"}
-{"id": "m24.e34.p0.c24", "src": "(Kangaskhan se quedará cuidando del huevo.)", "apply": "map", "speaker": "115", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "115"}
-{"id": "m24.e34.p0.c36", "src": "¡Kanghaaaaa!", "apply": "map", "speaker": "115", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "115"}
-{"id": "m24.e34.p0.c42", "src": "¡Kanghaaaaa! (Tu \\v[3] está muy bien.)", "apply": "map", "speaker": "115", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "115"}
-{"id": "m24.e34.p0.c50", "src": "¡Kanghaaaaa! (\\v[3] y \\v[4] están bien.)", "apply": "map", "speaker": "115", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "115"}
-{"id": "m24.e34.p0.c52", "src": "(Aunque no les gusta estar juntos)", "apply": "map", "speaker": "115", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "115"}
-{"id": "m24.e34.p0.c56", "src": "(Parece que no se llevan demasiado bien)", "apply": "map", "speaker": "115", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "115"}
-{"id": "m24.e34.p0.c60", "src": "(Parece que se gustan un poco)", "apply": "map", "speaker": "115", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "115"}
-{"id": "m24.e34.p0.c64", "src": "(Están juntos todo el tiempo)", "apply": "map", "speaker": "115", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "115"}
+{"id": "m24.e34.p0.c2", "src": "¡Kaaaanghaaaa! (¡Tengo un Huevo Pokémon para ti!)", "apply": "map", "speaker": "115", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "115"}
+{"id": "m24.e34.p0.c3", "src": "(¿Te quedas con el huevo?)", "apply": "map", "speaker": "115", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "115"}
+{"id": "m24.e34.p0.c8", "src": "No tienes espacio en tu equipo para guardarlo.", "apply": "map", "speaker": "115", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "115"}
+{"id": "m24.e34.p0.c12", "src": "\\PN recibió un huevo.", "apply": "map", "speaker": "115", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "115"}
+{"id": "m24.e34.p0.c18", "src": "(¿Seguro que quieres dejarle el huevo a Kangaskhan?)", "apply": "map", "speaker": "115", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "115"}
+{"id": "m24.e34.p0.c24", "src": "(Kangaskhan se quedará cuidando del huevo.)", "apply": "map", "speaker": "115", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "115"}
+{"id": "m24.e34.p0.c36", "src": "¡Kanghaaaaa!", "apply": "map", "speaker": "115", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "115"}
+{"id": "m24.e34.p0.c42", "src": "¡Kanghaaaaa! (Tu \\v[3] está muy bien.)", "apply": "map", "speaker": "115", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "115"}
+{"id": "m24.e34.p0.c50", "src": "¡Kanghaaaaa! (\\v[3] y \\v[4] están bien.)", "apply": "map", "speaker": "115", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "115"}
+{"id": "m24.e34.p0.c52", "src": "(Aunque no les gusta estar juntos)", "apply": "map", "speaker": "115", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "115"}
+{"id": "m24.e34.p0.c56", "src": "(Parece que no se llevan demasiado bien)", "apply": "map", "speaker": "115", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "115"}
+{"id": "m24.e34.p0.c60", "src": "(Parece que se gustan un poco)", "apply": "map", "speaker": "115", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "115"}
+{"id": "m24.e34.p0.c64", "src": "(Están juntos todo el tiempo)", "apply": "map", "speaker": "115", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "115"}
 {"id": "m24.e18.p0.c1", "src": "Escuchas el ruido de un Pokémon en la dirección contraria.", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
 {"id": "m24.e19.p0.c1", "src": "Escuchas el ruido de un Pokémon en la dirección contraria.", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
 {"id": "m24.e51.p0.c0", "src": "<b>Mimi:</b> ¡Hola, \\PN! Gracias a mis cartas elementales, puedo ganarme la vida otorgando ciertas bendiciones.", "apply": "map", "speaker": "mimiow2", "layer": "PS", "kind": "text", "scene": "대화", "how": "태그", "who": "Mimi"}
@@ -1870,8 +1870,8 @@
 {"id": "m24.e33.p0.c89.0", "src": "Sí", "apply": "map", "speaker": "acrilico4", "layer": "PC", "kind": "choice", "scene": "대화", "how": "선택지"}
 {"id": "m24.e33.p0.c107.0", "src": "Sí", "apply": "map", "speaker": "acrilico4", "layer": "PC", "kind": "choice", "scene": "대화", "how": "선택지"}
 {"id": "m24.e33.p0.c121.0", "src": "Sí", "apply": "map", "speaker": "acrilico4", "layer": "PC", "kind": "choice", "scene": "대화", "how": "선택지"}
-{"id": "m24.e34.p0.c4.0", "src": "Sí", "apply": "map", "speaker": "115", "layer": "N", "kind": "choice", "scene": "대화", "how": "선택지"}
-{"id": "m24.e34.p0.c19.0", "src": "Sí", "apply": "map", "speaker": "115", "layer": "N", "kind": "choice", "scene": "대화", "how": "선택지"}
+{"id": "m24.e34.p0.c4.0", "src": "Sí", "apply": "map", "speaker": "115", "layer": "PC", "kind": "choice", "scene": "대화", "how": "선택지"}
+{"id": "m24.e34.p0.c19.0", "src": "Sí", "apply": "map", "speaker": "115", "layer": "PC", "kind": "choice", "scene": "대화", "how": "선택지"}
 {"id": "m24.e41.p0.c5.0", "src": "Sí", "apply": "map", "speaker": "lotoow", "layer": "PS", "kind": "choice", "scene": "잡담", "how": "선택지"}
 {"id": "m24.e43.p0.c4.0", "src": "Sí", "apply": "map", "speaker": "giniaow", "layer": "PS", "kind": "choice", "scene": "대화", "how": "선택지"}
 {"id": "m24.e46.p0.c2.0", "src": "Sí", "apply": "map", "layer": "N", "kind": "choice", "scene": "잡담", "how": "선택지"}
@@ -1882,8 +1882,8 @@
 {"id": "m24.e33.p0.c89.01", "src": "No", "apply": "map", "speaker": "acrilico4", "layer": "PC", "kind": "choice", "scene": "대화", "how": "선택지"}
 {"id": "m24.e33.p0.c107.01", "src": "No", "apply": "map", "speaker": "acrilico4", "layer": "PC", "kind": "choice", "scene": "대화", "how": "선택지"}
 {"id": "m24.e33.p0.c121.01", "src": "No", "apply": "map", "speaker": "acrilico4", "layer": "PC", "kind": "choice", "scene": "대화", "how": "선택지"}
-{"id": "m24.e34.p0.c4.01", "src": "No", "apply": "map", "speaker": "115", "layer": "N", "kind": "choice", "scene": "대화", "how": "선택지"}
-{"id": "m24.e34.p0.c19.01", "src": "No", "apply": "map", "speaker": "115", "layer": "N", "kind": "choice", "scene": "대화", "how": "선택지"}
+{"id": "m24.e34.p0.c4.01", "src": "No", "apply": "map", "speaker": "115", "layer": "PC", "kind": "choice", "scene": "대화", "how": "선택지"}
+{"id": "m24.e34.p0.c19.01", "src": "No", "apply": "map", "speaker": "115", "layer": "PC", "kind": "choice", "scene": "대화", "how": "선택지"}
 {"id": "m24.e41.p0.c5.01", "src": "No", "apply": "map", "speaker": "lotoow", "layer": "PS", "kind": "choice", "scene": "잡담", "how": "선택지"}
 {"id": "m24.e43.p0.c4.01", "src": "No", "apply": "map", "speaker": "giniaow", "layer": "PS", "kind": "choice", "scene": "대화", "how": "선택지"}
 {"id": "m24.e46.p0.c2.01", "src": "No", "apply": "map", "layer": "N", "kind": "choice", "scene": "잡담", "how": "선택지"}
@@ -7077,7 +7077,7 @@
 {"id": "m136.e6.p0.c0", "src": "<b>Gruta Tierraunida</b>, ¡construyendo una <b>Kalos</b> conectada para todos!", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
 {"id": "m136.e7.p0.c1", "src": "¿Quieres usar la Montura Gogoat?", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
 {"id": "m136.e8.p0.c1", "src": "¿Quieres usar la Montura Gogoat?", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
-{"id": "m136.e9.p0.c4", "src": "¿Usar <b>Polvo Explosivo</b>?", "apply": "map", "speaker": "golperoca", "layer": "PC", "kind": "text", "scene": "잡담", "how": "미상"}
+{"id": "m136.e9.p0.c4", "src": "¿Usar <b>Polvo Explosivo</b>?", "apply": "map", "speaker": "golperoca", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
 {"id": "m136.e9.p0.c42", "src": "<b>Campesina:</b> ¡Juntos, al fin! ¡Mi único y verdadero amor!", "apply": "map", "speaker": "golperoca", "layer": "PC", "kind": "text", "scene": "잡담", "how": "태그", "who": "Campesina"}
 {"id": "m136.e9.p0.c84", "src": "<b>Campesino:</b> ¿Se... se refería a mi Pokémon y no a mí? Otra vez que me pasa lo mismo...", "apply": "map", "speaker": "golperoca", "layer": "PC", "kind": "text", "scene": "잡담", "how": "태그", "who": "Campesino"}
 {"id": "m136.e21.p0.c2", "src": "Ahora esta cueva pertenece a la Revolución. ¿Tienes permiso para entrar en ella?", "apply": "map", "speaker": "revolucionario", "layer": "PC", "kind": "text", "scene": "트레이너", "how": "그림", "who": "revolucionario"}
@@ -7343,16 +7343,16 @@
 {"id": "m141.e55.p0.c7", "src": "Pues está atendiendo unos asuntos importantes en el <b>Hospicio Caduco</b>. Ya sabes, ese castillo que hay en la parte norte del pueblo.", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
 {"id": "m141.e22.p0.c0", "src": "Los cazadores no nos limitamos a usar a los Pokémon para combatir, sino que combatimos junto a ellos.", "apply": "map", "speaker": "cazadorow", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "cazadorow"}
 {"id": "m141.e22.p0.c1", "src": "Por eso entrenamos para dominar también la espada, la ballesta y el látigo.", "apply": "map", "speaker": "cazadorow", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "cazadorow"}
-{"id": "m141.e33.p0.c0", "src": "...", "apply": "map", "speaker": "cazadorHerido", "layer": "N", "kind": "text", "scene": "잡담", "how": "지문"}
-{"id": "m141.e33.p1.c0", "src": "...", "apply": "map", "speaker": "cazadorHerido", "layer": "N", "kind": "text", "scene": "잡담", "how": "지문"}
-{"id": "m141.e33.p0.c1", "src": "Agh... no te acerques a mí, Aspirante. Estoy gravemente enfermo y no sé si podría ser contagioso.", "apply": "map", "speaker": "cazadorHerido", "layer": "N", "kind": "text", "scene": "잡담", "how": "지문"}
-{"id": "m141.e33.p1.c1", "src": "Agh... no te acerques a mí, Aspirante. Estoy gravemente enfermo y no sé si podría ser contagioso.", "apply": "map", "speaker": "cazadorHerido", "layer": "N", "kind": "text", "scene": "잡담", "how": "지문"}
-{"id": "m141.e33.p0.c2", "src": "Creo que se trata de una bruja... Sí... En algún lugar del reino, una bruja está jugando con mi alma mediante algún ritual.", "apply": "map", "speaker": "cazadorHerido", "layer": "N", "kind": "text", "scene": "잡담", "how": "지문"}
-{"id": "m141.e33.p1.c2", "src": "Creo que se trata de una bruja... Sí... En algún lugar del reino, una bruja está jugando con mi alma mediante algún ritual.", "apply": "map", "speaker": "cazadorHerido", "layer": "N", "kind": "text", "scene": "잡담", "how": "지문"}
-{"id": "m141.e33.p0.c3", "src": "¿Qué... qué se propone hacer conmigo?", "apply": "map", "speaker": "cazadorHerido", "layer": "N", "kind": "text", "scene": "잡담", "how": "지문"}
-{"id": "m141.e33.p1.c3", "src": "¿Qué... qué se propone hacer conmigo?", "apply": "map", "speaker": "cazadorHerido", "layer": "N", "kind": "text", "scene": "잡담", "how": "지문"}
-{"id": "m141.e33.p1.c4", "src": "¡No... no puedo aguantar más! ¡Mi carne... se desprende!", "apply": "map", "speaker": "cazadorHerido", "layer": "N", "kind": "text", "scene": "잡담", "how": "지문"}
-{"id": "m141.e33.p1.c46", "src": "Gracias, valiente Aspirante, por liberarme de esta maldición.", "apply": "map", "speaker": "cazadorHerido", "layer": "N", "kind": "text", "scene": "잡담", "how": "지문"}
+{"id": "m141.e33.p0.c0", "src": "...", "apply": "map", "speaker": "cazadorHerido", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "cazadorHerido"}
+{"id": "m141.e33.p1.c0", "src": "...", "apply": "map", "speaker": "cazadorHerido", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "cazadorHerido"}
+{"id": "m141.e33.p0.c1", "src": "Agh... no te acerques a mí, Aspirante. Estoy gravemente enfermo y no sé si podría ser contagioso.", "apply": "map", "speaker": "cazadorHerido", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "cazadorHerido"}
+{"id": "m141.e33.p1.c1", "src": "Agh... no te acerques a mí, Aspirante. Estoy gravemente enfermo y no sé si podría ser contagioso.", "apply": "map", "speaker": "cazadorHerido", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "cazadorHerido"}
+{"id": "m141.e33.p0.c2", "src": "Creo que se trata de una bruja... Sí... En algún lugar del reino, una bruja está jugando con mi alma mediante algún ritual.", "apply": "map", "speaker": "cazadorHerido", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "cazadorHerido"}
+{"id": "m141.e33.p1.c2", "src": "Creo que se trata de una bruja... Sí... En algún lugar del reino, una bruja está jugando con mi alma mediante algún ritual.", "apply": "map", "speaker": "cazadorHerido", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "cazadorHerido"}
+{"id": "m141.e33.p0.c3", "src": "¿Qué... qué se propone hacer conmigo?", "apply": "map", "speaker": "cazadorHerido", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "cazadorHerido"}
+{"id": "m141.e33.p1.c3", "src": "¿Qué... qué se propone hacer conmigo?", "apply": "map", "speaker": "cazadorHerido", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "cazadorHerido"}
+{"id": "m141.e33.p1.c4", "src": "¡No... no puedo aguantar más! ¡Mi carne... se desprende!", "apply": "map", "speaker": "cazadorHerido", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "cazadorHerido"}
+{"id": "m141.e33.p1.c46", "src": "Gracias, valiente Aspirante, por liberarme de esta maldición.", "apply": "map", "speaker": "cazadorHerido", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "cazadorHerido"}
 {"id": "m141.e23.p0.c0", "src": "A veces, después de una larga lucha junto a mi Pokémon, siento una conexión con él que me cuesta explicar con palabras.", "apply": "map", "speaker": "cazadorow", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "cazadorow"}
 {"id": "m141.e23.p0.c1", "src": "Es algo como si nuestros espíritus estuvieran conectados, como si fueran uno solo.", "apply": "map", "speaker": "cazadorow", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "cazadorow"}
 {"id": "m141.e18.p0.c0", "src": "La Regente de este pueblo es <b>Belladona</b>. También es la actual líder del Gremio de Cazadores.", "apply": "map", "speaker": "anciana", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "anciana"}
@@ -7540,42 +7540,42 @@
 {"id": "m146.e13.p0.c50", "src": "Vas a tener que combatir para avanzar, así que... ¡demos comienzo a la cacería!", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
 {"id": "m146.e14.p0.c50", "src": "Vas a tener que combatir para avanzar, así que... ¡demos comienzo a la cacería!", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
 {"id": "m146.e15.p0.c50", "src": "Vas a tener que combatir para avanzar, así que... ¡demos comienzo a la cacería!", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
-{"id": "m146.e5.p0.c52", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Elías"}
-{"id": "m146.e5.p0.c63", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Edgard"}
-{"id": "m146.e5.p0.c74", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Elvira"}
-{"id": "m146.e5.p0.c85", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Casandra"}
-{"id": "m146.e5.p0.c96", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Keira"}
-{"id": "m146.e5.p0.c107", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Selleck"}
-{"id": "m146.e11.p0.c52", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Elías"}
-{"id": "m146.e11.p0.c63", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Edgard"}
-{"id": "m146.e11.p0.c74", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Elvira"}
-{"id": "m146.e11.p0.c85", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Casandra"}
-{"id": "m146.e11.p0.c96", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Keira"}
-{"id": "m146.e11.p0.c107", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Selleck"}
-{"id": "m146.e12.p0.c52", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Elías"}
-{"id": "m146.e12.p0.c63", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Edgard"}
-{"id": "m146.e12.p0.c74", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Elvira"}
-{"id": "m146.e12.p0.c85", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Casandra"}
-{"id": "m146.e12.p0.c96", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Keira"}
-{"id": "m146.e12.p0.c107", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Selleck"}
-{"id": "m146.e13.p0.c52", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Elías"}
-{"id": "m146.e13.p0.c63", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Edgard"}
-{"id": "m146.e13.p0.c74", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Elvira"}
-{"id": "m146.e13.p0.c85", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Casandra"}
-{"id": "m146.e13.p0.c96", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Keira"}
-{"id": "m146.e13.p0.c107", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Selleck"}
-{"id": "m146.e14.p0.c52", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Elías"}
-{"id": "m146.e14.p0.c63", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Edgard"}
-{"id": "m146.e14.p0.c74", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Elvira"}
-{"id": "m146.e14.p0.c85", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Casandra"}
-{"id": "m146.e14.p0.c96", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Keira"}
-{"id": "m146.e14.p0.c107", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Selleck"}
-{"id": "m146.e15.p0.c52", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Elías"}
-{"id": "m146.e15.p0.c63", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Edgard"}
-{"id": "m146.e15.p0.c74", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Elvira"}
-{"id": "m146.e15.p0.c85", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Casandra"}
-{"id": "m146.e15.p0.c96", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Keira"}
-{"id": "m146.e15.p0.c107", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Selleck"}
+{"id": "m146.e5.p0.c52", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Elías"}
+{"id": "m146.e5.p0.c63", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Edgard"}
+{"id": "m146.e5.p0.c74", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Elvira"}
+{"id": "m146.e5.p0.c85", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Casandra"}
+{"id": "m146.e5.p0.c96", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Keira"}
+{"id": "m146.e5.p0.c107", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Selleck"}
+{"id": "m146.e11.p0.c52", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Elías"}
+{"id": "m146.e11.p0.c63", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Edgard"}
+{"id": "m146.e11.p0.c74", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Elvira"}
+{"id": "m146.e11.p0.c85", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Casandra"}
+{"id": "m146.e11.p0.c96", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Keira"}
+{"id": "m146.e11.p0.c107", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Selleck"}
+{"id": "m146.e12.p0.c52", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Elías"}
+{"id": "m146.e12.p0.c63", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Edgard"}
+{"id": "m146.e12.p0.c74", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Elvira"}
+{"id": "m146.e12.p0.c85", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Casandra"}
+{"id": "m146.e12.p0.c96", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Keira"}
+{"id": "m146.e12.p0.c107", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Selleck"}
+{"id": "m146.e13.p0.c52", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Elías"}
+{"id": "m146.e13.p0.c63", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Edgard"}
+{"id": "m146.e13.p0.c74", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Elvira"}
+{"id": "m146.e13.p0.c85", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Casandra"}
+{"id": "m146.e13.p0.c96", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Keira"}
+{"id": "m146.e13.p0.c107", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Selleck"}
+{"id": "m146.e14.p0.c52", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Elías"}
+{"id": "m146.e14.p0.c63", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Edgard"}
+{"id": "m146.e14.p0.c74", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Elvira"}
+{"id": "m146.e14.p0.c85", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Casandra"}
+{"id": "m146.e14.p0.c96", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Keira"}
+{"id": "m146.e14.p0.c107", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Selleck"}
+{"id": "m146.e15.p0.c52", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Elías"}
+{"id": "m146.e15.p0.c63", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Edgard"}
+{"id": "m146.e15.p0.c74", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Elvira"}
+{"id": "m146.e15.p0.c85", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Casandra"}
+{"id": "m146.e15.p0.c96", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Keira"}
+{"id": "m146.e15.p0.c107", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Selleck"}
 {"id": "m146.e5.p0.c166", "src": "¡Varios Pokémon de tu equipo reciben estados alterados!", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
 {"id": "m146.e11.p0.c166", "src": "¡Varios Pokémon de tu equipo reciben estados alterados!", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
 {"id": "m146.e12.p0.c166", "src": "¡Varios Pokémon de tu equipo reciben estados alterados!", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
@@ -7594,24 +7594,24 @@
 {"id": "m146.e13.p0.c228", "src": "¡Ju, ju, ju! ¡Que el mal fario caiga sobre ti!", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
 {"id": "m146.e14.p0.c228", "src": "¡Ju, ju, ju! ¡Que el mal fario caiga sobre ti!", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
 {"id": "m146.e15.p0.c228", "src": "¡Ju, ju, ju! ¡Que el mal fario caiga sobre ti!", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
-{"id": "m146.e5.p0.c230", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Yona"}
-{"id": "m146.e5.p0.c241", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Dora"}
-{"id": "m146.e5.p0.c252", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Neila"}
-{"id": "m146.e11.p0.c230", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Yona"}
-{"id": "m146.e11.p0.c241", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Dora"}
-{"id": "m146.e11.p0.c252", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Neila"}
-{"id": "m146.e12.p0.c230", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Yona"}
-{"id": "m146.e12.p0.c241", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Dora"}
-{"id": "m146.e12.p0.c252", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Neila"}
-{"id": "m146.e13.p0.c230", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Yona"}
-{"id": "m146.e13.p0.c241", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Dora"}
-{"id": "m146.e13.p0.c252", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Neila"}
-{"id": "m146.e14.p0.c230", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Yona"}
-{"id": "m146.e14.p0.c241", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Dora"}
-{"id": "m146.e14.p0.c252", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Neila"}
-{"id": "m146.e15.p0.c230", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Yona"}
-{"id": "m146.e15.p0.c241", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Dora"}
-{"id": "m146.e15.p0.c252", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Neila"}
+{"id": "m146.e5.p0.c230", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Yona"}
+{"id": "m146.e5.p0.c241", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Dora"}
+{"id": "m146.e5.p0.c252", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Neila"}
+{"id": "m146.e11.p0.c230", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Yona"}
+{"id": "m146.e11.p0.c241", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Dora"}
+{"id": "m146.e11.p0.c252", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Neila"}
+{"id": "m146.e12.p0.c230", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Yona"}
+{"id": "m146.e12.p0.c241", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Dora"}
+{"id": "m146.e12.p0.c252", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Neila"}
+{"id": "m146.e13.p0.c230", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Yona"}
+{"id": "m146.e13.p0.c241", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Dora"}
+{"id": "m146.e13.p0.c252", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Neila"}
+{"id": "m146.e14.p0.c230", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Yona"}
+{"id": "m146.e14.p0.c241", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Dora"}
+{"id": "m146.e14.p0.c252", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Neila"}
+{"id": "m146.e15.p0.c230", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Yona"}
+{"id": "m146.e15.p0.c241", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Dora"}
+{"id": "m146.e15.p0.c252", "src": "¡Regreso a la Sombra!", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Neila"}
 {"id": "m146.e6.p0.c0", "src": "Has tenido suerte, no me gusta demasiado combatir.", "apply": "map", "speaker": "cazadorow", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "cazadorow"}
 {"id": "m146.e6.p0.c1", "src": "Pero puedo darte unos estupendos consejos.", "apply": "map", "speaker": "cazadorow", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "cazadorow"}
 {"id": "m146.e6.p0.c2", "src": "Si la <i>mademoiselle</i> oye a una persona, prepárate para combatir o para encontrarte conmigo de nuevo.", "apply": "map", "speaker": "cazadorow", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "cazadorow"}
@@ -8090,8 +8090,8 @@
 {"id": "m150.e12.p0.c1", "src": "Puedo venderte otros refrigerios, eso sí.", "apply": "map", "speaker": "revolucionaria", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "revolucionaria"}
 {"id": "m150.e7.p0.c0", "src": "Esta dulce <i>mademoiselle</i> acaba de llegar de una región lejana sin un solo pokécuarto y dice que quiere casarse conmigo lo antes posible.", "apply": "map", "speaker": "burguesow", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "burguesow"}
 {"id": "m150.e7.p0.c1", "src": "Si es que cuando uno es un caballero encantador como yo, va enamorando allá donde va.", "apply": "map", "speaker": "burguesow", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "burguesow"}
-{"id": "m150.e13.p0.c0", "src": "¡Drowzeeeee!", "apply": "map", "speaker": "096", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "096"}
-{"id": "m150.e13.p0.c1", "src": "(Parece ser el \"camarero\" del restaurante)", "apply": "map", "speaker": "096", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "096"}
+{"id": "m150.e13.p0.c0", "src": "¡Drowzeeeee!", "apply": "map", "speaker": "096", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "096"}
+{"id": "m150.e13.p0.c1", "src": "(Parece ser el \"camarero\" del restaurante)", "apply": "map", "speaker": "096", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "096"}
 {"id": "m150.e19.p0.c1", "src": "Esto es una habitación reservada.", "apply": "map", "speaker": "gitano", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "gitano"}
 {"id": "m150.e19.p0.c2", "src": "Si no quieres meterte en problemas, puedes dar por terminada esta conversación.", "apply": "map", "speaker": "gitano", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "gitano"}
 {"id": "m150.e8.p0.c0", "src": "¡Viva la Revolución...! ¡Hic! ¡Viva la voluntad de los pueblos!", "apply": "map", "speaker": "revolucionario", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "revolucionario"}
@@ -9955,14 +9955,14 @@
 {"id": "m203.e6.p0.c22", "src": "<b>???:</b> ¡Todo gracias a ti, mi nuevo y único amigo!", "apply": "map", "layer": "PS", "kind": "text", "scene": "컷신", "how": "태그", "who": "???"}
 {"id": "m203.e6.p0.c25", "src": "<b>???:</b> ¡Todo gracias a ti, mi nueva y única amiga!", "apply": "map", "layer": "PS", "kind": "text", "scene": "컷신", "how": "태그", "who": "???"}
 {"id": "m203.e6.p0.c28", "src": "¡Ven, ven! ¡Tienes que experimentar las vistas desde aquí arriba!", "apply": "map", "layer": "PS", "kind": "text", "scene": "컷신", "how": "분기다름", "who": "???"}
-{"id": "m206.e16.p0.c1", "src": "¿Qué necesitas?", "apply": "map", "speaker": "474", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
-{"id": "m206.e16.p0.c18", "src": "¿Qué Pokémon debería recordar un movimiento?", "apply": "map", "speaker": "474", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
-{"id": "m206.e16.p0.c25", "src": "Vale, ¡vuelve cuando lo necesites!", "apply": "map", "speaker": "474", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
-{"id": "m206.e16.p0.c29", "src": "Eso es un huevo, pedazo de inútil.", "apply": "map", "speaker": "474", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
-{"id": "m206.e16.p0.c34", "src": "\\bNo way, I don't want to go near a Shadow Pokémon..", "apply": "map", "speaker": "474", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
-{"id": "m206.e16.p0.c40", "src": "Hmm... parece que no puedo enseñarle nada a tú \\v[3].", "apply": "map", "speaker": "474", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
-{"id": "m206.e16.p0.c45", "src": "¿Qué debería recordar \\v[3]?", "apply": "map", "speaker": "474", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
-{"id": "m206.e16.p0.c47", "src": "Bien, hecho está. Tu Pokémon ha recordado ese movimiento.", "apply": "map", "speaker": "474", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
+{"id": "m206.e16.p0.c1", "src": "¿Qué necesitas?", "apply": "map", "speaker": "474", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
+{"id": "m206.e16.p0.c18", "src": "¿Qué Pokémon debería recordar un movimiento?", "apply": "map", "speaker": "474", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
+{"id": "m206.e16.p0.c25", "src": "Vale, ¡vuelve cuando lo necesites!", "apply": "map", "speaker": "474", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
+{"id": "m206.e16.p0.c29", "src": "Eso es un huevo, pedazo de inútil.", "apply": "map", "speaker": "474", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
+{"id": "m206.e16.p0.c34", "src": "\\bNo way, I don't want to go near a Shadow Pokémon..", "apply": "map", "speaker": "474", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
+{"id": "m206.e16.p0.c40", "src": "Hmm... parece que no puedo enseñarle nada a tú \\v[3].", "apply": "map", "speaker": "474", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
+{"id": "m206.e16.p0.c45", "src": "¿Qué debería recordar \\v[3]?", "apply": "map", "speaker": "474", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
+{"id": "m206.e16.p0.c47", "src": "Bien, hecho está. Tu Pokémon ha recordado ese movimiento.", "apply": "map", "speaker": "474", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
 {"id": "m206.e11.p0.c2", "src": "¡Usaremos este palacio para alojar a los pobres! ¿De verdad vas a luchar contra ese noble propósito?", "apply": "map", "speaker": "revolucionario", "layer": "PC", "kind": "text", "scene": "트레이너", "how": "그림", "who": "revolucionario"}
 {"id": "m206.e11.p0.c3", "src": "¡Vaya! Pues sí que luchas con convicción...", "apply": "map", "speaker": "revolucionario", "layer": "PC", "kind": "battle", "scene": "트레이너", "how": "전투호출", "who": "Reyson"}
 {"id": "m206.e11.p1.c0", "src": "Afortunadamente, soy pobre, ¡lo cual significa que este palacio pasará a pertenecerme!", "apply": "map", "speaker": "revolucionario", "layer": "PC", "kind": "text", "scene": "트레이너", "how": "그림", "who": "revolucionario"}
@@ -9973,10 +9973,10 @@
 {"id": "m206.e10.p0.c2", "src": "¿Has venido a por el arma secreta que se esconde en el palacio? Pues te vas a llevar una decepción cuando te eche de aquí.", "apply": "map", "speaker": "azothaow", "layer": "PC", "kind": "text", "scene": "트레이너", "how": "그림", "who": "azothaow"}
 {"id": "m206.e10.p0.c3", "src": "No debieron darme tantas responsabilidades.", "apply": "map", "speaker": "azothaow", "layer": "PC", "kind": "battle", "scene": "트레이너", "how": "전투호출", "who": "Alexandra"}
 {"id": "m206.e10.p1.c0", "src": "Aún tengo que seguir entrenando a mis Pokémon, ¡los malos también tenemos que esforzarnos!", "apply": "map", "speaker": "azothaow", "layer": "PC", "kind": "text", "scene": "트레이너", "how": "그림", "who": "azothaow"}
-{"id": "m206.e16.p0.c2.0", "src": "Curar Pokémon", "apply": "map", "speaker": "474", "layer": "N", "kind": "choice", "scene": "대화", "how": "선택지"}
-{"id": "m206.e16.p0.c2.01", "src": "Acceder al Rancho", "apply": "map", "speaker": "474", "layer": "N", "kind": "choice", "scene": "대화", "how": "선택지"}
-{"id": "m206.e16.p0.c2.02", "src": "Recordar Movs", "apply": "map", "speaker": "474", "layer": "N", "kind": "choice", "scene": "대화", "how": "선택지"}
-{"id": "m206.e16.p0.c2.03", "src": "Nada", "apply": "map", "speaker": "474", "layer": "N", "kind": "choice", "scene": "대화", "how": "선택지"}
+{"id": "m206.e16.p0.c2.0", "src": "Curar Pokémon", "apply": "map", "speaker": "474", "layer": "PC", "kind": "choice", "scene": "대화", "how": "선택지"}
+{"id": "m206.e16.p0.c2.01", "src": "Acceder al Rancho", "apply": "map", "speaker": "474", "layer": "PC", "kind": "choice", "scene": "대화", "how": "선택지"}
+{"id": "m206.e16.p0.c2.02", "src": "Recordar Movs", "apply": "map", "speaker": "474", "layer": "PC", "kind": "choice", "scene": "대화", "how": "선택지"}
+{"id": "m206.e16.p0.c2.03", "src": "Nada", "apply": "map", "speaker": "474", "layer": "PC", "kind": "choice", "scene": "대화", "how": "선택지"}
 {"id": "m207.e5.p0.c0", "src": "¿Quieres volver al <b>Palacio Luminalia</b>?", "apply": "map", "speaker": "luz", "layer": "N", "kind": "text", "scene": "잡담", "how": "지문"}
 {"id": "m207.e5.p1.c0", "src": "¿Quieres volver al <b>Palacio Luminalia</b>?", "apply": "map", "speaker": "luz", "layer": "N", "kind": "text", "scene": "잡담", "how": "지문"}
 {"id": "m207.e6.p1.c0", "src": "Aquí solo hay basura.", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
@@ -10235,14 +10235,14 @@
 {"id": "m213.e1.p0.c89", "src": "Y cuando los hayamos capturado... solo os pido que compartáis conmigo una pequeña parte de su poder.", "apply": "map", "layer": "PS", "kind": "text", "scene": "컷신", "how": "상속", "who": "Aure"}
 {"id": "m213.e1.p0.c94", "src": "Y así, el Pokémon-hombre <b>Aure</b> pasó los siguientes meses documentando por escrito la construcción del arma.", "apply": "map", "layer": "PS", "kind": "text", "scene": "컷신", "how": "상속", "who": "Aure"}
 {"id": "m213.e1.p0.c95", "src": "Pero las cosas no salieron según lo planeado.", "apply": "map", "layer": "PS", "kind": "text", "scene": "컷신", "how": "상속", "who": "Aure"}
-{"id": "m214.e66.p0.c1", "src": "¿Qué necesitas?", "apply": "map", "speaker": "474", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
-{"id": "m214.e66.p0.c18", "src": "¿Qué Pokémon debería recordar un movimiento?", "apply": "map", "speaker": "474", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
-{"id": "m214.e66.p0.c25", "src": "Vale, ¡vuelve cuando lo necesites!", "apply": "map", "speaker": "474", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
-{"id": "m214.e66.p0.c29", "src": "Eso es un huevo, pedazo de inútil.", "apply": "map", "speaker": "474", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
-{"id": "m214.e66.p0.c34", "src": "\\bNo way, I don't want to go near a Shadow Pokémon..", "apply": "map", "speaker": "474", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
-{"id": "m214.e66.p0.c40", "src": "Hmm... parece que no puedo enseñarle nada a tú \\v[3].", "apply": "map", "speaker": "474", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
-{"id": "m214.e66.p0.c45", "src": "¿Qué debería recordar \\v[3]?", "apply": "map", "speaker": "474", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
-{"id": "m214.e66.p0.c47", "src": "Bien, hecho está. Tu Pokémon ha recordado ese movimiento.", "apply": "map", "speaker": "474", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
+{"id": "m214.e66.p0.c1", "src": "¿Qué necesitas?", "apply": "map", "speaker": "474", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
+{"id": "m214.e66.p0.c18", "src": "¿Qué Pokémon debería recordar un movimiento?", "apply": "map", "speaker": "474", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
+{"id": "m214.e66.p0.c25", "src": "Vale, ¡vuelve cuando lo necesites!", "apply": "map", "speaker": "474", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
+{"id": "m214.e66.p0.c29", "src": "Eso es un huevo, pedazo de inútil.", "apply": "map", "speaker": "474", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
+{"id": "m214.e66.p0.c34", "src": "\\bNo way, I don't want to go near a Shadow Pokémon..", "apply": "map", "speaker": "474", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
+{"id": "m214.e66.p0.c40", "src": "Hmm... parece que no puedo enseñarle nada a tú \\v[3].", "apply": "map", "speaker": "474", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
+{"id": "m214.e66.p0.c45", "src": "¿Qué debería recordar \\v[3]?", "apply": "map", "speaker": "474", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
+{"id": "m214.e66.p0.c47", "src": "Bien, hecho está. Tu Pokémon ha recordado ese movimiento.", "apply": "map", "speaker": "474", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "474"}
 {"id": "m214.e57.p0.c2", "src": "Ya casi hemos terminado de hacernos con el palacio. ¡Si aprecias tu vida, te irás bien lejos de aquí!", "apply": "map", "speaker": "revolucionaria", "layer": "PC", "kind": "text", "scene": "트레이너", "how": "그림", "who": "revolucionaria"}
 {"id": "m214.e57.p1.c0", "src": "Ya casi hemos terminado de hacernos con el palacio. ¡Si aprecias tu vida, te irás bien lejos de aquí!", "apply": "map", "speaker": "revolucionaria", "layer": "PC", "kind": "text", "scene": "트레이너", "how": "그림", "who": "revolucionaria"}
 {"id": "m214.e57.p0.c3", "src": "¡El palacio ya es nuestro hagas lo que hagas! ¡Será mejor que te rindas ahora!", "apply": "map", "speaker": "revolucionaria", "layer": "PC", "kind": "battle", "scene": "트레이너", "how": "전투호출", "who": "Pietra"}
@@ -10318,10 +10318,10 @@
 {"id": "m214.e65.p0.c9", "src": "Puedes seguir jugando de forma normal, pero recuerda que has fracasado.", "apply": "map", "layer": "N", "kind": "text", "scene": "컷신", "how": "미상"}
 {"id": "m214.e65.p0.c29", "src": "Puedes seguir jugando de forma normal, pero recuerda que has fracasado.", "apply": "map", "layer": "N", "kind": "text", "scene": "컷신", "how": "미상"}
 {"id": "m214.e65.p0.c58", "src": "Puedes seguir jugando de forma normal, pero recuerda que has fracasado.", "apply": "map", "layer": "N", "kind": "text", "scene": "컷신", "how": "미상"}
-{"id": "m214.e66.p0.c2.0", "src": "Curar Pokémon", "apply": "map", "speaker": "474", "layer": "N", "kind": "choice", "scene": "대화", "how": "선택지"}
-{"id": "m214.e66.p0.c2.01", "src": "Acceder al Rancho", "apply": "map", "speaker": "474", "layer": "N", "kind": "choice", "scene": "대화", "how": "선택지"}
-{"id": "m214.e66.p0.c2.02", "src": "Recordar Movs", "apply": "map", "speaker": "474", "layer": "N", "kind": "choice", "scene": "대화", "how": "선택지"}
-{"id": "m214.e66.p0.c2.03", "src": "Nada", "apply": "map", "speaker": "474", "layer": "N", "kind": "choice", "scene": "대화", "how": "선택지"}
+{"id": "m214.e66.p0.c2.0", "src": "Curar Pokémon", "apply": "map", "speaker": "474", "layer": "PC", "kind": "choice", "scene": "대화", "how": "선택지"}
+{"id": "m214.e66.p0.c2.01", "src": "Acceder al Rancho", "apply": "map", "speaker": "474", "layer": "PC", "kind": "choice", "scene": "대화", "how": "선택지"}
+{"id": "m214.e66.p0.c2.02", "src": "Recordar Movs", "apply": "map", "speaker": "474", "layer": "PC", "kind": "choice", "scene": "대화", "how": "선택지"}
+{"id": "m214.e66.p0.c2.03", "src": "Nada", "apply": "map", "speaker": "474", "layer": "PC", "kind": "choice", "scene": "대화", "how": "선택지"}
 {"id": "m214.e36.p0.c3.0", "src": "Sí", "apply": "map", "speaker": "lantow3", "layer": "PS", "kind": "choice", "scene": "잡담", "how": "선택지"}
 {"id": "m214.e36.p0.c3.01", "src": "No", "apply": "map", "speaker": "lantow3", "layer": "PS", "kind": "choice", "scene": "잡담", "how": "선택지"}
 {"id": "m215.e1.p0.c6", "src": "Finalmente, <i>monsieur</i> <b>Aure</b> terminó de dejar por escrito los planos del arma y fue liberado de su tormento.", "apply": "map", "speaker": "aureow", "layer": "PS", "kind": "text", "scene": "컷신", "how": "미상"}
@@ -11406,13 +11406,13 @@
 {"id": "m234.e12.p1.c0", "src": "Si tienes 100 fans yo soy una de ellos. Si tienes solo tiene 1 fan, esa soy yo. Si no tienes ningún fan es porque yo ya no estoy en este mundo.", "apply": "map", "speaker": "brujita", "layer": "PC", "kind": "text", "scene": "트레이너", "how": "그림", "who": "brujita"}
 {"id": "m234.e7.p0.c0", "src": "<b>PISTA DE ENTRENADOR:</b> Los Pokémon de tipo Planta no se ven afectados por los movimientos de polvos y esporas.", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "태그", "who": "PISTA DE ENTRENADOR"}
 {"id": "m234.e18.p0.c6", "src": "Gracias a mi patrocinador, he podido pagar este atuendo Ranger, ¡y estoy de lo más guapo con él!", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
-{"id": "m234.e18.p0.c7", "src": "Habré perdido, pero sigo siendo más guapo que tú.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Alber"}
+{"id": "m234.e18.p0.c7", "src": "Habré perdido, pero sigo siendo más guapo que tú.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Alber"}
 {"id": "m234.e13.p0.c0", "src": "Por favor, no ensucies esta ruta o me dará ecoansiedad.", "apply": "map", "speaker": "rangera", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "rangera"}
 {"id": "m234.e19.p0.c0", "src": "El cuerpo de Rangers Pokémon fue financiado en parte gracias a una donación de monsieur Lanto. Fue uno de sus últimos actos de generosidad antes de volverse completamente majara.", "apply": "map", "speaker": "ranger", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "ranger"}
 {"id": "m234.e14.p0.c6", "src": "¡Ja! ¡Somos los Ranger Pokémon! ¿Has venido a ensuciar este bonito sendero otoñal?", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
-{"id": "m234.e14.p0.c7", "src": "Siento haberte asustado. No, espera. Eso deberías decirlo tú.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Marianne"}
+{"id": "m234.e14.p0.c7", "src": "Siento haberte asustado. No, espera. Eso deberías decirlo tú.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Marianne"}
 {"id": "m234.e20.p0.c6", "src": "Como Ranger Pokémon que soy, mi responsabilidad es la de asegurar que los Pokémon disfruten de una existencia llena de gozo y felicidad.", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
-{"id": "m234.e20.p0.c7", "src": "Las derrotas escuecen poco cuando pienso en el bien que traerá el mañana.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Nixx"}
+{"id": "m234.e20.p0.c7", "src": "Las derrotas escuecen poco cuando pienso en el bien que traerá el mañana.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Nixx"}
 {"id": "m234.e26.p0.c0", "src": "¡Es un <b>Nido Alfa</b>! En él vive un Pokémon muy fuerte.", "apply": "map", "speaker": "nidoIncursion", "layer": "N", "kind": "text", "scene": "잡담", "how": "지문"}
 {"id": "m234.e26.p0.c1", "src": "En concreto, sientes la presencia de un Pokémon Fantasma muy poderoso.", "apply": "map", "speaker": "nidoIncursion", "layer": "N", "kind": "text", "scene": "잡담", "how": "지문"}
 {"id": "m234.e26.p0.c2", "src": "¿Quieres hacerlo salir?", "apply": "map", "speaker": "nidoIncursion", "layer": "N", "kind": "text", "scene": "잡담", "how": "지문"}
@@ -11420,7 +11420,7 @@
 {"id": "m234.e26.p0.c22", "src": "¡El Pokémon Alfa ha huido! Pero ha soltado un objeto tras de sí.", "apply": "map", "speaker": "nidoIncursion", "layer": "N", "kind": "text", "scene": "잡담", "how": "지문"}
 {"id": "m234.e26.p1.c0", "src": "El <b>Nido Alfa</b> está vacío...", "apply": "map", "speaker": "nidoIncursion", "layer": "N", "kind": "text", "scene": "잡담", "how": "지문"}
 {"id": "m234.e15.p0.c6", "src": "¿Qué te ha parecido mi maniobra de ser completamente invisible? Tendrías que ver lo bien que funciona con las mujeres.", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
-{"id": "m234.e15.p0.c7", "src": "A lo mejor es que no sirvo para Ranger...", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Chim"}
+{"id": "m234.e15.p0.c7", "src": "A lo mejor es que no sirvo para Ranger...", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Chim"}
 {"id": "m234.e21.p0.c0", "src": "Pierdas o ganes, lo más importante es aprovechar hasta el más mínimo instante de esta vida. Es algo que he aprendido de mis Pokémon.", "apply": "map", "speaker": "rangera", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "rangera"}
 {"id": "m234.e26.p0.c3.0", "src": "Sí", "apply": "map", "speaker": "nidoIncursion", "layer": "N", "kind": "choice", "scene": "잡담", "how": "선택지"}
 {"id": "m234.e26.p0.c3.01", "src": "No", "apply": "map", "speaker": "nidoIncursion", "layer": "N", "kind": "choice", "scene": "잡담", "how": "선택지"}
@@ -11478,10 +11478,10 @@
 {"id": "m236.e15.p0.c2.0", "src": "Sí", "apply": "map", "speaker": "599", "layer": "N", "kind": "choice", "scene": "잡담", "how": "선택지"}
 {"id": "m236.e15.p0.c2.01", "src": "No", "apply": "map", "speaker": "599", "layer": "N", "kind": "choice", "scene": "잡담", "how": "선택지"}
 {"id": "m237.e5.p0.c6", "src": "¡Ajá! Te he pillado intentando saquear estas ruinas, ¡y ahora pagarás por ello!", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
-{"id": "m237.e5.p0.c7", "src": "En mi cabeza me creo más guay de lo que soy...", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Tysman"}
+{"id": "m237.e5.p0.c7", "src": "En mi cabeza me creo más guay de lo que soy...", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Tysman"}
 {"id": "m237.e6.p0.c0", "src": "¿Es verdad que en Pueblo Fresco han aparecido los restos de la Reina Fundadora? Cuesta un poco creerlo.", "apply": "map", "speaker": "ranger", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "ranger"}
 {"id": "m237.e7.p0.c6", "src": "Cuando veo a los Pokémon combatir es que se me eriza la piel... ¡no hay nada que pueda hacer!", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
-{"id": "m237.e7.p0.c7", "src": "He perdido, pero se me ha puesto la piel de gallina.", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Antonio"}
+{"id": "m237.e7.p0.c7", "src": "He perdido, pero se me ha puesto la piel de gallina.", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Antonio"}
 {"id": "m237.e8.p0.c2", "src": "Estoy buscando un pretendiente para contraer matrimonio antes de que pase el tiempo... ¿serás tú la persona adecuada?", "apply": "map", "speaker": "burguesaow", "layer": "PC", "kind": "text", "scene": "트레이너", "how": "그림", "who": "burguesaow"}
 {"id": "m237.e8.p0.c3", "src": "¡Uy! ¡Pues sí que eres especial!", "apply": "map", "speaker": "burguesaow", "layer": "PC", "kind": "battle", "scene": "트레이너", "how": "전투호출", "who": "Nestora"}
 {"id": "m237.e8.p1.c0", "src": "Tal vez no debería obsesionarme con la idea del matrimonio y empezar a ganar dinero por mí misma. Tengo mucho en lo que pensar...", "apply": "map", "speaker": "burguesaow", "layer": "PC", "kind": "text", "scene": "트레이너", "how": "그림", "who": "burguesaow"}
@@ -12249,7 +12249,7 @@
 {"id": "m261.e19.p0.c18", "src": "Sientes que no estás solo en esta habitación.", "apply": "map", "speaker": "flecha", "layer": "N", "kind": "text", "scene": "컷신", "how": "지문"}
 {"id": "m261.e19.p0.c21", "src": "Sientes que no estás sola en esta habitación.", "apply": "map", "speaker": "flecha", "layer": "N", "kind": "text", "scene": "컷신", "how": "지문"}
 {"id": "m261.e19.p0.c44", "src": "¡Un siniestro monstruo de pesadilla te ataca!", "apply": "map", "speaker": "flecha", "layer": "N", "kind": "text", "scene": "컷신", "how": "지문"}
-{"id": "m261.e19.p0.c46", "src": "a xd", "apply": "map", "speaker": "flecha", "layer": "N", "kind": "battle", "scene": "컷신", "how": "전투호출", "who": "Saco"}
+{"id": "m261.e19.p0.c46", "src": "a xd", "apply": "map", "speaker": "flecha", "layer": "PC", "kind": "battle", "scene": "컷신", "how": "전투호출", "who": "Saco"}
 {"id": "m261.e19.p0.c54", "src": "Pero debe tratarse solo de un mal sueño.", "apply": "map", "speaker": "flecha", "layer": "N", "kind": "text", "scene": "컷신", "how": "지문"}
 {"id": "m261.e19.p0.c64", "src": "Has podido dormir, pero hacía mucho frío.", "apply": "map", "speaker": "flecha", "layer": "N", "kind": "text", "scene": "컷신", "how": "지문"}
 {"id": "m261.e19.p0.c65", "src": "Si vuelves a pasar la noche aquí, deberías buscar algo que abrigue como pijama.", "apply": "map", "speaker": "flecha", "layer": "N", "kind": "text", "scene": "컷신", "how": "지문"}
@@ -12268,7 +12268,7 @@
 {"id": "m261.e13.p0.c6.01", "src": "No", "apply": "map", "speaker": "lunatica", "layer": "PC", "kind": "choice", "scene": "대화", "how": "선택지"}
 {"id": "m261.e19.p0.c1.01", "src": "No", "apply": "map", "speaker": "flecha", "layer": "N", "kind": "choice", "scene": "컷신", "how": "선택지"}
 {"id": "m262.e27.p0.c56", "src": "El monstruo parece un poco desorientado por la música, ¡hora de acabar con él!", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
-{"id": "m262.e27.p0.c62", "src": "¡...!", "apply": "map", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Saco"}
+{"id": "m262.e27.p0.c62", "src": "¡...!", "apply": "map", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Saco"}
 {"id": "m262.e22.p0.c0", "src": "\\c[2]<b>Lanto:</b>\\c[0] La verdad es que siento tanta lástima por ti, que te haré un <i>petit</i> favor.", "apply": "map", "speaker": "lantoLunatico", "layer": "PS", "kind": "text", "scene": "잡담", "how": "태그", "who": "Lanto"}
 {"id": "m262.e23.p0.c112", "src": "\\c[2]<b>Lanto:</b>\\c[0] La verdad es que siento tanta lástima por ti, que te haré un <i>petit</i> favor.", "apply": "map", "layer": "PS", "kind": "text", "scene": "컷신", "how": "태그", "who": "Lanto"}
 {"id": "m262.e22.p0.c1", "src": "¡Dos, Tres, Cuatro, Dos!", "apply": "map", "speaker": "lantoLunatico", "layer": "PS", "kind": "text", "scene": "잡담", "how": "상속", "who": "Lanto"}
@@ -12345,17 +12345,17 @@
 {"id": "m263.e24.p0.c3", "src": "¡Aaaaah! ¡Me quedo sin caramelos!", "apply": "map", "speaker": "lunatica", "layer": "PC", "kind": "battle", "scene": "트레이너", "how": "전투호출", "who": "Lana"}
 {"id": "m263.e24.p1.c0", "src": "El tío Hypno es muy bueno conmigo, a pesar de ser un Pokémon. ¿Sabías que tiene una forma más evolucionada? No estoy loca, te lo digo en serio.", "apply": "map", "speaker": "lunatica", "layer": "PC", "kind": "text", "scene": "트레이너", "how": "그림", "who": "lunatica"}
 {"id": "m263.e46.p0.c0", "src": "...", "apply": "map", "speaker": "trchar000_5", "layer": "N", "kind": "text", "scene": "잡담", "how": "지문"}
-{"id": "m263.e46.p0.c1", "src": "...", "apply": "map", "speaker": "trchar000_5", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Majara"}
+{"id": "m263.e46.p0.c1", "src": "...", "apply": "map", "speaker": "trchar000_5", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Majara"}
 {"id": "m263.e46.p1.c0", "src": "...", "apply": "map", "speaker": "trchar002_5", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "trchar002_5"}
-{"id": "m263.e46.p1.c1", "src": "...", "apply": "map", "speaker": "trchar002_5", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Majara"}
+{"id": "m263.e46.p1.c1", "src": "...", "apply": "map", "speaker": "trchar002_5", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Majara"}
 {"id": "m263.e46.p2.c0", "src": "...", "apply": "map", "speaker": "trchar004_5", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "trchar004_5"}
-{"id": "m263.e46.p2.c1", "src": "...", "apply": "map", "speaker": "trchar004_5", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Majara"}
+{"id": "m263.e46.p2.c1", "src": "...", "apply": "map", "speaker": "trchar004_5", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Majara"}
 {"id": "m263.e46.p3.c0", "src": "...", "apply": "map", "speaker": "trchar001_5", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "trchar001_5"}
-{"id": "m263.e46.p3.c1", "src": "...", "apply": "map", "speaker": "trchar001_5", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Majara"}
+{"id": "m263.e46.p3.c1", "src": "...", "apply": "map", "speaker": "trchar001_5", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Majara"}
 {"id": "m263.e46.p4.c0", "src": "...", "apply": "map", "speaker": "trchar003_5", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "trchar003_5"}
-{"id": "m263.e46.p4.c1", "src": "...", "apply": "map", "speaker": "trchar003_5", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Majara"}
+{"id": "m263.e46.p4.c1", "src": "...", "apply": "map", "speaker": "trchar003_5", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Majara"}
 {"id": "m263.e46.p5.c0", "src": "...", "apply": "map", "speaker": "trchar005_5", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "trchar005_5"}
-{"id": "m263.e46.p5.c1", "src": "...", "apply": "map", "speaker": "trchar005_5", "layer": "N", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Majara"}
+{"id": "m263.e46.p5.c1", "src": "...", "apply": "map", "speaker": "trchar005_5", "layer": "PC", "kind": "battle", "scene": "잡담", "how": "전투호출", "who": "Majara"}
 {"id": "m263.e52.p0.c0", "src": "Necesito... ascender. Tengo que poder ver todo.", "apply": "map", "speaker": "lunatico", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "lunatico"}
 {"id": "m263.e52.p0.c1", "src": "¿Tienes... Fluido Onírico?", "apply": "map", "speaker": "lunatico", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "lunatico"}
 {"id": "m263.e52.p0.c3", "src": "¿Darle 1 unidad de Fluido Onírico?", "apply": "map", "speaker": "lunatico", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "lunatico"}
@@ -14338,8 +14338,8 @@
 {"id": "m303.e42.p0.c4", "src": "¿Usar <b>Polvo Explosivo</b>?", "apply": "map", "speaker": "golperoca", "layer": "N", "kind": "text", "scene": "잡담", "how": "지문"}
 {"id": "m303.e44.p0.c32", "src": "Con que esto es lo que pretendías desde el principio, ¿eh? ¡Espantar a mi Smeargle para después robármelo con facilidad!", "apply": "map", "speaker": "235", "layer": "N", "kind": "text", "scene": "컷신", "how": "그림", "who": "235"}
 {"id": "m303.e44.p0.c33", "src": "Pues te vas a arrepentir de tal fechoría. ¡Vas a ver de lo que son capaces estos Pokémon!", "apply": "map", "speaker": "235", "layer": "N", "kind": "text", "scene": "컷신", "how": "그림", "who": "235"}
-{"id": "m303.e44.p0.c36", "src": "¡Aaay! ¿Pero cómo te atreves a tratar así a mis pobres Smeargle?", "apply": "map", "speaker": "235", "layer": "N", "kind": "battle", "scene": "컷신", "how": "전투호출", "who": "Ginia"}
-{"id": "m303.e44.p0.c44", "src": "¡Aaay! ¿Pero cómo te atreves a tratar así a mis pobres Smeargle?", "apply": "map", "speaker": "235", "layer": "N", "kind": "battle", "scene": "컷신", "how": "전투호출", "who": "Ginia"}
+{"id": "m303.e44.p0.c36", "src": "¡Aaay! ¿Pero cómo te atreves a tratar así a mis pobres Smeargle?", "apply": "map", "speaker": "235", "layer": "PC", "kind": "battle", "scene": "컷신", "how": "전투호출", "who": "Ginia"}
+{"id": "m303.e44.p0.c44", "src": "¡Aaay! ¿Pero cómo te atreves a tratar así a mis pobres Smeargle?", "apply": "map", "speaker": "235", "layer": "PC", "kind": "battle", "scene": "컷신", "how": "전투호출", "who": "Ginia"}
 {"id": "m303.e44.p0.c74", "src": "¡<i>Oh, là, là</i>! Smeargle me cuenta que no está hecho para la vida casera y que le gustaría vivir aventuras.", "apply": "map", "speaker": "235", "layer": "N", "kind": "text", "scene": "컷신", "how": "그림", "who": "235"}
 {"id": "m303.e44.p0.c75", "src": "¿Sabes qué? Voy a dejar que te lo quedes. La verdad es que yo ya he acumulado unos cuantos.", "apply": "map", "speaker": "235", "layer": "N", "kind": "text", "scene": "컷신", "how": "그림", "who": "235"}
 {"id": "m303.e44.p0.c76", "src": "¡Pero, <i>s'il vous plait</i>, cúidalo bien!", "apply": "map", "speaker": "235", "layer": "N", "kind": "text", "scene": "컷신", "how": "그림", "who": "235"}
@@ -16132,24 +16132,24 @@
 {"id": "m356.e27.p1.c0", "src": "<b>Sabio:</b> Con vuestro permiso, he tocado vuestras mentes para que podáis entender a todos los Pokémon de la aldea.", "apply": "map", "speaker": "199", "layer": "PC", "kind": "text", "scene": "잡담", "how": "태그", "who": "Sabio"}
 {"id": "m356.e27.p1.c1", "src": "Hablad con <b>Siestín</b>, nuestro Snorlax líder. Si podéis despertarle y convencerle para que os abra el camino hacia las profundidades, tal vez exista una probiabilidad de triunfo en toda esta absoluta locura.", "apply": "map", "speaker": "199", "layer": "PC", "kind": "text", "scene": "잡담", "how": "상속", "who": "Sabio"}
 {"id": "m356.e27.p2.c0", "src": "<b>Sabio:</b> Os deseo suerte en vuestros emprendimientos, la necesitaréis cuando bajéis a la <b>Maraña Sombría</b> a través de esa cuerda.", "apply": "map", "speaker": "199", "layer": "PC", "kind": "text", "scene": "잡담", "how": "태그", "who": "Sabio"}
-{"id": "m356.e5.p1.c2", "src": "¿Necesitas curar las heridas de tus compañeros?", "apply": "map", "speaker": "242", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "242"}
-{"id": "m356.e5.p1.c5", "src": "¡Soy la mejor en esto!", "apply": "map", "speaker": "242", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "242"}
-{"id": "m356.e5.p1.c19", "src": "Misión cumplida, ¡vuelve cuando lo necesites!", "apply": "map", "speaker": "242", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "242"}
-{"id": "m356.e5.p1.c22", "src": "No hagas sufrir a los Pokémon de forma innecesaria.", "apply": "map", "speaker": "242", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "242"}
-{"id": "m356.e22.p1.c1", "src": "Debo seguir recolectando y sustrayendo bayas a los demás Pokémon por la gloria del líder <b>Siestín</b>...", "apply": "map", "speaker": "316s", "layer": "N", "kind": "text", "scene": "잡담", "how": "지문"}
-{"id": "m356.e22.p1.c2", "src": "Quiero decir, ¡por la gloria de nuestra nación Pokémon y que todos tengan siempre algo que echarse a la boca!", "apply": "map", "speaker": "316s", "layer": "N", "kind": "text", "scene": "잡담", "how": "지문"}
-{"id": "m356.e11.p1.c1", "src": "Elegimos como primer alcalde de nuestra aldea a un Snorlax llamado <b>Siestín</b>. Por su fuerza y veteranía, nos pareció la mejor idea.", "apply": "map", "speaker": "547", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "547"}
-{"id": "m356.e11.p1.c2", "src": "Pero no tardó en corromperse. Ahora se pasa el día durmiendo y acaparando todas las bayas...", "apply": "map", "speaker": "547", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "547"}
-{"id": "m356.e17.p1.c1", "src": "Sé que los Pokémon tenemos que convivir siempre en plena armonía y para eso se construyó este lugar.", "apply": "map", "speaker": "055", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "055"}
-{"id": "m356.e17.p1.c2", "src": "Pero yo cuando veo a un Pokémon de tipo Siniestro por la noche me cambio de acera, qué quieres que te diga.", "apply": "map", "speaker": "055", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "055"}
+{"id": "m356.e5.p1.c2", "src": "¿Necesitas curar las heridas de tus compañeros?", "apply": "map", "speaker": "242", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "242"}
+{"id": "m356.e5.p1.c5", "src": "¡Soy la mejor en esto!", "apply": "map", "speaker": "242", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "242"}
+{"id": "m356.e5.p1.c19", "src": "Misión cumplida, ¡vuelve cuando lo necesites!", "apply": "map", "speaker": "242", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "242"}
+{"id": "m356.e5.p1.c22", "src": "No hagas sufrir a los Pokémon de forma innecesaria.", "apply": "map", "speaker": "242", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "242"}
+{"id": "m356.e22.p1.c1", "src": "Debo seguir recolectando y sustrayendo bayas a los demás Pokémon por la gloria del líder <b>Siestín</b>...", "apply": "map", "speaker": "316s", "layer": "PC", "kind": "text", "scene": "잡담", "how": "지문"}
+{"id": "m356.e22.p1.c2", "src": "Quiero decir, ¡por la gloria de nuestra nación Pokémon y que todos tengan siempre algo que echarse a la boca!", "apply": "map", "speaker": "316s", "layer": "PC", "kind": "text", "scene": "잡담", "how": "지문"}
+{"id": "m356.e11.p1.c1", "src": "Elegimos como primer alcalde de nuestra aldea a un Snorlax llamado <b>Siestín</b>. Por su fuerza y veteranía, nos pareció la mejor idea.", "apply": "map", "speaker": "547", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "547"}
+{"id": "m356.e11.p1.c2", "src": "Pero no tardó en corromperse. Ahora se pasa el día durmiendo y acaparando todas las bayas...", "apply": "map", "speaker": "547", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "547"}
+{"id": "m356.e17.p1.c1", "src": "Sé que los Pokémon tenemos que convivir siempre en plena armonía y para eso se construyó este lugar.", "apply": "map", "speaker": "055", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "055"}
+{"id": "m356.e17.p1.c2", "src": "Pero yo cuando veo a un Pokémon de tipo Siniestro por la noche me cambio de acera, qué quieres que te diga.", "apply": "map", "speaker": "055", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "055"}
 {"id": "m356.e23.p1.c0", "src": "¡Usas la <b>Pokéflauta</b>!", "apply": "map", "speaker": "snorlaxDormido2", "layer": "PS", "kind": "text", "scene": "컷신", "how": "명단1", "who": "Siestín"}
 {"id": "m356.e23.p1.c3", "src": "¡El Snorlax se está despertando!", "apply": "map", "speaker": "snorlaxDormido2", "layer": "PS", "kind": "text", "scene": "컷신", "how": "명단1", "who": "Siestín"}
 {"id": "m356.e23.p1.c13", "src": "¡UAAAAAAAH!", "apply": "map", "speaker": "snorlaxDormido2", "layer": "PS", "kind": "text", "scene": "컷신", "how": "명단1", "who": "Siestín"}
 {"id": "m356.e23.p1.c14", "src": "¿Ya ha pasado una semana? ¿Tan rápido?", "apply": "map", "speaker": "snorlaxDormido2", "layer": "PS", "kind": "text", "scene": "컷신", "how": "명단1", "who": "Siestín"}
 {"id": "m356.e23.p1.c22", "src": "Humano... ¿Quién te crees que eres para despertar al incomensurable <b>Siestín</b>?", "apply": "map", "speaker": "snorlaxDormido2", "layer": "PS", "kind": "text", "scene": "컷신", "how": "명단1", "who": "Siestín"}
 {"id": "m356.e23.p1.c25", "src": "Humana... ¿Quién te crees que eres para despertar al incomensurable <b>Siestín</b>?", "apply": "map", "speaker": "snorlaxDormido2", "layer": "PS", "kind": "text", "scene": "컷신", "how": "명단1", "who": "Siestín"}
-{"id": "m356.e9.p1.c2", "src": "...", "apply": "map", "speaker": "301", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "301"}
-{"id": "m356.e18.p1.c2", "src": "...", "apply": "map", "speaker": "325", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "325"}
+{"id": "m356.e9.p1.c2", "src": "...", "apply": "map", "speaker": "301", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "301"}
+{"id": "m356.e18.p1.c2", "src": "...", "apply": "map", "speaker": "325", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "325"}
 {"id": "m356.e23.p1.c28", "src": "...", "apply": "map", "speaker": "snorlaxDormido2", "layer": "PS", "kind": "text", "scene": "컷신", "how": "명단1", "who": "Siestín"}
 {"id": "m356.e23.p1.c29", "src": "¿Cruzar los túneles? ... ¿Hablar con... <b>Xerneas</b>?", "apply": "map", "speaker": "snorlaxDormido2", "layer": "PS", "kind": "text", "scene": "컷신", "how": "명단1", "who": "Siestín"}
 {"id": "m356.e23.p1.c36", "src": "<b>Siestín:</b> Deberías postrarte ante mí... Y agradecer que no te meta un Cuerpopesado por... Plantear tal osadía.", "apply": "map", "speaker": "snorlaxDormido2", "layer": "PS", "kind": "text", "scene": "컷신", "how": "태그", "who": "Siestín"}
@@ -16162,21 +16162,21 @@
 {"id": "m356.e23.p1.c78", "src": "De acuerdo, humana. Bajaremos.", "apply": "map", "speaker": "snorlaxDormido2", "layer": "PS", "kind": "text", "scene": "컷신", "how": "분기다름", "who": "Siestín"}
 {"id": "m356.e29.p0.c0", "src": "\\c[2]<b>Olivier:</b>\\c[0] ¿Ha dicho que hablemos con un tal <b>Siestín</b>? Imagino que será el Snorlax ese que se está echando una siesta.", "apply": "map", "speaker": "olivierow", "layer": "PS", "kind": "text", "scene": "잡담", "how": "태그", "who": "Olivier"}
 {"id": "m356.e29.p0.c1", "src": "Todavía tienes la <b>Pokéflauta</b> que te entregué, así que despertarlo no debería suponer un problema.", "apply": "map", "speaker": "olivierow", "layer": "PS", "kind": "text", "scene": "잡담", "how": "상속", "who": "Olivier"}
-{"id": "m356.e18.p1.c1", "src": "¡Je, je, je!", "apply": "map", "speaker": "325", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "325"}
-{"id": "m356.e18.p1.c3", "src": "¡JE, JE, JE, JE! Tengo que seguir saltando. Saltando, saltando, saltando.", "apply": "map", "speaker": "325", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "325"}
-{"id": "m356.e18.p1.c4", "src": "Si en algún momento dejo de saltar, ¡moriré!", "apply": "map", "speaker": "325", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "325"}
-{"id": "m356.e7.p1.c1", "src": "¿Qué necesitas?", "apply": "map", "speaker": "181", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "181"}
-{"id": "m356.e7.p1.c5", "src": "¿Qué Pokémon debería recordar un movimiento?", "apply": "map", "speaker": "181", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "181"}
-{"id": "m356.e7.p1.c12", "src": "Vale, ¡vuelve cuando lo necesites!", "apply": "map", "speaker": "181", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "181"}
-{"id": "m356.e7.p1.c16", "src": "Eso es un huevo, pedazo de inútil.", "apply": "map", "speaker": "181", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "181"}
-{"id": "m356.e7.p1.c21", "src": "\\bNo way, I don't want to go near a Shadow Pokémon..", "apply": "map", "speaker": "181", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "181"}
-{"id": "m356.e7.p1.c27", "src": "Hmm... parece que no puedo enseñarle nada a tú \\v[3].", "apply": "map", "speaker": "181", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "181"}
-{"id": "m356.e7.p1.c32", "src": "¿Qué debería recordar \\v[3]?", "apply": "map", "speaker": "181", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "181"}
-{"id": "m356.e7.p1.c34", "src": "Bien, hecho está. Tu Pokémon ha recordado ese movimiento.", "apply": "map", "speaker": "181", "layer": "N", "kind": "text", "scene": "대화", "how": "그림", "who": "181"}
-{"id": "m356.e24.p1.c1", "src": "¿Tú venir a quitarnos bayas?", "apply": "map", "speaker": "195", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "195"}
-{"id": "m356.e24.p1.c2", "src": "Por favor. Yo tener pocas bayas. Líder supremo <b>Siestín</b> quitarme bayas todas las semanas. Yo hambriento.", "apply": "map", "speaker": "195", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "195"}
-{"id": "m356.e13.p1.c1", "src": "La belleza etérea de Lilligant es increíble, ¡me encantaría pedirle una cita! Pero solo soy un Pokémon Normal muy poca cosa...", "apply": "map", "speaker": "294", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "294"}
-{"id": "m356.e13.p1.c2", "src": "Tendré que pedirle consejos de seducción a Machamp. Él no parece tener problema para aparearse.", "apply": "map", "speaker": "294", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "294"}
+{"id": "m356.e18.p1.c1", "src": "¡Je, je, je!", "apply": "map", "speaker": "325", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "325"}
+{"id": "m356.e18.p1.c3", "src": "¡JE, JE, JE, JE! Tengo que seguir saltando. Saltando, saltando, saltando.", "apply": "map", "speaker": "325", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "325"}
+{"id": "m356.e18.p1.c4", "src": "Si en algún momento dejo de saltar, ¡moriré!", "apply": "map", "speaker": "325", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "325"}
+{"id": "m356.e7.p1.c1", "src": "¿Qué necesitas?", "apply": "map", "speaker": "181", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "181"}
+{"id": "m356.e7.p1.c5", "src": "¿Qué Pokémon debería recordar un movimiento?", "apply": "map", "speaker": "181", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "181"}
+{"id": "m356.e7.p1.c12", "src": "Vale, ¡vuelve cuando lo necesites!", "apply": "map", "speaker": "181", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "181"}
+{"id": "m356.e7.p1.c16", "src": "Eso es un huevo, pedazo de inútil.", "apply": "map", "speaker": "181", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "181"}
+{"id": "m356.e7.p1.c21", "src": "\\bNo way, I don't want to go near a Shadow Pokémon..", "apply": "map", "speaker": "181", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "181"}
+{"id": "m356.e7.p1.c27", "src": "Hmm... parece que no puedo enseñarle nada a tú \\v[3].", "apply": "map", "speaker": "181", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "181"}
+{"id": "m356.e7.p1.c32", "src": "¿Qué debería recordar \\v[3]?", "apply": "map", "speaker": "181", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "181"}
+{"id": "m356.e7.p1.c34", "src": "Bien, hecho está. Tu Pokémon ha recordado ese movimiento.", "apply": "map", "speaker": "181", "layer": "PC", "kind": "text", "scene": "대화", "how": "그림", "who": "181"}
+{"id": "m356.e24.p1.c1", "src": "¿Tú venir a quitarnos bayas?", "apply": "map", "speaker": "195", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "195"}
+{"id": "m356.e24.p1.c2", "src": "Por favor. Yo tener pocas bayas. Líder supremo <b>Siestín</b> quitarme bayas todas las semanas. Yo hambriento.", "apply": "map", "speaker": "195", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "195"}
+{"id": "m356.e13.p1.c1", "src": "La belleza etérea de Lilligant es increíble, ¡me encantaría pedirle una cita! Pero solo soy un Pokémon Normal muy poca cosa...", "apply": "map", "speaker": "294", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "294"}
+{"id": "m356.e13.p1.c2", "src": "Tendré que pedirle consejos de seducción a Machamp. Él no parece tener problema para aparearse.", "apply": "map", "speaker": "294", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "294"}
 {"id": "m356.e30.p0.c3", "src": "\\c[2]<b>Olivier:</b>\\c[0] Esos malnacidos se creen que nos la han jugado.", "apply": "map", "speaker": "olivierow3", "layer": "PS", "kind": "text", "scene": "컷신", "how": "태그", "who": "Olivier"}
 {"id": "m356.e30.p0.c4", "src": "Lo que no saben es que yo también tengo mis recursos...", "apply": "map", "speaker": "olivierow3", "layer": "PS", "kind": "text", "scene": "컷신", "how": "상속", "who": "Olivier"}
 {"id": "m356.e30.p0.c27", "src": "\\c[2]<b>Olivier:</b>\\c[0] Debería seguir descansando, <i>monsieur</i> <b>Arrayán</b>. Los poderes de <b>Xerneas</b> solo han cerrado sus heridas hasta cierto punto.", "apply": "map", "speaker": "olivierow3", "layer": "PS", "kind": "text", "scene": "컷신", "how": "태그", "who": "Olivier"}
@@ -16205,30 +16205,30 @@
 {"id": "m356.e30.p0.c166", "src": "Has tenido un encuentro con los 3 Pokémon legendarios. Ahora ha llegado la hora de la verdad.", "apply": "map", "speaker": "olivierow3", "layer": "PS", "kind": "text", "scene": "컷신", "how": "분기다름", "who": "Olivier"}
 {"id": "m356.e30.p0.c167", "src": "Revisa el mapa para encontrar tu siguiente destino, <b>Ciudad Yantra</b>.", "apply": "map", "speaker": "olivierow3", "layer": "PS", "kind": "text", "scene": "컷신", "how": "분기다름", "who": "Olivier"}
 {"id": "m356.e30.p0.c171", "src": "Te has encontrado con <b>Xerneas</b>, pero aún quedan otros Pokémon legendarios por <b>Kalos</b> a los que visitar.", "apply": "map", "speaker": "olivierow3", "layer": "PS", "kind": "text", "scene": "컷신", "how": "분기다름", "who": "Olivier"}
-{"id": "m356.e8.p1.c1", "src": "Cada vez que encontramos a un humano muerto en el bosque, tallo una efigie de madera en su honor.", "apply": "map", "speaker": "903", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "903"}
-{"id": "m356.e8.p1.c2", "src": "Intento colocarlas por ahí como señal de aviso a los viajeros incautos, pero parece que a ti no te han detenido.", "apply": "map", "speaker": "903", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "903"}
-{"id": "m356.e14.p1.c1", "src": "¡Menos mal que estoy yo aquí para enseñarle a los Pokémon cómo alcanzar su máximo potencial!", "apply": "map", "speaker": "068", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "068"}
-{"id": "m356.e14.p1.c2", "src": "Miro a mi alrededor y solo veo Pokémon con 0 EVs, naturalezas negativas, movimientos mal usados... Es como, ¡<i>putain</i>! ¡Así no atraeréis nunca a las hembras!", "apply": "map", "speaker": "068", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "068"}
-{"id": "m356.e9.p1.c1", "src": "<b>Villa Pokémon</b> es un refugio que acoge a todos los Pokémon abandonados por sus entrenadores.", "apply": "map", "speaker": "301", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "301"}
-{"id": "m356.e9.p1.c3", "src": "Por lo que sea, no hay ni un solo Pokémon Dragón en la aldea.", "apply": "map", "speaker": "301", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "301"}
+{"id": "m356.e8.p1.c1", "src": "Cada vez que encontramos a un humano muerto en el bosque, tallo una efigie de madera en su honor.", "apply": "map", "speaker": "903", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "903"}
+{"id": "m356.e8.p1.c2", "src": "Intento colocarlas por ahí como señal de aviso a los viajeros incautos, pero parece que a ti no te han detenido.", "apply": "map", "speaker": "903", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "903"}
+{"id": "m356.e14.p1.c1", "src": "¡Menos mal que estoy yo aquí para enseñarle a los Pokémon cómo alcanzar su máximo potencial!", "apply": "map", "speaker": "068", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "068"}
+{"id": "m356.e14.p1.c2", "src": "Miro a mi alrededor y solo veo Pokémon con 0 EVs, naturalezas negativas, movimientos mal usados... Es como, ¡<i>putain</i>! ¡Así no atraeréis nunca a las hembras!", "apply": "map", "speaker": "068", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "068"}
+{"id": "m356.e9.p1.c1", "src": "<b>Villa Pokémon</b> es un refugio que acoge a todos los Pokémon abandonados por sus entrenadores.", "apply": "map", "speaker": "301", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "301"}
+{"id": "m356.e9.p1.c3", "src": "Por lo que sea, no hay ni un solo Pokémon Dragón en la aldea.", "apply": "map", "speaker": "301", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "301"}
 {"id": "m356.e15.p0.c7", "src": "Has perdido el reto Nuzlocke, has fallado a todos los Pokémon que te han acompañado durante la aventura.", "apply": "map", "layer": "N", "kind": "text", "scene": "컷신", "how": "미상"}
 {"id": "m356.e15.p0.c27", "src": "Has perdido el reto Nuzlocke, has fallado a todos los Pokémon que te han acompañado durante la aventura.", "apply": "map", "layer": "N", "kind": "text", "scene": "컷신", "how": "미상"}
 {"id": "m356.e15.p0.c56", "src": "Has perdido el reto Nuzlocke, has fallado a todos los Pokémon que te han acompañado durante la aventura.", "apply": "map", "layer": "N", "kind": "text", "scene": "컷신", "how": "미상"}
 {"id": "m356.e15.p0.c9", "src": "Puedes seguir jugando de forma normal, pero recuerda que has fracasado.", "apply": "map", "layer": "N", "kind": "text", "scene": "컷신", "how": "미상"}
 {"id": "m356.e15.p0.c29", "src": "Puedes seguir jugando de forma normal, pero recuerda que has fracasado.", "apply": "map", "layer": "N", "kind": "text", "scene": "컷신", "how": "미상"}
 {"id": "m356.e15.p0.c58", "src": "Puedes seguir jugando de forma normal, pero recuerda que has fracasado.", "apply": "map", "layer": "N", "kind": "text", "scene": "컷신", "how": "미상"}
-{"id": "m356.e10.p1.c1", "src": "El abuelo descendió hasta lo más profundo del pozo de arañas para intentar calmar a Xerneas.", "apply": "map", "speaker": "465", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "465"}
-{"id": "m356.e10.p3.c1", "src": "El abuelo descendió hasta lo más profundo del pozo de arañas para intentar calmar a Xerneas.", "apply": "map", "speaker": "465", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "465"}
-{"id": "m356.e10.p1.c2", "src": "Si no fuera por él, los poderes de Xerneas provocarían un crecimiento desmesurado del bosque que alcanzaría a toda la región.", "apply": "map", "speaker": "465", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "465"}
-{"id": "m356.e10.p3.c2", "src": "Si no fuera por él, los poderes de Xerneas provocarían un crecimiento desmesurado del bosque que alcanzaría a toda la región.", "apply": "map", "speaker": "465", "layer": "N", "kind": "text", "scene": "잡담", "how": "그림", "who": "465"}
+{"id": "m356.e10.p1.c1", "src": "El abuelo descendió hasta lo más profundo del pozo de arañas para intentar calmar a Xerneas.", "apply": "map", "speaker": "465", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "465"}
+{"id": "m356.e10.p3.c1", "src": "El abuelo descendió hasta lo más profundo del pozo de arañas para intentar calmar a Xerneas.", "apply": "map", "speaker": "465", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "465"}
+{"id": "m356.e10.p1.c2", "src": "Si no fuera por él, los poderes de Xerneas provocarían un crecimiento desmesurado del bosque que alcanzaría a toda la región.", "apply": "map", "speaker": "465", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "465"}
+{"id": "m356.e10.p3.c2", "src": "Si no fuera por él, los poderes de Xerneas provocarían un crecimiento desmesurado del bosque que alcanzaría a toda la región.", "apply": "map", "speaker": "465", "layer": "PC", "kind": "text", "scene": "잡담", "how": "그림", "who": "465"}
 {"id": "m356.e32.p0.c0", "src": "\\c[3]<b>Arrayán:</b>\\c[0] Siempre tendréis un lugar en la <b>Villa Pokémon</b>, \\PN.", "apply": "map", "speaker": "arrayanow", "layer": "PS", "kind": "text", "scene": "잡담", "how": "태그", "who": "Arrayán"}
 {"id": "m356.e32.p0.c1", "src": "Y la verdad es que no me vendría mal algo de ayuda ahora que ese Snorlax se ha esfumado.", "apply": "map", "speaker": "arrayanow", "layer": "PS", "kind": "text", "scene": "잡담", "how": "상속", "who": "Arrayán"}
 {"id": "m356.e32.p0.c2", "src": "Estoy mayor...", "apply": "map", "speaker": "arrayanow", "layer": "PS", "kind": "text", "scene": "잡담", "how": "상속", "who": "Arrayán"}
-{"id": "m356.e5.p1.c3.0", "src": "Sí", "apply": "map", "speaker": "242", "layer": "N", "kind": "choice", "scene": "잡담", "how": "선택지"}
-{"id": "m356.e5.p1.c3.01", "src": "No", "apply": "map", "speaker": "242", "layer": "N", "kind": "choice", "scene": "잡담", "how": "선택지"}
-{"id": "m356.e7.p1.c2.0", "src": "Recordar movimiento", "apply": "map", "speaker": "181", "layer": "N", "kind": "choice", "scene": "대화", "how": "선택지"}
-{"id": "m356.e7.p1.c2.01", "src": "Niveles de los líderes", "apply": "map", "speaker": "181", "layer": "N", "kind": "choice", "scene": "대화", "how": "선택지"}
-{"id": "m356.e7.p1.c2.02", "src": "Exportar equipo", "apply": "map", "speaker": "181", "layer": "N", "kind": "choice", "scene": "대화", "how": "선택지"}
+{"id": "m356.e5.p1.c3.0", "src": "Sí", "apply": "map", "speaker": "242", "layer": "PC", "kind": "choice", "scene": "잡담", "how": "선택지"}
+{"id": "m356.e5.p1.c3.01", "src": "No", "apply": "map", "speaker": "242", "layer": "PC", "kind": "choice", "scene": "잡담", "how": "선택지"}
+{"id": "m356.e7.p1.c2.0", "src": "Recordar movimiento", "apply": "map", "speaker": "181", "layer": "PC", "kind": "choice", "scene": "대화", "how": "선택지"}
+{"id": "m356.e7.p1.c2.01", "src": "Niveles de los líderes", "apply": "map", "speaker": "181", "layer": "PC", "kind": "choice", "scene": "대화", "how": "선택지"}
+{"id": "m356.e7.p1.c2.02", "src": "Exportar equipo", "apply": "map", "speaker": "181", "layer": "PC", "kind": "choice", "scene": "대화", "how": "선택지"}
 {"id": "m357.e16.p0.c0", "src": "En este <b>Tablón de Misiones</b> encontrarás algunos encargos pendientes con los que te hayas topado en tu aventura.", "apply": "map", "layer": "N", "kind": "text", "scene": "잡담", "how": "미상"}
 {"id": "m357.e7.p0.c7", "src": "Has perdido el reto Nuzlocke, has fallado a todos los Pokémon que te han acompañado durante la aventura.", "apply": "map", "layer": "N", "kind": "text", "scene": "컷신", "how": "미상"}
 {"id": "m357.e7.p0.c27", "src": "Has perdido el reto Nuzlocke, has fallado a todos los Pokémon que te han acompañado durante la aventura.", "apply": "map", "layer": "N", "kind": "text", "scene": "컷신", "how": "미상"}

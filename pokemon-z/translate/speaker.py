@@ -92,7 +92,11 @@ KNOWN_CLS = [("who", "Anturia", "PS"), ("who", "Capitán Merlot", "PS"),
              # 순서대로 서야 셋이 동시에 맞는다(2026-08-14).
              ("who", "F3", "PS"), ("who", "AZ", "PS"),
              ("who", "PISTA DE ENTRENADOR", "N"),
-             ("sprite", "f3ow", "PS")]   # 어간을 한 단계씩 맞추지 않으면 `f`까지 깎인다
+             ("sprite", "f3ow", "PS"),   # 어간을 한 단계씩 맞추지 않으면 `f`까지 깎인다
+             # 그림 규칙의 예외 셋(2026-08-18) — 명단에서 뺀 다친 사냥꾼 · 기능 창구
+             # 포켓몬 · 포켓몬마을 주민. 예외가 풀리면 셋 다 N으로 돌아간다.
+             ("sprite", "cazadorHerido", "PC"), ("sprite", "115", "PC"),
+             ("sprite", "242", "PC")]
 
 # 1회 소비 판정의 정답 자리 — `docs/log/research/2026-08-13-audit-cells.jsonl`의 「1회소비」 값.
 KNOWN_ONCE = [((22, 3, 7), True), ((2, 1, 0), True), ((163, 44, 1), False), ((3, 47, 0), False)]
@@ -396,20 +400,35 @@ def person_tag(name):
     return not name.isupper()
 
 
-def person_sprite(sprite, objects):
+# 그림 규칙의 예외 — 포켓몬 그림이 사람 노릇을 하는 자리(2026-08-18 실행 3·4).
+# 포켓몬마을(맵356)은 포켓몬이 「주민」으로 1인칭 대사를 하는 특수 맵이라 맵째로 열고,
+# 아래 넷은 기능 창구 NPC다(돌봄센터 카랑코·기술 리마인더 둘·레스토랑 웨이터).
+# 넷 다 한 이벤트에만 서는 것을 전수로 확인해 (스프라이트, 맵) 쌍으로 좁히지 않았다.
+PERSON_MAPS = frozenset({356})
+PERSON_SPRITES = frozenset({"115", "474", "181", "096"})
+
+
+def person_sprite(sprite, objects, mid=None):
     """그림이 사람인가 — 숫자(포켓몬 번호)·전투 그림·사물 어간을 뺀다."""
-    return bool(sprite) and not sprite.startswith(NONPERSON) \
+    if not sprite:
+        return False
+    if sprite in PERSON_SPRITES or (mid in PERSON_MAPS and sprite[0].isdigit()):
+        return True
+    return not sprite.startswith(NONPERSON) \
         and not sprite[0].isdigit() and stem(sprite) not in objects
 
 
-def classify(cast, sprite, objects, canon, voices):
+def classify(cast, sprite, objects, canon, voices, mid=None, person=False):
     """페이지의 층 — PS 정본 인물 · PC 이름표 없는 인물 · N 지문·시스템.
 
     신호는 둘뿐이다(표본 126페이지 모집단 가중 정확도 0.991): **그림이 사람인가**와
     **사람 이름 이름표가 붙었는가.** 대사 줄 수·연출 명령은 이 축에서 아무 일도 안 한다.
+
+    `person=True`는 그 둘을 건너뛰고 사람 층으로 세운다 — 전투 호출 줄처럼 화자가
+    호출 인자로 이미 확정돼 있어 **그림으로 판정할 자리가 아닌** 갈래다(Z-67).
     """
     people = [c for c in cast if person_tag(c)]
-    if not people and not person_sprite(sprite, objects):
+    if not people and not person and not person_sprite(sprite, objects, mid):
         return "N"
     if any(c in canon for c in people) or voice_sprite(sprite, voices):
         return "PS"
@@ -502,8 +521,9 @@ def attribute(msgs, sprite="", objects=frozenset()):
 
     # 전투 호출의 대사는 **상속의 흐름 밖**이다 — 같은 페이지의 이름표를 물려받지도
     # 물려주지도 않고(`cur`를 안 건드린다), `cast`에도 안 들어간다. 화자는 호출
-    # 인자가 직접 말해 준다. `cast`는 페이지 것을 그대로 실어 층 판정을 나머지 줄과
-    # 맞춘다 — 이 줄만 다른 층으로 갈라지면 안 되니까.
+    # 인자가 직접 말해 준다. `cast`는 페이지 것을 그대로 싣되, 층은 이 갈래를 그림으로
+    # 가리지 않는다(`classify(person=True)`) — 스크립트 인자에 있는 대사라 그림이 없는
+    # 것이 정상이고, 없는 그림을 「사람 아님」으로 읽으면 인물 대사가 지문층에 갇힌다.
     for cmdi, ind, kind, text, tclass, name in battles:
         yield cmdi, ind, kind, text, name, "전투호출" if name else "스크립트", \
             sorted(cast), False, tclass
@@ -594,7 +614,8 @@ def scan():
     # 「진행 플래그」는 다른 맵의 페이지 조건에 쓰이는지로 갈린다.
     canon = canon_names(rows)
     for r in rows:
-        r["cls"] = classify(r["cast"], r["sprite"], objects, canon, voices)
+        r["cls"] = classify(r["cast"], r["sprite"], objects, canon, voices, r["map"],
+                            person=r["how"] == "전투호출")
         r["flags"] = [i for i in r["flags"] if i in cond_sw]
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
@@ -654,7 +675,6 @@ def main():
         scan()
     elif cmd == "stats":
         rows = load_attr()
-        import collections
         c = collections.Counter(r["how"] for r in rows)
         print(f"총 {len(rows)}행")
         for k, n in c.most_common():
@@ -670,7 +690,6 @@ def main():
         name = sys.argv[2]
         rows, ko = load_attr(), ko_index()
         hit = [r for r in rows if name.lower() in (r["who"] or "").lower()]
-        import collections
         print(f"{name}: {len(hit)}행 · 근거별 "
               f"{dict(collections.Counter(r['how'] for r in hit))}")
         show(hit, ko)
@@ -711,6 +730,22 @@ def main():
             mark = "O" if got == want else "X"
             ok, bad = ok + (got == want), bad + (got != want)
             print(f"[{mark}] once 맵{mid} ev{eid} p{pi} {want} ← {got}")
+
+        # 전투 호출은 그림으로 층을 가리지 않는다(Z-67). 지문층이 남으면 회귀다.
+        n_battle = sum(1 for r in rows if r["how"] == "전투호출" and r["cls"] == "N")
+        print(f"[{'O' if not n_battle else 'X'}] 전투호출 지문층 0 ← {n_battle}")
+        ok, bad = ok + (not n_battle), bad + bool(n_battle)
+
+        # 맵 한정 예외는 그 맵에서만 듣는다 — 밖의 숫자 그림 층 분포가 기준선이다.
+        # 전투 호출은 그림을 안 보는 갈래라 이 셈에서 뺀다(사냥꾼 그림 `235` 두 줄).
+        outside = collections.Counter(
+            r["cls"] for r in rows
+            if r["sprite"][:1].isdigit() and r["map"] not in PERSON_MAPS
+            and r["sprite"] not in PERSON_SPRITES and r["how"] != "전투호출")
+        want = {"N": 180, "PS": 109}       # 2026-08-18 예외 도입 직전 실측
+        mark = "O" if dict(outside) == want else "X"
+        ok, bad = ok + (dict(outside) == want), bad + (dict(outside) != want)
+        print(f"[{mark}] 맵356 밖 숫자 그림 {want} ← {dict(outside)}")
 
         # 어간 충돌은 목록을 박아 두는 것이라, 원본이 바뀌면 새 충돌이 조용히 샌다.
         conflicts = stem_conflicts({r["sprite"] for r in rows}, voice_sprites(),
