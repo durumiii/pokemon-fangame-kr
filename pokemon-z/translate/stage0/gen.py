@@ -169,6 +169,23 @@ def ui_sites():
     return sites, msgs
 
 
+def outside_sites():
+    """번역 조회 밖 자리(apply=surgery) — 정본은 data/outside-sites.jsonl(생성기 outside_scan.py).
+
+    tower는 값이 없어 원문을 그대로 값으로 둔다 — 미번역이 사실이라 집계에 그대로 보인다.
+    surgery는 share/patch_intl.py가 소스에 심는 값을 옮긴 것이다.
+    """
+    sites, msgs = [], []
+    for r in read_jsonl(DATA / "outside-sites.jsonl"):
+        if r["kind"] == "tower":
+            sid, val = f"tower.g{h8(r['src'])}", r["src"]
+        else:
+            sid, val = f"surg.g{h8(r['where'] + r['src'])}", r["ko"]
+        sites.append({"id": sid, "src": r["src"], "apply": "surgery"})
+        msgs.append(_msg(sid, val, None))
+    return sites, msgs
+
+
 def section_sites(fk):
     """리스트 절(apply=index)과 해시 절(apply=global). 동결 절23 키는 reviewed로 찍는다."""
     sites, msgs = [], []
@@ -205,13 +222,14 @@ def main():
     lsites, lmsgs = loc_sites()
     ssites, smsgs = section_sites(fk)
     usites, umsgs = ui_sites()
+    osites, omsgs = outside_sites()
 
-    sites = msites + lsites + ssites + usites
+    sites = msites + lsites + ssites + usites + osites
     ids = [s["id"] for s in sites]
     assert len(set(ids)) == len(ids), "자리 id가 겹친다"
 
     msgs = ([{"id": k, "val": v} for k, v in sorted(used_unified.items())]
-            + mmsgs + lmsgs + smsgs + umsgs)
+            + mmsgs + lmsgs + smsgs + umsgs + omsgs)
     mids = [m["id"] for m in msgs]
     assert len(set(mids)) == len(mids), "값 id가 겹친다"
 
