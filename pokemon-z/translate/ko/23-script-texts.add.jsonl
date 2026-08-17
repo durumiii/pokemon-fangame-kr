@@ -1,0 +1,30 @@
+{"k": "krmart:반말|¿Te interesa algo de lo que tengo?", "v": "마음에 드는 물건이라도 있어?", "갈래": "반말", "차례": "첫 인사"}
+{"k": "krmart:반말|¿{1}? Buena elección.\n¿Cuántas unidades quieres?", "v": "{1}? 좋은 선택이야.\r\n몇 개 필요해?", "갈래": "반말", "차례": "수량 묻기"}
+{"k": "krmart:반말|{1}... Y quieres {2}.\nTe costará ${3}. ¿De acuerdo?", "v": "{1}... 그리고 {2}\\j[이,가] 필요하군.\r\n${3}인데 괜찮겠어?", "갈래": "반말", "차례": "수량 확인"}
+{"k": "krmart:반말|{1} es una buena elección.\nTe costará ${2}. ¿De acuerdo?", "v": "{1}, 좋은 선택이야.\r\n${2}인데 괜찮겠어?", "갈래": "반말", "차례": "단품 확인"}
+{"k": "krmart:반말|¡Aquí tienes!\n¡Gracias!", "v": "자, 여기 있어!\r\n고마워!", "갈래": "반말", "차례": "구매 완료"}
+{"k": "krmart:반말|No tienes el dinero suficiente.", "v": "돈이 모자라잖아.", "갈래": "반말", "차례": "돈 부족"}
+{"k": "krmart:반말|¿En qué más puedo ayudarte?", "v": "더 필요한 거 있어?", "갈래": "반말", "차례": "되묻기"}
+{"k": "krmart:반말|¿{1}?\n¿Cuántas unidades quieres vender?", "v": "{1}?\r\n몇 개 팔 건데?", "갈래": "반말", "차례": "판매 수량"}
+{"k": "krmart:반말|Puedo pagarte ${1}.\n¿Te parece bien?", "v": "${1}에 사 줄게.\r\n괜찮겠어?", "갈래": "반말", "차례": "매입가"}
+{"k": "krmart:반말|¿{1}? ¡Oh, no!\nNo puedo comprar eso.", "v": "{1}? 이런!\r\n그건 살 수 없어.", "갈래": "반말", "차례": "매입 거절"}
+{"k": "krmart:반말|¡Vuelve cuando quieras!", "v": "생각나면 또 와!", "갈래": "반말", "차례": "작별"}
+{"k": "krmart:하게체|¿Te interesa algo de lo que tengo?", "v": "마음에 드는 물건이 있는가?", "갈래": "하게체", "차례": "첫 인사"}
+{"k": "krmart:하게체|¿{1}? Buena elección.\n¿Cuántas unidades quieres?", "v": "{1}? 좋은 선택일세.\r\n몇 개나 필요한가?", "갈래": "하게체", "차례": "수량 묻기"}
+{"k": "krmart:하게체|{1}... Y quieres {2}.\nTe costará ${3}. ¿De acuerdo?", "v": "{1}... 그리고 {2}\\j[이,가] 필요하군.\r\n${3}인데 괜찮겠나?", "갈래": "하게체", "차례": "수량 확인"}
+{"k": "krmart:하게체|{1} es una buena elección.\nTe costará ${2}. ¿De acuerdo?", "v": "{1}, 좋은 선택일세.\r\n${2}인데 괜찮겠나?", "갈래": "하게체", "차례": "단품 확인"}
+{"k": "krmart:하게체|¡Aquí tienes!\n¡Gracias!", "v": "자, 여기 있네!\r\n고맙네!", "갈래": "하게체", "차례": "구매 완료"}
+{"k": "krmart:하게체|No tienes el dinero suficiente.", "v": "돈이 모자라는군.", "갈래": "하게체", "차례": "돈 부족"}
+{"k": "krmart:하게체|¿En qué más puedo ayudarte?", "v": "더 필요한 것이 있는가?", "갈래": "하게체", "차례": "되묻기"}
+{"k": "krmart:하게체|¿{1}?\n¿Cuántas unidades quieres vender?", "v": "{1}?\r\n몇 개나 팔 텐가?", "갈래": "하게체", "차례": "판매 수량"}
+{"k": "krmart:하게체|Puedo pagarte ${1}.\n¿Te parece bien?", "v": "${1}에 사 주겠네.\r\n괜찮겠나?", "갈래": "하게체", "차례": "매입가"}
+{"k": "krmart:하게체|¿{1}? ¡Oh, no!\nNo puedo comprar eso.", "v": "{1}? 이런!\r\n그건 살 수 없네.", "갈래": "하게체", "차례": "매입 거절"}
+{"k": "krmart:하게체|¡Vuelve cuando quieras!", "v": "또 오게나!", "갈래": "하게체", "차례": "작별"}
+{"k": "krmart-at:26:4", "v": "반말", "상점": "검은깃털"}
+{"k": "krmart-at:26:5", "v": "반말", "상점": "자라"}
+{"k": "krmart-at:25:48", "v": "반말", "상점": "세룰레오"}
+{"k": "krmart-at:130:8", "v": "반말", "상점": "이름표 없음(cripto2)"}
+{"k": "krmart-at:150:12", "v": "반말", "상점": "이름표 없음(revolucionaria)"}
+{"k": "krmart-at:236:8", "v": "반말", "상점": "이름표 없음(obrerow)"}
+{"k": "krmart-at:270:29", "v": "반말", "상점": "이름표 없음(cripto2)"}
+{"k": "krmart-at:25:46", "v": "하게체", "상점": "브리오프"}
