@@ -261,6 +261,13 @@ def status():
     print(f"청크 {done}/{len(chunks)} · 통과 {ok:,}(무변경 {same:,}) · 반려 {rej:,} · ${cost:.2f}")
 
 
+def put_lines(edits):
+    """0단계 정본에 앉히고 ko를 역생성한다 — 창구는 stage0/edit.py 하나다."""
+    sys.path.insert(0, str(HERE / "stage0"))
+    from edit import put_lines as _put
+    return _put(edits)
+
+
 def apply():
     accepted = {}
     for p in sorted(OUT.glob("*.jsonl")):
@@ -269,17 +276,18 @@ def apply():
                 accepted[r["id"]] = r["ko"]
     changed = 0
     files = {23: "23-script-texts.jsonl", **{s: f"{stem}.jsonl" for s, stem in DESC_SECS.items()}}
+    edits = []
     for sec, fname in files.items():
-        path = HERE / "ko" / fname
-        rows = read_jsonl(path)
-        for j, d in enumerate(rows):
+        for j, d in enumerate(read_jsonl(HERE / "ko" / fname)):
             rid = f"s{sec}:{d['i']}" if "i" in d else f"s{sec}:{j}"
             ko = accepted.get(rid)
             if ko is not None and d.get("v") != ko:
-                d["v"] = ko
+                edits.append((fname, j + 1, ko))
                 changed += 1
-        path.write_text("\n".join(json.dumps(d, ensure_ascii=False) for d in rows) + "\n",
-                        encoding="utf-8")
+    err = put_lines(edits)
+    if err:
+        print("멈춤 —", err)
+        return
     print(f"정본 반영 {changed:,}행. 다음: uv run build.py")
 
 
