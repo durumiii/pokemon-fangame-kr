@@ -409,9 +409,10 @@ def main():
     # 재번역 도구 — 남이 특정 대사를 다시 번역할 때 일관성을 지켜 주는 재료
     kit = tbl / "번역 도구"
     kit.mkdir()
-    for fname in ("prompt.md", "prompt-npc.md",
-                  "speaker-aliases.json", "persona-table.jsonl", "sprite-groups.json"):
+    for fname in ("prompt.md", "prompt-npc.md", "speaker-aliases.json"):
         shutil.copy2(TRANSLATE / fname, kit / fname)
+    # 페르소나·스프라이트 묶음 정본(2026-08-18 강등 — 옛 jsonl·json 둘을 대체)
+    shutil.copy2(TRANSLATE / "stage0" / "groups.yaml", kit / "groups.yaml")
     for fname in ("glossary.md", "voices.md"):   # 판정 대장은 docs/ledger에 있다
         src = TRANSLATE.parent / "docs" / "ledger" / fname
         (kit / fname).write_text(_flatten_repo_links(src.read_text(encoding="utf-8")),

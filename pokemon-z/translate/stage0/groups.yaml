@@ -1,6 +1,7 @@
-_source:
-- translate/persona-table.jsonl
-- translate/sprite-groups.json
+# 페르소나·스프라이트 묶음 정본 — **이 파일이 정본이다** (2026-08-18 강등: 옛
+# persona-table.jsonl·sprite-groups.json을 대체). gen이 다시 쓰지 않으므로 직접 편집한다.
+# groups = 원시 스프라이트별 페르소나·버킷(개성 층), sprite_groups = 어간 → 화자 묶음
+# (구조 층). 두 층이 어긋나면 groups(페르소나)가 이긴다. 근거·이력은 대장(voices.md)에만.
 groups:
 - group: campesinaw
   match:
@@ -1103,7 +1104,7 @@ groups:
   note: 말투 배치 대상에서 제외
   source: translate/persona-table.jsonl
 sprite_groups:
-  _comment: '스프라이트 어간 → 화자 그룹 (NPC 어투 배정용 구조 분류). 어간은 mapscan.py 규칙: 접미(ow/w/TS/숫자) 제거. 그룹별 최종 어투는 register-study(실제 게임 화법 조사) 결과로 확정한다 — 이 파일은 「누가 말하나」만 정한다. voices=명명 인물(말투표 라우팅), 사물지문=오브젝트·시스템(평서 지문이 정답), 내용판정=스프라이트 없음(행 내용으로 갈라야 함). 2026-08-03 초판. 어미 체계=버킷, 개성=원시 스프라이트별 페르소나표(persona-table) 2층 구조 — 어간 축약이 신사/귀부인/아가씨 같은 변형을 지우므로 배치에는 원시 스프라이트명을 싣는다. 상위 64종의 정본은 translate/persona-table.jsonl(그림 실측 페르소나) — 그룹·버킷과 어긋나면 페르소나표가 이긴다.'
+  _comment: '스프라이트 어간 → 화자 그룹 (NPC 어투 배정용 구조 분류). 어간은 mapscan.py 규칙: 접미(ow/w/TS/숫자) 제거. 그룹별 최종 어투는 register-study(실제 게임 화법 조사) 결과로 확정한다 — 이 파일은 「누가 말하나」만 정한다. voices=명명 인물(말투표 라우팅), 사물지문=오브젝트·시스템(평서 지문이 정답), 내용판정=스프라이트 없음(행 내용으로 갈라야 함). 2026-08-03 초판. 어미 체계=버킷, 개성=원시 스프라이트별 페르소나표 2층 구조 — 어간 축약이 신사/귀부인/아가씨 같은 변형을 지우므로 배치에는 원시 스프라이트명을 싣는다. 상위 종의 페르소나 정본은 이 파일 위쪽 groups 절(그림 실측 페르소나) — 그룹·버킷과 어긋나면 페르소나가 이긴다.'
   groups:
     voices:
     - alca
