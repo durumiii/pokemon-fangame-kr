@@ -290,12 +290,15 @@ def roster():
     ⚠ `batch_pages.voice_lines`를 여기에 쓰면 안 된다 — 그쪽은 프롬프트에 실을
     말투를 모으느라 두 칸짜리 집단 화자표(시민·총사·아자하라 …)까지 읽는다.
     그 명단으로 층을 가르면 잔부·집단 화자가 정본 인물(PS)로 승격한다.
+
+    셀 6개(넉 칸 표) 미만은 버린다 — 대장의 판정 절에 든 3칸 예시표(정본줄|전|후)가
+    5셀로 잡혀 가짜 인물 다섯(줄 번호 넷 + 머리글)이 섞였던 자리다(2026-08-18 실측).
     """
     table = {}
     for line in (HERE.parent / "docs" / "ledger" / "voices.md").read_text(
             encoding="utf-8").splitlines():
         cells = [c.strip() for c in line.split("|")]
-        if len(cells) >= 5 and cells[1] and cells[1] not in ("인물", "갈래", "태그") \
+        if len(cells) >= 6 and cells[1] and cells[1] not in ("인물", "갈래", "태그") \
                 and not cells[1].startswith("-"):
             table[cells[1]] = cells[-2]
     return table
