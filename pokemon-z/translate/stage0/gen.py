@@ -62,13 +62,18 @@ def load_meta():
     al = {(r["map"], norm(r["es"])): r for r in read_jsonl(DATA / "approved-lines.jsonl")}
     ae = {(r["map"], r["event"]): r for r in read_jsonl(DATA / "approved-events.jsonl")}
     fk = {r["es"] for r in read_jsonl(DATA / "frozen-keys.jsonl")}
-    return al, ae, fk
+    # 행 단위 출처 원장(provenance.py build 산출) — 사람 낱건 이력의 누적.
+    pv = {(r["map"], norm(r["es"])): r["by"]
+          for r in read_jsonl(DATA / "provenance-lines.jsonl")} \
+        if (DATA / "provenance-lines.jsonl").exists() else {}
+    return al, ae, fk, pv
 
 
-def map_sites(attr, al, ae):
+def map_sites(attr, al, ae, pv):
     """맵 절 — 자리와 값. 한 (맵, norm 원문)에 자리가 여럿이면 값은 공유 항목에 둔다."""
     sites, msgs = [], []
-    stats = {"rows": 0, "sites": 0, "shared": 0, "no_attr": 0, "line_ok": 0, "ev_ok": 0}
+    stats = {"rows": 0, "sites": 0, "shared": 0, "no_attr": 0, "line_ok": 0, "ev_ok": 0,
+             "prov": 0}
     unified, div = load_verdicts()
     used_unified = {}
     for mi, rows in read_maps():
@@ -111,6 +116,10 @@ def map_sites(attr, al, ae):
                 vm.update(state="reviewed", by=f"human/{line['src']}")
                 if "본보기" in line:      # 명시만 옮긴다 — 없음(자동 선별)과 False(명시 제외)는 다르다
                     vm["sample"] = line["본보기"]
+            elif (mi, nk) in pv:
+                # 출처 원장 — 사람 낱건이 닿은 값. 승인 줄이 더 구체적이라 그쪽이 우선.
+                stats["prov"] += 1
+                vm.update(state="reviewed", by=pv[(mi, nk)])
             # 승인 이벤트 — 이벤트 단위 판정이라 자리별 항목에 찍는다(공유 값 누출 방지).
             # 줄 승인이 이미 찍힌 값 항목(단독 자리)은 그대로 둔다.
             for bm, meta in zip(body, metas):
@@ -217,8 +226,8 @@ def write_yaml(path, obj):
 
 def main():
     attr = load_attr()
-    al, ae, fk = load_meta()
-    msites, mmsgs, used_unified, stats = map_sites(attr, al, ae)
+    al, ae, fk, pv = load_meta()
+    msites, mmsgs, used_unified, stats = map_sites(attr, al, ae, pv)
     lsites, lmsgs = loc_sites()
     ssites, smsgs = section_sites(fk)
     usites, umsgs = ui_sites()
@@ -294,7 +303,8 @@ def main():
     print(f"통일 참조 {len(used_unified):,}건 · overrides {len(ovr):,}줄")
     n_frozen = sum(1 for m in smsgs if m.get("by") == "human/frozen-keys")
     print(f"판정 메타: 승인 줄 {stats['line_ok']:,}(원본 {len(al):,}) · "
-          f"승인 이벤트 자리 {stats['ev_ok']:,} · 동결 {n_frozen}(원본 {len(fk)})")
+          f"승인 이벤트 자리 {stats['ev_ok']:,} · 동결 {n_frozen}(원본 {len(fk)}) · "
+          f"출처 원장 {stats['prov']:,}(원본 {len(pv):,})")
 
 
 if __name__ == "__main__":
