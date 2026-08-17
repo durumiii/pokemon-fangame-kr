@@ -1,5 +1,6 @@
 # /// script
 # requires-python = ">=3.12"
+# dependencies = ["pyyaml"]
 # ///
 """stage0 값 수정 공용 한 벌 — (맵, norm(원문))으로 자리를 찾아 messages의 `val`을 간다.
 
@@ -18,7 +19,8 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common import OUT, dump_jsonl, norm, read_jsonl  # noqa: E402
+from common import OUT, dump_jsonl, norm, read_jsonl, read_overrides  # noqa: E402
+from diff import rebuild  # noqa: E402
 
 SHARED_RE = re.compile(r"^m\d+\.s\d+$")
 MAP_ID_RE = re.compile(r"^m(\d+)\.")
@@ -29,11 +31,12 @@ class Messages:
 
     def __init__(self, d=OUT):
         self.d = d
+        self.sites = read_jsonl(d / "sites.jsonl")
         self.msgs = read_jsonl(d / "messages.jsonl")
         self.idx = {m["id"]: i for i, m in enumerate(self.msgs)}
         # 맵 절의 줄 하나가 항목 하나 — ((맵, norm 원문), 값이 사는 id).
         self.groups, seen = [], set()
-        for s in read_jsonl(d / "sites.jsonl"):
+        for s in self.sites:
             if s["apply"] != "map":
                 continue
             tid = self.local(s["id"])
@@ -107,6 +110,39 @@ class Messages:
         dump_jsonl(self.d / "messages.jsonl", self.msgs)
 
 
+_cache = None       # (파일 지문, Messages, built, owner) — 상주 프로세스가 재사용한다
+
+
+def _stamp(d):
+    """0단계 파일들의 지금 모습. 밖에서 움직였으면(딴 도구·git 병합) 지문이 달라진다."""
+    return tuple((p.stat().st_mtime_ns, p.stat().st_size) if p.exists() else None
+                 for p in (d / "sites.jsonl", d / "messages.jsonl",
+                           d / "overrides.jsonl", d / "axes.yaml"))
+
+
+def load(d=OUT):
+    """(정본, 역생성, 자리 색인, 캐시가 살아 있었나) — 지문이 그대로면 아까 것을 준다.
+
+    파싱이 역생성 시간의 8할이라(0.20/0.26초) 저장 왕복에서 이것이 가장 크다.
+    캐시가 살아 있었다는 것은 **직전 쓰기가 전 절을 대조하고 끝났다**는 뜻이라,
+    그때만 이번에 건드린 절로 대조를 좁혀도 된다.
+    """
+    global _cache
+    st = _stamp(d)
+    if _cache is not None and _cache[0] == st and _cache[1].d == d:
+        return (*_cache[1:], True)
+    ed = Messages(d)
+    built, owner, _ = rebuild(d, sites=ed.sites, msgs={m["id"]: m for m in ed.msgs})
+    _cache = (st, ed, built, owner)
+    return ed, built, owner, False
+
+
+def invalidate():
+    """메모리와 파일이 어긋날 수 있는 자리에서 부른다 — 다음 번에 다시 읽는다."""
+    global _cache
+    _cache = None
+
+
 def put_lines(edits, allow_default=False):
     """ko의 (파일, 줄)들을 0단계 정본에 앉히고 ko를 **한 번에** 역생성한다 — 오류면 사유.
 
@@ -120,26 +156,36 @@ def put_lines(edits, allow_default=False):
     """
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     import emit
-    from diff import rebuild
 
     edits = list(edits)
     if not edits:
         return None
-    built, owner, _ = rebuild()
+    # 값만 갈므로 (파일, 줄) → 자리 색인은 이 호출 내내 그대로다.
+    ed, built, owner, warm = load()
     if emit.dirty_ko() and not emit.leftover(built):
+        # 낡음 판정은 **고치기 전** 역생성으로 본다 — 고친 뒤에는 「stage0가 앞섬」과
+        # 「사람이 ko를 고침」이 안 갈린다.
         return f"translate/ko/에 이 도구 밖의 수정이 있다 — {emit.advice(built)}"
     expect = emit.ko_state()          # 쓰기 직전에 이것과 견준다
-    ed = Messages()
-    for file, line, val in edits:
-        ids = owner.get(file, [])
-        sid = ids[line - 1] if 0 < line <= len(ids) else None
-        if sid is None:
-            return f"{file}:{line} — 0단계 자리에 안 붙는다(맵 머리 줄이거나 파일 밖)"
-        try:
+    try:
+        for file, line, val in edits:
+            ids = owner.get(file, [])
+            sid = ids[line - 1] if 0 < line <= len(ids) else None
+            if sid is None:
+                raise ValueError(f"{file}:{line} — 0단계 자리에 안 붙는다"
+                                 "(맵 머리 줄이거나 파일 밖)")
             (ed.put_default if allow_default else ed.put)(ed.local(sid), val)
-        except ValueError as e:
-            return f"{file}:{line} — {e}"
+    except ValueError as e:
+        invalidate()                  # 메모리만 갈렸을 수 있다 — 다음엔 다시 읽는다
+        return str(e)
     ed.save()
-    if emit.main(["--write"], expect=expect):
-        return "정본은 고쳤으나 ko 역생성이 멈췄다 — 터미널을 보라"
+    msgs = {m["id"]: m for m in ed.msgs}      # put이 항목을 갈아 끼웠다
+    built, owner, _ = rebuild(sites=ed.sites, msgs=msgs)
+    only = {f for f, _, _ in edits} if warm else None
+    if emit.write_ko(built, owner, emit.tainted_ids(msgs, read_overrides()),
+                     expect, show=0, only=only) is None:
+        invalidate()
+        return "정본은 고쳤으나 ko 역생성이 멈췄다(그 사이 ko가 움직였다) — 터미널을 보라"
+    global _cache
+    _cache = (_stamp(ed.d), ed, built, owner)   # 방금 쓴 것이 곧 지금 상태다
     return None

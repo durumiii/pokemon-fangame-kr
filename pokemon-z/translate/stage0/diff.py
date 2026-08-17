@@ -40,14 +40,18 @@ def resolve(val, msgs, seen=()):
     return val
 
 
-def rebuild(d=OUT):
+def rebuild(d=OUT, sites=None, msgs=None):
     """다섯 파일 → ({파일 이름: [레코드, ...]}, {파일 이름: [그 줄을 낸 자리 id, ...]}, 값 표)
 
     자리 id를 줄마다 함께 내는 것은 차이가 났을 때 「어느 자리가 냈나」를 되짚기 위해서다.
     맵 머리 줄처럼 자리가 없는 줄은 None.
+
+    `sites`·`msgs`를 주면 파일을 다시 안 읽는다 — 파싱이 이 함수 시간의 8할이라
+    상주 프로세스(스튜디오)가 같은 것을 여러 번 세울 때 그만큼이 통째로 빠진다.
     """
-    sites = read_jsonl(d / "sites.jsonl")
-    msgs = {m["id"]: m for m in read_jsonl(d / "messages.jsonl")}
+    sites = read_jsonl(d / "sites.jsonl") if sites is None else sites
+    msgs = ({m["id"]: m for m in read_jsonl(d / "messages.jsonl")} if msgs is None
+            else msgs)
     layout = yaml.safe_load((d / "axes.yaml").read_text(encoding="utf-8"))["layout"]
 
     out, owner = {}, {}
@@ -166,7 +170,7 @@ def tainted_ids(msgs, ovr):
     return out
 
 
-def compare(built, owner, tainted=frozenset(), write_to=None, show=5):
+def compare(built, owner, tainted=frozenset(), write_to=None, show=5, only=None):
     """역생성 결과를 현행 정본과 대조. 반환 (overrides 유래 건수, 그 밖의 건수).
 
     overrides가 값을 갈면 역생성이 ko와 달라지는데 그건 결함이 아니라 정본이 ko보다
@@ -174,6 +178,8 @@ def compare(built, owner, tainted=frozenset(), write_to=None, show=5):
     """
     from_ovr = other = 0
     for name, rows in sorted(built.items()):
+        if only is not None and name not in only:
+            continue          # 방금 건드린 절만 — 부르는 쪽이 나머지가 이미 맞는 것을 안다
         ids = owner.get(name, [])
         cur = read_jsonl(KO / name)
         diffs = []

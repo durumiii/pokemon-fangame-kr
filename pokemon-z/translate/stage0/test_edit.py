@@ -1,5 +1,6 @@
 # /// script
 # requires-python = ">=3.12"
+# dependencies = ["pyyaml"]
 # ///
 """edit 공용 한 벌 자체 검사 — 장난감 자료로 네 갈래만 본다.
 
@@ -14,6 +15,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import dump_jsonl  # noqa: E402
+import edit  # noqa: E402
 from edit import Messages  # noqa: E402
 
 SITES = [
@@ -66,7 +68,30 @@ def main():
         assert again.value("m1.e1.p0.c1") == "반갑다"
         assert [m["id"] for m in again.msgs] == [m["id"] for m in MSGS], "줄 순서가 밀렸다"
         assert MSGS[1]["val"] == "안녕", "원본을 건드렸다"
-    print("edit 자체 검사 통과 — 공유 항목 · 통일 참조 떼기 · 없는 열쇠 · 선택자 트리 거부 · 순서 보존")
+    cache_check()
+    print("edit 자체 검사 통과 — 공유 항목 · 통일 참조 떼기 · 없는 열쇠 · 선택자 트리 거부 · 순서 보존 · 캐시 무효화")
+
+
+def cache_check():
+    """상주 캐시 — 지문이 그대로면 같은 것을 주고, 밖에서 움직이면 다시 읽는다.
+
+    캐시가 파일보다 오래 살면 딴 도구(fix.py·git 병합)의 수정을 못 보고 덮는다.
+    """
+    with tempfile.TemporaryDirectory() as td:
+        d = Path(td)
+        dump_jsonl(d / "sites.jsonl", [])
+        dump_jsonl(d / "messages.jsonl", [{"id": "a", "val": "처음"}])
+        (d / "axes.yaml").write_text("layout: {maps: 0, sections: {}}\n", encoding="utf-8")
+        edit.invalidate()
+        st1 = edit._stamp(d)
+        one = Messages(d)
+        edit._cache = (st1, one, {}, {})
+        assert edit.load(d)[0] is one and edit.load(d)[3], "지문이 같은데 다시 읽었다"
+        dump_jsonl(d / "messages.jsonl", [{"id": "a", "val": "밖에서 갈린 값"}])
+        ed, _, _, warm = edit.load(d)
+        assert not warm, "밖에서 갈렸는데 캐시를 그대로 썼다"
+        assert ed.msgs[0]["val"] == "밖에서 갈린 값", ed.msgs
+        edit.invalidate()
 
 
 if __name__ == "__main__":
