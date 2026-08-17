@@ -17,16 +17,21 @@ import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import (  # noqa: E402
-    EMPTY_SECS, KO, OUT, dump_jsonl, ko_file, read_jsonl, read_overrides,
+    EMPTY_SECS, KO, OUT, dump_jsonl, h8, ko_file, read_jsonl, read_overrides,
 )
 
 SHARED_RE = re.compile(r"^m\d+\.s\d+$")
 MAP_ID_RE = re.compile(r"^m(\d+)\.")
+MAP_EV_RE = re.compile(r"^m(\d+)\.e(\d+)\.")
 
 
 def resolve(val, msgs, seen=()):
-    """참조를 따라 실제 문자열까지 간다."""
-    while isinstance(val, dict) and "ref" in val:
+    """참조를 따라 실제 문자열까지 간다. 선택자 트리는 기본 갈래를 취한다 —
+    갈래별 값은 base 절이 아니라 추가분 파일로 나간다."""
+    while isinstance(val, dict) and ("ref" in val or "sel" in val):
+        if "sel" in val:
+            val = val["default"]
+            continue
         r = val["ref"]
         assert r not in seen, f"참조 순환: {r}"
         seen = (*seen, r)
@@ -106,6 +111,29 @@ def rebuild(d=OUT):
     for sec in EMPTY_SECS:
         out.setdefault(ko_file(sec).name, [])
         owner.setdefault(ko_file(sec).name, [])
+
+    # 절23 추가분 — base와 **따로** 낸다(접으면 매 빌드가 정본을 되돌린다).
+    mart = layout.get("mart")
+    if mart:
+        brs = yaml.safe_load((d / "axes.yaml").read_text(encoding="utf-8"))["axes"]["mart"]
+        rows, rids = [], []
+        for br in brs["values"]:
+            for st in mart["steps"]:
+                sid = f"s23.k{h8(st['src'])}"
+                rows.append({"k": f"krmart:{br}|{st['src']}",
+                             "v": msgs[sid]["val"]["when"][br], "갈래": br, "차례": st["차례"]})
+                rids.append(sid)
+        by_ev = {}
+        for s in sites:
+            if "mart" in s:
+                by_ev.setdefault(MAP_EV_RE.match(s["id"]).groups(), s)
+        for a in mart["at"]:
+            s = by_ev[(str(a["map"]), str(a["event"]))]
+            rows.append({"k": f"krmart-at:{a['map']}:{a['event']}", "v": s["mart"],
+                         "상점": a["상점"]})
+            rids.append(s["id"])
+        out["23-script-texts.add.jsonl"] = rows
+        owner["23-script-texts.add.jsonl"] = rids
     return out, owner, msgs
 
 

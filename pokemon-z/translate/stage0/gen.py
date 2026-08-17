@@ -14,6 +14,7 @@ gen이 만들지도 다시 쓰지도 않는다(2026-08-18 강등).
 usage: uv run translate/stage0/gen.py
 """
 import json
+import re
 import sys
 
 import yaml
@@ -196,8 +197,58 @@ def outside_sites():
     return sites, msgs
 
 
-def section_sites(fk):
-    """리스트 절(apply=index)과 해시 절(apply=global). 동결 절23 키는 reviewed로 찍는다."""
+MART_ADD = KO / "23-script-texts.add.jsonl"
+
+
+def load_mart():
+    """절23 추가분(상점 갈래) → (원문→{갈래: 값}, 차례 목록, 배정 목록, 갈래 목록).
+
+    합성 열쇠라 base에 접히지 않는다(지침 text-pipeline 「접을 것과 남길 것」) — 값은
+    base 줄의 선택자 트리로 들어가고, 줄 차례·상점 이름은 파일 모양이라 axes의 layout에
+    남는다(빈 절 뼈대와 같은 자리).
+    """
+    if not MART_ADD.exists():
+        return {}, [], [], []
+    vals, steps, at, brs = {}, [], [], []
+    for r in read_jsonl(MART_ADD):
+        k = r["k"]
+        if k.startswith("krmart:"):
+            br, _, src = k[len("krmart:"):].partition("|")
+            if br not in brs:
+                brs.append(br)
+            vals.setdefault(src, {})[br] = r["v"]
+            seen = [s for s in steps if s["src"] == src]
+            if not seen:
+                steps.append({"src": src, "차례": r["차례"]})
+            else:
+                assert seen[0]["차례"] == r["차례"], f"갈래마다 차례가 다르다: {src!r}"
+        elif k.startswith("krmart-at:"):
+            mi, ev = (int(x) for x in k[len("krmart-at:"):].split(":"))
+            at.append({"map": mi, "event": ev, "갈래": r["v"], "상점": r["상점"]})
+    return vals, steps, at, brs
+
+
+def stamp_mart(sites, at):
+    """갈래 배정을 (맵, 이벤트) 자리의 축 칸으로 편다 — 간선을 자리 쪽에 둔다."""
+    want = {(a["map"], a["event"]): a["갈래"] for a in at}
+    n = 0
+    for s in sites:
+        m = re.match(r"^m(\d+)\.e(\d+)\.", s["id"])
+        if m and (int(m.group(1)), int(m.group(2))) in want:
+            s["mart"] = want[(int(m.group(1)), int(m.group(2)))]
+            n += 1
+    for pair in want:
+        if not any(s.get("mart") and s["id"].startswith(f"m{pair[0]}.e{pair[1]}.") for s in sites):
+            print(f"⚠ 상점 배정 자리 없음(좌표 드리프트?): 맵{pair[0]} 이벤트{pair[1]}")
+    return n
+
+
+def section_sites(fk, mart_vals):
+    """리스트 절(apply=index)과 해시 절(apply=global). 동결 절23 키는 reviewed로 찍는다.
+
+    절23의 상점 문구는 갈래별 값을 함께 들어 선택자 트리가 된다 — 기본 갈래(존대)가
+    base 줄의 값 그대로이고 `when`이 추가분의 갈래다.
+    """
     sites, msgs = [], []
     for sec in LIST_SECS:
         for r in read_jsonl(ko_file(sec)):
@@ -211,7 +262,9 @@ def section_sites(fk):
         for r in read_jsonl(ko_file(sec)):
             sid = f"s{sec}.k{h8(r['k'])}"
             sites.append({"id": sid, "src": r["k"], "apply": "global"})
-            m = _msg(sid, r["v"], None)
+            branches = mart_vals.get(r["k"]) if sec == 23 else None
+            val = {"sel": "mart", "when": branches, "default": r["v"]} if branches else r["v"]
+            m = _msg(sid, val, None)
             if sec == 23 and r["k"] in fk:
                 m.update(state="reviewed", by="human/frozen-keys")
             msgs.append(m)
@@ -258,9 +311,10 @@ def stamp_register_ok(sites):
 def main():
     attr = load_attr()
     al, ae, fk, pv = load_meta()
+    mart_vals, mart_steps, mart_at, mart_brs = load_mart()
     msites, mmsgs, used_unified, stats = map_sites(attr, al, ae, pv)
     lsites, lmsgs = loc_sites()
-    ssites, smsgs = section_sites(fk)
+    ssites, smsgs = section_sites(fk, mart_vals)
     usites, umsgs = ui_sites()
     osites, omsgs = outside_sites()
 
@@ -274,6 +328,7 @@ def main():
     assert len(set(mids)) == len(mids), "값 id가 겹친다"
 
     n_ok, n_ok_sites = stamp_register_ok(sites)
+    n_mart_sites = stamp_mart(sites, mart_at)
 
     # 사람 수정은 재생성을 지우지 않는다 — 마지막에 얹는다(설계 「이행 1단계」 overrides 절).
     ovr = read_overrides()
@@ -290,13 +345,17 @@ def main():
     # 값이 하나도 없는 절 셋과 빈 맵 33개가 자리 목록만으로는 안 살아나서 여기 적는다.
     write_yaml(OUT / "axes.yaml", {
         "axes": {"speaker": {"from": "sites.speaker"}, "to": {"from": "sites.to"},
-                 "kind": {"values": ["say", "narration", "choice", "system", "ui"]}},
+                 "kind": {"values": ["say", "narration", "choice", "system", "ui"]},
+                 "mart": {"values": mart_brs, "from": "sites.mart"}},
         "precedence": ["site", "speaker", "to", "kind"],
         "layout": {
             "maps": len(read_maps()),
             "sections": {0: "maps", **{s: "list" for s in LIST_SECS},
                          **{s: "hash" for s in HASH_SECS},
                          **{s: "empty" for s in EMPTY_SECS}},
+            # 절23 추가분의 모양 — 줄 차례와 상점 이름은 값이 아니라 파일 뼈대다.
+            "mart": {"steps": mart_steps,
+                     "at": [{k: v for k, v in a.items() if k != "갈래"} for a in mart_at]},
         },
     })
 
@@ -304,6 +363,8 @@ def main():
     print(f"맵 절: 정본 {stats['rows']:,}줄 → 자리 {stats['sites']:,}개 "
           f"(값 공유 묶음 {stats['shared']:,} · 귀속표 밖 {stats['no_attr']:,})")
     print(f"통일 참조 {len(used_unified):,}건 · overrides {len(ovr):,}줄")
+    print(f"절23 추가분: 갈래 {mart_brs} × {len(mart_steps)}줄 · 배정 {len(mart_at)}곳"
+          f"(자리 {n_mart_sites}개에 축 칸)")
     n_frozen = sum(1 for m in smsgs if m.get("by") == "human/frozen-keys")
     print(f"판정 메타: 승인 줄 {stats['line_ok']:,}(원본 {len(al):,}) · "
           f"승인 이벤트 자리 {stats['ev_ok']:,} · 동결 {n_frozen}(원본 {len(fk)}) · "
