@@ -8,9 +8,9 @@
   tower   배틀 시설(`TorreBatalla` 절 `BT_TRAINERS`)의 트레이너 이름. 해시 문자열이
           `PokeBattle_Trainer.new`로 곧바로 들어가 `pbGetMessageFromHash`를 안 탄다.
           번역값이 없다 — 미번역이 사실이라 `ko`를 안 적는다.
-  surgery 소스에 리터럴로 박혀 `_INTL` 포장이 없는 이름 넷. 값은 share/patch_intl.py의
-          EDITS가 이미 실어 나르므로 여기서는 그 값을 그대로 옮긴다(대조만 하고
-          patch_intl은 고치지 않는다).
+  surgery 소스에 리터럴로 박혀 `_INTL` 포장이 없는 이름 넷과, 요약 화면의 성격
+          활용형 25자리. 값은 share/patch_intl.py의 EDITS가 이미 실어 나르므로
+          여기서는 그 값을 그대로 옮긴다(대조만 하고 patch_intl은 고치지 않는다).
 
 미리보기: uv run translate/outside_scan.py   /   반영: uv run translate/outside_scan.py --write
 """
@@ -55,9 +55,23 @@ def check_patch_intl():
             print(f"경고: patch_intl에 {es}→{ko}({where})가 안 보인다 — 값이 어긋났는지 확인")
 
 
+NATURE_ADJ = ROOT / "data/nature-adj.jsonl"
+
+
+def nature_rows():
+    """요약 화면의 성격 활용형 25자리. 값 정본은 data/nature-adj.jsonl이고
+    patch_intl의 PScreen_Summary 수술이 같은 파일에서 값을 읽으므로 어긋날 수 없다."""
+    rows = [json.loads(l) for l in NATURE_ADJ.read_text(encoding="utf-8").splitlines()
+            if l.strip()]
+    return [{"kind": "surgery", "src": r["es"], "ko": r["adj"],
+             "where": "PScreen_Summary:naturename"}
+            for r in sorted((r for r in rows if "adj" in r), key=lambda r: r["i"])]
+
+
 def build():
     rows = [{"kind": "surgery", "src": es, "ko": ko, "where": where}
             for es, ko, where in SURGERY]
+    rows += nature_rows()
     rows += [{"kind": "tower", "src": n} for n in tower_names()]
     return "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows)
 
@@ -89,11 +103,13 @@ def demo():
     assert len(names) == len(set(names)) and names == sorted(names)
     assert "Tobal" in names and len(names) > 800, len(names)
     rows = [json.loads(l) for l in build().splitlines()]
-    assert [r["kind"] for r in rows[:4]] == ["surgery"] * 4
-    assert all(r["kind"] == "tower" and "ko" not in r for r in rows[4:])
+    n_surg = len(SURGERY) + len(nature_rows())
+    assert [r["kind"] for r in rows[:n_surg]] == ["surgery"] * n_surg
+    assert all(r["kind"] == "tower" and "ko" not in r for r in rows[n_surg:])
     assert len({(r.get("where", ""), r["src"]) for r in rows}) == len(rows), "자리가 겹친다"
     assert build() == build(), "두 번 돌린 결과가 다르다"
-    print("demo OK — tower %d개 · 수술 %d개" % (len(names), len(SURGERY)))
+    print("demo OK — tower %d개 · 수술 %d개(성격 활용형 %d 포함)"
+          % (len(names), len(SURGERY) + len(nature_rows()), len(nature_rows())))
 
 
 if __name__ == "__main__":

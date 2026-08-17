@@ -2,6 +2,31 @@
 {"kind": "surgery", "src": "ARTIFICIO", "ko": "수호장치", "where": "PField_EncounterModifiers:187"}
 {"kind": "surgery", "src": "FLOR", "ko": "꽃", "where": "PField_EncounterModifiers:201"}
 {"kind": "surgery", "src": "FLOR", "ko": "꽃", "where": "Boss:37"}
+{"kind": "surgery", "src": "Fuerte", "ko": "노력하는", "where": "PScreen_Summary:naturename"}
+{"kind": "surgery", "src": "Huraña", "ko": "외로움을 타는", "where": "PScreen_Summary:naturename"}
+{"kind": "surgery", "src": "Audaz", "ko": "용감한", "where": "PScreen_Summary:naturename"}
+{"kind": "surgery", "src": "Firme", "ko": "고집스러운", "where": "PScreen_Summary:naturename"}
+{"kind": "surgery", "src": "Pícara", "ko": "개구쟁이", "where": "PScreen_Summary:naturename"}
+{"kind": "surgery", "src": "Osada", "ko": "대담한", "where": "PScreen_Summary:naturename"}
+{"kind": "surgery", "src": "Dócil", "ko": "온순한", "where": "PScreen_Summary:naturename"}
+{"kind": "surgery", "src": "Plácida", "ko": "무사태평한", "where": "PScreen_Summary:naturename"}
+{"kind": "surgery", "src": "Agitada", "ko": "장난꾸러기", "where": "PScreen_Summary:naturename"}
+{"kind": "surgery", "src": "Floja", "ko": "촐랑거리는", "where": "PScreen_Summary:naturename"}
+{"kind": "surgery", "src": "Miedosa", "ko": "겁이 많은", "where": "PScreen_Summary:naturename"}
+{"kind": "surgery", "src": "Activa", "ko": "성급한", "where": "PScreen_Summary:naturename"}
+{"kind": "surgery", "src": "Seria", "ko": "성실한", "where": "PScreen_Summary:naturename"}
+{"kind": "surgery", "src": "Alegre", "ko": "명랑한", "where": "PScreen_Summary:naturename"}
+{"kind": "surgery", "src": "Ingenua", "ko": "천진난만한", "where": "PScreen_Summary:naturename"}
+{"kind": "surgery", "src": "Modesta", "ko": "조심스러운", "where": "PScreen_Summary:naturename"}
+{"kind": "surgery", "src": "Afable", "ko": "의젓한", "where": "PScreen_Summary:naturename"}
+{"kind": "surgery", "src": "Mansa", "ko": "냉정한", "where": "PScreen_Summary:naturename"}
+{"kind": "surgery", "src": "Tímida", "ko": "수줍음이 많은", "where": "PScreen_Summary:naturename"}
+{"kind": "surgery", "src": "Alocada", "ko": "덜렁거리는", "where": "PScreen_Summary:naturename"}
+{"kind": "surgery", "src": "Serena", "ko": "차분한", "where": "PScreen_Summary:naturename"}
+{"kind": "surgery", "src": "Amable", "ko": "얌전한", "where": "PScreen_Summary:naturename"}
+{"kind": "surgery", "src": "Grosera", "ko": "건방진", "where": "PScreen_Summary:naturename"}
+{"kind": "surgery", "src": "Cauta", "ko": "신중한", "where": "PScreen_Summary:naturename"}
+{"kind": "surgery", "src": "Rara", "ko": "변덕스러운", "where": "PScreen_Summary:naturename"}
 {"kind": "tower", "src": "Abilio"}
 {"kind": "tower", "src": "Absolut"}
 {"kind": "tower", "src": "Adolfo"}
