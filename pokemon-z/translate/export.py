@@ -89,4 +89,9 @@ def main():
 
 
 if __name__ == "__main__":
+    sys.path.insert(0, str(Path(__file__).parent))
+    from frozen import stop_unless_forced
+    stop_unless_forced(
+        "dat→정본 통째 덮기라 승격 뒤로는 방향이 거꾸로다(추가분도 base에 접힌다). "
+        "새 키 등재는 stage0가 길이다 — gen.py 재생성.")
     main()

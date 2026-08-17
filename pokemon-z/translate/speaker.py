@@ -267,10 +267,17 @@ def voice_sprites():
 VOICES_STRIP = re.compile(r"(Montado|Montada|Reventada|Caduca|Vestido|Monigote|Pose|"
                           r"Pechamen|Dormido|Final|Salamence|Lira|Capucha|Herido|"
                           r"Cabeza|Borracha|Mapa|Musica|Baln|TS)")
-# ⚠ 「대드루이드 피쿠스」는 직함+이름 합성이라 names.json에 정본이 없다(Ficus 항목 부재,
-# 2026-08-18 확인) — 피쿠스 표기가 재판정되면 여기가 낡는다. names.json 396행 대조 작업
-# (Z-53 한계 항목) 때 Ficus를 등재하고 이 값을 파생으로 바꾼다.
-VOICES_SPECIAL = {"az": "AZ", "f3": "F3", "druidaFicus": "대드루이드 피쿠스"}
+# 한글 표기가 아니라 그대로 쓰는 둘 — 표기 판정 대상이 아니라 코드에 남는다.
+# 한국어 표기가 필요한 화자는 groups.yaml의 `ko` 칸이 정본이다(group_names).
+VOICES_SPECIAL = {"az": "AZ", "f3": "F3"}
+
+
+def group_names():
+    """화자 → 한국어 표기. 정본은 stage0/groups.yaml의 `ko` 칸(직접 편집)."""
+    import yaml
+    groups = yaml.safe_load((HERE / "stage0" / "groups.yaml")
+                            .read_text(encoding="utf-8"))["groups"]
+    return {g["match"]["speaker"]: g["ko"] for g in groups if g.get("ko")}
 
 
 def deacc(s):
@@ -284,11 +291,12 @@ def voices_map():
     어디에도 없는」 그림을 가려내는 데 쓴다.
     """
     names = json.loads((HERE / "names.json").read_text(encoding="utf-8"))["names"]
+    special = {**VOICES_SPECIAL, **group_names()}
     out = {}
     for s in sprite_groups()["voices"]:
         base = VOICES_STRIP.sub("", s)
-        if base in VOICES_SPECIAL or s in VOICES_SPECIAL:
-            out[s] = VOICES_SPECIAL.get(s, VOICES_SPECIAL.get(base))
+        if base in special or s in special:
+            out[s] = special.get(s, special.get(base))
             continue
         ds = deacc(base)
         hit = next((ko for es, ko in names.items()
