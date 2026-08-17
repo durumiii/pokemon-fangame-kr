@@ -175,6 +175,94 @@ EDITS += [
     for name, const in _AMULETOS
 ]
 
+# 좌표 조회 1단(Z-73) — 맵 대사·선택지를 (맵, 이벤트, 명령 인덱스) + 원문으로 먼저 찾고,
+# 없으면 지금까지의 사슬(현재 맵 → 맵0 → 원문)로 그대로 떨어진다. 좌표 항목이 있는 줄만
+# 새 경로를 타므로 기존 동작은 안 바뀌고, 맵0 우회(Z-61)와도 안 부딪힌다.
+#
+# 열쇠 꼴 "krloc:<맵>:<이벤트>:<명령>|<정규화한 원문>" 은 translate/build.py와 한 글자도
+# 어긋나면 안 된다 — 그래서 조립을 MessageTypes.krLoc 한 자리에 모으고 부르는 쪽은
+# 한 줄씩만 얹는다. 원문에 stringToKey를 미리 걸어 두므로 getFromMapHash 안에서 한 번
+# 더 걸려도 결과가 같다(정규화가 멱등이고 접두에는 공백이 없다).
+#
+# ⚠ 맵 번호는 이벤트 소속 맵 @map_id를 쓴다($game_map.map_id가 아니다 — 전이 뒤 대사에서
+# 둘이 갈린다). 폴백 경로는 지금 값 그대로 둔다.
+# 도는 인터프리터는 Interpreter 하나뿐이라(Game_Interpreter는 죽은 코드) 수술 자리도
+# 그쪽뿐이다. 옛 소스가 두 클래스에 복제돼 있으므로 앵커에 Interpreter 쪽에만 있는
+# 줄(firstText·주석·pbMessage의 nil 인자)을 물려 한쪽만 갈린다. 루비 1.8 문법.
+# ⚠ 얹기만 하는 수술은 **옛 소스가 새 소스 안에 그대로 남는다** — 멱등 판정이
+# 「새 것이 있고 옛 것이 없으면 건너뛴다」라서, 그러면 돌릴 때마다 또 얹힌다
+# (2026-08-17에 실제로 두 번 얹혔다). 그래서 앵커에 **뒤따르는 줄까지** 물려
+# 옛 소스가 새 소스의 부분 문자열이 되지 않게 한다.
+EDITS += [
+    ("Intl_Messages",
+     '  def self.getFromMapHash(type,key)\r\n'
+     '    @@messages.getFromMapHash(type,key)\r\n'
+     '  end\r\n'
+     'end\r\n',
+     '  def self.getFromMapHash(type,key)\r\n'
+     '    @@messages.getFromMapHash(type,key)\r\n'
+     '  end\r\n'
+     '\r\n'
+     '  # 좌표 조회(Z-73) — 못 찾으면 nil을 주고 부르는 쪽이 옛 조회로 떨어진다.\r\n'
+     '  def self.krLoc(mapid,eventid,index,str)\r\n'
+     '    key="krloc:#{mapid}:#{eventid}:#{index}|"+Messages.stringToKey(str)\r\n'
+     '    hit=@@messages.getFromMapHash(mapid,key)\r\n'
+     '    return hit==key ? nil : hit\r\n'
+     '  end\r\n'
+     'end\r\n'),
+
+    # 대사 조회 좌표의 명령 인덱스는 **101이 선 자리**다 — 아래 루프가 @index를 401
+    # 마지막 줄까지 밀어 놓으므로 루프 전에 잡아 둔다.
+    ("Messages",
+     '    firstText=nil\r\n'
+     '    if @list[@index].parameters.length==1\r\n',
+     '    firstText=nil\r\n'
+     '    krIndex=@index\r\n'
+     '    if @list[@index].parameters.length==1\r\n'),
+
+    ("Messages",
+     '    message=_MAPINTL($game_map.map_id,message)\r\n'
+     '    if commands\r\n'
+     '      cmdlist=[]\r\n'
+     '      for cmd in commands[0]\r\n'
+     '        cmdlist.push(_MAPINTL($game_map.map_id,cmd))\r\n'
+     '      end\r\n',
+     '    krHit=MessageTypes.krLoc(@map_id,@event_id,krIndex,message)\r\n'
+     '    message=krHit ? krHit : _MAPINTL($game_map.map_id,message)\r\n'
+     '    if commands\r\n'
+     '      cmdlist=[]\r\n'
+     '      for cmd in commands[0]\r\n'
+     '        krHit=MessageTypes.krLoc(@map_id,@event_id,@index,cmd)\r\n'
+     '        cmdlist.push(krHit ? krHit : _MAPINTL($game_map.map_id,cmd))\r\n'
+     '      end\r\n'),
+
+    # 홀로 선 선택지(command_102). 앞의 pbMessage(...,nil)이 Interpreter 쪽 표식이다.
+    ("Messages",
+     '      Kernel.pbMessage(message+messageend,nil)\r\n'
+     '    end\r\n'
+     '    @message_waiting=false\r\n'
+     '    return true\r\n'
+     '  end\r\n'
+     '\r\n'
+     '  def command_102\r\n'
+     '    @message_waiting=true\r\n'
+     '    command=Kernel.pbShowCommands(nil,@list[@index].parameters[0].collect{|c| '
+     'MessageTypes.getFromMapHash($game_map ? $game_map.map_id : 0,c)},'
+     '@list[@index].parameters[1])\r\n',
+     '      Kernel.pbMessage(message+messageend,nil)\r\n'
+     '    end\r\n'
+     '    @message_waiting=false\r\n'
+     '    return true\r\n'
+     '  end\r\n'
+     '\r\n'
+     '  def command_102\r\n'
+     '    @message_waiting=true\r\n'
+     '    command=Kernel.pbShowCommands(nil,@list[@index].parameters[0].collect{|c| '
+     'MessageTypes.krLoc(@map_id,@event_id,@index,c) || '
+     'MessageTypes.getFromMapHash($game_map ? $game_map.map_id : 0,c)},'
+     '@list[@index].parameters[1])\r\n'),
+]
+
 
 def patch_file(path: Path) -> None:
     secs = load(open(path, "rb"))

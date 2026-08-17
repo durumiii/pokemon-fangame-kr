@@ -84,7 +84,7 @@ def main():
         keys.pop(kidx); values.pop(kidx)
         d[23]._private_data = rubywrite.dumps([keys, values])
     files = {int(p.name[:2]): p for p in KO.glob("*.jsonl")
-             if not p.name.endswith(".add.jsonl")}
+             if not p.name.endswith((".add.jsonl", ".loc.jsonl"))}
     # 추가분: 게임 스크립트에는 있는데 korean.dat에 키가 아예 없는 문자열.
     # 해시 절에 새 (키, 값) 쌍으로 덧붙인다. export.py가 본문에 흡수한 뒤에는
     # 이미 있는 키라 건너뛰므로 몇 번을 돌려도 안전하다.
@@ -98,6 +98,19 @@ def main():
         for r in read_jsonl(adds[0]):
             map_adds.setdefault(r["map"], []).append(r)
 
+    # 좌표 열쇠(Z-73 1단) — 같은 맵 안에서 같은 원문이 자리마다 다른 번역을 받아야 하는
+    # 줄을 여기 적는다. 줄 꼴은 {"map","event","cmd","k","v"}이고 k는 00-maps.jsonl의
+    # 원문 그대로다. **맵 절의 같은 해시에 열쇠 꼴만 달리해 얹는다** — 새 절을 만들면 절
+    # 수가 게임의 MessageTypes 상수와 어긋나고, 절0의 (맵 → 해시) 구조는 그대로 쓸 수
+    # 있기 때문이다. 게임 쪽 조립은 share/patch_intl.py의 MessageTypes.krLoc이고,
+    # 두 자리의 열쇠 꼴이 한 글자라도 어긋나면 조용히 안 맞는다.
+    map_locs = {}
+    loc_path = KO / "00-maps.loc.jsonl"
+    if loc_path.exists():
+        for r in read_jsonl(loc_path):
+            key = f"krloc:{r['map']}:{r['event']}:{r['cmd']}|" + string_to_key(r["k"])
+            map_locs.setdefault(r["map"], []).append({"k": key, "v": r["v"]})
+
     for sec, path in sorted(files.items()):
         rows = read_jsonl(path)
         obj = d[sec]
@@ -108,7 +121,9 @@ def main():
                 assert head.get("map") == mi, f"{path.name}: 맵 {mi} 헤더가 아니라 {head}"
                 keys, values = inner_of(oh)
                 # 지난 빌드가 덧붙인 추가분 키는 꼬리에 남는다 — 해시 절의 tail_ok와 같은 꼴.
-                tail_ok = {string_to_key(r["k"]).encode("utf-8") for r in map_adds.get(mi, ())}
+                tail_ok = {string_to_key(r["k"]).encode("utf-8")
+                           for r in map_adds.get(mi, ())}
+                tail_ok |= {r["k"].encode("utf-8") for r in map_locs.get(mi, ())}
                 strays = [k for k in keys[head["n"]:] if bytes(k) not in tail_ok]
                 assert len(keys) >= head["n"] and not strays, \
                     f"맵 {mi}: 줄 수 {head['n']} ≠ dat {len(keys)} (추가분 밖 꼬리 {len(strays)}개)"
@@ -200,6 +215,10 @@ def main():
         folded = {string_to_key(r["k"]).encode("utf-8")
                   for r in read_jsonl(files[sec])} if sec in files else set()
         append_rows(obj, read_jsonl(path), folded)
+
+    # 좌표 열쇠는 원문 열쇠와 이름이 겹치지 않으므로 folded가 없다 — 늘 얹는다.
+    for mi, loc_rows in sorted(map_locs.items()):
+        append_rows(d[0][mi], loc_rows, set())
 
     # 웹 스튜디오 제보용 버전 표식 — 게임은 이 키를 조회하지 않는다
     from datetime import date
