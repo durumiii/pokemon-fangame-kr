@@ -116,7 +116,7 @@
 {"es": "Un Pokémon de tu equipo ha sido envenenado.", "ko": "지닌 포켓몬 중 한 마리가 독에 걸렸다.", "맵수": 3, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "Los alquimistas de Pueblo Vánitas han estado husmeando más de la cuenta, hemos venido a darles un buen escarmiento.", "ko": "고목내마을의 연금술사들이 분수도 모르고 기웃거리길래, 버르장머리를 고쳐주러 왔다.", "맵수": 3, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "¿Tú también quieres recibir un escarmiento?", "ko": "너도 따끔한 맛을 보고 싶냐?", "맵수": 3, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
-{"es": "Nuestra sociedad fue fundada por Lanto y Alca hace ya 7 años, ¡no podrás con todo nuestro legado!", "ko": "우리 아조스단은 7년 전 란토 님과 알카 님께서 창설하셨지. 너 따위가 우리의 유산을 무너뜨릴 순 없다!", "맵수": 3, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
+{"es": "Nuestra sociedad fue fundada por Lanto y Alca hace ya 7 años, ¡no podrás con todo nuestro legado!", "ko": "우리 아조스단은 7년 전 란토님과 알카님께서 창설하셨지. 너 따위가 우리의 유산을 무너뜨릴 순 없다!", "맵수": 3, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "No decir nada", "ko": "아무 말도 하지 않는다", "맵수": 3, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "Interrogar", "ko": "질문한다", "맵수": 3, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "\\c[6]<b>Aure:</b>\\c[0] ...", "ko": "\\c[6]<b>아우레:</b>\\c[0] ...", "맵수": 3, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
@@ -214,7 +214,7 @@
 {"es": "El interruptor está encendido y cargando al Regente con una mayor fuerza de combate.", "ko": "켜진 스위치가 섭정에게 더 강한 전투력을 공급하고 있다.", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "¿Quieres revertirlo?", "ko": "원래대로 되돌릴까?", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "¡Kiaaaaa!", "ko": "키아아아아!", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
-{"es": "<b>PISTA DE ENTRENADOR:</b> El Polvo de Hueso es un componente muy valioso para todo buen Alquimista Pokémon. Suele crecer en catacumbas y lugares inhóspitos.", "ko": "<b>트레이너 팁:</b> ‘뼛가루’는 훌륭한 포켓몬 연금술사라면 누구나 소장해야 할 매우 귀중한 재료입니다. 주로 지하 묘지나 황량한 곳에서 얻습니다.", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
+{"es": "<b>PISTA DE ENTRENADOR:</b> El Polvo de Hueso es un componente muy valioso para todo buen Alquimista Pokémon. Suele crecer en catacumbas y lugares inhóspitos.", "ko": "<b>트레이너 팁:</b> ‘뼛가루’는 훌륭한 포켓몬 연금술사라면 누구나 소장해야 할 매우 귀중한 재료입니다. 주로 지하묘지나 황량한 곳에서 얻습니다.", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "<b>PISTA DE ENTRENADOR:</b> Si tu Pokémon tiene el movimiento Dulce Aroma, podrá utilizarlo para captar la atención de los Pokémon salvajes sin tener que moverte.", "ko": "<b>트레이너 팁:</b> 포켓몬이 ‘달콤한향기’ 기술을 가지고 있다면, 직접 움직이지 않고도 이 기술을 사용해 야생 포켓몬의 주의를 끌 수 있습니다.", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "Entrada a la <b>Gruta Tierraunida</b>, ¡una nueva forma de unir <b>Kalos</b>!", "ko": "<b>땅이음의 동굴</b> 입구, <b>칼로스</b>를 하나로 이어 주는 새로운 길!", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "Baya Zreza", "ko": "버치열매", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
@@ -419,7 +419,7 @@
 {"es": "Un auténtico festín para <b>Zygarde</b>.", "ko": "<b>지가르데</b>에게는 그야말로 성대한 진수성찬이죠.", "맵수": 2, "src": "sync"}
 {"es": "En este desafío te enfrentarás a los 6 primeros Regentes de la aventura de forma consecutiva. Tus Pokémon serán curados tras cada combate.", "ko": "이 도전에서는 모험의 전반 6명의 섭정과 연속으로 배틀합니다. 매 배틀이 끝나면 포켓몬이 회복됩니다.", "맵수": 2, "src": "sync"}
 {"es": "Tendrás que superar el desafío sin objetos curativos, que te serán requisados.", "ko": "회복 도구는 몰수되므로, 도구 없이 도전을 클리어해야 합니다.", "맵수": 2, "src": "sync"}
-{"es": "Si lo logras, recibirás una recompensa especial. Además de los <b>Puntos de Batalla</b> en cada combate.", "ko": "클리어하면 특별한 보상을 받게 됩니다. 각 배틀의 <b>배틀 포인트</b>도 함께 지급됩니다.", "맵수": 2, "src": "sync"}
+{"es": "Si lo logras, recibirás una recompensa especial. Además de los <b>Puntos de Batalla</b> en cada combate.", "ko": "클리어하면 특별한 보상을 받게 됩니다. 각 배틀의 <b>배틀포인트</b>도 함께 지급됩니다.", "맵수": 2, "src": "sync"}
 {"es": "¿Te interesa participar?", "ko": "참여해 보시겠어요?", "맵수": 2, "src": "sync"}
 {"es": "<i>Bon</i>, acompáñane.", "ko": "<i>Bon</i>, 저를 따라오세요.", "맵수": 2, "src": "sync"}
 {"es": "En este desafío te enfrentarás a los 6 últimos Regentes de la aventura de forma consecutiva. Tus Pokémon serán curados tras cada combate.", "ko": "이 도전에서는 모험의 후반 6명의 섭정과 연속으로 배틀합니다. 매 배틀이 끝나면 포켓몬이 회복됩니다.", "맵수": 2, "src": "sync"}

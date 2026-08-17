@@ -176,18 +176,18 @@
 {"k": "Hoenn Tough Contest Super Rank winner!", "v": "호연 강함 콘테스트 슈퍼랭크 우승!"}
 {"k": "Hoenn Tough Contest Hyper Rank winner!", "v": "호연 강함 콘테스트 하이퍼랭크 우승!"}
 {"k": "Hoenn Tough Contest Master Rank winner!", "v": "호연 강함 콘테스트 마스터랭크 우승!"}
-{"k": "Super Contest Cool Category Normal Rank winner!", "v": "슈퍼콘테스트 근사함 부문 노말랭크 우승!"}
-{"k": "Super Contest Cool Category Great Rank winner!", "v": "슈퍼콘테스트 근사함 부문 그레이트랭크 우승!"}
-{"k": "Super Contest Cool Category Ultra Rank winner!", "v": "슈퍼콘테스트 근사함 부문 울트라랭크 우승!"}
-{"k": "Super Contest Cool Category Master Rank winner!", "v": "슈퍼콘테스트 근사함 부문 마스터랭크 우승!"}
-{"k": "Super Contest Beauty Category Normal Rank winner!", "v": "슈퍼콘테스트 아름다움 부문 노말랭크 우승!"}
-{"k": "Super Contest Beauty Category Great Rank winner!", "v": "슈퍼콘테스트 아름다움 부문 그레이트랭크 우승!"}
-{"k": "Super Contest Beauty Category Ultra Rank winner!", "v": "슈퍼콘테스트 아름다움 부문 울트라랭크 우승!"}
-{"k": "Super Contest Beauty Category Master Rank winner!", "v": "슈퍼콘테스트 아름다움 부문 마스터랭크 우승!"}
-{"k": "Super Contest Cute Category Normal Rank winner!", "v": "슈퍼콘테스트 귀여움 부문 노말랭크 우승!"}
-{"k": "Super Contest Cute Category Great Rank winner!", "v": "슈퍼콘테스트 귀여움 부문 그레이트랭크 우승!"}
-{"k": "Super Contest Cute Category Ultra Rank winner!", "v": "슈퍼콘테스트 귀여움 부문 울트라랭크 우승!"}
-{"k": "Super Contest Cute Category Master Rank winner!", "v": "슈퍼콘테스트 귀여움 부문 마스터랭크 우승!"}
+{"k": "Super Contest Cool Category Normal Rank winner!", "v": "슈퍼 콘테스트 근사함 부문 노말랭크 우승!"}
+{"k": "Super Contest Cool Category Great Rank winner!", "v": "슈퍼 콘테스트 근사함 부문 그레이트랭크 우승!"}
+{"k": "Super Contest Cool Category Ultra Rank winner!", "v": "슈퍼 콘테스트 근사함 부문 울트라랭크 우승!"}
+{"k": "Super Contest Cool Category Master Rank winner!", "v": "슈퍼 콘테스트 근사함 부문 마스터랭크 우승!"}
+{"k": "Super Contest Beauty Category Normal Rank winner!", "v": "슈퍼 콘테스트 아름다움 부문 노말랭크 우승!"}
+{"k": "Super Contest Beauty Category Great Rank winner!", "v": "슈퍼 콘테스트 아름다움 부문 그레이트랭크 우승!"}
+{"k": "Super Contest Beauty Category Ultra Rank winner!", "v": "슈퍼 콘테스트 아름다움 부문 울트라랭크 우승!"}
+{"k": "Super Contest Beauty Category Master Rank winner!", "v": "슈퍼 콘테스트 아름다움 부문 마스터랭크 우승!"}
+{"k": "Super Contest Cute Category Normal Rank winner!", "v": "슈퍼 콘테스트 귀여움 부문 노말랭크 우승!"}
+{"k": "Super Contest Cute Category Great Rank winner!", "v": "슈퍼 콘테스트 귀여움 부문 그레이트랭크 우승!"}
+{"k": "Super Contest Cute Category Ultra Rank winner!", "v": "슈퍼 콘테스트 귀여움 부문 울트라랭크 우승!"}
+{"k": "Super Contest Cute Category Master Rank winner!", "v": "슈퍼 콘테스트 귀여움 부문 마스터랭크 우승!"}
 {"k": "Super Contest Smart Category Normal Rank winner!", "v": "슈퍼 콘테스트 슬기부문 노멀랭크 우승 리본!"}
 {"k": "Super Contest Smart Category Great Rank winner!", "v": "슈퍼 콘테스트 슬기부문 슈퍼랭크 우승 리본!"}
 {"k": "Super Contest Smart Category Ultra Rank winner!", "v": "슈퍼 콘테스트 슬기부문 하이랭크 우승 리본!"}
@@ -1449,7 +1449,7 @@
 {"k": "Poké Ball", "v": "몬스터볼"}
 {"k": "Ribbons", "v": "리본"}
 {"k": "Shadow Pokémon", "v": "그림자포켓몬"}
-{"k": "Make Mystery Gift", "v": "이상한 선물 만들기"}
+{"k": "Make Mystery Gift", "v": "이상한선물 만들기"}
 {"k": "Duplicate", "v": "복제"}
 {"k": "Delete", "v": "삭제한다"}
 {"k": "Set HP", "v": "HP 설정"}
@@ -2980,12 +2980,12 @@
 {"k": "Setear pasos en 1", "v": "걸음 수를 1로 설정"}
 {"k": "{1} no puede ser un huevo. ¿Hacerlo huevo de todas formas?", "v": "{1}\\j[은,는] 알이 될 수 없습니다. 그래도 알로 만들까요?"}
 {"k": "No es un Pokémon Oscuro.", "v": "그림자 포켓몬이 아니다."}
-{"k": "Medidor del corazón en {1}.", "v": "하트 게이지를 {1}\\j[으로,로]."}
+{"k": "Medidor del corazón en {1}.", "v": "하트게이지를 {1}\\j[으로,로]."}
 {"k": "Hacer Oscuro", "v": "다크 포켓몬으로"}
-{"k": "Bajar medidor del corazón", "v": "하트 게이지 낮추기"}
+{"k": "Bajar medidor del corazón", "v": "하트게이지 낮추기"}
 {"k": "{1} ahora es un Pokémon Oscuro.", "v": "{1}\\j[은,는] 다크 포켓몬이 됐다."}
 {"k": "{1} ya es un Pokémon Oscuro.", "v": "{1}\\j[은,는] 이미 그림자 포켓몬이다."}
-{"k": "El medidor del corazón de {1} bajo de {2} a {3} (ahora etapa {4}).", "v": "{1}의 하트 게이지가 {2}에서 {3}\\j[으로,로] 내려갔다 (현재 단계 {4})."}
+{"k": "El medidor del corazón de {1} bajo de {2} a {3} (ahora etapa {4}).", "v": "{1}의 하트게이지가 {2}에서 {3}\\j[으로,로] 내려갔다 (현재 단계 {4})."}
 {"k": "{1} no es un Pokémon Oscuro.", "v": "{1}\\j[은,는] 그림자 포켓몬이 아니다."}
 {"k": "¿Estás seguro de que quieres copiar este Pokémon?", "v": "정말 이 포켓몬을 복사할까?"}
 {"k": "El Pokémon fue duplicado.", "v": "포켓몬을 복제했다."}
@@ -3020,7 +3020,7 @@
 {"k": "N° Dex", "v": "도감 No."}
 {"k": "Tipo", "v": "타입"}
 {"k": "N° ID", "v": "ID 번호"}
-{"k": "Medidor del Corazón", "v": "하트 게이지"}
+{"k": "Medidor del Corazón", "v": "하트게이지"}
 {"k": "¡La puerta de su corazón está abierta! ¡Hacer desbloqueo definitivo!", "v": "마음의 문이 열렸다! 최종 해방을 실행하라!"}
 {"k": "La puerta de su corazón está casi abierta del todo.", "v": "마음의 문이 거의 다 열려 있다."}
 {"k": "La puerta de su corazón está bastante abierta.", "v": "마음의 문이 꽤 열려 있다."}
@@ -3312,9 +3312,9 @@
 {"k": "Setear ID nuevo (máx. 65535).", "v": "새 ID 설정 (최대 65535)."}
 {"k": "Pasos del huevo: {1}.", "v": "알 걸음 수: {1}."}
 {"k": "{1} no puede ser un huevo. ¿Hacer de todos modos?", "v": "{1}\\j[은,는] 알이 될 수 없습니다. 그래도 진행할까요?"}
-{"k": "Medidor del Corazón en {1}.", "v": "하트 게이지를 {1}\\j[으로,로]."}
-{"k": "Bajar Medidor Corazón", "v": "하트 게이지 낮추기"}
-{"k": "El medidor del corazón de {1} bajó de {2} hasta {3} (ahora en etapa {4}).", "v": "{1}의 하트 게이지가 {2}에서 {3}\\j[으로,로] 내려갔다 (현재 단계 {4})."}
+{"k": "Medidor del Corazón en {1}.", "v": "하트게이지를 {1}\\j[으로,로]."}
+{"k": "Bajar Medidor Corazón", "v": "하트게이지 낮추기"}
+{"k": "El medidor del corazón de {1} bajó de {2} hasta {3} (ahora en etapa {4}).", "v": "{1}의 하트게이지가 {2}에서 {3}\\j[으로,로] 내려갔다 (현재 단계 {4})."}
 {"k": "El Pokémon duplicado fue movido a tu equipo.", "v": "복제한 포켓몬을 지닌 포켓몬으로 옮겼다."}
 {"k": "Todas las cajas están llenas.", "v": "모든 박스가 가득 찼다."}
 {"k": "El Pokémon duplicado fue movido a la caja \"{1}.\"", "v": "복제한 포켓몬을 박스 “{1}”\\j[으로,로] 옮겼다."}
@@ -4288,8 +4288,8 @@
 {"k": "¡El Entrenador ha bloqueado la Poké Ball!\n¡No seas un ladrón!", "v": "트레이너가 몬스터볼을 막았다!\n남의 것에 손대면 도둑!"}
 {"k": "¡Oh no! ¡El Pokémon salió con facilidad!", "v": "안 돼! 포켓몬이 볼에서 나와버렸다!"}
 {"k": "Aww... ¡Parecía que ya estaba capturado!", "v": "아아! 잡은 줄 알았는데!"}
-{"k": "¡Aargh! ¡Casi lo tenía!", "v": "아쉽다! 조금만 더하면 잡을 수 있었는데!"}
-{"k": "¡Viejo! ¡Estuvo demasiado cerca!", "v": "아깝다! 조금만 더하면 됐는데!"}
+{"k": "¡Aargh! ¡Casi lo tenía!", "v": "아쉽다! 조금만 더 하면 잡을 수 있었는데!"}
+{"k": "¡Viejo! ¡Estuvo demasiado cerca!", "v": "아깝다! 조금만 더 하면 됐는데!"}
 {"k": "¡Si! ¡{1} ha sido capturado!", "v": "신난다! {1}\\j[을,를] 잡았다!"}
 {"k": "Se agregaron los datos de {1} en la Pokédex.", "v": "{1}의 데이터가 포켓몬도감에 등록됩니다."}
 {"k": "El equipo 1 no tiene Pokémon.", "v": "파티 1에 포켓몬이 없다."}
@@ -5674,7 +5674,7 @@
 {"k": "Dime, aspirante, ¿tienes el valor suficiente para enfrentarte a un monstruo del pantano?", "v": "말해봐라, 후보생. 늪지의 괴물과 맞설 배짱은 있느냐?"}
 {"k": "¡No... no imaginaba esta fuerza!", "v": "이럴 수가... 이런 힘일 줄이야!"}
 {"k": "¡Gracias a mis Pokémon he aprendido a no rendirme! ¡Esto no ha terminado!", "v": "포켓몬들 덕분에 포기하지 않는 법을 배웠어! 아직 안 끝났다!"}
-{"k": "¡No perderé! ¡No perderé delante del gran Derringer!", "v": "질 수 없어! 위대한 Derringer 님 앞에서 질 수는 없다고!"}
+{"k": "¡No perderé! ¡No perderé delante del gran Derringer!", "v": "질 수 없어! 위대한 Derringer님 앞에서 질 수는 없다고!"}
 {"k": "Espera... ¿qué?", "v": "잠깐... 뭐라고?"}
 {"k": "Hora de liberar todo nuestro poder, ¿no? ¡Sincronización completada al 100%!", "v": "이제 온 힘을해방할 때인가? 동기화 100% 완료!"}
 {"k": "¡Rectificad ahora que todavía estáis a tiempo! ¡Soy el único que puede mantener el orden en Céfira!", "v": "늦기 전에 생각을 고쳐먹어라! 세피라의 질서를 지킬 수 있는 건 나뿐이다!"}
@@ -5739,7 +5739,7 @@
 {"k": "Mensaje 2", "v": "Mensaje 2"}
 {"k": "Mensaje 3", "v": "Mensaje 3"}
 {"k": "Mensaje 4", "v": "Mensaje 4"}
-{"k": "Ve a la Ruta 26 a través de la Mina Turmalina", "v": "토르말린 광산을 지나 26번 도로로 가라"}
+{"k": "Ve a la Ruta 26 a través de la Mina Turmalina", "v": "토르말린 광산을 지나 26번도로로 가라"}
 {"k": "No puedes volar aquí.", "v": "여기서는 날 수 없다."}
 {"k": "¡{1} voló en el Pokérider!", "v": "{1}\\j[은,는] 포켓라이더로 날아갔다!"}
 {"k": "No puedes usarlo aquí.", "v": "여기서는 쓸 수 없다."}
@@ -6118,7 +6118,7 @@
 {"k": "¡Jijiji! ¿Notas cómo se entumecen tus articulaciones? ¡Pues ahora sentirás frío de verdad!", "v": "히히히! 관절이 굳어가는 게 느껴지느냐? 이제 진짜 추위를 맛보게 해 주마!"}
 {"k": "¡Aún puedo liberar más fuerza! ¡Concentraré la energía que me queda en un último ataque devastador!", "v": "아직 힘을 더 낼 수 있어! 남은 에너지를 모아 마지막으로 파멸적인 공격을 퍼붓겠다!"}
 {"k": "¡Jujujuju! ¿Te dan miedo los fantasmas? ¡Pues estás a punto de ver uno aterrador!", "v": "후후후후! 유령이 무섭나? 곧 진짜 무시무시한 유령을 보게 될 거다!"}
-{"k": "¿Crees que esos burdos ataques mellarán las escamas de mis dragones? ¡Te aplastaremos!", "v": "그런 어설픈 공격으로 내 드래곤의 비늘에 흠집이라도 낼 줄 아느냐? 짓뭉개주마!"}
+{"k": "¿Crees que esos burdos ataques mellarán las escamas de mis dragones? ¡Te aplastaremos!", "v": "그런 어설픈 공격으로 내 드래곤의 비늘에 흠집이라도 낼 줄 아느냐? 짓뭉개 주마!"}
 {"k": "Y nos levantaremos las veces que hagan falta. ¡Vamos, Pokémon mío, hasta el final! ¡Un último esfuerzo!", "v": "우리는 몇 번이든 다시 일어설 것이다. 가자, 나의 포켓몬! 끝까지! 마지막 힘을 내어라!"}
 {"k": "Mmm, parece que aún te faltan lugares por explorar.\nRecuerda que los Pokémon se encuentran en diversos lugares.", "v": "흠, 아직 탐험하지 않은 곳이 남은 모양이군.\n포켓몬은 다양한 장소에서 발견된다는 점을 잊지 말게."}
 {"k": "Mmm, veo que has capturado una cantidad decente.", "v": "흠, 꽤 많이 잡았군."}
@@ -6133,13 +6133,13 @@
 {"k": "¡CAMPEÓN DE LA LIGA #{JSS_SALONFAMA_REGION}!\n¡FELICIDADES!", "v": "#{JSS_SALONFAMA_REGION} 리그 챔피언!\n축하합니다!"}
 {"k": "<ac>¡Has entrado al Salón de la Fama!</ac>", "v": "<ac>명예의 전당에 올랐다!</ac>"}
 {"k": "<ac>No. #{$Trainer.party[i].species} #{$Trainer.party[i].name}/#{PBSpecies.getName($Trainer.party[i].species)} #{genero}</ac><ac>Nv. #{$Trainer.party[i].level} /#{sprintf(", "v": "<ac>No. #{$Trainer.party[i].species}  #{$Trainer.party[i].name}/#{PBSpecies.getName($Trainer.party[i].species)} #{genero}</ac><ac>Nv. #{$Trainer.party[i].level}  /#{sprintf("}
-{"k": "#{$Trainer.name}\nID : #{$Trainer.publicID}\nTiempo Jugado : #{time}", "v": "#{$Trainer.name}\nID : #{$Trainer.publicID}\nTiempo Jugado : #{time}"}
+{"k": "#{$Trainer.name}\nID : #{$Trainer.publicID}\nTiempo Jugado : #{time}", "v": "#{$Trainer.name}\nID: #{$Trainer.publicID}\n플레이 시간: #{time}"}
 {"k": "<ac>¡Campeón de la Liga! ¡Felicidades!</ac>", "v": "<ac>리그 챔피언! 축하합니다!</ac> "}
 {"k": "<ac>#{$Trainer.name} ID: #{$Trainer.publicID} Tiempo : #{time}</ac>", "v": "<ac>#{$Trainer.name}       ID: #{$Trainer.publicID}       Tiempo : #{time}</ac>"}
 {"k": "<ac>¡Bienvenido al Salón de la Fama!</ac> <ac>#{$Trainer.party[i].name}</ac><ac>#{PBSpecies.getName($Trainer.party[i].species)} #{genero} Nv. #{$Trainer.party[i].level}</ac> <ac>OT/#{$Trainer.party[i].ot}</ac> <ac>¡Encontrado en</ac><ac> #{mapname}! </ac> <ac></ac>", "v": "<ac>명예의 전당에 오신 것을 환영합니다!</ac> <ac>#{$Trainer.party[i].name}</ac><ac>#{PBSpecies.getName($Trainer.party[i].species)} #{genero} Lv. #{$Trainer.party[i].level}</ac> <ac>OT/#{$Trainer.party[i].ot}</ac> <ac>만난 곳:</ac><ac> #{mapname}! </ac> <ac></ac> "}
 {"k": "<ac>¡Salón de la Fama!</ac>", "v": "<ac>명예의 전당!</ac> "}
 {"k": "<ac>#{$Trainer.party[i].name}</ac><ac>#{PBSpecies.getName($Trainer.party[i].species)} #{genero}</ac> <ac> Nv. #{$Trainer.party[i].level}</ac> <ac>OT/#{$Trainer.party[i].ot}</ac> <ac>¡Encontrado en</ac><ac> #{mapname}! </ac> <ac></ac>", "v": "<ac>#{$Trainer.party[i].name}</ac><ac>#{PBSpecies.getName($Trainer.party[i].species)} #{genero}</ac> <ac> Lv. #{$Trainer.party[i].level}</ac> <ac>OT/#{$Trainer.party[i].ot}</ac> <ac>만난 곳:</ac><ac> #{mapname}! </ac> <ac></ac> "}
-{"k": "<ac>¡Salón de la Fama! </ac> <ac></ac>", "v": "<ac>명예의 전당! </ac>  <ac></ac> "}
+{"k": "<ac>¡Salón de la Fama! </ac> <ac></ac>", "v": "<ac>명예의 전당!</ac>  <ac></ac> "}
 {"k": "<ac>¡Campeón de la Liga #{JSS_SALONFAMA_REGION}! ¡Felicidades!</ac>", "v": "<ac>#{JSS_SALONFAMA_REGION} 리그 챔피언! 축하합니다!</ac>"}
 {"k": "#{$Trainer.party[i].name} Nv. #{$Trainer.party[i].level}", "v": "#{$Trainer.party「i」.name}           Nv. #{$Trainer.party「i」.level}"}
 {"k": "increased", "v": "increased"}
@@ -6631,7 +6631,7 @@
 {"k": "Derrota al Arma Definitiva.", "v": "최종병기를 쓰러뜨려라."}
 {"k": "Una isla peculiar", "v": "독특한 섬"}
 {"k": "Resuelve el misterio de la Isla Certijo.", "v": "세르티호섬의 수수께끼를 풀어라."}
-{"k": "Las criptas de la ciudad", "v": "도시의 지하 묘지"}
+{"k": "Las criptas de la ciudad", "v": "도시의 지하묘지"}
 {"k": "Llega a lo profundo de las Criptas de Luminalia.", "v": "미르 지하묘지 깊은 곳까지 도달하라."}
 {"k": "El tesoro maldito", "v": "저주받은 보물"}
 {"k": "Encuentra el tesoro de la Isla Montesanto.", "v": "몬테산토섬의 보물을 찾아라."}
@@ -6677,7 +6677,7 @@
 {"k": "Captura al menos a 250 Pokémon. Revisa el pedestal de Pueblo Acrílico.", "v": "포켓몬을 250마리 이상 잡아라. 아크릴리코마을의 받침대를 확인하라."}
 {"k": "Captura al menos a 500 Pokémon. Revisa el pedestal de Pueblo Acrílico.", "v": "포켓몬을 500마리 이상 잡아라. 아크릴리코마을의 받침대를 확인하라."}
 {"k": "Captura al menos a 750 Pokémon. Revisa el pedestal de Pueblo Acrílico.", "v": "포켓몬을 750마리 이상 잡아라. 아크릴리코마을의 받침대를 확인하라."}
-{"k": "Consigue los demás logros. Habla con EricLostie en la Ruta 26.", "v": "나머지 업적을 달성하라. 26번 도로의 EricLostie와 이야기하라."}
+{"k": "Consigue los demás logros. Habla con EricLostie en la Ruta 26.", "v": "나머지 업적을 달성하라. 26번도로의 EricLostie와 이야기하라."}
 {"k": "Dificultad", "v": "난이도"}
 {"k": "Heroico", "v": "영웅적"}
 {"k": "Fácil", "v": "쉬움"}

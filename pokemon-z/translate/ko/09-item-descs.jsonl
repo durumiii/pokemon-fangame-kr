@@ -226,9 +226,9 @@
 {"i": 225, "v": "포켓몬의 화상을 치료하는 스프레이약.", "es": "Medicina en spray que cura las quemaduras a un Pokémon."}
 {"i": 226, "v": "포켓몬의 마비를 푸는 스프레이약.", "es": "Medicina en spray que cura a un Pokémon paralizado."}
 {"i": 227, "v": "포켓몬의 얼음 상태를 푸는 스프레이약.", "es": "Medicina en spray que descongela a un Pokémon."}
-{"i": 228, "v": "포켓몬의 모든 상태이상을 치료하는 스프레이약.", "es": "Medicina en spray que cura todos los problemas de estado de un Pokémon."}
-{"i": 229, "v": "사라시티의 명물 과자. 포켓몬의 모든 상태이상을 치료한다.", "es": "Dulce típico de Ciudad Yantra que cura todos los problemas de estado de un Pokémon."}
-{"i": 230, "v": "미르시티의 명물. 포켓몬의 상태이상을 치료한다.", "es": "Especialidad de Ciudad Luminalia. Cura los problemas de estado de un Pokémon."}
+{"i": 228, "v": "포켓몬의 모든 상태 이상을 치료하는 스프레이약.", "es": "Medicina en spray que cura todos los problemas de estado de un Pokémon."}
+{"i": 229, "v": "사라시티의 명물 과자. 포켓몬의 모든 상태 이상을 치료한다.", "es": "Dulce típico de Ciudad Yantra que cura todos los problemas de estado de un Pokémon."}
+{"i": 230, "v": "미르시티의 명물. 포켓몬의 상태 이상을 치료한다.", "es": "Especialidad de Ciudad Luminalia. Cura los problemas de estado de un Pokémon."}
 {"i": 231, "v": "구름시티의 명물 아이스. 포켓몬 1마리의 상태 이상을 모두 회복한다.", "es": "Especialidad de Ciudad Porcelana. Cura los problemas de estado de un Pokémon."}
 {"i": 232, "v": "기절한 포켓몬을 되살려 HP를 절반 회복하는 약.", "es": "Medicina que reanima a un Pokémon debilitado y restaura la mitad de sus PS."}
 {"i": 233, "v": "기절한 포켓몬을 되살려 HP를 모두 회복하는 약.", "es": "Medicina que reanima a un Pokémon debilitado y restaura todos sus PS."}
@@ -241,7 +241,7 @@
 {"i": 240, "v": "영양 만점의 우유. 포켓몬 1마리의 HP를 100만큼 회복한다.", "es": "Leche de alto valor nutritivo que restaura 100 PS de un Pokémon."}
 {"i": 241, "v": "매우 쓴 가루약. 포켓몬 1마리의 HP를 50만큼 회복한다.", "es": "Polvo medicinal muy amargo que restaura 50 PS de un Pokémon."}
 {"i": 242, "v": "매우 쓴 뿌리. 포켓몬 1마리의 HP를 200만큼 회복한다.", "es": "Raíz muy amarga que restaura 200 PS de un Pokémon."}
-{"i": 243, "v": "몹시 쓴 가루약. 포켓몬의 모든 상태이상을 치료한다.", "es": "Polvos muy amargos que curan todos los problemas de estado de un Pokémon."}
+{"i": 243, "v": "몹시 쓴 가루약. 포켓몬의 모든 상태 이상을 치료한다.", "es": "Polvos muy amargos que curan todos los problemas de estado de un Pokémon."}
 {"i": 244, "v": "매우 쓴 약초. 기절한 포켓몬 1마리의 HP를 모두 회복한다.", "es": "Hierba muy amarga que reanima a un Pokémon debilitado y restaura todos sus PS."}
 {"i": 245, "v": "고른 기술의 PP를 최대 10 회복한다.", "es": "Restaura un máximo de 10 PP del ataque que elijas de un Pokémon."}
 {"i": 246, "v": "고른 기술의 PP를 모두 회복한다.", "es": "Restaura completamente los PP del movimiento que elijas de un Pokémon."}
@@ -276,7 +276,7 @@
 {"i": 275, "v": "잡은 야생 포켓몬이 매우 친밀해지기 쉬운 편안한 볼.", "es": "Acogedora Poké Ball que hace más amistosos a los Pokémon salvajes capturados."}
 {"i": 276, "v": "어떤 일을 기념해 만든 아주 특별한 몬스터볼.", "es": "Es una Poké Ball muy particular que se creó para conmemorar algún acontecimiento."}
 {"i": 277, "v": "조금 특별하다. 어두운 곳에서 야생 포켓몬을 잡기 쉬워진다.", "es": "Es algo distinta. Hace que sea más fácil capturar a Pokémon salvajes en la oscuridad."}
-{"i": 278, "v": "치유의 몬스터볼. 잡은 포켓몬의 HP를 회복하고 상태이상을 치료한다.", "es": "Poké Ball curativa que restaura los PS de un Pokémon capturado y cura sus problemas de estado."}
+{"i": 278, "v": "치유의 몬스터볼. 잡은 포켓몬의 HP를 회복하고 상태 이상을 치료한다.", "es": "Poké Ball curativa que restaura los PS de un Pokémon capturado y cura sus problemas de estado."}
 {"i": 279, "v": "배틀이 시작되자마자 사용하면 잡기 쉬워지는 조금 특이한 볼.", "es": "Una Poké Ball algo distinta que potencia el índice de captura si se usa al inicio de un encuentro con Pokémon salvajes."}
 {"i": 280, "v": "어떤 일을 기념해 만든 아주 특별한 몬스터볼.", "es": "Es una Poké Ball muy particular que se creó para conmemorar algún acontecimiento."}
 {"i": 281, "v": "조금 특별한 몬스터볼. 스피드가 아주 빠른 포켓몬을 잡는 데 좋다.", "es": "Poké Ball algo distinta, especialmente indicada para capturar Pokémon con Velocidad muy alta."}
@@ -395,7 +395,7 @@
 {"i": 394, "v": "포핀 재료. 포켓몬이 지니거나 써서 기술의 PP를 10 회복할 수 있다.", "es": "Ingrediente para Pokochos que los Pokémon pueden llevar o usar para restaurar 10 PP de un movimiento."}
 {"i": 395, "v": "포핀 재료. 포켓몬이 지니거나 써서 HP를 10 회복할 수 있다.", "es": "Ingrediente para Pokochos que los Pokémon pueden usar o llevar para restaurar 10 PS."}
 {"i": 396, "v": "포핀 재료. 포켓몬이 지니거나 써서 혼란을 풀 수 있다.", "es": "Ingrediente para Pokochos que los Pokémon pueden usar o llevar para salir del estado de confusión."}
-{"i": 397, "v": "포핀 재료. 포켓몬이 지니거나 써서 상태이상을 치료할 수 있다.", "es": "Ingrediente para Pokochos que los Pokémon pueden llevar o usar para recuperarse de problemas de estado."}
+{"i": 397, "v": "포핀 재료. 포켓몬이 지니거나 써서 상태 이상을 치료할 수 있다.", "es": "Ingrediente para Pokochos que los Pokémon pueden llevar o usar para recuperarse de problemas de estado."}
 {"i": 398, "v": "포핀 재료. 포켓몬이 지니거나 써서 HP를 조금 회복할 수 있다.", "es": "Ingrediente para Pokochos que los Pokémon pueden usar o llevar para restaurar algunos PS."}
 {"i": 399, "v": "포핀 재료. 위기일 때 HP를 회복하지만 혼란에 빠질 수 있다.", "es": "Ingrediente para Pokochos. Restaura los PS del Pokémon que la usa en un apuro, pero puede causar confusión."}
 {"i": 400, "v": "포핀 재료. 위기일 때 HP를 회복하지만 혼란에 빠질 수 있다.", "es": "Ingrediente para Pokochos. Restaura los PS del Pokémon que la usa en un apuro, pero puede causar confusión."}
@@ -561,7 +561,7 @@
 {"i": 560, "v": "위력이 상당한 다이너마이트.", "es": "Cartuchos de dinamita bastante potentes."}
 {"i": 561, "v": "26번도로의 사막을 지날 수 있게 된다.", "es": "Permite avanzar por el desierto de la Ruta 26."}
 {"i": 562, "v": "매우 아름답고 반짝거리지만 맛은 없어 보인다.", "es": "Es muy bonita y reluciente, aunque no parece tener buen sabor."}
-{"i": 563, "v": "포켓몬의 노력치를 고르게 최대까지 올려준다.", "es": "Maximiza los Puntos de Esfuerzo del Pokémon de forma equitativa."}
+{"i": 563, "v": "포켓몬의 노력치를 고르게 최대까지 올려 준다.", "es": "Maximiza los Puntos de Esfuerzo del Pokémon de forma equitativa."}
 {"i": 564, "v": "미스트랄시티의 영화 촬영장에 들어갈 수 있다.", "es": "Te permite entrar en los estudios de cine de Ciudad Mistral."}
 {"i": 565, "v": "마시면 다음에 만나는 야생 포켓몬이 색이 다른 포켓몬이 된다.", "es": "Cuando la bebas, el siguiente Pokémon salvaje que te encuentres será shiny."}
 {"i": 566, "v": "고장 난 광차를 만났을 때 쓸모가 있다.", "es": "Si alguna vez te encuentras con una vagoneta estropeada, te será útil."}
@@ -752,7 +752,7 @@
 {"i": 751, "v": "최상급 목재.", "es": "Madera de primera calidad."}
 {"i": 752, "v": "동굴에서 나온다. 쉽게 모양을 잡을 수 있는 큼직한 돌.", "es": "Se encuentra en cuevas. Un guijarro grande fácilmente moldeable."}
 {"i": 753, "v": "쉽게 모양을 잡을 수 있는 큼직한 쇳덩이.", "es": "Un trozo de hierro grande fácilmente moldeable."}
-{"i": 754, "v": "지하 묘지에서 나온다. 화학 약품을 만드는 데 쓴다.", "es": "Se encuentra en catacumbas y criptas. Se usa para crear compuestos químicos."}
+{"i": 754, "v": "지하묘지에서 나온다. 화학 약품을 만드는 데 쓴다.", "es": "Se encuentra en catacumbas y criptas. Se usa para crear compuestos químicos."}
 {"i": 755, "v": "머나먼 여러 지방에서 건너온 것들.", "es": "Procedentes de distintas regiones lejanas."}
 {"i": 756, "v": "작은 폭발을 일으켜 바위를 부순다.", "es": "Provoca una pequeña explosión para romper rocas."}
 {"i": 757, "v": "작은 나무를 벨 수 있지만 쓰면 부서진다.", "es": "Sirve para cortar pequeños árboles, pero se rompe al usarla."}
@@ -887,7 +887,7 @@
 {"i": 886, "v": "상기노마을의 점술사 미미가 가진 세 장의 카드 중 하나.", "es": "Una de las tres cartas de Mimi, la Tarotista de Pueblo Sanguino."}
 {"i": 887, "v": "상기노마을의 점술사 미미가 가진 세 장의 카드 중 하나.", "es": "Una de las tres cartas de Mimi, la Tarotista de Pueblo Sanguino."}
 {"i": 888, "v": "자기 기술의 반동 데미지를 받지 않지만 공격 기술만 쓸 수 있다.", "es": "No recibe daño de retroceso de sus propios ataques, pero solo puede usar movs. ofensivos."}
-{"i": 889, "v": "상태이상에 걸린 상대에게 주는 데미지가 30% 올라간다.", "es": "El daño contra enemigos que sufren estados alterados aumenta un 30%."}
+{"i": 889, "v": "상태 이상에 걸린 상대에게 주는 데미지가 30% 올라간다.", "es": "El daño contra enemigos que sufren estados alterados aumenta un 30%."}
 {"i": 890, "v": "흡수 기술이 언제나 최대 체력의 25%를 고정으로 회복시킨다.", "es": "Los ataques de drenaje siempre curan al usuario un 25% de su salud total, de forma fija."}
 {"i": 891, "v": "뮤가 떨어뜨린 유전자 물질. 새로운 생명이 태어날지도 모른다...", "es": "Material genético que dejó caer Mew. Podría dar lugar a una nueva vida..."}
 {"i": 892, "v": "불과 물의 힘이 하나로 합쳐진 유물.", "es": "El poder del fuego y el agua combinados en un único artefacto."}
