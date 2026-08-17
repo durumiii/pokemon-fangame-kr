@@ -75,6 +75,10 @@
  .st{font-size:12.5px} .st.ok{color:var(--ok)} .st.warn{color:var(--err)}
  .empty{color:var(--sub);text-align:center;padding:60px 0 70px;font-size:14px}
  .notecard{border-left:3px solid var(--warn)}
+ .prop{border:1px solid rgba(76,195,138,.5);background:rgba(76,195,138,.07);border-radius:8px;
+   padding:8px 11px;margin-top:8px}
+ .prop h4{margin:0 0 5px;font-size:11px;letter-spacing:.06em;color:var(--ok);font-weight:600}
+ .prop .why{font-size:12px;color:var(--warn);margin-top:5px}
  .notecard.done{border-left-color:var(--ok);opacity:.55}
  #toast{position:fixed;right:22px;bottom:22px;z-index:40;background:var(--panel);border:1px solid var(--line);
    border-radius:10px;padding:11px 18px;font-size:13.5px;box-shadow:0 6px 24px rgba(0,0,0,.45);
@@ -114,6 +118,9 @@
    <svg width=15 height=15 viewBox="0 0 16 16" fill=none stroke=currentColor stroke-width=1.6 stroke-linecap=round stroke-linejoin=round style="color:var(--gold)"><path d="M2.5 3.5h4a2 2 0 0 1 1.5.7 2 2 0 0 1 1.5-.7h4v9h-4a2 2 0 0 0-1.5.7 2 2 0 0 0-1.5-.7h-4zM8 4.2v9"/></svg>
    <span class=mi-t>참고<span class=mi-d>검색창의 말을 용어집·본가 이름·문장 코퍼스에서 찾아요</span></span></button>
   <hr>
+  <button onclick="closePanels();props()">
+   <svg width=15 height=15 viewBox="0 0 16 16" fill=none stroke=currentColor stroke-width=1.6 stroke-linecap=round stroke-linejoin=round style="color:var(--ok)"><path d="M2.5 8.5 6 12l7.5-8"/></svg>
+   <span class=mi-t>제안<span class=mi-d>에이전트가 올린 문안을 한 줄씩 보고 그대로 저장하거나 건너뛰어요</span></span></button>
   <button onclick="closePanels();notes()">
    <svg width=15 height=15 viewBox="0 0 16 16" fill=none stroke=currentColor stroke-width=1.6 stroke-linecap=round stroke-linejoin=round style="color:var(--warn)"><path d="m11 2.5 2.5 2.5L6 12.5l-3.2.7.7-3.2z"/></svg>
    <span class=mi-t>메모<span class=mi-d>손볼 자리를 쌓아 두고 다시 찾아가요 · 문구에 매이지 않는 전반 지적도 여기</span></span></button>
@@ -344,6 +351,12 @@ function more(){
    ${!h.line?'':`
    <textarea id=v${i} data-orig="${esc(h.v)}"
      onkeydown="if(event.ctrlKey&&event.key==='Enter')save(${i},'${h.file}',${h.line})">${esc(h.v)}</textarea>
+   ${h.prop?`<div class=prop><h4>에이전트 제안</h4><div class=nv>${esc(h.prop)}</div>
+     ${h.why?`<div class=why>${esc(h.why)}</div>`:''}
+     <div class=rowbar>
+      <button class=primary onclick="applyProp(${i},'${h.file}',${h.line})">제안대로 저장</button>
+      <button class=ghost onclick="dropProp('${h.file}',${h.line},${i})">건너뛰기</button>
+     </div></div>`:''}
    <div class=rowbar>
     <button class=primary onclick=save(${i},'${h.file}',${h.line})>저장</button>
     <button class=ghost onclick=showOrig(${i})>원본</button>
@@ -425,6 +438,23 @@ async function build(){
  b.disabled=false;b.textContent='빌드 → 게임 반영';
  if(js.ok){DIRTY=0;dirty(0);toast('빌드 완료 — 게임을 재시작하면 반영됩니다',3200)}
  else toast('빌드 실패: '+js.msg,5000);
+}
+function applyProp(i,file,line){
+ const box=$('card'+i).querySelector('.prop');
+ $('v'+i).value=box.querySelector('.nv').textContent;
+ save(i,file,line); box.remove();
+}
+async function dropProp(file,line,i){
+ await fetch('/propdel',{method:'POST',headers:{'Content-Type':'application/json'},
+   body:JSON.stringify({file,line})});
+ const box=$('card'+i)&&$('card'+i).querySelector('.prop'); if(box)box.remove();
+ toast('제안을 큐에서 뺐어요');
+}
+async function props(){
+ const js=await(await fetch('/props')).json();
+ HITS=js.props; ALL=js.props; SHOWN=0; FILE='';
+ $('meta').textContent=`에이전트 제안 — 남은 ${js.props.length}건. 카드에서 [제안대로 저장]을 누르면 정본에 바로 들어가고 큐에서 빠져요.`;
+ $('out').innerHTML=''; more();
 }
 async function notes(){
  const r=await fetch('/notes');const js=await r.json();

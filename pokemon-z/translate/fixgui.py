@@ -26,6 +26,7 @@ HERE = Path(__file__).parent
 LEDGER = HERE.parent / "docs" / "ledger"   # 판정 대장 (glossary·voices)
 KO = HERE / "ko"
 NOTES = HERE / "fixnotes.jsonl"
+PROPS = HERE / "proposals.jsonl"   # 에이전트가 올린 제안 문안 — 승인은 이 화면에서
 JOIN = HERE / "data" / "map-speaker-join.jsonl.gz"
 ATTR = HERE / "data" / "speaker-attr.jsonl.gz"
 GROUPS = HERE / "sprite-groups.json"
@@ -84,12 +85,48 @@ def chips(hits):
         k = norm(r["es"])
         if k in want:
             others.setdefault(k, set()).add(r["map"])
+    props = {(r["file"], int(r["line"])): r for r in load_props()}
     for h in hits:
         k = norm(h["es"])
+        pr = props.get((h.get("file"), h.get("line")))
+        if pr:
+            h["prop"], h["why"] = pr["new"], pr.get("why", "")
         h["mapname"] = map_label(h["map"])
         h["spots"] = c["spots"].get((h["map"], k), [])
         h["omaps"] = len(others.get(k, ())) - 1
     return hits
+
+
+def load_props():
+    """제안 층 — {file, line, new, why, by} 한 줄이 한 자리. 없으면 빈 목록."""
+    if not PROPS.exists():
+        return []
+    return [json.loads(l) for l in PROPS.read_text(encoding="utf-8").splitlines() if l.strip()]
+
+
+def save_props(rows):
+    PROPS.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows),
+                     encoding="utf-8")
+
+
+def drop_prop(file, line):
+    """반영했거나 건너뛴 자리는 큐에서 뺀다 — 제안 화면이 남은 일감만 보이게."""
+    rows = load_props()
+    keep = [r for r in rows if not (r.get("file") == file and int(r.get("line", 0)) == line)]
+    if len(keep) != len(rows):
+        save_props(keep)
+    return len(rows) - len(keep)
+
+
+def prop_rows():
+    """제안 화면용 — 제안에 현행 값·원문을 붙여 카드로 그릴 수 있게 만든다."""
+    props = {(r["file"], int(r["line"])): r for r in load_props()}
+    out = []
+    for r in iter_rows():
+        pr = props.get((r["file"], r["line"]))
+        if pr:
+            out.append({**r, "new": pr["new"], "why": pr.get("why", ""), "by": pr.get("by", "")})
+    return out
 
 
 def event_page(mp, event, page):
@@ -565,6 +602,8 @@ class H(BaseHTTPRequestHandler):
             qs = urllib.parse.parse_qs(u.query)
             self._json({"hits": chips(same_es(qs.get("es", [""])[0],
                                               int(qs.get("map", ["-1"])[0])))})
+        elif u.path == "/props":
+            self._json({"props": prop_rows()})
         elif u.path == "/notes":
             self._json({"notes": load_notes()})
         elif u.path == "/browse":
@@ -586,7 +625,12 @@ class H(BaseHTTPRequestHandler):
         if self.path == "/save":
             b = self._body()
             err = save_row(b["file"], int(b["line"]), b["v"])
+            if err is None:
+                drop_prop(b["file"], int(b["line"]))   # 반영된 제안은 큐에서 빠진다
             self._json({"ok": err is None, "err": err})
+        elif self.path == "/propdel":
+            b = self._body()
+            self._json({"ok": True, "dropped": drop_prop(b["file"], int(b["line"]))})
         elif self.path == "/note":
             b = self._body()
             notes = load_notes()

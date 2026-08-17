@@ -303,16 +303,32 @@ def esc_cell(s):
 
 STUDIO = ROOT.parent / "webapp" / "index.html"   # 배포판 스튜디오 — 꼴의 정본
 DELTA = """
- main{max-width:900px}
- .prop{border-left:3px solid var(--ok);background:rgba(76,195,138,.08);
-   border-radius:0 8px 8px 0;padding:6px 11px;margin-top:8px}
- .prop b{font-size:11.5px;color:var(--ok);margin-right:6px}
- h2{font-size:16px;margin:26px 0 10px}
- h3{font-size:12.5px;color:var(--sub);font-weight:600;margin:20px 0 8px}
+ main{max-width:1000px}
+ .bar{position:sticky;top:0;z-index:9;background:var(--panel);border-bottom:1px solid var(--line);
+   padding:9px 22px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+ .bar .grow{flex:1}
+ .sum{display:flex;gap:8px;flex-wrap:wrap;margin:14px 2px 18px}
+ .sum .chip{font-size:12.5px;padding:4px 10px}
+ .sum .chip.on{border-color:var(--ok);color:var(--ok)}
+ h2{font-size:16px;margin:26px 0 8px}
+ h3{font-size:12px;color:var(--sub);font-weight:600;letter-spacing:.06em;margin:22px 0 8px;
+   border-top:1px solid var(--line);padding-top:14px}
+ .card{margin-bottom:10px}
+ .card .top{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:6px}
+ .pair{display:grid;gap:8px;margin-top:8px}
+ @media(min-width:760px){.pair{grid-template-columns:1fr 1fr}}
+ .box{border:1px solid var(--line);border-radius:8px;padding:8px 11px;background:var(--panel)}
+ .box.now{opacity:.72}
+ .box.new{border-color:rgba(76,195,138,.55);background:rgba(76,195,138,.07)}
+ .box h4{margin:0 0 5px;font-size:11px;letter-spacing:.06em;color:var(--sub);font-weight:600}
+ .why{font-size:12px;color:var(--warn);margin-top:6px}
+ body.only .card:not(.has){display:none}
+ body.only h3{display:none}
  table{border-collapse:collapse;width:100%;font-size:12.5px}
  td,th{border:1px solid var(--line);padding:5px 8px;text-align:left;vertical-align:top}
  .wrap{overflow-x:auto}
 """
+
 
 
 def studio_css():
@@ -329,36 +345,45 @@ def studio_css():
 
 
 def to_html(groups, title="판정 재료", body_only=False):
-    """스튜디오와 같은 꼴로 낸다 — 카드·칩·원문색이 전부 그쪽 클래스다."""
+    """스튜디오와 같은 판으로 낸 한 화면 — 머리띠 · 요약 · 페이지별 카드 · 현행/제안 두 칸."""
     e = html.escape
+    n_prop = sum(1 for g in groups for r, _, _ in g["seq"] if r["id"] in g["prop"])
+    n_line = sum(len(g["seq"]) for g in groups)
     head = "" if body_only else "<!doctype html><meta charset=utf-8>"
     P = [f"{head}<title>{e(title)}</title><style>{studio_css()}</style>",
-         f'<header><div class=logo>Z <b>{e(title)}</b></div></header>', "<main>"]
+         f'<header><div class=logo>Z <b>{e(title)}</b></div></header>',
+         '<div class=bar>'
+         f'<span class=chip>대사 {n_line}</span>'
+         f'<span class=chip>제안 {n_prop}</span><span class=grow></span>'
+         '<button class=primary onclick="document.body.classList.toggle(\'only\');'
+         'this.textContent=document.body.classList.contains(\'only\')'
+         '?\'전문 보기\':\'제안만 보기\'">제안만 보기</button></div>',
+         "<main>"]
     for g in groups:
         P.append(f"<h2>맵{g['map']} {e(g['map_ko'])} · 이벤트{g['event']}"
                  + (f" — {e(g['title'])}" if g["title"] else "") + "</h2>")
         if g["note"]:
             P.append(f"<div class=meta>{e(g['note'])}</div>")
         chips = "".join(f"<span class=chip>{e(h)}</span>" for h in head_lines(g))
-        chips += f"<span class=chip>층 {e(' / '.join(g['layers']) or '없음')}</span>"
-        P.append(f"<div class=meta>{chips}</div>")
+        P.append(f"<div class=sum>{chips}"
+                 f"<span class=chip>층 {e(' / '.join(g['layers']) or '없음')}</span></div>")
         page = None
         for r, cand, fs in g["seq"]:
             if r["page"] != page:
                 page = r["page"]
                 P.append(f"<h3>겪는 순서 — 페이지 {page}</h3>")
             prop = g["prop"].get(r["id"])
-            cls = "card" + (" notecard" if fs else "") + (" saved" if prop or cand else "")
+            cls = "card" + (" has" if prop else "") + (" notecard" if fs else "")
             flag = "".join(f"<span class=chip>⚑ {e(f)}</span>" for f in fs)
-            P.append(f'<div class="{cls}">'
-                     f'<span class=chip>[{r["cmd"]}]</span>'
-                     f'<span class=chip>{e(naming(r))}</span>{flag}'
-                     f'<div class=es>{e(r.get("src", ""))}</div>'
-                     f'<div class=nv>{e(r["ko"])}</div>'
-                     + (f'<div class=prop><b>제안</b>{e(prop[1])}'
-                        + (f'<div class=meta>{e(prop[0])}</div>' if prop[0] else "")
-                        + "</div>" if prop else "")
-                     + "</div>")
+            body = (f'<div class=pair>'
+                    f'<div class="box now"><h4>현행</h4>{e(r["ko"])}</div>'
+                    f'<div class="box new"><h4>제안</h4>{e(prop[1])}'
+                    + (f'<div class=why>{e(prop[0])}</div>' if prop[0] else "")
+                    + "</div></div>") if prop else f'<div class=nv>{e(r["ko"])}</div>'
+            P.append(f'<div class="{cls}"><div class=top>'
+                     f'<span class=chip>명령 {r["cmd"]}</span>'
+                     f'<span class=chip>{e(naming(r))}</span>{flag}</div>'
+                     f'<div class=es>{e(r.get("src", ""))}</div>{body}</div>')
         if g["dups"]:
             P.append("<h3>같은 원문의 다른 자리</h3><div class=wrap><table>"
                      "<tr><th>원문<th>자리<th>화자<th>현행 번역")
@@ -373,6 +398,27 @@ def to_html(groups, title="판정 재료", body_only=False):
             P.append("</table></div>")
     P.append("</main>")
     return "\n".join(P)
+
+
+def serve(page_html, port):
+    """이 한 장을 그 자리에서 띄운다 — 파일을 건네지 않고 주소를 건네려는 것이다."""
+    import http.server
+    body = page_html.encode("utf-8")
+
+    class H(http.server.BaseHTTPRequestHandler):
+        def log_message(self, *a):
+            pass
+
+        def do_GET(self):
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+
+    srv = http.server.HTTPServer(("0.0.0.0", port), H)
+    print(f"판정 재료 → http://localhost:{port}  (Ctrl+C로 닫는다)", flush=True)
+    srv.serve_forever()
 
 
 def selftest():
@@ -416,6 +462,8 @@ def main():
     a.add_argument("--title", default="판정 재료", help="html 제목(아티팩트 이름)")
     a.add_argument("--body", action="store_true",
                    help="doctype·meta 없이 본문만 — 아티팩트로 올릴 때")
+    a.add_argument("--serve", type=int, nargs="?", const=8789,
+                   help="그 자리에서 띄운다(기본 8789) — 스튜디오는 8787이다")
     a.add_argument("--selftest", action="store_true")
     a = a.parse_args()
     if a.selftest:
@@ -429,6 +477,8 @@ def main():
         Path(a.out).write_text(text, encoding="utf-8")
     if a.html:
         Path(a.html).write_text(to_html(groups, a.title, a.body), encoding="utf-8")
+    if a.serve:
+        return serve(to_html(groups, a.title, False), a.serve)
     if not (a.out or a.html):
         print(text)
 
