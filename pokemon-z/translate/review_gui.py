@@ -125,6 +125,12 @@ function makeCard(r, sc){
 
 function render(){
   const body=document.getElementById('body');
+  body.innerHTML='<div id="asks"></div><div id="scenes"></div>';
+  renderAsks(); renderScenes();
+}
+
+function renderAsks(){
+  const body=document.getElementById('asks');
   body.innerHTML='';
   if(BRIEF){
     const b=document.createElement('section');
@@ -162,15 +168,12 @@ function render(){
       if(only) only.onclick=()=>{
         const on = !(ONLY && ONLY.id===id);
         ONLY = on ? {id, ids:new Set(q.rows), title:(q.title||q.id)} : null;
-        render(); count();
-        // 화면이 어떻게 바뀌었는지 보이는 자리로 데려간다 — 스크롤해야 알면 피드백이 아니다
-        const bar=document.getElementById('onlybar');
-        if(on && bar) bar.scrollIntoView({behavior:'smooth', block:'start'});
-        else window.scrollTo({top:0, behavior:'smooth'});
-        const q2=document.querySelector(`.ask[data-ask="${id}"] .st`);
-        if(q2){ q2.className='st ok';
-          q2.textContent = on ? '이 건의 재료만 남겼어요 — 한 번 더 누르면 전체'
-                              : '전체 재료로 돌아왔어요'; }
+        renderScenes(); count();          // 요청 카드는 그대로 둔다 — 화면이 튀지 않게
+        only.classList.toggle('on', on);
+        only.textContent = on ? '전체 재료로' : `이 건의 재료만 (${q.rows.length}자리)`;
+        say(on ? '이 건의 재료만 남겼어요 — 한 번 더 누르면 전체' : '전체 재료로 돌아왔어요');
+        if(on){ const bar=document.getElementById('onlybar');
+                if(bar) bar.scrollIntoView({behavior:'smooth', block:'start'}); }
       };
       const st=c.querySelector('.st');
       let fadeT=null;
@@ -187,12 +190,18 @@ function render(){
       if(NOTE[id]){ta.value=NOTE[id]; memo.classList.add('open');}
       paint();
       c.querySelectorAll('[data-b]').forEach(btn=>btn.onclick=()=>{
-        V[id]=btn.dataset.b; paint(); say('저장 중…','warn');
-        post({id, 판정:btn.dataset.b, 텍스트:(M[id]||''), 메모:(NOTE[id]||'')})
-          .then(()=>say(btn.dataset.b+'으로 저장했어요'))
+        const off = V[id]===btn.dataset.b;        // 같은 것을 다시 누르면 무른다
+        V[id]= off ? '' : btn.dataset.b; paint(); say('저장 중…','warn');
+        post({id, 판정:V[id], 텍스트:(M[id]||''), 메모:(NOTE[id]||'')})
+          .then(()=>say(off ? '판정을 물렀어요 — 다시 고를 수 있어요'
+                            : btn.dataset.b+'으로 저장했어요'))
           .catch(()=>say('저장 실패 — 서버가 떠 있나요?','err'));
       });
-      c.querySelector('[data-bmemo]').onclick=()=>memo.classList.toggle('open');
+      c.querySelector('[data-bmemo]').onclick=()=>{
+        const on=memo.classList.toggle('open');
+        say(on ? '메모 칸을 열었어요 — 적으면 저장돼요' : '메모 칸을 접었어요');
+        if(on) ta.focus();
+      };
       ta.oninput=()=>{NOTE[id]=ta.value;
         clearTimeout(timer[id]); say('적는 중…','warn');
         timer[id]=setTimeout(()=>
@@ -202,6 +211,11 @@ function render(){
     }
     body.appendChild(b);
   }
+}
+
+function renderScenes(){
+  const body=document.getElementById('scenes');
+  body.innerHTML='';
   if(ONLY){
     const n=document.createElement('div'); n.className='card'; n.id='onlybar';
     n.innerHTML=`<div class="es"><b>${esc(ONLY.title)}</b>의 재료만 보고 있어요 —
