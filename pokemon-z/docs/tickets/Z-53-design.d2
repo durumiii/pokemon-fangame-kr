@@ -1,4 +1,4 @@
-# Z-53 0단계 정본 — 전체 모양 (as-built + 설계)
+# Z-53 0단계 정본 — 전체 모양 (as-built + 설계, 2026-08-17 최종안)
 # render:  cd docs/tickets && d2 Z-53-design.d2 Z-53-design.svg
 
 vars: {
@@ -28,34 +28,40 @@ src: "출처 — 값이 실제로 있는 자리" {
   style: { fill: "#F8FAFC"; stroke: "#64748B"; stroke-dash: 4 }
   direction: down
 
-  tbl: "번역표 24절\n(지금 정본 → 출처로 강등)\n31,451행" { class: data }
-  rx: "게임 원본 rxdata\n맵·이벤트·페이지" { class: ext }
+  tbl: "번역표 24절\n(지금 정본 → 출처로 강등)\n절23은 절반이 죽은 키" { class: data }
+  rx: "게임 원본 rxdata\n맵·이벤트·명령" { class: ext }
   pbs: "PBS 텍스트\n⛔ 고치면 Data가 다시 만들어짐" { class: ext }
-  hard: "코드에 박힌 번역쌍\nCORE_TERMS · UiText TABLE\n_NATURE_ADJ" { class: data }
-  tower: "스크립트 안 데이터 표\n배틀시설 875명\n조회를 아예 안 탐" { class: ext }
-  corpus: "본가 코퍼스\ncanon/ — 판정 오라클" { class: data }
+  hard: "코드에 박힌 번역쌍\nCORE_TERMS · UiText TABLE" { class: data }
+  tower: "스크립트 안 데이터 표\n배틀시설 875명 — 조회를 안 탐" { class: ext }
+  corpus: "본가 코퍼스 · 이름 대조표\n판정 오라클" { class: data }
+  ledger: "말투 97항 · 페르소나 110항\n사람이 못 박은 규칙" { class: data }
 }
 
-stage0: "0단계 정본 — 표 셋 (전부 미구현)" {
+stage0: "0단계 정본 — 파일 다섯 (미구현)" {
   style: { fill: "#FDF2F8"; stroke: "#DB2777"; stroke-dash: 4 }
   direction: down
 
-  sites: "자리표\n문자열 하나가 있는 좌표 + 원문\n출처 종류 · 반영 경로 · 층 · 화자 · 청자" { class: open }
-  values: "값표\n원문 → 갈래[] → (한국어, 적용 군, 왜, 유래)\n갈래 하나면 그게 통일" { class: open }
-  groups: "대상군표\n조건에 이름을 붙인 정의\n말투·페르소나 판정이 이름에 붙는다" { class: open }
+  sites: "sites.jsonl\n자리 = id + src(낡음 판정용)\napply가 게임에 닿는 길을 적는다" { class: open }
+  msgs: "messages.jsonl\n값 = 문자열 · 선택자 트리 · 참조\nstate · by(유래)" { class: open }
+  groups: "groups.yaml\n대상군과 화자 — to 맵이 관계쌍 격\n혼잣말은 독립 격" { class: open }
+  terms: "terms.yaml\n재사용 조각 — 값이 {-term}으로 부른다" { class: open }
+  axes: "axes.yaml\n축 등재 + 우선순위\nsite > speaker > to > kind" { class: open }
 
-  sites -> values: "원문 키"
-  groups -> values: "적용 군 이름"
-  groups -> sites: "군에 드는 자리"
+  sites -> msgs: "id"
+  groups -> msgs: "적용 규칙"
+  terms -> msgs: "조각 참조"
+  axes -> msgs: "등재된 축만"
+  axes -> groups: "우선순위"
 }
 
 build: "빌드와 검사" {
   style: { fill: "#F0FDF4"; stroke: "#16A34A"; stroke-dash: 4 }
   direction: down
 
-  gate: "검사 게이트 (미구현)\n자리마다 오라클을 선언 → 한 자리에서 돈다\n미번역 · 번호 밀림 · 표기 갈림" { class: open }
-  emit: "빌드 (지금 있음, 다시 씀)\n표 셋 → 절별 번역표 → korean.dat" { class: det }
-  surgery: "소스 수술 패치 (지금 있음)\n조회를 안 타는 자리" { class: det }
+  gate: "검사 게이트 (미구현)\n자리마다 오라클을 선언 → 한 자리에서 돈다\n미번역 · 번호 밀림 · 미등재 갈림 · 조각 미사용" { class: open }
+  emit: "빌드 (지금 있음, 다시 씀)\napply를 보고 자리마다 맞는 열쇠로" { class: det }
+  krloc: "좌표 조회 (Z-73 — 섰다)\nkrloc:맵:이벤트:명령|원문" { class: det }
+  surgery: "소스 수술 (지금 있음)\n조회를 안 타는 자리" { class: det }
 }
 
 out: "산출물" {
@@ -64,27 +70,29 @@ out: "산출물" {
 
   tbl2: "번역표 24절 (파생물)\n지금 정본과 값 대조용" { class: artifact }
   dat: "korean.dat\n보관소 · 게임 설치본" { class: artifact }
-  todo: "남은 일감 목록\n규칙이 못 덮은 행" { class: artifact }
+  todo: "남은 일감 목록\n규칙이 못 덮은 1,037행" { class: artifact }
 }
 
-check: "값 대조 (이행 단계에서만)\n파생 번역표 == 지금 정본?" { class: open }
+check: "값 대조 (이행 2단계에서만)\n파생 번역표 == 지금 정본?  목표 차이 0" { class: open }
 
-src.tbl -> stage0.sites: "원문·좌표 흡수"
-src.tbl -> stage0.values: "지금 한국어 = 출처 값"
-src.rx -> stage0.sites: "층·화자·청자 실측"
+src.tbl -> stage0.sites: "자리·원문 흡수"
+src.tbl -> stage0.msgs: "지금 한국어 = 출처 값"
+src.rx -> stage0.sites: "층·화자 실측"
 src.pbs -> stage0.sites: "읽기만"
-src.hard -> stage0.values: "이관"
-src.tower -> stage0.sites: "반영 경로 = 소스 수술"
+src.hard -> stage0.terms: "이관"
+src.tower -> stage0.sites: "apply = surgery"
+src.ledger -> stage0.groups: "이관"
 src.corpus -> build.gate: "오라클"
 
 stage0.sites -> build.gate
-stage0.values -> build.emit
-stage0.sites -> build.emit: "자리별 반영 경로"
-stage0.sites -> build.surgery: "조회 안 타는 자리"
+stage0.msgs -> build.emit
+stage0.sites -> build.emit: "apply"
+build.emit -> build.krloc: "맵 대사"
+build.emit -> build.surgery: "조회 안 타는 자리"
 
 build.gate -> out.todo: "기계가 못 덮은 행"
 build.emit -> out.tbl2
-build.emit -> out.dat
+build.krloc -> out.dat
 build.surgery -> out.dat
 
 out.tbl2 -> check
