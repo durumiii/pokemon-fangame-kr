@@ -247,6 +247,56 @@ def build():
     print(f"→ {LINES_OUT} ({len(rows)}행)")
 
 
+def fixlog_check():
+    """fixlog 자국 대조(Z-54 ②) — 유지자의 **마지막** 손수정(new)이 지금 정본과 다른
+    자리를 나열한다. 어긋남 전부가 사고는 아니다 — 그 뒤의 유지자 판정(표기 통일 등)일
+    수 있어 **줄마다 사람이 가린다.** 이 도구는 목록과 마지막 손의 출처만 갖춘다.
+
+    거름 기준(수를 밝힌다): fixlog에서 kind=row · file=00-maps.jsonl · es 있는 줄만,
+    같은 es는 마지막 줄이 이긴다. 대조는 es(접은 원문) 앵커로 전 맵을 본다 — 줄 번호는
+    정본이 움직이면 딴 줄을 가리키므로 앵커로 쓰지 않는다.
+    """
+    raw = [json.loads(l) for l in (ROOT / "translate/fixlog.jsonl")
+           .read_text(encoding="utf-8").splitlines() if l.strip()]
+    rows = [r for r in raw if r.get("kind") == "row"
+            and r.get("file") == "00-maps.jsonl" and r.get("es")]
+    last = {}                                    # 접은 es → 마지막 손수정 줄
+    for r in rows:
+        last[fold(r["es"])] = r
+    cur, cm = collections.defaultdict(list), None
+    for line in (ROOT / "translate/ko/00-maps.jsonl").read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        d = json.loads(line)
+        if "map" in d:
+            cm = d["map"]
+        else:
+            cur[fold(d["k"])].append((cm, d["v"]))
+    mark, _ = walk()
+    bad = []
+    for es, r in last.items():
+        spots = cur.get(es)
+        if not spots:
+            bad.append((es, r, "정본에 원문 없음", []))
+            continue
+        vals = {v for _, v in spots}
+        if r["new"] not in vals:
+            bad.append((es, r, "전 자리 불일치", spots))
+        elif len(vals) > 1:
+            bad.append((es, r, "일부 자리만 일치(갈림)", spots))
+    print(f"fixlog 원시 {len(raw)}줄 → row·00-maps·es 있는 줄 {len(rows)} → "
+          f"마지막 손수정 기준 {len(last)}원문 → 어긋남 {len(bad)}")
+    for es, r, why, spots in bad:
+        by = mark.get((spots[0][0], es)) if spots else None
+        who = f"{by[0]}/{by[2]}{'(퍼짐)' if by[1] else ''}" if by else "이력 없음"
+        print(f"\n[{why}] 맵 {sorted({m for m, _ in spots}) or '-'} · 마지막 손: {who}")
+        print(f"  es: {es[:70]}")
+        print(f"  유지자 마지막 new: {r['new'][:70]}")
+        for m, v in spots[:3]:
+            if v != r["new"]:
+                print(f"  지금 정본(맵{m}): {v[:70]}")
+
+
 def stats():
     mark, _ = walk()
     c = collections.Counter((src, spread) for src, spread, _ in mark.values())
@@ -272,6 +322,8 @@ def main():
         build()
     elif cmd == "stats":
         stats()
+    elif cmd == "fixlog":
+        fixlog_check()
     elif cmd == "selftest":
         selftest()
     else:

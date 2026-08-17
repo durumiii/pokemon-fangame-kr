@@ -460,7 +460,7 @@ def plan(pilot=False, npc=False, pool_paths=()):
     pg = pages()
     pool, pool_ct = load_pool(pool_paths) if pool_paths else (None, collections.Counter())
     ex = excluded_pages(pg, skip_approved=pool is None)
-    prot = protected_pages() if pool else set()
+    prot = protected_pages()
     ko = ko_index()
     vlines, names, anon = voice_lines(), ko_names(), anon_index()
     approved = approved_set()
@@ -470,11 +470,16 @@ def plan(pilot=False, npc=False, pool_paths=()):
     def in_pool(r):
         return pool.get((r["map"], r["event"], r["page"], fold(r["k"])))
     chunks = []
+    skip_prot = skip_other = 0        # 보호 확산 가시화(Z-54 ④) — 조용히 빠지지 않게
     for key in sorted(pg):
         if key in ex:
             if pool:      # 관문별 제외 수를 찍으려면 여기서 세야 한다
                 n = sum(1 for r in pg[key] if in_pool(r) is not None)
                 pool_ct["보호(protected)" if key in prot else "그 밖 제외 페이지"] += n
+            elif key in prot:
+                skip_prot += 1
+            else:
+                skip_other += 1
             continue
         rows, take = pg[key], []
         if npc and not pool and (rows[0].get("scene") not in ("컷신", "대화")
@@ -610,6 +615,11 @@ def plan(pilot=False, npc=False, pool_paths=()):
                    encoding="utf-8")
     n = sum(len(c["rows"]) for c in chunks)
     sizes = sorted(len(c["rows"]) for c in chunks)
+    if not pool:
+        # 보호 확산 가시화(Z-54 ④) — 손수정 한 줄이 이벤트 통째를 가리는 구조라,
+        # 얼마나 빠졌는지 안 찍으면 재번역·선별이 조용히 좁아진다(맵79 사례).
+        print(f"제외 페이지: 보호 {skip_prot} · 그 밖(승인·인트로·지문 등) {skip_other} "
+              f"/ 전체 {len(pg)}")
     print(f"{len(chunks)}페이지 · {n}행 → {out}")
     if sizes:      # 사정권이 다 소진되면 빈 계획이 정상 결과다
         print(f"페이지 크기: 중앙 {sizes[len(sizes)//2]}행 · 최대 {sizes[-1]}행 · "
