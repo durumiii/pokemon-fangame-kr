@@ -17570,7 +17570,7 @@
 {"id": "m318.e73.p1.c40", "val": "\\c[2]<b>올리비에:</b>\\c[0] 고대 연금술로 만든 오토마톤이야! 작동하는 걸 보게 될 줄은 몰랐는데!", "state": "reviewed", "by": "human/307493b"}
 {"id": "m318.e73.p1.c41", "val": "몬스터볼을 꺼내라, \\PN! 이 녀석이 우리를 방해하려 할 거다!", "state": "reviewed", "by": "human/검수 반영"}
 {"id": "m318.e73.p1.c45", "val": {"ref": "unified.0e8c3d41"}, "state": "reviewed", "by": "human/c833065"}
-{"id": "m318.e73.p1.c85", "val": "\\c[2]<b>올리비에:</b>\\c[0] 잘했단다, \\PN! 어서 계속 가자!", "state": "reviewed", "by": "human/307493b"}
+{"id": "m318.e73.p1.c85", "val": "\\c[2]<b>올리비에:</b>\\c[0] 잘했다, \\PN! 어서 계속 가자!", "state": "reviewed", "by": "human/307493b"}
 {"id": "m318.e65.p0.c2", "val": "어떤 드루이드 전문화를 가장 선호하는가? 조화? 야성? 아니면 회복인가?", "state": "reviewed", "by": "human/b604fd5"}
 {"id": "m318.e65.p0.c3", "val": "보아하니 야성적인 투지에, 균형 잡힌 팀, 가방엔 풀회복약까지 갖추고 있구나.", "state": "reviewed", "by": "human/8232303"}
 {"id": "m318.e65.p1.c0", "val": "중앙에 봉인된 방을 보았는가? 거기가 대드루이드의 방이다만, 이 근처를 배회하는 다른 두 위대한 드루이드와 먼저 접촉해야만 열릴 게다."}
@@ -17852,8 +17852,8 @@
 {"id": "m328.e11.p0.c106", "val": "\\c[6]<b>아우레:</b>\\c[0] 놈의 본능에 대립하는 존재로 태어났습니다.", "state": "reviewed", "by": "human/6fccb3f"}
 {"id": "m328.e11.p0.c107", "val": "지가르데가 균형을 도모한다면, 저는 혼돈을 추구하지요.", "state": "reviewed", "by": "human/6fccb3f"}
 {"id": "m328.e11.p0.c109", "val": "즉, 삶과 죽음은 끊임없는 혼돈 속에서 서로 투쟁해야 마땅하다고 믿습니다. 강자가 약자를 지배하고, 그렇게 진화하는 법이지요.", "state": "reviewed", "by": "human/6fccb3f"}
-{"id": "m328.e11.p0.c115", "val": "<b>대드루이드 피쿠스:</b> 오, 이 얼마나 흥미로운 이야기인가요!", "state": "reviewed", "by": "human/6fccb3f"}
-{"id": "m328.e11.p0.c116", "val": "하지만 당신이 지가르데의 안티테제라면, 어째서 그보다 낮은 위계에 계신 것입니까?", "state": "reviewed", "by": "human/6fccb3f"}
+{"id": "m328.e11.p0.c115", "val": "<b>대드루이드 피쿠스:</b> 오, 흥미롭군요!", "state": "reviewed", "by": "human/6fccb3f"}
+{"id": "m328.e11.p0.c116", "val": "하지만 당신께서 지가르데의 대척점에 선 존재라면, 어째서 그보다 한 단계 낮은 격에 머물러 있는 것인지요?", "state": "reviewed", "by": "human/6fccb3f"}
 {"id": "m328.e11.p0.c121", "val": "\\c[6]<b>아우레:</b>\\c[0] 우주가 아직 태어나던 시절, 지가르데는 자신에게 허용된 것보다 더 많은 힘을 차지하며 우리를 속였습니다.", "state": "reviewed", "by": "human/6fccb3f"}
 {"id": "m328.e11.p0.c122", "val": "그렇기에 우리는 놈의 독재와 정체된 질서 아래 복종하고 있는 것입니다. 포켓몬 세계는 놈의 이상으로 인해 모든 잠재력과 진보를 잃어버리고 말았지요.", "state": "reviewed", "by": "human/6fccb3f"}
 {"id": "m328.e11.p0.c130", "val": "\\c[6]<b>아우레:</b>\\c[0] 과거에 놈에게 맞서려 시도해 보았으나, 놈의 힘에는 당해낼 수 없었습니다.", "state": "reviewed", "by": "human/6fccb3f"}
@@ -17874,10 +17874,10 @@
 {"id": "m328.e17.p0.c47", "val": {"ref": "unified.d37bf26f"}, "state": "reviewed", "by": "human/6fccb3f"}
 {"id": "m328.e17.p0.c48", "val": "너희가 나를 찾아왔을 때, 이 꽃 모양의 병기를 휘둘러 너희의 생명 에너지를 흡수할 것이다.", "state": "reviewed", "by": "human/6fccb3f"}
 {"id": "m328.e17.p0.c49", "val": "오직 이 방법만이... 내 백성을 자유롭게 하리라.", "state": "reviewed", "by": "human/6fccb3f"}
-{"id": "m328.e17.p0.c95", "val": "<b>대드루이드 피쿠스:</b> 크악!", "state": "reviewed", "by": "human/6fccb3f"}
+{"id": "m328.e17.p0.c95", "val": "<b>대드루이드 피쿠스:</b> 크아악!", "state": "reviewed", "by": "human/6fccb3f"}
 {"id": "m328.e17.p0.c97", "val": "\\c[6]<b>아우레:</b>\\c[0] 우리의 오랜 우정도 여기서 끝을 내야겠군, 훌륭한 대드루이드여.", "state": "reviewed", "by": "human/6fccb3f"}
 {"id": "m328.e17.p0.c99", "val": "<b>대드루이드 피쿠스:</b> <b>아우레</b> 선생...", "state": "reviewed", "by": "human/6fccb3f"}
-{"id": "m328.e17.p0.c109", "val": "\\c[6]<b>아우레:</b>\\c[0] 이런 오랫동안 속임수를 써야 했던 건 대단히 유감이지만, 모두를 위해 어쩔 수 없는 최선이었단다.", "state": "reviewed", "by": "human/6fccb3f"}
+{"id": "m328.e17.p0.c109", "val": "\\c[6]<b>아우레:</b>\\c[0] 이토록 오랫동안 기만을 이어 온 것은 유감이야. 그러나 결국 모두를 위한 최선의 선택이었다.", "state": "reviewed", "by": "human/6fccb3f"}
 {"id": "m328.e17.p0.c114", "val": "\\c[6]<b>아우레:</b>\\c[0] 너는 내가 스스로는 결코 만들어내지 못했을 물건을 창조해 냈지.", "state": "reviewed", "by": "human/6fccb3f"}
 {"id": "m328.e17.p0.c115", "val": "전설의 포켓몬에게 맞설 수 있는 병기를 말이야.", "state": "reviewed", "by": "human/6fccb3f"}
 {"id": "m328.e17.p0.c116", "val": {"ref": "unified.bbff63b8"}, "state": "reviewed", "by": "human/검수 반영"}
