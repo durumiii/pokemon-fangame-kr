@@ -52,13 +52,13 @@ LEDGER = HERE.parent / "docs" / "ledger"   # 판정 대장 (glossary·voices)
 sys.path.insert(0, str(HERE))
 import mapname  # noqa: E402
 from mend_newlines import mend  # noqa: E402
-from pilot_npc import ask_npc, harvest, key_of, npc_line  # noqa: E402
+from pilot_npc import ask_npc, harvest, key_of, load_personas, npc_line  # noqa: E402
 from validate import check  # noqa: E402
 
 ATTR = HERE / "data/speaker-attr.jsonl.gz"
 ANON = HERE / "data/2026-08-06-anon-speakers.jsonl"
 APPROVED = HERE / "data/approved-lines.jsonl"
-PERSONAS = HERE / "persona-table.jsonl"     # 무태그 NPC 페르소나표(스프라이트 단위)
+# 무태그 NPC 페르소나표는 pilot_npc.load_personas(정본 stage0/groups.yaml)로 읽는다.
 # 말투 정본은 stage0/voices.yaml, 용어 정본은 stage0/terms.yaml (2026-08-18 강등 —
 # 옛 voice-prompts.jsonl·term-pairs.jsonl은 은퇴)
 PROTECTED = HERE / "data/protected.jsonl"
@@ -169,9 +169,7 @@ def personas():
     표에는 「제외」 버킷의 판정 기록 행도 살지만(flecha, 유지자 판정 2026-08-09),
     그런 행은 여기서 걸러 매핑에 안 올린다.
     """
-    return {r["sprite"]: r for r in
-            (json.loads(l) for l in
-             PERSONAS.read_text(encoding="utf-8").splitlines() if l.strip())
+    return {s: r for s, r in load_personas().items()
             if not str(r.get("버킷", "")).startswith("제외")}
 
 

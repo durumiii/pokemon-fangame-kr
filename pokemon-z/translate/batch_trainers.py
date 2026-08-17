@@ -1,5 +1,6 @@
 # /// script
 # requires-python = ">=3.12"
+# dependencies = ["pyyaml"]
 # ///
 """배틀 트레이너 대사만 다시 번역한다 — 도전과 패배를 한 벌로 묶어서.
 

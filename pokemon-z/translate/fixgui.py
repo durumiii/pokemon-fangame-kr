@@ -1,5 +1,6 @@
 # /// script
 # requires-python = ">=3.12"
+# dependencies = ["pyyaml"]
 # ///
 """번역 즉석 수정 GUI — 검색·행 수정·메모·재빌드를 브라우저에서.
 
@@ -29,7 +30,7 @@ NOTES = HERE / "fixnotes.jsonl"
 PROPS = HERE / "proposals.jsonl"   # 에이전트가 올린 제안 문안 — 승인은 이 화면에서
 JOIN = HERE / "data" / "map-speaker-join.jsonl.gz"
 ATTR = HERE / "data" / "speaker-attr.jsonl.gz"
-GROUPS = HERE / "sprite-groups.json"
+GROUPS = HERE / "stage0" / "groups.yaml"   # 스프라이트 묶음·페르소나 정본(2026-08-18 강등)
 ICON = HERE.parent / "webapp" / "favicon.png"   # 배포판 스튜디오와 같은 아이콘
 
 _ctx = None  # 조인표·귀속표 지연 로드
@@ -46,7 +47,8 @@ def ctx():
     if _ctx is None:
         _ctx = {"row": {}, "mapname": {}, "spots": {}, "page": {}}
         try:
-            g = json.loads(GROUPS.read_text(encoding="utf-8"))["groups"]
+            import yaml
+            g = yaml.safe_load(GROUPS.read_text(encoding="utf-8"))["sprite_groups"]["groups"]
             s2g = {s: grp for grp, ss in g.items() for s in ss}
             stem = lambda s: re.sub(r"(ow|OW|TS|w)?\d*$", "", s) or "(없음)"
             for line in gzip.open(JOIN, "rt", encoding="utf-8"):
@@ -253,16 +255,13 @@ _persona = None
 
 
 def persona():
-    """스프라이트 → 사람이 읽는 한 줄(`persona-table.jsonl`의 페르소나 칸)."""
+    """스프라이트 → 사람이 읽는 한 줄(`stage0/groups.yaml`의 persona 칸)."""
     global _persona
     if _persona is None:
-        _persona = {}
-        pt = HERE / "persona-table.jsonl"
-        if pt.exists():
-            for line in pt.read_text(encoding="utf-8").splitlines():
-                d = json.loads(line)
-                if d.get("페르소나"):
-                    _persona[d["sprite"]] = d["페르소나"]
+        import yaml
+        _persona = {e["group"]: e["persona"]
+                    for e in yaml.safe_load(GROUPS.read_text(encoding="utf-8"))["groups"]
+                    if e.get("persona")}
     return _persona
 
 

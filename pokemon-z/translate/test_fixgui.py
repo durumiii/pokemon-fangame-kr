@@ -1,5 +1,6 @@
 # /// script
 # requires-python = ">=3.12"
+# dependencies = ["pyyaml"]
 # ///
 """fixgui의 일괄 바꾸기·묶음 되돌리기 규칙 — `uv run translate/test_fixgui.py`.
 

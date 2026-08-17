@@ -1,5 +1,6 @@
 # /// script
 # requires-python = ">=3.12"
+# dependencies = ["pyyaml"]
 # ///
 """판정 재료 생성 — 자리 목록을 받아 유지자에게 올릴 재료를 기계로 갖춘다.
 
@@ -87,15 +88,19 @@ def naming(r):
     return r.get("who") or r.get("speaker") or "(화자 없음)"
 
 
+def _groups_yaml():
+    import yaml
+    return yaml.safe_load((OUT / "groups.yaml").read_text(encoding="utf-8"))
+
+
 def personas():
     """스프라이트 → (버킷, 페르소나 한 줄). 그림 이름만으로는 못 읽는다."""
-    p = ROOT / "persona-table.jsonl"
-    return {r["sprite"]: (r.get("버킷", ""), r.get("페르소나", ""))
-            for r in read_jsonl(p)} if p.exists() else {}
+    return {e["group"]: (e.get("bucket", ""), e.get("persona", ""))
+            for e in _groups_yaml()["groups"]}
 
 
 def sprite_groups():
-    g = json.loads((ROOT / "sprite-groups.json").read_text(encoding="utf-8"))["groups"]
+    g = _groups_yaml()["sprite_groups"]["groups"]
     return {s: grp for grp, ss in g.items() for s in ss}
 
 
