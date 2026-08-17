@@ -1,0 +1,738 @@
+{"lit": "¡Pero falló!", "n_occurrences": 177, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:241", "PokeBattle_Battle:3553", "PokeBattle_Battler:2819", "PokeBattle_BattlerEffects:1078", "PokeBattle_BattlerEffects:1151"]}
+{"lit": "No tendrá ningún efecto.", "n_occurrences": 92, "categories": ["아이템", "필드"], "cross_category": true, "sample_sites": ["PItem_ItemEffects:1000", "PItem_ItemEffects:1017", "PItem_ItemEffects:1030", "PItem_ItemEffects:1043", "PItem_ItemEffects:1072"]}
+{"lit": "Salir", "n_occurrences": 52, "categories": ["디버그", "메뉴/UI", "아이템", "전투", "필드"], "cross_category": true, "sample_sites": ["BattleAnimationEditor:1948", "BattleAnimationEditor:1974", "BattleAnimationEditor:2008", "BattleAnimationEditor:2062", "BattleAnimationEditor:2291"]}
+{"lit": "{1} ha usado {2}.", "n_occurrences": 33, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:19", "PItem_ItemEffects:2141", "PItem_ItemEffects:2153", "PItem_ItemEffects:2165", "PItem_ItemEffects:2177"]}
+{"lit": "¡Pero no tuvo ningún efecto!", "n_occurrences": 29, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:2146", "PItem_ItemEffects:2158", "PItem_ItemEffects:2170", "PItem_ItemEffects:2181", "PItem_ItemEffects:2193"]}
+{"lit": "¡Los objetos curativos no tienen efecto en el Modo Heroico!", "n_occurrences": 26, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:1682", "PItem_ItemEffects:1690", "PItem_ItemEffects:1698", "PItem_ItemEffects:1706", "PItem_ItemEffects:1714"]}
+{"lit": "{1}", "n_occurrences": 25, "categories": ["디버그", "메뉴/UI", "아이템", "전투", "필드"], "cross_category": true, "sample_sites": ["Editor:2356", "Logros:543", "MOD:Type Matchup/001_MoveTypeColors.rb:68", "MOD:Type Matchup/001_MoveTypeColors.rb:87", "Nombres Habilidades:34"]}
+{"lit": "{1} ha cambiado su naturaleza.", "n_occurrences": 22, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:496", "PItem_ItemEffects:506", "PItem_ItemEffects:516", "PItem_ItemEffects:526", "PItem_ItemEffects:536"]}
+{"lit": "Aceptar", "n_occurrences": 17, "categories": ["디버그", "메뉴/UI"], "cross_category": true, "sample_sites": ["BattleAnimationEditor:1947", "BattleAnimationEditor:1973", "BattleAnimationEditor:2007", "BattleAnimationEditor:2061", "BattleAnimationEditor:2290"]}
+{"lit": "No se puede usar aquí.", "n_occurrences": 15, "categories": ["아이템", "필드"], "cross_category": true, "sample_sites": ["PField_HiddenMoves:1016", "PField_HiddenMoves:1052", "PField_HiddenMoves:298", "PField_HiddenMoves:358", "PField_HiddenMoves:688"]}
+{"lit": "{1} {2}", "n_occurrences": 13, "categories": ["그 밖", "디버그", "메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["BattleAnimationEditor:2805", "BattleAnimationEditor:2821", "BattleAnimationEditor:2847", "BattleAnimationEditor:2870", "Debug:533"]}
+{"lit": "♂", "n_occurrences": 13, "categories": ["그 밖", "디버그", "메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["Debug:582", "PScreen_Party:418", "PScreen_Storage:2295", "PScreen_Summary:250", "PScreen_Summary:356"]}
+{"lit": "♀", "n_occurrences": 13, "categories": ["그 밖", "디버그", "메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["Debug:582", "PScreen_Party:420", "PScreen_Storage:2297", "PScreen_Summary:252", "PScreen_Summary:358"]}
+{"lit": "No afecta a {1}...", "n_occurrences": 13, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_BattlerEffects:1082", "PokeBattle_BattlerEffects:1155", "PokeBattle_BattlerEffects:128", "PokeBattle_BattlerEffects:258", "PokeBattle_BattlerEffects:349"]}
+{"lit": "¡{2} de {1} hizo ineficaz {4} de {3}!", "n_occurrences": 13, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_BattlerEffects:1015", "PokeBattle_BattlerEffects:1022", "PokeBattle_BattlerEffects:1050", "PokeBattle_BattlerEffects:1057", "PokeBattle_BattlerEffects:1112"]}
+{"lit": "¡{2} de {1} hizo ineficaz {3}!", "n_occurrences": 13, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Move:380", "PokeBattle_Move:391", "PokeBattle_Move:404", "PokeBattle_Move:414", "PokeBattle_Move:428"]}
+{"lit": "¡Las características de {1} no subirán más!", "n_occurrences": 13, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:1019", "PokeBattle_MoveEffects:1046", "PokeBattle_MoveEffects:1076", "PokeBattle_MoveEffects:1102", "PokeBattle_MoveEffects:1129"]}
+{"lit": "Elige un Pokémon.", "n_occurrences": 13, "categories": ["그 밖", "메뉴/UI", "전투", "필드"], "cross_category": true, "sample_sites": ["Incubadora:159", "PScreen_Party:1156", "PScreen_Party:1159", "PScreen_Party:1817", "PScreen_Party:1819"]}
+{"lit": "No", "n_occurrences": 12, "categories": ["그 밖", "디버그", "메뉴/UI", "전투", "필드"], "cross_category": true, "sample_sites": ["BattleAnimationEditor:3813", "Editor:2141", "Evolucion:648", "Messages:1026", "Messages:1030"]}
+{"lit": "¡Pero falló debido a {2} de {1}!", "n_occurrences": 12, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:5138", "PokeBattle_MoveEffects:5142", "PokeBattle_MoveEffects:5187", "PokeBattle_MoveEffects:5191", "PokeBattle_MoveEffects:5226"]}
+{"lit": "¡{1} ha usado {2}!", "n_occurrences": 11, "categories": ["필드"], "cross_category": false, "sample_sites": ["PField_HiddenMoves:1028", "PField_HiddenMoves:1070", "PField_HiddenMoves:1132", "PField_HiddenMoves:306", "PField_HiddenMoves:366"]}
+{"lit": "Si", "n_occurrences": 10, "categories": ["그 밖", "디버그", "메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["BattleAnimationEditor:3813", "Editor:2141", "Messages:1026", "Messages:1030", "PScreen_Bag:1260"]}
+{"lit": "Objeto", "n_occurrences": 10, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PScreen_Party:1847", "PScreen_Storage:540", "PScreen_Storage:706", "PScreen_Summary:202", "PScreen_Summary:285"]}
+{"lit": "Ninguno", "n_occurrences": 9, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["PBEggGroups:37", "PScreen_Pokedex:901", "PScreen_Summary:214", "PScreen_Summary:290", "PScreen_Summary:353"]}
+{"lit": "Datos", "n_occurrences": 9, "categories": ["디버그", "메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["Debug:562", "PScreen_Party:1124", "PScreen_Party:1831", "PScreen_Storage:538", "PScreen_Storage:605"]}
+{"lit": "¿Qué hacer con {1}?", "n_occurrences": 9, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PScreen_Party:1126", "PScreen_Party:1190", "PScreen_Party:1222", "PScreen_Party:1309", "PScreen_Party:1851"]}
+{"lit": "Huevo", "n_occurrences": 9, "categories": ["그 밖", "메뉴/UI", "필드"], "cross_category": true, "sample_sites": ["Incubadora:243", "PField_DayCare:381", "PScreen_HallOfFame:369", "PScreen_Party:1207", "PScreen_Party:1734"]}
+{"lit": "${1}", "n_occurrences": 8, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["Messages:1225", "Messages:1317", "PMinigame_TripleTriad:1096", "PMinigame_TripleTriad:1148", "PMinigame_TripleTriad:1179"]}
+{"lit": "¡{1} se está protegiendo!", "n_occurrences": 8, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:2764", "PokeBattle_Battler:2826", "PokeBattle_Battler:2837", "PokeBattle_Battler:2851", "PokeBattle_MoveEffects:10346"]}
+{"lit": "¡{1} se encuentra confuso!", "n_occurrences": 8, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_BattlerEffects:578", "PokeBattle_MoveEffects:1737", "PokeBattle_MoveEffects:1764", "PokeBattle_MoveEffects:554", "PokeBattle_MoveEffects:564"]}
+{"lit": "¡{1} ya está listo gracias a la Hierba Única!", "n_occurrences": 8, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:10453", "PokeBattle_MoveEffects:5496", "PokeBattle_MoveEffects:5544", "PokeBattle_MoveEffects:5577", "PokeBattle_MoveEffects:5616"]}
+{"lit": "¡{1} ya está listo gracias a su Hierba Única!", "n_occurrences": 8, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:10232", "PokeBattle_MoveEffects:5695", "PokeBattle_MoveEffects:5731", "PokeBattle_MoveEffects:5763", "PokeBattle_MoveEffects:5795"]}
+{"lit": "Apodo de {1}", "n_occurrences": 8, "categories": ["그 밖", "메뉴/UI", "전투", "필드"], "cross_category": true, "sample_sites": ["PScreen_EggHatching:195", "PScreen_EggHatching:98", "PScreen_Party:1663", "PScreen_Storage:1151", "PSystem_Utilities NUEVO:1702"]}
+{"lit": "Graphics/Pictures/types", "n_occurrences": 8, "categories": ["그 밖", "메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["BetterMoveRelearner:40", "PMinigame_TripleTriad:73", "PMinigame_TripleTriad:87", "PScreen_MoveRelearner:90", "PScreen_Storage:2314"]}
+{"lit": "Lo siento, necesitas una medalla nueva.", "n_occurrences": 8, "categories": ["필드"], "cross_category": false, "sample_sites": ["PField_HiddenMoves:293", "PField_HiddenMoves:405", "PField_HiddenMoves:469", "PField_HiddenMoves:571", "PField_HiddenMoves:683"]}
+{"lit": "Los PP han sido restaurados.", "n_occurrences": 8, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:1104", "PItem_ItemEffects:1120", "PItem_ItemEffects:1136", "PItem_ItemEffects:1150", "PItem_ItemEffects:2060"]}
+{"lit": "Elige un Pokémon o cancela.", "n_occurrences": 8, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PScreen_Party:1156", "PScreen_Party:1159", "PScreen_Party:1817", "PScreen_Party:1819", "PScreen_Party:1896"]}
+{"lit": "Objeto utilizado por el entrenador durante la batalla.", "n_occurrences": 8, "categories": ["디버그"], "cross_category": false, "sample_sites": ["Editor:2643", "Editor:2645", "Editor:2647", "Editor:2649", "Editor:2651"]}
+{"lit": "¡El equipo de {1} está protegido por Velo Sagrado!", "n_occurrences": 7, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_BattlerEffects:1088", "PokeBattle_BattlerEffects:1161", "PokeBattle_BattlerEffects:152", "PokeBattle_BattlerEffects:277", "PokeBattle_BattlerEffects:368"]}
+{"lit": "Eso no se puede usar aquí.", "n_occurrences": 7, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:195", "PItem_ItemEffects:238", "PItem_ItemEffects:2496", "PItem_ItemEffects:286", "PItem_ItemEffects:401"]}
+{"lit": "{1} ha recuperado los PS.", "n_occurrences": 7, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:1023", "PItem_ItemEffects:1036", "PItem_ItemEffects:1092", "PItem_ItemEffects:1961", "PItem_ItemEffects:1984"]}
+{"lit": "SALIR", "n_occurrences": 7, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PBattle_BattleSwap:76", "PScreen_Bag:920", "PScreen_Mart:293", "PScreen_Party:128", "PScreen_Party:144"]}
+{"lit": "El número de objeto no es válido.", "n_occurrences": 7, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Bag:764", "PScreen_Bag:781", "PScreen_Bag:799", "PScreen_Bag:817", "PScreen_Bag:832"]}
+{"lit": "SKIPPING BATTLE...", "n_occurrences": 7, "categories": ["그 밖", "전투"], "cross_category": true, "sample_sites": ["Combate Inverso:150", "Combate Inverso:250", "Combate Inverso:357", "Combate Inverso:4", "Combate Inverso:67"]}
+{"lit": "Pokédex", "n_occurrences": 6, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_PauseMenu:118", "PScreen_Pokedex:1015", "PScreen_Pokedex:40", "PScreen_Pokedex:519", "PScreen_TrainerCard:59"]}
+{"lit": "¡{1} se curó de la parálisis!", "n_occurrences": 6, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:750", "PokeBattle_Battler:774", "PokeBattle_MoveEffects:710", "PokeBattle_MoveEffects:739", "PokeBattle_MoveEffects:757"]}
+{"lit": "¡{1} se despertó!", "n_occurrences": 6, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:752", "PokeBattle_Battler:776", "PokeBattle_BattlerEffects:512", "PokeBattle_MoveEffects:741", "PokeBattle_MoveEffects:759"]}
+{"lit": "¡{1} se curó del envenenamiento!", "n_occurrences": 6, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:754", "PokeBattle_Battler:778", "PokeBattle_MoveEffects:708", "PokeBattle_MoveEffects:743", "PokeBattle_MoveEffects:761"]}
+{"lit": "¡{1} se curó de la quemadura!", "n_occurrences": 6, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:756", "PokeBattle_Battler:780", "PokeBattle_MoveEffects:706", "PokeBattle_MoveEffects:745", "PokeBattle_MoveEffects:763"]}
+{"lit": "¡{1} se descongeló!", "n_occurrences": 6, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:758", "PokeBattle_Battler:782", "PokeBattle_BattlerEffects:518", "PokeBattle_MoveEffects:747", "PokeBattle_MoveEffects:765"]}
+{"lit": "¡{1} comenzó a cargar energía!", "n_occurrences": 6, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:1639", "PokeBattle_Battler:3154", "PokeBattle_Battler:3578", "PokeBattle_Battler:3582", "PokeBattle_MoveEffects:10051"]}
+{"lit": "¡{1} se transformó en el tipo {2}!", "n_occurrences": 6, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:10266", "PokeBattle_MoveEffects:10378", "PokeBattle_MoveEffects:2581", "PokeBattle_MoveEffects:2628", "PokeBattle_MoveEffects:2681"]}
+{"lit": "No puede usarse aquí.", "n_occurrences": 6, "categories": ["아이템", "필드"], "cross_category": true, "sample_sites": ["PField_HiddenMoves:410", "PItem_Items:531", "PItem_Items:548", "PItem_Items:581", "PItem_Items:803"]}
+{"lit": "No tuvo efecto.", "n_occurrences": 6, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:1563", "PItem_ItemEffects:1581", "PItem_ItemEffects:1631", "PItem_ItemEffects:1647", "PItem_ItemEffects:716"]}
+{"lit": "{1} ha recuperado su salud.", "n_occurrences": 6, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:1009", "PItem_ItemEffects:1078", "PItem_ItemEffects:1910", "PItem_ItemEffects:1937", "PItem_ItemEffects:2024"]}
+{"lit": "No tendrá ningún efecto..", "n_occurrences": 6, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:1324", "PItem_ItemEffects:1336", "PItem_ItemEffects:1348", "PItem_ItemEffects:1360", "PItem_ItemEffects:1372"]}
+{"lit": "Masculino", "n_occurrences": 6, "categories": ["디버그", "메뉴/UI"], "cross_category": true, "sample_sites": ["Editor:2439", "Editor:2487", "PScreen_Party:1607", "PScreen_Party:1632", "PScreen_Storage:1095"]}
+{"lit": "Femenino", "n_occurrences": 6, "categories": ["디버그", "메뉴/UI"], "cross_category": true, "sample_sites": ["Editor:2439", "Editor:2487", "PScreen_Party:1607", "PScreen_Party:1632", "PScreen_Storage:1095"]}
+{"lit": "Le has dado {2} a {1}.", "n_occurrences": 6, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PScreen_Party:1975", "PScreen_Party:1987", "PScreen_Party:1988", "RepExp:234", "RepExp:246"]}
+{"lit": "{1} x{2}", "n_occurrences": 6, "categories": ["그 밖"], "cross_category": false, "sample_sites": ["PMinigame_TripleTriad:1168", "PMinigame_TripleTriad:1235", "PMinigame_TripleTriad:1257", "PMinigame_TripleTriad:486", "PMinigame_TripleTriad:521"]}
+{"lit": "¡{1} ha restaurado su salud con una {2}!", "n_occurrences": 5, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:2182", "PokeBattle_Battler:2186", "PokeBattle_Battler:2190", "PokeBattle_Battler:2194", "PokeBattle_Battler:2198"]}
+{"lit": "¡Falló el ataque de {1}!", "n_occurrences": 5, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:2972", "PokeBattle_MoveEffects:1726", "PokeBattle_MoveEffects:1753", "PokeBattle_MoveEffects:2032", "PokeBattle_MoveEffects:8930"]}
+{"lit": "¡Pero ha fallado!", "n_occurrences": 5, "categories": ["전투", "필드"], "cross_category": true, "sample_sites": ["PokeBattle_BattlerEffects:15", "PokeBattle_BattlerEffects:429", "Pokemon_ShadowPokemon:712", "Pokemon_ShadowPokemon:777", "Pokemon_ShadowPokemon:814"]}
+{"lit": "¡{1} se está preparando para luchar!", "n_occurrences": 5, "categories": ["아이템", "전투"], "cross_category": true, "sample_sites": ["PItem_ItemEffects:2445", "PItem_ItemEffects:2458", "PItem_ItemEffects:2471", "PokeBattle_MoveEffects:1005", "PokeBattle_MoveEffects:998"]}
+{"lit": "¡{2} de {1} se ha acabado!", "n_occurrences": 5, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:2778", "PokeBattle_MoveEffects:2813", "PokeBattle_MoveEffects:2856", "PokeBattle_MoveEffects:2908", "PokeBattle_MoveEffects:2975"]}
+{"lit": "¡{1} es dañado por el retroceso!", "n_occurrences": 5, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:7369", "PokeBattle_MoveEffects:7392", "PokeBattle_MoveEffects:7416", "PokeBattle_MoveEffects:7441", "PokeBattle_MoveEffects:7473"]}
+{"lit": "¡No hay alivio para este diluvio!", "n_occurrences": 5, "categories": ["전투", "필드"], "cross_category": true, "sample_sites": ["PokeBattle_MoveEffects:7496", "PokeBattle_MoveEffects:7528", "PokeBattle_MoveEffects:7560", "PokeBattle_MoveEffects:7592", "Pokemon_ShadowPokemon:771"]}
+{"lit": "¡El sol realmente abrazador no ha mermado en absoluto!", "n_occurrences": 5, "categories": ["전투", "필드"], "cross_category": true, "sample_sites": ["PokeBattle_MoveEffects:7499", "PokeBattle_MoveEffects:7531", "PokeBattle_MoveEffects:7563", "PokeBattle_MoveEffects:7595", "Pokemon_ShadowPokemon:774"]}
+{"lit": "Los PS de {1} fueron restaurados.", "n_occurrences": 5, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battle:1886", "PokeBattle_Battle:1889", "PokeBattle_Battle:1892", "PokeBattle_Battle:1895", "PokeBattle_Battle:1904"]}
+{"lit": "¡Escapaste sin problemas!", "n_occurrences": 5, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battle:1978", "PokeBattle_Battle:1987", "PokeBattle_Battle:1993", "PokeBattle_Battle:2002", "PokeBattle_Battle:2036"]}
+{"lit": "Quitar cambio", "n_occurrences": 5, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Nombres Habilidades:12", "PScreen_Party:1358", "PScreen_Party:1397", "PScreen_Party:1422", "PScreen_Party:1449"]}
+{"lit": "Mover", "n_occurrences": 5, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PScreen_Party:1842", "PScreen_Party:1939", "PScreen_Storage:702", "RepExp:198", "RepExp:83"]}
+{"lit": "Dar", "n_occurrences": 5, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PScreen_Bag:520", "PScreen_Bag:618", "PScreen_Party:1937", "PScreen_Storage:2938", "RepExp:196"]}
+{"lit": "{1} fue seleccionado.", "n_occurrences": 5, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Storage:545", "PScreen_Storage:604", "PScreen_Storage:641", "PScreen_Storage:698", "PScreen_Storage:701"]}
+{"lit": "¿Dejar de editar el regalo?", "n_occurrences": 5, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_MysteryGift:104", "PScreen_MysteryGift:53", "PScreen_MysteryGift:55", "PScreen_MysteryGift:66", "PScreen_MysteryGift:87"]}
+{"lit": "Izquierda", "n_occurrences": 5, "categories": ["디버그", "메뉴/UI"], "cross_category": true, "sample_sites": ["Controles:174", "Controles:241", "Controles:62", "Editor:3103"]}
+{"lit": "Arriba", "n_occurrences": 5, "categories": ["디버그", "메뉴/UI"], "cross_category": true, "sample_sites": ["Controles:176", "Controles:245", "Controles:63", "Editor:3103"]}
+{"lit": "Derecha", "n_occurrences": 5, "categories": ["디버그", "메뉴/UI"], "cross_category": true, "sample_sites": ["Controles:175", "Controles:243", "Controles:64", "Editor:3103"]}
+{"lit": "Abajo", "n_occurrences": 5, "categories": ["디버그", "메뉴/UI"], "cross_category": true, "sample_sites": ["Controles:173", "Controles:239", "Controles:65", "Editor:3103"]}
+{"lit": "¡No hay espacio para el Pokémon!\u0001", "n_occurrences": 5, "categories": ["그 밖", "필드"], "cross_category": true, "sample_sites": ["Incubadora:204", "PSystem_Utilities NUEVO:1710", "PSystem_Utilities NUEVO:1752", "PSystem_Utilities NUEVO:1765", "RandomObjects:381"]}
+{"lit": "PS", "n_occurrences": 4, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["PBStats:14", "PScreen_Party:1492", "PScreen_Storage:981", "PScreen_Summary:652"]}
+{"lit": "Ataque", "n_occurrences": 4, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["PBStats:15", "PScreen_Party:1492", "PScreen_Storage:981", "PScreen_Summary:654"]}
+{"lit": "Defensa", "n_occurrences": 4, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["PBStats:16", "PScreen_Party:1492", "PScreen_Storage:981", "PScreen_Summary:656"]}
+{"lit": "Velocidad", "n_occurrences": 4, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["PBStats:17", "PScreen_Party:1493", "PScreen_Storage:982", "PScreen_Summary:662"]}
+{"lit": "¡{2} de {1} envenenó a {3}!", "n_occurrences": 4, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:1576", "PokeBattle_Battler:1612", "PokeBattle_Battler:1685", "PokeBattle_BattlerEffects:223"]}
+{"lit": "¡El efecto de Mofa de {1} ha pasado!", "n_occurrences": 4, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:589", "MOD:Battle Order/003_Leftovers.rb:105", "PokeBattle_Battle:3901", "PokeBattle_Battler:2345"]}
+{"lit": "¡{1} ha restaurado un poco sus PS con {2}!", "n_occurrences": 4, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/003_Leftovers.rb:125", "MOD:Battle Order/003_Leftovers.rb:134", "PokeBattle_Battler:2366", "PokeBattle_Battler:2375"]}
+{"lit": "¡{1} no se vió afectado!", "n_occurrences": 4, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:2753", "PokeBattle_MoveEffects:10765", "PokeBattle_MoveEffects:3124", "PokeBattle_MoveEffects:8735"]}
+{"lit": "¡{2} de {1} no tuvo efecto en {3}!", "n_occurrences": 4, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_BattlerEffects:1098", "PokeBattle_BattlerEffects:1171", "PokeBattle_BattlerEffects:161", "PokeBattle_BattlerEffects:287"]}
+{"lit": "¡{2} de {1} activado!", "n_occurrences": 4, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_BattlerEffects:724", "PokeBattle_BattlerEffects:753", "PokeBattle_BattlerEffects:895", "PokeBattle_BattlerEffects:935"]}
+{"lit": "¡La salud de {1} está completa!", "n_occurrences": 4, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:6160", "PokeBattle_MoveEffects:6185", "PokeBattle_MoveEffects:6234", "PokeBattle_MoveEffects:6273"]}
+{"lit": "{1} recuperó salud.", "n_occurrences": 4, "categories": ["아이템", "전투"], "cross_category": true, "sample_sites": ["PItem_ItemEffects:1049", "PokeBattle_MoveEffects:6165", "PokeBattle_MoveEffects:6191", "PokeBattle_MoveEffects:6248"]}
+{"lit": "{1} ha obtenido {2}.", "n_occurrences": 4, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:6985", "PokeBattle_MoveEffects:6986", "PokeBattle_MoveEffects:6988", "PokeBattle_MoveEffects:6989"]}
+{"lit": "¡Las misteriosas turbulencias siguen soplando sin cesar!", "n_occurrences": 4, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:7502", "PokeBattle_MoveEffects:7534", "PokeBattle_MoveEffects:7566", "PokeBattle_MoveEffects:7598"]}
+{"lit": "¡{1} se mueve primero gracias a la {2}!", "n_occurrences": 4, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/001_TurnOrder.rb:78", "MOD:Battle Order/001_TurnOrder.rb:86", "PokeBattle_Battle:1175", "PokeBattle_Battle:1184"]}
+{"lit": "¡{1} no puede ser remplazado!", "n_occurrences": 4, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battle:1362", "PokeBattle_Battle:1366", "PokeBattle_Battle:1370", "PokeBattle_BattleArena:23"]}
+{"lit": "¡{1} envió\r\na {2}!", "n_occurrences": 4, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battle:1751", "PokeBattle_Battle:2826", "PokeBattle_Battle:2829", "PokeBattle_Battle:2869"]}
+{"lit": "¡{1} ha ganado {2} Puntos de Experiencia!", "n_occurrences": 4, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battle:2349", "PokeBattle_Battle:2351", "RepExp:458", "RepExp:755"]}
+{"lit": "¿Prefieres que {1} no aprenda {2}?", "n_occurrences": 4, "categories": ["아이템", "전투"], "cross_category": true, "sample_sites": ["PItem_Items:650", "PItem_Items:654", "PokeBattle_Battle:2448", "PokeBattle_Battle:2452"]}
+{"lit": "{1} no ha aprendido {2}.", "n_occurrences": 4, "categories": ["아이템", "전투"], "cross_category": true, "sample_sites": ["PItem_Items:651", "PItem_Items:655", "PokeBattle_Battle:2449", "PokeBattle_Battle:2453"]}
+{"lit": "Ball", "n_occurrences": 4, "categories": ["디버그", "전투"], "cross_category": true, "sample_sites": ["Editor:2828", "PBattle_BugContest:291", "PokeBattle_Scene:2322", "PokeBattle_Scene:2339"]}
+{"lit": "Usar", "n_occurrences": 4, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PScreen_Bag:617", "PScreen_Party:1936", "PokeBattle_Scene:2469", "RepExp:195"]}
+{"lit": "SALTANDO BATALLA...", "n_occurrences": 4, "categories": ["그 밖", "전투", "필드"], "cross_category": true, "sample_sites": ["Boss:6", "PBattle_OrgBattle:989", "PField_Field:877", "PField_Field:941"]}
+{"lit": "No se puede utilizar cuando estás con alguien.", "n_occurrences": 4, "categories": ["필드"], "cross_category": false, "sample_sites": ["PField_HiddenMoves:1002", "PField_HiddenMoves:1056", "PField_HiddenMoves:579", "PField_HiddenMoves:913"]}
+{"lit": "Tipo de encuentro fuera de rango", "n_occurrences": 4, "categories": ["그 밖", "필드"], "cross_category": true, "sample_sites": ["PField_Encounters:162", "PField_Encounters:191", "PField_Encounters:645", "RandomMain:1493"]}
+{"lit": "\\se[]¡{1} ha aprendido {2}!\\se[MoveLearnt]", "n_occurrences": 4, "categories": ["아이템", "필드"], "cross_category": true, "sample_sites": ["PItem_Items:632", "Pokemon_MultipleForms:477", "Pokemon_MultipleForms:545", "Pokemon_MultipleForms:675"]}
+{"lit": "Ésta contiene {1}.\u0001", "n_occurrences": 4, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_Items:689", "PItem_Items:692", "PItem_Items:730", "PItem_Items:733"]}
+{"lit": "¿Qué movimiento recuperar?", "n_occurrences": 4, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:1098", "PItem_ItemEffects:1114", "PItem_ItemEffects:2054", "PItem_ItemEffects:2070"]}
+{"lit": "¡{1} ha cambiado de forma!", "n_occurrences": 4, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:1557", "PItem_ItemEffects:1575", "PItem_ItemEffects:1598", "PItem_ItemEffects:1612"]}
+{"lit": "Opciones", "n_occurrences": 4, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Load:505", "PScreen_Load:509", "PScreen_Options:480", "PScreen_PauseMenu:143"]}
+{"lit": "Depurador", "n_occurrences": 4, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PScreen_Party:1832", "PScreen_PauseMenu:144", "PScreen_Storage:709", "RepExp:73"]}
+{"lit": "PUEDE", "n_occurrences": 4, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["PScreen_Party:1152", "PScreen_Party:1178", "PSystem_Utilities NUEVO:2399", "PSystem_Utilities NUEVO:2402"]}
+{"lit": "Especie", "n_occurrences": 4, "categories": ["디버그", "메뉴/UI"], "cross_category": true, "sample_sites": ["Editor:2796", "PScreen_Party:1193", "PScreen_Storage:745", "PScreen_Summary:205"]}
+{"lit": "Género", "n_occurrences": 4, "categories": ["디버그", "메뉴/UI"], "cross_category": true, "sample_sites": ["Editor:2487", "Editor:2812", "PScreen_Party:1195", "PScreen_Storage:747"]}
+{"lit": "Habilidad", "n_occurrences": 4, "categories": ["디버그", "메뉴/UI"], "cross_category": true, "sample_sites": ["Editor:2810", "PScreen_Party:1196", "PScreen_Storage:748", "PScreen_Summary:664"]}
+{"lit": "Felicidad", "n_occurrences": 4, "categories": ["디버그", "메뉴/UI"], "cross_category": true, "sample_sites": ["Editor:2822", "PScreen_Party:1200", "PScreen_Storage:752", "PScreen_Summary:515"]}
+{"lit": "Borrar", "n_occurrences": 4, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:71", "PScreen_MysteryGift:201", "PScreen_Party:1211", "PScreen_Storage:763"]}
+{"lit": "Desconocido", "n_occurrences": 4, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1607", "PScreen_Party:1632", "PScreen_Storage:1095", "PScreen_Storage:1120"]}
+{"lit": "Leer", "n_occurrences": 4, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PScreen_Bag:616", "PScreen_Party:1919", "PScreen_Storage:2936", "RepExp:178"]}
+{"lit": "Quitar", "n_occurrences": 4, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PScreen_Party:1919", "PScreen_Party:1938", "RepExp:178", "RepExp:197"]}
+{"lit": "DATOS", "n_occurrences": 4, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PBattle_BattleSwap:171", "PBattle_BattleSwap:209", "PScreen_PurifyChamber:457", "PScreen_Summary:199"]}
+{"lit": "¡Ése es tu último Pokémon!", "n_occurrences": 4, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Storage:249", "PScreen_Storage:292", "PScreen_Storage:350", "PScreen_Storage:366"]}
+{"lit": "¿Salir de la Caja?", "n_occurrences": 4, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Storage:519", "PScreen_Storage:580", "PScreen_Storage:625", "PScreen_Storage:666"]}
+{"lit": "¿Hacer más cambios?", "n_occurrences": 4, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Storage:526", "PScreen_Storage:595", "PScreen_Storage:632", "PScreen_Storage:677"]}
+{"lit": "Marcar", "n_occurrences": 4, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Storage:541", "PScreen_Storage:605", "PScreen_Storage:642", "PScreen_Storage:707"]}
+{"lit": "Quitar modificación", "n_occurrences": 4, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Storage:848", "PScreen_Storage:887", "PScreen_Storage:912", "PScreen_Storage:939"]}
+{"lit": "Money:\n{1}", "n_occurrences": 4, "categories": ["그 밖"], "cross_category": false, "sample_sites": ["PMinigame_TripleTriad:1098", "PMinigame_TripleTriad:1149", "PMinigame_TripleTriad:1181", "PMinigame_TripleTriad:1228"]}
+{"lit": " << ", "n_occurrences": 4, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:522", "BattleAnimationEditor:528", "BattleAnimationEditor:776", "BattleAnimationEditor:781"]}
+{"lit": " >> ", "n_occurrences": 4, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:524", "BattleAnimationEditor:537", "BattleAnimationEditor:777", "BattleAnimationEditor:790"]}
+{"lit": "X:", "n_occurrences": 4, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2046", "BattleAnimationEditor:2347", "BattleAnimationEditor:2394", "BattleAnimationEditor:2613"]}
+{"lit": "Y:", "n_occurrences": 4, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2047", "BattleAnimationEditor:2348", "BattleAnimationEditor:2395", "BattleAnimationEditor:2614"]}
+{"lit": "Opacity:", "n_occurrences": 4, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2051", "BattleAnimationEditor:2349", "BattleAnimationEditor:2396", "BattleAnimationEditor:2618"]}
+{"lit": "Target", "n_occurrences": 4, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2056", "BattleAnimationEditor:2623", "BattleAnimationEditor:3668", "Compiler:1512"]}
+{"lit": "File: \"{1}\"", "n_occurrences": 4, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2285", "BattleAnimationEditor:2318", "BattleAnimationEditor:2346", "BattleAnimationEditor:2380"]}
+{"lit": "Sintaxis de línea errónea (se esperaba línea con formato XXX=YYY)\r\n{1}", "n_occurrences": 4, "categories": ["디버그"], "cross_category": false, "sample_sites": ["Compiler:1203", "Compiler:1305", "Compiler:192", "Compiler:2392"]}
+{"lit": "¡Tus otros Pokémon también han ganado Puntos de Experiencia gracias al Repartir Experiencia!", "n_occurrences": 4, "categories": ["전투"], "cross_category": false, "sample_sites": ["RepExp:321", "RepExp:326", "RepExp:575", "RepExp:580"]}
+{"lit": "{1}, {2}", "n_occurrences": 4, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Pokedex Mejorada:181", "Pokedex Mejorada:210", "Pokedex Mejorada:225", "Pokedex Mejorada:233"]}
+{"lit": "OK", "n_occurrences": 3, "categories": ["디버그", "메뉴/UI"], "cross_category": true, "sample_sites": ["BattleAnimationEditor:2774", "BattleAnimationEditor:3207", "TextEntry:55"]}
+{"lit": "Bicho", "n_occurrences": 3, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["PBEggGroups:25", "PScreen_Pokedex:904", "Pokedex Mejorada:175"]}
+{"lit": "Volador", "n_occurrences": 3, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["PBEggGroups:26", "PScreen_Pokedex:902", "Pokedex Mejorada:175"]}
+{"lit": "Planta", "n_occurrences": 3, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["PBEggGroups:29", "PScreen_Pokedex:905", "Pokedex Mejorada:176"]}
+{"lit": "Dragón", "n_occurrences": 3, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["PBEggGroups:36", "PScreen_Pokedex:907", "Pokedex Mejorada:178"]}
+{"lit": "¡{1} se ha transformado!", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:1066", "PokeBattle_MoveEffects:10710", "PokeBattle_MoveEffects:174"]}
+{"lit": "¡{1} alteró las dimensiones!", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:1242", "PokeBattle_Battler:1245", "PokeBattle_MoveEffects:8658"]}
+{"lit": "¡{2} de {1} lo despertó!", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:339", "PokeBattle_Battle:3651", "PokeBattle_Battler:1988"]}
+{"lit": "¡{2} de {1} le curó el veneno!", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:341", "PokeBattle_Battle:3653", "PokeBattle_Battler:1994"]}
+{"lit": "¡{2} de {1} le curó la quemadura!", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:343", "PokeBattle_Battle:3655", "PokeBattle_Battler:2000"]}
+{"lit": "¡{2} de {1} le curó la parálisis!", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:345", "PokeBattle_Battle:3657", "PokeBattle_Battler:2006"]}
+{"lit": "¡{2} de {1} le permitió descongelarse!", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:347", "PokeBattle_Battle:3659", "PokeBattle_Battler:2012"]}
+{"lit": "¡{2} de {1} inutilizó {4} de {3}!", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_BattlerEffects:1106", "PokeBattle_BattlerEffects:1179", "PokeBattle_BattlerEffects:295"]}
+{"lit": "¡{1} se ha protegido con Neblina!", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_BattlerEffects:812", "PokeBattle_MoveEffects:2041", "PokeBattle_MoveEffects:8939"]}
+{"lit": "¡El sustituto ha protegido a {1} de {3} de {2}!", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_BattlerEffects:1000", "PokeBattle_BattlerEffects:1035", "PokeBattle_BattlerEffects:965"]}
+{"lit": "¡{1} se ha protegido de {3} de {2} con Neblina!", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_BattlerEffects:1006", "PokeBattle_BattlerEffects:1041", "PokeBattle_BattlerEffects:971"]}
+{"lit": "¡{1} ha usado\r\n{2}!", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battle:1882", "PokeBattle_Move:1705", "PokeBattle_MoveEffects:6102"]}
+{"lit": "¡Pero no pasó nada!", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battle:2138", "PokeBattle_Battle:2144", "PokeBattle_MoveEffects:127"]}
+{"lit": "El campo de corriente eléctrica ha desaparecido.", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:1964", "PokeBattle_MoveEffects:2004", "PokeBattle_MoveEffects:9975"]}
+{"lit": "La hierba ha desaparecido.", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:1967", "PokeBattle_MoveEffects:2007", "PokeBattle_MoveEffects:9985"]}
+{"lit": "La niebla se ha disipado.", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:1970", "PokeBattle_MoveEffects:2010", "PokeBattle_MoveEffects:9990"]}
+{"lit": "Ha desaparecido la extraña sensación que había en el terreno de combate.", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:1973", "PokeBattle_MoveEffects:2013", "PokeBattle_MoveEffects:9980"]}
+{"lit": "¡La habilidad de {1} ha cambiado a {2}!", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:2773", "PokeBattle_MoveEffects:2808", "PokeBattle_MoveEffects:2903"]}
+{"lit": "¡{1} ya no está desactivado!", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:620", "PokeBattle_Battle:3932", "PokeBattle_MoveEffects:7274"]}
+{"lit": "¡Los dos movimientos se han unido! ¡Es un movimiento combinado!", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:7695", "PokeBattle_MoveEffects:7795", "PokeBattle_MoveEffects:7895"]}
+{"lit": "{1} está esperando a {2}...", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:7766", "PokeBattle_MoveEffects:7866", "PokeBattle_MoveEffects:7966"]}
+{"lit": "De alguna forma no se pudo regresar el objeto sin usar a la mochila.", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battle:1798", "PokeBattle_Battle:1812", "PokeBattle_Battle:1848"]}
+{"lit": "¡No conseguiste escapar!", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battle:1983", "PokeBattle_Battle:2014", "PokeBattle_Battle:2039"]}
+{"lit": "El nivel nuevo ({1}) es menor que el nivel actual\r\ndel Pokémon ({2}), lo que no debería pasar.\r\n[Depurar: {3}]", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battle:2359", "RepExp:466", "RepExp:763"]}
+{"lit": "¡{1} subió al nivel {2}!", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battle:2397", "RepExp:504", "RepExp:801"]}
+{"lit": "¡El deseo de {1} se hizo realidad!", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:303", "PokeBattle_Battle:2507", "PokeBattle_Battle:3615"]}
+{"lit": "Hace mucho sol...", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:47", "PokeBattle_Battle:2916", "PokeBattle_Battle:3359"]}
+{"lit": "Sigue lloviendo...", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:70", "PokeBattle_Battle:2919", "PokeBattle_Battle:3382"]}
+{"lit": "La tormenta de arena arrecia...", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:80", "PokeBattle_Battle:2922", "PokeBattle_Battle:3392"]}
+{"lit": "...", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battle:2956", "PokeBattle_Battle:4502", "PokeBattle_Battle:4507"]}
+{"lit": "Huir", "n_occurrences": 3, "categories": ["전투"], "cross_category": false, "sample_sites": ["PBattle_BugContest:293", "PokeBattle_Scene:2325", "PokeBattle_Scene:2338"]}
+{"lit": "Pokémon", "n_occurrences": 3, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PBattle_BugContest:292", "PScreen_PauseMenu:119", "PokeBattle_Scene:2337"]}
+{"lit": "Es una roca enorme, pero un Pokémon podría ser capaz de desplazarla.", "n_occurrences": 3, "categories": ["필드"], "cross_category": false, "sample_sites": ["PField_HiddenMoves:438", "PField_HiddenMoves:448", "PField_HiddenMoves:451"]}
+{"lit": "Una columna de agua desciende con un intenso rugido.", "n_occurrences": 3, "categories": ["필드"], "cross_category": false, "sample_sites": ["PField_HiddenMoves:660", "PField_HiddenMoves:663", "PField_HiddenMoves:675"]}
+{"lit": "La {1} ha sido plantada en el suelo blando y fértil.", "n_occurrences": 3, "categories": ["필드"], "cross_category": false, "sample_sites": ["PField_BerryPlants:361", "PField_BerryPlants:387", "PField_BerryPlants:411"]}
+{"lit": "Primavera", "n_occurrences": 3, "categories": ["메뉴/UI", "필드"], "cross_category": true, "sample_sites": ["Cartelitos:156", "PField_Time:293", "PField_Time:309"]}
+{"lit": "Verano", "n_occurrences": 3, "categories": ["메뉴/UI", "필드"], "cross_category": true, "sample_sites": ["Cartelitos:157", "PField_Time:294", "PField_Time:310"]}
+{"lit": "Otoño", "n_occurrences": 3, "categories": ["메뉴/UI", "필드"], "cross_category": true, "sample_sites": ["Cartelitos:158", "PField_Time:295", "PField_Time:311"]}
+{"lit": "Invierno", "n_occurrences": 3, "categories": ["메뉴/UI", "필드"], "cross_category": true, "sample_sites": ["Cartelitos:159", "PField_Time:296", "PField_Time:312"]}
+{"lit": "SALTANDO COMBATES...", "n_occurrences": 3, "categories": ["그 밖"], "cross_category": false, "sample_sites": ["PTrainer_NPCTrainers:295", "PTrainer_NPCTrainers:395", "PTrainer_NPCTrainers:502"]}
+{"lit": "TRAS PERDER...", "n_occurrences": 3, "categories": ["그 밖", "전투"], "cross_category": true, "sample_sites": ["PBattle_OrgBattle:990", "PTrainer_NPCTrainers:396", "PTrainer_NPCTrainers:503"]}
+{"lit": "PS Máx.<r>{1}\r\nAtaque<r>{2}\r\nDefensa<r>{3}\r\nAt. Esp.<r>{4}\r\nDef. Esp.<r>{5}\r\nVelocidad<r>{6}", "n_occurrences": 3, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_Items:317", "PItem_Items:319", "PItem_Items:344"]}
+{"lit": "{1} no puede ser aprendido.", "n_occurrences": 3, "categories": ["그 밖", "아이템"], "cross_category": true, "sample_sites": ["PItem_Items:685", "PSystem_Utilities NUEVO:2438", "PSystem_Utilities NUEVO:2441"]}
+{"lit": "No hay Pokémon.", "n_occurrences": 3, "categories": ["메뉴/UI", "아이템"], "cross_category": true, "sample_sites": ["PItem_ItemEffects:203", "PScreen_Bag:546", "PScreen_Bag:646"]}
+{"lit": "\\se[]1,\\wt[4] 2,\\wt[4] y...\\wt[8] ...\\wt[8] ...\\wt[8] ¡Puf!\\se[balldrop]\u0001", "n_occurrences": 3, "categories": ["필드"], "cross_category": false, "sample_sites": ["Pokemon_MultipleForms:474", "Pokemon_MultipleForms:542", "Pokemon_MultipleForms:672"]}
+{"lit": "{1} ha olvidado cómo\r\nusar {2}.\u0001", "n_occurrences": 3, "categories": ["필드"], "cross_category": false, "sample_sites": ["Pokemon_MultipleForms:475", "Pokemon_MultipleForms:543", "Pokemon_MultipleForms:673"]}
+{"lit": "Y...\u0001", "n_occurrences": 3, "categories": ["필드"], "cross_category": false, "sample_sites": ["Pokemon_MultipleForms:476", "Pokemon_MultipleForms:544", "Pokemon_MultipleForms:674"]}
+{"lit": "{1} ha olvidado {2}...", "n_occurrences": 3, "categories": ["필드"], "cross_category": false, "sample_sites": ["Pokemon_MultipleForms:488", "Pokemon_MultipleForms:556", "Pokemon_MultipleForms:686"]}
+{"lit": "¡{1} ha vuelto en sí gracias al {2}!", "n_occurrences": 3, "categories": ["필드"], "cross_category": false, "sample_sites": ["Pokemon_ShadowPokemon:256", "Pokemon_ShadowPokemon:275", "Pokemon_ShadowPokemon:294"]}
+{"lit": "Guardar", "n_occurrences": 3, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_PauseMenu:141", "PScreen_Storage:544", "PScreen_Storage:641"]}
+{"lit": "Sin especificar", "n_occurrences": 3, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Pokedex:895", "PScreen_Pokedex:909", "PScreen_Pokedex:915"]}
+{"lit": "NO PUEDE", "n_occurrences": 3, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["PScreen_Party:1152", "PScreen_Party:1178", "PSystem_Utilities NUEVO:2404"]}
+{"lit": "Nivel", "n_occurrences": 3, "categories": ["디버그", "메뉴/UI"], "cross_category": true, "sample_sites": ["Editor:2798", "PScreen_Party:1192", "PScreen_Storage:744"]}
+{"lit": "Naturaleza", "n_occurrences": 3, "categories": ["디버그", "메뉴/UI"], "cross_category": true, "sample_sites": ["Editor:2818", "PScreen_Party:1197", "PScreen_Storage:749"]}
+{"lit": "Forma", "n_occurrences": 3, "categories": ["디버그", "메뉴/UI"], "cross_category": true, "sample_sites": ["Editor:2814", "PScreen_Party:1199", "PScreen_Storage:751"]}
+{"lit": "Apodo", "n_occurrences": 3, "categories": ["디버그", "메뉴/UI"], "cross_category": true, "sample_sites": ["Editor:2824", "PScreen_Party:1204", "PScreen_Storage:756"]}
+{"lit": "Hacer Reg. Mist.", "n_occurrences": 3, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Bag:625", "PScreen_Party:1209", "PScreen_Storage:761"]}
+{"lit": "Curar", "n_occurrences": 3, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:186", "Controles:269", "PScreen_Party:1232"]}
+{"lit": "La habilidad {1} es natural.", "n_occurrences": 3, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Nombres Habilidades:13", "PScreen_Party:1398", "PScreen_Storage:888"]}
+{"lit": "La habilidad {1} es forzada.", "n_occurrences": 3, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Nombres Habilidades:14", "PScreen_Party:1399", "PScreen_Storage:889"]}
+{"lit": "Un Huevo no puede llevar un objeto.", "n_occurrences": 3, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PScreen_Party:1970", "PScreen_Storage:409", "RepExp:229"]}
+{"lit": "<c3=404040,B0B0B0>{2} de {1} de {3}\n", "n_occurrences": 3, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Summary:298", "PScreen_Summary:370", "PScreen_Summary:394"]}
+{"lit": "CATEGORÍA", "n_occurrences": 3, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["BetterMoveRelearner:90", "PScreen_MoveRelearner:144", "PScreen_Summary:803"]}
+{"lit": "POTENCIA", "n_occurrences": 3, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["BetterMoveRelearner:91", "PScreen_MoveRelearner:145", "PScreen_Summary:804"]}
+{"lit": "PRECISIÓN", "n_occurrences": 3, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["BetterMoveRelearner:94", "PScreen_MoveRelearner:148", "PScreen_Summary:805"]}
+{"lit": "¿Guardar los cambios?", "n_occurrences": 3, "categories": ["디버그", "메뉴/UI"], "cross_category": true, "sample_sites": ["Editor:4017", "PScreen_RegionMap:332", "TilesetEditor:165"]}
+{"lit": "P", "n_occurrences": 3, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:98", "PScreen_Options:569", "PScreen_Options:684"]}
+{"lit": "M", "n_occurrences": 3, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:95", "PScreen_Options:569", "PScreen_Options:684"]}
+{"lit": "G", "n_occurrences": 3, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:89", "PScreen_Options:569", "PScreen_Options:684"]}
+{"lit": "Sacar", "n_occurrences": 3, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Storage:539", "PScreen_Storage:604", "PScreen_Storage:705"]}
+{"lit": "Soltar", "n_occurrences": 3, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Storage:605", "PScreen_Storage:642", "PScreen_Storage:708"]}
+{"lit": "No hay regalos nuevos disponibles.", "n_occurrences": 3, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_MysteryGift:272", "PScreen_MysteryGift:284", "PScreen_MysteryGift:338"]}
+{"lit": "Kept all cards of your color.", "n_occurrences": 3, "categories": ["그 밖"], "cross_category": false, "sample_sites": ["PMinigame_TripleTriad:915", "PMinigame_TripleTriad:948", "PMinigame_TripleTriad:980"]}
+{"lit": "CANCEL", "n_occurrences": 3, "categories": ["그 밖"], "cross_category": false, "sample_sites": ["PMinigame_TripleTriad:1170", "PMinigame_TripleTriad:1237", "PMinigame_TripleTriad:1259"]}
+{"lit": "Cancelar/Pausa", "n_occurrences": 3, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:179", "Controles:180", "Controles:249"]}
+{"lit": "Selecciona una función para cambiar el botón asignado.", "n_occurrences": 3, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:372", "Controles:397", "Controles:406"]}
+{"lit": "User", "n_occurrences": 3, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2056", "BattleAnimationEditor:2623", "BattleAnimationEditor:3668"]}
+{"lit": "User and target", "n_occurrences": 3, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2056", "BattleAnimationEditor:2623", "BattleAnimationEditor:3668"]}
+{"lit": "Screen", "n_occurrences": 3, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2056", "BattleAnimationEditor:2623", "BattleAnimationEditor:3668"]}
+{"lit": "First Frame:", "n_occurrences": 3, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2452", "BattleAnimationEditor:2605", "BattleAnimationEditor:2669"]}
+{"lit": "Last Frame:", "n_occurrences": 3, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2453", "BattleAnimationEditor:2606", "BattleAnimationEditor:2670"]}
+{"lit": "Setear el valor en {1}.", "n_occurrences": 3, "categories": ["디버그"], "cross_category": false, "sample_sites": ["Editor:1759", "Editor:1784", "Editor:1810"]}
+{"lit": "F5: Ayuda", "n_occurrences": 3, "categories": ["디버그"], "cross_category": false, "sample_sites": ["Editor:3733", "Editor:3903", "Editor:3909"]}
+{"lit": "Se esperaba una sección al inicio del archivo\r\n{1}", "n_occurrences": 3, "categories": ["디버그"], "cross_category": false, "sample_sites": ["Compiler:1200", "Compiler:1302", "Compiler:2389"]}
+{"lit": "No puedes viajar aquí.", "n_occurrences": 3, "categories": ["메뉴/UI", "필드"], "cross_category": true, "sample_sites": ["Menu Mejorado:1585", "Pokerider:13", "Pokerider:4"]}
+{"lit": "AFTER LOSING...", "n_occurrences": 3, "categories": ["그 밖", "전투"], "cross_category": true, "sample_sites": ["Combate Inverso:251", "Combate Inverso:358", "Generaentrenador:166"]}
+{"lit": "Medicinas", "n_occurrences": 2, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["Objetos Batalla:16", "Settings:152"]}
+{"lit": "Failed to load the bitmap located at: {1}", "n_occurrences": 2, "categories": ["그 밖"], "cross_category": false, "sample_sites": ["BitmapCache:390", "BitmapCache:394"]}
+{"lit": "Escribe texto usando el teclado.\nPulsa ENTER para confirmar.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["TextEntry:870", "TextEntry:875"]}
+{"lit": "Your name?", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["TextEntry:1574", "TextEntry:1598"]}
+{"lit": "Enter {1}'s name.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["TextEntry:1585", "TextEntry:1609"]}
+{"lit": "Ataque Especial", "n_occurrences": 2, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["PBStats:18", "PScreen_Storage:982"]}
+{"lit": "Defensa Especial", "n_occurrences": 2, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["PBStats:19", "PScreen_Storage:982"]}
+{"lit": "Cool Ribbon", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PBRibbons:108", "PBRibbons:88"]}
+{"lit": "Cool Ribbon Master", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PBRibbons:111", "PBRibbons:91"]}
+{"lit": "Beauty Ribbon", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PBRibbons:112", "PBRibbons:92"]}
+{"lit": "Beauty Ribbon Master", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PBRibbons:115", "PBRibbons:95"]}
+{"lit": "Cute Ribbon", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PBRibbons:116", "PBRibbons:96"]}
+{"lit": "Cute Ribbon Master", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PBRibbons:119", "PBRibbons:99"]}
+{"lit": "Smart Ribbon", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PBRibbons:100", "PBRibbons:120"]}
+{"lit": "Smart Ribbon Master", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PBRibbons:103", "PBRibbons:123"]}
+{"lit": "Tough Ribbon", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PBRibbons:104", "PBRibbons:124"]}
+{"lit": "Tough Ribbon Master", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PBRibbons:107", "PBRibbons:127"]}
+{"lit": "A Ribbon awarded for defeating the Tower Tycoon at the Battle Tower.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PBRibbons:216", "PBRibbons:217"]}
+{"lit": "Pokémon League Champion Ribbon.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PBRibbons:247", "PBRibbons:251"]}
+{"lit": "Agua 1", "n_occurrences": 2, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["PBEggGroups:24", "Pokedex Mejorada:175"]}
+{"lit": "Campo", "n_occurrences": 2, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["PBEggGroups:27", "Pokedex Mejorada:176"]}
+{"lit": "Hada", "n_occurrences": 2, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["PBEggGroups:28", "Pokedex Mejorada:176"]}
+{"lit": "Humanoide", "n_occurrences": 2, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["PBEggGroups:30", "Pokedex Mejorada:176"]}
+{"lit": "Agua 3", "n_occurrences": 2, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["PBEggGroups:31", "Pokedex Mejorada:177"]}
+{"lit": "Mineral", "n_occurrences": 2, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["PBEggGroups:32", "Pokedex Mejorada:177"]}
+{"lit": "Amorfo", "n_occurrences": 2, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["PBEggGroups:33", "Pokedex Mejorada:177"]}
+{"lit": "Agua 2", "n_occurrences": 2, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["PBEggGroups:34", "Pokedex Mejorada:178"]}
+{"lit": "Ditto", "n_occurrences": 2, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["PBEggGroups:35", "Pokedex Mejorada:178"]}
+{"lit": "Rojo", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PBColors:18", "PScreen_Pokedex:916"]}
+{"lit": "Azul", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PBColors:19", "PScreen_Pokedex:916"]}
+{"lit": "Amarillo", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PBColors:20", "PScreen_Pokedex:916"]}
+{"lit": "Verde", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PBColors:21", "PScreen_Pokedex:917"]}
+{"lit": "Negro", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PBColors:22", "PScreen_Pokedex:917"]}
+{"lit": "Marrón", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PBColors:23", "PScreen_Pokedex:917"]}
+{"lit": "Morado", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PBColors:24", "PScreen_Pokedex:918"]}
+{"lit": "Gris", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PBColors:25", "PScreen_Pokedex:918"]}
+{"lit": "Blanco", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PBColors:26", "PScreen_Pokedex:918"]}
+{"lit": "Rosa", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PBColors:27", "PScreen_Pokedex:918"]}
+{"lit": "Un huevo no puede ser un Pokémon activo", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:235", "PokeBattle_Battler:275"]}
+{"lit": "{1} rival", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:587"]}
+{"lit": "{1} salvaje", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:589"]}
+{"lit": "{1} aliado", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:594"]}
+{"lit": "¡{1} se curó del estado Caduco!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:760", "PokeBattle_Battler:784"]}
+{"lit": "¡{1} se curó de la Hemorragia!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:762", "PokeBattle_Battler:786"]}
+{"lit": "PS menor a 0", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:865", "PokeBattle_Battler:880"]}
+{"lit": "PS mayor a los PS totales", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:866", "PokeBattle_Battler:881"]}
+{"lit": "¡Se ha formado un campo de corriente eléctrica en el campo de batalla!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:1375", "PokeBattle_MoveEffects:9721"]}
+{"lit": "¡El campo de batalla se volvió extraño!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:1390", "PokeBattle_MoveEffects:9793"]}
+{"lit": "¡El terreno de combate se ha cubierto de hierba!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:1404", "PokeBattle_MoveEffects:9746"]}
+{"lit": "¡La niebla ha envuelto el terreno de combate!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:1418", "PokeBattle_MoveEffects:9771"]}
+{"lit": "¡{1} se transformó en {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:1497", "PokeBattle_MoveEffects:3033"]}
+{"lit": "¡{2} de {1} enamoró a {3}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:1560", "PokeBattle_BattlerEffects:630"]}
+{"lit": "¡{2} de {1} paralizó a {3}! ¡Quizás no pueda moverse!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:1586", "PokeBattle_Battler:1653"]}
+{"lit": "¡El equipo enemigo ha sido rodeado de púas venenosas!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:1633", "PokeBattle_MoveEffects:7652"]}
+{"lit": "¡Ha explotado el Globo Helio de {1}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:1803", "PokeBattle_Battler:3237"]}
+{"lit": "¡{2} de {1} le quitó el enamoramiento!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:2023", "PokeBattle_Battler:2028"]}
+{"lit": "¡{1} recuperó su salud usando una {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:2086", "PokeBattle_Battler:2093"]}
+{"lit": "¡{1} se ha despertado gracias a la {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:2099", "PokeBattle_Battler:2165"]}
+{"lit": "¡{1} se ha curado del envenenamiento gracias a la {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:2105", "PokeBattle_Battler:2167"]}
+{"lit": "¡{1} se ha curado la quemadura gracias a la {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:2111", "PokeBattle_Battler:2169"]}
+{"lit": "¡{1} se ha recuperado de la parálisis gracias a la {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:2117", "PokeBattle_Battler:2171"]}
+{"lit": "¡{1} se ha descongelado gracias a la {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:2123", "PokeBattle_Battler:2173"]}
+{"lit": "¡{1} se ha librado de la confusión gracias a la {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:2155", "PokeBattle_Battler:2176"]}
+{"lit": "¡{1} ha restaurado su salud gracias a la {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/003_Leftovers.rb:19", "PokeBattle_Battler:2259"]}
+{"lit": "¡{1} ha restaurado su estado gracias a la {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/003_Leftovers.rb:90", "PokeBattle_Battler:2330"]}
+{"lit": "¡{1} se le pasó el enamoramiento usando {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/003_Leftovers.rb:104", "PokeBattle_Battler:2344"]}
+{"lit": "¡{1} se liberó de Repetición!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/003_Leftovers.rb:106", "PokeBattle_Battler:2346"]}
+{"lit": "¡El efecto de Tormento de {1} ha pasado!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/003_Leftovers.rb:107", "PokeBattle_Battler:2347"]}
+{"lit": "¡{1} se ha liberado de la anulación!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/003_Leftovers.rb:108", "PokeBattle_Battler:2348"]}
+{"lit": "¡Anticura de {1} se agotó!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/003_Leftovers.rb:109", "PokeBattle_Battler:2349"]}
+{"lit": "¡{1} ha sido herido por {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/003_Leftovers.rb:140", "PokeBattle_Battler:2381"]}
+{"lit": "¡{1} robó el movimiento de {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:2454", "PokeBattle_Battler:2568"]}
+{"lit": "¡{2} de {1} lo hace inmune a {3}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:2630", "PokeBattle_Battler:3141"]}
+{"lit": "¡Está tan confuso que se hirió a sí mismo!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:2729", "PokeBattle_Battler:3080"]}
+{"lit": "¡{1} ha evitado el ataque!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:2963", "PokeBattle_Battler:2968"]}
+{"lit": "¡{1} ha esquivado el ataque!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:2966", "PokeBattle_Battler:2970"]}
+{"lit": "¡{1} no puede usar {2} porque está sellado!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:3016", "PokeBattle_Battler:3026"]}
+{"lit": "¡Es super efectivo en {1}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:3365", "PokeBattle_Move:1630"]}
+{"lit": "¡Es super efectivo!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:3367", "PokeBattle_Move:1632"]}
+{"lit": "No es muy efectivo en {1}...", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:3371", "PokeBattle_Move:1636"]}
+{"lit": "No es muy efectivo...", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battler:3373", "PokeBattle_Move:1638"]}
+{"lit": "Pero no hay objetivo...", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battle:71", "PokeBattle_Battler:3681"]}
+{"lit": "¡{1} ya está confuso!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_BattlerEffects:534", "PokeBattle_BattlerEffects:558"]}
+{"lit": "¡{2} de {1} impide que quede confuso!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_BattlerEffects:543", "PokeBattle_BattlerEffects:562"]}
+{"lit": "¡{2} de {1} evita la pérdida de características!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_BattlerEffects:819", "PokeBattle_MoveEffects:2048"]}
+{"lit": "¡{2} de {1} recuperó sus PS!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Move:425", "PokeBattle_Move:438"]}
+{"lit": "¡Las características de {1} no bajarán más!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:2037", "PokeBattle_MoveEffects:8935"]}
+{"lit": "¡{2} de {1} evita que baje el Ataque!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:2058", "PokeBattle_MoveEffects:8955"]}
+{"lit": "¡{1} se está protegiendo con {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:10761", "PokeBattle_MoveEffects:3120"]}
+{"lit": "¡K.O de un golpe!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:10775", "PokeBattle_MoveEffects:3134"]}
+{"lit": "¡Se han debilitado los ataques de tipo Eléctrico!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:4172", "PokeBattle_MoveEffects:4183"]}
+{"lit": "¡Se han debilitado los ataques de tipo Fuego!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:4205", "PokeBattle_MoveEffects:4216"]}
+{"lit": "¡Reflejo subió la Defensa de tu equipo!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:4323", "PokeBattle_MoveEffects:8029"]}
+{"lit": "¡Reflejo subió la Defensa del equipo enemigo!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:4325", "PokeBattle_MoveEffects:8027"]}
+{"lit": "¡{1} fue identificado!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:4504", "PokeBattle_MoveEffects:4525"]}
+{"lit": "¡{1} esquivó el ataque!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:6349", "PokeBattle_MoveEffects:9206"]}
+{"lit": "¡{1} absorbió el Lodo Líquido!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:6379", "PokeBattle_MoveEffects:6409"]}
+{"lit": "¡{1} ha perdido energía!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:6384", "PokeBattle_MoveEffects:6414"]}
+{"lit": "¡{1} no pudo escapar!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:6851", "PokeBattle_MoveEffects:6867"]}
+{"lit": "¡El equipo enemigo está rodeado de piedras puntiagudas!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:10179", "PokeBattle_MoveEffects:7675"]}
+{"lit": "¡Tu equipo está rodeado de piedras puntiagudas!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:10181", "PokeBattle_MoveEffects:7677"]}
+{"lit": "¡El equipo rival se ve rodeado por un mar de llamas!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:7729", "PokeBattle_MoveEffects:7829"]}
+{"lit": "¡Tu equipo se ve rodeado por un mar de llamas!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:7732", "PokeBattle_MoveEffects:7832"]}
+{"lit": "¡Ha aparecido un pantano alrededor del equipo rival!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:7743", "PokeBattle_MoveEffects:7929"]}
+{"lit": "¡Ha aparecido un pantano alrededor de tu equipo!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:7746", "PokeBattle_MoveEffects:7932"]}
+{"lit": "¡Ha aparecido un arcoiris sobre tu equipo!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:7843", "PokeBattle_MoveEffects:7943"]}
+{"lit": "¡Ha aparecido un arcoiris sobre el equipo rival!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:7846", "PokeBattle_MoveEffects:7946"]}
+{"lit": "¡{1} se liberó de {3} de {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:10617", "PokeBattle_MoveEffects:8196"]}
+{"lit": "¡{1} se liberó de las drenadoras!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:10624", "PokeBattle_MoveEffects:8203"]}
+{"lit": "¡{1} se deshizo de las piedras puntiagudas!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:10628", "PokeBattle_MoveEffects:8207"]}
+{"lit": "¡{1} se deshizo de las púas!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:10632", "PokeBattle_MoveEffects:8211"]}
+{"lit": "¡{1} se deshizo de las púas venenosas!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:10636", "PokeBattle_MoveEffects:8215"]}
+{"lit": "¡{1} se deshizo de la red pegajosa!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:10640", "PokeBattle_MoveEffects:8219"]}
+{"lit": "¡{1} ha sido transaformado en tipo {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:9187", "PokeBattle_MoveEffects:9217"]}
+{"lit": "¡{1} ha absorbido el lodo líquido!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:10295", "PokeBattle_MoveEffects:9596"]}
+{"lit": "¡La energía de {1} ha sido absorbida!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:10299", "PokeBattle_MoveEffects:9601"]}
+{"lit": "¡{1} y {2} no pueden escapar!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_MoveEffects:10492", "PokeBattle_MoveEffects:10509"]}
+{"lit": "¿Quieres añadir a {1} a tu equipo?", "n_occurrences": 2, "categories": ["그 밖", "전투"], "cross_category": true, "sample_sites": ["PSystem_Utilities NUEVO:1718", "PokeBattle_Battle:23"]}
+{"lit": "¿Por cuál lo quieres remplazar?", "n_occurrences": 2, "categories": ["그 밖", "전투"], "cross_category": true, "sample_sites": ["PSystem_Utilities NUEVO:1719", "PokeBattle_Battle:24"]}
+{"lit": "{1} fue añadido a tu equipo.", "n_occurrences": 2, "categories": ["그 밖", "전투"], "cross_category": true, "sample_sites": ["PSystem_Utilities NUEVO:1723", "PokeBattle_Battle:29"]}
+{"lit": "{1} fue transferido al Rancho.", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battle:50", "PokeBattle_Battle:52"]}
+{"lit": "El {1} salvaje", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battle:481", "PokeBattle_SafariZone:30"]}
+{"lit": "¡Los efectos de la {1} deshabilita el uso de movimientos de estado!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battle:1001", "PokeBattle_Battle:994"]}
+{"lit": "¡{1} no puede usar {2} por estar sellado!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battle:1032", "PokeBattle_Battle:1044"]}
+{"lit": "¡{1} se puso saludable!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battle:1902", "PokeBattle_Battle:1909"]}
+{"lit": "Mega {1}", "n_occurrences": 2, "categories": ["전투", "필드"], "cross_category": true, "sample_sites": ["PokeBattle_Battle:2090", "Pokemon_MegaEvolution:30"]}
+{"lit": "¡{1} ha aprendido {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battle:2426", "PokeBattle_Battle:2445"]}
+{"lit": "Pero {1} ya conoce cuatro movimientos.", "n_occurrences": 2, "categories": ["아이템", "전투"], "cross_category": true, "sample_sites": ["PItem_Items:638", "PokeBattle_Battle:2433"]}
+{"lit": "¡Alto!\n¡Un Pokémon Oscuro!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battle:2473", "PokeBattle_Battle:2501"]}
+{"lit": "¡{1}\r\nte desafía!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Battle:2832", "PokeBattle_Battle:2867"]}
+{"lit": "¡{1} saca a {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/001_TurnOrder.rb:292", "PokeBattle_Battle:3212"]}
+{"lit": "¡{1}, cambio!\r\n¡Vuelve aquí!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/001_TurnOrder.rb:295", "PokeBattle_Battle:3215"]}
+{"lit": "¡{1} está reforzando su concentración!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/001_TurnOrder.rb:362", "PokeBattle_Battle:3282"]}
+{"lit": "Se ha ido el sol.", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:42", "PokeBattle_Battle:3354"]}
+{"lit": "¡{1} perdió algunos PS debido al Poder Solar!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:53", "PokeBattle_Battle:3366"]}
+{"lit": "Ha dejado de llover.", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:65", "PokeBattle_Battle:3377"]}
+{"lit": "La tormenta de arena amainó.", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:75", "PokeBattle_Battle:3387"]}
+{"lit": "¡La tormenta de arena zarandea a {1}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:94", "PokeBattle_Battle:3407"]}
+{"lit": "Ha dejado de nevar.", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:106", "PokeBattle_Battle:3418"]}
+{"lit": "Sigue granizando...", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:111", "PokeBattle_Battle:3423"]}
+{"lit": "¡El diluvio ha terminado!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:140", "PokeBattle_Battle:3452"]}
+{"lit": "¡El sol vuelve a brillar como siempre!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:155", "PokeBattle_Battle:3467"]}
+{"lit": "¡{1} ha sido dañado por la luz solar!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:165", "PokeBattle_Battle:3478"]}
+{"lit": "¡Las misteriosas turbulencias han amainado!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:183", "PokeBattle_Battle:3495"]}
+{"lit": "El cielo oscuro se ha aclarado.", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:194", "PokeBattle_Battle:3506"]}
+{"lit": "El cielo sigue oscuro...", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:199", "PokeBattle_Battle:3511"]}
+{"lit": "¡{1} ha sido dañado por el cielo oscuro!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:206", "PokeBattle_Battle:3519"]}
+{"lit": "¡{1} ha sufrido el ataque {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:224", "PokeBattle_Battle:3536"]}
+{"lit": "¡{1} ha restaurado algunos PS gracias a {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:266", "PokeBattle_Battle:3578"]}
+{"lit": "¡{1} ha restaurado algunos PS por su {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:274", "PokeBattle_Battle:3586"]}
+{"lit": "¡{1} ha sido dañado por la fuerte luz del sol sobre su {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:280", "PokeBattle_Battle:3592"]}
+{"lit": "{1} ha restaurado algunos PS con {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:287", "PokeBattle_Battle:3599"]}
+{"lit": "¡{1} ha sido dañado por el mar de llamas!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:320", "PokeBattle_Battle:3632"]}
+{"lit": "¡{2} de {1} le quitó el sueño a su compañero!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:360", "PokeBattle_Battle:3672"]}
+{"lit": "¡{2} de {1} le curó el venenó a su compañero!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:362", "PokeBattle_Battle:3674"]}
+{"lit": "¡{2} de {1} le curó la quemadura a su compañero!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:364", "PokeBattle_Battle:3676"]}
+{"lit": "¡{2} de {1} liberó de la parálisis a su compañero!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:366", "PokeBattle_Battle:3678"]}
+{"lit": "¡{2} de {1} descongeló a su compañero!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:368", "PokeBattle_Battle:3680"]}
+{"lit": "Los PS de {1} han sido recuperados.", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:378", "PokeBattle_Battle:3690"]}
+{"lit": "¡Acua Aro ha recuperado salud de {1}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:394", "PokeBattle_Battle:3706"]}
+{"lit": "¡{1} ha absorbido nutrientes con las raíces!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:405", "PokeBattle_Battle:3717"]}
+{"lit": "¡{1} ha absorbido el Lodo Líquido!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:419", "PokeBattle_Battle:3731"]}
+{"lit": "¡Las drenadoras restaron salud a {1}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:425", "PokeBattle_Battle:3737"]}
+{"lit": "¡{1} ha recuperado salud gracias al Antídoto!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:449", "PokeBattle_Battle:3761"]}
+{"lit": "¡{1} está inmerso en una Pesadilla!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:512", "PokeBattle_Battle:3825"]}
+{"lit": "¡{1} es víctima de una Maldición!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:529", "PokeBattle_Battle:3842"]}
+{"lit": "¡{1} se liberó de {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:545", "PokeBattle_Battle:3857"]}
+{"lit": "¡{1} ha sido dañado por {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:574", "PokeBattle_Battle:3887"]}
+{"lit": "¡Otra Vez ya no hace efecto en {1}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:607", "PokeBattle_Battle:3919"]}
+{"lit": "¡El electromagnetismo de {1} desapareció!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:631", "PokeBattle_Battle:3943"]}
+{"lit": "¡{1} se liberó de la Telequinesis!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:642", "PokeBattle_Battle:3954"]}
+{"lit": "¡Anticura ya no hace efecto en {1}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:653", "PokeBattle_Battle:3965"]}
+{"lit": "¡{1} puede volver a usar objetos!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:664", "PokeBattle_Battle:3976"]}
+{"lit": "¡El contador de salud de {1} bajó a {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:686", "PokeBattle_Battle:3998"]}
+{"lit": "¡Los efectos de Reflejo de tu equipo se disiparon!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:713", "PokeBattle_Battle:4025"]}
+{"lit": "¡Los efectos de Reflejo del equipo enemigo se disiparon!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:714", "PokeBattle_Battle:4026"]}
+{"lit": "¡Los efectos de Pantalla de Luz de tu equipo se disiparon!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:725", "PokeBattle_Battle:4037"]}
+{"lit": "¡Los efectos de Pantalla de Luz del equipo enemigo se disiparon!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:726", "PokeBattle_Battle:4038"]}
+{"lit": "¡Velo Sagrado de tu equipo dejó de hacer efecto!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:737", "PokeBattle_Battle:4049"]}
+{"lit": "¡Velo Sagrado del equipo enemigo dejó de hacer efecto!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:738", "PokeBattle_Battle:4050"]}
+{"lit": "¡Neblina de tu equipo dejó de hacer efecto!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:749", "PokeBattle_Battle:4061"]}
+{"lit": "¡Neblina del equipo enemigo dejó de hacer efecto!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:750", "PokeBattle_Battle:4062"]}
+{"lit": "¡Viento Afín de tu equipo dejó de hacer efecto!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:761", "PokeBattle_Battle:4073"]}
+{"lit": "¡Viento Afín del equipo enemigo dejó de hacer efecto!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:762", "PokeBattle_Battle:4074"]}
+{"lit": "¡Conjuro de tu equipo dejó de hacer efecto!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:773", "PokeBattle_Battle:4085"]}
+{"lit": "¡Conjuro del equipo enemigo dejó de hacer efecto!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:774", "PokeBattle_Battle:4086"]}
+{"lit": "The swamp around your team disappeared!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:785", "PokeBattle_Battle:4097"]}
+{"lit": "The swamp around the opposing team disappeared!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:786", "PokeBattle_Battle:4098"]}
+{"lit": "The sea of fire around your team disappeared!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:794", "PokeBattle_Battle:4106"]}
+{"lit": "The sea of fire around the opposing team disappeared!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:795", "PokeBattle_Battle:4107"]}
+{"lit": "The rainbow around your team disappeared!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:803", "PokeBattle_Battle:4115"]}
+{"lit": "The rainbow around the opposing team disappeared!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:804", "PokeBattle_Battle:4116"]}
+{"lit": "¡La Gravedad volvió a la normalidad!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:814", "PokeBattle_Battle:4126"]}
+{"lit": "¡Las dimensiones han vuelto a la normalidad!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:822", "PokeBattle_Battle:4134"]}
+{"lit": "¡Se ha acabado el efecto de Zona Extraña!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:830", "PokeBattle_Battle:4142"]}
+{"lit": "The area returned to normal.", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:838", "PokeBattle_Battle:4150"]}
+{"lit": "The effects of Mud Sport have faded.", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:846", "PokeBattle_Battle:4158"]}
+{"lit": "The effects of Water Sport have faded.", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:854", "PokeBattle_Battle:4166"]}
+{"lit": "¡La corriente eléctrica ha desaparecido del campo de batalla!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:862", "PokeBattle_Battle:4174"]}
+{"lit": "¡El campo de hierba ha desaparecido del campo de batalla!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:871", "PokeBattle_Battle:4183"]}
+{"lit": "¡La niebla se ha desvanecido del campo de batalla!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:880", "PokeBattle_Battle:4192"]}
+{"lit": "¡La sensación extraña desapareció del campo de batalla!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:889", "PokeBattle_Battle:4201"]}
+{"lit": "¡{1} se despertó por el Alboroto!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:902", "PokeBattle_Battle:4214"]}
+{"lit": "{1} se tranquilizó.", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:907", "PokeBattle_Battle:4219"]}
+{"lit": "¡{1} está montando un Alboroto!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:910", "PokeBattle_Battle:4222"]}
+{"lit": "¡{1} sufre por el mal sueño!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:929", "PokeBattle_Battle:4241"]}
+{"lit": "¡{1} sufre una terrible pesadilla!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:938", "PokeBattle_Battle:4250"]}
+{"lit": "¡{1} ha encontrado una {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:967", "PokeBattle_Battle:4279"]}
+{"lit": "¡{1} ha cosechado una {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:979", "PokeBattle_Battle:4291"]}
+{"lit": "¡{1} empieza a sangrar por la {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:1014", "PokeBattle_Battle:4326"]}
+{"lit": "¡{1} ha sido gravemente envenenado por la {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:1020", "PokeBattle_Battle:4332"]}
+{"lit": "¡{1} ha sido quemado por la {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:1026", "PokeBattle_Battle:4338"]}
+{"lit": "¡{1} ha sido dañado por la {2}!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Battle Order/002_EndOfRound.rb:1032", "PokeBattle_Battle:4345"]}
+{"lit": "PP: {1}/{2}", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["MOD:Type Matchup/001_MoveTypeColors.rb:91", "PokeBattle_Scene:426"]}
+{"lit": "Nv{1}", "n_occurrences": 2, "categories": ["그 밖", "전투"], "cross_category": true, "sample_sites": ["PokeBattle_Scene:652", "Tipos Pokemon:24"]}
+{"lit": "¿Qué hará {1}?", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PokeBattle_Scene:2321", "PokeBattle_Scene:2334"]}
+{"lit": "Luchar", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PBattle_BugContest:290", "PokeBattle_Scene:2335"]}
+{"lit": "Mochila", "n_occurrences": 2, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PScreen_PauseMenu:120", "PokeBattle_Scene:2336"]}
+{"lit": "Cambio", "n_occurrences": 2, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PScreen_Options:654", "PokeBattle_Scene:2677"]}
+{"lit": "¡Has huido sin problemas!", "n_occurrences": 2, "categories": ["아이템", "전투"], "cross_category": true, "sample_sites": ["PItem_ItemEffects:2529", "PokeBattle_SafariZone:153"]}
+{"lit": "¡{1} ha sobrevivido al envenenamiento!\\n¡El veneno ha desaparecido!\\1", "n_occurrences": 2, "categories": ["필드"], "cross_category": false, "sample_sites": ["PField_Field:1318", "PField_Field:1324"]}
+{"lit": "Parece que no pican.", "n_occurrences": 2, "categories": ["필드"], "cross_category": false, "sample_sites": ["PField_Field:1596", "PField_Field:1621"]}
+{"lit": "{1} puso \\c[1]{2}\\c[0]\r\nen el bolsillo <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0].", "n_occurrences": 2, "categories": ["필드"], "cross_category": false, "sample_sites": ["PField_Field:2156", "PField_Field:2196"]}
+{"lit": "\\se[ItemGet]¡Has obtenido \\c[1]{1}\\c[0]!\\wtnp[30]", "n_occurrences": 2, "categories": ["필드"], "cross_category": false, "sample_sites": ["PField_Field:2191", "PField_Field:2193"]}
+{"lit": "Hay unas espinas demasiado peligrosas como para pasar.", "n_occurrences": 2, "categories": ["필드"], "cross_category": false, "sample_sites": ["PField_HiddenMoves:282", "PField_HiddenMoves:285"]}
+{"lit": "No pasó nada...", "n_occurrences": 2, "categories": ["필드"], "cross_category": false, "sample_sites": ["PField_HiddenMoves:331", "PField_HiddenMoves:334"]}
+{"lit": "Es una roca resistente, pero un Pokémon podría destrozarla.", "n_occurrences": 2, "categories": ["필드"], "cross_category": false, "sample_sites": ["PField_HiddenMoves:393", "PField_HiddenMoves:396"]}
+{"lit": "¡{1} ha usado Buceo!", "n_occurrences": 2, "categories": ["필드"], "cross_category": false, "sample_sites": ["PField_HiddenMoves:714", "PField_HiddenMoves:757"]}
+{"lit": "El mar es profundo por aquí. Un Pokémon podría ser capaz de sumergirse.", "n_occurrences": 2, "categories": ["필드"], "cross_category": false, "sample_sites": ["PField_HiddenMoves:731", "PField_HiddenMoves:734"]}
+{"lit": "¿Quieres plantar una Baya?", "n_occurrences": 2, "categories": ["필드"], "cross_category": false, "sample_sites": ["PField_BerryPlants:345", "PField_BerryPlants:395"]}
+{"lit": "¡El arbusto de {2} ha dado {1} bayas!\n¿Quieres cosecharlas?", "n_occurrences": 2, "categories": ["필드"], "cross_category": false, "sample_sites": ["PField_BerryPlants:484", "PField_BerryPlants:549"]}
+{"lit": "¡El arbusto de {1} ha dado una baya!\n¿Quieres cosecharlas?", "n_occurrences": 2, "categories": ["필드"], "cross_category": false, "sample_sites": ["PField_BerryPlants:486", "PField_BerryPlants:551"]}
+{"lit": "Has cosechado {1} bayas del arbusto de {2}.\\wtnp[30]", "n_occurrences": 2, "categories": ["필드"], "cross_category": false, "sample_sites": ["PField_BerryPlants:495", "PField_BerryPlants:561"]}
+{"lit": "Has cosechado una baya del arbusto de {1}.\\wtnp[30]", "n_occurrences": 2, "categories": ["필드"], "cross_category": false, "sample_sites": ["PField_BerryPlants:497", "PField_BerryPlants:563"]}
+{"lit": "El suelo se ha vuelto blando y fértil de nuevo.\u0001", "n_occurrences": 2, "categories": ["필드"], "cross_category": false, "sample_sites": ["PField_BerryPlants:502", "PField_BerryPlants:568"]}
+{"lit": "El suelo se ha vuelto blando y arcilloso de nuevo.\u0001", "n_occurrences": 2, "categories": ["필드"], "cross_category": false, "sample_sites": ["PField_BerryPlants:505", "PField_BerryPlants:571"]}
+{"lit": "Aquí no hay ningún Pokémon...", "n_occurrences": 2, "categories": ["필드"], "cross_category": false, "sample_sites": ["PField_DayCare:116", "PField_DayCare:130"]}
+{"lit": "El tipo de entrenador no existe ({1}, {2}, ID {3})", "n_occurrences": 2, "categories": ["그 밖"], "cross_category": false, "sample_sites": ["PTrainer_NPCTrainers:23", "PTrainer_NPCTrainers:269"]}
+{"lit": "No tuvo ningún efecto.", "n_occurrences": 2, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_Items:377", "PItem_Items:472"]}
+{"lit": "\\se[accesspc]MO iniciada.", "n_occurrences": 2, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_Items:688", "PItem_Items:729"]}
+{"lit": "\\se[accesspc]MT iniciada.", "n_occurrences": 2, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_Items:691", "PItem_Items:732"]}
+{"lit": "Has usado el último {1}.", "n_occurrences": 2, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_Items:710", "PItem_Items:774"]}
+{"lit": "No hay ningún Pokémon.", "n_occurrences": 2, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_Items:724", "PItem_Items:745"]}
+{"lit": "NO APTO", "n_occurrences": 2, "categories": ["메뉴/UI", "아이템"], "cross_category": true, "sample_sites": ["PItem_Items:754", "PScreen_Party:1049"]}
+{"lit": "¿Usar con qué Pokémon?", "n_occurrences": 2, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_Items:760", "PItem_Items:762"]}
+{"lit": "¡{1} ha usado una {2}!", "n_occurrences": 2, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:170", "PItem_ItemEffects:178"]}
+{"lit": "No se puede utilizar cuando vas con alguien.", "n_occurrences": 2, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:189", "PItem_ItemEffects:290"]}
+{"lit": "Monedas: {1}", "n_occurrences": 2, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:258", "PItem_ItemEffects:482"]}
+{"lit": "{1} aumentó el potencial de todas sus estadísticas.", "n_occurrences": 2, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:1396", "PItem_ItemEffects:795"]}
+{"lit": "{1} se ha despertado.", "n_occurrences": 2, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:1795", "PItem_ItemEffects:881"]}
+{"lit": "{1} se curó de la Hemorragia.", "n_occurrences": 2, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:1815", "PItem_ItemEffects:896"]}
+{"lit": "{1} se curó del envenenamiento.", "n_occurrences": 2, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:1833", "PItem_ItemEffects:910"]}
+{"lit": "La quemadura de {1} ha sido curada.", "n_occurrences": 2, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:1852", "PItem_ItemEffects:924"]}
+{"lit": "{1} ha sido liberado de la parálisis.", "n_occurrences": 2, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:1871", "PItem_ItemEffects:938"]}
+{"lit": "{1} ha sido descongelado.", "n_occurrences": 2, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:1890", "PItem_ItemEffects:952"]}
+{"lit": "{1} ha recuperado {2} PS.", "n_occurrences": 2, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:1007", "PItem_ItemEffects:1935"]}
+{"lit": "¿A qué movimiento subir los PP?", "n_occurrences": 2, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:1156", "PItem_ItemEffects:1171"]}
+{"lit": "Se incrementaron los PP de {1}.", "n_occurrences": 2, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:1164", "PItem_ItemEffects:1179"]}
+{"lit": "El Ataque de {1} se ha incrementado.", "n_occurrences": 2, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:1202", "PItem_ItemEffects:1426"]}
+{"lit": "La Defensa de {1} se ha incrementado.", "n_occurrences": 2, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:1213", "PItem_ItemEffects:1437"]}
+{"lit": "El Ataque Especial de {1} se ha incrementado.", "n_occurrences": 2, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:1224", "PItem_ItemEffects:1448"]}
+{"lit": "La Defensa Especial de {1} se ha incrementado.", "n_occurrences": 2, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:1235", "PItem_ItemEffects:1459"]}
+{"lit": "La Velocidad de {1} se ha incrementado.", "n_occurrences": 2, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:1246", "PItem_ItemEffects:1470"]}
+{"lit": "No se puede usar en un Pokémon debilitado.", "n_occurrences": 2, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:1560", "PItem_ItemEffects:1578"]}
+{"lit": "No se puede utilizar en un Pokémon debilitado.", "n_occurrences": 2, "categories": ["아이템"], "cross_category": false, "sample_sites": ["PItem_ItemEffects:1628", "PItem_ItemEffects:1644"]}
+{"lit": "Graphics/Pictures/advancedPokedexEntryBar", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Pokedex:361", "Pokedex Mejorada:22"]}
+{"lit": "ABC", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Pokedex:571", "PScreen_Pokedex:896"]}
+{"lit": "DEF", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Pokedex:571", "PScreen_Pokedex:896"]}
+{"lit": "GHI", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Pokedex:571", "PScreen_Pokedex:896"]}
+{"lit": "JKL", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Pokedex:572", "PScreen_Pokedex:897"]}
+{"lit": "MNO", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Pokedex:572", "PScreen_Pokedex:897"]}
+{"lit": "PQR", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Pokedex:572", "PScreen_Pokedex:897"]}
+{"lit": "STU", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Pokedex:573", "PScreen_Pokedex:898"]}
+{"lit": "VWX", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Pokedex:573", "PScreen_Pokedex:898"]}
+{"lit": "YZ", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Pokedex:573", "PScreen_Pokedex:898"]}
+{"lit": "Listar por tipo.\r\nSólamente atrapados.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Pokedex:659", "PScreen_Pokedex:660"]}
+{"lit": "Seleccionar el modo de listado.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Pokedex:661", "PScreen_Pokedex:665"]}
+{"lit": "Graphics/Pictures/pokedexTypes", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Pokedex:722", "Pokedex Mejorada:478"]}
+{"lit": "Oscuro", "n_occurrences": 2, "categories": ["디버그", "메뉴/UI"], "cross_category": true, "sample_sites": ["Editor:2826", "PScreen_Pokedex:907"]}
+{"lit": "Graphics/Pictures/advancedPokedexNestBar", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_PokedexNestForm:34", "Pokedex Mejorada:46"]}
+{"lit": "Graphics/Pictures/advancedPokedexFormBar", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_PokedexNestForm:215", "Pokedex Mejorada:55"]}
+{"lit": "{1} Macho", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_PokedexNestForm:278", "PScreen_PokedexNestForm:313"]}
+{"lit": "{1} Hembra", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_PokedexNestForm:279", "PScreen_PokedexNestForm:314"]}
+{"lit": "Sin género", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_PokedexNestForm:303", "Pokedex Mejorada:166"]}
+{"lit": "Sí", "n_occurrences": 2, "categories": ["메뉴/UI", "필드"], "cross_category": true, "sample_sites": ["Evolucion:648", "PScreen_Party:750"]}
+{"lit": "¡Se ha sustituido {1} por {2}!", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:941", "PScreen_Party:950"]}
+{"lit": "¿Dar a qué Pokémon?", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:967", "PScreen_Party:979"]}
+{"lit": "Elige un Pokémon y confirma.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1074", "PScreen_Party:1095"]}
+{"lit": "Movimientos", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1194", "PScreen_Storage:746"]}
+{"lit": "Shininess", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1198", "PScreen_Storage:750"]}
+{"lit": "EV/IV/pID", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1201", "PScreen_Storage:753"]}
+{"lit": "Pokérus", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1202", "PScreen_Storage:754"]}
+{"lit": "EO", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1203", "PScreen_Summary:208"]}
+{"lit": "Poké Ball", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1205", "PScreen_Storage:757"]}
+{"lit": "Cintas", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1206", "PScreen_Storage:758"]}
+{"lit": "Pokémon Oscuro", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1208", "PScreen_Storage:760"]}
+{"lit": "Duplicar", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1210", "PScreen_Storage:762"]}
+{"lit": "Enseñar movimiento", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1310", "PScreen_Storage:801"]}
+{"lit": "Olvidar movimiento", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1311", "PScreen_Storage:802"]}
+{"lit": "{1} olvidó {2}.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1330", "PScreen_Storage:820"]}
+{"lit": "{1} no tiene género.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1348", "PScreen_Storage:838"]}
+{"lit": "macho", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1352", "PScreen_Storage:842"]}
+{"lit": "hembra", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1352", "PScreen_Storage:842"]}
+{"lit": "La naturaleza {1} es natural.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1423", "PScreen_Storage:913"]}
+{"lit": "La naturaleza {1} es forzada.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1424", "PScreen_Storage:914"]}
+{"lit": "shiny", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1443", "PScreen_Storage:933"]}
+{"lit": "normal", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1443", "PScreen_Storage:933"]}
+{"lit": "Hacer normal", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1448", "PScreen_Storage:938"]}
+{"lit": "La felicidad de {1} fue establecida en {2}.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1487", "PScreen_Storage:976"]}
+{"lit": "At. Esp.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1493", "PScreen_Summary:658"]}
+{"lit": "Def. Esp.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1493", "PScreen_Summary:660"]}
+{"lit": "ID personal es {1}.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1497", "PScreen_Storage:986"]}
+{"lit": "Setear EVs", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1498", "PScreen_Storage:987"]}
+{"lit": "Setear IVs", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1499", "PScreen_Storage:988"]}
+{"lit": "Poder Oculto:\n{1}, potencia {2}.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1535", "PScreen_Storage:1023"]}
+{"lit": "Hacer aleatorio", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1540", "PScreen_Storage:1028"]}
+{"lit": "{1} no tiene Pokérus.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1580", "PScreen_Storage:1068"]}
+{"lit": "Hacer no infectado", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1585", "PScreen_Storage:1073"]}
+{"lit": "Limpiar Pokérus", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1586", "PScreen_Storage:1074"]}
+{"lit": "Pokémon del jugador\n{1}\n{2}\n{3} ({4})", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1608", "PScreen_Storage:1096"]}
+{"lit": "Hacer del jugador", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1612", "PScreen_Storage:1100"]}
+{"lit": "Setear nombre del EO", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1613", "PScreen_Storage:1101"]}
+{"lit": "Setear género del EO", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1614", "PScreen_Storage:1102"]}
+{"lit": "{1} tiene el apodo {2}.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1653", "PScreen_Storage:1141"]}
+{"lit": "{1} no tiene apodo.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1654", "PScreen_Storage:1142"]}
+{"lit": "Renombrar", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1656", "PScreen_Storage:1144"]}
+{"lit": "Borrar nombre", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1657", "PScreen_Storage:1145"]}
+{"lit": "Usada {1}.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1688", "PScreen_Storage:1176"]}
+{"lit": "{1} cintas.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1704", "PScreen_Storage:1192"]}
+{"lit": "No es un huevo", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1719", "PScreen_Storage:1207"]}
+{"lit": "Hacer huevo", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1722", "PScreen_Storage:1210"]}
+{"lit": "Hacer Pokémon", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1723", "PScreen_Storage:1211"]}
+{"lit": "Setear pasos en 1", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1724", "PScreen_Storage:1212"]}
+{"lit": "No es un Pokémon Oscuro.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1759", "PScreen_Storage:1247"]}
+{"lit": "Hacer Oscuro", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1762", "PScreen_Storage:1250"]}
+{"lit": "{1} ahora es un Pokémon Oscuro.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1771", "PScreen_Storage:1259"]}
+{"lit": "{1} ya es un Pokémon Oscuro.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1774", "PScreen_Storage:1262"]}
+{"lit": "{1} no es un Pokémon Oscuro.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1785", "PScreen_Storage:1273"]}
+{"lit": "¿Estás seguro de que quieres copiar este Pokémon?", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1794", "PScreen_Storage:1282"]}
+{"lit": "El Pokémon fue borrado.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Party:1809", "PScreen_Storage:1313"]}
+{"lit": "Carta", "n_occurrences": 2, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PScreen_Party:1845", "RepExp:87"]}
+{"lit": "No tiene PS suficientes...", "n_occurrences": 2, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PScreen_Party:1860", "RepExp:103"]}
+{"lit": "¿En cuál Pokémon usarlo?", "n_occurrences": 2, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PScreen_Party:1863", "RepExp:106"]}
+{"lit": "¡{1} no puede usar {2} en sí mismo!", "n_occurrences": 2, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PScreen_Party:1871", "RepExp:114"]}
+{"lit": "¡{1} no puede usarse en un Huevo!", "n_occurrences": 2, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PScreen_Party:1873", "RepExp:116"]}
+{"lit": "{1} no puede usarse en ese Pokémon.", "n_occurrences": 2, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PScreen_Party:1875", "RepExp:118"]}
+{"lit": "{1} recuperó {2} puntos de salud.", "n_occurrences": 2, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PScreen_Party:1879", "RepExp:122"]}
+{"lit": "¿A qué posición mover?", "n_occurrences": 2, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PScreen_Party:1911", "RepExp:164"]}
+{"lit": "¿Qué quieres hacer con la carta?", "n_occurrences": 2, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PScreen_Party:1918", "RepExp:177"]}
+{"lit": "¿Qué quieres hacer con él?", "n_occurrences": 2, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PScreen_Party:1941", "RepExp:200"]}
+{"lit": "¿A qué Pokémon quieres darle {1}?", "n_occurrences": 2, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PScreen_Party:1960", "RepExp:219"]}
+{"lit": "Debes tomar la carta de {1} antes de darle otro objeto.", "n_occurrences": 2, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PScreen_Party:1978", "RepExp:237"]}
+{"lit": "{1} ya está llevando {2}.\u0001", "n_occurrences": 2, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PScreen_Party:1982", "RepExp:241"]}
+{"lit": "¿Quieres intercambiar estos objetos?", "n_occurrences": 2, "categories": ["메뉴/UI", "전투"], "cross_category": true, "sample_sites": ["PScreen_Party:1983", "RepExp:242"]}
+{"lit": "N° ID", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Summary:209", "PScreen_TrainerCard:55"]}
+{"lit": "NOTAS ENTRENADOR", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Summary:283", "PScreen_Summary:345"]}
+{"lit": "Parece que a este Huevo le tomará mucho tiempo abrirse.", "n_occurrences": 2, "categories": ["메뉴/UI", "필드"], "cross_category": true, "sample_sites": ["Incubadora:100", "PScreen_Summary:309"]}
+{"lit": "¿Qué saldrá? Aún le queda para abrirse.", "n_occurrences": 2, "categories": ["메뉴/UI", "필드"], "cross_category": true, "sample_sites": ["Incubadora:101", "PScreen_Summary:310"]}
+{"lit": "A veces se mueve. Debería abrirse pronto.", "n_occurrences": 2, "categories": ["메뉴/UI", "필드"], "cross_category": true, "sample_sites": ["Incubadora:102", "PScreen_Summary:311"]}
+{"lit": "Está haciendo ruidos. ¡Está a punto de abrirse!", "n_occurrences": 2, "categories": ["메뉴/UI", "필드"], "cross_category": true, "sample_sites": ["Incubadora:103", "PScreen_Summary:312"]}
+{"lit": "<c3=F83820,E09890>Faraway place\n", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Summary:379", "PScreen_Summary:400"]}
+{"lit": "MOVIMIENTOS", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Summary:722", "PScreen_Summary:802"]}
+{"lit": "Cerrar la mochila.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Bag:231", "PScreen_Bag:261"]}
+{"lit": "¿Cuántas unidades de {1} quieres tirar?", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Bag:495", "PScreen_Bag:661"]}
+{"lit": "Has seleccionado {1}.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Bag:523", "PScreen_Bag:629"]}
+{"lit": "Bolsillo inválido: {1}", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Bag:736", "PScreen_Bag:752"]}
+{"lit": "Radio", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Jukebox:36", "PScreen_Pokegear:87"]}
+{"lit": "Se registró a {1} en el Pokégear.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Phone:102", "PScreen_Phone:56"]}
+{"lit": "Nombre", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Storage:465", "PScreen_TrainerCard:53"]}
+{"lit": "Nuevo juego", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Load:501", "PScreen_Load:507"]}
+{"lit": "Otras partidas", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Load:502", "PScreen_Load:508"]}
+{"lit": "Regalo Misterioso", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Load:504", "PScreen_MysteryGift:37"]}
+{"lit": "Para instalar los tipos de letra, copia los archivos de Fonts en la carpeta Fonts en el Panel de Control.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Load:1043", "PScreen_Load:1054"]}
+{"lit": "<ac><c2=06644bd2>{1}</c2></ac>", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["CartelesPokemon:83", "PScreen_Save:15"]}
+{"lit": "Volumen Música", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Options:492", "PScreen_Options:603"]}
+{"lit": "Volumen Efec. Esp.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Options:506", "PScreen_Options:617"]}
+{"lit": "Velocidad del texto", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Options:521", "PScreen_Options:632"]}
+{"lit": "Sprites animados", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Options:529", "PScreen_Options:640"]}
+{"lit": "Animación movimientos", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Options:536", "PScreen_Options:648"]}
+{"lit": "Tecla Correr", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Options:542", "PScreen_Options:660"]}
+{"lit": "Sostener", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Options:542", "PScreen_Options:660"]}
+{"lit": "Pulsar", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Options:542", "PScreen_Options:660"]}
+{"lit": "Tamaño de ventana", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Options:569", "PScreen_Options:684"]}
+{"lit": "Comp", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Options:569", "PScreen_Options:684"]}
+{"lit": "Vsync", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Options:581", "PScreen_Options:696"]}
+{"lit": "Ocultar icono turbo", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Options:592", "PScreen_Options:704"]}
+{"lit": "Mostrar daño", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Options:596", "PScreen_Options:708"]}
+{"lit": "¡Tu equipo está completo!", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Storage:3078", "PScreen_Storage:324"]}
+{"lit": "Regresar al menú anterior.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Storage:3074", "PScreen_Storage:452"]}
+{"lit": "¡Estás sosteniendo un Pokémon!", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Storage:663", "PScreen_Storage:674"]}
+{"lit": "El género de {1} no puede ser cambiado.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Storage:858", "PScreen_Storage:866"]}
+{"lit": "Marcar tu Pokémon.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Storage:2601", "PScreen_Storage:2602"]}
+{"lit": "No hay objetos.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Storage:2888", "PScreen_Storage:2907"]}
+{"lit": "¿Qué quieres hacer?", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_PurifyChamber:639", "PScreen_Storage:2970"]}
+{"lit": "Desconexión", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Storage:2973", "PScreen_Storage:3001"]}
+{"lit": "Rancho Pokémon", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Storage:3057", "PScreen_Storage:3059"]}
+{"lit": "Sacar Pokémon", "n_occurrences": 2, "categories": ["디버그", "메뉴/UI"], "cross_category": true, "sample_sites": ["Debug:564", "PScreen_Storage:3067"]}
+{"lit": "Dejar Pokémon", "n_occurrences": 2, "categories": ["디버그", "메뉴/UI"], "cross_category": true, "sample_sites": ["Debug:563", "PScreen_Storage:3068"]}
+{"lit": "\\se[]¡{1} ha salido del huevo!\\wt[80]", "n_occurrences": 2, "categories": ["메뉴/UI", "필드"], "cross_category": true, "sample_sites": ["Evolucion:649", "PScreen_EggHatching:95"]}
+{"lit": "¿Quieres darle un apodo al {1} recién nacido?", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_EggHatching:193", "PScreen_EggHatching:97"]}
+{"lit": "¿Y ésto?\u0001", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_EggHatching:166", "PScreen_EggHatching:189"]}
+{"lit": "¿Qué movimiento quieres que enseñe?", "n_occurrences": 2, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["BetterMoveRelearner:62", "PScreen_MoveRelearner:111"]}
+{"lit": "PP", "n_occurrences": 2, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["BetterMoveRelearner:74", "PScreen_MoveRelearner:124"]}
+{"lit": "¿Prefieres que {1} no aprenda un movimiento nuevo?", "n_occurrences": 2, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["BetterMoveRelearner:138", "PScreen_MoveRelearner:215"]}
+{"lit": "¿Enseñar {1}?", "n_occurrences": 2, "categories": ["그 밖", "메뉴/UI"], "cross_category": true, "sample_sites": ["BetterMoveRelearner:142", "PScreen_MoveRelearner:220"]}
+{"lit": "Cámara de Purificación", "n_occurrences": 2, "categories": ["디버그", "메뉴/UI"], "cross_category": true, "sample_sites": ["Debug:278", "PScreen_PurifyChamber:271"]}
+{"lit": "Salir de la tienda.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Mart:320", "PScreen_Mart:633"]}
+{"lit": "No tienes el dinero suficiente.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_Mart:693", "PScreen_Mart:715"]}
+{"lit": "No hay ningún Regalo Misterioso definido.", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["PScreen_MysteryGift:145", "PScreen_MysteryGift:152"]}
+{"lit": "Pokémon can't be the same.", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PBattle_OrgBattleRules:568", "PBattle_OrgBattleRules:586"]}
+{"lit": "¿Generar equipos de Pokémon para este desafío?", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PBattle_OrgBattleGenerator:1444", "PBattle_OrgBattleGenerator:1447"]}
+{"lit": "NO", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PBattle_OrgBattleGenerator:1445", "PBattle_OrgBattleGenerator:1448"]}
+{"lit": "{1} - {2} POKéMON", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PBattle_BattleSwap:41", "PBattle_BattleSwap:44"]}
+{"lit": "¿Salir del intercambio?", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["PBattle_BattleSwap:228", "PBattle_BattleSwap:237"]}
+{"lit": "Choose a card, or check opponent with Z.", "n_occurrences": 2, "categories": ["그 밖"], "cross_category": false, "sample_sites": ["PMinigame_TripleTriad:326", "PMinigame_TripleTriad:361"]}
+{"lit": "Choose {1} cards to use for this duel.", "n_occurrences": 2, "categories": ["그 밖"], "cross_category": false, "sample_sites": ["PMinigame_TripleTriad:489", "PMinigame_TripleTriad:562"]}
+{"lit": "{1} will go first.", "n_occurrences": 2, "categories": ["그 밖"], "cross_category": false, "sample_sites": ["PMinigame_TripleTriad:818", "PMinigame_TripleTriad:821"]}
+{"lit": "Got opponent's {1} card.", "n_occurrences": 2, "categories": ["그 밖"], "cross_category": false, "sample_sites": ["PMinigame_TripleTriad:924", "PMinigame_TripleTriad:933"]}
+{"lit": "You don't have enough money.", "n_occurrences": 2, "categories": ["그 밖"], "cross_category": false, "sample_sites": ["PMinigame_TripleTriad:1123", "PMinigame_TripleTriad:1140"]}
+{"lit": "You have no cards.", "n_occurrences": 2, "categories": ["그 밖"], "cross_category": false, "sample_sites": ["PMinigame_TripleTriad:1172", "PMinigame_TripleTriad:1261"]}
+{"lit": "Nivel {1}", "n_occurrences": 2, "categories": ["그 밖"], "cross_category": false, "sample_sites": ["PMinigame_VoltorbFlip:377", "PMinigame_VoltorbFlip:95"]}
+{"lit": "Espacio", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:45", "Controles:57"]}
+{"lit": "Enter", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:178", "Controles:48"]}
+{"lit": "Alt", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:182", "Controles:51"]}
+{"lit": "Esc", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:180", "Controles:55"]}
+{"lit": "Pag Arriba", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:185", "Controles:58"]}
+{"lit": "Pag Abajo", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:184", "Controles:59"]}
+{"lit": "A", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:186", "Controles:83"]}
+{"lit": "C", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:177", "Controles:85"]}
+{"lit": "D", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:188", "Controles:86"]}
+{"lit": "S", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:101", "Controles:187"]}
+{"lit": "X", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:106", "Controles:179"]}
+{"lit": "Z", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:108", "Controles:181"]}
+{"lit": "F3", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:128", "Logros:57"]}
+{"lit": "F5", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:130", "Controles:183"]}
+{"lit": "|", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:161", "Controles:165"]}
+{"lit": "Correr/Acción", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:181", "Controles:247"]}
+{"lit": "Obj. registrado", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:183", "Controles:259"]}
+{"lit": "Desp. abajo", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:184", "Controles:255"]}
+{"lit": "Desp. arriba", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:185", "Controles:253"]}
+{"lit": "Vuelo", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:187", "Controles:271"]}
+{"lit": "Radar", "n_occurrences": 2, "categories": ["메뉴/UI"], "cross_category": false, "sample_sites": ["Controles:188", "Controles:273"]}
+{"lit": "{1} fue transferido al Rancho.\u0001", "n_occurrences": 2, "categories": ["그 밖"], "cross_category": false, "sample_sites": ["PSystem_Utilities NUEVO:1741", "PSystem_Utilities NUEVO:1743"]}
+{"lit": "¡Los Corrales del Rancho están llenos y no aceptan ni un Pokémon más!", "n_occurrences": 2, "categories": ["그 밖"], "cross_category": false, "sample_sites": ["PSystem_Utilities NUEVO:1753", "PSystem_Utilities NUEVO:1766"]}
+{"lit": "¡{1} ha obtenido un {2}!\\se[PokemonGet]\u0001", "n_occurrences": 2, "categories": ["그 밖"], "cross_category": false, "sample_sites": ["PSystem_Utilities NUEVO:1776", "PSystem_Utilities NUEVO:1815"]}
+{"lit": "{1} no es compatible con {2}.", "n_occurrences": 2, "categories": ["그 밖"], "cross_category": false, "sample_sites": ["PSystem_Utilities NUEVO:2437", "PSystem_Utilities NUEVO:2440"]}
+{"lit": "Por favor, espera.\\wtnp[0]", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["Debug:142", "Debug:155"]}
+{"lit": "Indicar el nivel del Pokémon.", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["Debug:397", "Debug:753"]}
+{"lit": "No hay ningún huevo disponible.", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["Debug:641", "Debug:653"]}
+{"lit": "No se definieron Pokémon errantes.", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["Debug:668", "Debug:705"]}
+{"lit": "Pattern:", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2045", "BattleAnimationEditor:2612"]}
+{"lit": "Zoom X:", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2048", "BattleAnimationEditor:2615"]}
+{"lit": "Zoom Y:", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2049", "BattleAnimationEditor:2616"]}
+{"lit": "Angle:", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2050", "BattleAnimationEditor:2617"]}
+{"lit": "Blending:", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2052", "BattleAnimationEditor:2619"]}
+{"lit": "Flip:", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2053", "BattleAnimationEditor:2620"]}
+{"lit": "False", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2053", "BattleAnimationEditor:2620"]}
+{"lit": "True", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2053", "BattleAnimationEditor:2620"]}
+{"lit": "Back", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2054", "BattleAnimationEditor:2621"]}
+{"lit": "Front", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2054", "BattleAnimationEditor:2621"]}
+{"lit": "Behind focus", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2054", "BattleAnimationEditor:2621"]}
+{"lit": "Above focus", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2054", "BattleAnimationEditor:2621"]}
+{"lit": "Priority:", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2055", "BattleAnimationEditor:2622"]}
+{"lit": "Focus:", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2058", "BattleAnimationEditor:2625"]}
+{"lit": "Add: Play Sound...", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2147", "BattleAnimationEditor:2251"]}
+{"lit": "Add: Set Background Graphic...", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2148", "BattleAnimationEditor:2252"]}
+{"lit": "Add: Edit Background Color/Location...", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2149", "BattleAnimationEditor:2253"]}
+{"lit": "Add: Set Foreground Graphic...", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2150", "BattleAnimationEditor:2254"]}
+{"lit": "Add: Edit Foreground Color/Location...", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2151", "BattleAnimationEditor:2255"]}
+{"lit": "<user's cry>", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2269", "BattleAnimationEditor:2317"]}
+{"lit": "Red:", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2350", "BattleAnimationEditor:2397"]}
+{"lit": "Green:", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2351", "BattleAnimationEditor:2398"]}
+{"lit": "Blue:", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2352", "BattleAnimationEditor:2399"]}
+{"lit": "Alpha:", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2353", "BattleAnimationEditor:2400"]}
+{"lit": "First Cel:", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2530", "BattleAnimationEditor:2607"]}
+{"lit": "Last Cel:", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2531", "BattleAnimationEditor:2608"]}
+{"lit": "Cancel", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2775", "BattleAnimationEditor:3208"]}
+{"lit": "Delete", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:2857", "BattleAnimationEditor:3605"]}
+{"lit": "Name: {1}", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:3482", "BattleAnimationEditor:3488"]}
+{"lit": "Save changes?", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:3552", "BattleAnimationEditor:3812"]}
+{"lit": "No animations exist.", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["BattleAnimationEditor:3753", "BattleAnimationEditor:3873"]}
+{"lit": "Consulta la documentación de la wiki para aprender a modificar este archivo.", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["Editor:566", "Editor:594"]}
+{"lit": "No hay archivos.", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["Editor:1382", "Editor:1469"]}
+{"lit": "Setear el valor por {1}.", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["Editor:1891", "Editor:1908"]}
+{"lit": "{1}\r\n{2}", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["Editor:2369", "Editor:2373"]}
+{"lit": "Mixto", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["Editor:2439", "Editor:2487"]}
+{"lit": "Tipo Entrenador", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["Editor:2624", "Editor:2713"]}
+{"lit": "Metadatos Globales", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["Editor:3210", "Editor:3808"]}
+{"lit": "{1}...", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["Compiler:130", "Compiler:139"]}
+{"lit": "Se esperaba una sección al inicio del archivo. Este error también puede ocurrir si el archivo no ha sido guardado en codificación UTF-8.\r\n{1}", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["Compiler:188", "Compiler:2049"]}
+{"lit": "Procesando linea {1}", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["Compiler:204", "Compiler:2064"]}
+{"lit": "Valor indefinido {1} en {2}\r\n{3}", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["Compiler:444", "Compiler:454"]}
+{"lit": "Valor incorrecto {1} en {2}\r\n{3}", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["Compiler:447", "Compiler:457"]}
+{"lit": "El campo '{1}' solo debe contener letras, números y\r\nguiones bajos, sin iniciar con un número.\r\n{2}", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["Compiler:528", "Compiler:537"]}
+{"lit": "Aviso: El mapa {1}, mencionado en los datos\r\nde conexiones de mapas, no ha sido encontrado.\r\n{2}", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["Compiler:1362", "Compiler:1366"]}
+{"lit": "Function code", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["Compiler:1459", "Compiler:1500"]}
+{"lit": "No se ha indicado el archivo de datos de entrenadores en la sección {1}\r\n{2}", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["Compiler:2491", "Compiler:2494"]}
+{"lit": "El número de nivel no es válido: {1}\r\n{2}", "n_occurrences": 2, "categories": ["디버그"], "cross_category": false, "sample_sites": ["Compiler:2593", "Compiler:2596"]}
+{"lit": "El Pokévial está vacío. Recárgalo en el Centro Pokémon.", "n_occurrences": 2, "categories": ["메뉴/UI", "아이템"], "cross_category": true, "sample_sites": ["Menu Mejorado:1566", "PokeVial:17"]}
+{"lit": "¡Tu equipo ha sido curado!", "n_occurrences": 2, "categories": ["메뉴/UI", "아이템"], "cross_category": true, "sample_sites": ["Menu Mejorado:1576", "PokeVial:26"]}
+{"lit": "Use on which Pokémon?", "n_occurrences": 2, "categories": ["전투", "필드"], "cross_category": true, "sample_sites": ["Incubadora:165", "Objetos Batalla:657"]}
+{"lit": "La caja \"{1}\" está llena.\u0001", "n_occurrences": 2, "categories": ["필드"], "cross_category": false, "sample_sites": ["Incubadora:216", "Incubadora:218"]}
+{"lit": "{1} fue transferido a la caja \"{2}.\"", "n_occurrences": 2, "categories": ["필드"], "cross_category": false, "sample_sites": ["Incubadora:220", "Incubadora:222"]}
+{"lit": "¡{1} ha ganado un total de {2} Puntos de Experiencia!", "n_occurrences": 2, "categories": ["전투"], "cross_category": false, "sample_sites": ["RepExp:456", "RepExp:753"]}
+{"lit": "x{1}", "n_occurrences": 2, "categories": ["메뉴/UI", "필드"], "cross_category": true, "sample_sites": ["Crafteo:712", "MultiRegister:127"]}
+{"lit": "Opponent 1's party has more than three Pokémon, which is not allowed", "n_occurrences": 2, "categories": ["그 밖", "전투"], "cross_category": true, "sample_sites": ["Combate Inverso:207", "Generaentrenador:122"]}
+{"lit": "Opponent 2's party has more than three Pokémon, which is not allowed", "n_occurrences": 2, "categories": ["그 밖", "전투"], "cross_category": true, "sample_sites": ["Combate Inverso:210", "Generaentrenador:125"]}
+{"lit": "[ ] Mapeo de habilidades", "n_occurrences": 2, "categories": ["그 밖"], "cross_category": false, "sample_sites": ["RandomMain:520", "RandomMain:524"]}
+{"lit": "[ ] Sin randomizar", "n_occurrences": 2, "categories": ["그 밖"], "cross_category": false, "sample_sites": ["RandomMain:520", "RandomMain:522"]}
+{"lit": "[ ] Full Random", "n_occurrences": 2, "categories": ["그 밖"], "cross_category": false, "sample_sites": ["RandomMain:522", "RandomMain:524"]}
