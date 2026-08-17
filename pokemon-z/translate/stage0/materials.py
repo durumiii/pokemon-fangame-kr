@@ -302,6 +302,20 @@ def esc_cell(s):
     return s.replace("|", "\\|").replace("\n", " ")
 
 
+def write_brief(out_dir, brief_path, groups, nhit):
+    """판정 요청 브리핑 — 제목·전반 설명·건마다 「정해 달라는 것·갈림·추천」.
+
+    검수 화면 맨 위에 서고 건 단위로 승인·기각·보류를 받는다. 문안 판정(행 단위)과
+    층위가 다르다 — 규칙·표기·수술처럼 문안이 아닌 판정이 갈 자리가 여기다.
+    """
+    b = json.loads(Path(brief_path).read_text(encoding="utf-8")) if brief_path else {}
+    b["scenes"] = len({(g["map"], g["event"]) for g in groups})
+    b["hits"] = nhit
+    (Path(out_dir) / "brief.json").write_text(
+        json.dumps(b, ensure_ascii=False, indent=1), encoding="utf-8")
+    return len(b.get("asks", []))
+
+
 def review_out(groups, out_dir):
     """검수 스튜디오(review_gui.py)가 읽는 꼴로 낸다 — 재료를 볼 화면은 그것이다.
 
@@ -334,7 +348,8 @@ def review_out(groups, out_dir):
                                "근거": why})
             pages.setdefault((g["map"], g["event"], r["page"]), []).append(row)
     for (mp, ev, pg), rows in sorted(pages.items()):
-        (out / f"p{mp}-{ev}-{pg}.jsonl").write_text(
+        # 맵 번호는 세 자리로 채운다 — review_gui의 「이벤트 전체 보기」가 그 꼴로 찾는다
+        (out / f"p{mp:03d}-{ev}-{pg}.jsonl").write_text(
             "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows), encoding="utf-8")
     (out / "screen-llm.jsonl").write_text(
         "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in screen), encoding="utf-8")
@@ -393,6 +408,7 @@ def main():
     a.add_argument("--context", type=int, help="후보 앞뒤 N줄만")
     a.add_argument("-o", "--out", help="사람·에이전트가 읽을 md")
     a.add_argument("--review", help="검수 스튜디오가 읽을 폴더로 낸다")
+    a.add_argument("--brief", help="판정 요청 브리핑 json — title·note·asks[{id,title,ask,split,rec}]")
     a.add_argument("--serve", type=int, nargs="?", const=8793,
                    help="--review와 함께 — 낸 자리를 검수 스튜디오로 곧바로 띄운다(기본 8793)")
     a.add_argument("--proposals", help="제안 문안 jsonl — {id, new, why}")
@@ -412,7 +428,9 @@ def main():
             print("⚠ --context는 --review에서 무시한다 — 검수 화면의 문맥은 장면 전문이다")
             groups = groups_from_args(ctx, a)
         npg, nhit = review_out(groups, a.review)
-        print(f"검수 스튜디오 입력 {npg}장면 · 제안 {nhit}줄 → {a.review}")
+        nask = write_brief(a.review, a.brief, groups, nhit)
+        print(f"검수 스튜디오 입력 {npg}장면 · 제안 {nhit}줄"
+              + (f" · 판정 요청 {nask}건" if nask else "") + f" → {a.review}")
         if a.serve:
             # 이미 승인된 이벤트도 다시 보는 자리라 --no-skip이 기본이다
             import subprocess

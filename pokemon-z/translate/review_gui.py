@@ -37,7 +37,7 @@ BODY = r"""<style>.tag.alt{background:#7d5bd6;color:#fff}
 .rq{font-size:12.5px;line-height:1.5;background:var(--card);border:1px solid var(--line);
   border-radius:8px;padding:9px 12px}</style>
 <script>
-let DATA = [], V = {}, M = {}, NOTE = {}, STAT = null;
+let DATA = [], V = {}, M = {}, NOTE = {}, STAT = null, BRIEF = null;
 const HUMAN = new Set();   // 사람이 손댄 자리 — 기계 수선 채움과 가른다
 const esc = s => (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])).replace(/\n/g,'<br>');
 function diff(a,b){
@@ -71,6 +71,10 @@ function makeCard(r, sc){
           <span class="rid">${r.id}</span>
           ${r.approved?'<span class="chip" title="유지자가 이미 판정한 줄">승인 줄</span>':''}
           ${r.covers?`<span class="chip" title="같은 화자의 같은 원문이 접힌 자리 — 판정이 맵 ${r.covers.join(', ')}에 함께 반영돼요">복제 ${r.covers.length}맵 함께</span>`:''}
+          ${r.persona?`<span class="chip" title="말투 등재 — 페르소나표·말투 대장">${esc(r.persona)}</span>`:''}
+          ${r.layer?`<span class="chip" title="층 — 정본 인물(PS) · 이름표 없는 인물(PC) · 지문·시스템(N)">층 ${esc(r.layer)}</span>`:''}
+          ${r.dups?`<span class="chip" title="같은 원문이 선 다른 자리 — 값이 갈릴 수 있어요">다른 자리 ${r.dups}</span>`:''}
+          ${(r.marks||[]).map(m=>`<span class="chip" title="사람 손이 지나간 자리">⚑ ${esc(m)}</span>`).join('')}
           <button class="ctxbtn" style="margin-left:auto">문맥</button></div>
         <div class="why">${(r.why||[]).map(w=>`<div><b>${esc(w['유형'])}</b>
           <span class="lay">· ${esc(w['층'])}</span>${w['근거']?' — '+esc(w['근거']):''}</div>`).join('')}</div>
@@ -122,6 +126,54 @@ function makeCard(r, sc){
 function render(){
   const body=document.getElementById('body');
   body.innerHTML='';
+  if(BRIEF){
+    const b=document.createElement('section');
+    b.innerHTML=`<div class="scene"><h2>${esc(BRIEF.title||'판정 요청')}</h2>
+      <span class="meta">자리 ${BRIEF.hits||0} · 장면 ${BRIEF.scenes||0}${
+        BRIEF.by?` · ${esc(BRIEF.by)}`:''}</span></div>
+      ${BRIEF.note?`<div class="card"><div class="es" style="white-space:pre-wrap">${esc(BRIEF.note)}</div></div>`:''}`;
+    for(const q of (BRIEF.asks||[])){
+      const id='bucket:'+q.id;
+      const c=document.createElement('div'); c.className='card';
+      c.innerHTML=`<div class="hd"><span class="who">${esc(q.title||q.id)}</span>
+          <span class="rid">${id}</span>
+          ${q.rows?`<span class="chip">자리 ${q.rows}</span>`:''}
+          <span class="chip verdict" style="margin-left:auto"></span></div>
+        ${q.ask?`<div class="opt"><span class="tag cur">정해 달라는 것</span>
+          <span class="txt" style="white-space:pre-wrap">${esc(q.ask)}</span></div>`:''}
+        ${q.split?`<div class="opt"><span class="tag alt">갈림</span>
+          <span class="txt" style="white-space:pre-wrap">${esc(q.split)}</span></div>`:''}
+        ${q.rec?`<div class="opt"><span class="tag new">추천</span>
+          <span class="txt" style="white-space:pre-wrap">${esc(q.rec)}</span></div>`:''}
+        <div class="tools"><button data-b="승인">승인</button>
+          <button data-b="기각">기각</button><button data-b="보류">보류</button>
+          <button data-bmemo="1">메모</button></div>
+        <div class="memo"><textarea rows="2" placeholder="판정 메모 — 왜 그렇게 정했나"></textarea></div>`;
+      const chip=c.querySelector('.verdict'), memo=c.querySelector('.memo');
+      const ta=memo.querySelector('textarea');
+      const paint=()=>{chip.textContent=V[id]?('판정 '+V[id]):''};
+      if(NOTE[id]){ta.value=NOTE[id]; memo.classList.add('open');}
+      paint();
+      c.querySelectorAll('[data-b]').forEach(btn=>btn.onclick=()=>{
+        V[id]=btn.dataset.b; paint();
+        post({id, 판정:btn.dataset.b, 텍스트:'', 메모:(NOTE[id]||'')});
+      });
+      c.querySelector('[data-bmemo]').onclick=()=>memo.classList.toggle('open');
+      ta.oninput=()=>{NOTE[id]=ta.value;
+        clearTimeout(timer[id]); timer[id]=setTimeout(()=>
+          post({id, 판정:(V[id]||''), 텍스트:'', 메모:ta.value}), 600);};
+      b.appendChild(c);
+    }
+    body.appendChild(b);
+  }
+  if(!DATA.length){
+    const e=document.createElement('section');
+    e.innerHTML=`<div class="scene"><h2>선별된 자리가 없어요</h2></div>
+      <div class="card"><div class="es">승인 이벤트·승인 줄로 숨긴 자리가 있으면
+      <b>--no-skip</b>으로 다시 띄우세요. 산출 폴더에 제안이 없으면 재료 도구의
+      <b>--proposals</b>부터 확인하고요.</div></div>`;
+    body.appendChild(e); return;
+  }
   for (const sc of DATA){
     const sec=document.createElement('section');
     sec.dataset.ev=sc.file;
@@ -265,12 +317,12 @@ Object.entries(LABEL).forEach(([k,v])=>BACK[v]=k);
 fetch('/data').then(r=>r.json()).then(d=>{
   DATA=d.scenes;
   for(const [id,x] of Object.entries(d.verdicts||{})){
-    if(x['판정']) V[id]=BACK[x['판정']];
+    if(x['판정']) V[id]=id.startsWith('bucket:')?x['판정']:BACK[x['판정']];
     if(x['ts']!=='auto') HUMAN.add(id);
     if(x['판정']==='직접') M[id]=x['텍스트']||'';
     if(x['메모']) NOTE[id]=x['메모'];
   }
-  STAT=d.stat||null;
+  STAT=d.stat||null; BRIEF=d.brief||null;
   for(const [k,x] of Object.entries(d.verdicts||{}))     // event:<맵>:<이벤트> 열쇠
     if(k.startsWith('event:') && x['판정']==='완료') DONE.add(k.slice(6));
   render(); count(); refold();
@@ -479,7 +531,9 @@ def handler(out_dir, vpath, all_rows=False, alt=None, no_skip=False):
                         if r["id"] in cov:
                             r["covers"] = cov[r["id"]]
                 v = load_verdicts(vpath)
-                self._json({"scenes": sc, "verdicts": v,
+                bf = Path(out_dir) / "brief.json"
+                brief = json.loads(bf.read_text(encoding="utf-8")) if bf.exists() else None
+                self._json({"scenes": sc, "verdicts": v, "brief": brief,
                             "stat": progress(out_dir, sc, v, all_rows)})
             else:
                 self._json({"err": "?"}, 404)
