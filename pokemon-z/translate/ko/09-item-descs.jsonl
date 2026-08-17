@@ -450,7 +450,7 @@
 {"i": 449, "v": "포켓몬이 지니면 위기일 때 기술의 명중률이 올라간다. 포핀 재료.", "es": "Cuando la lleve un Pokémon, le subirá la precisión de un movimiento en un momento de apuro. Ing. para Pokochos."}
 {"i": 450, "v": "지닌 포켓몬이 위기일 때 한 번 먼저 행동할 수 있게 된다.", "es": "El Pokémon que la lleve podrá actuar en primer lugar una vez cuando se encuentre en un momento de apuro."}
 {"i": 451, "v": "지닌 포켓몬이 물리 공격을 맞으면 공격한 쪽도 데미지를 입는다.", "es": "Si la lleva un Pokémon cuando un enemigo lanza un ataque físico, este también recibirá daño."}
-{"i": 452, "v": "지닌 포켓몬이 특수 공격을 맞으면 공격한 쪽도 데미지를 입는다.", "es": "Si la lleva un Pokémon cuando un enemigo lanza un ataque especial, este también recibirá daño."}
+{"i": 452, "v": "지닌 포켓몬이 특수공격을 맞으면 공격한 쪽도 데미지를 입는다.", "es": "Si la lleva un Pokémon cuando un enemigo lanza un ataque especial, este también recibirá daño."}
 {"i": 453, "v": "풀 무늬 카드. 포켓몬에게 들려 보내라.", "es": "Carta con un estampado de hierba. Haz que la entregue un Pokémon."}
 {"i": 454, "v": "불꽃빛 카드. 포켓몬에게 들려 보내라.", "es": "Carta con los colores del fuego. Haz que la entregue un Pokémon."}
 {"i": 455, "v": "물방울 무늬 카드. 포켓몬에게 들려 보내라.", "es": "Carta con una imagen de burbujas. Haz que la entregue un Pokémon."}
@@ -463,23 +463,23 @@
 {"i": 462, "v": "전통적인 항공우편 무늬 카드. 포켓몬에게 들려 보내라.", "es": "Carta con el diseño tradicional del correo aéreo. Haz que la entregue un Pokémon."}
 {"i": 463, "v": "무지개 모자이크 카드. 포켓몬에게 들려 보내라.", "es": "Carta con un mosaico de arco iris. Haz que la entregue un Pokémon."}
 {"i": 464, "v": "벽돌담 무늬 카드. 포켓몬에게 들려 보내라.", "es": "Carta con la imagen de una pared de ladrillos. Haz que la entregue un Pokémon."}
-{"i": 465, "v": "배틀 중인 포켓몬의 공격을 올리는 도구. 포켓몬을 볼에 넣어버리면 원래대로 되돌아간다.", "es": "Aumenta el Ataque en combate. Al cambiar de Pokémon, el efecto desaparece."}
+{"i": 465, "v": "배틀 중인 포켓몬의 공격을 올리는 도구. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta el Ataque en combate. Al cambiar de Pokémon, el efecto desaparece."}
 {"i": 466, "v": "배틀 중인 포켓몬의 공격을 그럭저럭 올린다. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta ligeramente el Ataque en combate. Al cambiar de Pokémon, el efecto desaparece."}
 {"i": 467, "v": "배틀 중인 포켓몬의 공격을 상당히 올린다. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta bastante el Ataque en combate. Al cambiar de Pokémon, el efecto desaparece."}
 {"i": 468, "v": "배틀 중인 포켓몬의 공격을 엄청나게 올린다. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta mucho el Ataque en combate. Al cambiar de Pokémon, el efecto desaparece."}
-{"i": 469, "v": "배틀 중인 포켓몬의 방어를 올리는 도구. 포켓몬을 볼에 넣어버리면 원래대로 되돌아간다.", "es": "Aumenta la Defensa en combate. Al cambiar de Pokémon, el efecto desaparece."}
+{"i": 469, "v": "배틀 중인 포켓몬의 방어를 올리는 도구. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta la Defensa en combate. Al cambiar de Pokémon, el efecto desaparece."}
 {"i": 470, "v": "배틀 중인 포켓몬의 방어를 그럭저럭 올린다. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta ligeramente la Defensa en combate. Al cambiar de Pokémon, el efecto desaparece."}
 {"i": 471, "v": "배틀 중인 포켓몬의 방어를 상당히 올린다. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta bastante la Defensa en combate. Al cambiar de Pokémon, el efecto desaparece."}
 {"i": 472, "v": "배틀 중인 포켓몬의 방어를 엄청나게 올린다. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta mucho la Defensa en combate. Al cambiar de Pokémon, el efecto desaparece."}
-{"i": 473, "v": "배틀 중인 포켓몬의 특수공격을 올리는 도구. 포켓몬을 볼에 넣어버리면 원래대로 되돌아간다.", "es": "Aumenta el Ataque Especial en combate. Al cambiar de Pokémon, el efecto desaparece."}
+{"i": 473, "v": "배틀 중인 포켓몬의 특수공격을 올리는 도구. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta el Ataque Especial en combate. Al cambiar de Pokémon, el efecto desaparece."}
 {"i": 474, "v": "배틀 중인 포켓몬의 특수공격을 그럭저럭 올린다. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta ligeramente el Ataque Especial en combate. Al cambiar de Pokémon, el efecto desaparece."}
 {"i": 475, "v": "배틀 중인 포켓몬의 특수공격을 상당히 올린다. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta bastante el Ataque Especial en combate. Al cambiar de Pokémon, el efecto desaparece."}
 {"i": 476, "v": "배틀 중인 포켓몬의 특수공격을 엄청나게 올린다. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta mucho el Ataque Especial en combate. Al cambiar de Pokémon, el efecto desaparece."}
-{"i": 477, "v": "배틀 중인 포켓몬의 특수방어를 올리는 도구. 포켓몬을 볼에 넣어버리면 원래대로 되돌아간다.", "es": "Aumenta la Defensa Especial en combate. Al cambiar de Pokémon, el efecto desaparece."}
+{"i": 477, "v": "배틀 중인 포켓몬의 특수방어를 올리는 도구. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta la Defensa Especial en combate. Al cambiar de Pokémon, el efecto desaparece."}
 {"i": 478, "v": "배틀 중인 포켓몬의 특수방어를 그럭저럭 올린다. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta ligeramente la Defensa Especial en combate. Al cambiar de Pokémon, el efecto desaparece."}
 {"i": 479, "v": "배틀 중인 포켓몬의 특수방어를 상당히 올린다. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta bastante la Defensa Especial en combate. Al cambiar de Pokémon, el efecto desaparece."}
 {"i": 480, "v": "배틀 중인 포켓몬의 특수방어를 엄청나게 올린다. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta mucho la Defensa Especial en combate. Al cambiar de Pokémon, el efecto desaparece."}
-{"i": 481, "v": "배틀 중인 포켓몬의 스피드를 올리는 도구. 포켓몬을 볼에 넣어버리면 원래대로 되돌아간다.", "es": "Aumenta la Velocidad en combate. Al cambiar de Pokémon, el efecto desaparece."}
+{"i": 481, "v": "배틀 중인 포켓몬의 스피드를 올리는 도구. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta la Velocidad en combate. Al cambiar de Pokémon, el efecto desaparece."}
 {"i": 482, "v": "배틀 중인 포켓몬의 스피드를 그럭저럭 올린다. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta ligeramente la Velocidad en combate. Al cambiar de Pokémon, el efecto desaparece."}
 {"i": 483, "v": "배틀 중인 포켓몬의 스피드를 상당히 올린다. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta bastante la Velocidad en combate. Al cambiar de Pokémon, el efecto desaparece."}
 {"i": 484, "v": "배틀 중인 포켓몬의 스피드를 엄청나게 올린다. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta mucho la Velocidad en combate. Al cambiar de Pokémon, el efecto desaparece."}
@@ -487,7 +487,7 @@
 {"i": 486, "v": "배틀 중인 포켓몬의 명중률을 그럭저럭 올린다. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta ligeramente la Precisión en combate. Al cambiar de Pokémon, el efecto desaparece."}
 {"i": 487, "v": "배틀 중인 포켓몬의 명중률을 상당히 올린다. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta bastante la Precisión en combate. Al cambiar de Pokémon, el efecto desaparece."}
 {"i": 488, "v": "배틀 중인 포켓몬의 명중률을 크게 올리는 도구. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta mucho la Precisión en combate. Al cambiar de Pokémon, el efecto desaparece."}
-{"i": 489, "v": "급소 명중률이 크게 올라간다. 한 번밖에 쓸 수 없다. 포켓몬을 볼에 넣어버리면 원래대로 되돌아간다.", "es": "Aumenta el índice de golpe crítico en combate. Al cambiar de Pokémon, el efecto desaparece."}
+{"i": 489, "v": "급소 명중률이 크게 올라간다. 한 번밖에 쓸 수 없다. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta el índice de golpe crítico en combate. Al cambiar de Pokémon, el efecto desaparece."}
 {"i": 490, "v": "급소에 맞을 확률이 올라간다. 포켓몬을 교체하면 효과가 사라진다.", "es": "Aumenta la probabilidad de asestar un golpe crítico. Al cambiar de Pokémon, el efecto desaparece.."}
 {"i": 491, "v": "급소에 맞을 확률이 크게 올라간다. 포켓몬을 교체하면 효과가 사라진다.", "es": "Aumenta mucho la probabilidad de asestar un golpe crítico. Al cambiar de Pokémon, el efecto desaparece."}
 {"i": 492, "v": "배틀 중 5턴 동안 같은 편의 능력을 떨어뜨리지 않게 하는 도구.", "es": "Evita que bajen las características del equipo Pokémon durante cinco turnos."}
