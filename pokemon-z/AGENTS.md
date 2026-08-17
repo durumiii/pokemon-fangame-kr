@@ -1,7 +1,10 @@
 # pokemon-z — 작업 규율
 
-스페인어 팬게임 Pokemon Z의 한글패치. **번역 정본은 `translate/ko/`**(절별 JSONL,
-(맵, 원문)마다 한 줄)이고 `korean.dat`는 빌드 산출물이다.
+스페인어 팬게임 Pokemon Z의 한글패치. **번역 정본은 `translate/stage0/`다**(자리
+`sites` · 값 `messages` · 말투 `voices` · 페르소나 `groups` · 용어 `terms` · 축 `axes` —
+2026-08-18 승격). `translate/ko/`(절별 JSONL)와 `korean.dat`는 빌드 산출물이다 —
+ko는 emit 역생성이 내고 git에 남으며, 읽기는 자유지만 **쓰기는 stage0 창구를 지나는
+도구로만 한다**(직접 고쳤으면 커밋 뒤 `gen.py` 재흡수가 예외 회수 경로다).
 
 **작업 범위** — 번역이 제대로 되기 위한 수정까지가 이 프로젝트의 일이다. 엔진·원작
 버그는 진단을 표면화하는 데까지만 하고, 기능 수정은 원인 확정 뒤 유지자 판정으로 한다.
@@ -23,7 +26,7 @@
 | [release](docs/guides/release.md) | 릴리스 노트, 자산 진열 |
 | [reuse-playbook](docs/guides/reuse-playbook.md) | 다른 팬게임에 이 방식을 다시 밟는 순서 |
 
-⚠ **`translate/ko/*.jsonl`(번역 정본)은 events-and-speech를 읽기 전에 고치지 않는다.**
+⚠ **번역값(`translate/stage0/` — 옛 `translate/ko/`)은 events-and-speech를 읽기 전에 고치지 않는다.**
 제보를 그대로 옮겨 넣는 작업도 예외가 아니다 — 제보가 건드리는 것이 말투일 때
 그 판이 어디서 갈리는지 모르면 반영이 곧 사고다(2026-08-08, 133줄 되돌림).
 
