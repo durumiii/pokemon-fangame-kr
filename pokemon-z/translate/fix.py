@@ -28,6 +28,12 @@ HERE = Path(__file__).parent
 KO = HERE / "ko"
 
 
+def put_lines(edits):
+    """0단계 정본에 앉히고 ko를 역생성한다 — 창구는 stage0/edit.py 하나다."""
+    sys.path.insert(0, str(HERE / "stage0"))
+    from edit import put_lines as _put
+    return _put(edits)
+
 def rows():
     for p in sorted(KO.glob("*.jsonl")):
         cur_map = None
@@ -109,16 +115,17 @@ def main():
     touched = {}
     for p, i, m, es, v in targets:
         touched.setdefault(p, set()).add(i)
-    changed = 0
+    changed, edits = 0, []
     for p, linenos in touched.items():
-        out = []
         for i, line in enumerate(p.read_text(encoding="utf-8").splitlines(), 1):
             d = json.loads(line)
             if i in linenos and query in d.get("v", ""):
-                d["v"] = d["v"].replace(query, to)
+                edits.append((p.name, i, d["v"].replace(query, to)))
                 changed += 1
-            out.append(json.dumps(d, ensure_ascii=False))
-        p.write_text("\n".join(out) + "\n", encoding="utf-8")
+    err = put_lines(edits)
+    if err:
+        print("멈춤 —", err)
+        return
     print(f"치환 {changed}행 (「{query[:30]}」→「{to[:30]}」)")
     if changed and "--no-build" not in args:
         r = subprocess.run(["uv", "run", str(HERE / "build.py")],

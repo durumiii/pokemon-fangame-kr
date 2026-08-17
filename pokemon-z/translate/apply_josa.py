@@ -20,7 +20,8 @@ import re
 import sys
 from pathlib import Path
 
-KO = Path(__file__).parent / "ko"
+HERE = Path(__file__).parent
+KO = HERE / "ko"
 
 # 병기 → \j[받침형,무받침형]. 괄호가 앞뒤 어느 쪽에 붙는 꼴이든 잡는다.
 CONVERSIONS = {
@@ -72,12 +73,18 @@ def convert(text):
     return out, hits
 
 
+def put_lines(edits):
+    """0단계 정본에 앉히고 ko를 역생성한다 — 창구는 stage0/edit.py 하나다."""
+    sys.path.insert(0, str(HERE / "stage0"))
+    from edit import put_lines as _put
+    return _put(edits)
+
 def main():
     dry = "--dry-run" in sys.argv
     counts, rows, samples = {}, 0, []
+    edits = []
     for path in sorted(KO.glob("*.jsonl")):
         lines = path.read_text(encoding="utf-8").split("\n")
-        dirty = False
         for i, line in enumerate(lines):
             if not line.strip():
                 continue
@@ -93,11 +100,12 @@ def main():
             rows += 1
             if len(samples) < 8:
                 samples.append(f"{path.name}:{i + 1}\n   전 {v[:90]}\n   후 {new[:90]}")
-            d["v"] = new
-            lines[i] = json.dumps(d, ensure_ascii=False)
-            dirty = True
-        if dirty and not dry:
-            path.write_text("\n".join(lines), encoding="utf-8")
+            edits.append((path.name, i + 1, new))
+    if not dry:
+        err = put_lines(edits)
+        if err:
+            print("멈춤 —", err)
+            return
 
     print(f"변환: {rows}행에서 {sum(counts.values())}회 —", counts)
     for s in samples:

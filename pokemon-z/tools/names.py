@@ -40,6 +40,12 @@ KO_DIR = HERE / "translate" / "ko"
 FINAL_CONSONANT = set()  # 받침 있는 한글 음절은 코드로 판별한다
 
 
+def put_lines(edits):
+    """0단계 정본에 앉히고 ko를 역생성한다 — 창구는 stage0/edit.py 하나다."""
+    sys.path.insert(0, str(HERE / "translate" / "stage0"))
+    from edit import put_lines as _put
+    return _put(edits)
+
 def has_batchim(word):
     """마지막 한글 음절에 받침이 있는가 — 조사 선택이 이걸로 갈린다."""
     for ch in reversed(word):
@@ -125,6 +131,7 @@ def cmd_rename(es, new):
     #  「무사 병영」까지 44행 갈아엎었다). **원문 칸에 그 이름이 있는 행만** 고친다.
     key = es.lower()
     changed, skipped = 0, []
+    edits = []
     for f in ko_files():
         lines = f.read_text(encoding="utf-8").split("\n")
         hit = 0
@@ -137,13 +144,15 @@ def cmd_rename(es, new):
             if key not in src_of(entry=e).lower():   # 절에 따라 원문 칸이 k 또는 es다
                 skipped.append((f.name, (e.get("k") or "")[:40], e["v"][:40]))
                 continue
-            e["v"] = e["v"].replace(old, new)
-            lines[i] = json.dumps(e, ensure_ascii=False)
+            edits.append((f.name, i + 1, e["v"].replace(old, new)))
             hit += 1
         if hit:
-            f.write_text("\n".join(lines), encoding="utf-8")
             print(f"  {f.name} {hit}행")
             changed += hit
+    err = put_lines(edits)
+    if err:
+        print("멈춤 —", err)
+        return
     if skipped:
         print(f"  건너뜀 {len(skipped)}행 — 번역엔 옛 표기가 있으나 원문에 {es!r}가 없어요:")
         for name, k, v in skipped[:8]:
