@@ -3398,16 +3398,16 @@
 {"k": "Salir de la tienda.", "v": "상점에서 나간다."}
 {"k": "Dinero:\n<r>${1}", "v": "소지금:\n<r>${1}"}
 {"k": "No tienes el dinero suficiente.", "v": "돈이 부족하군요."}
-{"k": "{1} es una buena elección.\nTe costará ${2}. ¿De acuerdo?", "v": "{1}, 좋은 선택이야.\r\n${2}인데 괜찮겠어?"}
-{"k": "¿{1}? Buena elección.\n¿Cuántas unidades quieres?", "v": "{1}? 좋은 선택이야.\r\n몇 개 필요해?"}
-{"k": "{1}... Y quieres {2}.\nTe costará ${3}. ¿De acuerdo?", "v": "{1}... 그리고 {2}\\j[이,가] 필요하군.\r\n${3}인데 괜찮겠어?"}
+{"k": "{1} es una buena elección.\nTe costará ${2}. ¿De acuerdo?", "v": "{1}, 좋은 선택이에요.\r\n${2}인데 괜찮으시겠어요?"}
+{"k": "¿{1}? Buena elección.\n¿Cuántas unidades quieres?", "v": "{1}? 좋은 선택이에요.\r\n몇 개 드릴까요?"}
+{"k": "{1}... Y quieres {2}.\nTe costará ${3}. ¿De acuerdo?", "v": "{1}... 그리고 {2}\\j[이,가] 필요하시군요.\r\n${3}인데 괜찮으시겠어요?"}
 {"k": "Error al borrar objeto guardado", "v": "저장된 도구 삭제 중 오류"}
 {"k": "No tienes espacio en la Mochila.", "v": "가방에 공간이 없다."}
 {"k": "¡Aquí tienes!\n¡Gracias!", "v": "네, 여기 있습니다!\r\n대단히 감사합니다!"}
 {"k": "También recibes una Honor Ball extra.", "v": "덤으로 프리미어볼도 하나 더 받는다."}
-{"k": "¿{1}? ¡Oh, no!\nNo puedo comprar eso.", "v": "{1}? 이런!\r\n그건 살 수 없어."}
-{"k": "¿{1}?\n¿Cuántas unidades quieres vender?", "v": "{1}?\r\n몇 개를 팔까?"}
-{"k": "Puedo pagarte ${1}.\n¿Te parece bien?", "v": "${1}에 사줄게.\r\n괜찮겠어?"}
+{"k": "¿{1}? ¡Oh, no!\nNo puedo comprar eso.", "v": "{1}? 이런!\r\n그건 살 수 없어요."}
+{"k": "¿{1}?\n¿Cuántas unidades quieres vender?", "v": "{1}?\r\n몇 개 파시겠어요?"}
+{"k": "Puedo pagarte ${1}.\n¿Te parece bien?", "v": "${1}에 사 드릴게요.\r\n괜찮으시겠어요?"}
 {"k": "Entregaste {1}.\nRecibiste ${2} por la venta.", "v": "{1}\\j[을,를]\n${2}에 매각했다."}
 {"k": "Me gustaría comprar algo", "v": "사러 왔다"}
 {"k": "Me gustaría vender algo", "v": "팔러 왔다"}
