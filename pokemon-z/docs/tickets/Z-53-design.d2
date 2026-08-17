@@ -1,6 +1,5 @@
 # Z-53 0단계 정본 — 전체 모양 (as-built + 설계)
 # render:  cd docs/tickets && d2 Z-53-design.d2 Z-53-design.svg
-# ⚠ 이 기계에 d2가 없어 렌더해서 눈으로 확인하지 못했다(2026-08-17).
 
 vars: {
   d2-config: {
@@ -25,25 +24,25 @@ title: |md
   # Z-53 — 0단계 정본이 서면 어떤 모양인가
 | { near: top-center }
 
-src: "출처 — 값이 실제로 사는 자리" {
+src: "출처 — 값이 실제로 있는 자리" {
   style: { fill: "#F8FAFC"; stroke: "#64748B"; stroke-dash: 4 }
   direction: down
 
   tbl: "번역표 24절\n(지금 정본 → 출처로 강등)\n31,451행" { class: data }
   rx: "게임 원본 rxdata\n맵·이벤트·페이지" { class: ext }
-  pbs: "PBS 텍스트\n⛔ 고치면 재컴파일 방아쇠" { class: ext }
+  pbs: "PBS 텍스트\n⛔ 고치면 Data가 다시 만들어짐" { class: ext }
   hard: "코드에 박힌 번역쌍\nCORE_TERMS · UiText TABLE\n_NATURE_ADJ" { class: data }
   tower: "스크립트 안 데이터 표\n배틀시설 875명\n조회를 아예 안 탐" { class: ext }
   corpus: "본가 코퍼스\ncanon/ — 판정 오라클" { class: data }
 }
 
-stage0: "0단계 정본 — 대장 셋 (전부 미구현)" {
+stage0: "0단계 정본 — 표 셋 (전부 미구현)" {
   style: { fill: "#FDF2F8"; stroke: "#DB2777"; stroke-dash: 4 }
   direction: down
 
-  sites: "자리 대장\n문자열 하나가 사는 좌표 + 원문\n출처 종류 · 반영 경로 · 층 · 화자 · 청자" { class: open }
-  values: "값 대장\n원문 → 갈래[] → (한국어, 적용 군, 왜, 유래)\n갈래 하나면 그게 통일" { class: open }
-  groups: "군 대장\n조건에 이름을 붙인 정의\n말투·페르소나 판정이 이름에 붙는다" { class: open }
+  sites: "자리표\n문자열 하나가 있는 좌표 + 원문\n출처 종류 · 반영 경로 · 층 · 화자 · 청자" { class: open }
+  values: "값표\n원문 → 갈래[] → (한국어, 적용 군, 왜, 유래)\n갈래 하나면 그게 통일" { class: open }
+  groups: "대상군표\n조건에 이름을 붙인 정의\n말투·페르소나 판정이 이름에 붙는다" { class: open }
 
   sites -> values: "원문 키"
   groups -> values: "적용 군 이름"
@@ -55,7 +54,7 @@ build: "빌드와 검사" {
   direction: down
 
   gate: "검사 게이트 (미구현)\n자리마다 오라클을 선언 → 한 자리에서 돈다\n미번역 · 번호 밀림 · 표기 갈림" { class: open }
-  emit: "빌드 (지금 있음, 다시 씀)\n대장 → 절별 번역표 → korean.dat" { class: det }
+  emit: "빌드 (지금 있음, 다시 씀)\n표 셋 → 절별 번역표 → korean.dat" { class: det }
   surgery: "소스 수술 패치 (지금 있음)\n조회를 안 타는 자리" { class: det }
 }
 
