@@ -259,6 +259,33 @@ EDITS += [
      '        cmdlist.push(krHit ? krHit : _MAPINTL(@map_id,cmd))\r\n'
      '      end\r\n'),
 
+    # 전투 호출 대사(Z-73). 이 대사는 101이 아니라 **조건 분기(111)의 스크립트 인자**
+    # `pbTrainerBattle(…, _I("..."))` 안에 있고, 그 스크립트를 Interpreter#pbExecuteScript의
+    # eval이 돌린다. 그래서 _I가 불릴 때 self가 인터프리터이고 @map_id·@event_id·@index가
+    # 그 자리에서 보인다 — **루비 1.8.7 실물로 판정했다**(share/qa-trainerloc.rb:
+    # `[P] [25, 38, 7, "Interpreter"]`, @index가 정본 자리 m25.e38.p0.c7의 c와 같다).
+    # 인터프리터가 아닌 데서 불리면 @map_id가 nil이라 옛 조회로 그대로 떨어진다.
+    # 폴백의 기준 맵도 @map_id로 내린다 — 맵 대사에서 이미 그렇게 고친 자리와 같은 결함이
+    # 이 경로에 남아 있었다(전이 뒤 도착 맵으로 조회). 공통 이벤트는 setup이 셋째 인자를
+    # 안 받아 @map_id가 현재 맵이 되므로 동작이 그대로다. 루비 1.8 문법.
+    # ⚠ 얹기만 하는 수술이라 뒤따르는 _MAPINTL 정의까지 앵커에 물린다(멱등).
+    ("Intl_Messages",
+     'def _I(str)\r\n'
+     '  return _MAPINTL($game_map.map_id,str)\r\n'
+     'end\r\n'
+     '\r\n'
+     'def _MAPINTL(mapid,*arg)\r\n',
+     'def _I(str)\r\n'
+     '  # 좌표 조회(Z-73) — 전투 호출 대사가 여기로 온다.\r\n'
+     '  if @map_id && @event_id\r\n'
+     '    krHit=MessageTypes.krLoc(@map_id,@event_id,@index,str)\r\n'
+     '    return krHit ? krHit : _MAPINTL(@map_id,str)\r\n'
+     '  end\r\n'
+     '  return _MAPINTL($game_map.map_id,str)\r\n'
+     'end\r\n'
+     '\r\n'
+     'def _MAPINTL(mapid,*arg)\r\n'),
+
     # 홀로 선 선택지(command_102). 앞의 pbMessage(...,nil)이 Interpreter 쪽 표식이다.
     ("Messages",
      '      Kernel.pbMessage(message+messageend,nil)\r\n'
