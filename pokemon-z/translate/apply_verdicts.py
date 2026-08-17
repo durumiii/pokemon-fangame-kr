@@ -210,19 +210,19 @@ def stage0_ready():
     ko 미커밋 수정은 emit이 덮어 지운다. 둘이 어긋나 있으면 어느 쪽이 앞선 것인지에
     따라 할 일이 정반대라 방향은 emit.advice()가 git 상태로 가린다.
     """
+    with contextlib.redirect_stdout(io.StringIO()):
+        built, owner, msgs = rebuild()
+        _, other = compare(built, owner, tainted_ids(msgs, read_overrides()), show=0)
     dirty = emit.dirty_ko()
     if dirty:
         print("멈춤 — translate/ko/에 미커밋 수정이 있다. emit이 덮으면 그 수정이 사라진다.")
         for ln in dirty[:10]:
             print(f"  {ln}")
-        print(f"  {emit.advice()}")
+        print(f"  {emit.advice(built)}")
         return False
-    with contextlib.redirect_stdout(io.StringIO()):
-        built, owner, msgs = rebuild()
-        _, other = compare(built, owner, tainted_ids(msgs, read_overrides()), show=0)
     if other:
         print(f"멈춤 — stage0와 ko가 {other}건 어긋난다(overrides 유래 아님).")
-        print(f"  {emit.advice()}")
+        print(f"  {emit.advice(built)}")
         return False
     return True
 

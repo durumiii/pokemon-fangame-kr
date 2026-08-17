@@ -109,6 +109,11 @@ def rebuild(d=OUT):
     return out, owner, msgs
 
 
+def serialize(rows):
+    """정본 파일 한 벌의 바이트 — 대조도 쓰기도 이 한 꼴을 쓴다."""
+    return "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows)
+
+
 def tainted_ids(msgs, ovr):
     """overrides가 건드린 id 하나가 실제로 물들이는 자리 id 집합.
 
@@ -151,7 +156,7 @@ def compare(built, owner, tainted=frozenset(), write_to=None, show=5):
                 sid = ids[i] if i < len(ids) else None
                 diffs.append((i, a, b, sid in tainted))
         # 바이트까지 같은지도 본다 — 레코드가 같아도 직렬화 꼴이 다를 수 있다.
-        made = "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows)
+        made = serialize(rows)
         same_bytes = made == (KO / name).read_text(encoding="utf-8")
         n_ovr = sum(1 for *_, o in diffs if o)
         from_ovr += n_ovr
