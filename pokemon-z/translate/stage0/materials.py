@@ -105,20 +105,9 @@ def sprite_groups():
 
 
 def marks():
-    """(fixlog 원문 키, register-ok 좌표 조건들) — 사람 판정이 지나간 자리."""
-    fix = {norm(r["es"]) for r in read_jsonl(ROOT / "fixlog.jsonl") if r.get("es")}
-    ok_path = DATA / "register-ok.jsonl"
-    ok = read_jsonl(ok_path) if ok_path.exists() else []
-    return fix, ok
-
-
-def ok_hit(ok, row):
-    """register-ok 한 줄은 있는 좌표 칸만으로 맞춘다(page·cmd가 없는 줄이 있다)."""
-    out = []
-    for r in ok:
-        if all(r.get(k) == row[k] for k in ("map", "event", "page", "cmd") if k in r):
-            out.append(r.get("이유", ""))
-    return out
+    """fixlog 원문 키 — 유지자 손이 지나간 자리. register-ok는 자리 칸(register_ok)으로
+    사이트에 펴져 있어(gen.stamp_register_ok) 따로 안 읽는다."""
+    return {norm(r["es"]) for r in read_jsonl(ROOT / "fixlog.jsonl") if r.get("es")}
 
 
 # ── 재료 조립 ────────────────────────────────────────────────────────────────
@@ -128,7 +117,7 @@ class Ctx:
         self.prop = prop or {}
         self.persona = personas()
         self.s2g = sprite_groups()
-        self.fix, self.ok = marks()
+        self.fix = marks()
         self.by_ev = {}
         self.by_src = {}
         for r in self.rows:
@@ -147,7 +136,8 @@ class Ctx:
             f.append("화자 손지정(overrides)")
         if r["nk"] in self.fix:
             f.append("유지자 손수정(fixlog)")
-        for why in ok_hit(self.ok, r):
+        if "register_ok" in r:
+            why = r["register_ok"]
             f.append(f"기존 판정 register-ok: {why}" if why else "기존 판정 register-ok")
         return f
 
