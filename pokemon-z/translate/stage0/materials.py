@@ -314,7 +314,9 @@ def review_out(groups, out_dir):
     screen, pages = [], {}
     for g in groups:
         for r, _, _ in g["seq"]:
-            row = {"id": r["id"], "who": naming(r), "es": r.get("src", ""), "old": r["ko"]}
+            # 배치 파이프라인의 자리 열쇠는 맵:이벤트:페이지:명령이다 — apply_verdicts가 그 꼴을 읽는다
+            bid = f'{g["map"]}:{g["event"]}:{r["page"]}:{r["cmd"]}'
+            row = {"id": bid, "who": naming(r), "es": r.get("src", ""), "old": r["ko"]}
             pr = g["prop"].get(r["id"])
             if pr:
                 row["new"] = pr[1]
