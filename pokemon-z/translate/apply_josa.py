@@ -79,10 +79,17 @@ def put_lines(edits):
     from edit import put_lines as _put
     return _put(edits)
 
+
+def sweep_skip(name):
+    sys.path.insert(0, str(HERE / "stage0"))
+    from common import sweep_skip as _s
+    return _s(name)
+
+
 def main():
     dry = "--dry-run" in sys.argv
     counts, rows, samples = {}, 0, []
-    edits = []
+    edits, left = [], []
     for path in sorted(KO.glob("*.jsonl")):
         lines = path.read_text(encoding="utf-8").split("\n")
         for i, line in enumerate(lines):
@@ -94,6 +101,9 @@ def main():
                 continue
             new, hits = convert(v)
             if new == v:
+                continue
+            if sweep_skip(path.name):     # 합성 열쇠 파일 — 사람이 직접 고칠 자리
+                left.append(f"{path.name}:{i + 1} {v[:60]}")
                 continue
             for k, n in hits.items():
                 counts[k] = counts.get(k, 0) + n
@@ -107,6 +117,8 @@ def main():
             print("멈춤 —", err)
             return
 
+    for ln in left:
+        print(f"  건너뜀(추가분·좌표는 직접 고친다) {ln}")
     print(f"변환: {rows}행에서 {sum(counts.values())}회 —", counts)
     for s in samples:
         print(s)

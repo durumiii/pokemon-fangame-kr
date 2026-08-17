@@ -54,7 +54,12 @@ def main():
 
     p = HERE / "ko" / f"{sec}.jsonl"
     if not p.exists():
-        p = next(iter((HERE / "ko").glob(f"{sec}*.jsonl")))
+        # 접두 일치로 아무거나 집으면 00-maps가 00-maps.loc을 물어 온다 — 절 번호로 찾는다.
+        sys.path.insert(0, str(HERE / "stage0"))
+        from common import ko_file
+        p = ko_file(int(sec[:2]))
+        if p is None:
+            sys.exit(f"중단: 절 파일을 못 찾았다 — {sec}")
     rows = [json.loads(l) for l in p.read_text(encoding="utf-8").splitlines()]
     n = applied = 0
     edits = []

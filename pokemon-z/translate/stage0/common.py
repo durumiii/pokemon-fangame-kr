@@ -56,6 +56,12 @@ def ko_file(sec):
     return _ko_files().get(sec)
 
 
+def sweep_skip(name):
+    """일괄 훑기에서 뺄 파일인가 — 추가분·좌표는 합성 열쇠라 부분 치환 규칙이 안 선다.
+    걸린 줄은 사람이 그 파일에서 직접 고친다(조용히 빼지 말고 목록으로 알릴 것)."""
+    return name.endswith((".add.jsonl", ".loc.jsonl"))
+
+
 def read_overrides(path=None):
     """사람 수정 층. 없으면 빈 목록 — gen은 overrides 없이도 돈다."""
     p = path or OVERRIDES

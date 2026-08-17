@@ -40,8 +40,10 @@ GAME = Path("/mnt/d/Game/Pokemon Z/V2.18/Data/korean.dat")
 STORE = Path("/mnt/d/GameVault/mods/Pokemon Z Fangame/한글패치 코어/Data/korean.dat")
 
 # 정본 파일 이름 앞 두 자리가 절 번호다
-SEC_FILE = {int(p.name[:2]): p for p in sorted(KO.glob("*.jsonl"))
-            if p.name[:2].isdigit() and not p.name.endswith(".add.jsonl")}
+# 절 → 정본 파일. 자체 글롭을 두면 .loc·.add가 절 자리를 덮는다(2026-08-18에
+# 00-maps.loc.jsonl이 절0을 덮어 맵 대사 회수가 통째로 버려지고 있었다).
+sys.path.insert(0, str(HERE / "stage0"))
+from common import ko_file  # noqa: E402
 
 
 def decide(was, got, canon):
@@ -93,7 +95,7 @@ def dat_values(path):
 
 def canon_rows(sec):
     """정본 파일의 (자리 → 줄 번호). 맵 대사는 (맵, 자리)."""
-    path = SEC_FILE.get(sec)
+    path = ko_file(sec)
     if not path:
         return None, None
     lines = path.read_text(encoding="utf-8").splitlines()
@@ -154,10 +156,10 @@ def main():
             if verdict == "빈값":
                 blank.append((sec, key, r["v"]))
                 continue
-            edits.append((SEC_FILE[sec].name, ln + 1, v))
+            edits.append((ko_file(sec).name, ln + 1, v))
             n += 1
         if n:
-            print(f"  {SEC_FILE[sec].name}: {n}행")
+            print(f"  {ko_file(sec).name}: {n}행")
         total += n
 
     if write:

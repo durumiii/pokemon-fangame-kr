@@ -34,6 +34,12 @@ def put_lines(edits):
     from edit import put_lines as _put
     return _put(edits)
 
+
+def sweep_skip(name):
+    sys.path.insert(0, str(HERE / "stage0"))
+    from common import sweep_skip as _s
+    return _s(name)
+
 def rows():
     for p in sorted(KO.glob("*.jsonl")):
         cur_map = None
@@ -115,13 +121,19 @@ def main():
     touched = {}
     for p, i, m, es, v in targets:
         touched.setdefault(p, set()).add(i)
-    changed, edits = 0, []
+    changed, edits, left = 0, [], []
     for p, linenos in touched.items():
         for i, line in enumerate(p.read_text(encoding="utf-8").splitlines(), 1):
             d = json.loads(line)
-            if i in linenos and query in d.get("v", ""):
-                edits.append((p.name, i, d["v"].replace(query, to)))
-                changed += 1
+            if i not in linenos or query not in d.get("v", ""):
+                continue
+            if sweep_skip(p.name):        # 합성 열쇠 파일 — 사람이 직접 고칠 자리
+                left.append(f"{p.name}:{i} {d.get('v', '')[:60]}")
+                continue
+            edits.append((p.name, i, d["v"].replace(query, to)))
+            changed += 1
+    for ln in left:
+        print(f"  건너뜀(추가분·좌표는 직접 고친다) {ln}")
     err = put_lines(edits)
     if err:
         print("멈춤 —", err)

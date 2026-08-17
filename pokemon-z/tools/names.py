@@ -46,6 +46,12 @@ def put_lines(edits):
     from edit import put_lines as _put
     return _put(edits)
 
+
+def sweep_skip(name):
+    sys.path.insert(0, str(HERE / "translate" / "stage0"))
+    from common import sweep_skip as _s
+    return _s(name)
+
 def has_batchim(word):
     """마지막 한글 음절에 받침이 있는가 — 조사 선택이 이걸로 갈린다."""
     for ch in reversed(word):
@@ -131,7 +137,7 @@ def cmd_rename(es, new):
     #  「무사 병영」까지 44행 갈아엎었다). **원문 칸에 그 이름이 있는 행만** 고친다.
     key = es.lower()
     changed, skipped = 0, []
-    edits = []
+    edits, left = [], []
     for f in ko_files():
         lines = f.read_text(encoding="utf-8").split("\n")
         hit = 0
@@ -144,11 +150,16 @@ def cmd_rename(es, new):
             if key not in src_of(entry=e).lower():   # 절에 따라 원문 칸이 k 또는 es다
                 skipped.append((f.name, (e.get("k") or "")[:40], e["v"][:40]))
                 continue
+            if sweep_skip(f.name):        # 합성 열쇠 파일 — 사람이 직접 고칠 자리
+                left.append(f"{f.name}:{i + 1} {e['v'][:60]}")
+                continue
             edits.append((f.name, i + 1, e["v"].replace(old, new)))
             hit += 1
         if hit:
             print(f"  {f.name} {hit}행")
             changed += hit
+    for ln in left:
+        print(f"  건너뜀(추가분·좌표는 직접 고친다) {ln}")
     err = put_lines(edits)
     if err:
         print("멈춤 —", err)
