@@ -105,3 +105,41 @@ class Messages:
 
     def save(self):
         dump_jsonl(self.d / "messages.jsonl", self.msgs)
+
+
+def put_lines(edits, allow_default=False):
+    """ko의 (파일, 줄)들을 0단계 정본에 앉히고 ko를 **한 번에** 역생성한다 — 오류면 사유.
+
+    ko를 고치는 도구가 전부 이 창구로 온다. (파일, 줄) → 자리 색인은 역생성의 owner가
+    그대로 주므로 도구마다 제 색인을 짜지 않는다. 줄마다 emit을 돌면 일괄 치환에서
+    못 쓰니 앉히기는 모아서 하고 역생성은 마지막에 한 번이다.
+
+    `allow_default`는 절23 상점 줄(선택자 트리)의 뜻을 정한다 — 사람이 그 줄을 보고
+    고치는 도구(스튜디오)만 참이고, 기계·일괄 도구는 거짓이라 거부된다. 갈래를 같이
+    안 가면 한 상점 안에서 격이 섞인다.
+    """
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import emit
+    from diff import rebuild
+
+    edits = list(edits)
+    if not edits:
+        return None
+    built, owner, _ = rebuild()
+    if emit.dirty_ko() and not emit.leftover(built):
+        return f"translate/ko/에 이 도구 밖의 수정이 있다 — {emit.advice(built)}"
+    expect = emit.ko_state()          # 쓰기 직전에 이것과 견준다
+    ed = Messages()
+    for file, line, val in edits:
+        ids = owner.get(file, [])
+        sid = ids[line - 1] if 0 < line <= len(ids) else None
+        if sid is None:
+            return f"{file}:{line} — 0단계 자리에 안 붙는다(맵 머리 줄이거나 파일 밖)"
+        try:
+            (ed.put_default if allow_default else ed.put)(ed.local(sid), val)
+        except ValueError as e:
+            return f"{file}:{line} — {e}"
+    ed.save()
+    if emit.main(["--write"], expect=expect):
+        return "정본은 고쳤으나 ko 역생성이 멈췄다 — 터미널을 보라"
+    return None
