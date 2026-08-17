@@ -1,5 +1,6 @@
 # /// script
 # requires-python = ">=3.12"
+# dependencies = ["pyyaml"]
 # ///
 """검수 판정을 번역 정본에 반영한다 — 선별분은 판정대로, 나머지는 새 번역으로.
 
@@ -17,8 +18,14 @@
 
 같은 (맵, 접힌 원문)이 여러 자리에 서면 정본은 한 줄뿐이다 — 그 열쇠에 판정이 둘 이상
 엇갈리면 반영하지 않고 목록으로 보여 준다.
+
+⚠ 값은 **stage0 정본**(`translate/stage0/messages.jsonl`)에 앉고 `translate/ko/`는
+emit이 역생성한다(Z-53 3단계 첫 전환). 그래서 쓰기 전에 둘을 본다 — ko에 미커밋
+수정이 있거나 stage0가 ko보다 낡았으면 멈추고 안내한다.
 """
 
+import contextlib
+import io
 import json
 import re
 import sys
@@ -26,7 +33,12 @@ from pathlib import Path
 
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
+sys.path.insert(0, str(HERE / "stage0"))
 from batch_pages import BATCH, MAPS, fold  # noqa: E402
+import emit  # noqa: E402
+from common import read_overrides  # noqa: E402
+from diff import compare, rebuild, tainted_ids  # noqa: E402
+from edit import Messages  # noqa: E402
 
 CHUNKS = BATCH / "page-chunks.jsonl"
 # 맵 자리 열쇠는 맵:이벤트[:페이지:명령] — 맵 번호와 이벤트가 앞에 서는 것이 이 도구의 전제다
@@ -192,6 +204,29 @@ def record_rows(ids):
     return new
 
 
+def stage0_ready():
+    """stage0에 값을 앉혀도 되는 상태인가 — 아니면 사유를 적고 False.
+
+    ko 미커밋 수정은 emit이 덮어 지운다. 둘이 어긋나 있으면 어느 쪽이 앞선 것인지에
+    따라 할 일이 정반대라 방향은 emit.advice()가 git 상태로 가린다.
+    """
+    with contextlib.redirect_stdout(io.StringIO()):
+        built, owner, msgs = rebuild()
+        _, other = compare(built, owner, tainted_ids(msgs, read_overrides()), show=0)
+    dirty = emit.dirty_ko()
+    if dirty:
+        print("멈춤 — translate/ko/에 미커밋 수정이 있다. emit이 덮으면 그 수정이 사라진다.")
+        for ln in dirty[:10]:
+            print(f"  {ln}")
+        print(f"  {emit.advice(built)}")
+        return False
+    if other:
+        print(f"멈춤 — stage0와 ko가 {other}건 어긋난다(overrides 유래 아님).")
+        print(f"  {emit.advice(built)}")
+        return False
+    return True
+
+
 def run(out_dir, write=False, events_only=False):
     d = Path(out_dir)
     ledger = d.parent / f"verdicts-{d.name}.jsonl"
@@ -297,24 +332,28 @@ def run(out_dir, write=False, events_only=False):
         print("미리보기만 — 반영하려면 --write")
         return
 
-    out, hit, sp_hit, cur = [], 0, 0, None
-    for line in MAPS.read_text(encoding="utf-8").splitlines():
-        if not line.strip():
-            out.append(line)
-            continue
-        r = json.loads(line)
-        if "map" in r:
-            cur = r["map"]
-        else:
-            kf = fold(r["k"])
-            new = plan.get((cur, kf))
-            if new and new != r["v"]:
-                r["v"], hit = new, hit + 1
-            elif not new and kf in spread and r["v"] == spread[kf][0]:
-                r["v"], sp_hit = spread[kf][1], sp_hit + 1
-        out.append(json.dumps(r, ensure_ascii=False))
-    MAPS.write_text("\n".join(out) + "\n", encoding="utf-8")
-    print(f"정본 {MAPS.name}: {hit}행 고침 · 통일 전파 {sp_hit}행")
+    if not stage0_ready():
+        return
+
+    # 정본은 stage0 다섯이고 ko는 산출물이다(Z-53 3단계) — 값은 messages에 앉히고
+    # ko는 emit이 역생성한다. 맵 안의 값만 갈리므로 통일 참조는 그 맵만 떨어져 나온다.
+    ed = Messages()
+    hit = sp_hit = 0
+    for (mi, kf), tid in ed.groups:
+        cur = ed.value(tid)
+        new = plan.get((mi, kf))
+        if new and new != cur:
+            ed.put(tid, new)
+            hit += 1
+        elif not new and kf in spread and cur == spread[kf][0]:
+            ed.put(tid, spread[kf][1])
+            sp_hit += 1
+    ed.save()
+    print(f"정본 messages.jsonl: {hit}행 고침 · 통일 전파 {sp_hit}행")
+    if emit.main(["--write"]):
+        # ko가 안 바뀌었는데 승인·보호를 잠그면 그 이벤트가 다시 안 열린다.
+        print("멈춤 — emit이 ko를 못 냈다. 승인 이벤트·보호 등재는 하지 않는다.")
+        return
     if events_only and keep:
         print(f"승인 이벤트 등재: {len(record_applied(keep))}개 새로 올림")
     if events_only and rows_ok:

@@ -1,0 +1,81 @@
+# /// script
+# requires-python = ">=3.12"
+# ///
+"""stage0 값 수정 공용 한 벌 — (맵, norm(원문))으로 자리를 찾아 messages의 `val`을 간다.
+
+값 수정 도구 열하나(Z-53 3단계)가 전부 이것을 부른다. 도구마다 제 조회를 다시 짜면
+그 수만큼 갈린다.
+
+**공유 항목(`m*.s*`)까지는 따라가고 통일 참조(`unified.*`)는 따라가지 않는다.**
+옛 경로(ko 직접 쓰기)는 (맵, 원문) 한 줄을 갈았다 — 그 맵의 자리는 전부 함께 바뀌고
+다른 맵은 그대로다. 통일 항목을 갈면 전 맵이 바뀌어 옛 경로와 어긋나므로, 참조를
+문자열로 갈아 끼워 그 맵만 떼어 낸다.
+
+ko까지 내리는 것은 이 모듈의 일이 아니다 — 저장 뒤 `emit.py --write`가 역생성한다.
+"""
+import re
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from common import OUT, dump_jsonl, norm, read_jsonl  # noqa: E402
+
+SHARED_RE = re.compile(r"^m\d+\.s\d+$")
+MAP_ID_RE = re.compile(r"^m(\d+)\.")
+
+
+class Messages:
+    """messages.jsonl을 메모리에 열고 값을 갈아 저장한다. 자리 조회는 sites.jsonl로 한다."""
+
+    def __init__(self, d=OUT):
+        self.d = d
+        self.msgs = read_jsonl(d / "messages.jsonl")
+        self.idx = {m["id"]: i for i, m in enumerate(self.msgs)}
+        # 맵 절의 줄 하나가 항목 하나 — ((맵, norm 원문), 값이 사는 id).
+        self.groups, seen = [], set()
+        for s in read_jsonl(d / "sites.jsonl"):
+            if s["apply"] != "map":
+                continue
+            tid = self.local(s["id"])
+            if tid in seen:
+                continue
+            seen.add(tid)
+            self.groups.append(((int(MAP_ID_RE.match(s["id"]).group(1)), norm(s["src"])), tid))
+        self.by_key = {}
+        for key, tid in self.groups:
+            self.by_key.setdefault(key, []).append(tid)
+
+    def local(self, sid):
+        """자리 → 그 맵 안에서 값이 실제로 사는 항목. 공유 항목까지만 따라간다."""
+        seen = set()
+        while True:
+            v = self.msgs[self.idx[sid]]["val"]
+            if not (isinstance(v, dict) and SHARED_RE.match(v.get("ref", ""))):
+                return sid
+            assert sid not in seen, f"참조 순환: {sid}"
+            seen.add(sid)
+            sid = v["ref"]
+
+    def value(self, mid):
+        """지금 보이는 문자열 — 참조를 끝까지 따라간다(diff.resolve와 같은 셈)."""
+        v, seen = self.msgs[self.idx[mid]]["val"], set()
+        while isinstance(v, dict) and "ref" in v:
+            assert v["ref"] not in seen, f"참조 순환: {v['ref']}"
+            seen.add(v["ref"])
+            v = self.msgs[self.idx[v["ref"]]]["val"]
+        return v
+
+    def put(self, mid, val):
+        """값 항목 하나를 간다. 참조였으면 문자열로 갈려 그 자리가 떨어져 나온다."""
+        i = self.idx[mid]
+        self.msgs[i] = {**self.msgs[i], "val": val}
+
+    def set(self, mi, src, val):
+        """(맵, 원문)의 값을 간다 — 바꾼 항목 수. 없는 열쇠면 0."""
+        tids = self.by_key.get((mi, norm(src)), [])
+        for tid in tids:
+            self.put(tid, val)
+        return len(tids)
+
+    def save(self):
+        dump_jsonl(self.d / "messages.jsonl", self.msgs)

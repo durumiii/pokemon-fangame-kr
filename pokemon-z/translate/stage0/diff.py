@@ -109,6 +109,11 @@ def rebuild(d=OUT):
     return out, owner, msgs
 
 
+def serialize(rows):
+    """정본 파일 한 벌의 바이트 — 대조도 쓰기도 이 한 꼴을 쓴다."""
+    return "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows)
+
+
 def tainted_ids(msgs, ovr):
     """overrides가 건드린 id 하나가 실제로 물들이는 자리 id 집합.
 
@@ -151,7 +156,7 @@ def compare(built, owner, tainted=frozenset(), write_to=None, show=5):
                 sid = ids[i] if i < len(ids) else None
                 diffs.append((i, a, b, sid in tainted))
         # 바이트까지 같은지도 본다 — 레코드가 같아도 직렬화 꼴이 다를 수 있다.
-        made = "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows)
+        made = serialize(rows)
         same_bytes = made == (KO / name).read_text(encoding="utf-8")
         n_ovr = sum(1 for *_, o in diffs if o)
         from_ovr += n_ovr
@@ -166,8 +171,10 @@ def compare(built, owner, tainted=frozenset(), write_to=None, show=5):
             print(f"          역생성={json.dumps(a, ensure_ascii=False)[:160]}")
             print(f"          현행  ={json.dumps(b, ensure_ascii=False)[:160]}")
         # 쓰기는 대조 뒤에 — 먼저 쓰면 제 산출과 대조해 「차이 0」으로 찍힌다
-        # (2026-08-18 emit --write 첫 실전에서 실측).
-        if write_to:
+        # (2026-08-18 emit --write 첫 실전에서 실측). 정본 자리에 바이트가 같은 것을
+        # 다시 앉히지는 않는다 — 손 안 댄 절까지 매번 재작성되는 것을 없앤다.
+        # 다른 디렉터리로 낼 때는 그 디렉터리가 온전해야 하므로 전부 쓴다.
+        if write_to and not (same_bytes and write_to == KO):
             (write_to / name).write_text(made, encoding="utf-8")
     return from_ovr, other
 
