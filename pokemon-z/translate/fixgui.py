@@ -13,7 +13,9 @@ Windows 브라우저에서 localhost로 바로 열린다(WSL 포트 공유).
 (fix.py --notes와 같은 파일).
 """
 
+import contextlib
 import gzip
+import io
 import json
 import re
 import subprocess
@@ -400,6 +402,37 @@ def new_op():
     return str(time.time_ns())
 
 
+def stage0_put(file, line, new_v):
+    """값을 0단계 정본에 앉히고 ko를 역생성한다 — ko는 산출물이다(Z-53 3단계).
+
+    (파일, 줄) → 자리 색인은 역생성의 owner가 그대로 준다. 따로 색인을 짜면 갈린다.
+    """
+    sys.path.insert(0, str(HERE / "stage0"))
+    from diff import rebuild
+    from edit import Messages
+    import emit
+
+    built, owner, _ = rebuild()
+    ids = owner.get(file, [])
+    sid = ids[line - 1] if line - 1 < len(ids) else None
+    if sid is None:
+        return "이 줄은 0단계 자리에 안 붙는다(맵 머리 줄?)"
+    # ko 상태는 값을 앉히기 **전에** 본다 — 앉힌 뒤에는 「stage0가 앞섬」과
+    # 「사람이 ko를 고침」이 구분되지 않는다.
+    if emit.dirty_ko() and not emit.leftover(built):
+        return "translate/ko/에 이 화면 밖의 수정이 있다 — 커밋하거나 harvest로 회수한 뒤 저장해라"
+    ed = Messages()
+    ed.put_default(ed.local(sid), new_v)
+    ed.save()
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        rc = emit.main(["--write"], guarded=False)
+    if rc:
+        print(buf.getvalue(), file=sys.stderr)      # 멈춘 사유는 띄운 터미널에 남긴다
+        return "정본은 고쳤으나 ko 역생성이 멈췄다 — 터미널을 보라"
+    return None
+
+
 def save_row(file, line, new_v, op=None, kind="row", label=""):
     p = KO / file
     if not p.is_file() or p.parent != KO:
@@ -411,9 +444,9 @@ def save_row(file, line, new_v, op=None, kind="row", label=""):
     old = d["v"]
     if old == new_v:
         return None
-    d["v"] = new_v
-    lines[line - 1] = json.dumps(d, ensure_ascii=False)
-    p.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    err = stage0_put(file, line, new_v)
+    if err:
+        return err
     with open(FIXLOG, "a", encoding="utf-8") as f:
         f.write(json.dumps({"file": file, "line": line, "es": d.get("k", ""),
                             "old": old, "new": new_v,

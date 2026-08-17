@@ -4,8 +4,9 @@
 # ///
 """apply_verdicts의 낡은 스냅숏 가드(Z-54 ③) — `uv run translate/test_apply_verdicts.py`.
 
-정본을 건드리지 않도록 MAPS를 임시 폴더로 갈아 끼우고 돈다. 산출의 old(배치 시점
-현행)가 지금 정본과 다르면 그 행은 반영되지 않고, 같으면 반영된다.
+정본을 건드리지 않도록 MAPS를 임시 폴더로 갈아 끼우고 **미리보기로** 돈다. 산출의
+old(배치 시점 현행)가 지금 정본과 다르면 그 행은 계획에서 빠지고, 같으면 든다.
+값이 실제로 어디 앉는지(0단계 정본 → emit 역생성)는 emit 왕복이 보는 몫이다.
 """
 import json
 import sys
@@ -35,14 +36,12 @@ def main():
         orig = av.MAPS
         av.MAPS = maps
         try:
-            av.run(str(out), write=True)
+            plan = av.run(str(out), write=False)
         finally:
             av.MAPS = orig
 
-        got = {json.loads(l)["k"]: json.loads(l)["v"]
-               for l in maps.read_text(encoding="utf-8").splitlines() if '"k"' in l}
-        assert got["Hola"] == "유지자가 방금 고친 값", got   # 낡은 스냅숏 — 안 덮는다
-        assert got["Adiós"] == "새 번역B", got               # 신선 — 반영된다
+        assert (1, "Hola") not in plan, plan          # 낡은 스냅숏 — 계획에서 빠진다
+        assert plan[(1, "Adiós")] == "새 번역B", plan  # 신선 — 계획에 든다
     print("OK")
 
 

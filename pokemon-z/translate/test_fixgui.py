@@ -45,9 +45,23 @@ def test_plan():
     assert fixgui.plan_replace(ROWS, "친구", "친구")[0] == []
 
 
+def line_write(file, line, new_v):
+    """쓰기 층 대역 — 이 시험의 주제는 **어느 행이 바뀌는가**(일괄·되돌리기 규칙)이지
+    값이 어디 앉는가가 아니다. 진짜 경로(0단계 정본 → emit 역생성)는 장난감 파일에
+    안 서므로 여기서는 줄을 그대로 갈아 끼운다. 저장 경로의 동치는 emit 왕복이 본다.
+    """
+    p = fixgui.KO / file
+    lines = p.read_text(encoding="utf-8").splitlines()
+    d = json.loads(lines[line - 1])
+    d["v"] = new_v
+    lines[line - 1] = json.dumps(d, ensure_ascii=False)
+    p.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 def test_bulk_and_revert(tmp):
     fixgui.KO = tmp
     fixgui.FIXLOG = tmp / "fixlog.jsonl"
+    fixgui.stage0_put = line_write
     (tmp / "a.jsonl").write_text(
         "\n".join(json.dumps({"k": r["es"], "v": r["v"]}, ensure_ascii=False)
                   for r in ROWS) + "\n", encoding="utf-8")

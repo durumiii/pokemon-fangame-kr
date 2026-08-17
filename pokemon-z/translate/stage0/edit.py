@@ -83,6 +83,19 @@ class Messages:
                 " 아직 없다. overrides나 추가분 파일로 가라.")
         self.msgs[i] = {**self.msgs[i], "val": val}
 
+    def put_default(self, mid, val):
+        """선택자 트리면 **기본 갈래만** 간다. 평문이면 put과 같다.
+
+        스튜디오가 절23 상점 줄을 고치는 것의 뜻이 이것이다 — 옛 경로가 base 줄을
+        고치던 것과 같은 자리이고, 갈래(when)는 그 화면에 보이지도 않는다.
+        """
+        i = self.idx[mid]
+        cur = self.msgs[i]["val"]
+        if isinstance(cur, dict) and "sel" in cur:
+            self.msgs[i] = {**self.msgs[i], "val": {**cur, "default": val}}
+        else:
+            self.put(mid, val)
+
     def set(self, mi, src, val):
         """(맵, 원문)의 값을 간다 — 바꾼 항목 수. 없는 열쇠면 0."""
         tids = self.by_key.get((mi, norm(src)), [])

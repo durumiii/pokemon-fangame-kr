@@ -328,12 +328,13 @@ def run(out_dir, write=False, events_only=False):
             continue
         spread[es] = (old, new)
 
+    # 반영 계획을 돌려준다 — 낡은 스냅숏·충돌 규칙을 쓰기 없이 시험할 수 있게.
     if not write:
         print("미리보기만 — 반영하려면 --write")
-        return
+        return plan
 
     if not stage0_ready():
-        return
+        return plan
 
     # 정본은 stage0 다섯이고 ko는 산출물이다(Z-53 3단계) — 값은 messages에 앉히고
     # ko는 emit이 역생성한다. 맵 안의 값만 갈리므로 통일 참조는 그 맵만 떨어져 나온다.
@@ -353,11 +354,12 @@ def run(out_dir, write=False, events_only=False):
     if emit.main(["--write"]):
         # ko가 안 바뀌었는데 승인·보호를 잠그면 그 이벤트가 다시 안 열린다.
         print("멈춤 — emit이 ko를 못 냈다. 승인 이벤트·보호 등재는 하지 않는다.")
-        return
+        return plan
     if events_only and keep:
         print(f"승인 이벤트 등재: {len(record_applied(keep))}개 새로 올림")
     if events_only and rows_ok:
         print(f"수선 행 등재: {len(record_rows(rows_ok))}개 — 화면에서 빠진다")
+    return plan
 
 
 if __name__ == "__main__":

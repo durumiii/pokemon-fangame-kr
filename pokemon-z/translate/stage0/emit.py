@@ -77,15 +77,20 @@ def advice(built=None):
             "uv run translate/stage0/gen.py 로 재흡수하고 커밋한 뒤 다시 돌려라.")
 
 
-def main(argv=None):
-    """argv를 받는 것은 다른 도구가 쓰기 경로를 부르기 위해서다(apply_verdicts 등)."""
+def main(argv=None, guarded=True):
+    """argv를 받는 것은 다른 도구가 쓰기 경로를 부르기 위해서다(apply_verdicts 등).
+
+    `guarded=False`는 **부르는 쪽이 값을 앉히기 전에 이미 ko 상태를 봤다**는 뜻이다
+    (fixgui의 연타 저장 — 둘째 저장 시점의 ko는 첫 저장이 낸 산출이라 여기서 다시
+    보면 「낡음」으로 잡힌다).
+    """
     write = "--write" in (sys.argv if argv is None else argv)
     built, owner, msgs = rebuild()
     tainted = tainted_ids(msgs, read_overrides())
 
     if write:
         # 끊긴 emit의 자국은 막지 않는다 — 그 자리에서 막으면 마저 밀어낼 길이 없다.
-        dko = dirty_ko()
+        dko = dirty_ko() if guarded else []
         if dko and not leftover(built):
             print("멈춤 — translate/ko/에 미커밋 수정이 있다. 덮어쓰면 그 수정이 사라진다.")
             for ln in dko[:10]:
