@@ -28,8 +28,12 @@
   ([기록](log/2026-08-18-trainer-call-krloc.md)) · `_NATURE_ADJ` 이관은
   `translate/data/nature-adj.jsonl`로 내려왔다(stage0 등재만 줄기 A 몫) · 화자 갈림은 첫
   덩이 반영에 이어 **남은 42묶음을 자리로 열어 판정 한 건만 남기고 닫았다**
-  ([닫음 기록](log/research/2026-08-18-speaker-split-closed.md)). 남은 것은 올린 판정 둘의
-  회신과 병합 뒤 실기 확인이다.
+  ([닫음 기록](log/research/2026-08-18-speaker-split-closed.md)). 올린 판정 둘도 회신·반영을
+  마쳤고, 그 뒤 넘어온 **상점 점원 문구 갈래 열쇠**까지 섰다
+  ([기록](log/2026-08-18-mart-register.md)). 병합·빌드까지 끝났으니 **이 줄기의 코드·정본
+  일감은 없다** — 남은 것은 사람 몫인 실기 확인과, 줄기 A 몫인 stage0 재생성·등재다.
+  이 세션이 세운 두 꼴은 플레이북의 [같은 원문을 자리마다 다르게](guides/reuse-playbook.md)
+  절에 일반형으로 앉혔다.
   2026-08-18에 셋이 빠졌다 — Z-61 우회 정리는 끝났고, 공통 이벤트 좌표와 배틀시설 875
   수술은 잴수록 일감이 아니었다([공통 이벤트](log/research/2026-08-18-common-events.md) ·
   [배틀시설](log/research/2026-08-18-tower-875.md)).
