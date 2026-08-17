@@ -1,0 +1,64 @@
+{"note": "단축키 표기는 키보드 기본 바인딩 기준(기본판 표준 — 2026-08-03 사용자 판정)."}
+{"note": "컨트롤러 라벨([X]/[LB]/[RB])은 Controller UX Z의 004_PadLabels 오버라이드 몫."}
+{"es": "[A] Curar", "ko": "[A] 회복"}
+{"es": "[S] Viajar", "ko": "[S] 이동"}
+{"es": "[D] Brújula", "ko": "[D] 나침반"}
+{"note": "디버그 패치판은 괄호를 벗긴다(\"A Curar\") — 무괄호 짝도 커버"}
+{"es": "A Curar", "ko": "A 회복"}
+{"es": "S Viajar", "ko": "S 이동"}
+{"es": "D Brújula", "ko": "D 나침반"}
+{"es": "Esta zona no tiene encuentros", "ko": "이 지역에는 나오는 포켓몬이 없습니다"}
+{"es": "No hay Pokémon salvajes", "ko": "야생 포켓몬이 없습니다"}
+{"es": "Pokémon salvajes en esta zona: ", "ko": "이 지역의 야생 포켓몬: "}
+{"es": "Medalla Guardia", "ko": "가르디아 배지"}
+{"es": "Medalla Espectro", "ko": "에스펙트로 배지"}
+{"es": "Medalla Centella", "ko": "센테야 배지"}
+{"es": "Medalla Vital", "ko": "비탈 배지"}
+{"es": "Medalla Tifón", "ko": "티폰 배지"}
+{"es": "Medalla Aguijón", "ko": "아기혼 배지"}
+{"es": "Medalla Visión", "ko": "비시온 배지"}
+{"es": "Medalla Pira", "ko": "피라 배지"}
+{"es": "Medalla Forja", "ko": "포르하 배지"}
+{"es": "Medalla Escarcha", "ko": "에스카르차 배지"}
+{"es": "Medalla Luzbel", "ko": "루스벨 배지"}
+{"es": "Medalla Odonata", "ko": "오도나타 배지"}
+{"note": "연금술(Crafteo) 레시피 조합 화면 하단 — 222_Crafteo.rb pbRedrawItem의"}
+{"note": "textpos 리터럴(첫 화면만 한글이고 둘째 화면이 누락돼 있었다)"}
+{"es": "C: Combinar", "ko": "C: 조합"}
+{"es": "Arriba/Abajo: Cantidad", "ko": "위/아래: 수량"}
+{"es": "X: Salir", "ko": "X: 나가기"}
+{"note": "불러오기 화면(141_PScreen_Load) — 슬롯 라벨 영문 하드코딩."}
+{"note": "\"Partida \"는 sprintf(\"Partida %d\") 접두 부분매치(→ 저장 1, 저장 2 …)."}
+{"note": "번역 정본에 \"Partida \" 포함 한국어 값 0건 확인(2026-08-02) — gsub 오폭 없음."}
+{"es": "Normal Save", "ko": "일반 저장"}
+{"es": "Autosave", "ko": "자동 저장"}
+{"es": " Auto Save", "ko": " (자동 저장)"}
+{"es": "Partida ", "ko": "저장 "}
+{"note": "인물 안내(231_Guia Personajes) 인포그래픽 라벨 — names.json 음차 준수."}
+{"note": "맨이름 쌍은 단어 경계 정규식 — Auretosk 등 라틴 이스터에그 부분 오폭 방지."}
+{"note": "AZ·F3은 keep 명단이라 그대로. Hombre del Saco는 대사 정본 「자루 든 남자」."}
+{"es": "Áster Zéphir (AZ)", "ko": "아스테르 제피르 (AZ)"}
+{"es": "Hombre del Saco", "ko": "자루 든 남자"}
+{"name": "Olivier"}
+{"name": "Crisanto"}
+{"name": "Melia"}
+{"name": "Merlot"}
+{"name": "Canola"}
+{"name": "Mirra"}
+{"name": "Núbila"}
+{"name": "Hisopo"}
+{"name": "Lanto"}
+{"name": "Alca"}
+{"name": "Wolfram"}
+{"name": "Zafra"}
+{"name": "Loto"}
+{"name": "Genos"}
+{"name": "Belladona"}
+{"name": "Malvo"}
+{"name": "Aure"}
+{"re": "Rosaleda", "ko": "로살레다"}
+{"name": "Ferrofaz"}
+{"name": "Pinot"}
+{"name": "Hibis"}
+{"name": "Anturia"}
+{"name": "Cendera"}

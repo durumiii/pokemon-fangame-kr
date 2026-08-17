@@ -5,6 +5,7 @@
 
 module UiTextKR
   TABLE = [
+    # (generated from translate/data/uitext.jsonl — 직접 고치지 말고 uv run translate/uitext.py --write)
     # 단축키 표기는 키보드 기본 바인딩 기준(기본판 표준 — 2026-08-03 사용자 판정).
     # 컨트롤러 라벨([X]/[LB]/[RB])은 Controller UX Z의 004_PadLabels 오버라이드 몫.
     ["[A] Curar", "[A] 회복"],
