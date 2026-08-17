@@ -19,7 +19,7 @@ EMPTY_SECS = [15, 16, 17]
 OVERRIDES = OUT / "overrides.jsonl"
 # overrides의 set이 쓸 수 있는 칸 — 설계 3절 sites·messages 스키마.
 SITE_FIELDS = {"src", "apply", "speaker", "to", "layer", "kind", "scene", "how", "who",
-               "translate"}
+               "translate", "mart"}
 MSG_FIELDS = {"val", "why", "state", "by", "sample"}
 
 

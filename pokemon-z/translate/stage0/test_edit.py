@@ -1,10 +1,10 @@
 # /// script
 # requires-python = ">=3.12"
 # ///
-"""edit 공용 한 벌 자체 검사 — 장난감 자료로 세 갈래만 본다.
+"""edit 공용 한 벌 자체 검사 — 장난감 자료로 네 갈래만 본다.
 
 공유 항목은 그 맵의 전 자리가 함께 바뀌는가 · 통일 참조는 그 맵만 떨어져 나오는가 ·
-없는 열쇠는 조용히 0인가.
+없는 열쇠는 조용히 0인가. 선택자 트리는 시끄럽게 거부하는가.
 
 usage: uv run translate/stage0/test_edit.py
 """
@@ -33,7 +33,7 @@ MSGS = [
     {"id": "m1.e2.p0.c1", "val": {"ref": "m1.s0"}},
     {"id": "m1.e3.p0.c1", "val": {"ref": "unified.x"}},
     {"id": "m2.e1.p0.c1", "val": {"ref": "unified.x"}},
-    {"id": "s23.k0", "val": "끝"},
+    {"id": "s23.k0", "val": {"sel": "mart", "when": {"반말": "끝이야"}, "default": "끝"}},
 ]
 
 
@@ -53,12 +53,20 @@ def main():
         assert e.value("m1.e3.p0.c1") == "또 보자"      # 그 맵만 참조에서 떨어졌다
         assert e.value("m2.e1.p0.c1") == "잘 가", "통일 항목을 갈아 다른 맵까지 물들었다"
 
+        assert e.value("s23.k0") == "끝", "선택자 트리는 기본 갈래로 보여야 한다"
+        try:
+            e.put("s23.k0", "덮어쓰기")
+        except ValueError:
+            pass
+        else:
+            raise AssertionError("선택자 트리를 통째로 덮는 것을 안 막았다")
+
         e.save()
         again = Messages(d)
         assert again.value("m1.e1.p0.c1") == "반갑다"
         assert [m["id"] for m in again.msgs] == [m["id"] for m in MSGS], "줄 순서가 밀렸다"
         assert MSGS[1]["val"] == "안녕", "원본을 건드렸다"
-    print("edit 자체 검사 통과 — 공유 항목 · 통일 참조 떼기 · 없는 열쇠 · 순서 보존")
+    print("edit 자체 검사 통과 — 공유 항목 · 통일 참조 떼기 · 없는 열쇠 · 선택자 트리 거부 · 순서 보존")
 
 
 if __name__ == "__main__":

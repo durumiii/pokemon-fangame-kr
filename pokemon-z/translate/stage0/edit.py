@@ -57,17 +57,30 @@ class Messages:
             sid = v["ref"]
 
     def value(self, mid):
-        """지금 보이는 문자열 — 참조를 끝까지 따라간다(diff.resolve와 같은 셈)."""
+        """지금 보이는 문자열 — 참조를 끝까지 따라간다(diff.resolve와 같은 셈).
+
+        선택자 트리는 **기본 갈래**를 돌려준다. 갈래별 값은 이 창으로 안 보인다.
+        """
         v, seen = self.msgs[self.idx[mid]]["val"], set()
-        while isinstance(v, dict) and "ref" in v:
+        while isinstance(v, dict) and ("ref" in v or "sel" in v):
+            if "sel" in v:
+                return v["default"]
             assert v["ref"] not in seen, f"참조 순환: {v['ref']}"
             seen.add(v["ref"])
             v = self.msgs[self.idx[v["ref"]]]["val"]
         return v
 
     def put(self, mid, val):
-        """값 항목 하나를 간다. 참조였으면 문자열로 갈려 그 자리가 떨어져 나온다."""
+        """값 항목 하나를 간다. 참조였으면 문자열로 갈려 그 자리가 떨어져 나온다.
+
+        선택자 트리는 거부한다 — 통째로 덮으면 갈래가 소리 없이 사라진다.
+        """
         i = self.idx[mid]
+        cur = self.msgs[i]["val"]
+        if isinstance(cur, dict) and "sel" in cur:
+            raise ValueError(
+                f"{mid}는 선택자 트리(갈래 {sorted(cur['when'])})다 — 갈래 값 수정 경로는"
+                " 아직 없다. overrides나 추가분 파일로 가라.")
         self.msgs[i] = {**self.msgs[i], "val": val}
 
     def set(self, mi, src, val):

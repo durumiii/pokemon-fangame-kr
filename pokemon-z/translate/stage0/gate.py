@@ -82,6 +82,9 @@ LOC_ORACLE = ("00-maps 정본의 (맵, 원문)", "사람 몫 — 좌표로 가�
 UI_ORACLE = ("게임 스크립트 리터럴 — 기계 오라클 없음", "verify.py UI 치환표(오폭 후보)", V)
 TOWER_ORACLE = ("게임 TorreBatalla 해시(수술 전 — 값 반영 경로 없음)", "사람 몫 — 음차", H)
 SURG_ORACLE = ("게임 스크립트·데이터 리터럴", "patch_intl EDITS(수술 반영)", H)
+# 절23 추가분(상점 갈래) — 값은 절23 자리의 선택자 트리라 위 23행이 덮고, 갈래가
+# 온전한지(줄 수·배정)는 verify.check_mart가 수술 자리 수를 기준으로 본다.
+MART_ORACLE = ("절23 base 키(추가분은 합성 열쇠)", "verify.py check_mart(갈래 줄 수·배정)", V)
 
 
 def string_to_key(s):
@@ -163,6 +166,8 @@ def resolve(mid, msgs):
         m = msgs[mid]
         why = why or ("why" in m)
         v = m["val"]
+        if isinstance(v, dict) and "sel" in v:
+            return mid, v["default"], why   # 갈래 값은 추가분 파일 몫이라 기본 갈래만 본다
         if not (isinstance(v, dict) and "ref" in v):
             return mid, v, why
         assert v["ref"] not in seen, f"참조 순환: {mid}"
@@ -370,7 +375,8 @@ def print_table():
         so, vo, who = ORACLES[sec]
         print(f"  {sec:02d}   {so:<42} {vo:<46} {who}")
     for label, (so, vo, who) in (("loc", LOC_ORACLE), ("ui", UI_ORACLE),
-                                 ("tower", TOWER_ORACLE), ("surg", SURG_ORACLE)):
+                                 ("tower", TOWER_ORACLE), ("surg", SURG_ORACLE),
+                                 ("mart", MART_ORACLE)):
         print(f"  {label:<6}{so:<40} {vo:<46} {who}")
     human = sorted(s for s in ORACLES if ORACLES[s][2] == H and s not in EMPTY_SECS)
     print(f"\n  값이 사람 몫인 절: {human} (빈 절 {EMPTY_SECS}는 대상 없음)")
