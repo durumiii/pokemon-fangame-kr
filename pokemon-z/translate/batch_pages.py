@@ -1,5 +1,6 @@
 # /// script
 # requires-python = ">=3.12"
+# dependencies = ["pyyaml"]
 # ///
 """주연 대사 재번역 배치 — 이벤트 페이지 단위.
 
@@ -146,8 +147,29 @@ def resolve_conditions(text, map_id):
     return re.sub(r"\s{2,}", " ", "".join(out)).strip()
 
 
+def _stage0_fresh(edit_file, stage0_file):
+    """읽기는 stage0, 편집은 아직 원본 파일(gen이 내려보낸다) — 편집이 더 새면 죽는다."""
+    if edit_file.exists() and stage0_file.exists() \
+            and edit_file.stat().st_mtime > stage0_file.stat().st_mtime:
+        raise SystemExit(f"{stage0_file.name}이 낡았다 — {edit_file.name}을 고쳤으면 "
+                         "uv run translate/stage0/gen.py 를 먼저 돌려라")
+
+
 def voice_prompts():
-    """프롬프트에 실리는 말투 정본. 없으면 말투표에서 뽑아 쓴다(과도기)."""
+    """프롬프트에 실리는 말투. 읽기 정본은 stage0/groups.yaml의 voices 절이고
+    voice-prompts.jsonl은 아직 편집 자리다(주도권 이전 1단계 — 읽기부터).
+    stage0가 없으면 jsonl로 돌아간다(과도기)."""
+    g = HERE / "stage0" / "groups.yaml"
+    if g.exists():
+        _stage0_fresh(PROMPTS, g)
+        import yaml
+        out = {}
+        for v in yaml.safe_load(g.read_text(encoding="utf-8"))["voices"]:
+            out[v["group"]] = {
+                "name": v["group"], "지시": v["instruction"],
+                "본보기": [{"격": s["register"], "글": s["text"]} for s in v["samples"]],
+            }
+        return out
     if not PROMPTS.exists():
         return {}
     out = {}
@@ -814,8 +836,15 @@ def term_pairs():
 
     voice-prompts와 같은 갈래다 — md는 근거·이력이 붙는 사람용 문서고, 기계는
     표를 md에서 캐다가 짝이 밀리는 사고를 냈다(2026-08-06 「Team Azoth 미탑재」).
-    새 판정은 두 곳에 다 적는다. 파일이 없으면 md 파싱으로 돌아간다(과도기).
+    새 판정은 두 곳에 다 적는다. 읽기 정본은 stage0/terms.yaml이고 term-pairs.jsonl은
+    아직 편집 자리다(주도권 이전 1단계). stage0 → jsonl → md 순으로 돌아간다(과도기).
     """
+    y = HERE / "stage0" / "terms.yaml"
+    if y.exists():
+        _stage0_fresh(TERMS, y)
+        import yaml
+        return [(t["src"], t["ko"])
+                for t in yaml.safe_load(y.read_text(encoding="utf-8"))["terms"]]
     if TERMS.exists():
         return [(r["es"], r["ko"]) for r in
                 (json.loads(l) for l in TERMS.read_text(encoding="utf-8").splitlines()
