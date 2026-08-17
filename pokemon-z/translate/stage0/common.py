@@ -2,6 +2,7 @@
 
 0단계 정본(Z-53 설계 3절)을 지금 출처에서 기계로 만들고 되돌리는 두 도구가 함께 쓴다.
 """
+import functools
 import hashlib
 import json
 import re
@@ -43,14 +44,16 @@ def dump_jsonl(path, rows):
     )
 
 
+@functools.cache
+def _ko_files():
+    """절 번호 → 파일. 글롭은 한 번만 — 역생성이 이 함수를 수만 번 부른다."""
+    return {int(p.name[:2]): p for p in sorted(KO.glob("*.jsonl"))
+            if not p.name.endswith((".add.jsonl", ".loc.jsonl"))}
+
+
 def ko_file(sec):
     """절 번호 → translate/ko/ 안의 파일 (없으면 None)."""
-    for p in sorted(KO.glob("*.jsonl")):
-        if p.name.endswith((".add.jsonl", ".loc.jsonl")):
-            continue
-        if int(p.name[:2]) == sec:
-            return p
-    return None
+    return _ko_files().get(sec)
 
 
 def read_overrides(path=None):
