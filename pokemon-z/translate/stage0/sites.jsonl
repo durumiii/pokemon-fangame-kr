@@ -327,43 +327,6 @@
 {"id": "m0.e54.p0.c3.02", "src": "¿Qué Pokémon transformas?", "apply": "map", "layer": "N", "kind": "choice", "scene": "공통", "how": "선택지"}
 {"id": "m0.e55.p0.c2.02", "src": "¿Qué Pokémon transformas?", "apply": "map", "layer": "PS", "kind": "choice", "scene": "공통", "how": "선택지"}
 {"id": "m0.e56.p0.c2.02", "src": "¿Qué Pokémon transformas?", "apply": "map", "layer": "PS", "kind": "choice", "scene": "공통", "how": "선택지"}
-{"id": "m0.k1c6afd3d", "src": "No te ves con la capacidad de sumergirte en el agua todavía...", "apply": "map"}
-{"id": "m0.k557699a9", "src": "No tardes mucho, ¿eh? Alguien se nos podría adelantar y reclamar el tesoro.", "apply": "map"}
-{"id": "m0.kdca70a07", "src": "Si te interesa, ¿por qué no buscas una por el pueblo?", "apply": "map"}
-{"id": "m0.k357c3a08", "src": "Una voz resuena en tu cabeza.", "apply": "map"}
-{"id": "m0.k57014379", "src": "\"¡No si no portas la <b>Llave del Palacio</b>!\"", "apply": "map"}
-{"id": "m0.ked30f4ef", "src": "Es hora de volver a tu celda.", "apply": "map"}
-{"id": "m0.k43366d9b", "src": "Entiendo. Aún así, es mi deber ético y moral prevenirte.", "apply": "map"}
-{"id": "m0.kb5394cf6", "src": "Analizando tu idea de colarte para rescatar a <i>mademoiselle</i> <b>Olivier</b>, concluyo que se trata de una idea pésima.", "apply": "map"}
-{"id": "m0.k1769e1d0", "src": "Este lugar puede provocar esa emoción a la que los humanos llamáis miedo. Ten cuidado, por favor.", "apply": "map"}
-{"id": "m0.k0d86d2e6", "src": "Ha pasado un tiempo sin que sepas de <b>Ferrofaz</b>.", "apply": "map"}
-{"id": "m0.k34b3b3e7", "src": "Te preocupa. Deberías ir a visitarle a su celda esta noche.", "apply": "map"}
-{"id": "m0.k73bd8f16", "src": "Todavía no hemos tenido la oportunidad de medirnos en igualdad de condiciones. En un combate Pokémon.", "apply": "map"}
-{"id": "m0.k497aa88c", "src": "¿Vas a negarte ese derecho?", "apply": "map"}
-{"id": "m0.k840e80d3", "src": "Te lo agradezco y te deseo una feliz vida. Me hubiera encantado estar a la altura como amigo.", "apply": "map"}
-{"id": "m0.k02097cc6", "src": "Solo espero que algún día puedas perdonarme.", "apply": "map"}
-{"id": "m0.kc920d645", "src": "¡Va, va! ¡Confía en mi! Je, je, je...", "apply": "map"}
-{"id": "m0.k787daea2", "src": "Unos minutos después...", "apply": "map"}
-{"id": "m0.k06199aa0", "src": "Pero incluso alguien tan fuerte y de tan buen corazón como él fue enmarañado por las sombras.", "apply": "map"}
-{"id": "m0.k5f544130", "src": "Y ahora, atrapado ahí abajo, es el único reducto que impide a <b>Xerneas</b> perder el control.", "apply": "map"}
-{"id": "m0.k1e6afb42", "src": "La <b>Torre Prisma</b> es la mayor de las construcciones que estoy llevando a cabo en <b>Ciudad Luminalia</b>.", "apply": "map"}
-{"id": "m0.k92f7a629", "src": "Pero mientras excavábamos para poner los cimientos, liberamos una gran bolsa de energía terránea del subsuelo.", "apply": "map"}
-{"id": "m0.k1c204f53", "src": "Un auténtico festín para <b>Zygarde</b>.", "apply": "map"}
-{"id": "m0.kd7111c80", "src": "En este desafío te enfrentarás a los 6 primeros Regentes de la aventura de forma consecutiva. Tus Pokémon serán curados tras cada combate.", "apply": "map"}
-{"id": "m0.kab5d2216", "src": "Tendrás que superar el desafío sin objetos curativos, que te serán requisados.", "apply": "map"}
-{"id": "m0.kee6cbbff", "src": "Si lo logras, recibirás una recompensa especial. Además de los <b>Puntos de Batalla</b> en cada combate.", "apply": "map"}
-{"id": "m0.k66705a17", "src": "¿Te interesa participar?", "apply": "map"}
-{"id": "m0.k810736d1", "src": "<i>Bon</i>, acompáñane.", "apply": "map"}
-{"id": "m0.k81794dd5", "src": "En este desafío te enfrentarás a los 6 últimos Regentes de la aventura de forma consecutiva. Tus Pokémon serán curados tras cada combate.", "apply": "map"}
-{"id": "m0.kf64aa1f3", "src": "¡Vuelve cuando tu corazón esté listo!", "apply": "map"}
-{"id": "m0.k968a2bd7", "src": "(Puedes prepararte hablando con los destellos de la izquierda)", "apply": "map"}
-{"id": "m0.ka40e94f9", "src": "\\c[4]<b>Angeline:</b>\\c[0] Al querer acabar con toda la violencia y destrucción, se ha convertido él mismo en la destrucción encarnada.", "apply": "map"}
-{"id": "m0.kc2d9d04b", "src": "Si no se le detiene, usará el <b>Arma Definitiva</b> para reconvertir el mundo en una charca estancada. Sin dolor, ni muerte, ni vida.", "apply": "map"}
-{"id": "m0.kba9db349", "src": "Un engaño. Un falso paraíso marchitado en el que ni humanos ni Pokémon podrán prosperar.", "apply": "map"}
-{"id": "m0.k41b59d07", "src": "\\c[4]<b>Angeline:</b>\\c[0] Una vez fue un hombre tremendamente generoso y entregado a los demás.", "apply": "map"}
-{"id": "m0.kd8d709e0", "src": "Y era ciertamente razonable y sabio.", "apply": "map"}
-{"id": "m0.k9c532993", "src": "Ese hombre sigue ahí dentro. Nuestro lado amable no desaparece así como así.", "apply": "map"}
-{"id": "m0.k660d5149", "src": "Muy bien, ¡vuelve cuando lo tengas todo listo!", "apply": "map"}
 {"id": "m1.e1.p0.c15", "src": "¿Qué aspecto tiene tu personaje?", "apply": "map", "layer": "N", "kind": "text", "scene": "컷신", "how": "미상"}
 {"id": "m1.e1.p2.c5", "src": "¿Puedes dar más detalles?", "apply": "map", "layer": "N", "kind": "text", "scene": "컷신", "how": "미상"}
 {"id": "m1.e1.p2.c41", "src": "¿Puedes dar más detalles de tu aspecto?", "apply": "map", "layer": "N", "kind": "text", "scene": "컷신", "how": "미상"}
@@ -19868,6 +19831,44 @@
 {"id": "loc.m25.e38.c40", "src": "En concreto, cada combate conmigo aumentará la estadística deseada en 36 <b>Puntos de Esfuerzo</b>, también conocido como EVs.", "apply": "krloc"}
 {"id": "loc.m25.e38.c41", "src": "Si equipas a tu Pokémon con objetos como Pesa Recia, Lente Recia... acelerarás el proceso de entrenamiento.", "apply": "krloc"}
 {"id": "loc.m155.e4.c4", "src": "¿Qué entrenamiento te gustaría hacer?", "apply": "krloc"}
+{"id": "loc.m63.e4.c6", "src": "¡Cúidalo muy bien!", "apply": "krloc"}
+{"id": "loc.m63.e4.c10", "src": "¡Vaya! Veo que no tienes uno.", "apply": "krloc"}
+{"id": "loc.m63.e6.c6", "src": "¡Cúidalo muy bien!", "apply": "krloc"}
+{"id": "loc.m63.e6.c10", "src": "¡Vaya! Veo que no tienes uno.", "apply": "krloc"}
+{"id": "loc.m116.e16.c6", "src": "¡Cúidalo muy bien!", "apply": "krloc"}
+{"id": "loc.m116.e16.c10", "src": "¡Vaya! Veo que no tienes uno.", "apply": "krloc"}
+{"id": "loc.m116.e17.c6", "src": "¡Cúidalo muy bien!", "apply": "krloc"}
+{"id": "loc.m116.e17.c10", "src": "¡Vaya! Veo que no tienes uno.", "apply": "krloc"}
+{"id": "loc.m116.e18.c6", "src": "¡Cúidalo muy bien!", "apply": "krloc"}
+{"id": "loc.m116.e18.c10", "src": "¡Vaya! Veo que no tienes uno.", "apply": "krloc"}
+{"id": "loc.m177.e4.c7", "src": "¡Cúidalo muy bien!", "apply": "krloc"}
+{"id": "loc.m177.e4.c11", "src": "¡Vaya! Veo que no tienes uno.", "apply": "krloc"}
+{"id": "loc.m177.e4.c12", "src": "Si te haces con ese Pokémon, ponlo en el primer lugar de tu equipo para que pueda verlo.", "apply": "krloc"}
+{"id": "loc.m178.e4.c6", "src": "¡Cúidalo muy bien!", "apply": "krloc"}
+{"id": "loc.m178.e4.c10", "src": "¡Vaya! Veo que no tienes uno.", "apply": "krloc"}
+{"id": "loc.m178.e6.c6", "src": "¡Cúidalo muy bien!", "apply": "krloc"}
+{"id": "loc.m178.e6.c10", "src": "¡Vaya! Veo que no tienes uno.", "apply": "krloc"}
+{"id": "loc.m179.e6.c6", "src": "¡Cúidalo muy bien!", "apply": "krloc"}
+{"id": "loc.m179.e6.c10", "src": "¡Vaya! Veo que no tienes uno.", "apply": "krloc"}
+{"id": "loc.m179.e6.c11", "src": "Si te haces con ese Pokémon, ponlo en el primer lugar de tu equipo para que pueda verlo.", "apply": "krloc"}
+{"id": "loc.m302.e4.c6", "src": "¡Cúidalo muy bien!", "apply": "krloc"}
+{"id": "loc.m302.e4.c10", "src": "¡Vaya! Veo que no tienes uno.", "apply": "krloc"}
+{"id": "loc.m302.e6.c6", "src": "¡Cúidalo muy bien!", "apply": "krloc"}
+{"id": "loc.m302.e6.c10", "src": "¡Vaya! Veo que no tienes uno.", "apply": "krloc"}
+{"id": "loc.m308.e12.c18", "src": "¡Vaya! Al final tendré que poner un anuncio en Milintercambios.", "apply": "krloc"}
+{"id": "loc.m395.e4.c7", "src": "¡Cúidalo muy bien!", "apply": "krloc"}
+{"id": "loc.m395.e4.c11", "src": "¡Vaya! Veo que no tienes uno.", "apply": "krloc"}
+{"id": "loc.m395.e4.c12", "src": "Si te haces con ese Pokémon, ponlo en el primer lugar de tu equipo para que pueda verlo.", "apply": "krloc"}
+{"id": "loc.m405.e25.c0", "src": "¡Buenos días! ¿Quieres cambiar tus <b>Puntos Batalla</b> por alguno de estos fantásticos premios?", "apply": "krloc"}
+{"id": "loc.m405.e25.c8", "src": "No tienes puntos suficientes. ¡Sigue combatiendo, que lo conseguirás!", "apply": "krloc"}
+{"id": "loc.m405.e25.c18", "src": "No tienes puntos suficientes. ¡Sigue combatiendo, que lo conseguirás!", "apply": "krloc"}
+{"id": "loc.m405.e25.c28", "src": "No tienes puntos suficientes. ¡Sigue combatiendo, que lo conseguirás!", "apply": "krloc"}
+{"id": "loc.m405.e25.c35", "src": "¡Vuelve cuando quieras!", "apply": "krloc"}
+{"id": "loc.m405.e29.c0", "src": "¡Buenos días! ¿Quieres cambiar tus <b>Puntos Batalla</b> por alguno de estos fantásticos premios?", "apply": "krloc"}
+{"id": "loc.m405.e29.c8", "src": "No tienes puntos suficientes. ¡Sigue combatiendo, que lo conseguirás!", "apply": "krloc"}
+{"id": "loc.m405.e29.c18", "src": "No tienes puntos suficientes. ¡Sigue combatiendo, que lo conseguirás!", "apply": "krloc"}
+{"id": "loc.m405.e29.c28", "src": "No tienes puntos suficientes. ¡Sigue combatiendo, que lo conseguirás!", "apply": "krloc"}
+{"id": "loc.m405.e29.c35", "src": "¡Vuelve cuando quieras!", "apply": "krloc"}
 {"id": "s1.i0", "apply": "index"}
 {"id": "s1.i1", "apply": "index", "src": "Bulbasaur"}
 {"id": "s1.i2", "apply": "index", "src": "Ivysaur"}

@@ -8,3 +8,41 @@
 {"map": 25, "event": 38, "cmd": 40, "k": "En concreto, cada combate conmigo aumentará la estadística deseada en 36 <b>Puntos de Esfuerzo</b>, también conocido como EVs.", "v": "저와 배틀할 때마다 원하는 능력치가 36 <b>노력치</b>(EV)만큼 올라가요.", "왜": "위와 같은 자리"}
 {"map": 25, "event": 38, "cmd": 41, "k": "Si equipas a tu Pokémon con objetos como Pesa Recia, Lente Recia... acelerarás el proceso de entrenamiento.", "v": "포켓몬에게 파워웨이트, 파워렌즈 같은 도구를 지니게 하면 훈련 속도를 더 올릴 수 있어요.", "왜": "위와 같은 자리"}
 {"map": 155, "event": 4, "cmd": 4, "k": "¿Qué entrenamiento te gustaría hacer?", "v": "어떤 트레이닝을 하시겠어요?", "왜": "훈련의 집(맵 155) 치유사(이벤트 4) — 이미 올라간 세 줄과 같은 자리이고 이 명령만 빠져 있었다"}
+{"map": 63, "event": 4, "cmd": 6, "k": "¡Cúidalo muy bien!", "v": "귀여워해 주세요!", "왜": "같은 안내문의 존대판이 이미 정본에 있다(맵116). 새 문안이 아니다"}
+{"map": 63, "event": 4, "cmd": 10, "k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 갖고 계시지 않네요.", "왜": "같은 안내문의 존대판이 이미 정본에 있다(맵116)"}
+{"map": 63, "event": 6, "cmd": 6, "k": "¡Cúidalo muy bien!", "v": "귀여워해 주세요!", "왜": "존대판 복제"}
+{"map": 63, "event": 6, "cmd": 10, "k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 갖고 계시지 않네요.", "왜": "존대판 복제"}
+{"map": 116, "event": 16, "cmd": 6, "k": "¡Cúidalo muy bien!", "v": "귀여워해 줘!", "왜": "반말판이 이미 정본에 있다(맵63 등 여덟 맵)"}
+{"map": 116, "event": 16, "cmd": 10, "k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 갖고 있지 않네.", "왜": "반말판 복제"}
+{"map": 116, "event": 17, "cmd": 6, "k": "¡Cúidalo muy bien!", "v": "귀여워해 줘!", "왜": "반말판 복제"}
+{"map": 116, "event": 17, "cmd": 10, "k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 갖고 있지 않네.", "왜": "반말판 복제"}
+{"map": 116, "event": 18, "cmd": 6, "k": "¡Cúidalo muy bien!", "v": "귀여워해 줘!", "왜": "반말판 복제"}
+{"map": 116, "event": 18, "cmd": 10, "k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 갖고 있지 않네.", "왜": "반말판 복제"}
+{"map": 177, "event": 4, "cmd": 7, "k": "¡Cúidalo muy bien!", "v": "귀여워해 주세요!", "왜": "존대판 복제"}
+{"map": 177, "event": 4, "cmd": 11, "k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 갖고 계시지 않네요.", "왜": "존대판 복제"}
+{"map": 177, "event": 4, "cmd": 12, "k": "Si te haces con ese Pokémon, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "그 포켓몬을 손에 넣으시면 볼 수 있게 선두에 세워서 보여 주세요.", "왜": "존대판 꼴 복제"}
+{"map": 178, "event": 4, "cmd": 6, "k": "¡Cúidalo muy bien!", "v": "귀여워해 주세요!", "왜": "존대판 복제"}
+{"map": 178, "event": 4, "cmd": 10, "k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 갖고 계시지 않네요.", "왜": "존대판 복제"}
+{"map": 178, "event": 6, "cmd": 6, "k": "¡Cúidalo muy bien!", "v": "귀여워해 주세요!", "왜": "존대판 복제"}
+{"map": 178, "event": 6, "cmd": 10, "k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 갖고 계시지 않네요.", "왜": "존대판 복제"}
+{"map": 179, "event": 6, "cmd": 6, "k": "¡Cúidalo muy bien!", "v": "귀여워해 주세요!", "왜": "존대판 복제"}
+{"map": 179, "event": 6, "cmd": 10, "k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 갖고 계시지 않네요.", "왜": "존대판 복제"}
+{"map": 179, "event": 6, "cmd": 11, "k": "Si te haces con ese Pokémon, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "그 포켓몬을 손에 넣으시면 볼 수 있게 선두에 세워서 보여 주세요.", "왜": "존대판 꼴 복제"}
+{"map": 302, "event": 4, "cmd": 6, "k": "¡Cúidalo muy bien!", "v": "귀여워해 주세요!", "왜": "존대판 복제"}
+{"map": 302, "event": 4, "cmd": 10, "k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 갖고 계시지 않네요.", "왜": "존대판 복제"}
+{"map": 302, "event": 6, "cmd": 6, "k": "¡Cúidalo muy bien!", "v": "귀여워해 주세요!", "왜": "존대판 복제"}
+{"map": 302, "event": 6, "cmd": 10, "k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 갖고 계시지 않네요.", "왜": "존대판 복제"}
+{"map": 308, "event": 12, "cmd": 18, "k": "¡Vaya! Al final tendré que poner un anuncio en Milintercambios.", "v": "이런! 결국 교환 게시판에 광고라도 올려야겠네요.", "왜": "존대판이 이미 정본에 있다(딴 맵 둘)"}
+{"map": 395, "event": 4, "cmd": 7, "k": "¡Cúidalo muy bien!", "v": "귀여워해 주세요!", "왜": "존대판 복제"}
+{"map": 395, "event": 4, "cmd": 11, "k": "¡Vaya! Veo que no tienes uno.", "v": "이런! 갖고 계시지 않네요.", "왜": "존대판 복제"}
+{"map": 395, "event": 4, "cmd": 12, "k": "Si te haces con ese Pokémon, ponlo en el primer lugar de tu equipo para que pueda verlo.", "v": "그 포켓몬을 손에 넣으시면 볼 수 있게 선두에 세워서 보여 주세요.", "왜": "존대판 꼴 복제"}
+{"map": 405, "event": 25, "cmd": 0, "k": "¡Buenos días! ¿Quieres cambiar tus <b>Puntos Batalla</b> por alguno de estos fantásticos premios?", "v": "좋은 아침! <b>배틀포인트</b>를 이 멋진 상품 중 하나로 바꿔 갈래?", "왜": "⚠ 새 문안 — 배틀포인트 창구가 이 게임 전체에서 해요체뿐이라 반말판이 정본에 없다. revolucionaria B1변형(혁명파 여자)"}
+{"map": 405, "event": 25, "cmd": 8, "k": "No tienes puntos suficientes. ¡Sigue combatiendo, que lo conseguirás!", "v": "포인트가 모자라. 계속 배틀하다 보면 분명 모을 수 있어!", "왜": "⚠ 새 문안 — 배틀포인트 창구가 이 게임 전체에서 해요체뿐이라 반말판이 정본에 없다. revolucionaria B1변형(혁명파 여자)"}
+{"map": 405, "event": 25, "cmd": 18, "k": "No tienes puntos suficientes. ¡Sigue combatiendo, que lo conseguirás!", "v": "포인트가 모자라. 계속 배틀하다 보면 분명 모을 수 있어!", "왜": "⚠ 새 문안 — 배틀포인트 창구가 이 게임 전체에서 해요체뿐이라 반말판이 정본에 없다. revolucionaria B1변형(혁명파 여자)"}
+{"map": 405, "event": 25, "cmd": 28, "k": "No tienes puntos suficientes. ¡Sigue combatiendo, que lo conseguirás!", "v": "포인트가 모자라. 계속 배틀하다 보면 분명 모을 수 있어!", "왜": "⚠ 새 문안 — 배틀포인트 창구가 이 게임 전체에서 해요체뿐이라 반말판이 정본에 없다. revolucionaria B1변형(혁명파 여자)"}
+{"map": 405, "event": 25, "cmd": 35, "k": "¡Vuelve cuando quieras!", "v": "언제든 다시 와!", "왜": "⚠ 새 문안 — 배틀포인트 창구가 이 게임 전체에서 해요체뿐이라 반말판이 정본에 없다. revolucionaria B1변형(혁명파 여자)"}
+{"map": 405, "event": 29, "cmd": 0, "k": "¡Buenos días! ¿Quieres cambiar tus <b>Puntos Batalla</b> por alguno de estos fantásticos premios?", "v": "좋은 아침! <b>배틀포인트</b>를 이 멋진 상품 중 하나로 바꿔 갈래?", "왜": "⚠ 새 문안 — 배틀포인트 창구가 이 게임 전체에서 해요체뿐이라 반말판이 정본에 없다. revolucionario B1변형(혁명파 남자)"}
+{"map": 405, "event": 29, "cmd": 8, "k": "No tienes puntos suficientes. ¡Sigue combatiendo, que lo conseguirás!", "v": "포인트가 모자라. 계속 배틀하다 보면 분명 모을 수 있어!", "왜": "⚠ 새 문안 — 배틀포인트 창구가 이 게임 전체에서 해요체뿐이라 반말판이 정본에 없다. revolucionario B1변형(혁명파 남자)"}
+{"map": 405, "event": 29, "cmd": 18, "k": "No tienes puntos suficientes. ¡Sigue combatiendo, que lo conseguirás!", "v": "포인트가 모자라. 계속 배틀하다 보면 분명 모을 수 있어!", "왜": "⚠ 새 문안 — 배틀포인트 창구가 이 게임 전체에서 해요체뿐이라 반말판이 정본에 없다. revolucionario B1변형(혁명파 남자)"}
+{"map": 405, "event": 29, "cmd": 28, "k": "No tienes puntos suficientes. ¡Sigue combatiendo, que lo conseguirás!", "v": "포인트가 모자라. 계속 배틀하다 보면 분명 모을 수 있어!", "왜": "⚠ 새 문안 — 배틀포인트 창구가 이 게임 전체에서 해요체뿐이라 반말판이 정본에 없다. revolucionario B1변형(혁명파 남자)"}
+{"map": 405, "event": 29, "cmd": 35, "k": "¡Vuelve cuando quieras!", "v": "언제든 다시 와!", "왜": "⚠ 새 문안 — 배틀포인트 창구가 이 게임 전체에서 해요체뿐이라 반말판이 정본에 없다. revolucionario B1변형(혁명파 남자)"}
