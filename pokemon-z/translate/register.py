@@ -15,8 +15,10 @@
 섞여 있어 사람이 갈라야 한다.
 
 usage:
-  uv run translate/register.py scan [출력경로]  어긋난 자리를 표로 뽑는다
+  uv run translate/register.py scan [출력경로] [--dual]
+                                               어긋난 자리를 표로 뽑는다
                                                (기본: docs/log/research/<오늘>-register-mismatch.md)
+                                               --dual: 이중 말투 인물도 검사에 넣는다(SCAN_DUAL 주석 참조)
   uv run translate/register.py who <이름>       한 인물의 급 분포
   uv run translate/register.py selftest
 """
@@ -40,8 +42,9 @@ RESEARCH = HERE.parent / "docs/log/research"
 def out_path(argv):
     """기록층은 날짜 박제다 — 돌릴 때마다 그날 파일로 낸다. 상수로 잡아 두면
     2026-08-06 판을 덮어썼다(2026-08-17에 실측·수선)."""
-    if len(argv) > 2:
-        return Path(argv[2])
+    rest = [a for a in argv[2:] if not a.startswith("--")]
+    if rest:
+        return Path(rest[0])
     return RESEARCH / f"{date.today():%Y-%m-%d}-register-mismatch.md"
 
 # 존대 / 하대 두 축. 나머지는 판정 보류.
@@ -61,9 +64,15 @@ def speechy(text):
     """지문 꼴 문장이 실은 대화인가 — 1·2인칭 표지 유무."""
     return bool(SPEECHY.search(clean(text or "")))
 
-# 상대에 따라 급을 바꾸는 것이 정체성인 인물들. 검사에서 빼지는 않고 **표시만** 한다 —
-# 청자를 모르는 것은 이들만의 사정이 아니라 이 도구 전체의 사정이므로, 일단 잡고
-# 아닌 자리는 판정으로 내린다(유지자 판정 2026-08-17).
+# 상대에 따라 급을 바꾸는 것이 정체성인 인물들. 기본값은 **검사에서 뺀다**.
+#
+# 「청자를 모르는 것은 이들만의 사정이 아니니 일단 잡고 아닌 자리는 판정으로 내린다」는
+# 길이 있고, `scan --dual`로 그 길을 갈 수 있다(그때는 빼는 대신 `(이중)` 표시만 붙는다).
+# 다만 이 도구가 아직 채점을 안 거쳐(혼잣말·말흐림·세부 어미·청자 미고려 오탐) 넓히면
+# 오탐이 같이 늘므로, 켜는 것은 유지자 판정을 받고 이 상수를 뒤집는다.
+# 넓혔을 때의 델타는 docs/log/research/2026-08-17-register-dual-delta.md.
+SCAN_DUAL = False
+
 DUAL = {"Lanto", "Crisanto", "Melia", "Olivier", "Aure", "Merlot",
         "Hisopo", "Cendera", "Pinot"}
 
@@ -201,7 +210,7 @@ def dominant(rows, ko):
     return tally
 
 
-def scan():
+def scan(scan_dual=SCAN_DUAL):
     rows, ko = load()
     tally = dominant(rows, ko)
     oks = load_ok()
@@ -209,6 +218,9 @@ def scan():
     for r in rows:
         who = r["who"]
         if r["kind"] not in ("text", "battle") or r["how"] not in CHECKED or not who:
+            continue
+        if is_dual(who) and not scan_dual:
+            skipped["이중말투"] += 1
             continue
         v = ko.get(ko_key(r["k"]))
         if not v:
@@ -240,13 +252,14 @@ def scan():
     return out, skipped, tally
 
 
-def write(out, skipped, tally, path):
+def write(out, skipped, tally, path, dual=False):
     L = [f"# 어미 급이 어긋난 자리 ({date.today():%Y-%m-%d} 생성)", "",
          "화자의 평소 급은 **이름표가 붙은 줄**로 정하고, 확정된 줄이 그와 어긋나는지 본다.",
          "⚠ 어긋남은 관측이지 처방이 아니다 — 어미를 고칠 자리와 귀속이 틀린 자리가 섞여 있다.",
-         "상대에 따라 격을 갈아입는 인물은 **이중** 표시만 달고 검사는 받는다 — 청자를 모르는 것은",
-         "이 도구 전체의 사정이라 통째로 빼지 않고 자리마다 판정한다. 어긋남이 아니라고 판정한",
-         "자리는 `translate/data/register-ok.jsonl`에 근거와 함께 등재하면 다음 실행부터 「판정됨」으로 센다.", "",
+         ("상대에 따라 격을 갈아입는 인물 아홉도 검사에 넣었다 — 화자 칸의 **(이중)** 표시가 그것이다."
+          if dual else "상대에 따라 격을 갈아입는 인물 아홉은 판정에서 뺐다(`scan --dual`로 넣을 수 있다)."),
+         "어긋남이 아니라고 판정한 자리는 `translate/data/register-ok.jsonl`에 근거와 함께 등재하면",
+         "다음 실행부터 목록에서 빠지고 「판정됨」으로 세어진다.", "",
          f"어긋난 자리 **{len(out)}곳**. 세지 않은 것: " +
          " · ".join(f"{k} {v}" for k, v in skipped.most_common()), "",
          "| 맵:이벤트:페이지:명령 | 화자 | 귀속 | 지금 | 평소 | 평소 비율 | 근거 어절 | 현행 번역 |",
@@ -311,6 +324,8 @@ def selftest():
     # 출력 경로 — 기본은 오늘 날짜, 인자가 있으면 그것
     assert out_path(["register.py", "scan"]).name == f"{date.today():%Y-%m-%d}-register-mismatch.md"
     assert out_path(["register.py", "scan", "/tmp/x.md"]) == Path("/tmp/x.md")
+    assert out_path(["register.py", "scan", "--dual"]).name.endswith("-register-mismatch.md")
+    assert out_path(["register.py", "scan", "--dual", "/tmp/x.md"]) == Path("/tmp/x.md")
     # 판정 등재는 자리 단위 — 적은 칸만 맞추고 안 적은 칸은 통째로 걸린다
     row = dict(map=112, event=4, page=0, cmd=254, who="Lanto")
     assert judged(row, [{"map": 112, "event": 4, "page": 0, "cmd": 254}])
@@ -334,7 +349,8 @@ def main():
     if cmd == "selftest":
         selftest()
     elif cmd == "scan":
-        write(*scan(), out_path(sys.argv))
+        dual = "--dual" in sys.argv
+        write(*scan(dual or SCAN_DUAL), out_path(sys.argv), dual=dual or SCAN_DUAL)
     elif cmd == "who" and len(sys.argv) > 2:
         rows, ko = load()
         t = dominant(rows, ko)
