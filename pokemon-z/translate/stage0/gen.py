@@ -216,6 +216,8 @@ def load_mart():
             br, _, src = k[len("krmart:"):].partition("|")
             if br not in brs:
                 brs.append(br)
+            # 평문만 받는다 — diff의 역생성이 when 값을 resolve 없이 그대로 꺼낸다.
+            assert isinstance(r["v"], str), f"갈래 값이 문자열이 아니다: {k!r}"
             vals.setdefault(src, {})[br] = r["v"]
             seen = [s for s in steps if s["src"] == src]
             if not seen:
@@ -229,7 +231,12 @@ def load_mart():
 
 
 def stamp_mart(sites, at):
-    """갈래 배정을 (맵, 이벤트) 자리의 축 칸으로 편다 — 간선을 자리 쪽에 둔다."""
+    """갈래 배정을 (맵, 이벤트) 자리의 축 칸으로 편다 — 간선을 자리 쪽에 둔다.
+
+    ⚠ `mart` 칸은 **그 자리가 속한 이벤트의 상점 화면 갈래**다(이벤트 속성). 그 줄을
+    말하는 사람의 말투가 아니므로 줄 말투 배정에 쓰지 마라 — 점원이 아닌 자리에도
+    같은 이벤트면 함께 찍힌다.
+    """
     want = {(a["map"], a["event"]): a["갈래"] for a in at}
     n = 0
     for s in sites:
