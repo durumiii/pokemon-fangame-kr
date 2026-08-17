@@ -37004,3 +37004,56 @@
 {"id": "s23.kbebed190", "src": "[ ] Randomizar tipos", "apply": "global"}
 {"id": "s23.k83e4c65f", "src": "[X] Randomizar tipos", "apply": "global"}
 {"id": "s23.ke3f4c4c1", "src": "......\\wt[5] ......\\1", "apply": "global"}
+{"id": "ui.g8a1b6503", "src": "[A] Curar", "apply": "gsub"}
+{"id": "ui.gbfcbee99", "src": "[S] Viajar", "apply": "gsub"}
+{"id": "ui.g90ccebf5", "src": "[D] Brújula", "apply": "gsub"}
+{"id": "ui.gd18dd02d", "src": "A Curar", "apply": "gsub"}
+{"id": "ui.gd96789a6", "src": "S Viajar", "apply": "gsub"}
+{"id": "ui.g7e9ed74b", "src": "D Brújula", "apply": "gsub"}
+{"id": "ui.g95632e0e", "src": "Esta zona no tiene encuentros", "apply": "gsub"}
+{"id": "ui.g066e6abb", "src": "No hay Pokémon salvajes", "apply": "gsub"}
+{"id": "ui.ga3196fe6", "src": "Pokémon salvajes en esta zona: ", "apply": "gsub"}
+{"id": "ui.g5513a2ca", "src": "Medalla Guardia", "apply": "gsub"}
+{"id": "ui.g3335dcef", "src": "Medalla Espectro", "apply": "gsub"}
+{"id": "ui.gabdcc115", "src": "Medalla Centella", "apply": "gsub"}
+{"id": "ui.g2133a570", "src": "Medalla Vital", "apply": "gsub"}
+{"id": "ui.ge7b8ee62", "src": "Medalla Tifón", "apply": "gsub"}
+{"id": "ui.g703b576f", "src": "Medalla Aguijón", "apply": "gsub"}
+{"id": "ui.gc2c1e9e8", "src": "Medalla Visión", "apply": "gsub"}
+{"id": "ui.gaf3ced2a", "src": "Medalla Pira", "apply": "gsub"}
+{"id": "ui.gef8cc6ea", "src": "Medalla Forja", "apply": "gsub"}
+{"id": "ui.gd4e795eb", "src": "Medalla Escarcha", "apply": "gsub"}
+{"id": "ui.gcc28e168", "src": "Medalla Luzbel", "apply": "gsub"}
+{"id": "ui.g09e93d25", "src": "Medalla Odonata", "apply": "gsub"}
+{"id": "ui.g822b41d6", "src": "C: Combinar", "apply": "gsub"}
+{"id": "ui.gc7f1f135", "src": "Arriba/Abajo: Cantidad", "apply": "gsub"}
+{"id": "ui.g6cb48df8", "src": "X: Salir", "apply": "gsub"}
+{"id": "ui.gd15c9039", "src": "Normal Save", "apply": "gsub"}
+{"id": "ui.gff6ad920", "src": "Autosave", "apply": "gsub"}
+{"id": "ui.ga1847d24", "src": " Auto Save", "apply": "gsub"}
+{"id": "ui.g748ed7c6", "src": "Partida ", "apply": "gsub"}
+{"id": "ui.gbcd36078", "src": "Áster Zéphir (AZ)", "apply": "gsub"}
+{"id": "ui.gdcce500d", "src": "Hombre del Saco", "apply": "gsub"}
+{"id": "ui.gddf0cd01", "src": "\\bOlivier\\b", "apply": "gsub"}
+{"id": "ui.gc06efc35", "src": "\\bCrisanto\\b", "apply": "gsub"}
+{"id": "ui.g7ce62bc0", "src": "\\bMelia\\b", "apply": "gsub"}
+{"id": "ui.g833ed891", "src": "\\bMerlot\\b", "apply": "gsub"}
+{"id": "ui.geaa4ae4b", "src": "\\bCanola\\b", "apply": "gsub"}
+{"id": "ui.g7f885b77", "src": "\\bMirra\\b", "apply": "gsub"}
+{"id": "ui.gcbd37038", "src": "\\bNúbila\\b", "apply": "gsub"}
+{"id": "ui.gdde4c385", "src": "\\bHisopo\\b", "apply": "gsub"}
+{"id": "ui.g3518e98d", "src": "\\bLanto\\b", "apply": "gsub"}
+{"id": "ui.g33e6fab5", "src": "\\bAlca\\b", "apply": "gsub"}
+{"id": "ui.g42564bce", "src": "\\bWolfram\\b", "apply": "gsub"}
+{"id": "ui.gbe067550", "src": "\\bZafra\\b", "apply": "gsub"}
+{"id": "ui.g615d8628", "src": "\\bLoto\\b", "apply": "gsub"}
+{"id": "ui.g9167ce92", "src": "\\bGenos\\b", "apply": "gsub"}
+{"id": "ui.g8f05e052", "src": "\\bBelladona\\b", "apply": "gsub"}
+{"id": "ui.g48b3a360", "src": "\\bMalvo\\b", "apply": "gsub"}
+{"id": "ui.g98b01c4d", "src": "\\bAure\\b", "apply": "gsub"}
+{"id": "ui.ga23210a7", "src": "\\bRosaleda\\b", "apply": "gsub"}
+{"id": "ui.gd6144cbd", "src": "\\bFerrofaz\\b", "apply": "gsub"}
+{"id": "ui.geda4a7d6", "src": "\\bPinot\\b", "apply": "gsub"}
+{"id": "ui.g1132e6c4", "src": "\\bHibis\\b", "apply": "gsub"}
+{"id": "ui.g9e97a3ae", "src": "\\bAnturia\\b", "apply": "gsub"}
+{"id": "ui.gc865f07e", "src": "\\bCendera\\b", "apply": "gsub"}

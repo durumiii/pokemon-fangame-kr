@@ -118,6 +118,26 @@ def loc_sites():
     return sites, msgs
 
 
+def ui_sites():
+    """런타임 치환표(apply=gsub) — UI Text KR. 값 정본은 data/uitext.jsonl이고
+    인명 행({"name": ...})의 표기는 names.json에서 읽는다(생성기 uitext.py와 같은 규칙)."""
+    names = json.loads((ROOT / "names.json").read_text(encoding="utf-8"))["names"]
+    sites, msgs = [], []
+    for r in read_jsonl(DATA / "uitext.jsonl"):
+        if "note" in r:
+            continue
+        if "name" in r:
+            src, val = f"\\b{r['name']}\\b", names[r["name"]]
+        elif "re" in r:
+            src, val = f"\\b{r['re']}\\b", r["ko"]
+        else:
+            src, val = r["es"], r["ko"]
+        sid = f"ui.g{h8(src)}"
+        sites.append({"id": sid, "src": src, "apply": "gsub"})
+        msgs.append(_msg(sid, val, None))
+    return sites, msgs
+
+
 def section_sites():
     """리스트 절(apply=index)과 해시 절(apply=global)."""
     sites, msgs = [], []
@@ -149,12 +169,14 @@ def main():
     msites, mmsgs, used_unified, stats = map_sites(attr)
     lsites, lmsgs = loc_sites()
     ssites, smsgs = section_sites()
+    usites, umsgs = ui_sites()
 
-    sites = msites + lsites + ssites
+    sites = msites + lsites + ssites + usites
     ids = [s["id"] for s in sites]
     assert len(set(ids)) == len(ids), "자리 id가 겹친다"
 
-    msgs = [{"id": k, "val": v} for k, v in sorted(used_unified.items())] + mmsgs + lmsgs + smsgs
+    msgs = ([{"id": k, "val": v} for k, v in sorted(used_unified.items())]
+            + mmsgs + lmsgs + smsgs + umsgs)
     mids = [m["id"] for m in msgs]
     assert len(set(mids)) == len(mids), "값 id가 겹친다"
 
