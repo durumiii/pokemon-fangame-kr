@@ -1,0 +1,64 @@
+# Z-53 이행 3단계 — 쓰기 경로의 방향 전환 (설계 2026-08-18)
+# render:  cd docs/tickets && d2 Z-53-stage3.d2 Z-53-stage3.svg
+
+vars: {
+  d2-config: {
+    theme-id: 0
+    layout-engine: elk
+  }
+}
+
+direction: right
+
+classes: {
+  det:  { style: { fill: "#DCFCE7"; stroke: "#16A34A"; stroke-width: 2; border-radius: 8; font-color: "#14532D"; bold: true } }
+  data: { style: { fill: "#F1F5F9"; stroke: "#64748B"; border-radius: 6 } }
+  open: { style: { fill: "#FCE7F3"; stroke: "#DB2777"; stroke-width: 2; stroke-dash: 4; border-radius: 8; font-color: "#9D174E"; bold: true } }
+  gone: { style: { fill: "#FFFFFF"; stroke: "#94A3B8"; stroke-dash: 2; border-radius: 6; font-color: "#94A3B8" } }
+}
+
+now: "전환기 — ko가 앞선다" {
+  style: { fill: "#F8FAFC"; stroke: "#64748B"; stroke-dash: 4 }
+  direction: right
+
+  writers: "전환 안 된 쓰기 도구\n(스튜디오 포함)" { class: data }
+  ko: "translate/ko/\n(아직 편집 창구)" { class: data }
+  gen: "gen 재생성\n= 재흡수" { class: det }
+  stage0: "stage0\nsites · messages" { class: data }
+  emit: "emit --write\n(재흡수 뒤에만 — 더러움 가드)" { class: det }
+
+  writers -> ko: "수정 → 커밋"
+  ko -> gen
+  gen -> stage0
+  stage0 -> emit
+  emit -> ko: "역생성"
+}
+
+after: "승격 뒤 — stage0가 정본" {
+  style: { fill: "#F8FAFC"; stroke: "#16A34A" }
+  direction: right
+
+  writers: "전환된 쓰기 도구 열하나" { class: data }
+  helper: "공용 한 벌\n(맵, 원문) → id · val 교체" { class: det }
+  stage0: "stage0 다섯 = 정본" { class: det }
+  emit: "emit --write" { class: det }
+  ko: "translate/ko/\n= 빌드 산출물 (git 잔류)" { class: data }
+  build: "build.py" { class: det }
+  dat: "korean.dat" { class: data }
+  readers: "읽는 도구 열여섯\n(그대로)" { class: data }
+  gate: "gate: emit 차이 0\n상시 검사" { class: det }
+
+  writers -> helper
+  helper -> stage0
+  stage0 -> emit
+  emit -> ko
+  ko -> build
+  build -> dat
+  ko -> readers: { style: { stroke-dash: 2 } }
+  gate -> stage0: { style: { stroke-dash: 2 } }
+
+  export: "export.py — 전환 없음\n(박제 여부는 유지자 확인)" { class: gone }
+  open1: "gen·overrides 거취\n(열림 — 재사용 가능성 높음)" { class: open }
+}
+
+now -> after: "도구 하나씩 —\n동치 증명 → ko 쓰기 걷어내기"
