@@ -124,6 +124,36 @@ EDITS += [
      'memo+=sprintf("<c3=F83820,E09890>%s",mapname)'),
 ]
 
+# 트레이너가 붙인 포켓몬 별명 — 번역표가 닿지 않는 자리(Z-63). 별명은 trainers.dat에
+# 들어 있고 pbLoadTrainer가 그대로 pokemon.name에 넣는다(바로 위 트레이너 이름은
+# pbGetMessageFromHash를 통과하는데 별명에는 그 포장이 없다). 게임 전체에 별명은
+# 간수 피노의 대포무노 하나뿐이라(trainers.dat 476 트레이너 전수 셈) 표 대신 조건 하나로
+# 간다 — 늘면 그때 표로 바꾼다. 번역어는 대사 정본과 같은 「폴리」(유지자 판정 2026-08-16).
+# 루비 1.8 문법.
+EDITS += [
+    ("PTrainer_NPCTrainers",
+     'pokemon.name=poke[TPNAME] if poke[TPNAME] && poke[TPNAME]!=""',
+     'pokemon.name=(poke[TPNAME]=="Paulie" ? "폴리" : poke[TPNAME]) '
+     'if poke[TPNAME] && poke[TPNAME]!=""'),
+]
+
+# 보스 포켓몬 이름 둘 — 별명과 같은 병이다(Z-63). 코드가 pokemon.name에 리터럴을
+# 곧바로 대입하므로 _INTL 포장이 없고, 그래서 어느 절에도 담기지 않는다(messages.dat에
+# ARTIFICIO 0건). 둘 다 MISSINGNO에 폼만 갈아 끼운 보스다.
+#   ARTIFICIO(맵 286 프레스코 풍차, 폼 1) → 「수호장치」 — 대사가 이 상대를 「수호 포켓몬」
+#     이라 부른다(맵 283·286에 5줄). 유지자 판정 2026-08-17(의역).
+#   FLOR(맵 474 최종병기, 폼 2) → 「꽃」 — 원문이 보통명사를 이름으로 세운 결을 그대로.
+#     본가 공식 「영원의 꽃」은 안 쓴다: 그 말은 AZ의 플라엣테를 가리키는데 같은 장면에
+#     플라엣테가 따로 등장해 섞인다(유지자 판정 2026-08-17).
+# FLOR는 한 마리에 이름이 두 번 대입된다 — 훅(EncounterModifiers)이 먼저 넣고
+# pbBossFight 본문(Boss)이 같은 값으로 덮으므로 **두 자리를 함께 고쳐야 한다.**
+# 이름칸은 잘림 처리가 없고 다섯 글자까지 레벨 표시와 안 겹친다(실측).
+EDITS += [
+    ("PField_EncounterModifiers", 'pokemon.name="ARTIFICIO"', 'pokemon.name="수호장치"'),
+    ("PField_EncounterModifiers", 'pokemon.name="FLOR"', 'pokemon.name="꽃"'),
+    ("Boss", 'genwildpoke.name="FLOR"', 'genwildpoke.name="꽃"'),
+]
+
 # 부적(Amuleto) 18종 — pbAmuleto(116_PItem_ItemEffects)가 번역된 아이템 이름을
 # 스페인어 원문과 문자열 비교해 인카운터 스위치(280~297)를 켠다. 이름이
 # 한글화되면 영원히 거짓이 되는 기능 버그라, 이름 비교를 상수 비교로 수술한다.

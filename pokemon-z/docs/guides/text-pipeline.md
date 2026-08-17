@@ -22,6 +22,19 @@ dat 포맷 문제를 만났을 때.
 | ⑤ 로직-문자열 결합(기능 버그) | 〃 | 〃 (예: 부적 18종) |
 | ⑥ 그림에 그려 넣은 글자 (PNG 베이크) | Graphics/Pictures (.orig 짝 = 한글화본) | PIL 재렌더. 텍스트 층 전수 미스면 이 층 의심. 상태이상 아이콘 띠는 `tools/status_icon.py` |
 
+⚠ **이름이라고 다 번역표를 타지는 않는다.** 트레이너 이름은 `pbGetMessageFromHash`를
+거치지만 **포켓몬 별명에는 그 포장이 없어**(`PTrainer_NPCTrainers`의 `pokemon.name=poke[14]`)
+`trainers.dat`의 값이 그대로 화면에 뜬다. 보스 이름을 코드가 직접 대입하는 자리도 있다
+(`PField_EncounterModifiers`의 `pokemon.name="..."`). 둘 다 `_INTL` 포장이 없어 어느 절에도
+담기지 않으니 **④층과 같은 소스 수술(`share/patch_intl.py` EDITS)로 간다**. 이름이 원문으로
+뜬다는 제보를 받으면 절을 뒤지기 전에 대입 자리부터 봐라 — `grep '\.name *= *"'`.
+
+⚠ **PBS 텍스트(`PBS/*.txt`)는 고치지 마라.** 게임은 평시에 PBS를 읽지 않는다 — 컴파일이
+`Compiler` 절의 `if $DEBUG` 블록 안에 있다. 그런데 재컴파일 여부가 「PBS 최신 수정시각 ≥
+Data 최신 수정시각」으로 정해지고, 서면 `Data/`의 21개 dat를 **먼저 지우고** PBS에서 전부
+다시 굽는다. 지금 설치본은 Data가 더 새것이라 안 걸리지만, PBS를 한 번 고치면 그 균형이
+뒤집혀 누군가 디버그로 실행하는 순간 우리가 얹은 것이 원본 내용으로 되돌아간다.
+
 값 판정은 셋뿐: **(A) 본가에 있다 → 판정하지 않고 조회한다.** 조회처는 둘이다 —
 이름표 `translate/canon/canon.jsonl`(PKHeX 산 — verify가 전수 대조. 이름만 같은 별개
 대상은 canon/exceptions.jsonl, 구세대 스페인어명은 canon/aliases.jsonl)과 **문장 코퍼스
