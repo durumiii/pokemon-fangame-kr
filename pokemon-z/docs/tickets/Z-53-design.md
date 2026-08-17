@@ -73,6 +73,13 @@ N 4,314. 층은 「그림이 사람인가」와 「이름표가 사람 이름인
 앞 둘은 3만 행이라 기계가 읽고 쓰므로 JSONL, 뒤 셋은 수백 개에 주석이 필요하고 사람이
 손으로 쓰므로 YAML이다.
 
+**voices는 여섯째 파일로 갈랐다**(2026-08-18 강등 실행) — `voices.yaml`(말투 지시·본보기)은
+사람 소유 정본이라 gen이 다시 쓰지 않는다. groups.yaml에 함께 두면 gen 재생성이 사람
+주석을 지우므로, 생명주기(사람 소유 vs 기계 파생)로 파일을 가른 것이다. persona·sprite
+묶음이 아직 기계 파생으로 groups.yaml에 남아 있고, 그쪽까지 사람 소유로 넘어가면
+groups.yaml로 도로 합칠 수 있다. terms.yaml은 같은 날 사람 소유가 됐다(옛
+voice-prompts.jsonl·term-pairs.jsonl 은퇴).
+
 ### sites — 자리
 
 ```jsonl

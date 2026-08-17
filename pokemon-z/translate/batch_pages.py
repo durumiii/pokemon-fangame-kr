@@ -59,7 +59,8 @@ ATTR = HERE / "data/speaker-attr.jsonl.gz"
 ANON = HERE / "data/2026-08-06-anon-speakers.jsonl"
 APPROVED = HERE / "data/approved-lines.jsonl"
 PERSONAS = HERE / "persona-table.jsonl"     # 무태그 NPC 페르소나표(스프라이트 단위)
-PROMPTS = HERE / "voice-prompts.jsonl"      # 프롬프트에 실리는 말투 정본
+# 말투 정본은 stage0/voices.yaml, 용어 정본은 stage0/terms.yaml (2026-08-18 강등 —
+# 옛 voice-prompts.jsonl·term-pairs.jsonl은 은퇴)
 PROTECTED = HERE / "data/protected.jsonl"
 MAPS = HERE / "ko" / "00-maps.jsonl"
 BATCH = HERE / "batch"
@@ -147,36 +148,16 @@ def resolve_conditions(text, map_id):
     return re.sub(r"\s{2,}", " ", "".join(out)).strip()
 
 
-def _stage0_fresh(edit_file, stage0_file):
-    """읽기는 stage0, 편집은 아직 원본 파일(gen이 내려보낸다) — 편집이 더 새면 죽는다."""
-    if edit_file.exists() and stage0_file.exists() \
-            and edit_file.stat().st_mtime > stage0_file.stat().st_mtime:
-        raise SystemExit(f"{stage0_file.name}이 낡았다 — {edit_file.name}을 고쳤으면 "
-                         "uv run translate/stage0/gen.py 를 먼저 돌려라")
-
-
 def voice_prompts():
-    """프롬프트에 실리는 말투. 읽기 정본은 stage0/groups.yaml의 voices 절이고
-    voice-prompts.jsonl은 아직 편집 자리다(주도권 이전 1단계 — 읽기부터).
-    stage0가 없으면 jsonl로 돌아간다(과도기)."""
-    g = HERE / "stage0" / "groups.yaml"
-    if g.exists():
-        _stage0_fresh(PROMPTS, g)
-        import yaml
-        out = {}
-        for v in yaml.safe_load(g.read_text(encoding="utf-8"))["voices"]:
-            out[v["group"]] = {
-                "name": v["group"], "지시": v["instruction"],
-                "본보기": [{"격": s["register"], "글": s["text"]} for s in v["samples"]],
-            }
-        return out
-    if not PROMPTS.exists():
-        return {}
+    """프롬프트에 실리는 말투 — 정본은 stage0/voices.yaml(직접 편집, 2026-08-18 강등)."""
+    import yaml
     out = {}
-    for line in PROMPTS.read_text(encoding="utf-8").splitlines():
-        if line.strip():
-            r = json.loads(line)
-            out[r["name"]] = r
+    for v in yaml.safe_load(
+            (HERE / "stage0" / "voices.yaml").read_text(encoding="utf-8"))["voices"]:
+        out[v["group"]] = {
+            "name": v["group"], "지시": v["instruction"],
+            "본보기": [{"격": s["register"], "글": s["text"]} for s in v["samples"]],
+        }
     return out
 
 
@@ -827,58 +808,16 @@ def strip_evidence(s):
 
 
 # 용어 쌍을 캘 절 — 다른 표(지명 대조 따위)는 칸 구성이 달라 잘못 읽힌다
-TERM_SECTIONS = ("## 고정 용어표", "### 2026-08-05 판정", "### 2026-08-06 판정")
-TERMS = HERE / "term-pairs.jsonl"      # 프롬프트에 실리는 용어 정본 — glossary.md는 사람용
-
-
 def term_pairs():
-    """프롬프트에 실리는 (원문, 표기) 쌍. 정본은 term-pairs.jsonl.
-
-    voice-prompts와 같은 갈래다 — md는 근거·이력이 붙는 사람용 문서고, 기계는
-    표를 md에서 캐다가 짝이 밀리는 사고를 냈다(2026-08-06 「Team Azoth 미탑재」).
-    새 판정은 두 곳에 다 적는다. 읽기 정본은 stage0/terms.yaml이고 term-pairs.jsonl은
-    아직 편집 자리다(주도권 이전 1단계). stage0 → jsonl → md 순으로 돌아간다(과도기).
+    """프롬프트에 실리는 (원문, 표기) 쌍 — 정본은 stage0/terms.yaml(직접 편집,
+    2026-08-18 강등). md 대장에서 표를 파싱하지 않는다 — 기계가 md 표를 캐다가 짝이
+    밀리는 사고를 냈다(2026-08-06 「Team Azoth 미탑재」). 새 판정은 terms.yaml과
+    대장 두 곳에.
     """
-    y = HERE / "stage0" / "terms.yaml"
-    if y.exists():
-        _stage0_fresh(TERMS, y)
-        import yaml
-        return [(t["src"], t["ko"])
-                for t in yaml.safe_load(y.read_text(encoding="utf-8"))["terms"]]
-    if TERMS.exists():
-        return [(r["es"], r["ko"]) for r in
-                (json.loads(l) for l in TERMS.read_text(encoding="utf-8").splitlines()
-                 if l.strip())]
-    return _term_pairs_md()
-
-
-def _term_pairs_md():
-    pairs, on = [], False
-    for line in (LEDGER / "glossary.md").read_text(encoding="utf-8").splitlines():
-        if line.startswith(("#", "##", "###")):
-            on = line.startswith(TERM_SECTIONS)
-        if not on or not line.startswith("|"):
-            continue
-        # 표가 「원문|표기 | |원문|표기」꼴이라 빈 칸이 자리를 가른다 — 빈 칸으로 끊어서
-        # 짝을 맞춘다. 예전엔 짝수/홀수 칸으로 잘라 한 칸씩 밀렸고, 그 바람에
-        # 「Team Azoth → 아조스단」이 프롬프트에 한 번도 실리지 않았다(2026-08-06 실측).
-        cells = [c.strip() for c in line.strip("|").split("|")]
-        group = []
-        for cell in cells + [""]:
-            if not cell:
-                if len(group) >= 2:
-                    a, b = group[0], group[1]
-                    if a not in ("원문", "표기", "근거") and not set(a) <= set("-") \
-                            and len(a) < 40:
-                        ko = re.sub(r"\s*\([^)]{12,}\)", "", strip_evidence(b))
-                        ko = re.split(r"\s+—\s+", ko)[0]
-                        ko = re.sub(r"\*\*", "", ko).strip("* ")   # 뒤에 붙은 근거·강조 표시를 뗀다
-                        if ko:
-                            pairs.append((a, ko))
-                group = []
-            else:
-                group.append(cell)
-    return pairs
+    import yaml
+    return [(t["src"], t["ko"])
+            for t in yaml.safe_load(
+                (HERE / "stage0" / "terms.yaml").read_text(encoding="utf-8"))["terms"]]
 
 
 def ledger_pairs():

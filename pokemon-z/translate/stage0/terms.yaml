@@ -1,5 +1,8 @@
-_source:
-- translate/term-pairs.jsonl
+# 용어 정본 — 프롬프트·선별에 실리는 (원문, 표기) 쌍. **이 파일이 정본이다**
+# (2026-08-18 강등: 옛 term-pairs.jsonl을 대체). gen이 다시 쓰지 않으므로 직접 편집한다.
+# 새 판정은 여기와 대장(docs/ledger/glossary.md) 두 곳에 — 근거·이력은 대장에만.
+# term 슬러그는 이관 때 기계 생성값이라 뜻이 없다 — 조각 참조를 쓰게 되는 항목부터
+# 사람이 읽는 이름으로 바꾼다.
 terms:
 - term: t-1af8e339
   ko: 최종병기

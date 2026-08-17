@@ -249,21 +249,12 @@ def main():
     dump_jsonl(OUT / "sites.jsonl", sites)
     dump_jsonl(OUT / "messages.jsonl", msgs)
 
-    # groups — 말투 프롬프트 + 페르소나 표 + 스프라이트 묶음. 기계 이관이라 격 판정을
-    # 새로 만들지 않는다 — 지시는 자유문 그대로 옮기고 구조화(register·to·forbid)는
-    # 사람 몫으로 남긴다(설계 3절 groups의 최종 꼴).
+    # groups — 페르소나 표 + 스프라이트 묶음(기계 파생). **말투는 여기 없다** —
+    # voices.yaml이 사람 소유 정본이라 gen이 다시 쓰지 않는다(2026-08-18 강등.
+    # 생명주기가 달라 파일을 갈랐다 — 사람 소유 YAML을 기계가 다시 쓰면 주석이 죽는다).
     sprite_groups = json.loads((ROOT / "sprite-groups.json").read_text(encoding="utf-8"))
     write_yaml(OUT / "groups.yaml", {
-        "_source": ["translate/voice-prompts.jsonl", "translate/persona-table.jsonl",
-                    "translate/sprite-groups.json"],
-        "voices": [
-            {"group": r["name"], "match": {"name": r["name"]},
-             "instruction": r["지시"],
-             "samples": [{"register": s.get("격", "—"), "text": s["글"]}
-                         for s in r.get("본보기", [])],
-             "source": "translate/voice-prompts.jsonl"}
-            for r in read_jsonl(ROOT / "voice-prompts.jsonl")
-        ],
+        "_source": ["translate/persona-table.jsonl", "translate/sprite-groups.json"],
         "groups": [
             {"group": r["sprite"], "match": {"speaker": r["sprite"]},
              "rows": r["rows"], "bucket": r["버킷"], "persona": r["페르소나"],
@@ -274,14 +265,7 @@ def main():
         "sprite_groups": sprite_groups,
     })
 
-    # terms — term-pairs만 기계 이관. 코드 하드코딩(CORE_TERMS·UiText TABLE) 이관은
-    # 설계가 「설계 뒤」로 미뤄 둔 자리라 여기 담지 않는다.
-    write_yaml(OUT / "terms.yaml", {
-        "_source": ["translate/term-pairs.jsonl"],
-        "terms": [{"term": f"t-{h8(r['es'])}", "ko": r["ko"], "src": r["es"],
-                   "source": "translate/term-pairs.jsonl"}
-                  for r in read_jsonl(ROOT / "term-pairs.jsonl")],
-    })
+    # terms.yaml은 사람 소유 정본이라 gen이 쓰지 않는다(2026-08-18 강등 — voices와 같다).
 
     # axes — 설계 3절 그대로. layout은 정본 값이 아니라 그릇의 뼈대다(절 종류·맵 수):
     # 값이 하나도 없는 절 셋과 빈 맵 33개가 자리 목록만으로는 안 살아나서 여기 적는다.
