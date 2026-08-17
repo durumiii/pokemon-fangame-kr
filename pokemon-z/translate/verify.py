@@ -195,10 +195,16 @@ def check_dat_and_sentinels():
     pairs = [(k, v) for k, v in zip(ks, vs) if bytes(k) != b"__kr_patch__"]
     ks, vs = [k for k, _ in pairs], [v for _, v in pairs]
     jr = rows(HERE / "ko" / "23-script-texts.jsonl")
+    # 추가분(`23-script-texts.add.jsonl`)은 base에 없는 키를 dat 꼬리에 얹는다 —
+    # build.py가 그 꼬리를 허용하므로(tail_ok) 미러 셈에도 함께 넣는다. 이걸 빼먹으면
+    # 추가분을 늘릴 때마다 미러가 어긋난 것처럼 잡힌다.
+    add_path = HERE / "ko" / "23-script-texts.add.jsonl"
+    n_add = len({string_to_key(r["k"]) for r in rows(add_path) if "k" in r}) \
+        if add_path.exists() else 0
     # __kr_patch__ 버전 표식(build.py가 심음)은 정본 밖 — 카운트에서 제외
     n_dat = sum(1 for k in ks if bytes(k) != b"__kr_patch__")
-    if len(jr) != n_dat:
-        report("FAIL", f"절23 미러 어긋남: jsonl {len(jr)} ≠ dat {n_dat}")
+    if len(jr) + n_add != n_dat:
+        report("FAIL", f"절23 미러 어긋남: jsonl {len(jr)}+추가분 {n_add} ≠ dat {n_dat}")
     sec = {bytes(k).decode("utf-8", "replace"): bytes(v).decode("utf-8", "replace")
            for k, v in zip(ks, vs)}
     for key, expect in SENTINELS:
