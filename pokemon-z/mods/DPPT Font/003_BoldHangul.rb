@@ -34,10 +34,11 @@ end
 def pixelShadowWide?(ch)
   s = ch[0]
   return false if !s.is_a?(String) || s.length == 0
-  # 1.8.7은 getbyte가 없고, 어떤 모바일 실행기는 getbyte가 없으면서 s[0]이 String이라
-  # (RPG Player 실측, 2026-08-08 제보) 192와의 비교가 ArgumentError로 터졌다.
-  # 그래서 s[0]으로는 절대 떨어지지 않게 — 바이트는 getbyte 아니면 unpack으로만 뜬다.
-  b = s.respond_to?(:getbyte) ? s.getbyte(0) : s.unpack("C")[0]
+  # getbyte를 쓰지 않는다 — 원작 `Map - Klein`이 조건 없이 `alias getbyte []`를 걸어서,
+  # 신형 루비에서는 getbyte가 있으면서도 정수가 아니라 한 글자짜리 문자열을 준다.
+  # 그 값을 192와 비교하면 ArgumentError로 터진다(2026-08-08 제보, 루비 3.1.4 재현).
+  # unpack은 별칭 유무·루비 판과 무관하게 첫 바이트를 정수로 준다 — 1.8.7 실기 확인.
+  b = s.unpack("C")[0]
   return b >= 0xC0       # 여러 바이트 글자(한글·기호)
 end
 

@@ -120,7 +120,7 @@
 
 이 모드는 `PokeBattle_Battle#pbPriority` · `#pbAttackPhase` · `#pbEndOfRoundPhase`와
 `PokeBattle_Battler#pbBerryCureCheck` · `#pbSpeed`를 잡는다. 같은 메서드를 다시 정의하는
-모드와는 함께 못 선다. 지금 이 저장소의 모드 넷(UI Text KR · Type Matchup · Debug Toggle ·
+모드와는 함께 못 선다. 지금 이 저장소의 모드 넷(UI Text KR · Type Matchup · 디버그 모드 ·
 Native Tilemap)과 poke-essentials `mod/z/`의 편의 모드들은 이 다섯을 건드리지 않는다.
 
 주입 섹션은 모드명 정렬 순으로 실리고 나중 정의가 이긴다. 이 모드는 이름이 `Battle Order`라
@@ -134,7 +134,7 @@ Native Tilemap)과 poke-essentials `mod/z/`의 편의 모드들은 이 다섯을
 
 ## 확인하는 법
 
-디버그를 켜면(Debug Toggle 모드의 W키) 처리마다 로그가 남으므로 순서를 눈으로 확인할 수
+디버그를 켜면(「디버그 모드」 모드의 P키) 처리마다 로그가 남으므로 순서를 눈으로 확인할 수
 있다. 볼 것 셋.
 
 1. `[Priority]` 줄이 한 라운드에 **여러 번** 찍히고, 마비나 트릭룸 뒤에 순서가 바뀌는가.

@@ -1661,7 +1661,7 @@
 {"k": "There's no room to store items.", "v": "도구를 보관할 공간이 없습니다."}
 {"k": "Deposited {1} {2}.", "v": "Deposited {1} {2}."}
 {"k": "Toss", "v": "버린다"}
-{"k": "Deselect", "v": "리셋"}
+{"k": "Deselect", "v": "해제"}
 {"k": "Register", "v": "등록한다"}
 {"k": "Invalid pocket: {1}", "v": "Invalid pocket: {1}"}
 {"k": "The item number is invalid.", "v": "The item number is invalid."}

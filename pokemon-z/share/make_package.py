@@ -337,15 +337,15 @@ def main():
         core = RUNA_MOD if variant == "runa-debug" else BASE_MOD
         (stage / "Data").mkdir(parents=True)
         shutil.copy2(core / "Data" / "Scripts.rxdata", stage / "Data" / "Scripts.rxdata")
-        for mod in (RUNA_INJECT + ["Debug Toggle"] if variant == "runa-debug" else INJECT_MODS):
+        for mod in (RUNA_INJECT + ["디버그 모드"] if variant == "runa-debug" else INJECT_MODS):
             r = modstore.apply(STORE / "Pokemon Z Fangame", mod, stage,
                                force=mod in FORCE_INJECT)
             print(f"주입: {mod} → {r['did']}")
         if variant == "runa-debug":
-            # 디버그는 켜진 채로 나가고(Main 머리의 `$DEBUG = true`), Debug Toggle이
-            # 그 위에서 W키로 끄고 켠다 — 키 폴링이 안 먹는 모바일에서도 디버그는
-            # 열려 있다(유지자 판정 2026-08-09). 회복은 Debug Toggle 쪽 조건부
-            # alias 하나뿐이라 「디버그 모드」의 무조건 회복과 겹치지 않는다.
+            # 디버그는 켜진 채로 나가고(Main 머리의 `$DEBUG = true`), 「디버그 모드」가
+            # 그 위에서 P키로 끄고 켠다 — 판정이 엔진 Input이라 모바일에서도 먹는다
+            # (유지자 판정 2026-08-09, 키·판정 방식은 Z-48에서 갈았다). 회복은 그 모드의
+            # 조건부 alias 하나뿐이라 두 겹으로 걸리지 않는다.
             _run_patch_debug(stage / "Data" / "Scripts.rxdata", only="Main")
             _settle_injections(stage / "Data" / "Scripts.rxdata")
             # 주입기가 DPPT Font의 글꼴 16벌까지 들여놓는다 — 여기서는 코어만 낸다.
