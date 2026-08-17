@@ -421,15 +421,16 @@ def stage0_put(file, line, new_v):
     # 「사람이 ko를 고침」이 구분되지 않는다.
     if emit.dirty_ko() and not emit.leftover(built):
         return "translate/ko/에 이 화면 밖의 수정이 있다 — 커밋하거나 harvest로 회수한 뒤 저장해라"
+    expect = emit.ko_state()      # 쓰기 직전에 이것과 견준다 — 그 사이 남이 고치면 멈춘다
     ed = Messages()
     ed.put_default(ed.local(sid), new_v)
     ed.save()
     buf = io.StringIO()
     with contextlib.redirect_stdout(buf):
-        rc = emit.main(["--write"], guarded=False)
+        rc = emit.main(["--write"], expect=expect)
     if rc:
         print(buf.getvalue(), file=sys.stderr)      # 멈춘 사유는 띄운 터미널에 남긴다
-        return "정본은 고쳤으나 ko 역생성이 멈췄다 — 터미널을 보라"
+        return "정본은 고쳤으나 ko 역생성이 멈췄다(그 사이 ko가 움직였을 수 있다) — 터미널을 보라"
     return None
 
 

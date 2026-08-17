@@ -20,7 +20,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common import KO, OUT, ROOT, read_overrides  # noqa: E402
+from common import KO, OUT, ROOT, h8, read_overrides  # noqa: E402
 from diff import compare, rebuild, serialize, tainted_ids  # noqa: E402
 
 
@@ -35,6 +35,15 @@ def dirty(*paths):
 
 def dirty_ko():
     return dirty(KO)
+
+
+def ko_state():
+    """미커밋 ko의 지금 모습 — 목록과 **내용까지**. 점검 시점과 쓰기 시점을 견준다."""
+    out = {}
+    for ln in dirty_ko():
+        p = KO / Path(ln[3:].strip().strip('"')).name   # 포슬린 경로는 저장소 뿌리 기준이다
+        out[ln] = h8(p.read_text(encoding="utf-8")) if p.exists() else None
+    return out
 
 
 def leftover(built):
@@ -77,20 +86,29 @@ def advice(built=None):
             "uv run translate/stage0/gen.py 로 재흡수하고 커밋한 뒤 다시 돌려라.")
 
 
-def main(argv=None, guarded=True):
+def main(argv=None, expect=None):
     """argv를 받는 것은 다른 도구가 쓰기 경로를 부르기 위해서다(apply_verdicts 등).
 
-    `guarded=False`는 **부르는 쪽이 값을 앉히기 전에 이미 ko 상태를 봤다**는 뜻이다
-    (fixgui의 연타 저장 — 둘째 저장 시점의 ko는 첫 저장이 낸 산출이라 여기서 다시
-    보면 「낡음」으로 잡힌다).
+    `expect`는 **부르는 쪽이 값을 앉히기 전에 뜬 `ko_state()` 스냅숏**이다(fixgui의
+    연타 저장 — 둘째 저장 시점의 ko는 첫 저장이 낸 산출이라 낡음 판정으로는 못 지나간다).
+    가드를 끄는 것이 아니라 **기대 상태와 대조**한다 — 점검과 쓰기 사이에 남이 ko를
+    건드렸으면 아무것도 안 쓰고 멈춘다.
     """
     write = "--write" in (sys.argv if argv is None else argv)
     built, owner, msgs = rebuild()
     tainted = tainted_ids(msgs, read_overrides())
 
-    if write:
+    if write and expect is not None:
+        # 쓰기 직전에 다시 떠서 견준다 — 창을 밀리초로 좁힌다.
+        now = ko_state()
+        if now != expect:
+            print("멈춤 — 점검 뒤 translate/ko/가 움직였다(딴 도구가 손댔다). 아무것도 안 썼다.")
+            for k in sorted(set(now) ^ set(expect)) or sorted(now):
+                print(f"  {k}")
+            return 2
+    elif write:
         # 끊긴 emit의 자국은 막지 않는다 — 그 자리에서 막으면 마저 밀어낼 길이 없다.
-        dko = dirty_ko() if guarded else []
+        dko = dirty_ko()
         if dko and not leftover(built):
             print("멈춤 — translate/ko/에 미커밋 수정이 있다. 덮어쓰면 그 수정이 사라진다.")
             for ln in dko[:10]:
