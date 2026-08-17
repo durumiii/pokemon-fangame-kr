@@ -1,0 +1,92 @@
+# Z-53 0단계 정본 — 전체 모양 (as-built + 설계)
+# render:  cd docs/tickets && d2 Z-53-design.d2 Z-53-design.svg
+# ⚠ 이 기계에 d2가 없어 렌더해서 눈으로 확인하지 못했다(2026-08-17).
+
+vars: {
+  d2-config: {
+    theme-id: 0
+    layout-engine: elk
+  }
+}
+
+direction: down
+
+classes: {
+  llm:    { style: { fill: "#FEF3C7"; stroke: "#D97706"; stroke-width: 2; border-radius: 8; font-color: "#78350F"; bold: true } }
+  learn:  { style: { fill: "#DBEAFE"; stroke: "#2563EB"; stroke-width: 2; border-radius: 8; font-color: "#1E3A8A"; bold: true } }
+  det:    { style: { fill: "#DCFCE7"; stroke: "#16A34A"; stroke-width: 2; border-radius: 8; font-color: "#14532D"; bold: true } }
+  data:   { style: { fill: "#F1F5F9"; stroke: "#64748B"; border-radius: 6 } }
+  open:   { style: { fill: "#FCE7F3"; stroke: "#DB2777"; stroke-width: 2; stroke-dash: 4; border-radius: 8; font-color: "#9D174E"; bold: true } }
+  artifact: { style: { fill: "#FFFFFF"; stroke: "#0F172A"; stroke-width: 3; border-radius: 4; shadow: true; bold: true } }
+  ext:    { style: { fill: "#FFFFFF"; stroke: "#94A3B8"; stroke-dash: 2; border-radius: 6; font-color: "#475569" } }
+}
+
+title: |md
+  # Z-53 — 0단계 정본이 서면 어떤 모양인가
+| { near: top-center }
+
+src: "출처 — 값이 실제로 사는 자리" {
+  style: { fill: "#F8FAFC"; stroke: "#64748B"; stroke-dash: 4 }
+  direction: down
+
+  tbl: "번역표 24절\n(지금 정본 → 출처로 강등)\n31,451행" { class: data }
+  rx: "게임 원본 rxdata\n맵·이벤트·페이지" { class: ext }
+  pbs: "PBS 텍스트\n⛔ 고치면 재컴파일 방아쇠" { class: ext }
+  hard: "코드에 박힌 번역쌍\nCORE_TERMS · UiText TABLE\n_NATURE_ADJ" { class: data }
+  tower: "스크립트 안 데이터 표\n배틀시설 875명\n조회를 아예 안 탐" { class: ext }
+  corpus: "본가 코퍼스\ncanon/ — 판정 오라클" { class: data }
+}
+
+stage0: "0단계 정본 — 대장 셋 (전부 미구현)" {
+  style: { fill: "#FDF2F8"; stroke: "#DB2777"; stroke-dash: 4 }
+  direction: down
+
+  sites: "자리 대장\n문자열 하나가 사는 좌표 + 원문\n출처 종류 · 반영 경로 · 층 · 화자 · 청자" { class: open }
+  values: "값 대장\n원문 → 갈래[] → (한국어, 적용 군, 왜, 유래)\n갈래 하나면 그게 통일" { class: open }
+  groups: "군 대장\n조건에 이름을 붙인 정의\n말투·페르소나 판정이 이름에 붙는다" { class: open }
+
+  sites -> values: "원문 키"
+  groups -> values: "적용 군 이름"
+  groups -> sites: "군에 드는 자리"
+}
+
+build: "빌드와 검사" {
+  style: { fill: "#F0FDF4"; stroke: "#16A34A"; stroke-dash: 4 }
+  direction: down
+
+  gate: "검사 게이트 (미구현)\n자리마다 오라클을 선언 → 한 자리에서 돈다\n미번역 · 번호 밀림 · 표기 갈림" { class: open }
+  emit: "빌드 (지금 있음, 다시 씀)\n대장 → 절별 번역표 → korean.dat" { class: det }
+  surgery: "소스 수술 패치 (지금 있음)\n조회를 안 타는 자리" { class: det }
+}
+
+out: "산출물" {
+  style: { fill: "#F8FAFC"; stroke: "#64748B"; stroke-dash: 4 }
+  direction: down
+
+  tbl2: "번역표 24절 (파생물)\n지금 정본과 값 대조용" { class: artifact }
+  dat: "korean.dat\n보관소 · 게임 설치본" { class: artifact }
+  todo: "남은 일감 목록\n규칙이 못 덮은 행" { class: artifact }
+}
+
+check: "값 대조 (이행 단계에서만)\n파생 번역표 == 지금 정본?" { class: open }
+
+src.tbl -> stage0.sites: "원문·좌표 흡수"
+src.tbl -> stage0.values: "지금 한국어 = 출처 값"
+src.rx -> stage0.sites: "층·화자·청자 실측"
+src.pbs -> stage0.sites: "읽기만"
+src.hard -> stage0.values: "이관"
+src.tower -> stage0.sites: "반영 경로 = 소스 수술"
+src.corpus -> build.gate: "오라클"
+
+stage0.sites -> build.gate
+stage0.values -> build.emit
+stage0.sites -> build.emit: "자리별 반영 경로"
+stage0.sites -> build.surgery: "조회 안 타는 자리"
+
+build.gate -> out.todo: "기계가 못 덮은 행"
+build.emit -> out.tbl2
+build.emit -> out.dat
+build.surgery -> out.dat
+
+out.tbl2 -> check
+src.tbl -> check: "지금 값"
