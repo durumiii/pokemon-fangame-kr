@@ -343,6 +343,31 @@ def check_unified(strict):
     print(f"통일 원문: 통일 목록 {len(led)}건 · 갈림 허용 {len(allowed)}건 · 불일치 {drift} · 미등재 갈림 {bad}")
 
 
+def check_loc():
+    """좌표 열쇠(Z-73)가 가리키는 자리가 실재하는가.
+
+    좌표 항목의 원문이 그 맵의 정본에 없으면 게임에서 **조용히** 안 맞는다 —
+    조회가 미스로 떨어져 옛 값이 그대로 뜨므로 화면만 봐서는 오타인지 판정대로인지
+    구분이 안 된다. 그래서 여기서 잡는다. 자리 자체(이벤트·명령 인덱스)가 맞는지는
+    실기에서만 갈리므로 이 검사 밖이다.
+    """
+    path = HERE / "ko" / "00-maps.loc.jsonl"
+    if not path.exists():
+        return
+    base, cur = set(), None
+    for r in rows(HERE / "ko" / "00-maps.jsonl"):
+        if "map" in r:
+            cur = r["map"]
+        else:
+            base.add((cur, string_to_key(r["k"])))
+    bad = 0
+    for n, r in enumerate(rows(path), 1):
+        if (r["map"], string_to_key(r["k"])) not in base:
+            bad += 1
+            report("FAIL", f"좌표 열쇠의 원문이 맵 {r['map']} 정본에 없음 — 00-maps.loc.jsonl:{n}")
+    print(f"좌표 열쇠: {len(rows(path))}줄 · 원문 미발견 {bad}")
+
+
 def main():
     strict = "--strict" in sys.argv
     check_canon(strict)
@@ -350,6 +375,7 @@ def main():
     check_kinds(strict)
     check_names(strict)
     check_unified(strict)
+    check_loc()
     check_dat_and_sentinels()
     check_scripts()
     check_ui_gsub()
