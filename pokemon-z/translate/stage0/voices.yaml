@@ -412,7 +412,7 @@ voices:
 - group: 루피코
   match:
     name: 루피코
-  instruction: 허둥대는 해요체("세상에!"), 정치 얘기는 꽁무니 뺌
+  instruction: 담백한 장인 존대 — 격은 해요체·합쇼체 존대 그대로(원문이 usted 일관)이고 애교 어미(「~거랍니다」·「~죠?」·「~네요」 연발)를 뺀다. 감탄사는 원문이 매번 다른 옛 투를 쓰니 「세상에/맙소사」로 뭉치지 말고 갈라 준다. 대장간 어휘(벼리다·단조)를 살린다. 정치 얘기는 꽁무니 뺌
   samples: []
   source: translate/voice-prompts.jsonl
 - group: 안투리아
