@@ -235,7 +235,14 @@ def check_scripts():
 
 def check_ui_gsub():
     src = UI_MOD.read_text(encoding="utf-8")
-    pairs = re.findall(r'\["((?:[^"\\]|\\.)+)",\s*"(?:[^"\\]|\\.)+"\]', src)
+    # 표는 문자열 쌍과 **정규식 쌍** 둘로 돼 있다. 문자열만 세면 인명 정규식
+    # 스물셋이 통째로 검사 밖에 남는다(2026-08-17 실측·수선).
+    lits = re.findall(r'\["((?:[^"\\]|\\.)+)",\s*"(?:[^"\\]|\\.)+"\]', src)
+    rxs = re.findall(r'\[/((?:[^/\\]|\\.)+)/,\s*"(?:[^"\\]|\\.)+"\]', src)
+    # 루비 리터럴의 몸통을 그대로 파이썬 re로 읽는다 — 표가 쓰는 것은 `\b`와
+    # 문자뿐이고, 루비도 파이썬도 UTF-8에서 한글을 낱말 문자로 쳐 경계가 같다.
+    probes = [(p, re.compile(re.escape(p))) for p in lits]
+    probes += [(f"/{p}/", re.compile(p)) for p in rxs]
     kos = []
     for f in (HERE / "ko").glob("*.jsonl"):
         for r in rows(f):
@@ -243,14 +250,14 @@ def check_ui_gsub():
             if v:
                 kos.append(v)
     hits = 0
-    for p in pairs:
-        if re.search(r"[가-힣]", p):
+    for label, rx in probes:
+        if re.search(r"[가-힣]", label):
             continue  # 원문이 한글인 쌍은 대상 아님
-        c = sum(1 for v in kos if p in v)
+        c = sum(1 for v in kos if rx.search(v))
         if c:
             hits += 1
-            report("WARN", f"UI gsub 오폭 후보: {p!r} 가 번역 값 {c}행에 부분 일치")
-    print(f"UI 치환표: {len(pairs)}쌍, 오폭 후보 {hits}")
+            report("WARN", f"UI gsub 오폭 후보: {label!r} 가 번역 값 {c}행에 부분 일치")
+    print(f"UI 치환표: {len(probes)}쌍(문자열 {len(lits)} · 정규식 {len(rxs)}), 오폭 후보 {hits}")
 
 
 def check_names(strict):

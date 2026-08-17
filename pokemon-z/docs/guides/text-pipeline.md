@@ -94,8 +94,16 @@ dat 포맷 문제를 만났을 때.
 조인표(`map-speaker-join.jsonl.gz`) · 익명 화자 판정본 · 보호 목록(`protected.jsonl`) ·
 승인분(`approved-lines.jsonl`·`approved-events.jsonl`) · **동결 목록
 (`frozen-keys.jsonl`) — 손으로 확정해 배치 재번역에 다시 안 태우는 절23 키.
-`batch.py`가 전투 표현 대장(`battle-expr-replacements.json`)의 키와 합쳐 읽는다**. **기록층(`docs/log/`)에 두지 않는다** —
+`batch.py`가 전투 표현 대장(`battle-expr-replacements.json`)의 키와 합쳐 읽는다** ·
+어미 급 판정분(`register-ok.jsonl`) — 검사에 걸렸으나 어긋남이 아니라고 판정한 자리.
+**기록층(`docs/log/`)에 두지 않는다** —
 박제와 살아 있는 데이터는 생명주기가 다르다.
+
+⚠ **기록층에 산출을 내는 도구는 출력 경로를 상수로 잡지 마라 — 돌릴 때마다 그날 날짜
+파일로 낸다.** 상수 경로는 지난 날짜의 박제를 조용히 덮고, 덮인 파일이 기준선처럼
+읽힌다. `register.py scan`이 그 꼴이다: 기본 경로가
+`docs/log/research/<오늘>-register-mismatch.md`이고, 다른 자리에 내려면 경로를 인자로
+준다(`uv run translate/register.py scan <경로>`).
 
 - **정본을 고치는 도구만 쓴다** — dat를 직접 문지르는 수정은 빌드 한 번에 지워진다.
   부득이 dat를 직접 고쳤으면(웹 스튜디오 등) **`harvest.py`로 회수한다**:

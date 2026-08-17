@@ -15,7 +15,8 @@
 섞여 있어 사람이 갈라야 한다.
 
 usage:
-  uv run translate/register.py scan            어긋난 자리를 표로 뽑는다
+  uv run translate/register.py scan [출력경로]  어긋난 자리를 표로 뽑는다
+                                               (기본: docs/log/research/<오늘>-register-mismatch.md)
   uv run translate/register.py who <이름>       한 인물의 급 분포
   uv run translate/register.py selftest
 """
@@ -24,6 +25,7 @@ import json
 import re
 import sys
 from collections import Counter, defaultdict
+from datetime import date
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -32,7 +34,15 @@ from reg import classify, clean  # noqa: E402
 HERE = Path(__file__).parent
 ATTR = HERE / "data/speaker-attr.jsonl.gz"
 KO_MAPS = HERE / "ko/00-maps.jsonl"
-OUT = HERE.parent / "docs/log/research/2026-08-06-register-mismatch.md"
+RESEARCH = HERE.parent / "docs/log/research"
+
+
+def out_path(argv):
+    """기록층은 날짜 박제다 — 돌릴 때마다 그날 파일로 낸다. 상수로 잡아 두면
+    2026-08-06 판을 덮어썼다(2026-08-17에 실측·수선)."""
+    if len(argv) > 2:
+        return Path(argv[2])
+    return RESEARCH / f"{date.today():%Y-%m-%d}-register-mismatch.md"
 
 # 존대 / 하대 두 축. 나머지는 판정 보류.
 HIGH = {"합쇼", "해요"}
@@ -51,16 +61,40 @@ def speechy(text):
     """지문 꼴 문장이 실은 대화인가 — 1·2인칭 표지 유무."""
     return bool(SPEECHY.search(clean(text or "")))
 
-# 상대에 따라 급을 바꾸는 것이 정체성인 인물들. 어미만으로 어긋남을 말할 수 없다.
+# 상대에 따라 급을 바꾸는 것이 정체성인 인물들. 검사에서 빼지는 않고 **표시만** 한다 —
+# 청자를 모르는 것은 이들만의 사정이 아니라 이 도구 전체의 사정이므로, 일단 잡고
+# 아닌 자리는 판정으로 내린다(유지자 판정 2026-08-17).
 DUAL = {"Lanto", "Crisanto", "Melia", "Olivier", "Aure", "Merlot",
         "Hisopo", "Cendera", "Pinot"}
+
+OK = HERE / "data/register-ok.jsonl"
 
 
 def is_dual(who):
     """귀속표의 이름표는 직함을 달고 온다 — `Alcaide Pinot`·`Capitán Merlot`·
-    `Capitana Cendera`·`Auretosk`. 맨이름으로만 맞추면 160행이 검사에 샌다
+    `Capitana Cendera`·`Auretosk`. 맨이름으로만 맞추면 160행이 샌다
     (2026-08-16 실측)."""
     return any(n in (who or "") for n in DUAL)
+
+
+def load_ok(path=None):
+    """어긋남이 아니라고 판정된 자리들. 줄마다 `map`은 필수, `event`·`page`·`cmd`·`who`는
+    있는 것만 맞춘다 — 이벤트 통째·페이지 통째·명령 하나를 같은 꼴로 적는다.
+    ⚠ 한 이벤트에 화자가 여럿 서는 자리가 흔하니(맵90 ev35는 볼프람과 올리비에가
+    같이 선다) 이벤트 통째로 적을 때는 `who`를 함께 적어 남의 줄까지 덮지 마라.
+    `이유` 칸은 필수로 읽지는 않지만 근거 없는 제외가 쌓이지 않게 비워 두지 마라."""
+    p = Path(path) if path else OK
+    if not p.exists():
+        return []
+    return [json.loads(l) for l in p.read_text(encoding="utf-8").splitlines() if l.strip()]
+
+
+def judged(r, oks):
+    """이 행이 등재된 자리에 걸리면 그 줄을 돌려준다."""
+    for o in oks:
+        if all(o.get(f) in (None, r[f]) for f in ("map", "event", "page", "cmd", "who")):
+            return o
+    return None
 
 
 def sentences(text):
@@ -170,13 +204,11 @@ def dominant(rows, ko):
 def scan():
     rows, ko = load()
     tally = dominant(rows, ko)
+    oks = load_ok()
     out, skipped = [], Counter()
     for r in rows:
         who = r["who"]
         if r["kind"] not in ("text", "battle") or r["how"] not in CHECKED or not who:
-            continue
-        if is_dual(who):
-            skipped["이중말투"] += 1
             continue
         v = ko.get(ko_key(r["k"]))
         if not v:
@@ -197,24 +229,31 @@ def scan():
         if share < 0.7:
             skipped["평소 급이 갈림"] += 1
             continue
-        out.append(dict(map=r["map"], event=r["event"], cmd=r["cmd"], who=who,
+        if judged(r, oks):
+            skipped["판정됨"] += 1
+            continue
+        out.append(dict(map=r["map"], event=r["event"], page=r["page"], cmd=r["cmd"],
+                        who=who, dual=is_dual(who),
                         how=r["how"], now=a, usual=usual, last=last, back=back,
                         share=round(share, 2), n=sum(c.values()), ko=v))
-    out.sort(key=lambda x: (-x["share"], x["map"], x["event"], x["cmd"]))
+    out.sort(key=lambda x: (-x["share"], x["map"], x["event"], x["page"], x["cmd"]))
     return out, skipped, tally
 
 
-def write(out, skipped, tally):
-    L = ["# 어미 급이 어긋난 자리 (2026-08-06 재생성)", "",
+def write(out, skipped, tally, path):
+    L = [f"# 어미 급이 어긋난 자리 ({date.today():%Y-%m-%d} 생성)", "",
          "화자의 평소 급은 **이름표가 붙은 줄**로 정하고, 확정된 줄이 그와 어긋나는지 본다.",
          "⚠ 어긋남은 관측이지 처방이 아니다 — 어미를 고칠 자리와 귀속이 틀린 자리가 섞여 있다.",
-         "이중 말투가 정체성인 인물 아홉은 판정에서 뺐다.", "",
+         "상대에 따라 격을 갈아입는 인물은 **이중** 표시만 달고 검사는 받는다 — 청자를 모르는 것은",
+         "이 도구 전체의 사정이라 통째로 빼지 않고 자리마다 판정한다. 어긋남이 아니라고 판정한",
+         "자리는 `translate/data/register-ok.jsonl`에 근거와 함께 등재하면 다음 실행부터 「판정됨」으로 센다.", "",
          f"어긋난 자리 **{len(out)}곳**. 세지 않은 것: " +
          " · ".join(f"{k} {v}" for k, v in skipped.most_common()), "",
-         "| 맵:이벤트:명령 | 화자 | 귀속 | 지금 | 평소 | 평소 비율 | 근거 어절 | 현행 번역 |",
+         "| 맵:이벤트:페이지:명령 | 화자 | 귀속 | 지금 | 평소 | 평소 비율 | 근거 어절 | 현행 번역 |",
          "|---|---|---|---|---|--:|---|---|"]
     for r in out:
-        L.append(f"| {r['map']}:{r['event']}:{r['cmd']} | {r['who']} | {r['how']} | "
+        L.append(f"| {r['map']}:{r['event']}:{r['page']}:{r['cmd']} | "
+                 f"{r['who']}{' (이중)' if r['dual'] else ''} | {r['how']} | "
                  f"{r['now']} | {r['usual']} | {r['share']} ({r['n']}줄) | {r['last']} | "
                  f"{r['ko'][:120].replace('|', '｜')} |")
     L += ["", "## 인물별 급 분포 (이름표 줄 기준, 10줄 이상)", "",
@@ -223,8 +262,8 @@ def write(out, skipped, tally):
         if sum(c.values()) < 10:
             continue
         L.append(f"| {who} | {c['존대']} | {c['하대']} | {c.most_common(1)[0][0]} |")
-    OUT.write_text("\n".join(L) + "\n", encoding="utf-8")
-    print(f"{len(out)}곳 → {OUT}")
+    path.write_text("\n".join(L) + "\n", encoding="utf-8")
+    print(f"{len(out)}곳 → {path}")
 
 
 def selftest():
@@ -269,6 +308,22 @@ def selftest():
     assert spell("B6하게(배틀 도발·혼잣말은 B1)") == "하게(배틀 도발·혼잣말은 반말)"
     assert spell("B1+B7(총사 계열)") == "반말+대화단정(총사 계열)"
     assert spell("제외(사물 — 잠긴 문 안내는 지문 규칙)").startswith("제외")
+    # 출력 경로 — 기본은 오늘 날짜, 인자가 있으면 그것
+    assert out_path(["register.py", "scan"]).name == f"{date.today():%Y-%m-%d}-register-mismatch.md"
+    assert out_path(["register.py", "scan", "/tmp/x.md"]) == Path("/tmp/x.md")
+    # 판정 등재는 자리 단위 — 적은 칸만 맞추고 안 적은 칸은 통째로 걸린다
+    row = dict(map=112, event=4, page=0, cmd=254, who="Lanto")
+    assert judged(row, [{"map": 112, "event": 4, "page": 0, "cmd": 254}])
+    assert judged(row, [{"map": 90, "event": 35}]) is None
+    assert judged(row, [{"map": 112, "event": 4}])            # 이벤트 통째
+    assert judged(row, [{"map": 112, "event": 4, "page": 0}])  # 페이지 통째
+    assert judged(row, [{"map": 112, "event": 4, "cmd": 9}]) is None
+    # 화자 칸은 한 이벤트에 여럿이 설 때 남의 줄을 안 덮게 한다
+    assert judged(row, [{"map": 112, "event": 4, "who": "Crisanto"}]) is None
+    assert judged(row, [{"map": 112, "event": 4, "who": "Lanto"}])
+    # 실제 등재분이 읽히고 이유 칸이 비어 있지 않은가
+    real = load_ok()
+    assert real and all(o.get("이유") and o.get("map") is not None for o in real)
     print("selftest 통과")
 
 
@@ -279,7 +334,7 @@ def main():
     if cmd == "selftest":
         selftest()
     elif cmd == "scan":
-        write(*scan())
+        write(*scan(), out_path(sys.argv))
     elif cmd == "who" and len(sys.argv) > 2:
         rows, ko = load()
         t = dominant(rows, ko)
