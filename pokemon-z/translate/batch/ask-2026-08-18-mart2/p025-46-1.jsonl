@@ -1,0 +1,15 @@
+{"id": "25:46:1:0", "who": "Briof", "es": "<b>Briof:</b> ¿Qué se te ofrece, \\PN?", "old": "<b>브리오프:</b> 무슨 일인가, \\PN?"}
+{"id": "25:46:1:16", "who": "Briof", "es": "¿Alguna vez has visitado la gran campana que hay en el <b>Santuario Prosperidad</b>? Dicen que es capaz de provocar fenómenos naturales si la haces repicar recitando ciertas palabras.", "old": "<b>풍요의 사당</b>에 있는 거대한 종에 가본 적이 있는가? 특정 주문을 외우며 종을 울리면 자연현상을 일으킬 수 있다고 하네."}
+{"id": "25:46:1:18", "who": "Briof", "es": "Tengo una prima en <b>Pueblo Petroglifo</b> que afirma conocer esas palabras. ¡Pero cualquiera se cree una historia semejante!", "old": "<b>가라마을</b>에 사는 내 사촌이 그 주문을 안다고 주장하는데, 그런 말을 누가 믿겠나!"}
+{"id": "25:46:1:21", "who": "Briof", "es": "¡Ah, por cierto! Si vienes dentro de un tiempo, probablemente habré ampliado mi tienda con más y mejores artículos.", "old": "아, 참! 얼마쯤 지난 뒤에 찾아오면, 가게를 더 넓혀서 더욱 다양하고 좋은 물건을 갖추어 놓겠네."}
+{"id": "s23.k720e7216@m25.e46", "who": "(화자 없음)", "es": "¿Te interesa algo de lo que tengo?", "old": "마음에 드는 물건이 있나요?", "new": "마음에 드는 물건이 있는가?"}
+{"id": "s23.k7bb394fa@m25.e46", "who": "(화자 없음)", "es": "¿{1}? Buena elección.\n¿Cuántas unidades quieres?", "old": "{1}? 좋은 선택이야.\r\n몇 개 필요해?", "new": "{1}? 좋은 선택일세.\r\n몇 개나 필요한가?"}
+{"id": "s23.k161942bb@m25.e46", "who": "(화자 없음)", "es": "{1}... Y quieres {2}.\nTe costará ${3}. ¿De acuerdo?", "old": "{1}... 그리고 {2}\\j[이,가] 필요하군.\r\n${3}인데 괜찮겠어?", "new": "{1}... 그리고 {2}\\j[이,가] 필요하군.\r\n${3}인데 괜찮겠나?"}
+{"id": "s23.k3201e96d@m25.e46", "who": "(화자 없음)", "es": "{1} es una buena elección.\nTe costará ${2}. ¿De acuerdo?", "old": "{1}, 좋은 선택이야.\r\n${2}인데 괜찮겠어?", "new": "{1}, 좋은 선택일세.\r\n${2}인데 괜찮겠나?"}
+{"id": "s23.ke8debbd9@m25.e46", "who": "(화자 없음)", "es": "¡Aquí tienes!\n¡Gracias!", "old": "네, 여기 있습니다!\r\n대단히 감사합니다!", "new": "자, 여기 있네!\r\n고맙네!"}
+{"id": "s23.k03aa6c9a@m25.e46", "who": "(화자 없음)", "es": "No tienes el dinero suficiente.", "old": "돈이 부족하군요.", "new": "돈이 모자라는군."}
+{"id": "s23.k62d4bafa@m25.e46", "who": "(화자 없음)", "es": "¿En qué más puedo ayudarte?", "old": "더 도와드릴 일이 있으신가요?", "new": "더 필요한 것이 있는가?"}
+{"id": "s23.kcae7ab4f@m25.e46", "who": "(화자 없음)", "es": "¿{1}?\n¿Cuántas unidades quieres vender?", "old": "{1}?\r\n몇 개를 팔까?", "new": "{1}?\r\n몇 개나 팔 텐가?"}
+{"id": "s23.k28f86508@m25.e46", "who": "(화자 없음)", "es": "Puedo pagarte ${1}.\n¿Te parece bien?", "old": "${1}에 사줄게.\r\n괜찮겠어?", "new": "${1}에 사 주겠네.\r\n괜찮겠나?"}
+{"id": "s23.k0196e5b8@m25.e46", "who": "(화자 없음)", "es": "¿{1}? ¡Oh, no!\nNo puedo comprar eso.", "old": "{1}? 이런!\r\n그건 살 수 없어.", "new": "{1}? 이런!\r\n그건 살 수 없네."}
+{"id": "s23.k591909ba@m25.e46", "who": "(화자 없음)", "es": "¡Vuelve cuando quieras!", "old": "또 오세요!", "new": "또 오게나!"}

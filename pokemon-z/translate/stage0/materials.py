@@ -17,6 +17,17 @@ overrides를 얹어 읽으므로 gen 재생성 없이 곧바로 반영되고, �
 
   {"id":"m213.e4.p0.c88","set":{"who":""},"why":"장면 끝 내레이션","by":"사람/2026-08-18"}
 
+**맵 밖 절의 문구도 재료로 낸다.** 상점·창구처럼 이벤트에서 열리는 화면의 문구(절23 등)는
+겪는 순서가 없으므로 자리 목록에 `anchor`를 준다 — 그 이벤트의 대사 뒤에 「화면」으로 붙어,
+플레이어가 말을 건 뒤 무엇을 어떤 차례로 만나는지가 한 장에 선다.
+
+  {"k":"¿Te interesa algo de lo que tengo?","anchor":"m26.e4","label":"첫 인사","order":1,
+   "bucket":"상점 점원 말투"}
+
+자리는 `k`(원문)나 `id`(사이트 id)로 가리키고, 원문 하나에 자리가 여럿이면 `site`로 고른다.
+화면 자리의 판정 열쇠는 사이트 id 그대로이고 `apply_verdicts`는 그 줄을 건너뛴다 —
+반영 경로가 절마다 달라 사람이 읽고 넣는다.
+
 usage:
   uv run translate/stage0/materials.py --map 141 --event 33
   uv run translate/stage0/materials.py --phrase "Bueno, otra vez será." --map 63
@@ -64,28 +75,51 @@ def load():
             v = msgs.get(v["ref"])
         return v if isinstance(v, str) else ""
 
-    rows = []
+    rows, off = [], []
     for s in sites:
         m = ID_RE.match(s["id"])
         if not m:
-            continue                      # 맵 밖 절·좌표 열쇠는 시퀀스가 없다
+            # 맵 밖 자리(절23 스크립트 문구 등)는 겪는 순서가 없다 — 앵커를 받아
+            # 그 이벤트의 순서 뒤에 「화면」으로 붙인다(groups_from_ids의 anchor).
+            # 좌표 열쇠(`loc.*`)는 맵 자리의 파생값이라 뺀다 — 판정할 자리가 아니다.
+            if s.get("src") and s["id"].startswith("s"):
+                off.append({**s, "ko": val(s["id"]), "nk": norm(s["src"])})
+            continue
         mp, ev, pg, cmd = (int(x) for x in m.groups())
         rows.append({**s, "map": mp, "event": ev, "page": pg, "cmd": cmd,
                      "ko": val(s["id"]), "nk": norm(s.get("src", ""))})
-    return rows, who_set
+    return rows, who_set, off
 
 
 def proposals(path):
     """제안 문안 층 — {"id", "new", "why"} 한 줄이 한 자리. 재료와 같은 장에 실린다.
 
     유지자에게 올리는 것은 「실물 + 제안」 한 장이지, 재료 한 장과 표 한 장이 아니다.
+
+    `bucket`을 적으면 그 묶음에서만 서는 제안이다 — 같은 자리에 갈래별로 다른 문안을
+    올릴 때 쓴다(상점 점원 말투의 존대·반말·하게체처럼). 안 적으면 모든 묶음에 선다.
     """
-    return {r["id"]: (r.get("why", ""), r["new"]) for r in read_jsonl(Path(path))} if path else {}
+    return {(r.get("bucket") or "", r["id"]): (r.get("why", ""), r["new"])
+            for r in read_jsonl(Path(path))} if path else {}
 
 
 def naming(r):
     """한 줄의 화자 표시 — 이름표가 먼저, 없으면 그림, 둘 다 없으면 표시 없음."""
     return r.get("who") or r.get("speaker") or "(화자 없음)"
+
+
+def bid_of(g, r):
+    """자리 열쇠 — 맵 자리는 배치 꼴(맵:이벤트:페이지:명령), 화면 자리는 사이트 id 그대로.
+
+    apply_verdicts는 배치 꼴만 정본에 반영한다. 화면 자리(절23 등)는 반영 경로가 달라
+    id를 그대로 두고, 판정은 사람이 읽어 반영한다.
+
+    ⚠ 화면 자리에는 앵커를 붙인다 — **같은 문구를 갈래별로 여러 이벤트에 걸어 물을 때**
+    열쇠가 겹치면 판정이 서로를 덮는다(상점 갈래 셋이 그 꼴이었다). 앵커를 붙여도
+    숫자로 시작하지 않으므로 apply_verdicts는 그대로 건너뛴다.
+    """
+    return (f'{g["map"]}:{g["event"]}:{r["page"]}:{r["cmd"]}'
+            if r.get("cmd") is not None else f'{r["id"]}@m{g["map"]}.e{g["event"]}')
 
 
 def _groups_yaml():
@@ -113,7 +147,7 @@ def marks():
 # ── 재료 조립 ────────────────────────────────────────────────────────────────
 class Ctx:
     def __init__(self, prop=None):
-        self.rows, self.who_set = load()
+        self.rows, self.who_set, self.off = load()
         self.prop = prop or {}
         self.persona = personas()
         self.s2g = sprite_groups()
@@ -123,6 +157,25 @@ class Ctx:
         for r in self.rows:
             self.by_ev.setdefault((r["map"], r["event"]), []).append(r)
             self.by_src.setdefault(r["nk"], []).append(r)
+        self.by_site = {r["id"]: r for r in self.off}
+        self.off_by_src = {}
+        for r in self.off:
+            self.off_by_src.setdefault(r["nk"], []).append(r)
+
+    def offmap(self, row):
+        """자리 목록 한 줄 → 맵 밖 자리 하나. `id`로 집거나 `k`(원문)로 찾는다."""
+        if row.get("id"):
+            hit = self.by_site.get(row["id"])
+            if not hit:
+                sys.exit(f"맵 밖 자리를 못 찾았다: {row['id']!r}")
+            return hit
+        hits = self.off_by_src.get(norm(row["k"]), [])
+        if not hits:
+            sys.exit(f"그 원문의 맵 밖 자리가 없다: {row['k']!r}")
+        if len(hits) > 1 and not row.get("site"):
+            ids = ", ".join(h["id"] for h in hits[:5])
+            sys.exit(f"원문 하나에 자리가 여럿이다 — `site`로 골라라: {row['k']!r} → {ids}")
+        return next((h for h in hits if h["id"] == row.get("site")), hits[0])
 
     def speaker(self, who, sprite):
         """머리에 서는 화자 한 줄 — 이름표가 이름이고, 그림은 페르소나를 여는 열쇠다."""
@@ -141,10 +194,23 @@ class Ctx:
             f.append(f"기존 판정 register-ok: {why}" if why else "기존 판정 register-ok")
         return f
 
-    def group(self, mp, ev, cand_ids, title=None, note=None):
-        """한 (맵, 이벤트) 묶음의 재료 — 머리 · 페이지별 시퀀스 · 같은 원문의 다른 자리."""
+    def group(self, mp, ev, cand_ids, title=None, note=None, attach=()):
+        """한 (맵, 이벤트) 묶음의 재료 — 머리 · 페이지별 시퀀스 · 같은 원문의 다른 자리.
+
+        `attach`는 그 이벤트에서 열리는 **화면**의 문구다(상점·창구 등 맵 밖 절).
+        플레이어가 겪는 순서는 「이벤트 대사 → 화면」이므로 시퀀스 꼬리에 붙인다.
+        """
         seq = sorted(self.by_ev.get((mp, ev), []), key=lambda r: (r["page"], r["cmd"]))
+        if attach:
+            pg = seq[-1]["page"] if seq else 0
+            for i, (site, label, _ord) in enumerate(sorted(attach, key=lambda x: x[2]), 1):
+                seq.append({**site, "map": mp, "event": ev, "page": pg, "cmd": None,
+                            "screen": f"{i}. {label}" if label else str(i),
+                            "layer": "화면"})
+                cand_ids = set(cand_ids) | {site["id"]}
         cands = [r for r in seq if r["id"] in cand_ids] or seq
+        # 제안은 묶음별로 갈린다 — 묶음을 안 적은 제안은 어느 묶음에나 선다
+        prop = {i: v for (b, i), v in self.prop.items() if not b or b == title}
         casts, layers = {}, {}
         for r in seq:
             casts[(r.get("who", ""), r.get("speaker", ""))] = None
@@ -169,7 +235,7 @@ class Ctx:
             "speakers": [self.speaker(w, s) for w, s in casts],
             "layers": [l for l in layers if l],
             "seq": [(r, r["id"] in cand_ids, self.flags(r)) for r in seq],
-            "prop": self.prop,
+            "prop": prop,
             "dups": dups,
         }
 
@@ -220,10 +286,36 @@ def groups_from_args(ctx, a):
     return groups_from_ids(ctx, Path(a.ids))
 
 
+def anchor_of(row):
+    """`anchor`는 「이 문구를 어느 이벤트에서 만나나」다 — "m26.e4" 또는 {"map","event"}."""
+    a = row["anchor"]
+    if isinstance(a, str):
+        m = re.match(r"^m(\d+)\.e(\d+)$", a)
+        if not m:
+            sys.exit(f"앵커 꼴이 아니다(m<맵>.e<이벤트>): {a!r}")
+        return int(m.group(1)), int(m.group(2))
+    return int(a["map"]), int(a["event"])
+
+
 def groups_from_ids(ctx, path):
-    """자리 목록 jsonl — id 또는 map+event(+cmd). 여분 칸은 제목·메모로 싣는다."""
-    buckets = {}
+    """자리 목록 jsonl — id 또는 map+event(+cmd). 여분 칸은 제목·메모로 싣는다.
+
+    **맵 밖 자리**(절23 스크립트 문구 등)는 `anchor`를 함께 준다 — 그 이벤트의 겪는
+    순서 뒤에 「화면」으로 붙는다. 자리는 `id`(사이트 id)나 `k`(원문)로 가리키고,
+    `label`·`order`가 화면에서 만나는 차례를 적는다.
+    """
+    buckets, attach = {}, {}
     for row in read_jsonl(path):
+        if row.get("anchor"):
+            mp, ev = anchor_of(row)
+            site = ctx.offmap(row)
+            key = (row.get("bucket") or "", mp, ev)
+            b = buckets.setdefault(key, {"mp": mp, "ev": ev, "ids": set(),
+                                         "title": row.get("bucket"),
+                                         "note": row.get("note")})
+            attach.setdefault(key, []).append(
+                (site, row.get("label", ""), row.get("order", len(attach.get(key, ())) + 1)))
+            continue
         if "id" in row:
             m = ID_RE.match(row["id"])
             if not m:
@@ -241,8 +333,9 @@ def groups_from_ids(ctx, path):
         for r in ctx.by_ev.get((mp, ev), ()):
             if (cmd is None or r["cmd"] == cmd) and (pg is None or r["page"] == pg):
                 b["ids"].add(r["id"])
-    return [ctx.group(b["mp"], b["ev"], b["ids"], b["title"], b["note"])
-            for b in buckets.values()]
+    return [ctx.group(b["mp"], b["ev"], b["ids"], b["title"], b["note"],
+                      attach.get(k, ()))
+            for k, b in buckets.items()]
 
 
 # ── 출력 ─────────────────────────────────────────────────────────────────────
@@ -276,15 +369,19 @@ def md(groups):
         if allf:
             L.append("- 사람 손이 지나간 자리: " + " · ".join(allf))
         L.append("")
-        page = None
+        page, on_screen = None, False
         for r, cand, fs in g["seq"]:
-            if r["page"] != page:
+            if r.get("screen"):
+                if not on_screen:
+                    on_screen = True
+                    L.append("### 여기서 열리는 화면 — 말을 건 뒤 이 차례로 만난다")
+            elif r["page"] != page:
                 page = r["page"]
                 L.append(f"### 겪는 순서 — 페이지 {page}")
             mark = "»" if cand else " "
             tag = f"{naming(r)}|{r.get('layer', '?')}"
             flag = ("  ⚑ " + " · ".join(fs)) if fs else ""
-            L.append(f"{mark} `[{r['cmd']}]` **{tag}**{flag}")
+            L.append(f"{mark} `[{r.get('screen') or r['cmd']}]` **{tag}**{flag}")
             L.append(f"    - ES: {r.get('src', '')}")
             L.append(f"    - KO: {r['ko']}")
             if r["id"] in g["prop"]:
@@ -323,7 +420,7 @@ def write_brief(out_dir, brief_path, groups, nhit):
     b["hits"] = nhit
     for q in b.get("asks", []):
         if q.get("bucket"):      # 묶음 이름이 같은 자리를 그 건에 묶는다
-            q["rows"] = [f'{g["map"]}:{g["event"]}:{r["page"]}:{r["cmd"]}'
+            q["rows"] = [bid_of(g, r)
                          for g in groups if g["title"] == q["bucket"]
                          for r, cand, _ in g["seq"] if cand or r["id"] in g["prop"]]
     (Path(out_dir) / "brief.json").write_text(
@@ -348,7 +445,7 @@ def review_out(groups, out_dir):
     for g in groups:
         for r, cand, _ in g["seq"]:
             # 배치 파이프라인의 자리 열쇠는 맵:이벤트:페이지:명령이다 — apply_verdicts가 그 꼴을 읽는다
-            bid = f'{g["map"]}:{g["event"]}:{r["page"]}:{r["cmd"]}'
+            bid = bid_of(g, r)
             row = {"id": bid, "who": naming(r), "es": r.get("src", ""), "old": r["ko"]}
             pr = g["prop"].get(r["id"])
             if pr:
@@ -400,7 +497,7 @@ def selftest():
     assert s2[0]["who"] == "올리비에", s2
     import tempfile
     with tempfile.TemporaryDirectory() as td:
-        ctx2 = Ctx({f"m141.e33.p0.c{g['seq'][0][0]['cmd']}": ("시험", "새 문안")})
+        ctx2 = Ctx({("", f"m141.e33.p0.c{g['seq'][0][0]['cmd']}"): ("시험", "새 문안")})
         g2 = ctx2.group(141, 33, set())
         npg, nhit = review_out([g2], td)
         rows = [json.loads(x) for x in (Path(td) / "p141-33-0.jsonl").read_text(
@@ -412,7 +509,26 @@ def selftest():
         assert all(i.count(":") == 3 for i in ids), sorted(ids)[:3]
         # 사유의 id가 행의 id와 같은 꼴이라야 검수 화면에 장면이 뜬다(안 그러면 0장면)
         assert all(x["id"] in ids for x in scr), (scr[:2], sorted(ids)[:3])
-    print("selftest ok — 맵141 이벤트33 {}행 · 맵63 중복 자리 {}건".format(
+    # 맵 밖 자리(절23)는 앵커를 받아 그 이벤트의 겪는 순서 뒤에 화면으로 붙는다
+    with tempfile.TemporaryDirectory() as td:
+        ids = Path(td) / "ids.jsonl"
+        ids.write_text(json.dumps(
+            {"k": "¡Vuelve cuando quieras!", "anchor": "m26.e4", "label": "작별",
+             "order": 1, "bucket": "화면 시험"}, ensure_ascii=False) + "\n",
+            encoding="utf-8")
+        gs = groups_from_ids(ctx, ids)
+        last = gs[0]["seq"][-1][0]
+        assert last.get("screen") and last["cmd"] is None, last
+        assert last["id"].startswith("s23."), last["id"]
+        assert gs[0]["seq"][-1][1], "화면 자리는 판정 자리로 서야 한다"
+        # 화면 자리의 열쇠는 사이트 id + 앵커 — 배치 꼴로 위장하면 엉뚱한 맵 자리에 반영되고,
+        # 앵커가 없으면 같은 문구를 갈래별로 물을 때 판정이 서로를 덮는다
+        bid = bid_of(gs[0], last)
+        assert bid == f'{last["id"]}@m26.e4', bid
+        assert not bid[0].isdigit()
+        npg, nhit = review_out(gs, td)
+        assert nhit >= 1, nhit
+    print("selftest ok — 맵141 이벤트33 {}행 · 맵63 중복 자리 {}건 · 화면 자리 1건".format(
         len(g["seq"]), len(p["dups"])))
 
 
