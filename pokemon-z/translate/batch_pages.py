@@ -766,19 +766,26 @@ def pick_pilot(chunks, npc=False, from_pool=False):
     return sorted(picked, key=lambda c: (c["map"], c["event"], c["page"]))
 
 
-# 언제나 실리는 핵심 규칙 — 용어집에서 근거·이력을 뺀 뼈대만
-CORE_TERMS = """\
+# 언제나 실리는 핵심 규칙 — 용어집에서 근거·이력을 뺀 뼈대만.
+# 여기 박힌 번역쌍(포켓프랑·무슈·마담·마드모아젤·마스크·맘마미아)의 표기 정본은
+# term-pairs.jsonl이다 — 이 함수는 거기서 읽어 끼운다. 쌍이 빠지면 KeyError로 죽는다.
+def core_terms():
+    ko = dict(term_pairs())
+    franc, msr, mme, mlle, mask, mamma = (
+        ko[es] for es in ("pokécuartos/pokéfrancos", "monsieur", "madame",
+                          "mademoiselle", "máscara", "Mamma mia"))
+    return f"""\
 - Never touch proper nouns: person, place, species, move, item and ability names keep
   their current Korean spelling even if the transliteration looks odd.
 - damage is 「데미지」 (not 대미지). Franchise vocabulary: 배틀 · 트레이너 · 체육관 ·
   기술머신 · 몬스터볼 · 도감. Status: 독/맹독/화상/마비/잠듦/얼음.
-- The currency pokécuartos/pokéfrancos is 「포켓프랑」.
-- Setting is monarchic Kalos: keep rank address (폐하·전하·경·마담·무슈); do not
+- The currency pokécuartos/pokéfrancos is 「{franc}」.
+- Setting is monarchic Kalos: keep rank address (폐하·전하·경·{mme}·{msr}); do not
   modernize. French/Russian exclamations stay Latin (Mon Dieu!, Sacrebleu!,
   Merci beaucoup!, Blyat); phrases woven into the sentence (a mid-sentence
   s'il vous plait) are translated. Address titles are transliterated:
-  monsieur→무슈, madame→마담, mademoiselle→마드모아젤. Italian `Mamma mia`→「맘마미아」.
-- máscara → 마스크 (not 가면).
+  monsieur→{msr}, madame→{mme}, mademoiselle→{mlle}. Italian `Mamma mia`→「{mamma}」.
+- máscara → {mask} (not 가면).
 - Kill translationese: 「~에 대해」→ object particle; 「~하는 것이 가능하다」→
   「~할 수 있다」; no double passive 「~되어진다」; ¡Qué …! becomes 「정말 ~구나!」
   not 「얼마나 ~한가!」."""
@@ -1002,7 +1009,7 @@ def glossary_for(rows):
             seen.add(h.casefold())
             uniq.append(h)
     hits = uniq
-    return CORE_TERMS + ("\n" + "\n".join(hits) if hits else "")
+    return core_terms() + ("\n" + "\n".join(hits) if hits else "")
 
 
 def build_prompt(fresh=False):
@@ -1316,7 +1323,7 @@ if __name__ == "__main__":
         assert s.lower().count("→ 섭정") == 1, s
         # 이름표 없는 화자도 이름을 얻어 cast 절과 장면 목록이 이어진다
         assert resolve("", {}) == ANON_NAME and resolve("  ", {}) == ANON_NAME
-        base = len(CORE_TERMS.splitlines())
+        base = len(core_terms().splitlines())
         for x in cs[:6]:
             print(f"{x['cid']} 발췌 {len(glossary_for(x['rows']).splitlines()) - base}항목")
 
