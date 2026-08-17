@@ -32,8 +32,9 @@ def dirty_ko():
     return [ln for ln in out.splitlines() if ln.strip()]
 
 
-def main():
-    write = "--write" in sys.argv
+def main(argv=None):
+    """argv를 받는 것은 다른 도구가 쓰기 경로를 부르기 위해서다(apply_verdicts 등)."""
+    write = "--write" in (sys.argv if argv is None else argv)
     built, owner, msgs = rebuild()
     tainted = tainted_ids(msgs, read_overrides())
 
