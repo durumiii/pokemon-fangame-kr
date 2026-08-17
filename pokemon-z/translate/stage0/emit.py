@@ -86,6 +86,17 @@ def advice(built=None):
             "uv run translate/stage0/gen.py 로 재흡수하고 커밋한 뒤 다시 돌려라.")
 
 
+def write_ko(built, owner, tainted=frozenset(), expect=None, show=5, only=None):
+    """이미 세운 역생성으로 ko를 앉힌다 — (from_ovr, other) 또는 쓰기를 막았으면 None.
+
+    `expect`가 있으면 쓰기 **직전에** ko를 다시 떠서 견준다(점검과 쓰기 사이 창).
+    """
+    if expect is not None and ko_state() != expect:
+        print("멈춤 — 점검 뒤 translate/ko/가 움직였다(딴 도구가 손댔다). 아무것도 안 썼다.")
+        return None
+    return compare(built, owner, tainted, write_to=KO, show=show, only=only)
+
+
 def main(argv=None, expect=None):
     """argv를 받는 것은 다른 도구가 쓰기 경로를 부르기 위해서다(apply_verdicts 등).
 
@@ -98,15 +109,7 @@ def main(argv=None, expect=None):
     built, owner, msgs = rebuild()
     tainted = tainted_ids(msgs, read_overrides())
 
-    if write and expect is not None:
-        # 쓰기 직전에 다시 떠서 견준다 — 창을 밀리초로 좁힌다.
-        now = ko_state()
-        if now != expect:
-            print("멈춤 — 점검 뒤 translate/ko/가 움직였다(딴 도구가 손댔다). 아무것도 안 썼다.")
-            for k in sorted(set(now) ^ set(expect)) or sorted(now):
-                print(f"  {k}")
-            return 2
-    elif write:
+    if write and expect is None:
         # 끊긴 emit의 자국은 막지 않는다 — 그 자리에서 막으면 마저 밀어낼 길이 없다.
         dko = dirty_ko()
         if dko and not leftover(built):
@@ -116,7 +119,13 @@ def main(argv=None, expect=None):
             print(f"  {advice(built)}")
             return 2
 
-    from_ovr, other = compare(built, owner, tainted, write_to=KO if write else None)
+    if write:
+        got = write_ko(built, owner, tainted, expect)
+        if got is None:
+            return 2
+        from_ovr, other = got
+    else:
+        from_ovr, other = compare(built, owner, tainted)
     print(f"\n{'써 냄' if write else 'dry-run'} — 차이 {from_ovr + other}건 "
           f"(overrides 유래 {from_ovr} · 그 밖 {other})")
     if not write and from_ovr + other:
