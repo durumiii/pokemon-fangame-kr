@@ -10,6 +10,7 @@ translate/batch/npc-sweep-flags.jsonl
 translate/judge/in/
 translate/mine/candidates.jsonl
 translate/mine/chunks.jsonl
+translate/stage0/findings/
 
 # 외부 공개 저장소에서 매번 새로 받는 오프라인 캐시 (build_canon.py --offline 용)
 translate/canon/raw/
