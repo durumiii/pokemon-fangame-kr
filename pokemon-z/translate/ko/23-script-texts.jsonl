@@ -6059,7 +6059,7 @@
 {"k": "Ha desaparecido la extraña sensación que había en el terreno de combate.", "v": "배틀 필드에 감돌던 기묘한 기운이 사라졌다."}
 {"k": "¡La sensación extraña desapareció del campo!", "v": "기묘한 기운이 필드에서 사라졌다!"}
 {"k": "¡{1} megaevoluciona gracias al vínculo con {3}!", "v": "{3}\\j[과,와]의 유대 덕분에 {1}\\j[이,가] 메가진화했다!"}
-{"k": "¡Las dimensiones han vuelto a la normalidad!", "v": "뒤틀어진 시공이 원래대로 돌아왔다!"}
+{"k": "¡Las dimensiones han vuelto a la normalidad!", "v": "뒤틀린 시공이 원래대로 되돌아왔다!"}
 {"k": "¡La corriente eléctrica ha desaparecido del campo de batalla!", "v": "일렉트릭필드가 배틀 필드에서 사라졌다!"}
 {"k": "¡El campo de hierba ha desaparecido del campo de batalla!", "v": "그래스필드가 배틀 필드에서 사라졌다!"}
 {"k": "¡La niebla se ha desvanecido del campo de batalla!", "v": "미스트필드가 배틀 필드에서 사라졌다!"}
@@ -6366,7 +6366,7 @@
 {"k": "Autoguardado Completado", "v": "Autoguardado Completado"}
 {"k": "", "v": ""}
 {"k": "¡{2} de {1} confundió a {3}!", "v": "{1}의 {2}\\j[이,가] {3}\\j[을,를] 혼란시켰다!"}
-{"k": "¡#{pbThis} alteró las dimensiones!", "v": "#{pbThis}\\j[이,가] 차원을 뒤틀었다!"}
+{"k": "¡#{pbThis} alteró las dimensiones!", "v": "#{pbThis}\\j[은,는] 시공을 뒤틀었다!"}
 {"k": "hemorragia", "v": "출혈"}
 {"k": "¡{1} se curó de la Hemorragia!", "v": "{1}의 출혈이 멎었다!"}
 {"k": "¡{1} está sangrando, recibirá más golpes críticos!", "v": "{1}\\j[이,가] 피를 흘리고 있다. 급소를 더 자주 맞게 된다!"}
