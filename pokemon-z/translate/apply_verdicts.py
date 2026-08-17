@@ -240,10 +240,33 @@ def run(out_dir, write=False, events_only=False):
                     clash.append((k2, why.get(k2), plan[k2], tag + "(covers)", new))
                     continue
                 plan[k2], why[k2] = new, tag + "(covers)"
+                olds[k2] = olds[key]              # 낡음 가드가 복제 자리도 같이 보게
+
+    # 낡은 스냅숏 가드(Z-54 ③) — 산출의 old(배치 시점 현행)가 지금 정본과 다르면
+    # 그 사이 유지자가 손댄 자리다. 반영하지 않고 알린다(검수 세트 문맥 행이 옛 값을
+    # 재반영한 사고 — 2026-08-13 하루 3회). 판정 명시 행도 예외가 아니다 — 어느 쪽이
+    # 이길지는 사람이 정한다.
+    cur_vals, cv = {}, None
+    for line in MAPS.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        r = json.loads(line)
+        if "map" in r:
+            cv = r["map"]
+        else:
+            cur_vals.setdefault((cv, fold(r["k"])), r["v"])
+    stale = [(k, olds[k], cur_vals[k], plan[k]) for k in list(plan)
+             if olds.get(k) and k in cur_vals
+             and cur_vals[k] != olds[k] and cur_vals[k] != plan[k]]
+    for k, *_ in stale:
+        plan.pop(k)
 
     for tag, n in sorted(stat.items(), key=lambda x: -x[1]):
         print(f"  {tag}: {n}행")
-    print(f"판정 기록 {len(vs)}건 · 반영 대상 {len(plan)}자리 · 열쇠 충돌 {len(clash)}")
+    print(f"판정 기록 {len(vs)}건 · 반영 대상 {len(plan)}자리 · 열쇠 충돌 {len(clash)} · "
+          f"낡은 스냅숏 제외 {len(stale)}")
+    for k, o, c, n in stale[:10]:
+        print(f"  낡음 맵{k[0]} 「{k[1][:30]}」: 배치때={o[:20]} / 지금={c[:20]} / 새판={n[:20]}")
     for key, t1, v1, t2, v2 in clash[:10]:
         print(f"  충돌 맵{key[0]} 「{key[1][:30]}」: {t1}={v1[:25]} / {t2}={v2[:25]}")
 
