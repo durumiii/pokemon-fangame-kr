@@ -19869,6 +19869,12 @@
 {"id": "loc.m405.e29.c18", "src": "No tienes puntos suficientes. ¡Sigue combatiendo, que lo conseguirás!", "apply": "krloc"}
 {"id": "loc.m405.e29.c28", "src": "No tienes puntos suficientes. ¡Sigue combatiendo, que lo conseguirás!", "apply": "krloc"}
 {"id": "loc.m405.e29.c35", "src": "¡Vuelve cuando quieras!", "apply": "krloc"}
+{"id": "loc.m25.e38.c7", "src": "¡Mamma mia! ¡Buen entrenamiento!", "apply": "krloc"}
+{"id": "loc.m25.e38.c15", "src": "¡Mamma mia! ¡Buen entrenamiento!", "apply": "krloc"}
+{"id": "loc.m25.e38.c23", "src": "¡Mamma mia! ¡Buen entrenamiento!", "apply": "krloc"}
+{"id": "loc.m155.e4.c7", "src": "¡Buen entrenamiento!", "apply": "krloc"}
+{"id": "loc.m155.e4.c15", "src": "¡Buen entrenamiento!", "apply": "krloc"}
+{"id": "loc.m155.e4.c23", "src": "¡Buen entrenamiento!", "apply": "krloc"}
 {"id": "s1.i0", "apply": "index"}
 {"id": "s1.i1", "apply": "index", "src": "Bulbasaur"}
 {"id": "s1.i2", "apply": "index", "src": "Ivysaur"}
