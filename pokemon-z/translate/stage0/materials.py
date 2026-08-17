@@ -234,14 +234,17 @@ def groups_from_ids(ctx, path):
             if not m:
                 print(f"건너뜀(맵 자리가 아님): {row['id']}", file=sys.stderr)
                 continue
-            mp, ev, cmd = int(m.group(1)), int(m.group(2)), int(m.group(4))
+            mp, ev, pg, cmd = (int(m.group(1)), int(m.group(2)),
+                               int(m.group(3)), int(m.group(4)))
         else:
-            mp, ev, cmd = row["map"], row["event"], row.get("cmd")
-        key = row.get("bucket") or f"{mp}.{ev}"
+            mp, ev, pg, cmd = row["map"], row["event"], row.get("page"), row.get("cmd")
+        # 묶음 이름은 여러 이벤트에 걸칠 수 있다 — 자리는 (이름, 맵, 이벤트)로 가른다.
+        # 이름만으로 묶으면 첫 이벤트의 좌표가 남아 나머지 이벤트의 자리가 조용히 사라진다.
+        key = (row.get("bucket") or "", mp, ev)
         b = buckets.setdefault(key, {"mp": mp, "ev": ev, "ids": set(),
                                      "title": row.get("bucket"), "note": row.get("note")})
         for r in ctx.by_ev.get((mp, ev), ()):
-            if cmd is None or r["cmd"] == cmd:
+            if (cmd is None or r["cmd"] == cmd) and (pg is None or r["page"] == pg):
                 b["ids"].add(r["id"])
     return [ctx.group(b["mp"], b["ev"], b["ids"], b["title"], b["note"])
             for b in buckets.values()]

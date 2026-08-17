@@ -454,7 +454,7 @@ voices:
 - group: 로토
   match:
     name: 로토
-  instruction: 기본 하대. **해적을 상대할 때는 존대.**
+  instruction: 기본 하대. **윗사람 앞에서만 존대**(맵149의 존대는 클라벨리나 섭정에게 향한다). 해적은 로토의 부하이므로 하대다 — 옛 지시 「해적을 상대할 때는 존대」는 2026-08-16에 뒤집혔다.
   samples: []
   source: translate/voice-prompts.jsonl
 - group: 뱃사공
