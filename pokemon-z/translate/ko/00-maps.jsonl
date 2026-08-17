@@ -9464,7 +9464,7 @@
 {"map": 288, "n": 89}
 {"k": "¿Quieres usar la Montura Gogoat?", "v": "고고트라이드를 사용할까?"}
 {"k": "<b>PISTA DE ENTRENADOR:</b> El clima de nieve, en combate, funciona como en las generaciones Pokémon más recientes, subiendo la Defensa de los Pokémon de tipo Hielo.", "v": "<b>트레이너 팁:</b> 배틀 중 눈이 내리는 날씨는 최근 포켓몬 시리즈와 마찬가지로, 얼음타입 포켓몬의 방어력을 높여줍니다."}
-{"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¿Has averiguado algo, \\PN?", "v": "\\c[3]<b>크리산토:</b>\\c[0] \\PN, 뭔가 알아낸 게 있는가?"}
+{"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¿Has averiguado algo, \\PN?", "v": "\\c[3]<b>크리산토:</b>\\c[0] \\PN, 뭔가 알아낸 게 있나?"}
 {"k": "¿Has encontrado a <i>monsieur</i> <b>Áster</b>?", "v": "<i>무슈</i> <b>아스테르</b>는 찾았고?"}
 {"k": "...", "v": "......"}
 {"k": "¡<i>Putain</i>! ¡Conque eso es lo que ha pasado!", "v": "<i>Putain</i>! 그래, 그런 일이 있었단 말이지!"}
@@ -9492,36 +9492,36 @@
 {"k": "\\c[5]<b>Melia:</b>\\c[0] Las 12, las 12, las 12...", "v": "\\c[5]<b>멜리아:</b>\\c[0] 12개, 12개, 12개..."}
 {"k": "\\c[5]<b>Melia:</b>\\c[0] ¡Claro! ¡Se están refiriendo a las 12 uvas que la gente toma en Nochevieja!", "v": "\\c[5]<b>멜리아:</b>\\c[0] 아! 새해 맞이할 때 사람들이 먹는 포도 12알을 말하는 거네!"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡No! Piensa mejor.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 아니야! 다시 잘 생각해 봐!"}
-{"k": "\\c[5]<b>Melia:</b>\\c[0] Vale, a ver, voy a concentrarme para pensar...", "v": "\\c[5]<b>멜리아:</b>\\c[0] 좋아요, 음... 집중해서 생각해 볼게요..."}
-{"k": "\\sh\\c[5]<b>Melia:</b>\\c[0] ¡AAAAAAHHHH!", "v": "\\sh\\c[5]<b>멜리아:</b>\\c[0] 아아아아악!"}
+{"k": "\\c[5]<b>Melia:</b>\\c[0] Vale, a ver, voy a concentrarme para pensar...", "v": "\\c[5]<b>멜리아:</b>\\c[0] 좋아, 음... 집중해서 생각해 볼게..."}
+{"k": "\\sh\\c[5]<b>Melia:</b>\\c[0] ¡AAAAAAHHHH!", "v": "\\sh\\c[5]<b>멜리아:</b>\\c[0] 으아아아아!"}
 {"k": "\\c[5]<b>Melia:</b>\\c[0] ¡Se tratan de las 12 medallas de los Regentes!", "v": "\\c[5]<b>멜리아:</b>\\c[0] 섭정들의 배지 12개를 말하는 거였어!"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡E-eso es! Las 12 medallas de los Regentes.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 바-바로 그거야! 섭정들의 배지 12개."}
-{"k": "¿No os da la impresión de que esas medallas son más importantes de lo que parecen?", "v": "너희도 그 배지들이 단순한 물건보다 훨씬 중요한 의미를 지닌 것 같지 않나?"}
+{"k": "¿No os da la impresión de que esas medallas son más importantes de lo que parecen?", "v": "너희가 생각하기에도 그 배지들이 단순한 물건보다 훨씬 중요한 의미를 지닌 것 같지 않아?"}
 {"k": "\\c[5]<b>Melia:</b>\\c[0] ¡<i>Oui</i>! ¡Sí! Más de una persona nos ha dicho que son más de lo que aparentan.", "v": "\\c[5]<b>멜리아:</b>\\c[0] <i>Oui</i>! 맞아! 겉보기보다 더 엄청난 물건이라고 말해준 사람이 있었거든!"}
-{"k": "Además... eso explicaría por qué mi padre me pidió que le entregara mis 6 medallas.", "v": "게다가... 그래서 아버지가 저한테 배지 6개를 전부 달라고 하셨던 거군요."}
+{"k": "Además... eso explicaría por qué mi padre me pidió que le entregara mis 6 medallas.", "v": "게다가... 그래서 아빠가 나한테 배지 6개를 전부 달라고 했던 거구나."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¿Le has dado tus 6 medallas a tu padre?", "v": "\\c[3]<b>크리산토:</b>\\c[0] 네 배지 6개를 아버지에게 드렸다고?"}
 {"k": "<i>Fantastique</i>, entonces <b>Alca</b> ya tiene la mitad de su objetivo cumplido, que sepamos.", "v": "<i>Fantastique</i>, 그럼 우리가 아는 한 <b>알카</b>는 이미 목표의 절반을 달성한 셈이군."}
 {"k": "\\c[5]<b>Melia:</b>\\c[0] ¿Y... y yo qué iba a saber?", "v": "\\c[5]<b>멜리아:</b>\\c[0] 그... 내가 그걸 어떻게 알았겠어?"}
-{"k": "\\c[3]<b>Crisanto:</b>\\c[0] También explicaría por qué algunos Regentes han sido asesinados en circunstancias misteriosas.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 일부 섭정들이 의문의 사고로 목숨을 잃은 이유도 설명이 되는군."}
+{"k": "\\c[3]<b>Crisanto:</b>\\c[0] También explicaría por qué algunos Regentes han sido asesinados en circunstancias misteriosas.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 일부 섭정들이 의문의 사고로 목숨을 잃은 이유도 설명이 돼."}
 {"k": "<b>Alca</b> perfectamente podría estar muy cerca de tenerlas todas. Tal vez le queden una o dos...", "v": "<b>알카</b>는 이미 배지를 거의 다 모았을지도 몰라. 어쩌면 한두 개 남았을 수도 있고..."}
 {"k": "Y cuando se haga con todas, de algún modo eso le permitirá activar un <b>Arma Definitiva</b>.", "v": "그리고 배지를 모두 손에 넣는 순간, 어떤 방식으로든 <b>최종병기</b>를 작동시킬 수 있겠지."}
-{"k": "\\c[5]<b>Melia:</b>\\c[0] Pe... pero si las medallas son tan especiales, ¿por qué nadie sabía nada?", "v": "\\c[5]<b>멜리아:</b>\\c[0] 하... 하지만 배지가 그렇게 특별한 거라면 왜 아무도 몰랐던 거죠?"}
-{"k": "Y los Regentes, ¿las han estado entregando tan pichi como si nada a los entrenadores Pokémon?", "v": "그리고 섭정들은 왜 그걸 아무렇지도 않게 포켓몬 트레이너들에게 나눠주고 있던 거고요?"}
+{"k": "\\c[5]<b>Melia:</b>\\c[0] Pe... pero si las medallas son tan especiales, ¿por qué nadie sabía nada?", "v": "\\c[5]<b>멜리아:</b>\\c[0] 하... 하지만 배지가 그렇게 특별한 거라면 왜 아무도 몰랐던 건데?"}
+{"k": "Y los Regentes, ¿las han estado entregando tan pichi como si nada a los entrenadores Pokémon?", "v": "그리고 섭정들은 왜 그걸 아무렇지도 않게 포켓몬 트레이너들에게 나눠주고 있던 거고?"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ...", "v": "\\c[3]<b>크리산토:</b>\\c[0] ..."}
-{"k": "\\c[3]<b>Crisanto:</b>\\c[0] \\PN, tú ya tienes 8 medallas en tu poder.", "v": "\\c[3]<b>크리산토:</b>\\c[0] \\PN, 너는 이미 8개의 배지를 갖고 있구나."}
-{"k": "Las 6 que conseguiste antes de que te encerraran en prisión las tengo yo. Conseguí preservarlas cuando orquestaron tu falso entierro.", "v": "감옥에 갇히기 전에 모은 6개는 내가 보관하고 있어. 네 가짜 장례식을 치를 때 무사히 확보해 두었지."}
+{"k": "\\c[3]<b>Crisanto:</b>\\c[0] \\PN, tú ya tienes 8 medallas en tu poder.", "v": "\\c[3]<b>크리산토:</b>\\c[0] \\PN, 너는 이미 8개의 배지를 갖고 있지."}
+{"k": "Las 6 que conseguiste antes de que te encerraran en prisión las tengo yo. Conseguí preservarlas cuando orquestaron tu falso entierro.", "v": "감옥에 갇히기 전에 모은 6개는 내가 보관하고 있어. 네 가짜 장례식을 치를 때 무사히 확보해 두었거든."}
 {"k": "Así que... esto es lo que se me ocurre.", "v": " 그러니까... 내 생각은 이래."}
-{"k": "\\c[3]<b>Crisanto:</b>\\c[0] Muy cerca de aquí hay un lugar llamado <b>Ciudad Fluxus</b>, hogar de grandes artesanos y orfebres.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 여기서 매우 가까운 곳에 훌륭한 장인들과 금세공사들의 도시인 <b>향전시티</b>가 있어."}
+{"k": "\\c[3]<b>Crisanto:</b>\\c[0] Muy cerca de aquí hay un lugar llamado <b>Ciudad Fluxus</b>, hogar de grandes artesanos y orfebres.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 여기서 가까운 곳에 훌륭한 장인들과 금세공사들의 도시인 <b>향전시티</b>가 있어."}
 {"k": "No muchos lo saben, pero las medallas de Regente se fabrican en <b>Ciudad Fluxus</b>. Desde ahí son repartidas a los Regentes de <b>Kalos</b>.", "v": "아는 사람은 많지 않지만, 섭정의 배지는 바로 <b>향전시티</b>에서 제작되어 <b>칼로스</b> 전역의 섭정들에게 전달되거든."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] Puede que allí puedan contarte más sobre el origen de las medallas, \\PN.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 어쩌면 그곳에서 배지의 유래에 대해 더 들을 수 있을지도 몰라, \\PN."}
 {"k": "\\c[5]<b>Melia:</b>\\c[0] ¡Oooh! ¡Buena idea!", "v": "\\c[5]<b>멜리아:</b>\\c[0] 오오! 좋은 생각이야!"}
-{"k": "¿Y nosotros qué hacemos mientras?", "v": "그럼 저희는 그동안 뭘 하죠?"}
+{"k": "¿Y nosotros qué hacemos mientras?", "v": "그럼 우리는 그동안 뭘 하면 돼?"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] Yo tengo que volver al cuartel general de <b>Ciudad Luminalia</b>.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 나는 <b>미르시티</b> 본부로 복귀해야 해."}
 {"k": "Voy a empezar a mover hilos para poner al ejército de mi parte y preparar un plan contra el gobierno de <b>Mirra</b>.", "v": "군대를 내 편으로 끌어들이고 <b>미라</b> 정부에 맞설 계획을 세우기 위해 손을 쓸 생각이야."}
-{"k": "\\c[5]<b>Melia:</b>\\c[0] ¡<i>D'accord</i>! Pues yo seguiré buscando a mi padre. Se me ocurren varios lugares donde buscarle.", "v": "\\c[5]<b>멜리아:</b>\\c[0] <i>D’accord</i>! 그럼 저는 계속 아버지를 찾아볼게요. 찾아볼 만한 곳이 몇 군데 떠오르거든요."}
+{"k": "\\c[5]<b>Melia:</b>\\c[0] ¡<i>D'accord</i>! Pues yo seguiré buscando a mi padre. Se me ocurren varios lugares donde buscarle.", "v": "\\c[5]<b>멜리아:</b>\\c[0] <i>D’accord</i>! 그럼 나는 계속 아빠를 찾아볼게. 찾아볼 만한 곳이 몇 군데 떠오르거든."}
 {"k": "Aunque antes de irme...", "v": "하지만 가기 전에..."}
-{"k": "\\c[5]<b>Melia:</b>\\c[0] \\PN, ¿quieres combatir conmigo?", "v": "\\c[5]<b>멜리아:</b>\\c[0] \\PN, 나랑 배틀 하나 할래?"}
-{"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¿Un combate Pokémon? ¿Ahora? No es que nos sobre el tiempo precisamente.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 포켓몬 배틀? 지금 말인가? 딱히 시간이 넉넉한 상황은 아니건만."}
+{"k": "\\c[5]<b>Melia:</b>\\c[0] \\PN, ¿quieres combatir conmigo?", "v": "\\c[5]<b>멜리아:</b>\\c[0] \\PN, 나랑 배틀 한 번 할래?"}
+{"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¿Un combate Pokémon? ¿Ahora? No es que nos sobre el tiempo precisamente.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 포켓몬 배틀을? 지금? 딱히 시간이 넉넉한 상황은 아닌데..."}
 {"k": "\\c[5]<b>Melia:</b>\\c[0] ¡<i>S'il vous plait</i>! Es que estoy un poco oxidada y no os seré de mucha ayuda así!", "v": "\\c[5]<b>멜리아:</b>\\c[0] 제발! 실력이 녹슬어서 이대로는 별 도움이 안 될 것 같단 말이야!"}
 {"k": "\\PN, avísame cuando lo tengas todo listo para combatir.", "v": "\\PN, 배틀 준비가 다 되면 나한테 말해 줘."}
 {"k": "<b>Melia</b> quiere combatir contigo antes de ir a <b>Ciudad Fluxus</b>.", "v": "<b>멜리아</b>는 <b>향전시티</b>로 가기 전에 너와 배틀하고 싶어 한다."}
@@ -9535,7 +9535,7 @@
 {"k": "¿Lo tienes todo listo?", "v": "준비는 다 됐어?"}
 {"k": "\\c[5]<b>Melia:</b>\\c[0] ¡Valeee! Pero antes de empezar...", "v": "\\c[5]<b>멜리아:</b>\\c[0] 좋아아아! 하지만 시작하기 전에..."}
 {"k": "Voy a enseñaros un truquito muy chulo que he aprendido.", "v": "내가 새로 배운 엄청 멋진 기술 하나 보여 줄게."}
-{"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¿¡Es... es la Megaevolución!?", "v": "\\c[3]<b>크리산토:</b>\\c[0] 이... 이것이 메가진화란 말인가!?"}
+{"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¿¡Es... es la Megaevolución!?", "v": "\\c[3]<b>크리산토:</b>\\c[0] 이... 이건 메가진화?"}
 {"k": "\\c[5]<b>Melia:</b>\\c[0] ¿La Mega-qué?", "v": "\\c[5]<b>멜리아:</b>\\c[0] 메가-뭐?"}
 {"k": "¿Tú también puedes hacer eso de sacar el brillo turquesa? ¡Sabía que seguías siendo mega-fuerte!", "v": "너도 그 청록색 빛을 내는 걸 할 수 있어? 역시 넌 엄청나게 강하구나!"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] Increíble. Parece que los tres hemos logrado dominar la Megaevolución por caminos distintos.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 놀랍군! 우리 셋 모두 각자 다른 방식으로 메가진화를 터득해 내다니."}
@@ -9860,7 +9860,7 @@
 {"k": "¡Maldita sea! ¡Me rindo, me rindo!", "v": "젠장! 항복이다, 항복할게!"}
 {"k": "<b>Mosquetero:</b> ¡Eh! ¡Has capturado a la ladrona esquiva! Buen trabajo.", "v": "<b>총사:</b> 어! 그 잘도 요리조리 도망치던 도둑을 잡았군! 잘했어."}
 {"k": "Me encargaré de que pase una buena temporadita entre rejas. Puedes quedarte con esto como premio a tus servicios prestados a la región de <b>Kalos</b>.", "v": "이 자가 철창 안에서 한동안 푹 썩도록 조치하겠어. 이건 <b>칼로스</b> 지방에 기여한 공로에 대한 보상으로 가져."}
-{"k": "Puedo predecir lo que te aguarda el destino por solo 100 pokécuartos. ¡Por algo me llaman <b>Clari Vidente</b>!", "v": "단 100포켓프랑에 닥쳐올 운명을 점쳐주마. 괜히 나를 <b>클라리 점쟁이</b>라 부르는 게 아니느니라!"}
+{"k": "Puedo predecir lo que te aguarda el destino por solo 100 pokécuartos. ¡Por algo me llaman <b>Clari Vidente</b>!", "v": "단 100포켓프랑에 닥쳐올 운명을 점쳐주마. 괜히 사람들이 나를 <b>천리안</b>라 부르는 게 아니니라!"}
 {"k": "¿Qué me dices? ¿Aceptas?", "v": "어떠냐? 한 번 점쳐보겠느냐?"}
 {"k": "Humm... Ya veo, ya veo...", "v": "흠... 보이기 시작하는구나, 보인다..."}
 {"k": "Tal vez deberías volver sobre tus pasos y comprobar si te has dejado algo por el camino. Podrías encontrarte con algo realmente útil.", "v": "지나온 길을 되돌아가 무언가 놓치지 않았는지 확인해 보거라. 꽤 요긴한 것을 찾을지도 모르느니라."}
@@ -9870,7 +9870,7 @@
 {"k": "Tal vez el día en el que te cruces con un Pokémon variocolor esté más cerca de lo que piensas...", "v": "색이 다른 포켓몬을 마주칠 날이 생각보다 가까울지도 모르느니라..."}
 {"k": "El tipo Acero traerá mucho dolor en tu viaje, prepárate bien contra él.", "v": "강철타입이 네 여정에 큰 시련을 줄 테니 철저히 대비하거라."}
 {"k": "Veo a un Pokémon de tipo Tierra en tu futuro equipo, te traerá grandes victorias.", "v": "네 미래의 팀에 땅타입 포켓몬이 보이는구나. 너에게 큰 승리를 가져다줄 게다."}
-{"k": "¿Tienes algún Pokémon cuyo nombre empieza por \"C\" o por \"S\"? ¡Hoy lo van a hacer muy bien!", "v": "이름이 \"C\"나 \"S\"로 시작하는 포켓몬이 있느냐? 오늘 그 녀석들이 대활약할 게다!"}
+{"k": "¿Tienes algún Pokémon cuyo nombre empieza por \"C\" o por \"S\"? ¡Hoy lo van a hacer muy bien!", "v": "이름이 \"ㅊ\"나 \"ㅅ\"로 시작하는 포켓몬이 있느냐? 오늘 그 녀석들이 대활약할 게다!"}
 {"k": "Veo un Manto Espejo en tu viaje, más pronto de lo que crees. Ten mucho cuidado.", "v": "네 여정에서 미러코트를 보게 될 게다. 생각보다 머지않았으니 각별히 조심하거라."}
 {"k": "Un curioso Pokémon de tipo Planta te sorprenderá, para bien o para mal.", "v": "묘한 풀타입 포켓몬이 널 놀라게 할 거다. 좋은 쪽이든 나쁜 쪽이든 말이다."}
 {"k": "No tienes suficiente dinero.", "v": "돈이 부족하구나."}
@@ -9948,7 +9948,7 @@
 {"k": "Éramos el pueblo más avanzado de toda la región... hasta que el agua llegó. Mucho conocimiento se ha perdido desde entonces.", "v": "우리는 이 지방 전체에서 가장 문명이 번성했던 마을이었다... 물이 밀려들기 전까지는. 그날 이후 수많은 지식이 실전되고 말았다."}
 {"k": "\\c[2]<b>Olivier:</b>\\c[0] <i>Sacrebleu</i>. Se me va a quedar el pelo hecho un desastre con tanta humedad.", "v": "\\c[2]<b>올리비에:</b>\\c[0] <i>Sacrebleu</i>. 습기가 이렇게 차면 머리가 엉망이 되어버릴 텐데."}
 {"k": "\\c[2]<b>Olivier:</b>\\c[0] Deja que yo me encargue de esto, \\PN.", "v": "\\c[2]<b>올리비에:</b>\\c[0] 이건 내게 맡겨라, \\PN."}
-{"k": "¡Pyroar, usa Llamarada!", "v": "화염드라, 불대문자!"}
+{"k": "¡Pyroar, usa Llamarada!", "v": "화염레오, 불대문자!"}
 {"k": "\\c[2]<b>Olivier:</b>\\c[0] <i>Bon</i>. Sea lo que sea lo que habite en estas ruinas, se habrá despertado.", "v": "\\c[2]<b>올리비에:</b>\\c[0] <i>Bon</i>. 이 유적에 살고 있는 게 뭐든 간에, 이제 깼겠지."}
 {"k": "Así que más nos vale que esta excursión merezca la pena y que hallemos algo de utilidad.", "v": "그러니 이번 탐사에서 뭐라도 쓸 만한 걸 찾아내길 바라야겠구나."}
 {"k": "¿Vienes en busca de los secretos de nuestra forja? Tendrás que demostrar valor, en ese caso.", "v": "우리 대장간의 비기를 찾아온 것인가? 그렇다면 그대의 용기를 증명해 보여라."}
@@ -10098,7 +10098,7 @@
 {"k": "Te avisaré si descubro algo. De momento, lo mejor que podrías hacer es irte a <b>Ciudad Fractal</b>, el feudo de la Capitana <b>Cendera</b>.", "v": "무언가 알아내면 알려드릴게요. 우선은 <b>센데라</b> 대장의 영지인 <b>이설시티</b>로 가는 게 제일 좋을 거예요."}
 {"k": "Sería increíble usar estas Megapiedras, pero no son tuyas.", "v": "이 메가스톤들을 쓸 수 있다면 정말 대단하겠지만, 네 것이 아니다."}
 {"k": "\\c[3]<b>Rúpico:</b>\\c[0] ¡Gañanes! ¡Zotes! ¿Cómo se atreven a despreciar así las artes tradicionales de <b>Ciudad Fluxus</b>?", "v": "\\c[3]<b>루피코:</b>\\c[0] 이런 무식한 놈들! 멍청이들! 감히 <b>향전시티</b>의 전통 공예를 그렇게 업신여기다니!"}
-{"k": "\\c[2]<b>Olivier:</b>\\c[0] ¡Fuerza ahora, Regente! Hemos venido, espero, con la intención de ayudar.", "v": "\\c[2]<b>올리비에:</b>\\c[0] 이제 힘내세요, 섭정님! 저희는 도움이 되었으면 하는 마음으로 왔답니다."}
+{"k": "\\c[2]<b>Olivier:</b>\\c[0] ¡Fuerza ahora, Regente! Hemos venido, espero, con la intención de ayudar.", "v": "\\c[2]<b>올리비에:</b>\\c[0] 자, 정신 차리세요, 섭정님. 저희도 도우러 온 거니까요. 아마도요."}
 {"k": "\\c[3]<b>Rúpico:</b>\\c[0] ¿Usted es... <i>mademoiselle</i> <b>Olivier</b>?", "v": "\\c[3]<b>루피코:</b>\\c[0] 당신은... <i>마드모아젤</i> <b>올리비에</b> 아닌가요?"}
 {"k": "¿La gran alquimista de la materia orgánica que incluso trabajó para la familia real? ¡Caramba! ¡Soy un gran admirador suyo!", "v": "왕실에서 일하기도 했던 유기물 연금술의 거장 분이시라니! 세상에! 저는 당신의 엄청난 팬이에요!"}
 {"k": "\\c[2]<b>Olivier:</b>\\c[0] Si quiere le firmo un libro luego. Pero eso no importa ahora.", "v": "\\c[2]<b>올리비에:</b>\\c[0] 원하시면 나중에 책에 사인을 해 드릴게요. 하지만 지금은 그게 중요한 게 아니랍니다."}
@@ -10429,8 +10429,8 @@
 {"k": "¡Has conseguido 5.000 pokécuartos!", "v": "5,000 포켓프랑을 얻었다!"}
 {"k": "Sí", "v": "예"}
 {"k": "No", "v": "아니요"}
-{"k": "Beber", "v": "마시다"}
-{"k": "No beber", "v": "마시지 마세요"}
+{"k": "Beber", "v": "마신다"}
+{"k": "No beber", "v": "마시지 않는다"}
 {"map": 316, "n": 75}
 {"k": "\\c[5]<b>Melia:</b>\\c[0] ¡Todo despejado, \\PN! ¡Aplasta a esa tortuga fea antes de que se ponga a disparar!", "v": "\\c[5]<b>멜리아:</b>\\c[0] 길이 열렸어, \\PN! 저 못생긴 거북이가 포격을 시작하기 전에 짓밟아 버려!"}
 {"k": "\\c[5]<b>Melia:</b>\\c[0] ¡Es <b>Alca</b>! ¡Busquemos una forma de subir hasta ahí arriba!", "v": "\\c[5]<b>멜리아:</b>\\c[0] <b>알카</b>다! 어떻게든 저 위로 올라갈 방법을 찾아보자!"}
@@ -10517,8 +10517,8 @@
 {"k": "Archidruida Ficus... ¿sigue con vida tu cuerpo, oculto en las profundidades?", "v": "대드루이드 피쿠스… 깊은 곳에 숨겨진 그대의 육신은 아직 살아 있는가?"}
 {"k": "Debí haberme tomado la poción de Panoramix.", "v": "파노라믹스의 묘약을 마셨어야 했는데."}
 {"k": "Veo que los entrenadores de hoy en día siguen colaborando estrechamente con los Pokémon. ¿Pero los has llegado a comprender realmente?", "v": "요즘 트레이너들도 여전히 포켓몬과 긴밀히 협력하는 모양이구나. 하지만 놈들을 진정으로 이해해 본 적이 있는가?"}
-{"k": "¡BUH! ¿Eh? ¿No te asustas? ¡Pues menudo fantasma de pacotilla estoy hecho? Aunque se me dan mejor los Pokémon.", "v": "부우! 어라? 안 놀라는가? 이거 참 형편없는 유령이 다 되었구나. 하기야 포켓몬 다루는 편이 더 낫다만."}
-{"k": "No me dan miedo los fantasmas, pero tú sí me das miedo.", "v": "난 유령은 안 무서운데, 네가 더 무섭다."}
+{"k": "¡BUH! ¿Eh? ¿No te asustas? ¡Pues menudo fantasma de pacotilla estoy hecho? Aunque se me dan mejor los Pokémon.", "v": "왁! 어라? 안 놀라는가? 유령 노릇은 영 젬병인가 보군. 뭐, 포켓몬 다루는 건 훨씬 자신 있다만."}
+{"k": "No me dan miedo los fantasmas, pero tú sí me das miedo.", "v": "유령은 안 무서운데, 넌 좀 무섭다."}
 {"k": "Intenta hacer menos ruido de chapoteo al caminar, ¿eh? Aún quedan un par de druidas vivos por aquí que intentan dormir.", "v": "걸을 때 찰방거리는 소리 좀 줄이거라. 이 근처에 잠을 청하는 드루이드가 아직 둘은 살아 있다."}
 {"k": "¿Estás intentando acceder a los recuerdos de nuestros archidruidas? ¿Por qué? ¿Para repetir los mismos errores que cometimos nosotros?", "v": "우리 대드루이드들의 기억에 접근하려는 것인가? 대체 왜냐? 우리가 저지른 과오를 똑같이 반복하려는 거냐?"}
 {"k": "Es que el agua está demasiado alta y me cala las rodillas. Así no se concentra uno...", "v": "물이 너무 차올라서 무릎까지 젖지 않느냐. 이러면 집중을 못 하는데..."}
@@ -10678,34 +10678,34 @@
 {"k": "Sus runas grabadas sirven como código de activación del <b>Arma Definitiva</b>.", "v": "거기에 새겨진 룬 문자가 <b>최종병기</b>를 가동하는 암호 역할을 하거든."}
 {"k": "\\c[2]<b>Olivier:</b>\\c[0] Aquí ya no se nos ha perdido nada más, \\PN. Salgamos antes de que el agua nos sepulte.", "v": "\\c[2]<b>올리비에:</b>\\c[0] 이제 여기에 볼일은 없다, \\PN. 물에 잠기기 전에 여기서 나가자."}
 {"map": 327, "n": 44}
-{"k": "Éramos el pueblo más sabio y avanzado de toda esta tierra.", "v": "우리는 이 온 땅을 통틀어 가장 현명하고 번성했던 민족이었습니다."}
-{"k": "Nuestro dominio sobre la piedra no tenía parangón.", "v": "돌을 다루는 저희의 기술에는 견줄 자가 없었습니다."}
-{"k": "Y, gracias a los cristales, teníamos una reserva casi infinita de Megapiedras.", "v": "또한 수정 덕분에, 저희는 무한에 가까운 메가스톤을 품을 수 있었습니다."}
-{"k": "Pero nuestra dicha no iba a durar eternamente.", "v": "하지만 우리의 번영이 영원히 이어질 수는 없었습니다."}
-{"k": "En aquellos días, antes de la decadencia, todavía teníamos contacto con los Pokémon legendarios.", "v": "쇠퇴에 이르기 전 그 시절에는, 저희도 전설의 포켓몬들과 온전히 교감할 수 있었습니다."}
+{"k": "Éramos el pueblo más sabio y avanzado de toda esta tierra.", "v": "우리는 이 온 땅을 통틀어 가장 현명하고 번성했던 민족이었다."}
+{"k": "Nuestro dominio sobre la piedra no tenía parangón.", "v": "돌을 다루는 우리의 기술에는 견줄 자가 없었고."}
+{"k": "Y, gracias a los cristales, teníamos una reserva casi infinita de Megapiedras.", "v": "수정 덕분에, 우리에게 주어진 메가스톤은 그야말로 무한했다."}
+{"k": "Pero nuestra dicha no iba a durar eternamente.", "v": "하지만 이 번영이 영원할 수는 없었다."}
+{"k": "En aquellos días, antes de la decadencia, todavía teníamos contacto con los Pokémon legendarios.", "v": "쇠퇴에 이르기 전 그 시절에는, 우리 역시 전설의 포켓몬들과 온전히 교감할 수 있었다."}
 {"k": "Xerneas, el Pokémon de la Vida.", "v": "생명의 포켓몬, 제르네아스."}
 {"k": "Yveltal, Pokémon de la Muerte.", "v": "죽음의 포켓몬, 이벨타르."}
-{"k": "Y Zygarde, que mantenía un Equilibrio entre ambos.", "v": "그리고 그 둘 사이에서 균형을 이루던 지가르데가 있었습니다."}
-{"k": "Pero había un cuarto Pokémon, inferior en fuerza y majestad.", "v": "하지만 힘과 위엄에서 그들에게 미치지 못하는 네 번째 포켓몬이 존재했습니다."}
-{"k": "Un Pokémon dorado con la capacidad de comunicarse con el lenguaje humano.", "v": "인간의 언어로 뜻을 전할 수 있는 황금빛 포켓몬이었습니다."}
-{"k": "Su nombre era <b>Auretosk</b>, y era utilizado como mensajero por los 3 Pokémon mayores.", "v": "그 이름은 <b>아우레토스크</b>라 불렸으며, 세 위대한 포켓몬의 전령으로 쓰였습니다."}
-{"k": "<b>Archidruida Ficus:</b> Sed bienvenidos a nuestra casa, ¡oh, divinos Pokémon!", "v": "<b>대드루이드 피쿠스:</b> 저희 집에 오신 것을 환영하나이다, 오, 신성하신 포켓몬이시여!"}
-{"k": "Yo soy el <b>Archidruida Ficus</b>. La última vez que nos agraciasteis con vuestra presencia, hace muchos años, tratasteis con mi predecesor.", "v": "저는 <b>대드루이드 피쿠스</b>라 하나이다. 까마득한 옛날, 선왕들께서 은혜로이 임하셨을 때에는 제 선대와 말씀을 나누셨나이다."}
-{"k": "Así pues, ¿qué mensaje quieren transmitirnos sus majestades Xerneas, Yveltal y Zygarde? ¿Cuál es la voluntad que debemos ejecutar?", "v": "하여, 제르네아스, 이벨타르, 지가르데 전하께서는 어떤 뜻을 전하러 오셨나이까? 저희가 따라야 할 가르침은 무엇이니이까?"}
+{"k": "Y Zygarde, que mantenía un Equilibrio entre ambos.", "v": "그리고 그 둘 사이에서 균형을 이루던 지가르데."}
+{"k": "Pero había un cuarto Pokémon, inferior en fuerza y majestad.", "v": "그리고 네 번째 포켓몬이 하나 더 있었다. 힘도 위엄도 다른 셋에는 미치지 못하는."}
+{"k": "Un Pokémon dorado con la capacidad de comunicarse con el lenguaje humano.", "v": "인간의 언어로 뜻을 전할 수 있는 황금빛 포켓몬."}
+{"k": "Su nombre era <b>Auretosk</b>, y era utilizado como mensajero por los 3 Pokémon mayores.", "v": "그는 <b>아우레토스크</b>라 불렸으며, 세 위대한 포켓몬의 전령으로 일해 왔다."}
+{"k": "<b>Archidruida Ficus:</b> Sed bienvenidos a nuestra casa, ¡oh, divinos Pokémon!", "v": "<b>대드루이드 피쿠스:</b> 저희 터전에 오신 것을 환영하나이다, 오, 신성하신 포켓몬이시여!"}
+{"k": "Yo soy el <b>Archidruida Ficus</b>. La última vez que nos agraciasteis con vuestra presencia, hace muchos años, tratasteis con mi predecesor.", "v": "저는 <b>대드루이드 피쿠스</b>라 하옵니다. 까마득한 옛날, 선왕들께서 은혜로이 임하셨을 때에는 제 선대와 말씀을 나누셨나이다."}
+{"k": "Así pues, ¿qué mensaje quieren transmitirnos sus majestades Xerneas, Yveltal y Zygarde? ¿Cuál es la voluntad que debemos ejecutar?", "v": "하여, 제르네아스, 이벨타르, 지가르데께서는 어떤 뜻을 전하러 오셨나이까? 저희가 따라야 할 가르침은 무엇이온지요?"}
 {"k": "\\c[6]<b>Aure:</b>\\c[0] Sus majestades están complacidas con el desempeño de vuestra civilización.", "v": "\\c[6]<b>아우레:</b>\\c[0] 왕께서는 그대들 문명이 보여준 결실에 만족하고 계십니다."}
 {"k": "Sin embargo, tienen algunas preocupaciones sobre cómo os estáis desarrollando que deben abordarse.", "v": "하지만 그대들이 발전해 가는 방식에 관하여, 바로잡아야 할 염려를 품고 계시지요."}
-{"k": "<b>Archidruida Ficus:</b> ¡Os... os escuchamos! ¿Cuáles son esas preocupaciones?", "v": "<b>대드루이드 피쿠스:</b> 듣… 경청하겠나이다! 대체 어떤 염려이시옵니까?"}
+{"k": "<b>Archidruida Ficus:</b> ¡Os... os escuchamos! ¿Cuáles son esas preocupaciones?", "v": "<b>대드루이드 피쿠스:</b> 겨… 경청하겠나이다! 대체 어떤 염려이시옵니까?"}
 {"k": "\\c[6]<b>Aure:</b>\\c[0] Como bien sabéis, mis maestros trabajan incansablemente para garantizar el equilibrio entre Vida y Muerte en los distintos ecosistemas que conforman nuestro mundo.", "v": "\\c[6]<b>아우레:</b>\\c[0] 잘 알고 계시듯, 제 주인들께서는 이 세상 여러 생태계의 삶과 죽음 사이 균형을 지키고자 쉬지 않고 일하고 계십니다."}
 {"k": "\\c[6]<b>Aure:</b>\\c[0] Y consideran que el número de humanos ha crecido demasiado últimamente. Son necesarias ciertas correcciones para evitar romper el equilibrio con los Pokémon.", "v": "\\c[6]<b>아우레:</b>\\c[0] 그리고 근래 들어 인간의 수가 너무 불어났다고 생각하시지요. 포켓몬과의 균형이 깨지는 것을 막으려면 얼마간의 조정이 필요합니다."}
 {"k": "\\c[6]<b>Aure:</b>\\c[0] En otras palabras, se os ordena reproduciros menos durante las próximas generaciones.", "v": "\\c[6]<b>아우레:</b>\\c[0] 다시 말해, 앞으로 몇 세대 동안 번식을 삼가라는 명입니다."}
-{"k": "<b>Archidruida Ficus:</b> ¡Esas son... son unas órdenes muy difíciles de cumplir!", "v": "<b>대드루이드 피쿠스:</b> 그, 그 명령은… 참으로 따르기 가혹하옵니다!"}
+{"k": "<b>Archidruida Ficus:</b> ¡Esas son... son unas órdenes muy difíciles de cumplir!", "v": "<b>대드루이드 피쿠스:</b> 그, 그 명령은… 참으로 따르기 가혹한 것입니다!"}
 {"k": "\\c[6]<b>Aure:</b>\\c[0] ¿Acaso queréis que empleemos otros métodos para reducir vuestro número? Os hemos ofrecido una buena solución.", "v": "\\c[6]<b>아우레:</b>\\c[0] 그렇다면 그대들의 수를 줄이기 위해 다른 수단이라도 쓰길 바랍니까? 자비를 베풀어 최선의 방법을 제안한 것입니다."}
 {"k": "\\c[6]<b>Aure:</b>\\c[0] Volveremos dentro de unos 30 años. No nos defraudéis.", "v": "\\c[6]<b>아우레:</b>\\c[0] 30년쯤 뒤에 다시 오겠습니다. 부디 실망하게 하지 마십시오."}
 {"k": "<b>Druida 1:</b> ¿Qué vamos a hacer, <b>Archidruida Ficus</b>?", "v": "<b>드루이드 1:</b> 어찌해야 합니까, <b>대드루이드 피쿠스님</b>?"}
 {"k": "La voluntad de los Pokémon legendarios parece demasiado despiadada.", "v": "전설의 포켓몬의 뜻이 너무나 무자비하게 느껴집니다."}
 {"k": "<b>Archidruida Ficus:</b> ...", "v": "<b>대드루이드 피쿠스:</b> …"}
-{"k": "<b>Archidruida Ficus:</b> Desde tiempos inmemoriales, hemos sido los favoritos de los Pokémon legendarios. El pueblo elegido.", "v": "<b>대드루이드 피쿠스:</b> 태초의 시절부터 우리는 전설의 포켓몬의 사랑을 받는 선택받은 백성이었나이다."}
-{"k": "Nos han guiado sabiamente. ¡No pueden equivocarse!", "v": "언제나 우리를 지혜롭게 이끌어 주셨으니, 결코 틀릴 리 없나이다!"}
+{"k": "<b>Archidruida Ficus:</b> Desde tiempos inmemoriales, hemos sido los favoritos de los Pokémon legendarios. El pueblo elegido.", "v": "<b>대드루이드 피쿠스:</b> 태초 시절부터 우리는 전설의 포켓몬의 사랑을 받는 선택받은 백성이었다."}
+{"k": "Nos han guiado sabiamente. ¡No pueden equivocarse!", "v": "언제나 우리를 지혜롭게 이끌어 주셨으니, 결코 틀릴 리 없다!"}
 {"k": "<b>???:</b> ¿Y habéis considerado que los Pokémon legendarios podrían haberse hecho demasiado viejos y que su criterio sea errático?", "v": "<b>???:</b> 전설의 포켓몬도 이제 너무 늙어 그 분별력이 흐려졌을지도 모른다는 생각은 안 해보셨습니까?"}
 {"k": "<b>Archidruida Ficus:</b> ¡Mensajero <b>Auretosk</b>!", "v": "<b>대드루이드 피쿠스:</b> 전령 <b>아우레토스크</b>님!"}
 {"k": "¿Viene a traernos nuevas instrucciones de los grandes Pokémon?", "v": "위대한 포켓몬 전하들의 새로운 지침을 전하러 오셨나이까?"}
