@@ -141,8 +141,6 @@ def compare(built, owner, tainted=frozenset(), write_to=None, show=5):
     """
     from_ovr = other = 0
     for name, rows in sorted(built.items()):
-        if write_to:
-            dump_jsonl(write_to / name, rows)
         ids = owner.get(name, [])
         cur = read_jsonl(KO / name)
         diffs = []
@@ -167,6 +165,10 @@ def compare(built, owner, tainted=frozenset(), write_to=None, show=5):
                   f"자리={ids[i] if i < len(ids) else '—'}")
             print(f"          역생성={json.dumps(a, ensure_ascii=False)[:160]}")
             print(f"          현행  ={json.dumps(b, ensure_ascii=False)[:160]}")
+        # 쓰기는 대조 뒤에 — 먼저 쓰면 제 산출과 대조해 「차이 0」으로 찍힌다
+        # (2026-08-18 emit --write 첫 실전에서 실측).
+        if write_to:
+            (write_to / name).write_text(made, encoding="utf-8")
     return from_ovr, other
 
 
