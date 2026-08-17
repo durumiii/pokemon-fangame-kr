@@ -1,6 +1,6 @@
 # /// script
 # requires-python = ">=3.12"
-# dependencies = ["rubymarshal"]
+# dependencies = ["rubymarshal", "pyyaml"]
 # ///
 """즉석 개별 수정 도구 — LLM 없이 찾고 바꾸고 바로 다시 만든다.
 

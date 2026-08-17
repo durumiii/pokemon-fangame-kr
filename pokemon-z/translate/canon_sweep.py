@@ -1,5 +1,6 @@
 # /// script
 # requires-python = ">=3.12"
+# dependencies = ["pyyaml"]
 # ///
 """정본 절을 본가 문장 코퍼스와 원문 완전 일치로 대조 — 미리보기/반영 (Z-2·Z-3).
 

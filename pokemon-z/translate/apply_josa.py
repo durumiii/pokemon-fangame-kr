@@ -1,5 +1,6 @@
 # /// script
 # requires-python = ">=3.12"
+# dependencies = ["pyyaml"]
 # ///
 """번역 정본(translate/ko/*.jsonl)의 조사 병기 「(은)는」류를 조사 자동 선택 문법 \\j[…]로 바꾼다.
 
