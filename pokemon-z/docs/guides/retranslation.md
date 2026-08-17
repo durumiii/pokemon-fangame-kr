@@ -97,6 +97,9 @@ voice-prompts.jsonl·term-pairs.jsonl은 은퇴했다. gen이 다시 쓰지 않�
   effort=low · 행당 약 $0.0004. 산출 `<out-dir>/screen-llm.jsonl`.
   백엔드는 `batch.py`가 정한다(`Z_BACKEND=openrouter`). 402를 만나면 즉시 멈춘다.
 
+같은 화면이 **판정 요청**도 받는다 — 배치 산출이 아닌 자리를 골라 재료를 갖추는 법은
+[text-pipeline](text-pipeline.md) 「판정 재료와 판정 요청」 절이다.
+
 선별분은 검수 스튜디오로 본다 — `uv run translate/review_gui.py --out <out-dir>
 [--port 8788]`. 파일럿처럼 전량을 볼 때는 `--all`(선별 무관 전 행 — 진도도 판정 수
 기준으로 바뀐다), 두 산출을 견줄 때는 `--alt <다른 out-dir>`(다른 답을 낸 행에 대조
