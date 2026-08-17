@@ -22,7 +22,7 @@
 `uv run tools/names.py check`(작업 중)와 `verify.py`(재배포 게이트 — 변이 잔존은 FAIL).
 표기 변경은 **`tools/names.py rename <원문> <새표기>`**로 정본과 목록을 함께 고친다
 (받침이 달라지면 조사 경고). 판정 근거는 `docs/ledger/glossary.md`에 적는다.
-프롬프트용 용어 정본은 `translate/term-pairs.jsonl`.
+프롬프트용 용어 정본은 `translate/stage0/terms.yaml`(직접 편집 — 2026-08-18 강등).
 
 - **치환·검사는 원문 칸(`k`/`es`)에 그 이름이 있는 행만 건드린다** — 번역 칸만 보고
   바꾸면 무관한 낱말까지 갈아엎는다(「무사히」→「총사히」류). 건너뛴 행은 목록으로

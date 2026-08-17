@@ -3,14 +3,24 @@
 # ///
 """판정 재료 생성 — 자리 목록을 받아 유지자에게 올릴 재료를 기계로 갖춘다.
 
-싣는 것: 맵 이름 · 화자(그림+페르소나+버킷+그룹) · 층 · 겪는 순서의 전 대사(원문·번역
-병기, cmd 오름차순) · 같은 원문의 다른 자리 · 유지자 손이 지나간 표시(fixlog·register-ok).
-한국어 문안은 만들지 않는다 — 실물만 나른다.
+싣는 것: 맵 이름 · 화자(이름표+그림+페르소나+버킷+그룹) · 층 · 겪는 순서의 전 대사
+(원문·번역 병기, cmd 오름차순) · 같은 원문의 다른 자리 · 유지자 손이 지나간 표시
+(fixlog·register-ok). 한국어 문안은 만들지 않는다 — 실물만 나른다.
+
+화자는 **이름표(`who`)가 먼저이고 그림은 그다음이다** — 그림은 이벤트에 하나뿐이라
+스토리 장면처럼 화자가 여럿인 자리를 한 이름으로 뭉갠다.
+
+⚠ 이름표 상속도 틀리는 자리가 있다(장면 끝의 내레이션을 앞 화자가 물고 가는 꼴).
+**틀린 자리는 `translate/stage0/overrides.jsonl`에 한 줄로 고친다** — 이 도구는
+overrides를 얹어 읽으므로 gen 재생성 없이 곧바로 반영되고, 고친 줄에는 표시가 붙는다.
+
+  {"id":"m213.e4.p0.c88","set":{"who":""},"why":"장면 끝 내레이션","by":"사람/2026-08-18"}
 
 usage:
   uv run translate/stage0/materials.py --map 141 --event 33
   uv run translate/stage0/materials.py --phrase "Bueno, otra vez será." --map 63
-  uv run translate/stage0/materials.py --ids cand.jsonl -o out.md --html out.html
+  uv run translate/stage0/materials.py --map 305 --event 2 --proposals p.jsonl \\
+      --review translate/batch/page-out-m305 → 검수 스튜디오로 본다
   uv run translate/stage0/materials.py --selftest
 """
 import argparse
@@ -21,7 +31,8 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common import DATA, OUT, ROOT, norm, read_jsonl  # noqa: E402
+from common import (DATA, OUT, ROOT, apply_overrides, norm, read_jsonl,  # noqa: E402
+                    read_overrides)
 
 sys.path.insert(0, str(ROOT))
 import mapname  # noqa: E402
@@ -33,8 +44,17 @@ STEM_RE = re.compile(r"(ow|OW|TS|w)?\d*$")
 
 # ── 실물 로드 ────────────────────────────────────────────────────────────────
 def load():
+    """sites·messages를 읽고 **사람 수정(overrides)을 얹어** 돌려준다.
+
+    gen을 다시 돌리지 않아도 화자 손지정이 곧바로 재료에 반영되게 하려는 것이다.
+    함께 돌려주는 집합은 화자 칸을 사람이 지정한 자리 — 출력에 표시가 붙는다.
+    """
     sites = read_jsonl(OUT / "sites.jsonl")
-    msgs = {m["id"]: m["val"] for m in read_jsonl(OUT / "messages.jsonl")}
+    msg_rows = read_jsonl(OUT / "messages.jsonl")
+    ovr = read_overrides()
+    sites, msg_rows = apply_overrides(sites, msg_rows, ovr)
+    who_set = {o["id"] for o in ovr if {"who", "speaker"} & set(o["set"])}
+    msgs = {m["id"]: m["val"] for m in msg_rows}
 
     def val(sid):
         v, seen = msgs.get(sid), set()
@@ -51,7 +71,20 @@ def load():
         mp, ev, pg, cmd = (int(x) for x in m.groups())
         rows.append({**s, "map": mp, "event": ev, "page": pg, "cmd": cmd,
                      "ko": val(s["id"]), "nk": norm(s.get("src", ""))})
-    return rows
+    return rows, who_set
+
+
+def proposals(path):
+    """제안 문안 층 — {"id", "new", "why"} 한 줄이 한 자리. 재료와 같은 장에 실린다.
+
+    유지자에게 올리는 것은 「실물 + 제안」 한 장이지, 재료 한 장과 표 한 장이 아니다.
+    """
+    return {r["id"]: (r.get("why", ""), r["new"]) for r in read_jsonl(Path(path))} if path else {}
+
+
+def naming(r):
+    """한 줄의 화자 표시 — 이름표가 먼저, 없으면 그림, 둘 다 없으면 표시 없음."""
+    return r.get("who") or r.get("speaker") or "(화자 없음)"
 
 
 def personas():
@@ -85,8 +118,9 @@ def ok_hit(ok, row):
 
 # ── 재료 조립 ────────────────────────────────────────────────────────────────
 class Ctx:
-    def __init__(self):
-        self.rows = load()
+    def __init__(self, prop=None):
+        self.rows, self.who_set = load()
+        self.prop = prop or {}
         self.persona = personas()
         self.s2g = sprite_groups()
         self.fix, self.ok = marks()
@@ -96,15 +130,16 @@ class Ctx:
             self.by_ev.setdefault((r["map"], r["event"]), []).append(r)
             self.by_src.setdefault(r["nk"], []).append(r)
 
-    def speaker(self, sprite):
-        if not sprite:
-            return "(그림 없음)", "", "", ""
-        bucket, per = self.persona.get(sprite, ("", ""))
-        grp = self.s2g.get(STEM_RE.sub("", sprite) or "(없음)", "?")
-        return sprite, grp, bucket, per
+    def speaker(self, who, sprite):
+        """머리에 서는 화자 한 줄 — 이름표가 이름이고, 그림은 페르소나를 여는 열쇠다."""
+        bucket, per = self.persona.get(sprite, ("", "")) if sprite else ("", "")
+        grp = self.s2g.get(STEM_RE.sub("", sprite) or "(없음)", "?") if sprite else "?"
+        return who or "(이름표 없음)", sprite, grp, bucket, per
 
     def flags(self, r):
         f = []
+        if r["id"] in self.who_set:
+            f.append("화자 손지정(overrides)")
         if r["nk"] in self.fix:
             f.append("유지자 손수정(fixlog)")
         for why in ok_hit(self.ok, r):
@@ -115,9 +150,9 @@ class Ctx:
         """한 (맵, 이벤트) 묶음의 재료 — 머리 · 페이지별 시퀀스 · 같은 원문의 다른 자리."""
         seq = sorted(self.by_ev.get((mp, ev), []), key=lambda r: (r["page"], r["cmd"]))
         cands = [r for r in seq if r["id"] in cand_ids] or seq
-        sprites, layers = {}, {}
+        casts, layers = {}, {}
         for r in seq:
-            sprites[r.get("speaker", "")] = None
+            casts[(r.get("who", ""), r.get("speaker", ""))] = None
             layers[r.get("layer", "")] = None
         # 같은 원문의 다른 자리 — 원문마다 한 번, 흔한 정형구는 잘라서 수만 알린다
         dups, seen_nk = [], set()
@@ -136,9 +171,10 @@ class Ctx:
         return {
             "map": mp, "event": ev, "map_ko": mapname.ko(mp) or "(이름 없음)",
             "title": title, "note": note,
-            "speakers": [self.speaker(s) for s in sprites],
+            "speakers": [self.speaker(w, s) for w, s in casts],
             "layers": [l for l in layers if l],
             "seq": [(r, r["id"] in cand_ids, self.flags(r)) for r in seq],
+            "prop": self.prop,
             "dups": dups,
         }
 
@@ -159,6 +195,18 @@ def context_cut(g, n):
 
 # ── 입력 ─────────────────────────────────────────────────────────────────────
 def groups_from_args(ctx, a):
+    if a.who:
+        hits = [r for r in ctx.rows if (r.get("who") or "") == a.who]
+        if not hits:
+            names = sorted({r["who"] for r in ctx.rows if r.get("who")
+                            and a.who in r["who"]})[:8]
+            sys.exit(f"그 화자의 자리가 없다: {a.who!r}"
+                     + (f" — 비슷한 이름: {', '.join(names)}" if names else ""))
+        seen = {}
+        for r in hits:
+            seen.setdefault((r["map"], r["event"]), set()).add(r["id"])
+        return [ctx.group(mp, ev, ids, title=f"화자 {a.who}")
+                for (mp, ev), ids in seen.items()]
     if a.map is not None and a.event is not None:
         return [ctx.group(a.map, a.event, set())]
     if a.phrase:
@@ -202,8 +250,10 @@ def groups_from_ids(ctx, path):
 # ── 출력 ─────────────────────────────────────────────────────────────────────
 def head_lines(g):
     out = []
-    for sprite, grp, bucket, per in g["speakers"]:
-        bits = [sprite]
+    for who, sprite, grp, bucket, per in g["speakers"]:
+        bits = [who]
+        if sprite:
+            bits.append(f"그림 {sprite}")
         if grp and grp != "?":
             bits.append(f"그룹 {grp}")
         if bucket:
@@ -234,11 +284,14 @@ def md(groups):
                 page = r["page"]
                 L.append(f"### 겪는 순서 — 페이지 {page}")
             mark = "»" if cand else " "
-            tag = f"{r.get('speaker') or '(그림 없음)'}|{r.get('layer', '?')}"
+            tag = f"{naming(r)}|{r.get('layer', '?')}"
             flag = ("  ⚑ " + " · ".join(fs)) if fs else ""
             L.append(f"{mark} `[{r['cmd']}]` **{tag}**{flag}")
             L.append(f"    - ES: {r.get('src', '')}")
             L.append(f"    - KO: {r['ko']}")
+            if r["id"] in g["prop"]:
+                why, new = g["prop"][r["id"]]
+                L.append(f"    - 제안: {new}" + (f"  ({why})" if why else ""))
         if g["dups"]:
             L.append("")
             L.append("### 같은 원문의 다른 자리")
@@ -248,7 +301,7 @@ def md(groups):
                 for o in spots:
                     L.append(f"| {esc_cell(r.get('src', ''))} | 맵{o['map']} "
                              f"{mapname.ko(o['map'])} {o['event']}·{o['cmd']} | "
-                             f"{o.get('speaker') or '(없음)'} | {o.get('layer', '?')} | "
+                             f"{naming(o)} | {o.get('layer', '?')} | "
                              f"{esc_cell(o['ko'])} |")
                 if total > len(spots):
                     L.append(f"| {esc_cell(r.get('src', ''))} | …외 {total - len(spots)}자리 "
@@ -261,66 +314,63 @@ def esc_cell(s):
     return s.replace("|", "\\|").replace("\n", " ")
 
 
-CSS = """
-:root{--bg:#fff;--fg:#1c1c1e;--mut:#6b6b70;--line:#e2e2e6;--chip:#eef1f6;--hit:#fff6d8}
-@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#17181a;--fg:#e8e8ea;
---mut:#9a9aa0;--line:#2e2f33;--chip:#26282d;--hit:#3a3320}}
-body{background:var(--bg);color:var(--fg);font:15px/1.6 system-ui,sans-serif;margin:0;
-padding:24px;max-width:1000px}
-details{border:1px solid var(--line);border-radius:8px;margin:12px 0;padding:8px 14px}
-summary{cursor:pointer;font-weight:600}
-.chip{display:inline-block;background:var(--chip);border-radius:99px;padding:1px 9px;
-font-size:12px;margin:2px 4px 2px 0}
-.line{border-left:3px solid transparent;padding:4px 0 4px 10px;margin:2px 0}
-.line.hit{border-left-color:#d9a520;background:var(--hit)}
-.es{color:var(--mut)}
-.cmd{font-family:ui-monospace,monospace;font-size:12px;color:var(--mut)}
-h3{font-size:14px;color:var(--mut);margin:14px 0 4px}
-table{border-collapse:collapse;width:100%;font-size:13px}
-td,th{border:1px solid var(--line);padding:4px 7px;text-align:left;vertical-align:top}
-.wrap{overflow-x:auto}
-"""
+def write_brief(out_dir, brief_path, groups, nhit):
+    """판정 요청 브리핑 — 제목·전반 설명·건마다 「정해 달라는 것·갈림·추천」.
+
+    검수 화면 맨 위에 서고 건 단위로 승인·기각·보류를 받는다. 문안 판정(행 단위)과
+    층위가 다르다 — 규칙·표기·수술처럼 문안이 아닌 판정이 갈 자리가 여기다.
+    """
+    b = json.loads(Path(brief_path).read_text(encoding="utf-8")) if brief_path else {}
+    b["scenes"] = len({(g["map"], g["event"]) for g in groups})
+    b["hits"] = nhit
+    for q in b.get("asks", []):
+        if q.get("bucket"):      # 묶음 이름이 같은 자리를 그 건에 묶는다
+            q["rows"] = [f'{g["map"]}:{g["event"]}:{r["page"]}:{r["cmd"]}'
+                         for g in groups if g["title"] == q["bucket"]
+                         for r, cand, _ in g["seq"] if cand or r["id"] in g["prop"]]
+    (Path(out_dir) / "brief.json").write_text(
+        json.dumps(b, ensure_ascii=False, indent=1), encoding="utf-8")
+    return len(b.get("asks", []))
 
 
-def to_html(groups):
-    e = html.escape
-    P = [f"<!doctype html><meta charset=utf-8><title>판정 재료</title><style>{CSS}</style>",
-         "<h1>판정 재료</h1>"]
+def review_out(groups, out_dir):
+    """검수 스튜디오(review_gui.py)가 읽는 꼴로 낸다 — 재료를 볼 화면은 그것이다.
+
+    페이지마다 `p<맵>-<이벤트>-<페이지>.jsonl`(id·who·es·old[·new])을 쓰고, 제안이 붙은
+    자리의 사유를 `screen-llm.jsonl`에 모은다. 이 도구는 화면을 만들지 않는다 —
+    한 저장소에 검수 화면이 둘이면 판정이 어디 쌓였는지부터 갈린다.
+
+    ⚠ 검수 스튜디오의 장면 열쇠는 (맵, 이벤트, 페이지)라 **묶음 이름이 파일에 안 담긴다.**
+    `--phrase`·`--ids`처럼 자리를 자유롭게 고른 판정은 여러 장면에 흩어지므로, 묶음 이름과
+    메모를 각 줄의 **사유**에 실어 어느 판정에 속한 자리인지 화면에서 읽히게 한다.
+    """
+    out = Path(out_dir)
+    out.mkdir(parents=True, exist_ok=True)
+    screen, pages = [], {}
     for g in groups:
-        P.append("<details open><summary>맵{} {} · 이벤트{}{}</summary>".format(
-            g["map"], e(g["map_ko"]), g["event"],
-            f" — {e(g['title'])}" if g["title"] else ""))
-        if g["note"]:
-            P.append(f"<p class=es>{e(g['note'])}</p>")
-        for h in head_lines(g):
-            P.append(f"<div><span class=chip>화자</span>{e(h)}</div>")
-        P.append(f"<div><span class=chip>층</span>{e(' / '.join(g['layers']) or '(없음)')}</div>")
-        page = None
-        for r, cand, fs in g["seq"]:
-            if r["page"] != page:
-                page = r["page"]
-                P.append(f"<h3>겪는 순서 — 페이지 {page}</h3>")
-            flag = ("<span class=chip>⚑ " + e(" · ".join(fs)) + "</span>") if fs else ""
-            P.append(
-                f"<div class='line{" hit" if cand else ""}'>"
-                f"<span class=cmd>[{r['cmd']}] {e(r.get('speaker') or '(그림 없음)')}"
-                f"|{e(r.get('layer', '?'))}</span> {flag}"
-                f"<div class=es>{e(r.get('src', ''))}</div><div>{e(r['ko'])}</div></div>")
-        if g["dups"]:
-            P.append("<h3>같은 원문의 다른 자리</h3><div class=wrap><table>"
-                     "<tr><th>원문<th>자리<th>화자<th>층<th>현행 번역")
-            for r, spots, total in g["dups"]:
-                for o in spots:
-                    P.append(f"<tr><td>{e(r.get('src', ''))}<td>맵{o['map']} "
-                             f"{e(mapname.ko(o['map']))} {o['event']}·{o['cmd']}"
-                             f"<td>{e(o.get('speaker') or '(없음)')}<td>{e(o.get('layer', '?'))}"
-                             f"<td>{e(o['ko'])}")
-                if total > len(spots):
-                    P.append(f"<tr><td>{e(r.get('src', ''))}<td colspan=4 class=es>"
-                             f"…외 {total - len(spots)}자리 (전체 {total})")
-            P.append("</table></div>")
-        P.append("</details>")
-    return "\n".join(P)
+        for r, cand, _ in g["seq"]:
+            # 배치 파이프라인의 자리 열쇠는 맵:이벤트:페이지:명령이다 — apply_verdicts가 그 꼴을 읽는다
+            bid = f'{g["map"]}:{g["event"]}:{r["page"]}:{r["cmd"]}'
+            row = {"id": bid, "who": naming(r), "es": r.get("src", ""), "old": r["ko"]}
+            pr = g["prop"].get(r["id"])
+            if pr:
+                row["new"] = pr[1]
+            elif cand:
+                row["new"] = r["ko"]      # 문안 없이 자리만 지목한 판정 — 현행을 그대로 세운다
+            if pr or cand:
+                why = " · ".join(x for x in (g["title"], g["note"],
+                                             pr[0] if pr else "") if x)
+                screen.append({"id": bid,
+                               "유형": g["title"] or ("제안" if pr else "판정 자리"),
+                               "근거": why})
+            pages.setdefault((g["map"], g["event"], r["page"]), []).append(row)
+    for (mp, ev, pg), rows in sorted(pages.items()):
+        # 맵 번호는 세 자리로 채운다 — review_gui의 「이벤트 전체 보기」가 그 꼴로 찾는다
+        (out / f"p{mp:03d}-{ev}-{pg}.jsonl").write_text(
+            "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows), encoding="utf-8")
+    (out / "screen-llm.jsonl").write_text(
+        "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in screen), encoding="utf-8")
+    return len(pages), len(screen)
 
 
 def selftest():
@@ -338,6 +388,32 @@ def selftest():
     p = ctx.group(63, 4, {r["id"] for r in ctx.by_src[norm("Bueno, otra vez será.")]
                           if r["map"] == 63 and r["event"] == 4})
     assert p["dups"], "같은 원문의 다른 자리가 안 잡혔다"
+    # 화자는 이름표가 먼저다 — 그림 하나에 화자 둘인 장면에서 갈려야 한다
+    assert naming({"who": "Olivier", "speaker": "rupicow2"}) == "Olivier"
+    assert naming({"who": "", "speaker": "rupicow2"}) == "rupicow2"
+    two = ctx.group(305, 2, set())
+    whos = {naming(r) for r, _, _ in two["seq"]}
+    assert {"Rúpico", "Olivier"} <= whos, whos
+    assert len(two["speakers"]) >= 2, two["speakers"]
+    # 사람 손지정은 gen 재생성 없이 곧바로 얹힌다
+    sid = "m305.e2.p1.c58"
+    s2, _ = apply_overrides([{"id": sid, "who": "Rúpico"}], [],
+                            [{"id": sid, "set": {"who": "올리비에"}}])
+    assert s2[0]["who"] == "올리비에", s2
+    import tempfile
+    with tempfile.TemporaryDirectory() as td:
+        ctx2 = Ctx({f"m141.e33.p0.c{g['seq'][0][0]['cmd']}": ("시험", "새 문안")})
+        g2 = ctx2.group(141, 33, set())
+        npg, nhit = review_out([g2], td)
+        rows = [json.loads(x) for x in (Path(td) / "p141-33-0.jsonl").read_text(
+            encoding="utf-8").splitlines()]
+        scr = [json.loads(x) for x in (Path(td) / "screen-llm.jsonl").read_text(
+            encoding="utf-8").splitlines()]
+        ids = {r["id"] for r in rows}
+        # 배치 꼴(맵:이벤트:페이지:명령)이라야 apply_verdicts가 읽는다
+        assert all(i.count(":") == 3 for i in ids), sorted(ids)[:3]
+        # 사유의 id가 행의 id와 같은 꼴이라야 검수 화면에 장면이 뜬다(안 그러면 0장면)
+        assert all(x["id"] in ids for x in scr), (scr[:2], sorted(ids)[:3])
     print("selftest ok — 맵141 이벤트33 {}행 · 맵63 중복 자리 {}건".format(
         len(g["seq"]), len(p["dups"])))
 
@@ -345,22 +421,42 @@ def selftest():
 def main():
     a = argparse.ArgumentParser(description=__doc__)
     a.add_argument("--ids"), a.add_argument("--phrase")
+    a.add_argument("--who", help="화자 한 사람의 자리 전부 — 말투 판정의 단위")
     a.add_argument("--map", type=int), a.add_argument("--event", type=int)
     a.add_argument("--context", type=int, help="후보 앞뒤 N줄만")
-    a.add_argument("-o", "--out"), a.add_argument("--html")
+    a.add_argument("-o", "--out", help="사람·에이전트가 읽을 md")
+    a.add_argument("--review", help="검수 스튜디오가 읽을 폴더로 낸다")
+    a.add_argument("--brief", help="판정 요청 브리핑 json — title·note·asks[{id,title,ask,split,rec}]")
+    a.add_argument("--serve", type=int, nargs="?", const=8793,
+                   help="--review와 함께 — 낸 자리를 검수 스튜디오로 곧바로 띄운다(기본 8793)")
+    a.add_argument("--proposals", help="제안 문안 jsonl — {id, new, why}")
     a.add_argument("--selftest", action="store_true")
     a = a.parse_args()
     if a.selftest:
         return selftest()
-    if not (a.ids or a.phrase or (a.map is not None and a.event is not None)):
-        sys.exit("--ids · --phrase · (--map과 --event) 중 하나가 필요하다")
-    groups = [context_cut(g, a.context) for g in groups_from_args(Ctx(), a)]
+    if not (a.ids or a.phrase or a.who or (a.map is not None and a.event is not None)):
+        sys.exit("--ids · --phrase · --who · (--map과 --event) 중 하나가 필요하다")
+    ctx = Ctx(proposals(a.proposals))
+    groups = [context_cut(g, a.context) for g in groups_from_args(ctx, a)]
     text = md(groups)
     if a.out:
         Path(a.out).write_text(text, encoding="utf-8")
-    if a.html:
-        Path(a.html).write_text(to_html(groups), encoding="utf-8")
-    if not (a.out or a.html):
+    if a.review:
+        if a.context is not None:
+            print("⚠ --context는 --review에서 무시한다 — 검수 화면의 문맥은 장면 전문이다")
+            groups = groups_from_args(ctx, a)
+        npg, nhit = review_out(groups, a.review)
+        nask = write_brief(a.review, a.brief, groups, nhit)
+        print(f"검수 스튜디오 입력 {npg}장면 · 제안 {nhit}줄"
+              + (f" · 판정 요청 {nask}건" if nask else "") + f" → {a.review}")
+        if a.serve:
+            # 이미 승인된 이벤트도 다시 보는 자리라 --no-skip이 기본이다
+            import subprocess
+            cmd = [sys.executable, str(ROOT / "review_gui.py"), "--out", a.review,
+                   "--port", str(a.serve), "--no-skip"]
+            return subprocess.call(cmd)
+        print(f"  uv run translate/review_gui.py --out {a.review} --port 8793 --no-skip")
+    if not (a.out or a.review):
         print(text)
 
 

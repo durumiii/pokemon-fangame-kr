@@ -26,6 +26,7 @@ HERE = Path(__file__).parent
 LEDGER = HERE.parent / "docs" / "ledger"   # 판정 대장 (glossary·voices)
 KO = HERE / "ko"
 NOTES = HERE / "fixnotes.jsonl"
+PROPS = HERE / "proposals.jsonl"   # 에이전트가 올린 제안 문안 — 승인은 이 화면에서
 JOIN = HERE / "data" / "map-speaker-join.jsonl.gz"
 ATTR = HERE / "data" / "speaker-attr.jsonl.gz"
 GROUPS = HERE / "sprite-groups.json"
@@ -84,12 +85,82 @@ def chips(hits):
         k = norm(r["es"])
         if k in want:
             others.setdefault(k, set()).add(r["map"])
+    props = {(r["file"], int(r["line"])): r for r in load_props()}
     for h in hits:
         k = norm(h["es"])
+        pr = props.get((h.get("file"), h.get("line")))
+        if pr:
+            h["prop"], h["why"] = pr["new"], pr.get("why", "")
         h["mapname"] = map_label(h["map"])
         h["spots"] = c["spots"].get((h["map"], k), [])
         h["omaps"] = len(others.get(k, ())) - 1
     return hits
+
+
+def load_props():
+    """제안 층 — {file, line, new, why, by} 한 줄이 한 자리.
+
+    `file`이 없고 `note`만 있는 줄은 **전반 설명**이다(왜 이 방향인가). 화면 맨 위에 선다.
+    """
+    if not PROPS.exists():
+        return []
+    return [json.loads(l) for l in PROPS.read_text(encoding="utf-8").splitlines() if l.strip()]
+
+
+def prop_note():
+    return "\n".join(r["note"] for r in load_props() if r.get("note") and not r.get("file"))
+
+
+def save_props(rows):
+    PROPS.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows),
+                     encoding="utf-8")
+
+
+def drop_prop(file, line):
+    """반영했거나 건너뛴 자리는 큐에서 뺀다 — 제안 화면이 남은 일감만 보이게."""
+    rows = load_props()
+    keep = [r for r in rows
+            if not (r.get("file") == file and int(r.get("line", 0)) == line)]
+    if len(keep) != len(rows):
+        save_props(keep)
+    return len(rows) - len(keep)
+
+
+def prop_rows():
+    """제안 화면용 — 검색 결과와 **같은 카드**가 그려지도록 칩까지 붙여 돌려준다."""
+    props = {(r["file"], int(r["line"])): r for r in load_props() if r.get("file")}
+    c = ctx()
+    out = []
+    for r in iter_rows():
+        pr = props.get((r["file"], r["line"]))
+        if not pr:
+            continue
+        info = c["row"].get((r["map"], r["es"]), {})
+        out.append({**r, "sprite": info.get("sprite", ""), "group": info.get("group", ""),
+                    "new": pr["new"], "why": pr.get("why", ""), "by": pr.get("by", "")})
+    return chips(out)
+
+
+def prop_groups():
+    """제안을 **이벤트 묶음**으로 갠다 — 맥락은 낱 줄이 아니라 장면에 있다.
+
+    묶음을 열면 기존 이벤트 화면(겪는 순서)이 그대로 뜨고, 그 안에서 제안이 붙은
+    카드만 초록으로 선다. 낱 줄 목록은 훑기용이지 판정용이 아니다.
+    """
+    rows = prop_rows()
+    gs = {}
+    for r in rows:
+        spot = (r.get("spots") or [[None, None, None, ""]])[0]
+        ev, pg, name = spot[0], spot[1], (spot[3] if len(spot) > 3 else "")
+        key = (r["map"], ev, pg)
+        g = gs.setdefault(key, {"map": r["map"], "mapname": r.get("mapname", ""),
+                                "event": ev, "page": pg, "name": name,
+                                "sprites": [], "lines": []})
+        if r.get("sprite") and r["sprite"] not in g["sprites"]:
+            g["sprites"].append(r["sprite"])
+        g["lines"].append({"line": r["line"], "file": r["file"], "es": r["es"],
+                           "v": r["v"], "new": r["new"], "why": r.get("why", "")})
+    return sorted(gs.values(), key=lambda g: (-len(g["lines"]), g["map"]))
 
 
 def event_page(mp, event, page):
@@ -565,6 +636,8 @@ class H(BaseHTTPRequestHandler):
             qs = urllib.parse.parse_qs(u.query)
             self._json({"hits": chips(same_es(qs.get("es", [""])[0],
                                               int(qs.get("map", ["-1"])[0])))})
+        elif u.path == "/props":
+            self._json({"props": prop_rows(), "groups": prop_groups(), "note": prop_note()})
         elif u.path == "/notes":
             self._json({"notes": load_notes()})
         elif u.path == "/browse":
@@ -586,7 +659,12 @@ class H(BaseHTTPRequestHandler):
         if self.path == "/save":
             b = self._body()
             err = save_row(b["file"], int(b["line"]), b["v"])
+            if err is None:
+                drop_prop(b["file"], int(b["line"]))   # 반영된 제안은 큐에서 빠진다
             self._json({"ok": err is None, "err": err})
+        elif self.path == "/propdel":
+            b = self._body()
+            self._json({"ok": True, "dropped": drop_prop(b["file"], int(b["line"]))})
         elif self.path == "/note":
             b = self._body()
             notes = load_notes()

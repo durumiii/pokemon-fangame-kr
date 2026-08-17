@@ -90,10 +90,16 @@ def source_of(sha, body):
 
 
 def walk():
-    """(맵, 원문) → 마지막으로 만진 커밋의 출처와 그 고침이 반복이었는지."""
+    """(맵, 원문) → 마지막 커밋의 출처 + **사람 낱건 이력의 누적**.
+
+    마지막 커밋만 보면 사람 낱건 뒤에 온 기계 일괄(표기 통일·값 수리)이 그 흔적을
+    지운다 — 2026-08-18 실측: 재생성이 보호 219페이지를 잃었고 그중 191이 45행짜리
+    기계 수리 커밋(2b1451b) 하나가 마지막 손이 된 자리였다. 그래서 human_solo는
+    이력 전체에서 누적한다: 한 번이라도 사람이 낱건으로 고쳤으면 값이 남는다.
+    """
     # 커밋 사이에 줄바꿈이 끼므로 레코드 구분자를 따로 둔다(널 둘로 자르면 안 붙는다)
     log = git("log", "--no-merges", "--reverse", "--format=%H%x1f%B%x1e", "--", KO_MAPS)
-    prev, mark = None, {}
+    prev, mark, solo = None, {}, {}
     for c in log.split("\x1e"):
         c = c.strip()
         if not c:
@@ -108,9 +114,12 @@ def walk():
             n = collections.Counter(sig(o, v) for _, o, v in ch)
             src = source_of(sha, body)
             for k, o, v in ch:
-                mark[k] = (src, spread_of(o, v, n[sig(o, v)]), sha[:7])
+                spread = spread_of(o, v, n[sig(o, v)])
+                mark[k] = (src, spread, sha[:7])
+                if src == "human" and not spread:
+                    solo[k] = sha[:7]        # 마지막 사람 낱건 커밋
         prev = cur
-    return mark
+    return mark, solo
 
 
 # 문장 끝을 바꾼 고침은 어미 손질이다. 사람이 인물 격을 손보면 같은 최소 고침
@@ -146,9 +155,9 @@ def spread_of(old, new, n):
     return n >= REPEAT and not is_ending(old, new)
 
 
-def protected(mark):
-    """사람이 자리를 보고 고친 것 = 출처가 human이고 그 고침이 반복이 아닌 것."""
-    return {k for k, (src, spread, _) in mark.items() if src == "human" and not spread}
+def protected(solo):
+    """사람이 자리를 보고 고친 것 = 이력 어딘가에 human 낱건이 있는 것(누적)."""
+    return set(solo)
 
 
 def from_reports():
@@ -201,22 +210,34 @@ def events(keys):
     return ev
 
 
+LINES_OUT = ROOT / "translate/data/provenance-lines.jsonl"
+
+
 def build():
-    mark = walk()
-    git_keys = protected(mark)
+    mark, solo = walk()
+    git_keys = protected(solo)
     rep_keys, dropped = from_reports()
     keys = git_keys | rep_keys
     ev = events(keys)
     OUT.write_text("\n".join(json.dumps(
         {"map": m, "event": e, "page": p}, ensure_ascii=False)
         for m, e, p in sorted(ev)) + "\n", encoding="utf-8")
+    # 행 단위 원장 — stage0 gen이 읽어 값에 state·by를 찍는다(Z-53 주도권 이전).
+    # 페이지 목록(OUT)은 이 원장의 파생이다.
+    rows = [{"map": m, "es": k, "by": f"human/{solo[(m, k)]}"} for m, k in sorted(git_keys)]
+    rows += [{"map": m, "es": k, "by": "human/report"}
+             for m, k in sorted(rep_keys - git_keys)]
+    LINES_OUT.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n"
+                                 for r in sorted(rows, key=lambda r: (r["map"], r["es"]))),
+                         encoding="utf-8")
     print(f"이력에서 {len(git_keys)}행 · 제보에서 {len(rep_keys)}행"
           f"(일괄 바꾸기 {dropped}행 뺌) → 합 {len(keys)}행 · 이벤트 {len(ev)}개")
     print(f"→ {OUT}")
+    print(f"→ {LINES_OUT} ({len(rows)}행)")
 
 
 def stats():
-    mark = walk()
+    mark, _ = walk()
     c = collections.Counter((src, spread) for src, spread, _ in mark.values())
     print(f"{'출처':<12}{'반복?':<8}{'행':>7}")
     for (src, spread), n in sorted(c.items(), key=lambda x: -x[1]):

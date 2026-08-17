@@ -255,6 +255,9 @@ def voice_sprites():
 VOICES_STRIP = re.compile(r"(Montado|Montada|Reventada|Caduca|Vestido|Monigote|Pose|"
                           r"Pechamen|Dormido|Final|Salamence|Lira|Capucha|Herido|"
                           r"Cabeza|Borracha|Mapa|Musica|Baln|TS)")
+# ⚠ 「대드루이드 피쿠스」는 직함+이름 합성이라 names.json에 정본이 없다(Ficus 항목 부재,
+# 2026-08-18 확인) — 피쿠스 표기가 재판정되면 여기가 낡는다. names.json 396행 대조 작업
+# (Z-53 한계 항목) 때 Ficus를 등재하고 이 값을 파생으로 바꾼다.
 VOICES_SPECIAL = {"az": "AZ", "f3": "F3", "druidaFicus": "대드루이드 피쿠스"}
 
 
@@ -290,12 +293,15 @@ def roster():
     ⚠ `batch_pages.voice_lines`를 여기에 쓰면 안 된다 — 그쪽은 프롬프트에 실을
     말투를 모으느라 두 칸짜리 집단 화자표(시민·총사·아자하라 …)까지 읽는다.
     그 명단으로 층을 가르면 잔부·집단 화자가 정본 인물(PS)로 승격한다.
+
+    셀 6개(넉 칸 표) 미만은 버린다 — 대장의 판정 절에 든 3칸 예시표(정본줄|전|후)가
+    5셀로 잡혀 가짜 인물 다섯(줄 번호 넷 + 머리글)이 섞였던 자리다(2026-08-18 실측).
     """
     table = {}
     for line in (HERE.parent / "docs" / "ledger" / "voices.md").read_text(
             encoding="utf-8").splitlines():
         cells = [c.strip() for c in line.split("|")]
-        if len(cells) >= 5 and cells[1] and cells[1] not in ("인물", "갈래", "태그") \
+        if len(cells) >= 6 and cells[1] and cells[1] not in ("인물", "갈래", "태그") \
                 and not cells[1].startswith("-"):
             table[cells[1]] = cells[-2]
     return table
@@ -352,9 +358,9 @@ def canon_names(rows, threshold=50):
 
     문턱(이름표 50행)은 대용품이라 등재 인물을 떨어뜨렸다(2026-08-13 감사 §3③:
     Anturia · Capitán Merlot · Barquero · Nácar · Mimi가 행수 미달로 잡담 층에
-    갔다). 등재 명단은 **`docs/ledger/voices.md`의 인물 표**다 — `voice-prompts.jsonl`
-    쪽은 `Aldeana`·`Gente`처럼 무리 이름표에 붙이는 말투 지시까지 담고 있어 명단으로
-    쓰면 행인이 정본 인물이 된다. 이름표는 스페인어에 직함이 붙어 오므로
+    갔다). 등재 명단은 **`docs/ledger/voices.md`의 인물 표**다 — 말투 정본
+    (`stage0/voices.yaml`) 쪽은 `Aldeana`·`Gente`처럼 무리 이름표에 붙이는 말투
+    지시까지 담고 있어 명단으로 쓰면 행인이 정본 인물이 된다. 이름표는 스페인어에 직함이 붙어 오므로
     `batch_pages.resolve`로 한국어 인물명까지 풀어 맞춘다.
     """
     from batch_pages import ko_names, resolve        # 이름표 → 한국어 인물명

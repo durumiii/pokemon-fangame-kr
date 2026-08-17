@@ -291,7 +291,8 @@ kind, who, how, cast, prompt, once, flags, k, cls, tclass}`다. `k`가 원문이
 
 ### 이름표가 붙는 인물 (스토리 장면)
 
-정본은 [../ledger/voices.md](../ledger/voices.md)와 `translate/voice-prompts.jsonl`.
+정본은 [../ledger/voices.md](../ledger/voices.md)와 `translate/stage0/voices.yaml`
+(2026-08-18 강등 — 옛 voice-prompts.jsonl은 은퇴).
 **어투의 최종 근거는 원문의 격(`tú`/`usted`/`vos`)이다.**
 
 - **인물 하나에 어미 하나를 배정해 평평하게 누르면 같은 장면의 옆줄과 부딪힌다**

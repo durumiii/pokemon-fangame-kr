@@ -99,6 +99,16 @@ def main():
     if len(sys.argv) < 3:
         sys.exit(__doc__)
     cell, name = int(sys.argv[1]), sys.argv[2]
+    # 낡음 검사 — 상태이상 표기 정본은 절23(caduco)이다. 재판정되면 그림만 낡으므로
+    # (실제로 쇠락→쇠약 재판정이 있었다) 정본과 어긋난 채 그리기 전에 여기서 멈춘다.
+    import json
+    repo = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    caduco = next((json.loads(l)["v"] for l in open(
+        os.path.join(repo, "translate", "ko", "23-script-texts.jsonl"), encoding="utf-8")
+        if l.strip() and json.loads(l).get("k") == "caduco"), None)
+    if caduco and caduco not in WORDS:
+        sys.exit(f"정본 표기가 「{caduco}」로 바뀌었다 — WORDS 글자 비트맵을 새 표기로 "
+                 f"다시 만들어라 (지금 비트맵: {list(WORDS)})")
     write = "--write" in sys.argv
     scratch = os.environ.get("SCRATCH", "/tmp")
     for fn in TARGETS:

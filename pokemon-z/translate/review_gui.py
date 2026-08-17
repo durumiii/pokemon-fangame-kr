@@ -37,7 +37,7 @@ BODY = r"""<style>.tag.alt{background:#7d5bd6;color:#fff}
 .rq{font-size:12.5px;line-height:1.5;background:var(--card);border:1px solid var(--line);
   border-radius:8px;padding:9px 12px}</style>
 <script>
-let DATA = [], V = {}, M = {}, NOTE = {}, STAT = null;
+let DATA = [], V = {}, M = {}, NOTE = {}, STAT = null, BRIEF = null, ONLY = null;
 const HUMAN = new Set();   // 사람이 손댄 자리 — 기계 수선 채움과 가른다
 const esc = s => (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])).replace(/\n/g,'<br>');
 function diff(a,b){
@@ -71,6 +71,10 @@ function makeCard(r, sc){
           <span class="rid">${r.id}</span>
           ${r.approved?'<span class="chip" title="유지자가 이미 판정한 줄">승인 줄</span>':''}
           ${r.covers?`<span class="chip" title="같은 화자의 같은 원문이 접힌 자리 — 판정이 맵 ${r.covers.join(', ')}에 함께 반영돼요">복제 ${r.covers.length}맵 함께</span>`:''}
+          ${r.persona?`<span class="chip" title="말투 등재 — 페르소나표·말투 대장">${esc(r.persona)}</span>`:''}
+          ${r.layer?`<span class="chip" title="층 — 정본 인물(PS) · 이름표 없는 인물(PC) · 지문·시스템(N)">층 ${esc(r.layer)}</span>`:''}
+          ${r.dups?`<span class="chip" title="같은 원문이 선 다른 자리 — 값이 갈릴 수 있어요">다른 자리 ${r.dups}</span>`:''}
+          ${(r.marks||[]).map(m=>`<span class="chip" title="사람 손이 지나간 자리">⚑ ${esc(m)}</span>`).join('')}
           <button class="ctxbtn" style="margin-left:auto">문맥</button></div>
         <div class="why">${(r.why||[]).map(w=>`<div><b>${esc(w['유형'])}</b>
           <span class="lay">· ${esc(w['층'])}</span>${w['근거']?' — '+esc(w['근거']):''}</div>`).join('')}</div>
@@ -121,8 +125,114 @@ function makeCard(r, sc){
 
 function render(){
   const body=document.getElementById('body');
+  body.innerHTML='<div id="asks"></div><div id="scenes"></div>';
+  renderAsks(); renderScenes();
+}
+
+function renderAsks(){
+  const body=document.getElementById('asks');
   body.innerHTML='';
-  for (const sc of DATA){
+  if(BRIEF){
+    const b=document.createElement('section');
+    b.innerHTML=`<div class="scene"><h2>${esc(BRIEF.title||'판정 요청')}</h2>
+      <span class="meta">자리 ${BRIEF.hits||0} · 장면 ${BRIEF.scenes||0}${
+        BRIEF.by?` · ${esc(BRIEF.by)}`:''}</span></div>
+      ${BRIEF.note?`<div class="card"><div class="es" style="white-space:pre-wrap">${esc(BRIEF.note)}</div></div>`:''}`;
+    for(const q of (BRIEF.asks||[])){
+      const id='bucket:'+q.id;
+      const c=document.createElement('div'); c.className='ask'; c.dataset.ask=id;
+      c.innerHTML=`<h2>${esc(q.title||q.id)}</h2>
+        <div class="sub">${q.rows&&q.rows.length?`재료 ${q.rows.length}자리`:''}
+          <span class="verdict"></span></div>
+        ${q.ask?`<section><h3>무엇을 정할 것인가</h3><p>${esc(q.ask)}</p></section>`:''}
+        ${q.split?`<section><h3>어느 쪽이든 무엇이 바뀌나</h3><p>${esc(q.split)}</p></section>`:''}
+        ${q.rec?`<section class="rec"><h3>추천</h3><p>${esc(q.rec)}</p></section>`:''}
+        ${(q.keep||[]).length?`<section class="keep"><h3>손대지 않는 자리</h3>
+          <p>${esc(q.keep.join('\n'))}</p></section>`:''}
+        <div class="tools"><button data-b="승인">승인</button>
+          <button data-b="기각">기각</button><button data-b="보류">보류</button>
+          ${q.rows&&q.rows.length?`<button data-only="1"${ONLY&&ONLY.id===id?' class="on"':''}>${
+            ONLY&&ONLY.id===id?'전체 재료로':`이 건의 재료만 (${q.rows.length}자리)`}</button>`:''}
+          <button data-bmemo="1">메모</button><span class="st"></span></div>
+        <section><h3>답 — 등재할 한 줄이나 고른 갈래</h3>
+          <textarea rows="2" class="ansbox"></textarea></section>
+        <div class="memo"><textarea rows="2" placeholder="판정 메모 — 왜 그렇게 정했나"></textarea></div>`;
+      const chip=c.querySelector('.verdict'), memo=c.querySelector('.memo');
+      const ta=memo.querySelector('textarea'), ans=c.querySelector('.ansbox');
+      ans.value=M[id]||'';
+      ans.oninput=()=>{M[id]=ans.value; clearTimeout(timer[id]); say('적는 중…','warn');
+        timer[id]=setTimeout(()=>post({id, 판정:(V[id]||''), 텍스트:ans.value,
+                                       메모:(NOTE[id]||'')})
+          .then(()=>say('답을 저장했어요')), 600);};
+      const only=c.querySelector('[data-only]');
+      if(only) only.onclick=()=>{
+        const on = !(ONLY && ONLY.id===id);
+        ONLY = on ? {id, ids:new Set(q.rows), title:(q.title||q.id)} : null;
+        renderScenes(); count();          // 요청 카드는 그대로 둔다 — 화면이 튀지 않게
+        only.classList.toggle('on', on);
+        only.textContent = on ? '전체 재료로' : `이 건의 재료만 (${q.rows.length}자리)`;
+        say(on ? '이 건의 재료만 남겼어요 — 한 번 더 누르면 전체' : '전체 재료로 돌아왔어요');
+        if(on){ const bar=document.getElementById('onlybar');
+                if(bar) bar.scrollIntoView({behavior:'smooth', block:'start'}); }
+      };
+      const st=c.querySelector('.st');
+      let fadeT=null;
+      const say=(msg,kind)=>{               // 누른 자리 바로 옆에서 알린다
+        st.className='st '+(kind||'ok'); st.textContent=msg;
+        clearTimeout(fadeT); fadeT=setTimeout(()=>st.classList.add('fade'), 2500);
+      };
+      const paint=()=>{
+        chip.textContent=V[id]?(' · 판정 '+V[id]):'';
+        c.dataset.v=V[id]||'';
+        c.querySelectorAll('[data-b]').forEach(b=>
+          b.classList.toggle('on', b.dataset.b===V[id]));
+      };
+      if(NOTE[id]){ta.value=NOTE[id]; memo.classList.add('open');}
+      paint();
+      c.querySelectorAll('[data-b]').forEach(btn=>btn.onclick=()=>{
+        const off = V[id]===btn.dataset.b;        // 같은 것을 다시 누르면 무른다
+        V[id]= off ? '' : btn.dataset.b; paint(); say('저장 중…','warn');
+        post({id, 판정:V[id], 텍스트:(M[id]||''), 메모:(NOTE[id]||'')})
+          .then(()=>say(off ? '판정을 물렀어요 — 다시 고를 수 있어요'
+                            : btn.dataset.b+'으로 저장했어요'))
+          .catch(()=>say('저장 실패 — 서버가 떠 있나요?','err'));
+      });
+      c.querySelector('[data-bmemo]').onclick=()=>{
+        const on=memo.classList.toggle('open');
+        say(on ? '메모 칸을 열었어요 — 적으면 저장돼요' : '메모 칸을 접었어요');
+        if(on) ta.focus();
+      };
+      ta.oninput=()=>{NOTE[id]=ta.value;
+        clearTimeout(timer[id]); say('적는 중…','warn');
+        timer[id]=setTimeout(()=>
+          post({id, 판정:(V[id]||''), 텍스트:(M[id]||''), 메모:ta.value})
+            .then(()=>say('메모를 저장했어요')), 600);};
+      b.appendChild(c);
+    }
+    body.appendChild(b);
+  }
+}
+
+function renderScenes(){
+  const body=document.getElementById('scenes');
+  body.innerHTML='';
+  if(ONLY){
+    const n=document.createElement('div'); n.className='card'; n.id='onlybar';
+    n.innerHTML=`<div class="es"><b>${esc(ONLY.title)}</b>의 재료만 보고 있어요 —
+      아래 장면이 그 건에 걸린 자리입니다.</div>`;
+    body.appendChild(n);
+  }
+  if(!DATA.length){
+    const e=document.createElement('section');
+    e.innerHTML=`<div class="scene"><h2>선별된 자리가 없어요</h2></div>
+      <div class="card"><div class="es">승인 이벤트·승인 줄로 숨긴 자리가 있으면
+      <b>--no-skip</b>으로 다시 띄우세요. 산출 폴더에 제안이 없으면 재료 도구의
+      <b>--proposals</b>부터 확인하고요.</div></div>`;
+    body.appendChild(e); return;
+  }
+  const VIEW = ONLY ? DATA.map(sc=>({...sc, rows:sc.rows.filter(r=>ONLY.ids.has(r.id))}))
+                          .filter(sc=>sc.rows.length) : DATA;
+  for (const sc of VIEW){
     const sec=document.createElement('section');
     sec.dataset.ev=sc.file;
     sec.innerHTML=`<div class="scene"><h2>${esc(sc.name)}</h2>
@@ -265,12 +375,16 @@ Object.entries(LABEL).forEach(([k,v])=>BACK[v]=k);
 fetch('/data').then(r=>r.json()).then(d=>{
   DATA=d.scenes;
   for(const [id,x] of Object.entries(d.verdicts||{})){
-    if(x['판정']) V[id]=BACK[x['판정']];
+    if(x['판정']) V[id]=id.startsWith('bucket:')?x['판정']:BACK[x['판정']];
     if(x['ts']!=='auto') HUMAN.add(id);
-    if(x['판정']==='직접') M[id]=x['텍스트']||'';
+    if(x['판정']==='직접'||id.startsWith('bucket:')) M[id]=x['텍스트']||'';
     if(x['메모']) NOTE[id]=x['메모'];
   }
-  STAT=d.stat||null;
+  STAT=d.stat||null; BRIEF=d.brief||null;
+  const intro=document.getElementById('intro');
+  if(intro) intro.innerHTML=BRIEF
+    ? '건마다 <b>승인·기각·보류</b>를 누르고, 필요하면 답을 적어 주세요. 「재료 보기」는 그 건에 걸린 자리만 남깁니다.'
+    : intro.innerHTML;
   for(const [k,x] of Object.entries(d.verdicts||{}))     // event:<맵>:<이벤트> 열쇠
     if(k.startsWith('event:') && x['판정']==='완료') DONE.add(k.slice(6));
   render(); count(); refold();
@@ -452,6 +566,7 @@ def handler(out_dir, vpath, all_rows=False, alt=None, no_skip=False):
             if u.path == "/":
                 self.send_response(200)
                 self.send_header("Content-Type", "text/html; charset=utf-8")
+                self.send_header("Cache-Control", "no-store")   # 낡은 화면이 남지 않게
                 self.send_header("Content-Length", str(len(page)))
                 self.end_headers()
                 self.wfile.write(page)
@@ -479,7 +594,9 @@ def handler(out_dir, vpath, all_rows=False, alt=None, no_skip=False):
                         if r["id"] in cov:
                             r["covers"] = cov[r["id"]]
                 v = load_verdicts(vpath)
-                self._json({"scenes": sc, "verdicts": v,
+                bf = Path(out_dir) / "brief.json"
+                brief = json.loads(bf.read_text(encoding="utf-8")) if bf.exists() else None
+                self._json({"scenes": sc, "verdicts": v, "brief": brief,
                             "stat": progress(out_dir, sc, v, all_rows)})
             else:
                 self._json({"err": "?"}, 404)

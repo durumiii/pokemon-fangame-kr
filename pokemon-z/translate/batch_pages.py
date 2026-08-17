@@ -1,5 +1,6 @@
 # /// script
 # requires-python = ">=3.12"
+# dependencies = ["pyyaml"]
 # ///
 """주연 대사 재번역 배치 — 이벤트 페이지 단위.
 
@@ -58,7 +59,8 @@ ATTR = HERE / "data/speaker-attr.jsonl.gz"
 ANON = HERE / "data/2026-08-06-anon-speakers.jsonl"
 APPROVED = HERE / "data/approved-lines.jsonl"
 PERSONAS = HERE / "persona-table.jsonl"     # 무태그 NPC 페르소나표(스프라이트 단위)
-PROMPTS = HERE / "voice-prompts.jsonl"      # 프롬프트에 실리는 말투 정본
+# 말투 정본은 stage0/voices.yaml, 용어 정본은 stage0/terms.yaml (2026-08-18 강등 —
+# 옛 voice-prompts.jsonl·term-pairs.jsonl은 은퇴)
 PROTECTED = HERE / "data/protected.jsonl"
 MAPS = HERE / "ko" / "00-maps.jsonl"
 BATCH = HERE / "batch"
@@ -147,14 +149,15 @@ def resolve_conditions(text, map_id):
 
 
 def voice_prompts():
-    """프롬프트에 실리는 말투 정본. 없으면 말투표에서 뽑아 쓴다(과도기)."""
-    if not PROMPTS.exists():
-        return {}
+    """프롬프트에 실리는 말투 — 정본은 stage0/voices.yaml(직접 편집, 2026-08-18 강등)."""
+    import yaml
     out = {}
-    for line in PROMPTS.read_text(encoding="utf-8").splitlines():
-        if line.strip():
-            r = json.loads(line)
-            out[r["name"]] = r
+    for v in yaml.safe_load(
+            (HERE / "stage0" / "voices.yaml").read_text(encoding="utf-8"))["voices"]:
+        out[v["group"]] = {
+            "name": v["group"], "지시": v["instruction"],
+            "본보기": [{"격": s["register"], "글": s["text"]} for s in v["samples"]],
+        }
     return out
 
 
@@ -766,19 +769,26 @@ def pick_pilot(chunks, npc=False, from_pool=False):
     return sorted(picked, key=lambda c: (c["map"], c["event"], c["page"]))
 
 
-# 언제나 실리는 핵심 규칙 — 용어집에서 근거·이력을 뺀 뼈대만
-CORE_TERMS = """\
+# 언제나 실리는 핵심 규칙 — 용어집에서 근거·이력을 뺀 뼈대만.
+# 여기 박힌 번역쌍(포켓프랑·무슈·마담·마드모아젤·마스크·맘마미아)의 표기 정본은
+# term-pairs.jsonl이다 — 이 함수는 거기서 읽어 끼운다. 쌍이 빠지면 KeyError로 죽는다.
+def core_terms():
+    ko = dict(term_pairs())
+    franc, msr, mme, mlle, mask, mamma = (
+        ko[es] for es in ("pokécuartos/pokéfrancos", "monsieur", "madame",
+                          "mademoiselle", "máscara", "Mamma mia"))
+    return f"""\
 - Never touch proper nouns: person, place, species, move, item and ability names keep
   their current Korean spelling even if the transliteration looks odd.
 - damage is 「데미지」 (not 대미지). Franchise vocabulary: 배틀 · 트레이너 · 체육관 ·
   기술머신 · 몬스터볼 · 도감. Status: 독/맹독/화상/마비/잠듦/얼음.
-- The currency pokécuartos/pokéfrancos is 「포켓프랑」.
-- Setting is monarchic Kalos: keep rank address (폐하·전하·경·마담·무슈); do not
+- The currency pokécuartos/pokéfrancos is 「{franc}」.
+- Setting is monarchic Kalos: keep rank address (폐하·전하·경·{mme}·{msr}); do not
   modernize. French/Russian exclamations stay Latin (Mon Dieu!, Sacrebleu!,
   Merci beaucoup!, Blyat); phrases woven into the sentence (a mid-sentence
   s'il vous plait) are translated. Address titles are transliterated:
-  monsieur→무슈, madame→마담, mademoiselle→마드모아젤. Italian `Mamma mia`→「맘마미아」.
-- máscara → 마스크 (not 가면).
+  monsieur→{msr}, madame→{mme}, mademoiselle→{mlle}. Italian `Mamma mia`→「{mamma}」.
+- máscara → {mask} (not 가면).
 - Kill translationese: 「~에 대해」→ object particle; 「~하는 것이 가능하다」→
   「~할 수 있다」; no double passive 「~되어진다」; ¡Qué …! becomes 「정말 ~구나!」
   not 「얼마나 ~한가!」."""
@@ -798,51 +808,16 @@ def strip_evidence(s):
 
 
 # 용어 쌍을 캘 절 — 다른 표(지명 대조 따위)는 칸 구성이 달라 잘못 읽힌다
-TERM_SECTIONS = ("## 고정 용어표", "### 2026-08-05 판정", "### 2026-08-06 판정")
-TERMS = HERE / "term-pairs.jsonl"      # 프롬프트에 실리는 용어 정본 — glossary.md는 사람용
-
-
 def term_pairs():
-    """프롬프트에 실리는 (원문, 표기) 쌍. 정본은 term-pairs.jsonl.
-
-    voice-prompts와 같은 갈래다 — md는 근거·이력이 붙는 사람용 문서고, 기계는
-    표를 md에서 캐다가 짝이 밀리는 사고를 냈다(2026-08-06 「Team Azoth 미탑재」).
-    새 판정은 두 곳에 다 적는다. 파일이 없으면 md 파싱으로 돌아간다(과도기).
+    """프롬프트에 실리는 (원문, 표기) 쌍 — 정본은 stage0/terms.yaml(직접 편집,
+    2026-08-18 강등). md 대장에서 표를 파싱하지 않는다 — 기계가 md 표를 캐다가 짝이
+    밀리는 사고를 냈다(2026-08-06 「Team Azoth 미탑재」). 새 판정은 terms.yaml과
+    대장 두 곳에.
     """
-    if TERMS.exists():
-        return [(r["es"], r["ko"]) for r in
-                (json.loads(l) for l in TERMS.read_text(encoding="utf-8").splitlines()
-                 if l.strip())]
-    return _term_pairs_md()
-
-
-def _term_pairs_md():
-    pairs, on = [], False
-    for line in (LEDGER / "glossary.md").read_text(encoding="utf-8").splitlines():
-        if line.startswith(("#", "##", "###")):
-            on = line.startswith(TERM_SECTIONS)
-        if not on or not line.startswith("|"):
-            continue
-        # 표가 「원문|표기 | |원문|표기」꼴이라 빈 칸이 자리를 가른다 — 빈 칸으로 끊어서
-        # 짝을 맞춘다. 예전엔 짝수/홀수 칸으로 잘라 한 칸씩 밀렸고, 그 바람에
-        # 「Team Azoth → 아조스단」이 프롬프트에 한 번도 실리지 않았다(2026-08-06 실측).
-        cells = [c.strip() for c in line.strip("|").split("|")]
-        group = []
-        for cell in cells + [""]:
-            if not cell:
-                if len(group) >= 2:
-                    a, b = group[0], group[1]
-                    if a not in ("원문", "표기", "근거") and not set(a) <= set("-") \
-                            and len(a) < 40:
-                        ko = re.sub(r"\s*\([^)]{12,}\)", "", strip_evidence(b))
-                        ko = re.split(r"\s+—\s+", ko)[0]
-                        ko = re.sub(r"\*\*", "", ko).strip("* ")   # 뒤에 붙은 근거·강조 표시를 뗀다
-                        if ko:
-                            pairs.append((a, ko))
-                group = []
-            else:
-                group.append(cell)
-    return pairs
+    import yaml
+    return [(t["src"], t["ko"])
+            for t in yaml.safe_load(
+                (HERE / "stage0" / "terms.yaml").read_text(encoding="utf-8"))["terms"]]
 
 
 def ledger_pairs():
@@ -1002,12 +977,20 @@ def glossary_for(rows):
             seen.add(h.casefold())
             uniq.append(h)
     hits = uniq
-    return CORE_TERMS + ("\n" + "\n".join(hits) if hits else "")
+    return core_terms() + ("\n" + "\n".join(hits) if hits else "")
 
 
 def build_prompt(fresh=False):
     """교정판(A)은 현행 번역을 함께 주고, 새로 번역(B)은 안 준다."""
     body = (HERE / "prompt-pages.md").read_text(encoding="utf-8")
+    # 낡음 검사 — md 규칙 M이 무슈 3쌍을 자구로 담는다(정본의 세 번째 사본).
+    # 표기 정본(term-pairs)이 바뀌면 md가 조용히 낡으므로 여기서 시끄럽게 죽는다.
+    ko = dict(term_pairs())
+    for es in ("monsieur", "madame", "mademoiselle"):
+        want = f"{es}→{ko[es]}"
+        if want not in body:
+            raise SystemExit(f"prompt-pages.md가 낡았다 — 「{want}」이 본문에 없다. "
+                             f"term-pairs 표기가 바뀌었으면 md 규칙 M도 함께 고쳐라.")
     if fresh:
         return body.split("## 시스템 프롬프트 본문 (새로 번역)", 1)[1].split("---", 1)[1]
     return body.split("## 시스템 프롬프트 본문", 1)[1].split("## 시스템 프롬프트 본문 (새로 번역)")[0]
@@ -1316,7 +1299,7 @@ if __name__ == "__main__":
         assert s.lower().count("→ 섭정") == 1, s
         # 이름표 없는 화자도 이름을 얻어 cast 절과 장면 목록이 이어진다
         assert resolve("", {}) == ANON_NAME and resolve("  ", {}) == ANON_NAME
-        base = len(CORE_TERMS.splitlines())
+        base = len(core_terms().splitlines())
         for x in cs[:6]:
             print(f"{x['cid']} 발췌 {len(glossary_for(x['rows']).splitlines()) - base}항목")
 

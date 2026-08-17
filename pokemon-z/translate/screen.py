@@ -1,5 +1,6 @@
 # /// script
 # requires-python = ">=3.12"
+# dependencies = ["pyyaml"]
 # ///
 """재번역 산출의 「뭔가 이상함」 선별 — 사람이 봐야 할 행만 추린다.
 

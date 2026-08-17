@@ -79,6 +79,9 @@ ORACLES = {
     23: ("messages.dat[23] 키 집합", "리본만 verify.check_ribbons · 나머지 코퍼스 미개척", V),
 }
 LOC_ORACLE = ("00-maps 정본의 (맵, 원문)", "사람 몫 — 좌표로 가른 맵 대사", V)
+UI_ORACLE = ("게임 스크립트 리터럴 — 기계 오라클 없음", "verify.py UI 치환표(오폭 후보)", V)
+TOWER_ORACLE = ("게임 TorreBatalla 해시(수술 전 — 값 반영 경로 없음)", "사람 몫 — 음차", H)
+SURG_ORACLE = ("게임 스크립트·데이터 리터럴", "patch_intl EDITS(수술 반영)", H)
 
 
 def string_to_key(s):
@@ -140,6 +143,12 @@ def sec_of(sid):
     """자리 id → 절 이름(정렬·집계용)."""
     if sid.startswith("loc."):
         return "loc"
+    if sid.startswith("ui."):
+        return "ui"
+    if sid.startswith("tower."):
+        return "tower"
+    if sid.startswith("surg."):
+        return "surg"
     m = MAP_ID.match(sid)
     if m:
         return "s00"
@@ -360,8 +369,9 @@ def print_table():
     for sec in range(24):
         so, vo, who = ORACLES[sec]
         print(f"  {sec:02d}   {so:<42} {vo:<46} {who}")
-    so, vo, who = LOC_ORACLE
-    print(f"  loc  {so:<42} {vo:<46} {who}")
+    for label, (so, vo, who) in (("loc", LOC_ORACLE), ("ui", UI_ORACLE),
+                                 ("tower", TOWER_ORACLE), ("surg", SURG_ORACLE)):
+        print(f"  {label:<6}{so:<40} {vo:<46} {who}")
     human = sorted(s for s in ORACLES if ORACLES[s][2] == H and s not in EMPTY_SECS)
     print(f"\n  값이 사람 몫인 절: {human} (빈 절 {EMPTY_SECS}는 대상 없음)")
 

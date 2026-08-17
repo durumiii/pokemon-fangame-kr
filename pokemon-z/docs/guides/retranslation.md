@@ -62,9 +62,13 @@ plan이 찍는다. 산출은 `batch/npc[-pilot]-chunks.jsonl`·`batch/npc-out[-p
 
 ## 프롬프트 정본 규약
 
-말투는 `translate/voice-prompts.jsonl`, 용어는 `translate/term-pairs.jsonl`, 본문은
-`translate/prompt-pages.md`. **md 대장(voices.md·glossary.md)에서 표를 파싱해 프롬프트에
-넣지 않는다** — 대장은 근거가 붙는 사람용이다. 새 판정은 jsonl과 대장 두 곳에.
+말투는 `translate/stage0/voices.yaml`, 용어는 `translate/stage0/terms.yaml`, 본문은
+`translate/prompt-pages.md` — 셋 다 **직접 편집하는 정본**이다(2026-08-18 강등으로 옛
+voice-prompts.jsonl·term-pairs.jsonl은 은퇴했다. gen이 다시 쓰지 않으므로 재생성 없이
+바로 반영된다). **md 대장(voices.md·glossary.md)에서 표를 파싱해 프롬프트에 넣지
+않는다** — 대장은 근거가 붙는 사람용이다. 새 판정은 stage0 정본과 대장 두 곳에.
+무슈 3쌍은 prompt-pages.md에도 자구로 실려 있어 표기가 바뀌면 md 규칙 M도 함께
+고친다(어기면 build_prompt가 죽는다).
 
 1. **역사·행 수·판정 날짜를 넣지 마라** — 받는 쪽은 맥락이 없다.
 2. **말투는 형용사보다 본보기가 정확하다** — 승인본에서 하대·존대를 섞어 뽑는다
