@@ -17,7 +17,7 @@ https://durumiii.github.io/z-kr-studio/ (Chrome/Edge 전용, 무설정 원칙 �
 | event.js | 이벤트 모아 보기 — 카드의 이벤트 칩·자리 목록·이벤트 화면 (~60줄) |
 | core.py | pyodide에서 도는 파이썬 — dat 파싱·값 교체·왕복 검증 |
 | rubywrite.py, vendor/rubymarshal/ | Ruby Marshal 직렬화(수정 금지 — repo 정본의 사본) |
-| speakers.json | 화자 조인표 + 이벤트 자리 축약본(생성물 — `translate/make_speakers.py`로 재생성) |
+| speakers.json | 화자 조인표 + 이벤트 자리 축약본(생성물 — `translate/make_speakers.py`로 재생성). **화자 칸의 출처는 둘이다** — 조인표와, 조인표에 없는 전투 종료 대사의 귀속표 이름표(한국어 직함+이름, 분류는 `트레이너`). 화자 칸이 비는 행이 여덟 남는다(원문이 빈 줄 여섯 · 화자 없음이 정답인 육아방 둘) |
 | tests/selfcheck.js | node 자체점검(DOM·FS·pyodide 목업 위 로직 검증) |
 | tests/test_core.py | pytest — 실물 korean.dat 대상(devbox에만 존재, 없으면 skip) |
 | publish.sh | 공개 repo(durumiii/z-kr-studio) rsync 배포 + Pages 빌드 명시 발주 |
