@@ -98,10 +98,17 @@ def chips(hits):
 
 
 def load_props():
-    """제안 층 — {file, line, new, why, by} 한 줄이 한 자리. 없으면 빈 목록."""
+    """제안 층 — {file, line, new, why, by} 한 줄이 한 자리.
+
+    `file`이 없고 `note`만 있는 줄은 **전반 설명**이다(왜 이 방향인가). 화면 맨 위에 선다.
+    """
     if not PROPS.exists():
         return []
     return [json.loads(l) for l in PROPS.read_text(encoding="utf-8").splitlines() if l.strip()]
+
+
+def prop_note():
+    return "\n".join(r["note"] for r in load_props() if r.get("note") and not r.get("file"))
 
 
 def save_props(rows):
@@ -112,21 +119,48 @@ def save_props(rows):
 def drop_prop(file, line):
     """반영했거나 건너뛴 자리는 큐에서 뺀다 — 제안 화면이 남은 일감만 보이게."""
     rows = load_props()
-    keep = [r for r in rows if not (r.get("file") == file and int(r.get("line", 0)) == line)]
+    keep = [r for r in rows
+            if not (r.get("file") == file and int(r.get("line", 0)) == line)]
     if len(keep) != len(rows):
         save_props(keep)
     return len(rows) - len(keep)
 
 
 def prop_rows():
-    """제안 화면용 — 제안에 현행 값·원문을 붙여 카드로 그릴 수 있게 만든다."""
-    props = {(r["file"], int(r["line"])): r for r in load_props()}
+    """제안 화면용 — 검색 결과와 **같은 카드**가 그려지도록 칩까지 붙여 돌려준다."""
+    props = {(r["file"], int(r["line"])): r for r in load_props() if r.get("file")}
+    c = ctx()
     out = []
     for r in iter_rows():
         pr = props.get((r["file"], r["line"]))
-        if pr:
-            out.append({**r, "new": pr["new"], "why": pr.get("why", ""), "by": pr.get("by", "")})
-    return out
+        if not pr:
+            continue
+        info = c["row"].get((r["map"], r["es"]), {})
+        out.append({**r, "sprite": info.get("sprite", ""), "group": info.get("group", ""),
+                    "new": pr["new"], "why": pr.get("why", ""), "by": pr.get("by", "")})
+    return chips(out)
+
+
+def prop_groups():
+    """제안을 **이벤트 묶음**으로 갠다 — 맥락은 낱 줄이 아니라 장면에 있다.
+
+    묶음을 열면 기존 이벤트 화면(겪는 순서)이 그대로 뜨고, 그 안에서 제안이 붙은
+    카드만 초록으로 선다. 낱 줄 목록은 훑기용이지 판정용이 아니다.
+    """
+    rows = prop_rows()
+    gs = {}
+    for r in rows:
+        spot = (r.get("spots") or [[None, None, None, ""]])[0]
+        ev, pg, name = spot[0], spot[1], (spot[3] if len(spot) > 3 else "")
+        key = (r["map"], ev, pg)
+        g = gs.setdefault(key, {"map": r["map"], "mapname": r.get("mapname", ""),
+                                "event": ev, "page": pg, "name": name,
+                                "sprites": [], "lines": []})
+        if r.get("sprite") and r["sprite"] not in g["sprites"]:
+            g["sprites"].append(r["sprite"])
+        g["lines"].append({"line": r["line"], "file": r["file"], "es": r["es"],
+                           "v": r["v"], "new": r["new"], "why": r.get("why", "")})
+    return sorted(gs.values(), key=lambda g: (-len(g["lines"]), g["map"]))
 
 
 def event_page(mp, event, page):
@@ -603,7 +637,7 @@ class H(BaseHTTPRequestHandler):
             self._json({"hits": chips(same_es(qs.get("es", [""])[0],
                                               int(qs.get("map", ["-1"])[0])))})
         elif u.path == "/props":
-            self._json({"props": prop_rows()})
+            self._json({"props": prop_rows(), "groups": prop_groups(), "note": prop_note()})
         elif u.path == "/notes":
             self._json({"notes": load_notes()})
         elif u.path == "/browse":

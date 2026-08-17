@@ -141,7 +141,8 @@
 <div id=toast></div>
 <script>
 const $=id=>document.getElementById(id);
-let HITS=[],ALL=[],PEND=[],SHOWN=0,DIRTY=0,FILE='',QRY='',TRUNC=false;const STEP=50;
+let HITS=[],ALL=[],PEND=[],SHOWN=0,DIRTY=0,FILE='',QRY='',TRUNC=false;
+let PROPS={props:[],groups:[],note:''};const STEP=50;
 // ─ 검색 태그 자동완성 — 값 후보는 서버(/tagvals)가 낸다 ─
 const TAGKEYS=['분류','맵','화자','원문','번역','상태'];
 const TAG_RE=new RegExp('^('+TAGKEYS.join('|')+'):(.*)$');
@@ -452,8 +453,34 @@ async function dropProp(file,line,i){
 }
 async function props(){
  const js=await(await fetch('/props')).json();
- HITS=js.props; ALL=js.props; SHOWN=0; FILE='';
- $('meta').textContent=`에이전트 제안 — 남은 ${js.props.length}건. 카드에서 [제안대로 저장]을 누르면 정본에 바로 들어가고 큐에서 빠져요.`;
+ PROPS=js; QRY='';
+ const n=js.props.length, g=js.groups.length;
+ $('meta').textContent=`에이전트 제안 — ${n}건 · 장면 ${g}곳. 장면을 열면 겪는 순서 그대로 보면서 그 자리에서 저장해요.`;
+ $('out').innerHTML=(js.note?`<div class=card><b>이 제안은 무엇인가</b>
+   <div class=nv style="margin-top:6px">${esc(js.note)}</div></div>`:'')
+  +js.groups.map((G,gi)=>`<div class=card>
+   <div class=top>
+    <span class=chip>맵 ${G.map}${G.mapname?' · '+esc(G.mapname):''}</span>
+    ${G.event!==null?`<span class=chip>${esc(G.name||'EV'+G.event)}</span>`:''}
+    ${G.sprites.map(sp=>`<span class=chip>${esc(sp)}</span>`).join('')}
+    <span class="chip" style="border-color:rgba(76,195,138,.5);color:var(--ok)">제안 ${G.lines.length}건</span>
+   </div>
+   ${G.lines.slice(0,3).map(L=>`<div class=meta style="margin:4px 2px">
+     <s>${esc(L.v.slice(0,60))}</s> → ${esc(L.new.slice(0,60))}</div>`).join('')}
+   ${G.lines.length>3?`<div class=meta style="margin:4px 2px">…외 ${G.lines.length-3}줄</div>`:''}
+   <div class=rowbar>
+    ${G.event!==null?`<button class=primary onclick="openEvent(${G.map},${G.event},${G.page})">장면 열기 — 겪는 순서</button>`:''}
+    <button class=ghost onclick="propList(${gi})">이 장면의 제안만</button>
+   </div>
+  </div>`).join('')
+  +(js.groups.length?'':'<div class=empty>남은 제안이 없습니다.</div>');
+}
+function propList(gi){
+ const G=PROPS.groups[gi];
+ const want=new Set(G.lines.map(L=>L.file+':'+L.line));
+ HITS=PROPS.props.filter(r=>want.has(r.file+':'+r.line));
+ ALL=HITS; SHOWN=0; FILE=''; TRUNC=false;
+ $('meta').textContent=`${G.mapname||'맵 '+G.map} · ${G.name||'EV'+G.event} — 제안 ${HITS.length}건 (낱 줄 훑기)`;
  $('out').innerHTML=''; more();
 }
 async function notes(){

@@ -19,7 +19,8 @@ overrides를 얹어 읽으므로 gen 재생성 없이 곧바로 반영되고, �
 usage:
   uv run translate/stage0/materials.py --map 141 --event 33
   uv run translate/stage0/materials.py --phrase "Bueno, otra vez será." --map 63
-  uv run translate/stage0/materials.py --ids cand.jsonl -o out.md --html out.html
+  uv run translate/stage0/materials.py --map 305 --event 2 --proposals p.jsonl \\
+      --review translate/batch/page-out-m305 → 검수 스튜디오로 본다
   uv run translate/stage0/materials.py --selftest
 """
 import argparse
@@ -301,124 +302,30 @@ def esc_cell(s):
     return s.replace("|", "\\|").replace("\n", " ")
 
 
-STUDIO = ROOT.parent / "webapp" / "index.html"   # 배포판 스튜디오 — 꼴의 정본
-DELTA = """
- main{max-width:1000px}
- .bar{position:sticky;top:0;z-index:9;background:var(--panel);border-bottom:1px solid var(--line);
-   padding:9px 22px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
- .bar .grow{flex:1}
- .sum{display:flex;gap:8px;flex-wrap:wrap;margin:14px 2px 18px}
- .sum .chip{font-size:12.5px;padding:4px 10px}
- .sum .chip.on{border-color:var(--ok);color:var(--ok)}
- h2{font-size:16px;margin:26px 0 8px}
- h3{font-size:12px;color:var(--sub);font-weight:600;letter-spacing:.06em;margin:22px 0 8px;
-   border-top:1px solid var(--line);padding-top:14px}
- .card{margin-bottom:10px}
- .card .top{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:6px}
- .pair{display:grid;gap:8px;margin-top:8px}
- @media(min-width:760px){.pair{grid-template-columns:1fr 1fr}}
- .box{border:1px solid var(--line);border-radius:8px;padding:8px 11px;background:var(--panel)}
- .box.now{opacity:.72}
- .box.new{border-color:rgba(76,195,138,.55);background:rgba(76,195,138,.07)}
- .box h4{margin:0 0 5px;font-size:11px;letter-spacing:.06em;color:var(--sub);font-weight:600}
- .why{font-size:12px;color:var(--warn);margin-top:6px}
- body.only .card:not(.has){display:none}
- body.only h3{display:none}
- table{border-collapse:collapse;width:100%;font-size:12.5px}
- td,th{border:1px solid var(--line);padding:5px 8px;text-align:left;vertical-align:top}
- .wrap{overflow-x:auto}
-"""
+def review_out(groups, out_dir):
+    """검수 스튜디오(review_gui.py)가 읽는 꼴로 낸다 — 재료를 볼 화면은 그것이다.
 
-
-
-def studio_css():
-    """스튜디오(webapp/index.html)의 <style>을 그대로 가져온다.
-
-    꼴을 두 벌 관리하지 않으려는 것이다 — 스튜디오를 손보면 이 페이지도 따라 바뀐다
-    (지침 text-pipeline 「꼴은 배포판 스튜디오와 같은 판을 쓴다」).
+    페이지마다 `p<맵>-<이벤트>-<페이지>.jsonl`(id·who·es·old[·new])을 쓰고, 제안이 붙은
+    자리의 사유를 `screen-llm.jsonl`에 모은다. 이 도구는 화면을 만들지 않는다 —
+    한 저장소에 검수 화면이 둘이면 판정이 어디 쌓였는지부터 갈린다.
     """
-    m = re.search(r"<style>(.*?)</style>", STUDIO.read_text(encoding="utf-8"), re.S)
-    if not m:
-        raise SystemExit(f"스튜디오 판을 못 찾았다: {STUDIO}")
-    return m.group(1) + DELTA
-
-
-
-def to_html(groups, title="판정 재료", body_only=False):
-    """스튜디오와 같은 판으로 낸 한 화면 — 머리띠 · 요약 · 페이지별 카드 · 현행/제안 두 칸."""
-    e = html.escape
-    n_prop = sum(1 for g in groups for r, _, _ in g["seq"] if r["id"] in g["prop"])
-    n_line = sum(len(g["seq"]) for g in groups)
-    head = "" if body_only else "<!doctype html><meta charset=utf-8>"
-    P = [f"{head}<title>{e(title)}</title><style>{studio_css()}</style>",
-         f'<header><div class=logo>Z <b>{e(title)}</b></div></header>',
-         '<div class=bar>'
-         f'<span class=chip>대사 {n_line}</span>'
-         f'<span class=chip>제안 {n_prop}</span><span class=grow></span>'
-         '<button class=primary onclick="document.body.classList.toggle(\'only\');'
-         'this.textContent=document.body.classList.contains(\'only\')'
-         '?\'전문 보기\':\'제안만 보기\'">제안만 보기</button></div>',
-         "<main>"]
+    out = Path(out_dir)
+    out.mkdir(parents=True, exist_ok=True)
+    screen, pages = [], {}
     for g in groups:
-        P.append(f"<h2>맵{g['map']} {e(g['map_ko'])} · 이벤트{g['event']}"
-                 + (f" — {e(g['title'])}" if g["title"] else "") + "</h2>")
-        if g["note"]:
-            P.append(f"<div class=meta>{e(g['note'])}</div>")
-        chips = "".join(f"<span class=chip>{e(h)}</span>" for h in head_lines(g))
-        P.append(f"<div class=sum>{chips}"
-                 f"<span class=chip>층 {e(' / '.join(g['layers']) or '없음')}</span></div>")
-        page = None
-        for r, cand, fs in g["seq"]:
-            if r["page"] != page:
-                page = r["page"]
-                P.append(f"<h3>겪는 순서 — 페이지 {page}</h3>")
-            prop = g["prop"].get(r["id"])
-            cls = "card" + (" has" if prop else "") + (" notecard" if fs else "")
-            flag = "".join(f"<span class=chip>⚑ {e(f)}</span>" for f in fs)
-            body = (f'<div class=pair>'
-                    f'<div class="box now"><h4>현행</h4>{e(r["ko"])}</div>'
-                    f'<div class="box new"><h4>제안</h4>{e(prop[1])}'
-                    + (f'<div class=why>{e(prop[0])}</div>' if prop[0] else "")
-                    + "</div></div>") if prop else f'<div class=nv>{e(r["ko"])}</div>'
-            P.append(f'<div class="{cls}"><div class=top>'
-                     f'<span class=chip>명령 {r["cmd"]}</span>'
-                     f'<span class=chip>{e(naming(r))}</span>{flag}</div>'
-                     f'<div class=es>{e(r.get("src", ""))}</div>{body}</div>')
-        if g["dups"]:
-            P.append("<h3>같은 원문의 다른 자리</h3><div class=wrap><table>"
-                     "<tr><th>원문<th>자리<th>화자<th>현행 번역")
-            for r, spots, total in g["dups"]:
-                for o in spots:
-                    P.append(f"<tr><td>{e(r.get('src', ''))}<td>맵{o['map']} "
-                             f"{e(mapname.ko(o['map']))} {o['event']}·{o['cmd']}"
-                             f"<td>{e(naming(o))}<td>{e(o['ko'])}")
-                if total > len(spots):
-                    P.append(f"<tr><td>{e(r.get('src', ''))}<td colspan=3 class=meta>"
-                             f"…외 {total - len(spots)}자리 (전체 {total})")
-            P.append("</table></div>")
-    P.append("</main>")
-    return "\n".join(P)
-
-
-def serve(page_html, port):
-    """이 한 장을 그 자리에서 띄운다 — 파일을 건네지 않고 주소를 건네려는 것이다."""
-    import http.server
-    body = page_html.encode("utf-8")
-
-    class H(http.server.BaseHTTPRequestHandler):
-        def log_message(self, *a):
-            pass
-
-        def do_GET(self):
-            self.send_response(200)
-            self.send_header("Content-Type", "text/html; charset=utf-8")
-            self.send_header("Content-Length", str(len(body)))
-            self.end_headers()
-            self.wfile.write(body)
-
-    srv = http.server.HTTPServer(("0.0.0.0", port), H)
-    print(f"판정 재료 → http://localhost:{port}  (Ctrl+C로 닫는다)", flush=True)
-    srv.serve_forever()
+        for r, _, _ in g["seq"]:
+            row = {"id": r["id"], "who": naming(r), "es": r.get("src", ""), "old": r["ko"]}
+            pr = g["prop"].get(r["id"])
+            if pr:
+                row["new"] = pr[1]
+                screen.append({"id": r["id"], "유형": "말투", "근거": pr[0]})
+            pages.setdefault((g["map"], g["event"], r["page"]), []).append(row)
+    for (mp, ev, pg), rows in sorted(pages.items()):
+        (out / f"p{mp}-{ev}-{pg}.jsonl").write_text(
+            "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows), encoding="utf-8")
+    (out / "screen-llm.jsonl").write_text(
+        "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in screen), encoding="utf-8")
+    return len(pages), len(screen)
 
 
 def selftest():
@@ -457,13 +364,11 @@ def main():
     a.add_argument("--ids"), a.add_argument("--phrase")
     a.add_argument("--map", type=int), a.add_argument("--event", type=int)
     a.add_argument("--context", type=int, help="후보 앞뒤 N줄만")
-    a.add_argument("-o", "--out"), a.add_argument("--html")
+    a.add_argument("-o", "--out", help="사람·에이전트가 읽을 md")
+    a.add_argument("--review", help="검수 스튜디오가 읽을 폴더로 낸다")
+    a.add_argument("--serve", type=int, nargs="?", const=8793,
+                   help="--review와 함께 — 낸 자리를 검수 스튜디오로 곧바로 띄운다(기본 8793)")
     a.add_argument("--proposals", help="제안 문안 jsonl — {id, new, why}")
-    a.add_argument("--title", default="판정 재료", help="html 제목(아티팩트 이름)")
-    a.add_argument("--body", action="store_true",
-                   help="doctype·meta 없이 본문만 — 아티팩트로 올릴 때")
-    a.add_argument("--serve", type=int, nargs="?", const=8789,
-                   help="그 자리에서 띄운다(기본 8789) — 스튜디오는 8787이다")
     a.add_argument("--selftest", action="store_true")
     a = a.parse_args()
     if a.selftest:
@@ -475,11 +380,17 @@ def main():
     text = md(groups)
     if a.out:
         Path(a.out).write_text(text, encoding="utf-8")
-    if a.html:
-        Path(a.html).write_text(to_html(groups, a.title, a.body), encoding="utf-8")
-    if a.serve:
-        return serve(to_html(groups, a.title, False), a.serve)
-    if not (a.out or a.html):
+    if a.review:
+        npg, nhit = review_out(groups, a.review)
+        print(f"검수 스튜디오 입력 {npg}장면 · 제안 {nhit}줄 → {a.review}")
+        if a.serve:
+            # 이미 승인된 이벤트도 다시 보는 자리라 --no-skip이 기본이다
+            import subprocess
+            cmd = [sys.executable, str(ROOT / "review_gui.py"), "--out", a.review,
+                   "--port", str(a.serve), "--no-skip"]
+            return subprocess.call(cmd)
+        print(f"  uv run translate/review_gui.py --out {a.review} --port 8793 --no-skip")
+    if not (a.out or a.review):
         print(text)
 
 
