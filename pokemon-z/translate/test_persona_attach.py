@@ -1,5 +1,6 @@
 # /// script
 # requires-python = ">=3.12"
+# dependencies = ["pyyaml"]
 # ///
 """attach_personas의 안전장치 하나만 지킨다 — `uv run translate/test_persona_attach.py`."""
 

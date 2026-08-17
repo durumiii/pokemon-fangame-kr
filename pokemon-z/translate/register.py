@@ -76,7 +76,8 @@ SCAN_DUAL = False
 DUAL = {"Lanto", "Crisanto", "Melia", "Olivier", "Aure", "Merlot",
         "Hisopo", "Cendera", "Pinot"}
 
-OK = HERE / "data/register-ok.jsonl"
+OK = HERE / "data/register-ok.jsonl"          # 사람 직접 편집 원천
+SITES = HERE / "stage0" / "sites.jsonl"       # gen이 원천을 자리 칸(register_ok)으로 편 것
 
 
 def is_dual(who):
@@ -87,23 +88,28 @@ def is_dual(who):
 
 
 def load_ok(path=None):
-    """어긋남이 아니라고 판정된 자리들. 줄마다 `map`은 필수, `event`·`page`·`cmd`·`who`는
-    있는 것만 맞춘다 — 이벤트 통째·페이지 통째·명령 하나를 같은 꼴로 적는다.
+    """원천(register-ok.jsonl) 원본 줄들 — 등재 위생 검사(selftest)용.
+
+    등재 꼴: 줄마다 `map`은 필수, `event`·`page`·`cmd`·`who`는 있는 것만 맞춘다 —
+    이벤트 통째·페이지 통째·명령 하나를 같은 꼴로 적는다.
     ⚠ 한 이벤트에 화자가 여럿 서는 자리가 흔하니(맵90 ev35는 볼프람과 올리비에가
     같이 선다) 이벤트 통째로 적을 때는 `who`를 함께 적어 남의 줄까지 덮지 마라.
-    `이유` 칸은 필수로 읽지는 않지만 근거 없는 제외가 쌓이지 않게 비워 두지 마라."""
+    `이유` 칸은 근거 없는 제외가 쌓이지 않게 비워 두지 마라."""
     p = Path(path) if path else OK
     if not p.exists():
         return []
     return [json.loads(l) for l in p.read_text(encoding="utf-8").splitlines() if l.strip()]
 
 
-def judged(r, oks):
-    """이 행이 등재된 자리에 걸리면 그 줄을 돌려준다."""
-    for o in oks:
-        if all(o.get(f) in (None, r[f]) for f in ("map", "event", "page", "cmd", "who")):
-            return o
-    return None
+def load_ok_ids():
+    """어긋남 아님 판정이 찍힌 자리 id → 이유. 좌표 조건의 펴기는 stage0 gen이 했다
+    (`stamp_register_ok`) — **원천에 등재한 뒤에는 gen을 다시 돌려야 여기 보인다.**"""
+    out = {}
+    for l in SITES.read_text(encoding="utf-8").splitlines():
+        if '"register_ok"' in l:
+            r = json.loads(l)
+            out[r["id"]] = r.get("register_ok", "")
+    return out
 
 
 def sentences(text):
@@ -213,7 +219,7 @@ def dominant(rows, ko):
 def scan(scan_dual=SCAN_DUAL):
     rows, ko = load()
     tally = dominant(rows, ko)
-    oks = load_ok()
+    oks = load_ok_ids()
     out, skipped = [], Counter()
     for r in rows:
         who = r["who"]
@@ -241,7 +247,7 @@ def scan(scan_dual=SCAN_DUAL):
         if share < 0.7:
             skipped["평소 급이 갈림"] += 1
             continue
-        if judged(r, oks):
+        if f"m{r['map']}.e{r['event']}.p{r['page']}.c{r['cmd']}" in oks:
             skipped["판정됨"] += 1
             continue
         out.append(dict(map=r["map"], event=r["event"], page=r["page"], cmd=r["cmd"],
@@ -258,8 +264,8 @@ def write(out, skipped, tally, path, dual=False):
          "⚠ 어긋남은 관측이지 처방이 아니다 — 어미를 고칠 자리와 귀속이 틀린 자리가 섞여 있다.",
          ("상대에 따라 격을 갈아입는 인물 아홉도 검사에 넣었다 — 화자 칸의 **(이중)** 표시가 그것이다."
           if dual else "상대에 따라 격을 갈아입는 인물 아홉은 판정에서 뺐다(`scan --dual`로 넣을 수 있다)."),
-         "어긋남이 아니라고 판정한 자리는 `translate/data/register-ok.jsonl`에 근거와 함께 등재하면",
-         "다음 실행부터 목록에서 빠지고 「판정됨」으로 세어진다.", "",
+         "어긋남이 아니라고 판정한 자리는 `translate/data/register-ok.jsonl`에 근거와 함께 등재하고",
+         "`stage0/gen.py`를 다시 돌리면(자리 칸으로 펴진다) 다음 실행부터 「판정됨」으로 세어진다.", "",
          f"어긋난 자리 **{len(out)}곳**. 세지 않은 것: " +
          " · ".join(f"{k} {v}" for k, v in skipped.most_common()), "",
          "| 맵:이벤트:페이지:명령 | 화자 | 귀속 | 지금 | 평소 | 평소 비율 | 근거 어절 | 현행 번역 |",
@@ -326,17 +332,15 @@ def selftest():
     assert out_path(["register.py", "scan", "/tmp/x.md"]) == Path("/tmp/x.md")
     assert out_path(["register.py", "scan", "--dual"]).name.endswith("-register-mismatch.md")
     assert out_path(["register.py", "scan", "--dual", "/tmp/x.md"]) == Path("/tmp/x.md")
-    # 판정 등재는 자리 단위 — 적은 칸만 맞추고 안 적은 칸은 통째로 걸린다
-    row = dict(map=112, event=4, page=0, cmd=254, who="Lanto")
-    assert judged(row, [{"map": 112, "event": 4, "page": 0, "cmd": 254}])
-    assert judged(row, [{"map": 90, "event": 35}]) is None
-    assert judged(row, [{"map": 112, "event": 4}])            # 이벤트 통째
-    assert judged(row, [{"map": 112, "event": 4, "page": 0}])  # 페이지 통째
-    assert judged(row, [{"map": 112, "event": 4, "cmd": 9}]) is None
-    # 화자 칸은 한 이벤트에 여럿이 설 때 남의 줄을 안 덮게 한다
-    assert judged(row, [{"map": 112, "event": 4, "who": "Crisanto"}]) is None
-    assert judged(row, [{"map": 112, "event": 4, "who": "Lanto"}])
-    # 실제 등재분이 읽히고 이유 칸이 비어 있지 않은가
+    # 자리 칸 펴기(gen.stamp_register_ok)가 실물 사이트에 서 있는가
+    oki = load_ok_ids()
+    assert "m112.e4.p0.c254" in oki and oki["m112.e4.p0.c254"]   # 낱 명령 등재
+    # 이벤트 통째 + who 등재(맵90 ev35 Wolfram)가 남의 줄(올리비에)을 안 덮는가
+    m90 = [json.loads(l) for l in SITES.read_text(encoding="utf-8").splitlines()
+           if l.startswith('{"id": "m90.e35.')]
+    assert any("register_ok" in r for r in m90)
+    assert all(r.get("who") == "Wolfram" for r in m90 if "register_ok" in r)
+    # 원천 등재 위생 — 이유 칸이 비지 않았는가
     real = load_ok()
     assert real and all(o.get("이유") and o.get("map") is not None for o in real)
     print("selftest 통과")

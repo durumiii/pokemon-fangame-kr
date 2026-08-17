@@ -1,6 +1,6 @@
 # /// script
 # requires-python = ">=3.12"
-# dependencies = ["rubymarshal"]
+# dependencies = ["rubymarshal", "pyyaml"]
 # ///
 """화자 귀속 — 이벤트 명령 순서로 「이 대사는 누구 말인가」를 계산한다.
 
@@ -218,9 +218,16 @@ def page_messages(cmdlist):
     return out
 
 
+def sprite_groups():
+    """스프라이트 묶음 — 정본은 stage0/groups.yaml(직접 편집, 2026-08-18 강등)."""
+    import yaml
+    return yaml.safe_load((HERE / "stage0" / "groups.yaml")
+                          .read_text(encoding="utf-8"))["sprite_groups"]["groups"]
+
+
 def object_sprites():
     """사물·연출 스프라이트 어간 — 이 그림이 붙은 이벤트의 말은 화자가 아니라 지문이다."""
-    g = json.loads((HERE / "sprite-groups.json").read_text(encoding="utf-8"))["groups"]
+    g = sprite_groups()
     return set(g.get("사물지문", [])) | set(g.get("포켓몬특수", []))
 
 
@@ -247,9 +254,8 @@ def stem_steps(s):
 
 
 def voice_sprites():
-    """정본 인물 스프라이트 어간 목록(`sprite-groups.json`의 voices)."""
-    g = json.loads((HERE / "sprite-groups.json").read_text(encoding="utf-8"))["groups"]
-    return set(g.get("voices", []))
+    """정본 인물 스프라이트 어간 목록(`stage0/groups.yaml` sprite_groups의 voices)."""
+    return set(sprite_groups().get("voices", []))
 
 
 VOICES_STRIP = re.compile(r"(Montado|Montada|Reventada|Caduca|Vestido|Monigote|Pose|"
@@ -273,8 +279,7 @@ def voices_map():
     """
     names = json.loads((HERE / "names.json").read_text(encoding="utf-8"))["names"]
     out = {}
-    groups = json.loads((HERE / "sprite-groups.json").read_text(encoding="utf-8"))["groups"]
-    for s in groups["voices"]:
+    for s in sprite_groups()["voices"]:
         base = VOICES_STRIP.sub("", s)
         if base in VOICES_SPECIAL or s in VOICES_SPECIAL:
             out[s] = VOICES_SPECIAL.get(s, VOICES_SPECIAL.get(base))

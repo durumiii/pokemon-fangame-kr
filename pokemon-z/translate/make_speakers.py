@@ -1,5 +1,6 @@
 # /// script
 # requires-python = ">=3.12"
+# dependencies = ["pyyaml"]
 # ///
 """축약 조인표 생성 — webapp/speakers.json.
 
@@ -27,7 +28,7 @@ from pathlib import Path
 HERE = Path(__file__).parent
 JOIN = HERE / "data" / "map-speaker-join.jsonl.gz"
 ATTR = HERE / "data" / "speaker-attr.jsonl.gz"
-GROUPS = HERE / "sprite-groups.json"
+GROUPS = HERE / "stage0" / "groups.yaml"   # 스프라이트 묶음 정본(2026-08-18 강등)
 KO = HERE / "ko"
 TTYPES = Path("/mnt/d/Game/Pokemon Z/V2.18/PBS/trainertypes.txt")   # 직함 상수 → 번호
 OUT = HERE.parent / "webapp" / "speakers.json"
@@ -56,9 +57,11 @@ def trainer_ko():
 
 
 def main():
+    import yaml
     tcls, tnames = trainer_ko()
     s2g = {s: grp for grp, ss in
-           json.loads(GROUPS.read_text(encoding="utf-8"))["groups"].items() for s in ss}
+           yaml.safe_load(GROUPS.read_text(encoding="utf-8"))
+           ["sprite_groups"]["groups"].items() for s in ss}
     sp, gp, en, maps = [], [], [], {}   # 문자열 테이블 + 맵별 본문
     idx = lambda tbl, s: tbl.index(s) if s in tbl else (tbl.append(s) or len(tbl) - 1)
     row = lambda m, k: m["rows"].setdefault(k, [None, None])

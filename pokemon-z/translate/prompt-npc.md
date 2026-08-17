@@ -2,7 +2,7 @@
 
 걸음 5 프롬프트(prompt.md)의 후속. 이번 판의 차이: 행마다 화자 문맥(페르소나
 +어미 지침)이 실린다. 근거는 화법 전거 조사(docs/research/2026-08-03-npc-
-register-study.md)와 페르소나표(persona-table.jsonl). 프롬프트 정본은 여기다.
+register-study.md)와 페르소나표(stage0/groups.yaml). 프롬프트 정본은 여기다.
 
 ---
 

@@ -132,7 +132,9 @@ dat 포맷 문제를 만났을 때.
 승인분(`approved-lines.jsonl`·`approved-events.jsonl`) · **동결 목록
 (`frozen-keys.jsonl`) — 손으로 확정해 배치 재번역에 다시 안 태우는 절23 키.
 `batch.py`가 전투 표현 대장(`battle-expr-replacements.json`)의 키와 합쳐 읽는다** ·
-어미 급 판정분(`register-ok.jsonl`) — 검사에 걸렸으나 어긋남이 아니라고 판정한 자리 ·
+어미 급 판정분(`register-ok.jsonl`) — 검사에 걸렸으나 어긋남이 아니라고 판정한 자리.
+직접 편집 원천이고 stage0 gen이 자리 칸(`register_ok`)으로 펴서 소비자(`register.py
+scan`·materials)는 그 칸을 읽는다 — **등재 뒤 gen 재생성이 먼저다** ·
 행 단위 출처 목록(`provenance-lines.jsonl`) — 사람 낱건이 닿은 (맵, 원문)의 누적,
 `provenance.py build`가 만들고 보호 목록은 이것의 파생이다(stage0 gen이 state·by로 흡수).
 **기록층(`docs/log/`)에 두지 않는다** —
@@ -185,7 +187,7 @@ sizes=[(16,16),(32,32),(48,48),(64,64),(128,128),(192,192)])"`.
 후보가 뜨고 Tab으로 채운다. 값은 이렇게 맞춘다 — 분류는 절 번호·절 이름·파일명, 맵은
 숫자면 정확 일치·글자면 이름 부분 일치(**한국어 이름은 절21에서 얹는다** — 조인표의
 이름은 스페인어다), 화자는 스프라이트·분류(`서민`·`접객` 등
-`sprite-groups.json`의 묶음)에 더해 **페르소나 한 줄**(`translate/persona-table.jsonl`)까지
+`stage0/groups.yaml` sprite_groups의 묶음)에 더해 **페르소나 한 줄**(같은 파일 groups 절)까지
 본다 — 그림 이름이 스페인어라 그것 없이는 한국어로 못 찾는다(`화자:아낙`). 원문·번역은
 각 칸 부분 일치. 상태는 `수정`(이 도구로 고친 적 있는 행)과
 `메모`뿐이다 — 로컬은 저장이 곧 정본이라 웹의 「반영」에 해당하는 구분이 없다.

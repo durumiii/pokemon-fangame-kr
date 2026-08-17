@@ -7,7 +7,7 @@
 사람 판정은 하나도 넣지 않는다. 지금 값을 그대로 옮긴다. 출처(`translate/ko/`,
 `translate/data/`)는 읽기만 한다.
 
-산출: translate/stage0/{sites.jsonl,messages.jsonl,groups.yaml,axes.yaml}
+산출: translate/stage0/{sites.jsonl,messages.jsonl,axes.yaml}
 되돌려 대조하는 쪽은 diff.py. voices.yaml·terms.yaml은 **사람 소유 정본**이라
 gen이 만들지도 다시 쓰지도 않는다(2026-08-18 강등).
 
@@ -225,6 +225,36 @@ def write_yaml(path, obj):
     )
 
 
+def stamp_register_ok(sites):
+    """register-ok(어긋남 아님 판정)를 자리 칸으로 편다 — 원천은 data/register-ok.jsonl
+    (사람 직접 편집), 좌표 조건은 있는 칸만 맞춘다(이벤트·페이지 통째 꼴 허용).
+    등재 뒤에는 gen을 다시 돌려야 소비자(register.py scan·materials)가 본다."""
+    import re
+    oks = read_jsonl(DATA / "register-ok.jsonl")
+    if not oks:
+        return 0, 0
+    idre = re.compile(r"^m(\d+)\.e(\d+)\.p(\d+)\.c(\d+(?:\.\d+)?)$")
+    hits = [0] * len(oks)
+    stamped = 0
+    for s in sites:
+        m = idre.match(s["id"])
+        if not m:
+            continue
+        c = m.group(4)
+        row = {"map": int(m.group(1)), "event": int(m.group(2)), "page": int(m.group(3)),
+               "cmd": float(c) if "." in c else int(c), "who": s.get("who")}
+        for i, o in enumerate(oks):
+            if all(o.get(f) in (None, row[f]) for f in ("map", "event", "page", "cmd", "who")):
+                s["register_ok"] = o.get("이유", "")
+                hits[i] += 1
+                stamped += 1
+                break
+    for o, n in zip(oks, hits):
+        if n == 0:
+            print(f"⚠ register-ok 자리 없음(좌표 드리프트?): {json.dumps(o, ensure_ascii=False)[:120]}")
+    return len(oks), stamped
+
+
 def main():
     attr = load_attr()
     al, ae, fk, pv = load_meta()
@@ -243,6 +273,8 @@ def main():
     mids = [m["id"] for m in msgs]
     assert len(set(mids)) == len(mids), "값 id가 겹친다"
 
+    n_ok, n_ok_sites = stamp_register_ok(sites)
+
     # 사람 수정은 재생성을 지우지 않는다 — 마지막에 얹는다(설계 「이행 1단계」 overrides 절).
     ovr = read_overrides()
     sites, msgs = apply_overrides(sites, msgs, ovr)
@@ -250,23 +282,9 @@ def main():
     dump_jsonl(OUT / "sites.jsonl", sites)
     dump_jsonl(OUT / "messages.jsonl", msgs)
 
-    # groups — 페르소나 표 + 스프라이트 묶음(기계 파생). **말투는 여기 없다** —
-    # voices.yaml이 사람 소유 정본이라 gen이 다시 쓰지 않는다(2026-08-18 강등.
-    # 생명주기가 달라 파일을 갈랐다 — 사람 소유 YAML을 기계가 다시 쓰면 주석이 죽는다).
-    sprite_groups = json.loads((ROOT / "sprite-groups.json").read_text(encoding="utf-8"))
-    write_yaml(OUT / "groups.yaml", {
-        "_source": ["translate/persona-table.jsonl", "translate/sprite-groups.json"],
-        "groups": [
-            {"group": r["sprite"], "match": {"speaker": r["sprite"]},
-             "rows": r["rows"], "bucket": r["버킷"], "persona": r["페르소나"],
-             "appearance": r["외형"], "basis": r["근거"], "note": r["비고"],
-             "source": "translate/persona-table.jsonl"}
-            for r in read_jsonl(ROOT / "persona-table.jsonl")
-        ],
-        "sprite_groups": sprite_groups,
-    })
-
-    # terms.yaml은 사람 소유 정본이라 gen이 쓰지 않는다(2026-08-18 강등 — voices와 같다).
+    # groups.yaml(페르소나·스프라이트 묶음)·voices.yaml·terms.yaml은 사람 소유
+    # 정본이라 gen이 쓰지 않는다(2026-08-18 강등 — 사람 소유 YAML을 기계가 다시
+    # 쓰면 주석이 죽는다).
 
     # axes — 설계 3절 그대로. layout은 정본 값이 아니라 그릇의 뼈대다(절 종류·맵 수):
     # 값이 하나도 없는 절 셋과 빈 맵 33개가 자리 목록만으로는 안 살아나서 여기 적는다.
@@ -289,7 +307,8 @@ def main():
     n_frozen = sum(1 for m in smsgs if m.get("by") == "human/frozen-keys")
     print(f"판정 메타: 승인 줄 {stats['line_ok']:,}(원본 {len(al):,}) · "
           f"승인 이벤트 자리 {stats['ev_ok']:,} · 동결 {n_frozen}(원본 {len(fk)}) · "
-          f"출처 목록 {stats['prov']:,}(원본 {len(pv):,})")
+          f"출처 목록 {stats['prov']:,}(원본 {len(pv):,}) · "
+          f"register-ok 자리 {n_ok_sites}(원본 {n_ok})")
 
 
 if __name__ == "__main__":

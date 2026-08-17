@@ -1,5 +1,6 @@
 # /// script
 # requires-python = ">=3.12"
+# dependencies = ["pyyaml"]
 # ///
 """판정 재료 생성 — 자리 목록을 받아 유지자에게 올릴 재료를 기계로 갖춘다.
 
@@ -87,33 +88,26 @@ def naming(r):
     return r.get("who") or r.get("speaker") or "(화자 없음)"
 
 
+def _groups_yaml():
+    import yaml
+    return yaml.safe_load((OUT / "groups.yaml").read_text(encoding="utf-8"))
+
+
 def personas():
     """스프라이트 → (버킷, 페르소나 한 줄). 그림 이름만으로는 못 읽는다."""
-    p = ROOT / "persona-table.jsonl"
-    return {r["sprite"]: (r.get("버킷", ""), r.get("페르소나", ""))
-            for r in read_jsonl(p)} if p.exists() else {}
+    return {e["group"]: (e.get("bucket", ""), e.get("persona", ""))
+            for e in _groups_yaml()["groups"]}
 
 
 def sprite_groups():
-    g = json.loads((ROOT / "sprite-groups.json").read_text(encoding="utf-8"))["groups"]
+    g = _groups_yaml()["sprite_groups"]["groups"]
     return {s: grp for grp, ss in g.items() for s in ss}
 
 
 def marks():
-    """(fixlog 원문 키, register-ok 좌표 조건들) — 사람 판정이 지나간 자리."""
-    fix = {norm(r["es"]) for r in read_jsonl(ROOT / "fixlog.jsonl") if r.get("es")}
-    ok_path = DATA / "register-ok.jsonl"
-    ok = read_jsonl(ok_path) if ok_path.exists() else []
-    return fix, ok
-
-
-def ok_hit(ok, row):
-    """register-ok 한 줄은 있는 좌표 칸만으로 맞춘다(page·cmd가 없는 줄이 있다)."""
-    out = []
-    for r in ok:
-        if all(r.get(k) == row[k] for k in ("map", "event", "page", "cmd") if k in r):
-            out.append(r.get("이유", ""))
-    return out
+    """fixlog 원문 키 — 유지자 손이 지나간 자리. register-ok는 자리 칸(register_ok)으로
+    사이트에 펴져 있어(gen.stamp_register_ok) 따로 안 읽는다."""
+    return {norm(r["es"]) for r in read_jsonl(ROOT / "fixlog.jsonl") if r.get("es")}
 
 
 # ── 재료 조립 ────────────────────────────────────────────────────────────────
@@ -123,7 +117,7 @@ class Ctx:
         self.prop = prop or {}
         self.persona = personas()
         self.s2g = sprite_groups()
-        self.fix, self.ok = marks()
+        self.fix = marks()
         self.by_ev = {}
         self.by_src = {}
         for r in self.rows:
@@ -142,7 +136,8 @@ class Ctx:
             f.append("화자 손지정(overrides)")
         if r["nk"] in self.fix:
             f.append("유지자 손수정(fixlog)")
-        for why in ok_hit(self.ok, r):
+        if "register_ok" in r:
+            why = r["register_ok"]
             f.append(f"기존 판정 register-ok: {why}" if why else "기존 판정 register-ok")
         return f
 

@@ -362,12 +362,12 @@ kind, who, how, cast, prompt, once, flags, k, cls, tclass}`다. `k`가 원문이
 **표지 없는 행은 행 단위로 급을 단정하지 않는다** — 비존대 어미의 다수(「~네」·
 「~군」·맨 「~다」)는 B1·B4·B6·B7 어디에나 살므로, 강한 표지가 있는 행들로 화자
 (스프라이트) 단위 급을 정하고 무표지 행은 그 급을 따른다.
-그룹별 배정은 `translate/sprite-groups.json`, 스프라이트별 개성은
-`translate/persona-table.jsonl`이 정본이다.
+그룹별 배정(sprite_groups)과 스프라이트별 개성(groups) 모두
+`translate/stage0/groups.yaml`이 정본이다(2026-08-18 강등).
 
 **스프라이트가 곧 페르소나다.** 독자가 이 화자에 대해 아는 것은 그림 하나뿐이므로,
-말투는 그림이 보여 주는 사람(귀족·군인·서민·어린이…)에게서 나와야 한다. 그룹 정본은
-`translate/sprite-groups.json`, 그룹·인물별 말투는 `translate/persona-table.jsonl`.
+말투는 그림이 보여 주는 사람(귀족·군인·서민·어린이…)에게서 나와야 한다. 묶음과
+페르소나의 정본은 `translate/stage0/groups.yaml`.
 
 - ⚠ **원문의 `tú`는 반말 근거가 아니다.** 스페인어의 일상 기본형이라 한국어 존대와
   얼마든지 함께 간다. 잡담 NPC의 원문은 거의 전부 `tú`인데, 그걸 반말 근거로 읽으면

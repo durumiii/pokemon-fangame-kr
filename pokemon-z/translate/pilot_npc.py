@@ -1,5 +1,6 @@
 # /// script
 # requires-python = ">=3.12"
+# dependencies = ["pyyaml"]
 # ///
 """NPC 어투 재번역 파일럿 — 페르소나 층을 실은 표본 배치.
 
@@ -27,7 +28,7 @@ from batch import URL, key_of, or_extras, worth_rewriting  # noqa: E402
 from register import spell  # noqa: E402  (B코드↔이름의 정본은 register)
 
 JOIN = HERE / "data/map-speaker-join.jsonl.gz"
-PERSONA = HERE / "persona-table.jsonl"
+PERSONA = HERE / "stage0" / "groups.yaml"   # 페르소나 정본(2026-08-18 강등)
 SAMPLE = HERE / "pilot" / "npc-sample.jsonl"
 
 # 파일럿에 꼭 넣을 대표 스프라이트(버킷·성별·나이·직능 골고루)
@@ -39,8 +40,12 @@ TARGET_ROWS = 260
 
 
 def load_personas():
-    return {json.loads(l)["sprite"]: json.loads(l)
-            for l in PERSONA.read_text(encoding="utf-8").splitlines() if l}
+    """스프라이트 → 페르소나표 행(옛 jsonl 키 그대로) — 정본은 stage0/groups.yaml."""
+    import yaml
+    ents = yaml.safe_load(PERSONA.read_text(encoding="utf-8"))["groups"]
+    return {e["group"]: {"sprite": e["group"], "rows": e["rows"], "버킷": e["bucket"],
+                         "페르소나": e["persona"], "외형": e["appearance"],
+                         "근거": e["basis"], "비고": e["note"]} for e in ents}
 
 
 def plan():
