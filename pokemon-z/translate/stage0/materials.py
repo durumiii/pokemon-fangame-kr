@@ -73,6 +73,14 @@ def load():
     return rows, who_set
 
 
+def proposals(path):
+    """제안 문안 층 — {"id", "new", "why"} 한 줄이 한 자리. 재료와 같은 장에 실린다.
+
+    유지자에게 올리는 것은 「실물 + 제안」 한 장이지, 재료 한 장과 표 한 장이 아니다.
+    """
+    return {r["id"]: (r.get("why", ""), r["new"]) for r in read_jsonl(Path(path))} if path else {}
+
+
 def naming(r):
     """한 줄의 화자 표시 — 이름표가 먼저, 없으면 그림, 둘 다 없으면 표시 없음."""
     return r.get("who") or r.get("speaker") or "(화자 없음)"
@@ -109,8 +117,9 @@ def ok_hit(ok, row):
 
 # ── 재료 조립 ────────────────────────────────────────────────────────────────
 class Ctx:
-    def __init__(self):
+    def __init__(self, prop=None):
         self.rows, self.who_set = load()
+        self.prop = prop or {}
         self.persona = personas()
         self.s2g = sprite_groups()
         self.fix, self.ok = marks()
@@ -164,6 +173,7 @@ class Ctx:
             "speakers": [self.speaker(w, s) for w, s in casts],
             "layers": [l for l in layers if l],
             "seq": [(r, r["id"] in cand_ids, self.flags(r)) for r in seq],
+            "prop": self.prop,
             "dups": dups,
         }
 
@@ -266,6 +276,9 @@ def md(groups):
             L.append(f"{mark} `[{r['cmd']}]` **{tag}**{flag}")
             L.append(f"    - ES: {r.get('src', '')}")
             L.append(f"    - KO: {r['ko']}")
+            if r["id"] in g["prop"]:
+                why, new = g["prop"][r["id"]]
+                L.append(f"    - 제안: {new}" + (f"  ({why})" if why else ""))
         if g["dups"]:
             L.append("")
             L.append("### 같은 원문의 다른 자리")
@@ -288,65 +301,77 @@ def esc_cell(s):
     return s.replace("|", "\\|").replace("\n", " ")
 
 
-CSS = """
-:root{--bg:#fff;--fg:#1c1c1e;--mut:#6b6b70;--line:#e2e2e6;--chip:#eef1f6;--hit:#fff6d8}
-@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#17181a;--fg:#e8e8ea;
---mut:#9a9aa0;--line:#2e2f33;--chip:#26282d;--hit:#3a3320}}
-body{background:var(--bg);color:var(--fg);font:15px/1.6 system-ui,sans-serif;margin:0;
-padding:24px;max-width:1000px}
-details{border:1px solid var(--line);border-radius:8px;margin:12px 0;padding:8px 14px}
-summary{cursor:pointer;font-weight:600}
-.chip{display:inline-block;background:var(--chip);border-radius:99px;padding:1px 9px;
-font-size:12px;margin:2px 4px 2px 0}
-.line{border-left:3px solid transparent;padding:4px 0 4px 10px;margin:2px 0}
-.line.hit{border-left-color:#d9a520;background:var(--hit)}
-.es{color:var(--mut)}
-.cmd{font-family:ui-monospace,monospace;font-size:12px;color:var(--mut)}
-h3{font-size:14px;color:var(--mut);margin:14px 0 4px}
-table{border-collapse:collapse;width:100%;font-size:13px}
-td,th{border:1px solid var(--line);padding:4px 7px;text-align:left;vertical-align:top}
-.wrap{overflow-x:auto}
+STUDIO = ROOT.parent / "webapp" / "index.html"   # 배포판 스튜디오 — 꼴의 정본
+DELTA = """
+ main{max-width:900px}
+ .prop{border-left:3px solid var(--ok);background:rgba(76,195,138,.08);
+   border-radius:0 8px 8px 0;padding:6px 11px;margin-top:8px}
+ .prop b{font-size:11.5px;color:var(--ok);margin-right:6px}
+ h2{font-size:16px;margin:26px 0 10px}
+ h3{font-size:12.5px;color:var(--sub);font-weight:600;margin:20px 0 8px}
+ table{border-collapse:collapse;width:100%;font-size:12.5px}
+ td,th{border:1px solid var(--line);padding:5px 8px;text-align:left;vertical-align:top}
+ .wrap{overflow-x:auto}
 """
 
 
-def to_html(groups):
+def studio_css():
+    """스튜디오(webapp/index.html)의 <style>을 그대로 가져온다.
+
+    꼴을 두 벌 관리하지 않으려는 것이다 — 스튜디오를 손보면 이 페이지도 따라 바뀐다
+    (지침 text-pipeline 「꼴은 배포판 스튜디오와 같은 판을 쓴다」).
+    """
+    m = re.search(r"<style>(.*?)</style>", STUDIO.read_text(encoding="utf-8"), re.S)
+    if not m:
+        raise SystemExit(f"스튜디오 판을 못 찾았다: {STUDIO}")
+    return m.group(1) + DELTA
+
+
+
+def to_html(groups, title="판정 재료", body_only=False):
+    """스튜디오와 같은 꼴로 낸다 — 카드·칩·원문색이 전부 그쪽 클래스다."""
     e = html.escape
-    P = [f"<!doctype html><meta charset=utf-8><title>판정 재료</title><style>{CSS}</style>",
-         "<h1>판정 재료</h1>"]
+    head = "" if body_only else "<!doctype html><meta charset=utf-8>"
+    P = [f"{head}<title>{e(title)}</title><style>{studio_css()}</style>",
+         f'<header><div class=logo>Z <b>{e(title)}</b></div></header>', "<main>"]
     for g in groups:
-        P.append("<details open><summary>맵{} {} · 이벤트{}{}</summary>".format(
-            g["map"], e(g["map_ko"]), g["event"],
-            f" — {e(g['title'])}" if g["title"] else ""))
+        P.append(f"<h2>맵{g['map']} {e(g['map_ko'])} · 이벤트{g['event']}"
+                 + (f" — {e(g['title'])}" if g["title"] else "") + "</h2>")
         if g["note"]:
-            P.append(f"<p class=es>{e(g['note'])}</p>")
-        for h in head_lines(g):
-            P.append(f"<div><span class=chip>화자</span>{e(h)}</div>")
-        P.append(f"<div><span class=chip>층</span>{e(' / '.join(g['layers']) or '(없음)')}</div>")
+            P.append(f"<div class=meta>{e(g['note'])}</div>")
+        chips = "".join(f"<span class=chip>{e(h)}</span>" for h in head_lines(g))
+        chips += f"<span class=chip>층 {e(' / '.join(g['layers']) or '없음')}</span>"
+        P.append(f"<div class=meta>{chips}</div>")
         page = None
         for r, cand, fs in g["seq"]:
             if r["page"] != page:
                 page = r["page"]
                 P.append(f"<h3>겪는 순서 — 페이지 {page}</h3>")
-            flag = ("<span class=chip>⚑ " + e(" · ".join(fs)) + "</span>") if fs else ""
-            P.append(
-                f"<div class='line{" hit" if cand else ""}'>"
-                f"<span class=cmd>[{r['cmd']}] {e(naming(r))}"
-                f"|{e(r.get('layer', '?'))}</span> {flag}"
-                f"<div class=es>{e(r.get('src', ''))}</div><div>{e(r['ko'])}</div></div>")
+            prop = g["prop"].get(r["id"])
+            cls = "card" + (" notecard" if fs else "") + (" saved" if prop or cand else "")
+            flag = "".join(f"<span class=chip>⚑ {e(f)}</span>" for f in fs)
+            P.append(f'<div class="{cls}">'
+                     f'<span class=chip>[{r["cmd"]}]</span>'
+                     f'<span class=chip>{e(naming(r))}</span>{flag}'
+                     f'<div class=es>{e(r.get("src", ""))}</div>'
+                     f'<div class=nv>{e(r["ko"])}</div>'
+                     + (f'<div class=prop><b>제안</b>{e(prop[1])}'
+                        + (f'<div class=meta>{e(prop[0])}</div>' if prop[0] else "")
+                        + "</div>" if prop else "")
+                     + "</div>")
         if g["dups"]:
             P.append("<h3>같은 원문의 다른 자리</h3><div class=wrap><table>"
-                     "<tr><th>원문<th>자리<th>화자<th>층<th>현행 번역")
+                     "<tr><th>원문<th>자리<th>화자<th>현행 번역")
             for r, spots, total in g["dups"]:
                 for o in spots:
                     P.append(f"<tr><td>{e(r.get('src', ''))}<td>맵{o['map']} "
                              f"{e(mapname.ko(o['map']))} {o['event']}·{o['cmd']}"
-                             f"<td>{e(naming(o))}<td>{e(o.get('layer', '?'))}"
-                             f"<td>{e(o['ko'])}")
+                             f"<td>{e(naming(o))}<td>{e(o['ko'])}")
                 if total > len(spots):
-                    P.append(f"<tr><td>{e(r.get('src', ''))}<td colspan=4 class=es>"
+                    P.append(f"<tr><td>{e(r.get('src', ''))}<td colspan=3 class=meta>"
                              f"…외 {total - len(spots)}자리 (전체 {total})")
             P.append("</table></div>")
-        P.append("</details>")
+    P.append("</main>")
     return "\n".join(P)
 
 
@@ -387,18 +412,23 @@ def main():
     a.add_argument("--map", type=int), a.add_argument("--event", type=int)
     a.add_argument("--context", type=int, help="후보 앞뒤 N줄만")
     a.add_argument("-o", "--out"), a.add_argument("--html")
+    a.add_argument("--proposals", help="제안 문안 jsonl — {id, new, why}")
+    a.add_argument("--title", default="판정 재료", help="html 제목(아티팩트 이름)")
+    a.add_argument("--body", action="store_true",
+                   help="doctype·meta 없이 본문만 — 아티팩트로 올릴 때")
     a.add_argument("--selftest", action="store_true")
     a = a.parse_args()
     if a.selftest:
         return selftest()
     if not (a.ids or a.phrase or (a.map is not None and a.event is not None)):
         sys.exit("--ids · --phrase · (--map과 --event) 중 하나가 필요하다")
-    groups = [context_cut(g, a.context) for g in groups_from_args(Ctx(), a)]
+    ctx = Ctx(proposals(a.proposals))
+    groups = [context_cut(g, a.context) for g in groups_from_args(ctx, a)]
     text = md(groups)
     if a.out:
         Path(a.out).write_text(text, encoding="utf-8")
     if a.html:
-        Path(a.html).write_text(to_html(groups), encoding="utf-8")
+        Path(a.html).write_text(to_html(groups, a.title, a.body), encoding="utf-8")
     if not (a.out or a.html):
         print(text)
 
