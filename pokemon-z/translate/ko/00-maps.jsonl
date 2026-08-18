@@ -3640,7 +3640,7 @@
 {"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Estos son los dormitorios de los mosqueteros. Deberíamos estar a salvo aquí.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 이곳은 총사들의 침실이다. 여기라면 안전할 게야."}
 {"k": "¡<i>Sacrebleu</i>! Hace mucho frío en estas estancias. Encenderé la chimenea.", "v": "<i>Sacrebleu</i>! 이 방은 매우 춥군. 벽난로에 불을 지펴야겠어."}
 {"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Sí. Mucho mejor ahora.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 그래. 이제 훨씬 낫구나."}
-{"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Ya sé lo que estarás pensando, \\PN.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 네가 무슨 생각을 하는지 이미 알고 있단다, \\PN."}
+{"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Ya sé lo que estarás pensando, \\PN.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 그대가 무슨 생각을 하는지 이미 알고 있다네, \\PN."}
 {"k": "Menudo rey, que no es capaz de defenderse por sí solo.", "v": "자신 하나조차 지키지 못하는 왕이라니, 참 한심하겠지."}
 {"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Hace tiempo que perdí facultades como entrenador Pokémon.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 포켓몬 트레이너로서의 기량은 잃은 지 오래라네."}
 {"k": "...", "v": "......"}
@@ -6674,7 +6674,7 @@
 {"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Ya veo.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 그렇군."}
 {"k": "Este palacio ha soportado invasiones peores. ¡No nos derrotarán esta noche!", "v": "이 궁전은 이보다 더한 침략도 견뎌내었네. 오늘 밤 놈들이 우리를 무너뜨릴 수는 없을 게다!"}
 {"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Aunque tampoco permitiré que esta cacería alcance a ninguno de los aquí presentes. Y eso es lo realmente importante.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 하지만 이곳에 있는 그 누구에게도 이 침략의 마수가 미치게 두지는 않을 게다. 그 점이야말로 정말 중요한 일이지."}
-{"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Vosotros tres, ¿os encontráis bien?", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 너희 세 사람, 몸은 괜찮은가?"}
+{"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Vosotros tres, ¿os encontráis bien?", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 자네들, 몸은 괜찮은가?"}
 {"k": "Si puedo ayudaros de algún modo, haré todo lo que esté en mi mano.", "v": "내가 도울 일이 있다면 무엇이든 힘쓰겠네."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] Creo que ya tiene poco sentido permanecer disfrazados.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 이제 변장을 계속 유지하는 건 의미가 없을 것 같군요."}
 {"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] ¡Eres \\PN! ¿Cómo has llegado hasta aquí?", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] \\PN 자네였나! 어떻게 여기까지 온 건가?"}
@@ -12030,10 +12030,10 @@
 {"map": 390, "n": 73}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] Aquí estás, <b>Mirra</b>. ¡Ladino y desleal!", "v": "\\c[3]<b>크리산토:</b>\\c[0] 자, 여기 있었구나, <b>미라</b>. 간사하고 불충한 자여!"}
 {"k": "<b>Kalos</b> no merece ni un segundo más el ultraje de vuestro gobierno. ¡Se hará justicia!", "v": "<b>칼로스</b>는 당신의 통치가 저지른 모욕을 단 1초도 더 견딜 수 없다. 정의가 실현되리라!"}
-{"k": "\\c[6]<b>Mirra:</b>\\c[0] ¿Justicia, dices? Lo que pretendes traer no es justicia, maese <b>Crisanto</b>, sino rencor disfrazado de virtud.", "v": "\\c[6]<b>미라:</b>\\c[0] 정의라고 했는가, <b>크리산토</b> 선생? 네가 가져오려는 것은 정의가 아니라 미덕으로 위장한 원한일 뿐이다."}
+{"k": "\\c[6]<b>Mirra:</b>\\c[0] ¿Justicia, dices? Lo que pretendes traer no es justicia, maese <b>Crisanto</b>, sino rencor disfrazado de virtud.", "v": "\\c[6]<b>미라:</b>\\c[0] 정의라고 했는가, <b>크리산토</b> 선생? 자네가 내세우는 건 정의가 아니야. 미덕의 탈을 쓴 원한일 뿐이지."}
 {"k": "Si crees que al derribarme traerás el orden y la prosperidad a <b>Kalos</b>, te equivocas de pleno.", "v": "나를 무너뜨려 <b>칼로스</b>에 질서와 번영을 가져올 수 있다고 믿는다면, 큰 착각이다."}
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] El gobierno de los hombres solo conduce al caos y a la corrupción. Bien lo sabéis.", "v": "\\c[6]<b>미라:</b>\\c[0] 인간의 통치는 오직 혼란과 부패로 이어질 뿐이다. 당신들도 잘 알고 있겠지."}
-{"k": "Y mi propio gobierno no es una excepción. Pero este es solo un estado transitorio hasta que pueda entregarle las riendas a mi maestro <b>Aure</b>.", "v": "나의 통치 또한 예외는 아니다. 하지만 이는 스승이신 <b>아우레</b>님께 실권을 넘겨드릴 때까지의 일시적인 상태일 뿐이다."}
+{"k": "Y mi propio gobierno no es una excepción. Pero este es solo un estado transitorio hasta que pueda entregarle las riendas a mi maestro <b>Aure</b>.", "v": "나의 통치 또한 예외는 아니다. 하지만 이는 스승이신 <b>아우레</b>님께 실권을 넘겨드릴 때까지의 일시적인 상태일 뿐이야."}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¿Vuestro maestro <b>Aure</b>? ¿Aquel que solo busca esclavizar a los humanos?", "v": "\\c[3]<b>크리산토:</b>\\c[0] 너희의 스승 <b>아우레</b>라고? 오직 인간을 노예로 삼으려는 그 자 말인가?"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¿Aquel que os ordenó el encarcelamiento injusto tanto de \\PN como de la profesora <b>Olivier</b>?", "v": "\\c[3]<b>크리산토:</b>\\c[0] \\PN\\j[과,와] <b>올리비에 박사님</b>을 부당하게 감금하라 명령한 그 자 말인가?"}
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] A ellos dos les debo una disculpa, cierto es. Mi maestro los sobrevaloró al creer que pretendían construir el <b>Arma Definitiva</b>.", "v": "\\c[6]<b>미라:</b>\\c[0] 그 두 사람에게 사과해야 함은 사실이다. 스승께서는 그 둘이 <b>최종병기</b>를 만들려 한다고 믿어 과대평가하셨다."}
