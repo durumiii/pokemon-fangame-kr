@@ -118,9 +118,9 @@ def rebuild(d=OUT, sites=None, msgs=None):
 
     # 절23 추가분 — base와 **따로** 낸다(접으면 매 빌드가 정본을 되돌린다).
     mart = layout.get("mart")
+    rows, rids = [], []
     if mart:
         brs = yaml.safe_load((d / "axes.yaml").read_text(encoding="utf-8"))["axes"]["mart"]
-        rows, rids = [], []
         for br in brs["values"]:
             for st in mart["steps"]:
                 sid = f"s23.k{h8(st['src'])}"
@@ -136,6 +136,13 @@ def rebuild(d=OUT, sites=None, msgs=None):
             rows.append({"k": f"krmart-at:{a['map']}:{a['event']}", "v": s["mart"],
                          "상점": a["상점"]})
             rids.append(s["id"])
+    # 전역 추가 키 — 게임 스크립트에만 있는 평문 키(gen의 addkey_sites 왕복 상대)
+    for s in sites:
+        if s.get("apply") != "kradd":
+            continue
+        rows.append({"k": s["src"], "v": resolve(msgs[s["id"]]["val"], msgs)})
+        rids.append(s["id"])
+    if rows:
         out["23-script-texts.add.jsonl"] = rows
         owner["23-script-texts.add.jsonl"] = rids
     return out, owner, msgs

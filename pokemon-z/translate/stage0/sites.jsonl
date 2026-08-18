@@ -38040,3 +38040,6 @@
 {"id": "img.tutorialLegendarios", "src": "Tendrás que encontrar a los 3 Pokémon\nlegendarios para encaminarte al final del\njuego.\n\nPuedes ir a por los tres Pokémon\nlegendarios en el orden que quieras.\n\nLos niveles de las zonas a las que\nelijas ir escalarán con tu nivel. LV", "apply": "image"}
 {"id": "img.tutorialRandom", "src": "¡HAS DESBLOQUEADO EL MODO RANDOM!\nA partir de ahora, en las nuevas partidas\nque empieces en Pokémon Z, se te ofrecerá\nla opción de randomizar el juego cuando\ntomes el control del personaje.\n\nTe recomiendo combinarlo con la dificultad\nHeroica o con el Monotype para un reto más\ninteresante.", "apply": "image"}
 {"id": "img.bagReg", "src": "F5", "apply": "image"}
+{"id": "s23.a969a5702", "src": "¡{1} está siendo salado!", "apply": "kradd"}
+{"id": "s23.ad8377e40", "src": "¡{1} quedó atrapado en el cepo!", "apply": "kradd"}
+{"id": "s23.ace68d52d", "src": "¡{1} quedó atrapado en Ferroprisión!", "apply": "kradd"}

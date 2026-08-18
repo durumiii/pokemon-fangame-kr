@@ -195,6 +195,25 @@ def loc_sites():
     return sites, msgs
 
 
+def addkey_sites():
+    """전역 추가 키(apply=kradd) — 게임 스크립트에는 있는데 dat base에 없는 평문 키.
+
+    23-script-texts.add.jsonl의 {k,v} 평문 행이 원본이다(krmart:류 합성 열쇠는
+    load_mart 몫). id는 `s23.a…`로 가른다 — diff의 k-자리 정규식(`s23.k`)이 이걸
+    본문 파일로 내보내면 build의 미러 검사가 깨지기 때문(2026-08-19, Z-18)."""
+    sites, msgs = [], []
+    if not MART_ADD.exists():
+        return sites, msgs
+    for r in read_jsonl(MART_ADD):
+        k = r["k"]
+        if k.startswith(("krmart:", "krmart-at:")):
+            continue
+        sid = f"s23.a{h8(k)}"
+        sites.append({"id": sid, "src": k, "apply": "kradd"})
+        msgs.append(_msg(sid, r["v"], r.get("왜")))
+    return sites, msgs
+
+
 def ui_sites():
     """런타임 치환표(apply=gsub) — UI Text KR. 값 정본은 data/uitext.jsonl이고
     인명 행({"name": ...})의 표기는 names.json에서 읽는다(생성기 uitext.py와 같은 규칙)."""
@@ -375,13 +394,14 @@ def main():
     usites, umsgs = ui_sites()
     osites, omsgs = outside_sites()
     asites, amsgs = asset_sites()
+    aksites, akmsgs = addkey_sites()
 
-    sites = msites + lsites + ssites + usites + osites + asites
+    sites = msites + lsites + ssites + usites + osites + asites + aksites
     ids = [s["id"] for s in sites]
     assert len(set(ids)) == len(ids), "자리 id가 겹친다"
 
     msgs = ([{"id": k, "val": v} for k, v in sorted(used_unified.items())]
-            + mmsgs + lmsgs + smsgs + umsgs + omsgs + amsgs)
+            + mmsgs + lmsgs + smsgs + umsgs + omsgs + amsgs + akmsgs)
     mids = [m["id"] for m in msgs]
     assert len(set(mids)) == len(mids), "값 id가 겹친다"
 
