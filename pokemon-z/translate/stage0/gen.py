@@ -26,9 +26,10 @@ from common import (  # noqa: E402
     read_maps, read_overrides,
 )
 
-# 귀속표에서 자리로 옮기는 칸 — (귀속표 이름, 자리 이름)
-ATTR_FIELDS = [("sprite", "speaker"), ("cls", "layer"), ("kind", "kind"),
-               ("scene", "scene"), ("how", "how"), ("who", "who")]
+# 귀속표에서 자리로 옮기는 칸 — (귀속표 이름, 자리 이름). 행 사실만 여기 있다.
+# 층·장면은 페이지 단위 판정이라 자리에 안 싣는다(Z-53 설계 2절, 3단계에서 걷음) —
+# 페이지 판정은 pages.jsonl이 정본이고 조회는 structure.row_layer·scene이 받는다.
+ATTR_FIELDS = [("sprite", "speaker"), ("kind", "kind"), ("how", "how"), ("who", "who")]
 # 귀속표에서 페이지로 올리는 칸 — (귀속표 이름, 페이지 이름, 등재 값 목록).
 # 값 목록은 다수결 동점을 가르는 순서이기도 하다(앞선 값이 이긴다 — 재생성 결정성).
 PAGE_ATTR = [("cls", "layer", PAGE_LAYERS), ("scene", "scene", PAGE_SCENES)]

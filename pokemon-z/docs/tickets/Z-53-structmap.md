@@ -125,14 +125,18 @@ materials.py가 이미 하는 일의 공용화라 새 발명이 아니다. 정�
    불일치 0) · materials 층 표시 셋(37,970행 불일치 0, 표본 md·review 바이트 동일) ·
    scene_eval(4,702장 갈림 0). **register는 전환 불요**(층·장면·말투 표를 아예 안
    읽는다 — grep 전수). edit.py 캐시 지문에 pages·layout 추가.
-3. 전환이 다 선 뒤 sites에서 layer·scene을 걷고 gen·gate를 맞춘다. ⚠ 행 단위 사람
-   판정이 살아남으려면 `SITE_FIELDS`에 layer를 남겨 overrides 행 갈래가 계속 서야
-   한다(위 row_layer 항목).
+3. ~~전환이 다 선 뒤 sites에서 layer·scene을 걷고 gen·gate를 맞춘다~~ — **섰다**
+   (2026-08-18 실측). gen의 `ATTR_FIELDS`에서 두 칸을 걷어 sites의 layer는 overrides
+   9줄만, scene은 0줄이 됐다. `SITE_FIELDS`에는 layer만 남기고(행 단위 사람 판정 갈래)
+   scene은 걷었다 — overrides 전수에 자리 scene 줄이 없다. 층 표시 차이는 37,970행
+   중 39행, 전부 mixed 21페이지 안이고 overrides 9줄은 값 유지. 걷는 김에 로더의
+   자리 id 접기가 선택지 갈래(`.c3.0`, 2,229자리)를 페이지로 못 접던 것을 고쳤다.
 4. ~~kind 등재 수정 + enum 검사 + layout 분리~~ — **섰다**(1과 함께, 2026-08-18).
    diff 역생성 차이 0 유지(loc 54·빈 맵 33 재현 포함).
 
-이행이 남긴 꼬리: mixed 21곳(동점 13곳 포함)의 층 판정 · `edit.py` 캐시 지문이
-pages/layout을 안 본다(로더가 서면 스튜디오도 pages를 읽게 되므로 2단계에서 함께).
+**네 걸음이 다 섰다(2026-08-18).** 남은 꼬리: mixed 21곳(동점 13곳 포함)의 층 판정 —
+`grep '"mixed"' translate/stage0/pages.jsonl`이 목록이고, 판정은 overrides 한 줄씩.
+(edit.py 캐시 지문 건은 2단계에서 해소됐다.)
 
 ## 확정도
 

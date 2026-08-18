@@ -225,8 +225,8 @@ def check_overrides(ovr, sites, msgs, pages):
     """사람 수정 층이 성립하는가 — id 실재 · 칸 이름 · 유래(why·by).
 
     overrides는 gen이 지우지 않는 유일한 사람 손이라 여기서 안 걸리면 조용히 안 먹는다.
-    페이지 id(`m*.e*.p*`)는 페이지 표로 가고 칸도 페이지 스키마로 본다 — layer·scene이
-    자리 스키마와 이름이 겹쳐 칸 이름만으로는 못 가른다(common.apply_overrides와 같은 규칙).
+    페이지 id(`m*.e*.p*`)는 페이지 표로 가고 칸도 페이지 스키마로 본다 — layer가 자리
+    스키마와 이름이 겹쳐 칸 이름만으로는 못 가른다(common.apply_overrides와 같은 규칙).
     """
     bad = []
     sset, mset = {s["id"] for s in sites}, {m["id"] for m in msgs}

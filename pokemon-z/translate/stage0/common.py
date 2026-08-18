@@ -19,11 +19,14 @@ EMPTY_SECS = [15, 16, 17]
 
 OVERRIDES = OUT / "overrides.jsonl"
 # overrides의 set이 쓸 수 있는 칸 — 설계 3절 sites·messages 스키마.
-SITE_FIELDS = {"src", "apply", "speaker", "to", "layer", "kind", "scene", "how", "who",
+# layer는 gen이 안 싣지만 남는다 — 컷신 안 확인창처럼 사람이 **행 하나만** N으로 고쳐 둔
+# 자리가 overrides에 9줄 있고(structure.row_layer가 그 값을 페이지 판정보다 먼저 본다),
+# 그 갈래가 서려면 자리 스키마에 이름이 있어야 한다. scene은 행 단위 판정이 없어 걷었다.
+SITE_FIELDS = {"src", "apply", "speaker", "to", "layer", "kind", "how", "who",
                "translate", "mart"}
 MSG_FIELDS = {"val", "why", "state", "by", "sample"}
 # 페이지 레코드(pages.jsonl) — 층·장면은 페이지 단위 판정이라 여기 산다(Z-53 설계 2절).
-# layer·scene 이름이 SITE_FIELDS와 겹치므로 어느 표에 얹을지는 id 꼴이 가른다.
+# layer 이름이 SITE_FIELDS와 겹치므로 어느 표에 얹을지는 id 꼴이 가른다.
 PAGE_FIELDS = {"layer", "scene", "mixed", "by", "why"}
 PAGE_ID = re.compile(r"^m\d+\.e\d+\.p\d+$")
 
@@ -107,8 +110,8 @@ def apply_overrides(sites, msgs, ovr):
 def apply_page_overrides(pages, ovr):
     """페이지 층에 사람 수정을 얹는다 — 페이지 id 줄만 본다.
 
-    표를 칸 이름이 아니라 **id 꼴로** 가르는 것은 layer·scene이 자리 스키마와 이름이
-    겹치기 때문이다(이행이 끝나면 자리 쪽이 걷힌다 — Z-53 설계 2절).
+    표를 칸 이름이 아니라 **id 꼴로** 가르는 것은 layer가 자리 스키마와 이름이 겹치기
+    때문이다 — 행 단위 사람 판정이 자리 쪽에 계속 얹힌다(Z-53 설계 2절).
     """
     pi = {p["id"]: i for i, p in enumerate(pages)}
     pages = list(pages)

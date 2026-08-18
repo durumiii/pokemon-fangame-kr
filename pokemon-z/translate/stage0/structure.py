@@ -25,7 +25,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import (OUT, OVERRIDES, apply_page_overrides, read_jsonl,  # noqa: E402
                     read_overrides)
 
-SITE_ID = re.compile(r"^(m\d+\.e\d+\.p\d+)\.c\d+$")
+# 자리 id → 그 자리가 놓인 페이지. 끝을 잠그지 않는다 — 선택지 갈래는 `.c3.0`처럼
+# 명령 아래 한 칸이 더 붙고(2,229자리), 그것도 같은 페이지의 자리다(gate.PAGE_OF와 같은 꼴).
+SITE_ID = re.compile(r"^(m\d+\.e\d+\.p\d+)\.c")
 PAGES = OUT / "pages.jsonl"
 VOICES, GROUPS = "voices", "groups"      # 말투가 사는 두 표 — 이름표 쪽과 그림 쪽
 
@@ -74,10 +76,10 @@ def row_layer(row):
     """한 자리의 층 — **행에 적힌 값이 먼저이고 페이지 판정이 그다음이다.**
 
     층은 페이지 판정이지만 예외가 행으로 산다 — 컷신 안의 화자 없는 확인창·회상 자막처럼
-    사람이 행 하나만 N으로 고쳐 둔 자리가 8건 있다(overrides, 2026-08-13·08-18). 페이지
-    판정으로 갈아 끼우면 그 판정이 표시에서 사라지므로 행 값을 먼저 본다. 자리 스키마에서
-    layer 사본 칸이 걷히면(설계 3단계) 이 함수는 저절로 페이지 판정으로 내려앉고,
-    overrides로 고친 행만 예외로 남는다.
+    사람이 행 하나만 N으로 고쳐 둔 자리가 9건 있다(overrides, 2026-08-13·08-18). 페이지
+    판정으로 갈아 끼우면 그 판정이 표시에서 사라지므로 행 값을 먼저 본다. gen은 더 이상
+    자리에 층을 안 싣는다(설계 3단계 완료) — 그래서 행 값이 서는 자리는 overrides 9줄과
+    materials가 붙이는 화면 자리(`layer: "화면"`)뿐이다.
     """
     return row.get("layer") or layer(row.get("id", ""))
 
@@ -100,6 +102,7 @@ def voice_ref(row):
 
 def selftest():
     assert page_id(26, 4, 0) == page_id("m26.e4.p0.c7") == page_id("m26.e4.p0") == "m26.e4.p0"
+    assert page_id("m26.e4.p0.c7.0") == "m26.e4.p0"       # 선택지 갈래도 제 페이지로
     assert page_id("s23.k0") == "s23.k0" and of("s23.k0") == {}
     assert layer("m0.e51.p0") == "N" and scene(0, 51, 0) == "공통"
     assert voice_ref({"how": "그림", "sprite": "campesinaw"}) == (GROUPS, "campesinaw")
