@@ -51,6 +51,8 @@ HERE = Path(__file__).parent
 LEDGER = HERE.parent / "docs" / "ledger"   # 판정 대장 (glossary·voices)
 sys.path.insert(0, str(HERE))
 import mapname  # noqa: E402
+sys.path.insert(0, str(HERE / "stage0"))
+import structure  # noqa: E402  — 층·장면 판정과 말투 표 연결의 공용 창구(Z-53)
 from mend_newlines import mend  # noqa: E402
 from pilot_npc import ask_npc, harvest, key_of, load_personas, npc_line  # noqa: E402
 from validate import check  # noqa: E402
@@ -482,7 +484,7 @@ def plan(pilot=False, npc=False, pool_paths=()):
                 skip_other += 1
             continue
         rows, take = pg[key], []
-        if npc and not pool and (rows[0].get("scene") not in ("컷신", "대화")
+        if npc and not pool and (structure.scene(*key) not in ("컷신", "대화")
                                  or any(x.get("how") == "태그" for x in rows)):
             continue                     # 이름표가 한 줄이라도 있으면 주연 갈래 몫
         for r in rows:
@@ -509,9 +511,9 @@ def plan(pilot=False, npc=False, pool_paths=()):
                 take.append((r, who, cur, ""))
                 continue
             if npc:
-                if r["kind"] != "text" or r["how"] != "그림":
+                tbl, sprite = structure.voice_ref(r)
+                if r["kind"] != "text" or tbl != structure.GROUPS:
                     continue
-                sprite = r.get("sprite") or ""
                 if sprite not in per:    # 사람 아님(포켓몬 번호·연출물) 또는 미등재
                     npc_skipped += 1
                     continue
@@ -523,9 +525,9 @@ def plan(pilot=False, npc=False, pool_paths=()):
                     continue
                 take.append((r, sprite, cur, ""))
                 continue
-            if r["kind"] != "text" or r["how"] not in ("태그", "상속"):
+            tbl, who = structure.voice_ref(r)
+            if r["kind"] != "text" or tbl != structure.VOICES:
                 continue
-            who = r.get("who") or ""
             if not who or who in SYS or who in VOICE_FIXED:
                 continue
             cur = ko.get((r["map"], fold(r["k"])))

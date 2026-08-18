@@ -121,7 +121,8 @@ def _stamp(d):
     """0단계 파일들의 지금 모습. 밖에서 움직였으면(딴 도구·git 병합) 지문이 달라진다."""
     return tuple((p.stat().st_mtime_ns, p.stat().st_size) if p.exists() else None
                  for p in (d / "sites.jsonl", d / "messages.jsonl",
-                           d / "overrides.jsonl", d / "axes.yaml"))
+                           d / "overrides.jsonl", d / "axes.yaml",
+                           d / "pages.jsonl", d / "layout.yaml"))
 
 
 def load(d=OUT):

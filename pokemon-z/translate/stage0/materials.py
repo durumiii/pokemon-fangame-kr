@@ -45,6 +45,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import (DATA, OUT, ROOT, apply_overrides, norm, read_jsonl,  # noqa: E402
                     read_overrides)
+from structure import row_layer  # noqa: E402  — 층은 행 값 먼저, 없으면 페이지 판정(Z-53)
 
 sys.path.insert(0, str(ROOT))
 import mapname  # noqa: E402
@@ -214,7 +215,7 @@ class Ctx:
         casts, layers = {}, {}
         for r in seq:
             casts[(r.get("who", ""), r.get("speaker", ""))] = None
-            layers[r.get("layer", "")] = None
+            layers[row_layer(r)] = None
         # 같은 원문의 다른 자리 — 원문마다 한 번, 흔한 정형구는 잘라서 수만 알린다
         dups, seen_nk = [], set()
         for r in cands:
@@ -379,7 +380,7 @@ def md(groups):
                 page = r["page"]
                 L.append(f"### 겪는 순서 — 페이지 {page}")
             mark = "»" if cand else " "
-            tag = f"{naming(r)}|{r.get('layer', '?')}"
+            tag = f"{naming(r)}|{row_layer(r) or '?'}"
             flag = ("  ⚑ " + " · ".join(fs)) if fs else ""
             L.append(f"{mark} `[{r.get('screen') or r['cmd']}]` **{tag}**{flag}")
             L.append(f"    - ES: {r.get('src', '')}")
@@ -396,7 +397,7 @@ def md(groups):
                 for o in spots:
                     L.append(f"| {esc_cell(r.get('src', ''))} | 맵{o['map']} "
                              f"{mapname.ko(o['map'])} {o['event']}·{o['cmd']} | "
-                             f"{naming(o)} | {o.get('layer', '?')} | "
+                             f"{naming(o)} | {row_layer(o) or '?'} | "
                              f"{esc_cell(o['ko'])} |")
                 if total > len(spots):
                     L.append(f"| {esc_cell(r.get('src', ''))} | …외 {total - len(spots)}자리 "

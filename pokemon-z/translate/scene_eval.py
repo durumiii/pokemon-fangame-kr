@@ -23,6 +23,9 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 HERE = Path(__file__).parent
+sys.path.insert(0, str(HERE / "stage0"))
+import structure  # noqa: E402  — 층 판정은 페이지 정본이 준다(Z-53)
+
 ATTR = HERE / "data" / "speaker-attr.jsonl.gz"
 SCENE = HERE / "data" / "scene"
 LABELS = SCENE / "labels.jsonl"
@@ -82,7 +85,7 @@ def signals(rows, key, flags_reg, story):
     ⚠ 「단독인가」를 등재에 박지 마라 — 다른 플래그의 값이 바뀌면 동반이던 것이 단독이
     된다. 여기서 매번 다시 센다.
     """
-    person = any(r["cls"] == "PS" for r in rows)
+    person = structure.layer(*key) == "PS"
     fl = {f for r in rows for f in r["flags"]}
     vals = {v for f in fl if (v := flags_reg.get(f))}
     plot = "메인스토리" in vals or vals == {"임시 플래그"}

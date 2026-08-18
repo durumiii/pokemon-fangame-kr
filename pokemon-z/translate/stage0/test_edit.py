@@ -92,6 +92,13 @@ def cache_check():
         ed, _, _, warm = edit.load(d)
         assert not warm, "밖에서 갈렸는데 캐시를 그대로 썼다"
         assert ed.msgs[0]["val"] == "밖에서 갈린 값", ed.msgs
+        # 지문은 0단계 파일 여섯을 다 덮는다 — 페이지 판정(pages)과 그릇 뼈대(layout)가
+        # 빠져 있으면 층·장면을 고쳐도 상주 창구가 옛 값을 그대로 준다(Z-53 2단계)
+        for name, text in (("pages.jsonl", '{"id": "m1.e1.p0", "layer": "N"}\n'),
+                           ("layout.yaml", "maps: 12\nsections: {}\n")):
+            st = edit._stamp(d)
+            (d / name).write_text(text, encoding="utf-8")
+            assert edit._stamp(d) != st, f"{name}이 갈렸는데 지문이 그대로다"
         edit.invalidate()
 
 
