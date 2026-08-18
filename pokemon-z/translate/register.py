@@ -123,7 +123,7 @@ def sentences(text):
     return [p.strip() for p in re.split(r"(?<=[.!?…])\s+|(?<=[.!?…])(?=[가-힣])", t) if p.strip()]
 
 
-# B1~B7 급 판정 (events-and-speech 「이름표 없는 잡담 NPC」 표가 정본, 2026-08-09 확장)
+# B1~B7 급 판정 (speech-style 「이름표 없는 잡담 NPC」 표가 정본, 2026-08-09 확장)
 # 코드↔이름의 정본은 이 표 하나다 — 라벨을 다른 파일에 다시 적지 마라.
 BUCKET_NAMES = {"B1": "반말", "B2": "해요", "B3": "합쇼", "B4": "어른말",
                 "B5": "지문평서", "B6": "하게", "B7": "대화단정"}

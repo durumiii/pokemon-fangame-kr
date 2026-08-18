@@ -3,7 +3,7 @@
 **범위** — 유저 제보를 받고, 보관하고, 정본에 넣는 흐름과 웹 스튜디오.
 **여는 때** — 시트에 새 제보가 쌓였을 때 · 스튜디오를 고치거나 재배포할 때.
 **다루지 않는 것** — 제보를 반영하며 만나는 말투·표기 판정
-([events-and-speech.md](events-and-speech.md) · [names-terms.md](names-terms.md)).
+([speech-style.md](speech-style.md) · [names-terms.md](names-terms.md)).
 **전제** — 자리 표기(`맵:블록안순번`)의 해석이 절마다 다르다는 것 — 아래 절차 2가 정본.
 
 ## 제보 시트 — `tools/sheet.py`

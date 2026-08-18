@@ -441,7 +441,7 @@ fixnotes 「프로파노마을 gitana의 ~다체 어색」에서 출발한 판�
 조사 자동 선택(`\j[받침형,무받침형]`)은 번역 정본이 그 문법을 쓰는 순간 해석기 없이는
 배포가 성립하지 않는다 — **한쪽 없이 다른 쪽을 못 쓰면 둘은 별개 시스템이 아니다.**
 그래서 Josa Select 모드를 코어 본문 섹션으로 흡수했다(현행 규칙과 도구는
-text-pipeline의 조사 자동 선택 절 — `share/josa.rb`·`share/bake_josa.py`).
+dat-format의 조사 자동 선택 절 — `share/josa.rb`·`share/bake_josa.py`).
 
 같은 판단이 다시 올 때의 기준: 로드 순서가 취약하다 · 늘 한 몸으로 배포된다 ·
 다운스트림이 그 모듈의 동작을 암묵 전제한다 — 셋 중 하나면 흡수 쪽이다.
@@ -1176,7 +1176,7 @@ monsieur/mademoiselle/madame 원문 행 전수(단어 경계, 00·15~17·22·23�
 
 실행 기록(페르소나표 작성 · 파일럿 2회 · 전량 배치 · 사후 스윕)은
 [NPC 어투 재번역 경위](../log/2026-08-03-npc-register-batch.md)로 옮겼다.
-확정된 규칙은 [events-and-speech](../guides/events-and-speech.md)의 말투 배정 절이 정본이다.
+확정된 규칙은 [speech-style](../guides/speech-style.md)이 정본이다.
 
 ## 확정된 결정 (2026-08-01 사용자)
 

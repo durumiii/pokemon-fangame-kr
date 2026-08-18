@@ -6,7 +6,8 @@
 **LLM에 돈을 내는 스크립트를 짜거나 돌릴 때**(즉석 조사 스크립트도 해당한다).
 **다루지 않는 것** — 한 자리 손수정([text-pipeline.md](text-pipeline.md)) · 말투 정본
 ([../ledger/voices.md](../ledger/voices.md)).
-**전제** — 화자·말투 개념([events-and-speech.md](events-and-speech.md)).
+**전제** — 화자 개념([events-and-speech.md](events-and-speech.md))과 말투 배정
+([speech-style.md](speech-style.md)).
 
 **돈이 드는 실행은 아래 「유료 실행의 표준 장비」를 먼저 읽는다.**
 
@@ -133,7 +134,7 @@ plan이 찍는다. 산출은 `batch/npc[-pilot]-chunks.jsonl`·`batch/npc-out[-p
   백엔드는 `batch.py`가 정한다(`Z_BACKEND=openrouter`). 402를 만나면 즉시 멈춘다.
 
 같은 화면이 **판정 요청**도 받는다 — 배치 산출이 아닌 자리를 골라 재료를 갖추는 법은
-[text-pipeline](text-pipeline.md) 「판정 재료와 판정 요청」 절이다.
+[studio.md](studio.md) 「판정 재료와 판정 요청」 절이다.
 
 선별분은 검수 스튜디오로 본다 — `uv run translate/review_gui.py --out <out-dir>
 [--port 8788]`. 파일럿처럼 전량을 볼 때는 `--all`(진도도 판정 수 기준으로 바뀐다),

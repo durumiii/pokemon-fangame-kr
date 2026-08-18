@@ -4,7 +4,7 @@
 **여는 때** — 표기가 어색하다는 제보를 받았을 때 · 새 이름을 옮길 때 · 표기를 갈아
 끼울 때.
 **다루지 않는 것** — 문장 수정 절차([text-pipeline.md](text-pipeline.md)) · 말투
-([events-and-speech.md](events-and-speech.md)).
+([speech-style.md](speech-style.md)).
 **전제** — 없음.
 
 ## 표기를 정하는 순서

@@ -17,8 +17,11 @@ ko는 emit 역생성이 내고 git에 남으며, 읽기는 자유지만 **쓰기
 
 | 가이드 | 다루는 것 |
 |---|---|
-| [events-and-speech](docs/guides/events-and-speech.md) | 이벤트·텍스트의 종류, 화자 판정, 말투 배정 |
+| [events-and-speech](docs/guides/events-and-speech.md) | 이벤트·텍스트의 종류, 화자 판정 |
+| [speech-style](docs/guides/speech-style.md) | 말투(격) 배정 — 번역 문안을 쓰기 전 필수 |
 | [text-pipeline](docs/guides/text-pipeline.md) | 텍스트가 어디 살고 어떻게 고치고 빌드하나, 본가 자구 조회 |
+| [studio](docs/guides/studio.md) | 검수 스튜디오, 유지자 접점, 판정 재료 뽑기 |
+| [dat-format](docs/guides/dat-format.md) | korean.dat 포맷·인코딩 함정 |
 | [names-terms](docs/guides/names-terms.md) | 고유명·용어 표기, 전수 치환 |
 | [retranslation](docs/guides/retranslation.md) | LLM 배치 재번역, 프롬프트 규약 |
 | [reports](docs/guides/reports.md) | 유저 제보 시트, 웹 스튜디오 |
@@ -26,7 +29,7 @@ ko는 emit 역생성이 내고 git에 남으며, 읽기는 자유지만 **쓰기
 | [release](docs/guides/release.md) | 릴리스 노트, 자산 진열 |
 | [reuse-playbook](docs/guides/reuse-playbook.md) | 다른 팬게임에 이 방식을 다시 밟는 순서 |
 
-⚠ **번역값(`translate/stage0/` — 옛 `translate/ko/`)은 events-and-speech를 읽기 전에 고치지 않는다.**
+⚠ **번역값(`translate/stage0/` — 옛 `translate/ko/`)은 events-and-speech와 speech-style을 읽기 전에 고치지 않는다.**
 제보를 그대로 옮겨 넣는 작업도 예외가 아니다 — 제보가 건드리는 것이 말투일 때
 그 판이 어디서 갈리는지 모르면 반영이 곧 사고다(2026-08-08, 133줄 되돌림).
 
@@ -72,7 +75,7 @@ ko는 emit 역생성이 내고 git에 남으며, 읽기는 자유지만 **쓰기
   그때 기록하지 않으면 복원할 수 없다.
 - **유지자가 스튜디오에서 남긴 메모·수정을 먼저 본다** — 미결 메모는
   `translate/fixnotes.jsonl`(`done` 없는 줄), 손댄 자리는 `translate/fixlog.jsonl`과
-  `git diff translate/ko/`. 읽는 법은 [text-pipeline](docs/guides/text-pipeline.md)
+  `git diff translate/ko/`. 읽는 법은 [studio](docs/guides/studio.md)
   「유지자가 스튜디오에서 남긴 것」 절.
 - **판정거리로 올리기 전에 대장을 검색한다** — 이미 정해 둔 것을 다시 묻거나 티켓으로 세우는
   사고가 2026-08-17에 두 번 났다(고유명 띄어쓰기·말줄임표. 둘 다 판정이 대장에 있었다).
