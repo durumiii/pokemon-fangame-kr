@@ -1104,6 +1104,326 @@ groups:
   basis: 유지자 승인(2026-08-13, Z-47 보강)
   note: 말투 배치 대상에서 제외
   source: translate/persona-table.jsonl
+- group: acrilico3
+  match:
+    speaker: acrilico3
+  rows: 23
+  bucket: B2+B3
+  persona: 아크릴리코마을의 기술 가르침꾼. 정중한 해요체로 안내하고 절차는 합쇼로 맺는다. 기억력이 좋다고 자부한다
+  appearance: 성인. 초록 머리와 초록 모자, 얼굴 윗부분을 흰 붕대 겸 가면으로 감쌌다. 회색 상의
+  basis: 어간('acrilico') 이웃 합류(2026-08-18 미등재 화자 선별 B) — acrilico2와 같은 인물
+  note: acrilico2와 같은 묶음(어간 이웃 합류, 2026-08-18)
+  source: stage0/groups.yaml 직접 편집
+- group: acrilico5
+  match:
+    speaker: acrilico5
+  rows: 20
+  bucket: B2+B3
+  persona: 아크릴리코마을의 기술 가르침꾼. 정중한 해요체로 안내하고 절차는 합쇼로 맺는다. 기억력이 좋다고 자부한다
+  appearance: 성인. 초록 머리와 초록 모자, 얼굴 윗부분을 흰 붕대 겸 가면으로 감쌌다. 회색 상의
+  basis: 어간('acrilico') 이웃 합류(2026-08-18 미등재 화자 선별 B) — acrilico2와 같은 인물
+  note: acrilico2와 같은 묶음(어간 이웃 합류, 2026-08-18)
+  source: stage0/groups.yaml 직접 편집
+- group: acrilico82
+  match:
+    speaker: acrilico82
+  rows: 5
+  bucket: B2+B3
+  persona: 아크릴리코마을의 기술 가르침꾼. 정중한 해요체로 안내하고 절차는 합쇼로 맺는다. 기억력이 좋다고 자부한다
+  appearance: 성인. 초록 머리와 초록 모자, 얼굴 윗부분을 흰 붕대 겸 가면으로 감쌌다. 회색 상의
+  basis: 어간('acrilico') 이웃 합류(2026-08-18 미등재 화자 선별 B) — acrilico2와 같은 인물
+  note: acrilico2와 같은 묶음(어간 이웃 합류, 2026-08-18)
+  source: stage0/groups.yaml 직접 편집
+- group: enfermera
+  match:
+    speaker: enfermera
+  rows: 6
+  bucket: B2+B3
+  persona: 포켓몬센터 간호사. 밝은 해요체로 맞이하고 치료 절차는 합쇼로 또박또박 안내한다
+  appearance: 젊은 여자. 흰 간호모, 진분홍 머리를 양갈래로 묶고, 갈색 유니폼에 포켓볼 문양 앞치마
+  basis: 어간('enfermera') 이웃 합류(2026-08-18 미등재 화자 선별 B) — enfermera2와 같은 인물
+  note: enfermera2와 같은 묶음(어간 이웃 합류, 2026-08-18)
+  source: stage0/groups.yaml 직접 편집
+- group: cripto2
+  match:
+    speaker: cripto2
+  rows: 4
+  bucket: B1
+  persona: 납골당 상인. 낮게 가라앉은 반말
+  appearance: 지하 납골당 인물
+  basis: 어간('cripto') 이웃 합류(2026-08-18 미등재 화자 선별 B) — cripto1과 같은 인물
+  note: cripto1과 같은 묶음(어간 이웃 합류, 2026-08-18)
+  source: stage0/groups.yaml 직접 편집
+- group: lunatico3
+  match:
+    speaker: lunatico3
+  rows: 1
+  bucket: B1(불안정한 존대 혼재)
+  persona: 어둠의 탑 수용자. 반말과 해요체를 오가며 말이 끊긴다. 헛것을 보고 혼잣말을 하다 갑자기 상대에게 매달린다
+  appearance: 성인 남자. 민머리, 초록 눈썹, 퀭한 눈, 낡은 흰 구속복 차림
+  basis: 어간('lunatico') 이웃 합류(2026-08-18 미등재 화자 선별 B) — lunatico와 같은 인물
+  note: lunatico와 같은 묶음(어간 이웃 합류, 2026-08-18)
+  source: stage0/groups.yaml 직접 편집
+- group: '474'
+  match:
+    speaker: '474'
+  rows: 24
+  bucket: B1
+  persona: 잊은 기술을 되살려 주는 창구 담당. 툭툭 던지는 반말에 짓궂은 핀잔이 섞인다
+  appearance: ''
+  basis: 이름+대사(그림 못 봄 — 포켓몬 그림이나 speaker.py가 사람 취급)
+  note: 'Z-53 ① 채점(2026-08-18, 유지자 승인). 근거: 이름+대사(그림 못 봄 — 포켓몬 그림이나 speaker.py가 사람 취급)'
+  source: Z-53 채점(2026-08-18)
+- group: '115'
+  match:
+    speaker: '115'
+  rows: 17
+  bucket: B5
+  persona: 알을 맡아 돌봐 주는 캥카. 제 말은 울음소리뿐이고 뜻은 괄호 안 서술로 전해진다
+  appearance: ''
+  basis: 이름+대사
+  note: 'Z-53 ① 채점(2026-08-18, 유지자 승인). 근거: 이름+대사'
+  source: Z-53 채점(2026-08-18)
+- group: vampirow
+  match:
+    speaker: vampirow
+  rows: 16
+  bucket: B1(신호 없음 — 기본값)
+  persona: 성에 숨어 사는 뱀파이어. 대사가 절규뿐이라 말투를 정할 재료가 없다
+  appearance: ''
+  basis: 이름+대사(그림 못 봄)
+  note: 'Z-53 ① 채점(2026-08-18, 유지자 승인). 근거: 이름+대사(그림 못 봄)'
+  source: Z-53 채점(2026-08-18)
+- group: azothoE
+  match:
+    speaker: azothoE
+  rows: 15
+  bucket: B7
+  persona: 아조스단 상급 단원. 확신에 찬 단정체로 조직의 이념을 늘어놓고, 이따금 들뜬 농담이 튀어나온다
+  appearance: ''
+  basis: 이름+대사(그림 못 봄 — azotho=Team Azoth, E=엘리트)
+  note: 'Z-53 ① 채점(2026-08-18, 유지자 승인). 근거: 이름+대사(그림 못 봄 — azotho=Team Azoth, E=엘리트)'
+  source: Z-53 채점(2026-08-18)
+- group: jardineroOW
+  match:
+    speaker: jardineroOW
+  rows: 14
+  bucket: B1
+  persona: 란토 저택의 정원사. 살가운 반말로 말을 붙이고, 제 일 자랑과 고용주 뒷말을 반씩 섞는다
+  appearance: ''
+  basis: 이름+대사(그림 못 봄 — jardinero=정원사)
+  note: 'Z-53 ① 채점(2026-08-18, 유지자 승인). 근거: 이름+대사(그림 못 봄 — jardinero=정원사)'
+  source: Z-53 채점(2026-08-18)
+- group: enfermera2G
+  match:
+    speaker: enfermera2G
+  rows: 12
+  bucket: B2+B3
+  persona: 저택·요양원에 상주하는 간호사. 밝은 해요체로 맞이하고 회복 절차는 합쇼로 또박또박 안내한다
+  appearance: ''
+  basis: 이름+대사(그림 못 봄 — enfermera2 변형)
+  note: 'Z-53 ① 채점(2026-08-18, 유지자 승인). 근거: 이름+대사(그림 못 봄 — enfermera2 변형)'
+  source: Z-53 채점(2026-08-18)
+- group: '181'
+  match:
+    speaker: '181'
+  rows: 11
+  bucket: B1
+  persona: 잊은 기술을 되살려 주는 창구 담당. 툭툭 던지는 반말에 짓궂은 핀잔이 섞인다
+  appearance: ''
+  basis: 이름+대사
+  note: 'Z-53 ① 채점(2026-08-18, 유지자 승인). 근거: 이름+대사'
+  source: Z-53 채점(2026-08-18)
+- group: '242'
+  match:
+    speaker: '242'
+  rows: 6
+  bucket: B2(절차 B3)
+  persona: 포켓몬마을의 회복 창구를 맡은 포켓몬. 절차는 정중한 존대로 안내하고, 제 솜씨 자랑에서만 반말이 튀어나온다
+  appearance: ''
+  basis: 이름+대사
+  note: 'Z-53 ① 채점(2026-08-18, 유지자 승인). 근거: 이름+대사'
+  source: Z-53 채점(2026-08-18)
+- group: golperoca
+  match:
+    speaker: golperoca
+  rows: 5
+  bucket: B5
+  persona: 사람 화자가 아니다 — 바위를 부수는 자리의 확인창·시스템 문구
+  appearance: ''
+  basis: 이름+대사(그림 못 봄 — golpe+roca=바위 치기)
+  note: 'Z-53 ① 채점(2026-08-18, 유지자 승인). 근거: 이름+대사(그림 못 봄 — golpe+roca=바위 치기)'
+  source: Z-53 채점(2026-08-18)
+- group: '325'
+  match:
+    speaker: '325'
+  rows: 4
+  bucket: B1
+  persona: 멈추면 죽는다고 믿고 쉼 없이 뛰는 포켓몬마을 주민. 들뜬 반말로 같은 말을 되풀이한다
+  appearance: ''
+  basis: 이름+대사(그림 못 봄)
+  note: 'Z-53 ① 채점(2026-08-18, 유지자 승인). 근거: 이름+대사(그림 못 봄)'
+  source: Z-53 채점(2026-08-18)
+- group: '465'
+  match:
+    speaker: '465'
+  rows: 4
+  bucket: B5
+  persona: 말하는 화자가 아니라 마을의 내력을 전하는 서술문
+  appearance: ''
+  basis: 이름+대사(그림 못 봄)
+  note: 'Z-53 ① 채점(2026-08-18, 유지자 승인). 근거: 이름+대사(그림 못 봄)'
+  source: Z-53 채점(2026-08-18)
+- group: '301'
+  match:
+    speaker: '301'
+  rows: 3
+  bucket: B5
+  persona: 말하는 화자가 아니라 마을을 소개하는 안내·서술문
+  appearance: ''
+  basis: 이름+대사(그림 못 봄)
+  note: 'Z-53 ① 채점(2026-08-18, 유지자 승인). 근거: 이름+대사(그림 못 봄)'
+  source: Z-53 채점(2026-08-18)
+- group: 096
+  match:
+    speaker: 096
+  rows: 2
+  bucket: B5
+  persona: 식당에서 시중드는 슬리퍼. 말은 울음소리뿐이고 나머지는 괄호 안 서술이다
+  appearance: ''
+  basis: 이름+대사(그림 못 봄)
+  note: 'Z-53 ① 채점(2026-08-18, 유지자 승인). 근거: 이름+대사(그림 못 봄)'
+  source: Z-53 채점(2026-08-18)
+- group: '547'
+  match:
+    speaker: '547'
+  rows: 2
+  bucket: B4
+  persona: 마을의 지난 일을 일러 주는 나이 든 포켓몬마을 주민. 정감 어린 하대로 사정을 들려준다
+  appearance: ''
+  basis: 이름+대사(그림 못 봄)
+  note: 'Z-53 ① 채점(2026-08-18, 유지자 승인). 근거: 이름+대사(그림 못 봄)'
+  source: Z-53 채점(2026-08-18)
+- group: 316s
+  match:
+    speaker: 316s
+  rows: 2
+  bucket: B1
+  persona: 우두머리 눈치를 보며 열매를 걷으러 다니는 포켓몬마을 주민. 속내를 흘렸다가 황급히 주워 담는 반말 혼잣말
+  appearance: ''
+  basis: 이름+대사(그림 못 봄)
+  note: 'Z-53 ① 채점(2026-08-18, 유지자 승인). 근거: 이름+대사(그림 못 봄)'
+  source: Z-53 채점(2026-08-18)
+- group: '055'
+  match:
+    speaker: '055'
+  rows: 2
+  bucket: B1
+  persona: 화합을 말하면서도 악타입은 슬쩍 피하는 포켓몬마을 주민. 겸연쩍은 반말
+  appearance: ''
+  basis: 이름+대사(그림 못 봄)
+  note: 'Z-53 ① 채점(2026-08-18, 유지자 승인). 근거: 이름+대사(그림 못 봄)'
+  source: Z-53 채점(2026-08-18)
+- group: '294'
+  match:
+    speaker: '294'
+  rows: 2
+  bucket: B2
+  persona: 짝사랑에 조심스러운 포켓몬마을 주민. 자신을 낮추는 해요체로 속내를 털어놓는다
+  appearance: ''
+  basis: 이름+대사(그림 못 봄)
+  note: 'Z-53 ① 채점(2026-08-18, 유지자 승인). 근거: 이름+대사(그림 못 봄)'
+  source: Z-53 채점(2026-08-18)
+- group: '195'
+  match:
+    speaker: '195'
+  rows: 2
+  bucket: B1
+  persona: 말이 서툰 포켓몬마을 주민. 조사와 활용을 빠뜨린 짧은 문장으로 겁먹은 채 사정한다
+  appearance: ''
+  basis: 이름+대사(그림 못 봄)
+  note: 'Z-53 ① 채점(2026-08-18, 유지자 승인). 근거: 이름+대사(그림 못 봄)'
+  source: Z-53 채점(2026-08-18)
+- group: '903'
+  match:
+    speaker: '903'
+  rows: 2
+  bucket: B4
+  persona: 숲에서 죽은 사람을 기려 목상을 깎는 포켓몬마을 주민. 나이 든 이의 정감 하대
+  appearance: ''
+  basis: 이름+대사(그림 못 봄)
+  note: 'Z-53 ① 채점(2026-08-18, 유지자 승인). 근거: 이름+대사(그림 못 봄)'
+  source: Z-53 채점(2026-08-18)
+- group: 068
+  match:
+    speaker: 068
+  rows: 2
+  bucket: B1
+  persona: 육성 이론을 떠벌리는 포켓몬마을 주민. 들뜬 반말에 프랑스어 욕설이 한 번 섞인다
+  appearance: ''
+  basis: 이름+대사(그림 못 봄)
+  note: 'Z-53 ① 채점(2026-08-18, 유지자 승인). 근거: 이름+대사(그림 못 봄)'
+  source: Z-53 채점(2026-08-18)
+- group: cazadorHerido
+  match:
+    speaker: cazadorHerido
+  rows: 10
+  bucket: B7
+  persona: 저주에 살이 무너져 가는 사냥꾼. 앓는 소리를 섞은 딱딱한 반말로 다가오지 말라고 밀어낸다
+  appearance: ''
+  basis: 이름+대사(그림 못 봄 — cazador=사냥꾼, herido=부상)
+  note: 'Z-53 ① 채점(2026-08-18, 유지자 승인). 근거: 이름+대사(그림 못 봄 — cazador=사냥꾼, herido=부상)'
+  source: Z-53 채점(2026-08-18)
+- group: espectrow
+  match:
+    speaker: espectrow
+  rows: 8
+  bucket: B5(기억 재생 — 행별 결 유지)
+  persona: 떠도는 숲에 남은 영혼들의 기억. 죽은 아이·감시자 등 서로 다른 영혼의 목소리가 한 그림에 섞여 있다 — 한 페르소나로 누르지 않고 각 기억의 현행 결을 지킨다
+  appearance: ''
+  basis: 유지자 판정(2026-08-18) — 「편지처럼 지문이되 사람 대화가 있는 꼴. 서로 다른 영혼이 남긴 기억을 듣는 것에 가깝다」
+  note: ''
+  source: stage0/groups.yaml 직접 편집
+- group: floetteEterno2
+  match:
+    speaker: floetteEterno2
+  rows: 4
+  bucket: B5
+  persona: 영원의 플라엣테 자리의 문구 — 관찰 지문과 시스템 안내가 본체고, 이름표 발화는 울음소리(플라…)뿐이다
+  appearance: ''
+  basis: 유지자 판정(2026-08-18) — 지문 층
+  note: ''
+  source: stage0/groups.yaml 직접 편집
+- group: espiritu1
+  match:
+    speaker: espiritu1
+  rows: 1
+  bucket: B2
+  persona: 얀트라 도서관 수수께끼의 세 정령(민트·릴라·오렌지)의 하나. 셋이 한 수수께끼라 해요체로 통일한다 — 논리 문장이라 어미 밖은 손대지 않는다
+  appearance: ''
+  basis: 유지자 판정(2026-08-18) — 해요체 통일
+  note: ''
+  source: stage0/groups.yaml 직접 편집
+- group: espiritu2
+  match:
+    speaker: espiritu2
+  rows: 1
+  bucket: B2
+  persona: 얀트라 도서관 수수께끼의 세 정령(민트·릴라·오렌지)의 하나. 셋이 한 수수께끼라 해요체로 통일한다 — 논리 문장이라 어미 밖은 손대지 않는다
+  appearance: ''
+  basis: 유지자 판정(2026-08-18) — 해요체 통일
+  note: ''
+  source: stage0/groups.yaml 직접 편집
+- group: espiritu3
+  match:
+    speaker: espiritu3
+  rows: 1
+  bucket: B2
+  persona: 얀트라 도서관 수수께끼의 세 정령(민트·릴라·오렌지)의 하나. 셋이 한 수수께끼라 해요체로 통일한다 — 논리 문장이라 어미 밖은 손대지 않는다
+  appearance: ''
+  basis: 유지자 판정(2026-08-18) — 해요체 통일
+  note: ''
+  source: stage0/groups.yaml 직접 편집
 sprite_groups:
   _comment: '스프라이트 어간 → 화자 그룹 (NPC 어투 배정용 구조 분류). 어간은 mapscan.py 규칙: 접미(ow/w/TS/숫자) 제거. 그룹별 최종 어투는 register-study(실제 게임 화법 조사) 결과로 확정한다 — 이 파일은 「누가 말하나」만 정한다. voices=명명 인물(말투표 라우팅), 사물지문=오브젝트·시스템(평서 지문이 정답), 내용판정=스프라이트 없음(행 내용으로 갈라야 함). 2026-08-03 초판. 어미 체계=버킷, 개성=원시 스프라이트별 페르소나표 2층 구조 — 어간 축약이 신사/귀부인/아가씨 같은 변형을 지우므로 배치에는 원시 스프라이트명을 싣는다. 상위 종의 페르소나 정본은 이 파일 위쪽 groups 절(그림 실측 페르소나) — 그룹·버킷과 어긋나면 페르소나가 이긴다.'
   groups:

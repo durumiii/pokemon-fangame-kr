@@ -1,0 +1,2251 @@
+{
+ "title": "Z-53 ① 미등재 화자 채점",
+ "note": "규칙 미등재 정체성 151개 · 769행 — 행수 내림차순. PS는 voices 등재(또는 기존 인물의 별칭 여부), PC는 groups 버킷·페르소나 배정.",
+ "asks": [
+  {
+   "id": "Recluta Azoth",
+   "title": "Recluta Azoth — PS 41행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵29 Pueblo Collage, 맵90 Academia Novarte, 맵70 Ruta 6, 맵53 Ruta 3, 맵46 Bosque Ladera · 단서: cast:Recluta Azoth, how:태그, how:상속, cast:Crisanto, cast:Anciana",
+   "rec": "",
+   "bucket": "Recluta Azoth",
+   "rows": [
+    "29:26:0:114",
+    "29:26:0:115",
+    "29:26:0:116",
+    "29:26:0:117",
+    "29:26:0:127",
+    "29:26:0:128",
+    "29:26:0:139",
+    "29:26:0:160",
+    "29:26:0:161",
+    "29:26:0:196",
+    "29:26:0:197",
+    "29:26:0:198",
+    "29:26:0:199",
+    "29:26:0:204",
+    "46:20:0:162",
+    "53:14:0:71",
+    "53:14:0:73",
+    "53:14:0:74",
+    "53:14:0:101",
+    "53:14:0:128",
+    "53:14:0:129",
+    "70:16:0:19",
+    "70:16:0:20",
+    "70:16:0:32",
+    "70:16:0:33",
+    "70:16:0:46",
+    "70:16:0:47",
+    "70:16:0:78",
+    "70:16:0:79",
+    "90:38:2:14",
+    "90:38:2:15",
+    "90:38:2:33",
+    "90:40:2:12",
+    "90:40:2:13",
+    "90:40:2:31",
+    "90:35:2:13",
+    "90:35:2:14",
+    "90:35:2:32",
+    "90:41:2:13",
+    "90:41:2:14",
+    "90:41:2:32"
+   ]
+  },
+  {
+   "id": "monjeAcrilico",
+   "title": "monjeAcrilico — PC 29행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵404 Barco Encallado, 맵25 Pueblo Acrílico · 단서: cast:Cerúleo, how:상속, how:태그, how:분기다름, how:선택지",
+   "rec": "",
+   "bucket": "monjeAcrilico",
+   "rows": [
+    "25:48:0:0",
+    "25:48:0:15",
+    "25:48:0:16",
+    "404:10:0:5",
+    "404:10:0:6",
+    "404:10:0:7",
+    "404:10:0:9",
+    "404:10:0:11",
+    "404:10:0:13",
+    "404:10:0:16",
+    "404:10:0:17",
+    "404:10:0:18",
+    "404:10:0:22",
+    "404:10:1:0",
+    "404:10:1:1",
+    "404:10:1:2",
+    "404:10:2:6",
+    "404:10:2:7",
+    "404:10:2:8",
+    "404:10:2:10",
+    "404:10:2:15",
+    "404:10:2:16",
+    "404:10:2:18",
+    "404:10:2:19",
+    "404:10:2:22"
+   ]
+  },
+  {
+   "id": "Plumanegra",
+   "title": "Plumanegra — PS 27행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵26 Hospicio Acrílico, 맵187 Criptas de Luminalia · 단서: cast:Plumanegra, how:상속, how:분기다름, how:태그, how:명단1",
+   "rec": "",
+   "bucket": "Plumanegra",
+   "rows": [
+    "26:4:0:1",
+    "26:4:0:2",
+    "26:4:0:3",
+    "26:4:0:6",
+    "26:4:0:18",
+    "26:4:0:19",
+    "26:4:0:20",
+    "26:4:1:1",
+    "26:4:1:2",
+    "26:4:1:3",
+    "26:4:1:4",
+    "26:4:1:11",
+    "26:4:1:21",
+    "26:4:1:22",
+    "26:4:1:23",
+    "187:15:0:0",
+    "187:15:0:1",
+    "187:15:0:2",
+    "187:15:0:3",
+    "187:15:0:6",
+    "187:15:0:7",
+    "187:15:0:8",
+    "187:15:0:9",
+    "187:15:0:17",
+    "187:15:0:18",
+    "187:15:0:19",
+    "187:15:0:20"
+   ]
+  },
+  {
+   "id": "474",
+   "title": "474 — PC 24행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵206 Palacio Luminalia, 맵214 Palacio Luminalia · 단서: how:그림, how:선택지",
+   "rec": "",
+   "bucket": "474",
+   "rows": [
+    "206:16:0:1",
+    "206:16:0:18",
+    "206:16:0:25",
+    "206:16:0:29",
+    "206:16:0:34",
+    "206:16:0:40",
+    "206:16:0:45",
+    "206:16:0:47",
+    "214:66:0:1",
+    "214:66:0:18",
+    "214:66:0:25",
+    "214:66:0:29",
+    "214:66:0:34",
+    "214:66:0:40",
+    "214:66:0:45",
+    "214:66:0:47"
+   ]
+  },
+  {
+   "id": "acrilico3",
+   "title": "acrilico3 — PC 23행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵64 Casa, 맵25 Pueblo Acrílico · 단서: cast:Margarito, how:상속, how:태그, how:분기다름, how:명단1",
+   "rec": "이웃 스프라이트 acrilico1, acrilico2, acrilico4 등재 — 같은 묶음 후보",
+   "bucket": "acrilico3",
+   "rows": [
+    "25:25:0:1",
+    "25:25:0:4",
+    "64:4:0:0",
+    "64:4:0:1",
+    "64:4:0:2",
+    "64:4:0:3",
+    "64:4:0:6",
+    "64:4:0:7",
+    "64:4:0:8",
+    "64:4:0:9",
+    "64:4:0:13",
+    "64:4:1:0",
+    "64:4:1:1",
+    "64:4:1:2",
+    "64:4:1:3",
+    "64:4:2:0",
+    "64:4:2:1",
+    "64:4:2:2",
+    "64:4:2:3",
+    "64:4:2:4",
+    "64:4:2:5"
+   ]
+  },
+  {
+   "id": "Genos",
+   "title": "Genos — PS 22행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵139 Viejo Vánitas, 맵166 Hospicio Caduco, 맵169 Escena Melia 2 · 단서: cast:Genos, how:태그, cast:???, cast:Belladona, cast:Crisanto",
+   "rec": "",
+   "bucket": "Genos",
+   "rows": [
+    "139:51:0:75",
+    "139:51:0:80",
+    "139:51:0:85",
+    "139:51:0:86",
+    "139:51:0:95",
+    "139:51:0:102",
+    "139:51:0:103",
+    "139:51:0:109",
+    "139:51:0:110",
+    "139:51:0:117",
+    "139:51:0:118",
+    "166:4:1:218",
+    "166:4:1:219",
+    "166:4:1:291",
+    "166:4:1:306",
+    "166:4:1:307",
+    "166:4:1:354",
+    "166:4:1:359",
+    "169:34:0:121",
+    "169:34:0:122",
+    "169:34:0:253",
+    "169:34:0:254"
+   ]
+  },
+  {
+   "id": "acrilico5",
+   "title": "acrilico5 — PC 20행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵25 Pueblo Acrílico · 단서: cast:Dendro, how:분기다름, how:상속, how:선택지, how:태그",
+   "rec": "이웃 스프라이트 acrilico1, acrilico2, acrilico4 등재 — 같은 묶음 후보",
+   "bucket": "acrilico5",
+   "rows": [
+    "25:33:0:0",
+    "25:33:0:1",
+    "25:33:0:3",
+    "25:33:0:12",
+    "25:33:0:22",
+    "25:33:0:23",
+    "25:33:0:28",
+    "25:33:0:32",
+    "25:33:1:0",
+    "25:33:1:1",
+    "25:33:1:3",
+    "25:33:1:12",
+    "25:33:1:22",
+    "25:33:1:23",
+    "25:33:1:28",
+    "25:33:1:32"
+   ]
+  },
+  {
+   "id": "Mosquetera",
+   "title": "Mosquetera — PS 17행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵332 Sala de Mando, 맵361 Expansiones de Luminalia - Sur, 맵74 Pueblo Profano · 단서: cast:Crisanto, cast:Mosquetera, cast:Melia, cast:Mosquetero, how:태그 · Z-73 화자 갈림 70건과 겹침",
+   "rec": "",
+   "bucket": "Mosquetera",
+   "rows": [
+    "74:20:0:157",
+    "74:20:0:196",
+    "74:20:0:197",
+    "332:9:0:17",
+    "332:9:0:18",
+    "332:9:0:20",
+    "332:9:0:34",
+    "332:9:0:35",
+    "332:9:0:40",
+    "332:9:0:128",
+    "332:9:0:129",
+    "361:42:0:65",
+    "361:42:0:86",
+    "361:42:0:87",
+    "361:42:0:103",
+    "361:42:0:108",
+    "361:42:0:128"
+   ]
+  },
+  {
+   "id": "115",
+   "title": "115 — PC 17행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵24 Pueblo Acrílico · 단서: how:그림, how:선택지",
+   "rec": "",
+   "bucket": "115",
+   "rows": [
+    "24:34:0:2",
+    "24:34:0:3",
+    "24:34:0:8",
+    "24:34:0:12",
+    "24:34:0:18",
+    "24:34:0:24",
+    "24:34:0:36",
+    "24:34:0:42",
+    "24:34:0:50",
+    "24:34:0:52",
+    "24:34:0:56",
+    "24:34:0:60",
+    "24:34:0:64"
+   ]
+  },
+  {
+   "id": "vampirow",
+   "title": "vampirow — PC 16행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵128 Catacumbas Septentrionales, 맵92 Chateau Lanto, 맵94 Chateau Lanto · 단서: how:그림, tclass:VAMPIRO, how:전투호출",
+   "rec": "",
+   "bucket": "vampirow",
+   "rows": [
+    "92:13:0:2",
+    "92:13:0:3",
+    "92:13:1:0",
+    "92:14:0:2",
+    "92:14:0:3",
+    "92:14:1:0",
+    "94:12:0:2",
+    "94:12:0:3",
+    "94:12:1:0",
+    "128:21:0:0",
+    "128:21:0:1",
+    "128:21:0:2",
+    "128:21:0:3",
+    "128:21:0:10",
+    "128:21:0:11",
+    "128:21:0:18"
+   ]
+  },
+  {
+   "id": "Consejero Narciso",
+   "title": "Consejero Narciso — PS 15행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵212 Escena 2, 맵213 Escena 3, 맵211 Escena 1 · 단서: cast:Consejero Narciso, cast:Rey Malvo, cast:Aure, cast:???, cast:Reina Malva",
+   "rec": "",
+   "bucket": "Consejero Narciso",
+   "rows": [
+    "211:3:0:133",
+    "211:3:0:138",
+    "211:3:0:139",
+    "212:2:0:55",
+    "212:2:0:56",
+    "212:2:0:83",
+    "212:2:0:95",
+    "212:2:0:96",
+    "212:2:0:169",
+    "213:1:0:20",
+    "213:1:0:21",
+    "213:1:0:31",
+    "213:1:0:54",
+    "213:1:0:55",
+    "213:1:0:83"
+   ]
+  },
+  {
+   "id": "Bruja",
+   "title": "Bruja — PS 15행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵271 Fábrica de Pokéball · 단서: cast:???, cast:Bruja, cast:Brujas, cast:Crisanto, how:상속",
+   "rec": "",
+   "bucket": "Bruja",
+   "rows": [
+    "271:4:0:131",
+    "271:4:0:132",
+    "271:4:0:137",
+    "271:4:0:171",
+    "271:4:0:245",
+    "271:4:0:246",
+    "271:4:0:247",
+    "271:4:0:462",
+    "271:4:0:463",
+    "271:4:0:469",
+    "271:4:0:488",
+    "271:4:0:489",
+    "271:4:0:501",
+    "271:4:0:502",
+    "271:4:0:528"
+   ]
+  },
+  {
+   "id": "azothoE",
+   "title": "azothoE — PC 15행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵470 El Arma Definitiva, 맵472 El Arma Definitiva, 맵473 El Arma Definitiva, 맵475 El Arma Definitiva, 맵476 El Arma Definitiva · 단서: how:그림, tclass:ELITEAZOTH, how:전투호출",
+   "rec": "",
+   "bucket": "azothoE",
+   "rows": [
+    "470:50:0:2",
+    "470:50:0:3",
+    "470:50:1:0",
+    "472:24:0:2",
+    "472:24:0:4",
+    "472:24:1:0",
+    "473:76:0:2",
+    "473:76:0:3",
+    "473:76:1:0",
+    "475:10:0:2",
+    "475:10:0:3",
+    "475:10:1:0",
+    "476:42:0:2",
+    "476:42:0:3",
+    "476:42:1:0"
+   ]
+  },
+  {
+   "id": "jardineroOW",
+   "title": "jardineroOW — PC 14행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵100 Ruta 8 Este · 단서: how:그림, tclass:JARDINERO, how:전투호출",
+   "rec": "",
+   "bucket": "jardineroOW",
+   "rows": [
+    "100:22:0:2",
+    "100:22:0:3",
+    "100:22:1:0",
+    "100:23:0:0",
+    "100:24:0:0",
+    "100:19:0:2",
+    "100:19:0:3",
+    "100:19:1:0",
+    "100:20:0:2",
+    "100:20:0:3",
+    "100:20:1:0",
+    "100:21:0:2",
+    "100:21:0:3",
+    "100:21:1:0"
+   ]
+  },
+  {
+   "id": "Cazador",
+   "title": "Cazador — PS 13행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵147 Hospicio Caduco, 맵137 Ruta 12 · 단서: cast:Cazador, cast:Crisanto, cast:Melia, cast:Lanto, cast:Wolfram",
+   "rec": "",
+   "bucket": "Cazador",
+   "rows": [
+    "137:21:0:312",
+    "137:21:0:313",
+    "137:21:0:322",
+    "137:21:0:323",
+    "137:21:0:328",
+    "147:27:0:20",
+    "147:27:0:21",
+    "147:28:0:21",
+    "147:28:0:22",
+    "147:25:0:15",
+    "147:25:0:16",
+    "147:26:0:19",
+    "147:26:0:20"
+   ]
+  },
+  {
+   "id": "Mujer",
+   "title": "Mujer — PS 13행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵285 Escena, 맵506 Epílogo 2, 맵505 Epílogo · 단서: cast:Mujer, how:태그, cast:Crisanto, cast:Melia, how:상속",
+   "rec": "",
+   "bucket": "Mujer",
+   "rows": [
+    "285:1:0:22",
+    "285:1:0:27",
+    "285:1:0:43",
+    "285:1:0:48",
+    "285:1:0:50",
+    "285:1:0:55",
+    "285:1:0:70",
+    "285:1:0:71",
+    "285:1:0:76",
+    "505:32:0:231",
+    "506:12:0:42",
+    "506:12:0:43",
+    "506:12:0:49"
+   ]
+  },
+  {
+   "id": "Fantasma",
+   "title": "Fantasma — PS 12행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵315 Isla Montesanto · 단서: cast:Fantasma, cast:Loto, how:상속, how:태그",
+   "rec": "",
+   "bucket": "Fantasma",
+   "rows": [
+    "315:5:0:9",
+    "315:5:0:10",
+    "315:5:0:11",
+    "315:5:0:12",
+    "315:5:0:13",
+    "315:5:0:25",
+    "315:5:0:26",
+    "315:5:0:35",
+    "315:5:0:36",
+    "315:5:0:37",
+    "315:5:0:45",
+    "315:5:0:94"
+   ]
+  },
+  {
+   "id": "enfermera2G",
+   "title": "enfermera2G — PC 12행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵68 Casa Grande, 맵197 Hospicio Caduco · 단서: how:그림, how:선택지",
+   "rec": "",
+   "bucket": "enfermera2G",
+   "rows": [
+    "68:2:0:1",
+    "68:2:0:4",
+    "68:2:0:18",
+    "68:2:0:21",
+    "197:4:0:1",
+    "197:4:0:4",
+    "197:4:0:18",
+    "197:4:0:21"
+   ]
+  },
+  {
+   "id": "Eric",
+   "title": "Eric — PS 11행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵487 Ruta 26 · 단서: cast:Eric, how:상속, how:태그, how:분기다름",
+   "rec": "",
+   "bucket": "Eric",
+   "rows": [
+    "487:7:0:0",
+    "487:7:0:1",
+    "487:7:0:2",
+    "487:7:0:5",
+    "487:7:0:13",
+    "487:7:0:14",
+    "487:7:0:16",
+    "487:7:0:17",
+    "487:7:0:21",
+    "487:7:1:0",
+    "487:7:1:1"
+   ]
+  },
+  {
+   "id": "181",
+   "title": "181 — PC 11행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵356 Villa Pokemon · 단서: how:그림, how:선택지",
+   "rec": "",
+   "bucket": "181",
+   "rows": [
+    "356:7:1:1",
+    "356:7:1:5",
+    "356:7:1:12",
+    "356:7:1:16",
+    "356:7:1:21",
+    "356:7:1:27",
+    "356:7:1:32",
+    "356:7:1:34"
+   ]
+  },
+  {
+   "id": "Carabinera",
+   "title": "Carabinera — PS 10행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵278 Escena Manifestacion · 단서: cast:Brujita, cast:Carabinera, cast:Carabinero, how:태그, how:분기다름 · Z-73 화자 갈림 70건과 겹침",
+   "rec": "",
+   "bucket": "Carabinera",
+   "rows": [
+    "278:2:0:22",
+    "278:2:0:57",
+    "278:2:0:60",
+    "278:2:0:67",
+    "278:2:0:78",
+    "278:2:0:81",
+    "278:2:0:84",
+    "278:2:0:89",
+    "278:2:0:243",
+    "278:2:0:244"
+   ]
+  },
+  {
+   "id": "Sabio",
+   "title": "Sabio — PS 10행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵356 Villa Pokemon · 단서: cast:Olivier, cast:Sabio, cast:Slowking, how:상속, how:태그",
+   "rec": "",
+   "bucket": "Sabio",
+   "rows": [
+    "356:27:0:36",
+    "356:27:0:38",
+    "356:27:0:50",
+    "356:27:0:51",
+    "356:27:0:63",
+    "356:27:0:64",
+    "356:27:0:89",
+    "356:27:0:90",
+    "356:27:0:101",
+    "356:27:0:102"
+   ]
+  },
+  {
+   "id": "cazadorHerido",
+   "title": "cazadorHerido — PC 10행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵141 Pueblo Vánitas · 단서: how:그림",
+   "rec": "",
+   "bucket": "cazadorHerido",
+   "rows": [
+    "141:33:0:0",
+    "141:33:0:1",
+    "141:33:0:2",
+    "141:33:0:3",
+    "141:33:1:0",
+    "141:33:1:1",
+    "141:33:1:2",
+    "141:33:1:3",
+    "141:33:1:4",
+    "141:33:1:46"
+   ]
+  },
+  {
+   "id": "Mosquetero",
+   "title": "Mosquetero — PS 9행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵332 Sala de Mando, 맵285 Escena, 맵500 Escenas Finales, 맵74 Pueblo Profano · 단서: cast:Crisanto, cast:Mosquetero, how:태그, cast:Melia, cast:Mosquetera · Z-73 화자 갈림 70건과 겹침",
+   "rec": "",
+   "bucket": "Mosquetero",
+   "rows": [
+    "74:20:0:36",
+    "285:26:0:56",
+    "285:26:0:57",
+    "332:9:0:97",
+    "332:9:0:158",
+    "332:9:0:159",
+    "332:9:0:171",
+    "500:3:0:185",
+    "500:3:0:201"
+   ]
+  },
+  {
+   "id": "Pirata 1",
+   "title": "Pirata 1 — PS 9행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵149 Bastión Pokémon · 단서: cast:Capitán Loto, cast:Clavelina, cast:Pirata 1, cast:Pirata 2, how:태그",
+   "rec": "",
+   "bucket": "Pirata 1",
+   "rows": [
+    "149:23:0:17",
+    "149:23:0:37",
+    "149:23:0:38",
+    "149:25:0:18",
+    "149:25:0:38",
+    "149:25:0:39",
+    "149:26:0:19",
+    "149:26:0:39",
+    "149:26:0:40"
+   ]
+  },
+  {
+   "id": "Rey Malvo",
+   "title": "Rey Malvo — PS 9행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵212 Escena 2, 맵215 Escena 4, 맵211 Escena 1, 맵213 Escena 3 · 단서: cast:Rey Malvo, cast:Aure, cast:Consejero Narciso, how:태그, cast:???",
+   "rec": "",
+   "bucket": "Rey Malvo",
+   "rows": [
+    "211:3:0:144",
+    "212:2:0:28",
+    "212:2:0:29",
+    "212:2:0:30",
+    "212:2:0:118",
+    "212:2:0:182",
+    "213:1:0:76",
+    "215:1:0:37",
+    "215:1:0:91"
+   ]
+  },
+  {
+   "id": "Malvo",
+   "title": "Malvo — PS 8행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵488 El Arma Definitiva, 맵437 Manantial Profundo, 맵36 Chateau Rosillon, 맵344 Batalla de Kalos Este, 맵453 Escena 1 · 단서: cast:Malvo, how:태그, cast:Crisanto, cast:Melia, cast:Olivier · Z-73 화자 갈림 70건과 겹침",
+   "rec": "",
+   "bucket": "Malvo",
+   "rows": [
+    "36:51:0:150",
+    "344:51:0:459",
+    "437:1:2:138",
+    "437:1:2:331",
+    "453:13:0:459",
+    "488:33:0:16",
+    "488:33:0:19",
+    "488:33:0:30"
+   ]
+  },
+  {
+   "id": "\\PN",
+   "title": "\\PN — PS 8행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵437 Manantial Profundo, 맵490 Corazón del Arma, 맵208 Cámaras de Reflexión, 맵450 Puerta Yantra, 맵497 Pueblo Cromlech · 단서: cast:\\PN, how:태그, cast:Alca, cast:Olivier, cast:Crisanto",
+   "rec": "",
+   "bucket": "\\PN",
+   "rows": [
+    "208:31:0:130",
+    "437:1:2:333",
+    "437:1:2:358",
+    "450:1:0:83",
+    "490:2:0:540",
+    "490:2:0:542",
+    "497:2:0:150",
+    "502:4:0:47"
+   ]
+  },
+  {
+   "id": "Alto Caballero Tileo",
+   "title": "Alto Caballero Tileo — PS 8행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵209 Cámaras de Reflexión · 단서: cast:Alto Caballero Tileo, how:상속, how:태그",
+   "rec": "",
+   "bucket": "Alto Caballero Tileo",
+   "rows": [
+    "209:1:0:9",
+    "209:1:0:10",
+    "209:1:0:11",
+    "209:1:0:12",
+    "209:1:0:13",
+    "209:1:0:22",
+    "209:1:0:23",
+    "209:1:0:24"
+   ]
+  },
+  {
+   "id": "Alto Caballero Narciso",
+   "title": "Alto Caballero Narciso — PS 8행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵209 Cámaras de Reflexión · 단서: cast:Alto Caballero Narciso, how:상속, how:태그",
+   "rec": "",
+   "bucket": "Alto Caballero Narciso",
+   "rows": [
+    "209:3:0:9",
+    "209:3:0:10",
+    "209:3:0:11",
+    "209:3:0:12",
+    "209:3:0:13",
+    "209:3:0:22",
+    "209:3:0:23",
+    "209:3:0:24"
+   ]
+  },
+  {
+   "id": "Alta Dama Malva",
+   "title": "Alta Dama Malva — PS 8행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵209 Cámaras de Reflexión · 단서: cast:Alta Dama Malva, how:상속, how:태그",
+   "rec": "",
+   "bucket": "Alta Dama Malva",
+   "rows": [
+    "209:4:0:9",
+    "209:4:0:10",
+    "209:4:0:11",
+    "209:4:0:13",
+    "209:4:0:14",
+    "209:4:0:23",
+    "209:4:0:24",
+    "209:4:0:26"
+   ]
+  },
+  {
+   "id": "espectrow",
+   "title": "espectrow — PC 8행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵365 Bosque Errante, 맵368 Bosque Errante, 맵370 Bosque Errante, 맵371 Bosque Errante · 단서: how:그림",
+   "rec": "",
+   "bucket": "espectrow",
+   "rows": [
+    "365:5:0:2",
+    "365:5:1:0",
+    "368:8:0:2",
+    "368:8:1:0",
+    "370:4:0:2",
+    "370:4:1:0",
+    "371:6:0:2",
+    "371:6:1:0"
+   ]
+  },
+  {
+   "id": "Recluta Azoth 2",
+   "title": "Recluta Azoth 2 — PS 7행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵73 Madriguera Profunda, 맵44 Pantano Profano · 단서: cast:Crisanto, cast:Melia, cast:Recluta Azoth 2, cast:Recluta Azoth 1, how:태그",
+   "rec": "",
+   "bucket": "Recluta Azoth 2",
+   "rows": [
+    "44:25:0:32",
+    "73:8:0:25",
+    "73:8:0:42",
+    "73:8:0:43",
+    "73:8:0:91",
+    "73:8:0:92",
+    "73:8:0:186"
+   ]
+  },
+  {
+   "id": "Recluta Azoth 1",
+   "title": "Recluta Azoth 1 — PS 7행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵73 Madriguera Profunda · 단서: cast:Crisanto, cast:Melia, cast:Recluta Azoth 1, cast:Recluta Azoth 2, how:태그",
+   "rec": "",
+   "bucket": "Recluta Azoth 1",
+   "rows": [
+    "73:8:0:19",
+    "73:8:0:39",
+    "73:8:0:40",
+    "73:8:0:84",
+    "73:8:0:123",
+    "73:8:0:130",
+    "73:8:0:185"
+   ]
+  },
+  {
+   "id": "Pirata 2",
+   "title": "Pirata 2 — PS 6행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵149 Bastión Pokémon · 단서: cast:Capitán Loto, cast:Clavelina, cast:Pirata 1, cast:Pirata 2, how:태그",
+   "rec": "",
+   "bucket": "Pirata 2",
+   "rows": [
+    "149:23:0:22",
+    "149:23:0:60",
+    "149:25:0:23",
+    "149:25:0:61",
+    "149:26:0:24",
+    "149:26:0:62"
+   ]
+  },
+  {
+   "id": "Floette",
+   "title": "Floette — PS 6행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵167 Escena Melia 1, 맵446 Otro Lugar · 단서: cast:Floette, cast:Melia, how:태그, cast:Angeline, how:상속",
+   "rec": "",
+   "bucket": "Floette",
+   "rows": [
+    "167:2:0:24",
+    "167:2:0:86",
+    "167:2:0:87",
+    "446:9:0:53",
+    "446:4:0:49",
+    "446:10:0:54"
+   ]
+  },
+  {
+   "id": "lantow3",
+   "title": "lantow3 — PS 6행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵190 Palacio Luminalia, 맵214 Palacio Luminalia · 단서: how:그림",
+   "rec": "",
+   "bucket": "lantow3",
+   "rows": [
+    "190:90:0:0",
+    "190:90:0:1",
+    "190:90:0:2",
+    "214:36:0:0",
+    "214:36:0:1",
+    "214:36:0:2"
+   ]
+  },
+  {
+   "id": "Revolucionaria",
+   "title": "Revolucionaria — PS 6행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵214 Palacio Luminalia · 단서: cast:Crisanto, cast:Melia, cast:Mirra, cast:Revolucionaria, how:태그 · Z-73 화자 갈림 70건과 겹침",
+   "rec": "",
+   "bucket": "Revolucionaria",
+   "rows": [
+    "214:39:0:84",
+    "214:39:0:85",
+    "214:49:0:88",
+    "214:49:0:89",
+    "214:50:0:88",
+    "214:50:0:89"
+   ]
+  },
+  {
+   "id": "Carabinero",
+   "title": "Carabinero — PS 6행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵278 Escena Manifestacion · 단서: cast:Brujita, cast:Carabinera, cast:Carabinero, how:태그, how:상속",
+   "rec": "",
+   "bucket": "Carabinero",
+   "rows": [
+    "278:2:0:27",
+    "278:2:0:28",
+    "278:2:0:33",
+    "278:2:0:46",
+    "278:2:0:94",
+    "278:2:0:174"
+   ]
+  },
+  {
+   "id": "Soldados de Fractal",
+   "title": "Soldados de Fractal — PS 6행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵322 Bastión Pokémon · 단서: cast:Capitana Cendera, cast:Soldados de Fractal, how:분기다름, how:태그, how:상속",
+   "rec": "",
+   "bucket": "Soldados de Fractal",
+   "rows": [
+    "322:25:0:42",
+    "322:25:0:59",
+    "322:25:0:81",
+    "322:25:0:103",
+    "322:25:0:198",
+    "322:25:0:199"
+   ]
+  },
+  {
+   "id": "enfermera",
+   "title": "enfermera — PC 6행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵193 Palacio Luminalia · 단서: how:그림, how:선택지",
+   "rec": "이웃 스프라이트 enfermera2 등재 — 같은 묶음 후보",
+   "bucket": "enfermera",
+   "rows": [
+    "193:25:0:1",
+    "193:25:0:4",
+    "193:25:0:18",
+    "193:25:0:21"
+   ]
+  },
+  {
+   "id": "242",
+   "title": "242 — PC 6행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵356 Villa Pokemon · 단서: how:그림, how:선택지",
+   "rec": "",
+   "bucket": "242",
+   "rows": [
+    "356:5:1:2",
+    "356:5:1:5",
+    "356:5:1:19",
+    "356:5:1:22"
+   ]
+  },
+  {
+   "id": "Metre",
+   "title": "Metre — PS 5행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵40 Vieja Biblioteca, 맵35 Chateau Rosillon · 단서: cast:Metre, cast:Crisanto, cast:Melia, how:태그, how:상속",
+   "rec": "",
+   "bucket": "Metre",
+   "rows": [
+    "35:18:1:7",
+    "40:22:0:11",
+    "40:22:0:61",
+    "40:22:0:74",
+    "40:22:0:80"
+   ]
+  },
+  {
+   "id": "Mosqueteros",
+   "title": "Mosqueteros — PS 5행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵106 Fort Leviatán, 맵70 Ruta 6, 맵322 Bastión Pokémon · 단서: cast:Mosqueteros, how:태그, cast:Melia, cast:Merlot, cast:Áster Zephir",
+   "rec": "",
+   "bucket": "Mosqueteros",
+   "rows": [
+    "70:16:0:115",
+    "106:6:0:55",
+    "106:7:0:54",
+    "106:41:0:56",
+    "322:1:0:179"
+   ]
+  },
+  {
+   "id": "Camarero",
+   "title": "Camarero — PS 5행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵116 Restaurante Le Chonk · 단서: cast:Camarero, cast:Eneldo, cast:Zafra, how:상속, how:태그",
+   "rec": "",
+   "bucket": "Camarero",
+   "rows": [
+    "116:36:0:50",
+    "116:36:0:51",
+    "116:36:0:52",
+    "116:36:0:61",
+    "116:36:0:62"
+   ]
+  },
+  {
+   "id": "crisantow",
+   "title": "crisantow — PS 5행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵195 Escena Crisanto 2 · 단서: how:그림",
+   "rec": "",
+   "bucket": "crisantow",
+   "rows": [
+    "195:3:0:5",
+    "195:3:0:6",
+    "195:3:0:18",
+    "195:3:0:19",
+    "195:3:0:20"
+   ]
+  },
+  {
+   "id": "Soldados",
+   "title": "Soldados — PS 5행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵342 Escenas 1 · 단서: cast:AZ, cast:Alca, cast:Crisanto, cast:Melia, cast:Soldados",
+   "rec": "",
+   "bucket": "Soldados",
+   "rows": [
+    "342:1:0:75",
+    "342:1:0:82",
+    "342:1:0:134",
+    "342:1:0:440",
+    "342:1:0:441"
+   ]
+  },
+  {
+   "id": "golperoca",
+   "title": "golperoca — PC 5행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵136 Gruta Tierraunida · 단서: cast:Campesina, cast:Campesino, how:선택지, how:태그, how:미상",
+   "rec": "",
+   "bucket": "golperoca",
+   "rows": [
+    "136:9:0:4",
+    "136:9:0:42",
+    "136:9:0:84"
+   ]
+  },
+  {
+   "id": "acrilico82",
+   "title": "acrilico82 — PC 5행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵223 Prisión del Olvido · 단서: how:그림 · Z-73 화자 갈림 70건과 겹침",
+   "rec": "이웃 스프라이트 acrilico1, acrilico2, acrilico4 등재 — 같은 묶음 후보",
+   "bucket": "acrilico82",
+   "rows": [
+    "223:13:0:0",
+    "223:13:0:1",
+    "223:13:0:2",
+    "223:13:0:3",
+    "223:13:0:4"
+   ]
+  },
+  {
+   "id": "Caballero Tileo",
+   "title": "Caballero Tileo — PS 4행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵211 Escena 1 · 단서: cast:???, cast:Caballero Tileo, cast:Consejero Narciso, cast:Reina Malva, cast:Rey Malvo",
+   "rec": "",
+   "bucket": "Caballero Tileo",
+   "rows": [
+    "211:3:0:21",
+    "211:3:0:22",
+    "211:3:0:23",
+    "211:3:0:68"
+   ]
+  },
+  {
+   "id": "Brujas",
+   "title": "Brujas — PS 4행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵271 Fábrica de Pokéball · 단서: cast:???, cast:Bruja, cast:Brujas, cast:Crisanto, how:태그",
+   "rec": "",
+   "bucket": "Brujas",
+   "rows": [
+    "271:4:0:121",
+    "271:4:0:122",
+    "271:4:0:195",
+    "271:4:0:217"
+   ]
+  },
+  {
+   "id": "Drumond",
+   "title": "Drumond — PS 4행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵322 Bastión Pokémon · 단서: cast:Capitana Cendera, cast:Soldados de Fractal, tclass:ELITEFRACTAL, how:전투호출 · Z-73 화자 갈림 70건과 겹침",
+   "rec": "",
+   "bucket": "Drumond",
+   "rows": [
+    "322:25:0:112",
+    "322:25:0:144",
+    "322:25:0:169",
+    "322:25:0:187"
+   ]
+  },
+  {
+   "id": "Teniente",
+   "title": "Teniente — PS 4행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵329 Escena 2 · 단서: cast:Crisanto, cast:Teniente, how:태그, how:상속",
+   "rec": "",
+   "bucket": "Teniente",
+   "rows": [
+    "329:10:0:43",
+    "329:10:0:44",
+    "329:10:0:59",
+    "329:10:0:67"
+   ]
+  },
+  {
+   "id": "Hombre sentenciado",
+   "title": "Hombre sentenciado — PS 4행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵331 Pueblo Mosaico · 단서: cast:Briof, cast:Hombre sentenciado, how:상속, how:태그",
+   "rec": "",
+   "bucket": "Hombre sentenciado",
+   "rows": [
+    "331:7:0:34",
+    "331:7:0:35",
+    "331:7:0:36",
+    "331:7:0:37"
+   ]
+  },
+  {
+   "id": "Hombre 1",
+   "title": "Hombre 1 — PS 4행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵505 Epílogo · 단서: cast:Hombre 1, cast:Hombre 2, cast:Melia, cast:Mujer, cast:Pintor",
+   "rec": "",
+   "bucket": "Hombre 1",
+   "rows": [
+    "505:32:0:86",
+    "505:32:0:100",
+    "505:32:0:101",
+    "505:32:0:102"
+   ]
+  },
+  {
+   "id": "Hombre 2",
+   "title": "Hombre 2 — PS 4행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵505 Epílogo · 단서: cast:Hombre 1, cast:Hombre 2, cast:Melia, cast:Mujer, cast:Pintor",
+   "rec": "",
+   "bucket": "Hombre 2",
+   "rows": [
+    "505:32:0:91",
+    "505:32:0:107",
+    "505:32:0:108"
+   ]
+  },
+  {
+   "id": "cripto2",
+   "title": "cripto2 — PC 4행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵187 Criptas de Luminalia, 맵130 Estación de Servicio, 맵270 Ruta 15 · 단서: how:그림",
+   "rec": "이웃 스프라이트 cripto1 등재 — 같은 묶음 후보",
+   "bucket": "cripto2",
+   "rows": [
+    "130:8:0:0",
+    "187:6:0:0",
+    "187:10:0:0",
+    "270:29:0:0"
+   ]
+  },
+  {
+   "id": "325",
+   "title": "325 — PC 4행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵356 Villa Pokemon · 단서: how:그림",
+   "rec": "",
+   "bucket": "325",
+   "rows": [
+    "356:18:1:1",
+    "356:18:1:2",
+    "356:18:1:3",
+    "356:18:1:4"
+   ]
+  },
+  {
+   "id": "465",
+   "title": "465 — PC 4행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵356 Villa Pokemon · 단서: how:그림",
+   "rec": "",
+   "bucket": "465",
+   "rows": [
+    "356:10:1:1",
+    "356:10:1:2",
+    "356:10:3:1",
+    "356:10:3:2"
+   ]
+  },
+  {
+   "id": "floetteEterno2",
+   "title": "floetteEterno2 — PC 4행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵461 Ciudad Yantra · 단서: cast:Floette, how:명단1, how:태그, how:상속",
+   "rec": "",
+   "bucket": "floetteEterno2",
+   "rows": [
+    "461:7:0:41",
+    "461:7:0:42",
+    "461:7:0:77",
+    "461:7:0:193"
+   ]
+  },
+  {
+   "id": "Anciana",
+   "title": "Anciana — PS 3행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵29 Pueblo Collage · 단서: cast:Anciana, cast:Crisanto, cast:Gente, cast:Recluta Azoth, how:태그",
+   "rec": "",
+   "bucket": "Anciana",
+   "rows": [
+    "29:26:0:153",
+    "29:26:0:166",
+    "29:26:0:172"
+   ]
+  },
+  {
+   "id": "Curt y Debra",
+   "title": "Curt y Debra — PS 3행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵148 Hospicio Caduco, 맵53 Ruta 3 · 단서: cast:Melia, tclass:AZOTHOS, how:전투호출, cast:Belladona, cast:Crisanto",
+   "rec": "",
+   "bucket": "Curt y Debra",
+   "rows": [
+    "53:14:0:120",
+    "148:29:0:124",
+    "148:13:0:123"
+   ]
+  },
+  {
+   "id": "Actriz",
+   "title": "Actriz — PS 3행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵61 Bastión Pokémon · 단서: cast:Actriz, cast:Hisopo, how:상속, how:태그",
+   "rec": "",
+   "bucket": "Actriz",
+   "rows": [
+    "61:11:1:36",
+    "61:11:1:37",
+    "61:11:1:38"
+   ]
+  },
+  {
+   "id": "Absol",
+   "title": "Absol — PS 3행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵71 Escena Aster 1 · 단서: cast:Absol, cast:Capitán Merlot, cast:Áster Zephir, how:태그, how:상속",
+   "rec": "",
+   "bucket": "Absol",
+   "rows": [
+    "71:1:0:87",
+    "71:1:0:96",
+    "71:1:0:98"
+   ]
+  },
+  {
+   "id": "Aldeanos",
+   "title": "Aldeanos — PS 3행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵74 Pueblo Profano · 단서: cast:Aldeana, cast:Aldeano, cast:Aldeanos, cast:Capitán Merlot, cast:Crisanto",
+   "rec": "",
+   "bucket": "Aldeanos",
+   "rows": [
+    "74:20:0:210",
+    "74:20:0:215",
+    "74:20:0:220"
+   ]
+  },
+  {
+   "id": "Ciudadano",
+   "title": "Ciudadano — PS 3행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵133 Ciudad Relieve · 단서: cast:Alca, cast:Ciudadana, cast:Ciudadano, cast:Ciudadanos, cast:Crisanto",
+   "rec": "",
+   "bucket": "Ciudadano",
+   "rows": [
+    "133:56:0:111",
+    "133:56:0:112",
+    "133:56:0:113"
+   ]
+  },
+  {
+   "id": "Tetra y Elaine",
+   "title": "Tetra y Elaine — PS 3행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵149 Bastión Pokémon · 단서: cast:Capitán Loto, cast:Clavelina, cast:Pirata 1, cast:Pirata 2, tclass:PIRATAS",
+   "rec": "",
+   "bucket": "Tetra y Elaine",
+   "rows": [
+    "149:23:0:46",
+    "149:25:0:47",
+    "149:26:0:48"
+   ]
+  },
+  {
+   "id": "Sacerdotisa Drácena",
+   "title": "Sacerdotisa Drácena — PS 3행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵211 Escena 1, 맵212 Escena 2 · 단서: cast:???, cast:Consejero Narciso, cast:Reina Malva, cast:Rey Malvo, cast:Sacerdotisa Drácena",
+   "rec": "",
+   "bucket": "Sacerdotisa Drácena",
+   "rows": [
+    "211:3:0:124",
+    "211:3:0:125",
+    "212:2:0:163"
+   ]
+  },
+  {
+   "id": "ferrofaz2",
+   "title": "ferrofaz2 — PS 3행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵226 Prisión del Olvido · 단서: how:그림",
+   "rec": "",
+   "bucket": "ferrofaz2",
+   "rows": [
+    "226:36:0:0",
+    "226:36:0:1",
+    "226:36:0:2"
+   ]
+  },
+  {
+   "id": "Hans",
+   "title": "Hans — PS 3행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵322 Bastión Pokémon · 단서: cast:Capitana Cendera, cast:Soldados de Fractal, tclass:ELITEFRACTAL, how:전투호출 · Z-73 화자 갈림 70건과 겹침",
+   "rec": "",
+   "bucket": "Hans",
+   "rows": [
+    "322:25:0:119",
+    "322:25:0:151",
+    "322:25:0:176"
+   ]
+  },
+  {
+   "id": "Slowking",
+   "title": "Slowking — PS 3행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵356 Villa Pokemon · 단서: cast:Olivier, cast:Sabio, cast:Slowking, how:태그, how:상속",
+   "rec": "",
+   "bucket": "Slowking",
+   "rows": [
+    "356:27:0:18",
+    "356:27:0:19",
+    "356:27:0:35"
+   ]
+  },
+  {
+   "id": "Auretosk",
+   "title": "Auretosk — PS 3행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵390 Torre Prisma · 단서: cast:Aure, cast:Auretosk, cast:Crisanto, cast:Mirra, how:태그",
+   "rec": "",
+   "bucket": "Auretosk",
+   "rows": [
+    "390:23:0:553",
+    "390:23:0:554",
+    "390:23:0:572"
+   ]
+  },
+  {
+   "id": "azow",
+   "title": "azow — PS 3행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵426 Escena Aster 3 · 단서: how:그림",
+   "rec": "",
+   "bucket": "azow",
+   "rows": [
+    "426:1:0:4",
+    "426:1:0:5",
+    "426:1:0:10"
+   ]
+  },
+  {
+   "id": "Malvo, del linaje Rojo",
+   "title": "Malvo, del linaje Rojo — PS 3행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵488 El Arma Definitiva · 단서: cast:Malvo, del linaje Rojo, how:태그, cast:Malvo",
+   "rec": "",
+   "bucket": "Malvo, del linaje Rojo",
+   "rows": [
+    "488:33:0:119",
+    "488:33:0:133",
+    "488:33:1:0"
+   ]
+  },
+  {
+   "id": "Pintor",
+   "title": "Pintor — PS 3행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵505 Epílogo · 단서: cast:Hombre 1, cast:Hombre 2, cast:Melia, cast:Mujer, cast:Pintor",
+   "rec": "",
+   "bucket": "Pintor",
+   "rows": [
+    "505:32:0:147",
+    "505:32:0:162",
+    "505:32:0:167"
+   ]
+  },
+  {
+   "id": "199",
+   "title": "199 — PC 3행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵356 Villa Pokemon · 단서: cast:Sabio, how:태그, how:상속",
+   "rec": "",
+   "bucket": "199",
+   "rows": [
+    "356:27:1:0",
+    "356:27:1:1",
+    "356:27:2:0"
+   ]
+  },
+  {
+   "id": "301",
+   "title": "301 — PC 3행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵356 Villa Pokemon · 단서: how:그림",
+   "rec": "",
+   "bucket": "301",
+   "rows": [
+    "356:9:1:1",
+    "356:9:1:2",
+    "356:9:1:3"
+   ]
+  },
+  {
+   "id": "malvoPose",
+   "title": "malvoPose — PC 3행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵381 Ciudad Yantra · 단서: cast:Malvo, how:태그, tclass:MALVO1, how:전투호출",
+   "rec": "",
+   "bucket": "malvoPose",
+   "rows": [
+    "381:40:0:8",
+    "381:40:0:10",
+    "381:40:0:17"
+   ]
+  },
+  {
+   "id": "Gente",
+   "title": "Gente — PS 2행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵29 Pueblo Collage · 단서: cast:Anciana, cast:Crisanto, cast:Gente, cast:Recluta Azoth, how:태그",
+   "rec": "",
+   "bucket": "Gente",
+   "rows": [
+    "29:26:0:191",
+    "29:26:0:202"
+   ]
+  },
+  {
+   "id": "Recluta Azoth 3",
+   "title": "Recluta Azoth 3 — PS 2행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵44 Pantano Profano · 단서: cast:Crisanto, cast:Melia, cast:Recluta Azoth 2, cast:Recluta Azoth 3, how:태그",
+   "rec": "",
+   "bucket": "Recluta Azoth 3",
+   "rows": [
+    "44:25:0:54",
+    "44:25:0:55"
+   ]
+  },
+  {
+   "id": "azow5",
+   "title": "azow5 — PS 2행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵72 Escena Aster 2 · 단서: how:그림",
+   "rec": "",
+   "bucket": "azow5",
+   "rows": [
+    "72:1:0:2",
+    "72:1:0:3"
+   ]
+  },
+  {
+   "id": "Amicia y Hugo",
+   "title": "Amicia y Hugo — PS 2행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵73 Madriguera Profunda · 단서: cast:Crisanto, cast:Melia, cast:Recluta Azoth 1, cast:Recluta Azoth 2, tclass:AZOTHOS",
+   "rec": "",
+   "bucket": "Amicia y Hugo",
+   "rows": [
+    "73:8:0:46",
+    "73:8:0:54"
+   ]
+  },
+  {
+   "id": "Druidas",
+   "title": "Druidas — PS 2행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵120 Cámara Druídica · 단서: cast:Crisanto, cast:Druidas, cast:Mirra, how:태그, how:상속",
+   "rec": "",
+   "bucket": "Druidas",
+   "rows": [
+    "120:13:0:259",
+    "120:13:0:260"
+   ]
+  },
+  {
+   "id": "Acertijos",
+   "title": "Acertijos — PS 2행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵123 Isla Certijo · 단서: cast:Rey de los Acertijos, tclass:REYACERTIJOS, how:전투호출",
+   "rec": "",
+   "bucket": "Acertijos",
+   "rows": [
+    "123:3:5:6",
+    "123:4:5:6"
+   ]
+  },
+  {
+   "id": "Revolucionarios",
+   "title": "Revolucionarios — PS 2행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵127 Petrocueva · 단서: cast:Alca, cast:Revolucionarios, cast:Áster Zephir, how:태그",
+   "rec": "",
+   "bucket": "Revolucionarios",
+   "rows": [
+    "127:3:0:35",
+    "127:3:0:161"
+   ]
+  },
+  {
+   "id": "Ciudadana",
+   "title": "Ciudadana — PS 2행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵133 Ciudad Relieve · 단서: cast:Alca, cast:Ciudadana, cast:Ciudadano, cast:Ciudadanos, cast:Crisanto",
+   "rec": "",
+   "bucket": "Ciudadana",
+   "rows": [
+    "133:56:0:86",
+    "133:56:0:87"
+   ]
+  },
+  {
+   "id": "Ciudadanos",
+   "title": "Ciudadanos — PS 2행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵133 Ciudad Relieve · 단서: cast:Alca, cast:Ciudadana, cast:Ciudadano, cast:Ciudadanos, cast:Crisanto",
+   "rec": "",
+   "bucket": "Ciudadanos",
+   "rows": [
+    "133:56:0:128",
+    "133:56:0:180"
+   ]
+  },
+  {
+   "id": "Reclutas Azoth",
+   "title": "Reclutas Azoth — PS 2행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵148 Hospicio Caduco · 단서: cast:Belladona, cast:Crisanto, cast:Lanto, cast:Melia, cast:Reclutas Azoth",
+   "rec": "",
+   "bucket": "Reclutas Azoth",
+   "rows": [
+    "148:29:0:134",
+    "148:13:0:133"
+   ]
+  },
+  {
+   "id": "Spartoi",
+   "title": "Spartoi — PS 2행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵162 Ciudad Luminalia - Oeste · 단서: cast:Crisanto, cast:Mirra, how:전투호출, tclass:MOSQUETERO, tclass:MOSQUETERA",
+   "rec": "",
+   "bucket": "Spartoi",
+   "rows": [
+    "162:6:2:6",
+    "162:6:3:6"
+   ]
+  },
+  {
+   "id": "Áster y Angeline",
+   "title": "Áster y Angeline — PS 2행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵216 Palacio Luminalia · 단서: cast:Angeline, cast:Crisanto, cast:Melia, cast:Mirra, cast:Áster Zephir",
+   "rec": "",
+   "bucket": "Áster y Angeline",
+   "rows": [
+    "216:4:0:130",
+    "216:4:0:138"
+   ]
+  },
+  {
+   "id": "Carabineros",
+   "title": "Carabineros — PS 2행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵252 Escena Mega 1 · 단서: cast:Alcaide Pinot, cast:Carabineros, how:태그, how:상속",
+   "rec": "",
+   "bucket": "Carabineros",
+   "rows": [
+    "252:1:1:189",
+    "252:1:1:190"
+   ]
+  },
+  {
+   "id": "Rupico",
+   "title": "Rupico — PS 2행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵305 Bastión Pokémon, 맵418 Gran Hotel Luminalia · 단서: cast:Rúpico, how:전투호출, tclass:LIDER9, cast:F3, tclass:LIDER9R",
+   "rec": "",
+   "bucket": "Rupico",
+   "rows": [
+    "305:17:0:67",
+    "418:19:2:28"
+   ]
+  },
+  {
+   "id": "Vladimir",
+   "title": "Vladimir — PS 2행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵322 Bastión Pokémon · 단서: cast:Capitana Cendera, cast:Soldados de Fractal, tclass:ELITEFRACTAL, how:전투호출 · Z-73 화자 갈림 70건과 겹침",
+   "rec": "",
+   "bucket": "Vladimir",
+   "rows": [
+    "322:25:0:126",
+    "322:25:0:158"
+   ]
+  },
+  {
+   "id": "Druida 1",
+   "title": "Druida 1 — PS 2행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵327 Antigua Forja - Escenas · 단서: cast:???, cast:Archidruida Ficus, cast:Aure, cast:Druida 1, how:태그",
+   "rec": "",
+   "bucket": "Druida 1",
+   "rows": [
+    "327:15:0:188",
+    "327:15:0:189"
+   ]
+  },
+  {
+   "id": "Arrayan",
+   "title": "Arrayan — PS 2행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵384 Maraña Oscura, 맵418 Gran Hotel Luminalia · 단서: cast:Arrayán, how:전투호출, cast:Olivier, tclass:LIDER12, cast:Belladona",
+   "rec": "",
+   "bucket": "Arrayan",
+   "rows": [
+    "384:3:0:52",
+    "418:19:5:29"
+   ]
+  },
+  {
+   "id": "Marco y Renia",
+   "title": "Marco y Renia — PS 2행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵424 Torre Maestra · 단서: cast:Cornelio, cast:Crisanto, cast:Melia, cast:Olivier, tclass:MONJES",
+   "rec": "",
+   "bucket": "Marco y Renia",
+   "rows": [
+    "424:5:0:180",
+    "424:5:0:188"
+   ]
+  },
+  {
+   "id": "el Arma Definitiva",
+   "title": "el Arma Definitiva — PS 2행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵495 Corazón del Arma · 단서: cast:Alca, tclass:ALCAFINAL2, how:전투호출",
+   "rec": "",
+   "bucket": "el Arma Definitiva",
+   "rows": [
+    "495:1:1:79",
+    "495:1:1:87"
+   ]
+  },
+  {
+   "id": "Pyroar",
+   "title": "Pyroar — PS 2행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵498 Escena 4 · 단서: cast:AZ, cast:Melia, cast:Olivier, cast:Pyroar, how:태그",
+   "rec": "",
+   "bucket": "Pyroar",
+   "rows": [
+    "498:1:0:31",
+    "498:1:0:44"
+   ]
+  },
+  {
+   "id": "096",
+   "title": "096 — PC 2행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵150 Gambón Rouge · 단서: how:그림",
+   "rec": "",
+   "bucket": "096",
+   "rows": [
+    "150:13:0:0",
+    "150:13:0:1"
+   ]
+  },
+  {
+   "id": "235",
+   "title": "235 — PC 2행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵303 Cueva Desenlace · 단서: tclass:GINIA, how:전투호출",
+   "rec": "",
+   "bucket": "235",
+   "rows": [
+    "303:44:0:36",
+    "303:44:0:44"
+   ]
+  },
+  {
+   "id": "547",
+   "title": "547 — PC 2행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵356 Villa Pokemon · 단서: how:그림",
+   "rec": "",
+   "bucket": "547",
+   "rows": [
+    "356:11:1:1",
+    "356:11:1:2"
+   ]
+  },
+  {
+   "id": "316s",
+   "title": "316s — PC 2행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵356 Villa Pokemon · 단서: how:지문",
+   "rec": "",
+   "bucket": "316s",
+   "rows": [
+    "356:22:1:1",
+    "356:22:1:2"
+   ]
+  },
+  {
+   "id": "055",
+   "title": "055 — PC 2행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵356 Villa Pokemon · 단서: how:그림",
+   "rec": "",
+   "bucket": "055",
+   "rows": [
+    "356:17:1:1",
+    "356:17:1:2"
+   ]
+  },
+  {
+   "id": "294",
+   "title": "294 — PC 2행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵356 Villa Pokemon · 단서: how:그림",
+   "rec": "",
+   "bucket": "294",
+   "rows": [
+    "356:13:1:1",
+    "356:13:1:2"
+   ]
+  },
+  {
+   "id": "195",
+   "title": "195 — PC 2행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵356 Villa Pokemon · 단서: how:그림",
+   "rec": "",
+   "bucket": "195",
+   "rows": [
+    "356:24:1:1",
+    "356:24:1:2"
+   ]
+  },
+  {
+   "id": "903",
+   "title": "903 — PC 2행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵356 Villa Pokemon · 단서: how:그림",
+   "rec": "",
+   "bucket": "903",
+   "rows": [
+    "356:8:1:1",
+    "356:8:1:2"
+   ]
+  },
+  {
+   "id": "068",
+   "title": "068 — PC 2행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵356 Villa Pokemon · 단서: how:그림",
+   "rec": "",
+   "bucket": "068",
+   "rows": [
+    "356:14:1:1",
+    "356:14:1:2"
+   ]
+  },
+  {
+   "id": "Muchacha",
+   "title": "Muchacha — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵37 Chateau Rosillon · 단서: cast:Lanto, cast:Muchacha, how:태그",
+   "rec": "",
+   "bucket": "Muchacha",
+   "rows": [
+    "37:37:0:35"
+   ]
+  },
+  {
+   "id": "Morelull",
+   "title": "Morelull — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵46 Bosque Ladera · 단서: cast:???, cast:Crisanto, cast:Morelull, cast:Núbila, cast:Recluta Azoth",
+   "rec": "",
+   "bucket": "Morelull",
+   "rows": [
+    "46:20:0:24"
+   ]
+  },
+  {
+   "id": "Amicia",
+   "title": "Amicia — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵70 Ruta 6 · 단서: cast:Capitán Merlot, cast:Mosqueteros, cast:Recluta Azoth, tclass:AZOTHA, how:전투호출",
+   "rec": "",
+   "bucket": "Amicia",
+   "rows": [
+    "70:16:0:22"
+   ]
+  },
+  {
+   "id": "Hugo",
+   "title": "Hugo — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵70 Ruta 6 · 단서: cast:Capitán Merlot, cast:Mosqueteros, cast:Recluta Azoth, tclass:AZOTHO, how:전투호출",
+   "rec": "",
+   "bucket": "Hugo",
+   "rows": [
+    "70:16:0:34"
+   ]
+  },
+  {
+   "id": "Aldeano",
+   "title": "Aldeano — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵74 Pueblo Profano · 단서: cast:Aldeana, cast:Aldeano, cast:Aldeanos, cast:Capitán Merlot, cast:Crisanto",
+   "rec": "",
+   "bucket": "Aldeano",
+   "rows": [
+    "74:20:0:46"
+   ]
+  },
+  {
+   "id": "Aldeana",
+   "title": "Aldeana — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵74 Pueblo Profano · 단서: cast:Aldeana, cast:Aldeano, cast:Aldeanos, cast:Capitán Merlot, cast:Crisanto",
+   "rec": "",
+   "bucket": "Aldeana",
+   "rows": [
+    "74:20:0:56"
+   ]
+  },
+  {
+   "id": "Campesina",
+   "title": "Campesina — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵113 Pueblo Bodegón · 단서: cast:Campesina, cast:Crisanto, cast:Mirra, how:태그",
+   "rec": "",
+   "bucket": "Campesina",
+   "rows": [
+    "113:55:0:33"
+   ]
+  },
+  {
+   "id": "Tlachtga",
+   "title": "Tlachtga — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵120 Cámara Druídica · 단서: cast:Crisanto, cast:Druidas, cast:Mirra, tclass:DRUIDA, how:전투호출",
+   "rec": "",
+   "bucket": "Tlachtga",
+   "rows": [
+    "120:13:0:266"
+   ]
+  },
+  {
+   "id": "Bodhmall",
+   "title": "Bodhmall — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵120 Cámara Druídica · 단서: cast:Crisanto, cast:Druidas, cast:Mirra, tclass:DRUIDA, how:전투호출",
+   "rec": "",
+   "bucket": "Bodhmall",
+   "rows": [
+    "120:13:0:285"
+   ]
+  },
+  {
+   "id": "Niña",
+   "title": "Niña — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵188 Orfanato · 단서: cast:Alca, cast:Crisanto, cast:Melia, cast:Niña, how:태그",
+   "rec": "",
+   "bucket": "Niña",
+   "rows": [
+    "188:14:0:88"
+   ]
+  },
+  {
+   "id": "Tileo",
+   "title": "Tileo — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵209 Cámaras de Reflexión · 단서: cast:Alto Caballero Tileo, tclass:ALTOMANDO1, how:전투호출",
+   "rec": "",
+   "bucket": "Tileo",
+   "rows": [
+    "209:1:0:14"
+   ]
+  },
+  {
+   "id": "Drácena",
+   "title": "Drácena — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵209 Cámaras de Reflexión · 단서: cast:Alta Dama Drácena, tclass:ALTOMANDO2, how:전투호출",
+   "rec": "",
+   "bucket": "Drácena",
+   "rows": [
+    "209:2:0:14"
+   ]
+  },
+  {
+   "id": "Narciso",
+   "title": "Narciso — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵209 Cámaras de Reflexión · 단서: cast:Alto Caballero Narciso, tclass:ALTOMANDO3, how:전투호출",
+   "rec": "",
+   "bucket": "Narciso",
+   "rows": [
+    "209:3:0:14"
+   ]
+  },
+  {
+   "id": "Malva",
+   "title": "Malva — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵209 Cámaras de Reflexión · 단서: cast:Alta Dama Malva, tclass:ALTOMANDO4, how:전투호출",
+   "rec": "",
+   "bucket": "Malva",
+   "rows": [
+    "209:4:0:15"
+   ]
+  },
+  {
+   "id": "Revolucionario",
+   "title": "Revolucionario — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵221 Carruaje 2 · 단서: cast:???, cast:Aure, cast:Mirra, cast:Revolucionario, how:태그",
+   "rec": "",
+   "bucket": "Revolucionario",
+   "rows": [
+    "221:1:0:80"
+   ]
+  },
+  {
+   "id": "Pinot",
+   "title": "Pinot — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵222 Prisión del Olvido · 단서: cast:Alcaide Pinot, tclass:PINOT, how:전투호출",
+   "rec": "",
+   "bucket": "Pinot",
+   "rows": [
+    "222:14:0:17"
+   ]
+  },
+  {
+   "id": "Cintia",
+   "title": "Cintia — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵248 Escena Liga · 단서: cast:Áster Zephir, tclass:CINTIA, how:전투호출",
+   "rec": "",
+   "bucket": "Cintia",
+   "rows": [
+    "248:2:0:28"
+   ]
+  },
+  {
+   "id": "Edmond y Mercedes",
+   "title": "Edmond y Mercedes — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵278 Escena Manifestacion · 단서: cast:Brujita, cast:Carabinera, cast:Carabinero, tclass:CARABINEROS, how:전투호출",
+   "rec": "",
+   "bucket": "Edmond y Mercedes",
+   "rows": [
+    "278:2:0:69"
+   ]
+  },
+  {
+   "id": "Aldeana 1",
+   "title": "Aldeana 1 — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵285 Escena · 단서: cast:Aldeana 1, cast:Aldeana 2, cast:Aldeano 3, cast:Crisanto, cast:Mosquetero",
+   "rec": "",
+   "bucket": "Aldeana 1",
+   "rows": [
+    "285:26:0:66"
+   ]
+  },
+  {
+   "id": "Aldeana 2",
+   "title": "Aldeana 2 — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵285 Escena · 단서: cast:Aldeana 1, cast:Aldeana 2, cast:Aldeano 3, cast:Crisanto, cast:Mosquetero",
+   "rec": "",
+   "bucket": "Aldeana 2",
+   "rows": [
+    "285:26:0:71"
+   ]
+  },
+  {
+   "id": "Aldeano 3",
+   "title": "Aldeano 3 — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵285 Escena · 단서: cast:Aldeana 1, cast:Aldeana 2, cast:Aldeano 3, cast:Crisanto, cast:Mosquetero",
+   "rec": "",
+   "bucket": "Aldeano 3",
+   "rows": [
+    "285:26:0:76"
+   ]
+  },
+  {
+   "id": "Augustine",
+   "title": "Augustine — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵290 Pueblo Mosaico · 단서: cast:???, cast:Augustine, cast:Núbila, cast:Olivier, how:태그",
+   "rec": "",
+   "bucket": "Augustine",
+   "rows": [
+    "290:53:0:203"
+   ]
+  },
+  {
+   "id": "ATENCIÓN",
+   "title": "ATENCIÓN — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵291 Balneario Oculto · 단서: cast:ATENCIÓN, cast:Crisanto, cast:Melia, how:태그",
+   "rec": "",
+   "bucket": "ATENCIÓN",
+   "rows": [
+    "291:1:0:60"
+   ]
+  },
+  {
+   "id": "de Montesanto",
+   "title": "de Montesanto — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵315 Isla Montesanto · 단서: cast:Fantasma, cast:Loto, tclass:FANTASMA, how:전투호출",
+   "rec": "",
+   "bucket": "de Montesanto",
+   "rows": [
+    "315:5:0:17"
+   ]
+  },
+  {
+   "id": "de la Forja",
+   "title": "de la Forja — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵318 Antigua Forja Inundada · 단서: cast:Olivier, tclass:GUARDIANFORJA, how:전투호출",
+   "rec": "",
+   "bucket": "de la Forja",
+   "rows": [
+    "318:73:1:45"
+   ]
+  },
+  {
+   "id": "Vostok",
+   "title": "Vostok — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵322 Bastión Pokémon · 단서: cast:Capitana Cendera, cast:Soldados de Fractal, tclass:ELITEFRACTAL, how:전투호출 · Z-73 화자 갈림 70건과 겹침",
+   "rec": "",
+   "bucket": "Vostok",
+   "rows": [
+    "322:25:0:133"
+   ]
+  },
+  {
+   "id": "Bastian",
+   "title": "Bastian — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵331 Pueblo Mosaico · 단서: cast:Briof, cast:Hombre sentenciado, tclass:BURGUES, how:전투호출",
+   "rec": "",
+   "bucket": "Bastian",
+   "rows": [
+    "331:7:0:5"
+   ]
+  },
+  {
+   "id": "Mosqueteros de Mirra",
+   "title": "Mosqueteros de Mirra — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵333 Escena Fractal · 단서: cast:Aure, cast:Crisanto, cast:Melia, cast:Mirra, cast:Mosqueteros de Mirra",
+   "rec": "",
+   "bucket": "Mosqueteros de Mirra",
+   "rows": [
+    "333:2:0:127"
+   ]
+  },
+  {
+   "id": "Primula y Tornasola",
+   "title": "Primula y Tornasola — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵344 Batalla de Kalos Este · 단서: cast:AZ, cast:Alca, cast:Crisanto, cast:Melia, cast:Olivier",
+   "rec": "",
+   "bucket": "Primula y Tornasola",
+   "rows": [
+    "344:59:0:58"
+   ]
+  },
+  {
+   "id": "Heraldo del Oro",
+   "title": "Heraldo del Oro — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵390 Torre Prisma · 단서: cast:Aure, cast:Auretosk, cast:Crisanto, cast:Mirra, tclass:MIRRA4",
+   "rec": "",
+   "bucket": "Heraldo del Oro",
+   "rows": [
+    "390:23:0:383"
+   ]
+  },
+  {
+   "id": "Xerneas",
+   "title": "Xerneas — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵437 Manantial Profundo · 단서: cast:Arrayán, cast:Malvo, cast:Olivier, cast:Xerneas, cast:\\PN",
+   "rec": "",
+   "bucket": "Xerneas",
+   "rows": [
+    "437:1:2:225"
+   ]
+  },
+  {
+   "id": "Monja",
+   "title": "Monja — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵453 Escena 1 · 단서: cast:Crisanto, cast:Malvo, cast:Melia, cast:Monja, cast:Olivier",
+   "rec": "",
+   "bucket": "Monja",
+   "rows": [
+    "453:13:0:199"
+   ]
+  },
+  {
+   "id": "EricLostie",
+   "title": "EricLostie — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵487 Ruta 26 · 단서: cast:Eric, tclass:ERIC, how:전투호출",
+   "rec": "",
+   "bucket": "EricLostie",
+   "rows": [
+    "487:7:0:6"
+   ]
+  },
+  {
+   "id": "del linaje Rojo",
+   "title": "del linaje Rojo — PS 1행",
+   "ask": "이 화자의 말투 등재. voices(기존 인물의 별칭인지 먼저).",
+   "split": "맵: 맵488 El Arma Definitiva · 단서: cast:Malvo, cast:Malvo, del linaje Rojo, tclass:MALVOFINAL, how:전투호출 · Z-73 화자 갈림 70건과 겹침",
+   "rec": "",
+   "bucket": "del linaje Rojo",
+   "rows": [
+    "488:33:0:123"
+   ]
+  },
+  {
+   "id": "trchar000_5",
+   "title": "trchar000_5 — PC 1행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵263 Torre Oscura P0 · 단서: tclass:Doppelganger, how:전투호출",
+   "rec": "",
+   "bucket": "trchar000_5",
+   "rows": [
+    "263:46:0:1"
+   ]
+  },
+  {
+   "id": "trchar002_5",
+   "title": "trchar002_5 — PC 1행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵263 Torre Oscura P0 · 단서: tclass:Doppelganger, how:전투호출",
+   "rec": "",
+   "bucket": "trchar002_5",
+   "rows": [
+    "263:46:1:1"
+   ]
+  },
+  {
+   "id": "trchar004_5",
+   "title": "trchar004_5 — PC 1행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵263 Torre Oscura P0 · 단서: tclass:Doppelganger, how:전투호출",
+   "rec": "",
+   "bucket": "trchar004_5",
+   "rows": [
+    "263:46:2:1"
+   ]
+  },
+  {
+   "id": "trchar001_5",
+   "title": "trchar001_5 — PC 1행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵263 Torre Oscura P0 · 단서: tclass:Doppelganger, how:전투호출",
+   "rec": "",
+   "bucket": "trchar001_5",
+   "rows": [
+    "263:46:3:1"
+   ]
+  },
+  {
+   "id": "trchar003_5",
+   "title": "trchar003_5 — PC 1행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵263 Torre Oscura P0 · 단서: tclass:Doppelganger, how:전투호출",
+   "rec": "",
+   "bucket": "trchar003_5",
+   "rows": [
+    "263:46:4:1"
+   ]
+  },
+  {
+   "id": "trchar005_5",
+   "title": "trchar005_5 — PC 1행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵263 Torre Oscura P0 · 단서: tclass:Doppelganger, how:전투호출",
+   "rec": "",
+   "bucket": "trchar005_5",
+   "rows": [
+    "263:46:5:1"
+   ]
+  },
+  {
+   "id": "lunatico3",
+   "title": "lunatico3 — PC 1행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵265 Torre Oscura P3 · 단서: how:그림",
+   "rec": "이웃 스프라이트 lunatico, lunatico2 등재 — 같은 묶음 후보",
+   "bucket": "lunatico3",
+   "rows": [
+    "265:13:0:0"
+   ]
+  },
+  {
+   "id": "espiritu2",
+   "title": "espiritu2 — PC 1행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵410 Biblioteca Yantra · 단서: cast:Lila, how:태그",
+   "rec": "",
+   "bucket": "espiritu2",
+   "rows": [
+    "410:5:1:0"
+   ]
+  },
+  {
+   "id": "espiritu3",
+   "title": "espiritu3 — PC 1행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵410 Biblioteca Yantra · 단서: cast:Naranja, how:태그",
+   "rec": "",
+   "bucket": "espiritu3",
+   "rows": [
+    "410:6:1:0"
+   ]
+  },
+  {
+   "id": "espiritu1",
+   "title": "espiritu1 — PC 1행",
+   "ask": "이 화자의 말투 등재. groups 버킷·페르소나.",
+   "split": "맵: 맵410 Biblioteca Yantra · 단서: cast:Menta, how:태그",
+   "rec": "",
+   "bucket": "espiritu1",
+   "rows": [
+    "410:4:1:0"
+   ]
+  }
+ ],
+ "scenes": 167,
+ "hits": 733
+}

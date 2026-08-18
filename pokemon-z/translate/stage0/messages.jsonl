@@ -6,7 +6,7 @@
 {"id": "unified.02ab2b7c", "val": "<b>남쪽:</b> 25번도로"}
 {"id": "unified.041d6d7f", "val": "<b>\\PN:</b> ..."}
 {"id": "unified.06199aa0", "val": "하지만 그토록 강하고 따뜻한 마음을 가진 이조차 어둠에 사로잡히고 말았지."}
-{"id": "unified.069d27ea", "val": "하지만 내 망치의 제대로 된 한 방을 견딜 바위는 없죠! 너와 나는 곧 다시 맞붙게 될 거예요."}
+{"id": "unified.069d27ea", "val": "하지만 제 망치의 제대로 된 한 방을 견딜 바위는 없습니다! 우리도 곧 다시 맞붙게 되겠지요."}
 {"id": "unified.07572cc5", "val": "그건 옛날에 했던 실험이에요. 뛰어난 연금술사들과 함께 인공 포켓몬을 만들어 보려던 시도였죠."}
 {"id": "unified.077c0580", "val": "나는 <b>아스테르 왕</b>의 이름으로 법을 집행하는 자다. 귀찮게 하지 마라, 알겠나?"}
 {"id": "unified.07a9fc3b", "val": "야생 파라스, 버섯꼬, 깜놀버슬, 자마슈(및 그 진화형들)에게서 작은버섯을 얻을 수 있다. <b>랜덤 모드</b>도 마찬가지다."}
@@ -268,7 +268,7 @@
 {"id": "unified.9c7d287b", "val": "관 속에 들어갈까?"}
 {"id": "unified.9cbb7afa", "val": "\\c[5]<b>멜리아:</b>\\c[0] ..."}
 {"id": "unified.9dafcdfa", "val": "꿈의액체 1개를 줄까?"}
-{"id": "unified.9df4e8e1", "val": "그 눈빛을 보니, 지난번에 만났을 때보다 배틀 실력이 훨씬 탄탄해졌나 보네요."}
+{"id": "unified.9df4e8e1", "val": "눈빛을 보니 지난번 뵈었을 때보다 배틀 솜씨가 한층 단단해지셨군요."}
 {"id": "unified.9e32d28e", "val": "포켓몬 회복하기"}
 {"id": "unified.9f02f7e6", "val": "<b>아조스단의 메모:</b> 최근 신병들을 대상으로 한 연설 중 하나에서, <i>마담</i> <b>알카</b>는 몇 가지 유의할 만한 점을 언급했습니다."}
 {"id": "unified.9f06d9f6", "val": "하지만..."}
@@ -382,7 +382,7 @@
 {"id": "unified.dd40246e", "val": "\\c[6]<b>미라:</b>\\c[0] <b>말보의부적</b>을 찾았는데, 이걸로 뭘 해야 하지?"}
 {"id": "unified.de4f8403", "val": "아무 말도 하지 않는다"}
 {"id": "unified.de7347fd", "val": "이 섬의 깊은 곳에는 화산 포켓몬이 살고 있지."}
-{"id": "unified.dfdc0787", "val": "<b>루피코:</b> 맙소사, \\PN! 여기서 만날 줄은 몰랐는데요."}
+{"id": "unified.dfdc0787", "val": "<b>루피코:</b> 어이쿠, \\PN 씨! 여기서 뵐 줄은 몰랐습니다."}
 {"id": "unified.e02eaa54", "val": "더 잘 살아보려고 여기에 온 거였는데..."}
 {"id": "unified.e0757d91", "val": "배를 타고 <b>망각의 감옥</b>으로 가시렵니까?"}
 {"id": "unified.e07fd598", "val": "호수 아래로 잠수할까?"}
@@ -20115,10 +20115,10 @@
 {"id": "m404.s2", "val": "<b>세룰레오:</b> 딸꾹! 어, 어, 어이! 여기 머물 거라면 집세라도 내라고! 딸꾹!", "state": "reviewed", "by": "human/8358bd0"}
 {"id": "m404.e10.p0.c5", "val": {"ref": "m404.s2"}, "state": "reviewed", "by": "human/검수 반영"}
 {"id": "m404.e10.p2.c6", "val": {"ref": "m404.s2"}, "state": "reviewed", "by": "human/검수 반영"}
-{"id": "m404.s3", "val": "나는 유서 깊은 <b>사라시티</b>의 <b>세룰레오</b> 수도사다, 딸깍! 적어도, 그 도시에서 쫓겨나기 전까지는 말이지.", "state": "reviewed", "by": "human/8358bd0"}
+{"id": "m404.s3", "val": "나는 유서 깊은 <b>사라시티</b>의 <b>세룰레오</b> 수도사다, 딸꾹! 적어도, 그 도시에서 쫓겨나기 전까지는 말이지.", "state": "reviewed", "by": "human/8358bd0"}
 {"id": "m404.e10.p0.c6", "val": {"ref": "m404.s3"}, "state": "reviewed", "by": "human/검수 반영"}
 {"id": "m404.e10.p2.c7", "val": {"ref": "m404.s3"}, "state": "reviewed", "by": "human/검수 반영"}
-{"id": "m404.s4", "val": "다른 수도사놈들이 명상이니 뭐니 하는 쓸데없는 짓에 매달리는 동안, 나는 내 모든 지혜를 짜내 포켓몬 연금술로 술을 만드는 연구를 했지, 딸깍!", "state": "reviewed", "by": "human/8358bd0"}
+{"id": "m404.s4", "val": "다른 수도사놈들이 명상이니 뭐니 하는 쓸데없는 짓에 매달리는 동안, 나는 내 모든 지혜를 짜내 포켓몬 연금술로 술을 만드는 연구를 했지, 딸꾹!", "state": "reviewed", "by": "human/8358bd0"}
 {"id": "m404.e10.p0.c7", "val": {"ref": "m404.s4"}, "state": "reviewed", "by": "human/검수 반영"}
 {"id": "m404.e10.p2.c8", "val": {"ref": "m404.s4"}, "state": "reviewed", "by": "human/검수 반영"}
 {"id": "m404.s5", "val": "교단의 동료 녀석들은 내 실험을 인정해 주지 않더군. 이젠 화학이라는 예술을 존중할 줄도 모르는 건가?", "state": "reviewed", "by": "human/8358bd0"}
@@ -20136,9 +20136,9 @@
 {"id": "m404.e10.p0.c22", "val": "그렇다면 내 배에서 나가라고! 딸꾹!", "state": "reviewed", "by": "human/a881f87"}
 {"id": "m404.e10.p1.c0", "val": "<b>세룰레오:</b> 그 은혜도 모르는 수도승 놈들, 교단 본부가 있는 <b>사라시티</b>에 도서관을 하나 두고 있거든.", "state": "reviewed", "by": "human/8358bd0"}
 {"id": "m404.e10.p2.c15", "val": {"ref": "unified.6eae3a5b"}, "state": "reviewed", "by": "human/0306362"}
-{"id": "m404.e10.p2.c16", "val": "<b>세룰레오:</b> 그 책은! 교단의 암호가 적힌 책을 가지고 있잖아! 딸깍! 오랫동안 찾아 헤매던 건데!", "state": "reviewed", "by": "human/8358bd0"}
+{"id": "m404.e10.p2.c16", "val": "<b>세룰레오:</b> 그 책은! 교단의 암호가 적힌 책을 가지고 있잖아! 딸꾹! 오랫동안 찾아 헤매던 건데!", "state": "reviewed", "by": "human/8358bd0"}
 {"id": "m404.e10.p2.c18", "val": "이제 내 복수를 천천히 숙성시켜서, 언젠가 <b>얀트라 교단</b>을 해체해 버리고 말겠다.", "state": "reviewed", "by": "human/8358bd0"}
-{"id": "m404.e10.p2.c19", "val": "이걸 연구하려면 좀 더 위생적인 곳에 자리를 잡는 게 좋겠어, 딸깍! 가능하면 밥벌이라도 하면서 말이지.", "state": "reviewed", "by": "human/8358bd0"}
+{"id": "m404.e10.p2.c19", "val": "이걸 연구하려면 좀 더 위생적인 곳에 자리를 잡는 게 좋겠어, 딸꾹! 가능하면 밥벌이라도 하면서 말이지.", "state": "reviewed", "by": "human/8358bd0"}
 {"id": "m404.e10.p2.c22", "val": "<b>세룰레오</b> 수도사는 <b>아크릴리코마을</b>로 떠난다.", "state": "reviewed", "by": "human/8358bd0"}
 {"id": "m404.e10.p0.c14.0", "val": {"ref": "unified.873caab4"}, "state": "reviewed", "by": "human/0306362"}
 {"id": "m404.e10.p0.c14.01", "val": {"ref": "unified.816c52fd"}, "state": "reviewed", "by": "human/검수 반영"}
@@ -20170,9 +20170,9 @@
 {"id": "m405.e12.p0.c1", "val": {"ref": "unified.936c1d76"}}
 {"id": "m405.e12.p0.c2", "val": {"ref": "unified.1f9de8fa"}}
 {"id": "m405.e12.p0.c3", "val": {"ref": "unified.91d7daec"}}
-{"id": "m405.e23.p0.c0", "val": "<b>루피코:</b> 어이쿠, \\PN 씨! 여기서 뵐 줄은 몰랐습니다."}
-{"id": "m405.e23.p0.c1", "val": "눈빛을 보니 지난번 뵈었을 때보다 배틀 솜씨가 한층 단단해지셨군요.", "state": "reviewed", "by": "human/55467e6"}
-{"id": "m405.e23.p0.c2", "val": "하지만 제 망치의 제대로 된 한 방을 견딜 바위는 없습니다! 우리도 곧 다시 맞붙게 되겠지요."}
+{"id": "m405.e23.p0.c0", "val": {"ref": "unified.dfdc0787"}}
+{"id": "m405.e23.p0.c1", "val": {"ref": "unified.9df4e8e1"}, "state": "reviewed", "by": "human/55467e6"}
+{"id": "m405.e23.p0.c2", "val": {"ref": "unified.069d27ea"}}
 {"id": "m405.e18.p0.c0", "val": "무작위 배틀에서 4연승을 달성하면 아주 귀중한 도구를 받을 수 있거든."}
 {"id": "m405.e18.p0.c1", "val": {"ref": "unified.41e88774"}}
 {"id": "m405.e2.p0.c1", "val": {"ref": "unified.b2a16557"}, "state": "reviewed", "by": "human/ed2774b"}
@@ -20618,10 +20618,10 @@
 {"id": "m409.e15.p0.c1.01", "val": {"ref": "m409.s28"}}
 {"id": "m409.e16.p0.c1.01", "val": {"ref": "m409.s28"}}
 {"id": "m409.e17.p0.c1.01", "val": {"ref": "m409.s28"}}
-{"id": "m410.e5.p1.c0", "val": "<b>릴라:</b> 민트는 항상 진실을 말해."}
+{"id": "m410.e5.p1.c0", "val": "<b>릴라:</b> 민트는 항상 진실을 말해요."}
 {"id": "m410.e11.p0.c0", "val": "<b>마스터타워</b> 뒤편에는 전설의 포켓몬들이 태어난 황금나무의 잔해가 있는 안뜰이 있습니다."}
 {"id": "m410.e11.p0.c1", "val": "우리가 덕을 꾸준히 실천한다면, 언젠가 그 나무가 다시 빛을 발할 것입니다."}
-{"id": "m410.e6.p1.c0", "val": "<b>오렌지:</b> 릴라는 거짓말을 한다."}
+{"id": "m410.e6.p1.c0", "val": "<b>오렌지:</b> 릴라는 거짓말을 해요."}
 {"id": "m410.e12.p0.c0", "val": "<b>칼로스</b>의 모든 신 포켓몬 중에서 저는 이벨타르가 가장 무섭습니다."}
 {"id": "m410.e12.p0.c1", "val": "수천 년 전, 녀석을 화나게 했을 때는 음산한 날갯짓 한 번으로 마을 전체를 쓸어버릴 수도 있었다지요."}
 {"id": "m410.e13.p0.c0", "val": "<b>최종병기</b>라면 늙지 않는 세상에서 영원한 아름다움을 만들어 낼 수 있을 텐데요."}
@@ -20989,9 +20989,9 @@
 {"id": "m429.e12.p0.c1", "val": {"ref": "unified.936c1d76"}, "state": "reviewed", "by": "human/55467e6"}
 {"id": "m429.e12.p0.c2", "val": {"ref": "unified.1f9de8fa"}, "state": "reviewed", "by": "human/55467e6"}
 {"id": "m429.e12.p0.c3", "val": {"ref": "unified.91d7daec"}, "state": "reviewed", "by": "human/55467e6"}
-{"id": "m429.e23.p0.c0", "val": "<b>루피코:</b> 어이쿠, \\PN 씨! 여기서 뵐 줄은 몰랐습니다.", "state": "reviewed", "by": "human/55467e6"}
-{"id": "m429.e23.p0.c1", "val": "눈빛을 보니 지난번 뵈었을 때보다 배틀 솜씨가 한층 단단해지셨군요.", "state": "reviewed", "by": "human/55467e6"}
-{"id": "m429.e23.p0.c2", "val": "하지만 제 망치의 제대로 된 한 방을 견딜 바위는 없습니다! 우리도 곧 다시 맞붙게 되겠지요.", "state": "reviewed", "by": "human/55467e6"}
+{"id": "m429.e23.p0.c0", "val": {"ref": "unified.dfdc0787"}, "state": "reviewed", "by": "human/55467e6"}
+{"id": "m429.e23.p0.c1", "val": {"ref": "unified.9df4e8e1"}, "state": "reviewed", "by": "human/55467e6"}
+{"id": "m429.e23.p0.c2", "val": {"ref": "unified.069d27ea"}, "state": "reviewed", "by": "human/55467e6"}
 {"id": "m429.e18.p0.c0", "val": "무작위 배틀에서 7연승을 달성하면 엄청 귀중한 도구를 받을 수 있어."}
 {"id": "m429.e18.p0.c1", "val": {"ref": "unified.41e88774"}, "state": "reviewed", "by": "human/55467e6"}
 {"id": "m429.e2.p0.c1", "val": {"ref": "unified.b2a16557"}, "state": "reviewed", "by": "human/ed2774b"}

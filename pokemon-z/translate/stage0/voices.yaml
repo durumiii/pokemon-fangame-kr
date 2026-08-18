@@ -445,6 +445,13 @@ voices:
   instruction: 의전 합쇼체 「폐하께서 ~하셨습니다」 고정
   samples: []
   source: translate/voice-prompts.jsonl
+- group: 고위 귀부인 파키라
+  match:
+    name: 고위 귀부인 파키라
+  instruction: 의전 합쇼체 「폐하께서 ~하셨습니다」 고정
+  samples: []
+  source: translate/voice-prompts.jsonl
+  note: 파키라와 같은 인물(canon/names.jsonl의 직함 포함 표기 'Alta Dama Malva'가 여기로 해석됨). 미등재 화자 선별 B, 2026-08-18 합류
 - group: 클렘
   match:
     name: 클렘
@@ -481,6 +488,21 @@ voices:
   - register: 존대(여럿에게)
     text: 전하들께서는 그대들 문명이 보여준 결실에 만족하고 계십니다.
   source: translate/voice-prompts.jsonl
+- group: 아우레토스크
+  match:
+    name: 아우레토스크
+  instruction: 태고의 존재라 말투가 높고 느리다. 상대에 따라 격이 갈린다 — 말보 왕에게는 원문이 vos 계열(vos·vuestro·habéis·sois)이라 「그대」에 하게체(~네·~인가·~게야·~군), 존댓말도 반말도 아니다. 드루이드 무리처럼 여럿을 상대할 때는 vosotros라 전설 포켓몬의 사자로서 존대로 말하되 2인칭은 「그대들」이다 — 존대 어미에 「너희」를 섞지 않는다. 미라·크리산토에게는 tú이므로 반말. 사람을 낮춰 보는 내용을 높은 격조로 말하는 데서 서늘함이 나온다.
+  samples:
+  - register: 옛 경칭(말보 왕에게)
+    text: 하지만 그대는 자격이 없네. 거대한 역사의 흐름 속에서 그대의 치세는 그저 약간의 소음을 일으킨 것으로 기억될 뿐이지.
+  - register: 옛 경칭(말보 왕에게)
+    text: 그대의 연금술사들은 내가 글로 적어 남긴 설계도를 아직도 해석하려 애쓰고 있는가?
+  - register: 하대(그 밖)
+    text: 인간이란 지배하기 위해서만 무언가를 보살피는 법이니까.
+  - register: 존대(여럿에게)
+    text: 전하들께서는 그대들 문명이 보여준 결실에 만족하고 계십니다.
+  source: translate/voice-prompts.jsonl
+  note: 아우레와 같은 인물(canon/names.jsonl의 이명 표기 'Auretosk'가 여기로 해석됨. docs/ledger/voices.md:245 인물표 이명 명시). 미등재 화자 선별 B, 2026-08-18 합류
 - group: 누빌라
   match:
     name: 누빌라
@@ -795,3 +817,273 @@ voices:
   - register: 존대
     text: 최고의 포켓몬 배틀이었어요! 바로 이런 거죠!
   source: translate/voice-prompts.jsonl
+- group: 게노스
+  match:
+    name: 게노스
+  instruction: 주인공·사냥감에게는 감정을 뺀 단정체 「~다」로 관찰하듯 말하고, 해부·표본·주사 같은 실험실 어휘를 쓴다. 상관 란토와 그 앞에서는 합쇼 존대로 갈아입는다(「~합니다」·「~하지요」).
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 즈미 고문
+  match:
+    name: 즈미 고문
+  instruction: 말보 왕과 왕비 앞에서는 최상급 합쇼 존대로 간언하고(「~이옵니다」·「~입니다」), 주인공·아우레·죄인에게는 차갑게 내려찍는 단정체 「~다/~하라」로 갈아입는다. 격의 갈림은 상대 전환이지 흔들림이 아니다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 유령
+  match:
+    name: 유령
+  instruction: 생전에 부호였던 섬의 유령. 하게체로 격식을 갖춰 자네라 부르고(「~일세」·「~다네」·「~하지」), 보물을 미끼로 던지는 대목에서만 능글맞은 웃음을 섞는다. 격은 하나로 깔고 진동은 어휘로 낸다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 에릭
+  match:
+    name: 에릭
+  instruction: 여행을 마쳐 가는 또래 트레이너. 다정하고 느긋한 반말로 주인공의 여정을 치켜세우고, 감상은 길게 늘이지 않는다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+  note: EricLostie 이름표도 이 항목이 덮는다(canon 매핑, Z-53 확인 2026-08-18)
+- group: 상급기사 간피
+  match:
+    name: 상급기사 간피
+  instruction: 말보 왕의 근위대장. 그대라 부르는 고풍 의고체로 선포하듯 말한다(「~노라」·「~하리라」·「~보아라」). 패배해도 격을 낮추지 않고 예를 갖춘다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 상급기사 즈미
+  match:
+    name: 상급기사 즈미
+  instruction: 궁정 마법사 출신의 상급기사. 너라 부르며 상대의 무지를 짚는 냉소적 단정체(「~다」·「~하지」)를 쓴다. 같은 방을 지키는 간피의 의고체와 대비되게 현대적인 결로 둔다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: Revolucionaria
+  match:
+    name: Revolucionaria
+  instruction: 궁전 전투에 뛰어드는 혁명군 병사. 짧게 외치는 전투 단정체 「~다/~해라」만 쓴다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+  note: 이름표를 한국어로 옮기면 표시명이 다른 화자와 겹쳐(혁명가) 말투가 하나로 접힌다 — 원 이름표로 등재. 표시 번역은 「혁명가」 그대로. Z-53 채점(2026-08-18)
+- group: 지배인
+  match:
+    name: 지배인
+  instruction: 저택 연회를 맡은 지배인. 손님과 상전에게는 합쇼 존대로 응대하고, 상황을 살피는 혼잣말에서만 격을 조금 푼다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 웨이터
+  match:
+    name: 웨이터
+  instruction: 고급 식당의 웨이터. 섭정에게 보고하는 자리라 합쇼 존대로 또박또박 말하고, 소감을 덧붙일 때만 「~네요」로 살짝 푼다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 간피 기사
+  match:
+    name: 간피 기사
+  instruction: 왕 앞에 부복해 보고하는 젊은 기사. 합쇼 존대로 짧게 아뢴다(「~했습니다」). 뒷날의 상급기사 간피와 같은 인물이지만, 이 자리는 상대가 왕이라 격이 다르다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+  note: 별칭 — 「상급기사 간피」와 동일 인물의 이른 시점 이름표(Z-53 확인, 2026-08-18)
+- group: 마녀들
+  match:
+    name: 마녀들
+  instruction: 공장을 태우러 몰려온 마녀들. 늙은 마녀의 정감 없는 하대체로 흡족해하며 말한다(「~게야」·「~했다」). 여럿이 한 이름표로 묶여 있으므로 개인차를 내지 않는다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 드루몬드
+  match:
+    name: 드루몬드
+  instruction: 이설시티 정예 병사. 패배 대사 한 줄뿐이라 개성을 넣지 않고, 군인의 단정체 「~다」로 둔다. Hans·Vladimir·Vostok와 같은 문장을 공유하므로 넷을 한 결로 맞춘다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 중위
+  match:
+    name: 중위
+  instruction: 크리산토 대장의 부관. 합쇼 존대로 전황을 보고하고 명령을 복창한다(「~입니다」·「~하겠습니다」).
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 남자 1
+  match:
+    name: 남자 1
+  instruction: 에필로그 거리에서 멜리아를 알아보는 남자. 옆 사람에게 핀잔을 던지는 반말로 두고, 현행 마지막 줄의 「~걸요」 존대는 반말로 맞춘다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 남자 2
+  match:
+    name: 남자 2
+  instruction: 에필로그 거리에서 되묻는 남자. 상대에게 한 수 접는 해요체로 두어 반말을 쓰는 남자 1과 대비시킨다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 여배우
+  match:
+    name: 여배우
+  instruction: 삶과 죽음을 읊는 여배우. 무대 대사처럼 정돈된 해요체로 묻고(「~죠」·「~인가요」), 원문의 vos 경칭을 살려 상대를 높인다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 앱솔
+  match:
+    name: 앱솔
+  instruction: 재앙을 알리는 앱솔. 신탁을 읊듯 문어체 예언형으로만 말한다(「~하리라」·「~할 것이다」). 대화체로 내리지 않는다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 드라세나 여사제
+  match:
+    name: 드라세나 여사제
+  instruction: 왕실 여사제. 왕 앞에서 합쇼 존대로 아뢰고(「~입니다」·「~겠습니까」), 신앙을 앞세워 목소리를 높일 때도 격은 유지한다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 한스
+  match:
+    name: 한스
+  instruction: 이설시티 정예 병사. 패배 대사 한 줄뿐이라 군인의 단정체 「~다」로 두고, Drumond·Vladimir·Vostok와 한 결로 맞춘다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 야도킹
+  match:
+    name: 야도킹
+  instruction: 포켓몬마을의 원로 야도킹 — Sabio(현자)와 같은 인물의 다른 이름표다. 같은 하게체 지시를 그대로 쓴다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+  note: 별칭 — 「현자」(Sabio)와 동일 인물(Z-53 확인, 2026-08-18)
+- group: 화가
+  match:
+    name: 화가
+  instruction: 거리에서 그림을 파는 화가. 귀부인을 맞이하는 살가운 해요체를 깔고, 제 작품을 낮추는 겸양 대목만 합쇼로 올린다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 드루이드
+  match:
+    name: 드루이드
+  instruction: 비밀을 지키는 드루이드들. 여럿이 한목소리로 내는 엄숙한 단정체 「~된다/~안 된다」만 쓴다. 개인차를 내지 않는다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 왕
+  match:
+    name: 왕
+  instruction: 수수께끼 섬의 죽은 왕. 아랫사람을 어르는 정감 하대로 옛일을 들려준다(「~말이다」·「~하거라」).
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 시민들
+  match:
+    name: 시민들
+  instruction: 광장에 모인 시민들. 여럿이 함께 내는 반응이므로 해요체로 짧게 되묻거나 연호만 한다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 스파르토이
+  match:
+    name: 스파르토이
+  instruction: 총사 트레이너의 패배 대사 한 줄뿐이다. 총사 묶음의 시원시원한 반말을 그대로 따른다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 블라디미르
+  match:
+    name: 블라디미르
+  instruction: 이설시티 정예 병사. 패배 대사 한 줄뿐이라 군인의 단정체 「~다」로 두고, Drumond·Hans·Vostok와 한 결로 맞춘다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 드루이드 1
+  match:
+    name: 드루이드 1
+  instruction: 대드루이드를 모시는 드루이드. 상급자에게 합쇼 존대로 묻고 아뢴다(「~합니까」·「~느껴집니다」).
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: Muchacha
+  match:
+    name: Muchacha
+  instruction: 저택에서 란토의 손길을 웃어넘기는 아가씨. 새침한 해요체로 밀어낸다(「~세요」·「~라고요」).
+  samples: []
+  source: Z-53 채점(2026-08-18)
+  note: 이름표를 한국어로 옮기면 표시명이 다른 화자와 겹쳐(소녀) 말투가 하나로 접힌다 — 원 이름표로 등재. 표시 번역은 「소녀」 그대로. Z-53 채점(2026-08-18)
+- group: 아미시아
+  match:
+    name: 아미시아
+  instruction: 아조스단 하급 단원의 도발 한 줄뿐이다. 조직의 이념을 앞세운 단정체 「~다」로 두고 아조스단 묶음과 결을 맞춘다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 위고
+  match:
+    name: 위고
+  instruction: 아조스단 하급 단원의 패배 대사 한 줄뿐이다. 투덜대는 반말로 두고 아조스단 묶음과 결을 맞춘다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: Niña
+  match:
+    name: Niña
+  instruction: 보육원 아이. 어른에게 또박또박 인사하는 해요·합쇼 존대 한 줄뿐이다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+  note: 이름표를 한국어로 옮기면 표시명이 다른 화자와 겹쳐(소녀) 말투가 하나로 접힌다 — 원 이름표로 등재. 표시 번역은 「소녀」 그대로. Z-53 채점(2026-08-18)
+- group: 간피
+  match:
+    name: 간피
+  instruction: 상급기사 간피의 전투호출 대사다. 「상급기사 간피」 지시(그대·의고체)를 그대로 쓴다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+  note: 별칭 — 「상급기사 간피」와 동일 인물(Z-53 확인, 2026-08-18). 전투호출 이름표
+- group: 드라세나
+  match:
+    name: 드라세나
+  instruction: 상급기사 드라세나의 전투호출 대사다. 겨루기를 즐기는 밝은 해요체로 둔다(「~인가요」·「~오세요」).
+  samples: []
+  source: Z-53 채점(2026-08-18)
+  note: 별칭 — 「상급기사 드라세나」와 동일 인물(Z-53 확인, 2026-08-18). 전투호출 이름표
+- group: 즈미
+  match:
+    name: 즈미
+  instruction: 상급기사 즈미의 전투호출 대사다. 「상급기사 즈미」 지시(너·냉소적 단정체)를 그대로 쓴다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+  note: 별칭 — 「상급기사 즈미」와 동일 인물(Z-53 확인, 2026-08-18). 전투호출 이름표
+- group: Revolucionario
+  match:
+    name: Revolucionario
+  instruction: 미라를 따르는 혁명파 대원. 상관에게 합쇼 존대로 복명한다(「~하겠습니다」).
+  samples: []
+  source: Z-53 채점(2026-08-18)
+  note: 이름표를 한국어로 옮기면 표시명이 다른 화자와 겹쳐(혁명가) 말투가 하나로 접힌다 — 원 이름표로 등재. 표시 번역은 「혁명가」 그대로. Z-53 채점(2026-08-18)
+- group: 마을 주민 1
+  match:
+    name: 마을 주민 1
+  instruction: 축제 구경 나온 마을 주민. 들뜬 반말로 감탄한다(「~라니까!」).
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 마을 주민 2
+  match:
+    name: 마을 주민 2
+  instruction: 축제 구경 나온 마을 주민. 옆 사람에게 해요체로 말을 건넨다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 마을 주민 3
+  match:
+    name: 마을 주민 3
+  instruction: 축제에 취한 나이 든 마을 주민. 격식 하대의 감탄으로 흥을 낸다(「~구먼」).
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 어거스틴
+  match:
+    name: 어거스틴
+  instruction: 엄마의 부름에 답하는 아이. 짧고 밝은 반말 한 줄뿐이다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 보스토크
+  match:
+    name: 보스토크
+  instruction: 이설시티 정예 병사. 패배 대사 한 줄뿐이라 군인의 단정체 「~다」로 두고, Drumond·Hans·Vladimir와 한 결로 맞춘다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 바스티안
+  match:
+    name: 바스티안
+  instruction: 신분을 앞세우는 부르주아 트레이너. 상대를 깔보는 단정체 도발 한 줄뿐이다.
+  samples: []
+  source: Z-53 채점(2026-08-18)
+- group: 검은깃털
+  match:
+    name: 검은깃털
+  instruction: 자칭 악당의 자부심이 밴 거리낌 없는 반말 단정체 — 능청(「~하지」·「~라고」)과 웃음(제, 제, 제)이 결이다. 어느 국면에서도 존대로 올리지 않는다(상점·거래 문구 포함). [맵>=100] 지하묘지 국면(맵187) — 도둑 활동 중의 위압. 경고·위협은 차게 내려찍는다(「~하겠어」·「~일 거다」). [맵<100] 은신처 국면(맵26) — 정착과 은퇴. 위협 어휘를 거두고 느긋한 반말로 누그러진다.
+  samples: []
+  source: Z-53 ① 스튜디오 판정(2026-08-18)
+  note: 유지자 판정 「국면별로 가르기」. 조건 경계 100은 맵26/맵187을 가르는 임의값 — 이 인물이 새 맵에 서면 경계를 다시 본다.
+- group: 세룰레오
+  match:
+    name: 세룰레오
+  instruction: 술에 절어 사는 파계 수도사. 스스럼없는 반말에 술주정 추임새(「딸꾹!」)와 신세 한탄·능청이 섞인다. 복수 부탁도 거래 흥정도 격은 올리지 않고, 교단·화학 얘기에서만 잠깐 진지해진다.
+  samples: []
+  source: Z-53 ① 스튜디오 판정(2026-08-18)
+  note: 이름표 Cerúleo(그림 monjeAcrilico) — 유지자 판정 「인물 등재」. 잡담 스프라이트가 아니라 인물 층이다.

@@ -1,0 +1,110 @@
+{"id": "271:4:0:1", "who": "flecha", "es": "Esta parece una sala bastante despejada. ¿Quieres abrir la <b>Vasija Castigo</b>?", "old": "이 방은 꽤 탁 트여 있다. ‘<b>굴레의항아리</b>’를 열어볼까?"}
+{"id": "271:4:0:15", "who": "flecha", "es": "La <b>Vasija Castigo</b> empieza a temblar de forma siniestra...", "old": "<b>굴레의항아리</b>가 불길하게 흔들리기 시작한다..."}
+{"id": "271:4:0:28", "who": "flecha", "es": "¡Un Pokémon ha salido de la vasija!", "old": "항아리에서 포켓몬이 나왔다!"}
+{"id": "271:4:0:121", "who": "Brujas", "es": "<b>Brujas:</b> ¡Síiiii! El portal de Hoopa ha sido abierto.", "old": "<b>마녀들:</b> 좋았어어어! 후파의 포탈이 열렸다."}
+{"id": "271:4:0:122", "who": "Brujas", "es": "Ahora irán llegando todas las brujas de la región de <b>Kalos</b> para reducir esta fábrica a cenizas.", "old": "이제 <b>칼로스</b> 지방의 모든 마녀들이 몰려와 이 몬스터볼 공장을 잿더미로 만들어 버릴 게야."}
+{"id": "271:4:0:131", "who": "Bruja", "es": "<b>Bruja:</b> Has cumplido bien con tu misión, \\PN. El aquelarre de brujas está en deuda contigo.", "old": "<b>마녀:</b> 임무를 훌륭히 완수했구나, \\PN. 우리 마녀집회가 너에게 빚을 졌어.", "new": "<b>마녀:</b> 임무를 훌륭히 완수했구나, \\PN. 우리 마녀집회가 너에게 빚을 졌어."}
+{"id": "271:4:0:132", "who": "Bruja", "es": "¡Del resto nos encargaremos nosotras!", "old": "나머지는 우리가 맡으마!", "new": "나머지는 우리가 맡으마!"}
+{"id": "271:4:0:137", "who": "Bruja", "es": "<b>Bruja:</b> ¡<i>Avant</i>! ¡Que arda todo!", "old": "<b>마녀:</b> <i>Avant</i>! 전부 불태워라!", "new": "<b>마녀:</b> <i>Avant</i>! 전부 불태워라!"}
+{"id": "271:4:0:171", "who": "Bruja", "es": "<b>Bruja:</b> ¡Seguid así! ¡Seguid así! Este será el final de la <b>Fábrica de Pokéball</b>.", "old": "<b>마녀:</b> 계속해라! 계속해! 이것으로 <b>몬스터볼 공장</b>은 끝이다.", "new": "<b>마녀:</b> 계속해라! 계속해! 이것으로 <b>몬스터볼 공장</b>은 끝이다."}
+{"id": "271:4:0:173", "who": "???", "es": "<b>???:</b> Es suficiente. Hasta aquí llegamos con vuestras fechorías.", "old": "<b>???:</b> 거기까지다. 너희의 악행도 여기까지다."}
+{"id": "271:4:0:195", "who": "Brujas", "es": "<b>Brujas:</b> ¡Aaaa... aaaaaahhh!", "old": "<b>마녀들:</b> 아아아... 아아아악!"}
+{"id": "271:4:0:217", "who": "Brujas", "es": "Es... el... ¡el Capitán <b>Crisanto</b>!", "old": "저... 저 사람은... <b>크리산토</b> 대장이다!"}
+{"id": "271:4:0:221", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] Vengo de liderar seis meses de guerra contra los ejércitos de <b>Galar</b> y no estoy de buen humor precisamente.", "old": "\\c[3]<b>크리산토:</b>\\c[0] <b>가라르</b> 군대에 맞서 6개월간 전쟁을 이끌고 막 돌아온 참이라, 딱히 기분이 좋지 않거든."}
+{"id": "271:4:0:222", "who": "Crisanto", "es": "Lo último que me apetece es tener que lidiar con unas alborotadoras locales, pero son órdenes del Legislador.", "old": "지방의 소란꾼 따위를 상대하고 싶진 않지만, 입법관님의 명령이니 어쩔 수 없지."}
+{"id": "271:4:0:224", "who": "Crisanto", "es": "Vamos a zanjar este asunto rápido y a mi manera.", "old": "이 일은 내 방식대로 신속하게 매듭짓도록 하겠다."}
+{"id": "271:4:0:238", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] Podemos acabar incluso antes si decidís marcharos de buen grado.", "old": "\\c[3]<b>크리산토:</b>\\c[0] 순순히 물러난다면 훨씬 일찍 끝낼 수도 있다만."}
+{"id": "271:4:0:245", "who": "Bruja", "es": "<b>Bruja:</b> ¡Ji, ji, ji! ¡Me temo que has cometido un grave error viniendo solo, capitán!", "old": "<b>마녀:</b> 히히히! 혼자서 오다니 엄청난 실수를 저질렀구나, 대장!", "new": "<b>마녀:</b> 히히히! 혼자서 오다니 엄청난 실수를 저질렀구나, 대장!"}
+{"id": "271:4:0:246", "who": "Bruja", "es": "Ahora las brujas estamos unidas en sororidad. ¡No podrás con nosotras!", "old": "지금 우리 마녀들은 자매애로 굳게 단결되어 있다. 우리를 당해내지 못할 거다!", "new": "지금 우리 마녀들은 자매애로 굳게 단결되어 있다. 우리를 당해내지 못할 거다!"}
+{"id": "271:4:0:247", "who": "Bruja", "es": "¡Brujas, coged las manos de vuestras compañeras y manifestad vuestro auténtico poder!", "old": "마녀들이여, 동료의 손을 잡고 진정한 힘을 드러내라!", "new": "마녀들이여, 동료의 손을 잡고 진정한 힘을 드러내라!"}
+{"id": "271:4:0:253", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] Habrase visto...", "old": "\\c[3]<b>크리산토:</b>\\c[0] 별꼴을 다 보겠군..."}
+{"id": "271:4:0:279", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] Gallade, por favor, deshazte de ellas.", "old": "\\c[3]<b>크리산토:</b>\\c[0] 엘레이드, 저들을 물러세우거라."}
+{"id": "271:4:0:358", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] Y en cuanto a ti, pérfida bruja, ¿no te da vergüenza caer tan bajo?", "old": "\\c[3]<b>크리산토:</b>\\c[0] 그리고 사악한 마녀여, 이렇게까지 추락하다니 부끄럽지도 않은가!"}
+{"id": "271:4:0:360", "who": "Crisanto", "es": "Tomando el aspecto de mi antiguo amigo, una persona tan honorable.", "old": "그토록 고결했던 내 오랜 친구의 모습을 하고서."}
+{"id": "271:4:0:363", "who": "Crisanto", "es": "Y que además murió de forma tan prematura.", "old": "게다가 그렇게 안타깝게 요절한 친구인데."}
+{"id": "271:4:0:366", "who": "Crisanto", "es": "Tomando el aspecto de mi antigua amiga, una persona tan honorable.", "old": "그토록 고결했던 내 오랜 친구의 모습을 하고서."}
+{"id": "271:4:0:369", "who": "Crisanto", "es": "Y que además murió de forma tan prematura.", "old": "게다가 그렇게 안타깝게 요절한 친구인데."}
+{"id": "271:4:0:379", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] Me aseguraré de que pagues muy cara esta macabra broma.", "old": "\\c[3]<b>크리산토:</b>\\c[0] 이 끔찍한 장난의 대가를 아주 혹독하게 치르게 해주마."}
+{"id": "271:4:0:380", "who": "Crisanto", "es": "...", "old": "......"}
+{"id": "271:4:0:381", "who": "Crisanto", "es": "¿No dices nada?", "old": "아무 말도 안 하는 거냐?"}
+{"id": "271:4:0:383", "who": "Crisanto", "es": "Claro, él también era de pocas palabras.", "old": "하긴, 그 녀석도 원래 말수가 적긴 했지."}
+{"id": "271:4:0:386", "who": "Crisanto", "es": "Claro, ella también era de pocas palabras.", "old": "하긴, 그 녀석도 원래 말수가 적긴 했지."}
+{"id": "271:4:0:393", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] ...", "old": "\\c[3]<b>크리산토:</b>\\c[0] ..."}
+{"id": "271:4:0:394", "who": "Crisanto", "es": "Espera...", "old": "잠깐..."}
+{"id": "271:4:0:396", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] No... no puede...", "old": "\\c[3]<b>크리산토:</b>\\c[0] 설마... 그럴 리가..."}
+{"id": "271:4:0:404", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] ¡No puedes ser \\PN! ¡Tú... tú habías muerto!", "old": "\\c[3]<b>크리산토:</b>\\c[0] 네가 \\PN일 리가 없어! 너... 넌 죽었잖아!"}
+{"id": "271:4:0:405", "who": "Crisanto", "es": "¿¡Eres acaso el espectro de \\PN que viene a atormentarme!?", "old": "혹시 나를 괴롭히러 온 \\PN의 원혼인 거냐!?"}
+{"id": "271:4:0:417", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] ¿De verdad eres tú?", "old": "\\c[3]<b>크리산토:</b>\\c[0] 정말 너 맞아?"}
+{"id": "271:4:0:418", "who": "Crisanto", "es": "Eso significa que...", "old": "그렇다는 건..."}
+{"id": "271:4:0:423", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] Era... era un engaño.", "old": "\\c[3]<b>크리산토:</b>\\c[0] 전부... 전부 속임수였던 거야."}
+{"id": "271:4:0:424", "who": "Crisanto", "es": "Algo no cuadraba. Pero cuando empecé a darle vueltas, me enviaron lejos a combatir la guerra y...", "old": "뭔가 이상했어. 하지만 의구심이 들기 시작했을 때, 난 멀리 전쟁터로 보내졌고..."}
+{"id": "271:4:0:429", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] Por el amor de todos los Pokémon, ¿qué he hecho? ¿En qué error devastador he caído?", "old": "\\c[3]<b>크리산토:</b>\\c[0] 세상에, 내가 무슨 짓을 저지른 건가? 대체 어떤 끔찍한 착각에 빠져 있었단 말인가!"}
+{"id": "271:4:0:437", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] Pero... entonces, ¿dónde has estado, \\PN? Acaso el Legislador <b>Mirra</b>...", "old": "\\c[3]<b>크리산토:</b>\\c[0] 하지만... 그렇다면 그동안 어디에 있었던 거냐, \\PN? 설마 입법관 <b>미라</b>님이..."}
+{"id": "271:4:0:438", "who": "Crisanto", "es": "No...", "old": "아니..."}
+{"id": "271:4:0:446", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] La <b>Prisión del Olvido</b>.", "old": "\\c[3]<b>크리산토:</b>\\c[0] <b>망각의 감옥</b>."}
+{"id": "271:4:0:447", "who": "Crisanto", "es": "...", "old": "......"}
+{"id": "271:4:0:448", "who": "Crisanto", "es": "No tengo perdón.", "old": "난 용서받을 자격이 없어."}
+{"id": "271:4:0:449", "who": "Crisanto", "es": "No tengo ningún tipo de perdón.", "old": "절대로 용서받지 못할 죄야."}
+{"id": "271:4:0:462", "who": "Bruja", "es": "<b>Bruja:</b> ¡Me vengaré de vosotros!", "old": "<b>마녀:</b> 너희에게 복수하겠다!", "new": "<b>마녀:</b> 너희에게 복수하겠다!"}
+{"id": "271:4:0:463", "who": "Bruja", "es": "¡Aunque tenga que llevarme todo por delante!", "old": "모든 걸 싹 다 휩쓸어 버려서라도!", "new": "모든 걸 싹 다 휩쓸어 버려서라도!"}
+{"id": "271:4:0:469", "who": "Bruja", "es": "<b>Bruja:</b> ¡Chandelure, usa Lanzallamas!", "old": "<b>마녀:</b> 샹델라, 화염방사!", "new": "<b>마녀:</b> 샹델라, 화염방사!"}
+{"id": "271:4:0:488", "who": "Bruja", "es": "...", "old": "......", "new": "......"}
+{"id": "271:4:0:489", "who": "Bruja", "es": "No puedes caer todavía.", "old": "아직 쓰러지면 안 돼.", "new": "아직 쓰러지면 안 돼."}
+{"id": "271:4:0:501", "who": "Bruja", "es": "Todavía no hemos tenido la oportunidad de medirnos en igualdad de condiciones. En un combate Pokémon.", "old": "아직 대등한 조건에서 겨뤄볼 기회가 없었잖아. 포켓몬 배틀로 말이야.", "new": "아직 대등한 조건에서 겨뤄볼 기회가 없었잖아. 포켓몬 배틀로 말이야."}
+{"id": "271:4:0:502", "who": "Bruja", "es": "¿Vas a negarte ese derecho?", "old": "그 권리를 포기할 셈인가?", "new": "그 권리를 포기할 셈인가?"}
+{"id": "271:4:0:528", "who": "Bruja", "es": "¿Dónde está <b>Crisanto</b>?", "old": "<b>크리산토</b>는 어디 있지?", "new": "<b>크리산토</b>는 어디 있지?"}
+{"id": "271:4:0:1", "who": "flecha", "es": "Esta parece una sala bastante despejada. ¿Quieres abrir la <b>Vasija Castigo</b>?", "old": "이 방은 꽤 탁 트여 있다. ‘<b>굴레의항아리</b>’를 열어볼까?"}
+{"id": "271:4:0:15", "who": "flecha", "es": "La <b>Vasija Castigo</b> empieza a temblar de forma siniestra...", "old": "<b>굴레의항아리</b>가 불길하게 흔들리기 시작한다..."}
+{"id": "271:4:0:28", "who": "flecha", "es": "¡Un Pokémon ha salido de la vasija!", "old": "항아리에서 포켓몬이 나왔다!"}
+{"id": "271:4:0:121", "who": "Brujas", "es": "<b>Brujas:</b> ¡Síiiii! El portal de Hoopa ha sido abierto.", "old": "<b>마녀들:</b> 좋았어어어! 후파의 포탈이 열렸다.", "new": "<b>마녀들:</b> 좋았어어어! 후파의 포탈이 열렸다."}
+{"id": "271:4:0:122", "who": "Brujas", "es": "Ahora irán llegando todas las brujas de la región de <b>Kalos</b> para reducir esta fábrica a cenizas.", "old": "이제 <b>칼로스</b> 지방의 모든 마녀들이 몰려와 이 몬스터볼 공장을 잿더미로 만들어 버릴 게야.", "new": "이제 <b>칼로스</b> 지방의 모든 마녀들이 몰려와 이 몬스터볼 공장을 잿더미로 만들어 버릴 게야."}
+{"id": "271:4:0:131", "who": "Bruja", "es": "<b>Bruja:</b> Has cumplido bien con tu misión, \\PN. El aquelarre de brujas está en deuda contigo.", "old": "<b>마녀:</b> 임무를 훌륭히 완수했구나, \\PN. 우리 마녀집회가 너에게 빚을 졌어."}
+{"id": "271:4:0:132", "who": "Bruja", "es": "¡Del resto nos encargaremos nosotras!", "old": "나머지는 우리가 맡으마!"}
+{"id": "271:4:0:137", "who": "Bruja", "es": "<b>Bruja:</b> ¡<i>Avant</i>! ¡Que arda todo!", "old": "<b>마녀:</b> <i>Avant</i>! 전부 불태워라!"}
+{"id": "271:4:0:171", "who": "Bruja", "es": "<b>Bruja:</b> ¡Seguid así! ¡Seguid así! Este será el final de la <b>Fábrica de Pokéball</b>.", "old": "<b>마녀:</b> 계속해라! 계속해! 이것으로 <b>몬스터볼 공장</b>은 끝이다."}
+{"id": "271:4:0:173", "who": "???", "es": "<b>???:</b> Es suficiente. Hasta aquí llegamos con vuestras fechorías.", "old": "<b>???:</b> 거기까지다. 너희의 악행도 여기까지다."}
+{"id": "271:4:0:195", "who": "Brujas", "es": "<b>Brujas:</b> ¡Aaaa... aaaaaahhh!", "old": "<b>마녀들:</b> 아아아... 아아아악!", "new": "<b>마녀들:</b> 아아아... 아아아악!"}
+{"id": "271:4:0:217", "who": "Brujas", "es": "Es... el... ¡el Capitán <b>Crisanto</b>!", "old": "저... 저 사람은... <b>크리산토</b> 대장이다!", "new": "저... 저 사람은... <b>크리산토</b> 대장이다!"}
+{"id": "271:4:0:221", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] Vengo de liderar seis meses de guerra contra los ejércitos de <b>Galar</b> y no estoy de buen humor precisamente.", "old": "\\c[3]<b>크리산토:</b>\\c[0] <b>가라르</b> 군대에 맞서 6개월간 전쟁을 이끌고 막 돌아온 참이라, 딱히 기분이 좋지 않거든."}
+{"id": "271:4:0:222", "who": "Crisanto", "es": "Lo último que me apetece es tener que lidiar con unas alborotadoras locales, pero son órdenes del Legislador.", "old": "지방의 소란꾼 따위를 상대하고 싶진 않지만, 입법관님의 명령이니 어쩔 수 없지."}
+{"id": "271:4:0:224", "who": "Crisanto", "es": "Vamos a zanjar este asunto rápido y a mi manera.", "old": "이 일은 내 방식대로 신속하게 매듭짓도록 하겠다."}
+{"id": "271:4:0:238", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] Podemos acabar incluso antes si decidís marcharos de buen grado.", "old": "\\c[3]<b>크리산토:</b>\\c[0] 순순히 물러난다면 훨씬 일찍 끝낼 수도 있다만."}
+{"id": "271:4:0:245", "who": "Bruja", "es": "<b>Bruja:</b> ¡Ji, ji, ji! ¡Me temo que has cometido un grave error viniendo solo, capitán!", "old": "<b>마녀:</b> 히히히! 혼자서 오다니 엄청난 실수를 저질렀구나, 대장!"}
+{"id": "271:4:0:246", "who": "Bruja", "es": "Ahora las brujas estamos unidas en sororidad. ¡No podrás con nosotras!", "old": "지금 우리 마녀들은 자매애로 굳게 단결되어 있다. 우리를 당해내지 못할 거다!"}
+{"id": "271:4:0:247", "who": "Bruja", "es": "¡Brujas, coged las manos de vuestras compañeras y manifestad vuestro auténtico poder!", "old": "마녀들이여, 동료의 손을 잡고 진정한 힘을 드러내라!"}
+{"id": "271:4:0:253", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] Habrase visto...", "old": "\\c[3]<b>크리산토:</b>\\c[0] 별꼴을 다 보겠군..."}
+{"id": "271:4:0:279", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] Gallade, por favor, deshazte de ellas.", "old": "\\c[3]<b>크리산토:</b>\\c[0] 엘레이드, 저들을 물러세우거라."}
+{"id": "271:4:0:358", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] Y en cuanto a ti, pérfida bruja, ¿no te da vergüenza caer tan bajo?", "old": "\\c[3]<b>크리산토:</b>\\c[0] 그리고 사악한 마녀여, 이렇게까지 추락하다니 부끄럽지도 않은가!"}
+{"id": "271:4:0:360", "who": "Crisanto", "es": "Tomando el aspecto de mi antiguo amigo, una persona tan honorable.", "old": "그토록 고결했던 내 오랜 친구의 모습을 하고서."}
+{"id": "271:4:0:363", "who": "Crisanto", "es": "Y que además murió de forma tan prematura.", "old": "게다가 그렇게 안타깝게 요절한 친구인데."}
+{"id": "271:4:0:366", "who": "Crisanto", "es": "Tomando el aspecto de mi antigua amiga, una persona tan honorable.", "old": "그토록 고결했던 내 오랜 친구의 모습을 하고서."}
+{"id": "271:4:0:369", "who": "Crisanto", "es": "Y que además murió de forma tan prematura.", "old": "게다가 그렇게 안타깝게 요절한 친구인데."}
+{"id": "271:4:0:379", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] Me aseguraré de que pagues muy cara esta macabra broma.", "old": "\\c[3]<b>크리산토:</b>\\c[0] 이 끔찍한 장난의 대가를 아주 혹독하게 치르게 해주마."}
+{"id": "271:4:0:380", "who": "Crisanto", "es": "...", "old": "......"}
+{"id": "271:4:0:381", "who": "Crisanto", "es": "¿No dices nada?", "old": "아무 말도 안 하는 거냐?"}
+{"id": "271:4:0:383", "who": "Crisanto", "es": "Claro, él también era de pocas palabras.", "old": "하긴, 그 녀석도 원래 말수가 적긴 했지."}
+{"id": "271:4:0:386", "who": "Crisanto", "es": "Claro, ella también era de pocas palabras.", "old": "하긴, 그 녀석도 원래 말수가 적긴 했지."}
+{"id": "271:4:0:393", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] ...", "old": "\\c[3]<b>크리산토:</b>\\c[0] ..."}
+{"id": "271:4:0:394", "who": "Crisanto", "es": "Espera...", "old": "잠깐..."}
+{"id": "271:4:0:396", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] No... no puede...", "old": "\\c[3]<b>크리산토:</b>\\c[0] 설마... 그럴 리가..."}
+{"id": "271:4:0:404", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] ¡No puedes ser \\PN! ¡Tú... tú habías muerto!", "old": "\\c[3]<b>크리산토:</b>\\c[0] 네가 \\PN일 리가 없어! 너... 넌 죽었잖아!"}
+{"id": "271:4:0:405", "who": "Crisanto", "es": "¿¡Eres acaso el espectro de \\PN que viene a atormentarme!?", "old": "혹시 나를 괴롭히러 온 \\PN의 원혼인 거냐!?"}
+{"id": "271:4:0:417", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] ¿De verdad eres tú?", "old": "\\c[3]<b>크리산토:</b>\\c[0] 정말 너 맞아?"}
+{"id": "271:4:0:418", "who": "Crisanto", "es": "Eso significa que...", "old": "그렇다는 건..."}
+{"id": "271:4:0:423", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] Era... era un engaño.", "old": "\\c[3]<b>크리산토:</b>\\c[0] 전부... 전부 속임수였던 거야."}
+{"id": "271:4:0:424", "who": "Crisanto", "es": "Algo no cuadraba. Pero cuando empecé a darle vueltas, me enviaron lejos a combatir la guerra y...", "old": "뭔가 이상했어. 하지만 의구심이 들기 시작했을 때, 난 멀리 전쟁터로 보내졌고..."}
+{"id": "271:4:0:429", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] Por el amor de todos los Pokémon, ¿qué he hecho? ¿En qué error devastador he caído?", "old": "\\c[3]<b>크리산토:</b>\\c[0] 세상에, 내가 무슨 짓을 저지른 건가? 대체 어떤 끔찍한 착각에 빠져 있었단 말인가!"}
+{"id": "271:4:0:437", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] Pero... entonces, ¿dónde has estado, \\PN? Acaso el Legislador <b>Mirra</b>...", "old": "\\c[3]<b>크리산토:</b>\\c[0] 하지만... 그렇다면 그동안 어디에 있었던 거냐, \\PN? 설마 입법관 <b>미라</b>님이..."}
+{"id": "271:4:0:438", "who": "Crisanto", "es": "No...", "old": "아니..."}
+{"id": "271:4:0:446", "who": "Crisanto", "es": "\\c[3]<b>Crisanto:</b>\\c[0] La <b>Prisión del Olvido</b>.", "old": "\\c[3]<b>크리산토:</b>\\c[0] <b>망각의 감옥</b>."}
+{"id": "271:4:0:447", "who": "Crisanto", "es": "...", "old": "......"}
+{"id": "271:4:0:448", "who": "Crisanto", "es": "No tengo perdón.", "old": "난 용서받을 자격이 없어."}
+{"id": "271:4:0:449", "who": "Crisanto", "es": "No tengo ningún tipo de perdón.", "old": "절대로 용서받지 못할 죄야."}
+{"id": "271:4:0:462", "who": "Bruja", "es": "<b>Bruja:</b> ¡Me vengaré de vosotros!", "old": "<b>마녀:</b> 너희에게 복수하겠다!"}
+{"id": "271:4:0:463", "who": "Bruja", "es": "¡Aunque tenga que llevarme todo por delante!", "old": "모든 걸 싹 다 휩쓸어 버려서라도!"}
+{"id": "271:4:0:469", "who": "Bruja", "es": "<b>Bruja:</b> ¡Chandelure, usa Lanzallamas!", "old": "<b>마녀:</b> 샹델라, 화염방사!"}
+{"id": "271:4:0:488", "who": "Bruja", "es": "...", "old": "......"}
+{"id": "271:4:0:489", "who": "Bruja", "es": "No puedes caer todavía.", "old": "아직 쓰러지면 안 돼."}
+{"id": "271:4:0:501", "who": "Bruja", "es": "Todavía no hemos tenido la oportunidad de medirnos en igualdad de condiciones. En un combate Pokémon.", "old": "아직 대등한 조건에서 겨뤄볼 기회가 없었잖아. 포켓몬 배틀로 말이야."}
+{"id": "271:4:0:502", "who": "Bruja", "es": "¿Vas a negarte ese derecho?", "old": "그 권리를 포기할 셈인가?"}
+{"id": "271:4:0:528", "who": "Bruja", "es": "¿Dónde está <b>Crisanto</b>?", "old": "<b>크리산토</b>는 어디 있지?"}
