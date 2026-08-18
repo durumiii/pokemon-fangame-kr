@@ -84,12 +84,20 @@ def scene_of(fp, why, ok=frozenset(), all_rows=False):
         return None
     # 파일 이름은 p<맵>-<이벤트>-<페이지>(주연) 또는 t<맵>-<이벤트>(트레이너) 꼴이다
     m = re.match(r"^[A-Za-z]*(\d+)-(\d+)(?:-(\d+))?$", fp.stem)
-    if not m:
+    sec = re.match(r"^sec-(.+)$", fp.stem)      # 맵 밖 절 묶음 — `sec-<절이름>.jsonl`
+    if not m and not sec:
         return None
-    mid, ev, pg = m.group(1), m.group(2), m.group(3) or "0"
+    if sec:
+        # 절 단위 검수(Z-71 본가 채택 등) — 좌표가 없어 map=-1로 세운다.
+        # 판정 id는 「절#줄색인」이라 apply_verdicts가 못 읽고(의도), 절별 반영
+        # 도구가 판정 파일을 읽어 넣는다.
+        mid, ev, pg, name = -1, "0", "0", "절 " + sec.group(1)
+    else:
+        mid, ev, pg = int(m.group(1)), m.group(2), m.group(3) or "0"
+        name = mapname.ko(mid) or f"맵 {mid}"
     return {
-        "file": fp.stem, "map": int(mid), "event": ev, "page": pg,
-        "name": mapname.ko(int(mid)) or f"맵 {int(mid)}",
+        "file": fp.stem, "map": mid, "event": ev, "page": pg,
+        "name": name,
         "cast": list(dict.fromkeys(r["who"] for r in rows)),
         "total": len(rows),
         # 걸렸지만 승인 줄이라 숨긴 행 수 — 장면 머리에 알린다

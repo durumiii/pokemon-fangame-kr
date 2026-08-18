@@ -1,0 +1,393 @@
+{"id": "00-maps#4833", "flags": ["채택:usum:630 문 열기 질문 문구"]}
+{"id": "00-maps#6159", "flags": ["채택:xy:387 본가 NPC 대사와 일치"]}
+{"id": "00-maps#7901", "flags": ["채택:xy:22 본가 트레이너 대사와 일치"]}
+{"id": "00-maps#8071", "flags": ["채택:xy:22 본가 패배 대사와 일치"]}
+{"id": "02-kinds#391", "flags": ["채택:swsh:pokecamp_main 포켓몬 분류(장난꾸러기포켓몬)"]}
+{"id": "02-kinds#674", "flags": ["채택:swsh:pokecamp_main 포켓몬 분류(장난꾸러기포켓몬)"]}
+{"id": "03-entries#131", "flags": ["채택:oras:7 라프라스 공식 도감 설명문"]}
+{"id": "03-entries#142", "flags": ["채택:oras:7 프테라 공식 도감 설명문"]}
+{"id": "03-entries#143", "flags": ["채택:oras:7 잠만보 공식 도감 설명문"]}
+{"id": "03-entries#145", "flags": ["채택:oras:7 썬더 공식 도감 설명문"]}
+{"id": "03-entries#146", "flags": ["채택:oras:7 파이어 공식 도감 설명문"]}
+{"id": "03-entries#154", "flags": ["채택:oras:7 메가니움 공식 도감 설명문"]}
+{"id": "03-entries#209", "flags": ["채택:oras:7 블루 공식 도감 설명문"]}
+{"id": "03-entries#226", "flags": ["채택:oras:7 만타인 공식 도감 설명문"]}
+{"id": "03-entries#229", "flags": ["채택:oras:7 헬가 공식 도감 설명문"]}
+{"id": "03-entries#245", "flags": ["채택:oras:7 스이쿤 공식 도감 설명문"]}
+{"id": "03-entries#517", "flags": ["채택:xy:6 몽나 공식 도감 설명문"]}
+{"id": "03-entries#543", "flags": ["채택:xy:7 마디네 공식 도감 설명문"]}
+{"id": "03-entries#552", "flags": ["채택:xy:6 악비르 공식 도감 설명문"]}
+{"id": "03-entries#562", "flags": ["채택:xy:7 데스마스 공식 도감 설명문"]}
+{"id": "03-entries#568", "flags": ["채택:xy:7 깨봉이 공식 도감 설명문"]}
+{"id": "03-entries#618", "flags": ["채택:xy:6 메더 공식 도감 설명문"]}
+{"id": "03-entries#621", "flags": ["채택:xy:7 크리만 공식 도감 설명문"]}
+{"id": "03-entries#626", "flags": ["채택:xy:7 버프론 공식 도감 설명문"]}
+{"id": "03-entries#670", "flags": ["채택:xy:7 플라엣테 공식 도감 설명문"]}
+{"id": "03-entries#678", "flags": ["채택:xy:7 냐오닉스 공식 도감 설명문"]}
+{"id": "03-entries#684", "flags": ["채택:xy:7 나룸퍼프 도감 설명과 일치"]}
+{"id": "03-entries#694", "flags": ["채택:xy:7 목도리키텔 도감 설명과 일치"]}
+{"id": "03-entries#695", "flags": ["채택:xy:7 일레도리자드 도감 설명과 일치"]}
+{"id": "03-entries#696", "flags": ["채택:xy:6 티고라스 도감 설명과 일치"]}
+{"id": "03-entries#697", "flags": ["채택:xy:6 견고라스 도감 설명(100년 오기)과 일치"]}
+{"id": "03-entries#714", "flags": ["채택:xy:7 음뱃 도감 설명과 일치"]}
+{"id": "03-entries#720", "flags": ["채택:xy:6 후파 도감 설명과 일치"]}
+{"id": "03-entries#724", "flags": ["채택:sm:119 모크나이퍼 도감 설명과 일치"]}
+{"id": "03-entries#725", "flags": ["채택:sm:119 냐오불 도감 설명과 일치"]}
+{"id": "03-entries#729", "flags": ["채택:sv:zukan_comment_A 키요공 도감 설명과 일치"]}
+{"id": "03-entries#730", "flags": ["채택:sm:119 누리레느 도감 설명과 일치"]}
+{"id": "03-entries#731", "flags": ["채택:sm:119 콕코구리 도감 설명과 일치"]}
+{"id": "03-entries#733", "flags": ["채택:sm:119 왕큰부리 도감 설명과 일치"]}
+{"id": "03-entries#734", "flags": ["채택:sm:120 영구스 도감 설명과 일치"]}
+{"id": "03-entries#735", "flags": ["채택:sm:119 형사구스 도감 설명과 일치"]}
+{"id": "03-entries#740", "flags": ["채택:sm:119 모단단게 도감 설명과 일치"]}
+{"id": "03-entries#741", "flags": ["채택:sm:119 춤추새 이글이글스타일 도감 일치"]}
+{"id": "03-entries#743", "flags": ["채택:sm:119 에블리 도감 설명과 일치"]}
+{"id": "03-entries#745", "flags": ["채택:sm:119 루가루암 한낮의모습 도감 일치"]}
+{"id": "03-entries#752", "flags": ["채택:sm:119 물거미 도감 설명과 일치"]}
+{"id": "03-entries#754", "flags": ["채택:sm:120 라란티스 도감 설명과 일치"]}
+{"id": "03-entries#758", "flags": ["채택:sm:120 염뉴트 도감 설명과 일치"]}
+{"id": "03-entries#759", "flags": ["채택:sm:119 포곰곰 도감 설명과 일치"]}
+{"id": "03-entries#760", "flags": ["채택:sm:119 이븐곰 도감 설명과 일치"]}
+{"id": "03-entries#761", "flags": ["채택:sm:119 달콤아 썬 버전 도감 설명과 일치"]}
+{"id": "03-entries#764", "flags": ["채택:sm:119 큐아링 도감 설명과 일치"]}
+{"id": "03-entries#765", "flags": ["채택:sm:119 하랑우탄 도감 설명과 일치"]}
+{"id": "03-entries#766", "flags": ["채택:sm:119 내던숭이 도감 설명과 일치"]}
+{"id": "03-entries#772", "flags": ["채택:sm:119 타입:널 도감 설명과 일치"]}
+{"id": "03-entries#775", "flags": ["채택:sm:120 자말라 도감 설명과 일치"]}
+{"id": "03-entries#776", "flags": ["채택:sm:119 폭거북스 도감 설명 일치"]}
+{"id": "03-entries#777", "flags": ["채택:sm:120 토게데마루 도감 설명 일치"]}
+{"id": "03-entries#778", "flags": ["채택:sm:119 따라큐 도감 설명 일치"]}
+{"id": "03-entries#782", "flags": ["채택:sm:119 짜랑꼬 도감 설명 일치"]}
+{"id": "03-entries#783", "flags": ["채택:sm:119 짜랑고우 도감 설명 일치"]}
+{"id": "03-entries#784", "flags": ["채택:sm:119 짜랑고우거 도감 설명 일치"]}
+{"id": "03-entries#785", "flags": ["채택:sm:119 카푸꼬꼬꼭 도감 설명 일치"]}
+{"id": "03-entries#789", "flags": ["채택:sm:119 코스모그 도감 설명 일치"]}
+{"id": "03-entries#790", "flags": ["채택:sm:119 코스모움 도감 설명 일치"]}
+{"id": "03-entries#801", "flags": ["채택:sm:119 마기아나 도감 설명 일치"]}
+{"id": "03-entries#802", "flags": ["채택:sm:119 마샤도 도감 설명 일치"]}
+{"id": "03-entries#823", "flags": ["채택:swsh:zukan_comment_A 아머까오 도감 설명 일치"]}
+{"id": "03-entries#827", "flags": ["채택:swsh:zukan_comment_A 폭슬라이 도감 설명 일치"]}
+{"id": "03-entries#834", "flags": ["채택:swsh:zukan_comment_A 갈가부기 도감 설명 일치"]}
+{"id": "03-entries#839", "flags": ["채택:swsh:zukan_comment_A 석탄산 도감 설명 일치"]}
+{"id": "03-entries#860", "flags": ["채택:swsh:zukan_comment_A 속임수여우 도감 설명 일치"]}
+{"id": "03-entries#892", "flags": ["채택:swsh:zukan_comment_B 우라오스 도감 설명 일치"]}
+{"id": "03-entries#905", "flags": ["채택:xy:6 배쓰나이 도감 설명 일치"]}
+{"id": "06-move-descs#36", "flags": ["채택:xy:15 집단구타 기술 설명 일치"]}
+{"id": "06-move-descs#38", "flags": ["채택:xy:15 경혈찌르기/승부굳히기류 기술 설명"]}
+{"id": "06-move-descs#40", "flags": ["채택:oras:16 배통치/부식가스류 기술 설명"]}
+{"id": "06-move-descs#47", "flags": ["채택:xy:15 가로채기 기술 설명 일치"]}
+{"id": "06-move-descs#52", "flags": ["채택:xy:15 용성군 기술 설명 일치"]}
+{"id": "06-move-descs#61", "flags": ["채택:lgpe:wazainfo 에어슬래시 기술 설명 일치"]}
+{"id": "06-move-descs#66", "flags": ["채택:usum:39 와일드볼트 기술 설명 일치"]}
+{"id": "06-move-descs#71", "flags": ["채택:sv:wazainfo 방전 기술 설명 일치"]}
+{"id": "06-move-descs#75", "flags": ["채택:lgpe:wazainfo 번개엄니 기술 설명 일치"]}
+{"id": "06-move-descs#78", "flags": ["채택:xy:15 차지빔 기술 설명 일치"]}
+{"id": "06-move-descs#81", "flags": ["채택:xy:15 충전 기술 설명 일치"]}
+{"id": "06-move-descs#86", "flags": ["채택:xy:15 인파이트 기술 설명 일치"]}
+{"id": "06-move-descs#87", "flags": ["채택:la:wazainfo 기합구슬 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#117", "flags": ["채택:xy:15 안다리걸기 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#128", "flags": ["채택:za:wazainfo 불대문자 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#135", "flags": ["채택:lgpe:wazainfo 연옥/분연 계열 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#141", "flags": ["채택:xy:15 불꽃튀기기 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#144", "flags": ["채택:sv:wazainfo 불꽃의맹세 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#148", "flags": ["채택:lgpe:wazainfo 소각 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#150", "flags": ["채택:oras:117 쾌청 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#153", "flags": ["채택:xy:15 브레이브버드 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#161", "flags": ["채택:xy:15 수다 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#189", "flags": ["채택:xy:15 원한 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#190", "flags": ["채택:xy:15 하드플랜트 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#194", "flags": ["채택:xy:15 러스터캐논 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#196", "flags": ["채택:xy:15 우드해머 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#198", "flags": ["채택:la:iteminfo 에너지볼 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#206", "flags": ["채택:xy:15 풀의맹세 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#221", "flags": ["채택:sv:wazainfo 달의불빛/광합성 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#224", "flags": ["채택:la:iteminfo 대지의힘 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#247", "flags": ["채택:la:wazainfo 얼어붙은바람 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#248", "flags": ["채택:xy:15 얼음엄니 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#262", "flags": ["채택:xy:15 기가임팩트 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#264", "flags": ["채택:xy:15 마지막수단 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#271", "flags": ["채택:xy:15 로케트박치기 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#277", "flags": ["채택:xy:15 테크노버스터 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#296", "flags": ["채택:xy:15 탐내다 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#304", "flags": ["채택:xy:15 웨더볼 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#307", "flags": ["채택:lgpe:wazainfo 칼등치기 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#312", "flags": ["채택:xy:15 코골기 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#354", "flags": ["채택:xy:15 텍스처 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#361", "flags": ["채택:za:iteminfo 버티기 공식 스페인어 설명문과 일치함"]}
+{"id": "06-move-descs#369", "flags": ["채택:xy:15 본가 성장 기술 설명의 스페인어 공식 번역"]}
+{"id": "06-move-descs#378", "flags": ["채택:xy:15 본가 기습 기술 설명의 스페인어 공식 번역"]}
+{"id": "06-move-descs#387", "flags": ["채택:lgpe:wazainfo 본가 자연의힘 기술 설명의 스페인어 공식 번역"]}
+{"id": "06-move-descs#394", "flags": ["채택:xy:15 본가 리사이클 기술 설명의 스페인어 공식 번역"]}
+{"id": "06-move-descs#405", "flags": ["채택:sv:wazainfo 본가 스케치 기술 설명의 스페인어 공식 번역"]}
+{"id": "06-move-descs#413", "flags": ["채택:la:wazainfo 본가 초음파 기술 설명의 스페인어 공식 번역"]}
+{"id": "06-move-descs#421", "flags": ["채택:xy:15 본가 간지르기 기술 설명의 스페인어 공식 번역"]}
+{"id": "06-move-descs#423", "flags": ["채택:la:wazainfo 본가 날려버리기 기술 설명의 스페인어 공식 번역"]}
+{"id": "06-move-descs#427", "flags": ["채택:xy:15 본가 더스트슈트 기술 설명의 스페인어 공식 번역"]}
+{"id": "06-move-descs#430", "flags": ["채택:la:iteminfo 본가 독찌르기 기술 설명의 스페인어 공식 번역"]}
+{"id": "06-move-descs#447", "flags": ["채택:xy:15 본가 독압정 기술 설명의 스페인어 공식 번역"]}
+{"id": "06-move-descs#469", "flags": ["채택:lgpe:wazainfo 본가 장막 기술 설명의 스페인어 공식 번역"]}
+{"id": "06-move-descs#500", "flags": ["채택:xy:15 본가 원더룸 기술 설명의 스페인어 공식 번역"]}
+{"id": "06-move-descs#521", "flags": ["채택:usum:39 본가 강철날개 기술 설명의 스페인어 공식 번역"]}
+{"id": "06-move-descs#531", "flags": ["채택:la:iteminfo 본가 철벽 기술 설명의 스페인어 공식 번역"]}
+{"id": "06-move-descs#540", "flags": ["채택:lgpe:wazainfo 본가 집게해머 기술 설명의 스페인어 공식 번역"]}
+{"id": "06-move-descs#549", "flags": ["채택:xy:15 본가 물의맹세 기술 설명의 스페인어 공식 번역"]}
+{"id": "06-move-descs#554", "flags": ["채택:xy:15 본가 거품 기술 설명의 스페인어 공식 번역"]}
+{"id": "06-move-descs#608", "flags": ["채택:sv:wazainfo 본가 사이코필드 기술 설명의 스페인어 공식 번역"]}
+{"id": "06-move-descs#668", "flags": ["채택:xy:15 본가 돌진 기술 설명의 스페인어 공식 번역"]}
+{"id": "06-move-descs#724", "flags": ["채택:sv:wazainfo 본가 암흑강타 기술 설명의 스페인어 공식 번역"]}
+{"id": "07-items#842", "flags": ["채택:za:itemname_acc_classified 호텔 등의 객실열쇠 공식 명칭"]}
+{"id": "08-item-plurals#842", "flags": ["채택:za:itemname_acc_classified 호텔 등의 객실열쇠 공식 명칭"]}
+{"id": "09-item-descs#13", "flags": ["채택:oras:117 본가 천둥의돌 도구 설명의 스페인어 공식 번역"]}
+{"id": "09-item-descs#14", "flags": ["채택:oras:117 본가 물의돌 도구 설명의 스페인어 공식 번역"]}
+{"id": "09-item-descs#15", "flags": ["채택:oras:117 리프의돌 본가 설명 변형"]}
+{"id": "09-item-descs#49", "flags": ["채택:oras:117 하트비늘 본가 설명 변형"]}
+{"id": "09-item-descs#51", "flags": ["채택:usum:39 귀중한뼈 본가 설명 변형"]}
+{"id": "09-item-descs#70", "flags": ["채택:oras:117 빨간실 본가 설명 변형"]}
+{"id": "09-item-descs#73", "flags": ["채택:usum:39 탈출버튼/레드카드 본가 설명 변형"]}
+{"id": "09-item-descs#75", "flags": ["채택:lgpe:iteminfo 연막탄 본가 설명 변형"]}
+{"id": "09-item-descs#86", "flags": ["채택:oras:117 매끄러운바위 본가 설명 변형"]}
+{"id": "09-item-descs#87", "flags": ["채택:usum:39 차가운바위 본가 설명 변형"]}
+{"id": "09-item-descs#89", "flags": ["채택:za:iteminfo 조임밴드 본가 설명 변형"]}
+{"id": "09-item-descs#96", "flags": ["채택:usum:39 하양허브 본가 설명 변형"]}
+{"id": "09-item-descs#127", "flags": ["채택:usum:39 반짝가루/향로 본가 설명 변형"]}
+{"id": "09-item-descs#131", "flags": ["채택:usum:39 잔물결향로 본가 설명 변형"]}
+{"id": "09-item-descs#246", "flags": ["채택:lgpe:iteminfo 맥스업 기술 설명 공식 번역 일치"]}
+{"id": "09-item-descs#247", "flags": ["채택:lgpe:iteminfo 맥스에테르류 설명 공식 번역 일치"]}
+{"id": "09-item-descs#257", "flags": ["채택:lgpe:iteminfo 체력날개 설명 공식 번역 일치"]}
+{"id": "09-item-descs#258", "flags": ["채택:lgpe:iteminfo 근력날개 설명 공식 번역 일치"]}
+{"id": "09-item-descs#259", "flags": ["채택:lgpe:iteminfo 저항날개 설명 공식 번역 일치"]}
+{"id": "09-item-descs#260", "flags": ["채택:lgpe:iteminfo 지력날개 설명 공식 번역 일치"]}
+{"id": "09-item-descs#261", "flags": ["채택:lgpe:iteminfo 정신날개 설명 공식 번역 일치"]}
+{"id": "09-item-descs#262", "flags": ["채택:oras:117 순발날개 설명 공식 번역 일치"]}
+{"id": "09-item-descs#264", "flags": ["채택:la:iteminfo 마스터볼 설명 공식 번역 일치"]}
+{"id": "09-item-descs#265", "flags": ["채택:oras:117 하이퍼볼 설명 공식 번역 일치"]}
+{"id": "09-item-descs#271", "flags": ["채택:lgpe:iteminfo 다이브볼 설명 공식 번역 일치"]}
+{"id": "09-item-descs#272", "flags": ["채택:lgpe:iteminfo 네스트볼 설명 공식 번역 일치"]}
+{"id": "09-item-descs#273", "flags": ["채택:lgpe:iteminfo 리피트볼 설명 공식 번역 일치"]}
+{"id": "09-item-descs#298", "flags": ["채택:oras:117 쾌청 기술머신 설명 공식 번역 일치"]}
+{"id": "09-item-descs#341", "flags": ["채택:lgpe:wazainfo 적당히손봐주기/칼등치기 설명 공식 일치"]}
+{"id": "09-item-descs#346", "flags": ["채택:lgpe:wazainfo 불태우기 설명 공식 번역 일치"]}
+{"id": "09-item-descs#386", "flags": ["채택:xy:15 괴력 기술머신 설명 공식 번역 일치"]}
+{"id": "09-item-descs#449", "flags": ["채택:lgpe:iteminfo 미클열매 설명 공식 번역 일치"]}
+{"id": "09-item-descs#451", "flags": ["채택:oras:117 울퉁불퉁멧 설명 공식 번역 일치"]}
+{"id": "09-item-descs#464", "flags": ["채택:lgpe:iteminfo 브리지메일M 설명 공식 번역 일치"]}
+{"id": "09-item-descs#491", "flags": ["채택:usum:39 크리티컬커터 설명 공식 번역 일치"]}
+{"id": "09-item-descs#500", "flags": ["채택:usum:39 삐삐인형 설명 공식 번역 일치"]}
+{"id": "09-item-descs#502", "flags": ["채택:lgpe:iteminfo 에나비꼬리 설명 공식 번역 일치"]}
+{"id": "09-item-descs#508", "flags": ["채택:xy:99 다우징머신 설명 공식 번역 일치"]}
+{"id": "09-item-descs#517", "flags": ["채택:usum:39 고라파덕물뿌리개 설명 공식 번역 일치"]}
+{"id": "09-item-descs#721", "flags": ["채택:lgpe:iteminfo 약점보험 설명 공식 번역 일치"]}
+{"id": "11-ability-descs#98", "flags": ["채택:za:tokuseiinfo 매직가드 특성 설명문"]}
+{"id": "11-ability-descs#146", "flags": ["채택:oras:36 모래헤치기 특성 설명문"]}
+{"id": "11-ability-descs#162", "flags": ["채택:oras:36 승리의별 특성 설명문"]}
+{"id": "11-ability-descs#169", "flags": ["채택:za:tokuseiinfo 단단한발톱 특성 설명문"]}
+{"id": "11-ability-descs#230", "flags": ["채택:lgpe:tokuseiinfo 부식 특성 설명문"]}
+{"id": "21-map-names#160", "flags": ["채택:za:place_name_spe 미르시티 남쪽 구역명"]}
+{"id": "21-map-names#161", "flags": ["채택:za:place_name_spe 미르시티 동쪽 구역명"]}
+{"id": "23-script-texts#227", "flags": ["채택:za:ribbon 추억리본 설명문"]}
+{"id": "23-script-texts#230", "flags": ["채택:oras:123 챔피언리본 설명/타이틀"]}
+{"id": "23-script-texts#902", "flags": ["채택:la:btl_std 무지개 효과 종료 배틀 텍스트"]}
+{"id": "23-script-texts#903", "flags": ["채택:la:btl_std 상대 무지개 효과 종료 배틀 텍스트"]}
+{"id": "23-script-texts#959", "flags": ["채택:za:btl_app 포켓몬 선택 안내문"]}
+{"id": "23-script-texts#1106", "flags": ["채택:lgpe:sub_event_017 메뉴 취소 버튼"]}
+{"id": "23-script-texts#1929", "flags": ["채택:za:vending_machine 소지금 부족 시스템 대사"]}
+{"id": "23-script-texts#1935", "flags": ["채택:xy:60 구매 완료 상점 대사"]}
+{"id": "23-script-texts#3028", "flags": ["채택:oras:372 문이 잠겨 있다는 맵 오브젝트 대사"]}
+{"id": "23-script-texts#3399", "flags": ["채택:swsh:rigel1_sub_019 소지금 부족 대사"]}
+{"id": "23-script-texts#3444", "flags": ["채택:za:mystery 이상한 소포 수령 안내문"]}
+{"id": "23-script-texts#3459", "flags": ["채택:oras:101 전당등록 횟수 표시"]}
+{"id": "23-script-texts#3470", "flags": ["채택:za:trtype 트레이너 유형과 이름 결합"]}
+{"id": "23-script-texts#4158", "flags": ["채택:oras:147 빛의장막 시전 메시지"]}
+{"id": "23-script-texts#4159", "flags": ["채택:oras:147 상대 빛의장막 시전 메시지"]}
+{"id": "23-script-texts#4569", "flags": ["채택:za:btl_std 델타스트림 지속 메시지"]}
+{"id": "23-script-texts#4578", "flags": ["채택:za:btl_std 모래바람 종료 메시지"]}
+{"id": "23-script-texts#4954", "flags": ["채택:usum:1 학습장치 OFF 시스템 메시지"]}
+{"id": "23-script-texts#4955", "flags": ["채택:usum:1 학습장치 ON 시스템 메시지"]}
+{"id": "23-script-texts#5137", "flags": ["채택:la:btl_std 불꽃의맹세+물의맹세 무지개 효과"]}
+{"id": "23-script-texts#5138", "flags": ["채택:la:btl_std 상대 무지개 효과 발생 메시지"]}
+{"id": "23-script-texts#5775", "flags": ["채택:oras:152 박스 가득 참 메시지"]}
+{"id": "23-script-texts#6058", "flags": ["채택:lgpe:btl_std 트릭룸 등 지대효과 종료 메시지"]}
+{"id": "23-script-texts#6405", "flags": ["채택:la:btl_std 압정뿌리기 시전 메시지"]}
+{"id": "23-script-texts#6406", "flags": ["채택:la:btl_std 아군 압정뿌리기 시전 메시지"]}
+{"id": "23-script-texts#1445", "flags": ["채택:usum 포켓러스 공식 명칭"]}
+{"id": "23-script-texts#2813", "flags": ["채택:za 포켓몬 성별 수컷 표기"]}
+{"id": "23-script-texts#2814", "flags": ["채택:za 포켓몬 성별 암컷 표기"]}
+{"id": "23-script-texts#2820", "flags": ["채택:za 확인/결정 버튼 UI"]}
+{"id": "23-script-texts#2834", "flags": ["채택:swsh 알 도구 지니기 불가 안내"]}
+{"id": "23-script-texts#3217", "flags": ["채택:oras 지닌 포켓몬 가득 참 공식 알림"]}
+{"id": "23-script-texts#3224", "flags": ["채택:za PC 박스 포켓몬 데려오기 메뉴"]}
+{"id": "23-script-texts#3226", "flags": ["채택:za PC 박스 포켓몬 이동 메뉴"]}
+{"id": "23-script-texts#3227", "flags": ["채택:za PC 박스 도구 이동 메뉴"]}
+{"id": "23-script-texts#3228", "flags": ["채택:swsh PC 통신/박스 종료 메뉴"]}
+{"id": "23-script-texts#3382", "flags": ["채택:oras PC 박스 꺼내기/데리고 가기"]}
+{"id": "23-script-texts#3384", "flags": ["채택:la PC 박스 배치/놓기 메뉴"]}
+{"id": "23-script-texts#3538", "flags": ["채택:swsh 기술머신 습득 여부 표기"]}
+{"id": "23-script-texts#3713", "flags": ["채택:la 우두머리(Alpha) 포켓몬 명칭"]}
+{"id": "23-script-texts#4107", "flags": ["채택:la 도구 힐벨 등 효과 발동 문구"]}
+{"id": "23-script-texts#4585", "flags": ["채택:za 델타스트림 해제 배틀 문구"]}
+{"id": "23-script-texts#4629", "flags": ["채택:za 기술 페어리록 효과 문구"]}
+{"id": "23-script-texts#4897", "flags": ["채택:sv 기술머신 배울 수 있음 상태 표기"]}
+{"id": "23-script-texts#5632", "flags": ["채택:usum 낚시 실패 시 출력되는 문구"]}
+{"id": "23-script-texts#222", "flags": ["채택:za 노력리본 공식 설명문"]}
+{"id": "23-script-texts#2903", "flags": ["채택:sv 기술 잊기 메뉴 문구 공식 대응"]}
+{"id": "23-script-texts#4997", "flags": ["채택:za 기절 포켓몬 사용 불가 공식 문구"]}
+{"id": "23-script-texts#205", "flags": ["채택:xy 챔피언리본 설명문 공식 번역"]}
+{"id": "23-script-texts#206", "flags": ["채택:la 신오챔피언리본 설명문 공식 번역"]}
+{"id": "23-script-texts#5353", "flags": ["채택:oras 포켓몬 선택 확인 안내 문구"]}
+{"id": "23-script-texts#4240", "flags": ["채택:oras 매직룸 발동 공식 메시지"]}
+{"id": "23-script-texts#4157", "flags": ["채택:oras 상대 리플렉터 공식 메시지"]}
+{"id": "23-script-texts#127", "flags": ["채택:za 신오챔피언리본 공식 명칭"]}
+{"id": "23-script-texts#3355", "flags": ["채택:xy PC 포켓몬 데려가기 설명"]}
+{"id": "23-script-texts#4156", "flags": ["채택:oras 아군 리플렉터 공식 메시지"]}
+{"id": "23-script-texts#3053", "flags": ["채택:za 포켓몬 성격 특성 공식 번역"]}
+{"id": "23-script-texts#3060", "flags": ["채택:za 포켓몬 성격 특성 공식 번역"]}
+{"id": "23-script-texts#3058", "flags": ["채택:za 포켓몬 성격 특성 공식 번역"]}
+{"id": "23-script-texts#4166", "flags": ["채택:la 와이드가드 발동 공식 메시지"]}
+{"id": "23-script-texts#221", "flags": ["채택:za 아티스트리본 설명문 공식 번역"]}
+{"id": "23-script-texts#3072", "flags": ["채택:lgpe 포켓몬 성격 특성 공식 번역"]}
+{"id": "23-script-texts#4164", "flags": ["채택:la 퍼스트가드 발동 공식 메시지"]}
+{"id": "23-script-texts#4165", "flags": ["채택:la 와이드가드 발동 공식 메시지"]}
+{"id": "23-script-texts#3051", "flags": ["채택:lgpe 포켓몬 성격 특성 공식 번역"]}
+{"id": "23-script-texts#2788", "flags": ["채택:usum 설정/미지정 본가 옵션 문구"]}
+{"id": "23-script-texts#3073", "flags": ["채택:za 포켓몬 특징 본가 공식 문구"]}
+{"id": "23-script-texts#5005", "flags": ["채택:usum 도구 사용 불가 본가 문구"]}
+{"id": "23-script-texts#3356", "flags": ["채택:xy PC 메뉴 포켓몬 보관 안내"]}
+{"id": "23-script-texts#4683", "flags": ["채택:la 빛의장막 해제 전투 메시지"]}
+{"id": "23-script-texts#3406", "flags": ["채택:usum 볼 10개 구매 시 덤 증정 대사"]}
+{"id": "23-script-texts#4133", "flags": ["채택:la 순풍 기술 발동 전투 문구"]}
+{"id": "23-script-texts#4684", "flags": ["채택:la 상대 빛의장막 해제 문구"]}
+{"id": "23-script-texts#4786", "flags": ["채택:oras 열매 심기 상호작용 문구"]}
+{"id": "23-script-texts#5130", "flags": ["채택:la 소지금 부족 시 시스템 문구"]}
+{"id": "23-script-texts#4155", "flags": ["채택:la 주술 기술 효과 발동 문구"]}
+{"id": "23-script-texts#4163", "flags": ["채택:la 패스트가드 방어 성공 문구"]}
+{"id": "23-script-texts#3230", "flags": ["채택:xy PC 박스 포켓몬 보관 설명"]}
+{"id": "23-script-texts#3998", "flags": ["채택:oras 불면 등 특성 수면 방지 문구"]}
+{"id": "23-script-texts#4623", "flags": ["채택:la 트릭가드 방어 성공 문구"]}
+{"id": "23-script-texts#4681", "flags": ["채택:la 리플렉터 해제 전투 문구"]}
+{"id": "23-script-texts#4682", "flags": ["채택:la 상대 리플렉터 해제 문구"]}
+{"id": "23-script-texts#3068", "flags": ["채택:lgpe 포켓몬 특징 본가 공식 문구"]}
+{"id": "23-script-texts#4632", "flags": ["채택:oras 일렉트릭필드 발동 공식 문구"]}
+{"id": "23-script-texts#4622", "flags": ["채택:la 트릭가드 발동 본가 메시지"]}
+{"id": "23-script-texts#5349", "flags": ["채택:usum 리포트 손상 본가 에러 메시지"]}
+{"id": "23-script-texts#3341", "flags": ["채택:xy 가방 가득 참 본가 문구"]}
+{"id": "23-script-texts#5012", "flags": ["채택:usum 더블배틀 볼 투척 불가 문구"]}
+{"id": "23-script-texts#4929", "flags": ["채택:oras 폭포오르기 필드 사용 확인 문구"]}
+{"id": "23-script-texts#4663", "flags": ["채택:za 델타스트림 지속 본가 문구"]}
+{"id": "23-script-texts#4087", "flags": ["채택:la 급소 타격 공식 문구"]}
+{"id": "23-script-texts#5003", "flags": ["채택:usum 유전자쐐기 등 합체 불가 문구"]}
+{"id": "23-script-texts#3318", "flags": ["채택:za 박스 가득 참 본가 문구"]}
+{"id": "23-script-texts#4463", "flags": ["채택:za 킬가르도 실드폼 체인지 문구"]}
+{"id": "23-script-texts#2800", "flags": ["채택:xy 정렬 방식 알파벳순/가나다순 대응"]}
+{"id": "23-script-texts#5608", "flags": ["채택:lgpe 낚시 성공 시 나타나는 공식 문구"]}
+{"id": "23-script-texts#3231", "flags": ["채택:oras PC 박스 포켓몬 정리 공식 설명문"]}
+{"id": "23-script-texts#4042", "flags": ["채택:za 혼란 상태이상 발생 공식 메시지"]}
+{"id": "23-script-texts#4008", "flags": ["채택:la 신비의부적 발동 시 공식 메시지"]}
+{"id": "23-script-texts#3037", "flags": ["채택:sv 알 부화 상태 메시지 본가 문구와 일치"]}
+{"id": "23-script-texts#4943", "flags": ["채택:za 스프레이 효과 만료 공식 문구"]}
+{"id": "23-script-texts#3059", "flags": ["채택:lgpe 포켓몬 성격/개성 문구 본가 공식 번역"]}
+{"id": "23-script-texts#4535", "flags": ["채택:za 독압정 해제 본가 문구와 대응"]}
+{"id": "23-script-texts#3377", "flags": ["채택:oras 알 놓기 불가 본가 공식 문구"]}
+{"id": "23-script-texts#4134", "flags": ["채택:la 상대 순풍 발동 본가 공식 문구"]}
+{"id": "23-script-texts#4257", "flags": ["채택:za 대타출동 체력부족 본가 공식 문구"]}
+{"id": "23-script-texts#3977", "flags": ["채택:usum 도구 사용 대상 선택 본가 공식 문구"]}
+{"id": "23-script-texts#4395", "flags": ["채택:sv PP 회복 본가 공식 문구 계열"]}
+{"id": "23-script-texts#4220", "flags": ["채택:za 도주 실패 공식 문구 변형"]}
+{"id": "23-script-texts#4132", "flags": ["채택:za 기술 사념공유/페인스플릿 공식 문구"]}
+{"id": "23-script-texts#6363", "flags": ["채택:oras 원더룸 기술 발동 공식 문구"]}
+{"id": "23-script-texts#120", "flags": ["채택:za Ability Ribbon의 공식명 어빌리티리본"]}
+{"id": "23-script-texts#4465", "flags": ["채택:za PP 소진 배틀 메시지 일치"]}
+{"id": "23-script-texts#5629", "flags": ["채택:za 포획 실패 3흔들림 대사 일치"]}
+{"id": "23-script-texts#4431", "flags": ["채택:za 트릭가드 방어 성공 메시지"]}
+{"id": "23-script-texts#4692", "flags": ["채택:lgpe 주술 효과 종료 전투 메시지"]}
+{"id": "23-script-texts#4877", "flags": ["채택:la 자전거 하차 불가 공식 문구"]}
+{"id": "23-script-texts#4606", "flags": ["채택:la 패배 시 포켓몬 없음 메시지"]}
+{"id": "23-script-texts#6175", "flags": ["채택:usum 포켓몬 쓰러짐 기본 메시지"]}
+{"id": "23-script-texts#3466", "flags": ["채택:lgpe 곤충채집소년 트레이너명"]}
+{"id": "23-script-texts#3063", "flags": ["채택:lgpe 성격 설명 문구(촐랑대는 성격)"]}
+{"id": "23-script-texts#43", "flags": ["채택:za 이름 입력 안내 문구"]}
+{"id": "23-script-texts#4691", "flags": ["채택:lgpe 주술 해제 공식 전투 대사"]}
+{"id": "23-script-texts#200", "flags": ["채택:za 타워타이쿤 리본 설명문 공식 번역"]}
+{"id": "23-script-texts#2858", "flags": ["채택:za:btl_pokeselect 참가 여부 선택지 공식 번역"]}
+{"id": "23-script-texts#3004", "flags": ["채택:oras:80 위치 이동/교체 질문 공식 번역"]}
+{"id": "23-script-texts#3343", "flags": ["채택:la:slidemenu 도구 보관함/창고 UI 공식 번역"]}
+{"id": "23-script-texts#3397", "flags": ["채택:za:main_01_01 상점 나가기 선택지 공식 번역"]}
+{"id": "23-script-texts#3539", "flags": ["채택:oras:80 기술머신 가르칠 포켓몬 선택 공식 번역"]}
+{"id": "23-script-texts#3798", "flags": ["채택:za:waza_remember 지닌물건 UI 명칭 변형"]}
+{"id": "23-script-texts#4466", "flags": ["채택:za:btl_std 시작의바다 불꽃 공격 무효 메시지"]}
+{"id": "23-script-texts#4661", "flags": ["채택:za:btl_std 시작의바다 날씨 지속 메시지 공식 번역"]}
+{"id": "23-script-texts#4685", "flags": ["채택:la:btl_std 신비의부적 해제 메시지 공식 번역"]}
+{"id": "23-script-texts#4686", "flags": ["채택:oras:147 상대 신비의부적 해제 본가 문구"]}
+{"id": "23-script-texts#4687", "flags": ["채택:usum:17 아군 흰안개 해제 본가 문구"]}
+{"id": "23-script-texts#4688", "flags": ["채택:usum:17 상대 흰안개 해제 본가 문구"]}
+{"id": "23-script-texts#4693", "flags": ["채택:za:btl_std 중력 해제 본가 문구"]}
+{"id": "23-script-texts#4788", "flags": ["채택:xy:127 나무열매 심기 확인 본가 문구"]}
+{"id": "23-script-texts#5010", "flags": ["채택:usum:17 아군 흰안개 발동 본가 문구"]}
+{"id": "23-script-texts#5011", "flags": ["채택:usum:17 상대 흰안개 발동 본가 문구"]}
+{"id": "23-script-texts#6051", "flags": ["채택:za:btl_std 원더룸 설치 본가 문구"]}
+{"id": "23-script-texts#6063", "flags": ["채택:za:btl_std 그래스필드 종료 본가 문구"]}
+{"id": "23-script-texts#6064", "flags": ["채택:za:btl_std 미스트필드 종료 본가 문구"]}
+{"id": "23-script-texts#6065", "flags": ["채택:lgpe:btl_std 원더룸 종료 본가 문구"]}
+{"id": "23-script-texts#1597", "flags": ["채택:sv:place_name 출신지 '먼 곳' 본가 문구 일치"]}
+{"id": "23-script-texts#2819", "flags": ["채택:za:main_01_01 UI 나가기/그만둔다 매칭"]}
+{"id": "23-script-texts#2863", "flags": ["채택:sv:shop_waza 기술머신 습득 불가 표시 문구"]}
+{"id": "23-script-texts#3021", "flags": ["채택:swsh:trainer_license_comon ID 넘버 UI 레이블"]}
+{"id": "23-script-texts#3080", "flags": ["채택:sv:shop_waza 기술 스테이터스 명중 UI"]}
+{"id": "23-script-texts#3225", "flags": ["채택:usum:33 PC 메뉴 포켓몬 맡기기 UI"]}
+{"id": "23-script-texts#3257", "flags": ["채택:oras:161 배틀 룰 트리오/트리플 매칭"]}
+{"id": "23-script-texts#3392", "flags": ["채택:sv:option UI 교체/변경 버튼"]}
+{"id": "23-script-texts#3454", "flags": ["채택:swsh:trainer_license_comon IDNo. 포맷 레이블"]}
+{"id": "23-script-texts#3456", "flags": ["채택:usum:12 도감 번호 미발견 표시"]}
+{"id": "23-script-texts#3517", "flags": ["채택:za:net_topmenu 교환 종료 확인 본가 문구"]}
+{"id": "23-script-texts#3683", "flags": ["채택:usum:12 가방 배틀용 포켓 UI"]}
+{"id": "23-script-texts#4003", "flags": ["채택:za:btl_std 기술 실패 표준 문구"]}
+{"id": "23-script-texts#4898", "flags": ["채택:usum:78 도구 대상 포켓몬 선택 문구"]}
+{"id": "23-script-texts#6250", "flags": ["채택:za:box 포켓몬 특성 UI 레이블"]}
+{"id": "23-script-texts#6254", "flags": ["채택:za:waza_remember 특수공격 능력치 약어"]}
+{"id": "23-script-texts#6255", "flags": ["채택:za:waza_remember 특수방어 능력치 약어"]}
+{"id": "23-script-texts#6328", "flags": ["채택:usum:32 도감 메뉴 항목"]}
+{"id": "23-script-texts#6334", "flags": ["채택:za:btl_std 기술 실패 메시지 오탈자"]}
+{"id": "23-script-texts#6396", "flags": ["채택:za:bag 도구 메뉴의 사용 명령"]}
+{"id": "09-item-descs#142", "flags": ["용어:Flecha Venenosa→독바늘"]}
+{"id": "09-item-descs#147", "flags": ["용어:Robustez→옹골참"]}
+{"id": "09-item-descs#149", "flags": ["용어:Dureza→파워풀리본"]}
+{"id": "09-item-descs#153", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#154", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#155", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#156", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#157", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#158", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#159", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#160", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#161", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#162", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#163", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#164", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#165", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#166", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#167", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#168", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#169", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#170", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#171", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#172", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#173", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#174", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#175", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#176", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#177", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#178", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#179", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#180", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#181", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#182", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#183", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#184", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#185", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#195", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#196", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#197", "flags": ["용어:Potencia→천하장사"]}
+{"id": "09-item-descs#206", "flags": ["용어:Protección→방어"]}
+{"id": "09-item-descs#452", "flags": ["용어:Especial→스페셜리본"]}
+{"id": "11-ability-descs#200", "flags": ["용어:Potencia→천하장사"]}
+{"id": "23-script-texts#6332", "flags": ["용어:Martillo Colosal→거대해머"]}
+{"id": "23-script-texts#6062", "flags": ["용어:Campo→컨트리리본"]}
