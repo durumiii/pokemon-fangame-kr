@@ -4175,7 +4175,7 @@
 {"k": "¡{1} se dejó engañar por Mofa!", "v": "{1}\\j[이,가] 도발에 넘어갔다!"}
 {"k": "¡{1} no puede curarse!", "v": "{1}\\j[은,는] 회복할 수 없다!"}
 {"k": "¡{1} es víctima de una Maldición!", "v": "{1}\\j[은,는] 저주받고 있다!"}
-{"k": "¡{1} es azotado por un torbellino!", "v": "{1}\\j[은,는] 소용돌이에 휩쓸렸다!"}
+{"k": "¡{1} es azotado por un torbellino!", "v": "{1}의 주위에서 공기가 소용돌이친다!"}
 {"k": "¡{1} se ha cargado completamente gracias a su Hierba Única!", "v": "파워풀허브 덕분에 {1}\\j[이,가] 힘을 모두 모았다!"}
 {"k": "¡{1} absorbió luz solar!", "v": "{1}\\j[은,는] 햇빛을 흡수했다!"}
 {"k": "¡{1} se rodeó de una luz gélida!", "v": "{1}\\j[은,는] 서늘한 빛으로 몸을 둘렀다!"}
@@ -4189,12 +4189,12 @@
 {"k": "¡{1} saltó muy alto!", "v": "{1}\\j[은,는] 높이 뛰어올랐다!"}
 {"k": "¡{1} ha desaparecido!", "v": "{1}\\j[이,가] 사라졌다!"}
 {"k": "¡{1} es oprimido por Atadura de {2}!", "v": "{1}\\j[은,는] {2}에게 조이기를 당했다!"}
-{"k": "¡{1} atenazó a {2}!", "v": "{1}\\j[은,는] {2}\\j[을,를] 옭아맸다!"}
-{"k": "¡{1} fue atrapado en el torbellino!", "v": "{1}\\j[은,는] 소용돌이에 갇혔다!"}
-{"k": "¡{1} quedó atrapado en Lluvia Ígnea!", "v": "{1}\\j[은,는] 마그마스톰에 갇혔다!"}
-{"k": "¡{1} quedó atrapado en Bucle Arena!", "v": "{1}\\j[은,는] 모래지옥에 갇혔다!"}
-{"k": "¡{1} fue atrapado por {2}!", "v": "{1}\\j[이,가] {2}에게 붙잡혔다!"}
-{"k": "¡{1} quedó atrapado en el torbellino!", "v": "{1}\\j[은,는] 소용돌이에 갇혔다!"}
+{"k": "¡{1} atenazó a {2}!", "v": "{2}\\j[은,는] {1}의 껍질에 꼈다!"}
+{"k": "¡{1} fue atrapado en el torbellino!", "v": "{1}\\j[은,는] 불꽃의 소용돌이에 갇혔다!"}
+{"k": "¡{1} quedó atrapado en Lluvia Ígnea!", "v": "{1}\\j[은,는] 마그마의 소용돌이에 갇혔다!"}
+{"k": "¡{1} quedó atrapado en Bucle Arena!", "v": "{1}\\j[은,는] 모래지옥에 붙잡혔다!"}
+{"k": "¡{1} fue atrapado por {2}!", "v": "{1}\\j[은,는] {2}에게 휘감겼다!"}
+{"k": "¡{1} quedó atrapado en el torbellino!", "v": "{1}\\j[은,는] 빠져나갈 수 없게 되었다!"}
 {"k": "¡{1} quedó confuso por la fatiga!", "v": "{1}\\j[은,는] 몹시 지쳐서 혼란에 빠졌다!"}
 {"k": "¡{1} liberó energía!", "v": "{1}\\j[은,는] 에너지를 해방했다!"}
 {"k": "¡{1} está juntando energía!", "v": "{1}\\j[은,는] 에너지를 모으고 있다!"}
@@ -4612,7 +4612,7 @@
 {"k": "¡{1} se desmayó!", "v": "{1}\\j[은,는] 쓰러졌다!"}
 {"k": "¡{2} de {1} evita que baje el Ataque!", "v": "{1}의 {2}\\j[이,가] 공격이 떨어지는 것을 막았다!"}
 {"k": "¡{2} de {1} evita que baje la Defensa!", "v": "{1}의 {2}\\j[이,가] 방어가 떨어지는 것을 막았다!"}
-{"k": "¡{1} ha sido infectado con la infestación de {2}!", "v": "{1}\\j[은,는] {2}의 엉겨붙기에 엉겨붙었다!"}
+{"k": "¡{1} ha sido infectado con la infestación de {2}!", "v": "{2}\\j[은,는] {1}에게 엉겨 붙었다!"}
 {"k": "¡{1} montó un Alboroto!", "v": "{1}\\j[은,는] 소란을 피웠다!"}
 {"k": "¡{2} decidió aprovechar la oportunidad que le dió {1}!", "v": "{2}\\j[이,가] {1}\\j[이,가] 만든 기회를 놓치지 않았다!"}
 {"k": "¡{1} retrasó su turno!", "v": "{1}\\j[은,는] 턴을 미뤘다!"}
@@ -5720,7 +5720,7 @@
 {"k": "¿Me obligas a usar a este Pokemon? ¡Pues te vas a arrepentir!", "v": "이 포켓몬까지 쓰게 만들다니? 후회하게 해 주마!"}
 {"k": "¡No voy a perder! ¡He aprendido mucho durante este viaje!", "v": "질 수 없어! 이 여행 동안 아주 많은 걸 배웠단 말이야!"}
 {"k": "¡Venga! ¡Ahora voy a demostrarte por qué este es mi Pokémon más fuerte!", "v": "자! 이 녀석이 왜 내 최강 포켓몬인지 보여 주지!"}
-{"k": "¡{1} fue atrapado!", "v": "{1}\\j[을,를] 잡았다!"}
+{"k": "¡{1} fue atrapado!", "v": "{1}\\j[은,는] 소용돌이 속에 갇혔다!"}
 {"k": "¡{1} rompió su disfraz!", "v": "{1}의 변장이 벗겨졌다!"}
 {"k": "¿Una presa escurridiza? Bien, hora de sacar mis ases en la manga.", "v": "미끄러운 먹잇감이군? 좋아, 숨겨둔 패를 꺼낼 때다."}
 {"k": "But a shinizer's effect still lingers from earlier.", "v": "But a shinizer’s effect still lingers from earlier."}
@@ -6847,3 +6847,6 @@
 {"k": "[ ] Randomizar tipos", "v": "[  ] 타입 랜덤화"}
 {"k": "[X] Randomizar tipos", "v": "[X] 타입 랜덤화"}
 {"k": "......\\wt[5] ......\\1", "v": "......\\wt[5] ......\\1"}
+{"k": "¡{1} está siendo salado!", "v": "{1}\\j[은,는] 소금에 절여졌다!"}
+{"k": "¡{1} quedó atrapado en el cepo!", "v": "{1}\\j[은,는] 집게덫에 붙잡혔다!"}
+{"k": "¡{1} quedó atrapado en Ferroprisión!", "v": "{1}\\j[은,는] 강철감옥에 갇혔다!"}
