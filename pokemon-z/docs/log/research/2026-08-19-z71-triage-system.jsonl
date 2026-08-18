@@ -1,0 +1,872 @@
+{"i": 20, "원문": "Failed to load the bitmap located at: {1}", "현행": "다음 위치에서 비트맵을 불러오지 못했습니다: {1}", "출신": "유보"}
+{"i": 39, "원문": "UPPER", "현행": "대문자", "출신": "유보"}
+{"i": 981, "원문": "Skill", "현행": "기술", "출신": "유보"}
+{"i": 995, "원문": "SKIPPING BATTLE...", "현행": "배틀 스킵 중...", "출신": "유보"}
+{"i": 1156, "원문": "Opponent 1's party has more than three Pokémon, which is not allowed", "현행": "상대 1의 파티에 포켓몬이 세 마리를 초과하여 참여할 수 없습니다.", "출신": "유보"}
+{"i": 1157, "원문": "Opponent 2's party has more than three Pokémon, which is not allowed", "현행": "상대 2의 파티에 포켓몬이 세 마리를 초과하여 참여할 수 없습니다.", "출신": "유보"}
+{"i": 1158, "원문": "AFTER LOSING...", "현행": "패배 후...", "출신": "유보"}
+{"i": 1712, "원문": "No starting position was set in the map editor.\u0001", "현행": "맵 에디터에서 시작 위치가 설정되지 않았습니다.\u0001", "출신": "유보"}
+{"i": 1713, "원문": "The game cannot continue.", "현행": "게임을 더 이상 진행할 수 없습니다.", "출신": "유보"}
+{"i": 1722, "원문": "The map was not found. The game cannot continue.", "현행": "맵을 찾을 수 없습니다. 게임을 더 이상 진행할 수 없습니다.", "출신": "유보"}
+{"i": 1723, "원문": "The map is corrupt. The game cannot continue.", "현행": "맵 데이터가 손상되었습니다. 게임을 더 이상 진행할 수 없습니다.", "출신": "유보"}
+{"i": 1947, "원문": "Choose a phrase to be where the gift Pokémon was obtained from.", "현행": "선물 포켓몬을 얻은 장소로 쓸 문구를 선택하세요.", "출신": "유보"}
+{"i": 2317, "원문": "Exit from the editor?", "현행": "에디터를 종료하시겠습니까?", "출신": "유보"}
+{"i": 2321, "원문": "Frame:", "현행": "프레임:", "출신": "유보"}
+{"i": 2338, "원문": "Angle:", "현행": "각도:", "출신": "유보"}
+{"i": 2341, "원문": "Flip:", "현행": "반전:", "출신": "유보"}
+{"i": 2347, "원문": "Above focus", "현행": "포커스 위", "출신": "유보"}
+{"i": 2348, "원문": "Priority:", "현행": "우선순위:", "출신": "유보"}
+{"i": 2352, "원문": "Screen", "현행": "화면", "출신": "유보"}
+{"i": 2354, "원문": "Set Blending Color", "현행": "혼합 색상 설정", "출신": "유보"}
+{"i": 2355, "원문": "Set Color Tone", "현행": "색조 설정", "출신": "유보"}
+{"i": 2357, "원문": "Add: Set Background Graphic...", "현행": "추가: 배경 그래픽 설정...", "출신": "유보"}
+{"i": 2358, "원문": "Add: Edit Background Color/Location...", "현행": "추가: 배경 색상/위치 편집...", "출신": "유보"}
+{"i": 2360, "원문": "Add: Edit Foreground Color/Location...", "현행": "추가: 전경 색상/위치 편집...", "출신": "유보"}
+{"i": 2361, "원문": "Set Frame", "현행": "프레임 설정", "출신": "유보"}
+{"i": 2362, "원문": "Delete Timing", "현행": "타이밍 삭제", "출신": "유보"}
+{"i": 2367, "원문": "Pitch:", "현행": "음높이:", "출신": "유보"}
+{"i": 2370, "원문": "[Erase background graphic]", "현행": "「배경 그래픽 지우기」", "출신": "유보"}
+{"i": 2372, "원문": "First Frame:", "현행": "첫 프레임:", "출신": "유보"}
+{"i": 2373, "원문": "Last Frame:", "현행": "마지막 프레임:", "출신": "유보"}
+{"i": 2376, "원문": "Ending Frame:", "현행": "종료 프레임:", "출신": "유보"}
+{"i": 2387, "원문": "C: Load/rename an animation\nEsc: Cancel", "현행": "C: Load/rename an animation\nEsc: Cancel", "출신": "유보"}
+{"i": 2389, "원문": "Resize Animation List", "현행": "애니메이션 목록 크기 변경", "출신": "유보"}
+{"i": 2390, "원문": "Load Animation", "현행": "애니메이션 불러오기", "출신": "유보"}
+{"i": 2392, "원문": "Enter a filename.", "현행": "파일 이름을 입력하십시오.", "출신": "유보"}
+{"i": 2393, "원문": "Couldn't save the animation to {1}.", "현행": "애니메이션을 {1}에 저장할 수 없었습니다.", "출신": "유보"}
+{"i": 2394, "원문": "Animation was saved to {1} in the game folder.", "현행": "애니메이션이 게임 폴더의 {1}에 저장되었습니다.", "출신": "유보"}
+{"i": 2395, "원문": "It's a text file, so it can be transferred to others easily.", "현행": "텍스트 파일이므로 다른 사람에게 쉽게 전달할 수 있습니다.", "출신": "유보"}
+{"i": 2396, "원문": "The animation is invalid or could not be loaded.", "현행": "애니메이션이 잘못되었거나 불러올 수 없었습니다.", "출신": "유보"}
+{"i": 2397, "원문": "The animation file {1} was not found. The animation will load anyway.", "현행": "애니메이션 파일 {1}\\j[을,를] 찾을 수 없습니다. 그래도 애니메이션을 불러옵니다.", "출신": "유보"}
+{"i": 2398, "원문": "Number of frames:", "현행": "프레임 수:", "출신": "유보"}
+{"i": 2409, "원문": "Entire Slide...", "현행": "슬라이드 전체...", "출신": "유보"}
+{"i": 2410, "원문": "Play Animation", "현행": "애니메이션 재생", "출신": "유보"}
+{"i": 2415, "원문": "Set Animation Sheet", "현행": "애니메이션 시트 설정", "출신": "유보"}
+{"i": 2416, "원문": "List of Animations", "현행": "애니메이션 목록", "출신": "유보"}
+{"i": 2418, "원문": "Paste Frame", "현행": "프레임 붙여넣기", "출신": "유보"}
+{"i": 2420, "원문": "Insert Frame", "현행": "프레임 삽입", "출신": "유보"}
+{"i": 2424, "원문": "Copy", "현행": "복사", "출신": "유보"}
+{"i": 2428, "원문": "No animations exist.", "현행": "애니메이션이 없습니다.", "출신": "유보"}
+{"i": 2430, "원문": "Z+Up/Down: Swap\nZ+Left: Delete\nZ+Right: Insert", "현행": "Z+Up/Down: Swap\nZ+Left: Delete\nZ+Right: Insert", "출신": "유보"}
+{"i": 2432, "원문": "Will convert animations now.", "현행": "지금 애니메이션을 변환합니다.", "출신": "유보"}
+{"i": 2433, "원문": "{1} animations converted to new format.", "현행": "{1}개의 애니메이션이 새 형식으로 변환되었습니다.", "출신": "유보"}
+{"i": 2667, "원문": "Function code", "현행": "Function code", "출신": "유보"}
+{"i": 2733, "원문": "Por favor, consulta la documentación para aprender a configurar un entrenador.", "현행": "트레이너 설정 방법은 문서를 참고하세요.", "출신": "유보"}
+{"i": 2885, "원문": "Estado: Dormido", "현행": "상태: 잠듦", "출신": "유보"}
+{"i": 2887, "원문": "Estado: Quemado", "현행": "상태: 화상", "출신": "유보"}
+{"i": 2892, "원문": "Establecer los PS del Pokémon (máx. {1}).", "현행": "포켓몬의 HP를 설정합니다 (최대 {1}).", "출신": "유보"}
+{"i": 2894, "원문": "Establecer el contador de sueño del Pokémon.", "현행": "포켓몬의 수면 턴 수를 설정합니다.", "출신": "유보"}
+{"i": 2895, "원문": "El estado de {1} fue cambiado.", "현행": "{1}의 상태를 변경했다.", "출신": "유보"}
+{"i": 2896, "원문": "El estado de {1} no pudo ser cambiado.", "현행": "{1}의 상태를 바꿀 수 없었습니다.", "출신": "유보"}
+{"i": 2898, "원문": "{1} está completamente curado.", "현행": "{1}\\j[은,는] 완전히 회복됐다.", "출신": "유보"}
+{"i": 2899, "원문": "Establecer el nivel del Pokémon (máx. {1}).", "현행": "포켓몬의 레벨을 설정합니다 (최대 {1}).", "출신": "유보"}
+{"i": 2901, "원문": "La especie de {1} fue cambiada a {2}.", "현행": "{1}의 종류를 {2}\\j[으로,로] 바꿨다.", "출신": "유보"}
+{"i": 2905, "원문": "Restaurar mov. iniciales", "현행": "처음 기술 복원", "출신": "유보"}
+{"i": 2908, "원문": "Los movimientos de {1} fueron restablecidos.", "현행": "{1}의 기술을 원래대로 복구했습니다.", "출신": "유보"}
+{"i": 2909, "원문": "{1} recuperó sus movimientos iniciales.", "현행": "{1}\\j[이,가] 원래 기술을 되찾았다.", "출신": "유보"}
+{"i": 2910, "원문": "{1} no tiene género.", "현행": "{1}\\j[은,는] 성별이 없다.", "출신": "유보"}
+{"i": 2913, "원문": "El género {1} es natural.", "현행": "성별 {1}\\j[은,는] 자연 발생이다.", "출신": "유보"}
+{"i": 2914, "원문": "El género {1} es forzado.", "현행": "성별 {1}\\j[은,는] 강제 지정이다.", "출신": "유보"}
+{"i": 2916, "원문": "Hacer hembra", "현행": "암컷으로", "출신": "유보"}
+{"i": 2919, "원문": "El género de {1} no se puedo cambiar.", "현행": "{1}의 성별은 바꿀 수 없다.", "출신": "유보"}
+{"i": 2920, "원문": "Ahora {1} es hembra.", "현행": "이제 {1}\\j[은,는] 암컷이다.", "출신": "유보"}
+{"i": 2921, "원문": "El género de {1} no se puede cambiar.", "현행": "{1}의 성별은 바꿀 수 없다.", "출신": "유보"}
+{"i": 2922, "원문": "Se quitó el cambio de género.", "현행": "성별 변경을 취소했다.", "출신": "유보"}
+{"i": 2929, "원문": "Hacer shiny", "현행": "색이 다른 포켓몬으로 만들기", "출신": "유보"}
+{"i": 2931, "원문": "Establecer la forma del Pokémon.", "현행": "포켓몬의 폼을 설정한다.", "출신": "유보"}
+{"i": 2933, "원문": "Establecer la felicidad de Pokémon (máx. 255).", "현행": "포켓몬의 친밀도를 설정한다 (최대 255).", "출신": "유보"}
+{"i": 2934, "원문": "La felicidad de {1} fue establecida en {2}.", "현행": "{1}의 친밀도를 {2}\\j[으로,로] 설정했다.", "출신": "유보"}
+{"i": 2948, "원문": "Establecer el IV para {1} (máx. 31).", "현행": "{1}의 개체값을 설정한다 (최대 31).", "출신": "유보"}
+{"i": 2949, "원문": "{1} no tiene Pokérus.", "현행": "{1}\\j[은,는] 포케루스가 없다.", "출신": "유보"}
+{"i": 2950, "원문": "Tiene grado {1}, infectado por {2} días más.", "현행": "등급 {1}, {2}일 더 감염 상태.", "출신": "유보"}
+{"i": 2951, "원문": "Tiene grado {1}, no infectado.", "현행": "등급 {1}, 감염되지 않음.", "출신": "유보"}
+{"i": 2952, "원문": "Dar grado aleatorio", "현행": "랜덤 등급 부여", "출신": "유보"}
+{"i": 2953, "원문": "Hacer no infectado", "현행": "미감염으로 설정", "출신": "유보"}
+{"i": 2954, "원문": "Limpiar Pokérus", "현행": "포케루스 제거", "출신": "유보"}
+{"i": 2959, "원문": "Pokémon extranjero\n{1}\n{2}\n{3} ({4})", "현행": "외국 포켓몬\n{1}\n{2}\n{3} ({4})", "출신": "유보"}
+{"i": 2960, "원문": "Hacer del jugador", "현행": "플레이어 소유로", "출신": "유보"}
+{"i": 2962, "원문": "Setear género del EO", "현행": "OT 성별 설정", "출신": "유보"}
+{"i": 2963, "원문": "ID extranjero aleatorio", "현행": "랜덤 트레이너 ID", "출신": "유보"}
+{"i": 2964, "원문": "Setear ID extranjero", "현행": "트레이너 ID 설정", "출신": "유보"}
+{"i": 2966, "원문": "Establecer el género del EO.", "현행": "오리지널 트레이너의 성별을 설정한다.", "출신": "유보"}
+{"i": 2968, "원문": "{1} tiene el apodo {2}.", "현행": "{1}의 별명은 {2}이다.", "출신": "유보"}
+{"i": 2969, "원문": "{1} no tiene apodo.", "현행": "{1}\\j[은,는] 별명이 없다.", "출신": "유보"}
+{"i": 2971, "원문": "Borrar nombre", "현행": "이름 지우기", "출신": "유보"}
+{"i": 2976, "원문": "Huevo con pasos: {1}.", "현행": "알 걸음 수: {1}.", "출신": "유보"}
+{"i": 2979, "원문": "Setear pasos en 1", "현행": "걸음 수를 1로 설정", "출신": "유보"}
+{"i": 2980, "원문": "{1} no puede ser un huevo. ¿Hacerlo huevo de todas formas?", "현행": "{1}\\j[은,는] 알이 될 수 없습니다. 그래도 알로 만들까요?", "출신": "유보"}
+{"i": 2984, "원문": "Bajar medidor del corazón", "현행": "하트게이지 낮추기", "출신": "유보"}
+{"i": 2989, "원문": "¿Estás seguro de que quieres copiar este Pokémon?", "현행": "정말 이 포켓몬을 복사할까?", "출신": "유보"}
+{"i": 2990, "원문": "El Pokémon fue duplicado.", "현행": "포켓몬을 복제했다.", "출신": "유보"}
+{"i": 2992, "원문": "El Pokémon fue borrado.", "현행": "포켓몬을 삭제했다.", "출신": "유보"}
+{"i": 3111, "원문": "Bolsillo inválido: {1}", "현행": "잘못된 포켓: {1}", "출신": "유보"}
+{"i": 3112, "원문": "El número de objeto no es válido.", "현행": "올바르지 않은 도구 번호입니다.", "출신": "유보"}
+{"i": 3121, "원문": "No se pudo encontrar el mapa.", "현행": "맵을 찾을 수 없었다.", "출신": "유보"}
+{"i": 3122, "원문": "Establecer el nombre para este lugar.", "현행": "이 장소의 이름을 설정합니다.", "출신": "유보"}
+{"i": 3129, "원문": "No se definieron mensajes de {1}.\nNo se puedo llamar al evento común {2}.", "현행": "{1}의 메시지가 정의되지 않았습니다.\n공통 이벤트 {2}\\j[을,를] 호출할 수 없습니다.", "출신": "유보"}
+{"i": 3184, "원문": "Volumen Efec. Esp.", "현행": "효과음 음량", "출신": "유보"}
+{"i": 3195, "원문": "Pulsar", "현행": "토글", "출신": "유보"}
+{"i": 3199, "원문": "Tamaño de ventana", "현행": "창 크기", "출신": "유보"}
+{"i": 3213, "원문": "No se puede dejar desde la Caja...", "현행": "박스에서는 맡길 수 없습니다...", "출신": "유보"}
+{"i": 3218, "원문": "Posición {1},{2} está vacía...", "현행": "위치 {1},{2}\\j[은,는] 비어 있다...", "출신": "유보"}
+{"i": 3219, "원문": "Posición {1},{2} no está vacía...", "현행": "위치 {1},{2}\\j[은,는] 비어 있지 않습니다...", "출신": "유보"}
+{"i": 3277, "원문": "La especie de {1} se cambió a {2}.", "현행": "{1}의 종류를 {2}\\j[으로,로] 바꿨다.", "출신": "유보"}
+{"i": 3278, "원문": "Restablecer lista de movimientos", "현행": "기술 목록 초기화", "출신": "유보"}
+{"i": 3279, "원문": "Restablecer movimientos iniciales", "현행": "초기 기술로 되돌리기", "출신": "유보"}
+{"i": 3281, "원문": "Los movimientos de {1} se restablecieron a sus iniciales.", "현행": "{1}의 기술을 초기 기술로 되돌렸습니다.", "출신": "유보"}
+{"i": 3282, "원문": "El género de {1} es natural.", "현행": "{1}의 성별은 자연 발생입니다.", "출신": "유보"}
+{"i": 3283, "원문": "El género de {1} es forzado.", "현행": "{1}의 성별은 고정입니다.", "출신": "유보"}
+{"i": 3284, "원문": "Cambiar a macho", "현행": "수컷으로 변경", "출신": "유보"}
+{"i": 3285, "원문": "Cambiar a hembra", "현행": "암컷으로 변경", "출신": "유보"}
+{"i": 3286, "원문": "Quitar modificación", "현행": "수정 취소", "출신": "유보"}
+{"i": 3288, "원문": "El género de {1} no puede ser cambiado.", "현행": "{1}의 성별은 바꿀 수 없습니다.", "출신": "유보"}
+{"i": 3289, "원문": "{1} ahora es hembra.", "현행": "{1}\\j[은,는] 이제 암컷이다.", "출신": "유보"}
+{"i": 3290, "원문": "Modificación de género retirada.", "현행": "성별 변경을 취소했습니다.", "출신": "유보"}
+{"i": 3296, "원문": "Establecer la felicidad del Pokémon (máx. 255).", "현행": "포켓몬의 친밀도를 설정합니다 (최대 255).", "출신": "유보"}
+{"i": 3303, "원문": "Tiene etapa {1}, infectado por {2} días más.", "현행": "단계 {1}, {2}일 더 감염 상태.", "출신": "유보"}
+{"i": 3304, "원문": "Tiene etapa {1}, no infectado.", "현행": "단계 {1}, 감염되지 않음.", "출신": "유보"}
+{"i": 3307, "원문": "ID extrangero aleatorio", "현행": "랜덤 트레이너 ID", "출신": "유보"}
+{"i": 3310, "원문": "Setear género del EO.", "현행": "OT 성별 설정.", "출신": "유보"}
+{"i": 3312, "원문": "Pasos del huevo: {1}.", "현행": "알 걸음 수: {1}.", "출신": "유보"}
+{"i": 3313, "원문": "{1} no puede ser un huevo. ¿Hacer de todos modos?", "현행": "{1}\\j[은,는] 알이 될 수 없습니다. 그래도 진행할까요?", "출신": "유보"}
+{"i": 3315, "원문": "Bajar Medidor Corazón", "현행": "하트게이지 낮추기", "출신": "유보"}
+{"i": 3317, "원문": "El Pokémon duplicado fue movido a tu equipo.", "현행": "복제한 포켓몬을 지닌 포켓몬으로 옮겼다.", "출신": "유보"}
+{"i": 3319, "원문": "El Pokémon duplicado fue movido a la caja \"{1}.\"", "현행": "복제한 포켓몬을 박스 “{1}”\\j[으로,로] 옮겼다.", "출신": "유보"}
+{"i": 3320, "원문": "¿Estás seguro de borrar este Pokémon?", "현행": "정말 이 포켓몬을 삭제할까?", "출신": "유보"}
+{"i": 3325, "원문": "Marcar tu Pokémon.", "현행": "포켓몬에 마크를 단다.", "출신": "유보"}
+{"i": 3326, "원문": "El jugador no está en el mapa, por lo que no se puede determinar la región.", "현행": "플레이어가 맵에 없어 지역을 판단할 수 없습니다.", "출신": "유보"}
+{"i": 3327, "원문": "El mapa actual no pertenece a ninguna región. Por favor, configura los metadatos MapPosition para este mapa.", "현행": "현재 맵이 어느 지역에도 속하지 않습니다. 이 맵의 MapPosition 메타데이터를 설정하세요.", "출신": "유보"}
+{"i": 3396, "원문": "RITMO", "현행": "리듬", "출신": "유보"}
+{"i": 3403, "원문": "Error al borrar objeto guardado", "현행": "저장된 도구 삭제 중 오류", "출신": "유보"}
+{"i": 3419, "원문": "Ingresa una nota.", "현행": "메모를 입력하세요.", "출신": "유보"}
+{"i": 3420, "원문": "¿Dejar de editar el regalo?", "현행": "선물 편집을 그만두겠습니까?", "출신": "유보"}
+{"i": 3422, "원문": "Elige un ID único para este regalo.", "현행": "이 선물의 고유 ID를 선택하세요.", "출신": "유보"}
+{"i": 3423, "원문": "Ese ID ya está siendo usado por un Regalo Misterioso.", "현행": "그 ID는 이미 다른 신비한 선물에서 사용하고 있다.", "출신": "유보"}
+{"i": 3425, "원문": "No se pudo editar el regalo.", "현행": "선물을 편집할 수 없었다.", "출신": "유보"}
+{"i": 3426, "원문": "No se creó el regalo.", "현행": "선물을 생성하지 못했다.", "출신": "유보"}
+{"i": 3427, "원문": "El regalo ha sido guardado en MysteryGiftMaster.txt.", "현행": "선물을 MysteryGiftMaster.txt에 저장했다.", "출신": "유보"}
+{"i": 3428, "원문": "No se pudo guardar el regalo en MysteryGiftMaster.txt.", "현행": "선물을 MysteryGiftMaster.txt에 저장하지 못했다.", "출신": "유보"}
+{"i": 3429, "원문": "No hay ningún Regalo Misterioso definido.", "현행": "정의된 신비한 선물이 없다.", "출신": "유보"}
+{"i": 3431, "원문": "No se encontró ningún Regalo Misterioso en línea.\\wtnp[20]", "현행": "온라인 신비한 선물을 찾지 못했다.\\wtnp[20]", "출신": "유보"}
+{"i": 3432, "원문": "Regalo Misterioso en línea encontrado.\\wtnp[20]", "현행": "온라인 신비한 선물을 찾았다.\\wtnp[20]", "출신": "유보"}
+{"i": 3433, "원문": "\\ts[]Gestionar Regalos Misteriosos (X=en línea).", "현행": "\\ts[]신비한 선물 관리 (X=온라인).", "출신": "유보"}
+{"i": 3434, "원문": "Los regalos se guardaron en MysteryGift.txt.", "현행": "선물을 MysteryGift.txt에 저장했다.", "출신": "유보"}
+{"i": 3435, "원문": "MysteryGift.txt subido a Internet.", "현행": "MysteryGift.txt를 인터넷에 업로드했습니다.", "출신": "유보"}
+{"i": 3436, "원문": "No se pudieron guardar los regalos en MysteryGift.txt.", "현행": "선물을 MysteryGift.txt에 저장하지 못했다.", "출신": "유보"}
+{"i": 3437, "원문": "Cambiar en/fuera de línea", "현행": "온라인/오프라인 전환", "출신": "유보"}
+{"i": 3440, "원문": "¿Estas seguro de querer borrar este regalo?", "현행": "정말 이 선물을 삭제하시겠습니까?", "출신": "유보"}
+{"i": 3447, "원문": "No se pudo encontrar un Regalo Misterioso sin reclamar con ID {1}.", "현행": "ID {1}의 미수령 신비한 선물을 찾지 못했다.", "출신": "유보"}
+{"i": 3474, "원문": "No hay Pokémon salvajes en el mapa {1}, por lo que se cancela el concurso.", "현행": "맵 {1}에 야생 포켓몬이 없어 대회를 취소합니다.", "출신": "유보"}
+{"i": 3475, "원문": "Muy pocos concursantes cazando bichos.", "현행": "벌레잡기 대회 참가자가 너무 적다.", "출신": "유보"}
+{"i": 3519, "원문": "Los datos grabados no se pudieron encontrar o guardar.", "현행": "저장 데이터를 찾거나 저장할 수 없었습니다.", "출신": "유보"}
+{"i": 3520, "원문": "Los datos grabados tenían un formato inválido.", "현행": "저장 데이터의 형식이 올바르지 않습니다.", "출신": "유보"}
+{"i": 3521, "원문": "El formado de los datos grabados no está soportado.", "현행": "저장 데이터 형식이 지원되지 않습니다.", "출신": "유보"}
+{"i": 3522, "원문": "No había ningún sonido en la grabación. Asegúrese de que el micrófono está conectado a la PC y listo.", "현행": "녹음된 소리가 없습니다. 마이크가 PC에 연결되어 준비되었는지 확인해 주세요.", "출신": "유보"}
+{"i": 3523, "원문": "Todos los dispositivos de grabación están ocupados. No se puede grabar en este momento.", "현행": "모든 녹음 장치가 사용 중입니다. 지금은 녹음할 수 없습니다.", "출신": "유보"}
+{"i": 3524, "원문": "Se encontró dispositivo de grabación no soportado. No es posible la grabación.", "현행": "지원되지 않는 녹음 장치가 발견되었습니다. 녹음할 수 없습니다.", "출신": "유보"}
+{"i": 3525, "원문": "Fallo en la grabación: {1}", "현행": "저장 실패: {1}", "출신": "유보"}
+{"i": 3546, "원문": "Para localizar el texto en un idioma en particular, traduzca todas las segundas líneas de cada par en el archivo.\u0001", "현행": "특정 언어로 번역하려면 파일에서 각 쌍의 두 번째 줄을 모두 번역하세요.\u0001", "출신": "유보"}
+{"i": 3547, "원문": "Luego de traducirlas, elija \"Compilar Texto.\"", "현행": "번역을 마친 뒤 “텍스트 컴파일”을 선택하세요.", "출신": "유보"}
+{"i": 3548, "원문": "Texto compilado exitosamente y guardado en intl.dat.", "현행": "텍스트를 성공적으로 컴파일해 intl.dat에 저장했다.", "출신": "유보"}
+{"i": 3550, "원문": "Fallo al compilar el texto: {1}", "현행": "텍스트 컴파일 실패: {1}", "출신": "유보"}
+{"i": 3551, "원문": "SALTAR A MAPA", "현행": "맵으로 이동", "출신": "유보"}
+{"i": 3552, "원문": "Interruptores", "현행": "스위치", "출신": "유보"}
+{"i": 3553, "원문": "Refrescar Mapa", "현행": "맵 새로고침", "출신": "유보"}
+{"i": 3554, "원문": "Saltar a Mapa", "현행": "맵으로 이동", "출신": "유보"}
+{"i": 3555, "원문": "Curar Equipo", "현행": "파티 회복", "출신": "유보"}
+{"i": 3560, "원문": "Llenar Cajas de Almacenamiento", "현행": "보관 박스 채우기", "출신": "유보"}
+{"i": 3561, "원문": "Vaciar Cajas de Almacenamiento", "현행": "보관 박스 비우기", "출신": "유보"}
+{"i": 3563, "원문": "Setear Personaje del Jugador", "현행": "플레이어 캐릭터 설정", "출신": "유보"}
+{"i": 3564, "원문": "Renombrar Jugador", "현행": "플레이어 이름 변경", "출신": "유보"}
+{"i": 3565, "원문": "Cambiar ID del Jugador", "현행": "플레이어 ID 변경", "출신": "유보"}
+{"i": 3566, "원문": "Cambiar Ropa del Jugador", "현행": "플레이어 옷 변경", "출신": "유보"}
+{"i": 3568, "원문": "Setear Monedas", "현행": "동전 설정", "출신": "유보"}
+{"i": 3570, "원문": "Obtener Equipo de Prueba", "현행": "테스트 팀 받기", "출신": "유보"}
+{"i": 3575, "원문": "Activar Revanchas del Celular", "현행": "휴대전화 재대결 활성화", "출신": "유보"}
+{"i": 3579, "원문": "Estado de los Pokémon errantes", "현행": "배회 포켓몬 상태", "출신": "유보"}
+{"i": 3580, "원문": "Avanzar errantes", "현행": "배회 포켓몬 이동", "출신": "유보"}
+{"i": 3584, "원문": "Editar Tipos de Entrenadores", "현행": "트레이너 타입 편집", "출신": "유보"}
+{"i": 3586, "원문": "Probar Batalla con Salvaje", "현행": "야생 배틀 테스트", "출신": "유보"}
+{"i": 3587, "원문": "Probar Batalla Doble con Salvajes", "현행": "야생 더블배틀 테스트", "출신": "유보"}
+{"i": 3588, "원문": "Probar Batalla con Entrenador", "현행": "트레이너 배틀 테스트", "출신": "유보"}
+{"i": 3589, "원문": "Probar Batalla Doble con Entrenadores", "현행": "트레이너 더블배틀 테스트", "출신": "유보"}
+{"i": 3590, "원문": "Extraer Texto", "현행": "텍스트 추출", "출신": "유보"}
+{"i": 3591, "원문": "Compilar Texto", "현행": "텍스트 컴파일", "출신": "유보"}
+{"i": 3593, "원문": "Conexiones de Mapas", "현행": "맵 연결", "출신": "유보"}
+{"i": 3595, "원문": "Consola de Depuración", "현행": "디버그 콘솔", "출신": "유보"}
+{"i": 3596, "원문": "Activar Registro de Batalla", "현행": "배틀 기록 활성화", "출신": "유보"}
+{"i": 3597, "원문": "Se refrescará el mapa.", "현행": "맵을 새로 고칩니다.", "출신": "유보"}
+{"i": 3598, "원문": "El equipo Pokémon recuperó la salud.", "현행": "포켓몬 파티가 체력을 회복했다.", "출신": "유보"}
+{"i": 3603, "원문": "Se llenó la Mochila con {1} unidades de cada objeto.", "현행": "가방을 각 도구 {1}개씩으로 채웠다.", "출신": "유보"}
+{"i": 3605, "원문": "Indicar el nivel del Pokémon.", "현행": "포켓몬의 레벨을 지정한다.", "출신": "유보"}
+{"i": 3606, "원문": "Las Cajas fueron llenadas de un Pokémon de cada especie.", "현행": "박스를 종류별로 한 마리씩 채웠다.", "출신": "유보"}
+{"i": 3607, "원문": "Nota: La capacidad de almacenamiento ({1} cajas de 30) es menor que el número de especies.", "현행": "참고: 보관 용량 (30칸 박스 {1}개)이 종류 수보다 적습니다.", "출신": "유보"}
+{"i": 3608, "원문": "Se vaciaron las Cajas.", "현행": "박스를 비웠다.", "출신": "유보"}
+{"i": 3609, "원문": "Hay un sólo personaje definido.", "현행": "정의된 캐릭터가 하나뿐이다.", "출신": "유보"}
+{"i": 3610, "원문": "Seleccione el nuevo personaje del jugador.", "현행": "새 플레이어 캐릭터를 선택하세요.", "출신": "유보"}
+{"i": 3611, "원문": "El personaje del jugador ha sido cambiado.", "현행": "플레이어 캐릭터를 바꿨다.", "출신": "유보"}
+{"i": 3612, "원문": "El nombre de jugador cambió a {1}.", "현행": "플레이어 이름을 {1}\\j[으로,로] 바꿨다.", "출신": "유보"}
+{"i": 3613, "원문": "El ID del jugador se cambió por {1} (2).", "현행": "플레이어 ID를 {1} (2)\\j[으로,로] 바꿨다.", "출신": "유보"}
+{"i": 3614, "원문": "Establecer la ropa del jugador.", "현행": "플레이어의 옷을 설정한다.", "출신": "유보"}
+{"i": 3615, "원문": "La ropa del jugador ha sido cambiada.", "현행": "플레이어의 옷을 바꿨다.", "출신": "유보"}
+{"i": 3616, "원문": "Indicar la cantidad de dinero del jugador.", "현행": "플레이어의 소지금을 지정한다.", "출신": "유보"}
+{"i": 3618, "원문": "Indicar la cantidad de monedas del jugador.", "현행": "플레이어의 코인 수를 지정한다.", "출신": "유보"}
+{"i": 3619, "원문": "Ahora tiene {1} monedas.", "현행": "이제 동전 {1}개를 가지고 있습니다.", "출신": "유보"}
+{"i": 3621, "원문": "Equipo completado con Pokémon de prueba.", "현행": "파티를 테스트용 포켓몬으로 채웠다.", "출신": "유보"}
+{"i": 3624, "원문": "Pokégear listo.", "현행": "포켓기어 준비 완료.", "출신": "유보"}
+{"i": 3625, "원문": "Pokégear quitado.", "현행": "포켓기어를 회수했다.", "출신": "유보"}
+{"i": 3626, "원문": "Pokédex listo.", "현행": "도감 준비 완료.", "출신": "유보"}
+{"i": 3627, "원문": "Pokédex quitado.", "현행": "도감을 회수했다.", "출신": "유보"}
+{"i": 3628, "원문": "No hay entrenadores en el Celular.", "현행": "휴대전화에 등록된 트레이너가 없다.", "출신": "유보"}
+{"i": 3629, "원문": "Ahora todos los entrenadores registrados en el Celular están listos para una revancha.", "현행": "이제 휴대전화에 등록된 모든 트레이너가 재대결할 준비가 됐다.", "출신": "유보"}
+{"i": 3630, "원문": "Generar Huevo", "현행": "알 생성", "출신": "유보"}
+{"i": 3633, "원문": "Hay {1} Pokémon en la guardería.", "현행": "키우미집에 포켓몬이 {1}마리 있다.", "출신": "유보"}
+{"i": 3635, "원문": "Un huevo está esperando ser retirado.", "현행": "알이 인수되기를 기다리고 있다.", "출신": "유보"}
+{"i": 3636, "원문": "Los Pokémon dejados no se pueden reproducir.", "현행": "맡긴 포켓몬은 알을 낳을 수 없다.", "출신": "유보"}
+{"i": 3637, "원문": "Los Pokémon dejados se pueden reproducir.", "현행": "맡긴 포켓몬은 알을 낳을 수 있다.", "출신": "유보"}
+{"i": 3638, "원문": "Hay un nuevo disponible, no se puede dejar ningún Pokémon.", "현행": "새 알이 있어서 포켓몬을 맡길 수 없다.", "출신": "유보"}
+{"i": 3639, "원문": "Ya se dejaron dos Pokémon en la guardería.", "현행": "이미 키우미집에 포켓몬 두 마리를 맡겼다.", "출신": "유보"}
+{"i": 3642, "원문": "Hay un huevo disponible, no se puede sacar ningún Pokémon.", "현행": "알이 있어서 포켓몬을 꺼낼 수 없다.", "출신": "유보"}
+{"i": 3643, "원문": "No hay ningún Pokémon en la guardería.", "현행": "키우미집에 포켓몬이 없다.", "출신": "유보"}
+{"i": 3644, "원문": "El equipo está completo, no se puede sacar ningún Pokémon.", "현행": "파티가 가득 차서 포켓몬을 꺼낼 수 없다.", "출신": "유보"}
+{"i": 3648, "원문": "Deben haber dos Pokémon en la guardería para generar un huevo.", "현행": "알이 생기려면 키우미집에 포켓몬이 두 마리 있어야 한다.", "출신": "유보"}
+{"i": 3649, "원문": "Los Pokémon de la guardería no se pueden reproducir.", "현행": "키우미집의 포켓몬은 교배할 수 없다.", "출신": "유보"}
+{"i": 3650, "원문": "Ahora hay un huevo esperando ser retirado.", "현행": "지금 수령을 기다리는 알이 있다.", "출신": "유보"}
+{"i": 3652, "원문": "El equipo está lleno, no se puede retirar el huevo.", "현행": "지닌 포켓몬이 가득 차서 알을 받을 수 없다.", "출신": "유보"}
+{"i": 3654, "원문": "El huevo ha sido regalado al criador Pokémon.", "현행": "알을 포켓몬 브리더에게 건넸다.", "출신": "유보"}
+{"i": 3655, "원문": "Ahora les queda a todos los huevos del equipo un solo paso para eclosionar.", "현행": "이제 지닌 포켓몬의 모든 알이 부화까지 한 걸음 남았다.", "출신": "유보"}
+{"i": 3656, "원문": "No se definieron Pokémon errantes.", "현행": "배회 포켓몬이 설정되지 않았다.", "출신": "유보"}
+{"i": 3659, "원문": "{1} (Nv.{2}) está vagando por el mapa {3} ({4}){5}", "현행": "{1} (Lv.{2})\\j[이,가] 맵 {3} ({4})에서 배회 중{5}", "출신": "유보"}
+{"i": 3661, "원문": "{1} (Nv.{2}) está vagando (mapa no definido).", "현행": "{1} (Lv.{2})\\j[이,가] 배회 중 (맵 미정의).", "출신": "유보"}
+{"i": 3662, "원문": "{1} (Nv.{2}) no está vagando (el interruptor {3} está apagado).", "현행": "{1} (Lv.{2})\\j[은,는] 배회 중이 아닙니다 (스위치 {3}\\j[이,가] 꺼져 있음).", "출신": "유보"}
+{"i": 3665, "원문": "Todos los entrenadores de este mapa fueron restablecidos.", "현행": "이 맵의 트레이너를 모두 리셋했다.", "출신": "유보"}
+{"i": 3666, "원문": "Este comando no se puede utilizar aquí.", "현행": "이 커맨드는 여기서 사용할 수 없다.", "출신": "유보"}
+{"i": 3675, "원문": "El registro de depuración de batallas se creará en la carpeta Data.", "현행": "배틀 디버그 로그를 Data 폴더에 만듭니다.", "출신": "유보"}
+{"i": 3676, "원문": "No se creará el registro de depuración de batallas.", "현행": "배틀 디버그 로그를 만들지 않습니다.", "출신": "유보"}
+{"i": 3689, "원문": "Campo {1} no es un entero positivo", "현행": "필드 {1}\\j[은,는] 양의 정수가 아님", "출신": "유보"}
+{"i": 3699, "원문": "El editor ha detectado que los datos del tileset fueron editados recientemente en RPG Maker XP.", "현행": "타일셋 데이터가 최근 RPG Maker XP에서 편집된 것을 에디터가 감지했습니다.", "출신": "유보"}
+{"i": 3700, "원문": "¿Quieres cargar estos cambios recientes?", "현행": "최근 변경사항을 불러올까?", "출신": "유보"}
+{"i": 3701, "원문": "Editor Tileset (PgUp/PgDn: DESPLAZA; Z: MENÚ)", "현행": "타일셋 에디터 (PgUp/PgDn: 스크롤, Z: 메뉴)", "출신": "유보"}
+{"i": 3702, "원문": "Ir abajo", "현행": "아래로 이동", "출신": "유보"}
+{"i": 3705, "원문": "Para asegurar que los cambios se mantengan, cierre y vuelva a abrir RPG Maker XP.", "현행": "변경사항을 확실히 적용하려면 RPG Maker XP를 닫았다가 다시 여세요.", "출신": "유보"}
+{"i": 3707, "원문": "Establecer la etiqueta del terreno.", "현행": "지형 태그를 설정한다.", "출신": "유보"}
+{"i": 3717, "원문": "Procesando especies {1}...", "현행": "{1} 종 처리 중...", "출신": "유보"}
+{"i": 3718, "원문": "Consulta la documentación de la wiki para aprender a modificar este archivo.", "현행": "이 파일을 수정하는 방법은 위키 문서를 참고하세요.", "출신": "유보"}
+{"i": 3719, "원문": "No hay archivos.", "현행": "파일이 없다.", "출신": "유보"}
+{"i": 3720, "원문": "Setear el valor en {1}.", "현행": "값을 {1}\\j[으로,로] 설정한다.", "출신": "유보"}
+{"i": 3721, "원문": "No se puede editar esta propiedad.", "현행": "이 속성은 편집할 수 없다.", "출신": "유보"}
+{"i": 3722, "원문": "No se puede editar aquí esta propiedad en este momento.", "현행": "지금은 여기서 이 속성을 편집할 수 없다.", "출신": "유보"}
+{"i": 3724, "원문": "¿Cambiar valor {1}?", "현행": "값 {1}\\j[을,를] 바꿀까?", "출신": "유보"}
+{"i": 3725, "원문": "Setear el valor por {1}.", "현행": "값을 {1}\\j[으로,로] 설정한다.", "출신": "유보"}
+{"i": 3731, "원문": "¿Borrar el tipo de encuentro {1}?", "현행": "인카운터 타입 {1}\\j[을,를] 삭제할까?", "출신": "유보"}
+{"i": 3734, "원문": "Establecer el nivel mínimo.", "현행": "최소 레벨을 설정한다.", "출신": "유보"}
+{"i": 3735, "원문": "Establecer el nivel máximo.", "현행": "최대 레벨을 설정한다.", "출신": "유보"}
+{"i": 3736, "원문": "Establecer la densidad de Pokémon en tierra (por defecto {1}).", "현행": "육상 포켓몬 밀도를 설정합니다 (기본값 {1}).", "출신": "유보"}
+{"i": 3737, "원문": "Establecer la densidad de Pokémon en cuevas (por defecto {1}).", "현행": "동굴 포켓몬 밀도를 설정합니다 (기본값 {1}).", "출신": "유보"}
+{"i": 3738, "원문": "Establecer la densidad de Pokémon en agua (por defecto {1}).", "현행": "수상 포켓몬 밀도를 설정합니다 (기본값 {1}).", "출신": "유보"}
+{"i": 3740, "원문": "Error al crear el tipo de entrenador. Elige un nombre diferente.", "현행": "트레이너 타입을 만들지 못했습니다. 다른 이름을 선택하세요.", "출신": "유보"}
+{"i": 3741, "원문": "¿Es el género masculino, femenino o mixto?", "현행": "성별은 남성, 여성, 아니면 혼성인가?", "출신": "유보"}
+{"i": 3743, "원문": "Indicar la cantidad de dinero por nivel que se obtiene venciendo a este Tipo de Entrenador.", "현행": "이 타입의 트레이너를 이겼을 때 레벨당 얻는 금액을 지정합니다.", "출신": "유보"}
+{"i": 3744, "원문": "Se ha creado el Tipo de Entrenador (ID: {1}).", "현행": "트레이너 타입을 생성했습니다 (ID: {1}).", "출신": "유보"}
+{"i": 3746, "원문": "Nombre Interno", "현행": "내부 이름", "출신": "유보"}
+{"i": 3747, "원문": "Nombre interno que aparece en constructores como PBTrainers::XXX.", "현행": "PBTrainers::XXX 같은 생성자에서 사용하는 내부 이름.", "출신": "유보"}
+{"i": 3751, "원문": "El jugador gana esta cantidad de dinero multiplicada por el nivel del Pokémon de mayor nivel del entrenador.", "현행": "트레이너가 보유한 포켓몬 중 최고 레벨에 이 금액을 곱한 만큼 플레이어가 획득합니다.", "출신": "유보"}
+{"i": 3753, "원문": "Música de Fondo tocada durante la batalla contra este tipo de entrenadores.", "현행": "이 타입의 트레이너와 배틀하는 동안 재생되는 배경음악.", "출신": "유보"}
+{"i": 3755, "원문": "Efecto de Música tocado cuando el jugador gana la batalla con este tipo de entrenadores.", "현행": "이 타입의 트레이너와의 배틀에서 승리했을 때 재생되는 음악 효과.", "출신": "유보"}
+{"i": 3756, "원문": "EM Inicio Batalla", "현행": "배틀 시작 BGM", "출신": "유보"}
+{"i": 3757, "원문": "Efecto de Música tocado antes de pelear contra los entrenadores de este tipo.", "현행": "이 타입의 트레이너와 싸우기 전에 재생되는 음악 효과.", "출신": "유보"}
+{"i": 3758, "원문": "Género del tipo de entrenador.", "현행": "트레이너 타입의 성별.", "출신": "유보"}
+{"i": 3759, "원문": "Destreza", "현행": "손재주", "출신": "유보"}
+{"i": 3760, "원문": "Nivel de destreza del tipo de entrenador.", "현행": "트레이너 타입의 숙련도 레벨.", "출신": "유보"}
+{"i": 3761, "원문": "Códigos de Habilidades", "현행": "특성 코드", "출신": "유보"}
+{"i": 3762, "원문": "Letras/frases que representan cambios en la IA de los entrenadores de este tipo.", "현행": "이 타입 트레이너의 AI 변화를 나타내는 문자/문구.", "출신": "유보"}
+{"i": 3763, "원문": "Tipos de Entrenadores", "현행": "트레이너 타입", "출신": "유보"}
+{"i": 3771, "원문": "ID utilizdo para identificar entrenadores con los mismos nombre y tipo.", "현행": "이름과 타입이 같은 트레이너를 식별하는 데 사용하는 ID.", "출신": "유보"}
+{"i": 3774, "원문": "Tercer Pokémon.", "현행": "세 번째 포켓몬.", "출신": "유보"}
+{"i": 3775, "원문": "Cuarto Pokémon.", "현행": "네 번째 포켓몬.", "출신": "유보"}
+{"i": 3776, "원문": "Quinto Pokémon.", "현행": "다섯 번째 포켓몬.", "출신": "유보"}
+{"i": 3777, "원문": "Sexto Pokémon.", "현행": "여섯 번째 포켓몬.", "출신": "유보"}
+{"i": 3779, "원문": "Objeto utilizado por el entrenador durante la batalla.", "현행": "트레이너가 배틀 중에 사용하는 도구.", "출신": "유보"}
+{"i": 3789, "원문": "Primero. Establece el tipo de entrenador.", "현행": "먼저 트레이너 타입을 설정하세요.", "출신": "유보"}
+{"i": 3794, "원문": "No se puedo guardar. La lista de Pokémon está vacía.", "현행": "저장할 수 없습니다. 포켓몬 목록이 비어 있습니다.", "출신": "유보"}
+{"i": 3795, "원문": "No se puedo guardar. Falta ingresar nombre.", "현행": "저장할 수 없습니다. 이름을 입력해야 합니다.", "출신": "유보"}
+{"i": 3796, "원문": "Especie del Pokémon.", "현행": "포켓몬의 종류.", "출신": "유보"}
+{"i": 3799, "원문": "El objeto llevado por el Pokémon.", "현행": "포켓몬이 지닌 도구.", "출신": "유보"}
+{"i": 3801, "원문": "Primer movimiento. Deja todos los movimientos en blanco (usa la tecla Z) para completarlo con movimientos naturales.", "현행": "첫 번째 기술. 모든 기술을 비워두면 (Z키 사용) 자력기로 채워집니다.", "출신": "유보"}
+{"i": 3803, "원문": "Segundo movimiento. Deja todos los movimientos en blanco (usa la tecla Z) para completarlo con movimientos naturales.", "현행": "두 번째 기술. 모든 기술을 비워두면 (Z키 사용) 자력기로 채워집니다.", "출신": "유보"}
+{"i": 3805, "원문": "Tercer movimiento. Deja todos los movimientos en blanco (usa la tecla Z) para completarlo con movimientos naturales.", "현행": "세 번째 기술. 모든 기술을 비워두면 (Z키 사용) 자력기로 채워집니다.", "출신": "유보"}
+{"i": 3807, "원문": "Cuarto movimiento. Deja todos los movimientos en blanco (usa la tecla Z) para completarlo con movimientos naturales.", "현행": "네 번째 기술. 모든 기술을 비워두면 (Z키 사용) 자력기로 채워집니다.", "출신": "유보"}
+{"i": 3809, "원문": "Bandera de género. 0=macho, 1=hembra.", "현행": "성별 플래그. 0=수컷, 1=암컷.", "출신": "유보"}
+{"i": 3811, "원문": "Si se establece como Verdadero, el Pokémon tendrá colores diferentes.", "현행": "참으로 설정하면 색이 다른 포켓몬이 됩니다.", "출신": "유보"}
+{"i": 3813, "원문": "Valores Individuales de cada una de las características del Pokémon.", "현행": "포켓몬 각 능력치의 개체값.", "출신": "유보"}
+{"i": 3814, "원문": "Felicidad del Pokémon.", "현행": "포켓몬의 친밀도.", "출신": "유보"}
+{"i": 3816, "원문": "Si se establece como Verdadero, el Pokémon será Oscuro.", "현행": "참으로 설정하면 그림자 포켓몬이 됩니다.", "출신": "유보"}
+{"i": 3819, "원문": "El tipo de entrenador del que es el jugador.", "현행": "플레이어의 트레이너 타입.", "출신": "유보"}
+{"i": 3821, "원문": "Gráficos del jugador para caminar.", "현행": "플레이어의 보행 그래픽.", "출신": "유보"}
+{"i": 3823, "원문": "Gráficos del jugador usando la bici.", "현행": "자전거를 탄 플레이어의 그래픽.", "출신": "유보"}
+{"i": 3825, "원문": "Gráficos del jugador usando Surf.", "현행": "플레이어의 파도타기 그래픽.", "출신": "유보"}
+{"i": 3826, "원문": "Corriendo", "현행": "달리기", "출신": "유보"}
+{"i": 3827, "원문": "Gráficos del jugador al correr.", "현행": "플레이어의 대시 그래픽.", "출신": "유보"}
+{"i": 3829, "원문": "Gráficos del jugador usando Buceo.", "현행": "플레이어의 다이빙 그래픽.", "출신": "유보"}
+{"i": 3831, "원문": "Gráficos del jugador usando una caña.", "현행": "플레이어의 낚시 그래픽.", "출신": "유보"}
+{"i": 3833, "원문": "Gráficos del jugador usando Surf y pescando.", "현행": "파도타기 중 낚시하는 플레이어 그래픽.", "출신": "유보"}
+{"i": 3834, "원문": "Ancho", "현행": "너비", "출신": "유보"}
+{"i": 3835, "원문": "El ancho del mapa en cuadros del Mapa de la Región.", "현행": "지역 맵에서 이 맵의 가로 칸 수.", "출신": "유보"}
+{"i": 3837, "원문": "Un conjunto de marcas de 1s y 0s indicando los cuadros que forman parte de este mapa (1=es parte, 0=no es parte).", "현행": "이 맵에 속하는 칸을 1과 0으로 나타낸 표시 (1=속함, 0=속하지 않음).", "출신": "유보"}
+{"i": 3838, "원문": "Elige la dirección de aparición.", "현행": "등장 방향을 선택하세요.", "출신": "유보"}
+{"i": 3839, "원문": "Abajo", "현행": "아래", "출신": "유보"}
+{"i": 3842, "원문": "Arriba", "현행": "위", "출신": "유보"}
+{"i": 3843, "원문": "Mapa de región no definido.", "현행": "지역 맵이 정의되지 않았다.", "출신": "유보"}
+{"i": 3844, "원문": "Elegir un mapa de región.", "현행": "지역 맵을 선택한다.", "출신": "유보"}
+{"i": 3846, "원문": "Setear la probabilidad del clima.", "현행": "날씨 확률을 설정한다.", "출신": "유보"}
+{"i": 3848, "원문": "Metadatos Globales", "현행": "글로벌 메타데이터", "출신": "유보"}
+{"i": 3849, "원문": "Pincha un punto en el mapa.", "현행": "맵에서 지점을 찍으세요.", "출신": "유보"}
+{"i": 3850, "원문": "En verdadero, este mapa se considera al aire libre y será pintado según el momento del día.", "현행": "참으로 설정하면 이 맵을 야외로 보고 시간대에 따라 색을 입힙니다.", "출신": "유보"}
+{"i": 3851, "원문": "En verdadero, el juego mostrará un cartel con el nombre del mapa al entrar en él.", "현행": "참으로 설정하면 맵에 들어갈 때 맵 이름 표지를 표시합니다.", "출신": "유보"}
+{"i": 3852, "원문": "En verdadero, se puede utilizar la bicicleta en este mapa.", "현행": "참으로 설정하면 이 맵에서 자전거를 탈 수 있습니다.", "출신": "유보"}
+{"i": 3853, "원문": "En verdadero, la bicicleta se utiliza de forma automática y no se la puede dejar.", "현행": "참으로 설정하면 자전거가 자동으로 사용되며 내릴 수 없습니다.", "출신": "유보"}
+{"i": 3854, "원문": "ID del Mapa del Centro Pokémon de este pueblo, y las coordenadas X e Y de su puerta de entrada.", "현행": "이 마을 포켓몬센터의 맵 ID와 입구의 X, Y 좌표.", "출신": "유보"}
+{"i": 3855, "원문": "Condiciones climáticas vigentes para este mapa.", "현행": "이 맵에 적용되는 날씨 조건.", "출신": "유보"}
+{"i": 3856, "원문": "Identifica el punto en el mapa regional para este mapa.", "현행": "이 맵이 지역 맵에서 어느 지점인지 지정합니다.", "출신": "유보"}
+{"i": 3857, "원문": "Indica la capa submarina de este mapa. Se utiliza solamente si el mapa tiene aguas profundas.", "현행": "이 맵의 수중 레이어를 지정합니다. 깊은 물이 있는 맵에서만 씁니다.", "출신": "유보"}
+{"i": 3858, "원문": "En verdadero, este mapa es oscuro y aparece un círculo de luz alrededor del jugador. Se puede utilizar Destello para ampliar el círculo.", "현행": "참으로 설정하면 이 맵은 어둡고 플레이어 주위에 빛의 원이 생깁니다. 플래시로 원을 넓힐 수 있습니다.", "출신": "유보"}
+{"i": 3859, "원문": "En verdadero, este mapa es parte de la Zona Safari (tanto interior como exterior). No se usa para la oficina de recepción.", "현행": "참으로 설정하면 이 맵은 사파리존에 속합니다 (실내·실외 모두). 접수처에는 쓰지 않습니다.", "출신": "유보"}
+{"i": 3860, "원문": "En verdadero, cuando el jugador se acerca al borde del mapa, el jugador deja de estar centrado como de costumbre.", "현행": "참으로 설정하면 플레이어가 맵 가장자리에 다가갈 때 화면 중앙 고정이 풀립니다.", "출신": "유보"}
+{"i": 3861, "원문": "En verdadero, este mapa tiene un escenario generado aleatoriamente. Consulta la wiki para más información.", "현행": "참으로 설정하면 이 맵은 무작위 생성 구조를 씁니다. 자세한 내용은 위키를 참고하세요.", "출신": "유보"}
+{"i": 3863, "원문": "Música de Fondo por Defecto para batallas con Pokémon salvajes en este mapa.", "현행": "이 맵의 야생 포켓몬 배틀 기본 배경음악.", "출신": "유보"}
+{"i": 3864, "원문": "Música de Fondo por Defecto para batallas contra Entrenadores en este mapa.", "현행": "이 맵의 트레이너 배틀 기본 배경음악.", "출신": "유보"}
+{"i": 3865, "원문": "Efecto de Música por Defecto tras vencer a un Pokémon salvaje en este mapa.", "현행": "이 맵에서 야생 포켓몬을 이긴 뒤 재생되는 기본 음악 효과.", "출신": "유보"}
+{"i": 3866, "원문": "Efecto de Música por Defecto tras vencer a un Entrenador en este mapa.", "현행": "이 맵에서 트레이너를 이긴 뒤 재생되는 기본 음악 효과.", "출신": "유보"}
+{"i": 3867, "원문": "El ancho del mapa en cuadros del Mapa de Pueblos y una cadena indicando los cuadros que son parte del mapa.", "현행": "마을 맵에서 이 맵의 가로 칸 수와, 어느 칸이 이 맵에 속하는지 나타내는 문자열.", "출신": "유보"}
+{"i": 3868, "원문": "ID y coordenadas X e Y del mapa donde el jugador se posiciona cuando pierde un combate y aún no llegó a ningún Centro Pokémon.", "현행": "배틀에서 지고 아직 포켓몬센터에 들르지 않았을 때 플레이어가 이동할 맵 ID와 X, Y 좌표.", "출신": "유보"}
+{"i": 3869, "원문": "Música de Fondo por defecto reproducida durante una batalla contra un Pokémon salvaje.", "현행": "야생 포켓몬 배틀 중 재생되는 기본 배경음악.", "출신": "유보"}
+{"i": 3870, "원문": "Música de Fondo por defecto reproducida durante una batalla contra un entrenador.", "현행": "트레이너 배틀 중 재생되는 기본 배경음악.", "출신": "유보"}
+{"i": 3871, "원문": "Efecto Musical por defecto reproducido en la victoria contra un Pokémon salvaje.", "현행": "야생 포켓몬을 이겼을 때 재생되는 기본 음악 효과.", "출신": "유보"}
+{"i": 3873, "원문": "Música de Fondo reproducida cuando el jugador está usando Surf.", "현행": "플레이어가 파도타기 중일 때 재생되는 배경음악.", "출신": "유보"}
+{"i": 3874, "원문": "Música de Fondo reproducida cuando el jugador está usando una bici.", "현행": "플레이어가 자전거를 탈 때 재생되는 배경음악.", "출신": "유보"}
+{"i": 3875, "원문": "Determina el jugador A.", "현행": "플레이어 A를 지정한다.", "출신": "유보"}
+{"i": 3876, "원문": "Determina el jugador B.", "현행": "플레이어 B를 지정한다.", "출신": "유보"}
+{"i": 3877, "원문": "Determina el jugador C.", "현행": "플레이어 C를 지정한다.", "출신": "유보"}
+{"i": 3878, "원문": "Determina el jugador D.", "현행": "플레이어 D를 지정한다.", "출신": "유보"}
+{"i": 3879, "원문": "Determina el jugador E.", "현행": "플레이어 E를 지정한다.", "출신": "유보"}
+{"i": 3880, "원문": "Determina el jugador F.", "현행": "플레이어 F를 지정한다.", "출신": "유보"}
+{"i": 3881, "원문": "Determina el jugador G.", "현행": "플레이어 G를 지정한다.", "출신": "유보"}
+{"i": 3882, "원문": "Determina el jugador H.", "현행": "플레이어 H를 지정한다.", "출신": "유보"}
+{"i": 3884, "원문": "A: Agregar un mapa en el plano", "현행": "A: 화면에 맵 추가\r\n", "출신": "유보"}
+{"i": 3885, "원문": "DEL: Borrar un mapa del plano", "현행": "DEL: 화면에서 맵 삭제\r\n", "출신": "유보"}
+{"i": 3886, "원문": "S: Ir a otro mapa", "현행": "S: 다른 맵으로 이동", "출신": "유보"}
+{"i": 3887, "원문": "Clic para seleccionar un mapa", "현행": "클릭해서 맵 선택\r\n", "출신": "유보"}
+{"i": 3888, "원문": "Doble-clic: Editar metadatos del mapa", "현행": "더블클릭: 맵 메타데이터 편집\r\n", "출신": "유보"}
+{"i": 3889, "원문": "E: Editar encuentros del mapa", "현행": "E: 맵 인카운터 편집\r\n", "출신": "유보"}
+{"i": 3890, "원문": "Arrastrar mapa para moverlo", "현행": "맵을 끌어서 이동\r\n", "출신": "유보"}
+{"i": 3891, "원문": "Teclas de fechas/arrastrar plano: Mueve al plano alrededor", "현행": "방향키 또는 드래그: 화면을 이동합니다", "출신": "유보"}
+{"i": 3894, "원문": "Saltar al Mapa", "현행": "맵으로 이동", "출신": "유보"}
+{"i": 3896, "원문": "Archivo {1}, seccion {2}, clave {3}\n{4}", "현행": "파일 {1}, 섹션 {2}, 키 {3}\n{4}", "출신": "유보"}
+{"i": 3897, "원문": "Archivo {1}, linea {2}\n{3}", "현행": "파일 {1}, 줄 {2}\n{3}", "출신": "유보"}
+{"i": 3900, "원문": "El campo {1} no tiene un valor entero\n{2}", "현행": "필드 {1}의 값이 정수가 아닙니다\r\n{2}", "출신": "유보"}
+{"i": 3901, "원문": "El campo {1} no tiene un valor entero positivo\n{2}", "현행": "필드 {1}의 값이 양의 정수가 아닙니다\r\n{2}", "출신": "유보"}
+{"i": 3902, "원문": "El campo {1} no tiene un valor numérico\n{2}", "현행": "필드 {1}의 값이 숫자가 아닙니다\r\n{2}", "출신": "유보"}
+{"i": 3904, "원문": "Procesando eventos comunes", "현행": "공통 이벤트 처리 중", "출신": "유보"}
+{"i": 3905, "원문": "Los mapas nuevos en la carpeta Data fueron importados correctamente.", "현행": "Data 폴더의 새 맵을 정상적으로 가져왔습니다.", "출신": "유보"}
+{"i": 3906, "원문": "Compilando datos de los tipos", "현행": "타입 데이터 컴파일 중", "출신": "유보"}
+{"i": 3907, "원문": "Compilando datos del mapa de la región", "현행": "지역 맵 데이터 컴파일 중", "출신": "유보"}
+{"i": 3908, "원문": "Compilando datos de las conexiones de los mapas", "현행": "맵 연결 데이터 컴파일 중", "출신": "유보"}
+{"i": 3909, "원문": "Compilando datos de las habilidades", "현행": "특성 데이터 컴파일 중", "출신": "유보"}
+{"i": 3910, "원문": "Compilando datos de los movimientos", "현행": "기술 데이터 컴파일 중", "출신": "유보"}
+{"i": 3911, "원문": "Compilando datos de los objetos", "현행": "도구 데이터 컴파일 중", "출신": "유보"}
+{"i": 3912, "원문": "Compilando datos de las plantas de bayas", "현행": "나무열매 나무 데이터 컴파일 중", "출신": "유보"}
+{"i": 3913, "원문": "Compilando datos de los Pokemon", "현행": "포켓몬 데이터 컴파일 중", "출신": "유보"}
+{"i": 3914, "원문": "Compilando datos de las máquinas", "현행": "머신 데이터 컴파일 중", "출신": "유보"}
+{"i": 3915, "원문": "Compilando datos de los entrenadores", "현행": "트레이너 데이터 컴파일 중", "출신": "유보"}
+{"i": 3916, "원문": "Compilando datos del celular", "현행": "휴대전화 데이터 컴파일 중", "출신": "유보"}
+{"i": 3918, "원문": "Compilando datos de batallas con entrenadores", "현행": "트레이너 배틀 데이터 컴파일 중", "출신": "유보"}
+{"i": 3919, "원문": "Compilando datos de los encuentros", "현행": "인카운터 데이터 컴파일 중", "출신": "유보"}
+{"i": 3920, "원문": "Compilando datos de los movimientos oscuros", "현행": "다크 기술 데이터 컴파일 중", "출신": "유보"}
+{"i": 3922, "원문": "Para mover el personaje principal. También usado para desplazarse en los listados.", "현행": "주인공을 움직입니다. 목록에서 이동할 때도 쓰입니다.", "출신": "유보"}
+{"i": 3923, "원문": "Usado para confirmar una selección, activar cosas y hablar con la gente.", "현행": "선택 확정, 조사, 대화에 쓰입니다.", "출신": "유보"}
+{"i": 3924, "원문": "Usado para salir, cancelar una selección o modo y abrir el menú del juego.", "현행": "나가기, 선택이나 모드 취소, 게임 메뉴 열기에 쓰입니다.", "출신": "유보"}
+{"i": 3925, "원문": "Mantener presionado mientras camina para correr.", "현행": "걷는 중에 누르고 있으면 달립니다.", "출신": "유보"}
+{"i": 3926, "원문": "Presionar para usar un Objeto Clave registrado.", "현행": "누르면 등록한 중요한 도구를 씁니다.", "출신": "유보"}
+{"i": 4312, "원문": "PS menor a 0", "현행": "HP 0 미만", "출신": "유보"}
+{"i": 4493, "원문": "De alguna forma no se pudo regresar el objeto sin usar a la mochila.", "현행": "어째선지 쓰지 않은 도구를 가방으로 되돌리지 못했다.", "출신": "유보"}
+{"i": 4498, "원문": "¿Tratar esta batalla como una victoria?", "현행": "이 배틀을 승리로 처리할까?", "출신": "유보"}
+{"i": 4499, "원문": "¿Tratar esta batalla como una derrota?", "현행": "이 배틀을 패배로 처리할까?", "출신": "유보"}
+{"i": 4517, "원문": "El nivel nuevo ({1}) es menor que el nivel actual\ndel Pokémon ({2}), lo que no debería pasar.\n[Depurar: {3}]", "현행": "새 레벨 ({1})이 포켓몬의\r\n현재 레벨 ({2})보다 낮습니다. 있을 수 없는 일입니다.\r\n「디버그: {3}」", "출신": "유보"}
+{"i": 4541, "원문": "Sólo se permiten dos Pokémon salvajes en una batalla doble", "현행": "더블배틀에서는 야생 포켓몬을 두 마리까지만 허용합니다", "출신": "유보"}
+{"i": 4542, "원문": "Sólo se permite un Pokémon salvaje en batallas individuales", "현행": "싱글배틀에서는 야생 포켓몬을 한 마리까지만 허용합니다", "출신": "유보"}
+{"i": 4544, "원문": "Sólo se permite uno o dos Pokémon salvajes en batallas dobles", "현행": "더블배틀에는 야생 포켓몬 한두 마리만 가능합니다", "출신": "유보"}
+{"i": 4545, "원문": "Rivales con cero o más de dos personas no están permitidos", "현행": "상대는 한 명 또는 두 명만 가능합니다", "출신": "유보"}
+{"i": 4546, "원문": "Entrenadores jugadores con cero o más de dos personas no están permitidos", "현행": "플레이어 트레이너는 한 명 또는 두 명만 가능합니다", "출신": "유보"}
+{"i": 4548, "원문": "El oponente 1 no tiene ningún Pokémon saludable", "현행": "상대 1에게 싸울 수 있는 포켓몬이 없다", "출신": "유보"}
+{"i": 4549, "원문": "El oponente 2 no tiene ningún Pokémon saludable", "현행": "상대 2에게 싸울 수 있는 포켓몬이 없다", "출신": "유보"}
+{"i": 4554, "원문": "El oponente debe tener un sólo participante en batallas individuales", "현행": "싱글배틀에서 상대는 한 명만 참가할 수 있습니다", "출신": "유보"}
+{"i": 4555, "원문": "El jugador debe tener un sólo participante en batallas individuales", "현행": "싱글배틀에서 플레이어는 한 명만 참가할 수 있습니다", "출신": "유보"}
+{"i": 4556, "원문": "El jugador 1 no tiene ningún Pokémon saludable", "현행": "플레이어 1에게 싸울 수 있는 포켓몬이 없다", "출신": "유보"}
+{"i": 4557, "원문": "El jugador 2 no tiene ningún Pokémon saludable", "현행": "플레이어 2에게 싸울 수 있는 포켓몬이 없다", "출신": "유보"}
+{"i": 4559, "원문": "El jugador no tiene dos Pokémon saludables", "현행": "플레이어에게 싸울 수 있는 포켓몬이 두 마리 없다", "출신": "유보"}
+{"i": 4561, "원문": "El jugador no tiene ningún Pokémon saludable", "현행": "플레이어에게 싸울 수 있는 포켓몬이 없다", "출신": "유보"}
+{"i": 4645, "원문": "Se esperaba una identificación de sección al inicio del archivo (línea {1})", "현행": "파일 시작 부분에 섹션 식별자가 필요합니다 ({1}번째 줄)", "출신": "유보"}
+{"i": 4648, "원문": "La sección {1} no puede ser una lista ordenada (la sección ha sido interpretada como una lista ordenada porque su primer línea es un número)", "현행": "섹션 {1}\\j[은,는] 순서 목록일 수 없습니다 (첫 줄이 숫자여서 순서 목록으로 해석됨)", "출신": "유보"}
+{"i": 4649, "원문": "La cuenta de líneas de la sección {1} no es divisible en 3 (la sección ha sido interpretada como una lista ordenada porque su primer línea es un número)", "현행": "섹션 {1}의 줄 수가 3으로 나누어떨어지지 않습니다 (첫 줄이 숫자여서 순서 목록으로 해석됨)", "출신": "유보"}
+{"i": 4650, "원문": "La sección {1} tiene una cantidad extraña de entradas (la sección ha sido interpretada como una hash porque su primer línea no es un número)", "현행": "섹션 {1}의 항목 수가 이상합니다 (첫 줄이 숫자가 아니어서 해시로 해석됨)", "출신": "유보"}
+{"i": 4651, "원문": "Se esperaba un número en la sección {1}, en su lugar se obtuvo {2}", "현행": "섹션 {1}에 숫자가 필요하지만 {2}\\j[을,를] 받았습니다", "출신": "유보"}
+{"i": 4653, "원문": "El ancho del frame es 0", "현행": "프레임 너비가 0입니다", "출신": "유보"}
+{"i": 4654, "원문": "El alto del frame es 0", "현행": "프레임 높이가 0입니다", "출신": "유보"}
+{"i": 4655, "원문": "El ancho del bitmap ({1}) no es un múltiplo del ancho del frame ({2}) [Bitmap={3}]", "현행": "비트맵 너비({1})가 프레임 너비({2})의 배수가 아닙니다 「Bitmap={3}」", "출신": "유보"}
+{"i": 4729, "원문": "GRABANDO\nPresione ESC para cancelar.", "현행": "녹화 중\n취소하려면 ESC 키를 누르십시오.", "출신": "유보"}
+{"i": 4852, "원문": "El tipo de entrenador no existe ({1}, {2}, ID {3})", "현행": "트레이너 타입이 존재하지 않습니다 ({1}, {2}, ID {3})", "출신": "유보"}
+{"i": 4856, "원문": "Establecer el nivel de {1}.", "현행": "{1}의 레벨을 설정한다.", "출신": "유보"}
+{"i": 4857, "원문": "Los datos del entrenador han sido agregados a la lista de combates y en PBS/trainers.txt.", "현행": "트레이너 데이터가 배틀 목록과 PBS/trainers.txt에 추가되었습니다.", "출신": "유보"}
+{"i": 4862, "원문": "No se encontró entrenador ({1}, {2}, ID {3})", "현행": "트레이너를 찾을 수 없습니다 ({1}, {2}, ID {3})", "출신": "유보"}
+{"i": 4864, "원문": "El equipo del Rival 1 tiene más de tres Pokémon, lo que no está permitido", "현행": "라이벌 1의 파티에 포켓몬이 3마리를 초과했습니다. 허용되지 않습니다.", "출신": "유보"}
+{"i": 5017, "원문": "El número de nivel ({1}) no es válido.", "현행": "레벨 수치({1})가 올바르지 않다.", "출신": "유보"}
+{"i": 5019, "원문": "El número de especie (núm. {1} de {2}) no es válido.", "현행": "종류 번호({2} 중 {1}번)가 올바르지 않습니다.", "출신": "유보"}
+{"i": 5052, "원문": "La especie no existe ({1}).", "현행": "존재하지 않는 종이다 ({1}).", "출신": "유보"}
+{"i": 5056, "원문": "Se esperaba una sección al inicio del archivo. Este error también puede ocurrir si el archivo no ha sido guardado en codificación UTF-8.\n{1}", "현행": "파일 시작 부분에 섹션이 필요합니다. 파일이 UTF-8 인코딩으로 저장되지 않은 경우에도 이 오류가 발생할 수 있습니다.\r\n{1}", "출신": "유보"}
+{"i": 5057, "원문": "Sintaxis de línea errónea (se esperaba línea con formato XXX=YYY)\n{1}", "현행": "줄 구문 오류 (XXX=YYY 형식의 줄이 필요함)\r\n{1}", "출신": "유보"}
+{"i": 5059, "원문": "Se esperaba una sección al inicio del archivo (línea {1}). La sección inicia con '[nombre de sección]'", "현행": "파일 시작 부분에 섹션이 필요합니다 ({1}번째 줄). 섹션은 ‘「섹션 이름」’으로 시작합니다.", "출신": "유보"}
+{"i": 5060, "원문": "El valor \"{1}\" debe estar entre 0 y 255 (0x00-0xFF en hex), se obtuvo un valor de {2}\n{3}", "현행": "값 “{1}”\\j[은,는] 0에서 255 사이여야 하지만 (16진수 0x00-0xFF) {2} 값을 얻었습니다.\r\n{3}", "출신": "유보"}
+{"i": 5061, "원문": "El valor \"{1}\" debe estar entre -128 y 127, se obtuvo un valor de {2}\n{3}", "현행": "값 “{1}”\\j[은,는] -128에서 127 사이여야 하지만 {2} 값을 얻었습니다.\r\n{3}", "출신": "유보"}
+{"i": 5063, "원문": "El valor \"{1}\" debe estar entre -32768 y 32767, se obtuvo un valor de {2}\n{3}", "현행": "값 “{1}”\\j[은,는] -32768에서 32767 사이여야 하지만 {2} 값을 얻었습니다.\r\n{3}", "출신": "유보"}
+{"i": 5064, "원문": "El campo {1} no tiene un valor booleano (true, false, 1, 0)\n{2}", "현행": "필드 {1}에 불리언 값(true, false, 1, 0)이 없습니다.\r\n{2}", "출신": "유보"}
+{"i": 5065, "원문": "Valor indefinido {1} en {2}\n{3}", "현행": "{2}의 값 {1}\\j[이,가] 정의되지 않음\r\n{3}", "출신": "유보"}
+{"i": 5066, "원문": "Valor incorrecto {1} en {2}\n{3}", "현행": "{2}의 값 {1}\\j[이,가] 잘못됨\r\n{3}", "출신": "유보"}
+{"i": 5067, "원문": "Valor indefinido {1} (se esperaba uno de: {2})\n{3}", "현행": "정의되지 않은 값 {1} (다음 중 하나여야 함: {2})\r\n{3}", "출신": "유보"}
+{"i": 5068, "원문": "Valor incorrecto {1} (se esperaba uno de: {2})\n{3}", "현행": "올바르지 않은 값 {1} (다음 중 하나여야 함: {2})\r\n{3}", "출신": "유보"}
+{"i": 5073, "원문": "El campo '{1}' solo debe contener letras, números y\nguiones bajos, sin iniciar con un número.\n{2}", "현행": "‘{1}’ 필드에는 문자, 숫자, 언더스코어만 포함될 수 있으며\r\n숫자로 시작할 수 없습니다.\r\n{2}", "출신": "유보"}
+{"i": 5074, "원문": "El valor {1} no está definido como una constante en {2}", "현행": "{1} 값은 {2}에 상수로 정의되어 있지 않습니다.", "출신": "유보"}
+{"i": 5075, "원문": "Nombre de constante de objeto indefinido: %s\nEl nombre sólo consiste en letras, números y\nguiones bajos y no puede iniciar con un número.\nAsegúrate de que el objeto está definido en\nPBS/items.txt.\n{1}", "현행": "정의되지 않은 도구 상수 이름: %s\r\n이름은 문자, 숫자, 언더스코어로만 구성되어야 하며\r\n숫자로 시작할 수 없습니다.\r\n해당 오브젝트가\r\nPBS/items.txt에 정의되어 있는지 확인하십시오.\r\n{1}", "출신": "유보"}
+{"i": 5076, "원문": "Nombre de constante de especie indefinido: [%s]\nEl nombre sólo consiste en letras, números y\nguiones bajos y no puede iniciar con un número.\nAsegúrate de que el objeto está definido en\nPBS/pokemon.txt.\n{1}", "현행": "정의되지 않은 종 상수 이름: 「%s」\r\n이름은 문자, 숫자, 언더스코어로만 구성되어야 하며\r\n숫자로 시작할 수 없습니다.\r\n해당 오브젝트가\r\nPBS/pokemon.txt에 정의되어 있는지 확인하십시오.\r\n{1}", "출신": "유보"}
+{"i": 5077, "원문": "Nombre de constante de movimiento indefinido: %s\nEl nombre sólo consiste en letras, números y\nguiones bajos y no puede iniciar con un número.\nAsegúrate de que el objeto está definido en\nPBS/moves.txt.\n{1}", "현행": "정의되지 않은 기술 상수 이름: %s\r\n이름은 문자, 숫자, 언더스코어로만 구성되어야 하며\r\n숫자로 시작할 수 없습니다.\r\n해당 오브젝트가\r\nPBS/moves.txt에 정의되어 있는지 확인하십시오.\r\n{1}", "출신": "유보"}
+{"i": 5078, "원문": "Nombre de constante de naturaleza indefinido: %s\nEl nombre sólo consiste en letras, números y\nguiones bajos y no puede iniciar con un número.\nAsegúrate de que el objeto está definido en\nla sección del script PBNatures.\n{1}", "현행": "정의되지 않은 성격 상수 이름: %s\r\n이름은 문자, 숫자, 언더스코어로만 구성되어야 하며\r\n숫자로 시작할 수 없습니다.\r\n해당 오브젝트가\r\nPBNatures 스크립트 섹션에 정의되어 있는지 확인하십시오.\r\n{1}", "출신": "유보"}
+{"i": 5079, "원문": "Nombre de constante de Entrenador indefinido: %s\nEl nombre sólo consiste en letras, números y\nguiones bajos y no puede iniciar con un número.\nAsegúrate de que el objeto está definido en\ntrainertypes.txt.\n{1}", "현행": "정의되지 않은 트레이너 상수 이름: %s\r\n이름에는 영문자, 숫자,\r\n밑줄만 쓸 수 있으며 숫자로 시작할 수 없습니다.\r\n해당 항목이\r\ntrainertypes.txt에 정의되어 있는지 확인하세요.\r\n{1}", "출신": "유보"}
+{"i": 5080, "원문": "El valor obligatorio '{1}' no ha sido indicado en la sección '{2}'\n{3}", "현행": "필수 값 ‘{1}’\\j[이,가] 섹션 ‘{2}’에 지정되지 않았습니다\r\n{3}", "출신": "유보"}
+{"i": 5081, "원문": "Se esperaba una sección al inicio del archivo\n{1}", "현행": "파일 첫머리에 섹션이 필요합니다\r\n{1}", "출신": "유보"}
+{"i": 5085, "원문": "Aviso: El mapa {1}, mencionado en los datos\nde conexiones de mapas, no ha sido encontrado.\n{2}", "현행": "경고: 맵 연결 데이터에 있는\r\n맵 {1}\\j[을,를] 찾을 수 없습니다.\r\n{2}", "출신": "유보"}
+{"i": 5086, "원문": "El lado Norte del primer mapa debe conectarse con el lado Sur del segundo\n{1}", "현행": "첫 번째 맵의 북쪽은 두 번째 맵의 남쪽과 이어져야 합니다\r\n{1}", "출신": "유보"}
+{"i": 5087, "원문": "El lado Sur del primer mapa debe conectarse con el lado Norte del segundo\n{1}", "현행": "첫 번째 맵의 남쪽은 두 번째 맵의 북쪽과 이어져야 합니다\r\n{1}", "출신": "유보"}
+{"i": 5088, "원문": "El lado Este del primer mapa debe conectarse con el lado Oeste del segundo\n{1}", "현행": "첫 번째 맵의 동쪽은 두 번째 맵의 서쪽과 이어져야 합니다\r\n{1}", "출신": "유보"}
+{"i": 5089, "원문": "El lado Oeste del primer mapa debe conectarse con el lado Este del segundo\n{1}", "현행": "첫 번째 맵의 서쪽은 두 번째 맵의 동쪽과 이어져야 합니다\r\n{1}", "출신": "유보"}
+{"i": 5090, "원문": "Los movimientos de Estado deben tener daño base de 0, use Físico o Especial\n{1}", "현행": "변화 기술의 기본 위력은 0이어야 합니다. 물리나 특수를 쓰세요\r\n{1}", "출신": "유보"}
+{"i": 5091, "원문": "Aviso: Los movimientos Físicos o Especiales no pueden tener daño base de 0, se cambia a movimientos de Estado\n{1}", "현행": "경고: 물리·특수 기술의 기본 위력은 0일 수 없어 변화 기술로 바꿉니다\r\n{1}", "출신": "유보"}
+{"i": 5092, "원문": "No se ha definido el tipo del Pokémon en la sección {2} (PBS/pokemon.txt)", "현행": "섹션 {2}에 포켓몬 타입이 정의되어 있지 않습니다 (PBS/pokemon.txt)", "출신": "유보"}
+{"i": 5093, "원문": "Una especie Pokemon no puede ser enumerada en 0 (PBS/pokemon.txt)", "현행": "포켓몬 종류는 0번으로 매길 수 없습니다 (PBS/pokemon.txt)", "출신": "유보"}
+{"i": 5094, "원문": "Un valor obligatorio {1} no ha sido encontrado o está en blanco en la sección {2} (PBS/pokemon.txt)", "현행": "필수 값 {1}\\j[을,를] 찾을 수 없거나 비어 있습니다 (섹션 {2}, PBS/pokemon.txt)", "출신": "유보"}
+{"i": 5095, "원문": "El valor '{1}' no puede ser menor que o igual a 0 (sección {2}, PBS/pokemon.txt)", "현행": "값 ‘{1}’\\j[은,는] 0 이하일 수 없습니다 (섹션 {2}, PBS/pokemon.txt)", "출신": "유보"}
+{"i": 5097, "원문": "La clase {1} tiene más de 20 caracteres de longitud (sección {2}, PBS/pokemon.txt)", "현행": "클래스 {1}\\j[이,가] 20자를 넘습니다 (섹션 {2}, PBS/pokemon.txt)", "출신": "유보"}
+{"i": 5098, "원문": "El nombre de la especie {1} tiene más de 20 caracteres de longitud (sección {2}, PBS/pokemon.txt)", "현행": "종류 이름 {1}\\j[이,가] 20자를 넘습니다 (섹션 {2}, PBS/pokemon.txt)", "출신": "유보"}
+{"i": 5099, "원문": "No se han definido especies de Pokémon en pokemon.txt", "현행": "pokemon.txt에 정의된 포켓몬 종류가 없습니다", "출신": "유보"}
+{"i": 5100, "원문": "Cantidad de dinero errónea (debe ser entre 0 y 255)\n{1}", "현행": "금액 오류 (0~255 사이여야 함)\r\n{1}", "출신": "유보"}
+{"i": 5101, "원문": "Valor de destreza erróneo (debe ser entre 0 y 255)\n{1}", "현행": "숙련도 값 오류 (0~255 사이여야 함)\r\n{1}", "출신": "유보"}
+{"i": 5102, "원문": "Hay dos tipos de entrenadores ({1} y {2}) con el mismo ID ({3}), lo que no está permitido.\n{4}", "현행": "두 트레이너 타입({1} 및 {2})이 같은 ID({3})를 사용하고 있습니다. 이는 허용되지 않습니다.\r\n{4}", "출신": "유보"}
+{"i": 5103, "원문": "El nombre del entrenador es muy largo\n{1}", "현행": "트레이너 이름이 너무 깁니다\r\n{1}", "출신": "유보"}
+{"i": 5104, "원문": "Se esperaba un número para el ID de batalla del entrenador\n{1}", "현행": "트레이너 배틀 ID에는 숫자가 필요합니다\r\n{1}", "출신": "유보"}
+{"i": 5105, "원문": "Se esperaba un número para la cantidad de Pokémon\n{1}", "현행": "포켓몬 수에는 숫자가 필요합니다\r\n{1}", "출신": "유보"}
+{"i": 5106, "원문": "Se esperaba un nombre de especie: {1}\n{2}", "현행": "종류 이름이 필요합니다: {1}\r\n{2}", "출신": "유보"}
+{"i": 5108, "원문": "Bandera de habilidad errónea: {1} (debe ser 0 o 1 o 2-5)\n{2}", "현행": "특성 플래그 오류: {1} (0, 1 또는 2~5여야 함)\r\n{2}", "출신": "유보"}
+{"i": 5109, "원문": "Bandera de género errónea: {1} (debe ser M o F, o 0 o 1)\n{2}", "현행": "성별 플래그 오류: {1} (M, F 또는 0, 1이어야 함)\r\n{2}", "출신": "유보"}
+{"i": 5110, "원문": "Forma errónea: {1} (debe ser 0 o mayor)\n{2}", "현행": "폼 값 오류: {1} (0 이상이어야 함)\r\n{2}", "출신": "유보"}
+{"i": 5111, "원문": "IV errónea: {1} (debe estar entre 0-31)\n{2}", "현행": "개체값 오류: {1} (0~31 사이여야 함)\r\n{2}", "출신": "유보"}
+{"i": 5112, "원문": "Felicidad errónea: {1} (debe estar entre 0-255)\n{2}", "현행": "친밀도 오류: {1} (0~255 사이여야 함)\r\n{2}", "출신": "유보"}
+{"i": 5114, "원문": "Ball errónea: {1} (debe ser 0 o mayor)\n{2}", "현행": "볼 값 오류: {1} (0 이상이어야 함)\r\n{2}", "출신": "유보"}
+{"i": 5115, "원문": "Los datos de la Casa son necesarios en la sección metadata.txt [{1}]", "현행": "metadata.txt 섹션 「{1}」에 집 데이터가 필요합니다", "출신": "유보"}
+{"i": 5116, "원문": "Los datos de PlayerA son necesarios en la sección metadata.txt [{1}]", "현행": "metadata.txt 섹션 「{1}」에 PlayerA 데이터가 필요합니다", "출신": "유보"}
+{"i": 5117, "원문": "No se ha indicado el archivo de datos de entrenadores en la sección {1}\n{2}", "현행": "섹션 {1}에 트레이너 데이터 파일이 지정되지 않았습니다\r\n{2}", "출신": "유보"}
+{"i": 5118, "원문": "No se pueden definir encuentros en Campo y Cueva en la misma área (mapa ID {1})", "현행": "같은 지역(맵 ID {1})에 들판과 동굴 인카운터를 함께 정의할 수 없습니다", "출신": "유보"}
+{"i": 5119, "원문": "En encounters.txt, se esperaba un línea de especies,\npero se obtuvo \"{1}\" (posiblemente hay muy pocas entradas en un tipo de encuentro).\nVerifica el formato de la sección enumerada con {2},\nque se encuentra justo antes de esta línea.\n{3}", "현행": "encounters.txt에서 종 줄이 와야 하는데\r\n“{1}”\\j[을,를] 받았습니다 (인카운터 타입의 항목이 너무 적을 수 있습니다).\r\n이 줄 바로 앞에 있는\r\n{2}번 섹션의 형식을 확인하세요.\r\n{3}", "출신": "유보"}
+{"i": 5120, "원문": "El número de nivel no es válido: {1}\n{2}", "현행": "레벨 번호가 올바르지 않음: {1}\r\n{2}", "출신": "유보"}
+{"i": 5121, "원문": "El nivel mínimo es mayor que el nivel máximo: {1}\n{2}", "현행": "최소 레벨이 최대 레벨보다 큽니다: {1}\r\n{2}", "출신": "유보"}
+{"i": 5122, "원문": "Se encontró fin de archivo inesperado. Hay muy pocas entradas en la última sección, se esperaban {1} entradas.\nVerifica el formato de la sección número {2}.\n{3}", "현행": "예기치 않은 파일 끝입니다. 마지막 섹션의 항목이 너무 적습니다. {1}개가 필요합니다.\r\n{2}번 섹션의 형식을 확인하세요.\r\n{3}", "출신": "유보"}
+{"i": 5123, "원문": "Sintaxis de densidades errónea en encounters.txt; se obtuvo \"{1}\"\n{2}", "현행": "encounters.txt의 밀도 구문 오류. “{1}”\\j[을,를] 받았습니다\r\n{2}", "출신": "유보"}
+{"i": 5124, "원문": "Tipo de encuentro indefinido {1}, se esperaba uno de los siguientes:\n{2}\n{3}", "현행": "정의되지 않은 인카운터 타입 {1}. 다음 중 하나여야 합니다:\r\n{2}\r\n{3}", "출신": "유보"}
+{"i": 5140, "원문": "PS mayor a los PS totales", "현행": "HP가 최대 HP보다 큼", "출신": "유보"}
+{"i": 5154, "원문": "Archivo {1}, seccion {2}\n{3}", "현행": "파일 {1}, 섹션 {2}\n{3}", "출신": "유보"}
+{"i": 5342, "원문": "Faltan algunos tipos de letras en tu ordenador.\u0001", "현행": "컴퓨터에 일부 글꼴이 없습니다.\u0001", "출신": "유보"}
+{"i": 5343, "원문": "Puedes jugar sin problemas, aunque habrá algunos fallos gráficos..\u0001", "현행": "플레이에는 문제없지만 일부 그래픽 오류가 발생할 수 있습니다..\u0001", "출신": "유보"}
+{"i": 5344, "원문": "Se han instalado algunos tipos de letra.\u0001", "현행": "일부 글꼴을 설치했습니다.\u0001", "출신": "유보"}
+{"i": 5345, "원문": "Para instalar los tipos de letra, copia los archivos de Fonts en la carpeta Fonts en el Panel de Control.", "현행": "글꼴을 설치하려면 Fonts 폴더의 파일을 제어판의 Fonts 폴더에 복사하세요.", "출신": "유보"}
+{"i": 5346, "원문": "Se han instalado los tipos de letra.\u0001", "현행": "글꼴을 설치했습니다.\u0001", "출신": "유보"}
+{"i": 5357, "원문": "Un script está fallando, el juego se va a reiniciar. Vuelve a descargar el juego si este error se repite.", "현행": "스크립트 오류로 게임을 다시 시작합니다. 이 오류가 반복되면 게임을 다시 받으세요.", "출신": "유보"}
+{"i": 5538, "원문": "Clear", "현행": "Clear", "출신": "유보"}
+{"i": 5699, "원문": "Escribe texto usando el teclado.\nPulsa ENTER para confirmar.", "현행": "키보드로 입력하세요.\nENTER를 누르면 확정됩니다.", "출신": "유보"}
+{"i": 5745, "원문": "Lista habiidades:", "현행": "특성 목록:", "출신": "유보"}
+{"i": 5747, "원문": "Fin lista habilidades.", "현행": "특성 목록 끝.", "출신": "유보"}
+{"i": 6005, "원문": "PASOS PARA ECLOSIONAR: {1} ({2} ciclos)", "현행": "부화까지 걸음 수: {1} ({2}사이클)", "출신": "유보"}
+{"i": 6013, "원문": "HABILIDADES: {1}", "현행": "특성: {1}", "출신": "유보"}
+{"i": 6016, "원문": "{1} (común)", "현행": "{1} (일반)", "출신": "유보"}
+{"i": 6017, "원문": "{1} (poco común)", "현행": "{1} (희귀)", "출신": "유보"}
+{"i": 6020, "원문": "EVOLUCIÓN: {1}", "현행": "진화: {1}", "출신": "유보"}
+{"i": 6022, "원문": "{1} por felicidad de día", "현행": "낮에 친밀도로 {1}", "출신": "유보"}
+{"i": 6023, "원문": "{1} por felicidad de noche", "현행": "밤에 친밀도로 {1}", "출신": "유보"}
+{"i": 6027, "원문": "{1} usando {2}", "현행": "{1} / {2} 사용", "출신": "유보"}
+{"i": 6030, "원문": "{1} al nivel {2} si su Ataque es menor que su Defensa", "현행": "공격이 방어보다 낮을 때 레벨 {2}에서 {1}", "출신": "유보"}
+{"i": 6031, "원문": "{1} al nivel {2} dependiendo de su ID", "현행": "ID에 따라 레벨 {2}의 {1}", "출신": "유보"}
+{"i": 6033, "원문": "{1} cuando su belleza es mayor que {2}", "현행": "아름다움 수치가 {2}보다 높을 때 {1}", "출신": "유보"}
+{"i": 6034, "원문": "{1} usando {2} si es macho", "현행": "수컷일 때 {2}\\j[을,를] 쓴 {1}", "출신": "유보"}
+{"i": 6035, "원문": "{1} usando {2} si es hembra", "현행": "암컷일 때 {2}\\j[을,를] 쓴 {1}", "출신": "유보"}
+{"i": 6040, "원문": "{1} al nivel {2} si es macho", "현행": "수컷일 때 레벨 {2}의 {1}", "출신": "유보"}
+{"i": 6041, "원문": "{1} al nivel {2} si es hembra", "현행": "암컷일 때 레벨 {2}의 {1}", "출신": "유보"}
+{"i": 6042, "원문": "{1} subiendo de nivel en {2}", "현행": "{2}에서 레벨업으로 {1}", "출신": "유보"}
+{"i": 6164, "원문": "Sprites animados", "현행": "포켓몬 애니메이션", "출신": "유보"}
+{"i": 6165, "원문": "Animación movimientos", "현행": "기술 애니메이션", "출신": "유보"}
+{"i": 6298, "원문": "Pag Arriba", "현행": "Page Up", "출신": "유보"}
+{"i": 6303, "원문": "Imprimir Pantalla", "현행": "Print Screen", "출신": "유보"}
+{"i": 6317, "원문": "Desp. abajo", "현행": "아래로 스크롤", "출신": "유보"}
+{"i": 6318, "원문": "Desp. arriba", "현행": "위로 스크롤", "출신": "유보"}
+{"i": 6320, "원문": "Radar", "현행": "레이더", "출신": "유보"}
+{"i": 6323, "원문": "¿Poner los controles por defecto?", "현행": "조작키를 기본값으로 되돌릴까?", "출신": "유보"}
+{"i": 6324, "원문": "Selecciona una función para cambiar el botón asignado.", "현행": "할당된 버튼을 바꿀 기능을 선택하세요.", "출신": "유보"}
+{"i": 6325, "원문": "Pulsa una nueva tecla.", "현행": "새 키를 누르세요.", "출신": "유보"}
+{"i": 6327, "원문": "Hay acciones sin asignar, debes asignarlas todas.", "현행": "할당되지 않은 동작이 있습니다. 모두 할당해야 합니다.", "출신": "유보"}
+{"i": 6409, "원문": "Ocultar icono turbo", "현행": "배속 아이콘", "출신": "유보"}
+{"i": 6411, "원문": "Puedes registrar objetos de la Bolsa para usarlos con esta tecla.", "현행": "가방의 도구를 등록해 이 키로 쓸 수 있습니다.", "출신": "유보"}
+{"i": 6758, "원문": "\\se[ItemGet]¡Has obtenido \\c[1]{1}\\c[0]!\\nÉsta contiene \\c[1]{2}\\c[0].\\wtnp[30]", "현행": "\\se[ItemGet]\\c[1]{1}\\c[0]\\j[을,를] 손에 넣었다!\\n안에는 \\c[1]{2}\\c[0]\\j[이,가] 들어 있다.\\wtnp[30]", "출신": "유보"}
+{"i": 6759, "원문": "\\se[ItemGet]¡{1} ha encontrado \\c[1]{2}\\c[0]!\\nÉsta contiene \\c[1]{3}\\c[0].\\wtnp[30]", "현행": "\\se[ItemGet]{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를] 손에 넣었다!\\n안에는 \\c[1]{3}\\c[0]\\j[이,가] 들어 있다.\\wtnp[30]", "출신": "유보"}
+{"i": 6760, "원문": "\\se[ItemGet]¡{1} ha recibido \\c[1]{2}\\c[0]!\\nÉste contiene \\c[1]{3}\\c[0].\\wtnp[30]", "현행": "\\se[ItemGet]{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를] 받았다!\\n안에는 \\c[1]{3}\\c[0]\\j[이,가] 들어 있다.\\wtnp[30]", "출신": "유보"}
+{"i": 6820, "원문": "Elegir modo de randomizar habilidades", "현행": "특성 랜덤 방식 선택", "출신": "유보"}
+{"i": 6821, "원문": "Elige las generaciones para el random", "현행": "랜덤에 포함할 세대 선택", "출신": "유보"}
+{"i": 6822, "원문": "Elija el modo para las habilidades random", "현행": "특성 랜덤 방식을 선택하세요", "출신": "유보"}
+{"i": 6824, "원문": "[ ] Full Random", "현행": "[ ] 풀 랜덤", "출신": "유보"}
+{"i": 6825, "원문": "[X] Full Random", "현행": "[X] 풀 랜덤", "출신": "유보"}
+{"i": 6826, "원문": "[ ] Mapeo de habilidades", "현행": "[ ] 특성 매핑", "출신": "유보"}
+{"i": 6827, "원문": "[X] Mapeo de habilidades", "현행": "[X] 특성 매핑", "출신": "유보"}
+{"i": 6830, "원문": "[ ] Evoluciones random", "현행": "[  ] 진화 랜덤", "출신": "유보"}
+{"i": 6831, "원문": "[X] Evoluciones random", "현행": "[X] 진화 랜덤", "출신": "유보"}
+{"i": 6832, "원문": "[ ] Evoluciones random con BST similar", "현행": "[  ] 비슷한 종족값 진화 랜덤", "출신": "유보"}
+{"i": 6833, "원문": "[X] Evoluciones random con BST similar", "현행": "[X] 비슷한 종족값 진화 랜덤", "출신": "유보"}
+{"i": 6834, "원문": "[ ] Modo Semi Random", "현행": "[  ] 세미 랜덤 모드", "출신": "유보"}
+{"i": 6835, "원문": "[X] Modo Semi Random", "현행": "[X] 세미 랜덤 모드", "출신": "유보"}
+{"i": 6836, "원문": "[ ] Movimientos random", "현행": "[  ] 기술 랜덤", "출신": "유보"}
+{"i": 6837, "원문": "[X] Movimientos random", "현행": "[X] 기술 랜덤", "출신": "유보"}
+{"i": 6838, "원문": "[ ] Random progresivo", "현행": "[  ] 점진적 랜덤", "출신": "유보"}
+{"i": 6839, "원문": "[X] Random progresivo", "현행": "[X] 점진적 랜덤", "출신": "유보"}
+{"i": 6840, "원문": "[ ] Randomizar compatibilidad con MTs", "현행": "[  ] 기술머신 호환 랜덤화", "출신": "유보"}
+{"i": 6841, "원문": "[X] Randomizar compatibilidad con MTs", "현행": "[X] 기술머신 호환 랜덤화", "출신": "유보"}
+{"i": 6846, "원문": "[ ] Randomizar tipos", "현행": "[  ] 타입 랜덤화", "출신": "유보"}
+{"i": 6847, "원문": "[X] Randomizar tipos", "현행": "[X] 타입 랜덤화", "출신": "유보"}
+{"i": 41, "원문": "other", "현행": "기타", "출신": "창작추정"}
+{"i": 1298, "원문": "Debug", "현행": "디버그", "출신": "창작추정"}
+{"i": 1308, "원문": "pokedexSearchbg", "현행": "pokedexSearchbg", "출신": "창작추정"}
+{"i": 1309, "원문": "pokedexbg", "현행": "pokedexbg", "출신": "창작추정"}
+{"i": 1441, "원문": "Shininess", "현행": "색이 다른 포켓몬 여부", "출신": "창작추정"}
+{"i": 1444, "원문": "EV/IV/pID", "현행": "노력치/개체값/pID", "출신": "창작추정"}
+{"i": 1510, "원문": "Randomise pID", "현행": "pID 무작위화", "출신": "창작추정"}
+{"i": 1677, "원문": "Save changes?", "현행": "변경 내용을 저장할까요?", "출신": "창작추정"}
+{"i": 1721, "원문": "Map {1} was not found.", "현행": "맵 {1}번을 찾을 수 없습니다.", "출신": "창작추정"}
+{"i": 2064, "원문": "{1}{2}<c2=06644bd2>\nHP: {3}", "현행": "{1}{2}<c2=06644bd2>\nHP: {3}", "출신": "창작추정"}
+{"i": 2081, "원문": "{1}-{2}", "현행": "{1}-{2}", "출신": "창작추정"}
+{"i": 2106, "원문": "{1} ${2}", "현행": "{1} {2}포켓프랑", "출신": "창작추정"}
+{"i": 2116, "원문": "Graphics/Pictures/Slot Machine/images", "현행": "Graphics/Pictures/Slot Machine/images", "출신": "창작추정"}
+{"i": 2117, "원문": "Graphics/Pictures/Slot Machine/ReelOverlay", "현행": "Graphics/Pictures/Slot Machine/ReelOverlay", "출신": "창작추정"}
+{"i": 2118, "원문": "Graphics/Pictures/Slot Machine/numbers", "현행": "Graphics/Pictures/Slot Machine/numbers", "출신": "창작추정"}
+{"i": 2154, "원문": "Graphics/Pictures/Tile Puzzle/cursor", "현행": "Graphics/Pictures/Tile Puzzle/cursor", "출신": "창작추정"}
+{"i": 2155, "원문": "Graphics/Pictures/Tile Puzzle/tiles#{@board}", "현행": "Graphics/Pictures/Tile Puzzle/tiles#{@board}", "출신": "창작추정"}
+{"i": 2185, "원문": "Variables", "현행": "변수", "출신": "창작추정"}
+{"i": 2319, "원문": "<<", "현행": "←", "출신": "창작추정"}
+{"i": 2320, "원문": ">>", "현행": "→", "출신": "창작추정"}
+{"i": 2325, "원문": "Red Offset:", "현행": "적색 오프셋:", "출신": "창작추정"}
+{"i": 2327, "원문": "Blue Offset:", "현행": "청색 오프셋:", "출신": "창작추정"}
+{"i": 2329, "원문": "Red:", "현행": "빨강:", "출신": "창작추정"}
+{"i": 2331, "원문": "Blue:", "현행": "파랑:", "출신": "창작추정"}
+{"i": 2334, "원문": "X:", "현행": "X:", "출신": "창작추정"}
+{"i": 2335, "원문": "Y:", "현행": "Y:", "출신": "창작추정"}
+{"i": 2339, "원문": "Opacity:", "현행": "불투명도:", "출신": "창작추정"}
+{"i": 2345, "원문": "Front", "현행": "앞", "출신": "창작추정"}
+{"i": 2346, "원문": "Behind focus", "현행": "포커스 뒤", "출신": "창작추정"}
+{"i": 2349, "원문": "User", "현행": "사용자", "출신": "창작추정"}
+{"i": 2351, "원문": "User and target", "현행": "사용자 및 대상", "출신": "창작추정"}
+{"i": 2353, "원문": "Focus:", "현행": "포커스:", "출신": "창작추정"}
+{"i": 2356, "원문": "Add: Play Sound...", "현행": "추가: 효과음 재생...", "출신": "창작추정"}
+{"i": 2359, "원문": "Add: Set Foreground Graphic...", "현행": "추가: 전경 그래픽 설정...", "출신": "창작추정"}
+{"i": 2364, "원문": "[Play user's cry]", "현행": "「사용자의 울음소리 재생」", "출신": "창작추정"}
+{"i": 2366, "원문": "Volume:", "현행": "음량:", "출신": "창작추정"}
+{"i": 2368, "원문": "Play Sound", "현행": "효과음 재생", "출신": "창작추정"}
+{"i": 2369, "원문": "Stop Sound", "현행": "효과음 정지", "출신": "창작추정"}
+{"i": 2371, "원문": "Duration:", "현행": "지속 시간:", "출신": "창작추정"}
+{"i": 2377, "원문": "First Cel:", "현행": "첫 셀:", "출신": "창작추정"}
+{"i": 2378, "원문": "Last Cel:", "현행": "마지막 셀:", "출신": "창작추정"}
+{"i": 2380, "원문": "Position/Zoom/Angle", "현행": "위치/확대·축소/각도", "출신": "창작추정"}
+{"i": 2381, "원문": "Opacity/Blending", "현행": "불투명도/합성", "출신": "창작추정"}
+{"i": 2382, "원문": "X-Axis Movement", "현행": "X축 이동", "출신": "창작추정"}
+{"i": 2383, "원문": "Y-Axis Movement", "현행": "Y축 이동", "출신": "창작추정"}
+{"i": 2384, "원문": "Hue:", "현행": "색조:", "출신": "창작추정"}
+{"i": 2388, "원문": "Total Animations:", "현행": "총 애니메이션 수:", "출신": "창작추정"}
+{"i": 2399, "원문": "Define Curve", "현행": "곡선 정의", "출신": "창작추정"}
+{"i": 2400, "원문": "Define Path", "현행": "경로 정의", "출신": "창작추정"}
+{"i": 2401, "원문": "Name: {1}", "현행": "이름: {1}", "출신": "창작추정"}
+{"i": 2402, "원문": "SE and BG...", "현행": "효과음과 배경...", "출신": "창작추정"}
+{"i": 2403, "원문": "Cel Focus...", "현행": "셀 초점...", "출신": "창작추정"}
+{"i": 2404, "원문": "Paste Last", "현행": "마지막 프레임 붙여넣기", "출신": "창작추정"}
+{"i": 2407, "원문": "Tweening...", "현행": "트위닝...", "출신": "창작추정"}
+{"i": 2408, "원문": "Cel Batch...", "현행": "셀 일괄 설정...", "출신": "창작추정"}
+{"i": 2411, "원문": "Play Opp Anim", "현행": "상대 애니메이션 재생", "출신": "창작추정"}
+{"i": 2412, "원문": "Import Anim...", "현행": "애니메이션 가져오기...", "출신": "창작추정"}
+{"i": 2413, "원문": "Export Anim...", "현행": "애니메이션 내보내기...", "출신": "창작추정"}
+{"i": 2422, "원문": "Properties...", "현행": "속성...", "출신": "창작추정"}
+{"i": 2425, "원문": "Paste", "현행": "붙여넣기", "출신": "창작추정"}
+{"i": 2426, "원문": "Renumber...", "현행": "번호 재할당...", "출신": "창작추정"}
+{"i": 2427, "원문": "Define Path...", "현행": "경로 설정...", "출신": "창작추정"}
+{"i": 2429, "원문": "Animations Organiser", "현행": "애니메이션 관리자", "출신": "창작추정"}
+{"i": 2439, "원문": "[GLOBAL]", "현행": "「GLOBAL」", "출신": "창작추정"}
+{"i": 2495, "원문": "Pokémon 1", "현행": "포켓몬 1", "출신": "창작추정"}
+{"i": 2497, "원문": "Pokémon 2", "현행": "포켓몬 2", "출신": "창작추정"}
+{"i": 2499, "원문": "Pokémon 3", "현행": "포켓몬 3", "출신": "창작추정"}
+{"i": 2501, "원문": "Pokémon 4", "현행": "포켓몬 4", "출신": "창작추정"}
+{"i": 2503, "원문": "Pokémon 5", "현행": "포켓몬 5", "출신": "창작추정"}
+{"i": 2505, "원문": "Pokémon 6", "현행": "포켓몬 6", "출신": "창작추정"}
+{"i": 2672, "원문": "Total PP", "현행": "최대 PP", "출신": "창작추정"}
+{"i": 2732, "원문": "El entrenador no ha sido definido, por lo tanto no puede ser mostrado.", "현행": "트레이너가 정의되지 않아 표시할 수 없습니다.", "출신": "창작추정"}
+{"i": 2741, "원문": "Depurador", "현행": "디버거", "출신": "창작추정"}
+{"i": 2742, "원문": "Salir del Juego", "현행": "게임 종료", "출신": "창작추정"}
+{"i": 2757, "원문": "Ordenamiento", "현행": "정렬", "출신": "창작추정"}
+{"i": 2811, "원문": "No se encontraron coincidencias.", "현행": "일치하는 항목을 찾지 못했습니다.", "출신": "창작추정"}
+{"i": 2849, "원문": "INHABILITADO", "현행": "사용 불가", "출신": "창작추정"}
+{"i": 2882, "원문": "Duplicar", "현행": "복제", "출신": "창작추정"}
+{"i": 2884, "원문": "Setear PS", "현행": "HP 설정", "출신": "창작추정"}
+{"i": 2890, "원문": "Debilitar", "현행": "기절시키기", "출신": "창작추정"}
+{"i": 2893, "원문": "Los PS de {1} se establecieron en {2}.", "현행": "{1}의 HP를 {2}\\j[으로,로] 설정했다.", "출신": "창작추정"}
+{"i": 2897, "원문": "Los PS de {1} están en 0.", "현행": "{1}의 HP가 0이다.", "출신": "창작추정"}
+{"i": 2900, "원문": "El nivel del {1} se estableció en {2}.", "현행": "{1}의 레벨을 {2}\\j[으로,로] 설정했다.", "출신": "창작추정"}
+{"i": 2923, "원문": "La habilidad {1} es natural.", "현행": "특성 {1}\\j[은,는] 자연 발생이다.", "출신": "창작추정"}
+{"i": 2924, "원문": "La habilidad {1} es forzada.", "현행": "특성 {1}\\j[은,는] 강제 지정이다.", "출신": "창작추정"}
+{"i": 2925, "원문": "La naturaleza {1} es natural.", "현행": "성격 {1}\\j[은,는] 자연 발생이다.", "출신": "창작추정"}
+{"i": 2926, "원문": "La naturaleza {1} es forzada.", "현행": "성격 {1}\\j[은,는] 강제 지정이다.", "출신": "창작추정"}
+{"i": 2927, "원문": "Shininess ({1}) es natural.", "현행": "색이 다름 ({1})은 자연 발생이다.", "출신": "창작추정"}
+{"i": 2928, "원문": "Shininess ({1}) es forzado.", "현행": "색이 다름 ({1})은 강제 지정이다.", "출신": "창작추정"}
+{"i": 2930, "원문": "Hacer normal", "현행": "일반으로", "출신": "창작추정"}
+{"i": 2932, "원문": "La forma de {1} se cambió a {2}.", "현행": "{1}의 폼을 {2}\\j[으로,로] 바꿨다.", "출신": "창작추정"}
+{"i": 2942, "원문": "Setear EVs", "현행": "노력치 설정", "출신": "창작추정"}
+{"i": 2943, "원문": "Setear IVs", "현행": "개체값 설정", "출신": "창작추정"}
+{"i": 2944, "원문": "¿Cuál EV cambiar?", "현행": "어떤 노력치를 바꿀까?", "출신": "창작추정"}
+{"i": 2945, "원문": "SEstablecer el EV para {1} (máx. {2}).", "현행": "{1}의 노력치를 설정한다 (최대 {2}).", "출신": "창작추정"}
+{"i": 2961, "원문": "Setear nombre del EO", "현행": "OT 이름 설정", "출신": "창작추정"}
+{"i": 2965, "원문": "Nombre del EO de {1}", "현행": "{1}의 OT 이름", "출신": "창작추정"}
+{"i": 2967, "원문": "Setear el nuevo ID (máx. 65535).", "현행": "새 ID를 설정한다 (최대 65535).", "출신": "창작추정"}
+{"i": 2975, "원문": "No es un huevo", "현행": "알이 아니다", "출신": "창작추정"}
+{"i": 2977, "원문": "Hacer huevo", "현행": "알로 만들기", "출신": "창작추정"}
+{"i": 2978, "원문": "Hacer Pokémon", "현행": "포켓몬 만들기", "출신": "창작추정"}
+{"i": 2987, "원문": "El medidor del corazón de {1} bajo de {2} a {3} (ahora etapa {4}).", "현행": "{1}의 하트게이지가 {2}에서 {3}\\j[으로,로] 내려갔다 (현재 단계 {4}).", "출신": "창작추정"}
+{"i": 3141, "원문": "Iniciado", "현행": "시작", "출신": "창작추정"}
+{"i": 3194, "원문": "Sostener", "현행": "홀드", "출신": "창작추정"}
+{"i": 3205, "원문": "Cuadro diálogo {1}.", "현행": "대화창 {1}.", "출신": "창작추정"}
+{"i": 3275, "원문": "Setear el nivel del Pokémon (máx. {1}).", "현행": "포켓몬의 레벨을 설정합니다 (최대 {1}).", "출신": "창작추정"}
+{"i": 3276, "원문": "El nivel de {1} fue seteado en {2}.", "현행": "{1}의 레벨을 {2}\\j[으로,로] 설정했다.", "출신": "창작추정"}
+{"i": 3280, "원문": "Los movimientos de {1} se restablecieron.", "현행": "{1}의 기술을 되돌렸습니다.", "출신": "창작추정"}
+{"i": 3294, "원문": "Setear la forma del Pokémon.", "현행": "포켓몬의 폼을 설정합니다.", "출신": "창작추정"}
+{"i": 3295, "원문": "La forma de {1} fue seteada en {2}.", "현행": "{1}의 폼을 {2}\\j[으로,로] 설정했다.", "출신": "창작추정"}
+{"i": 3300, "원문": "¿Qué EV cambiar?", "현행": "어떤 노력치를 변경하시겠습니까?", "출신": "창작추정"}
+{"i": 3301, "원문": "Setear el EV para {1} (máx. {2}).", "현행": "{1}의 노력치를 설정합니다 (최대 {2}).", "출신": "창작추정"}
+{"i": 3302, "원문": "Setear el IV para {1} (máx. 31).", "현행": "{1}의 개체값을 설정한다 (최대 31).", "출신": "창작추정"}
+{"i": 3305, "원문": "Dar etapa aleatoria", "현행": "랜덤 진화단계 부여", "출신": "창작추정"}
+{"i": 3306, "원문": "Pokémon extrangero\n{1}\n{2}\n{3} ({4})", "현행": "외국 포켓몬\n{1}\n{2}\n{3} ({4})", "출신": "창작추정"}
+{"i": 3308, "원문": "Setear ID extrangero", "현행": "트레이너 ID 설정", "출신": "창작추정"}
+{"i": 3309, "원문": "¿{1} es el nombre del EO?", "현행": "OT 이름을 {1}\\j[으로,로] 할까?", "출신": "창작추정"}
+{"i": 3311, "원문": "Setear ID nuevo (máx. 65535).", "현행": "새 ID 설정 (최대 65535).", "출신": "창작추정"}
+{"i": 3316, "원문": "El medidor del corazón de {1} bajó de {2} hasta {3} (ahora en etapa {4}).", "현행": "{1}의 하트게이지가 {2}에서 {3}\\j[으로,로] 내려갔다 (현재 단계 {4}).", "출신": "창작추정"}
+{"i": 3394, "원문": "{1} Nv{2} {3}/{4}", "현행": "{1} Lv{2} {3}/{4}", "출신": "창작추정"}
+{"i": 3395, "원문": "FLUJO", "현행": "플로우", "출신": "창작추정"}
+{"i": 3398, "원문": "Dinero:\n<r>${1}", "현행": "소지금:\n<r>${1}", "출신": "창작추정"}
+{"i": 3418, "원문": "[Personalizado]", "현행": "「커스텀」", "출신": "창작추정"}
+{"i": 3424, "원문": "Ingresa un nombre para este regalo.", "현행": "이 선물의 이름을 입력하세요.", "출신": "창작추정"}
+{"i": 3441, "원문": "Exportar selec. a archivo", "현행": "선택 항목 파일로 내보내기", "출신": "창작추정"}
+{"i": 3483, "원문": "El número de rondas es 0 o menos.", "현행": "라운드 수가 0 이하다.", "출신": "창작추정"}
+{"i": 3492, "원문": "Simulando batallas ({1} de {2})", "현행": "배틀 시뮬레이션 중 ({2}개 중 {1}개)", "출신": "창작추정"}
+{"i": 3495, "원문": "SI, USAR EXISTENTE", "현행": "예, 기존 항목 사용", "출신": "창작추정"}
+{"i": 3496, "원문": "SI, USAR NUEVO", "현행": "예, 새 항목 사용", "출신": "창작추정"}
+{"i": 3510, "원문": "NO SELECC.", "현행": "미선택", "출신": "창작추정"}
+{"i": 3545, "원문": "Todos los textos del juego se extrajeron y se guardaron en intl.txt.\u0001", "현행": "게임의 모든 텍스트를 추출해 intl.txt에 저장했습니다.\u0001", "출신": "창작추정"}
+{"i": 3549, "원문": "Para usar el archivo en un juego, ubica el archivo en la carpeta Data con un nombre diferente, y luego edita la matriz LANGUAGES en el script Settings.", "현행": "게임에서 이 파일을 쓰려면 Data 폴더에 다른 이름으로 넣고 Settings 스크립트의 LANGUAGES 배열을 수정하세요.", "출신": "창작추정"}
+{"i": 3556, "원문": "Agregar Objeto", "현행": "도구 추가", "출신": "창작추정"}
+{"i": 3559, "원문": "Agregar Pokémon", "현행": "포켓몬 추가", "출신": "창작추정"}
+{"i": 3562, "원문": "Usar PC", "현행": "PC 사용", "출신": "창작추정"}
+{"i": 3567, "원문": "Setear Dinero", "현행": "소지금 설정", "출신": "창작추정"}
+{"i": 3572, "원문": "Habilitar Pokégear", "현행": "포켓기어 활성화", "출신": "창작추정"}
+{"i": 3573, "원문": "Habilitar Pokédex", "현행": "도감 활성화", "출신": "창작추정"}
+{"i": 3582, "원문": "Setear Metadatos", "현행": "메타데이터 설정", "출신": "창작추정"}
+{"i": 3583, "원문": "Setear Etiquetas de Terrenos", "현행": "지형 태그 설정", "출신": "창작추정"}
+{"i": 3592, "원문": "Compilar Datos", "현행": "데이터 컴파일", "출신": "창작추정"}
+{"i": 3599, "원문": "AGREGAR OBJETO", "현행": "도구 추가", "출신": "창작추정"}
+{"i": 3601, "원문": "El objeto ha sido agregado.", "현행": "도구를 추가했다.", "출신": "창작추정"}
+{"i": 3617, "원문": "Ahora tiene ${1}.", "현행": "이제 ${1}\\j[을,를] 가지고 있습니다.", "출신": "창작추정"}
+{"i": 3620, "원문": "{1} Medalla {2}", "현행": "{1} 배지 {2}", "출신": "창작추정"}
+{"i": 3634, "원문": "{1}) {2} ({3}), Nv.{4} (dejado con Nv.{5})", "현행": "{1}) {2} ({3}), Lv.{4} (맡길 때 Lv.{5})", "출신": "창작추정"}
+{"i": 3640, "원문": "No hay equipo, no se puede dejar ningún Pokémon.", "현행": "파티가 없어서 포켓몬을 맡길 수 없다.", "출신": "창작추정"}
+{"i": 3641, "원문": "Se ha dejado a {1}.", "현행": "{1}\\j[을,를] 맡겼다.", "출신": "창작추정"}
+{"i": 3647, "원문": "Ya hay un huevo esperando ser retirado.", "현행": "이미 인수를 기다리는 알이 있다.", "출신": "창작추정"}
+{"i": 3663, "원문": "Los Pokémon continuaron vagando.", "현행": "포켓몬은 계속 배회했다.", "출신": "창작추정"}
+{"i": 3668, "원문": "Indicar el nivel del primer Pokémon.", "현행": "첫 번째 포켓몬의 레벨을 지정한다.", "출신": "창작추정"}
+{"i": 3670, "원문": "Indicar el nivel del segundo Pokémon.", "현행": "두 번째 포켓몬의 레벨을 지정한다.", "출신": "창작추정"}
+{"i": 3672, "원문": "ENTRENADOR DOBLE 1", "현행": "더블 트레이너 1", "출신": "창작추정"}
+{"i": 3673, "원문": "ENTRENADOR DOBLE 2", "현행": "더블 트레이너 2", "출신": "창작추정"}
+{"i": 3674, "원문": "Se han compilado todos los datos del juego.", "현행": "게임 데이터를 모두 컴파일했다.", "출신": "창작추정"}
+{"i": 3690, "원문": "Dinero:\n<ar>{1}</ar>", "현행": "소지금:\n<ar>{1}</ar>", "출신": "창작추정"}
+{"i": 3704, "원문": "Cambiar tileset", "현행": "타일셋 변경", "출신": "창작추정"}
+{"i": 3706, "원문": "¿Salir del editor?", "현행": "에디터를 종료할까?", "출신": "창작추정"}
+{"i": 3708, "원문": "Cuadro:", "현행": "프레임:", "출신": "창작추정"}
+{"i": 3710, "원문": "Rojo:", "현행": "빨강:", "출신": "창작추정"}
+{"i": 3711, "원문": "Verde:", "현행": "초록:", "출신": "창작추정"}
+{"i": 3712, "원문": "Azul:", "현행": "파랑:", "출신": "창작추정"}
+{"i": 3714, "원문": "Primer Cuadro:", "현행": "첫 프레임:", "출신": "창작추정"}
+{"i": 3715, "원문": "Último Cuadro:", "현행": "마지막 프레임:", "출신": "창작추정"}
+{"i": 3716, "원문": "Nombre Nuevo:", "현행": "새 이름:", "출신": "창작추정"}
+{"i": 3728, "원문": "Densidad: {1},{2},{3}", "현행": "밀도: {1},{2},{3}", "출신": "창작추정"}
+{"i": 3729, "원문": "Densidad: Aún no definida", "현행": "밀도: 아직 설정되지 않음", "출신": "창작추정"}
+{"i": 3730, "원문": "[Nuevo Tipo de Encuentro]", "현행": "「새 인카운터 타입」", "출신": "창작추정"}
+{"i": 3732, "원문": "{1}% {2} (Nv.{3})", "현행": "{1}% {2} (Lv.{3})", "출신": "창작추정"}
+{"i": 3733, "원문": "{1}% {2} (Nv.{3}-Nv.{4})", "현행": "{1}% {2} (Lv.{3}-Lv.{4})", "출신": "창작추정"}
+{"i": 3739, "원문": "Por favor, ingrese el nombre del tipo de entrenador.", "현행": "트레이너 타입 이름을 입력하세요.", "출신": "창작추정"}
+{"i": 3742, "원문": "Mixto", "현행": "혼합", "출신": "창작추정"}
+{"i": 3748, "원문": "Nombre del Entrenador", "현행": "트레이너 이름", "출신": "창작추정"}
+{"i": 3749, "원문": "Nombre del tipo de entrenador usado en los textos del juego.", "현행": "게임 텍스트에 쓰이는 트레이너 타입 이름.", "출신": "창작추정"}
+{"i": 3750, "원문": "Dinero por Nivel", "현행": "레벨당 상금", "출신": "창작추정"}
+{"i": 3764, "원문": "El tipo de entrenador fue borrado.", "현행": "트레이너 타입을 삭제했습니다.", "출신": "창작추정"}
+{"i": 3766, "원문": "Tipo Entrenador", "현행": "트레이너 종류", "출신": "창작추정"}
+{"i": 3767, "원문": "Nombre del tipo de entrenador para este Entrenador.", "현행": "이 트레이너의 트레이너 타입 이름.", "출신": "창작추정"}
+{"i": 3768, "원문": "Nombre Entrenador", "현행": "트레이너 이름", "출신": "창작추정"}
+{"i": 3769, "원문": "Nombre del Entrenador.", "현행": "트레이너 이름.", "출신": "창작추정"}
+{"i": 3772, "원문": "Primer Pokémon.", "현행": "첫 번째 포켓몬.", "출신": "창작추정"}
+{"i": 3773, "원문": "Segundo Pokémon.", "현행": "두 번째 포켓몬.", "출신": "창작추정"}
+{"i": 3778, "원문": "Objeto 1", "현행": "도구 1", "출신": "창작추정"}
+{"i": 3780, "원문": "Objeto 2", "현행": "도구 2", "출신": "창작추정"}
+{"i": 3781, "원문": "Objeto 3", "현행": "도구 3", "출신": "창작추정"}
+{"i": 3782, "원문": "Objeto 4", "현행": "도구 4", "출신": "창작추정"}
+{"i": 3783, "원문": "Objeto 5", "현행": "도구 5", "출신": "창작추정"}
+{"i": 3784, "원문": "Objeto 6", "현행": "도구 6", "출신": "창작추정"}
+{"i": 3785, "원문": "Objeto 7", "현행": "도구 7", "출신": "창작추정"}
+{"i": 3786, "원문": "Objeto 8", "현행": "도구 8", "출신": "창작추정"}
+{"i": 3788, "원문": "El combate de entrenador fue borrado.", "현행": "트레이너 배틀을 삭제했습니다.", "출신": "창작추정"}
+{"i": 3790, "원문": "Usar tipo existente", "현행": "기존 종류 사용", "출신": "창작추정"}
+{"i": 3791, "원문": "Usar tipo nuevo", "현행": "새 종류 사용", "출신": "창작추정"}
+{"i": 3792, "원문": "Ahora, ingresa el nombre del entrenador.", "현행": "이제 트레이너 이름을 입력하세요.", "출신": "창작추정"}
+{"i": 3793, "원문": "No hay espacio para crear un entrenador de ese tipo y nombre.", "현행": "해당 타입과 이름으로 트레이너를 생성할 공간이 없습니다.", "출신": "창작추정"}
+{"i": 3797, "원문": "Nivel del Pokémon.", "현행": "포켓몬의 레벨.", "출신": "창작추정"}
+{"i": 3800, "원문": "Movimiento 1", "현행": "기술 1", "출신": "창작추정"}
+{"i": 3802, "원문": "Movimiento 2", "현행": "기술 2", "출신": "창작추정"}
+{"i": 3804, "원문": "Movimiento 3", "현행": "기술 3", "출신": "창작추정"}
+{"i": 3806, "원문": "Movimiento 4", "현행": "기술 4", "출신": "창작추정"}
+{"i": 3808, "원문": "Bandera de la habilidad. 0=primera habilidad, 1=segunda habilidad, 2-5=habilidad oculta.", "현행": "특성 플래그. 0=첫 번째 특성, 1=두 번째 특성, 2~5=숨겨진 특성.", "출신": "창작추정"}
+{"i": 3810, "원문": "Forma del Pokémon.", "현행": "포켓몬의 폼.", "출신": "창작추정"}
+{"i": 3812, "원문": "Naturaleza del Pokémon.", "현행": "포켓몬의 성격.", "출신": "창작추정"}
+{"i": 3815, "원문": "Nombre del Pokémon.", "현행": "포켓몬의 이름.", "출신": "창작추정"}
+{"i": 3817, "원문": "El número de la Poké Ball en la que se encuentra el Pokémon.", "현행": "포켓몬이 들어 있는 몬스터볼의 번호.", "출신": "창작추정"}
+{"i": 3818, "원문": "Tipo de Entrenador", "현행": "트레이너 타입", "출신": "창작추정"}
+{"i": 3820, "원문": "Caminando", "현행": "걷기", "출신": "창작추정"}
+{"i": 3847, "원문": "SETEAR METADATOS", "현행": "메타데이터 설정", "출신": "창작추정"}
+{"i": 3862, "원문": "Archivos PNG con nombres 'battlebgXXX', 'enemybaseXXX', 'playerbaseXXX' en la carpeta Battlebacks, donde XXX es el valor de esta propiedad.", "현행": "Battlebacks 폴더의 ‘battlebgXXX’, ‘enemybaseXXX’, ‘playerbaseXXX’ PNG 파일. XXX는 이 속성의 값입니다.", "출신": "창작추정"}
+{"i": 3872, "원문": "Efecto Musical por defecto reproducido en la victoria contra un entrenador.", "현행": "트레이너를 이겼을 때 재생되는 기본 음악 효과.", "출신": "창작추정"}
+{"i": 3883, "원문": "F5: Ayuda", "현행": "F5: 도움말", "출신": "창작추정"}
+{"i": 3895, "원문": "¿Salir del Editor?", "현행": "에디터를 종료할까?", "출신": "창작추정"}
+{"i": 3898, "원문": "Campo entrecomillado inválido (en: {1})\n{2}", "현행": "따옴표 필드가 올바르지 않음 (위치: {1})\r\n{2}", "출신": "창작추정"}
+{"i": 3917, "원문": "Compilando metadatos", "현행": "메타데이터 컴파일 중", "출신": "창작추정"}
+{"i": 3921, "원문": "Compilando mensajes", "현행": "메시지 컴파일 중", "출신": "창작추정"}
+{"i": 4294, "원문": "El equipo 1 no tiene Pokémon.", "현행": "파티 1에 포켓몬이 없다.", "출신": "창작추정"}
+{"i": 4295, "원문": "El equipo 2 no tiene Pokémon.", "현행": "파티 2에 포켓몬이 없다.", "출신": "창작추정"}
+{"i": 4296, "원문": "Las batallas con más de dos Pokémon salvajes no están permitidas.", "현행": "야생 포켓몬이 두 마리를 넘는 배틀은 할 수 없습니다.", "출신": "창작추정"}
+{"i": 4539, "원문": "Equipo 1 tiene más de {1} Pokémon.", "현행": "팀 1에 포켓몬이 {1}마리를 넘는다.", "출신": "창작추정"}
+{"i": 4540, "원문": "Equipo 2 tiene más de {1} Pokémon.", "현행": "팀 2에 포켓몬이 {1}마리를 넘는다.", "출신": "창작추정"}
+{"i": 4646, "원문": "No se pudo encontrar {1}", "현행": "{1}\\j[을,를] 찾을 수 없었다", "출신": "창작추정"}
+{"i": 4647, "원문": "Nombre de sección inválido {1}", "현행": "잘못된 섹션 이름 {1}", "출신": "창작추정"}
+{"i": 4656, "원문": "El alto del bitmap ({1}) no es un múltiplo del alto del frame ({2}) [Bitmap={3}]", "현행": "비트맵 높이({1})가 프레임 높이({2})의 배수가 아닙니다 「Bitmap={3}」", "출신": "창작추정"}
+{"i": 4657, "원문": "El ancho del bitmap ({1}) no es un múltiplo del contador de frame ({2}) [Bitmap={3}]", "현행": "비트맵 너비({1})가 프레임 수({2})의 배수가 아닙니다 「Bitmap={3}」", "출신": "창작추정"}
+{"i": 4730, "원문": "REPRODUCIENDO...", "현행": "재생 중...", "출신": "창작추정"}
+{"i": 4826, "원문": "Lunes", "현행": "월요일", "출신": "창작추정"}
+{"i": 4827, "원문": "Martes", "현행": "화요일", "출신": "창작추정"}
+{"i": 4828, "원문": "Miércoles", "현행": "수요일", "출신": "창작추정"}
+{"i": 4829, "원문": "Jueves", "현행": "목요일", "출신": "창작추정"}
+{"i": 4830, "원문": "Viernes", "현행": "금요일", "출신": "창작추정"}
+{"i": 4831, "원문": "Sábado", "현행": "토요일", "출신": "창작추정"}
+{"i": 4832, "원문": "Enero", "현행": "1월", "출신": "창작추정"}
+{"i": 4833, "원문": "Febrero", "현행": "2월", "출신": "창작추정"}
+{"i": 4834, "원문": "Marzo", "현행": "3월", "출신": "창작추정"}
+{"i": 4836, "원문": "Mayo", "현행": "5월", "출신": "창작추정"}
+{"i": 4837, "원문": "Junio", "현행": "6월", "출신": "창작추정"}
+{"i": 4839, "원문": "Agosto", "현행": "8월", "출신": "창작추정"}
+{"i": 4840, "원문": "Septiembre", "현행": "9월", "출신": "창작추정"}
+{"i": 4841, "원문": "Octubre", "현행": "10월", "출신": "창작추정"}
+{"i": 4842, "원문": "Noviembre", "현행": "11월", "출신": "창작추정"}
+{"i": 4843, "원문": "Diciembre", "현행": "12월", "출신": "창작추정"}
+{"i": 4853, "원문": "Ingrese el primer Pokémon.", "현행": "첫 번째 포켓몬을 입력하세요.", "출신": "창작추정"}
+{"i": 4854, "원문": "¿Agregar otro Pokémon?", "현행": "다른 포켓몬을 추가할까?", "출신": "창작추정"}
+{"i": 4855, "원문": "¡Este entrenador debe tener al menos 1 Pokémon!", "현행": "이 트레이너는 포켓몬을 적어도 1마리 가지고 있어야 한다!", "출신": "창작추정"}
+{"i": 4858, "원문": "¿Agregar tipo de entrenador nuevo {1}?", "현행": "새로운 트레이너 타입 {1}\\j[을,를] 추가할까?", "출신": "창작추정"}
+{"i": 4859, "원문": "¿Agregar combate nuevo {1} (de {2}) para ({3}, {4})?", "현행": "({3}, {4})에 새 배틀 {1} ({2} 중)\\j[을,를] 추가할까?", "출신": "창작추정"}
+{"i": 4860, "원문": "¿Agregar entrenador nuevo ({1}, {2}, ID {3})?", "현행": "새로운 트레이너 ({1}, {2}, ID {3})\\j[을,를] 추가할까?", "출신": "창작추정"}
+{"i": 4861, "원문": "¿Agregar entrenador nuevo ({1}, {2})?", "현행": "새로운 트레이너 ({1}, {2})\\j[을,를] 추가할까?", "출신": "창작추정"}
+{"i": 4863, "원문": "SALTANDO COMBATES...", "현행": "배틀 스킵 중...", "출신": "창작추정"}
+{"i": 5062, "원문": "El valor \"{1}\" debe estar entre 0 y 65535 (0x0000-0xFFFF en hex), se obtuvo un valor de {2}\n{3}", "현행": "값 “{1}”\\j[은,는] 0에서 65535 사이여야 하지만 (16진수 0x0000-0xFFFF) {2} 값을 얻었습니다.\r\n{3}", "출신": "창작추정"}
+{"i": 5069, "원문": "Enumeración no definida\n{1}", "현행": "정의되지 않은 열거형\r\n{1}", "출신": "창작추정"}
+{"i": 5070, "원문": "El campo '{1}' debe ser mayor que 0\n{2}", "현행": "‘{1}’ 필드는 0보다 커야 합니다.\r\n{2}", "출신": "창작추정"}
+{"i": 5071, "원문": "El campo '{1}' debe ser 0 o mayor\n{2}", "현행": "‘{1}’ 필드는 0 이상이어야 합니다.\r\n{2}", "출신": "창작추정"}
+{"i": 5072, "원문": "El campo '{1}' no es un número hexadecimal\n{2}", "현행": "‘{1}’ 필드는 16진수 숫자가 아닙니다.\r\n{2}", "출신": "창작추정"}
+{"i": 5082, "원문": "'{1}' no es un tipo definido (PBS/types.txt, {2}, Weaknesses/Debilidades)", "현행": "‘{1}’\\j[은,는] 정의된 타입이 아닙니다 (PBS/types.txt, {2}, Weaknesses/Debilidades)", "출신": "창작추정"}
+{"i": 5083, "원문": "'{1}' no es un tipo definido (PBS/types.txt, {2}, Resistances/Resistencias)", "현행": "‘{1}’\\j[은,는] 정의된 타입이 아닙니다 (PBS/types.txt, {2}, Resistances/Resistencias)", "출신": "창작추정"}
+{"i": 5084, "원문": "'{1}' no es un tipo definido (PBS/types.txt, {2}, Immunities/Inmunidades)", "현행": "‘{1}’\\j[은,는] 정의된 타입이 아닙니다 (PBS/types.txt, {2}, Immunities/Inmunidades)", "출신": "창작추정"}
+{"i": 5096, "원문": "Nombre interno inválido: {1} (sección {2}, PBS/pokemon.txt)", "현행": "내부 이름이 올바르지 않습니다: {1} (섹션 {2}, PBS/pokemon.txt)", "출신": "창작추정"}
+{"i": 5107, "원문": "Nivel erróneo: {1} (debe estar entre 1-{2})\n{3}", "현행": "레벨 오류: {1} (1~{2} 사이여야 함)\r\n{3}", "출신": "창작추정"}
+{"i": 5113, "원문": "Apodo erróneo: {1} (debe ser de 1-20 caracteres)\n{2}", "현행": "별명 오류: {1} (1~20자여야 함)\r\n{2}", "출신": "창작추정"}
+{"i": 5125, "원문": "¿Quieres agregar un entrenador nuevo con el nombre {1}?", "현행": "{1}\\j[이라는,라는] 이름으로 새 트레이너를 추가할까요?", "출신": "창작추정"}
+{"i": 5155, "원문": "Campo entrecomillado invalido (en: {1})", "현행": "따옴표 필드가 올바르지 않음 (위치: {1})", "출신": "창작추정"}
+{"i": 5157, "원문": "Núm Nuevo:", "현행": "새 번호:", "출신": "창작추정"}
+{"i": 5326, "원문": "Pokédex<r><c3={1}>{2}/{3}</c3><br>", "현행": "도감<r><c3={1}>{2}/{3}</c3><br>", "출신": "창작추정"}
+{"i": 5334, "원문": "No se han encontrado partidas.", "현행": "리포트를 찾을 수 없습니다.", "출신": "창작추정"}
+{"i": 5337, "원문": "Otras partidas", "현행": "다른 리포트", "출신": "창작추정"}
+{"i": 5341, "원문": "No tienes más partidas.", "현행": "리포트가 더 이상 없습니다.", "출신": "창작추정"}
+{"i": 5644, "원문": "Vaporwave", "현행": "베이퍼웨이브", "출신": "창작추정"}
+{"i": 5707, "원문": "Nombre<r><c3={1}>{2}</c3><br>", "현행": "이름<r><c3={1}>{2}</c3><br>", "출신": "창작추정"}
+{"i": 5710, "원문": "Archivo<r><c3={1}>{2}</c3><br>", "현행": "파일<r><c3={1}>{2}</c3><br>", "출신": "창작추정"}
+{"i": 5711, "원문": "Archivo<r><c3={1}>1</c3><br>", "현행": "파일<r><c3={1}>1</c3><br>", "출신": "창작추정"}
+{"i": 5746, "원문": "Abils: {1}", "현행": "특성: {1}", "출신": "창작추정"}
+{"i": 5876, "원문": "Decimal", "현행": "소수점", "출신": "창작추정"}
+{"i": 5905, "원문": "+", "현행": "+", "출신": "창작추정"}
+{"i": 5909, "원문": "/?", "현행": "/?", "출신": "창작추정"}
+{"i": 5910, "원문": "`~", "현행": "`~", "출신": "창작추정"}
+{"i": 5911, "원문": "{", "현행": "{", "출신": "창작추정"}
+{"i": 5913, "원문": "}", "현행": "}", "출신": "창작추정"}
+{"i": 5914, "원문": "'\"", "현행": "’“", "출신": "창작추정"}
+{"i": 5985, "원문": "{1} custom4 with {2}", "현행": "{1} custom4 with {2}", "출신": "창작추정"}
+{"i": 5986, "원문": "{1} custom5 with {2}", "현행": "{1} custom5 with {2}", "출신": "창작추정"}
+{"i": 5987, "원문": "{1} custom6 with {2}", "현행": "{1} custom6 with {2}", "출신": "창작추정"}
+{"i": 5988, "원문": "{1} custom7 with {2}", "현행": "{1} custom7 with {2}", "출신": "창작추정"}
+{"i": 6009, "원문": "RATIO DE GÉNERO: {1}", "현행": "성비: {1}", "출신": "창작추정"}
+{"i": 6015, "원문": "{1} (siempre)", "현행": "{1} (항상)", "출신": "창작추정"}
+{"i": 6024, "원문": "{1} al nivel {2}", "현행": "레벨 {2}의 {1}", "출신": "창작추정"}
+{"i": 6025, "원문": "{1} por intercambio", "현행": "교환으로 {1}", "출신": "창작추정"}
+{"i": 6026, "원문": "{1} por intercambio con {2}", "현행": "{2}\\j[과,와] 교환으로 {1}", "출신": "창작추정"}
+{"i": 6028, "원문": "{1} al nivel {2} si su Ataque es mayor que su Defensa", "현행": "공격이 방어보다 높을 때 레벨 {2}에서 {1}", "출신": "창작추정"}
+{"i": 6029, "원문": "{1} al nivel {2} si su Ataque es igual que su Defensa", "현행": "공격과 방어가 같을 때 레벨 {2}에서 {1}", "출신": "창작추정"}
+{"i": 6032, "원문": "{1} al nivel {2} si hay espacio en tu equipo", "현행": "파티에 빈자리가 있을 때 레벨 {2}에서 {1}", "출신": "창작추정"}
+{"i": 6036, "원문": "{1} si lleva {2} de día", "현행": "낮에 {2}\\j[을,를] 지닌 {1}", "출신": "창작추정"}
+{"i": 6037, "원문": "{1} si lleva {2} de noche", "현행": "밤에 {2}\\j[을,를] 지닌 {1}", "출신": "창작추정"}
+{"i": 6039, "원문": "{1} si hay un {2} en el equipo", "현행": "파티에 {2}\\j[이,가] 있을 때 {1}", "출신": "창작추정"}
+{"i": 6043, "원문": "{1} intercambiándolo por {2}", "현행": "{2}\\j[과,와] 교환해서 {1}", "출신": "창작추정"}
+{"i": 6044, "원문": "{1} al nivel {2} de día", "현행": "낮에 레벨 {2}의 {1}", "출신": "창작추정"}
+{"i": 6045, "원문": "{1} al nivel {2} de noche", "현행": "밤에 레벨 {2}의 {1}", "출신": "창작추정"}
+{"i": 6048, "원문": "MOVIMIENTOS POR NIVEL:", "현행": "레벨업으로 배우는 기술:", "출신": "창작추정"}
+{"i": 6049, "원문": "MOVIMIENTOS HUEVO:", "현행": "유전 기술:", "출신": "창작추정"}
+{"i": 6050, "원문": "MOVIMIENTOS POR MT Y MO:", "현행": "기술머신·비전머신으로 배우는 기술:", "출신": "창작추정"}
+{"i": 6217, "원문": "Logros", "현행": "업적", "출신": "창작추정"}
+{"i": 6249, "원문": "INFORMACIÓN", "현행": "정보", "출신": "창작추정"}
+{"i": 6279, "원문": "EV / IV", "현행": "노력치 / 개체값", "출신": "창작추정"}
+{"i": 6295, "원문": "Tabulador", "현행": "탭", "출신": "창작추정"}
+{"i": 6296, "원문": "Pausa", "현행": "일시정지", "출신": "창작추정"}
+{"i": 6297, "원문": "Bloq Mayus", "현행": "Caps Lock", "출신": "창작추정"}
+{"i": 6302, "원문": "Ejecutar", "현행": "실행", "출신": "창작추정"}
+{"i": 6306, "원문": "Multiplicación", "현행": "곱하기", "출신": "창작추정"}
+{"i": 6307, "원문": "Suma", "현행": "더하기", "출신": "창작추정"}
+{"i": 6308, "원문": "Separador", "현행": "구분자", "출신": "창작추정"}
+{"i": 6309, "원문": "Resta", "현행": "빼기", "출신": "창작추정"}
+{"i": 6310, "원문": "Dividir", "현행": "나누기", "출신": "창작추정"}
+{"i": 6311, "원문": "Bloq Num", "현행": "Num Lock", "출신": "창작추정"}
+{"i": 6312, "원문": "Bloq Deslizar", "현행": "Scroll Lock", "출신": "창작추정"}
+{"i": 6313, "원문": "Cancelar/Pausa", "현행": "취소/일시정지", "출신": "창작추정"}
+{"i": 6314, "원문": "Correr/Acción", "현행": "달리기/행동", "출신": "창작추정"}
+{"i": 6315, "원문": "Turbo", "현행": "터보", "출신": "창작추정"}
+{"i": 6408, "원문": "Vsync", "현행": "수직동기화", "출신": "창작추정"}
+{"i": 6412, "원문": ">99", "현행": ">99", "출신": "창작추정"}
+{"i": 6828, "원문": "[ ] Sin randomizar", "현행": "[ ] 랜덤 없음", "출신": "창작추정"}
+{"i": 6829, "원문": "[X] Sin randomizar", "현행": "[X] 랜덤 없음", "출신": "창작추정"}
+{"i": 6842, "원문": "[ ] Randomizar objetos", "현행": "[  ] 도구 랜덤화", "출신": "창작추정"}
+{"i": 6843, "원문": "[X] Randomizar objetos", "현행": "[X] 도구 랜덤화", "출신": "창작추정"}
+{"i": 6844, "원문": "[ ] Randomizar objetos de salvajes", "현행": "[  ] 야생 포켓몬 도구 랜덤화", "출신": "창작추정"}
+{"i": 6845, "원문": "[X] Randomizar objetos de salvajes", "현행": "[X] 야생 포켓몬 도구 랜덤화", "출신": "창작추정"}
+{"i": 6848, "원문": "......\\wt[5] ......\\1", "현행": "......\\wt[5] ......\\1", "출신": "창작추정"}

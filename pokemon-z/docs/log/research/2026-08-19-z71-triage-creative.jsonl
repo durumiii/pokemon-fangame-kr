@@ -1,0 +1,250 @@
+{"i": 1257, "원문": "Djinn", "현행": "진", "출신": "유보"}
+{"i": 2024, "원문": "This team is not allowed.", "현행": "이 팀은 참가할 수 없습니다.", "출신": "유보"}
+{"i": 2066, "원문": "DEFEND", "현행": "방어", "출신": "유보"}
+{"i": 2068, "원문": "FIERCE ATTACK", "현행": "강력 공격", "출신": "유보"}
+{"i": 2070, "원문": "Choose a command.", "현행": "지시를 선택하십시오.", "출신": "유보"}
+{"i": 2071, "원문": "You study each other's movements...", "현행": "서로의 움직임을 살피고 있습니다...", "출신": "유보"}
+{"i": 2072, "원문": "Your attack was not blocked!", "현행": "공격이 막히지 않았습니다!", "출신": "유보"}
+{"i": 2074, "원문": "You pierce through the opponent's defenses!", "현행": "상대의 방어를 뚫었습니다!", "출신": "유보"}
+{"i": 2075, "원문": "You fail to block the opponent's attack!", "현행": "상대의 공격을 막지 못했습니다!", "출신": "유보"}
+{"i": 2076, "원문": "You cross blades with the opponent!", "현행": "상대와 합을 겨룹니다!", "출신": "유보"}
+{"i": 2078, "원문": "You evade the opponent's attack!", "현행": "상대의 공격을 회피했습니다!", "출신": "유보"}
+{"i": 2079, "원문": "The opponent pierces through your defenses!", "현행": "상대가 방어를 뚫었습니다!", "출신": "유보"}
+{"i": 2082, "원문": "Check opponent's cards.", "현행": "상대의 카드를 확인합니다.", "출신": "유보"}
+{"i": 2087, "원문": "Choose {1} cards to use for this duel.", "현행": "이번 듀얼에 사용할 카드 {1}장을 선택하십시오.", "출신": "유보"}
+{"i": 2088, "원문": "{1} cards have been chosen.", "현행": "카드 {1}장을 선택했습니다.", "출신": "유보"}
+{"i": 2090, "원문": "Maximum level must be 0 through 9.", "현행": "최대 레벨은 0에서 9 사이여야 합니다.", "출신": "유보"}
+{"i": 2091, "원문": "Maximum level shouldn't be less than the minimum level.", "현행": "최대 레벨은 최소 레벨보다 낮을 수 없습니다.", "출신": "유보"}
+{"i": 2094, "원문": "Choosing the starting player...", "현행": "선공 플레이어를 정하는 중...", "출신": "유보"}
+{"i": 2097, "원문": "{1} can't move somehow...", "현행": "{1}\\j[이,가] 왠지 움직일 수 없습니다...", "출신": "유보"}
+{"i": 2098, "원문": "The game is a draw.", "현행": "무승부입니다.", "출신": "유보"}
+{"i": 2099, "원문": "Kept all cards of your color.", "현행": "자신 색상의 모든 카드를 지켰습니다.", "출신": "유보"}
+{"i": 2102, "원문": "Got all opponent's cards.", "현행": "상대의 모든 카드를 획득했습니다.", "출신": "유보"}
+{"i": 2105, "원문": "Opponent won all your cards.", "현행": "상대에게 모든 카드를 빼앗겼습니다.", "출신": "유보"}
+{"i": 2107, "원문": "There are no cards that you can buy.", "현행": "살 수 있는 카드가 없습니다.", "출신": "유보"}
+{"i": 2109, "원문": "The {1} card? Certainly.\nHow many would you like?", "현행": "{1} 카드 말이지? 물론 있네.\r\n몇 장 필요한가?", "출신": "유보"}
+{"i": 2113, "원문": "The {1} card? How many would you like to sell?", "현행": "{1} 카드 말인가? 몇 장 팔 텐가?", "출신": "유보"}
+{"i": 2115, "원문": "Turned over the {1} card and received ${2}.", "현행": "{1} 카드를 넘기고 {2}포켓프랑을 받았습니다.", "출신": "유보"}
+{"i": 3489, "원문": "¡Hombre! ¡He perdido!", "현행": "이런! 졌잖아!", "출신": "유보"}
+{"i": 3490, "원문": "Preparándose para generar equipos", "현행": "파티 생성 준비 중", "출신": "유보"}
+{"i": 3494, "원문": "¿Generar equipos de Pokémon para este desafío?", "현행": "이 도전에 사용할 포켓몬 파티를 생성하시겠습니까?", "출신": "유보"}
+{"i": 3498, "원문": "Elegir el desafío.", "현행": "도전을 선택한다.", "출신": "유보"}
+{"i": 3499, "원문": "Este desafío usará la lista de Pokémon de {1}.", "현행": "이 도전에는 {1}의 포켓몬 목록을 사용합니다.", "출신": "유보"}
+{"i": 3500, "원문": "Esto podría tomar un buen tiempo. ¿Estás seguro?", "현행": "시간이 꽤 걸릴 수 있습니다. 정말 진행하시겠습니까?", "출신": "유보"}
+{"i": 3501, "원문": "Generación de equipos completada.", "현행": "파티 생성이 완료되었습니다.", "출신": "유보"}
+{"i": 3516, "원문": "¿Aceptar este Pokémon?", "현행": "이 포켓몬을 받을까?", "출신": "유보"}
+{"i": 4774, "원문": "No hay espacio para depositar un Pokémon", "현행": "포켓몬을 맡길 공간이 없다", "출신": "유보"}
+{"i": 4775, "원문": "No se pudo encontrar el Pokémon depositado", "현행": "맡긴 포켓몬을 찾을 수 없었다", "출신": "유보"}
+{"i": 4865, "원문": "El equipo del Rival 2 tiene más de tres Pokémon, lo que no está permitido", "현행": "라이벌 2의 파티에 포켓몬이 3마리를 초과했습니다. 허용되지 않습니다.", "출신": "유보"}
+{"i": 4905, "원문": "Lo siento, necesitas una medalla nueva.", "현행": "미안하지만 새로운 배지가 필요해.", "출신": "유보"}
+{"i": 4950, "원문": "Usando el objeto...", "현행": "도구를 사용하는 중...", "출신": "유보"}
+{"i": 5045, "원문": "Está por olvidar la canción que conoce.", "현행": "알고 있던 노래를 잊으려 하고 있다.", "출신": "유보"}
+{"i": 5047, "원문": "¿Quieres cambiar esta canción ahora?", "현행": "지금 이 노래로 바꿀까?", "출신": "유보"}
+{"i": 5048, "원문": "¡{1} ha aprendido una canción nueva!", "현행": "{1}\\j[이,가] 새 노래를 배웠다!", "출신": "유보"}
+{"i": 5049, "원문": "¡La puerta de su corazón está abierta! ¡Hacer purificación definitiva!", "현행": "마음의 문이 열렸다! 최종 정화를 실행하라!", "출신": "유보"}
+{"i": 5645, "원문": "Western", "현행": "웨스턴", "출신": "유보"}
+{"i": 5666, "원문": "¿Quieres desactivar el Repartir Experiencia en este Pokémon?", "현행": "이 포켓몬의 학습장치를 끄겠습니까?", "출신": "유보"}
+{"i": 5668, "원문": "¿Quieres activar el Repartir Experiencia en este Pokémon?", "현행": "이 포켓몬의 학습장치를 켜겠습니까?", "출신": "유보"}
+{"i": 5684, "원문": "{1} aumentó su Salud potencial.", "현행": "{1}의 잠재 HP가 올랐다.", "출신": "유보"}
+{"i": 5685, "원문": "{1} aumentó su Ataque potencial.", "현행": "{1}의 잠재 공격이 올랐다.", "출신": "유보"}
+{"i": 5686, "원문": "{1} aumentó su Defensa potencial.", "현행": "{1}의 잠재 방어가 올랐다.", "출신": "유보"}
+{"i": 5687, "원문": "{1} aumentó su Ataque Especial potencial.", "현행": "{1}의 잠재 특수공격이 올랐다.", "출신": "유보"}
+{"i": 5688, "원문": "{1} aumentó su Defensa Especial potencial.", "현행": "{1}의 잠재 특수방어가 올랐다.", "출신": "유보"}
+{"i": 5689, "원문": "{1} aumentó su Velocidad potencial.", "현행": "{1}의 잠재 스피드가 올랐다.", "출신": "유보"}
+{"i": 5733, "원문": "Ya has bebido una Poción Brillante.", "현행": "이미 반짝이는물약을 마셨다.", "출신": "유보"}
+{"i": 5734, "원문": "El siguiente Pokémon salvaje que te encuentres será shiny.", "현행": "다음에 만나는 야생 포켓몬은 색이 다른 포켓몬이 됩니다.", "출신": "유보"}
+{"i": 5749, "원문": "La Lente ya está siendo usada.", "현행": "렌즈는 이미 사용 중이다.", "출신": "유보"}
+{"i": 5750, "원문": "¡\\PN usó Lente de la Verdad!", "현행": "\\PN\\j[은,는] 진실의렌즈를 썼다!", "출신": "유보"}
+{"i": 5768, "원문": "Tienes {1} curación disponible de un máximo de {2}.", "현행": "회복을 {1}회 사용할 수 있습니다 (최대 {2}회).", "출신": "유보"}
+{"i": 5769, "원문": "Tienes {1} curaciones disponibles de un máximo de {2}.", "현행": "회복을 {1}회 사용할 수 있습니다 (최대 {2}회).", "출신": "유보"}
+{"i": 5772, "원문": "¡Tu equipo ha sido curado!", "현행": "파티가 모두 회복되었다!", "출신": "유보"}
+{"i": 5779, "원문": "Lo tengo bastante crudo pero... tal vez si intento esto...", "현행": "상황이 꽤 힘들지만... 이걸 시도해보면 어떨까...", "출신": "유보"}
+{"i": 5789, "원문": "{1} es una basura de Pokémon.", "현행": "{1}\\j[은,는] 쓰레기 같은 포켓몬이다.", "출신": "유보"}
+{"i": 5790, "원문": "{1} es un Pokémon bastante malo.", "현행": "{1}\\j[은,는] 꽤 나쁜 포켓몬이다.", "출신": "유보"}
+{"i": 5793, "원문": "¡{1} es un Pokémon demasiado bueno! ¡No sé qué ofrecerte por él!", "현행": "{1}\\j[은,는] 너무 훌륭한 포켓몬이야! 뭘 주고 바꿔야 할지 모르겠네!", "출신": "유보"}
+{"i": 5794, "원문": "¡{1} es un Pokémon demasiado valioso! No deberías dármelo.", "현행": "{1}\\j[은,는] 너무 소중한 포켓몬이야! 나한테 주면 안 되지.", "출신": "유보"}
+{"i": 6052, "원문": "¡{1} va a ser atacado por su {2}!", "현행": "{1}\\j[은,는] 자신의 {2}에게 공격당한다!", "출신": "유보"}
+{"i": 6097, "원문": "El Pokévial está vacío. Recárgalo en el Centro Pokémon.", "현행": "포켓몬약병이 비었다. 포켓몬센터에서 채울 수 있다.", "출신": "유보"}
+{"i": 6098, "원문": "¿Curar a tu equipo con el Pokévial?", "현행": "포켓몬약병으로 파티를 회복시킬까?", "출신": "유보"}
+{"i": 6100, "원문": "¿Quieres curar a tu equipo con el Pokévial? Le quedan {1} usos de {2}.", "현행": "포켓몬약병으로 파티를 회복시킬까? {2}회 중 {1}회 남았다.", "출신": "유보"}
+{"i": 6158, "원문": "¿Te interesa algo de lo que tengo?", "현행": "마음에 드는 물건이 있나요?", "출신": "유보"}
+{"i": 6171, "원문": "Te faltan materiales.", "현행": "재료가 부족하다.", "출신": "유보"}
+{"i": 6174, "원문": "Hay un ingrediente o cantidad de ingredientes no válido.", "현행": "올바르지 않은 재료이거나 재료의 양이 잘못되었습니다.", "출신": "유보"}
+{"i": 6177, "원문": "caduco", "현행": "쇠약", "출신": "유보"}
+{"i": 6179, "원문": "¡{1} está perdiendo luz!", "현행": "{1}\\j[이,가] 빛을 잃어가고 있다!", "출신": "유보"}
+{"i": 6180, "원문": "¡{1} ha recuperado su luz!", "현행": "{1}\\j[이,가] 빛을 되찾았다!", "출신": "유보"}
+{"i": 6181, "원문": "{1} ya tiene estado Caduco.", "현행": "{1}\\j[은,는] 이미 쇠약 상태다.", "출신": "유보"}
+{"i": 6182, "원문": "¡{1} está perdiendo su luz!", "현행": "{1}\\j[이,가] 빛을 잃어가고 있다!", "출신": "유보"}
+{"i": 6183, "원문": "¡{2} de {1} ha infligido estado Caduco a {3}!", "현행": "{1}의 {2}\\j[이,가] {3}\\j[을,를] 쇠약 상태로 만들었다!", "출신": "유보"}
+{"i": 6197, "원문": "Si no mantienes la cabeza en su sitio, acabarás blandiendo ese Pokémon contra ti. ¡Sigamos!", "현행": "정신 똑바로 차리지 않으면 결국 그 포켓몬을 너 자신에게 휘두르게 될 거다. 계속하자!", "출신": "유보"}
+{"i": 6201, "원문": "Esa luz que desprenden tus Pokémon es cautivadora. ¿Me permites tomar una muestra?", "현행": "당신의 포켓몬이 뿜어내는 그 빛은 참으로 매혹적이군요. 표본을 조금 채취해도 되겠습니까?", "출신": "유보"}
+{"i": 6202, "원문": "Esto pinta mal. Tal vez tendría que haberme quedado componiendo música...", "현행": "상황이 안 좋네. 그냥 계속 곡이나 쓸 걸 그랬나...", "출신": "유보"}
+{"i": 6203, "원문": "¡Uy! Si pierdo quedaré en evidencia delante de la mirada de estos reyes y reinas. ¡Qué corte!", "현행": "우와! 지면 이 왕과 왕비님들 시선 앞에서 망신이잖아. 부끄러워라!", "출신": "유보"}
+{"i": 6204, "원문": "¿Cómo? ¿No me engañan mis ojos? Estoy viendo... todo un poderío artístico en el campo de batalla.", "현행": "뭐지? 내가 지금 헛것을 보는 건가? 배틀에서... 이토록 압도적인 예술의 경지를 보게 될 줄이야.", "출신": "유보"}
+{"i": 6205, "원문": "Ya veo que no eres alguien normal. ¿Acaso tú también tienes la bendición del Árbol Eterno?", "현행": "보통내기가 아니라는 건 알겠다. 너도 영원의 나무의 축복을 받은 건가?", "출신": "유보"}
+{"i": 6206, "원문": "Cuanto más te resistas, peor será. ¡Me obligas a usar a mi Pokémon más potente!", "현행": "버틸수록 네 손해야. 날 내 제일 강한 포켓몬까지 쓰게 만들다니!", "출신": "유보"}
+{"i": 6207, "원문": "\\se[computeropen]{1} accedió al Rancho Pokémon.", "현행": "\\se[computeropen]{1}\\j[이,가] 포켓몬 목장에 접속했다.", "출신": "유보"}
+{"i": 6208, "원문": "Rancho Pokémon", "현행": "포켓몬 목장", "출신": "유보"}
+{"i": 6209, "원문": "\\se[PC open]{1} accedió al Rancho Pokémon.", "현행": "\\se[PC open]{1}\\j[이,가] 포켓몬 목장에 접속했다.", "출신": "유보"}
+{"i": 6210, "원문": "¡{1} sufre daño por el frío!", "현행": "{1}\\j[은,는] 추위로 데미지를 입었다!", "출신": "유보"}
+{"i": 6213, "원문": "{1} fue transferido al Rancho.", "현행": "{1}\\j[을,를] 목장으로 보냈다.", "출신": "유보"}
+{"i": 6214, "원문": "¡Robar es de ladrones y políticos!", "현행": "남의 것에 손대면 도둑!", "출신": "유보"}
+{"i": 6216, "원문": "¡El Pokémon está bloqueado en el uso de {2}!", "현행": "포켓몬은 {2}만 쓸 수 있게 됐다!", "출신": "유보"}
+{"i": 6232, "원문": "¡Se activó Retirada de {1}!", "현행": "{1}의 회수가 발동했다!", "출신": "유보"}
+{"i": 6233, "원문": "Has elegido el camino del tormento, ¡será un placer indescriptible!", "현행": "고통의 길을 골랐군. 말로 다 못 할 즐거움이 되겠어!", "출신": "유보"}
+{"i": 6234, "원문": "¡Eh, cuidado con mancharme el traje! Que vale más que diez veces tú.", "현행": "내 옷에 얼룩 묻히지 마! 너보다 열 배는 비싼 거니까.", "출신": "유보"}
+{"i": 6235, "원문": "Siento que me voy haciendo más fuerte a medida que el combate transcurre. ¿Me permites que desate todo el poder de este Pokémon?", "현행": "배틀이 이어질수록 내가 강해지는 게 느껴진다. 이 포켓몬의 모든 힘을 해방해도 되겠나?", "출신": "유보"}
+{"i": 6236, "원문": "¡{1} ahora es hembra!", "현행": "{1}\\j[은,는] 이제 암컷이다!", "출신": "유보"}
+{"i": 6238, "원문": "¡{1} no tiene género!", "현행": "{1}\\j[은,는] 성별이 없다!", "출신": "유보"}
+{"i": 6239, "원문": "¡El Pokémon aún no ha nacido!", "현행": "포켓몬이 아직 태어나지 않았다!", "출신": "유보"}
+{"i": 6240, "원문": "Te he horneado un postrecito que creo que te sorprenderá, ¿puedes probarlo, porfi?", "현행": "깜짝 놀랄 만한 디저트를 구워봤어. 한 입만 먹어볼래?", "출신": "유보"}
+{"i": 6241, "원문": "Ya veo que has cuidado de tus Pokémon con mucho esmero. Y ellos responden a ese esfuerzo.", "현행": "포켓몬을 정성껏 돌봐온 게 보이는군. 그들도 그 노력에 답하고 있어.", "출신": "유보"}
+{"i": 6242, "원문": "¿Qué te parece el equipito de Pokémon cuquis que estoy montando? Yo lo adoro.", "현행": "내가 맞추고 있는 귀여운 포켓몬 팀 어때? 난 정말 마음에 들어.", "출신": "유보"}
+{"i": 6246, "원문": "¿Has tenido suficiente? Tú también podrías alcanzar este poder si tuvieras toda la eternidad para entrenar. Yo podría ayudarte.", "현행": "이제 충분한가? 영원의 시간을 들여 단련한다면 너도 이 힘에 닿을 수 있다. 내가 도와줄 수도 있지.", "출신": "유보"}
+{"i": 6247, "원문": "Hay una receta que no está bien definida.", "현행": "제대로 정의되지 않은 레시피가 있다.", "출신": "유보"}
+{"i": 6281, "원문": "Pero todavía tiene efecto el último Amuleto utilizado.", "현행": "하지만 마지막에 쓴 부적의 효과가 아직 남아 있다.", "출신": "유보"}
+{"i": 6282, "원문": "El Amuleto dejó de tener efecto...", "현행": "부적의 효과가 사라졌다...", "출신": "유보"}
+{"i": 6289, "원문": "¡{1} entra a combatir con furia desmedida!", "현행": "{1}\\j[이,가] 걷잡을 수 없는 분노로 배틀에 들어섰다!", "출신": "유보"}
+{"i": 6290, "원문": "¡{1} tintinea como una campana!", "현행": "{1}\\j[이,가] 종처럼 울린다!", "출신": "유보"}
+{"i": 6291, "원문": "¡{1} se curó del estado Caduco!", "현행": "{1}의 쇠약 상태가 나았다!", "출신": "유보"}
+{"i": 6293, "원문": "El nivel de {1} no ha subido.", "현행": "{1}의 레벨은 오르지 않았다.", "출신": "유보"}
+{"i": 6335, "원문": "{1} aumentó el potencial de todas sus estadísticas.", "현행": "{1}의 모든 능력 잠재력이 올랐다.", "출신": "유보"}
+{"i": 6336, "원문": "¡El huevo mágico libera un movimiento adicional!", "현행": "마법의 알이 기술을 하나 더 터뜨렸다!", "출신": "유보"}
+{"i": 6339, "원문": "¡{1} ha roto su baguette de tanta fuerza!", "현행": "{1}\\j[이,가] 힘을 너무 준 나머지 바게트를 부러뜨렸다!", "출신": "유보"}
+{"i": 6350, "원문": "¡Tengo por mío todo cuanto abarca cielo y mar! ¡Este combate también será mío, cariño!", "현행": "하늘과 바다에 닿는 모든 것이 내 것이다! 이 승부도 내 것이 되겠지, 얘야!", "출신": "유보"}
+{"i": 6351, "원문": "Mi convicción es más fuerte que nunca ahora. Las manifestaré a través de mi último Pokémon.", "현행": "지금 내 신념은 그 어느 때보다 굳건해. 마지막 포켓몬으로 보여주겠어!", "출신": "유보"}
+{"i": 6352, "원문": "Se acabó el juego. Voy a aplicarte la dosis más mortal de la que dispongo.", "현행": "장난은 끝이다. 내가 가진 가장 치명적인 걸 쓰지.", "출신": "유보"}
+{"i": 6353, "원문": "Vamos a utilizar nuestra técnica final de cazadora, ¡esto va a ponerse intenso!", "현행": "사냥꾼의 최종 오의를 쓰겠다. 뜨거워질 거야!", "출신": "유보"}
+{"i": 6355, "원문": "¿Qué crees que haces, basura? ¿Pretendes humillarme otra vez? ¡Pienso hacerte lo peor!", "현행": "뭐 하는 짓이야, 쓰레기야? 또 날 망신 주려고? 최악을 보여 주지!", "출신": "유보"}
+{"i": 6356, "원문": "¿Es que no paras? ¡Me defenderé de este y de mil golpes más si hace falta!", "현행": "안 멈출 셈이야? 필요하다면 천 번이라도 막아주지!", "출신": "유보"}
+{"i": 6357, "원문": "No le quedan mucha salud a mis Pokémon, pero se aferrarán a ella hasta el final.", "현행": "내 포켓몬들은 체력이 얼마 없지만 끝까지 버텨낼 거야.", "출신": "유보"}
+{"i": 6358, "원문": "¿Crees que ya has ganado? Todavía no has visto mi as en la manga...", "현행": "이겼다고 생각하나? 아직 내겐 숨은 패가 남아 있다...", "출신": "유보"}
+{"i": 6359, "원문": "¿Has pensado bien en lo que haces? ¡El siguiente golpe va a doler mucho!", "현행": "지금 뭘 하는지 잘 생각했나? 다음 공격은 꽤 아플 거다!", "출신": "유보"}
+{"i": 6360, "원문": "Este calor... este fuego... ¡esto era ser un entrenador Pokémon!", "현행": "이 열기... 이 불꽃... 이게 바로 포켓몬 트레이너지!", "출신": "유보"}
+{"i": 6371, "원문": "¡{1} está sangrando, recibirá más golpes críticos!", "현행": "{1}\\j[이,가] 피를 흘리고 있다. 급소를 더 자주 맞게 된다!", "출신": "유보"}
+{"i": 6375, "원문": "¡{2} de {1} ha infligido estado Hemorragia a {3}!", "현행": "{1}의 {2}\\j[이,가] {3}\\j[을,를] 출혈 상태로 만들었다!", "출신": "유보"}
+{"i": 6379, "원문": "¡{1} empieza a sangrar por la {2}!", "현행": "{1}\\j[은,는] {2} 때문에 출혈 상태가 되었다!", "출신": "유보"}
+{"i": 6383, "원문": "Empiezas a sentir un sueño extraño...", "현행": "묘한 졸음이 밀려온다...", "출신": "유보"}
+{"i": 6384, "원문": "Tu mente se nubla...", "현행": "정신이 흐려진다...", "출신": "유보"}
+{"i": 6393, "원문": "No me dejas otra opción. De verdad que no.", "현행": "다른 선택지를 주지 않는군. 정말로.", "출신": "유보"}
+{"i": 6399, "원문": "¡Entra en razón, por favor! ¡Ni el más feroz de los ejércitos enemigos me dio tanta guerra!", "현행": "제발 정신 좀 차려! 가장 사나운 적군도 나를 이만큼 애먹이진 않았다고!", "출신": "유보"}
+{"i": 6402, "원문": "Antes era un hombre débil. ¡Pero de ese hombre débil resurgió un auténtico gigante con voluntad inquebrantable!", "현행": "예전의 나는 나약한 인간이었다. 하지만 그 나약함을 딛고, 불굴의 의지를 지닌 진정한 거인으로 다시 일어섰다!", "출신": "유보"}
+{"i": 6403, "원문": "¡Mira! ¡Mira ahora! No te lo pierdas, ¿eh?", "현행": "봐! 지금 봐! 놓치지 마, 알겠지?", "출신": "유보"}
+{"i": 6407, "원문": "¡{1} prepara una Lanza Relámpago!", "현행": "{1}\\j[이,가] 번개창을 준비한다!", "출신": "유보"}
+{"i": 6410, "원문": "¿Qué objeto deseas buscar?", "현행": "어떤 도구를 찾을까?", "출신": "유보"}
+{"i": 6497, "원문": "¡Mira esto! ¡Un maleficio forjado en el crisol de las llamas!", "현행": "이걸 봐라! 불길의 도가니 속에서 벼려낸 저주다!", "출신": "유보"}
+{"i": 6498, "원문": "¡{1} iradia un aura dorada!", "현행": "{1}\\j[이,가] 황금빛 오라를 뿜어낸다!", "출신": "유보"}
+{"i": 6499, "원문": "¡Aún puedo liberar más fuerza! ¡Concentraré la energía que me queda en un último martillazo!", "현행": "아직 더 힘을 낼 수 있어! 남은 에너지를 마지막 망치질에 집중하겠다!", "출신": "유보"}
+{"i": 6500, "원문": "Impresionante. Nunca pensé que llegarías tan lejos la primera vez que te vi en mi laboratorio.", "현행": "대단하군. 내 연구소에서 너를 처음 봤을 때, 여기까지 올 줄은 몰랐다.", "출신": "유보"}
+{"i": 6515, "원문": "Confiesa, ¿alguna vez te han roto el corazón?", "현행": "솔직하게 고백해봐, 마음 상해본 적 있어?", "출신": "유보"}
+{"i": 6516, "원문": "\\se[]¡Mon Dieu!\n¡{1} está evolucionando!\\^", "현행": "\\se[]Mon Dieu!\r\n{1}의 모습이...!\\^", "출신": "유보"}
+{"i": 6605, "원문": "Vence a la Maestra de Espadas.", "현행": "검의 달인을 쓰러뜨려라.", "출신": "유보"}
+{"i": 6611, "원문": "Loto", "현행": "로토", "출신": "유보"}
+{"i": 6618, "원문": "Vence al Esclavista de Mentes.", "현행": "마음을 옭아매는 자를 쓰러뜨려라.", "출신": "유보"}
+{"i": 6620, "원문": "Vence a la Bruja de la Llama.", "현행": "불꽃의 마녀를 쓰러뜨려라.", "출신": "유보"}
+{"i": 6622, "원문": "Vence al Forjador de Medallas.", "현행": "배지를 벼리는 자를 쓰러뜨려라.", "출신": "유보"}
+{"i": 6624, "원문": "Vence a la Condesa de Invierno.", "현행": "겨울의 여백작을 쓰러뜨려라.", "출신": "유보"}
+{"i": 6626, "원문": "Vence a la Maestra de Pesadilla.", "현행": "악몽의 주인을 쓰러뜨려라.", "출신": "유보"}
+{"i": 6629, "원문": "El oponente definitivo", "현행": "최강의 상대", "출신": "유보"}
+{"i": 6630, "원문": "Derrota al Arma Definitiva.", "현행": "최종병기를 쓰러뜨려라.", "출신": "유보"}
+{"i": 6631, "원문": "Una isla peculiar", "현행": "독특한 섬", "출신": "유보"}
+{"i": 6632, "원문": "Resuelve el misterio de la Isla Certijo.", "현행": "세르티호섬의 수수께끼를 풀어라.", "출신": "유보"}
+{"i": 6634, "원문": "Llega a lo profundo de las Criptas de Luminalia.", "현행": "미르 지하묘지 깊은 곳까지 도달하라.", "출신": "유보"}
+{"i": 6636, "원문": "Encuentra el tesoro de la Isla Montesanto.", "현행": "몬테산토섬의 보물을 찾아라.", "출신": "유보"}
+{"i": 6645, "원문": "Pokévial Definitivo", "현행": "궁극의 포켓몬약병", "출신": "유보"}
+{"i": 6647, "원문": "Hogar reconstruido", "현행": "재건된 집", "출신": "유보"}
+{"i": 6659, "원문": "Vence a la Sombra de la Ópera.", "현행": "오페라의 그림자를 쓰러뜨려라.", "출신": "유보"}
+{"i": 6660, "원문": "Vence a la Maravilla Mecánica.", "현행": "기계 장치의 경이를 쓰러뜨려라.", "출신": "유보"}
+{"i": 6661, "원문": "Unos cuantos Pokémon", "현행": "포켓몬 몇 마리", "출신": "유보"}
+{"i": 6664, "원문": "Demasiados Pokémon", "현행": "포켓몬이 너무 많다", "출신": "유보"}
+{"i": 6666, "원문": "Vence al Demonio del Cielo y el Mar", "현행": "하늘과 바다의 악마를 쓰러뜨려라", "출신": "유보"}
+{"i": 6667, "원문": "Vence a la Espina Mortal.", "현행": "죽음의 가시를 쓰러뜨려라.", "출신": "유보"}
+{"i": 6668, "원문": "Vence al Regente Perdido.", "현행": "잃어버린 섭정을 쓰러뜨려라.", "출신": "유보"}
+{"i": 6669, "원문": "Maestría de MTs", "현행": "기술머신 마스터리", "출신": "유보"}
+{"i": 6670, "원문": "Consigue al menos 100 MTs. Revisa el pedestal de Pueblo Acrílico.", "현행": "기술머신을 100개 이상 모아라. 아크릴리코마을의 받침대를 확인하라.", "출신": "유보"}
+{"i": 6671, "원문": "Maestría de Alquimia", "현행": "연금술 마스터리", "출신": "유보"}
+{"i": 6672, "원문": "Consigue al menos 50 recetas de alquimia. Revisa el pedestal de Pueblo Acrílico.", "현행": "연금술 레시피를 50개 이상 모아라. 아크릴리코마을의 받침대를 확인하라.", "출신": "유보"}
+{"i": 6673, "원문": "Maestría Alfa", "현행": "우두머리 마스터리", "출신": "유보"}
+{"i": 6674, "원문": "Derrota a los Pokémon de los 18 Nidos Alfa. Revisa el pedestal de Pueblo Acrílico.", "현행": "우두머리 둥지 18곳의 포켓몬을 쓰러뜨려라. 아크릴리코마을의 받침대를 확인하라.", "출신": "유보"}
+{"i": 6675, "원문": "Trae a 15 personas a Pueblo Acrílico. Revisa el pedestal de Pueblo Acrílico.", "현행": "아크릴리코마을에 15명을 데려와라. 아크릴리코마을의 받침대를 확인하라.", "출신": "유보"}
+{"i": 6676, "원문": "Captura al menos a 250 Pokémon. Revisa el pedestal de Pueblo Acrílico.", "현행": "포켓몬을 250마리 이상 잡아라. 아크릴리코마을의 받침대를 확인하라.", "출신": "유보"}
+{"i": 6677, "원문": "Captura al menos a 500 Pokémon. Revisa el pedestal de Pueblo Acrílico.", "현행": "포켓몬을 500마리 이상 잡아라. 아크릴리코마을의 받침대를 확인하라.", "출신": "유보"}
+{"i": 6678, "원문": "Captura al menos a 750 Pokémon. Revisa el pedestal de Pueblo Acrílico.", "현행": "포켓몬을 750마리 이상 잡아라. 아크릴리코마을의 받침대를 확인하라.", "출신": "유보"}
+{"i": 6683, "원문": "¡Los objetos curativos no tienen efecto en el Modo Heroico!", "현행": "영웅 모드에서는 회복 도구가 효과가 없다!", "출신": "유보"}
+{"i": 6691, "원문": "¡Pokémon míos! ¡Permitidme renacer y sacar mi auténtica fuerza!", "현행": "나의 포켓몬들이여! 내가 다시 태어나 진정한 힘을 발휘할 수 있게 해다오!", "출신": "유보"}
+{"i": 6692, "원문": "¡El Mundo Pokémon con el que sueñas no existe ni existirá nunca! ¡Nada bueno puede salir del gobierno del ser humano!", "현행": "네가 꿈꾸는 포켓몬 세계는 존재하지도 않고, 앞으로도 없을 거다! 인간의 통치에서 좋은 것이 나올 리 없어!", "출신": "유보"}
+{"i": 6693, "원문": "¿De dónde has salido tú? Tienes un estilo de combate muy... arcaico.", "현행": "넌 대체 어디서 나타난 거냐? 배틀 방식이 아주... 고풍스럽군.", "출신": "유보"}
+{"i": 6694, "원문": "¡Ya te queda poco para alcanzar el verdadero Vínculo con tus Pokémon! ¡Continúa luchando un poco más!", "현행": "포켓몬과 진정한 유대를 맺기까지 얼마 안 남았다! 조금만 더 힘내서 싸워라!", "출신": "유보"}
+{"i": 6699, "원문": "¿Esto es lo que sienten los entrenadores todos los días? ¡Ahora entiendo por qué tiene tanto éxito eso de conseguir medallas!", "현행": "트레이너들은 매일 이런 기분을 느끼는 건가? 배지를 모으는 게 왜 그렇게 인기 있는지 이제 알겠어!", "출신": "유보"}
+{"i": 6700, "원문": "Pasa la noche en el Balneario Oculto.", "현행": "숨겨진 온천에서 하룻밤을 보내라.", "출신": "유보"}
+{"i": 6701, "원문": "Un encuentro destinado", "현행": "운명적인 만남", "출신": "유보"}
+{"i": 6703, "원문": "La caída del rey", "현행": "왕의 몰락", "출신": "유보"}
+{"i": 6704, "원문": "¡Mi espada destruye imperios enteros! ¿Qué crees que será capaz de hacerle a tus Pokémon?", "현행": "내 검은 제국 전체를 무너뜨린다! 네 포켓몬에게는 무슨 짓을 할 수 있을 것 같으냐?", "출신": "유보"}
+{"i": 6705, "원문": "¡Esto ya estaba calculado! ¡Ahora verás florecer mi plan maestro!", "현행": "이것도 다 계산된 것이다! 이제 내 위대한 계획이 결실을 맺는 모습을 보아라!", "출신": "유보"}
+{"i": 6710, "원문": "¡Tienes un talento inusitado! ¡Eso no te lo voy a negar nunca!", "현행": "보기 드문 재능이야! 그건 절대로 부정하지 않겠다!", "출신": "유보"}
+{"i": 6711, "원문": "¡No puedes usar ataques de daño fijo!", "현행": "고정 데미지 기술은 쓸 수 없다!", "출신": "유보"}
+{"i": 6712, "원문": "¡Un placer hacer intercambios contigo!", "현행": "교환해서 즐거웠어!", "출신": "유보"}
+{"i": 6713, "원문": "Encuentra las 4 mejoras del Pokévial (5 usos del vial).", "현행": "포켓몬약병 강화 4개를 찾아라 (약병 5회 사용).", "출신": "유보"}
+{"i": 6817, "원문": "Piénsatelo bien, tus Pokémon pueden tener habilidades ocultas muy interesantes.", "현행": "잘 생각해 보세요. 포켓몬이 아주 흥미로운 숨겨진 특성을 가지고 있을지도 모릅니다.", "출신": "유보"}
+{"i": 1932, "원문": "{1}, and you want {2}.\nThat will be ${3}. OK?", "현행": "{1} 카드 {2}장이군.\r\n전부 ${3}일세. 괜찮은가?", "출신": "창작추정"}
+{"i": 2030, "원문": "LIGHT Cup", "현행": "라이트 컵", "출신": "창작추정"}
+{"i": 2067, "원문": "PRECISE ATTACK", "현행": "정밀 공격", "출신": "창작추정"}
+{"i": 2069, "원문": "SPECIAL ATTACK", "현행": "특수공격", "출신": "창작추정"}
+{"i": 2073, "원문": "Your attack was evaded!", "현행": "공격이 빗나갔습니다!", "출신": "창작추정"}
+{"i": 2077, "원문": "You hit each other!", "현행": "서로에게 공격이 적중했습니다!", "출신": "창작추정"}
+{"i": 2080, "원문": "Your special attacks collide!", "현행": "특수공격이 충돌했습니다!", "출신": "창작추정"}
+{"i": 2083, "원문": "Choose a card, or check opponent with Z.", "현행": "카드를 선택하거나 Z키로 상대 카드를 확인하십시오.", "출신": "창작추정"}
+{"i": 2084, "원문": "Choose a card.", "현행": "카드를 선택하십시오.", "출신": "창작추정"}
+{"i": 2085, "원문": "Place the card.", "현행": "카드를 놓으십시오.", "출신": "창작추정"}
+{"i": 2089, "원문": "Minimum level must be 0 through 9.", "현행": "최소 레벨은 0에서 9 사이여야 합니다.", "출신": "창작추정"}
+{"i": 2093, "원문": "Opponent has an illegal card, \"{1}\".", "현행": "상대가 규정 위반 카드 “{1}”\\j[을,를] 가지고 있습니다.", "출신": "창작추정"}
+{"i": 2095, "원문": "{1} will go first.", "현행": "{1}\\j[이,가] 먼저 시작합니다.", "출신": "창작추정"}
+{"i": 2096, "원문": "{1} is making a move...", "현행": "{1}\\j[이,가] 수하는 중...", "출신": "창작추정"}
+{"i": 2100, "원문": "{1} won against {2}.", "현행": "{1}\\j[이,가] {2}에게 승리했습니다.", "출신": "창작추정"}
+{"i": 2101, "원문": "Got opponent's {1} card.", "현행": "상대의 {1} 카드를 획득했습니다.", "출신": "창작추정"}
+{"i": 2103, "원문": "{1} lost against {2}.", "현행": "{1}\\j[이,가] {2}에게 패배했습니다.", "출신": "창작추정"}
+{"i": 2104, "원문": "Opponent won your {1} card.", "현행": "상대에게 {1} 카드를 빼앗겼습니다.", "출신": "창작추정"}
+{"i": 2112, "원문": "The {1} card? Oh, no.\nI can't buy that.", "현행": "{1} 카드? 이런.\r\n그건 살 수 없어.", "출신": "창작추정"}
+{"i": 3362, "원문": "¿Y ésto?\u0001", "현행": "이건 뭐지?\u0001", "출신": "창작추정"}
+{"i": 3486, "원문": "TRAS PERDER...", "현행": "패배 후...", "출신": "창작추정"}
+{"i": 3488, "원문": "¡Si! ¡Yo gané!", "현행": "좋아! 내가 이겼다!", "출신": "창작추정"}
+{"i": 3927, "원문": "saludable", "현행": "건강함", "출신": "창작추정"}
+{"i": 3974, "원문": "Piedra", "현행": "돌", "출신": "창작추정"}
+{"i": 3978, "원문": "Sin objetivo por alguna razón...", "현행": "어째선지 대상이 없다...", "출신": "창작추정"}
+{"i": 5160, "원문": "\\G¡Aquí tienes!", "현행": "\\G여기 있어!", "출신": "창작추정"}
+{"i": 5175, "원문": "Como quieras, no te molestaré más entonces.", "현행": "마음대로 해, 그럼 더 귀찮게 하지 않을게.", "출신": "창작추정"}
+{"i": 5623, "원문": "PokePhone", "현행": "포켓폰", "출신": "창작추정"}
+{"i": 5624, "원문": "Agenda", "현행": "연락처", "출신": "창작추정"}
+{"i": 5633, "원문": "¿Quieres ofrecerme algún Pokémon?", "현행": "나에게 포켓몬을 내주겠니?", "출신": "창작추정"}
+{"i": 5639, "원문": "{1} es un Pokémon bastante bueno.", "현행": "{1}\\j[은,는] 꽤 좋은 포켓몬이지.", "출신": "창작추정"}
+{"i": 6168, "원문": "¿Quieres crear {1} {2}?", "현행": "{1} {2}\\j[을,를] 만들까?", "출신": "창작추정"}
+{"i": 6178, "원문": "¡La luz ha vuelto en {1} gracias a la {2}!", "현행": "{2} 덕분에 {1}의 빛이 돌아왔다!", "출신": "창작추정"}
+{"i": 6283, "원문": "Se incrementaron mucho los PS de {1}.", "현행": "{1}의 HP가 크게 올랐다.", "출신": "창작추정"}
+{"i": 6354, "원문": "¡Aaaah! ¡No voy a perder ahora que tengo a mis Pokémon superpoderosos!", "현행": "으아아! 초강력 포켓몬이 있는데 질 수는 없지!", "출신": "창작추정"}
+{"i": 6369, "원문": "hemorragia", "현행": "출혈", "출신": "창작추정"}
+{"i": 6370, "원문": "¡{1} se curó de la Hemorragia!", "현행": "{1}의 출혈이 멎었다!", "출신": "창작추정"}
+{"i": 6372, "원문": "¡{1} curó su Hemorragia!", "현행": "{1}의 출혈이 멎었다!", "출신": "창작추정"}
+{"i": 6373, "원문": "{1} ya tiene estado Hemorragia.", "현행": "{1}\\j[은,는] 이미 출혈 상태다.", "출신": "창작추정"}
+{"i": 6374, "원문": "¡{1} sufre Hemorragia!", "현행": "{1}\\j[은,는] 출혈 상태가 되었다!", "출신": "창작추정"}
+{"i": 6376, "원문": "Estado: Hemorragia", "현행": "상태: 출혈", "출신": "창작추정"}
+{"i": 6377, "원문": "{1} se curó de la Hemorragia.", "현행": "{1}의 출혈이 멎었다.", "출신": "창작추정"}
+{"i": 6378, "원문": "¡{2} de {1} desgarró a {3}!", "현행": "{1}의 {2} 때문에 {3}\\j[은,는] 출혈 상태가 되었다!", "출신": "창작추정"}
+{"i": 6380, "원문": "¡{1} desgarró a {2}!", "현행": "{1}의 공격에 {2}\\j[은,는] 출혈 상태가 되었다!", "출신": "창작추정"}
+{"i": 6501, "원문": "¿Crees que esos burdos ataques mellarán el hielo de mis Pokémon? ¡Te aplastaremos!", "현행": "그런 어설픈 공격으로 내 포켓몬의 얼음에 금이라도 낼 수 있을 것 같으냐? 짓뭉개 주마!", "출신": "창작추정"}
+{"i": 6604, "원문": "Canola", "현행": "카놀라", "출신": "창작추정"}
+{"i": 6606, "원문": "Hisopo", "현행": "히소포", "출신": "창작추정"}
+{"i": 6609, "원문": "Zafra", "현행": "사프라", "출신": "창작추정"}
+{"i": 6613, "원문": "Belladona", "현행": "벨라도나", "출신": "창작추정"}
+{"i": 6616, "원문": "Derrota al Último Rey.", "현행": "마지막 왕을 쓰러뜨려라.", "출신": "창작추정"}
+{"i": 6619, "원문": "Anturia", "현행": "안투리아", "출신": "창작추정"}
+{"i": 6621, "원문": "Rúpico", "현행": "루피코", "출신": "창작추정"}
+{"i": 6623, "원문": "Cendera", "현행": "센데라", "출신": "창작추정"}
+{"i": 6625, "원문": "Siempreviva", "현행": "시엠프레비바", "출신": "창작추정"}
+{"i": 6627, "원문": "Arrayán", "현행": "아라얀", "출신": "창작추정"}
+{"i": 6633, "원문": "Las criptas de la ciudad", "현행": "도시의 지하묘지", "출신": "창작추정"}
+{"i": 6651, "원문": "Muchos Pokémon", "현행": "포켓몬이 너무 많음", "출신": "창작추정"}
+{"i": 6702, "원문": "Derrota al campanero de Ciudad Luminalia.", "현행": "미르시티의 종지기를 쓰러뜨려라.", "출신": "창작추정"}
+{"i": 6706, "원문": "¡Bien, muy bien! Ya veo que combates de forma amorosa e inclusiva con todos tus Pokémon.", "현행": "좋아, 아주 좋아! 모든 포켓몬을 애정과 포용으로 대하며 배틀하는 게 보이는구나.", "출신": "창작추정"}
+{"i": 6812, "원문": "¡Solo puedes capturar Pokémon de tipo {1}!", "현행": "{1}타입 포켓몬만 잡을 수 있다!", "출신": "창작추정"}
+{"i": 6814, "원문": "Sin duda, tienes el mejor {1} del mundo.", "현행": "분명 세상에서 제일가는 {1}\\j[이,가] 틀림없다.", "출신": "창작추정"}
+{"i": 6815, "원문": "¿Qué habilidad quieres para {1}?", "현행": "{1}에게 어떤 특성을 원하나요?", "출신": "창작추정"}
