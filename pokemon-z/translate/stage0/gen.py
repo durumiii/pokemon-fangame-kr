@@ -232,6 +232,21 @@ def outside_sites():
     return sites, msgs
 
 
+def asset_sites():
+    """그림 자산 문안(apply=image) — 정본은 data/asset-texts.jsonl(Z-74).
+
+    기초 관리용 등재다: 자리·값이 정본 조회와 전수 치환(fix.py)에 잡히게만 한다.
+    그림 제작은 translate/assets/의 생성기가 원료 파일을 직접 읽는다 — 파이프라인
+    편입이 아니다(유지자 지시 2026-08-19). kind 축에 안 얹는다(카드 종류는 원료 몫).
+    """
+    sites, msgs = [], []
+    for r in read_jsonl(DATA / "asset-texts.jsonl"):
+        sid = f"img.{r['file'].rsplit('.', 1)[0]}"
+        sites.append({"id": sid, "src": r["es"], "apply": "image"})
+        msgs.append(_msg(sid, r.get("ko") or r["es"], None))
+    return sites, msgs
+
+
 MART_ADD = KO / "23-script-texts.add.jsonl"
 
 
@@ -359,13 +374,14 @@ def main():
     ssites, smsgs = section_sites(fk, mart_vals)
     usites, umsgs = ui_sites()
     osites, omsgs = outside_sites()
+    asites, amsgs = asset_sites()
 
-    sites = msites + lsites + ssites + usites + osites
+    sites = msites + lsites + ssites + usites + osites + asites
     ids = [s["id"] for s in sites]
     assert len(set(ids)) == len(ids), "자리 id가 겹친다"
 
     msgs = ([{"id": k, "val": v} for k, v in sorted(used_unified.items())]
-            + mmsgs + lmsgs + smsgs + umsgs + omsgs)
+            + mmsgs + lmsgs + smsgs + umsgs + omsgs + amsgs)
     mids = [m["id"] for m in msgs]
     assert len(set(mids)) == len(mids), "값 id가 겹친다"
 

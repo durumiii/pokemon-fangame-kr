@@ -5511,7 +5511,7 @@
 {"id": "m106.e23.p0.c88", "src": "\\c[1]<b>Áster Zephir:</b>\\c[0] No necesitaría nada más porque no importaría.", "apply": "map", "kind": "text", "how": "태그", "who": "Áster Zephir"}
 {"id": "m106.e23.p0.c89", "src": "Si has sentido algo así en este cruel mundo, \\PN, sabrás de lo que te hablo.", "apply": "map", "kind": "text", "how": "상속", "who": "Áster Zephir"}
 {"id": "m106.e23.p0.c102", "src": "\\c[1]<b>Áster Zephir:</b>\\c[0] Supongo que te cuento todo esto porque podría ser mi última conversación.", "apply": "map", "kind": "text", "how": "태그", "who": "Áster Zephir"}
-{"id": "m106.e23.p0.c112", "src": "\\sh¡Buscad, compatriotas! ¡El rey no puede haber salido de la fortaleza!", "apply": "map", "kind": "text", "how": "상속", "who": "Áster Zephir"}
+{"id": "m106.e23.p0.c112", "src": "\\sh¡Buscad, compatriotas! ¡El rey no puede haber salido de la fortaleza!", "apply": "map", "kind": "text", "how": "상속", "who": "Revolucionario"}
 {"id": "m106.e23.p0.c116", "src": "\\c[1]<b>Áster Zephir:</b>\\c[0] En realidad no tenemos por qué caer los dos aquí.", "apply": "map", "kind": "text", "how": "태그", "who": "Áster Zephir"}
 {"id": "m106.e23.p0.c122", "src": "\\c[1]<b>Áster Zephir:</b>\\c[0] Entrégame a ellos y seguro que te perdonarán. No tenemos otra salida, a fin de cuentas.", "apply": "map", "kind": "text", "how": "태그", "who": "Áster Zephir"}
 {"id": "m106.e23.p0.c123", "src": "No tenemos otra salida...", "apply": "map", "kind": "text", "how": "상속", "who": "Áster Zephir"}
@@ -37968,3 +37968,74 @@
 {"id": "tower.g5970ef63", "src": "Álvaroramón", "apply": "surgery"}
 {"id": "tower.g706c0f06", "src": "Ébano", "apply": "surgery"}
 {"id": "tower.g40b68857", "src": "​​Richi", "apply": "surgery"}
+{"id": "img.alquimia1", "src": "Pelaje Fino: Pueden soltarlo Pokémon de\ntipo Normal\nRocío Matinal: Pueden soltarlo Pokémon\nde tipo Bicho\nPluma Suave: Pueden soltarlo Pokémon de\ntipo Volador\nMineral Extraño: Pueden soltarlo Pokémon\nde tipo Roca\nGrava Seca: Pueden soltarlo Pokémon de\nde tipo Tierra\nPolvo Brillante: Pueden soltarlo Pokémon\nde tipo Eléctrico", "apply": "image"}
+{"id": "img.alquimia2", "src": "Brasa Candente: Pueden soltarlo Pokémon\nde tipo Fuego\nAgua Vital: Pueden soltarlo Pokémon de\ntipo Agua\nMusgo Aromático: Pueden soltarlo Pokémon\nde tipo Planta\nPokétoxina: Pueden soltarlo Pokémon de\ntipo Veneno\nEsquirlas Frías: Pueden soltarlo Pokémon\nde tipo Hielo\nFibra Elástica: Pueden soltarlo Pokémon\nde tipo Lucha", "apply": "image"}
+{"id": "img.alquimia3", "src": "Fluido Onírico: Pueden soltarlo Pokémon\nde tipo Psíquico\nEctoplasma: Pueden soltarlo Pokémon de\ntipo Fantasma\nExtracto Sombrío: Pueden soltarlo\nPokémon de tipo Siniestro\nVirutas Férreas: Pueden soltarlo Pokémon\nde tipo Acero\nEscama Dura: Pueden soltarlo\nPokémon de tipo Dragón\nAzúcar Meloso: Pueden soltarlo Pokémon\nde tipo Hada", "apply": "image"}
+{"id": "img.alquimia4", "src": "Madera: Se obtiene cortando árboles y en\ncajas de suministros\n\nGuijarro: Se encuentran en cuevas\ny lugares pedregosos\n\nPolvo de Hueso: Muy escaso.\nSe encuentra en catacumbas y\nprofundidades.", "apply": "image"}
+{"id": "img.cartaBayas", "src": "CARTA DE BAYAS\n\nBAYA ZREZA\nCOLOR ROJO\nCURA LA\nPARALISIS\n\nBAYA ARANJA\nCOLOR AZUL\nCURA UN\nPOCO LOS PS\n\nBAYA ZIUELA\nCOLOR VERDE\nCURA TODOS\nLOS ESTADOS\n\nBAYA ZIDRA\nCOLOR AMARILLO\nCURA MUCHO\nLOS PS\n\nBAYA ATANIA\nCOLOR MORADO\nCURA EL\nSUEÑO", "apply": "image"}
+{"id": "img.cartelActo1", "src": "ACTO 1:\nPOKÉTOUR", "apply": "image"}
+{"id": "img.cartelActo2", "src": "ACTO 2:\nTRAICIÓN", "apply": "image"}
+{"id": "img.cartelActo3", "src": "ACTO 3:\nARMA DEFINITIVA", "apply": "image"}
+{"id": "img.cartelFinal1", "src": "UN TIEMPO DESPUÉS...", "apply": "image"}
+{"id": "img.cartelFinal2", "src": "EPÍLOGO\n\n50 AÑOS DESPUÉS", "apply": "image"}
+{"id": "img.diploma", "src": "Este diploma certifica que has\ncompletado la Pokédex Clásica.\n¡Enhorabuena!\nEricLostie\n(El diseño gráfico es mi pasión...)", "apply": "image"}
+{"id": "img.diplomaNuz1", "src": "Este diploma certifica que has\ncompletado un nuzlocke de Pokémon Z.\n¡Enhorabuena!\nEricLostie\n(El diseño gráfico es mi pasión...)", "apply": "image"}
+{"id": "img.diplomaNuz2", "src": "Este diploma certifica que has\ncompletado un nuzlocke de Pokémon Z\nen dificultad heroica.\n¡Enhorabuena!\nEricLostie\n(El diseño gráfico es mi pasión...)", "apply": "image"}
+{"id": "img.helpbg", "src": "CONTROLES\n\nMovimiento\n\nX Interactuar / Menú\n\nC Interactuar / Correr\n\nZ Atrás\n\nQ Turbo", "apply": "image"}
+{"id": "img.icon_register", "src": "REG\nREG", "apply": "image"}
+{"id": "img.introText1", "src": "HACE MUCHO TIEMPO,\nEL MUNDO POKÉMON\nESTUVO A PUNTO DE\nSER DESTRUIDO POR\nUNA GUERRA ATROZ", "apply": "image"}
+{"id": "img.introText2", "src": "EL REY DE AQUELLOS\nDÍAS, ÁSTER ZÉPHIR,\nCONSTRUYÓ UN\nARTEFACTO CAPAZ DE\nDEVOLVER LA VIDA", "apply": "image"}
+{"id": "img.introText3", "src": "DE LOS HUMANOS\nY POKÉMON QUE\nPERECÍAN EN EL\nCONFLICTO", "apply": "image"}
+{"id": "img.introText4", "src": "SIN EMBARGO, LA GRAN\nGUERRA NO LLEGABA A\nSU FIN", "apply": "image"}
+{"id": "img.introText5", "src": "LLENO DE CÓLERA, EL REY\nMODIFICÓ EL ARTEFACTO\nY LO CONVIRTIÓ EN UN\nARMA", "apply": "image"}
+{"id": "img.introText6", "src": "CAPAZ DE LIBERAR UN\nPODER QUE TERMINASE\nCON TODAS LAS\nBATALLAS", "apply": "image"}
+{"id": "img.introText7", "src": "PERO MUCHOS DETALLES\nDE LA NATURALEZA DE\nESTOS EVENTOS SE HAN\nPERDIDO CON EL TIEMPO", "apply": "image"}
+{"id": "img.introText8", "src": "ESTA ES TODA LA\nHISTORIA DE LO QUE\nOCURRIÓ", "apply": "image"}
+{"id": "img.introTexto0", "src": "KALOS", "apply": "image"}
+{"id": "img.introTexto1", "src": "KALOS\nHACE 300 AÑOS...", "apply": "image"}
+{"id": "img.namingControls", "src": "▼ TECLA F5 ▼ TECLA X TECLA Z\nMAYÚS minús otros BORRAR FIN", "apply": "image"}
+{"id": "img.prisionRot", "src": "PRISIÓN DEL OLVIDO", "apply": "image"}
+{"id": "img.rot10Cendera1", "src": "CENDERA", "apply": "image"}
+{"id": "img.rot10Cendera2", "src": "CONDESA DE INVIERNO", "apply": "image"}
+{"id": "img.rot11Siempreviva1", "src": "SIEMPREVIVA", "apply": "image"}
+{"id": "img.rot11Siempreviva2", "src": "MAESTRA DE CEREMONIAS", "apply": "image"}
+{"id": "img.rot12Arrayan1", "src": "ARRAYÁN", "apply": "image"}
+{"id": "img.rot12Arrayan2", "src": "REGENTE PERDIDO", "apply": "image"}
+{"id": "img.rot13Mirra1", "src": "MIRRA", "apply": "image"}
+{"id": "img.rot13Mirra2", "src": "HERALDO DEL ORO", "apply": "image"}
+{"id": "img.rot1Canola", "src": "CANOLA", "apply": "image"}
+{"id": "img.rot1Canola2", "src": "MAESTRA DE ESPADAS", "apply": "image"}
+{"id": "img.rot1F3", "src": "F3", "apply": "image"}
+{"id": "img.rot1Lider7", "src": "HIBIS", "apply": "image"}
+{"id": "img.rot1Loto", "src": "LOTO", "apply": "image"}
+{"id": "img.rot2F3", "src": "MARAVILLA MECÁNICA", "apply": "image"}
+{"id": "img.rot2Hisopo", "src": "HISOPO", "apply": "image"}
+{"id": "img.rot2Hisopo2", "src": "SOMBRA DE LA ÓPERA", "apply": "image"}
+{"id": "img.rot2Lider7", "src": "ESCLAVISTA DE MENTES", "apply": "image"}
+{"id": "img.rot2Loto", "src": "DEMONIO DEL CIELO\nY DEL MAR", "apply": "image"}
+{"id": "img.rot4Zafra", "src": "ZAFRA", "apply": "image"}
+{"id": "img.rot4Zafra2", "src": "CHEF EN CIERNES", "apply": "image"}
+{"id": "img.rot6Belladona", "src": "BELLADONA", "apply": "image"}
+{"id": "img.rot6Belladona2", "src": "LA ESPINA MORTAL", "apply": "image"}
+{"id": "img.rot8Anturia", "src": "ANTURIA", "apply": "image"}
+{"id": "img.rot8Anturia2", "src": "BRUJA DE LA\nLLAMA", "apply": "image"}
+{"id": "img.rot9Rupico", "src": "RUPICO", "apply": "image"}
+{"id": "img.rot9Rupico2", "src": "FORJADOR DE\nMEDALLAS", "apply": "image"}
+{"id": "img.rotAZ", "src": "ÁSTER Y ANGELINE", "apply": "image"}
+{"id": "img.rotAZ2", "src": "LOS ÚLTIMOS REYES", "apply": "image"}
+{"id": "img.rotAlcaFinal2", "src": "EL ARMA\nDEFINITIVA", "apply": "image"}
+{"id": "img.rotAlcafinal", "src": "ALCA", "apply": "image"}
+{"id": "img.rotMazmorra1", "src": "LA TORRE OSCURA", "apply": "image"}
+{"id": "img.rotMazmorra2", "src": "FÁBRICA DE POKÉBALL", "apply": "image"}
+{"id": "img.rotMazmorra3", "src": "GRUTA HELADA", "apply": "image"}
+{"id": "img.rotMazmorra4", "src": "ANTIGUA FORJA\nINUNDADA", "apply": "image"}
+{"id": "img.rotMazmorra5", "src": "MARAÑA OSCURA", "apply": "image"}
+{"id": "img.rotMazmorra6", "src": "PESADILLA DEL\nCIRCO", "apply": "image"}
+{"id": "img.rotMazmorra7", "src": "TORRE PRISMA", "apply": "image"}
+{"id": "img.rotMazmorra8", "src": "EL ARMA DEFINITIVA", "apply": "image"}
+{"id": "img.sitioArma1", "src": "CIUDAD VERDE, KANTO", "apply": "image"}
+{"id": "img.sitioArma2", "src": "CIUDAD GRES, TESELIA", "apply": "image"}
+{"id": "img.sitioArma3", "src": "ALDEA LILII, ALOLA", "apply": "image"}
+{"id": "img.tutorialBat", "src": "1.Derrota a soldados enemigos para\nconseguir que el ejército de Crisanto\ngane ventaja.\n\n2.Cuanto mayor sea el símbolo de dificultad\ndel enemigo, más ventaja otorgará\nderrotarlo.\n\n3. Hay unos pocos puntos de\ncuración escondidos por la zona.", "apply": "image"}
+{"id": "img.tutorialLegendarios", "src": "Tendrás que encontrar a los 3 Pokémon\nlegendarios para encaminarte al final del\njuego.\n\nPuedes ir a por los tres Pokémon\nlegendarios en el orden que quieras.\n\nLos niveles de las zonas a las que\nelijas ir escalarán con tu nivel. LV", "apply": "image"}
+{"id": "img.tutorialRandom", "src": "¡HAS DESBLOQUEADO EL MODO RANDOM!\nA partir de ahora, en las nuevas partidas\nque empieces en Pokémon Z, se te ofrecerá\nla opción de randomizar el juego cuando\ntomes el control del personaje.\n\nTe recomiendo combinarlo con la dificultad\nHeroica o con el Monotype para un reto más\ninteresante.", "apply": "image"}

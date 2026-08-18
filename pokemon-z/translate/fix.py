@@ -40,7 +40,15 @@ def sweep_skip(name):
     from common import sweep_skip as _s
     return _s(name)
 
+ASSETS = HERE / "data/asset-texts.jsonl"
+
+
 def rows():
+    # 그림 자산 문안(Z-74) — 검색·전수 치환이 이미지 문구에도 미친다(유지자 지시).
+    for i, line in enumerate(ASSETS.read_text(encoding="utf-8").splitlines(), 1):
+        d = json.loads(line)
+        if d.get("ko"):
+            yield ASSETS, i, None, d["es"], d["ko"], d
     for p in sorted(KO.glob("*.jsonl")):
         cur_map = None
         for i, line in enumerate(p.read_text(encoding="utf-8").splitlines(), 1):
@@ -122,7 +130,18 @@ def main():
     for p, i, m, es, v in targets:
         touched.setdefault(p, set()).add(i)
     changed, edits, left = 0, [], []
+    regen = []
     for p, linenos in touched.items():
+        if p == ASSETS:                    # 자산 문안 — 원료 파일에 직접 쓰고 그림은 재생성 몫
+            lines = p.read_text(encoding="utf-8").splitlines()
+            for i in linenos:
+                d = json.loads(lines[i - 1])
+                if query in d.get("ko", ""):
+                    d["ko"] = d["ko"].replace(query, to)
+                    lines[i - 1] = json.dumps(d, ensure_ascii=False)
+                    regen.append(d["file"]); changed += 1
+            p.write_text("\n".join(lines) + "\n", encoding="utf-8")
+            continue
         for i, line in enumerate(p.read_text(encoding="utf-8").splitlines(), 1):
             d = json.loads(line)
             if i not in linenos or query not in d.get("v", ""):
@@ -139,6 +158,10 @@ def main():
         print("멈춤 —", err)
         return
     print(f"치환 {changed}행 (「{query[:30]}」→「{to[:30]}」)")
+    if regen:
+        print(f"⚠ 그림 재생성 필요 {len(regen)}장: {', '.join(regen[:8])}"
+              + (" …" if len(regen) > 8 else "")
+              + " — translate/assets/ 생성기 재실행 후 install_assets.py --write")
     if changed and "--no-build" not in args:
         r = subprocess.run(["uv", "run", str(HERE / "build.py")],
                            capture_output=True, text=True)
