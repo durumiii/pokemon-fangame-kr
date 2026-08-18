@@ -2,7 +2,7 @@
 # requires-python = ">=3.12"
 # dependencies = []
 # ///
-"""Z-74 그림 자산 71장을 한글패치 코어 모드에 반입한다.
+"""Z-74 그림 자산 71장을 Z-GUI 모드에 반입한다.
 
 원장(translate/data/asset-texts.jsonl)의 71장을 생성 폴더에서 코어 모드의
 Graphics/Pictures/로 복사한다. 원장 in_core가 참인 46장은 이미 mod.json에 항목이
@@ -10,7 +10,7 @@ Graphics/Pictures/로 복사한다. 원장 in_core가 참인 46장은 이미 mod
 새 항목의 replaces_crc는 바닐라 원본의 CRC32 — 설치본에 `.orig`가 있으면 그것,
 없으면 아직 안 덮은 설치본 파일에서 잰다.
 
-mod.json은 보관소와 repo(mods/한글패치 코어/mod.json) 양쪽을 같은 내용으로 갱신한다.
+mod.json은 보관소와 repo(mods/Z-GUI/mod.json) 양쪽을 같은 내용으로 갱신한다.
 
     uv run translate/assets/install_assets.py            # 표만 찍는다(기본)
     uv run translate/assets/install_assets.py --write    # 실제로 복사·갱신
@@ -21,8 +21,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 LEDGER = ROOT / "translate/data/asset-texts.jsonl"
 INSTALL = Path("/mnt/d/Game/Pokemon Z/V2.18/Graphics/Pictures")
-CORE = Path("/mnt/d/GameVault/mods/Pokemon Z Fangame/한글패치 코어")
-REPO_MOD = ROOT / "mods/한글패치 코어/mod.json"
+CORE = Path("/mnt/d/GameVault/mods/Pokemon Z Fangame/Z-GUI")
+REPO_MOD = ROOT / "mods/Z-GUI/mod.json"
 DEFAULT_CARDS = Path("/tmp/claude-1000/-home-durumii-workspace-claude-native-"
                      "pokemon-fangame-kr/cb96cd66-0e0a-4e10-8e5f-614e8ecfd6a0/"
                      "scratchpad/cards")

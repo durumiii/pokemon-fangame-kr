@@ -1,0 +1,427 @@
+{
+  "name": "Z-GUI",
+  "game": "Pokemon Z Fangame",
+  "version": "260804",
+  "summary": "전투 화면과 도감의 GUI 그림을 더 나은 것으로 교체합니다",
+  "description": "전투 화면과 도감의 GUI 그림을 갈아 끼우는 개선판이에요. 배틀 커맨드·기술 버튼, 메시지 창, 상태 아이콘, 타입 아이콘이 바뀌어요.\n\n글자가 구워진 그림 세 장(배틀 커맨드 버튼·타입 아이콘·도감 타입 아이콘)은 이 모드가 도맡아요.\n\n출처: 260804_Pokemon_Z_GUI.zip (제3자 배포, 원문 안내문 없음). 원본 지문은 V2.18 설치본의 .orig 백업에서 떴어요.",
+  "engine": "essentials-v16",
+  "install": "assets",
+  "created_at": "2026-08-04",
+  "order": {
+    "after": [
+      "한글패치 통합"
+    ]
+  },
+  "scripts": [],
+  "assets": [
+    {
+      "file": "Graphics/Pictures/alquimia1.png",
+      "install_to": "Graphics/Pictures/alquimia1.png",
+      "replaces_crc": 1083380914
+    },
+    {
+      "file": "Graphics/Pictures/alquimia2.png",
+      "install_to": "Graphics/Pictures/alquimia2.png",
+      "replaces_crc": 1709385634
+    },
+    {
+      "file": "Graphics/Pictures/alquimia3.png",
+      "install_to": "Graphics/Pictures/alquimia3.png",
+      "replaces_crc": 4118358617
+    },
+    {
+      "file": "Graphics/Pictures/alquimia4.png",
+      "install_to": "Graphics/Pictures/alquimia4.png",
+      "replaces_crc": 2556579517
+    },
+    {
+      "file": "Graphics/Pictures/battleCommandButtons.png",
+      "install_to": "Graphics/Pictures/battleCommandButtons.png",
+      "replaces_crc": 2769150955
+    },
+    {
+      "file": "Graphics/Pictures/battleFight.png",
+      "install_to": "Graphics/Pictures/battleFight.png",
+      "replaces_crc": 3129474049
+    },
+    {
+      "file": "Graphics/Pictures/battleFightButtons.png",
+      "install_to": "Graphics/Pictures/battleFightButtons.png",
+      "replaces_crc": 3737237252
+    },
+    {
+      "file": "Graphics/Pictures/battleMessage.png",
+      "install_to": "Graphics/Pictures/battleMessage.png",
+      "replaces_crc": 1544673575
+    },
+    {
+      "file": "Graphics/Pictures/battleStatuses.png",
+      "install_to": "Graphics/Pictures/battleStatuses.png",
+      "replaces_crc": 2276520956
+    },
+    {
+      "file": "Graphics/Pictures/cartaBayas.PNG",
+      "install_to": "Graphics/Pictures/cartaBayas.PNG",
+      "replaces_crc": 778870648
+    },
+    {
+      "file": "Graphics/Pictures/cartelActo1.png",
+      "install_to": "Graphics/Pictures/cartelActo1.png",
+      "replaces_crc": 1074681653
+    },
+    {
+      "file": "Graphics/Pictures/cartelActo2.png",
+      "install_to": "Graphics/Pictures/cartelActo2.png",
+      "replaces_crc": 1689678878
+    },
+    {
+      "file": "Graphics/Pictures/cartelActo3.png",
+      "install_to": "Graphics/Pictures/cartelActo3.png",
+      "replaces_crc": 315599311
+    },
+    {
+      "file": "Graphics/Pictures/cartelFinal1.png",
+      "install_to": "Graphics/Pictures/cartelFinal1.png",
+      "replaces_crc": 671297168
+    },
+    {
+      "file": "Graphics/Pictures/cartelFinal2.png",
+      "install_to": "Graphics/Pictures/cartelFinal2.png",
+      "replaces_crc": 398851210
+    },
+    {
+      "file": "Graphics/Pictures/diploma.png",
+      "install_to": "Graphics/Pictures/diploma.png",
+      "replaces_crc": 1431840952
+    },
+    {
+      "file": "Graphics/Pictures/diplomaNuz1.png",
+      "install_to": "Graphics/Pictures/diplomaNuz1.png",
+      "replaces_crc": 3126702796
+    },
+    {
+      "file": "Graphics/Pictures/diplomaNuz2.png",
+      "install_to": "Graphics/Pictures/diplomaNuz2.png",
+      "replaces_crc": 1701054029
+    },
+    {
+      "file": "Graphics/Pictures/helpbg.png",
+      "install_to": "Graphics/Pictures/helpbg.png",
+      "replaces_crc": 2019899916
+    },
+    {
+      "file": "Graphics/Pictures/icon_register.PNG",
+      "install_to": "Graphics/Pictures/icon_register.PNG",
+      "replaces_crc": 3663483547
+    },
+    {
+      "file": "Graphics/Pictures/introText1.png",
+      "install_to": "Graphics/Pictures/introText1.png",
+      "replaces_crc": 116896022
+    },
+    {
+      "file": "Graphics/Pictures/introText2.png",
+      "install_to": "Graphics/Pictures/introText2.png",
+      "replaces_crc": 3471388905
+    },
+    {
+      "file": "Graphics/Pictures/introText3.png",
+      "install_to": "Graphics/Pictures/introText3.png",
+      "replaces_crc": 3571262245
+    },
+    {
+      "file": "Graphics/Pictures/introText4.png",
+      "install_to": "Graphics/Pictures/introText4.png",
+      "replaces_crc": 3419299805
+    },
+    {
+      "file": "Graphics/Pictures/introText5.png",
+      "install_to": "Graphics/Pictures/introText5.png",
+      "replaces_crc": 194455464
+    },
+    {
+      "file": "Graphics/Pictures/introText6.png",
+      "install_to": "Graphics/Pictures/introText6.png",
+      "replaces_crc": 3735064879
+    },
+    {
+      "file": "Graphics/Pictures/introText7.png",
+      "install_to": "Graphics/Pictures/introText7.png",
+      "replaces_crc": 2467340725
+    },
+    {
+      "file": "Graphics/Pictures/introText8.png",
+      "install_to": "Graphics/Pictures/introText8.png",
+      "replaces_crc": 3656153201
+    },
+    {
+      "file": "Graphics/Pictures/introTexto0.png",
+      "install_to": "Graphics/Pictures/introTexto0.png",
+      "replaces_crc": 2656919753
+    },
+    {
+      "file": "Graphics/Pictures/introTexto1.png",
+      "install_to": "Graphics/Pictures/introTexto1.png",
+      "replaces_crc": 417499347
+    },
+    {
+      "file": "Graphics/Pictures/namingControls.png",
+      "install_to": "Graphics/Pictures/namingControls.png",
+      "replaces_crc": 4249061654
+    },
+    {
+      "file": "Graphics/Pictures/pokedexTypes.png",
+      "install_to": "Graphics/Pictures/pokedexTypes.png",
+      "replaces_crc": 4264346030
+    },
+    {
+      "file": "Graphics/Pictures/prisionRot.png",
+      "install_to": "Graphics/Pictures/prisionRot.png",
+      "replaces_crc": 2755067150
+    },
+    {
+      "file": "Graphics/Pictures/rot10Cendera1.png",
+      "install_to": "Graphics/Pictures/rot10Cendera1.png",
+      "replaces_crc": 1900051519
+    },
+    {
+      "file": "Graphics/Pictures/rot10Cendera2.png",
+      "install_to": "Graphics/Pictures/rot10Cendera2.png",
+      "replaces_crc": 2535757389
+    },
+    {
+      "file": "Graphics/Pictures/rot11Siempreviva1.png",
+      "install_to": "Graphics/Pictures/rot11Siempreviva1.png",
+      "replaces_crc": 2286945028
+    },
+    {
+      "file": "Graphics/Pictures/rot11Siempreviva2.png",
+      "install_to": "Graphics/Pictures/rot11Siempreviva2.png",
+      "replaces_crc": 2951427037
+    },
+    {
+      "file": "Graphics/Pictures/rot12Arrayan1.png",
+      "install_to": "Graphics/Pictures/rot12Arrayan1.png",
+      "replaces_crc": 804176714
+    },
+    {
+      "file": "Graphics/Pictures/rot12Arrayan2.png",
+      "install_to": "Graphics/Pictures/rot12Arrayan2.png",
+      "replaces_crc": 635513177
+    },
+    {
+      "file": "Graphics/Pictures/rot13Mirra1.png",
+      "install_to": "Graphics/Pictures/rot13Mirra1.png",
+      "replaces_crc": 3807825133
+    },
+    {
+      "file": "Graphics/Pictures/rot13Mirra2.png",
+      "install_to": "Graphics/Pictures/rot13Mirra2.png",
+      "replaces_crc": 3624664550
+    },
+    {
+      "file": "Graphics/Pictures/rot1Canola.png",
+      "install_to": "Graphics/Pictures/rot1Canola.png",
+      "replaces_crc": 976517035
+    },
+    {
+      "file": "Graphics/Pictures/rot1Canola2.png",
+      "install_to": "Graphics/Pictures/rot1Canola2.png",
+      "replaces_crc": 1478676065
+    },
+    {
+      "file": "Graphics/Pictures/rot1F3.png",
+      "install_to": "Graphics/Pictures/rot1F3.png",
+      "replaces_crc": 1064024065
+    },
+    {
+      "file": "Graphics/Pictures/rot1Lider7.png",
+      "install_to": "Graphics/Pictures/rot1Lider7.png",
+      "replaces_crc": 1226758473
+    },
+    {
+      "file": "Graphics/Pictures/rot1Loto.png",
+      "install_to": "Graphics/Pictures/rot1Loto.png",
+      "replaces_crc": 148776387
+    },
+    {
+      "file": "Graphics/Pictures/rot2F3.png",
+      "install_to": "Graphics/Pictures/rot2F3.png",
+      "replaces_crc": 1102756540
+    },
+    {
+      "file": "Graphics/Pictures/rot2Hisopo.png",
+      "install_to": "Graphics/Pictures/rot2Hisopo.png",
+      "replaces_crc": 1395207091
+    },
+    {
+      "file": "Graphics/Pictures/rot2Hisopo2.png",
+      "install_to": "Graphics/Pictures/rot2Hisopo2.png",
+      "replaces_crc": 301730011
+    },
+    {
+      "file": "Graphics/Pictures/rot2Lider7.png",
+      "install_to": "Graphics/Pictures/rot2Lider7.png",
+      "replaces_crc": 2938064941
+    },
+    {
+      "file": "Graphics/Pictures/rot2Loto.png",
+      "install_to": "Graphics/Pictures/rot2Loto.png",
+      "replaces_crc": 3605615160
+    },
+    {
+      "file": "Graphics/Pictures/rot4Zafra.png",
+      "install_to": "Graphics/Pictures/rot4Zafra.png",
+      "replaces_crc": 3909968729
+    },
+    {
+      "file": "Graphics/Pictures/rot4Zafra2.png",
+      "install_to": "Graphics/Pictures/rot4Zafra2.png",
+      "replaces_crc": 695018699
+    },
+    {
+      "file": "Graphics/Pictures/rot6Belladona.png",
+      "install_to": "Graphics/Pictures/rot6Belladona.png",
+      "replaces_crc": 2938561098
+    },
+    {
+      "file": "Graphics/Pictures/rot6Belladona2.png",
+      "install_to": "Graphics/Pictures/rot6Belladona2.png",
+      "replaces_crc": 712656267
+    },
+    {
+      "file": "Graphics/Pictures/rot8Anturia.png",
+      "install_to": "Graphics/Pictures/rot8Anturia.png",
+      "replaces_crc": 2167292281
+    },
+    {
+      "file": "Graphics/Pictures/rot8Anturia2.png",
+      "install_to": "Graphics/Pictures/rot8Anturia2.png",
+      "replaces_crc": 2841546763
+    },
+    {
+      "file": "Graphics/Pictures/rot9Rupico.png",
+      "install_to": "Graphics/Pictures/rot9Rupico.png",
+      "replaces_crc": 1498143872
+    },
+    {
+      "file": "Graphics/Pictures/rot9Rupico2.png",
+      "install_to": "Graphics/Pictures/rot9Rupico2.png",
+      "replaces_crc": 1252531486
+    },
+    {
+      "file": "Graphics/Pictures/rotAZ.png",
+      "install_to": "Graphics/Pictures/rotAZ.png",
+      "replaces_crc": 3690740818
+    },
+    {
+      "file": "Graphics/Pictures/rotAZ2.png",
+      "install_to": "Graphics/Pictures/rotAZ2.png",
+      "replaces_crc": 4249119214
+    },
+    {
+      "file": "Graphics/Pictures/rotAlcaFinal2.png",
+      "install_to": "Graphics/Pictures/rotAlcaFinal2.png",
+      "replaces_crc": 2485670846
+    },
+    {
+      "file": "Graphics/Pictures/rotAlcafinal.png",
+      "install_to": "Graphics/Pictures/rotAlcafinal.png",
+      "replaces_crc": 4125455814
+    },
+    {
+      "file": "Graphics/Pictures/rotMazmorra1.png",
+      "install_to": "Graphics/Pictures/rotMazmorra1.png",
+      "replaces_crc": 225015404
+    },
+    {
+      "file": "Graphics/Pictures/rotMazmorra2.png",
+      "install_to": "Graphics/Pictures/rotMazmorra2.png",
+      "replaces_crc": 2703510791
+    },
+    {
+      "file": "Graphics/Pictures/rotMazmorra3.png",
+      "install_to": "Graphics/Pictures/rotMazmorra3.png",
+      "replaces_crc": 224476850
+    },
+    {
+      "file": "Graphics/Pictures/rotMazmorra4.png",
+      "install_to": "Graphics/Pictures/rotMazmorra4.png",
+      "replaces_crc": 2967926822
+    },
+    {
+      "file": "Graphics/Pictures/rotMazmorra5.png",
+      "install_to": "Graphics/Pictures/rotMazmorra5.png",
+      "replaces_crc": 3800104060
+    },
+    {
+      "file": "Graphics/Pictures/rotMazmorra6.png",
+      "install_to": "Graphics/Pictures/rotMazmorra6.png",
+      "replaces_crc": 618749132
+    },
+    {
+      "file": "Graphics/Pictures/rotMazmorra7.png",
+      "install_to": "Graphics/Pictures/rotMazmorra7.png",
+      "replaces_crc": 1986571472
+    },
+    {
+      "file": "Graphics/Pictures/rotMazmorra8.png",
+      "install_to": "Graphics/Pictures/rotMazmorra8.png",
+      "replaces_crc": 448020304
+    },
+    {
+      "file": "Graphics/Pictures/sitioArma1.png",
+      "install_to": "Graphics/Pictures/sitioArma1.png",
+      "replaces_crc": 4141071001
+    },
+    {
+      "file": "Graphics/Pictures/sitioArma2.png",
+      "install_to": "Graphics/Pictures/sitioArma2.png",
+      "replaces_crc": 1364990325
+    },
+    {
+      "file": "Graphics/Pictures/sitioArma3.png",
+      "install_to": "Graphics/Pictures/sitioArma3.png",
+      "replaces_crc": 1412689856
+    },
+    {
+      "file": "Graphics/Pictures/statuses.PNG",
+      "install_to": "Graphics/Pictures/statuses.PNG",
+      "replaces_crc": 2807289637
+    },
+    {
+      "file": "Graphics/Pictures/tutorialBat.png",
+      "install_to": "Graphics/Pictures/tutorialBat.png",
+      "replaces_crc": 3220075860
+    },
+    {
+      "file": "Graphics/Pictures/tutorialLegendarios.png",
+      "install_to": "Graphics/Pictures/tutorialLegendarios.png",
+      "replaces_crc": 985018007
+    },
+    {
+      "file": "Graphics/Pictures/tutorialRandom.png",
+      "install_to": "Graphics/Pictures/tutorialRandom.png",
+      "replaces_crc": 2947011828
+    },
+    {
+      "file": "Graphics/Pictures/types.png",
+      "install_to": "Graphics/Pictures/types.png",
+      "replaces_crc": 2198127947
+    }
+  ],
+  "touches": {
+    "methods": [],
+    "files": [
+      "Graphics/Pictures/battleCommandButtons.png",
+      "Graphics/Pictures/battleFight.png",
+      "Graphics/Pictures/battleFightButtons.png",
+      "Graphics/Pictures/battleMessage.png",
+      "Graphics/Pictures/battleStatuses.png",
+      "Graphics/Pictures/pokedexTypes.png",
+      "Graphics/Pictures/statuses.PNG",
+      "Graphics/Pictures/types.png"
+    ]
+  },
+  "updated_at": "2026-08-05"
+}
