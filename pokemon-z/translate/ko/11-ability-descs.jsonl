@@ -96,7 +96,7 @@
 {"i": 95, "v": "상태 이상에 걸리면 스피드가 50% 올라간다.", "es": "Sube la velocidad un 50% durante un cambio de estado."}
 {"i": 96, "v": "모든 공격을 노말타입으로 바꾸고 위력을 50% 올린다.", "es": "Convierte los ataques en tipo Normal y los potencia un 50%."}
 {"i": 97, "v": "급소 공격의 데미지가 올라간다.", "es": "Aumenta el daño de los golpes críticos."}
-{"i": 98, "v": "직접 공격에만 데미지를 받는다.", "es": "Solo recibe daño de ataques directos."}
+{"i": 98, "v": "공격 이외에는 데미지를 받지 않는다.", "es": "Solo recibe daño de ataques directos."}
 {"i": 99, "v": "명중률이 100%가 된다.", "es": "Aumenta la precisión al 100%."}
 {"i": 100, "v": "스피드가 떨어져 나중에 공격한다.", "es": "Baja la velocidad para atacar en segundo lugar."}
 {"i": 101, "v": "위력 60 이하인 기술의 위력이 50% 올라간다.", "es": "Aumenta un 50% el poder de ataques con 60 de potencia o menos."}
@@ -144,7 +144,7 @@
 {"i": 143, "v": "접촉하기만 해도 상대를 독 상태로 만들 때가 있다.", "es": "Puede envenenar al objetivo con solo tocarlo."}
 {"i": 144, "v": "몬스터볼로 돌아가면 HP를 회복한다.", "es": "Recupera un PS cuando lo regresa a su PokéBall."}
 {"i": 145, "v": "방어가 떨어지지 않는다.", "es": "Impide la reducción de defensa."}
-{"i": 146, "v": "모래바람이 불 때 스피드가 올라간다.", "es": "Aumenta la velocidad durante un tormenta arena."}
+{"i": 146, "v": "모래바람으로 스피드가 올라간다.", "es": "Aumenta la velocidad durante un tormenta arena."}
 {"i": 147, "v": "상태 이상에 걸릴 확률이 줄어든다.", "es": "Reduce la probabilidad de cambio de estado."}
 {"i": 148, "v": "상대가 먼저 행동하면 특수공격이 올라간다.", "es": "Si el enemigo se mueve primero, sube el ataque especial."}
 {"i": 149, "v": "다른 포켓몬으로 변신할 수 있다.", "es": "Permite transformarse en otros PKMN."}
@@ -160,14 +160,14 @@
 {"i": 159, "v": "모래바람이 불 때 일부 기술의 위력이 올라간다.", "es": "Sube el poder de ciertos movimientos en una tormenta de arena."}
 {"i": 160, "v": "접촉해 온 상대에게 데미지를 준다.", "es": "Provoca daño al rival que haga contacto con este PKMN."}
 {"i": 161, "v": "HP가 줄어들면 폼이 바뀐다.", "es": "Cambia la forma del Pokémon cuando quedan pocos HP."}
-{"i": 162, "v": "명중률이 올라간다.", "es": "Aumenta la precisión del PKMN."}
+{"i": 162, "v": "기술의 명중률이 올라간다.", "es": "Aumenta la precisión del PKMN."}
 {"i": 163, "v": "다른 특성의 효과를 무효로 한다.", "es": "Anula el efecto de otras habilidades."}
 {"i": 164, "v": "다른 특성의 효과를 무효로 한다.", "es": "Anula el efecto de otras habilidades."}
 {"i": 165, "v": "싸라기눈이 내릴 때 스피드가 올라간다.", "es": "Sube la velocidad mientras haya granizo."}
 {"i": 166, "v": "노말타입 기술이 페어리타입이 되고 위력이 20% 올라간다.", "es": "Convierte los movimientos de tipo Normal en Hada y los potencia un 20%."}
 {"i": 167, "v": "노말타입 기술이 벌레타입이 되고 위력이 20% 올라간다.", "es": "Convierte los movimientos de tipo Normal en Bicho y los potencia un 20%."}
 {"i": 168, "v": "노말타입 기술이 얼음타입이 되고 위력이 20% 올라간다.", "es": "Convierte los movimientos de tipo Normal en Hielo y los potencia un 20%."}
-{"i": 169, "v": "접촉 기술의 위력이 올라간다.", "es": "Aumenta la potencia de los mov. de contacto."}
+{"i": 169, "v": "상대에게 접촉하는 기술의 위력이 올라간다.", "es": "Aumenta la potencia de los mov. de contacto."}
 {"i": 170, "v": "특수공격이 올라가지만 하나의 기술만 쓸 수 있다.", "es": "Aumenta el Atq. Esp. pero solo permite usar un movimiento."}
 {"i": 171, "v": "두 번 공격하며 두 번째 공격은 조금 약해진다.", "es": "Ataca dos veces, siendo el segundo ataque un poco más débil."}
 {"i": 172, "v": "노말타입 기술이 고스트타입이 되고 위력이 20% 올라간다.", "es": "Convierte los movimientos de tipo Normal en Fantasma y los potencia un 20%."}
@@ -228,7 +228,7 @@
 {"i": 227, "v": "얼음인분의 보호를 받아 특수공격으로 받는 데미지가 절반이 된다.", "es": "Las gélidas escamas que protegen su cuerpo reducen a la mitad el daño que le infligen los ataques especiales."}
 {"i": 228, "v": "선제공격 기술에 영향을 받지 않는다.", "es": "Inmune a los movimientos de prioridad."}
 {"i": 229, "v": "HP가 절반이 되면 방어와 특수방어가 떨어지는 대신 공격과 스피드가 올라간다.", "es": "Cuando pierde la mitad de salud, reduce sus defensas a cambio de aumentar su ataque y velocidad."}
-{"i": 230, "v": "강철·독타입 포켓몬도 독 상태로 만들 수 있다.", "es": "Permite envenenar incluso a Pokémon de tipo Acero y Veneno."}
+{"i": 230, "v": "강철타입이나 독타입도 독 상태로 만들 수 있다.", "es": "Permite envenenar incluso a Pokémon de tipo Acero y Veneno."}
 {"i": 231, "v": "능력 변화 효과를 상대에게 되돌려준다.", "es": "Rebota los cambios de estadísticas al oponente."}
 {"i": 232, "v": "화상을 입지 않는다. 불꽃 기술을 받으면 공격이 올라간다.", "es": "No puede ser quemado. Si es alcanzado por fuego, se sube el Ataque."}
 {"i": 233, "v": "접촉 공격이 30% 확률로 상대를 마비시킨다.", "es": "Tiene un 30% de paralizar al enemigo con ataques de contacto."}

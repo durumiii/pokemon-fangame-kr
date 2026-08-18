@@ -11,9 +11,9 @@
 {"i": 10, "v": "파란 작은 조각. 옛날에 만들어진 어떤 도구의 일부인 듯하다.", "es": "Un pequeño fragmento azul. Parece formar parte de algún tipo de herramienta antigua."}
 {"i": 11, "v": "초록색 작은 조각. 옛날에 만들어진 어떤 도구의 일부인 듯하다.", "es": "Un pequeño fragmento verde. Parece formar parte de algún tipo de herramienta antigua."}
 {"i": 12, "v": "어느 특정 포켓몬을 진화시키는 이상한 돌. 주황색을 띠고 있다.", "es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja."}
-{"i": 13, "v": "일부 포켓몬을 진화시키는 신기한 돌. 번개 무늬가 그려져 있다.", "es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene dibujado un rayo."}
-{"i": 14, "v": "일부 포켓몬을 진화시키는 신기한 돌. 물처럼 푸르다.", "es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul, como el agua."}
-{"i": 15, "v": "일부 포켓몬을 진화시키는 신기한 돌. 잎사귀 무늬가 그려져 있다.", "es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene dibujada una hoja."}
+{"i": 13, "v": "어느 특정 포켓몬을 진화시키는 이상한 돌. 천둥번개 무늬가 있다.", "es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene dibujado un rayo."}
+{"i": 14, "v": "어느 특정 포켓몬을 진화시키는 이상한 돌. 투명한 푸른색을 띠고 있다.", "es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul, como el agua."}
+{"i": 15, "v": "어느 특정 포켓몬을 진화시키는 이상한 돌. 잎사귀 무늬가 있다.", "es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene dibujada una hoja."}
 {"i": 16, "v": "어느 특정 포켓몬을 진화시키는 이상한 돌. 밤하늘처럼 까맣다.", "es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es negra como el azabache."}
 {"i": 17, "v": "어느 특정 포켓몬을 진화시키는 이상한 돌. 태양처럼 빨갛다.", "es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es roja como el núcleo del sol."}
 {"i": 18, "v": "어느 특정 포켓몬을 진화시키는 이상한 돌. 칠흑처럼 어둡다.", "es": "Una piedra peculiar que hace evolucionar a algunos Pokémon. Es oscura como la noche."}
@@ -47,9 +47,9 @@
 {"i": 46, "v": "혜성이 가까워졌을 때 지표면에 떨어진 조각. 상점에서 비싸게 팔린다.", "es": "Fragmento de un cometa caído al suelo al atravesar la atmósfera. Muy valorado por los coleccionistas."}
 {"i": 47, "v": "금색으로 반짝반짝 빛나는 순금으로 만들어진 큰 구슬. 상점에서 비싸게 팔린다.", "es": "Pepita de oro puro que desprende un brillo espectacular. Puede venderse muy cara en las tiendas."}
 {"i": 48, "v": "눈부시게 빛나는 커다란 순금 덩어리. 수집가들이 아주 귀하게 여긴다.", "es": "Pepita grande de oro puro que desprende un brillo espectacular. Muy valorada por los coleccionistas."}
-{"i": 49, "v": "무지갯빛으로 빛나는 하트 모양의 고운 비늘. 아주 보기 드물다.", "es": "Bella escama con forma de corazón que brilla con los colores del arco iris. Es muy poco común."}
+{"i": 49, "v": "예쁜 하트 모양의 무척 진귀한 비늘. 무지개색으로 연하게 반짝인다.", "es": "Bella escama con forma de corazón que brilla con los colores del arco iris. Es muy poco común."}
 {"i": 50, "v": "출처를 알 수 없는 아주 맛있는 꼬리. 비싸게 팔린다.", "es": "Cola de origen desconocido y muy sabrosa. Se vende muy cara."}
-{"i": 51, "v": "고고학적 가치가 큰 뼈. 가게에서 비싸게 팔린다.", "es": "Un hueso de gran valor arqueológico que puede alcanzar un alto precio en las tiendas."}
+{"i": 51, "v": "포켓몬 고고학에 있어 매우 귀중한 뼈. 상점에서 비싸게 팔린다.", "es": "Un hueso de gran valor arqueológico que puede alcanzar un alto precio en las tiendas."}
 {"i": 52, "v": "3천 년도 더 된 동전. 수집가들이 아주 귀하게 여긴다.", "es": "Moneda de cobre de más de tres mil años de antigüedad. Muy valorada por los coleccionistas."}
 {"i": 53, "v": "3천 년도 더 된 은화. 수집가들이 아주 귀하게 여긴다.", "es": "Moneda de plata de más de tres mil años de antigüedad. Muy valorada por los coleccionistas."}
 {"i": 54, "v": "3천 년도 더 된 금화. 수집가들이 아주 귀하게 여긴다.", "es": "Moneda de oro de más de tres mil años de antigüedad. Muy valorada por los coleccionistas."}
@@ -68,12 +68,12 @@
 {"i": 67, "v": "번쩍이는 빛으로 상대의 명중률을 떨어뜨린다. 포켓몬에게 지니게 한다.", "es": "Lanza un destello que baja la precisión del enemigo. Debe llevarlo un Pokémon."}
 {"i": 68, "v": "진화를 막는다. 아직 진화할 수 있는 포켓몬이라면 방어와 특수방어가 올라간다.", "es": "Evita evolucionar. El Pokémon portador aumentará su Defensa y su Defensa Especial si aún puede evolucionar."}
 {"i": 69, "v": "가벼운 돌. 포켓몬의 무게를 줄이고 스피드를 25% 올린다.", "es": "Piedra ligera que reduce el peso del Pokémon y aumenta su velocidad un 25%."}
-{"i": 70, "v": "가늘고 긴 붉은 실. 지닌 포켓몬의 헤롱헤롱 상태를 상대에게 옮긴다.", "es": "Un hilo largo y delgado de color rojo que transmite el enamoramiento del Pokémon que lo lleva a su rival."}
+{"i": 70, "v": "가늘고 긴 새빨간 실. 지니게 하면 자신이 헤롱헤롱해졌을 때 상대도 헤롱헤롱해지게 된다.", "es": "Un hilo largo y delgado de color rojo que transmite el enamoramiento del Pokémon que lo lleva a su rival."}
 {"i": 71, "v": "포켓몬에게 지니게 하면 타격 기술을 당했을 때 상대에게도 데미지를 준다.", "es": "Si el portador es alcanzado por un ataque físico, el agresor también recibe daño."}
 {"i": 72, "v": "지니게 하고 기술에 데미지를 받으면 배틀에서 탈출하여 지닌 포켓몬과 교체할 수 있다.", "es": "Si el portador es alcanzado por un ataque, saldrá del combate y será sustituido por otro Pokémon del equipo."}
-{"i": 73, "v": "지닌 포켓몬이 데미지를 입으면 공격한 상대를 밖으로 날려 보내는 신비한 카드.", "es": "Misteriosa tarjeta que permite al Pokémon que la lleve expulsar al agresor cuando este le cause daño."}
+{"i": 73, "v": "이상한 힘이 있는 카드. 지니게 하면 기술을 사용한 상대를 퇴장시킬 수 있다.", "es": "Misteriosa tarjeta que permite al Pokémon que la lleve expulsar al agresor cuando este le cause daño."}
 {"i": 74, "v": "튼튼하고 단단한 허물. 지니게 한 포켓몬은 교대 포켓몬과 반드시 교체할 수 있다.", "es": "En combate, esta concha desechada sirve para que un Pokémon se cambie por otro que no esté combatiendo."}
-{"i": 75, "v": "포켓몬에게 지니게 한다. 야생 포켓몬과의 배틀에서 도망칠 수 있다.", "es": "Debe llevarla un Pokémon. Permite huir de combates contra Pokémon salvajes."}
+{"i": 75, "v": "지니게 한 포켓몬은 야생 포켓몬과의 배틀에서 반드시 도망칠 수 있다.", "es": "Debe llevarla un Pokémon. Permite huir de combates contra Pokémon salvajes."}
 {"i": 76, "v": "행복이 가득한 알. 배틀에서 경험치를 더 받는다. 포켓몬에게 지니게 한다.", "es": "Es un huevo lleno de felicidad que te hará ganar Puntos de Exp. extra en combate. Debe llevarlo un Pokémon."}
 {"i": 77, "v": "지닌 포켓몬이 배틀에 나가지 않아도 경험치의 일부를 받는다.", "es": "El Pokémon que lo lleva obtiene parte de los Puntos de Exp. conseguidos en el combate sin participar en él."}
 {"i": 78, "v": "지니게 한 포켓몬이 한 번이라도 배틀에 나가면 돈을 2배로 받을 수 있다.", "es": "Si el Pokémon que la lleva lucha en un combate, duplica las ganancias."}
@@ -84,17 +84,17 @@
 {"i": 83, "v": "스피드가 50% 올라가지만 기술을 하나밖에 쓸 수 없게 된다.", "es": "Potencia la Velocidad un 50%, pero solo permite usar un tipo de movimiento."}
 {"i": 84, "v": "지니게 한 포켓몬이 쾌청을 쓰면 여느 때보다 쾌청의 시간이 길어진다.", "es": "Prolonga la duración del movimiento Día Soleado que use el Pokémon que la lleva."}
 {"i": 85, "v": "지니게 한 포켓몬이 비바라기를 쓰면 여느 때보다 비 내리는 시간이 길어진다.", "es": "Prolonga la duración del movimiento Danza Lluvia que use el Pokémon que la lleva."}
-{"i": 86, "v": "지닌 포켓몬이 쓰는 모래바람의 지속 턴이 늘어난다.", "es": "Prolonga la duración del movimiento Torm. Arena que use el Pokémon que la lleva."}
-{"i": 87, "v": "지닌 포켓몬이 쓰는 싸라기눈의 지속 턴이 늘어난다.", "es": "Prolonga la duración del movimiento Granizo del Pokémon que la lleva."}
+{"i": 86, "v": "지니게 한 포켓몬이 모래바람을 쓰면 여느 때보다 모래바람의 시간이 길어진다.", "es": "Prolonga la duración del movimiento Torm. Arena que use el Pokémon que la lleva."}
+{"i": 87, "v": "지니게 한 포켓몬이 싸라기눈을 쓰면 여느 때보다 싸라기눈의 시간이 길어진다.", "es": "Prolonga la duración del movimiento Granizo del Pokémon que la lleva."}
 {"i": 88, "v": "지니게 한 포켓몬이 빛의장막이나 리플렉터를 사용했을 때 여느 때보다 긴 시간 동안 지속된다.", "es": "Prolonga la duración de barreras como Reflejo y Pantalla de Luz. Debe llevarla un Pokémon."}
-{"i": 89, "v": "조이기나 연속조이기 같은 여러 턴 공격의 지속 턴이 늘어난다. 포켓몬에게 지니게 한다.", "es": "Prolonga la duración de ataques multiturno como Atadura y Repetición. Debe llevarla un Pokémon."}
+{"i": 89, "v": "지니게 하면 조이기나 김밥말이 등 데미지를 계속 주는 기술의 턴 수가 늘어난다.", "es": "Prolonga la duración de ataques multiturno como Atadura y Repetición. Debe llevarla un Pokémon."}
 {"i": 90, "v": "조이기 기술을 보조하는 밴드. 지니게 하면 조이기 기술의 위력이 강해진다.", "es": "Banda que potencia los movimientos que estrujan al rival."}
 {"i": 91, "v": "체력을 흡수하는 기술의 회복량이 30% 늘어난다.", "es": "Los movimientos de drenaje de salud te curan un 30% extra."}
 {"i": 92, "v": "독타입 포켓몬의 HP를 1/16 회복시키고 그 외에는 데미지를 준다.", "es": "Restaura 1/16 de PS de los Pokémon de tipo Veneno y daña a todos los demás."}
 {"i": 93, "v": "매 턴 종료 시 체력을 1/16 회복한다.", "es": "Restauran 1/16 de salud al final de cada turno."}
 {"i": 94, "v": "공격으로 준 데미지의 20%를 회복한다.", "es": "Los ataques curan un 20% del daño infligido."}
 {"i": 95, "v": "지닌 포켓몬의 헤롱헤롱 상태가 풀린다. 한 번만 쓸 수 있다.", "es": "El Pokémon que la lleve se libera del enamoramiento. Solo puede usarse una vez."}
-{"i": 96, "v": "배틀에서 떨어진 능력을 되돌린다. 한 번만 쓸 수 있다. 포켓몬에게 지니게 한다.", "es": "Restaura cualquier característica debilitada en combate. Solo se puede usar una vez. Debe llevarla un Pokémon."}
+{"i": 96, "v": "지니게 한 포켓몬의 능력이 떨어졌을 때 한 번만 원래 상태로 돌아온다.", "es": "Restaura cualquier característica debilitada en combate. Solo se puede usar una vez. Debe llevarla un Pokémon."}
 {"i": 97, "v": "지니게 한 포켓몬은 한 번만 1턴째에 힘을 모으는 기술을 바로 사용할 수 있다.", "es": "Permite el uso inmediato de cualquier movimiento en el primer turno. Es de un solo uso y debe llevarla un Pokémon."}
 {"i": 98, "v": "단 한 번 쓰면 없어지는 구근. 지니게 하고 물 기술을 받으면 특수공격이 올라간다.", "es": "Raíz de usar y tirar que sube el Ataque Especial cuando se recibe un ataque de tipo Agua."}
 {"i": 99, "v": "단 한 번 쓰면 없어지는 충전지. 지니게 하고 전기 기술로 공격받으면 공격이 올라간다.", "es": "Batería de usar y tirar que sube el Ataque de quien la lleva cuando recibe un golpe de tipo Eléctrico."}
@@ -125,11 +125,11 @@
 {"i": 124, "v": "레벨업 때 특수공격이 잘 오르지만 스피드가 떨어진다. 포켓몬에게 지니게 한다.", "es": "Ayuda a ganar At. Esp. al subir de nivel, pero reduce la Velocidad. Debe llevarla un Pokémon."}
 {"i": 125, "v": "레벨업 때 특수방어가 잘 오르지만 스피드가 떨어진다. 포켓몬에게 지니게 한다.", "es": "Ayuda a ganar Def. Esp. al subir de nivel, pero reduce la Velocidad. Debe llevarla un Pokémon."}
 {"i": 126, "v": "레벨업 때 스피드가 잘 오르지만 배틀 중에는 스피드가 떨어진다. 포켓몬에게 지니게 한다.", "es": "Ayuda a ganar Velocidad al subir de nivel, pero reduce la Velocidad en combate. Debe llevarla un Pokémon."}
-{"i": 127, "v": "포켓몬에게 지니게 한다. 독특한 향이 상대의 명중률을 떨어뜨린다.", "es": "Debe llevarlo un Pokémon. Su peculiar aroma reduce la precisión del rival."}
+{"i": 127, "v": "지니게 하면 향로의 이상한 향기가 상대를 혼란시켜 기술이 명중하기 어려워진다.", "es": "Debe llevarlo un Pokémon. Su peculiar aroma reduce la precisión del rival."}
 {"i": 128, "v": "색다른 향료. 지닌 포켓몬의 행동이 느려진다.", "es": "Exótica sustancia aromática que hace que el Pokémon que la lleva se mueva más despacio."}
 {"i": 129, "v": "색다른 향. 지닌 포켓몬이 배틀에 나가면 상금이 2배가 된다.", "es": "Incienso de aroma exótico. Si el Pokémon que lo lleva participa en un combate, duplica las ganancias."}
 {"i": 130, "v": "선두 포켓몬이 지니면 야생 포켓몬이 덜 나타나게 된다.", "es": "Si lo lleva el primer Pokémon del equipo, los Pokémon salvajes se acercarán con menos frecuencia."}
-{"i": 131, "v": "독특한 향이 물타입 기술의 위력을 올려 준다. 포켓몬에게 지니게 한다.", "es": "Tiene un curioso aroma que potencia la energía de los ataques de tipo Agua. Debe llevarlo un Pokémon."}
+{"i": 131, "v": "이상한 향기의 향로. 지니게 하면 물타입 기술의 위력이 올라간다.", "es": "Tiene un curioso aroma que potencia la energía de los ataques de tipo Agua. Debe llevarlo un Pokémon."}
 {"i": 132, "v": "물타입 기술의 위력을 올리는 색다른 향. 포켓몬에게 지니게 한다.", "es": "Incienso exótico que fortalece los movimientos de tipo Agua. Debe llevarlo un Pokémon."}
 {"i": 133, "v": "이상한 향기의 향로. 지니게 하면 풀타입 기술의 위력이 올라간다.", "es": "Incienso de exótico aroma que fortalece los movimientos de tipo Planta. Debe llevarlo un Pokémon."}
 {"i": 134, "v": "이상한 향기의 향로. 지니게 하면 에스퍼타입 기술의 위력이 올라간다.", "es": "Incienso de exótico aroma que fortalece los movimientos de tipo Psíquico. Debe llevarlo un Pokémon."}
@@ -244,8 +244,8 @@
 {"i": 243, "v": "몹시 쓴 가루약. 포켓몬의 모든 상태 이상을 치료한다.", "es": "Polvos muy amargos que curan todos los problemas de estado de un Pokémon."}
 {"i": 244, "v": "매우 쓴 약초. 기절한 포켓몬 1마리의 HP를 모두 회복한다.", "es": "Hierba muy amarga que reanima a un Pokémon debilitado y restaura todos sus PS."}
 {"i": 245, "v": "고른 기술의 PP를 최대 10 회복한다.", "es": "Restaura un máximo de 10 PP del ataque que elijas de un Pokémon."}
-{"i": 246, "v": "고른 기술의 PP를 모두 회복한다.", "es": "Restaura completamente los PP del movimiento que elijas de un Pokémon."}
-{"i": 247, "v": "포켓몬이 배운 모든 기술의 PP를 10씩 회복한다.", "es": "Restaura 10 PP de todos los movimientos aprendidos por un Pokémon."}
+{"i": 246, "v": "포켓몬이 기억하고 있는 기술 중 1개의 PP를 모두 회복한다.", "es": "Restaura completamente los PP del movimiento que elijas de un Pokémon."}
+{"i": 247, "v": "포켓몬이 기억하고 있는 4개 기술의 PP를 10씩 회복한다.", "es": "Restaura 10 PP de todos los movimientos aprendidos por un Pokémon."}
 {"i": 248, "v": "포켓몬이 기억하고 있는 4개 기술의 PP를 모두 회복한다.", "es": "Restaura completamente los PP de todos los movimientos aprendidos por el Pokémon elegido."}
 {"i": 249, "v": "고른 기술의 최대 PP를 조금 늘린다.", "es": "Aumenta ligeramente los PP máximos del ataque que elijas de un Pokémon."}
 {"i": 250, "v": "고른 기술의 PP를 최대까지 늘린다.", "es": "Aumenta al máximo los PP del ataque que elijas de un Pokémon."}
@@ -255,23 +255,23 @@
 {"i": 254, "v": "포켓몬의 특수공격 노력치를 10 올리는 가루.", "es": "Polvo que aumenta (+10 EVs) el At. Esp. de un Pokémon."}
 {"i": 255, "v": "포켓몬의 특수방어 노력치를 10 올리는 가루.", "es": "Polvo que aumenta (+10 EVs) la Defensa Especial de un Pokémon."}
 {"i": 256, "v": "포켓몬의 스피드 노력치를 10 올리는 가루.", "es": "Polvo que aumenta (+10 EVs) la Velocidad de un Pokémon."}
-{"i": 257, "v": "포켓몬의 HP 노력치를 1 올리는 깃털.", "es": "Pluma que aumenta un poco (+1 EV) los PS de un Pokémon."}
-{"i": 258, "v": "포켓몬의 공격 노력치를 1 올리는 깃털.", "es": "Pluma que aumenta un poco (+1 EV) el Ataque de un Pokémon."}
-{"i": 259, "v": "포켓몬의 방어 노력치를 1 올리는 깃털.", "es": "Pluma que aumenta un poco (+1 EV) la Defensa de un Pokémon."}
-{"i": 260, "v": "포켓몬의 특수공격 노력치를 1 올리는 깃털.", "es": "Pluma que aumenta un poco (+1 EV) el Ataque Especial de un Pokémone."}
-{"i": 261, "v": "포켓몬의 특수방어 노력치를 1 올리는 깃털.", "es": "Pluma que aumenta un poco (+1 EV) la Defensa Especial de un Pokémon."}
-{"i": 262, "v": "포켓몬의 스피드 노력치를 1 올리는 깃털.", "es": "Pluma que aumenta un poco (+1 EV) la Velocidad de un Pokémon."}
+{"i": 257, "v": "포켓몬에게 사용하는 도구. 포켓몬 1마리의 HP 기초 포인트를 조금 올린다.", "es": "Pluma que aumenta un poco (+1 EV) los PS de un Pokémon."}
+{"i": 258, "v": "포켓몬에게 사용하는 도구. 포켓몬 1마리의 공격 기초 포인트를 조금 올린다.", "es": "Pluma que aumenta un poco (+1 EV) el Ataque de un Pokémon."}
+{"i": 259, "v": "포켓몬에게 사용하는 도구. 포켓몬 1마리의 방어 기초 포인트를 조금 올린다.", "es": "Pluma que aumenta un poco (+1 EV) la Defensa de un Pokémon."}
+{"i": 260, "v": "포켓몬에게 사용하는 도구. 포켓몬 1마리의 특수공격 기초 포인트를 조금 올린다.", "es": "Pluma que aumenta un poco (+1 EV) el Ataque Especial de un Pokémone."}
+{"i": 261, "v": "포켓몬에게 사용하는 도구. 포켓몬 1마리의 특수방어 기초 포인트를 조금 올린다.", "es": "Pluma que aumenta un poco (+1 EV) la Defensa Especial de un Pokémon."}
+{"i": 262, "v": "포켓몬에게 사용하는 도구. 포켓몬 1마리의 스피드 기초 포인트를 조금 올린다.", "es": "Pluma que aumenta un poco (+1 EV) la Velocidad de un Pokémon."}
 {"i": 263, "v": "에너지가 가득한 사탕. 먹이면 포켓몬 1마리의 레벨이 1만큼 올라간다.", "es": "Caramelo energético que sube a un Pokémon de nivel."}
-{"i": 264, "v": "궁극의 몬스터볼. 어떤 야생 포켓몬이든 반드시 잡는다.", "es": "La Poké Ball definitiva. Atrapa a cualquier Pokémon salvaje y no falla nunca."}
-{"i": 265, "v": "성능이 뛰어난 몬스터볼. 슈퍼볼보다 잘 잡힌다.", "es": "Poké Ball de rendimiento superior. Tiene más índice de éxito que la Superball."}
+{"i": 264, "v": "야생 포켓몬을 반드시 잡을 수 있는 최고 성능의 볼.", "es": "La Poké Ball definitiva. Atrapa a cualquier Pokémon salvaje y no falla nunca."}
+{"i": 265, "v": "수퍼볼보다도 더욱 포켓몬을 잡기 쉬워진 매우 성능이 좋은 볼.", "es": "Poké Ball de rendimiento superior. Tiene más índice de éxito que la Superball."}
 {"i": 266, "v": "몬스터볼보다도 더욱 포켓몬을 잡기 쉬워진 약간 성능이 좋은 볼.", "es": "Poké Ball de alto rendimiento. Tiene un índice de éxito superior al de la Poké Ball."}
 {"i": 267, "v": "야생 포켓몬에게 던져서 잡기 위한 볼. 캡슐식으로 되어 있다.", "es": "Dispositivo con diseño capsular que atrapa Pokémon salvajes. Se lanza como una bola contra el blanco."}
 {"i": 268, "v": "대습초원 안에서만 쓰는 특별한 볼. 얼룩무늬로 되어 있다.", "es": "Poké Ball con un diseño de camuflaje que se utiliza únicamente en el Gran Pantano."}
 {"i": 269, "v": "벌레잡이대회 전용 특별한 몬스터볼.", "es": "Poké Ball especial para el Concurso de Captura de Bichos."}
 {"i": 270, "v": "물타입과 벌레타입의 포켓몬을 잡기 쉬워지는 조금 특이한 볼.", "es": "Es algo distinta a las demás. Funciona especialmente bien con los Pokémon de tipo Agua y Bicho."}
-{"i": 271, "v": "조금 특별한 볼. 바다에 사는 포켓몬에게 특히 잘 듣는다.", "es": "Es algo distinta a las demás. Funciona especialmente bien con los Pokémon que viven en el mar."}
-{"i": 272, "v": "조금 특별한 볼. 레벨이 낮은 야생 포켓몬에게 특히 잘 듣는다.", "es": "Es algo distinta a las demás. Funciona especialmente bien con los Pokémon salvajes de menor nivel."}
-{"i": 273, "v": "조금 특별한 볼. 이미 잡은 적 있는 포켓몬에게 특히 잘 듣는다.", "es": "Es algo distinta a las demás. Funciona especialmente bien con los Pokémon iguales a los que ya has capturado."}
+{"i": 271, "v": "물의 세계에서 사는 포켓몬을 잡기 쉬운 조금 특이한 볼.", "es": "Es algo distinta a las demás. Funciona especialmente bien con los Pokémon que viven en el mar."}
+{"i": 272, "v": "잡으려는 야생 포켓몬이 약할수록 잡기 쉬운 조금 특이한 볼.", "es": "Es algo distinta a las demás. Funciona especialmente bien con los Pokémon salvajes de menor nivel."}
+{"i": 273, "v": "잡은 적이 있는 포켓몬을 잡기 쉬운 조금 특이한 볼.", "es": "Es algo distinta a las demás. Funciona especialmente bien con los Pokémon iguales a los que ya has capturado."}
 {"i": 274, "v": "턴 수가 길어지면 길어질수록 포켓몬을 잡기 쉬워지는 조금 특이한 볼.", "es": "Una Poké Ball algo distinta que va mejorando su rendimiento con cada turno de combate."}
 {"i": 275, "v": "잡은 야생 포켓몬이 매우 친밀해지기 쉬운 편안한 볼.", "es": "Acogedora Poké Ball que hace más amistosos a los Pokémon salvajes capturados."}
 {"i": 276, "v": "어떤 일을 기념해 만든 아주 특별한 몬스터볼.", "es": "Es una Poké Ball muy particular que se creó para conmemorar algún acontecimiento."}
@@ -296,7 +296,7 @@
 {"i": 295, "v": "몸에 힘을 주어 근육을 두껍게 해서 자신의 공격과 방어를 올린다.", "es": "Robustece el cuerpo para subir el Ataque y la Defensa."}
 {"i": 296, "v": "물의 기세로 몸통박치기를 한다.", "es": "Ataca con una embestida acuática."}
 {"i": 297, "v": "뾰족한 바위를 뿌려 함정을 놓는다.", "es": "Lanza una trampa en forma de rocas puntiagudas."}
-{"i": 298, "v": "5턴 동안 햇살을 강하게 만들어 불꽃타입 기술을 강화한다.", "es": "Quien lo usa intensifica el sol durante cinco turnos, lo que potencia los movimientos de tipo Fuego."}
+{"i": 298, "v": "5턴 동안 햇살을 강하게 해서 불꽃타입 기술의 위력을 올린다.", "es": "Quien lo usa intensifica el sol durante cinco turnos, lo que potencia los movimientos de tipo Fuego."}
 {"i": 299, "v": "상대를 화나게 한다. 3턴 동안 상대는 데미지를 주는 기술밖에 쓸 수 없게 된다.", "es": "Enfurece al objetivo para que solo use movimientos de ataque durante tres turnos."}
 {"i": 300, "v": "냉동빔을 상대에게 발사하여 공격한다. 얼음 상태로 만들 때가 있다.", "es": "Rayo de hielo que puede llegar a congelar."}
 {"i": 301, "v": "잠든 상대의 꿈을 먹어 큰 데미지를 주고 기운을 빨아들인다.", "es": "Devora los sueños de un objetivo dormido para causar gran daño y absorber energía."}
@@ -339,12 +339,12 @@
 {"i": 338, "v": "물의 파동을 쏜다. 상대를 혼란시킬 수 있다.", "es": "Dispara un pulso de agua que puede confundir al objetivo."}
 {"i": 339, "v": "기합을 높여서 혼신의 힘을 방출한다. 상대의 특수방어를 떨어뜨릴 때가 있다.", "es": "Agudiza la concentración mental y libera su poder. Puede disminuir la Defensa Especial del objetivo."}
 {"i": 340, "v": "자연으로부터 모은 생명의 힘을 발사한다. 상대의 특수방어를 떨어뜨릴 때가 있다.", "es": "Aúna fuerzas de la naturaleza y libera su ataque. Puede disminuir la Defensa Especial del objetivo."}
-{"i": 341, "v": "힘을 조절한 공격. 상대를 쓰러뜨리지 않고 HP를 최소 1 남긴다.", "es": "Ataque moderado que no debilita al objetivo y le deja al menos un PS."}
+{"i": 341, "v": "상대의 HP가 반드시 1만큼 남도록 조절하여 공격한다.", "es": "Ataque moderado que no debilita al objetivo y le deja al menos un PS."}
 {"i": 342, "v": "차가운 물을 끼얹어 공격한다. 공격을 떨어뜨린다.", "es": "Ataca arrojando agua helada. Reduce el Ataque."}
 {"i": 343, "v": "강철처럼 단단한 꼬리로 공격한다.", "es": "Ataca con una potente cola de acero."}
 {"i": 344, "v": "깊게 베어 낸다. 높은 확률로 출혈을 일으킨다.", "es": "Corte profundo con alta probabilidad de causar Hemorragia."}
 {"i": 345, "v": "거센 불길을 내뿜는다. 화상을 입힐 수 있다.", "es": "Una intensa descarga de llamas que puede quemar al oponente."}
-{"i": 346, "v": "옆에 있는 상대까지 태우는 불길. 상대가 지닌 나무열매는 타서 쓸 수 없게 된다.", "es": "Llamas que golpean a los objetivos adyacentes. Si estos llevan Bayas, estas se quemarán y ya no se podrán usar."}
+{"i": 346, "v": "불꽃으로 상대를 공격한다. 상대가 나무열매 등을 지니고 있을 때 불태워서 쓸 수 없게 만든다.", "es": "Llamas que golpean a los objetivos adyacentes. Si estos llevan Bayas, estas se quemarán y ya no se podrán usar."}
 {"i": 347, "v": "강철처럼 단단한 날개로 공격한다.", "es": "Ataca con un ala dura como el acero."}
 {"i": 348, "v": "으스스하고 괴상한 불꽃을 쏘아 상대를 화상 상태로 만든다.", "es": "Siniestra llama morada que produce quemaduras."}
 {"i": 349, "v": "경쾌하게 상대를 공격한다. 자신이 도구를 지니고 있지 않을 때 큰 데미지를 준다.", "es": "Golpea ágilmente. Si el usuario no porta ningún objeto, el objetivo resulta seriamente dañado."}
@@ -384,7 +384,7 @@
 {"i": 383, "v": "낫이나 발톱 등으로 상대를 베어 공격한다. 가느다란 나무도 자를 수 있다.", "es": "Corta con garras, guadañas, etc. También sirve para cortar árboles finos."}
 {"i": 384, "v": "1턴째: 날아오른다.                                   2턴째: 공격한다. 배틀 밖에서는 가 본 곳으로 이동할 수 있다.", "es": "1° turno: vuela.                                   2° turno: ataca. Fuera de combate, permite ir a sitios conocidos."}
 {"i": 385, "v": "큰 파도로 자신의 주위에 있는 포켓몬을 공격한다. 물 위도 헤엄쳐서 나아간다.", "es": "Inunda el campo de batalla con una ola gigante. Fuera de batalla sirve para moverse sobre el agua."}
-{"i": 386, "v": "강력한 주먹질. 배틀 밖에서는 바위를 밀 수 있다.", "es": "Potente puñetazo. Fuera de combate sirve para mover piedras."}
+{"i": 386, "v": "혼신의 힘으로 상대를 세게 때려서 공격한다. 무거운 돌을 밀 수도 있다.", "es": "Potente puñetazo. Fuera de combate sirve para mover piedras."}
 {"i": 387, "v": "굉장한 기세로 상대에게 돌진한다. 상대를 풀죽게 만들 때가 있다. 폭포도 거슬러 올라갈 수 있다.", "es": "Embiste con un gran impulso que puede hacer retroceder. También sirve para remontar cascadas."}
 {"i": 388, "v": "1턴째: 바다로 잠수한다.  2턴째: 떠올라 공격한다.", "es": "Primer turno: se sumerge en el mar.  Segundo turno: emerge y ataca."}
 {"i": 389, "v": "포핀 재료. 포켓몬이 지니거나 써서 마비를 풀 수 있다.", "es": "Ingrediente para Pokochos. Los Pokémon pueden llevarla o usarla para recuperarse de la parálisis."}
@@ -447,9 +447,9 @@
 {"i": 446, "v": "포핀 재료. 포켓몬이 지니면 위기일 때 급소율이 올라간다.", "es": "Ingrediente para Pokochos. Si la lleva un Pokémon, sube su capacidad de dar un golpe crítico en un apuro."}
 {"i": 447, "v": "포핀 재료. 포켓몬이 지니면 위기일 때 능력 하나가 크게 올라간다.", "es": "Ingrediente para Pokochos. Si la lleva un Pokémon, aumenta drásticamente 1 característica en un momento de apuro."}
 {"i": 448, "v": "포핀 재료. 지닌 포켓몬이 효과가 굉장한 기술을 맞으면 HP를 회복한다.", "es": "Ingrediente para Pokochos. Restaura los PS de un Pokémon si la lleva cuando le alcanza un ataque supereficaz."}
-{"i": 449, "v": "포켓몬이 지니면 위기일 때 기술의 명중률이 올라간다. 포핀 재료.", "es": "Cuando la lleve un Pokémon, le subirá la precisión de un movimiento en un momento de apuro. Ing. para Pokochos."}
+{"i": 449, "v": "포켓몬에게 지니게 하면 위급할 때 한 번만 기술의 명중률이 올라간다.", "es": "Cuando la lleve un Pokémon, le subirá la precisión de un movimiento en un momento de apuro. Ing. para Pokochos."}
 {"i": 450, "v": "지닌 포켓몬이 위기일 때 한 번 먼저 행동할 수 있게 된다.", "es": "El Pokémon que la lleve podrá actuar en primer lugar una vez cuando se encuentre en un momento de apuro."}
-{"i": 451, "v": "지닌 포켓몬이 물리 공격을 맞으면 공격한 쪽도 데미지를 입는다.", "es": "Si la lleva un Pokémon cuando un enemigo lanza un ataque físico, este también recibirá daño."}
+{"i": 451, "v": "포켓몬에게 지니게 하면 물리 기술을 당했을 때 상대에게도 데미지를 준다.", "es": "Si la lleva un Pokémon cuando un enemigo lanza un ataque físico, este también recibirá daño."}
 {"i": 452, "v": "지닌 포켓몬이 특수공격을 맞으면 공격한 쪽도 데미지를 입는다.", "es": "Si la lleva un Pokémon cuando un enemigo lanza un ataque especial, este también recibirá daño."}
 {"i": 453, "v": "풀 무늬 카드. 포켓몬에게 들려 보내라.", "es": "Carta con un estampado de hierba. Haz que la entregue un Pokémon."}
 {"i": 454, "v": "불꽃빛 카드. 포켓몬에게 들려 보내라.", "es": "Carta con los colores del fuego. Haz que la entregue un Pokémon."}
@@ -462,7 +462,7 @@
 {"i": 461, "v": "은하 무늬 카드. 포켓몬에게 들려 보내라.", "es": "Carta con la imagen de una galaxia. Haz que la entregue un Pokémon."}
 {"i": 462, "v": "전통적인 항공우편 무늬 카드. 포켓몬에게 들려 보내라.", "es": "Carta con el diseño tradicional del correo aéreo. Haz que la entregue un Pokémon."}
 {"i": 463, "v": "무지개 모자이크 카드. 포켓몬에게 들려 보내라.", "es": "Carta con un mosaico de arco iris. Haz que la entregue un Pokémon."}
-{"i": 464, "v": "벽돌담 무늬 카드. 포켓몬에게 들려 보내라.", "es": "Carta con la imagen de una pared de ladrillos. Haz que la entregue un Pokémon."}
+{"i": 464, "v": "벽돌로 만든 다리의 무늬가 프린트된 편지지. 포켓몬에게 지니게 해서 쓴다.", "es": "Carta con la imagen de una pared de ladrillos. Haz que la entregue un Pokémon."}
 {"i": 465, "v": "배틀 중인 포켓몬의 공격을 올리는 도구. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta el Ataque en combate. Al cambiar de Pokémon, el efecto desaparece."}
 {"i": 466, "v": "배틀 중인 포켓몬의 공격을 그럭저럭 올린다. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta ligeramente el Ataque en combate. Al cambiar de Pokémon, el efecto desaparece."}
 {"i": 467, "v": "배틀 중인 포켓몬의 공격을 상당히 올린다. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta bastante el Ataque en combate. Al cambiar de Pokémon, el efecto desaparece."}
@@ -489,7 +489,7 @@
 {"i": 488, "v": "배틀 중인 포켓몬의 명중률을 크게 올리는 도구. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta mucho la Precisión en combate. Al cambiar de Pokémon, el efecto desaparece."}
 {"i": 489, "v": "급소 명중률이 크게 올라간다. 한 번밖에 쓸 수 없다. 포켓몬을 볼에 넣어 버리면 원래대로 되돌아간다.", "es": "Aumenta el índice de golpe crítico en combate. Al cambiar de Pokémon, el efecto desaparece."}
 {"i": 490, "v": "급소에 맞을 확률이 올라간다. 포켓몬을 교체하면 효과가 사라진다.", "es": "Aumenta la probabilidad de asestar un golpe crítico. Al cambiar de Pokémon, el efecto desaparece.."}
-{"i": 491, "v": "급소에 맞을 확률이 크게 올라간다. 포켓몬을 교체하면 효과가 사라진다.", "es": "Aumenta mucho la probabilidad de asestar un golpe crítico. Al cambiar de Pokémon, el efecto desaparece."}
+{"i": 491, "v": "급소 명중률이 크게 올라간다. 사용할 때마다 효과가 올라간다. 포켓몬을 볼에 넣어버리면 원래대로 되돌아간다.", "es": "Aumenta mucho la probabilidad de asestar un golpe crítico. Al cambiar de Pokémon, el efecto desaparece."}
 {"i": 492, "v": "배틀 중 5턴 동안 같은 편의 능력을 떨어뜨리지 않게 하는 도구.", "es": "Evita que bajen las características del equipo Pokémon durante cinco turnos."}
 {"i": 493, "v": "사용하면 같은 편 포켓몬의 능력 변화가 원래대로 되돌아간다.", "es": "Cuando se usa, se anulan los cambios en las características de un Pokémon de tu equipo."}
 {"i": 494, "v": "사용하면 같은 편 포켓몬의 특성을 발동시킨다.", "es": "Al usarlo, activa la habilidad de un Pokémon de tu equipo."}
@@ -498,15 +498,15 @@
 {"i": 497, "v": "파란 수정 피리. 그 가락이 잠든 포켓몬을 깨운다.", "es": "Flauta de cristal azul cuya melodía despierta a los Pokémon dormidos."}
 {"i": 498, "v": "노란 수정 피리. 포켓몬의 혼란을 풀어 준다.", "es": "Flauta de cristal amarillo que espabila a los Pokémon confusos."}
 {"i": 499, "v": "빨간 수정 피리. 포켓몬의 헤롱헤롱 상태를 풀어 준다.", "es": "Flauta de cristal rojo que libera a un Pokémon del enamoramiento."}
-{"i": 500, "v": "포켓몬을 꾀어내는 인형. 야생 포켓몬과의 배틀에서 도망칠 때 쓴다.", "es": "Un muñeco que atrae a los Pokémon. Puedes utilizarlo para huir de un combate con un Pokémon salvaje."}
+{"i": 500, "v": "포켓몬의 관심을 끄는 도구. 야생 포켓몬과의 배틀에서 반드시 도망칠 수 있다.", "es": "Un muñeco que atrae a los Pokémon. Puedes utilizarlo para huir de un combate con un Pokémon salvaje."}
 {"i": 501, "v": "포켓몬을 꾀어내 야생 포켓몬과의 배틀에서 도망칠 수 있다.", "es": "Atrae a los Pokémon y sirve para huir de un combate con un Pokémon salvaje."}
-{"i": 502, "v": "포켓몬을 꾀어내는 물건. 야생 포켓몬과의 배틀에서 도망칠 때 쓴다.", "es": "Un objeto que atrae a los Pokémon. Puedes utilizarlo para huir de un combate con un Pokémon salvaje."}
+{"i": 502, "v": "포켓몬의 관심을 끄는 도구. 야생 포켓몬과의 배틀에서 반드시 도망칠 수 있다.", "es": "Un objeto que atrae a los Pokémon. Puedes utilizarlo para huir de un combate con un Pokémon salvaje."}
 {"i": 503, "v": "세상 끝까지 태워다 줄 탈것 고고트.", "es": "Un Gogoat de montar que te llevará hasta el fin del mundo."}
 {"i": 504, "v": "제법 쓸 만한 낚싯대. 어떤 물에서든 야생 포켓몬을 낚는다.", "es": "Una caña bastante decente. Pesca Pokémon salvajes en todo tipo de aguas."}
 {"i": 505, "v": "새것 같은 고급 낚싯대. 어떤 물에서든 야생 포켓몬을 낚는다.", "es": "Una caña de pescar nuevecita y de gran calidad. Pesca Pokémon salvajes en todo tipo de aguas."}
 {"i": 506, "v": "최첨단 기술로 만든 굉장한 낚싯대. 어떤 물에서든 야생 포켓몬을 낚는다.", "es": "Una increíble caña de pescar de alta tecnología. Pesca Pokémon salvajes en todo tipo de aguas."}
 {"i": 507, "v": "음파로 보이지 않는 물건을 찾는 탐지기. 찾아내면 신호를 낸다.", "es": "Detector de objetos invisibles por ondas sonoras. Emite una señal cuando encuentra un objeto."}
-{"i": 508, "v": "보이지 않는 물건에 빛과 소리로 반응해 위치를 알려 주는 정밀 기기.", "es": "Aparato de precisión que reacciona con luz y sonido ante los objetos que no se ven e indica su posición."}
+{"i": 508, "v": "보이지 않는 도구에 반응해서 소리와 빛으로 가르쳐주는 최신 기계.", "es": "Aparato de precisión que reacciona con luz y sonido ante los objetos que no se ven e indica su posición."}
 {"i": 509, "v": "풀밭에 숨어 있는 포켓몬을 찾아내는 도구. 걸으면 전지가 충전된다.", "es": "Busca Pokémon que se esconden en la hierba. La batería se recarga mientras caminas."}
 {"i": 510, "v": "언제라도 간편하게 볼 수 있는 편리한 지도. 자신이 있는 곳도 알 수 있다.", "es": "Un mapa muy útil que puede consultarse en cualquier momento y que, además, te indica dónde te encuentras."}
 {"i": 511, "v": "어떤 포켓몬이든 단숨에 깨운다. 소리도 아름답다.", "es": "Consigue despertar al instante a cualquier Pokémon y suena de maravilla."}
@@ -515,7 +515,7 @@
 {"i": 514, "v": "실프주식회사에서 만든, 보이지 않는 포켓몬을 보는 장치.", "es": "Dispositivo hecho en SILPH S.A para ver Pokémon invisibles."}
 {"i": 515, "v": "데봉코포레이션에서 만든, 보이지 않는 포켓몬을 보는 장치.", "es": "Dispositivo hecho en DEVON para ver Pokémon invisibles."}
 {"i": 516, "v": "물이 들어 있어 나무열매밭에 물을 줄 때 쓰는 도구.", "es": "Objeto que contiene agua y se usa para regar las Bayas del Plantabayas."}
-{"i": 517, "v": "고라파덕 모양의 물뿌리개. 푸석한 땅에 심은 나무열매가 더 잘 자란다.", "es": "Una regadera con forma de PSYDUCK. Ayuda a que las bayas plantadas en tierra suelta crezcan mejor."}
+{"i": 517, "v": "물을 주는 도구. 푹신푹신한 흙에 심은 나무열매를 쑥쑥 키운다.", "es": "Una regadera con forma de PSYDUCK. Ayuda a que las bayas plantadas en tierra suelta crezcan mejor."}
 {"i": 518, "v": "물이 들어 있어 나무열매밭에 물을 줄 때 쓰는 도구.", "es": "Objeto que contiene agua y se usa para regar las Bayas del Plantabayas."}
 {"i": 519, "v": "생일이나 기념일 등에 감사의 마음을 전하기 위해 부케로 만들어 보내는 일이 있다.", "es": "Una flor que se suele regalar en ramos para expresar agradecimiento en ocasiones especiales, como cumpleaños."}
 {"i": 520, "v": "우주항에 들어가려면 필요한 신분증.", "es": "Una tarjeta de identificación necesaria para acceder a los Puertos Espaciales."}
@@ -719,7 +719,7 @@
 {"i": 718, "v": "페어리타입의 석판. 지니게 하면 페어리타입 기술의 위력이 강해진다.", "es": "Tabla de piedra que potencia los movimientos de tipo Hada. Debe llevarla un Pokémon."}
 {"i": 719, "v": "노말타입 기술의 위력을 25% 올리는 석판. 포켓몬에게 지니게 한다.", "es": "Tabla de piedra que potencia los movimientos de tipo Normal un 25%. Debe llevarla un Pokémon."}
 {"i": 720, "v": "프리즘섬의 우두머리 둥지로 포켓몬을 불러들인다.", "es": "Atrae Pokémon en los Nidos Alfa de la Isla Prisma."}
-{"i": 721, "v": "지닌 포켓몬이 약점을 찔리면 공격과 특수공격이 크게 올라간다.", "es": "Aumenta mucho el Atq. y el At. Esp. cuando el Pokémon que lo lleva recibe un ataque frente al cual es débil."}
+{"i": 721, "v": "약점을 공격당했을 때 공격과 특수공격이 각각 크게 올라간다.", "es": "Aumenta mucho el Atq. y el At. Esp. cuando el Pokémon que lo lleva recibe un ataque frente al cual es débil."}
 {"i": 722, "v": "트럭 뒷문을 열 수 있다.", "es": "Abre la parte trasera de un camión."}
 {"i": 723, "v": "수호조 제단에 바치는 물건.", "es": "Entrégalas en los Altares de las Aves Guardianas."}
 {"i": 724, "v": "보만다의 메가진화용 돌.", "es": "Piedra para megaevolucionar a Salamence."}

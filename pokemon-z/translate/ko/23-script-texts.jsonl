@@ -125,7 +125,7 @@
 {"k": "Pair Ability Ribbon", "v": "페어어빌리티리본"}
 {"k": "World Ability Ribbon", "v": "월드어빌리티리본"}
 {"k": "Champion Ribbon", "v": "챔피언리본"}
-{"k": "Sinnoh Champ Ribbon", "v": "신오 챔피언리본"}
+{"k": "Sinnoh Champ Ribbon", "v": "신오챔피언리본"}
 {"k": "Record Ribbon", "v": "레코드리본"}
 {"k": "Event Ribbon", "v": "이벤트리본"}
 {"k": "Legend Ribbon", "v": "레전드리본"}
@@ -198,13 +198,13 @@
 {"k": "Super Contest Tough Category Master Rank winner!", "v": "슈퍼 콘테스트 강함부문 마스터랭크 우승 리본!"}
 {"k": "Ribbon awarded for clearing Hoenn's Battle Tower's Lv. 50 challenge.", "v": "호연지방 배틀타워의 Lv.50 도전을 클리어한 기념 리본."}
 {"k": "Ribbon awarded for clearing Hoenn's Battle Tower's Lv. 100 challenge.", "v": "호연지방 배틀타워의 Lv.100 도전을 클리어한 기념 리본."}
-{"k": "A Ribbon awarded for defeating the Tower Tycoon at the Battle Tower.", "v": "배틀타워에서 타워타이쿤을 꺾은 기념 리본."}
+{"k": "A Ribbon awarded for defeating the Tower Tycoon at the Battle Tower.", "v": "배틀타워의 챔피언을 이긴 기념리본"}
 {"k": "A Ribbon awarded for completing the Battle Tower Double challenge.", "v": "배틀타워 더블 도전을 클리어한 기념 리본."}
 {"k": "A Ribbon awarded for completing the Battle Tower Multi challenge.", "v": "배틀타워 멀티 도전을 클리어한 기념 리본."}
 {"k": "A Ribbon awarded for completing the Battle Tower Link Multi challenge.", "v": "배틀타워 통신 멀티 도전을 클리어한 기념 리본."}
 {"k": "A Ribbon awarded for completing the Wi-Fi Battle Tower challenge.", "v": "Wi-Fi 배틀타워 도전을 클리어한 기념 리본."}
-{"k": "Ribbon for clearing the Pokémon League and entering the Hall of Fame in another region.", "v": "다른 지방의 포켓몬리그를 제패하고 명예의 전당에 오른 리본."}
-{"k": "Ribbon awarded for beating the Sinnoh Champion and entering the Hall of Fame.", "v": "신오지방 챔피언에게 승리하여 명예의 전당에 들어간 기념 리본."}
+{"k": "Ribbon for clearing the Pokémon League and entering the Hall of Fame in another region.", "v": "다른 지방의 리그에서 이겨서 전당등록한 기념리본"}
+{"k": "Ribbon awarded for beating the Sinnoh Champion and entering the Hall of Fame.", "v": "신오에서 챔피언에게 이겨서 전당등록한 기념리본"}
 {"k": "A Ribbon awarded for setting an incredible record.", "v": "대단한 기록을 남긴 기념리본"}
 {"k": "Pokémon Event Participation Ribbon.", "v": "포켓몬 이벤트 참가 리본."}
 {"k": "A Ribbon awarded for setting a legendary record.", "v": "전설적 기록을 남긴 기념리본"}
@@ -219,13 +219,13 @@
 {"k": "A Ribbon for recalling a deep slumber that made life soothing.", "v": "푹 잠들었던 것을 떠올려서 인생에 평온함을 주는 리본"}
 {"k": "A Ribbon for recalling that smiles enrich the quality of life.", "v": "방긋 미소 지을 일을 떠올려서 인생을 풍부하게 해 주는 리본"}
 {"k": "A Ribbon awarded to a Pokémon deemed to have a top-quality footprint.", "v": "최고의 발자국을 가진 포켓몬이 받을 수 있는 리본"}
-{"k": "Ribbon awarded for being chosen as a super sketch model in Hoenn.", "v": "호연지방에서 최고 스케치 모델로 뽑힌 기념 리본."}
-{"k": "Ribbon awarded for being an exceptionally hard worker.", "v": "지독한 노력가임을 인정받은 기념 리본."}
+{"k": "Ribbon awarded for being chosen as a super sketch model in Hoenn.", "v": "호연에서 호화로운 초상화의 모델이 된 기념리본"}
+{"k": "Ribbon awarded for being an exceptionally hard worker.", "v": "많이 노력하고 있는 포켓몬에게 수여되는 리본"}
 {"k": "A Ribbon to celebrate a birthday.", "v": "생일을 축하하는 리본."}
 {"k": "A special Ribbon for a special day.", "v": "특별한 날의 특별한 리본"}
 {"k": "A Ribbon that proclaims love for Pokémon.", "v": "포켓몬을 매우 좋아하는 것을 증명하는 기념리본"}
 {"k": "Special Holiday Ribbon.", "v": "특별한 휴일 기념 리본."}
-{"k": "A Ribbon to cherish a special memory.", "v": "특별한 추억을 간직하기 위한 리본."}
+{"k": "A Ribbon to cherish a special memory.", "v": "특별한 추억을 기념하는 리본"}
 {"k": "A Ribbon said to make your wish come true.", "v": "소원이 이루어진다고 전해지는 리본"}
 {"k": "A Ribbon awarded for overcoming all difficult challenges.", "v": "모든 고난을 극복한 기념리본"}
 {"k": "Pokémon League Champion Ribbon.", "v": "포켓몬리그 챔피언 리본."}
@@ -900,8 +900,8 @@
 {"k": "The swamp around the opposing team disappeared!", "v": "상대 주변의 습지초원이 사라졌다!"}
 {"k": "The sea of fire around your team disappeared!", "v": "우리 편 주변의 불바다가 사라졌다!"}
 {"k": "The sea of fire around the opposing team disappeared!", "v": "상대 주변의 불바다가 사라졌다!"}
-{"k": "The rainbow around your team disappeared!", "v": "아군 주변의 무지개가 사라졌다!"}
-{"k": "The rainbow around the opposing team disappeared!", "v": "상대 주변의 무지개가 사라졌다!"}
+{"k": "The rainbow around your team disappeared!", "v": "우리 편 하늘에서 무지개가 사라졌다!"}
+{"k": "The rainbow around the opposing team disappeared!", "v": "상대 하늘에서 무지개가 사라졌다!"}
 {"k": "Gravity returned to normal.", "v": "Gravity returned to normal."}
 {"k": "The twisted dimensions returned to normal.", "v": "The twisted dimensions returned to normal."}
 {"k": "The area returned to normal.", "v": "주변이 원상태로 돌아왔다."}
@@ -1104,7 +1104,7 @@
 {"k": "{1:s} (♂, Lv{2:d})", "v": "{1:s} (♂, Lv{2:d})"}
 {"k": "{1:s} (♀, Lv{2:d})", "v": "{1:s} (♀, Lv{2:d})"}
 {"k": "{1:s} (Lv{2:d})", "v": "{1:s} (Lv{2:d})"}
-{"k": "CANCEL", "v": "취소"}
+{"k": "CANCEL", "v": "그만둔다"}
 {"k": "Can't store the egg", "v": "Can’t store the egg"}
 {"k": "Day-Care Couple", "v": "Day-Care Couple"}
 {"k": "Egg", "v": "알"}
@@ -1443,7 +1443,7 @@
 {"k": "Form", "v": "모습"}
 {"k": "Happiness", "v": "친밀도"}
 {"k": "EV/IV/pID", "v": "노력치/개체값/pID"}
-{"k": "Pokérus", "v": "포케루스"}
+{"k": "Pokérus", "v": "포켓러스"}
 {"k": "Ownership", "v": "어버이"}
 {"k": "Nickname", "v": "넥네임"}
 {"k": "Poké Ball", "v": "몬스터볼"}
@@ -1927,7 +1927,7 @@
 {"k": "Money:\n<r>${1}", "v": "소지금:\n<r>{1}포켓프랑"}
 {"k": "In Bag:<r>{1:d}", "v": "가방 안:<r>{1:d}"}
 {"k": "x{1:d}<r>$ {2:d}", "v": "x{1:d}<r>{2:d}포켓프랑"}
-{"k": "You don't have enough money.", "v": "돈이 부족합니다."}
+{"k": "You don't have enough money.", "v": "돈이 부족하다!"}
 {"k": "Certainly. You want {1}.\nThat will be ${2}. OK?", "v": "Certainly. You want {1}.\r\nThat will be ${2}. OK?"}
 {"k": "{1}? Certainly.\nHow many would you like?", "v": "{1}?  Certainly.\r\nHow many would you like?"}
 {"k": "{1}, and you want {2}.\nThat will be ${3}. OK?", "v": "{1} 카드 {2}장이군.\r\n전부 ${3}일세. 괜찮은가?"}
@@ -2786,7 +2786,7 @@
 {"k": "Hielo", "v": "얼음"}
 {"k": "Dragón", "v": "드래곤"}
 {"k": "Oscuro", "v": "악"}
-{"k": "Sin especificar", "v": "지정 안 함"}
+{"k": "Sin especificar", "v": "설정하지 않는다"}
 {"k": "Rojo", "v": "빨강"}
 {"k": "Azul", "v": "파랑"}
 {"k": "Amarillo", "v": "노랑"}
@@ -2817,8 +2817,8 @@
 {"k": "Hembra", "v": "암컷"}
 {"k": "Forma única", "v": "단일 폼"}
 {"k": "Sin género", "v": "성별 없음"}
-{"k": "SALIR", "v": "나가기"}
-{"k": "CONFIRMAR", "v": "확인"}
+{"k": "SALIR", "v": "그만둔다"}
+{"k": "CONFIRMAR", "v": "결정"}
 {"k": "Nv.{1}", "v": "Lv.{1}"}
 {"k": "Si", "v": "예"}
 {"k": "Ingrese un mensaje (máx. {1} caracteres).", "v": "메시지를 입력하세요 (최대 {1}자)."}
@@ -2856,12 +2856,12 @@
 {"k": "SEXTO", "v": "여섯 번째"}
 {"k": "Elije un Pokémon y confirma.", "v": "포켓몬을 선택하고 확인하세요."}
 {"k": "Participa", "v": "참가"}
-{"k": "No participa", "v": "참가하지 않음"}
+{"k": "No participa", "v": "참가하지 않는다"}
 {"k": "Datos", "v": "능력치를 본다"}
 {"k": "¿Qué hacer con {1}?", "v": "{1}\\j[을,를] 어떻게 할까?"}
 {"k": "No pueden participar más de {1} Pokémon.", "v": "포켓몬은 {1}마리를 초과해 참가할 수 없습니다."}
 {"k": "PUEDE", "v": "가능"}
-{"k": "NO PUEDE", "v": "불가능"}
+{"k": "NO PUEDE", "v": "배울 수 없다"}
 {"k": "Elije un Pokémon.", "v": "포켓몬을 선택하세요."}
 {"k": "Elije un Pokémon o cancela.", "v": "포켓몬을 선택하거나 취소하세요."}
 {"k": "Este Pokémon no puede ser elegido.", "v": "이 포켓몬은 선택할 수 없습니다."}
@@ -2901,7 +2901,7 @@
 {"k": "El nivel del {1} se estableció en {2}.", "v": "{1}의 레벨을 {2}\\j[으로,로] 설정했다."}
 {"k": "La especie de {1} fue cambiada a {2}.", "v": "{1}의 종류를 {2}\\j[으로,로] 바꿨다."}
 {"k": "Enseñar movimiento", "v": "기술 가르치기"}
-{"k": "Olvidar movimiento", "v": "기술 잊기"}
+{"k": "Olvidar movimiento", "v": "기술을 잊는다"}
 {"k": "Restaurar lista de mov.", "v": "기술 목록 되돌리기"}
 {"k": "Restaurar mov. iniciales", "v": "처음 기술 복원"}
 {"k": "Seleccione el movimiento a olvidar.", "v": "잊게 할 기술을 선택하세요."}
@@ -3002,7 +3002,7 @@
 {"k": "{1} recuperó {2} puntos de salud.", "v": "{1}\\j[은,는] 체력을 {2}만큼 회복했다."}
 {"k": "Elige un Pokémon.", "v": "포켓몬을 선택해 주십시오!"}
 {"k": "Elige un Pokémon o cancela.", "v": "포켓몬을 선택하거나 취소하세요."}
-{"k": "¿A qué posición mover?", "v": "어느 위치로 옮길까?"}
+{"k": "¿A qué posición mover?", "v": "어디와 교체할까?"}
 {"k": "¿Qué quieres hacer con la carta?", "v": "편지를 어떻게 할까?"}
 {"k": "Leer", "v": "읽기"}
 {"k": "Quitar", "v": "가져온다"}
@@ -3019,14 +3019,14 @@
 {"k": "DATOS", "v": "정보"}
 {"k": "N° Dex", "v": "도감 No."}
 {"k": "Tipo", "v": "타입"}
-{"k": "N° ID", "v": "ID 번호"}
+{"k": "N° ID", "v": "IDNo."}
 {"k": "Medidor del Corazón", "v": "하트게이지"}
 {"k": "¡La puerta de su corazón está abierta! ¡Hacer desbloqueo definitivo!", "v": "마음의 문이 열렸다! 최종 해방을 실행하라!"}
 {"k": "La puerta de su corazón está casi abierta del todo.", "v": "마음의 문이 거의 다 열려 있다."}
 {"k": "La puerta de su corazón está bastante abierta.", "v": "마음의 문이 꽤 열려 있다."}
 {"k": "La puerta de su corazón está un poco abierta.", "v": "마음의 문이 조금 열려 있다."}
 {"k": "La puerta de su corazón está apenas abierta.", "v": "마음의 문이 아주 조금 열려 있다."}
-{"k": "La puerta está fuertemente cerrada.", "v": "문이 굳게 잠겨 있다."}
+{"k": "La puerta está fuertemente cerrada.", "v": "문은 굳게 잠겨 있다."}
 {"k": "Puntos de Experiencia", "v": "경험치"}
 {"k": "Para subir de nivel", "v": "레벨업하려면"}
 {"k": "PRESTADO", "v": "빌림"}
@@ -3035,7 +3035,7 @@
 {"k": "<c3=404040,B0B0B0>Un extraño Huevo Pokémon hallado por la <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.", "v": "<c3=404040,B0B0B0><c3=F83820,E09890>{1}<c3=404040,B0B0B0>\\j[이,가] 발견한 이상한 포켓몬 알.\n"}
 {"k": "<c3=404040,B0B0B0>\"Estado del Huevo\"", "v": "<c3=404040,B0B0B0>“알 상태”\n"}
 {"k": "Parece que a este Huevo le tomará mucho tiempo abrirse.", "v": "이 알은 부화하는 데 한참 걸릴 것 같다."}
-{"k": "¿Qué saldrá? Aún le queda para abrirse.", "v": "무엇이 나올까? 부화하려면 아직 멀었다."}
+{"k": "¿Qué saldrá? Aún le queda para abrirse.", "v": "무엇이 태어날까? 태어나기까지 아직 시간이 걸릴 것 같다."}
 {"k": "A veces se mueve. Debería abrirse pronto.", "v": "가끔 움직인다. 곧 부화할 것 같다."}
 {"k": "Está haciendo ruidos. ¡Está a punto de abrirse!", "v": "소리가 난다. 곧 부화할 것 같다!"}
 {"k": "<c3=404040,B0B0B0>Naturaleza <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.", "v": "<c3=404040,B0B0B0><c3=F83820,E09890>{1}<c3=404040,B0B0B0> 성격."}
@@ -3049,29 +3049,29 @@
 {"k": "Suele perder cosas.", "v": "물건을 잘 잃어버린다."}
 {"k": "A veces se enoja.", "v": "가끔 화를 낸다."}
 {"k": "Le gusta relajarse.", "v": "유유자적함을 좋아함."}
-{"k": "Orgulloso de su fuerza.", "v": "자신의 힘을 자랑스러워한다."}
+{"k": "Orgulloso de su fuerza.", "v": "힘자랑이 특기임."}
 {"k": "Le gusta revolverse.", "v": "난동부리기를 좋아함."}
-{"k": "Un poco cabezota.", "v": "조금 고집이 세다."}
+{"k": "Un poco cabezota.", "v": "조금 고집통이임."}
 {"k": "Le gusta luchar.", "v": "싸움을 좋아함."}
 {"k": "Muy cabezota.", "v": "매우 고집이 세다."}
 {"k": "Cuerpo resistente.", "v": "몸이 튼튼하다."}
 {"k": "Capaz de hacerlo solo.", "v": "혼자서도 잘 해낸다."}
-{"k": "Muy persistente.", "v": "매우 끈질기다."}
-{"k": "Buen fajador.", "v": "싸움을 잘한다."}
-{"k": "Muy perseverante.", "v": "매우 끈기가 있다."}
+{"k": "Muy persistente.", "v": "끈질김."}
+{"k": "Buen fajador.", "v": "맷집이 강함."}
+{"k": "Muy perseverante.", "v": "잘 참음."}
 {"k": "Le gusta correr.", "v": "달리기를 좋아함."}
 {"k": "Oído siempre alerta.", "v": "항상 귀를 기울이고 있다."}
-{"k": "Impetuoso y bobo.", "v": "성급하고 둔하다."}
+{"k": "Impetuoso y bobo.", "v": "촐랑대는 성격임."}
 {"k": "Es un poco payaso.", "v": "약간 우쭐쟁이임."}
 {"k": "Huye rápido.", "v": "도망에는 선수임."}
 {"k": "Muy curioso.", "v": "매우 호기심이 많다."}
 {"k": "Travieso.", "v": "장난기가 많다."}
-{"k": "Muy astuto.", "v": "매우 영리하다."}
+{"k": "Muy astuto.", "v": "빈틈이 없음."}
 {"k": "A veces se distrae.", "v": "가끔 딴생각을 한다."}
 {"k": "Muy quisquilloso.", "v": "매우 까다롭다."}
 {"k": "Voluntarioso.", "v": "고집이 세다."}
-{"k": "Algo orgulloso.", "v": "조금 자존심이 세다."}
-{"k": "Muy insolente.", "v": "매우 건방지다."}
+{"k": "Algo orgulloso.", "v": "조금 겉치레를 좋아함."}
+{"k": "Muy insolente.", "v": "오기가 센 성격임."}
 {"k": "Odia perder.", "v": "지기 싫어함."}
 {"k": "Tiene mal genio.", "v": "혈기가 왕성함."}
 {"k": "CARACTERÍSTICAS", "v": "능력치"}
@@ -3215,21 +3215,21 @@
 {"k": "¿En qué Caja dejarlo?", "v": "어느 박스에 맡기시겠습니까?"}
 {"k": "La Caja está llena.", "v": "이 박스는 가득 찼습니다!"}
 {"k": "No se puede retirar del equipo...", "v": "파티에서 뺄 수 없다..."}
-{"k": "¡Tu equipo está completo!", "v": "파티가 가득 찼다!"}
+{"k": "¡Tu equipo está completo!", "v": "지닌 포켓몬이 가득 찼다!"}
 {"k": "Posición {1},{2} está vacía...", "v": "위치 {1},{2}\\j[은,는] 비어 있다..."}
 {"k": "Posición {1},{2} no está vacía...", "v": "위치 {1},{2}\\j[은,는] 비어 있지 않습니다..."}
 {"k": "¿Tomar {1}?", "v": "{1}\\j[을,를] 가져갈까?"}
 {"k": "No se puede guardar {1}.", "v": "{1}\\j[은,는] 저장할 수 없다."}
 {"k": "Tomaste {1}.", "v": "{1}\\j[을,를] 받았다."}
 {"k": "¡Ahora lleva {1}!", "v": "이제 {1}\\j[을,를] 지니고 있다!"}
-{"k": "SACAR POKéMON", "v": "포켓몬 꺼내기"}
-{"k": "DEJAR POKéMON", "v": "포켓몬 맡기기"}
-{"k": "MOVER POKéMON", "v": "포켓몬 이동"}
-{"k": "MOVER OBJETOS", "v": "도구 옮기기"}
-{"k": "DESCONECTAR", "v": "연결 끊기"}
+{"k": "SACAR POKéMON", "v": "포켓몬 내보내기"}
+{"k": "DEJAR POKéMON", "v": "포켓몬을 맡긴다"}
+{"k": "MOVER POKéMON", "v": "포켓몬 교체"}
+{"k": "MOVER OBJETOS", "v": "지닌 물건 교체"}
+{"k": "DESCONECTAR", "v": "종료한다"}
 {"k": "Mueve un Pokémon de una Caja a tu equipo.", "v": "박스의 포켓몬을 지닌 포켓몬으로 옮깁니다."}
-{"k": "Guarda un Pokémon de tu equipo en una Caja.", "v": "지닌 포켓몬을 박스에 맡깁니다."}
-{"k": "Organiza los Pokémon de las Cajas y tu equipo.", "v": "박스와 지닌 포켓몬을 정리합니다."}
+{"k": "Guarda un Pokémon de tu equipo en una Caja.", "v": "지닌 포켓몬을 박스에 맡길 수 있습니다"}
+{"k": "Organiza los Pokémon de las Cajas y tu equipo.", "v": "박스에 맡긴 포켓몬이나 지닌 포켓몬을 정리할 수 있습니다"}
 {"k": "Mueve los objetos que llevan los Pokémon de la Cajas y tu equipo.", "v": "박스와 지닌 포켓몬이 지닌 도구를 옮깁니다."}
 {"k": "Regresar al menú anterior.", "v": "이전 메뉴로 돌아갑니다."}
 {"k": "Saltar", "v": "점프"}
@@ -3316,7 +3316,7 @@
 {"k": "Bajar Medidor Corazón", "v": "하트게이지 낮추기"}
 {"k": "El medidor del corazón de {1} bajó de {2} hasta {3} (ahora en etapa {4}).", "v": "{1}의 하트게이지가 {2}에서 {3}\\j[으로,로] 내려갔다 (현재 단계 {4})."}
 {"k": "El Pokémon duplicado fue movido a tu equipo.", "v": "복제한 포켓몬을 지닌 포켓몬으로 옮겼다."}
-{"k": "Todas las cajas están llenas.", "v": "모든 박스가 가득 찼다."}
+{"k": "Todas las cajas están llenas.", "v": "박스가 가득 찼다!"}
 {"k": "El Pokémon duplicado fue movido a la caja \"{1}.\"", "v": "복제한 포켓몬을 박스 “{1}”\\j[으로,로] 옮겼다."}
 {"k": "¿Estás seguro de borrar este Pokémon?", "v": "정말 이 포켓몬을 삭제할까?"}
 {"k": "Sin habilidad", "v": "특성 없음"}
@@ -3339,9 +3339,9 @@
 {"k": "Mover a la Mochila", "v": "가방으로 옮기기"}
 {"k": "El mensaje se perderá. ¿Estás de acuerdo?", "v": "메시지가 사라집니다. 괜찮겠습니까?"}
 {"k": "La Carta regresó a la Mochila con el mensaje borrado.", "v": "편지가 내용이 지워진 채 가방으로 돌아왔다."}
-{"k": "La mochila está llena.", "v": "가방이 가득 찼다."}
+{"k": "La mochila está llena.", "v": "가방이 가득 찼다!"}
 {"k": "¿Qué quieres hacer?", "v": "무엇을 할까?"}
-{"k": "Almacén Objetos", "v": "도구 보관함"}
+{"k": "Almacén Objetos", "v": "창고"}
 {"k": "Buzón", "v": "우편함"}
 {"k": "Desconexión", "v": "접속 해제"}
 {"k": "\\se[computeropen]{1} encendió la PC.", "v": "\\se[computeropen]{1}\\j[은,는] PC를 켰다."}
@@ -3375,14 +3375,14 @@
 {"k": "¡Tu {1} está en la Cámara de Purificación listo para ser purificado!", "v": "당신의 {1}\\j[이,가] 정화의 방에서 정화될 준비를 마쳤다!"}
 {"k": "Cámara de Purificación", "v": "정화의 방"}
 {"k": "\\se[accesspc]Acceso a la Cámara de Purificación concedido.", "v": "\\se[accesspc]정화의 방 접속이 허가됐다."}
-{"k": "No se puede colocar un huevo ahí.", "v": "거기에는 알을 놓을 수 없다."}
+{"k": "No se puede colocar un huevo ahí.", "v": "알은 놓을 수 없습니다"}
 {"k": "Solamente se puede poner un Pokémon Oscuro ahí.", "v": "거기에는 그림자 포켓몬만 놓을 수 있다."}
 {"k": "No se puede colocar un Pokemon Oscuro ahí.", "v": "거기에는 그림자 포켓몬을 놓을 수 없다."}
 {"k": "Este {1} está listo para abrir su corazón. Sin embargo, debe haber al menos un Pokémon normal en la cámara para completar la ceremonia de purificación.", "v": "이 {1}\\j[은,는] 마음을 열 준비가 됐다. 다만 정화 의식을 마치려면 방에 일반 포켓몬이 최소 한 마리 있어야 한다."}
 {"k": "MOVER", "v": "이동"}
-{"k": "SACAR", "v": "꺼내기"}
+{"k": "SACAR", "v": "데리고 간다"}
 {"k": "INTERCAMBIAR", "v": "교환"}
-{"k": "COLOCAR", "v": "놓기"}
+{"k": "COLOCAR", "v": "배치한다"}
 {"k": "ROTAR", "v": "회전"}
 {"k": "REMPLAZAR", "v": "교체"}
 {"k": "¿Qué debería hacerse con {1}?", "v": "{1}\\j[을,를] 어떻게 할까?"}
@@ -3390,12 +3390,12 @@
 {"k": "¡Hay un Pokémon que está listo para abrir su corazón!\u0001", "v": "마음을 열 준비가 된 포켓몬이 있다!\u0001"}
 {"k": "¡Hay otro Pokémon que está listo para abrir su corazón!", "v": "마음을 열 준비가 된 또 다른 포켓몬이 있다!"}
 {"k": "EDITAR", "v": "편집"}
-{"k": "CAMBIAR", "v": "변경"}
+{"k": "CAMBIAR", "v": "교체"}
 {"k": "{1} Nv{2} {3}", "v": "{1} Lv{2} {3}"}
 {"k": "{1} Nv{2} {3}/{4}", "v": "{1} Lv{2} {3}/{4}"}
 {"k": "FLUJO", "v": "플로우"}
 {"k": "RITMO", "v": "리듬"}
-{"k": "Salir de la tienda.", "v": "상점에서 나간다."}
+{"k": "Salir de la tienda.", "v": "그만둔다"}
 {"k": "Dinero:\n<r>${1}", "v": "소지금:\n<r>${1}"}
 {"k": "No tienes el dinero suficiente.", "v": "돈이 부족하군요."}
 {"k": "{1} es una buena elección.\nTe costará ${2}. ¿De acuerdo?", "v": "{1}, 좋은 선택이에요.\r\n${2}인데 괜찮으시겠어요?"}
@@ -3404,7 +3404,7 @@
 {"k": "Error al borrar objeto guardado", "v": "저장된 도구 삭제 중 오류"}
 {"k": "No tienes espacio en la Mochila.", "v": "가방에 공간이 없다."}
 {"k": "¡Aquí tienes!\n¡Gracias!", "v": "네, 여기 있습니다!\r\n대단히 감사합니다!"}
-{"k": "También recibes una Honor Ball extra.", "v": "덤으로 프리미어볼도 하나 더 받는다."}
+{"k": "También recibes una Honor Ball extra.", "v": "프레미어볼 1개를 서비스로 드리겠습니다!"}
 {"k": "¿{1}? ¡Oh, no!\nNo puedo comprar eso.", "v": "{1}? 이런!\r\n그건 살 수 없어요."}
 {"k": "¿{1}?\n¿Cuántas unidades quieres vender?", "v": "{1}?\r\n몇 개 파시겠어요?"}
 {"k": "Puedo pagarte ${1}.\n¿Te parece bien?", "v": "${1}에 사 드릴게요.\r\n괜찮으시겠어요?"}
@@ -3442,7 +3442,7 @@
 {"k": "Exportar selec. a archivo", "v": "선택 항목 파일로 내보내기"}
 {"k": "Buscando regalos.\nEspere un momento...\\wtnp[0]", "v": "선물을 찾는 중.\n잠시만 기다려 주세요...\\wtnp[0]"}
 {"k": "No hay regalos nuevos disponibles.", "v": "받을 수 있는 새 선물이 없습니다."}
-{"k": "Elige el regalo que quieres recibir.\\wtnp[0]", "v": "받고 싶은 선물을 선택하세요.\\wtnp[0]"}
+{"k": "Elige el regalo que quieres recibir.\\wtnp[0]", "v": "코드나 변수 있는 건 그냥 바꾸면 안 된다고."}
 {"k": "¡Se ha recibido el regalo!", "v": "선물을 받았다!"}
 {"k": "Retira tu regalo del repartidor en cualquier Tienda.", "v": "아무 상점의 배달원에게서 선물을 받으세요."}
 {"k": "No se pudo encontrar un Regalo Misterioso sin reclamar con ID {1}.", "v": "ID {1}의 미수령 신비한 선물을 찾지 못했다."}
@@ -6049,21 +6049,21 @@
 {"k": "MOVIMIENTOS POR NIVEL:", "v": "레벨업으로 배우는 기술:"}
 {"k": "MOVIMIENTOS HUEVO:", "v": "유전 기술:"}
 {"k": "MOVIMIENTOS POR MT Y MO:", "v": "기술머신·비전머신으로 배우는 기술:"}
-{"k": "¡El campo de batalla se volvió extraño!", "v": "배틀 필드가 기묘해졌다!"}
+{"k": "¡El campo de batalla se volvió extraño!", "v": "발밑에서 이상한 느낌이 든다!"}
 {"k": "¡{1} va a ser atacado por su {2}!", "v": "{1}\\j[은,는] 자신의 {2}에게 공격당한다!"}
 {"k": "¡{1} rebosa energía cósmica!", "v": "{1}\\j[이,가] 우주의 기운으로 넘친다!"}
 {"k": "¡Campo Psíquico protegió a {1}!", "v": "{1}\\j[을,를] 사이코필드가 지켜 주고 있다!"}
 {"k": "El campo de corriente eléctrica ha desaparecido.", "v": "발밑의 전기가 사라졌다!"}
 {"k": "La hierba ha desaparecido.", "v": "발밑의 풀이 사라졌다!"}
 {"k": "La niebla se ha disipado.", "v": "발밑의 안개가 사라졌다!"}
-{"k": "Ha desaparecido la extraña sensación que había en el terreno de combate.", "v": "배틀 필드에 감돌던 기묘한 기운이 사라졌다."}
+{"k": "Ha desaparecido la extraña sensación que había en el terreno de combate.", "v": "발밑의 이상한 느낌이 사라졌다!"}
 {"k": "¡La sensación extraña desapareció del campo!", "v": "기묘한 기운이 필드에서 사라졌다!"}
 {"k": "¡{1} megaevoluciona gracias al vínculo con {3}!", "v": "{3}\\j[과,와]의 유대 덕분에 {1}\\j[이,가] 메가진화했다!"}
 {"k": "¡Las dimensiones han vuelto a la normalidad!", "v": "뒤틀린 시공이 원래대로 되돌아왔다!"}
 {"k": "¡La corriente eléctrica ha desaparecido del campo de batalla!", "v": "일렉트릭필드가 배틀 필드에서 사라졌다!"}
-{"k": "¡El campo de hierba ha desaparecido del campo de batalla!", "v": "그래스필드가 배틀 필드에서 사라졌다!"}
-{"k": "¡La niebla se ha desvanecido del campo de batalla!", "v": "미스트필드가 배틀 필드에서 사라졌다!"}
-{"k": "¡La sensación extraña desapareció del campo de batalla!", "v": "기묘한 기운이 배틀 필드에서 사라졌다!"}
+{"k": "¡El campo de hierba ha desaparecido del campo de batalla!", "v": "발밑의 풀이 사라졌다!"}
+{"k": "¡La niebla se ha desvanecido del campo de batalla!", "v": "발밑의 안개가 사라졌다!"}
+{"k": "¡La sensación extraña desapareció del campo de batalla!", "v": "발밑의 이상한 느낌이 사라졌다!"}
 {"k": "{1} ate the Adamant Mint.", "v": "{1} ate the Adamant Mint."}
 {"k": "{1} ate the Bold Mint.", "v": "{1} ate the Bold Mint."}
 {"k": "{1} ate the Brave Mint.", "v": "{1} ate the Brave Mint."}
@@ -6248,7 +6248,7 @@
 {"k": "Hay una receta que no está bien definida.", "v": "제대로 정의되지 않은 레시피가 있다."}
 {"k": "CERRAR", "v": "닫기"}
 {"k": "INFORMACIÓN", "v": "정보"}
-{"k": "Habilidad:", "v": "특성:"}
+{"k": "Habilidad:", "v": "특성"}
 {"k": "EV / IV / Poder Oculto", "v": "EV / IV / Poder Oculto "}
 {"k": "ATAQ.", "v": "공격"}
 {"k": "DEFE.", "v": "방어"}
@@ -6326,13 +6326,13 @@
 {"k": "Pulsa una nueva tecla.", "v": "새 키를 누르세요."}
 {"k": "¿Guardar cambios antes de salir?", "v": "나가기 전에 변경사항을 저장할까?"}
 {"k": "Hay acciones sin asignar, debes asignarlas todas.", "v": "할당되지 않은 동작이 있습니다. 모두 할당해야 합니다."}
-{"k": "Pokedex", "v": "도감"}
+{"k": "Pokedex", "v": "포켓몬 도감"}
 {"k": "No se pueden meter mas puas", "v": "더 이상 압정을 깔 수 없다"}
 {"k": "¡Regia Presencia impidió el ataque!", "v": "여왕의위엄이 공격을 막았다!"}
 {"k": "El enemigo ya esta rodeado de piedras puntiaguadas", "v": "상대는 이미 스텔스록에 둘러싸여 있다"}
 {"k": "No puede utilizar el movimiento Martillo Colosal dos veces seguidas", "v": "기가톤해머는 연속으로 두 번 쓸 수 없다"}
 {"k": "¡{1} fue envenenado!", "v": "{1}의 몸에 독이 퍼졌다!"}
-{"k": "¡Pero falló", "v": "하지만 실패했다"}
+{"k": "¡Pero falló", "v": "그러나 실패하고 말았다!!"}
 {"k": "{1} aumentó el potencial de todas sus estadísticas.", "v": "{1}의 모든 능력 잠재력이 올랐다."}
 {"k": "¡El huevo mágico libera un movimiento adicional!", "v": "마법의 알이 기술을 하나 더 터뜨렸다!"}
 {"k": "¡{2} de {1} paralizó a {3}!", "v": "{1}의 {2} 때문에 {3}\\j[은,는] 마비되어 기술이 나오기 어려워졌다!"}
@@ -6361,7 +6361,7 @@
 {"k": "Este calor... este fuego... ¡esto era ser un entrenador Pokémon!", "v": "이 열기... 이 불꽃... 이게 바로 포켓몬 트레이너지!"}
 {"k": "{1} alteró las dimensiones!", "v": "{1}\\j[은,는] 시공을 뒤틀었다!"}
 {"k": "¡El efecto de Zona Extraña ha terminado!", "v": "원더룸의 효과가 끝났다!"}
-{"k": "¡Se ha creado una Zona Extraña donde la Defensa y la Defensa Especial se intercambian!", "v": "방어와 특수방어가 뒤바뀌는 원더룸이 만들어졌다!"}
+{"k": "¡Se ha creado una Zona Extraña donde la Defensa y la Defensa Especial se intercambian!", "v": "방어와 특수방어가 바뀌는 공간을 만들어 냈다!"}
 {"k": "¡Se ha acabado el efecto de Zona Extraña!", "v": "원더룸의 효과가 끝났다!"}
 {"k": "Autoguardado Completado", "v": "Autoguardado Completado"}
 {"k": "", "v": ""}
@@ -6394,7 +6394,7 @@
 {"k": "No me dejas otra opción. De verdad que no.", "v": "다른 선택지를 주지 않는군. 정말로."}
 {"k": "Pokéballs", "v": "몬스터볼"}
 {"k": "Objeto Batalla", "v": "배틀도구"}
-{"k": "USAR", "v": "사용"}
+{"k": "USAR", "v": "사용한다"}
 {"k": "NO USAR", "v": "사용 불가"}
 {"k": "Último objeto usado", "v": "마지막에 쓴 도구"}
 {"k": "¡Entra en razón, por favor! ¡Ni el más feroz de los ejércitos enemigos me dio tanta guerra!", "v": "제발 정신 좀 차려! 가장 사나운 적군도 나를 이만큼 애먹이진 않았다고!"}
@@ -6403,8 +6403,8 @@
 {"k": "Antes era un hombre débil. ¡Pero de ese hombre débil resurgió un auténtico gigante con voluntad inquebrantable!", "v": "예전의 나는 나약한 인간이었다. 하지만 그 나약함을 딛고, 불굴의 의지를 지닌 진정한 거인으로 다시 일어섰다!"}
 {"k": "¡Mira! ¡Mira ahora! No te lo pierdas, ¿eh?", "v": "봐! 지금 봐! 놓치지 마, 알겠지?"}
 {"k": "El enemigo ya esta rodeado de púas", "v": "상대는 이미 압정에 둘러싸여 있다"}
-{"k": "¡El equipo enemigo está rodeado de púas!", "v": "상대 팀 주위에 압정이 깔렸다!"}
-{"k": "¡Tu equipo está rodeado de púas!", "v": "아군 팀 주위에 압정이 깔렸다!"}
+{"k": "¡El equipo enemigo está rodeado de púas!", "v": "상대의 발밑에 압정이 뿌려졌다!"}
+{"k": "¡Tu equipo está rodeado de púas!", "v": "우리 편의 발밑에 압정이 뿌려졌다!"}
 {"k": "¡{1} prepara una Lanza Relámpago!", "v": "{1}\\j[이,가] 번개창을 준비한다!"}
 {"k": "Vsync", "v": "수직동기화"}
 {"k": "Ocultar icono turbo", "v": "배속 아이콘"}

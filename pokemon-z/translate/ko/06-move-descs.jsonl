@@ -34,23 +34,23 @@
 {"i": 33, "v": "상대 포켓몬이 교체될 때 기술을 쓰면 2배의 위력으로 공격할 수 있다.", "es": "Hace el doble de daño al objetivo que pide el relevo."}
 {"i": 34, "v": "공격하며 상대의 도구를 빼앗는다. 자신에게 도구가 있으면", "es": "Ataca y le quita al objetivo el objeto que lleve. Si el agresor lleva un objeto"}
 {"i": 35, "v": "배틀 중 상대가 지닌 도구를 쓰지 못하게 한다.", "es": "Impide al objetivo usar el objeto que lleva durante el combate."}
-{"i": 36, "v": "파티 전원이 함께 공격한다. 수가 많을수록 공격 횟수가 늘어난다.", "es": "Ataque de todo el equipo Pokémon. Cuantos más haya, más veces ataca."}
+{"i": 36, "v": "같은 편 전원이 공격한다. 동료 포켓몬이 많을수록 기술의 공격 횟수가 증가한다.", "es": "Ataque de todo el equipo Pokémon. Cuantos más haya, más veces ataca."}
 {"i": 37, "v": "복수의 저주를 상대에게 건다. 50% 확률로 화상을 입힌다.", "es": "Lanza una maldición vengativa al objetivo. Puede causar quemaduras (50%)."}
-{"i": 38, "v": "상대의 랭크 업이 많이 되어 있을수록 위력이 커진다.", "es": "La fuerza del ataque aumenta cuanto más se ha fortalecido el rival con cambios de características."}
+{"i": 38, "v": "능력 변화로 상대가 파워업한 만큼 기술의 위력이 올라간다.", "es": "La fuerza del ataque aumenta cuanto más se ha fortalecido el rival con cambios de características."}
 {"i": 39, "v": "암흑의 세계로 끌고 가서 상대를 잠듦 상태로 만든다.", "es": "El objetivo es enviado a un mundo de tinieblas que lo hace dormir."}
-{"i": 40, "v": "상대가 지닌 도구를 쓰지 못하게 한다. 트레이너도 도구를 쓸 수 없다.", "es": "Impide al objetivo usar el objeto que lleva. Su Entrenador tampoco puede usar objetos sobre él."}
+{"i": 40, "v": "지니게 한 도구를 쓸 수 없게 한다. 트레이너도 그 포켓몬에게는 도구를 쓸 수 없다.", "es": "Impide al objetivo usar el objeto que lleva. Su Entrenador tampoco puede usar objetos sobre él."}
 {"i": 41, "v": "우는 척을 하며 눈물을 흘린다. 난처하게 만들어 상대의 특수방어를 크게 떨어뜨린다.", "es": "Lágrimas de cocodrilo que bajan mucho la Defensa Especial del objetivo."}
 {"i": 42, "v": "상대를 치켜세워 혼란시키지만 특수공격도 올려 준다.", "es": "Halaga al objetivo y lo confunde, pero también sube su Ataque Especial.."}
 {"i": 43, "v": "손톱을 갈아 날카롭게 한다. 자신의 공격과 명중률을 올린다.", "es": "El usuario se afila las garras para aumentar su Ataque y Precisión."}
 {"i": 44, "v": "자신은 기절하게 되지만 그 대신 상대의 공격과 특수공격을 크게 떨어뜨린다.", "es": "El usuario se debilita, pero baja mucho tanto el Ataque como el Ataque Especial del objetivo."}
 {"i": 45, "v": "나쁜 일을 생각해서 머리를 활성화시킨다. 자신의 특수공격을 크게 올린다.", "es": "Estimula su cerebro pensando en cosas malas. Aumenta considerablemente el Ataque Especial."}
 {"i": 46, "v": "상대를 위협해 그 턴의 가장 마지막에 움직이게 만든다.", "es": "El usuario intimida a su objetivo logrando que su movimiento sea el último del turno."}
-{"i": 47, "v": "상대가 쓰려는 회복 기술이나 능력 변화 기술의 효과를 가로챈다.", "es": "Roba el efecto de movimientos de curación o de cambio de características que intente usar un combatiente."}
+{"i": 47, "v": "상대가 사용하려고 한 회복 기술이나 능력 변화의 기술을 빼앗아 자신에게 쓴다.", "es": "Roba el efecto de movimientos de curación o de cambio de características que intente usar un combatiente."}
 {"i": 48, "v": "눈에 보이지 않는 속도로 자신과 상대가 지닌 물건을 교환한다.", "es": "Intercambia con el objetivo los objetos que llevan tan rápido que es imposible verlo a simple vista."}
 {"i": 49, "v": "상대를 화나게 한다. 3턴 동안 상대는 데미지를 주는 기술밖에 쓸 수 없게 된다.", "es": "Enfurece al objetivo para que solo use movimientos de ataque durante tres turnos."}
 {"i": 50, "v": "상대에게 트집을 잡아서 똑같은 기술을 2회 연속으로 쓸 수 없게 한다.", "es": "Atormenta y enfurece al objetivo, que no puede usar dos veces seguidas el mismo movimiento."}
 {"i": 51, "v": "시간이 뒤틀릴 정도의 힘을 사용해서 상대를 공격한다. 다음 턴은 움직일 수 없다.", "es": "Ataca al objetivo usando tal energía que el tiempo se distorsiona. El usuario descansa el siguiente turno."}
-{"i": 52, "v": "거대한 운석을 하늘에서 떨어뜨린다. 자신의 특수공격이 크게 떨어진다.", "es": "Hace que grandes cometas caigan del cielo. Baja mucho el Ataque Especial de quien lo usa"}
+{"i": 52, "v": "천공에서 운석을 상대에게 떨어뜨린다. 사용하면 반동으로 자신의 특수공격이 크게 떨어진다.", "es": "Hace que grandes cometas caigan del cielo. Baja mucho el Ataque Especial de quien lo usa"}
 {"i": 53, "v": "2~3턴 동안 마구 난동 부려서 공격한다. 난동 부린 뒤에는 혼란에 빠진다.", "es": "Ataca de dos a tres turnos y acaba confundiendo al agresor."}
 {"i": 54, "v": "굉장한 살기로 위압하면서 몸통박치기한다. 상대를 풀죽게 만들 때가 있다.", "es": "Ataca de forma brutal mientras intimida al objetivo. También puede hacerlo retroceder."}
 {"i": 55, "v": "주위의 공간과 함께 상대를 절단하여 데미지를 준다. 급소에 맞기 쉽다.", "es": "Desgarra al objetivo y el espacio a su alrededor. Suele ser crítico."}
@@ -59,33 +59,33 @@
 {"i": 58, "v": "상대를 튕겨 내서 교대할 포켓몬을 끌어낸다. 야생의 경우에는 배틀이 끝난다.", "es": "Ataca al objetivo y lo obliga a cambiarse por otro Pokémon. Si es uno salvaje, acaba el combate."}
 {"i": 59, "v": "굉장한 숨결을 내뿜어 공격한다. 상대를 마비 상태로 만들 때가 있다.", "es": "Poderosa ráfaga de aliento que golpea al objetivo y puede paralizarlo."}
 {"i": 60, "v": "몸의 단단한 부분으로 상대를 때려 공격한다. 2회 연속으로 데미지를 준다.", "es": "Golpea dos veces seguidas con la cola u otras partes de su cuerpo."}
-{"i": 61, "v": "거센 회오리로 상대를 찢는다. 풀죽게 할 수 있다.", "es": "Crea un violento tornado para hacer trizas al rival. Puede hacerle retroceder."}
+{"i": 61, "v": "회오리를 일으켜 상대를 끌어들여 공격한다. 상대를 풀죽게 만들 때가 있다.", "es": "Crea un violento tornado para hacer trizas al rival. Puede hacerle retroceder."}
 {"i": 62, "v": "분노의 충격파를 상대에게 부딪쳐서 공격한다. 언제나 40의 데미지를 준다.", "es": "Ráfaga de furiosas ondas de choque que quitan 40 PS."}
 {"i": 63, "v": "신비롭고 힘센 춤을 격렬하게 춘다. 자신의 공격과 스피드를 올린다.", "es": "Danza mística que sube el Ataque y la Velocidad."}
 {"i": 64, "v": "방대한 전기를 몸에 둘러 상대에게 돌진해서 공격한다. 마비 상태로 만들 때가 있다.", "es": "Ataca envolviéndose de una gran carga eléctrica y embistiendo al objetivo con ella. Puede paralizar."}
 {"i": 65, "v": "강한 번개를 떨어뜨려 공격한다. 상대를 마비 상태로 만들 때가 있다.", "es": "Un poderoso rayo que daña al objetivo y puede paralizarlo."}
-{"i": 66, "v": "위험한 몸통박치기. 자신도 데미지를 입는다.", "es": "Placaje de alto riesgo que hiere también al atacante."}
+{"i": 66, "v": "전기를 두르고 상대에게 부딪쳐 공격한다. 자신도 조금 데미지를 입는다.", "es": "Placaje de alto riesgo que hiere también al atacante."}
 {"i": 67, "v": "대포처럼 전기를 발사해서 공격한다. 상대를 마비 상태로 만든다.", "es": "Dispara una descarga eléctrica que causa daño y parálisis."}
 {"i": 68, "v": "거대한 천둥을 내리친다. 거대한 불꽃의 영향을 받아 기술의 위력이 올라간다.", "es": "Ataca con una enorme descarga eléctrica. Aumenta su potencia si es influenciada por una gigantesca llamarada."}
 {"i": 69, "v": "강한 전격을 상대에게 날려서 공격한다. 마비 상태로 만들 때가 있다.", "es": "Potente ataque eléctrico que puede paralizar al objetivo."}
 {"i": 70, "v": "전기를 두르고 상대에게 부딪쳐 공격한다. 자신도 조금 데미지를 입는다.", "es": "Carga eléctrica muy potente que también hiere ligeramente a quien la usa."}
-{"i": 71, "v": "눈부신 전기 파동이 배틀 중인 다른 포켓몬에게 퍼진다. 마비시킬 수 있다.", "es": "Una deslumbradora onda eléctrica afecta a los demás Pokémon del combate. Puede paralizar."}
+{"i": 71, "v": "눈부신 전격으로 자신의 주위에 있는 포켓몬을 공격한다. 마비 상태로 만들 때가 있다.", "es": "Una deslumbradora onda eléctrica afecta a los demás Pokémon del combate. Puede paralizar."}
 {"i": 72, "v": "전격을 담은 펀치로 상대를 공격한다. 마비 상태로 만들 때가 있다.", "es": "Puñetazo eléctrico. Puede paralizar."}
 {"i": 73, "v": "공격한 뒤 굉장한 스피드로 돌아와서 교대 포켓몬과 교체한다.", "es": "Tras atacar, vuelve a toda prisa para dar paso a otro Pokémon del equipo."}
 {"i": 74, "v": "전기를 둘러 상대에게 돌진하여 공격한다. 마비 상태로 만들 때가 있다.", "es": "Ataque eléctrico que puede llegar a paralizar."}
-{"i": 75, "v": "전기를 두른 이빨로 문다. 상대를 풀죽게 하거나 마비시킬 수 있다.", "es": "Usa colmillos electrificados para morder. Puede hacer que el rival retroceda o se paralice."}
+{"i": 75, "v": "전기를 모은 이빨로 문다. 상대를 풀죽게 하거나 마비 상태로 만들 때가 있다.", "es": "Usa colmillos electrificados para morder. Puede hacer que el rival retroceda o se paralice."}
 {"i": 76, "v": "전격을 재빠르게 상대에게 날린다. 공격은 반드시 명중한다.", "es": "Ataque eléctrico muy rápido e ineludible."}
 {"i": 77, "v": "전기 네트로 상대를 붙잡아서 공격한다. 상대의 스피드를 떨어뜨린다.", "es": "Atrapa y ataca a los objetivos con una telaraña eléctrica. También reduce su Velocidad."}
-{"i": 78, "v": "전기 광선을 쏜다. 자신의 특수공격이 올라갈 수 있다.", "es": "Lanza un rayo eléctrico contra el rival. Puede subir el Ataque Especial de quien lo usa."}
+{"i": 78, "v": "전격의 다발을 상대에게 발사한다. 전기를 모아서 자신의 특수공격을 올릴 때가 있다.", "es": "Lanza un rayo eléctrico contra el rival. Puede subir el Ataque Especial de quien lo usa."}
 {"i": 79, "v": "전기 자극을 상대에게 날려서 공격한다. 마비 상태로 만들 때가 있다.", "es": "Ataque eléctrico que puede paralizar al objetivo."}
 {"i": 80, "v": "전기 구슬을 던진다. 자신의 스피드가 빠를수록 데미지가 커진다.", "es": "Lanza una bola eléctrica. Cuanto mayor Velocidad del usuario, mayor será el daño causado."}
-{"i": 81, "v": "에너지를 충전해 다음 전기 기술을 강화한다. 특수방어도 올라간다.", "es": "Recarga energía para potenciar el siguiente movimiento Eléctrico. También sube la Def. Esp."}
+{"i": 81, "v": "다음 턴에 쓸 전기타입 기술의 위력을 올린다. 자신의 특수방어도 올라간다.", "es": "Recarga energía para potenciar el siguiente movimiento Eléctrico. También sube la Def. Esp."}
 {"i": 82, "v": "전기로 만든 자력의 힘으로 허공에 뜬다. 5턴 동안 부유할 수 있다.", "es": "Levita gracias a un campo magnético generado por electricidad durante cinco turnos."}
 {"i": 83, "v": "약한 전격을 날려서 상대를 마비 상태로 만든다.", "es": "Una ligera descarga que paraliza al objetivo si lo alcanza."}
 {"i": 84, "v": "정신을 집중해 펀치를 날린다. 기술을 쓰기 전에 공격을 받으면 실패한다.", "es": "Se concentra para dar un puñetazo. Falla si se sufre un golpe antes de su uso."}
 {"i": 85, "v": "점프해서 무릎차기로 상대를 공격한다. 빗나가면 자신이 데미지를 입는다.", "es": "Salta muy alto y lanza una patada. Si falla, dañará al usuario."}
-{"i": 86, "v": "방어를 버리고 정면으로 맞선다. 자신의 방어와 특수방어가 떨어진다.", "es": "Lucha abiertamente contra el rival sin defenderse. También reduce la Defensa y la Def. Esp. del usuario."}
-{"i": 87, "v": "정신을 벼려 힘을 터뜨린다. 상대의 특수방어를 떨어뜨릴 수 있다.", "es": "Agudiza la concentración mental y libera su poder. Puede disminuir la Def. Esp. del rival."}
+{"i": 86, "v": "방어를 포기하고 상대 깊숙이 돌격한다. 자신의 방어와 특수방어가 떨어진다.", "es": "Lucha abiertamente contra el rival sin defenderse. También reduce la Defensa y la Def. Esp. del usuario."}
+{"i": 87, "v": "기합을 높여서 혼신의 힘을 방출한다. 상대의 특수방어를 떨어뜨릴 때가 있다.", "es": "Agudiza la concentración mental y libera su poder. Puede disminuir la Def. Esp. del rival."}
 {"i": 88, "v": "엄청난 힘을 발휘하여 상대를 공격한다. 자신의 공격과 방어가 떨어진다.", "es": "Ataque de gran potencia, pero que reduce el Ataque y la Defensa del agresor."}
 {"i": 89, "v": "양손으로 당수를 상대에게 힘껏 쳐서 공격한다. 급소에 맞기 쉽다.", "es": "Corte doble que suele propinar un golpe crítico."}
 {"i": 90, "v": "혼신의 힘으로 펀치를 날려서 공격한다. 상대를 반드시 혼란시킨다.", "es": "Puñetazo con toda la fuerza concentrada. Causa confusión si atina."}
@@ -115,7 +115,7 @@
 {"i": 114, "v": "3회 연속으로 킥을 날려 공격한다. 기술이 맞을 때마다 위력이 올라간다.", "es": "Patea hasta tres veces seguidas y cada vez más fuerte."}
 {"i": 115, "v": "상대로부터 받은 물리공격의 데미지를 2배로 만들어 같은 상대에게 돌려준다.", "es": "Devuelve un golpe físico por duplicado."}
 {"i": 116, "v": "목숨을 걸고 상대를 공격한다. 자신은 기절하게 되지만 상대에게 HP만큼의 데미지를 준다.", "es": "El usuario se sacrifica causándole un daño al objetivo equivalente a sus propios PS perdidos."}
-{"i": 117, "v": "낮은 발차기. 상대가 무거울수록 위력이 커진다.", "es": "Patada baja. Cuanto más pesa el objetivo, más hiere."}
+{"i": 117, "v": "발을 강하게 걸고 상대를 넘어뜨려 공격한다. 상대가 무거울수록 위력이 올라간다.", "es": "Patada baja. Cuanto más pesa el objetivo, más hiere."}
 {"i": 118, "v": "힘을 쥐어짜서 공격한다. 자신의 HP가 적을수록 기술의 위력이 올라간다.", "es": "Ataque desesperado que causa más daño cuantos menos PS tenga el usuario."}
 {"i": 119, "v": "인력을 사용해 내던진다. 자신의 레벨과 똑같은 데미지를 상대에게 준다.", "es": "La gravedad derriba al objetivo. Se restarán tantos PS como nivel tenga el agresor."}
 {"i": 120, "v": "몸을 단련해 공격과 방어를 올린다.", "es": "Robustece el cuerpo para subir el Ataque y la Defensa.."}
@@ -126,32 +126,32 @@
 {"i": 125, "v": "분노를 폭발시켜 상대를 공격한다. 자신의 HP가 적을수록 기술의 위력이 떨어진다.", "es": "Furia explosiva. Cuanto menor sea el número de PS del usuario, menos daño hará el ataque."}
 {"i": 126, "v": "풀 파워로 상대를 공격한다. 쓰면 반동으로 자신의 특수공격이 크게 떨어진다.", "es": "Ataque en toda regla que baja mucho el Ataque Especial de quien lo usa."}
 {"i": 127, "v": "아름다우면서도 격렬한 푸른불꽃으로 상대를 둘러싸서 공격한다. 화상 상태로 만들 때가 있다.", "es": "Ataca con una bella pero potente llama azul que rodea al objetivo. Puede quemarlo."}
-{"i": 128, "v": "모든 걸 태우는 맹렬한 불길. 화상을 입힐 수 있다.", "es": "Llama intensa que lo chamusca todo y puede causar quemaduras."}
+{"i": 128, "v": "큰대자의 불꽃으로 불태운다. 상대를 화상 상태로 만들 때가 있다.", "es": "Llama intensa que lo chamusca todo y puede causar quemaduras."}
 {"i": 129, "v": "불길에 몸을 감싸고 상대에게 돌진한다.", "es": "El Pokémon se cubre de llamas y carga contra el objetivo"}
 {"i": 130, "v": "2~5턴 동안 이어지는 불꽃 폭풍에 상대를 가둔다.", "es": "El rival queda atrapado en una tormenta de fuego que dura de dos a cinco turnos."}
 {"i": 131, "v": "거대한 불꽃을 내리친다. 거대한 천둥의 영향을 받아 기술의 위력이 올라간다.", "es": "Ataca con una llamarada gigantesca. Aumenta su potencia si es influenciada por una gran energía eléctrica."}
 {"i": 132, "v": "뜨거운 숨결을 상대에게 내뿜어 공격한다. 화상 상태로 만들 때가 있다.", "es": "Provoca un viento abrasador que puede quemar al objetivo."}
 {"i": 133, "v": "격렬한 불꽃으로 상대를 둘러싸 공격한다. 화상 상태로 만든다.", "es": "Ataca con una gran ráfaga de fuego que causa quemaduras."}
 {"i": 134, "v": "신비한 불꽃으로 상대를 태워서 공격한다. 화상 상태로 만들 때가 있다.", "es": "Fuego místico de gran intensidad que puede causar quemaduras."}
-{"i": 135, "v": "불지옥이 주위 포켓몬을 모두 태운다. 화상을 입힐 수 있다.", "es": "Un infierno de llamas daña a los Pokémon de alrededor en combate. Puede quemar."}
+{"i": 135, "v": "새빨간 불꽃으로 자신의 주위에 있는 포켓몬을 공격한다. 화상 상태로 만들 때가 있다.", "es": "Un infierno de llamas daña a los Pokémon de alrededor en combate. Puede quemar."}
 {"i": 136, "v": "세찬 불꽃을 상대에게 발사하여 공격한다. 화상 상태로 만들 때가 있다.", "es": "Ataca con una gran ráfaga de fuego que puede causar quemaduras."}
 {"i": 137, "v": "공격한 상대를 화상 상태로 만들 때가 있다. 급소에도 맞기 쉽다.", "es": "Patada que suele ser un golpe crítico y puede causar quemaduras."}
 {"i": 138, "v": "불길에 휩싸여 공격한다. 자신의 특수공격이 올라갈 수 있다.", "es": "El Pokémon golpea envuelto en llamas. Puede aumentar el Ataque Especial de quien lo usa."}
 {"i": 139, "v": "새빨간 불꽃으로 자신의 주위에 있는 포켓몬을 공격한다. 화상 상태로 만들 때가 있다.", "es": "Un infierno de llamas daña a los Pokémon adyacentes en combate. Puede quemar."}
 {"i": 140, "v": "불꽃을 담은 펀치로 상대를 공격한다. 화상 상태로 만들 때가 있다.", "es": "Puñetazo ardiente. Puede quemar."}
-{"i": 141, "v": "불길로 공격한다. 옆에 있는 포켓몬에게도 닿는다.", "es": "Golpea al objetivo con una llamarada que afecta a sus Pokémon adyacentes."}
+{"i": 141, "v": "맞으면 튀는 불꽃으로 상대를 공격한다. 튕긴 불꽃은 옆의 상대에게도 쏟아진다.", "es": "Golpea al objetivo con una llamarada que afecta a sus Pokémon adyacentes."}
 {"i": 142, "v": "불꽃을 두른 이빨로 문다. 상대를 풀죽게 하거나 화상 상태로 만들 때가 있다.", "es": "Usa colmillos en llamas para morder. Puede hacer que el objetivo retroceda o reciba quemaduras."}
 {"i": 143, "v": "불꽃을 둘러 상대에게 돌진하여 공격한다. 화상 상태로 만들 때가 있다.", "es": "Ataca envuelto en fuego. Puede causar quemaduras."}
-{"i": 144, "v": "불기둥으로 공격한다. 풀 공격과 겹치면 불바다가 되며 위력이 커진다.", "es": "Ataca con columnas de fuego. Combinado con un ataque tipo planta crea un mar de llamas y aumenta su potencia."}
+{"i": 144, "v": "불꽃기둥으로 공격한다. 풀과 조합하면 위력이 올라가고 주위가 불바다가 된다.", "es": "Ataca con columnas de fuego. Combinado con un ataque tipo planta crea un mar de llamas y aumenta su potencia."}
 {"i": 145, "v": "불꽃을 둘러 상대를 공격한다. 힘을 모아서 자신의 스피드를 올린다.", "es": "Llamas que golpean al objetivo y aumentan la Velocidad del atacante."}
 {"i": 146, "v": "작은 불꽃을 상대에게 발사하여 공격한다. 화상 상태로 만들 때가 있다.", "es": "Ataca con llamas pequeñas que pueden causar quemaduras."}
 {"i": 147, "v": "세차게 소용돌이치는 불꽃 속에 4~5턴 동안 상대를 가두어 공격한다.", "es": "Un aro de fuego que atrapa al objetivo de cuatro a cinco turnos."}
-{"i": 148, "v": "옆에 있는 상대까지 태우는 불길. 상대가 지닌 나무열매는 타서 쓸 수 없게 된다.", "es": "Llamas que golpean a los objetivos adyacentes. Si estos llevan Bayas, estas se quemarán y ya no se podrán usar."}
+{"i": 148, "v": "불꽃으로 상대를 공격한다. 상대가 나무열매 등을 지니고 있을 때 불태워서 쓸 수 없게 만든다.", "es": "Llamas que golpean a los objetivos adyacentes. Si estos llevan Bayas, estas se quemarán y ya no se podrán usar."}
 {"i": 149, "v": "불타는 몸으로 상대에게 부딪쳐서 공격한다. 자신이 상대보다 무거울수록 위력이 올라간다.", "es": "El usuario ataca con su cuerpo ardiente. Cuanto mayor sea su peso comparado con el del objetivo, más daño causará."}
-{"i": 150, "v": "5턴 동안 햇살을 강하게 만들어 불꽃타입 기술을 강화한다.", "es": "Quien lo usa intensifica el sol durante cinco turnos, lo que potencia los movimientos de tipo Fuego."}
+{"i": 150, "v": "5턴 동안 햇살을 강하게 해서 불꽃타입 기술의 위력을 올린다.", "es": "Quien lo usa intensifica el sol durante cinco turnos, lo que potencia los movimientos de tipo Fuego."}
 {"i": 151, "v": "으스스하고 괴상한 불꽃을 쏘아 상대를 화상 상태로 만든다.", "es": "Siniestra llama morada que produce quemaduras."}
 {"i": 152, "v": "2턴째에 상대를 공격한다. 가끔 풀죽게 만든다. 급소에도 맞기 쉽다.", "es": "Ataque en dos turnos que suele ser crítico. Puede hacer retroceder al objetivo."}
-{"i": 153, "v": "날개를 접고 낮게 날아 공격한다. 자신도 데미지를 입는다.", "es": "Pliega sus alas y ataca con un vuelo rasante. El Pokémon que lo usa también resulta dañado."}
+{"i": 153, "v": "날개를 접어 저공비행으로 돌격한다. 자신도 상당한 데미지를 입는다.", "es": "Pliega sus alas y ataca con un vuelo rasante. El Pokémon que lo usa también resulta dañado."}
 {"i": 154, "v": "강렬한 바람으로 상대를 둘러싸서 공격한다. 상대를 혼란시킬 때가 있다.", "es": "Golpea al objetivo con un fuerte torbellino que envuelve al rival y puede confundirlo."}
 {"i": 155, "v": "공기의 소용돌이를 발사하여 공격한다. 급소에 맞기 쉽다.", "es": "Lanza un chorro de aire que suele dar un golpe crítico."}
 {"i": 156, "v": "1턴째에 하늘을 날아 2턴째에 상대를 공격한다. 알고 있는 도시로 날아갈 수 있다.", "es": "Primer turno: vuela.    Segundo turno: ataca. Fuera de combate, permite ir a sitios ya conocidos."}
@@ -159,7 +159,7 @@
 {"i": 158, "v": "회전하면서 뾰족한 부리를 상대에게 꿰찔러 공격한다.", "es": "Picotazo giratorio y perforador muy potente."}
 {"i": 159, "v": "하늘마저 가르는 바람의 칼날로 공격한다.", "es": "Ataca con una hoja de aire que incluso corta el cielo."}
 {"i": 160, "v": "재빠른 움직임으로 상대를 농락해 벤다. 공격은 반드시 명중한다.", "es": "El usuario lanza un ataque muy rápido e ineludible."}
-{"i": 161, "v": "배운 말로 이루어진 음파로 공격한다. 상대를 혼란시킬 수 있다.", "es": "Ataca con una onda sónica compuesta por palabras que ha aprendido. Puede confundir al objetivo."}
+{"i": 161, "v": "기억한 말로 음파를 일으켜서 공격한다. 상대를 혼란시킨다.", "es": "Ataca con una onda sónica compuesta por palabras que ha aprendido. Puede confundir al objetivo."}
 {"i": 162, "v": "상대를 쫀다. 상대가 나무열매를 지니고 있으면 함께 쪼아 그 효과를 얻는다.", "es": "Picotea al objetivo. Si este sostiene una Baya, la picotea también y obtiene sus efectos."}
 {"i": 163, "v": "양 날개로 두 번 때린다.", "es": "Golpea dos veces con las dos alas."}
 {"i": 164, "v": "크게 펼친 훌륭한 날개를 상대에게 부딪쳐서 공격한다.", "es": "Golpea al objetivo con unas grandes alas."}
@@ -187,16 +187,16 @@
 {"i": 186, "v": "자신이 쓰러지면 상대도 함께 쓰러진다.", "es": "Si el usuario se debilita, el enemigo se debilita también."}
 {"i": 187, "v": "상대의 기술로 기절하면 원념을 담아 그 기술의 PP를 0으로 만든다.", "es": "Si el usuario se debilita al recibir un ataque, todos los PP de este último ataque serán eliminados."}
 {"i": 188, "v": "잠듦 상태의 상대에게 악몽을 꾸게 하여 매 턴 조금씩 HP를 떨어뜨려 간다.", "es": "El objetivo dormido sufre una pesadilla que le hace perder PS en cada turno."}
-{"i": 189, "v": "원한을 터뜨려 상대가 마지막에 쓴 기술의 PP를 4 깎는다.", "es": "Da rienda suelta a su rencor para reducir cuatro PP del último movimiento usado por el rival."}
-{"i": 190, "v": "거대한 식물로 때린다. 다음 턴에는 움직일 수 없다.", "es": "Golpea con una enorme planta. El atacante no puede moverse en el siguiente turno."}
+{"i": 189, "v": "상대가 마지막으로 사용한 기술에 원한을 품어 그 기술의 PP를 4만큼 줄인다.", "es": "Da rienda suelta a su rencor para reducir cuatro PP del último movimiento usado por el rival."}
+{"i": 190, "v": "큰 나무로 상대를 힘껏 쳐서 공격한다. 다음 턴은 움직일 수 없게 된다.", "es": "Golpea con una enorme planta. El atacante no puede moverse en el siguiente turno."}
 {"i": 191, "v": "뾰족한 잎사귀로 상대에게 바람을 일으킨다. 사용하면 반동으로 자신의 특수공격이 크게 떨어진다.", "es": "Cae una lluvia de hojas afiladas. Baja mucho el Ataque Especial de quien lo usa."}
 {"i": 192, "v": "2~3턴 동안 꽃을 흩뿌려서 상대를 공격한다. 흩뿌린 뒤에는 혼란에 빠진다.", "es": "Lanza pétalos de dos a tres turnos y acaba confundiendo al atacante."}
 {"i": 193, "v": "덩굴이나 촉수를 세차게 휘둘러 상대를 힘껏 쳐서 공격한다.", "es": "El usuario agita violentamente sus lianas o tentáculos para golpear al objetivo."}
-{"i": 194, "v": "몸에서 충격파를 터뜨린다. 상대의 특수방어를 떨어뜨릴 수 있다.", "es": "Una onda de choque se libera del cuerpo. Puede bajar la Defensa Especial del objetivo."}
+{"i": 194, "v": "몸속에서 충격파를 발생시킨다. 상대의 특수방어를 크게 떨어뜨릴 때가 있다.", "es": "Una onda de choque se libera del cuerpo. Puede bajar la Defensa Especial del objetivo."}
 {"i": 195, "v": "1턴째에 빛을 모으고 2턴째에 공격한다.", "es": "Primer turno: absorbe luz. Segundo turno: ataca."}
-{"i": 196, "v": "단단한 몸으로 들이받는다. 자신도 상당한 데미지를 입는다.", "es": "Arremete contra el rival con su robusto cuerpo. El agresor también sufre bastante daño."}
+{"i": 196, "v": "단단한 몸통을 상대에게 부딪쳐서 공격한다. 자신도 상당한 데미지를 입는다.", "es": "Arremete contra el rival con su robusto cuerpo. El agresor también sufre bastante daño."}
 {"i": 197, "v": "잎사귀를 칼처럼 이용해 상대를 베어 공격한다. 급소에 맞기 쉽다.", "es": "Acuchilla con una hoja fina. Suele dar un golpe crítico."}
-{"i": 198, "v": "자연의 힘을 모아 터뜨린다. 상대의 특수방어를 떨어뜨릴 수 있다.", "es": "Aúna fuerzas de la naturaleza y libera su ataque. Puede disminuir la Def. Esp. del objetivo."}
+{"i": 198, "v": "자연으로부터 모은 생명의 힘을 발사한다. 상대의 특수방어를 떨어뜨릴 때가 있다.", "es": "Aúna fuerzas de la naturaleza y libera su ataque. Puede disminuir la Def. Esp. del objetivo."}
 {"i": 199, "v": "단단한 껍질을 가지고 있는 큰 씨앗을 위에서 힘껏 내던져 상대를 공격한다.", "es": "Lanza al objetivo una descarga de semillas explosivas desde arriba."}
 {"i": 200, "v": "준 데미지의 절반을 흡수한다.", "es": "Absorbe la mitad del daño producido."}
 {"i": 201, "v": "뿔을 꿰찔러서 상대의 양분을 흡수한다. 입힌 데미지의 절반에 해당하는 HP를 회복할 수 있다.", "es": "Un golpe que drena energía. El Pokémon recupera la mitad de los PS arrebatados al objetivo."}
@@ -204,7 +204,7 @@
 {"i": 203, "v": "상대를 추적하는 이상한 잎사귀를 흩뿌린다. 공격은 반드시 명중한다.", "es": "Esparce extrañas hojas que persiguen al objetivo. No se puede esquivar."}
 {"i": 204, "v": "바늘팔을 세차게 흔들어 공격한다. 상대를 풀죽게 만들 때가 있다.", "es": "Pega con brazos de pinchos y puede hacer retroceder al objetivo."}
 {"i": 205, "v": "잎사귀를 날려 상대를 베어 공격한다. 급소에 맞기 쉽다.", "es": "Corta con hojas afiladas. Suele ser crítico."}
-{"i": 206, "v": "잎의 기둥으로 공격한다. 물 공격과 겹치면 늪이 생기며 위력이 커진다.", "es": "Ataca con columnas de hojas. Combinado con un ataque de agua crea un pantano y aumenta su potencia."}
+{"i": 206, "v": "풀기둥으로 공격한다. 물과 조합하면 위력이 올라가고 주변이 습지초원이 된다.", "es": "Ataca con columnas de hojas. Combinado con un ataque de agua crea un pantano y aumenta su potencia."}
 {"i": 207, "v": "준 데미지의 절반을 흡수한다.", "es": "Absorbe la mitad del daño producido."}
 {"i": 208, "v": "채찍처럼 휘어지는 가늘고 긴 덩굴로 상대를 힘껏 쳐서 공격한다.", "es": "Azota al objetivo con ramas finas."}
 {"i": 209, "v": "씨앗을 기세 좋게 상대에게 발사하여 공격한다. 2~5회 연속으로 쓴다.", "es": "Dispara rápido de dos a cinco ráfagas de semillas de manera consecutiva."}
@@ -219,10 +219,10 @@
 {"i": 218, "v": "잠이 오는 가루를 많이 흩뿌려서 상대를 잠듦 상태로 만든다.", "es": "Esparce polvo que duerme al objetivo."}
 {"i": 219, "v": "최면 효과가 있는 포자를 훌훌 흩뿌려서 상대를 잠듦 상태로 만든다.", "es": "Esparce esporas que inducen al sueño."}
 {"i": 220, "v": "저리가루를 많이 흩뿌려서 상대를 마비 상태로 만든다.", "es": "Esparce polvo que paraliza al objetivo."}
-{"i": 221, "v": "HP를 회복한다. 회복량은 날씨에 따라 달라진다.", "es": "Restaura PS del usuario. La cantidad varía según el clima."}
+{"i": 221, "v": "자신의 HP를 회복한다. 날씨에 따라 회복량이 변한다.", "es": "Restaura PS del usuario. La cantidad varía según el clima."}
 {"i": 222, "v": "상대에게 씨앗을 심어 서서히 괴롭힌다.", "es": "Se planta una semilla en el objetivo que le causa pesar."}
 {"i": 223, "v": "지진의 충격으로 자신의 주위에 있는 포켓몬을 공격한다.", "es": "Un terremoto que afecta a los Pokémon de alrededor en combate."}
-{"i": 224, "v": "상대 발밑의 땅이 거세게 솟구친다. 상대의 특수방어를 떨어뜨릴 수 있다.", "es": "La tierra a los pies del rival erupciona violentamente. Puede disminuir la Defensa Especial del rival."}
+{"i": 224, "v": "상대의 발밑에 대지의 힘을 방출한다. 상대의 특수방어를 떨어뜨릴 때가 있다.", "es": "La tierra a los pies del rival erupciona violentamente. Puede disminuir la Defensa Especial del rival."}
 {"i": 225, "v": "1턴째에 파고들어 2턴째에 상대를 공격한다. 동굴에서 탈출할 수도 있다.", "es": "Primer turno: cava. Segundo turno: ataca. También sirve para salir de ciertas zonas."}
 {"i": 226, "v": "드릴처럼 몸을 회전시켜서 상대에게 몸통박치기한다. 급소에 맞기 쉽다.", "es": "El usuario golpea usando su cuerpo como un taladro. Suele ser crítico."}
 {"i": 227, "v": "뼈로 벤다. 상대를 풀죽게 할 수 있다.", "es": "Corta con un hueso. Puede hacer retroceder al objetivo."}
@@ -245,8 +245,8 @@
 {"i": 244, "v": "큰 고드름을 격렬하게 부딪쳐서 공격한다. 상대를 풀죽게 만들 때가 있다.", "es": "Lanza grandes carámbanos. Puede hacer retroceder al objetivo."}
 {"i": 245, "v": "냉기를 담은 펀치로 상대를 공격한다. 얼음 상태로 만들 때가 있다.", "es": "Puñetazo helado. Puede congelar."}
 {"i": 246, "v": "여러 빛깔의 광선. 얼릴 수 있다.", "es": "Rayo multicolor que puede congelar."}
-{"i": 247, "v": "차가운 바람으로 공격한다. 상대의 스피드를 떨어뜨릴 수 있다.", "es": "Ataque con aire helado que puede bajar la Velocidad del objetivo."}
-{"i": 248, "v": "얼음 이빨로 문다. 상대를 풀죽게 하거나 얼릴 수 있다.", "es": "Usa colmillos helados para morder. Puede hacer que el objetivo retroceda o congelarlo."}
+{"i": 247, "v": "차가운 냉기를 상대에게 내뿜어 공격한다. 상대의 스피드를 떨어뜨린다.", "es": "Ataque con aire helado que puede bajar la Velocidad del objetivo."}
+{"i": 248, "v": "냉기를 품은 이빨로 문다. 상대를 풀죽게 하거나 얼음 상태로 만들 때가 있다.", "es": "Usa colmillos helados para morder. Puede hacer que el objetivo retroceda o congelarlo."}
 {"i": 249, "v": "상대에게 기술로 공격받으면 그 상대에 대해서 기술의 위력이 2배가 된다.", "es": "Este ataque inflige el doble de daño a un objetivo que haya golpeado al usuario en ese mismo turno."}
 {"i": 250, "v": "차가운 냉기를 상대에게 내뿜어 공격한다. 상대의 스피드를 떨어뜨린다.", "es": "Ataque con aire helado que baja la Velocidad del objetivo."}
 {"i": 251, "v": "차가운 바람으로 공격한다. 반드시 급소에 맞는다.", "es": "Ataque con aire helado. Siempre resulta en un golpe crítico."}
@@ -260,22 +260,22 @@
 {"i": 259, "v": "하얀 안개로 몸을 덮는다. 5턴 동안 상대에 의해 능력이 떨어지지 않게 된다.", "es": "Rodea de fina niebla al usuario y protege las características de su equipo durante cinco turnos."}
 {"i": 260, "v": "폭발을 일으켜서 자신의 주위에 있는 포켓몬을 공격한다. 쓰고 나서 기절하게 된다.", "es": "El atacante explota y hiere a todos a su alrededor. El usuario se debilita de inmediato."}
 {"i": 261, "v": "폭발을 일으켜서 자신의 주위에 있는 포켓몬을 공격한다. 쓰고 나서 기절하게 된다.", "es": "El atacante explota y hiere a todos a su alrededor. El usuario se debilita de inmediato."}
-{"i": 262, "v": "온 힘을 다해 상대에게 돌진한다. 다음 턴에는 쉰다.", "es": "Carga contra el rival usando toda la fuerza que tiene. El Pokémon descansa el turno siguiente."}
+{"i": 262, "v": "가진 힘을 모두 사용해서 상대에게 돌격한다. 다음 턴은 움직일 수 없다.", "es": "Carga contra el rival usando toda la fuerza que tiene. El Pokémon descansa el turno siguiente."}
 {"i": 263, "v": "효과가 있다", "es": "Es eficaz"}
-{"i": 264, "v": "배운 다른 기술을 모두 쓴 뒤에만 쓸 수 있다.", "es": "Este movimiento solo puede usarse tras haber usado todos los demás conocidos por el Pokémon."}
+{"i": 264, "v": "배틀 중에 기억하고 있는 기술을 모두 사용하면 그때부터 쓸 수 있는 필살기이다.", "es": "Este movimiento solo puede usarse tras haber usado todos los demás conocidos por el Pokémon."}
 {"i": 265, "v": "목숨을 걸고 상대에게 돌진하여 공격을 한다. 자신도 데미지를 입는다.", "es": "Ataque arriesgado que también hiere al agresor."}
 {"i": 266, "v": "굉장한 아프로 머리로 상대에게 돌진하여 공격한다. 자신도 조금 데미지를 입는다.", "es": "Propina un tremendo cabezazo. También daña al usuario un poco."}
 {"i": 267, "v": "굉장한 힘을 담은 킥으로 상대를 걷어차서 공격한다.", "es": "Patada de extrema fuerza."}
 {"i": 268, "v": "2~3턴 동안 마구 난동 부려서 공격한다. 난동 부린 뒤에는 혼란에 빠진다.", "es": "Ataca de dos a tres turnos y acaba confundiendo al agresor."}
 {"i": 269, "v": "큰 알을 온 힘을 다해 상대에게 내던져서 공격한다.", "es": "Arroja un huevo al objetivo con gran fuerza."}
 {"i": 270, "v": "수많은 빛줄기를 쏜다. 지닌 플레이트의 종류에 따라 타입이 달라진다.", "es": "Emite incontables haces de luz. Varía según el tipo de Tabla que lleve el usuario."}
-{"i": 271, "v": "1턴째에 자세를 잡아 방어를 올리고 2턴째에 박치기한다.", "es": "Primer turno: se prepara y sube la Defensa. Segundo turno: da el cabezazo."}
+{"i": 271, "v": "1턴째에 머리를 움츠려 방어를 올린다. 2턴째에 상대를 공격한다.", "es": "Primer turno: se prepara y sube la Defensa. Segundo turno: da el cabezazo."}
 {"i": 272, "v": "시끄럽게 울리는 큰 진동을 상대에게 전달하여 공격한다.", "es": "Grito desgarrador que inflige daño al objetivo."}
 {"i": 273, "v": "굉장한 기세로 상대에게 돌진하여 공격한다. 상대를 혼란시킬 때가 있다.", "es": "Ataca con una gran embestida. Puede confundir al objetivo."}
 {"i": 274, "v": "굉장한 기세로 상대에게 부딪쳐 공격한다. 자신도 조금 데미지를 입는다.", "es": "Carga desmedida que también hiere al agresor."}
 {"i": 275, "v": "3턴 동안 소란 피워 공격한다. 그동안은 아무도 잠들지 않게 된다.", "es": "Ataca de forma alborotada durante tres turnos. Mantiene despiertos a todos."}
 {"i": 276, "v": "몸 전체로 상대를 덮쳐눌러 공격한다. 마비 상태로 만들 때가 있다.", "es": "Salta sobre el objetivo con todo su peso. Puede paralizar."}
-{"i": 277, "v": "거대한 레이저로 공격한다. 지닌 카셋트에 따라 타입이 정해진다.", "es": "Ataca al objetivo con un gran laser. El tipo del ataque lo determina el cartucho que porta el usuario."}
+{"i": 277, "v": "광탄을 상대에게 방출한다. 자신이 지니고 있는 카세트에 의해 타입이 바뀐다.", "es": "Ataca al objetivo con un gran laser. El tipo del ataque lo determina el cartucho que porta el usuario."}
 {"i": 278, "v": "눈에 보이지 않는 굉장한 속도로 상대에게 돌진하여 공격한다. 반드시 선제공격을 할 수 있다.", "es": "Ataque muy rápido que siempre se realiza el primero."}
 {"i": 279, "v": "가느다란 이빨로 문다. 70% 확률로 출혈을 일으킨다.", "es": "Ataque con finos colmillos. Casi siempre inflige Hemorragia (70%)"}
 {"i": 280, "v": "힘을 담은 펀치로 상대를 공격한다.", "es": "Un puñetazo de gran potencia."}
@@ -294,7 +294,7 @@
 {"i": 293, "v": "칼날로 공격한다. 30% 확률로 출혈을 일으키고 급소에 잘 맞는다.", "es": "Ataca con cuchillas que pueden provocar Hemorragia (30%). Suele dar un golpe crítico."}
 {"i": 294, "v": "뿔로 들이받는다. 30% 확률로 출혈을 일으킨다.", "es": "Ataca al objetivo con una cornada que puede causar Hemorragia (30%)."}
 {"i": 295, "v": "큰 발로 상대를 짓밟아서 공격한다. 상대를 풀죽게 만들 때가 있다.", "es": "Tremendo pisotón que puede hacer retroceder al objetivo."}
-{"i": 296, "v": "다정하게 다가가 공격하며 상대의 도구를 빼앗을 수 있다.", "es": "Se acerca con ternura al objetivo, pero le ataca pudiendo robar el objeto que lleve."}
+{"i": 296, "v": "귀엽게 애교부리며 상대에게 다가가 지니고 있는 도구를 뺏는다.", "es": "Se acerca con ternura al objetivo, pero le ataca pudiendo robar el objeto que lleve."}
 {"i": 297, "v": "노래로 공격한다. 쓰는 포켓몬이 많을수록", "es": "Un canto que ataca al objetivo. Cuantos más Pokémon lo usan"}
 {"i": 298, "v": "마비 상태의 상대에게는 위력이 2배가 되지만 대신 상대의 마비가 풀린다.", "es": "Hace el doble de daño a objetivos paralizados, pero también cura la parálisis."}
 {"i": 299, "v": "별 모양의 빛을 발사해서 상대를 공격한다. 공격은 반드시 명중한다.", "es": "Lanza rayos en forma de estrella que no fallan nunca."}
@@ -302,15 +302,15 @@
 {"i": 301, "v": "날카로운 발톱으로 벤다. 70% 확률로 출혈을 일으킨다.", "es": "Corta con afiladas garras y tiene gran probabilidad de provocar Hemorragia (70%)."}
 {"i": 302, "v": "자신의 PP가 떨어지면 발버둥 쳐 상대를 공격한다. 자신도 조금 데미지를 입는다.", "es": "Solo se usa como último recurso al acabarse los PP. Hiere un poco al agresor."}
 {"i": 303, "v": "상대를 향해서 몸 전체를 부딪쳐가며 공격한다.", "es": "Embiste con todo el cuerpo."}
-{"i": 304, "v": "날씨에 따라 타입과 위력이 달라진다.", "es": "El tipo y fuerza del ataque varían según el clima."}
+{"i": 304, "v": "사용했을 때의 날씨에 따라서 기술 타입과 위력이 바뀐다.", "es": "El tipo y fuerza del ataque varían según el clima."}
 {"i": 305, "v": "울리는 목소리로 상대를 공격한다. 매 턴 누군가 이 기술을 계속해서 쓰면 위력이 올라간다.", "es": "Un susurro que aumenta de potencia conforme el usuario y otros Pokémon lo van utilizando."}
 {"i": 306, "v": "기습해서 먼저 공격한다.", "es": "Ataca primero de forma sorprendente."}
-{"i": 307, "v": "힘을 조절한 공격. 상대를 쓰러뜨리지 않고 HP를 최소 1 남긴다.", "es": "Ataque moderado que no debilita al objetivo y le deja al menos un PS."}
+{"i": 307, "v": "상대의 HP가 반드시 1만큼 남도록 조절하여 공격한다.", "es": "Ataque moderado que no debilita al objetivo y le deja al menos un PS."}
 {"i": 308, "v": "상대의 몸에 돈을 세게 던져서 공격한다. 배틀 후에 돈을 받을 수 있다.", "es": "Arroja monedas al objetivo. Las recupera al final del combate."}
 {"i": 309, "v": "긴 꼬리나 손 등을 사용하여 상대를 때려서 공격한다.", "es": "Golpea con las patas o la cola."}
 {"i": 310, "v": "눈에 보이지 않는 굉장한 속도로 상대에게 돌진한다. 반드시 선제공격할 수 있다.", "es": "Ataque rápido que permite golpear en primer lugar."}
 {"i": 311, "v": "단단하고 뾰족하며 날카로운 손톱으로 상대를 할퀴어서 공격한다.", "es": "Araña con afiladas garras."}
-{"i": 312, "v": "잠든 상태에서만 쓸 수 있는 큰 코골이. 상대를 풀죽게 할 수 있다.", "es": "Fuerte ronquido que debe usarse dormido. Puede hacer retroceder al objetivo."}
+{"i": 312, "v": "자신이 잠들어있을 때 소음을 내어 공격한다. 상대를 풀죽게 만들 때가 있다.", "es": "Fuerte ronquido que debe usarse dormido. Puede hacer retroceder al objetivo."}
 {"i": 313, "v": "꼬리 등을 써서 상대를 때려 공격한다. 2회 연속으로 공격한다.", "es": "Golpea al objetivo dos veces seguidas con la cola u otras partes de su cuerpo."}
 {"i": 314, "v": "방어나 판별을 하고 있는 상대에게 공격할 수 있다. 방어 효과를 해제시킨다.", "es": "Permite golpear a objetivos que usan Protección o Detección y anula dichos movimientos."}
 {"i": 315, "v": "단단한 꼬리로 상대를 때려서 공격한다. 2~5회 동안 연속으로 쓴다.", "es": "Golpea con la cola u otras partes de su cuerpo de dos a cinco veces seguidas."}
@@ -352,14 +352,14 @@
 {"i": 351, "v": "물가나 풀밭, 동굴 등 있는 장소에 맞춰서 자신의 타입을 바꾼다.", "es": "Modifica el tipo del Pokémon según el terreno de combate donde esté."}
 {"i": 352, "v": "수컷은 암컷을 암컷은 수컷을 유혹하여 상대의 특수공격을 크게 떨어뜨린다.", "es": "Si el objetivo es del sexo opuesto, queda embelesado y baja mucho su Ataque Especial."}
 {"i": 353, "v": "귀엽게 바라보고 방심을 유도하여 상대의 공격을 크게 떨어뜨린다.", "es": "Engatusa al objetivo y reduce bastante su Ataque."}
-{"i": 354, "v": "자신의 타입을 배운 기술 중 하나의 타입으로 바뀐다.", "es": "Cambia el tipo del usuario por el de uno de sus movimientos."}
+{"i": 354, "v": "자신의 타입을 배운 기술 중 가장 위에 있는 기술과 같은 타입으로 바꾼다.", "es": "Cambia el tipo del usuario por el de uno de sus movimientos."}
 {"i": 355, "v": "상대가 마지막으로 쓴 기술에 저항할 수 있도록 자신의 타입을 변화시킨다.", "es": "El usuario cambia de tipo para hacerse resistente al último tipo de movimiento usado por el objetivo."}
 {"i": 356, "v": "전기를 두르고 상대에게 뛰어든다. 빗나가면 자신이 다친다.", "es": "Salta cargado de electricidad sobre el objetivo. Si falla, se lesiona."}
 {"i": 357, "v": "몸을 둥글게 웅크려서 자신의 방어를 올린다.", "es": "Se enrosca para ocultar su punto débil. Sube la Defensa."}
 {"i": 358, "v": "상대의 움직임을 막아 바로 전에 쓴 기술을 4턴 동안 사용할 수 없게 만든다.", "es": "Desactiva el último movimiento del objetivo durante cuatro turnos."}
 {"i": 359, "v": "재빠른 움직임으로 분신을 만들어 상대에게 혼동을 유발해 회피율을 올린다.", "es": "Crea copias de sí mismo para mejorar la Evasión."}
 {"i": 360, "v": "상대에게 앙코르를 외쳐서 기술을 3번 연속으로 쓰게 한다.", "es": "El objetivo repite su último movimiento durante tres turnos."}
-{"i": 361, "v": "어떤 공격이든 버텨 HP를 최소 1 남긴다. 연속으로 쓰면 실패할 수 있다.", "es": "Resiste cualquier ataque y deja al menos un PS. Puede fallar si se usa repetidamente."}
+{"i": 361, "v": "공격을 받아도 HP를 반드시 1만큼은 남긴다. 연속으로 쓰면 실패하기 쉽다.", "es": "Resiste cualquier ataque y deja al menos un PS. Puede fallar si se usa repetidamente."}
 {"i": 362, "v": "이상한 리듬으로 춤춘다. 움직임을 흉내 내게 해서 자신과 상대의 특성을 똑같게 만든다.", "es": "Una extraña danza que hace que el usuario y el objetivo tengan la misma habilidad."}
 {"i": 363, "v": "눈부신 빛으로 상대의 명중률을 떨어뜨린다. 배틀 밖에서는 주위를 밝힌다.", "es": "Luz cegadora que baja la Precisión del objetivo. Fuera de combate sirve para iluminar."}
 {"i": 364, "v": "깊게 숨을 들이마셔 기합을 넣는다. 자신의 공격이 급소에 맞기 쉬워진다.", "es": "Concentra energía para aumentar las posibilidades de un golpe crítico."}
@@ -367,7 +367,7 @@
 {"i": 366, "v": "고스트타입에 효과가 없는 기술이나 회피율이 높은 상대라 할지라도 공격이 맞게 된다.", "es": "Permite atacar con cualquier movimiento a objetivos de tipo Fantasma y golpear a Pokémon evasivos."}
 {"i": 367, "v": "배의 무늬로 겁을 주어 상대를 마비 상태로 만든다.", "es": "Intimida y asusta al objetivo con la mirada para dejarlo paralizado."}
 {"i": 368, "v": "귀여운 울음소리를 들려주고 관심을 끌어 방심한 사이에 상대의 공격을 떨어뜨린다.", "es": "Dulce gruñido que reduce el Ataque del contrincante."}
-{"i": 369, "v": "몸이 급격히 자라나 공격과 특수공격을 올린다.", "es": "El cuerpo del usuario crece a marchas forzadas y aumenta el Ataque y el Ataque Especi."}
+{"i": 369, "v": "몸을 일시에 크게 성장시켜 공격과 특수공격을 올린다.", "es": "El cuerpo del usuario crece a marchas forzadas y aumenta el Ataque y el Ataque Especi."}
 {"i": 370, "v": "전신에 힘을 주어 몸을 단단하게 해서 자신의 방어를 올린다.", "es": "Tensa la musculatura del usuario para aumentar la Defensa."}
 {"i": 371, "v": "기분 좋은 방울소리를 들려주어 같은 편 전원의 상태 이상을 회복한다.", "es": "Tañido que cura los problemas de estado de todos los Pokémon del equipo."}
 {"i": 372, "v": "동료를 돕는다. 도움받은 포켓몬이 쓰는 기술의 위력은 여느 때보다 커진다.", "es": "El usuario ayuda a un aliado reforzando la potencia de su ataque."}
@@ -376,7 +376,7 @@
 {"i": 375, "v": "조준을 잘 맞춰 다음 공격이 반드시 상대에게 명중하도록 한다.", "es": "Fija el blanco para que el siguiente ataque no falle."}
 {"i": 376, "v": "무서운 얼굴로 키스한다. 상대를 잠듦 상태로 만든다.", "es": "Con una cara que asusta, da un beso al objetivo y lo adormece."}
 {"i": 377, "v": "하늘을 향해 기도를 올려 상대의 공격을 급소에 맞지 않게 한다.", "es": "Lanza al cielo un conjuro que impide al objetivo asestar golpes críticos."}
-{"i": 378, "v": "상대가 쓰려는 기술을 앞질러 더 강하게 먼저 쓴다.", "es": "Se adelanta al movimiento que pretende usar el objetivo y lo lanza antes con más fuerza. Si el usuario es más lento"}
+{"i": 378, "v": "위력을 올려 상대가 쓰려고 하는 기술을 먼저 쓴다. 먼저 쓰지 않으면 실패한다.", "es": "Se adelanta al movimiento que pretende usar el objetivo y lo lanza antes con más fuerza. Si el usuario es más lento"}
 {"i": 379, "v": "상대가 배틀에서 도망치지 못하게 한다.", "es": "Impide al objetivo huir de la batalla."}
 {"i": 380, "v": "손가락을 흔들어 자신의 뇌를 자극해서 모든 기술 중 어느 하나를 날린다.", "es": "El usuario mueve un dedo y estimula su cerebro para usar al azar casi cualquier movimiento."}
 {"i": 381, "v": "자신의 최대 HP 절반을 회복한다. 동료에게 HP를 나누어 줄 수도 있다.", "es": "Restaura la mitad de los PS máximos del usuario. Fuera de combate se usa para transferir parte de sus PS a un aliado."}
@@ -385,14 +385,14 @@
 {"i": 384, "v": "몸을 축소하여 작게 보임으로써 자신의 회피율을 크게 올린다.", "es": "El usuario mengua para aumentar mucho la Evasión."}
 {"i": 385, "v": "자신의 HP를 회복한다. 날씨에 따라 회복량이 변한다.", "es": "Restaura PS del usuario. La cantidad varía según el tiempo que haga."}
 {"i": 386, "v": "자신의 HP를 회복한다. 날씨에 따라 회복량이 변한다.", "es": "Restaura PS del usuario. La cantidad varía según el tiempo que haga."}
-{"i": 387, "v": "자연의 힘을 쓴다. 배틀 장소에 따라 나오는 기술이 달라진다.", "es": "Usa el poder de la naturaleza. Su efecto varía según el entorno de combate."}
+{"i": 387, "v": "자연의 힘으로 공격한다. 사용하는 장소에 따라 나오는 기술이 변화한다.", "es": "Usa el poder de la naturaleza. Su efecto varía según el entorno de combate."}
 {"i": 388, "v": "고스트타입에 효과가 없는 기술이나 회피율이 높은 상대라 할지라도 공격이 맞게 된다.", "es": "Permite atacar con cualquier movimiento a objetivos de tipo Fantasma y golpear a Pokémon evasivos."}
 {"i": 389, "v": "자신의 HP와 상대의 HP를 합친 것을 자신과 상대가 사이좋게 나눈다.", "es": "Suma los PS del usuario a los del objetivo y los reparte a partes iguales."}
 {"i": 390, "v": "노래를 들은 포켓몬은 3턴이 지나면 기절한다. 교체되면 효과가 없어진다.", "es": "Si un Pokémon escucha este canto y no es cambiado por otro en tres turnos, acaba debilitándose."}
 {"i": 391, "v": "모든 공격을 막는다", "es": "Frena todos los ataques"}
 {"i": 392, "v": "자신에게 암시를 걸어서 능력 변화 상태를 상대와 똑같은 상태로 만든다.", "es": "Quien lo usa se hipnotiza y copia cualquier cambio que haya en las características de su objetivo."}
 {"i": 393, "v": "세포를 재생시켜 자신의 최대 HP의 절반만큼 HP를 회복한다.", "es": "Restaura hasta la mitad de los PS máximos."}
-{"i": 394, "v": "배틀에서 이미 사용한 일회용 지닌 도구를 다시 주워 와서 쓸 수 있게 한다.", "es": "Recicla y así recupera el objeto equipado de un solo uso que ya ha sido empleado en el combate."}
+{"i": 394, "v": "배틀 중에 사용하여 없어진 자신의 지닌 물건을 재생시켜 사용할 수 있게 한다.", "es": "Recicla y así recupera el objeto equipado de un solo uso que ya ha sido empleado en el combate."}
 {"i": 395, "v": "상대의 타입을 반사해서 자신도 똑같은 타입이 된다.", "es": "Cambia el tipo del Pokémon al mismo tipo que el del objetivo."}
 {"i": 396, "v": "휴식을 취해 마비, 독, 화상 상태를 치료한다.", "es": "Descansa para curar parálisis, envenenamiento o quemaduras.."}
 {"i": 397, "v": "상대를 도망가게 해서 교대할 포켓몬을 끌어낸다. 야생의 경우에는 배틀이 끝난다.", "es": "Se lleva al objetivo, que es cambiado por otro Pokémon. Si es un Pokémon salvaje, acaba el combate."}
@@ -403,7 +403,7 @@
 {"i": 402, "v": "껍질을 깨서 방어와 특수방어를 떨어뜨리는 대신 공격, 특수공격, 스피드를 크게 올린다.", "es": "El usuario rompe su coraza y baja su Defensa y Def. Esp., pero aumenta mucho su Ataque, Ataque Especial y Velocidad."}
 {"i": 403, "v": "상대의 특성을 단순으로 바꾼다.", "es": "Cambia la habilidad del objetivo a Simple."}
 {"i": 404, "v": "기분 좋게 예쁜 노랫소리를 들려주어 상대를 잠듦 상태로 만든다.", "es": "Cancioncilla que hace dormir profundamente al objetivo."}
-{"i": 405, "v": "상대가 마지막으로 사용한 기술을 영구히 배운다. 한 번 쓰면 없어진다.", "es": "Aprende de forma permanente el último movimiento del objetivo. Es de un solo uso."}
+{"i": 405, "v": "상대가 쓴 기술을 자신의 것으로 만든다. 한 번 사용하면 스케치는 사라진다.", "es": "Aprende de forma permanente el último movimiento del objetivo. Es de un solo uso."}
 {"i": 406, "v": "게으름 피우며 쉰다. 자신의 HP를 최대 HP의 절반만큼 회복한다.", "es": "El usuario se relaja y restaura la mitad de sus PS máximos."}
 {"i": 407, "v": "자신이 배운 기술 중 하나를 무작위로 날린다. 자신이 잠들어 있을 때만 쓸 수 있다.", "es": "Mientras duerme, usa uno de sus movimientos elegido al azar."}
 {"i": 408, "v": "연기나 먹물을 내뿜어 상대의 명중률을 떨어뜨린다.", "es": "Baja la Precisión del objetivo con una nube de humo o tinta."}
@@ -411,7 +411,7 @@
 {"i": 410, "v": "공격도 하지 않고 팔딱팔딱 튈 뿐 아무 일도 일어나지 않는다...", "es": "No tiene ningún efecto. Solo salpica."}
 {"i": 411, "v": "힘을 비축해서 자신의 방어와 특수방어를 올린다. 최대 3회까지 비축할 수 있다.", "es": "Acumula energía y sube la Defensa y la Defensa Especial. Puede utilizarse hasta tres veces."}
 {"i": 412, "v": "자신의 HP를 조금 깎아서 분신을 만든다. 분신은 자신의 대타가 된다.", "es": "Utiliza parte de los PS propios para crear un sustituto que actúa como señuelo."}
-{"i": 413, "v": "기묘한 음파. 상대를 혼란에 빠뜨릴 수 있다.", "es": "Raras ondas sónicas que pueden confundir al objetivo."}
+{"i": 413, "v": "특수한 음파를 몸에서 발산하여 상대를 혼란시킨다.", "es": "Raras ondas sónicas que pueden confundir al objetivo."}
 {"i": 414, "v": "상대를 화내게 해서 혼란시킨다. 분노로 상대의 공격은 크게 올라가 버린다.", "es": "Provoca confusión en el objetivo, pero también sube mucho su Ataque."}
 {"i": 415, "v": "비축된 힘을 꿀꺽해서 자신의 HP를 회복한다. 비축된 만큼 회복한다.", "es": "Absorbe la energía acumulada con Reserva y restaura PS."}
 {"i": 416, "v": "천사처럼 귀엽게 키스하여 상대를 혼란시킨다.", "es": "Da un beso con tal dulzura que causa confusión."}
@@ -419,16 +419,16 @@
 {"i": 418, "v": "싸움의 춤을 격렬하게 춰서 기세를 높인다. 자신의 공격을 크게 올린다.", "es": "Baile frenético que aumenta mucho el Ataque."}
 {"i": 419, "v": "꼬리를 흔들어 상대의 방어를 떨어뜨린다.", "es": "Agita la cola para bajar la Defensa del contrincante."}
 {"i": 420, "v": "흔들흔들 댄스를 춰서 주위에 있는 포켓몬을 혼란 상태로 만든다.", "es": "Danza histérica que confunde a los Pokémon que están alrededor del usuario."}
-{"i": 421, "v": "상대를 웃겨 공격과 방어를 떨어뜨린다.", "es": "Hace reír al objetivo para bajar el Ataque y la Defensa."}
+{"i": 421, "v": "몸을 간질여 웃게 만들어서 상대의 공격과 방어를 떨어뜨린다.", "es": "Hace reír al objetivo para bajar el Ataque y la Defensa."}
 {"i": 422, "v": "상대와 똑같은 모습으로 변신한다.", "es": "El usuario se transforma en una copia del objetivo"}
-{"i": 423, "v": "상대를 쫓아내 다른 포켓몬으로 교체시킨다. 야생 포켓몬이면 배틀이 끝난다.", "es": "Se lleva al rival, que es cambiado por otro Pokémon. Si es un Pokémon salvaje, acaba el combate."}
+{"i": 423, "v": "상대를 도망가게 해서 교대할 포켓몬을 끌어낸다. 야생의 경우에는 배틀이 끝난다.", "es": "Se lleva al rival, que es cambiado por otro Pokémon. Si es un Pokémon salvaje, acaba el combate."}
 {"i": 424, "v": "소원을 빌어 다음 턴에 최대 HP의 절반을 회복한다.", "es": "Cumple el deseo de restaurar la mitad de los PS máximos en el siguiente turno."}
 {"i": 425, "v": "자신의 공격과 특수공격을 올린다.", "es": "Movimiento que aumenta el Ataque y el Ataque Especial de quien lo usa."}
 {"i": 426, "v": "큰 하품으로 졸음을 유도한다. 다음 턴에 상대를 잠듦 상태로 만든다.", "es": "Gran bostezo que induce al sueño al objetivo en el siguiente turno."}
-{"i": 427, "v": "역겨운 쓰레기를 상대에게 던진다. 독을 입힐 수 있다.", "es": "Lanza contra el objetivo asquerosa basura. Puede envenenar al objetivo."}
+{"i": 427, "v": "더러운 쓰레기를 상대에게 부딪쳐서 공격한다. 독 상태로 만들 때가 있다.", "es": "Lanza contra el objetivo asquerosa basura. Puede envenenar al objetivo."}
 {"i": 428, "v": "오물 파도로 자신의 주위에 있는 포켓몬을 공격한다. 독 상태로 만들 때가 있다.", "es": "Una onda tóxica que daña a los Pokémon de alrededor. Puede envenenar."}
 {"i": 429, "v": "더러운 오물을 상대에게 내던져서 공격한다. 독 상태로 만들 때가 있다.", "es": "Arroja residuos al objetivo. Puede llegar a envenenar."}
-{"i": 430, "v": "독이 오른 촉수나 팔로 찌른다. 독을 입힐 수 있다.", "es": "Pincha al rival con un tentáculo o brazo envenenado. Puede llegar a envenenar al rival."}
+{"i": 430, "v": "독에 물든 촉수나 팔로 상대를 꿰찌른다. 독 상태로 만들 때가 있다.", "es": "Pincha al rival con un tentáculo o brazo envenenado. Puede llegar a envenenar al rival."}
 {"i": 431, "v": "독 칼날로 상대를 베어 가른다. 독 상태로 만들 때가 있고 급소에도 맞기 쉽다.", "es": "Tajo que puede envenenar al objetivo. Suele ser crítico."}
 {"i": 432, "v": "더러운 오물을 상대에게 내던져서 공격한다. 독 상태로 만들 때가 있다.", "es": "Arroja residuos al objetivo. Puede llegar a envenenar."}
 {"i": 433, "v": "특수한 독액을 끼얹는다. 독 상태의 상대에게는 위력이 2배가 된다.", "es": "Ataca cubriendo al objetivo con un líquido venenoso. El daño será doble si este ya está envenenado."}
@@ -445,7 +445,7 @@
 {"i": 444, "v": "독가스를 내뿜어 상대를 독 상태로 만든다.", "es": "Lanza una nube de gas tóxico al objetivo. Produce envenenamiento."}
 {"i": 445, "v": "독이 있는 가루를 많이 흩뿌려서 상대를 독 상태로 만든다.", "es": "Polvo tóxico que envenena al objetivo."}
 {"i": 446, "v": "상대를 맹독 상태로 만든다. 턴이 진행될수록 독의 데미지가 증가한다.", "es": "Envenena gravemente al objetivo y causa un daño mayor en cada turno."}
-{"i": 447, "v": "상대 발밑에 독압정을 깐다. 교체로 나오는 포켓몬에게 독을 입힌다.", "es": "Lanza una trampa de púas tóxicas a los pies del objetivo. El veneno afecta a los Pokémon que entran."}
+{"i": 447, "v": "상대의 발밑에 독압정을 뿌린다. 교체로 나온 상대 포켓몬에 독을 덮어씌운다.", "es": "Lanza una trampa de púas tóxicas a los pies del objetivo. El veneno afecta a los Pokémon que entran."}
 {"i": 448, "v": "풀 파워로 상대를 공격한다. 쓰면 반동으로 자신의 특수공격이 크게 떨어진다.", "es": "Ataque en toda regla que baja mucho el Ataque Especial de quien lo usa."}
 {"i": 449, "v": "잠자고 있는 상대의 꿈을 먹어 공격한다. 데미지의 절반을 HP로 회복한다.", "es": "Restaura al usuario la mitad del daño causado a un objetivo dormido."}
 {"i": 450, "v": "기술을 사용한 2턴 뒤에 상대에게 염동력 덩어리를 보내어 공격한다.", "es": "Concentra energía psíquica para golpear al objetivo dos turnos después."}
@@ -467,7 +467,7 @@
 {"i": 466, "v": "힘을 빼고 몸을 가볍게 해서 고속으로 움직인다. 자신의 스피드를 크게 올린다.", "es": "Relaja el cuerpo para ganar mucha Velocidad."}
 {"i": 467, "v": "기묘한 힘으로 자신과 동료의 자리를 바꾼다.", "es": "Un extraño poder que intercambia las posiciones del usuario y un aliado sobre el terreno de combate."}
 {"i": 468, "v": "머리를 비워서 순간적으로 무언가를 잊어버림으로써 자신의 특수방어를 크게 올린다.", "es": "El usuario olvida sus preocupaciones y aumenta mucho la Defensa Especial."}
-{"i": 469, "v": "방어막을 만들어 방어를 크게 올린다.", "es": "Crea una barrera para aumentar mucho la Defensa."}
+{"i": 469, "v": "튼튼한 장막을 만들어 자신의 방어를 크게 올린다.", "es": "Crea una barrera para aumentar mucho la Defensa."}
 {"i": 470, "v": "조용히 정신을 통일하고 마음을 가라앉혀서 자신의 특수공격과 특수방어를 올린다.", "es": "Aumenta la concentración y calma el espíritu para subir el Ataque Especial y la Defensa Especial."}
 {"i": 471, "v": "우주로부터 신비한 힘을 손에 넣음으로써 자신의 방어와 특수방어를 올린다.", "es": "Sube la Defensa y la Defensa Especial propias con energía mística."}
 {"i": 472, "v": "5턴 동안 중력을 강하게 해서 부유나 하늘을 나는 기술을 사용할 수 없게 한다.", "es": "La gravedad aumenta durante cinco turnos, lo que impide acciones que impliquen volar o levitar."}
@@ -498,7 +498,7 @@
 {"i": 497, "v": "즉시 도망치거나 마지막으로 들른 포켓몬센터로 이동한다.", "es": "Permite huir al instante o viajar al último Centro Pokémon visitado."}
 {"i": 498, "v": "상대의 빈틈을 노려 자신과 상대가 지닌 물건을 바꿔치기한다.", "es": "Engaña al objetivo desprevenido e intercambia objetos."}
 {"i": 499, "v": "이상한 공간을 만든다. 5턴 동안 느린 포켓몬부터 행동할 수 있다.", "es": "Se crea un espacio extraño en el que los Pokémon lentos se mueven primero durante cinco turnos."}
-{"i": 500, "v": "5턴 동안 모든 포켓몬의 방어와 특수방어가 뒤바뀌는 신비한 공간을 만든다.", "es": "Crea una zona misteriosa donde se intercambian la Defensa y Def. Especial en todos los Pokémon por cinco turnos."}
+{"i": 500, "v": "이상한 공간을 만든다. 5턴 동안 모든 포켓몬의 방어와 특수방어가 바뀐다.", "es": "Crea una zona misteriosa donde se intercambian la Defensa y Def. Especial en todos los Pokémon por cinco turnos."}
 {"i": 501, "v": "목숨을 걸고 혼신의 힘으로 상대에게 박치기를 한다. 자신도 굉장한 데미지를 입는다.", "es": "El usuario arriesga su vida y lanza un cabezazo con toda su fuerza. El agresor resulta seriamente dañado."}
 {"i": 502, "v": "거대한 바위를 상대에게 발사하여 공격한다. 다음 턴은 움직일 수 없게 된다.", "es": "Lanza una piedra enorme contra el objetivo, pero tiene que descansar el siguiente turno."}
 {"i": 503, "v": "뾰족한 바위를 상대에게 꿰찔러서 공격한다. 급소에 맞기 쉽다.", "es": "Clava piedras muy afiladas al objetivo. Suele ser crítico."}
@@ -519,7 +519,7 @@
 {"i": 518, "v": "혜성과 같은 펀치를 날려서 상대를 공격한다. 자신의 공격이 올라갈 때가 있다.", "es": "Puñetazo que impacta como un meteorito y puede subir el Ataque del agresor."}
 {"i": 519, "v": "몸의 빛을 한곳에 모아서 힘을 방출한다. 상대의 특수방어를 떨어뜨릴 때가 있다.", "es": "El usuario concentra toda la luz del cuerpo y la libera. Puede bajar la Defensa Especial del objetivo."}
 {"i": 520, "v": "강철과 같은 단단한 머리로 공격한다. 상대를 풀죽게 만들 때가 있다.", "es": "Ataca con su dura cabeza de hierro. Puede hacer que el objetivo retroceda."}
-{"i": 521, "v": "육중한 날개로 때린다. 30% 확률로 자신의 방어가 올라간다.", "es": "Alas macizas que golpean al objetivo y tienen un 30% de subir la Defensa del usuario."}
+{"i": 521, "v": "단단한 날개를 상대에게 부딪쳐서 공격한다. 30% 확률로 자신의 방어가 올라간다.", "es": "Alas macizas que golpean al objetivo y tienen un 30% de subir la Defensa del usuario."}
 {"i": 522, "v": "갈고닦은 몸에서 섬광의 힘을 상대에게 쏜다. 명중률을 떨어뜨릴 때가 있다.", "es": "El usuario libera un haz de energía desde su pulido cuerpo. Puede bajar la Precisión."}
 {"i": 523, "v": "상대에게 달라붙는 강철의 폭탄을 발사한다. 공격은 반드시 명중한다.", "es": "Lanza unas bombas de hierro que se pegan al adversario. No se puede esquivar."}
 {"i": 524, "v": "강철의 기어를 상대에게 던져서 공격한다. 2회 연속으로 데미지를 준다.", "es": "Rota dos engranajes de hierro sobre el objetivo. Golpea dos veces."}
@@ -529,7 +529,7 @@
 {"i": 528, "v": "무거운 몸으로 상대에게 부딪쳐 공격한다. 자신이 상대보다 무거울수록 위력이 올라간다.", "es": "El usuario golpea con todo su cuerpo. Cuanto mayor sea su peso comparado con el del objetivo, más daño causará."}
 {"i": 529, "v": "마지막으로 받은 공격을 상대에게 되돌려준다", "es": "Devuelve al objetivo el último ataque recibido"}
 {"i": 530, "v": "몸의 쓸모없는 부분을 깎는다. 자신의 스피드를 크게 올리고 체중도 가벼워진다.", "es": "El usuario se sacude para hacerse más ligero y aumentar mucho su Velocidad."}
-{"i": 531, "v": "몸을 쇠처럼 단단하게 해 방어를 크게 올린다.", "es": "Fortalece el cuerpo como si fuera hierro y sube mucho la Defensa."}
+{"i": 531, "v": "피부를 쇠처럼 단단하게 만듦으로써 자신의 방어를 크게 올린다.", "es": "Fortalece el cuerpo como si fuera hierro y sube mucho la Defensa."}
 {"i": 532, "v": "금속을 긁을 때 나는 듯한 싫은 소리를 들려준다. 상대의 특수방어를 크게 떨어뜨린다.", "es": "Horrible chirrido metálico que baja mucho la Defensa Especial del objetivo."}
 {"i": 533, "v": "톱니바퀴를 돌려서 자신의 공격을 올리는 것뿐만 아니라 스피드도 크게 올린다.", "es": "Al hacer girar los engranajes, el usuario mejora su Ataque y aumenta su Velocidad espectacularmente."}
 {"i": 534, "v": "물의 대포를 상대에게 발사해서 공격한다. 다음 턴은 움직일 수 없다.", "es": "Disparo de agua. El atacante debe descansar el siguiente turno."}
@@ -538,7 +538,7 @@
 {"i": 537, "v": "흙탕물로 공격한다. 명중률을 떨어뜨릴 수 있다.", "es": "Ataque con agua lodosa que puede bajar la Precisión."}
 {"i": 538, "v": "큰 파도로 자신의 주위에 있는 포켓몬을 공격한다. 물 위도 헤엄쳐서 나아간다.", "es": "Inunda el campo de batalla con una ola gigante. Fuera de batalla sirve para moverse sobre el agua."}
 {"i": 539, "v": "세차게 날뛰는 거친 파도와 같이 큰 꼬리를 휘둘러서 상대를 공격한다.", "es": "Ataca agitando la cola como si fuera una ola rabiosa en una tormenta devastadora."}
-{"i": 540, "v": "집게로 세게 친다. 급소에 잘 맞는다.", "es": "Golpea con fuerza con unas pinzas. Suele ser crítico."}
+{"i": 540, "v": "큰 집게를 상대에게 내리쳐서 공격한다. 급소에 맞기 쉽다.", "es": "Golpea con fuerza con unas pinzas. Suele ser crítico."}
 {"i": 541, "v": "1턴째에 바닷속으로 잠수하고 2턴째에 떠올라 공격한다.", "es": "Primer turno: se sumerge en el mar. Segundo turno: emerge y ataca."}
 {"i": 542, "v": "뜨겁게 끓어오르는 물을 상대에게 발사해서 공격한다. 화상 상태로 만들 때가 있다.", "es": "Ataca arrojando agua hirviendo al objetivo. Puede causar quemaduras."}
 {"i": 543, "v": "굉장한 기세로 상대에게 돌진한다. 상대를 풀죽게 만들 때가 있다. 폭포도 거슬러 올라갈 수 있다.", "es": "Embiste con un gran impulso que puede hacer retroceder. También sirve para remontar cascadas."}
@@ -547,12 +547,12 @@
 {"i": 546, "v": "거품을 기세 좋게 상대에게 발사하여 공격한다. 스피드를 떨어뜨릴 때가 있다.", "es": "Diluvio de burbujas que puede bajar la Velocidad."}
 {"i": 547, "v": "상대의 얼굴 등에 먹물을 내뿜어 공격한다. 명중률을 떨어뜨릴 때가 있다.", "es": "Dispara tinta a la cara. Puede bajar la Precisión."}
 {"i": 548, "v": "물의 진동을 상대에게 가하여 공격한다. 상대를 혼란시킬 때가 있다.", "es": "Ataca con un potente chorro de agua. Puede confundir al objetivo."}
-{"i": 549, "v": "물기둥으로 공격한다. 불꽃 공격과 겹치면 무지개가 뜨며 위력이 커진다.", "es": "Ataca con columnas de agua. Si se combina con un ataque de fuego, crea un arcoíris y aumenta su potencia."}
+{"i": 549, "v": "물기둥으로 공격한다. 불꽃과 조합하면 위력이 올라가고 하늘에 무지개가 걸린다.", "es": "Ataca con columnas de agua. Si se combina con un ataque de fuego, crea un arcoíris y aumenta su potencia."}
 {"i": 550, "v": "눈에 보이지 않는 굉장한 속도로 상대에게 돌진한다. 반드시 선제공격할 수 있다.", "es": "Ataque rápido que permite golpear en primer lugar."}
 {"i": 551, "v": "물을 기세 좋게 상대에게 발사하여 공격한다.", "es": "Ataca disparando agua con gran potencia."}
 {"i": 552, "v": "매우 튼튼하고 두꺼운 껍질에 4~5턴 동안 상대를 끼워서 공격한다.", "es": "Atrapa y atenaza con fuerza durante cuatro o cinco turnos."}
 {"i": 553, "v": "세차게 소용돌이치는 물속에 4~5턴 동안 상대를 가두어 공격한다.", "es": "Una tromba de agua atrapa al objetivo durante cuatro o cinco turnos."}
-{"i": 554, "v": "거품을 날린다. 상대의 스피드를 떨어뜨릴 수 있다.", "es": "Lanza burbujas al contrincante y puede reducir su Velocidad."}
+{"i": 554, "v": "매우 많은 거품을 상대에게 내뿜어 공격한다. 상대의 스피드를 떨어뜨릴 때가 있다.", "es": "Lanza burbujas al contrincante y puede reducir su Velocidad."}
 {"i": 555, "v": "자신의 몸 주변을 물로 만든 베일로 덮는다. 매 턴 HP를 회복한다.", "es": "Un manto de agua cubre al Pokémon que lo usa. Recupera algunos PS en cada turno."}
 {"i": 556, "v": "5턴 동안 비를 내리게 하여 물타입 기술의 위력을 올린다.", "es": "Genera una fuerte lluvia que refuerza los movimientos de tipo Agua durante cinco turnos."}
 {"i": 557, "v": "많은 물을 끼얹어서 상대를 물타입으로 바꾼다.", "es": "Potente lluvia que transforma al objetivo en un Pokémon de tipo Agua."}
@@ -606,7 +606,7 @@
 {"i": 605, "v": "상대의 지닌 물건을 조종해서 공격한다. 상대가 도구를 지니고 있지 않으면 실패한다.", "es": "El usuario ataca utilizando el objeto que lleva el rival. Si no tiene ninguno equipado, el movimiento falla."}
 {"i": 606, "v": "비늘을 2~5회 연속으로 날린다. 자신의 스피드가 오르지만 방어가 떨어진다.", "es": "Lanza escamas al objetivo de dos a cinco veces seguidas. Aumenta la Velocidad del usuario pero reduce su Defensa."}
 {"i": 607, "v": "눈물을 그렁그렁거려 상대의 전의를 상실하게 한다. 상대의 공격과 특수공격이 떨어진다.", "es": "Mira al objetivo con ojos llorosos para hacerle perder su espíritu combativo y reduce su Ataque y Ataque Especial."}
-{"i": 608, "v": "5턴 동안 에스퍼타입 기술이 강해지고 선공 기술로부터 보호받는다.", "es": "Durante cinco turnos, se potencian los movimientos de tipo Psíquico y los Pokémon quedan protegidos contra movimientos con prioridad."}
+{"i": 608, "v": "5턴 동안 땅에 있으면 선제공격을 받지 않는다. 에스퍼타입의 위력이 올라간다.", "es": "Durante cinco turnos, se potencian los movimientos de tipo Psíquico y los Pokémon quedan protegidos contra movimientos con prioridad."}
 {"i": 609, "v": "5턴 동안 발밑을 미스트필드로 만든다. 땅에 있으면 상태 이상이 되지 않는다.", "es": "Cubre de niebla el terreno de combate durante cinco turnos. Los Pokémon que estén en el suelo no se ven afectados por cambios de estado."}
 {"i": 610, "v": "5턴 동안 발밑을 일렉트릭필드로 만든다. 땅에 있는 포켓몬은 잠들지 않게 된다.", "es": "Durante cinco turnos, crea un campo eléctrico en el terreno de combate que impide dormirse a los Pokémon que estén en contacto con el suelo."}
 {"i": 611, "v": "5턴 동안 발밑을 그래스필드로 만든다. 땅에 있는 포켓몬은 매 턴 회복한다.", "es": "Convierte el terreno de combate en un campo de hierba durante cinco turnos. Los Pokémon que estén en el suelo recuperan PS en cada turno."}
@@ -666,7 +666,7 @@
 {"i": 665, "v": "뒤흔들어 공격하고 스피드를 떨어뜨린다.", "es": "Ataca con una sacudida Y baja su Velocidad."}
 {"i": 666, "v": "풀 파워로 상대를 공격한다. 쓰면 반동으로 자신의 특수공격이 크게 떨어진다.", "es": "Ataque en toda regla que baja mucho el Ataque Especial de quien lo usa."}
 {"i": 667, "v": "축적된 파워로 상대를 공격한다. 자신의 능력이 올라가 있는 만큼 위력이 오른다.", "es": "Acumula poder para golpear. Cuanto más suban las características del usuario, mayor será el daño."}
-{"i": 668, "v": "단단한 몸으로 들이받는다. 자신도 상당한 데미지를 입는다.", "es": "Arremete contra el rival con su robusto cuerpo. El agresor también sufre bastante daño."}
+{"i": 668, "v": "단단한 몸통을 상대에게 부딪쳐서 공격한다. 자신도 상당한 데미지를 입는다.", "es": "Arremete contra el rival con su robusto cuerpo. El agresor también sufre bastante daño."}
 {"i": 669, "v": "2~3턴 동안 마구 난동 부려서 공격한다. 난동 부린 뒤에는 혼란에 빠진다.", "es": "Ataca de dos a tres turnos y acaba confundiendo al agresor."}
 {"i": 670, "v": "4~5턴 동안 상대를 몰아붙여 가둔다.", "es": "Acosa y atrapa al objetivo de cuatro a cinco turnos."}
 {"i": 671, "v": "신비한 날개로 공격하며 스피드를 올린다.", "es": "Ataca con un ala mística y aumenta la Velocidad del atacante."}
@@ -722,7 +722,7 @@
 {"i": 721, "v": "입자로 이루어진 칼날을 퍼부어 두 번 연속 데미지를 준다. 반드시 맞는다.", "es": "Ráfaga de cuchillas formadas por partículas que inflige daño dos veces seguidas. No falla."}
 {"i": 722, "v": "몸을 낮춰 상대의 방심을 유도한 뒤 공격한다. 반드시 맞는다.", "es": "Se postra para que el objetivo baje la guardia y aprovecha para atacar. No falla."}
 {"i": 723, "v": "3회 때리며 반드시 급소에 맞는다.", "es": "Golpea 3 veces y siempre asesta un golpe crítico."}
-{"i": 724, "v": "악의 기술을 완전히 통달해야 쓸 수 있는 파괴적인 일격. 반드시 급소에 맞는다.", "es": "Golpe devastador que requiere un absoluto dominio de las artes siniestras. Siempre es crítico."}
+{"i": 724, "v": "악의 태세가 극에 달하여 강렬한 일격을 날린다. 반드시 급소에 맞는다.", "es": "Golpe devastador que requiere un absoluto dominio de las artes siniestras. Siempre es crítico."}
 {"i": 725, "v": "바위와 풀타입을 동시에 가진 기술이다.", "es": "Este movimiento es de tipo Roca y Planta a la vez."}
 {"i": 726, "v": "꼬리로 무한대 기호를 그리며 공격한다. 상대를 쇠약 상태로 만든다.", "es": "Ataca formando un símbolo infinito con su cola. Aplica Caduco al rival."}
 {"i": 727, "v": "Constellar의 태양 폼과 달 폼을 전환한다. 폼에 따라 물리 기술이 되기도, 특수 기술이 되기도 한다.", "es": "Cambia a Constellar entre forma solar y lunar. Este mov. es físico o especial en función de la forma."}
