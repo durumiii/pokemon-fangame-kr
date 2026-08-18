@@ -3637,31 +3637,31 @@
 {"k": "\\c[5]<b>Melia:</b>\\c[0] ¿Qué es eso? ¿Un terremoto?", "v": "\\c[5]<b>멜리아:</b>\\c[0] 이게 무슨 소리지? 지진인가?"}
 {"k": "\\sh¡Ciudadanos, tomad las armas!", "v": "\\sh시민들이여, 무기를 들어라!"}
 {"k": "\\sh¡El rey <b>Áster</b> está ahí dentro!", "v": "\\sh<b>아스테르</b> 왕이 저 안에 있다!"}
-{"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Estos son los dormitorios de los mosqueteros. Deberíamos estar a salvo aquí.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 이곳은 총사들의 침실이다. 여기라면 안전할 게야."}
-{"k": "¡<i>Sacrebleu</i>! Hace mucho frío en estas estancias. Encenderé la chimenea.", "v": "<i>Sacrebleu</i>! 이 방은 매우 춥군. 벽난로에 불을 지펴야겠어."}
-{"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Sí. Mucho mejor ahora.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 그래. 이제 훨씬 낫구나."}
-{"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Ya sé lo que estarás pensando, \\PN.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 그대가 무슨 생각을 하는지 이미 알고 있다네, \\PN."}
-{"k": "Menudo rey, que no es capaz de defenderse por sí solo.", "v": "자신 하나조차 지키지 못하는 왕이라니, 참 한심하겠지."}
+{"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Estos son los dormitorios de los mosqueteros. Deberíamos estar a salvo aquí.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 이곳은 총사들의 침실일세. 여기라면 안전할 게야."}
+{"k": "¡<i>Sacrebleu</i>! Hace mucho frío en estas estancias. Encenderé la chimenea.", "v": "<i>Sacrebleu</i>! 이 방은 꽤 춥군. 벽난로에 불을 지펴야겠어."}
+{"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Sí. Mucho mejor ahora.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 음, 이제 훨씬 낫구만."}
+{"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Ya sé lo que estarás pensando, \\PN.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 그대가 무슨 생각을 하는지 이미 알고 있네, \\PN."}
+{"k": "Menudo rey, que no es capaz de defenderse por sí solo.", "v": "자기 몸 하나 지키지 못하는 왕이라니, 참 한심하겠지."}
 {"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Hace tiempo que perdí facultades como entrenador Pokémon.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 포켓몬 트레이너로서의 기량은 잃은 지 오래라네."}
 {"k": "...", "v": "......"}
-{"k": "La que sí era un prodigio era... ella.", "v": "진정한 신동이었던 건... 그 사람이었지."}
-{"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Mi amada <b>Angeline</b>. Ella sí que se entendía bien con los Pokémon.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 내 사랑하는 <b>안젤린</b>. 그 사람이야말로 포켓몬과 진심으로 교감할 줄 알았단다."}
-{"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Una persona formidable. De esas que tenían un don para leer en el corazón de los demás.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 정말 훌륭한 사람이었지. 타인의 마음을 읽어내는 재능을 가진 그런 인물이었어."}
+{"k": "La que sí era un prodigio era... ella.", "v": "진정한 신동이었던 건... 내가 아니라 그이였지."}
+{"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Mi amada <b>Angeline</b>. Ella sí que se entendía bien con los Pokémon.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 내 사랑하는 <b>안젤린</b>. 그 사람이야말로 포켓몬과 진심으로 교감할 줄 알았네."}
+{"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Una persona formidable. De esas que tenían un don para leer en el corazón de los demás.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 정말 훌륭한 사람이었지. 타인의 마음을 읽어내는 재능을 지닌 그런 사람이었어."}
 {"k": "Pero la maldición del destino cayó sobre mí y me la arrebató.", "v": "하지만 운명의 저주가 내게 닥쳐 그 사람을 앗아가 버렸다네."}
-{"k": "Y nunca podré suplicarle al inexorable Yveltal que me la devuelva.", "v": "그리고 냉혹한 이벨타르에게 그 사람을 돌려달라고 애원할 수도 없겠지."}
+{"k": "Y nunca podré suplicarle al inexorable Yveltal que me la devuelva.", "v": "냉혹한 이벨타르에게 그 사람을 돌려달라 애원할 수도 없는 노릇이고."}
 {"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] ¡Con qué facilidad entregaría el reino de <b>Kalos</b> a cambio de volver a verla!", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 그 사람을 다시 볼 수만 있다면 <b>칼로스</b> 왕국이라도 기꺼이 내어줄 텐데!"}
-{"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] No necesitaría nada más porque no importaría.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 다른 건 아무것도 필요치 않을 게다. 아무 의미도 없을 테니까."}
-{"k": "Si has sentido algo así en este cruel mundo, \\PN, sabrás de lo que te hablo.", "v": "이 잔혹한 세상에서 그런 감정을 느껴본 적이 있다면, \\PN, 내가 무슨 말을 하는지 이해할 게다."}
-{"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Supongo que te cuento todo esto porque podría ser mi última conversación.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 이것이 그대와의 마지막 대화가 될 수도 있기에 전부 이야기하는 것이라네."}
+{"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] No necesitaría nada más porque no importaría.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 다른 건 아무것도 필요치 않네. 다 부질없는 것이니."}
+{"k": "Si has sentido algo así en este cruel mundo, \\PN, sabrás de lo que te hablo.", "v": "이 잔혹한 세상에서 그런 마음을 느껴본 적이 있다면, \\PN, 그대도 내 말을 이해할 걸세."}
+{"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Supongo que te cuento todo esto porque podría ser mi última conversación.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 이것이 그대와의 마지막 대화가 될지도 모르니 이런 이야기까지 털어놓는 것이겠지."}
 {"k": "\\sh¡Buscad, compatriotas! ¡El rey no puede haber salido de la fortaleza!", "v": "\\sh동포들이여, 수색하라! 왕이 요새 밖으로 나갔을 리 없다!"}
 {"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] En realidad no tenemos por qué caer los dos aquí.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 사실 우리 둘 다 여기서 목숨을 잃을 필요는 없네."}
 {"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Entrégame a ellos y seguro que te perdonarán. No tenemos otra salida, a fin de cuentas.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 나를 그들에게 넘기게. 그러면 그대는 살려줄 걸세. 어차피 우리에겐 달리 방법이 없지 않은가."}
 {"k": "No tenemos otra salida...", "v": "다른 방법이..."}
-{"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Espera, acabo de recordar... ¡<i>Mon dieu</i>! ¡Sí que tenemos otra salida!", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 잠깐, 방금 생각났네... <i>Mon dieu</i>! 다른 탈출구가 있구만!"}
+{"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Espera, acabo de recordar... ¡<i>Mon dieu</i>! ¡Sí que tenemos otra salida!", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 잠깐, 방금 생각났네... <i>Mon dieu</i>! 다른 길이 있었어!"}
 {"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] ¿Has visto esa puerta al otro lado de la habitación? Conduce a un pequeño pasillo de celdas donde se encerraban a prisioneros de guerra.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 방 건너편에 있는 저 문이 보이는가? 전쟁 포로들을 가두던 작은 감방 복도로 연결된다네."}
-{"k": "Existe una vieja leyenda. Por lo visto, un sabio loco que yacía preso logró excavar un túnel hacia el exterior desde su celda.", "v": "오래된 전설이 하나 있지. 갇혀 있던 어느 미친 현자가 감방에서 바깥으로 통하는 터널을 팠다고 하네."}
-{"k": "Nunca se ha comprobado. ¡De ser cierto, el túnel debería seguir ahí!", "v": "확인된 적은 없다네. 하지만 사실이라면 터널이 아직 거기 남아 있을 걸세!"}
-{"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] ¡Démonos prisa, \\PN!", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 서두르게, \\PN!"}
+{"k": "Existe una vieja leyenda. Por lo visto, un sabio loco que yacía preso logró excavar un túnel hacia el exterior desde su celda.", "v": "오래된 이야기가 하나 있지. 갇혀 있던 어느 미치광이 현자가 감방에서 바깥으로 통하는 터널을 팠다고 하더군."}
+{"k": "Nunca se ha comprobado. ¡De ser cierto, el túnel debería seguir ahí!", "v": "진위는 확인된 바 없네만, 사실이라면 그 터널이 아직 남아 있을 걸세!"}
+{"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] ¡Démonos prisa, \\PN!", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 서두르세, \\PN!"}
 {"k": "¡Es una caja con materiales!", "v": "재료가 들어 있는 상자다!"}
 {"k": "Ya has registrado esta caja.", "v": "이 상자는 이미 확인했다."}
 {"k": "¡Estamos listos para combatir!", "v": "배틀 준비 완료다!"}
