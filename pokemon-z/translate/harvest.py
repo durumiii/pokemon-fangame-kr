@@ -1,6 +1,6 @@
 # /// script
 # requires-python = ">=3.12"
-# dependencies = ["rubymarshal"]
+# dependencies = ["rubymarshal", "pyyaml"]
 # ///
 """dat에 손으로 넣은 수정을 정본(ko/)으로 회수한다 — 손댄 자리만 골라서.
 

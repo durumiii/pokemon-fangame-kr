@@ -1,5 +1,6 @@
 # /// script
 # requires-python = ">=3.12"
+# dependencies = ["pyyaml"]
 # ///
 """통일 정형구 목록 — 여러 맵에 복제된 원문의 통일판을 **원문 키로** 자체 저장한다.
 

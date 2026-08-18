@@ -1,5 +1,6 @@
 # /// script
 # requires-python = ">=3.12"
+# dependencies = ["pyyaml"]
 # ///
 """걸음 5 초벌 배치 러너 — gemini-3.6-flash(llmgateway).
 

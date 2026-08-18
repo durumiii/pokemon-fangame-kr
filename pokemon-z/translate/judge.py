@@ -1,5 +1,6 @@
 # /// script
 # requires-python = ">=3.12"
+# dependencies = ["pyyaml"]
 # ///
 """걸음 5 좁혀진 검토(4단) 러너 — 발굴 후보를 Opus(claude -p --bare, 구독)로 판정.
 

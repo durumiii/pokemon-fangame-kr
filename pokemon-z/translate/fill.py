@@ -1,6 +1,6 @@
 # /// script
 # requires-python = ">=3.12"
-# dependencies = ["rubymarshal"]
+# dependencies = ["rubymarshal", "pyyaml"]
 # ///
 """걸음 5의 두 소배치 — ① 절23 가시 미번역 새 번역, ② 설명문 절 다듬기.
 
