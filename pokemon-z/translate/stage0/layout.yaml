@@ -1,0 +1,89 @@
+maps: 508
+sections:
+  0: maps
+  1: list
+  2: list
+  3: list
+  4: list
+  5: list
+  6: list
+  7: list
+  8: list
+  9: list
+  10: list
+  11: list
+  12: list
+  13: list
+  18: list
+  21: list
+  14: hash
+  19: hash
+  20: hash
+  22: hash
+  23: hash
+  15: empty
+  16: empty
+  17: empty
+mart:
+  steps:
+  - src: ¿Te interesa algo de lo que tengo?
+    차례: 첫 인사
+  - src: '¿{1}? Buena elección.
+
+      ¿Cuántas unidades quieres?'
+    차례: 수량 묻기
+  - src: '{1}... Y quieres {2}.
+
+      Te costará ${3}. ¿De acuerdo?'
+    차례: 수량 확인
+  - src: '{1} es una buena elección.
+
+      Te costará ${2}. ¿De acuerdo?'
+    차례: 단품 확인
+  - src: '¡Aquí tienes!
+
+      ¡Gracias!'
+    차례: 구매 완료
+  - src: No tienes el dinero suficiente.
+    차례: 돈 부족
+  - src: ¿En qué más puedo ayudarte?
+    차례: 되묻기
+  - src: '¿{1}?
+
+      ¿Cuántas unidades quieres vender?'
+    차례: 판매 수량
+  - src: 'Puedo pagarte ${1}.
+
+      ¿Te parece bien?'
+    차례: 매입가
+  - src: '¿{1}? ¡Oh, no!
+
+      No puedo comprar eso.'
+    차례: 매입 거절
+  - src: ¡Vuelve cuando quieras!
+    차례: 작별
+  at:
+  - map: 26
+    event: 4
+    상점: 검은깃털
+  - map: 26
+    event: 5
+    상점: 자라
+  - map: 25
+    event: 48
+    상점: 세룰레오
+  - map: 130
+    event: 8
+    상점: 이름표 없음(cripto2)
+  - map: 150
+    event: 12
+    상점: 이름표 없음(revolucionaria)
+  - map: 236
+    event: 8
+    상점: 이름표 없음(obrerow)
+  - map: 270
+    event: 29
+    상점: 이름표 없음(cripto2)
+  - map: 25
+    event: 46
+    상점: 브리오프

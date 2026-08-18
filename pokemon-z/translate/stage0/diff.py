@@ -52,7 +52,7 @@ def rebuild(d=OUT, sites=None, msgs=None):
     sites = read_jsonl(d / "sites.jsonl") if sites is None else sites
     msgs = ({m["id"]: m for m in read_jsonl(d / "messages.jsonl")} if msgs is None
             else msgs)
-    layout = yaml.safe_load((d / "axes.yaml").read_text(encoding="utf-8"))["layout"]
+    layout = yaml.safe_load((d / "layout.yaml").read_text(encoding="utf-8"))
 
     out, owner = {}, {}
 

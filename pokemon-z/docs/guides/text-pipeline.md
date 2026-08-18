@@ -61,8 +61,10 @@ dat 포맷 문제를 만났을 때.
 ## 정본과 빌드
 
 **번역 정본은 `translate/stage0/`다**(2026-08-18 승격) — 자리 `sites.jsonl` · 값
-`messages.jsonl` · 말투 `voices.yaml` · 페르소나 `groups.yaml` · 용어 `terms.yaml` ·
-축 `axes.yaml`. **`translate/ko/`는 emit 역생성이 내는 빌드 산출물**이고(절별 JSONL,
+`messages.jsonl` · **페이지 판정 `pages.jsonl`**(층·장면을 페이지 단위로, `by`가
+기계/사람 유래 — 교정은 overrides 한 줄, 접기 동점·갈림은 `mixed` 표시) · 말투
+`voices.yaml` · 페르소나 `groups.yaml` · 용어 `terms.yaml` · 축 `axes.yaml`(그릇
+뼈대는 `layout.yaml`로 갈라 gen이 낸다). **`translate/ko/`는 emit 역생성이 내는 빌드 산출물**이고(절별 JSONL,
 (맵, 원문)마다 한 줄 — git에 남는다), `build.py`가 그 ko를 읽어 `korean.dat`를 만든다
 (왕복 검증 내장). 값 수정은 전부 stage0 창구(`stage0/edit.py`의 `put_lines`)를 지나는
 도구로 한다 — 스튜디오·apply_verdicts·배치 반영·일괄 치환이 다 그 길이고, 도구가

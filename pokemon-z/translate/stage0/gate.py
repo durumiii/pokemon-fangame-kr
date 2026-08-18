@@ -19,8 +19,10 @@
   6. emit   — 역생성이 지금 translate/ko/와 같은가. overrides 유래가 아닌 차이는 **FAIL** —
               승격 뒤로는 ko가 산출물이라 이 검사가 그 관계를 상시로 지킨다.
   5. div    — 미등재 갈림. 같은 원문인데 통일 참조를 안 가리면서 값이 갈리고 `why`도 없는 자리.
+  7. pages  — 페이지 레코드 층의 정합(자리마다 제 페이지가 있고 · 고아 페이지가 없다). **FAIL**
+  8. enum   — axes.yaml에 `values`가 선 축의 정본 실물값이 등재 안인가. **FAIL**
 
-종료 코드는 1·2·6번만 물린다. 4·5번은 묵은 짐이 산더미라 집계만 낸다 — 게이트를 처음부터
+종료 코드는 1·2·6·7·8번만 물린다. 4·5번은 묵은 짐이 산더미라 집계만 낸다 — 게이트를 처음부터
 빨간불로 만들면 아무도 안 본다.
 
 산출: translate/stage0/findings/*.jsonl (검사별 위반 목록, 재실행 시 덮어씀)
@@ -35,10 +37,12 @@ import sys
 import time
 from pathlib import Path
 
+import yaml
+
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import (  # noqa: E402
-    EMPTY_SECS, HASH_SECS, LIST_SECS, MSG_FIELDS, OUT, ROOT, SITE_FIELDS,
-    dump_jsonl, norm, read_jsonl, read_overrides,
+    EMPTY_SECS, HASH_SECS, LIST_SECS, MSG_FIELDS, OUT, PAGE_FIELDS, PAGE_ID, ROOT,
+    SITE_FIELDS, dump_jsonl, norm, read_jsonl, read_overrides,
 )
 
 sys.path.insert(0, str(ROOT.parent / "vendor"))
@@ -51,6 +55,7 @@ PBS = GAME / "PBS"
 HANGUL = re.compile(r"[가-힣]")
 SEC_ID = re.compile(r"^s(\d+)\.")
 MAP_ID = re.compile(r"^m(\d+)\.")
+PAGE_OF = re.compile(r"^(m\d+\.e\d+\.p\d+)\.c")     # 자리 id → 그 자리가 놓인 페이지 id
 
 # ── 오라클 선언표 ────────────────────────────────────────────────────────────
 # 절마다 (원문 오라클, 값 오라클, 값을 실제로 돌리는 곳). 값 오라클이 없는 절은
@@ -216,13 +221,16 @@ def check_refs(sites, msgs):
     return bad
 
 
-def check_overrides(ovr, sites, msgs):
+def check_overrides(ovr, sites, msgs, pages):
     """사람 수정 층이 성립하는가 — id 실재 · 칸 이름 · 유래(why·by).
 
     overrides는 gen이 지우지 않는 유일한 사람 손이라 여기서 안 걸리면 조용히 안 먹는다.
+    페이지 id(`m*.e*.p*`)는 페이지 표로 가고 칸도 페이지 스키마로 본다 — layer·scene이
+    자리 스키마와 이름이 겹쳐 칸 이름만으로는 못 가른다(common.apply_overrides와 같은 규칙).
     """
     bad = []
     sset, mset = {s["id"] for s in sites}, {m["id"] for m in msgs}
+    pset = {p["id"] for p in pages}
     for n, o in enumerate(ovr):
         where = {"줄": n + 1, "id": o.get("id")}
         if not o.get("id"):
@@ -233,7 +241,12 @@ def check_overrides(ovr, sites, msgs):
             bad.append({**where, "kind": "set이 비었다"})
             continue
         for k in st:
-            if k in SITE_FIELDS:
+            if PAGE_ID.match(o["id"]):
+                if k not in PAGE_FIELDS:
+                    bad.append({**where, "kind": "페이지 스키마에 없는 칸", "칸": k})
+                elif o["id"] not in pset:
+                    bad.append({**where, "kind": "실재하지 않는 페이지 id", "칸": k})
+            elif k in SITE_FIELDS:
                 if o["id"] not in sset:
                     bad.append({**where, "kind": "실재하지 않는 자리 id", "칸": k})
             elif k in MSG_FIELDS:
@@ -391,6 +404,50 @@ def check_div(sites, msgs):
     return rows, bad, len(groups)
 
 
+def check_pages(sites, pages):
+    """페이지 레코드 층의 정합 — 자리마다 제 페이지가 있고, 대응 자리 없는 페이지가 없다.
+
+    층·장면이 페이지로 올라간 뒤로 이 대응이 끊기면 조회가 조용히 빈 값을 준다.
+    """
+    bad, have, seen = [], set(), set()
+    for p in pages:
+        if p["id"] in have:
+            bad.append({"kind": "page-id 중복", "id": p["id"]})
+        have.add(p["id"])
+    for s in sites:
+        m = PAGE_OF.match(s["id"])
+        if not m:
+            continue
+        seen.add(m.group(1))
+        if m.group(1) not in have:
+            bad.append({"kind": "자리의 페이지가 pages에 없다", "id": s["id"],
+                        "페이지": m.group(1)})
+    bad += [{"kind": "고아 페이지(대응 자리가 없다)", "id": p} for p in sorted(have - seen)]
+    return bad, len(seen)
+
+
+def check_enum(axes, tables):
+    """등재제 축 — `values`와 `from`이 함께 선 축의 정본 실물값이 등재 안인가.
+
+    선언만 있고 검사가 없어 kind 등재가 실물과 어긋난 채 오래 살았다(Z-53 설계 4절).
+    """
+    bad = []
+    for name, ax in sorted(axes.get("axes", {}).items()):
+        vals, frm = ax.get("values"), ax.get("from")
+        if not vals or not frm:
+            continue
+        tbl, _, field = frm.partition(".")
+        if tbl not in tables:
+            bad.append({"kind": "축이 없는 표를 가리킨다", "축": name, "from": frm})
+            continue
+        for r in tables[tbl]:
+            v = r.get(field)
+            if v is not None and v not in vals:
+                bad.append({"kind": "등재 밖 값", "축": name, "from": frm,
+                            "id": r["id"], "값": v})
+    return bad
+
+
 # ── 보고 ────────────────────────────────────────────────────────────────────
 def print_table():
     print("오라클 선언표 — 절마다 「무엇으로 대조하는가」와 「누가 돌리는가」")
@@ -435,7 +492,7 @@ def selftest_emit():
     import tempfile
     with tempfile.TemporaryDirectory() as td:
         td = Path(td)
-        for n in ("sites.jsonl", "messages.jsonl", "axes.yaml"):
+        for n in ("sites.jsonl", "messages.jsonl", "pages.jsonl", "axes.yaml", "layout.yaml"):
             shutil.copy(OUT / n, td / n)
         rows = read_jsonl(td / "messages.jsonl")
         i = next(i for i, m in enumerate(rows) if isinstance(m["val"], str) and m["val"])
@@ -455,12 +512,13 @@ def main():
 
     sites = read_jsonl(d / "sites.jsonl")
     msgs = read_jsonl(d / "messages.jsonl")
+    pages = read_jsonl(d / "pages.jsonl")
     if not quiet:
         print_table()
-    print(f"\n0단계: {d} — 자리 {len(sites):,} · 값 {len(msgs):,}\n")
+    print(f"\n0단계: {d} — 자리 {len(sites):,} · 값 {len(msgs):,} · 페이지 {len(pages):,}\n")
 
     ovr = read_overrides(d / "overrides.jsonl")
-    ovr_bad = check_overrides(ovr, sites, msgs)
+    ovr_bad = check_overrides(ovr, sites, msgs, pages)
     dump_jsonl(findings / "overrides.jsonl", ovr_bad)
     print(f"[{'FAIL' if ovr_bad else ' OK '}] 0. overrides 사람 수정 층 — "
           f"{len(ovr):,}줄 중 위반 {len(ovr_bad)}건")
@@ -515,6 +573,22 @@ def main():
     for r in div_rows[:5]:
         print(f"        {r['src'][:60]!r} 맵 {r['maps'][:6]} 값 {r['값'][:2]}")
 
+    pg_bad, pg_used = check_pages(sites, pages)
+    dump_jsonl(findings / "pages.jsonl", pg_bad)
+    print(f"[{'FAIL' if pg_bad else ' OK '}] 7. pages 정합 — 페이지 {len(pages):,} · "
+          f"자리가 가리키는 페이지 {pg_used:,} · 위반 {len(pg_bad)}건")
+    for r in pg_bad[:5]:
+        print(f"        {r}")
+
+    axes = yaml.safe_load((d / "axes.yaml").read_text(encoding="utf-8"))
+    enum_bad = check_enum(axes, {"sites": sites, "messages": msgs, "pages": pages})
+    dump_jsonl(findings / "enum.jsonl", enum_bad)
+    declared = [k for k, v in axes.get("axes", {}).items() if v.get("values")]
+    print(f"[{'FAIL' if enum_bad else ' OK '}] 8. 축 등재 — values가 선 축 {declared} · "
+          f"등재 밖 값 {len(enum_bad)}건")
+    for r in enum_bad[:5]:
+        print(f"        {r}")
+
     t0 = time.time()
     emit_other, emit_ovr, emit_rows, emit_mod = check_emit(d)
     dump_jsonl(findings / "emit.jsonl", emit_rows)
@@ -525,8 +599,9 @@ def main():
     if emit_other:
         print(f"        {emit_mod.advice()}")
 
-    print(f"\n산출: {findings}/{{overrides,refs,src,pbs,untranslated,divergence,emit}}.jsonl")
-    return 1 if (ovr_bad or refs or src_bad or emit_other) else 0
+    print(f"\n산출: {findings}/"
+          f"{{overrides,refs,src,pbs,untranslated,divergence,pages,enum,emit}}.jsonl")
+    return 1 if (ovr_bad or refs or src_bad or pg_bad or enum_bad or emit_other) else 0
 
 
 if __name__ == "__main__":

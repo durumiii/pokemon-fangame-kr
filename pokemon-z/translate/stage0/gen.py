@@ -7,7 +7,7 @@
 사람 판정은 하나도 넣지 않는다. 지금 값을 그대로 옮긴다. 출처(`translate/ko/`,
 `translate/data/`)는 읽기만 한다.
 
-산출: translate/stage0/{sites.jsonl,messages.jsonl,axes.yaml}
+산출: translate/stage0/{sites.jsonl,messages.jsonl,pages.jsonl,axes.yaml,layout.yaml}
 되돌려 대조하는 쪽은 diff.py. voices.yaml·terms.yaml은 **사람 소유 정본**이라
 gen이 만들지도 다시 쓰지도 않는다(2026-08-18 강등).
 
@@ -21,13 +21,17 @@ import yaml
 
 sys.path.insert(0, str(__import__("pathlib").Path(__file__).resolve().parent))
 from common import (  # noqa: E402
-    DATA, EMPTY_SECS, HASH_SECS, KO, LIST_SECS, OUT, ROOT,
-    apply_overrides, dump_jsonl, h8, ko_file, norm, read_jsonl, read_maps, read_overrides,
+    DATA, EMPTY_SECS, HASH_SECS, KINDS, KO, LIST_SECS, OUT, PAGE_LAYERS, PAGE_SCENES, ROOT,
+    apply_overrides, apply_page_overrides, dump_jsonl, h8, ko_file, norm, read_jsonl,
+    read_maps, read_overrides,
 )
 
 # 귀속표에서 자리로 옮기는 칸 — (귀속표 이름, 자리 이름)
 ATTR_FIELDS = [("sprite", "speaker"), ("cls", "layer"), ("kind", "kind"),
                ("scene", "scene"), ("how", "how"), ("who", "who")]
+# 귀속표에서 페이지로 올리는 칸 — (귀속표 이름, 페이지 이름, 등재 값 목록).
+# 값 목록은 다수결 동점을 가르는 순서이기도 하다(앞선 값이 이긴다 — 재생성 결정성).
+PAGE_ATTR = [("cls", "layer", PAGE_LAYERS), ("scene", "scene", PAGE_SCENES)]
 
 
 def load_attr():
@@ -74,6 +78,7 @@ def load_meta():
 def map_sites(attr, al, ae, pv):
     """맵 절 — 자리와 값. 한 (맵, norm 원문)에 자리가 여럿이면 값은 공유 항목에 둔다."""
     sites, msgs = [], []
+    pages = {}          # (맵, 이벤트, 페이지) → {페이지 칸: {값: 몇 행}}
     stats = {"rows": 0, "sites": 0, "shared": 0, "no_attr": 0, "line_ok": 0, "ev_ok": 0,
              "prov": 0}
     unified, div = load_verdicts()
@@ -139,8 +144,37 @@ def map_sites(attr, al, ae, pv):
                         v = meta.get(src_f)
                         if v not in (None, "", []):
                             s[dst_f] = v
+                    p = pages.setdefault((mi, meta["event"], meta["page"]), {})
+                    for src_f, dst_f, _ in PAGE_ATTR:
+                        v = meta.get(src_f)
+                        if v not in (None, "", []):
+                            p.setdefault(dst_f, {})
+                            p[dst_f][v] = p[dst_f].get(v, 0) + 1
                 sites.append(s)
-    return sites, msgs, used_unified, stats
+    return sites, msgs, used_unified, stats, fold_pages(pages)
+
+
+def fold_pages(counts):
+    """행 단위 귀속값을 페이지 한 줄로 접는다 — 다수결, 갈리면 `mixed`를 남긴다.
+
+    귀속표는 행 단위인데 층·장면은 페이지 단위 판정이다(Z-53 설계 2절). 페이지 안에서
+    값이 갈리는 자리가 실제로 있어(2026-08-18 실측: 층 21페이지 · 장면 0) 조용히 누르지
+    않고 표시를 남긴다 — 사람 판정은 overrides가 그 위에 얹는다.
+    """
+    rows = []
+    for (mi, ev, pg), c in sorted(counts.items()):
+        row, mixed = {"id": f"m{mi}.e{ev}.p{pg}"}, False
+        for _, f, order in PAGE_ATTR:
+            if f not in c:
+                continue
+            mixed = mixed or len(c[f]) > 1
+            rank = {v: i for i, v in enumerate(order)}
+            row[f] = max(c[f], key=lambda v: (c[f][v], -rank.get(v, len(order))))
+        if mixed:
+            row["mixed"] = True
+        row["by"] = "machine/gen"
+        rows.append(row)
+    return rows
 
 
 def _msg(mid, val, why):
@@ -319,7 +353,7 @@ def main():
     attr = load_attr()
     al, ae, fk, pv = load_meta()
     mart_vals, mart_steps, mart_at, mart_brs = load_mart()
-    msites, mmsgs, used_unified, stats = map_sites(attr, al, ae, pv)
+    msites, mmsgs, used_unified, stats, pages = map_sites(attr, al, ae, pv)
     lsites, lmsgs = loc_sites()
     ssites, smsgs = section_sites(fk, mart_vals)
     usites, umsgs = ui_sites()
@@ -340,33 +374,42 @@ def main():
     # 사람 수정은 재생성을 지우지 않는다 — 마지막에 얹는다(설계 「이행 1단계」 overrides 절).
     ovr = read_overrides()
     sites, msgs = apply_overrides(sites, msgs, ovr)
+    pages = apply_page_overrides(pages, ovr)
 
     dump_jsonl(OUT / "sites.jsonl", sites)
     dump_jsonl(OUT / "messages.jsonl", msgs)
+    dump_jsonl(OUT / "pages.jsonl", pages)
 
     # groups.yaml(페르소나·스프라이트 묶음)·voices.yaml·terms.yaml은 사람 소유
     # 정본이라 gen이 쓰지 않는다(2026-08-18 강등 — 사람 소유 YAML을 기계가 다시
     # 쓰면 주석이 죽는다).
 
-    # axes — 설계 3절 그대로. layout은 정본 값이 아니라 그릇의 뼈대다(절 종류·맵 수):
-    # 값이 하나도 없는 절 셋과 빈 맵 33개가 자리 목록만으로는 안 살아나서 여기 적는다.
+    # axes — 축 등재와 우선순위만. `values`가 선 축은 gate 검사 8이 `from`의 실물값을
+    # 여기 견준다(등재 밖 값이면 FAIL).
     write_yaml(OUT / "axes.yaml", {
         "axes": {"speaker": {"from": "sites.speaker"}, "to": {"from": "sites.to"},
-                 "kind": {"values": ["say", "narration", "choice", "system", "ui"]},
-                 "mart": {"values": mart_brs, "from": "sites.mart"}},
+                 "kind": {"values": KINDS, "from": "sites.kind"},
+                 "mart": {"values": mart_brs, "from": "sites.mart"},
+                 "layer": {"values": PAGE_LAYERS, "from": "pages.layer"},
+                 "scene": {"values": PAGE_SCENES, "from": "pages.scene"}},
         "precedence": ["site", "speaker", "to", "kind"],
-        "layout": {
-            "maps": len(read_maps()),
-            "sections": {0: "maps", **{s: "list" for s in LIST_SECS},
-                         **{s: "hash" for s in HASH_SECS},
-                         **{s: "empty" for s in EMPTY_SECS}},
-            # 절23 추가분의 모양 — 줄 차례와 상점 이름은 값이 아니라 파일 뼈대다.
-            "mart": {"steps": mart_steps,
-                     "at": [{k: v for k, v in a.items() if k != "갈래"} for a in mart_at]},
-        },
     })
 
-    print(f"sites {len(sites):,} · messages {len(msgs):,}")
+    # layout — 축이 아니라 그릇의 뼈대다(절 종류·맵 수): 값이 하나도 없는 절 셋과
+    # 빈 맵 33개가 자리 목록만으로는 안 살아나서 여기 적는다. 소비자는 diff의 역생성.
+    write_yaml(OUT / "layout.yaml", {
+        "maps": len(read_maps()),
+        "sections": {0: "maps", **{s: "list" for s in LIST_SECS},
+                     **{s: "hash" for s in HASH_SECS},
+                     **{s: "empty" for s in EMPTY_SECS}},
+        # 절23 추가분의 모양 — 줄 차례와 상점 이름은 값이 아니라 파일 뼈대다.
+        "mart": {"steps": mart_steps,
+                 "at": [{k: v for k, v in a.items() if k != "갈래"} for a in mart_at]},
+    })
+
+    n_mixed = sum(1 for p in pages if p.get("mixed"))
+    print(f"sites {len(sites):,} · messages {len(msgs):,} · pages {len(pages):,}"
+          f" (페이지 안에서 값이 갈린 곳 {n_mixed})")
     print(f"맵 절: 정본 {stats['rows']:,}줄 → 자리 {stats['sites']:,}개 "
           f"(값 공유 묶음 {stats['shared']:,} · 귀속표 밖 {stats['no_attr']:,})")
     print(f"통일 참조 {len(used_unified):,}건 · overrides {len(ovr):,}줄")

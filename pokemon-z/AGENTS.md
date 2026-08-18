@@ -1,8 +1,8 @@
 # pokemon-z — 작업 규율
 
 스페인어 팬게임 Pokemon Z의 한글패치. **번역 정본은 `translate/stage0/`다**(자리
-`sites` · 값 `messages` · 말투 `voices` · 페르소나 `groups` · 용어 `terms` · 축 `axes` —
-2026-08-18 승격). `translate/ko/`(절별 JSONL)와 `korean.dat`는 빌드 산출물이다 —
+`sites` · 값 `messages` · 페이지 판정 `pages` · 말투 `voices` · 페르소나 `groups` ·
+용어 `terms` · 축 `axes` — 2026-08-18 승격). `translate/ko/`(절별 JSONL)와 `korean.dat`는 빌드 산출물이다 —
 ko는 emit 역생성이 내고 git에 남으며, 읽기는 자유지만 **쓰기는 stage0 창구를 지나는
 도구로만 한다**(직접 고쳤으면 커밋 뒤 `gen.py` 재흡수가 예외 회수 경로다).
 
