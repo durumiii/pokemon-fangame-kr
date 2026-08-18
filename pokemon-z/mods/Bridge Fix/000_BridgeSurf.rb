@@ -77,3 +77,26 @@ class Game_Map
     return 0
   end
 end
+
+# 세이브에 박제된 옛 맵 사본을 되살린다 — 맵 파일만 갈아 끼워서는 안 통하는 자리.
+#
+# 세이브에는 $MapFactory가 통째로 실리고, 그 안에는 그때 들고 있던 Game_Map이
+# 타일 데이터까지 함께 박제된다(143_PScreen_Save.rb의 `Marshal.dump($MapFactory,f)`).
+# 불러오기는 Data/System.rxdata의 매직 넘버가 그대로면 맵을 다시 세우지 않고
+# 그 사본을 쓴다(142_PScreen_Load.rb). 그래서 19번도로에서 저장한 세이브는 모드를
+# 깔고 게임을 다시 켜도 물 없는 옛 다리 밑을 그대로 들고 있고, 파도타기가 마주 칸을
+# 물이 아니라고 읽어 pbEndSurf가 그 자리에서 하선시킨다 — 겉보기엔 「막힘」이다.
+#
+# 19번도로에 들어설 때마다 타일 데이터만 파일에서 다시 읽어 갈아 끼운다. 이벤트·BGM
+# 같은 나머지는 손대지 않는다. 정상 진입은 어차피 파일에서 세우므로 값이 같고,
+# 옛 세이브에서만 결과가 달라진다.
+Events.onMapChange += proc {
+  m = $game_map
+  if m && m.map_id == 299
+    begin
+      fresh = load_data("Data/Map299.rxdata")
+      m.instance_variable_get(:@map).data = fresh.data if fresh
+    rescue
+    end
+  end
+}

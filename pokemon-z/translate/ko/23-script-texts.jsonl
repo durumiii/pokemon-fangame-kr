@@ -41,7 +41,7 @@
 {"k": "lower", "v": "소문자"}
 {"k": "other", "v": "기타"}
 {"k": "Your name?", "v": "당신의 이름은?"}
-{"k": "Enter {1}'s name.", "v": "{1}의 이름을 입력하십시오."}
+{"k": "Enter {1}'s name.", "v": "{1}의 이름을 입력하세요."}
 {"k": "Moves the main character. Also used to scroll through list entries.", "v": "Moves the main character. Also used to scroll through list entries."}
 {"k": "Used to confirm a choice, check things, and talk to people.", "v": "Used to confirm a choice, check things, and talk to people."}
 {"k": "Used to exit, cancel a choice or mode, and open the pause menu.", "v": "Used to exit, cancel a choice or mode, and open the pause menu."}
@@ -2390,7 +2390,7 @@
 {"k": "Resize Animation List", "v": "애니메이션 목록 크기 변경"}
 {"k": "Load Animation", "v": "애니메이션 불러오기"}
 {"k": "Are you sure you want to delete this animation?", "v": "이 애니메이션을 삭제하시겠습니까?"}
-{"k": "Enter a filename.", "v": "파일 이름을 입력하십시오."}
+{"k": "Enter a filename.", "v": "파일 이름을 입력하세요."}
 {"k": "Couldn't save the animation to {1}.", "v": "애니메이션을 {1}에 저장할 수 없었습니다."}
 {"k": "Animation was saved to {1} in the game folder.", "v": "애니메이션이 게임 폴더의 {1}에 저장되었습니다."}
 {"k": "It's a text file, so it can be transferred to others easily.", "v": "텍스트 파일이므로 다른 사람에게 쉽게 전달할 수 있습니다."}
@@ -2811,10 +2811,10 @@
 {"k": "Los Pokémon atrapados se listan del más bajo al más alto.", "v": "잡은 포켓몬을 작은 순으로 표시합니다."}
 {"k": "No se encontraron coincidencias.", "v": "일치하는 항목을 찾지 못했습니다."}
 {"k": "Nido de {1}", "v": "{1}의 둥지"}
-{"k": "{1} Macho", "v": "{1} 수컷"}
-{"k": "{1} Hembra", "v": "{1} 암컷"}
-{"k": "Macho", "v": "수컷"}
-{"k": "Hembra", "v": "암컷"}
+{"k": "{1} Macho", "v": "{1} 수컷의 모습"}
+{"k": "{1} Hembra", "v": "{1} 암컷의 모습"}
+{"k": "Macho", "v": "수컷의 모습"}
+{"k": "Hembra", "v": "암컷의 모습"}
 {"k": "Forma única", "v": "단일 폼"}
 {"k": "Sin género", "v": "성별 없음"}
 {"k": "SALIR", "v": "그만둔다"}
@@ -3452,7 +3452,7 @@
 {"k": "\\se[ItemGet]¡{1} recibió {2} \\c[1]{3}\\c[0]!\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[은,는] {2}개의 \\c[1]{3}\\c[0]\\j[을,를] 받았다!\\wtnp[30]"}
 {"k": "\\se[ItemGet]¡{1} recibió un \\c[1]{2}\\c[0]!\\wtnp[30]", "v": "\\se[ItemGet]{1}\\j[은,는] \\c[1]{2}\\c[0]\\j[을,를] 받았다!\\wtnp[30]"}
 {"k": "Nombre<r>{1}<br>", "v": "이름<r>{1}<br>"}
-{"k": "ID N°<r>{1}<br>", "v": "ID No.<r>{1}<br>"}
+{"k": "ID N°<r>{1}<br>", "v": "IDNo.<r>{1}<br>"}
 {"k": "¡Campeón de la Liga!\n¡Felicitaciones!\\^", "v": "리그 챔피언!\n축하합니다!\\^"}
 {"k": "N° ???", "v": "No.???"}
 {"k": "Nv. {1}", "v": "Lv. {1}"}
@@ -3996,9 +3996,9 @@
 {"k": "¡El Campo Eléctrico evita que {1} se quede dormido!", "v": "일렉트릭필드가 {1}의 잠듦을 막았다!"}
 {"k": "¡El Campo de Niebla evita que {1} se quede dormido!", "v": "미스트필드가 {1}의 잠듦을 막았다!"}
 {"k": "¡Pero {1} no puede dormir por el alboroto!", "v": "하지만 소란 때문에 {1}\\j[은,는] 잠들 수 없다!"}
-{"k": "¡{2} de {1} evita quedarse dormido!", "v": "{1}의 {2}\\j[이,가] 잠드는 것을 막았다!"}
-{"k": "¡{1} se mantiene despierto gracias al {2} de su aliado!", "v": "{1}\\j[은,는] {2} 때문에 잠들지 않는다!"}
-{"k": "¡{1} está protegido por Velo Sagrado!", "v": "{1}\\j[은,는] 신비의부적으로 보호받고 있다!"}
+{"k": "¡{2} de {1} evita quedarse dormido!", "v": "{1}의 {2} 때문에 잠들지 않는다!"}
+{"k": "¡{1} se mantiene despierto gracias al {2} de su aliado!", "v": "{1}\\j[은,는] 아군의 {2} 때문에 잠들지 않는다!"}
+{"k": "¡{1} está protegido por Velo Sagrado!", "v": "{1}\\j[을,를] 신비의 베일이 지켜주고 있다!"}
 {"k": "¡{1} se durmió!", "v": "{1}\\j[은,는] 잠들었다!"}
 {"k": "{1} ya está envenenado.", "v": "{1}\\j[은,는] 이미 몸에 독이 퍼진 상태다."}
 {"k": "¡Pero falló!", "v": "그러나 실패하고 말았다!!"}
@@ -4006,7 +4006,7 @@
 {"k": "¡El Campo de Niebla evita que {1} sea envenedado!", "v": "미스트필드가 {1}의 독을 막았다!"}
 {"k": "¡{2} de {1} evita el envenenamiento!", "v": "{1}의 {2}\\j[이,가] 독을 막았다!"}
 {"k": "¡{2} del aliado de {1} evita el envenenamiento!", "v": "{1} 아군의 {2}\\j[이,가] 독을 막았다!"}
-{"k": "¡El equipo de {1} está protegido por Velo Sagrado!", "v": "{1}의 파티는 신비의부적으로 보호받고 있다!"}
+{"k": "¡El equipo de {1} está protegido por Velo Sagrado!", "v": "{1}\\j[을,를] 신비의 베일이 지켜주고 있다!"}
 {"k": "¡{2} de {1} no tuvo efecto en {3}!", "v": "{1}의 {2}\\j[은,는] {3}에게 효과가 없었다!"}
 {"k": "¡{2} de {1} hizo ineficaz {4} de {3}!", "v": "{1}의 {2}\\j[이,가] {3}의 {4}\\j[을,를] 무효로 만들었다!"}
 {"k": "¡{1} ha sido gravemente envenenado!", "v": "{1}의 몸에 맹독이 퍼졌다!"}
@@ -4218,7 +4218,7 @@
 {"k": "¡{1} huyó del combate!", "v": "{1}\\j[은,는] 배틀에서 도망쳤다!"}
 {"k": "¡{1} se aferra al suelo con {2}!", "v": "{1}\\j[은,는] {2}\\j[으로,로] 땅을 붙잡았다!"}
 {"k": "¡{1} se aferra al suelo con sus raíces!", "v": "{1}\\j[은,는] 뿌리로 땅을 붙잡았다!"}
-{"k": "¡{1} no pudo escapar!", "v": "{1}\\j[은,는] 도망칠 수 없었다!"}
+{"k": "¡{1} no pudo escapar!", "v": "{1}\\j[은,는] 이제 도망칠 수 없다!"}
 {"k": "¡{2} de {1} cayó al suelo!", "v": "{1}의 {2}\\j[이,가] 땅에 떨어졌다!"}
 {"k": "¡{1} robó {3} de {2}!", "v": "{1}\\j[은,는] {2}에게서 {3}\\j[을,를] 빼앗았다!"}
 {"k": "¡{1} cambió objetos con su oponente!", "v": "{1}\\j[이,가] 상대와 도구를 바꿨다!"}
@@ -4429,7 +4429,7 @@
 {"k": "¡Pero no consiguió escupir energía!", "v": "하지만 에너지를 뿜어내지 못했다!"}
 {"k": "¡{1} ha sido protegido por Anticipo!", "v": "{1}\\j[은,는] 패스트가드의 보호를 받았다!"}
 {"k": "¡{1} ha sido protegido por Vastaguardia!", "v": "{1}\\j[은,는] 와이드가드의 보호를 받았다!"}
-{"k": "¡Truco Defensa ha protegido a {1}!", "v": "트릭가드가 {1}\\j[을,를] 지켰다!"}
+{"k": "¡Truco Defensa ha protegido a {1}!", "v": "{1}\\j[을,를] 트릭가드가 지켜줬다!"}
 {"k": "¡Escudo Tatami ha neutralizado {1}!", "v": "다다미가르기가 {1}\\j[을,를] 무력화했다!"}
 {"k": "¡{1} ha sido dañado!", "v": "{1}\\j[은,는] 데미지를 입었다!"}
 {"k": "No ha afectado a\n{1}...", "v": "{1}에게는\n효과가 없었다..."}
@@ -4460,8 +4460,8 @@
 {"k": "¡Golpeó {1} vez!", "v": "{1}번 맞았다!"}
 {"k": "¡Golpeó {1} veces!", "v": "{1}번 맞았다!"}
 {"k": "¡{1} se llevó al atacante consigo!", "v": "{1}\\j[은,는] 상대를 길동무로 삼았다!"}
-{"k": "¡{1} ha cambiado a su Forma Filo!", "v": "{1}\\j[은,는] 블레이드폼으로 바뀌었다!"}
-{"k": "¡{1} ha cambiado a su Forma Escudo!", "v": "{1}\\j[은,는] 실드폼으로 바뀌었다!"}
+{"k": "¡{1} ha cambiado a su Forma Filo!", "v": "{1}\\j[은,는] 블레이드폼으로 변했다!"}
+{"k": "¡{1} ha cambiado a su Forma Escudo!", "v": "{1}\\j[은,는] 실드폼으로 변했다!"}
 {"k": "¡{1} usó\n{2}!", "v": "{1}의\r\n{2}!"}
 {"k": "¡Pero no le quedan PP al movimiento!", "v": "그러나 남은 PP가 없었다!"}
 {"k": "¡El ataque de tipo Fuego desapareció en medio del diluvio!", "v": "강한 비의 영향으로 불꽃타입의 공격이 사라졌다!"}
@@ -4533,7 +4533,7 @@
 {"k": "¡{1} se rodeó de una luz lunar misteriosa!", "v": "{1}\\j[은,는] 신비한 달빛에 휩싸였다!"}
 {"k": "¡{1} ha sido herido por las púas!", "v": "{1}\\j[은,는] 압정뿌리기의 데미지를 입었다!"}
 {"k": "¡{1} fue herido por las piedras puntiagudas!", "v": "{1}\\j[은,는] 스텔스록에 상처를 입었다!"}
-{"k": "¡Las Púas Tóxicas lanzadas alrededor de {1} desaparecieron!", "v": "{1} 주위에 깔린 독압정이 사라졌다!"}
+{"k": "¡Las Púas Tóxicas lanzadas alrededor de {1} desaparecieron!", "v": "{1} 발밑의 독압정이 사라졌다!"}
 {"k": "¡{1} ha sido gravemente envenenado por las Púas Tóxicas!", "v": "{1}\\j[은,는] 독압정에 찔려 맹독에 걸렸다!"}
 {"k": "¡{1} ha sido envenenado por las Púas Tóxicas!", "v": "{1}\\j[은,는] 독압정에 찔려 독에 걸렸다!"}
 {"k": "¡{1} ha sido atrapado en la Red Viscosa!", "v": "{1}\\j[은,는] 끈적끈적네트에 걸렸다!"}
@@ -4604,7 +4604,7 @@
 {"k": "¡{1} ha derrotado a\n{2}!", "v": "{1}\\j[이,가]\r\n{2}\\j[을,를] 쓰러뜨렸다!"}
 {"k": "¡{1} ha obtenido ${2}\npor la victoria!", "v": "{1}\\j[은,는] 상금으로 ${2}\\j[을,를] 얻었다!"}
 {"k": "¡{1} ha recogido ${2}!", "v": "{1}\\j[이,가] ${2}\\j[을,를] 주웠다!"}
-{"k": "¡{1} no tiene más Pokémon que puedan pelear!", "v": "{1}에게 더 이상 싸울 수 있는 포켓몬이 없다!"}
+{"k": "¡{1} no tiene más Pokémon que puedan pelear!", "v": "{1}에게는 싸울 수 있는 포켓몬이 없다!"}
 {"k": "¡{1} ha perdido contra {2} y {3}!", "v": "{1}\\j[은,는] {2}\\j[과,와] {3}에게 졌다!"}
 {"k": "¡{1} ha perdido contra\n{2}!", "v": "{1}\\j[은,는]\r\n{2}에게 졌다!"}
 {"k": "{1} ha entregado ${2} al ganador...", "v": "{1}\\j[은,는] 승자에게 ${2}\\j[을,를] 건넸다..."}
