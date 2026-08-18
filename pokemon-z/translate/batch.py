@@ -44,7 +44,11 @@ URL = "https://api.llmgateway.io/v1/chat/completions"
 KEY_NAME = "LLMGATEWAY_API_KEY"
 if os.environ.get("Z_BACKEND") == "openrouter":
     # llmgateway 크레딧 소진 시 대체 경로(2026-08-06). 캐싱은 명시 cache_control 방식.
-    MODEL = "google/gemini-3.6-flash"
+    # 2026-08-19 유지자 판정: 모델은 3.7-flash, **프로바이더는 vertex로만, flex 필수**.
+    # endpoints API 실측 — google-vertex/global/flex 단가 in 0.1875 · out 0.9375 $/M
+    # (llmgateway 3.6-flash 정가 1.5/7.5의 정확히 1/8). 프로바이더 고정은 아래
+    # or_extras의 provider.only가 나른다.
+    MODEL = "google/gemini-3.7-flash"
     URL = "https://openrouter.ai/api/v1/chat/completions"
     KEY_NAME = "OPENROUTER_API_KEY"
 CHUNK_ROWS = 40  # 한 요청의 행 수. 60 이하 맵은 통째로 간다(장면 유지)
@@ -73,6 +77,8 @@ CHUNK_ROWS = 40  # 한 요청의 행 수. 60 이하 맵은 통째로 간다(장�
 # 아니라 천장을 정가 밑으로 걸어 고를 endpoint가 없었기 때문이다 — 값을 내리는
 # 길이긴 하나 service_tier가 곧바르다.
 SERVICE_TIER = os.environ.get("Z_TIER", "flex")
+# 프로바이더 고정(2026-08-19 유지자 판정: vertex로만). 빈 값이면 고정 없음.
+PROVIDER_ONLY = os.environ.get("Z_PROVIDER", "google-vertex")
 
 
 def or_extras():
@@ -80,7 +86,8 @@ def or_extras():
     if "openrouter" not in URL:
         return {}
     return {"usage": {"include": True},
-            **({"service_tier": SERVICE_TIER} if SERVICE_TIER else {})}
+            **({"service_tier": SERVICE_TIER} if SERVICE_TIER else {}),
+            **({"provider": {"only": [PROVIDER_ONLY]}} if PROVIDER_ONLY else {})}
 
 sys.path.insert(0, str(HERE))
 from validate import check  # noqa: E402  (7종 검사 재사용)
