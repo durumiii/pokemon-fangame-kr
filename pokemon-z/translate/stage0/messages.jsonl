@@ -16883,17 +16883,17 @@
 {"id": "m305.e11.p0.c79", "val": {"ref": "m305.s9"}}
 {"id": "m305.e12.p0.c78", "val": {"ref": "m305.s9"}}
 {"id": "m305.e13.p0.c77", "val": {"ref": "m305.s9"}}
-{"id": "m305.s10", "val": "\\c[3]<b>루피코:</b>\\c[0] 그 말은 즉... 그 배지들을 단조하던 기술이 완전히 끝장났다는 뜻이죠.", "state": "reviewed", "by": "human/15952bb"}
+{"id": "m305.s10", "val": "\\c[3]<b>루피코:</b>\\c[0] 그 말은 즉... 그 배지들을 단조하던 기술이 완전히 끝장났다는 뜻입니다.", "state": "reviewed", "by": "human/15952bb"}
 {"id": "m305.e10.p0.c85", "val": {"ref": "m305.s10"}, "state": "reviewed", "by": "human/검수 반영"}
 {"id": "m305.e11.p0.c84", "val": {"ref": "m305.s10"}}
 {"id": "m305.e12.p0.c83", "val": {"ref": "m305.s10"}}
 {"id": "m305.e13.p0.c82", "val": {"ref": "m305.s10"}}
-{"id": "m305.s11", "val": "\\c[3]<b>루피코:</b>\\c[0] 맙소사! 당신들이 원한 게 정말 이거였나요? 아버지께 물려받은 제 일터를 망쳐놓는 거요?", "state": "reviewed", "by": "human/15952bb"}
+{"id": "m305.s11", "val": "\\c[3]<b>루피코:</b>\\c[0] 아이고, 이런! 당신들이 원한 게 이거였습니까? 아버지께 물려받은 제 일터를 망가뜨리는 것 말입니다.", "state": "reviewed", "by": "human/15952bb"}
 {"id": "m305.e10.p0.c90", "val": {"ref": "m305.s11"}, "state": "reviewed", "by": "human/검수 반영"}
 {"id": "m305.e11.p0.c89", "val": {"ref": "m305.s11"}}
 {"id": "m305.e12.p0.c88", "val": {"ref": "m305.s11"}}
 {"id": "m305.e13.p0.c87", "val": {"ref": "m305.s11"}}
-{"id": "m305.s12", "val": "그분도 할아버지께 물려받으셨고, 그 역사는 아주 오랜 옛날로 올라가는데 말이에요!", "state": "reviewed", "by": "human/15952bb"}
+{"id": "m305.s12", "val": "그분도 할아버지께 물려받으셨고, 그 내력은 아주 오랜 옛날까지 거슬러 올라가는데 말입니다!", "state": "reviewed", "by": "human/15952bb"}
 {"id": "m305.e10.p0.c91", "val": {"ref": "m305.s12"}, "state": "reviewed", "by": "human/검수 반영"}
 {"id": "m305.e11.p0.c90", "val": {"ref": "m305.s12"}}
 {"id": "m305.e12.p0.c89", "val": {"ref": "m305.s12"}}
@@ -16908,22 +16908,22 @@
 {"id": "m305.e11.p0.c107", "val": {"ref": "m305.s14"}}
 {"id": "m305.e12.p0.c106", "val": {"ref": "m305.s14"}}
 {"id": "m305.e13.p0.c105", "val": {"ref": "m305.s14"}}
-{"id": "m305.s15", "val": "\\c[3]<b>루피코:</b>\\c[0] 이봐요, 대장님. 사실 전 정치 따위의 복잡한 일에 개입하는 건 질색이에요... 머리만 아프다고요.", "state": "reviewed", "by": "human/15952bb"}
+{"id": "m305.s15", "val": "\\c[3]<b>루피코:</b>\\c[0] 이보십시오, 대장님. 전 그런 정치 얘기에 끼는 건 질색입니다... 머리가 안 따라 주거든요.", "state": "reviewed", "by": "human/15952bb"}
 {"id": "m305.e10.p0.c118", "val": {"ref": "m305.s15"}, "state": "reviewed", "by": "human/검수 반영"}
 {"id": "m305.e11.p0.c117", "val": {"ref": "m305.s15"}}
 {"id": "m305.e12.p0.c116", "val": {"ref": "m305.s15"}}
 {"id": "m305.e13.p0.c115", "val": {"ref": "m305.s15"}}
-{"id": "m305.s16", "val": "하지만 그 배지들은 수세기 전 드루이드들이 만든 것이고, 현대의 문제와는 아무 상관도 없었다는 건 말씀드릴 수 있어요.", "state": "reviewed", "by": "human/15952bb"}
+{"id": "m305.s16", "val": "하지만 그 배지들은 수백 년 전 드루이드들이 만든 것이고, 요즘 문제와는 아무 상관도 없다는 건 말씀드릴 수 있습니다.", "state": "reviewed", "by": "human/15952bb"}
 {"id": "m305.e10.p0.c119", "val": {"ref": "m305.s16"}, "state": "reviewed", "by": "human/검수 반영"}
 {"id": "m305.e11.p0.c118", "val": {"ref": "m305.s16"}}
 {"id": "m305.e12.p0.c117", "val": {"ref": "m305.s16"}}
 {"id": "m305.e13.p0.c116", "val": {"ref": "m305.s16"}}
-{"id": "m305.s17", "val": "\\c[3]<b>루피코:</b>\\c[0] 게다가... 저런! 이 도시를 점령하겠다고 협박해서 강제로 파괴하게 만드셨잖아요!", "state": "reviewed", "by": "human/15952bb"}
+{"id": "m305.s17", "val": "\\c[3]<b>루피코:</b>\\c[0] 게다가... 어이쿠! 이 도시를 점령하겠다고 협박해서 기어이 파괴하게 만드셨잖습니까!", "state": "reviewed", "by": "human/15952bb"}
 {"id": "m305.e10.p0.c126", "val": {"ref": "m305.s17"}, "state": "reviewed", "by": "human/검수 반영"}
 {"id": "m305.e11.p0.c125", "val": {"ref": "m305.s17"}}
 {"id": "m305.e12.p0.c124", "val": {"ref": "m305.s17"}}
 {"id": "m305.e13.p0.c123", "val": {"ref": "m305.s17"}}
-{"id": "m305.s18", "val": "우리는 명령을 따랐습니다. 이제 제발 병사들을 이 도시에서 철수시켜 주세요!", "state": "reviewed", "by": "human/15952bb"}
+{"id": "m305.s18", "val": "우리는 명령을 따랐습니다. 이제 병사들을 이 도시에서 물려 주십시오, 거 참!", "state": "reviewed", "by": "human/15952bb"}
 {"id": "m305.e10.p0.c127", "val": {"ref": "m305.s18"}, "state": "reviewed", "by": "human/검수 반영"}
 {"id": "m305.e11.p0.c126", "val": {"ref": "m305.s18"}}
 {"id": "m305.e12.p0.c125", "val": {"ref": "m305.s18"}}
@@ -16958,28 +16958,28 @@
 {"id": "m305.e11.p0.c159", "val": {"ref": "m305.s24"}}
 {"id": "m305.e12.p0.c158", "val": {"ref": "m305.s24"}}
 {"id": "m305.e13.p0.c157", "val": {"ref": "m305.s24"}}
-{"id": "m305.e17.p0.c22", "val": "\\c[3]<b>루피코:</b>\\c[0] 여기가 <b>향전시티</b>의 요새예요.", "state": "reviewed", "by": "human/15952bb"}
-{"id": "m305.e17.p0.c23", "val": "그리 예쁘지 않다는 건 알지만, 여긴 낭비하는 걸 좋아하지 않거든요. 우리는 근면한 사람들이니까요.", "state": "reviewed", "by": "human/15952bb"}
-{"id": "m305.e17.p0.c24", "val": "자, 제자리에 서세요.", "state": "reviewed", "by": "human/15952bb"}
-{"id": "m305.e17.p0.c43", "val": "\\c[3]<b>루피코:</b>\\c[0] 아이고, <b>루피코</b>의 머리야 힘을 내! 포켓몬 배틀에 필요한 건 다 기억해 내야 해!", "state": "reviewed", "by": "human/15952bb"}
-{"id": "m305.e17.p0.c44", "val": "머리에 망치질을 크게 한 번 당하고 싶지 않으면 말이에요!", "state": "reviewed", "by": "human/검수 반영"}
+{"id": "m305.e17.p0.c22", "val": "\\c[3]<b>루피코:</b>\\c[0] 여기가 <b>향전시티</b>의 포켓몬 요새입니다.", "state": "reviewed", "by": "human/15952bb"}
+{"id": "m305.e17.p0.c23", "val": "썩 보기 좋지 않다는 건 압니다만, 여기선 낭비를 좋아하지 않거든요. 다들 부지런히 일하니까요.", "state": "reviewed", "by": "human/15952bb"}
+{"id": "m305.e17.p0.c24", "val": "자, 제 자리에 서시죠.", "state": "reviewed", "by": "human/15952bb"}
+{"id": "m305.e17.p0.c43", "val": "\\c[3]<b>루피코:</b>\\c[0] 자, <b>루피코</b>의 머리야, 힘 좀 내 봐! 포켓몬 배틀에 필요한 건 다 기억해 내야 한다고!", "state": "reviewed", "by": "human/15952bb"}
+{"id": "m305.e17.p0.c44", "val": "뚝배기에 망치질 당하고 싶지 않으면 말이야!", "state": "reviewed", "by": "human/검수 반영"}
 {"id": "m305.s30", "val": "\\c[3]<b>루피코:</b>\\c[0] ..."}
 {"id": "m305.e2.p1.c97", "val": {"ref": "m305.s30"}, "state": "reviewed", "by": "human/검수 반영"}
 {"id": "m305.e2.p3.c14", "val": {"ref": "m305.s30"}, "state": "reviewed", "by": "human/검수 반영"}
 {"id": "m305.e17.p0.c49", "val": {"ref": "m305.s30"}, "state": "reviewed", "by": "human/검수 반영"}
-{"id": "m305.e17.p0.c67", "val": "당신의 포켓몬들이 세 실마릴의 심장처럼 빛나고 있어요! 정말 대단해요!", "state": "reviewed", "by": "human/c833065"}
-{"id": "m305.e17.p0.c86", "val": "\\c[3]<b>루피코:</b>\\c[0] 세상에! 당신의 포켓몬 엔트리는 그야말로 명품 장인의 작품이군요! 아주 잘 단련하셨어요.", "state": "reviewed", "by": "human/15952bb"}
-{"id": "m305.e17.p0.c87", "val": "이제 제 몫을 해야겠네요. <b>포르하 배지</b>를 드릴 테니 잘 간직해 주세요.", "state": "reviewed", "by": "human/15952bb"}
-{"id": "m305.s34", "val": "\\c[3]<b>루피코:</b>\\c[0] 지금 배지가 몇 개나 있으신가요? 12개 중에 9개인가요?", "state": "reviewed", "by": "human/15952bb"}
+{"id": "m305.e17.p0.c67", "val": "포켓몬들이 세 실마릴의 심장처럼 빛나는군요! 대단합니다!", "state": "reviewed", "by": "human/c833065"}
+{"id": "m305.e17.p0.c86", "val": "\\c[3]<b>루피코:</b>\\c[0] 허어 참! 그 엔트리야말로 장인의 작품입니다! 아주 잘 벼려 놓으셨군요.", "state": "reviewed", "by": "human/15952bb"}
+{"id": "m305.e17.p0.c87", "val": "이제 제 몫을 하겠습니다. <b>포르하 배지</b>를 드릴 테니 잘 간직해 주십시오.", "state": "reviewed", "by": "human/15952bb"}
+{"id": "m305.s34", "val": "\\c[3]<b>루피코:</b>\\c[0] 배지는 몇 개나 모으셨습니까? 12개 중에 9개입니까?", "state": "reviewed", "by": "human/15952bb"}
 {"id": "m305.e17.p0.c93", "val": {"ref": "m305.s34"}, "state": "reviewed", "by": "human/검수 반영"}
 {"id": "m305.e20.p0.c0", "val": {"ref": "m305.s34"}}
-{"id": "m305.s35", "val": "<b>이설시티</b>의 배지를 찾으시는 거라면, 아까 말씀드렸듯이 <b>센데라</b> 대장이 마지막 복제품을 가지고 있는 걸로 알고 있어요.", "state": "reviewed", "by": "human/15952bb"}
+{"id": "m305.s35", "val": "<b>이설시티</b>의 배지를 찾으시는 거라면, 아까 말씀드렸듯이 <b>센데라</b> 대장님이 마지막 복제품을 갖고 계신 걸로 압니다.", "state": "reviewed", "by": "human/15952bb"}
 {"id": "m305.e17.p0.c94", "val": {"ref": "m305.s35"}, "state": "reviewed", "by": "human/검수 반영"}
 {"id": "m305.e20.p0.c1", "val": {"ref": "m305.s35"}}
-{"id": "m305.s36", "val": "남은 두 개는 단서를 완전히 놓쳐 버렸지만요. 소문은 몇 개 알고 있지만, 섣불리 추측하는 건 싫어서요...", "state": "reviewed", "by": "human/15952bb"}
+{"id": "m305.s36", "val": "남은 둘은 행방이 완전히 끊겼습니다. 소문이야 몇 가지 들었습니다만, 섣불리 넘겨짚는 건 좋아하지 않아서요...", "state": "reviewed", "by": "human/15952bb"}
 {"id": "m305.e17.p0.c95", "val": {"ref": "m305.s36"}, "state": "reviewed", "by": "human/검수 반영"}
 {"id": "m305.e20.p0.c2", "val": {"ref": "m305.s36"}}
-{"id": "m305.s37", "val": "무언가 알아내면 알려드릴게요. 우선은 <b>센데라</b> 대장의 영지인 <b>이설시티</b>로 가는 게 제일 좋을 거예요.", "state": "reviewed", "by": "human/15952bb"}
+{"id": "m305.s37", "val": "무언가 알아내면 알려 드리겠습니다. 우선은 <b>센데라</b> 대장님의 영지인 <b>이설시티</b>로 가시는 편이 좋겠습니다.", "state": "reviewed", "by": "human/15952bb"}
 {"id": "m305.e17.p0.c96", "val": {"ref": "m305.s37"}, "state": "reviewed", "by": "human/검수 반영"}
 {"id": "m305.e20.p0.c3", "val": {"ref": "m305.s37"}}
 {"id": "m305.s38", "val": "이 메가스톤들을 쓸 수 있다면 정말 대단하겠지만, 네 것이 아니다.", "state": "reviewed", "by": "human/b267968"}
@@ -20170,9 +20170,9 @@
 {"id": "m405.e12.p0.c1", "val": {"ref": "unified.936c1d76"}}
 {"id": "m405.e12.p0.c2", "val": {"ref": "unified.1f9de8fa"}}
 {"id": "m405.e12.p0.c3", "val": {"ref": "unified.91d7daec"}}
-{"id": "m405.e23.p0.c0", "val": {"ref": "unified.dfdc0787"}}
-{"id": "m405.e23.p0.c1", "val": {"ref": "unified.9df4e8e1"}, "state": "reviewed", "by": "human/55467e6"}
-{"id": "m405.e23.p0.c2", "val": {"ref": "unified.069d27ea"}}
+{"id": "m405.e23.p0.c0", "val": "<b>루피코:</b> 어이쿠, \\PN 씨! 여기서 뵐 줄은 몰랐습니다."}
+{"id": "m405.e23.p0.c1", "val": "눈빛을 보니 지난번 뵈었을 때보다 배틀 솜씨가 한층 단단해지셨군요.", "state": "reviewed", "by": "human/55467e6"}
+{"id": "m405.e23.p0.c2", "val": "하지만 제 망치의 제대로 된 한 방을 견딜 바위는 없습니다! 우리도 곧 다시 맞붙게 되겠지요."}
 {"id": "m405.e18.p0.c0", "val": "무작위 배틀에서 4연승을 달성하면 아주 귀중한 도구를 받을 수 있거든."}
 {"id": "m405.e18.p0.c1", "val": {"ref": "unified.41e88774"}}
 {"id": "m405.e2.p0.c1", "val": {"ref": "unified.b2a16557"}, "state": "reviewed", "by": "human/ed2774b"}
@@ -20741,10 +20741,10 @@
 {"id": "m418.e19.p2.c13", "val": "그 유대가 만들어 내는 또 한 번의 강렬한 전율을 받아들일 모든 부품의 준비가 완료되었습니다, \\PN.", "state": "reviewed", "by": "human/4bf6d47"}
 {"id": "m418.e19.p2.c14", "val": "정보 수신 완료 및 프로토콜 갱신 완료. 이제 상황을 조금 더 명확히 이해할 수 있게 되었습니다.", "state": "reviewed", "by": "human/검수 반영"}
 {"id": "m418.e19.p2.c21", "val": "<b>F3:</b> 저 같은 자동인형도 언젠가 궁극의 유대에 도달할 수 있을 것이라 생각하십니까, \\PN? 완전히 기능이 정지하기 전에 그것을 확인해 보고 싶습니다.", "state": "reviewed", "by": "human/4bf6d47"}
-{"id": "m418.e19.p2.c26", "val": "<b>루피코:</b> 세상에! 여기엔 강한 트레이너가 정말 많네요! 그리고 \\PN 씨는 언제나처럼 제일 앞줄에 계시고요!", "state": "reviewed", "by": "human/4bf6d47"}
-{"id": "m418.e19.p2.c27", "val": "해머질 제대로 한 번이면 해결 안 되는 건 없죠. 쾅! 그 배틀 실력을 조금 단련해 보자고요!", "state": "reviewed", "by": "human/4bf6d47"}
-{"id": "m418.e19.p2.c28", "val": "세상에나! 그 엄청난 힘에 아주 굳어버렸지 뭐예요!", "state": "reviewed", "by": "human/c833065"}
-{"id": "m418.e19.p2.c35", "val": "<b>루피코:</b> 맙소사! 저번보다 훨씬 더 강해지셨잖아요! 오늘은 이쯤 하고 제 본업인 공방으로 돌아가 봐야겠어요.", "state": "reviewed", "by": "human/4bf6d47"}
+{"id": "m418.e19.p2.c26", "val": "<b>루피코:</b> 어이구야! 여기엔 강한 트레이너가 참 많습니다! 그리고 \\PN 씨는 언제나처럼 맨 앞줄에 계시는군요!", "state": "reviewed", "by": "human/4bf6d47"}
+{"id": "m418.e19.p2.c27", "val": "망치질 한 번 제대로면 못 고칠 건 없습니다. 쾅! 그 배틀 솜씨를 좀 벼려 보시지요!", "state": "reviewed", "by": "human/4bf6d47"}
+{"id": "m418.e19.p2.c28", "val": "이런 날벼락이! 그 힘에 제가 아주 돌처럼 굳어 버렸군요!", "state": "reviewed", "by": "human/c833065"}
+{"id": "m418.e19.p2.c35", "val": "<b>루피코:</b> 어이쿠! 저번보다 더 강해지셨습니다! 오늘은 이쯤 하고 제 본업인 공방으로 돌아가 봐야겠습니다.", "state": "reviewed", "by": "human/4bf6d47"}
 {"id": "m418.e19.p3.c11", "val": "<b>사프라:</b> 꺄아! 다시 만나서 정말 기뻐, \\PN! 내 식당은 그 어느 때보다 잘되고 있고 곧 이 지방 다른 곳에도 지점을 낼 거지만, 배틀할 시간은 언제든 뺄 수 있어!", "state": "reviewed", "by": "human/검수 반영"}
 {"id": "m418.e19.p3.c13", "val": "이번엔 내가 어떤 걸 준비해 왔는지 볼래?", "state": "reviewed", "by": "human/검수 반영"}
 {"id": "m418.e19.p3.c14", "val": "배틀도 요리랑 같아서, 감동을 끌어내려면 재료의 양과 질을 정교하게 맞출 줄 알아야 해!", "state": "reviewed", "by": "human/f71cf90"}
@@ -20989,9 +20989,9 @@
 {"id": "m429.e12.p0.c1", "val": {"ref": "unified.936c1d76"}, "state": "reviewed", "by": "human/55467e6"}
 {"id": "m429.e12.p0.c2", "val": {"ref": "unified.1f9de8fa"}, "state": "reviewed", "by": "human/55467e6"}
 {"id": "m429.e12.p0.c3", "val": {"ref": "unified.91d7daec"}, "state": "reviewed", "by": "human/55467e6"}
-{"id": "m429.e23.p0.c0", "val": {"ref": "unified.dfdc0787"}, "state": "reviewed", "by": "human/55467e6"}
-{"id": "m429.e23.p0.c1", "val": {"ref": "unified.9df4e8e1"}, "state": "reviewed", "by": "human/55467e6"}
-{"id": "m429.e23.p0.c2", "val": {"ref": "unified.069d27ea"}, "state": "reviewed", "by": "human/55467e6"}
+{"id": "m429.e23.p0.c0", "val": "<b>루피코:</b> 어이쿠, \\PN 씨! 여기서 뵐 줄은 몰랐습니다.", "state": "reviewed", "by": "human/55467e6"}
+{"id": "m429.e23.p0.c1", "val": "눈빛을 보니 지난번 뵈었을 때보다 배틀 솜씨가 한층 단단해지셨군요.", "state": "reviewed", "by": "human/55467e6"}
+{"id": "m429.e23.p0.c2", "val": "하지만 제 망치의 제대로 된 한 방을 견딜 바위는 없습니다! 우리도 곧 다시 맞붙게 되겠지요.", "state": "reviewed", "by": "human/55467e6"}
 {"id": "m429.e18.p0.c0", "val": "무작위 배틀에서 7연승을 달성하면 엄청 귀중한 도구를 받을 수 있어."}
 {"id": "m429.e18.p0.c1", "val": {"ref": "unified.41e88774"}, "state": "reviewed", "by": "human/55467e6"}
 {"id": "m429.e2.p0.c1", "val": {"ref": "unified.b2a16557"}, "state": "reviewed", "by": "human/ed2774b"}
