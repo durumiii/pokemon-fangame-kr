@@ -638,7 +638,7 @@
 {"k": "{1}'s status is returned to normal!", "v": "{1}’s status is returned to normal!"}
 {"k": "{1} can't use items anymore!", "v": "{1} can’t use items anymore!"}
 {"k": "The area returned to normal!", "v": "The area returned to normal!"}
-{"k": "It created a bizarre area in which Pokémon's held items lose their effects!", "v": "포켓몬이 지닌 도구의 효과가 사라지는 기묘한 공간이 만들어졌다!"}
+{"k": "It created a bizarre area in which Pokémon's held items lose their effects!", "v": "포켓몬이 지닌 물건의 효과가 사라지는 기묘한 공간이 만들어졌다!"}
 {"k": "There is no relief from this heavy rain!", "v": "강한 비의 기세는 멈추지 않는다!"}
 {"k": "The extremely harsh sunlight was not lessened at all!", "v": "강한 햇살의 기세는 멈추지 않는다!"}
 {"k": "The mysterious air current blows on regardless!", "v": "The mysterious air current blows on regardless!"}
@@ -1799,7 +1799,7 @@
 {"k": "Move Pokémon stored in boxes to your party.", "v": "박스의 포켓몬을 지닌 포켓몬으로 옮깁니다."}
 {"k": "Store Pokémon in your party in Boxes.", "v": "지닌 포켓몬을 박스에 맡깁니다."}
 {"k": "Organize the Pokémon in Boxes and in your party.", "v": "박스와 지닌 포켓몬을 정리합니다."}
-{"k": "Move items held by any Pokémon in a Box and your party.", "v": "박스와 지닌 포켓몬이 지닌 도구를 옮깁니다."}
+{"k": "Move items held by any Pokémon in a Box and your party.", "v": "박스와 지닌 포켓몬이 지닌 물건을 옮깁니다."}
 {"k": "Return to the previous menu.", "v": "이전 메뉴로 돌아갑니다."}
 {"k": "Jump", "v": "점프"}
 {"k": "Wallpaper", "v": "벽지"}
@@ -2526,7 +2526,7 @@
 {"k": "Species of the Pokémon.", "v": "포켓몬의 종류."}
 {"k": "Level of the Pokémon.", "v": "포켓몬의 레벨."}
 {"k": "Held item", "v": "지닌물건"}
-{"k": "Item held by the Pokémon.", "v": "포켓몬이 지닌 도구."}
+{"k": "Item held by the Pokémon.", "v": "포켓몬이 지닌 물건."}
 {"k": "Move 1", "v": "Move 1"}
 {"k": "First move. Leave all moves blank (use Z key) to give it a wild move set.", "v": "First move. Leave all moves blank (use Z key) to give it a wild move set."}
 {"k": "Move 2", "v": "Move 2"}
@@ -3230,7 +3230,7 @@
 {"k": "Mueve un Pokémon de una Caja a tu equipo.", "v": "박스의 포켓몬을 지닌 포켓몬으로 옮깁니다."}
 {"k": "Guarda un Pokémon de tu equipo en una Caja.", "v": "지닌 포켓몬을 박스에 맡길 수 있습니다"}
 {"k": "Organiza los Pokémon de las Cajas y tu equipo.", "v": "박스에 맡긴 포켓몬이나 지닌 포켓몬을 정리할 수 있습니다"}
-{"k": "Mueve los objetos que llevan los Pokémon de la Cajas y tu equipo.", "v": "박스와 지닌 포켓몬이 지닌 도구를 옮깁니다."}
+{"k": "Mueve los objetos que llevan los Pokémon de la Cajas y tu equipo.", "v": "박스와 지닌 포켓몬이 지닌 물건을 옮깁니다."}
 {"k": "Regresar al menú anterior.", "v": "이전 메뉴로 돌아갑니다."}
 {"k": "Saltar", "v": "점프"}
 {"k": "Paisaje", "v": "벽지"}
@@ -3454,10 +3454,10 @@
 {"k": "Nombre<r>{1}<br>", "v": "이름<r>{1}<br>"}
 {"k": "ID N°<r>{1}<br>", "v": "ID No.<r>{1}<br>"}
 {"k": "¡Campeón de la Liga!\n¡Felicitaciones!\\^", "v": "리그 챔피언!\n축하합니다!\\^"}
-{"k": "N° ???", "v": "No. ???"}
+{"k": "N° ???", "v": "No.???"}
 {"k": "Nv. {1}", "v": "Lv. {1}"}
 {"k": "ID N°{1}", "v": "ID No.{1}"}
-{"k": "Hall de la Fama N°", "v": "명예의 전당 N°"}
+{"k": "Hall de la Fama N°", "v": "전당등록"}
 {"k": "¡Bienvenido al Hall de la Fama!", "v": "명예의 전당에 온 것을 환영합니다!"}
 {"k": "Hall de la Fama", "v": "전당등록"}
 {"k": "\\se[accesspc]Acceso al Hall de la Fama concedido.", "v": "\\se[accesspc]명예의 전당 접속이 허가되었습니다."}
@@ -3536,8 +3536,8 @@
 {"k": "¡{1} obtuvo {2}!\\se[PokemonGet]\u0001", "v": "{1}\\j[은,는] {2}\\j[을,를] 얻었다!\\se[PokemonGet]\u0001"}
 {"k": "{1} recibió un Pokémon de {2}.\\se[PokemonGet]\u0001", "v": "{1}\\j[은,는] {2}에게서 포켓몬을 받았다.\\se[PokemonGet]\u0001"}
 {"k": "{1} recibió un Pokémon.\\se[PokemonGet]\u0001", "v": "{1}\\j[은,는] 포켓몬을 받았다.\\se[PokemonGet]\u0001"}
-{"k": "APRENDIDO", "v": "알고있음"}
-{"k": "¿A qué Pokémon enseñarle?", "v": "어느 포켓몬에게 가르치겠습니까?"}
+{"k": "APRENDIDO", "v": "이미 알고 있다"}
+{"k": "¿A qué Pokémon enseñarle?", "v": "어느 포켓몬에게 가르칠까?"}
 {"k": "{1} no puede ser aprendido por un Huevo.", "v": "알은 {1}\\j[을,를] 배울 수 없다."}
 {"k": "No se puede enseñar ningún movimiento a un Pokémon Oscuro.", "v": "그림자 포켓몬에게는 기술을 가르칠 수 없다."}
 {"k": "{1} no es compatible con {2}.", "v": "{1}\\j[은,는] {2}\\j[과,와] 맞지 않는다."}
@@ -3681,7 +3681,7 @@
 {"k": "MTs / MOs", "v": "기술머신/비전머신"}
 {"k": "Bayas", "v": "나무열매"}
 {"k": "Cartas", "v": "Cartas"}
-{"k": "Obj. Batallas", "v": "배틀도구"}
+{"k": "Obj. Batallas", "v": "배틀용"}
 {"k": "Obj. Claves", "v": "중요한 물건"}
 {"k": "Pokédex Kanto", "v": "관동 도감"}
 {"k": "Pokédex Johto", "v": "조토 도감"}
@@ -3711,7 +3711,7 @@
 {"k": "Rojo:", "v": "빨강:"}
 {"k": "Verde:", "v": "초록:"}
 {"k": "Azul:", "v": "파랑:"}
-{"k": "Alfa:", "v": "알파:"}
+{"k": "Alfa:", "v": "우두머리"}
 {"k": "Primer Cuadro:", "v": "첫 프레임:"}
 {"k": "Último Cuadro:", "v": "마지막 프레임:"}
 {"k": "Nombre Nuevo:", "v": "새 이름:"}
@@ -3796,8 +3796,8 @@
 {"k": "No se puedo guardar. Falta ingresar nombre.", "v": "저장할 수 없습니다. 이름을 입력해야 합니다."}
 {"k": "Especie del Pokémon.", "v": "포켓몬의 종류."}
 {"k": "Nivel del Pokémon.", "v": "포켓몬의 레벨."}
-{"k": "Objeto llevado", "v": "지닌도구"}
-{"k": "El objeto llevado por el Pokémon.", "v": "포켓몬이 지닌 도구."}
+{"k": "Objeto llevado", "v": "지닌 물건"}
+{"k": "El objeto llevado por el Pokémon.", "v": "포켓몬이 지닌 물건."}
 {"k": "Movimiento 1", "v": "기술 1"}
 {"k": "Primer movimiento. Deja todos los movimientos en blanco (usa la tecla Z) para completarlo con movimientos naturales.", "v": "첫 번째 기술. 모든 기술을 비워두면 (Z키 사용) 자력기로 채워집니다."}
 {"k": "Movimiento 2", "v": "기술 2"}
@@ -3975,7 +3975,7 @@
 {"k": "Piedra", "v": "돌"}
 {"k": "Llamar", "v": "Llamar"}
 {"k": "{1} está seleccionado.", "v": "{1}\\j[을,를] 어떻게 할까?"}
-{"k": "¿En qué Pokémon usarlo?", "v": "어느 포켓몬에게 쓸까?"}
+{"k": "¿En qué Pokémon usarlo?", "v": "어느 포켓몬에게 사용할까?"}
 {"k": "Sin objetivo por alguna razón...", "v": "어째선지 대상이 없다..."}
 {"k": "PS Máx.<r>+{1}\nAtaque<r>+{2}\nDefensa<r>+{3}\nAt. Esp<r>+{4}\nDef. Esp<r>+{5}\nVelocidad<r>+{6}", "v": "최대HP<r>+{1}\r\n공격<r>+{2}\r\n방어<r>+{3}\r\n특수공격<r>+{4}\r\n특수방어<r>+{5}\r\n스피드<r>+{6}"}
 {"k": "PS Máx.<r>{1}\nAtaque<r>{2}\nDefensa<r>{3}\nAt. Esp<r>{4}\nDef. Esp<r>{5}\nVelocidad<r>{6}", "v": "최대HP<r>{1}\r\n공격<r>{2}\r\n방어<r>{3}\r\n특수공격<r>{4}\r\n특수방어<r>{5}\r\n스피드<r>{6}"}
@@ -4001,7 +4001,7 @@
 {"k": "¡{1} está protegido por Velo Sagrado!", "v": "{1}\\j[은,는] 신비의부적으로 보호받고 있다!"}
 {"k": "¡{1} se durmió!", "v": "{1}\\j[은,는] 잠들었다!"}
 {"k": "{1} ya está envenenado.", "v": "{1}\\j[은,는] 이미 몸에 독이 퍼진 상태다."}
-{"k": "¡Pero falló!", "v": "그러나 실패하고 말았다!"}
+{"k": "¡Pero falló!", "v": "그러나 실패하고 말았다!!"}
 {"k": "No afecta a {1}...", "v": "{1}에게는 효과가 없는 것 같다..."}
 {"k": "¡El Campo de Niebla evita que {1} sea envenedado!", "v": "미스트필드가 {1}의 독을 막았다!"}
 {"k": "¡{2} de {1} evita el envenenamiento!", "v": "{1}의 {2}\\j[이,가] 독을 막았다!"}
@@ -4130,9 +4130,9 @@
 {"k": "¡{1} cambió su Ataque y Defensa!", "v": "{1}\\j[은,는] 자신의 공격과 방어를 맞바꿨다!"}
 {"k": "¡{1} comparte su fuerza con el objetivo!", "v": "{1}\\j[이,가] 상대와 힘을 나눴다!"}
 {"k": "¡{1} comparte su guardia con el objetivo!", "v": "{1}\\j[이,가] 상대와 방어를 나눴다!"}
-{"k": "¡Los combatientes comparten el daño sufrido!", "v": "싸우는 포켓몬들이 받은 데미지를 나눠 가졌다!"}
-{"k": "¡Viento Afín sopla a favor de tu equipo!", "v": "순풍이 우리 편에 불어온다!"}
-{"k": "¡Viento Afín sopla a favor del equipo enemigo!", "v": "순풍이 상대 편에 불어온다!"}
+{"k": "¡Los combatientes comparten el daño sufrido!", "v": "서로의 체력을 나누어 가졌다!"}
+{"k": "¡Viento Afín sopla a favor de tu equipo!", "v": "우리 편에게 순풍이 불기 시작했다!"}
+{"k": "¡Viento Afín sopla a favor del equipo enemigo!", "v": "상대에게 순풍이 불기 시작했다!"}
 {"k": "¡{1} aprendió {2}!", "v": "{1}\\j[은,는] {2}\\j[을,를] 배웠다!"}
 {"k": "¡{1} usó Esquema en {2}!", "v": "{1}\\j[은,는] {2}에게 스케치를 썼다!"}
 {"k": "¡{1} se transformó en el tipo {2}!", "v": "{1}\\j[은,는] {2} 타입으로 변했다!"}
@@ -4153,18 +4153,18 @@
 {"k": "¡Se han debilitado los ataques de tipo Eléctrico!", "v": "전기타입 기술의 위력이 약해졌다!"}
 {"k": "¡Se han debilitado los ataques de tipo Fuego!", "v": "불꽃타입 기술의 위력이 약해졌다!"}
 {"k": "¡El Conjuro protege a tu equipo de los golpes críticos!", "v": "주술의 힘으로 우리 편의 급소가 숨겨졌다!"}
-{"k": "¡El Conjuro protege al equipo enemigo de los golpes críticos!", "v": "주술의 힘으로 상대 편의 급소가 숨겨졌다!"}
-{"k": "¡Reflejo subió la Defensa de tu equipo!", "v": "리플렉터가 우리 편의 방어를 올렸다!"}
-{"k": "¡Reflejo subió la Defensa del equipo enemigo!", "v": "리플렉터가 상대 편의 방어를 올렸다!"}
-{"k": "¡Pantalla de Luz subió la Defensa Especial de tu equipo!", "v": "빛의장막이 우리 편의 특수방어를 올렸다!"}
-{"k": "¡Pantalla de Luz subió la Defensa Especial del equipo enemigo!", "v": "빛의장막이 상대 편의 특수방어를 올렸다!"}
+{"k": "¡El Conjuro protege al equipo enemigo de los golpes críticos!", "v": "주술의 힘으로 상대의 급소가 숨겨졌다!"}
+{"k": "¡Reflejo subió la Defensa de tu equipo!", "v": "우리 편은 리플렉터로 물리공격에 강해졌다!"}
+{"k": "¡Reflejo subió la Defensa del equipo enemigo!", "v": "상대는 리플렉터로 물리공격에 강해졌다!"}
+{"k": "¡Pantalla de Luz subió la Defensa Especial de tu equipo!", "v": "우리 편은 빛의장막으로 특수공격에 강해졌다!"}
+{"k": "¡Pantalla de Luz subió la Defensa Especial del equipo enemigo!", "v": "상대는 빛의장막으로 특수공격에 강해졌다!"}
 {"k": "¡{1} apuntó a {2}!", "v": "{1}\\j[은,는] {2}\\j[을,를] 노렸다!"}
 {"k": "¡{1} fue identificado!", "v": "{1}\\j[이,가] 간파당했다!"}
 {"k": "¡{1} se está protegiendo!", "v": "{1}\\j[은,는] 방어 태세에 들어갔다!"}
-{"k": "¡Anticipo ha protegido a tu equipo!", "v": "패스트가드가 우리 편을 지켰다!"}
-{"k": "¡Anticipo ha protegido al equipo rival!", "v": "패스트가드가 상대 편을 지켰다!"}
-{"k": "¡Vastaguardia ha protegido a tu equipo!", "v": "와이드가드가 우리 편을 지켰다!"}
-{"k": "¡Vastaguardia ha protegido al equipo rival!", "v": "와이드가드가 상대 편을 지켰다!"}
+{"k": "¡Anticipo ha protegido a tu equipo!", "v": "우리 편 주변을 퍼스트가드가 보호하고 있다!"}
+{"k": "¡Anticipo ha protegido al equipo rival!", "v": "상대 주변을 퍼스트가드가 보호하고 있다!"}
+{"k": "¡Vastaguardia ha protegido a tu equipo!", "v": "우리 편 주변을 와이드가드가 보호하고 있다!"}
+{"k": "¡Vastaguardia ha protegido al equipo rival!", "v": "상대 주변을 와이드가드가 보호하고 있다!"}
 {"k": "¡El Movimiento Espejo falló!", "v": "따라하기가 실패했다!"}
 {"k": "¡{1} se cubrió con Capa Mágica!", "v": "{1}\\j[은,는] 매직코트로 몸을 감쌌다!"}
 {"k": "¡{1} espera a que su rival haga algún movimiento!", "v": "{1}\\j[은,는] 상대가 움직이기를 기다린다!"}
@@ -4238,7 +4238,7 @@
 {"k": "¡El estado de {1} volvió a la normalidad!", "v": "{1}의 상태가 원래대로 돌아왔다!"}
 {"k": "¡{1} no puede usar objetos!", "v": "{1}\\j[은,는] 도구를 쓸 수 없다!"}
 {"k": "¡La Zona Mágica se acabó, y los efectos de los objetos volvieron a la normalidad!", "v": "매직룸이 끝나 도구의 효과가 원래대로 돌아왔다!"}
-{"k": "¡Se ha creado un espacio mágico en el que los efectos de los objetos desaparecieron!", "v": "도구의 효과가 사라지는 마법의 공간이 만들어졌다!"}
+{"k": "¡Se ha creado un espacio mágico en el que los efectos de los objetos desaparecieron!", "v": "지니게 한 도구의 효과가 없어지는 공간을 만들어 냈다!"}
 {"k": "¡{1} es dañado por el retroceso!", "v": "{1}\\j[은,는] 반동으로 데미지를 입었다!"}
 {"k": "¡El sol está brillando!", "v": "햇살이 강해졌다!"}
 {"k": "¡Ha empezado a llover!", "v": "비가 내리기 시작했다!"}
@@ -4255,7 +4255,7 @@
 {"k": "¡Reflejo del equipo enemigo no funciona!", "v": "상대 팀의 리플렉터는 효과가 없다!"}
 {"k": "¡Reflejo no funciona en tu equipo!", "v": "우리 편에는 리플렉터가 효과가 없다!"}
 {"k": "¡{1} ya tiene un sustituto!", "v": "{1}\\j[은,는] 이미 대타출동이 나와 있다!"}
-{"k": "¡Estaba muy debil para crear un sustituto!", "v": "체력이 부족해서 대타를 만들 수 없다!"}
+{"k": "¡Estaba muy debil para crear un sustituto!", "v": "그러나 대타를 내보내기에는 체력이 부족했다!"}
 {"k": "¡{1} creó un sustituto!", "v": "{1}\\j[은,는] 대타출동을 불러냈다!"}
 {"k": "¡Se redujeron los PP de {2} de {1} en {3}!", "v": "{1}의 {2} PP가 {3}만큼 줄었다!"}
 {"k": "¡{1} ha caído en una Pesadilla!", "v": "{1}\\j[은,는] 악몽을 꾸기 시작했다!"}
@@ -4463,8 +4463,8 @@
 {"k": "¡{1} ha cambiado a su Forma Filo!", "v": "{1}\\j[은,는] 블레이드폼으로 바뀌었다!"}
 {"k": "¡{1} ha cambiado a su Forma Escudo!", "v": "{1}\\j[은,는] 실드폼으로 바뀌었다!"}
 {"k": "¡{1} usó\n{2}!", "v": "{1}의\r\n{2}!"}
-{"k": "¡Pero no le quedan PP al movimiento!", "v": "그러나 기술을 사용할 PP가 남아 있지 않다!"}
-{"k": "¡El ataque de tipo Fuego desapareció en medio del diluvio!", "v": "불꽃타입 공격이 폭우 속에서 꺼지고 말았다!"}
+{"k": "¡Pero no le quedan PP al movimiento!", "v": "그러나 남은 PP가 없었다!"}
+{"k": "¡El ataque de tipo Fuego desapareció en medio del diluvio!", "v": "강한 비의 영향으로 불꽃타입의 공격이 사라졌다!"}
 {"k": "¡El ataque de tipo Agua se evaporó por la fuerza del sol abrazador!", "v": "물타입 공격이 큰가뭄 속에서 증발하고 말았다!"}
 {"k": "¡Cuando las llamas tocaron el polvo que cubría al Pokémon, éste explotó!", "v": "불길이 포켓몬을 덮은 가루에 닿아 폭발했다!"}
 {"k": "¡{1} se ha transformado en tipo {2}!", "v": "{1}\\j[은,는] {2} 타입으로 변했다!"}
@@ -4567,7 +4567,7 @@
 {"k": "Sigue granizando...", "v": "싸라기눈이 계속 내리고 있다..."}
 {"k": "Sigue diluviando...", "v": "거센 비가 계속 내리고 있다..."}
 {"k": "El sol sigue realmente abrasador...", "v": "햇살이 여전히 타는 듯하다..."}
-{"k": "Las misteriosas turbulencias continúan con fuerza...", "v": "기묘한 난기류가 여전히 거세다..."}
+{"k": "Las misteriosas turbulencias continúan con fuerza...", "v": "수수께끼의 난기류의 기세는 멈추지 않는다!"}
 {"k": "¡{1} no se puede liberar de la Caída Libre!", "v": "{1}\\j[은,는] 프리폴에서 벗어날 수 없다!"}
 {"k": "Los objetos no se pueden utilizar aquí.", "v": "여기서는 도구를 쓸 수 없다."}
 {"k": "¡{1} saca a {2}!", "v": "{1}\\j[은,는] {2}\\j[을,를] 집어넣었다!"}
@@ -4576,14 +4576,14 @@
 {"k": "Se ha ido el sol.", "v": "햇살이 원래대로 돌아왔다."}
 {"k": "¡{1} perdió algunos PS debido al Poder Solar!", "v": "선파워 때문에 {1}\\j[은,는] HP를 잃었다!"}
 {"k": "Ha dejado de llover.", "v": "비가 그쳤다."}
-{"k": "La tormenta de arena amainó.", "v": "모래바람이 가라앉았다."}
+{"k": "La tormenta de arena amainó.", "v": "모래바람이 가라앉았다!"}
 {"k": "¡La tormenta de arena zarandea a {1}!", "v": "모래바람이 {1}\\j[을,를] 덮쳤다!"}
 {"k": "Ha dejado de granizar.", "v": "싸라기눈이 그쳤다."}
 {"k": "¡El granizo zarandea a {1}!", "v": "싸라기눈이 {1}\\j[을,를] 덮쳤다!"}
 {"k": "¡El diluvio ha terminado!", "v": "폭우가 그쳤다!"}
 {"k": "¡El sol vuelve a brillar como siempre!", "v": "햇살이 원래대로 되돌아왔다!"}
 {"k": "¡{1} ha sido dañado por la luz solar!", "v": "{1}\\j[은,는] 햇빛에 데미지를 입었다!"}
-{"k": "¡Las misteriosas turbulencias han amainado!", "v": "기묘한 난기류가 잦아들었다!"}
+{"k": "¡Las misteriosas turbulencias han amainado!", "v": "수수께끼의 난기류가 가라앉았다!"}
 {"k": "El cielo oscuro se ha aclarado.", "v": "어두웠던 하늘이 개었다."}
 {"k": "El cielo sigue oscuro...", "v": "하늘은 여전히 어둡다..."}
 {"k": "¡{1} ha sido dañado por el cielo oscuro!", "v": "{1}\\j[은,는] 어두운 하늘에 데미지를 입었다!"}
@@ -4620,17 +4620,17 @@
 {"k": "¡{1} y {2} han intercambiado posiciones!", "v": "{1}\\j[과,와] {2}\\j[이,가] 자리를 바꿨다!"}
 {"k": "¡{1} ha sido cubierto con polvo!", "v": "{1}\\j[은,는] 가루를 뒤집어썼다!"}
 {"k": "¡{1} va a usar un tatami para bloquear ataques!", "v": "{1}\\j[이,가] 다다미가에시로 공격을 막으려 한다!"}
-{"k": "¡El Truco Defensa ha protegido a tu equipo!", "v": "트릭가드가 아군의 파티를 지켰다!"}
-{"k": "¡El Truco Defensa ha protegido al equipo rival!", "v": "트릭가드가 상대 파티를 지켰다!"}
+{"k": "¡El Truco Defensa ha protegido a tu equipo!", "v": "우리 편 주변을 트릭가드가 보호하고 있다!"}
+{"k": "¡El Truco Defensa ha protegido al equipo rival!", "v": "상대 주변을 트릭가드가 보호하고 있다!"}
 {"k": "¡{1} desaparece en un abrir y cerrar de ojos!", "v": "{1}\\j[이,가] 눈 깜짝할 사이에 사라졌다!"}
 {"k": "¡{1} ya está listo gracias a la Hierba Única!", "v": "파워풀허브 덕분에 {1}\\j[은,는] 준비를 마쳤다!"}
 {"k": "¡{1} está absorbiendo energía!", "v": "{1}\\j[이,가] 에너지를 흡수하고 있다!"}
 {"k": "¡{1} ha absorbido el lodo líquido!", "v": "{1}\\j[이,가] 해감액을 흡수했다!"}
 {"k": "¡La energía de {1} ha sido absorbida!", "v": "{1}\\j[으로,로]부터 에너지를 흡수했다!"}
-{"k": "¡Nadie podrá huir durante el próximo turno!", "v": "다음 턴에는 아무도 도망칠 수 없다!"}
+{"k": "¡Nadie podrá huir durante el próximo turno!", "v": "다음 턴은 도망갈 수 없다!"}
 {"k": "¡Una red viscosa se extiende a los pies del equipo rival!", "v": "상대 발밑에 끈적끈적네트가 펼쳐졌다!"}
 {"k": "¡Una red viscosa se extiende a los pies de tu equipo!", "v": "우리 편 발밑에 끈적끈적네트가 펼쳐졌다!"}
-{"k": "¡Se ha formado un campo de corriente eléctrica en el campo de batalla!", "v": "발밑에 전기가 흐르기 시작했다!"}
+{"k": "¡Se ha formado un campo de corriente eléctrica en el campo de batalla!", "v": "발밑에 전기가 떠돌기 시작했다!"}
 {"k": "¡El terreno de combate se ha cubierto de hierba!", "v": "발밑에 풀이 무성해졌다!"}
 {"k": "¡La niebla ha envuelto el terreno de combate!", "v": "발밑이 안개로 자욱해졌다!"}
 {"k": "¡La felicidad se respira en el aire!", "v": "모두 행복한 기분에 휩싸였다!"}
@@ -4659,9 +4659,9 @@
 {"k": "¡{1} recuperó su salud!", "v": "{1}\\j[은,는] 체력을 회복했다!"}
 {"k": "{1} ha obtenido {2}.", "v": "{1}\\j[은,는] {2}\\j[을,를] 손에 넣었다."}
 {"k": "¡{1} ha recibido {2} de {3}!", "v": "{1}\\j[은,는] {3}에게서 {2}\\j[을,를] 받았다!"}
-{"k": "¡No hay alivio para este diluvio!", "v": "이 폭우는 그칠 줄을 모른다!"}
+{"k": "¡No hay alivio para este diluvio!", "v": "강한 비의 기세는 멈추지 않는다!"}
 {"k": "¡El sol realmente abrazador no ha mermado en absoluto!", "v": "강렬하게 내리쬐는 햇살이 전혀 누그러지지 않는다!"}
-{"k": "¡Las misteriosas turbulencias siguen soplando sin cesar!", "v": "기묘한 난기류가 쉼 없이 불어오고 있다!"}
+{"k": "¡Las misteriosas turbulencias siguen soplando sin cesar!", "v": "수수께끼의 난기류의 기세는 멈추지 않는다!"}
 {"k": "¡Un {1} salvaje te corta el paso!", "v": "야생 {1}\\j[이,가] 길을 막았다!"}
 {"k": "¡{1} y {2}\nte desafían!", "v": "{1}\\j[과,와] {2}\\j[이,가]\r\n승부를 걸어왔다!"}
 {"k": "¡{1}\nte desafía!", "v": "{1}\\j[이,가]\r\n승부를 걸어왔다!"}
@@ -4679,19 +4679,19 @@
 {"k": "¡Anticura ya no hace efecto en {1}!", "v": "{1}의 회복봉인이 풀렸다!"}
 {"k": "¡{1} puede volver a usar objetos!", "v": "{1}\\j[은,는] 다시 도구를 쓸 수 있게 되었다!"}
 {"k": "¡El contador de salud de {1} bajó a {2}!", "v": "{1}의 체력 카운터가 {2}\\j[으로,로] 떨어졌다!"}
-{"k": "¡Los efectos de Reflejo de tu equipo se disiparon!", "v": "파티의 리플렉터 효과가 사라졌다!"}
-{"k": "¡Los efectos de Reflejo del equipo enemigo se disiparon!", "v": "상대 파티의 리플렉터 효과가 사라졌다!"}
-{"k": "¡Los efectos de Pantalla de Luz de tu equipo se disiparon!", "v": "파티의 빛의장막 효과가 사라졌다!"}
-{"k": "¡Los efectos de Pantalla de Luz del equipo enemigo se disiparon!", "v": "상대 파티의 빛의장막 효과가 사라졌다!"}
-{"k": "¡Velo Sagrado de tu equipo dejó de hacer efecto!", "v": "파티의 신비의부적 효과가 사라졌다!"}
-{"k": "¡Velo Sagrado del equipo enemigo dejó de hacer efecto!", "v": "상대 파티의 신비의부적 효과가 사라졌다!"}
-{"k": "¡Neblina de tu equipo dejó de hacer efecto!", "v": "파티의 하얀안개 효과가 사라졌다!"}
-{"k": "¡Neblina del equipo enemigo dejó de hacer efecto!", "v": "상대 파티의 하얀안개 효과가 사라졌다!"}
+{"k": "¡Los efectos de Reflejo de tu equipo se disiparon!", "v": "우리 편의 리플렉터가 없어졌다!"}
+{"k": "¡Los efectos de Reflejo del equipo enemigo se disiparon!", "v": "상대의 리플렉터가 없어졌다!"}
+{"k": "¡Los efectos de Pantalla de Luz de tu equipo se disiparon!", "v": "우리 편의 빛의장막이 없어졌다!"}
+{"k": "¡Los efectos de Pantalla de Luz del equipo enemigo se disiparon!", "v": "상대의 빛의장막이 없어졌다!"}
+{"k": "¡Velo Sagrado de tu equipo dejó de hacer efecto!", "v": "우리 편을 감싸던 신비의 베일이 없어졌다!"}
+{"k": "¡Velo Sagrado del equipo enemigo dejó de hacer efecto!", "v": "상대를 감싸던 신비의 베일이 없어졌다!"}
+{"k": "¡Neblina de tu equipo dejó de hacer efecto!", "v": "우리 편을 감싸던 흰안개가 없어졌다!"}
+{"k": "¡Neblina del equipo enemigo dejó de hacer efecto!", "v": "상대를 감싸던 흰안개가 없어졌다!"}
 {"k": "¡Viento Afín de tu equipo dejó de hacer efecto!", "v": "파티의 순풍 효과가 사라졌다!"}
 {"k": "¡Viento Afín del equipo enemigo dejó de hacer efecto!", "v": "상대 파티의 순풍 효과가 사라졌다!"}
-{"k": "¡Conjuro de tu equipo dejó de hacer efecto!", "v": "파티의 주술 효과가 사라졌다!"}
-{"k": "¡Conjuro del equipo enemigo dejó de hacer efecto!", "v": "상대 파티의 주술 효과가 사라졌다!"}
-{"k": "¡La Gravedad volvió a la normalidad!", "v": "중력이 원래대로 돌아왔다!"}
+{"k": "¡Conjuro de tu equipo dejó de hacer efecto!", "v": "우리 편의 주술이 풀렸다!"}
+{"k": "¡Conjuro del equipo enemigo dejó de hacer efecto!", "v": "상대의 주술이 풀렸다!"}
+{"k": "¡La Gravedad volvió a la normalidad!", "v": "중력이 원래대로 되돌아왔다!"}
 {"k": "¡{1} se despertó por el Alboroto!", "v": "{1}\\j[이,가] 소란 때문에 잠에서 깼다!"}
 {"k": "{1} se tranquilizó.", "v": "{1}\\j[은,는] 진정했다."}
 {"k": "¡{1} está montando un Alboroto!", "v": "{1}\\j[은,는] 소란을 피우고 있다!"}
@@ -4875,7 +4875,7 @@
 {"k": "La salud de {1} ha sido recuperada.", "v": "{1}의 체력을 회복했다."}
 {"k": "No puede usarse aquí.", "v": "여기서는 쓸 수 없다."}
 {"k": "No puede usarse cuando está con alguien.", "v": "누군가와 동행 중일 때는 사용할 수 없다."}
-{"k": "No puedes bajarte de la Bici en este lugar.", "v": "여기서는 자전거에서 내릴 수 없다."}
+{"k": "No puedes bajarte de la Bici en este lugar.", "v": "지금은 자전거에서 내릴 수 없다."}
 {"k": "Un huevo no puede aprender {1}.", "v": "알은 {1}\\j[을,를] 배울 수 없다."}
 {"k": "No se puede enseñar {1} a este Pokémon.", "v": "이 포켓몬에게는 {1}\\j[을,를] 가르칠 수 없다."}
 {"k": "{1} ya conoce {2}.", "v": "{1}\\j[은,는] 이미 {2}\\j[을,를] 알고 있다."}
@@ -4896,7 +4896,7 @@
 {"k": "No hay ningún Pokémon.", "v": "포켓몬이 존재하지 않는다."}
 {"k": "¿Quieres enseñarle {1} a un Pokémon?", "v": "포켓몬에게 {1}\\j[을,를] 가르치겠습니까?"}
 {"k": "APTO", "v": "가능"}
-{"k": "¿Usar con qué Pokémon?", "v": "어느 포켓몬에게 쓸까?"}
+{"k": "¿Usar con qué Pokémon?", "v": "어느 포켓몬에게 사용할까?"}
 {"k": "Pero todavía tiene efecto el último Repente utilizado.", "v": "하지만 아직 전에 사용한 스프레이의 효과가 남아 있다."}
 {"k": "{1} ha usado {2}.", "v": "{1}의 {2}!"}
 {"k": "¡Este árbol parece fácil de cortar!\u0001", "v": "이 나무는 쉽게 벨 수 있을 것 같다!\u0001"}
@@ -4927,7 +4927,7 @@
 {"k": "No se puede utilizar cuando estás con alguien.", "v": "누군가와 함께 있을 때는 쓸 수 없다."}
 {"k": "¡Disfruta de la bici!", "v": "자전거를 즐겨!"}
 {"k": "¡No se puede navegar aquí!", "v": "여기서는 파도타기를 할 수 없다!"}
-{"k": "Es una gran cascada. ¿Quieres utilizar Cascada?", "v": "거대한 폭포다. 폭포오르기를 쓸까?"}
+{"k": "Es una gran cascada. ¿Quieres utilizar Cascada?", "v": "큰 폭포다! 폭포오르기를 쓰겠습니까?"}
 {"k": "¡{1} ha usado Cascada!", "v": "{1}\\j[은,는] 폭포오르기를 썼다!"}
 {"k": "Una columna de agua desciende con un intenso rugido.", "v": "물기둥이 굉음을 내며 떨어지고 있다."}
 {"k": "El mar es profundo por aquí. ¿Quieres sumergirte?", "v": "이 근처는 바다가 깊다. 잠수할까?"}
@@ -4941,7 +4941,7 @@
 {"k": "El dulce aroma se desvaneció por alguna razón...", "v": "무슨 이유에선지 달콤한향기는 사라졌다..."}
 {"k": "Parece que no hay nada aquí...", "v": "여기에는 아무것도 없는 것 같다..."}
 {"k": "Tipo de encuentro fuera de rango", "v": "인카운터 타입이 범위를 벗어남"}
-{"k": "El Repelente dejó de tener efecto...", "v": "스프레이의 효과가 떨어졌다..."}
+{"k": "El Repelente dejó de tener efecto...", "v": "스프레이의 효과가 사라졌다!"}
 {"k": "¿Quieres utilizar otro Repelente?", "v": "리펠을 하나 더 쓸까?"}
 {"k": "¡{1} ha usado una {2}!", "v": "{1}\\j[은,는] {2}\\j[을,를] 썼다!"}
 {"k": "¡{1} se encontrará con más Pokémon de nivel alto!", "v": "{1}\\j[은,는] 레벨이 높은 포켓몬과 더 자주 만나게 된다!"}
@@ -5001,16 +5001,16 @@
 {"k": "¿Fusionar con qué Pokémon?", "v": "어느 포켓몬과 합칠까?"}
 {"k": "No se puede fusionar con un Huevo.", "v": "알과는 합체할 수 없습니다"}
 {"k": "No se puede fusionar con un Pokémon debilitado.", "v": "기절한 포켓몬과는 합체할 수 없습니다"}
-{"k": "No se puede fusionar con sí mismo.", "v": "자기 자신과는 합칠 수 없다."}
+{"k": "No se puede fusionar con sí mismo.", "v": "그 포켓몬과는 합체할 수 없습니다"}
 {"k": "No se puede fusionar con ese Pokémon.", "v": "그 포켓몬과는 합체할 수 없습니다"}
-{"k": "No se puede utilizar en un Pokémon debilitado.", "v": "쓰러진 포켓몬에게는 쓸 수 없다."}
+{"k": "No se puede utilizar en un Pokémon debilitado.", "v": "기절한 포켓몬에게는 쓸 수 없다."}
 {"k": "¡{1} ha cambiando de forma!", "v": "{1}\\j[은,는] 폼이 바뀌었다!"}
 {"k": "¿Quieres cambiar la habilidad de {1} a {2}?", "v": "{1}의 특성을 {2}\\j[으로,로] 바꿀까?"}
 {"k": "¡La habilidad de {1} se ha cambiado a {2}!", "v": "{1}의 특성이 {2}\\j[으로,로] 바뀌었다!"}
 {"k": "{1} ya no está confuso.", "v": "{1}\\j[은,는] 혼란이 풀렸다."}
-{"k": "¡Tu equipo ha sido cubierto por una Neblina!", "v": "우리 편 팀이 하얀 안개로 감싸였다!"}
-{"k": "¡El equipo enemigo ha sido cubierto por una Neblina!", "v": "상대 편 팀이 하얀 안개로 감싸였다!"}
-{"k": "¡Esto no es bueno! ¡No se puede apuntar cuando hay más de un Pokémon!", "v": "이런! 포켓몬이 둘 이상일 때는 조준할 수 없다!"}
+{"k": "¡Tu equipo ha sido cubierto por una Neblina!", "v": "우리 편은 흰안개에 둘러싸였다!"}
+{"k": "¡El equipo enemigo ha sido cubierto por una Neblina!", "v": "상대는 흰안개에 둘러싸였다!"}
+{"k": "¡Esto no es bueno! ¡No se puede apuntar cuando hay más de un Pokémon!", "v": "안 되겠어! 1마리가 아니어서 목표를 정할 수가 없어...!"}
 {"k": "¡No hay espacio en la PC!", "v": "PC에 공간이 없다!"}
 {"k": "No se puede usar en la bicicleta.", "v": "자전거를 탄 상태에서는 사용할 수 없다."}
 {"k": "¡Se ha agotado la batería!\nPara recargarlo, necesitas caminar otros {1} pasos.", "v": "배터리가 다 떨어졌다!\n충전하려면 {1}걸음을 더 걸어야 한다."}
@@ -5135,8 +5135,8 @@
 {"k": "¡Ha aparecido un pantano alrededor del equipo rival!", "v": "상대 주변에 습지초원이 펼쳐졌다!"}
 {"k": "¡Ha aparecido un pantano alrededor de tu equipo!", "v": "우리 편 주변에 습지초원이 펼쳐졌다!"}
 {"k": "{1} está esperando a {2}...", "v": "{1}\\j[은,는] {2}\\j[을,를] 기다리고 있다..."}
-{"k": "¡Ha aparecido un arcoiris sobre tu equipo!", "v": "아군 팀 위에 무지개가 떴다!"}
-{"k": "¡Ha aparecido un arcoiris sobre el equipo rival!", "v": "상대 팀 위에 무지개가 떴다!"}
+{"k": "¡Ha aparecido un arcoiris sobre tu equipo!", "v": "우리 편 하늘에 무지개가 걸렸다!"}
+{"k": "¡Ha aparecido un arcoiris sobre el equipo rival!", "v": "상대 하늘에 무지개가 걸렸다!"}
 {"k": "Struggle", "v": "발버둥"}
 {"k": "PS mayor a los PS totales", "v": "HP가 최대 HP보다 큼"}
 {"k": "¡{1} se ha debilitado!", "v": "{1}\\j[은,는] 쓰러졌다!"}
@@ -5347,7 +5347,7 @@
 {"k": "Se han instalado los tipos de letra.\u0001", "v": "글꼴을 설치했습니다.\u0001"}
 {"k": "¿Quieres aplicar los cambios?", "v": "변경사항을 적용하시겠습니까?"}
 {"k": "Se ha corrompido la partida, se cargará una anterior.", "v": "리포트가 손상되어 이전 리포트를 불러옵니다."}
-{"k": "Se ha corrompido la partida.", "v": "리포트가 손상되었습니다."}
+{"k": "Se ha corrompido la partida.", "v": "리포트의 내용이 사라져 버렸다!"}
 {"k": "¿Quieres borrar esta partida y empezar una nueva?", "v": "이 리포트를 삭제하고 새로 시작하시겠습니까?"}
 {"k": "Se ha borrado la partida.", "v": "리포트의 내용이 사라져 버렸다!"}
 {"k": "Nuevo juego", "v": "새로 시작"}
@@ -5627,10 +5627,10 @@
 {"k": "Bien, así que has usado ese truco. Intentaré fijarme.", "v": "좋아, 그런 수법을 썼군. 잘 지켜보도록 하지."}
 {"k": "Hasta aquí. Vamos a ponernos serios.", "v": "여기까지다. 진지하게 나가볼까."}
 {"k": "¡No lo has atrapado ni de coña!", "v": "잡기는커녕 어림도 없었다!"}
-{"k": "¡Vaya! ¡Parecía que lo tenías!", "v": "와! 거의 잡은 것 같았는데!"}
+{"k": "¡Vaya! ¡Parecía que lo tenías!", "v": "아아! 잡았다고 생각했는데!"}
 {"k": "¡Agh! ¡Por muy poco!", "v": "윽! 아깝다!"}
 {"k": "¡Va! ¡Ha faltado poquísimo!", "v": "아! 정말 아깝다!"}
-{"k": "Parece que no pican.", "v": "입질이 없는 것 같다."}
+{"k": "Parece que no pican.", "v": "잡히지 않네..."}
 {"k": "¿Quieres ofrecerme algún Pokémon?", "v": "나에게 포켓몬을 내주겠니?"}
 {"k": "No tienes ningún Pokémon.", "v": "포켓몬을 한 마리도 지니고 있지 않습니다."}
 {"k": "¡Ostras, {1} es un Pokémon demasiado valioso! No tengo nada que ofrecerte por él.", "v": "우와, {1}\\j[은,는] 너무 귀한 포켓몬이야! 교환해 줄 만한 게 없는걸."}

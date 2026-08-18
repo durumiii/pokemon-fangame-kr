@@ -33,7 +33,7 @@
 {"i": 32, "v": "모아서 공격한다. 상대보다 나중에 공격할 수 있으면 기술의 위력은 2배가 된다.", "es": "El usuario contraataca con el doble de fuerza si el objetivo usa un movimiento antes."}
 {"i": 33, "v": "상대 포켓몬이 교체될 때 기술을 쓰면 2배의 위력으로 공격할 수 있다.", "es": "Hace el doble de daño al objetivo que pide el relevo."}
 {"i": 34, "v": "공격하며 상대의 도구를 빼앗는다. 자신에게 도구가 있으면", "es": "Ataca y le quita al objetivo el objeto que lleve. Si el agresor lleva un objeto"}
-{"i": 35, "v": "배틀 중 상대가 지닌 도구를 쓰지 못하게 한다.", "es": "Impide al objetivo usar el objeto que lleva durante el combate."}
+{"i": 35, "v": "배틀 중 상대가 지닌 물건을 쓰지 못하게 한다.", "es": "Impide al objetivo usar el objeto que lleva durante el combate."}
 {"i": 36, "v": "같은 편 전원이 공격한다. 동료 포켓몬이 많을수록 기술의 공격 횟수가 증가한다.", "es": "Ataque de todo el equipo Pokémon. Cuantos más haya, más veces ataca."}
 {"i": 37, "v": "복수의 저주를 상대에게 건다. 50% 확률로 화상을 입힌다.", "es": "Lanza una maldición vengativa al objetivo. Puede causar quemaduras (50%)."}
 {"i": 38, "v": "능력 변화로 상대가 파워업한 만큼 기술의 위력이 올라간다.", "es": "La fuerza del ataque aumenta cuanto más se ha fortalecido el rival con cambios de características."}
