@@ -364,6 +364,26 @@
       "replaces_crc": 3270865241
     },
     {
+      "file": "Graphics/Pictures/alquimia1.png",
+      "install_to": "Graphics/Pictures/alquimia1.png",
+      "replaces_crc": 1083380914
+    },
+    {
+      "file": "Graphics/Pictures/alquimia2.png",
+      "install_to": "Graphics/Pictures/alquimia2.png",
+      "replaces_crc": 1709385634
+    },
+    {
+      "file": "Graphics/Pictures/alquimia3.png",
+      "install_to": "Graphics/Pictures/alquimia3.png",
+      "replaces_crc": 4118358617
+    },
+    {
+      "file": "Graphics/Pictures/alquimia4.png",
+      "install_to": "Graphics/Pictures/alquimia4.png",
+      "replaces_crc": 2556579517
+    },
+    {
       "file": "Graphics/Pictures/bag1.png",
       "install_to": "Graphics/Pictures/bag1.png",
       "replaces_crc": 503768254
@@ -554,6 +574,21 @@
       "replaces_crc": 3086138574
     },
     {
+      "file": "Graphics/Pictures/diploma.png",
+      "install_to": "Graphics/Pictures/diploma.png",
+      "replaces_crc": 1431840952
+    },
+    {
+      "file": "Graphics/Pictures/diplomaNuz1.png",
+      "install_to": "Graphics/Pictures/diplomaNuz1.png",
+      "replaces_crc": 3126702796
+    },
+    {
+      "file": "Graphics/Pictures/diplomaNuz2.png",
+      "install_to": "Graphics/Pictures/diplomaNuz2.png",
+      "replaces_crc": 1701054029
+    },
+    {
       "file": "Graphics/Pictures/helpArrowKeys.png",
       "install_to": "Graphics/Pictures/helpArrowKeys.png",
       "replaces_crc": 1170200926
@@ -582,6 +617,11 @@
       "file": "Graphics/Pictures/helpbg.png",
       "install_to": "Graphics/Pictures/helpbg.png",
       "replaces_crc": 2019899916
+    },
+    {
+      "file": "Graphics/Pictures/icon_register.PNG",
+      "install_to": "Graphics/Pictures/icon_register.PNG",
+      "replaces_crc": 3663483547
     },
     {
       "file": "Graphics/Pictures/introText1.png",
@@ -624,6 +664,11 @@
       "replaces_crc": 3656153201
     },
     {
+      "file": "Graphics/Pictures/introTexto0.png",
+      "install_to": "Graphics/Pictures/introTexto0.png",
+      "replaces_crc": 2656919753
+    },
+    {
       "file": "Graphics/Pictures/introTexto1.png",
       "install_to": "Graphics/Pictures/introTexto1.png",
       "replaces_crc": 417499347
@@ -632,6 +677,11 @@
       "file": "Graphics/Pictures/mapbg.png",
       "install_to": "Graphics/Pictures/mapbg.png",
       "replaces_crc": 3785161296
+    },
+    {
+      "file": "Graphics/Pictures/namingControls.png",
+      "install_to": "Graphics/Pictures/namingControls.png",
+      "replaces_crc": 4249061654
     },
     {
       "file": "Graphics/Pictures/pokedexEntry.png",
@@ -664,9 +714,19 @@
       "replaces_crc": 2755067150
     },
     {
+      "file": "Graphics/Pictures/rot10Cendera1.png",
+      "install_to": "Graphics/Pictures/rot10Cendera1.png",
+      "replaces_crc": 1900051519
+    },
+    {
       "file": "Graphics/Pictures/rot10Cendera2.png",
       "install_to": "Graphics/Pictures/rot10Cendera2.png",
       "replaces_crc": 2535757389
+    },
+    {
+      "file": "Graphics/Pictures/rot11Siempreviva1.png",
+      "install_to": "Graphics/Pictures/rot11Siempreviva1.png",
+      "replaces_crc": 2286945028
     },
     {
       "file": "Graphics/Pictures/rot11Siempreviva2.png",
@@ -674,9 +734,19 @@
       "replaces_crc": 2951427037
     },
     {
+      "file": "Graphics/Pictures/rot12Arrayan1.png",
+      "install_to": "Graphics/Pictures/rot12Arrayan1.png",
+      "replaces_crc": 804176714
+    },
+    {
       "file": "Graphics/Pictures/rot12Arrayan2.png",
       "install_to": "Graphics/Pictures/rot12Arrayan2.png",
       "replaces_crc": 635513177
+    },
+    {
+      "file": "Graphics/Pictures/rot13Mirra1.png",
+      "install_to": "Graphics/Pictures/rot13Mirra1.png",
+      "replaces_crc": 3807825133
     },
     {
       "file": "Graphics/Pictures/rot13Mirra2.png",
@@ -684,14 +754,39 @@
       "replaces_crc": 3624664550
     },
     {
+      "file": "Graphics/Pictures/rot1Canola.png",
+      "install_to": "Graphics/Pictures/rot1Canola.png",
+      "replaces_crc": 976517035
+    },
+    {
       "file": "Graphics/Pictures/rot1Canola2.png",
       "install_to": "Graphics/Pictures/rot1Canola2.png",
       "replaces_crc": 1478676065
     },
     {
+      "file": "Graphics/Pictures/rot1F3.png",
+      "install_to": "Graphics/Pictures/rot1F3.png",
+      "replaces_crc": 1064024065
+    },
+    {
+      "file": "Graphics/Pictures/rot1Lider7.png",
+      "install_to": "Graphics/Pictures/rot1Lider7.png",
+      "replaces_crc": 1226758473
+    },
+    {
+      "file": "Graphics/Pictures/rot1Loto.png",
+      "install_to": "Graphics/Pictures/rot1Loto.png",
+      "replaces_crc": 148776387
+    },
+    {
       "file": "Graphics/Pictures/rot2F3.png",
       "install_to": "Graphics/Pictures/rot2F3.png",
       "replaces_crc": 1102756540
+    },
+    {
+      "file": "Graphics/Pictures/rot2Hisopo.png",
+      "install_to": "Graphics/Pictures/rot2Hisopo.png",
+      "replaces_crc": 1395207091
     },
     {
       "file": "Graphics/Pictures/rot2Hisopo2.png",
@@ -709,9 +804,19 @@
       "replaces_crc": 3605615160
     },
     {
+      "file": "Graphics/Pictures/rot4Zafra.png",
+      "install_to": "Graphics/Pictures/rot4Zafra.png",
+      "replaces_crc": 3909968729
+    },
+    {
       "file": "Graphics/Pictures/rot4Zafra2.png",
       "install_to": "Graphics/Pictures/rot4Zafra2.png",
       "replaces_crc": 695018699
+    },
+    {
+      "file": "Graphics/Pictures/rot6Belladona.png",
+      "install_to": "Graphics/Pictures/rot6Belladona.png",
+      "replaces_crc": 2938561098
     },
     {
       "file": "Graphics/Pictures/rot6Belladona2.png",
@@ -719,9 +824,19 @@
       "replaces_crc": 712656267
     },
     {
+      "file": "Graphics/Pictures/rot8Anturia.png",
+      "install_to": "Graphics/Pictures/rot8Anturia.png",
+      "replaces_crc": 2167292281
+    },
+    {
       "file": "Graphics/Pictures/rot8Anturia2.png",
       "install_to": "Graphics/Pictures/rot8Anturia2.png",
       "replaces_crc": 2841546763
+    },
+    {
+      "file": "Graphics/Pictures/rot9Rupico.png",
+      "install_to": "Graphics/Pictures/rot9Rupico.png",
+      "replaces_crc": 1498143872
     },
     {
       "file": "Graphics/Pictures/rot9Rupico2.png",
@@ -744,6 +859,11 @@
       "replaces_crc": 2485670846
     },
     {
+      "file": "Graphics/Pictures/rotAlcafinal.png",
+      "install_to": "Graphics/Pictures/rotAlcafinal.png",
+      "replaces_crc": 4125455814
+    },
+    {
       "file": "Graphics/Pictures/rotMazmorra1.png",
       "install_to": "Graphics/Pictures/rotMazmorra1.png",
       "replaces_crc": 225015404
@@ -762,6 +882,11 @@
       "file": "Graphics/Pictures/rotMazmorra4.png",
       "install_to": "Graphics/Pictures/rotMazmorra4.png",
       "replaces_crc": 2967926822
+    },
+    {
+      "file": "Graphics/Pictures/rotMazmorra5.png",
+      "install_to": "Graphics/Pictures/rotMazmorra5.png",
+      "replaces_crc": 3800104060
     },
     {
       "file": "Graphics/Pictures/rotMazmorra6.png",
