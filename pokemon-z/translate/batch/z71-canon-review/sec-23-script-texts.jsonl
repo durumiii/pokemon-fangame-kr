@@ -1,15 +1,70 @@
-{"id": "23-script-texts#2814", "who": "본가채택", "es": "{1} Hembra", "old": "{1} 암컷", "new": "암컷의 모습"}
-{"id": "23-script-texts#3454", "who": "본가채택", "es": "ID N°<r>{1}<br>", "old": "ID No.<r>{1}<br>", "new": "IDNo."}
-{"id": "23-script-texts#3998", "who": "본가채택", "es": "¡{2} de {1} evita quedarse dormido!", "old": "{1}의 {2}\\j[이,가] 잠드는 것을 막았다!", "new": "잠듦 상태가 되지 않는다."}
-{"id": "23-script-texts#4008", "who": "본가채택", "es": "¡El equipo de {1} está protegido por Velo Sagrado!", "old": "{1}의 파티는 신비의부적으로 보호받고 있다!", "new": "우리 편은 신비의 베일에 둘러싸였다!"}
-{"id": "23-script-texts#4042", "who": "본가채택", "es": "¡{1} se encuentra confuso!", "old": "{1}\\j[은,는] 혼란에 빠졌다!", "new": "우리 편 포켓몬은 혼란에 빠졌다!"}
-{"id": "23-script-texts#4087", "who": "본가채택", "es": "¡Es un golpe crítico en {1}!", "old": "{1}의 급소에 맞았다!", "new": "급소에 맞았다!"}
-{"id": "23-script-texts#4220", "who": "본가채택", "es": "¡{1} no pudo escapar!", "old": "{1}\\j[은,는] 도망칠 수 없었다!", "new": "도망칠 수 없었다!"}
-{"id": "23-script-texts#43", "who": "본가채택", "es": "Enter {1}'s name.", "old": "{1}의 이름을 입력하십시오.", "new": "이름을 입력해 주십시오."}
-{"id": "23-script-texts#4395", "who": "본가채택", "es": "¡{1} ha restaurado los PP de {3} con {2}!", "old": "{1}\\j[은,는] {2}\\j[으로,로] {3}의 PP를 회복했다!", "new": "PP를 회복했다!\\c"}
-{"id": "23-script-texts#4431", "who": "본가채택", "es": "¡Truco Defensa ha protegido a {1}!", "old": "트릭가드가 {1}\\j[을,를] 지켰다!", "new": "상대 주변을 트릭가드가 보호하고 있다!"}
-{"id": "23-script-texts#4463", "who": "본가채택", "es": "¡{1} ha cambiado a su Forma Escudo!", "old": "{1}\\j[은,는] 실드폼으로 바뀌었다!", "new": "실드폼 체인지!"}
-{"id": "23-script-texts#4535", "who": "본가채택", "es": "¡Las Púas Tóxicas lanzadas alrededor de {1} desaparecieron!", "old": "{1} 주위에 깔린 독압정이 사라졌다!", "new": "상대 발밑의 독압정이 사라졌다!"}
-{"id": "23-script-texts#4606", "who": "본가채택", "es": "¡{1} no tiene más Pokémon que puedan pelear!", "old": "{1}에게 더 이상 싸울 수 있는 포켓몬이 없다!", "new": "싸울 수 있는 포켓몬이 없다!"}
-{"id": "23-script-texts#4997", "who": "본가채택", "es": "No se puede usar en un Pokémon debilitado.", "old": "쓰러진 포켓몬에게는 쓸 수 없다.", "new": "기절한 포켓몬에게는 쓸 수 없습니다.\\c"}
-{"id": "23-script-texts#5130", "who": "본가채택", "es": "\\GNo tienes el dinero suficiente.", "old": "\\G돈이 부족합니다.", "new": "돈이 부족합니다!\\c"}
+{"id": "23-script-texts#3456", "who": "본가채택", "es": "N° ???", "old": "No. ???", "new": "No.???"}
+{"id": "23-script-texts#3459", "who": "본가채택", "es": "Hall de la Fama N°", "old": "명예의 전당 N°", "new": "전당등록"}
+{"id": "23-script-texts#3466", "who": "본가채택", "es": "Cazabichos Eduardo", "old": "곤충채집 소년 에두아르도", "new": "곤충채집소년"}
+{"id": "23-script-texts#3470", "who": "본가채택", "es": "Entrenador Guay Nico", "old": "엘리트 트레이너 니코", "new": "엘리트 트레이너"}
+{"id": "23-script-texts#3517", "who": "본가채택", "es": "¿Salir del intercambio?", "old": "교환을 그만둘까?", "new": "교환을 취소하겠습니까?"}
+{"id": "23-script-texts#3538", "who": "본가채택", "es": "APRENDIDO", "old": "알고있음", "new": "이미 알고 있다"}
+{"id": "23-script-texts#3539", "who": "본가채택", "es": "¿A qué Pokémon enseñarle?", "old": "어느 포켓몬에게 가르치겠습니까?", "new": "어느 포켓몬에게 가르칠까?"}
+{"id": "23-script-texts#3683", "who": "본가채택", "es": "Obj. Batallas", "old": "배틀도구", "new": "배틀용"}
+{"id": "23-script-texts#3713", "who": "본가채택", "es": "Alfa:", "old": "알파:", "new": "우두머리"}
+{"id": "23-script-texts#3798", "who": "본가채택", "es": "Objeto llevado", "old": "지닌도구", "new": "지닌 물건"}
+{"id": "23-script-texts#3977", "who": "본가채택", "es": "¿En qué Pokémon usarlo?", "old": "어느 포켓몬에게 쓸까?", "new": "어느 포켓몬에게 사용할까?"}
+{"id": "23-script-texts#4003", "who": "본가채택", "es": "¡Pero falló!", "old": "그러나 실패하고 말았다!", "new": "그러나 실패하고 말았다!!"}
+{"id": "23-script-texts#4107", "who": "본가채택", "es": "¡Ha repicado una campana!", "old": "종이 울렸다!", "new": "방울소리가 울려 퍼졌다!"}
+{"id": "23-script-texts#4132", "who": "본가채택", "es": "¡Los combatientes comparten el daño sufrido!", "old": "싸우는 포켓몬들이 받은 데미지를 나눠 가졌다!", "new": "서로의 체력을 나누어 가졌다!"}
+{"id": "23-script-texts#4133", "who": "본가채택", "es": "¡Viento Afín sopla a favor de tu equipo!", "old": "순풍이 우리 편에 불어온다!", "new": "우리 편에게 순풍이 불기 시작했다!"}
+{"id": "23-script-texts#4134", "who": "본가채택", "es": "¡Viento Afín sopla a favor del equipo enemigo!", "old": "순풍이 상대 편에 불어온다!", "new": "상대에게 순풍이 불기 시작했다!"}
+{"id": "23-script-texts#4155", "who": "본가채택", "es": "¡El Conjuro protege al equipo enemigo de los golpes críticos!", "old": "주술의 힘으로 상대 편의 급소가 숨겨졌다!", "new": "주술의 힘으로 상대의 급소가 숨겨졌다!"}
+{"id": "23-script-texts#4156", "who": "본가채택", "es": "¡Reflejo subió la Defensa de tu equipo!", "old": "리플렉터가 우리 편의 방어를 올렸다!", "new": "우리 편은 리플렉터로 물리공격에 강해졌다!"}
+{"id": "23-script-texts#4157", "who": "본가채택", "es": "¡Reflejo subió la Defensa del equipo enemigo!", "old": "리플렉터가 상대 편의 방어를 올렸다!", "new": "상대는 리플렉터로 물리공격에 강해졌다!"}
+{"id": "23-script-texts#4158", "who": "본가채택", "es": "¡Pantalla de Luz subió la Defensa Especial de tu equipo!", "old": "빛의장막이 우리 편의 특수방어를 올렸다!", "new": "우리 편은 빛의장막으로 특수공격에 강해졌다!"}
+{"id": "23-script-texts#4159", "who": "본가채택", "es": "¡Pantalla de Luz subió la Defensa Especial del equipo enemigo!", "old": "빛의장막이 상대 편의 특수방어를 올렸다!", "new": "상대는 빛의장막으로 특수공격에 강해졌다!"}
+{"id": "23-script-texts#4163", "who": "본가채택", "es": "¡Anticipo ha protegido a tu equipo!", "old": "패스트가드가 우리 편을 지켰다!", "new": "우리 편 주변을 퍼스트가드가 보호하고 있다!"}
+{"id": "23-script-texts#4164", "who": "본가채택", "es": "¡Anticipo ha protegido al equipo rival!", "old": "패스트가드가 상대 편을 지켰다!", "new": "상대 주변을 퍼스트가드가 보호하고 있다!"}
+{"id": "23-script-texts#4165", "who": "본가채택", "es": "¡Vastaguardia ha protegido a tu equipo!", "old": "와이드가드가 우리 편을 지켰다!", "new": "우리 편 주변을 와이드가드가 보호하고 있다!"}
+{"id": "23-script-texts#4166", "who": "본가채택", "es": "¡Vastaguardia ha protegido al equipo rival!", "old": "와이드가드가 상대 편을 지켰다!", "new": "상대 주변을 와이드가드가 보호하고 있다!"}
+{"id": "23-script-texts#4240", "who": "본가채택", "es": "¡Se ha creado un espacio mágico en el que los efectos de los objetos desaparecieron!", "old": "도구의 효과가 사라지는 마법의 공간이 만들어졌다!", "new": "지니게 한 도구의 효과가 없어지는 공간을 만들어 냈다!"}
+{"id": "23-script-texts#4257", "who": "본가채택", "es": "¡Estaba muy debil para crear un sustituto!", "old": "체력이 부족해서 대타를 만들 수 없다!", "new": "그러나 대타를 내보내기에는 체력이 부족했다!"}
+{"id": "23-script-texts#4465", "who": "본가채택", "es": "¡Pero no le quedan PP al movimiento!", "old": "그러나 기술을 사용할 PP가 남아 있지 않다!", "new": "그러나 남은 PP가 없었다!"}
+{"id": "23-script-texts#4466", "who": "본가채택", "es": "¡El ataque de tipo Fuego desapareció en medio del diluvio!", "old": "불꽃타입 공격이 폭우 속에서 꺼지고 말았다!", "new": "강한 비의 영향으로 불꽃타입의 공격이 사라졌다!"}
+{"id": "23-script-texts#4569", "who": "본가채택", "es": "Las misteriosas turbulencias continúan con fuerza...", "old": "기묘한 난기류가 여전히 거세다...", "new": "수수께끼의 난기류의 기세는 멈추지 않는다!"}
+{"id": "23-script-texts#4578", "who": "본가채택", "es": "La tormenta de arena amainó.", "old": "모래바람이 가라앉았다.", "new": "모래바람이 가라앉았다!"}
+{"id": "23-script-texts#4585", "who": "본가채택", "es": "¡Las misteriosas turbulencias han amainado!", "old": "기묘한 난기류가 잦아들었다!", "new": "수수께끼의 난기류가 가라앉았다!"}
+{"id": "23-script-texts#4622", "who": "본가채택", "es": "¡El Truco Defensa ha protegido a tu equipo!", "old": "트릭가드가 아군의 파티를 지켰다!", "new": "우리 편 주변을 트릭가드가 보호하고 있다!"}
+{"id": "23-script-texts#4623", "who": "본가채택", "es": "¡El Truco Defensa ha protegido al equipo rival!", "old": "트릭가드가 상대 파티를 지켰다!", "new": "상대 주변을 트릭가드가 보호하고 있다!"}
+{"id": "23-script-texts#4629", "who": "본가채택", "es": "¡Nadie podrá huir durante el próximo turno!", "old": "다음 턴에는 아무도 도망칠 수 없다!", "new": "다음 턴은 도망갈 수 없다!"}
+{"id": "23-script-texts#4632", "who": "본가채택", "es": "¡Se ha formado un campo de corriente eléctrica en el campo de batalla!", "old": "발밑에 전기가 흐르기 시작했다!", "new": "발밑에 전기가 떠돌기 시작했다!"}
+{"id": "23-script-texts#4661", "who": "본가채택", "es": "¡No hay alivio para este diluvio!", "old": "이 폭우는 그칠 줄을 모른다!", "new": "강한 비의 기세는 멈추지 않는다!"}
+{"id": "23-script-texts#4663", "who": "본가채택", "es": "¡Las misteriosas turbulencias siguen soplando sin cesar!", "old": "기묘한 난기류가 쉼 없이 불어오고 있다!", "new": "수수께끼의 난기류의 기세는 멈추지 않는다!"}
+{"id": "23-script-texts#4681", "who": "본가채택", "es": "¡Los efectos de Reflejo de tu equipo se disiparon!", "old": "파티의 리플렉터 효과가 사라졌다!", "new": "우리 편의 리플렉터가 없어졌다!"}
+{"id": "23-script-texts#4682", "who": "본가채택", "es": "¡Los efectos de Reflejo del equipo enemigo se disiparon!", "old": "상대 파티의 리플렉터 효과가 사라졌다!", "new": "상대의 리플렉터가 없어졌다!"}
+{"id": "23-script-texts#4683", "who": "본가채택", "es": "¡Los efectos de Pantalla de Luz de tu equipo se disiparon!", "old": "파티의 빛의장막 효과가 사라졌다!", "new": "우리 편의 빛의장막이 없어졌다!"}
+{"id": "23-script-texts#4684", "who": "본가채택", "es": "¡Los efectos de Pantalla de Luz del equipo enemigo se disiparon!", "old": "상대 파티의 빛의장막 효과가 사라졌다!", "new": "상대의 빛의장막이 없어졌다!"}
+{"id": "23-script-texts#4685", "who": "본가채택", "es": "¡Velo Sagrado de tu equipo dejó de hacer efecto!", "old": "파티의 신비의부적 효과가 사라졌다!", "new": "우리 편을 감싸던 신비의 베일이 없어졌다!"}
+{"id": "23-script-texts#4686", "who": "본가채택", "es": "¡Velo Sagrado del equipo enemigo dejó de hacer efecto!", "old": "상대 파티의 신비의부적 효과가 사라졌다!", "new": "상대를 감싸던 신비의 베일이 없어졌다!"}
+{"id": "23-script-texts#4687", "who": "본가채택", "es": "¡Neblina de tu equipo dejó de hacer efecto!", "old": "파티의 하얀안개 효과가 사라졌다!", "new": "우리 편을 감싸던 흰안개가 없어졌다!"}
+{"id": "23-script-texts#4688", "who": "본가채택", "es": "¡Neblina del equipo enemigo dejó de hacer efecto!", "old": "상대 파티의 하얀안개 효과가 사라졌다!", "new": "상대를 감싸던 흰안개가 없어졌다!"}
+{"id": "23-script-texts#4691", "who": "본가채택", "es": "¡Conjuro de tu equipo dejó de hacer efecto!", "old": "파티의 주술 효과가 사라졌다!", "new": "우리 편의 주술이 풀렸다!"}
+{"id": "23-script-texts#4692", "who": "본가채택", "es": "¡Conjuro del equipo enemigo dejó de hacer efecto!", "old": "상대 파티의 주술 효과가 사라졌다!", "new": "상대의 주술이 풀렸다!"}
+{"id": "23-script-texts#4693", "who": "본가채택", "es": "¡La Gravedad volvió a la normalidad!", "old": "중력이 원래대로 돌아왔다!", "new": "중력이 원래대로 되돌아왔다!"}
+{"id": "23-script-texts#4786", "who": "본가채택", "es": "Plantar Baya", "old": "열매 심기", "new": "나무열매를 심자!"}
+{"id": "23-script-texts#4788", "who": "본가채택", "es": "¿Quieres plantar una Baya?", "old": "나무열매를 심을까?", "new": "나무열매를 심겠습니까?"}
+{"id": "23-script-texts#4877", "who": "본가채택", "es": "No puedes bajarte de la Bici en este lugar.", "old": "여기서는 자전거에서 내릴 수 없다.", "new": "지금은 자전거에서 내릴 수 없다."}
+{"id": "23-script-texts#4897", "who": "본가채택", "es": "APTO", "old": "가능", "new": "쓸 수 있다!"}
+{"id": "23-script-texts#4898", "who": "본가채택", "es": "¿Usar con qué Pokémon?", "old": "어느 포켓몬에게 쓸까?", "new": "어느 포켓몬에게 사용할까?"}
+{"id": "23-script-texts#4929", "who": "본가채택", "es": "Es una gran cascada. ¿Quieres utilizar Cascada?", "old": "거대한 폭포다. 폭포오르기를 쓸까?", "new": "큰 폭포다! 폭포오르기를 쓰겠습니까?"}
+{"id": "23-script-texts#4943", "who": "본가채택", "es": "El Repelente dejó de tener efecto...", "old": "스프레이의 효과가 떨어졌다...", "new": "스프레이의 효과가 사라졌다!"}
+{"id": "23-script-texts#4954", "who": "본가채택", "es": "Has desactivado el Repartir Exp.", "old": "학습장치를 껐다.", "new": "학습장치를 껐습니다"}
+{"id": "23-script-texts#4955", "who": "본가채택", "es": "Has activado el Repartir Exp.", "old": "학습장치를 켰다.", "new": "학습장치를 켰습니다"}
+{"id": "23-script-texts#5003", "who": "본가채택", "es": "No se puede fusionar con sí mismo.", "old": "자기 자신과는 합칠 수 없다.", "new": "그 포켓몬과는 합체할 수 없습니다"}
+{"id": "23-script-texts#5005", "who": "본가채택", "es": "No se puede utilizar en un Pokémon debilitado.", "old": "쓰러진 포켓몬에게는 쓸 수 없다.", "new": "기절한 포켓몬에게는 쓸 수 없습니다"}
+{"id": "23-script-texts#5010", "who": "본가채택", "es": "¡Tu equipo ha sido cubierto por una Neblina!", "old": "우리 편 팀이 하얀 안개로 감싸였다!", "new": "우리 편은 흰안개에 둘러싸였다!"}
+{"id": "23-script-texts#5011", "who": "본가채택", "es": "¡El equipo enemigo ha sido cubierto por una Neblina!", "old": "상대 편 팀이 하얀 안개로 감싸였다!", "new": "상대는 흰안개에 둘러싸였다!"}
+{"id": "23-script-texts#5012", "who": "본가채택", "es": "¡Esto no es bueno! ¡No se puede apuntar cuando hay más de un Pokémon!", "old": "이런! 포켓몬이 둘 이상일 때는 조준할 수 없다!", "new": "안 되겠어! 1마리가 아니어서 목표를 정할 수가 없어...!"}
+{"id": "23-script-texts#5137", "who": "본가채택", "es": "¡Ha aparecido un arcoiris sobre tu equipo!", "old": "아군 팀 위에 무지개가 떴다!", "new": "우리 편 하늘에 무지개가 걸렸다!"}
+{"id": "23-script-texts#5138", "who": "본가채택", "es": "¡Ha aparecido un arcoiris sobre el equipo rival!", "old": "상대 팀 위에 무지개가 떴다!", "new": "상대 하늘에 무지개가 걸렸다!"}
+{"id": "23-script-texts#5349", "who": "본가채택", "es": "Se ha corrompido la partida.", "old": "리포트가 손상되었습니다.", "new": "리포트의 내용이 사라져 버렸다!"}
+{"id": "23-script-texts#5353", "who": "본가채택", "es": "Elige un Pokémon y confirma.", "old": "포켓몬을 선택하고 결정하세요.", "new": "포켓몬을 선택하고 결정"}
+{"id": "23-script-texts#5608", "who": "본가채택", "es": "¡Oh! ¡Ha picado algo!", "old": "앗! 입질이 왔다!", "new": "옷 오옷! 걸렸다 걸렸다!"}
+{"id": "23-script-texts#5629", "who": "본가채택", "es": "¡Vaya! ¡Parecía que lo tenías!", "old": "와! 거의 잡은 것 같았는데!", "new": "아아! 잡았다고 생각했는데!"}
+{"id": "23-script-texts#5632", "who": "본가채택", "es": "Parece que no pican.", "old": "입질이 없는 것 같다.", "new": "잡히지 않네..."}

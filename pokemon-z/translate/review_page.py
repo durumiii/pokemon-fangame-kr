@@ -91,7 +91,10 @@ def scene_of(fp, why, ok=frozenset(), all_rows=False):
         # 절 단위 검수(Z-71 본가 채택 등) — 좌표가 없어 map=-1로 세운다.
         # 판정 id는 「절#줄색인」이라 apply_verdicts가 못 읽고(의도), 절별 반영
         # 도구가 판정 파일을 읽어 넣는다.
-        mid, ev, pg, name = -1, "0", "0", "절 " + sec.group(1)
+        # ⚠ event는 절 이름 그대로 — "0"으로 두면 장면 일괄 승인 기록이 전 절에서
+        #   event:-1:0-0 한 열쇠로 겹쳐 서로를 덮는다(2026-08-19 실사고, 09-item
+        #   40행 일괄 기록이 특성 1행 일괄에 덮였다).
+        mid, ev, pg, name = -1, sec.group(1), "0", "절 " + sec.group(1)
     else:
         mid, ev, pg = int(m.group(1)), m.group(2), m.group(3) or "0"
         name = mapname.ko(mid) or f"맵 {mid}"
@@ -142,7 +145,9 @@ def collect(d, ok=None, done=None, all_rows=False):
         if fp.name.startswith("screen"):
             continue
         sc = scene_of(fp, why, ok, all_rows)
-        if sc and (sc["map"], int(sc["event"])) not in done:
+        # 절 장면(map=-1)의 event는 절 이름이라 int로 못 읽는다 — 승인 이벤트 기록은
+        # 맵 좌표만 담으므로 절은 애초에 거기 없다.
+        if sc and (sc["map"] == -1 or (sc["map"], int(sc["event"])) not in done):
             out.append(sc)
     return out
 
@@ -306,13 +311,13 @@ function render(){
       <span class="meta">맵 ${sc.map} · 이벤트 ${esc(sc.event)}-${esc(sc.page)} ·
         ${esc(sc.cast.join(' · '))} · 장면 ${sc.total}행 중 <b>${sc.rows.length}행 선별</b></span>
       <span class="act" style="margin-left:auto"><button data-all="1">이벤트 일괄 승인</button>
-        <button data-flow="1">장면 흐름</button></span></div>`;
+        ${sc.map===-1?'':'<button data-flow="1">장면 흐름</button>'}</span></div>`;
     const setters=[];
     for (const r of sc.rows){
       const card=document.createElement('div'); card.className='card';
       card.innerHTML=`<div class="hd"><span class="who">${esc(r.who)}</span>
           <span class="rid">${r.id}</span>
-          <button class="ctxbtn" style="margin-left:auto">문맥</button></div>
+          ${sc.map===-1?'':'<button class="ctxbtn" style="margin-left:auto">문맥</button>'}</div>
         <div class="why">${r.why.map(w=>`<div><b>${esc(w['유형'])}</b>
           <span class="lay">· ${esc(w['층'])}</span>${w['근거']?' — '+esc(w['근거']):''}</div>`).join('')}</div>
         <div class="es">${esc(r.es)}</div>
@@ -349,7 +354,8 @@ function render(){
       sec.appendChild(card);
     }
     sec.querySelectorAll('.ctxbtn').forEach((b,i)=>b.onclick=()=>openFlow(sc, sc.rows[i].id));
-    sec.querySelector('[data-flow]').onclick=()=>openFlow(sc, null);
+    // 절 장면(map=-1)은 흐름이 절 전체라 문맥이 아니다 — 두 버튼을 아예 안 낸다
+    sec.querySelector('[data-flow]')?.addEventListener('click',()=>openFlow(sc, null));
     sec.querySelector('[data-all]').onclick=()=>setters.forEach(f=>f('new'));
     SET.push(setters);
     body.appendChild(sec);

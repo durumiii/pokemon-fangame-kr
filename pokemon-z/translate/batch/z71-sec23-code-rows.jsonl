@@ -1,0 +1,15 @@
+{"id": "23-script-texts#2814", "who": "본가채택", "es": "{1} Hembra", "old": "{1} 암컷", "new": "암컷의 모습"}
+{"id": "23-script-texts#3454", "who": "본가채택", "es": "ID N°<r>{1}<br>", "old": "ID No.<r>{1}<br>", "new": "IDNo."}
+{"id": "23-script-texts#3998", "who": "본가채택", "es": "¡{2} de {1} evita quedarse dormido!", "old": "{1}의 {2}\\j[이,가] 잠드는 것을 막았다!", "new": "잠듦 상태가 되지 않는다."}
+{"id": "23-script-texts#4008", "who": "본가채택", "es": "¡El equipo de {1} está protegido por Velo Sagrado!", "old": "{1}의 파티는 신비의부적으로 보호받고 있다!", "new": "우리 편은 신비의 베일에 둘러싸였다!"}
+{"id": "23-script-texts#4042", "who": "본가채택", "es": "¡{1} se encuentra confuso!", "old": "{1}\\j[은,는] 혼란에 빠졌다!", "new": "우리 편 포켓몬은 혼란에 빠졌다!"}
+{"id": "23-script-texts#4087", "who": "본가채택", "es": "¡Es un golpe crítico en {1}!", "old": "{1}의 급소에 맞았다!", "new": "급소에 맞았다!"}
+{"id": "23-script-texts#4220", "who": "본가채택", "es": "¡{1} no pudo escapar!", "old": "{1}\\j[은,는] 도망칠 수 없었다!", "new": "도망칠 수 없었다!"}
+{"id": "23-script-texts#43", "who": "본가채택", "es": "Enter {1}'s name.", "old": "{1}의 이름을 입력하십시오.", "new": "이름을 입력해 주십시오."}
+{"id": "23-script-texts#4395", "who": "본가채택", "es": "¡{1} ha restaurado los PP de {3} con {2}!", "old": "{1}\\j[은,는] {2}\\j[으로,로] {3}의 PP를 회복했다!", "new": "PP를 회복했다!\\c"}
+{"id": "23-script-texts#4431", "who": "본가채택", "es": "¡Truco Defensa ha protegido a {1}!", "old": "트릭가드가 {1}\\j[을,를] 지켰다!", "new": "상대 주변을 트릭가드가 보호하고 있다!"}
+{"id": "23-script-texts#4463", "who": "본가채택", "es": "¡{1} ha cambiado a su Forma Escudo!", "old": "{1}\\j[은,는] 실드폼으로 바뀌었다!", "new": "실드폼 체인지!"}
+{"id": "23-script-texts#4535", "who": "본가채택", "es": "¡Las Púas Tóxicas lanzadas alrededor de {1} desaparecieron!", "old": "{1} 주위에 깔린 독압정이 사라졌다!", "new": "상대 발밑의 독압정이 사라졌다!"}
+{"id": "23-script-texts#4606", "who": "본가채택", "es": "¡{1} no tiene más Pokémon que puedan pelear!", "old": "{1}에게 더 이상 싸울 수 있는 포켓몬이 없다!", "new": "싸울 수 있는 포켓몬이 없다!"}
+{"id": "23-script-texts#4997", "who": "본가채택", "es": "No se puede usar en un Pokémon debilitado.", "old": "쓰러진 포켓몬에게는 쓸 수 없다.", "new": "기절한 포켓몬에게는 쓸 수 없습니다.\\c"}
+{"id": "23-script-texts#5130", "who": "본가채택", "es": "\\GNo tienes el dinero suficiente.", "old": "\\G돈이 부족합니다.", "new": "돈이 부족합니다!\\c"}
