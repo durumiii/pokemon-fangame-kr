@@ -52,4 +52,28 @@ class Game_Map
     end
     return true
   end
+
+  # 같은 결함의 남은 반쪽 — pbEndSurf(103_PField_HiddenMoves.rb)가 부르는 지형 조회다.
+  # 여기도 다리 건너뛰기가 bridge==0일 때만 걸려서, 표시가 켜진 채 다리 밑에 들어가면
+  # 데크의 지형 15가 나와 「물 위가 아니다」로 읽히고 그 자리에서 하선당한다.
+  # 통행 판정만 고쳐서는 다리 밑을 지나갈 수 없어 이쪽도 같은 꼴로 고친다.
+  # surfing 추가는 !countBridge 갈래 안에서만 — 진짜 다리 태그가 필요해 countBridge=true로
+  # 부르는 호출들은 원래대로 다리 태그를 받는다.
+  def terrain_tag(x, y, countBridge=false)
+    if @map_id != 0
+      for i in [2, 1, 0]
+        tile_id = data[x, y, i]
+        next if tile_id && PBTerrain.isBridge?(@terrain_tags[tile_id]) &&
+                !countBridge && $PokemonGlobal &&
+                ($PokemonGlobal.bridge==0 || $PokemonGlobal.surfing)
+        if tile_id == nil
+          return 0
+        elsif @terrain_tags[tile_id] && @terrain_tags[tile_id] > 0 &&
+           @terrain_tags[tile_id]!=PBTerrain::Neutral
+          return @terrain_tags[tile_id]
+        end
+      end
+    end
+    return 0
+  end
 end

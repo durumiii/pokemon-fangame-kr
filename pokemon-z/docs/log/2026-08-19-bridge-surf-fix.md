@@ -73,23 +73,46 @@
   (43,22)에서 남쪽 (43,28)까지 폭 탐색: 원본은 네 조건 전부 막힘, 수술본은
   `bridge==0`에서 통과하며 다리 밑 열네 칸에 모두 닿는다.
 
-### 남은 구멍 — `terrain_tag`는 아직 다리를 건너뛰지 않는다
+### 2차 수술 — `terrain_tag`도 같은 꼴로 닫았다
 
-같은 시뮬레이션에서 `$PokemonGlobal.bridge > 0`이면 수술본도 여전히 막힌다.
-`Game_Map#terrain_tag`(016_Game_Map.rb:380)의 다리 건너뛰기가 `bridge==0`일 때만 걸려서,
-표시가 켜진 채면 데크의 지형 15가 그대로 나오고 `pbEndSurf`가 하선시킨다. 표시는 맵을
-옮겨도 꺼지지 않으므로 다리를 한 번이라도 건넌 판에서는 이쪽이 남는다.
-
-`playerPassable?`에 넣은 것과 같은 꼴의 한 줄이면 닫힌다:
+1차만으로는 `$PokemonGlobal.bridge > 0`(다리를 한 번 건넌 판 — 사실상 모든 판)에서 여전히
+막혔다. 관문은 `pbEndSurf`(103_PField_HiddenMoves.rb:524)가 부르는 `Game_Map#terrain_tag`
+(016_Game_Map.rb:380)로, 그 다리 건너뛰기도 `bridge==0`일 때만 걸려서 표시가 켜져 있으면
+데크의 지형 15가 나오고 그 자리에서 하선당한다. 같은 규율으로 원문 전문을 떠 와 한 줄만 바꿨다.
 
     - next if tile_id && PBTerrain.isBridge?(@terrain_tags[tile_id]) &&
     -         $PokemonGlobal && $PokemonGlobal.bridge==0 && !countBridge
-    + next if tile_id && PBTerrain.isBridge?(@terrain_tags[tile_id]) && !countBridge &&
-    +         $PokemonGlobal && ($PokemonGlobal.bridge==0 || $PokemonGlobal.surfing)
+    + next if tile_id && PBTerrain.isBridge?(@terrain_tags[tile_id]) &&
+    +         !countBridge && $PokemonGlobal &&
+    +         ($PokemonGlobal.bridge==0 || $PokemonGlobal.surfing)
 
-모드 스크립트를 다른 갈래에서 손대고 있어 이번 커밋에는 넣지 않았다 — 유지자 판정 대기.
+surfing 추가는 `!countBridge` 갈래 안에만 들어가므로, 진짜 다리 태그가 필요해
+`countBridge=true`로 부르는 호출들은 원래대로 다리 태그를 받는다.
+
+시뮬레이션(`cross.py`)을 terrain_tag 수술 반영 꼴로 고쳐 8조합을 다시 돌린 결과:
+
+| 맵 | bridge | BridgeFix | 결과 | 다리밑 도달 |
+|---|---|---|---|---|
+| 원본 | 0 | X | 통과 | 14/14 |
+| 원본 | 0 | O | 통과 | 14/14 |
+| 원본 | 2 | X | 막힘 | 0/14 |
+| 원본 | 2 | O | 통과 | 14/14 |
+| 수정본 | 0 | X | 통과 | 14/14 |
+| 수정본 | 0 | O | 통과 | 14/14 |
+| 수정본 | 2 | X | 막힘 | 0/14 |
+| 수정본 | 2 | O | 통과 | 14/14 |
+
+모드를 얹은 네 줄이 전부 통과다(직전에는 `bridge=2` 두 줄이 막힘이었다). 막힌 두 줄은
+모드를 안 얹은 순정 엔진이라 예상대로다.
+
+⚠ **이 표는 맵 수술이 필요한지 되묻게 만든다** — `terrain_tag`까지 고치면 원본 맵도
+`bridge=2`에서 14/14로 통과한다. 맵 수술의 전제(데크 밑에 물 타일이 없어 하선당한다)와
+어긋나므로, 맵 수술을 걷을지는 실측 대조 뒤 유지자가 정할 일로 남겨 둔다.
 
 ## 남은 것
 
-실기 확인 — 19번도로(맵 299)의 다리 아래 물길을 파도타기로 지나가 보는 것. 위의
-`terrain_tag` 구멍 때문에, 다리를 건너지 않고 물에 들어간 판에서 먼저 봐야 한다.
+실기 확인 — 19번도로(맵 299)의 다리 아래 물길을 파도타기로 지나가 보는 것. 다리를 건넌
+뒤(`bridge` 표시가 켜진 판)에 봐야 이번 2차 수술이 실제로 걸리는지 확인된다.
+
+맵 수술의 필요 여부 — 위 표의 「원본 맵 + 모드」 줄이 통과하므로 맵 파일 교체가 없어도
+될 수 있다. 실기에서 원본 맵으로 확인되면 걷는 쪽을 검토한다.
