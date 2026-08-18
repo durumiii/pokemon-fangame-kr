@@ -65,7 +65,7 @@ GAME = Path("/mnt/d/Game/Pokemon Z/V2.18/Data")
 OUT = HERE / "data" / "speaker-attr.jsonl.gz"
 KO_MAPS = HERE / "ko" / "00-maps.jsonl"
 
-TAG = re.compile(r"^(?:\\c\[\d+\])?<b>([^<:]{1,24}):</b>")
+TAG = re.compile(r"^(?:\\c\[\d+\])?(?:\\sh)?(?:\\c\[\d+\])?<b>([^<:]{1,24}):</b>")
 
 # 정답을 아는 자리 — 유지자가 실기·제보로 확정한 것들 (원문 조각, 기대 화자, 출처)
 KNOWN = [
