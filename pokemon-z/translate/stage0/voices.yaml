@@ -719,12 +719,6 @@ voices:
   instruction: 차분한 해요체 — 교배소 안내.
   samples: []
   source: translate/voice-prompts.jsonl
-- group: 세룰레오
-  match:
-    name: 세룰레오
-  instruction: 너스레 반말 — 술 마시다 들킨 수도승.
-  samples: []
-  source: translate/voice-prompts.jsonl
 - group: 시골 아낙
   match:
     name: 시골 아낙
@@ -1086,4 +1080,23 @@ voices:
   instruction: 술에 절어 사는 파계 수도사. 스스럼없는 반말에 술주정 추임새(「딸꾹!」)와 신세 한탄·능청이 섞인다. 복수 부탁도 거래 흥정도 격은 올리지 않고, 교단·화학 얘기에서만 잠깐 진지해진다.
   samples: []
   source: Z-53 ① 스튜디오 판정(2026-08-18)
-  note: 이름표 Cerúleo(그림 monjeAcrilico) — 유지자 판정 「인물 등재」. 잡담 스프라이트가 아니라 인물 층이다.
+  note: 이름표 Cerúleo(그림 monjeAcrilico) — 유지자 판정 「인물 등재」. 잡담 스프라이트가 아니라 인물 층이다. 옛 항목(「너스레 반말 — 술 마시다 들킨 수도승」, voice-prompts 유래)을 이 항목이 대체한다(같은 방향, 2026-08-18 합침).
+- group: 병사들
+  match:
+    name: 병사들
+  instruction: 왕국 병사들의 집단 외침·복명. 군인의 단정체 「~다/~해라」로 짧게 — 여럿이 한 이름표라 개인차를 내지 않는다.
+  samples: []
+  source: Z-53 ① 마감(2026-08-18)
+- group: 이설시티의 병사들
+  match:
+    name: 이설시티의 병사들
+  instruction: 이설시티 진영 병사들의 집단 함성·위협. 군인의 단정체로, 이설시티 정예 병사 넷(드루몬드·한스·블라디미르·보스토크)과 한 결.
+  samples: []
+  source: Z-53 ① 마감(2026-08-18)
+- group: 미라의 총사들
+  match:
+    name: 미라의 총사들
+  instruction: 총사와 같다 — 보고체 합쇼체, 상관 호칭 정확히. 집단 이름표라 개인차를 내지 않는다.
+  samples: []
+  source: Z-53 ① 마감(2026-08-18)
+  note: 「Mosqueteros」 항목의 집단 변형 — canon의 Mosqueteros de Mirra 표기가 여기로 해석된다
