@@ -47,6 +47,8 @@ def main():
 
     copy, new, missing, crc_fail = [], [], [], []
     for r in rows:
+        if r.get("owner"):  # 다른 모드 소유 자산 — Z-GUI 반입 대상 아님
+            continue
         name = r["file"]
         src = cards / name
         if not src.exists():
