@@ -57,6 +57,25 @@ EDITS = [
 # 직행해 Sí/No가 스페인어로 노출되는 기능 버그(제보 목록 「제보 6건」의 첫 건).
 # Messages 절이 Interpreter/Game_Interpreter 양쪽에 같은 본문을 정의하므로
 # 한 EDIT이 2곳을 치환한다. 조회는 게임의 정규 사슬(맵 해시 → 맵0 폴백)을 그대로 탄다.
+# Z-18: 조임 개시 문구 수술 (2026-08-19).
+# ① PBMoves에 INFESTATION 상수가 없다 — moves.txt 상수는 ACOSO(엉겨붙기의 서반아 정식명)라
+#    분기가 죽어 있었다(isConst?는 미정의 상수에 false). 상수를 실물로 바꾼다.
+# ② 전용 분기 없는 조임 기술 셋(SALAZON·SNAPTRAP·FERROPRISION)이 else의 소용돌이 문구를
+#    쓰던 것을 기술별 분기로 가른다. 새 키 셋은 23-script-texts.add.jsonl에 얹었다.
+#    ⚠ 치환 결과가 옛 리터럴을 부분 문자열로 품으면 멱등 검사(new in src and old not in src)가
+#    깨진다 — 마지막 폴백의 인자 앞에 공백 하나를 두어 옛 문자열과 갈랐다.
+EDITS += [
+    ("PokeBattle_MoveEffects",
+     'elsif isConst?(@id,PBMoves,:INFESTATION)',
+     'elsif isConst?(@id,PBMoves,:ACOSO)'),
+    ("PokeBattle_MoveEffects",
+     '@battle.pbDisplay(_INTL("¡{1} quedó atrapado en el torbellino!",opponent.pbThis))',
+     '@battle.pbDisplay(isConst?(@id,PBMoves,:SALAZON) ? _INTL("¡{1} está siendo salado!",opponent.pbThis) : '
+     'isConst?(@id,PBMoves,:SNAPTRAP) ? _INTL("¡{1} quedó atrapado en el cepo!",opponent.pbThis) : '
+     'isConst?(@id,PBMoves,:FERROPRISION) ? _INTL("¡{1} quedó atrapado en Ferroprisión!",opponent.pbThis) : '
+     '_INTL("¡{1} quedó atrapado en el torbellino!", opponent.pbThis))'),
+]
+
 # 루비 1.8 문법 유의.
 # ⚠ 아래 좌표 조회 EDIT이 **산 클래스 쪽만** 다시 덮어 기준 맵을 @map_id로 바꾼다 —
 # 여기 남는 $game_map.map_id는 죽은 Game_Interpreter 쪽 사본이다. 그 죽은 복제를 언젠가
