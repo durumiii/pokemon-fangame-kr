@@ -117,7 +117,9 @@ RPG Maker 이벤트는 겉모양이 같아도 플레이어가 겪는 방식이 �
 `flag-register.jsonl`(스위치 433종) · `var-register.jsonl`(변수 191종) ·
 `flag-recheck-80.jsonl`(등재 독립 재판정) · `counter-pages.jsonl`(기능 창구 357페이지,
 채점 게이트가 이것을 뺀다) · `lost-flag-labels.jsonl`(2026-08-14 등재 수선으로 플롯 신호를
-잃은 47페이지 전수 라벨).
+잃은 47페이지 전수 라벨). 같은 폴더의 나머지 넷(`new-series`·`tag-pages-159`·
+`tag-roster-160`·`var111-pages`)은 등재가 아니라 **닫힌 조사의 박제**다 — 코드 소비자
+0건, 출신은 2026-08-14 조사 문서 둘(series-verify·tag-whitelist)이 인용한다.
 
 **신호를 고쳤으면 그 신호를 만든 라벨로 다시 재지 마라.** 새 라운드를 뽑아야 한다.
 그리고 채점표의 「표본놓침」 칸을 먼저 보라 — 재현율 추정을 떠받치는 실제 관측 수이고,
