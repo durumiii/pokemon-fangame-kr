@@ -8,7 +8,7 @@
 
     uv run translate/scene_eval.py sample 200 --round 4   # 블라인드 시트 만들기
     uv run translate/scene_eval.py score                  # 쌓인 라벨로 신호 채점
-    uv run translate/scene_eval.py score --pool 버림      # 버리는 층만
+    uv run translate/scene_eval.py sample 100 --pool 버림  # 버리는 층만 표집
 
 ⚠ 표본 시트에는 좌표와 원문만 싣는다 — 층·플래그·화자를 실으면 라벨이 오염되고
 그 라운드는 통째로 못 쓴다. 라벨러에게 이 파일도 열지 말라고 일러라.

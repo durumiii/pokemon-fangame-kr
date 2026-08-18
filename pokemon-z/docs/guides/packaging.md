@@ -94,7 +94,8 @@ UI Text KR이 키보드 기준으로 적고 저쪽 `004_PadLabels`가 덮는다.
     uv run runa/make-hangul-variant.py # BW 마스터 — DPPt의 한글만 갈아 끼운다
     uv run runa/make-font-mods.py      # 글꼴 모드 셋(DPPT·Galmuri·BW Font)
 
-재료는 번역표 정본(`translate/ko/`)과 「한글패치 코어」 모드다. 같은 재료로 몇 번을
+재료는 번역표(`translate/ko/` — 정본 `translate/stage0/`에서 emit이 내는 빌드 산출물)와
+「한글패치 코어」 모드다. 같은 재료로 몇 번을
 돌려도 바이트까지 같다 — 글꼴에 저장 시각이 새로 매겨지지 않게 `recalcTimestamp=False`를
 쓴다(안 그러면 설치 판정이 「원본이 달라졌다」로 읽는다).
 
@@ -123,7 +124,8 @@ UI Text KR이 키보드 기준으로 적고 저쪽 `004_PadLabels`가 덮는다.
   `share/ruby-compat.rb`.
 - **소스 수술** — 파싱·의미론이 갈리는 자리는 심으로 못 덮는다. `share/patch_ruby_compat.py`가
   코어 안에서 직접 갈아 끼운다(멱등 — 다시 돌리면 이미 된 것은 건너뛴다. 보관소 기반판·
-  게임 설치본 양쪽이 기본 대상). 지금 열두 갈래이고, 1.8 관용구가 3.x에서 깨지는 부류다:
+  게임 설치본 양쪽이 기본 대상). 갈래 목록은 코드(`REGEX_EDITS` 표 + 전용 함수)가
+  정본이고, 1.8 관용구가 3.x에서 깨지는 부류다:
   1.8 전용 구문(`when N:`·rescue 밖 `retry`) · 정규식 리터럴의 높은 바이트 표기 ·
   바이트를 `문자열[i]`로 읽는 자리 · `nil.id`·`Object#id` 전제 · `String#getbyte`
   무조건 별칭 · `proc` 안의 `return`(1.8은 `proc`이 `lambda`였다) · 이름 입력창의
