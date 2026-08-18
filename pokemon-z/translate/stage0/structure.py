@@ -87,15 +87,18 @@ def row_layer(row):
 def voice_ref(row):
     """한 행의 말투가 어느 표로 가나 — (표, 그 표의 열쇠).
 
-    이름표(`how`가 태그·상속)면 말투표(voices)를 이름으로 열고, 그림(`how="그림"`)이면
-    페르소나표(groups)를 스프라이트로 연다. 그 밖(미상·선택지·지문)은 표가 없다.
+    이름표(`how`가 태그·상속·분기다름)면 말투표(voices)를 이름으로 열고, 그림
+    (`how="그림"`)이면 페르소나표(groups)를 스프라이트로 연다. 그 밖(미상·선택지·
+    지문)은 표가 없다. 분기다름은 Z-58 판정(2026-08-19 ① 통째 편입)으로 들어왔다 —
+    분기 갈래에 섞인 시스템 진행 문구가 인물 목소리 지시를 받는 위험은 태그·상속과
+    같은 결이고, 지문 갈래 휴리스틱(Z-53 ② 꼬리 nkind)이 서면 한번에 거른다.
     열쇠가 비어도 표는 알려 준다 — 「그림인데 스프라이트가 없다」와 「그림이 아니다」는
     거르는 자리가 다르다(batch_pages의 페르소나표 밖 셈이 그 차이를 센다).
     """
     how = row.get("how") or ""
     if how == "그림":
         return GROUPS, row.get("sprite") or ""
-    if how in ("태그", "상속"):
+    if how in ("태그", "상속", "분기다름"):
         return VOICES, row.get("who") or ""
     return "", ""
 
@@ -108,6 +111,7 @@ def selftest():
     assert voice_ref({"how": "그림", "sprite": "campesinaw"}) == (GROUPS, "campesinaw")
     assert voice_ref({"how": "그림"}) == (GROUPS, "")
     assert voice_ref({"how": "상속", "who": "멜리아"}) == (VOICES, "멜리아")
+    assert voice_ref({"how": "분기다름", "who": "F3"}) == (VOICES, "F3")   # Z-58 ① 편입
     assert voice_ref({"how": "미상", "who": "멜리아"}) == ("", "")
     # 행에 적힌 층이 페이지 판정을 이긴다 — 사람이 행 하나만 고쳐 둔 자리를 안 잃는다
     assert row_layer({"id": "m0.e51.p0.c1", "layer": "PS"}) == "PS"
