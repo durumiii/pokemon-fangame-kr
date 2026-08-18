@@ -4995,7 +4995,7 @@
 {"k": "{1} se ha vuelto más amable. ¡Su Velocidad de base ya no puede bajar más!", "v": "{1}\\j[이,가] 당신을 매우 잘 따른다! 하지만 기초 스피드가 줄었다!"}
 {"k": "{1} se ha vuelto más amable. ¡Pero tiene menos Velocidad de base!", "v": "{1}\\j[이,가] 더 친근해졌다. 하지만 기초 스피드가 줄었다!"}
 {"k": "¡{1} ha cambiado de forma!", "v": "{1}\\j[은,는] 폼이 바뀌었다!"}
-{"k": "No se puede usar en un Pokémon debilitado.", "v": "쓰러진 포켓몬에게는 쓸 수 없다."}
+{"k": "No se puede usar en un Pokémon debilitado.", "v": "기절한 포켓몬에게는 쓸 수 없다."}
 {"k": "No tuvo efecto.", "v": "효과가 없었다."}
 {"k": "No tienes espacio para separar a los Pokémon.", "v": "포켓몬을 분리할 공간이 없다."}
 {"k": "¿Fusionar con qué Pokémon?", "v": "어느 포켓몬과 합칠까?"}
