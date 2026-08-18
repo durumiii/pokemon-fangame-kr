@@ -166,7 +166,11 @@ def grade(text, lenient=False):
 
 
 def axis(text):
-    """(축, 근거어절, 물러난 횟수) — 뒤에서부터 종결이 분명한 문장을 찾는다."""
+    """(축, 근거어절, 물러난 횟수) — 뒤에서부터 종결이 분명한 문장을 찾는다.
+
+    「~다」 종결은 인칭 표지가 있어야 대화(하대)다 — 표지 없는 지문평서(B5)는
+    청자를 앞에 둔 말이 아니라서 급 판정을 보류한다(Z-66 할 일 1: grade()의
+    SPEECHY 구분을 급 검사도 쓴다. 2026-08-18)."""
     parts = sentences(text)
     for back, part in enumerate(reversed(parts)):
         bucket, last = classify(part)
@@ -175,6 +179,8 @@ def axis(text):
         if bucket in LOW:
             if bucket == "해체" and AMBIG.search(last) and back + 1 < len(parts):
                 continue  # 조각일 수 있다 — 앞 문장을 본다
+            if bucket == "평서다" and not speechy(text):
+                continue  # 지문평서 — 대화가 아니다
             return "하대", last, back
     return "", "", 0
 
@@ -296,7 +302,10 @@ def selftest():
     assert axis("이것을 증표로 받아주십시오.")[0] == "존대"
     assert axis("나랑 같이 가자!")[0] == "하대"
     assert axis("우리 마을은 항상 평화롭단다.")[0] == "하대"
-    assert axis("포켓몬 도감을 받았다!")[0] == "하대"
+    # 지문평서는 급 판정 보류 — 인칭 표지가 있으면 대화단정으로 하대 (Z-66 할 일 1)
+    assert axis("포켓몬 도감을 받았다!")[0] == ""
+    assert axis("전기 장벽이 길을 막고 있다!")[0] == ""
+    assert axis("나쁘게 듣진 마라, 하지만 난 너희 쪽 녀석들 손에 많은 전우를 잃었다.")[0] == "하대"
     # 물러나기는 마지막 문장이 조각일 때만
     assert axis("고마워!")[2] == 0
     # 2026-08-09 보강: 문미 호칭 「군」은 종결어미가 아니다 (구 Z-29)
