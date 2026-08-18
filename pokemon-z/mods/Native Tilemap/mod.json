@@ -1,9 +1,9 @@
 {
   "name": "Native Tilemap",
   "game": "Pokemon Z Fangame",
-  "version": "0.1",
+  "version": "0.2",
   "summary": "맵 렌더러를 엔진 내장 타일맵으로 되돌립니다 (Joiplay 렌더 깨짐 우회)",
-  "description": "맵 타일을 그리는 렌더러를 게임의 커스텀 구현(MAPVIEWMODE=1) 대신 엔진 내장 타일맵(0)으로 되돌리는 모드예요. Joiplay에서 커스텀 렌더러가 깨지는 문제를 우회해요.\n\n상수를 고치지 않고 유일한 소비처인 PokemonSystem#tilemap을 덮어요. 내장 타일맵을 못 쓰는 환경이면 게임의 TilemapLoader가 스스로 커스텀 렌더러로 폴백하므로, 최악의 경우가 현행 동작이에요.\n\n설치는 파일 복사가 아니라 주입입니다 — pokemon-z/inject.py 또는 라이브러리 모드 관리자로 설치해요.",
+  "description": "맵 타일을 그리는 렌더러를 게임의 커스텀 구현(MAPVIEWMODE=1) 대신 엔진 내장 타일맵(0)으로 되돌리는 모드예요. Joiplay에서 커스텀 렌더러가 깨지는 문제를 우회해요.\n\n다리가 놓인 맵 여섯 곳(5번도로·7번도로 북쪽·옛 고목내마을·18번도로·19번도로·미르 신시가지 서쪽)은 예외로 커스텀 렌더러를 그대로 씁니다. 다리 위에 올라섰을 때 다리를 캐릭터 아래로 내리는 보정이 커스텀 렌더러에만 있어서, 내장 렌더러로 그리면 다리가 캐릭터를 덮어요.\n\n상수를 고치지 않고 유일한 소비처인 PokemonSystem#tilemap을 덮어요. 내장 타일맵을 못 쓰는 환경이면 게임의 TilemapLoader가 스스로 커스텀 렌더러로 폴백하므로, 최악의 경우가 현행 동작이에요.\n\n설치는 파일 복사가 아니라 주입입니다 — pokemon-z/inject.py 또는 라이브러리 모드 관리자로 설치해요.",
   "engine": "essentials-v16",
   "install": "inject",
   "created_at": "2026-08-09",
