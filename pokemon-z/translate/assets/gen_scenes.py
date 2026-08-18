@@ -18,15 +18,22 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
-SC = Path("/tmp/claude-1000/-home-durumii-workspace-claude-native-pokemon-fangame-kr"
-          "/cb96cd66-0e0a-4e10-8e5f-614e8ecfd6a0/scratchpad")
+SC = Path(__file__).parent  # (구 scratchpad 상수 — repo로 정착)
 sys.path.insert(0, str(SC))
 from scenelib import strip_lines, strip_text, TEXT_W, TEXT_O  # noqa: E402
 
 REPO = Path(__file__).resolve().parents[2]
-SRC = SC / "scenes-src"
-OUT = SC / "cards"
-SHEETS = SC / "sheets"
+INSTALL = Path("/mnt/d/Game/Pokemon Z/V2.18/Graphics/Pictures")
+
+class _Src:
+    """원문판 해석 — 설치본 .orig가 있으면 그것, 없으면 본 파일(아직 안 덮은 바닐라)."""
+    def __truediv__(self, name):
+        o = INSTALL / (name + ".orig")
+        return o if o.exists() else INSTALL / name
+
+SRC = _Src()
+OUT = Path(__file__).resolve().parents[2] / "mods/Z-GUI/Graphics/Pictures"  # 정본 자리
+SHEETS = Path(__file__).resolve().parents[2] / "share/review-cards"
 FONTS = SC / "fonts"
 GAL = {14: FONTS / "Galmuri14.ttf", 11: REPO / "runa/fonts/src/Galmuri11.ttf",
        9: FONTS / "Galmuri9.ttf", 7: FONTS / "Galmuri7.ttf"}

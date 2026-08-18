@@ -23,9 +23,7 @@ LEDGER = ROOT / "translate/data/asset-texts.jsonl"
 INSTALL = Path("/mnt/d/Game/Pokemon Z/V2.18/Graphics/Pictures")
 CORE = Path("/mnt/d/GameVault/mods/Pokemon Z Fangame/Z-GUI")
 REPO_MOD = ROOT / "mods/Z-GUI/mod.json"
-DEFAULT_CARDS = Path("/tmp/claude-1000/-home-durumii-workspace-claude-native-"
-                     "pokemon-fangame-kr/cb96cd66-0e0a-4e10-8e5f-614e8ecfd6a0/"
-                     "scratchpad/cards")
+DEFAULT_CARDS = Path(__file__).resolve().parents[2] / "mods/Z-GUI/Graphics/Pictures"  # 정본
 
 
 def vanilla_crc(name):
