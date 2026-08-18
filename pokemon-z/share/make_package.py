@@ -54,7 +54,7 @@ DIST = HERE / "dist"
 
 # ─ 합본(runa) 전용 ───────────────────────────────────────────────────────────
 RUNA_MOD = STORE / "Pokemon Z Fangame" / "한글패치 코어"
-RUNA_INJECT = ["UI Text KR", "DPPT Font", "Type Matchup"]
+RUNA_INJECT = ["UI Text KR", "DPPT Font", "Type Matchup", "Bridge Fix"]
 # 카드의 `expects`가 순정 기준으로 뜬 모드 — 스테이징은 패치판이라 늘 어긋난다.
 # 기준선 재대조가 없어 `force`로 넘긴다(packaging 가이드 「mod.json의 expects」 절).
 # UI Text KR도 같은 처지가 됐다 — 호환 수술이 `SpriteWindow` 절의 다른 클래스

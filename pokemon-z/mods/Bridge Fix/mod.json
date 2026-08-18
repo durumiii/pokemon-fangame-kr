@@ -1,0 +1,24 @@
+{
+  "name": "Bridge Fix",
+  "game": "Pokemon Z Fangame",
+  "summary": "파도타기로 다리 밑 물길을 지나갈 수 있게 고칩니다",
+  "description": "다리 밑 물길이 파도타기로 막히는 원작 엔진의 통행 판정 결함을 고치는 모드예요.\n\n다리에 올라서면 켜지는 표시가 맵을 옮기거나 세이브를 불러와도 꺼지지 않아요. 그 상태로 물에 들어가면 통행 판정이 다리 타일에서 끝나 버려서, 다리 아래를 지나가야 하는 물길이 벽처럼 막힙니다.\n\n파도타기 중에는 다리 타일을 건너뛰고 아래 물 타일로 판정하게 바꿔요. 다리 위에서는 파도타기를 할 수 없으니 다른 상황의 통행은 그대로입니다.\n\n원본 메서드 Game_Map#playerPassable?를 통째로 다시 정의하므로, 같은 메서드를 건드리는 다른 모드와는 함께 쓸 수 없어요.",
+  "engine": "essentials-v16",
+  "install": "inject",
+  "created_at": "2026-08-19",
+  "scripts": [
+    {
+      "file": "000_BridgeSurf.rb",
+      "script_name": "000_BridgeSurf.rb"
+    }
+  ],
+  "touches": {
+    "methods": [
+      "Game_Map#playerPassable?"
+    ],
+    "files": []
+  },
+  "expects": {
+    "Game_Map": "2ed4b0f6a1a04157de25adbb84ffd93c"
+  }
+}
