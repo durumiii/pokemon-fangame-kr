@@ -7539,12 +7539,12 @@
 {"id": "m146.e15.p0.c85", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "kind": "battle", "how": "전투호출", "who": "Casandra"}
 {"id": "m146.e15.p0.c96", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "kind": "battle", "how": "전투호출", "who": "Keira"}
 {"id": "m146.e15.p0.c107", "src": "La luna se tiñe roja sobre mí.", "apply": "map", "kind": "battle", "how": "전투호출", "who": "Selleck"}
-{"id": "m146.e5.p0.c166", "src": "¡Varios Pokémon de tu equipo reciben estados alterados!", "apply": "map", "kind": "text", "how": "미상"}
-{"id": "m146.e11.p0.c166", "src": "¡Varios Pokémon de tu equipo reciben estados alterados!", "apply": "map", "kind": "text", "how": "미상"}
-{"id": "m146.e12.p0.c166", "src": "¡Varios Pokémon de tu equipo reciben estados alterados!", "apply": "map", "kind": "text", "how": "미상"}
-{"id": "m146.e13.p0.c166", "src": "¡Varios Pokémon de tu equipo reciben estados alterados!", "apply": "map", "kind": "text", "how": "미상"}
-{"id": "m146.e14.p0.c166", "src": "¡Varios Pokémon de tu equipo reciben estados alterados!", "apply": "map", "kind": "text", "how": "미상"}
-{"id": "m146.e15.p0.c166", "src": "¡Varios Pokémon de tu equipo reciben estados alterados!", "apply": "map", "kind": "text", "how": "미상"}
+{"id": "m146.e5.p0.c166", "src": "¡Varios Pokémon de tu equipo reciben estados alterados!", "apply": "map", "kind": "text", "how": "미상", "layer": "N"}
+{"id": "m146.e11.p0.c166", "src": "¡Varios Pokémon de tu equipo reciben estados alterados!", "apply": "map", "kind": "text", "how": "미상", "layer": "N"}
+{"id": "m146.e12.p0.c166", "src": "¡Varios Pokémon de tu equipo reciben estados alterados!", "apply": "map", "kind": "text", "how": "미상", "layer": "N"}
+{"id": "m146.e13.p0.c166", "src": "¡Varios Pokémon de tu equipo reciben estados alterados!", "apply": "map", "kind": "text", "how": "미상", "layer": "N"}
+{"id": "m146.e14.p0.c166", "src": "¡Varios Pokémon de tu equipo reciben estados alterados!", "apply": "map", "kind": "text", "how": "미상", "layer": "N"}
+{"id": "m146.e15.p0.c166", "src": "¡Varios Pokémon de tu equipo reciben estados alterados!", "apply": "map", "kind": "text", "how": "미상", "layer": "N"}
 {"id": "m146.e5.p0.c201", "src": "¡La fortuna está de tu lado, Aspirante! Permíteme sanar a tus Pokémon.", "apply": "map", "kind": "text", "how": "미상"}
 {"id": "m146.e11.p0.c201", "src": "¡La fortuna está de tu lado, Aspirante! Permíteme sanar a tus Pokémon.", "apply": "map", "kind": "text", "how": "미상"}
 {"id": "m146.e12.p0.c201", "src": "¡La fortuna está de tu lado, Aspirante! Permíteme sanar a tus Pokémon.", "apply": "map", "kind": "text", "how": "미상"}
