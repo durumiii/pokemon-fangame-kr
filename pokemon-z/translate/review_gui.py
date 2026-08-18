@@ -22,6 +22,7 @@
 import json
 import re
 import sys
+import threading
 import time
 import urllib.parse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -451,10 +452,17 @@ def load_verdicts(p):
     out = {}
     if p.exists():
         for line in p.read_text(encoding="utf-8").splitlines():
-            if line.strip():
+            if not line.strip():
+                continue
+            try:
                 r = json.loads(line)
-                key = r.get("id") or ("event:" + r.get("event", ""))
-                out[key] = r
+            except json.JSONDecodeError:
+                # 깨진 줄 하나가 화면·저장 전체를 마비시키던 사고(2026-08-19)의 가드 —
+                # 그 줄만 버리고 알린다. 판정 유실은 줄 단위에서 멈춘다.
+                print(f"⚠ 판정 기록 깨진 줄 건너뜀: {line[:60]!r}", file=sys.stderr)
+                continue
+            key = r.get("id") or ("event:" + r.get("event", ""))
+            out[key] = r
     return out
 
 
@@ -501,15 +509,22 @@ def progress(out_dir, scenes, verdicts=None, all_rows=False):
             "끝남": ask - left + j}
 
 
+_VLOCK = threading.Lock()
+
+
 def append_verdict(p, rec):
-    """자리마다 최종 판정 한 줄만 남긴다 — 같은 자리를 고쳐 누르면 그 줄을 갈아 끼운다."""
-    rec["ts"] = time.strftime("%Y-%m-%dT%H:%M:%S")
-    cur = load_verdicts(p)
-    cur[rec.get("id") or ("event:" + rec.get("event", ""))] = rec
-    tmp = p.with_suffix(".tmp")
-    tmp.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in cur.values()),
-                   encoding="utf-8")
-    tmp.replace(p)
+    """자리마다 최종 판정 한 줄만 남긴다 — 같은 자리를 고쳐 누르면 그 줄을 갈아 끼운다.
+
+    ⚠ 자물쇠 필수 — 스레드 서버에서 빠른 연타가 같은 .tmp를 겹쳐 쓰며 기록을
+    깨뜨렸고(2026-08-19, 같은 초 판정 다섯), 깨진 뒤의 판정이 전부 유실됐다."""
+    with _VLOCK:
+        rec["ts"] = time.strftime("%Y-%m-%dT%H:%M:%S")
+        cur = load_verdicts(p)
+        cur[rec.get("id") or ("event:" + rec.get("event", ""))] = rec
+        tmp = p.with_suffix(".tmp")
+        tmp.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in cur.values()),
+                       encoding="utf-8")
+        tmp.replace(p)
 
 
 def covers_map(out_dir):
