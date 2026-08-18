@@ -1,0 +1,74 @@
+# Z-53 ② 00-maps 구조화 — 설계 그림 (as-built + open)
+# render: cd docs/tickets && d2 Z-53-structmap.d2 Z-53-structmap.svg
+
+vars: {
+  d2-config: {
+    theme-id: 0
+    layout-engine: elk
+  }
+}
+
+direction: down
+
+classes: {
+  llm:    { style: { fill: "#FEF3C7"; stroke: "#D97706"; stroke-width: 2; border-radius: 8; font-color: "#78350F"; bold: true } }
+  learn:  { style: { fill: "#DBEAFE"; stroke: "#2563EB"; stroke-width: 2; border-radius: 8; font-color: "#1E3A8A"; bold: true } }
+  det:    { style: { fill: "#DCFCE7"; stroke: "#16A34A"; stroke-width: 2; border-radius: 8; font-color: "#14532D"; bold: true } }
+  data:   { style: { fill: "#F1F5F9"; stroke: "#64748B"; border-radius: 6 } }
+  open:   { style: { fill: "#FCE7F3"; stroke: "#DB2777"; stroke-width: 2; stroke-dash: 4; border-radius: 8; font-color: "#9D174E"; bold: true } }
+  artifact: { style: { fill: "#FFFFFF"; stroke: "#0F172A"; stroke-width: 3; border-radius: 4; shadow: true; bold: true } }
+  ext:    { style: { fill: "#FFFFFF"; stroke: "#94A3B8"; stroke-dash: 2; border-radius: 6; font-color: "#475569" } }
+}
+
+title: "Z-53 ② — 페이지 층과 공용 구분 로더" {
+  near: top-center
+  shape: text
+  style: { font-size: 24; bold: true }
+}
+
+game: "게임 원본\n(Map*.rxdata)" { class: ext }
+scan: "speaker.py scan\n(화자·층·장면 추론)" { class: det }
+attr: "귀속표 19,834행\ncls·scene·who·sprite·how" { class: data }
+game -> scan -> attr
+
+stage0: "정본 translate/stage0/" {
+  style: { fill: "#FAFAF9"; stroke: "#0F172A"; stroke-dash: 4 }
+  direction: down
+  gen: "gen.py 재생성\n(귀속표 칸을 그대로 복사)" { class: det }
+  ovr: "overrides.jsonl\n(사람 판정 한 줄)" { class: data }
+  sites: "sites.jsonl 37,970\n행 사실 who·how·kind" { class: artifact }
+  msgs: "messages.jsonl 41,061\n값·state·by" { class: artifact }
+  pages: "pages.jsonl 4,700 (미구현)\n페이지 판정 layer·scene·by·why" { class: open }
+  loader: "공용 구분 로더 (미구현)\n층·장면·말투 연결을 한 곳에서" { class: open }
+  gen -> sites
+  gen -> msgs
+  gen -> pages: "페이지 단위로 편다"
+  ovr -> gen: "재생성 끝에 얹힘"
+  sites -> loader
+  pages -> loader
+}
+attr -> stage0.gen
+
+consumers: "소비자 — 지금은 제각기 재계산" {
+  style: { fill: "#FFF7ED"; stroke: "#D97706"; stroke-dash: 4 }
+  reg: "register.py\n(kind+how+who)" { class: det }
+  batch: "batch_pages.py\n(갈래 셋, scene 한 줄)" { class: det }
+  mat: "materials.py\n(수제 조인)" { class: det }
+}
+attr -> consumers.reg: "as-built" { style: { stroke-dash: 3 } }
+attr -> consumers.batch: "as-built" { style: { stroke-dash: 3 } }
+stage0.loader -> consumers.reg: "전환 후"
+stage0.loader -> consumers.batch: "전환 후"
+stage0.loader -> consumers.mat: "전환 후"
+
+emit: "emit.py 역생성\n(diff 0 게이트)" { class: det }
+ko: "translate/ko/*.jsonl + 00-maps.loc.jsonl\n산출물 (loc도 왜까지 왕복)" { class: data }
+build: "build.py" { class: det }
+dat: "korean.dat" { class: data }
+gate: "gate.py 검사\n+ enum 검사 (미구현)" { class: open }
+
+stage0.sites -> emit
+stage0.msgs -> emit
+emit -> ko -> build -> dat
+stage0.sites -> gate
+stage0.pages -> gate: "정합 검사"
