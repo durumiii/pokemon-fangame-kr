@@ -5,7 +5,8 @@
 """edit 공용 한 벌 자체 검사 — 장난감 자료로 네 갈래만 본다.
 
 공유 항목은 그 맵의 전 자리가 함께 바뀌는가 · 통일 참조는 그 맵만 떨어져 나오는가 ·
-없는 열쇠는 조용히 0인가. 선택자 트리는 시끄럽게 거부하는가.
+없는 열쇠는 조용히 0인가. 선택자 트리는 시끄럽게 거부하는가 · 뜬 뒤에 코드가 바뀌면
+쓰기를 거부하는가.
 
 usage: uv run translate/stage0/test_edit.py
 """
@@ -39,7 +40,22 @@ MSGS = [
 ]
 
 
+def test_stale_guard():
+    """뜬 뒤에 stage0 코드가 바뀌면 쓰기를 거부한다(2026-08-19 옛 스튜디오 사고)."""
+    assert edit.stale_reason() is None
+    saved = edit._LOADED_STAMP
+    try:
+        edit._LOADED_STAMP = 0          # 「이 프로세스가 아주 옛날에 떴다」
+        why = edit.stale_reason()
+        assert why and "다시 켜고" in why, why
+        assert edit.put_lines([("00-maps.jsonl", 1, "아무거나")]) == why
+    finally:
+        edit._LOADED_STAMP = saved
+    assert edit.stale_reason() is None
+
+
 def main():
+    test_stale_guard()
     with tempfile.TemporaryDirectory() as td:
         d = Path(td)
         dump_jsonl(d / "sites.jsonl", SITES)
@@ -69,7 +85,7 @@ def main():
         assert [m["id"] for m in again.msgs] == [m["id"] for m in MSGS], "줄 순서가 밀렸다"
         assert MSGS[1]["val"] == "안녕", "원본을 건드렸다"
     cache_check()
-    print("edit 자체 검사 통과 — 공유 항목 · 통일 참조 떼기 · 없는 열쇠 · 선택자 트리 거부 · 순서 보존 · 캐시 무효화")
+    print("edit 자체 검사 통과 — 낡은 프로세스 가드 · 공유 항목 · 통일 참조 떼기 · 없는 열쇠 · 선택자 트리 거부 · 순서 보존 · 캐시 무효화")
 
 
 def cache_check():

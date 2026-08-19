@@ -23,6 +23,30 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import OUT, dump_jsonl, norm, read_jsonl, read_overrides  # noqa: E402
 from diff import rebuild  # noqa: E402
 
+# 오래 떠 있는 도구가 옛 코드로 정본을 쓰는 것을 막는다.
+# 2026-08-19 실사고: 전날 밤부터 떠 있던 스튜디오가 추가 키 채널(apply=kradd)을 모르는
+# 옛 diff를 물고 있다가, 저장 한 번에 그 채널의 평문 세 줄을 산출에서 걷어냈다.
+# 정본(stage0)은 무사했지만 산출과 dat가 갈려 verify가 절23 미러 어긋남으로 잡았다.
+# 역생성 코드가 바뀌면 같은 정본에서 다른 산출이 나오므로, 뜬 뒤에 코드가 바뀌었으면
+# 쓰기를 거부하고 재시작을 시킨다. 검사는 이 창구 한 곳 — 값 수정 도구 열하나가 여기로 온다.
+_SRC = sorted(Path(__file__).resolve().parent.glob("*.py"))
+
+
+def _src_stamp():
+    return max((p.stat().st_mtime_ns for p in _SRC), default=0)
+
+
+_LOADED_STAMP = _src_stamp()
+
+
+def stale_reason():
+    """뜬 뒤에 stage0 코드가 바뀌었으면 사유, 아니면 None."""
+    if _src_stamp() <= _LOADED_STAMP:
+        return None
+    newer = [p.name for p in _SRC if p.stat().st_mtime_ns > _LOADED_STAMP]
+    return ("정본 도구가 갱신됐다(" + ", ".join(sorted(newer)) + ") — 이 프로세스는 옛 "
+            "코드를 물고 있어 역생성 결과가 지금 판과 다를 수 있다. 껐다 다시 켜고 저장하라.")
+
 SHARED_RE = re.compile(r"^m\d+\.s\d+$")
 MAP_ID_RE = re.compile(r"^m(\d+)\.")
 
@@ -160,6 +184,9 @@ def put_lines(edits, allow_default=False):
     안 가면 한 상점 안에서 격이 섞인다.
     """
     with _lock:               # 스튜디오는 스레드 서버다 — 저장 둘이 겹치면 캐시가 엉킨다
+        stale = stale_reason()
+        if stale:
+            return stale
         return _put_lines(edits, allow_default)
 
 
