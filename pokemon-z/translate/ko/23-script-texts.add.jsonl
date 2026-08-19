@@ -1,6 +1,6 @@
 {"k": "krmart:반말|¿Te interesa algo de lo que tengo?", "v": "마음에 드는 물건이라도 있어?", "갈래": "반말", "차례": "첫 인사"}
 {"k": "krmart:반말|¿{1}? Buena elección.\n¿Cuántas unidades quieres?", "v": "{1}? 좋은 선택이야.\r\n몇 개 필요해?", "갈래": "반말", "차례": "수량 묻기"}
-{"k": "krmart:반말|{1}... Y quieres {2}.\nTe costará ${3}. ¿De acuerdo?", "v": "{1}... 그리고 {2}\\j[이,가] 필요하군.\r\n${3}인데 괜찮겠어?", "갈래": "반말", "차례": "수량 확인"}
+{"k": "krmart:반말|{1}... Y quieres {2}.\nTe costará ${3}. ¿De acuerdo?", "v": "{1}... {2}개 필요하군.\r\n${3}인데 괜찮겠어?", "갈래": "반말", "차례": "수량 확인"}
 {"k": "krmart:반말|{1} es una buena elección.\nTe costará ${2}. ¿De acuerdo?", "v": "{1}, 좋은 선택이야.\r\n${2}인데 괜찮겠어?", "갈래": "반말", "차례": "단품 확인"}
 {"k": "krmart:반말|¡Aquí tienes!\n¡Gracias!", "v": "자, 여기 있어!\r\n고마워!", "갈래": "반말", "차례": "구매 완료"}
 {"k": "krmart:반말|No tienes el dinero suficiente.", "v": "돈이 모자라잖아.", "갈래": "반말", "차례": "돈 부족"}
@@ -11,7 +11,7 @@
 {"k": "krmart:반말|¡Vuelve cuando quieras!", "v": "생각나면 또 와!", "갈래": "반말", "차례": "작별"}
 {"k": "krmart:하게체|¿Te interesa algo de lo que tengo?", "v": "마음에 드는 물건이 있는가?", "갈래": "하게체", "차례": "첫 인사"}
 {"k": "krmart:하게체|¿{1}? Buena elección.\n¿Cuántas unidades quieres?", "v": "{1}? 좋은 선택일세.\r\n몇 개나 필요한가?", "갈래": "하게체", "차례": "수량 묻기"}
-{"k": "krmart:하게체|{1}... Y quieres {2}.\nTe costará ${3}. ¿De acuerdo?", "v": "{1}... 그리고 {2}\\j[이,가] 필요하군.\r\n${3}인데 괜찮겠나?", "갈래": "하게체", "차례": "수량 확인"}
+{"k": "krmart:하게체|{1}... Y quieres {2}.\nTe costará ${3}. ¿De acuerdo?", "v": "{1}... {2}개 필요하군.\r\n${3}인데 괜찮겠나?", "갈래": "하게체", "차례": "수량 확인"}
 {"k": "krmart:하게체|{1} es una buena elección.\nTe costará ${2}. ¿De acuerdo?", "v": "{1}, 좋은 선택일세.\r\n${2}인데 괜찮겠나?", "갈래": "하게체", "차례": "단품 확인"}
 {"k": "krmart:하게체|¡Aquí tienes!\n¡Gracias!", "v": "자, 여기 있네!\r\n고맙네!", "갈래": "하게체", "차례": "구매 완료"}
 {"k": "krmart:하게체|No tienes el dinero suficiente.", "v": "돈이 모자라는군.", "갈래": "하게체", "차례": "돈 부족"}

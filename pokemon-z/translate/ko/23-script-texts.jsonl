@@ -3400,7 +3400,7 @@
 {"k": "No tienes el dinero suficiente.", "v": "돈이 부족하군요."}
 {"k": "{1} es una buena elección.\nTe costará ${2}. ¿De acuerdo?", "v": "{1}, 좋은 선택이에요.\r\n${2}인데 괜찮으시겠어요?"}
 {"k": "¿{1}? Buena elección.\n¿Cuántas unidades quieres?", "v": "{1}? 좋은 선택이에요.\r\n몇 개 드릴까요?"}
-{"k": "{1}... Y quieres {2}.\nTe costará ${3}. ¿De acuerdo?", "v": "{1}... 그리고 {2}\\j[이,가] 필요하시군요.\r\n${3}인데 괜찮으시겠어요?"}
+{"k": "{1}... Y quieres {2}.\nTe costará ${3}. ¿De acuerdo?", "v": "{1}... {2}개 필요하시군요.\r\n${3}인데 괜찮으시겠어요?"}
 {"k": "Error al borrar objeto guardado", "v": "저장된 도구 삭제 중 오류"}
 {"k": "No tienes espacio en la Mochila.", "v": "가방에 공간이 없다."}
 {"k": "¡Aquí tienes!\n¡Gracias!", "v": "네, 여기 있습니다!\r\n대단히 감사합니다!"}

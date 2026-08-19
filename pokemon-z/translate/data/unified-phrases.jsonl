@@ -390,7 +390,7 @@
 {"es": "Si se recibe un as, el jugador puede decidir si contarlo como 1 o como 13.", "ko": "에이스를 뽑으면 이를 1로 칠지 13으로 칠지 맘대로 정할 수 있지.", "맵수": 2, "src": "sync"}
 {"es": "¡Eh, eh! Que no pretendo estafarte, me gusta jugar limpio.", "ko": "이봐, 이봐! 널 속이려는 게 아냐, 난 정당하게 겨루는 걸 좋아한다고.", "맵수": 2, "src": "sync"}
 {"es": "Te ha tocado un as, ¿que valor le asignas? Recuerda que tienes que intentar sumar 21.", "ko": "에이스가 나왔군. 이 카드를 몇으로 치겠어? 합계가 21이 되도록 해야 한다는 걸 잊지 마라.", "맵수": 2, "src": "sync"}
-{"es": "Has recibido un \\v[135]. Recuerda que debes intentar sumar 21.", "ko": "\\v[135]를 받았어. 합이 21에 가까워져야 한다는 걸 잊지 마.", "맵수": 2, "src": "sync"}
+{"es": "Has recibido un \\v[135]. Recuerda que debes intentar sumar 21.", "ko": "\\v[135]\\j[을,를] 받았어. 합이 21에 가까워져야 한다는 걸 잊지 마.", "맵수": 2, "src": "sync"}
 {"es": "¿Quieres recibir otra carta?", "ko": "카드를 한 장 더 받겠어?", "맵수": 2, "src": "sync"}
 {"es": "<b>Contrincante:</b> ¡Bien! ¡Veamos quién ha ganado!", "ko": "<b>상대방:</b> 좋아! 누가 이겼는지 확인해 보자고!", "맵수": 2, "src": "sync"}
 {"es": "¡Tu contrincante gana la partida!", "ko": "상대방의 승리다!", "맵수": 2, "src": "sync"}

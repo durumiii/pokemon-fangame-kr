@@ -1488,7 +1488,7 @@
 {"k": "Es la tercera parte de una trilogía que cuenta la historia antigua de <b>Kalos</b> desde su fundación.", "v": "건국 이래 <b>칼로스</b>의 고대사를 다룬 3부작 중 세 번째 작품이죠!"}
 {"k": "Han traído dulces de muchas regiones exóticas. ¡Prueba esto, por ejemplo!", "v": "이국적인 여러 지방의 과자를 가져왔어요. 예를 들면 이것도 꼭 드셔 보세요!"}
 {"k": "¿Quién quiere hacerse con todos los Pokémon? ¡Yo prefiero hacerme con todos los dulces!", "v": "누가 포켓몬을 모두 모으고 싶어 하겠어요? 난 차라리 과자를 전부 모으겠어요!"}
-{"k": "<b>Capitán Merlot:</b> Tú eras \\PN, ¿verdad? ¡Celebro que nos hayamos podido reunir de nuevo!", "v": "<b>메를로 대장:</b> 자네가 \\PN이었지? 다시 만날 수 있게 되어 참으로 기쁘구나!"}
+{"k": "<b>Capitán Merlot:</b> Tú eras \\PN, ¿verdad? ¡Celebro que nos hayamos podido reunir de nuevo!", "v": "<b>메를로 대장:</b> 자네가 \\PN\\j[이었지,였지]? 다시 만날 수 있게 되어 참으로 기쁘구나!"}
 {"k": "<b>Capitán Merlot:</b> No dejo de pensar en ese dichoso nombre, <b>Alca</b>...", "v": "<b>메를로 대장:</b> 그 빌어먹을 이름, ‘<b>알카</b>’가 자꾸만 머릿속을 맴도는군..."}
 {"k": "\\c[2]<b>Olivier:</b>\\c[0] \\PN, <b>Crisanto</b>, imagino que os acordáis del <b>Capitán Merlot</b>, el padre de <b>Melia</b>.", "v": "\\c[2]<b>올리비에:</b>\\c[0] \\PN, <b>크리산토</b>. <b>멜리아</b>의 아버지인 <b>메를로 대장님</b>은 기억하고 있지?"}
 {"k": "<b>Capitán Merlot:</b> Quiero brindar por usted, <i>mademoiselle</i> <b>Olivier</b>. Está haciendo un trabajo estupendo con sus alumnos.", "v": "<b>메를로 대장:</b> <i>마드모아젤</i> <b>올리비에</b>, 자네를 위해 건배를 하지. 제자들을 아주 훌륭하게 가르치고 있더군."}
@@ -2738,7 +2738,7 @@
 {"k": "Me temo que tu <b>PokéTour</b> va a quedar interrumpido. ¡Tengo que arrestarte!", "v": "너의 <b>포켓투어</b>는 여기서 중단되어야겠구나. 너를 체포하겠다!"}
 {"k": "¿Cómo? ¡Esto podría considerarse alta traición! ¡Responderás ante las máximas autoridades de Kalos!", "v": "무어라? 이는 반역죄나 다름없다! 칼로스의 최고 권력자 앞에서 추궁을 받게 될 것이다!"}
 {"k": "<b>Capitán Merlot:</b> ¿Vas a seguir ofreciendo resistencia? Puedo llamar a los refuerzos que sean necesarios para prenderte.", "v": "<b>메를로 대장:</b> 끝까지 저항하겠다는 것이냐? 너를 사로잡기 위해서라면 얼마든지 지원군을 부를 수 있다."}
-{"k": "\\c[5]<b>Melia:</b>\\c[0] <i>Monsieur</i> <b>Merlot</b>, por favor, ¡pare! ¡\\PN es inocente!", "v": "\\c[5]<b>멜리아:</b>\\c[0] <b>메를로</b> <i>무슈</i>, 제발 멈춰 주세요! \\PN은 무죄예요!"}
+{"k": "\\c[5]<b>Melia:</b>\\c[0] <i>Monsieur</i> <b>Merlot</b>, por favor, ¡pare! ¡\\PN es inocente!", "v": "\\c[5]<b>멜리아:</b>\\c[0] <b>메를로</b> <i>무슈</i>, 제발 멈춰 주세요! \\PN\\j[은,는] 무죄예요!"}
 {"k": "<b>Capitán Merlot:</b> ¡<i>Sacrebleu</i>, <b>Melia</b>! ¿Tú también estás metida en esta situación?", "v": "<b>메를로 대장:</b> <i>Sacrebleu</i>, <b>멜리아</b>! 너까지 이 일에 얽혀 있는 거냐?"}
 {"k": "Unos minutos después...", "v": "몇 분 뒤..."}
 {"k": "<b>Capitán Merlot:</b> ¡Ya veo! ¡Así que eso es lo que ha pasado!", "v": "<b>메를로 대장:</b> 그렇군! 그런 사정이 있었단 말이지!"}
@@ -2817,7 +2817,7 @@
 {"k": "Ya has arrancado las bayas de este arbusto.", "v": "이 관목에서는 이미 나무열매를 다 땄다."}
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] Ahora, Absol. Acaba con ellos.", "v": "\\c[6]<b>미라:</b>\\c[0] 자, 이제 앱솔. 그들을 끝장내라."}
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] ¡Vaya! <i>Monsieur</i> \\PN, de nuevo.", "v": "\\c[6]<b>미라:</b>\\c[0] 와! <i>무슈</i> \\PN, 또 만났네."}
-{"k": "\\c[6]<b>Mirra:</b>\\c[0] ¡Vaya! <i>Mademoiselle</i> \\PN, de nuevo.", "v": "\\c[6]<b>미라:</b>\\c[0] 와! 또 <i>마드모아젤</i> \\PN이구나."}
+{"k": "\\c[6]<b>Mirra:</b>\\c[0] ¡Vaya! <i>Mademoiselle</i> \\PN, de nuevo.", "v": "\\c[6]<b>미라:</b>\\c[0] 와! 또 <i>마드모아젤</i> \\PN\\j[이구나,구나]."}
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] Esta zona de <b>Kalos</b> ha quedado libre de las alimañas del <b>Team Azoth</b>.", "v": "\\c[6]<b>미라:</b>\\c[0] <b>칼로스</b>의 이 지역은 <b>아조스단</b>의 해충들로부터 해방되었다."}
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] Aunque, según me he enterado, tus esfuerzos han contribuido enormemente a ello.", "v": "\\c[6]<b>미라:</b>\\c[0] 하지만 내가 듣기로는, 네 노력이 그에 크게 기여했다고 한다."}
 {"k": "\\c[6]<b>Mirra:</b>\\c[0] Dime, \\PN. Como Aspirante, ¿tu amor por los Pokémon es incondicional?", "v": "\\c[6]<b>미라:</b>\\c[0] \\PN, 말해 봐. ‘도전자’로서, 포켓몬을 향한 네 사랑에는 조건이 없니?"}
@@ -5340,7 +5340,7 @@
 {"k": "¡Eh, eh! Que no pretendo estafarte, me gusta jugar limpio.", "v": "이봐, 이봐! 널 속이려는 게 아냐, 난 정당하게 겨루는 걸 좋아한다고."}
 {"k": "\\PN recibe una carta.", "v": "\\PN\\j[이,가] 카드를 한 장 받는다."}
 {"k": "Te ha tocado un as, ¿que valor le asignas? Recuerda que tienes que intentar sumar 21.", "v": "에이스가 나왔군. 이 카드를 몇으로 치겠어? 합계가 21이 되도록 해야 한다는 걸 잊지 마라."}
-{"k": "Has recibido un \\v[135]. Recuerda que debes intentar sumar 21.", "v": "\\v[135]를 받았어. 합이 21에 가까워져야 한다는 걸 잊지 마."}
+{"k": "Has recibido un \\v[135]. Recuerda que debes intentar sumar 21.", "v": "\\v[135]\\j[을,를] 받았어. 합이 21에 가까워져야 한다는 걸 잊지 마."}
 {"k": "<b>Contrincante:</b> Mmm...", "v": "<b>상대방:</b> 음..."}
 {"k": "¿Quieres recibir otra carta?", "v": "카드를 한 장 더 받겠어?"}
 {"k": "<b>Contrincante:</b> ¡Bien! ¡Veamos quién ha ganado!", "v": "<b>상대방:</b> 좋아! 누가 이겼는지 확인해 보자고!"}
@@ -7655,7 +7655,7 @@
 {"k": "¡Eh, eh! Que no pretendo estafarte, me gusta jugar limpio.", "v": "이봐, 이봐! 널 속이려는 게 아냐, 난 정당하게 겨루는 걸 좋아한다고."}
 {"k": "\\PN recibe una carta.", "v": "\\PN\\j[이,가] 카드를 한 장 받는다."}
 {"k": "Te ha tocado un as, ¿que valor le asignas? Recuerda que tienes que intentar sumar 21.", "v": "에이스가 나왔군. 이 카드를 몇으로 치겠어? 합계가 21이 되도록 해야 한다는 걸 잊지 마라."}
-{"k": "Has recibido un \\v[135]. Recuerda que debes intentar sumar 21.", "v": "\\v[135]를 받았어. 합이 21에 가까워져야 한다는 걸 잊지 마."}
+{"k": "Has recibido un \\v[135]. Recuerda que debes intentar sumar 21.", "v": "\\v[135]\\j[을,를] 받았어. 합이 21에 가까워져야 한다는 걸 잊지 마."}
 {"k": "<b>Contrincante:</b> Mmm...", "v": "<b>상대방:</b> 음..."}
 {"k": "¿Quieres recibir otra carta?", "v": "카드를 한 장 더 받겠어?"}
 {"k": "<b>Contrincante:</b> ¡Bien! ¡Veamos quién ha ganado!", "v": "<b>상대방:</b> 좋아! 누가 이겼는지 확인해 보자고!"}
@@ -8286,7 +8286,7 @@
 {"k": "Disculpa la intromisión pero... tu cara me suena. No habrás hecho nada ilegal últimamente, ¿verdad?", "v": "실례지만... 얼굴이 익숙하군. 최근에 불법적인 일을 저지르진 않았겠지?"}
 {"k": "¿Quieres usar la Montura Gogoat?", "v": "고고트라이드를 사용할까?"}
 {"k": "\\c[6]<b>F3:</b>\\c[0] ¿<i>Monsieur</i> \\PN?", "v": "\\c[6]<b>F3:</b>\\c[0] <i>무슈</i> \\PN인가요?"}
-{"k": "\\c[6]<b>F3:</b>\\c[0] ¿<i>Mademoiselle</i> \\PN?", "v": "\\c[6]<b>F3:</b>\\c[0] <i>마드모아젤</i> \\PN이신가요?"}
+{"k": "\\c[6]<b>F3:</b>\\c[0] ¿<i>Mademoiselle</i> \\PN?", "v": "\\c[6]<b>F3:</b>\\c[0] <i>마드모아젤</i> \\PN\\j[이신가요,신가요]?"}
 {"k": "Mis datos almacenados... te reconocen...", "v": "저장된 내 데이터가... 당신을 인식합니다..."}
 {"k": "Me temo que... no podré serte de mucha utilidad... en este estado.", "v": "유감스럽게도... 이 상태로는... 당신에게 큰 도움이 되지 못할 것 같습니다..."}
 {"k": "Hay un carruaje accidentado cerca... buscad una <b>batería alquímica</b>...", "v": "근처에 사고 난 마차가 있으니... <b>연금술 배터리</b>를 찾아 주십시오..."}
@@ -9333,7 +9333,7 @@
 {"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Si quieres te lo devuelvo, \\PN.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 원한다면 돌려주겠네, \\PN."}
 {"k": "Lo he leído y estudiado cientos de veces. Una lectura muy edificante.", "v": "수백 번은 읽고 정독했지. 참으로 유익한 책이었어."}
 {"k": "\\c[5]<b>Melia:</b>\\c[0] ¡Papi! ¡Mira! ¡Nuestros amigos están de visita!", "v": "\\c[5]<b>멜리아:</b>\\c[0] 아빠! 봐 봐! 우리 친구들이 놀러 왔어!"}
-{"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡Espera, <b>Melia</b>! No creo que tu padre nos considere precisamente amigos a \\PN y a mí.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 잠깐만, <b>멜리아</b>! 아버님께서 나와 \\PN을 딱히 친구로 생각하실 것 같진 않은데."}
+{"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡Espera, <b>Melia</b>! No creo que tu padre nos considere precisamente amigos a \\PN y a mí.", "v": "\\c[3]<b>크리산토:</b>\\c[0] 잠깐만, <b>멜리아</b>! 아버님께서 나와 \\PN\\j[을,를] 딱히 친구로 생각하실 것 같진 않은데."}
 {"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] ¿Lo dices por lo de la Revolución? Tranquilo, no os guardo rencor.", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 혁명 일 때문이라면 걱정 마라, 유감은 없으니."}
 {"k": "Puestos a que ocurriera, mejor que fuerais vosotros.", "v": "어차피 일어날 일이었다면, 차라리 너희여서 다행이구나."}
 {"k": "\\c[1]<b>Áster Zephir:</b>\\c[0] Supongo que ya tenéis la <b>Kalos</b> que tanto ansiabais, ¿no, Capitán <b>Crisanto</b>?", "v": "\\c[1]<b>아스테르 제피르:</b>\\c[0] 그토록 갈망하던 <b>칼로스</b>를 이제 얻은 모양이군, <b>크리산토</b> 대장?"}
