@@ -428,6 +428,21 @@ EDITS += [
      '@list[@index].parameters[1])\r\n'),
 ]
 
+# 전투 종료 대사가 조회를 안 탄다 — `customTrainerBattle(trainer, "…")` 둘째 인자가
+# `_I()` 포장 없는 평문 리터럴이라 어느 절에도 안 담긴다(588호출·고유 26문구·15파일).
+# 머리에서 한 번 조회를 태우면 전 호출자가 함께 풀린다. `_INTL`은 미스에 원문을
+# 그대로 돌려주므로(Intl_Messages: rescue → arg[0]) 키 없는 자리도 지금과 같다.
+# 값은 절23 추가 키(apply=kradd, 23-script-texts.add.jsonl). 유지자 승인 2026-08-19.
+# 앵커에 뒤따르는 줄을 물려 옛 소스가 새 소스의 부분 문자열이 되지 않게 했다.
+EDITS += [
+    ("Generaentrenador",
+     'def customTrainerBattle(trainer,endspeech,doublebattle=false,canlose=false)\r\n'
+     '  trainerparty=0 # added by SH\r\n',
+     'def customTrainerBattle(trainer,endspeech,doublebattle=false,canlose=false)\r\n'
+     '  endspeech=_INTL(endspeech)\r\n'
+     '  trainerparty=0 # added by SH\r\n'),
+]
+
 
 def patch_file(path: Path) -> None:
     secs = load(open(path, "rb"))

@@ -1,0 +1,20 @@
+{
+ "title": "전투 종료 대사 26문구 — 정본 합류 승인",
+ "note": "이벤트 스크립트의 `customTrainerBattle(trainer, \"…\")` 둘째 인자다. `_I()` 포장이 없어 어느 절에도 안 담겨 588곳 전부가 스페인어로 나온다. 26문구를 절23 추가 키(apply=kradd)로 등재하고 `customTrainerBattle` 머리에 `endspeech=_INTL(endspeech)` 한 줄을 넣으면 588곳이 한꺼번에 풀린다. 행별 문안 판정과 별개로 아래 두 건을 정해 주세요.",
+ "asks": [
+  {
+   "id": "surgery",
+   "title": "소스 수술 한 줄",
+   "ask": "`Generaentrenador` 절의 `customTrainerBattle` 머리에 `endspeech=_INTL(endspeech)`를 넣는다(share/patch_intl.py EDITS).",
+   "split": "넣으면 588호출이 절23 조회를 탄다. 안 넣으면 키를 얹어도 안 읽힌다 — 번역표만으로는 이 층에 닿는 길이 없다.",
+   "rec": "승인. `_INTL`은 조회 실패 시 원문을 그대로 돌려주고, 26문구에 `{1}` 자리표가 하나도 없어 치환 부작용이 없다. Z-18과 같은 경로다."
+  },
+  {
+   "id": "kradd",
+   "title": "절23 추가 키 26개 등재",
+   "ask": "승인된 문안을 `translate/ko/23-script-texts.add.jsonl`에 얹고 `gen.py`로 stage0에 흡수한다.",
+   "split": "추가 키 채널은 Z-18에서 한 번 쓴 길이다. 대안은 맵 데이터를 직접 고치는 것인데 빌드 파이프라인 밖이라 다음 빌드에 지워진다.",
+   "rec": "승인."
+  }
+ ]
+}

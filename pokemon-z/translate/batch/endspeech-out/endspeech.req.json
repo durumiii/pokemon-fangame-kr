@@ -1,0 +1,213 @@
+{
+ "system": "\n\nYou translate a Pokémon fangame (Spanish original, monarchic Kalos setting) into\nKorean. Input is a JSON array; each item is {\"id\", \"who\", \"es\", \"자리\", \"도전\",\n\"도전_ko\"} — the fields are described just below. `es` is the Spanish source.\n\n**This request is not a scene.** The user message is a JSON array of unrelated\nbattle-defeat lines, each spoken by a different kind of trainer somewhere else in\nthe game. There is no scene header: **every item carries its own speaker\ninstruction**, and you must read each item's fields before translating it.\n\nEach item is {\"id\", \"who\", \"es\", \"자리\", \"도전\", \"도전_ko\"}:\n- `who` — the speaker's trainer class (Korean name, then the Spanish original).\n- `자리` — where the line is spoken and how many trainers share it. Lines shared by\n  dozens of trainers are stock lines for a whole unit: keep them general, and never\n  write anything that fits only one individual.\n- `도전` / `도전_ko` — the same trainer's pre-battle challenge line in Spanish and in\n  its **approved Korean translation**. This pair is the register anchor: the defeat\n  line is the same person speaking moments later, so match the speech level and the\n  texture of `도전_ko` unless the item says otherwise.\n\nBecause the items are unrelated, never carry context, addressee or speech level\nfrom one item into another.\n\n**These are defeat lines, spoken the instant the trainer loses.** Many of them are\nnot addressed to the player at all — they are muttering, wailing or a remark to\nsomeone absent. When an item has no listener marker (no 2nd person, no vocative, no\ncommand, no question to the player), do **not** force it to the level of `도전_ko`;\nwrite it as the natural Korean for talking to oneself. Rule C still decides the\nlevel whenever a listener is actually addressed.\n\n`도전_ko` is quoted context, not a template: it may carry `<b>…</b>` tags and a\n`이름:` speaker prefix, and **none of that may appear in your output.** Your `es`\nlines carry no markup at all, so your Korean must carry none either.\n\nOutput remains ONE flat JSON array of {\"id\", \"ko\"} covering every item, in the\norder given.\n\nTranslate every `es` into Korean dialogue for the game's text box. Write it as the\nKorean release of this game would read — not as a gloss of the Spanish.\n\n### Speech-level rules\n\nA. Follow each item's own `who` / `자리` / `도전_ko`, but **rewrite the sentence\n   whole** — swapping only the ending kills the rhythm. For 반말, use living\n   spoken forms (「~어/~야/~지/~잖아/~거든」); a string of narrative 「~다.」 is wrong.\nB. **Many characters change speech level by addressee.** Decide **who each line is\n   spoken to** — the defeated trainer may be talking to the player, to their own\n   Pokémon, to an absent superior, or to nobody. The listener decides the level,\n   and `도전_ko` only tells you how this speaker talks to the player.\nC. **The Spanish register is the final authority.** Check how the source addresses\n   the listener: `tú` (familiar sg) · `usted` (formal sg) · `vosotros` (familiar pl)\n   · `vos` (archaic formal sg).\n   - `usted` is more often *unmarked as a word*: it shows only through `le`/`su` and\n     3rd-person verbs (`Puede estar tranquilo`, `Como le he dicho`). Absence of the\n     word is not evidence of familiarity.\n   - `vos`-family endings (`-áis`/`-éis`/`os`/`vuestro`) are **usually plural**\n     (addressing the party). They are the archaic honorific only when the same line\n     carries singular evidence — a singular vocative (`Maese Hibis`, `maese Crisanto`)\n     or a singular adjective (`Vos sois responsable`). That honorific is court/knightly\n     etiquette between ranking figures and is **independent of hostility**.\nD. A 존대 speaker may mix 해요체 and 합쇼체 by function: greetings, invitations and\n   feeling in 해요체; declarations, procedure and reports in 합쇼체.\nE. A 존대 speaker may drop to 반말 in exactly four places: talking to themselves,\n   exclamation or realization (「~구나!」「~다니!」), echoing a question back\n   (「~다고?」), and song or quotation. Nowhere else. **Consecutive lines to the same\n   listener must not wobble between levels.**\nF. Korean has many natural endings for one speech level. Don't normalize them —\n   short exclamations in 「~다」, assertive 「~거다」, 「~구나」, 「~는걸」 all belong to\n   ordinary 반말 and should survive.\nG. Male/female variant pairs of one line (`un intruso` / `una intrusa`) keep their\n   distinction, and **must not disagree in speech level** with each other.\nH. Do not invent interjections, laughter or self-titles that are absent from the\n   source, and do not drop ones that are there. Follow the source. Render\n   onomatopoeia by the standard Korean convention (`*Ejem*`→`*에헴*`) — do not\n   substitute a different sound of your own.\nI. The player character (\\PN) has no fixed gender or age. Never invent gendered or\n   age-based address terms (「오빠/누나/언니/아가씨/총각」). Use only titles present\n   in the source.\n\n### Naturalness rules (Korean that does not read as translated)\n\nJ. Sentence-initial connective adverbials (`En concreto,` `De hecho,` `Por lo\n   visto,`) usually vanish in Korean dialogue — context already links the\n   sentences. Fold the nuance into the ending or drop it:\n   `En concreto, sientes la presencia…` → 「아주 강력한 …의 기운이 느껴진다.」\nK. Translate idiom with idiom. When the Spanish uses a set phrase, reach for the\n   Korean set phrase with the same meaning before rendering the image word by\n   word: `bailar al son de la flauta de X` → 「X의 장단에 놀아나다」,\n   `el largo y férreo estoque de la ley` → 「법의 철퇴」. Only when no\n   counterpart exists, unfold the meaning in plain words.\nL. Unwind noun-chain calques into verb endings: 「~하는 것은 위험합니다」 →\n   「~는 건 위험하다」, 「~한 상태로」 → 「~한 채로」. Counts follow Korean habit\n   in prose: `solo 1 Pokémon` → 「포켓몬이 하나뿐」.\nM. Spanish demonstratives and intensifiers (`ese/esta`, `completa`, `realmente`)\n   that only fill rhythm read as translationese — render the sentence without\n   them when they carry no information. (That is not dropping a fact.)\nN. Confirm-box questions and choice labels are the player's own voice, not an\n   NPC asking the player: `¿Quieres abrir la puerta?` at a locked door →\n   「잠긴 문을 열까?」; a choice `Acepto` → 「그렇게 하죠」. Self-question\n   endings, dialogue-style buttons.\nO. For stock situations the series-canon phrasing wins over a literal rendering:\n   `¡Pero no tuvo ningún efecto!` → 「그러나 아무 일도 일어나지 않았다!」;\n   item pickup `ha encontrado`/`found` → 「얻었다」. When the official Korean\n   games have a fixed line for the situation, use it.\nP. A Pokémon's cry echoes its own species name — rebuild it from the Korean\n   name, not the Spanish (`Luuuull…` of Morelull → 「자마아…」 of 자마슈).\nQ. Mind relative-clause scope: in `que …, pero …` the `pero` may still be inside\n   the relative clause. Check what the second verb attaches to before rendering,\n   or the meaning flips.\n\n### Preservation rules (violations are auto-rejected by machine validation)\n\n1. Translate the meaning exactly. Do not add or drop facts, numbers or names; do not\n   add modifiers absent from the source; do not change a verb to a different sense.\n2. **Formatting tags and speaker prefixes have been removed before you see this\n   text, and are restored mechanically afterwards. Write plain Korean — never add\n   `<b>`, `<i>`, `\\c[n]`, or a `이름:` prefix of your own.** Placeholders that carry\n   meaning are still present and must be kept exactly as they appear, in the same\n   count: \\PN, \\v[n], \\se[..], \\wt[..], \\m, \\TP, \\TE, \\TM, <icon=..>, <r>,\n   \\j[받침형,무받침형], {1}-style slots, and a trailing \\x01.\n   Keep the same number of newline characters as `es`.\n3. Keep proper nouns and game terms exactly as the term rules below give them.\n   French/Russian *exclamations and interjections* stay in the Latin script\n   (`alors`, `d'accord`, `Mon Dieu!`, `Sacrebleu!`, `Merci beaucoup!`). But a\n   French phrase *woven into the sentence* as an ordinary word (a polite\n   `s'il vous plait` mid-sentence) is translated into Korean like any other word.\n   **Address titles are transliterated: monsieur→무슈, madame→마담,\n   mademoiselle→마드모아젤.**\n4. Keep it inside a text box — roughly the length of the Spanish line, never padded\n   out with explanation.\n5. Write dialogue, not subtitles. Contractions, particles and rhythm that a Korean\n   player would read aloud naturally.\n\nOutput only a JSON array: [{\"id\": \"<id as given>\", \"ko\": \"<Korean translation>\"}, …]\nInclude every input item. No prose, no comments, no code fences.\n\n### Term rules (apply exactly)\n\n- Never touch proper nouns: person, place, species, move, item and ability names keep\n  their current Korean spelling even if the transliteration looks odd.\n- damage is 「데미지」 (not 대미지). Franchise vocabulary: 배틀 · 트레이너 · 체육관 ·\n  기술머신 · 몬스터볼 · 도감. Status: 독/맹독/화상/마비/잠듦/얼음.\n- The currency pokécuartos/pokéfrancos is 「포켓프랑」.\n- Setting is monarchic Kalos: keep rank address (폐하·전하·경·마담·무슈); do not\n  modernize. French/Russian exclamations stay Latin (Mon Dieu!, Sacrebleu!,\n  Merci beaucoup!, Blyat); phrases woven into the sentence (a mid-sentence\n  s'il vous plait) are translated. Address titles are transliterated:\n  monsieur→무슈, madame→마담, mademoiselle→마드모아젤. Italian `Mamma mia`→「맘마미아」.\n- máscara → 마스크 (not 가면).\n- Kill translationese: 「~에 대해」→ object particle; 「~하는 것이 가능하다」→\n  「~할 수 있다」; no double passive 「~되어진다」; ¡Qué …! becomes 「정말 ~구나!」\n  not 「얼마나 ~한가!」.\n- Alquimia Pokémon → 포켓몬 연금술\n- Legislador → 입법관\n- Capitán/Capitana → 대장 / 선장(배·해적: 로토)\n- Paldea → 팔데아\n- Team Flare → 플레어단\n- Xerneas → 제르네아스\n- Crisanto → 크리산토\n- Mirra → 미라\n- Alca → 알카\n- Ciudad Luminalia → 미르시티\n- Villa Pokemon → 포켓몬마을\n- Circo Sanguino → 상기노 서커스\n- Morpeko → 모르페코\n",
+ "user": [
+  {
+   "id": "e00",
+   "who": "경관(Carabinera) / 경관(Carabinero) / 포켓몬 트레이너(Entrenadora)",
+   "es": "¡Regreso a la sombra!",
+   "자리": "전투에 진 직후 하는 말. 트레이너 323명이 함께 쓰는 대사. 호출 363곳 · 공통 이벤트 「Torre Batalla」",
+   "도전": "",
+   "도전_ko": ""
+  },
+  {
+   "id": "e01",
+   "who": "경관(Carabinera) / 경관(Carabinero)",
+   "es": "¿No te gustaría ceder a tus Pokémon al ejército?",
+   "자리": "전투에 진 직후 하는 말. 트레이너 57명이 함께 쓰는 대사. 호출 60곳 · 칼로스 동부 전투(맵 314)",
+   "도전": "¡Aaay! ¡Yo no quiero luchar! ¡No pensaba que fuera a estallar una guerra cuando me alisté al ejército!",
+   "도전_ko": "아이고! 난 싸우고 싶지 않다고! 입대할 때 전쟁이 터질 줄은 꿈에도 몰랐단 말이야!"
+  },
+  {
+   "id": "e02",
+   "who": "경관(Carabinera) / 경관(Carabinero)",
+   "es": "En mis décadas de experiencia, jamás había visto a alguien así.",
+   "자리": "전투에 진 직후 하는 말. 트레이너 40명이 함께 쓰는 대사. 호출 40곳 · 칼로스 동부 전투(맵 314)",
+   "도전": "Soy un mariscal veterano de <b>Ciudad Luminalia</b>, ¿qué honor podría encontrar con un enemigo tan insignificante como tú?",
+   "도전_ko": "나는 <b>미르시티</b>의 베테랑 원수다! 너처럼 하찮은 적을 상대해서 무슨 영광을 얻겠어?"
+  },
+  {
+   "id": "e03",
+   "who": "경관(Carabinero)",
+   "es": "¿Quiénes somos? ¿Hacia dónde vamos? ¿Tiene algún sentido todo?",
+   "자리": "전투에 진 직후 하는 말. 트레이너 20명이 함께 쓰는 대사. 호출 20곳 · 칼로스 동부 전투(맵 314)",
+   "도전": "¿Realmente vale la pena esta guerra? Mi Pokémon y yo solo deseamos paz, pero nos vemos obligados a luchar.",
+   "도전_ko": "이 전쟁이 정말 그만한 가치가 있을까? 나와 내 포켓몬은 평화만을 바라지만, 어쩔 수 없이 싸워야만 해."
+  },
+  {
+   "id": "e04",
+   "who": "경관(Carabinero)",
+   "es": "¡Aaaah! ¡Por eso no soporto a los paldeanos!",
+   "자리": "전투에 진 직후 하는 말. 트레이너 19명이 함께 쓰는 대사. 호출 20곳 · 칼로스 동부 전투(맵 314)",
+   "도전": "Por tu acento debes de ser de <b>Paldea</b>, ¿no? ¡Estaba deseando cruzarme con uno de los vuestros en batalla!",
+   "도전_ko": "억양을 보니 <b>팔데아</b> 출신이지? 그쪽 동네 녀석과 꼭 겨뤄보고 싶었거든!"
+  },
+  {
+   "id": "e05",
+   "who": "경관(Carabinera)",
+   "es": "¡Qué Pokémon tan duros y curtidos para la batalla!",
+   "자리": "전투에 진 직후 하는 말. 트레이너 20명이 함께 쓰는 대사. 호출 20곳 · 칼로스 동부 전투(맵 314)",
+   "도전": "Ni tus Pokémon ni tú estáis hechos para la verdadera lucha, joven. ¡Prepárate para conocer la dureza de la guerra!",
+   "도전_ko": "젊은이, 너도 네 포켓몬도 진짜 싸움을 할 준비는 안 되어 있구나. 전쟁의 참혹함을 알게 해 주마!"
+  },
+  {
+   "id": "e06",
+   "who": "경관(Carabinera)",
+   "es": "¿Te has fijado en mi forma de luchar? ¡Eso es el honor!",
+   "자리": "전투에 진 직후 하는 말. 트레이너 20명이 함께 쓰는 대사. 호출 20곳 · 칼로스 동부 전투(맵 314)",
+   "도전": "Si debo caer en este campo de batalla, lo haré con honor. ¡Mis Pokémon lucharán hasta el último aliento!",
+   "도전_ko": "이 전장에서 쓰러져야 한다면 명예롭게 쓰러지겠다. 내 포켓몬들은 마지막 숨이 다할 때까지 싸울 거다!"
+  },
+  {
+   "id": "e07",
+   "who": "경관(Carabinero)",
+   "es": "¡Ten piedad, por favor!",
+   "자리": "전투에 진 직후 하는 말. 트레이너 20명이 함께 쓰는 대사. 호출 20곳 · 칼로스 동부 전투(맵 314)",
+   "도전": "No hay piedad en la guerra, y no habrá piedad con tus Pokémon. ¡Prepárate!",
+   "도전_ko": "전쟁에 자비란 없다. 네 포켓몬에게도 자비는 없을 테니 각오해라!"
+  },
+  {
+   "id": "e08",
+   "who": "아리아도스(Ariados) / 트래피더(Spidops)",
+   "es": "¡Scriiiii!",
+   "자리": "전투에 진 직후 하는 말. 트레이너 7명이 함께 쓰는 대사. 원문은 낱말이 아니라 비명·울음이고, 종명을 흉내 낸 꼴이 아니다. 호출 7곳 · 어둠의 덤불(맵 387), 어둠의 덤불(맵 388)",
+   "도전": "¡WRYYYYYYY!",
+   "도전_ko": "크아아아악!"
+  },
+  {
+   "id": "e09",
+   "who": "광대(Payaso)",
+   "es": "¡Tú también flotarás pronto!",
+   "자리": "전투에 진 직후 하는 말. 호출 2곳 · 22번도로(맵 358), 22번도로(맵 359)",
+   "도전": "Hola, ricura. ¿Te has perdido? ¿Quieres un globo de colorines?",
+   "도전_ko": "안녕, 귀염둥이. 길이라도 잃었어? 알록달록한 풍선 하나 줄까?"
+  },
+  {
+   "id": "e10",
+   "who": "어릿광대(Arlequina)",
+   "es": "Veo que no te has dejado engañar por mis trucos.",
+   "자리": "전투에 진 직후 하는 말. 호출 1곳 · 22번도로(맵 358)",
+   "도전": "¡Ju, ju, ju! ¡Se presenta la mejor arlequina de la región! Mis trucos no tienen parangón.",
+   "도전_ko": "후, 후, 후! 이 지방 최고의 피에로 등장이다! 제 마술은 비길 데가 없죠."
+  },
+  {
+   "id": "e11",
+   "who": "어릿광대(Arlequina)",
+   "es": "A pesar de la derrota, siempre mantendré mi sonrisa.",
+   "자리": "전투에 진 직후 하는 말. 호출 1곳 · 22번도로(맵 359)",
+   "도전": "¿A dónde vas con esa cara tan seria? Déjame dibujarte una sonrisa...",
+   "도전_ko": "왜 그렇게 진지한 표정을 짓고 있나요? 당신 얼굴에 웃음을 그려드릴게요..."
+  },
+  {
+   "id": "e12",
+   "who": "어릿광대(Arlequina)",
+   "es": "¡Ay! ¡Se me ha corrido el maquillaje de la emoción!",
+   "자리": "전투에 진 직후 하는 말. 호출 1곳 · 22번도로(맵 359)",
+   "도전": "El Circo Sanguino está muy cerca. ¿Ya te has hecho con tu entrada para presenciar el mayor espectáculo del siglo?",
+   "도전_ko": "상기노 서커스가 바로 근처에 있답니다. 세기의 위대한 쇼를 관람할 입장권은 마련하셨나요?"
+  },
+  {
+   "id": "e13",
+   "who": "망령(Espectro)",
+   "es": "Debo proteger a los Pokémon...",
+   "자리": "전투에 진 직후 하는 말. 호출 1곳 · 헤매는 숲(맵 365)",
+   "도전": "La pura y bondadosa Villa Pokémon... Debo protegerla del mundo exterior.",
+   "도전_ko": "순수하고 상냥한 포켓몬마을… 바깥세상으로부터 꼭 지켜내야 해."
+  },
+  {
+   "id": "e14",
+   "who": "망령(Espectro)",
+   "es": "Xerneas, Xerneas...",
+   "자리": "전투에 진 직후 하는 말. 호출 1곳 · 헤매는 숲(맵 368)",
+   "도전": "El Pokémon de la Vida... ha despertado. Su calidez, su radiancia... pronto te alcanzará a ti también.",
+   "도전_ko": "생명의 포켓몬이… 깨어났다. 그 온기와 광채가… 머지않아 너한테도 닿을 거다."
+  },
+  {
+   "id": "e15",
+   "who": "망령(Espectro)",
+   "es": "Este bosque es solo para almas y Pokémon.",
+   "자리": "전투에 진 직후 하는 말. 호출 1곳 · 헤매는 숲(맵 370)",
+   "도전": "Caminar en este bosque... no debes. Márchate. ¡Márchate!",
+   "도전_ko": "이 숲속을 걸어 다니면… 안 되지. 나가. 어서 나가!"
+  },
+  {
+   "id": "e16",
+   "who": "망령(Espectro)",
+   "es": "No tengo ojos, pero veo la luz...",
+   "자리": "전투에 진 직후 하는 말. 호출 1곳 · 헤매는 숲(맵 371)",
+   "도전": "La morada secreta de los Pokémon abandonados... Debo vigilarla.",
+   "도전_ko": "버려진 포켓몬들의 비밀 은신처… 감시해야겠어."
+  },
+  {
+   "id": "e17",
+   "who": "어릿광대(Arlequina)",
+   "es": "Tú también tienes mucho talento. ¿Con quién has estudiado?",
+   "자리": "전투에 진 직후 하는 말. 호출 1곳 · 서커스의 악몽(맵 374)",
+   "도전": "¿Te intrigan los Morpeko? ¡Son unos Pokémon muy talentosos! ¿Quieres saber más de ellos?",
+   "도전_ko": "모르페코에게 관심이 있으신가요? 정말 재능이 뛰어난 포켓몬이에요! 모르페코에 대해 더 알고 싶으신가요?"
+  },
+  {
+   "id": "e18",
+   "who": "광대(Payaso)",
+   "es": "Nos hemos levantado de mal humor, ¿eh?",
+   "자리": "전투에 진 직후 하는 말. 호출 1곳 · 서커스의 악몽(맵 380)",
+   "도전": "¡Oh! ¿Sois los nuevos clientes? Por favor, déjame darte una muestra de los trucos y maravillas que encontrarás por aquí.",
+   "도전_ko": "오! 새로 온 손님들인가? 여기서 보게 될 신기한 묘기들을 맛보기로 조금 보여 줄게."
+  },
+  {
+   "id": "e19",
+   "who": "어릿광대(Arlequina)",
+   "es": "¡Qué público más difícil! ¡Hoy estáis todos la mar de revoltosos!",
+   "자리": "전투에 진 직후 하는 말. 호출 1곳 · 서커스의 악몽(맵 380)",
+   "도전": "¿No te interesan los juguetes? ¡Porque aquí tenemos unos cuantos que desafían toda lógica!",
+   "도전_ko": "장난감에 관심 없으신가요? 여기 상식을 뛰어넘는 장난감이 준비되어 있거든요!"
+  },
+  {
+   "id": "e20",
+   "who": "어릿광대(Arlequina)",
+   "es": "Soy yo la que está encerrada contigo.",
+   "자리": "전투에 진 직후 하는 말. 호출 1곳 · 서커스의 악몽(맵 380)",
+   "도전": "Aquí encerramos a Pokémon salvajes y peligrosos, ¡no te acerques más de lo necesario o tendré que tomar medidas!",
+   "도전_ko": "여기엔 위험한 야생 포켓몬들을 가둬뒀으니 너무 가까이 오지 마세요. 안 그러면 조치를 취할 수밖에 없습니다!"
+  },
+  {
+   "id": "e21",
+   "who": "경관(Carabinero)",
+   "es": "¿Es que nadie respeta ya a la autoridad?",
+   "자리": "전투에 진 직후 하는 말. 호출 1곳 · 프리즘타워(맵 385)",
+   "도전": "¡Manos en alto! ¡Deja lentamente tus Pokéball al suelo!",
+   "도전_ko": "손 들어라! 몬스터볼은 천천히 바닥에 내려놓아라!"
+  },
+  {
+   "id": "e22",
+   "who": "총사(Mosquetero)",
+   "es": "¡El Legislador Mirra sabrá de esto!",
+   "자리": "전투에 진 직후 하는 말. 호출 1곳 · 프리즘타워(맵 385)",
+   "도전": "¿Qué haces tú aquí? ¡El Legislador Mirra ha prohibido estrictamente el paso!",
+   "도전_ko": "너 여기서 뭐 하는 거냐? 입법관 미라님께서 통행을 엄격히 금지하셨다!"
+  },
+  {
+   "id": "e23",
+   "who": "경관(Carabinera)",
+   "es": "¡Legislador Mirra! ¡Te he fallado!",
+   "자리": "전투에 진 직후 하는 말. 호출 1곳 · 프리즘타워(맵 386)",
+   "도전": "¿El Capitán Crisanto está volviendo a meter las narices donde no le llaman? Ya es hora de que alguien ocupe su puesto. ¡Y puedo ser yo!",
+   "도전_ko": "크리산토 대장이 또 부르지도 않은 데 참견하고 다닌다고? 이제 누군가 그 자리를 대신할 때다. 바로 내가 될 수도 있지!"
+  },
+  {
+   "id": "e24",
+   "who": "플레어단 신입(Recluta Flare)",
+   "es": "¡El Team Flare no puede perder!",
+   "자리": "전투에 진 직후 하는 말. 호출 1곳 · 플레어단 비밀기지(맵 441)",
+   "도전": "<b>Reclutas Flare:</b> El Pokémon legendario se encuentra al final de estos pasillos y no podemos permitir que llegues hasta él. Vamos a pedirte amablemente que des marcha atrás.",
+   "도전_ko": "<b>플레어단 신병:</b> 전설의 포켓몬은 이 복도 끝에 있다. 너 따위가 그곳까지 가게 둘 순 없지. 얌전히 발길을 돌려 돌아가시지."
+  },
+  {
+   "id": "e25",
+   "who": "플레어단 신입(Recluta Flare)",
+   "es": "¿Cómo podemos haber perdido? ¡Si somos muy listos!",
+   "자리": "전투에 진 직후 하는 말. 호출 1곳 · 플레어단 비밀기지(맵 441)",
+   "도전": "<b>Reclutas Flare:</b> El <b>Team Flare</b> es la conjunción de los antiguos conocimientos de Alquimia Pokémon con la tecnología del mundo moderno, ¡y por eso heredaremos el nuevo mundo!",
+   "도전_ko": "<b>플레어단 신병들:</b> <b>플레어단</b>은 고대 포켓몬 연금술의 지식과 현대 세계의 기술이 결합된 결정체, 그렇기에 우리가 새로운 세계를 물려받는 것이다!"
+  }
+ ]
+}
