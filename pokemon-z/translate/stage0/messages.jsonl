@@ -18256,16 +18256,16 @@
 {"id": "m342.e1.p0.c18", "val": "\\c[3]<b>크리산토:</b>\\c[0] 지금 당장 지니고 계신 포켓몬을 모두 몬스터볼에 넣으십시오!", "state": "reviewed", "by": "human/crisanto-blend-2026-08-03"}
 {"id": "m342.e1.p0.c35", "val": "\\c[3]<b>크리산토:</b>\\c[0] 모두 다 말입니다! 어느 쪽 진영이든 상관없이 전부!", "state": "reviewed", "by": "human/crisanto-blend-2026-08-03", "sample": false}
 {"id": "m342.e1.p0.c36", "val": "포켓몬들을 대피시키십시오!", "state": "reviewed", "by": "human/0140084"}
-{"id": "m342.e1.p0.c44", "val": "\\sh\\c[3]<b>크리산토:</b>\\c[0] 들여보내라니까!!!", "state": "reviewed", "by": "human/crisanto-blend-2026-08-03"}
+{"id": "m342.e1.p0.c44", "val": "\\sh\\c[3]<b>크리산토:</b>\\c[0] 집어넣으라니까!!!", "state": "reviewed", "by": "human/crisanto-blend-2026-08-03"}
 {"id": "m342.e1.p0.c66", "val": "\\c[5]<b>멜리아:</b>\\c[0] 아버지, <i>제발</i>!", "state": "reviewed", "by": "human/37226f5"}
-{"id": "m342.e1.p0.c75", "val": "<b>병사들:</b> 저게 적의 최종병기지, 그렇지? 가동하려는 것 같다! 막아야 해!", "state": "reviewed", "by": "human/0140084"}
-{"id": "m342.e1.p0.c82", "val": "\\sh<b>병사들:</b> 블로스터, 적을 무력화하기 위해 하이드로펌프를 쏴라!", "state": "reviewed", "by": "human/0140084"}
+{"id": "m342.e1.p0.c75", "val": "<b>병사들:</b> 저게 적의 주력 병기 맞지? 가동하려는 것 같은데! 막아야 해!", "state": "reviewed", "by": "human/0140084"}
+{"id": "m342.e1.p0.c82", "val": "\\sh<b>병사들:</b> 블로스터, 하이드로펌프! 적을 제압해라!", "state": "reviewed", "by": "human/0140084"}
 {"id": "m342.e1.p0.c134", "val": "\\sh\\c[5]<b>멜리아:</b>\\c[0] 플라엣테!", "state": "reviewed", "by": "human/0140084"}
 {"id": "m342.e1.p0.c138", "val": "\\c[1]<b>AZ:</b>\\c[0] <i>Putain</i>! 당장 병기를 가동해야 해!", "state": "reviewed", "by": "human/0140084"}
 {"id": "m342.e1.p0.c440", "val": "<b>병사들:</b> 포켓몬들이...!", "state": "reviewed", "by": "human/0140084"}
 {"id": "m342.e1.p0.c441", "val": "방금 모든 포켓몬이 사라져 버렸어!", "state": "reviewed", "by": "human/crisanto-blend-2026-08-03"}
 {"id": "m342.e1.p0.c448", "val": "\\c[3]<b>크리산토:</b>\\c[0] 안 돼... 안 돼!", "state": "reviewed", "by": "human/검수 반영"}
-{"id": "m342.e1.p0.c449", "val": "이 자식들! 빌어먹을 놈들!", "state": "reviewed", "by": "human/검수 반영"}
+{"id": "m342.e1.p0.c449", "val": "이 개자식들! 천벌받을 놈들!", "state": "reviewed", "by": "human/검수 반영"}
 {"id": "m342.e1.p0.c477", "val": {"ref": "unified.20d53600"}, "state": "reviewed", "by": "human/검수 반영"}
 {"id": "m343.e1.p0.c22", "val": "\\c[5]<b>멜리아:</b>\\c[0] 어-어디지...? 여긴 대체 어디야?", "state": "reviewed", "by": "human/37226f5"}
 {"id": "m343.e1.p0.c31", "val": "\\c[5]<b>멜리아:</b>\\c[0] 플라엣테! 안 돼! 제발, 안 돼!", "state": "reviewed", "by": "human/검수 반영"}
