@@ -5169,11 +5169,11 @@
 {"k": "{1} es un Pokemon bastante pepino.", "v": "{1}\\j[은,는] 꽤 끝내주는 포켓몬이다."}
 {"k": "¡{1} es un Pokemon tocho de cojones!", "v": "{1}\\j[은,는] 엄청나게 대단한 포켓몬이다!"}
 {"k": "¡{1} es un Pokemon de la hostia!", "v": "{1}\\j[은,는] 진짜 기가 막힌 포켓몬이다!"}
-{"k": "¿Cambiarías mi {1} por tu {2}?", "v": "내 {1}\\j[을,를] 네 {2}\\j[과,와] 바꿀래?"}
+{"k": "¿Cambiarías mi {1} por tu {2}?", "v": "제 {1}\\j[을,를] 그쪽 {2}\\j[과,와] 바꾸시겠어요?"}
 {"k": "Un placer hacer negocios contigo. ¡Búscame en otros lugares del mundo para más intercambios!", "v": "좋은 거래였어. 다른 곳에서도 날 찾으면 또 교환하자!"}
-{"k": "Vaya, a mí me parecía un intercambio justo.", "v": "이런, 난 제법 공정한 교환이라고 생각했는데."}
+{"k": "Vaya, a mí me parecía un intercambio justo.", "v": "이런, 저는 제법 공정한 교환이라고 생각했는데요."}
 {"k": "¡Pues que te den por culo!", "v": "그럼 알아서 해라!"}
-{"k": "Como quieras, no te molestaré más entonces.", "v": "마음대로 해, 그럼 더 귀찮게 하지 않을게."}
+{"k": "Como quieras, no te molestaré más entonces.", "v": "그러시다면 더 붙잡지 않을게요."}
 {"k": "Elige un Pokemon.", "v": "포켓몬을 선택하세요."}
 {"k": "\\se[]¡Felicidades! ¡Tu {1} ha evolucionado en {2}!\\wt[80]", "v": "\\se[]축하합니다! {1}\\j[이,가] {2}\\j[으로,로] 진화했습니다!\\wt[80]"}
 {"k": "¡Te has hecho con la victoria!\\^", "v": "승리를 거뒀다!\\^"}
@@ -5631,13 +5631,13 @@
 {"k": "¡Agh! ¡Por muy poco!", "v": "윽! 아깝다!"}
 {"k": "¡Va! ¡Ha faltado poquísimo!", "v": "아! 정말 아깝다!"}
 {"k": "Parece que no pican.", "v": "잡히지 않네..."}
-{"k": "¿Quieres ofrecerme algún Pokémon?", "v": "나에게 포켓몬을 내주겠니?"}
-{"k": "No tienes ningún Pokémon.", "v": "포켓몬을 한 마리도 지니고 있지 않습니다."}
+{"k": "¿Quieres ofrecerme algún Pokémon?", "v": "저에게 포켓몬을 내주시겠어요?"}
+{"k": "No tienes ningún Pokémon.", "v": "포켓몬을 한 마리도 지니고 계시지 않네요."}
 {"k": "¡Ostras, {1} es un Pokémon demasiado valioso! No tengo nada que ofrecerte por él.", "v": "우와, {1}\\j[은,는] 너무 귀한 포켓몬이야! 교환해 줄 만한 게 없는걸."}
 {"k": "{1} es muy mal Pokémon.", "v": "{1}\\j[은,는] 아주 별로인 포켓몬이다."}
 {"k": "{1} es un Pokémon bastante regulero.", "v": "{1}\\j[은,는] 그저 그런 포켓몬이다."}
 {"k": "{1} es un Pokémon decentillo.", "v": "{1}\\j[은,는] 그럭저럭 괜찮은 포켓몬이다."}
-{"k": "{1} es un Pokémon bastante bueno.", "v": "{1}\\j[은,는] 꽤 좋은 포켓몬이지."}
+{"k": "{1} es un Pokémon bastante bueno.", "v": "{1}\\j[은,는] 꽤 좋은 포켓몬이네요."}
 {"k": "¡{1} es un Pokémon buenísimo!", "v": "{1}\\j[은,는] 아주 좋은 포켓몬이다!"}
 {"k": "¡{1} es un Pokémon de la hostia!", "v": "{1}\\j[은,는] 끝내주는 포켓몬이다!"}
 {"k": "Hasta aquí llegamos. Vamos a ponernos serios.", "v": "여기까지다. 이제 진지하게 가볼까."}
@@ -5787,13 +5787,13 @@
 {"k": "<ar><c2=7FFF5EF7>{1}</c2></ar>", "v": "<ar><c2=7FFF5EF7>{1}</c2></ar>"}
 {"k": "<ac><c2=7FFF5EF7>{1}</c2></ac>", "v": "<ac><c2=7FFF5EF7>{1}</c2></ac>"}
 {"k": "Mmm...", "v": "음..."}
-{"k": "{1} es una basura de Pokémon.", "v": "{1}\\j[은,는] 쓰레기 같은 포켓몬이다."}
-{"k": "{1} es un Pokémon bastante malo.", "v": "{1}\\j[은,는] 꽤 나쁜 포켓몬이다."}
-{"k": "{1} es un Pokémon decente.", "v": "{1}\\j[은,는] 괜찮은 포켓몬이다."}
-{"k": "¡{1} es un Pokémon increíble!", "v": "{1}\\j[은,는] 굉장한 포켓몬이다!"}
-{"k": "¡{1} es un Pokémon demasiado bueno! ¡No sé qué ofrecerte por él!", "v": "{1}\\j[은,는] 너무 훌륭한 포켓몬이야! 뭘 주고 바꿔야 할지 모르겠네!"}
-{"k": "¡{1} es un Pokémon demasiado valioso! No deberías dármelo.", "v": "{1}\\j[은,는] 너무 소중한 포켓몬이야! 나한테 주면 안 되지."}
-{"k": "¡En otra ocasión será, supongo!", "v": "다음 기회에 해야겠군!"}
+{"k": "{1} es una basura de Pokémon.", "v": "{1}\\j[은,는] 영 형편없는 포켓몬이네요."}
+{"k": "{1} es un Pokémon bastante malo.", "v": "{1}\\j[은,는] 꽤 나쁜 포켓몬이네요."}
+{"k": "{1} es un Pokémon decente.", "v": "{1}\\j[은,는] 괜찮은 포켓몬이네요."}
+{"k": "¡{1} es un Pokémon increíble!", "v": "{1}\\j[은,는] 굉장한 포켓몬이에요!"}
+{"k": "¡{1} es un Pokémon demasiado bueno! ¡No sé qué ofrecerte por él!", "v": "{1}\\j[은,는] 너무 훌륭한 포켓몬이에요! 뭘 드리고 바꿔야 할지 모르겠네요!"}
+{"k": "¡{1} es un Pokémon demasiado valioso! No deberías dármelo.", "v": "{1}\\j[은,는] 너무 소중한 포켓몬이에요! 저한테 주시면 안 되죠."}
+{"k": "¡En otra ocasión será, supongo!", "v": "다음 기회를 노려야겠네요!"}
 {"k": "¡El disfraz ha actuado como señuelo!", "v": "탈이 대타가 되었다!"}
 {"k": "¡El disfraz de {1} se ha roto!", "v": "{1}의 정체가 드러났다!"}
 {"k": "Exit. If you changed anything, asks if you want to keep changes.", "v": "Exit. If you changed anything, asks if you want to keep changes."}
@@ -6710,7 +6710,7 @@
 {"k": "Mega Floette", "v": "메가플라엣테"}
 {"k": "¡Tienes un talento inusitado! ¡Eso no te lo voy a negar nunca!", "v": "보기 드문 재능이야! 그건 절대로 부정하지 않겠다!"}
 {"k": "¡No puedes usar ataques de daño fijo!", "v": "고정 데미지 기술은 쓸 수 없다!"}
-{"k": "¡Un placer hacer intercambios contigo!", "v": "교환해서 즐거웠어!"}
+{"k": "¡Un placer hacer intercambios contigo!", "v": "즐거운 거래였어요!"}
 {"k": "Encuentra las 4 mejoras del Pokévial (5 usos del vial).", "v": "포켓몬약병 강화 4개를 찾아라 (약병 5회 사용)."}
 {"k": "<c3=404040,B0B0B0>Huevo eclosionado.\\n", "v": "<c3=404040,B0B0B0>알에서 태어났다.\\n"}
 {"k": "<c3=404040,B0B0B0>Naturaleza <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.\\n", "v": "<c3=404040,B0B0B0><c3=F83820,E09890>{1}<c3=404040,B0B0B0> 성격\\n"}
