@@ -14,9 +14,10 @@
 중앙까지의 차이를 옮김량으로 쓴다. 표지는 12x12 몸통과 바로 밑 12x4 그림자로
 이뤄지고 둘을 함께 옮긴다. 비운 자리는 가장 가까운 배경 픽셀로 메운다.
 
-장소 칸이 짝지어지지 않는 표지(원판 (2,5) 근처 하나)는 건드리지 않는다 — 이름
-항목도 게임 맵도 없어 칸 중앙으로 옮기면 「눌러도 아무것도 안 뜨는 표지」가
-된다. 그 자리의 처분은 유지자 판정 몫이다.
+장소 칸이 짝지어지지 않는 표지는 기본적으로 건드리지 않는다 — 이름 항목도 게임
+맵도 없어 칸 중앙으로 옮기면 「눌러도 아무것도 안 뜨는 표지」가 된다. 다만 모드가
+장소 항목을 채워 주는 표지는 예외라, 갈 칸을 MANUAL_MOVES에 손으로 적어 둔다.
+그 밖의 짝 없는 표지의 처분은 유지자 판정 몫이다.
 
     uv run translate/assets/gen_regionmap.py            # 표만 찍는다
     uv run translate/assets/gen_regionmap.py --write    # 정본 폴더에 png를 낸다
@@ -41,6 +42,13 @@ MARK = 12            # 표지 몸통 한 변
 SHADOW = 4           # 몸통 바로 밑 그림자 높이
 TEMPLATE_CELL = (19, 17)   # 본으로 쓸 정렬된 표지 — 남쪽 감시탑
 SHADOW_RGB = (41, 41, 41)
+
+# 짝 없는 표지를 손으로 정한 칸에 앉힌다 — 원판의 몸통 좌상 좌표 → 갈 칸.
+# 서부 카타콤: townmap.dat에 항목이 없어 자동 짝짓기가 건너뛰지만, QOL Pack의
+# MISSING_POINTS가 장소 항목을 채우므로 이름도 스냅도 산다. 제 칸 (6,9)로 내리면
+# 아래 칸의 마을 표지와 붙어 스냅이 지저분해져 한 칸 위로 올린다(유지자 판정
+# 2026-08-21). 모드의 MISSING_POINTS와 칸이 어긋나면 커서가 표지 아닌 칸에 선다.
+MANUAL_MOVES = {(96, 140): (6, 8)}
 
 
 def src_path():
@@ -131,6 +139,8 @@ def main():
         cx, cy = x + MARK // 2, y + MARK // 2
         cell, _ = nearest_cell(cx, cy, cells)
         if cell is None:
+            cell = MANUAL_MOVES.get((x, y))
+        if cell is None:
             orphans.append((x, y))
             continue
         sx = cell[0] * SQUARE + 8 - cx
@@ -140,7 +150,8 @@ def main():
 
     print(f"표지 {len(marks)}개 · 옮길 것 {len(moves)}개 · 짝 없는 표지 {len(orphans)}개")
     for x, y, sx, sy, cell in sorted(moves, key=lambda m: (m[4][1], m[4][0])):
-        print(f"  칸 {cell} {cells[cell]:<26} 옮김 {sx:+d},{sy:+d}")
+        name = cells.get(cell, "(손으로 정한 칸)")
+        print(f"  칸 {cell} {name:<26} 옮김 {sx:+d},{sy:+d}")
     for x, y in orphans:
         print(f"  ⚠ 짝 없는 표지 좌상({x},{y}) — 손대지 않는다(장소 데이터·게임 맵 없음)")
 
@@ -167,7 +178,7 @@ def main():
                 c = img.convert("RGB").crop(box).resize((48 * S, 48 * S), Image.NEAREST)
                 d = ImageDraw.Draw(c)
                 d.rectangle([16 * S, 16 * S, 32 * S - 1, 32 * S - 1], outline=(255, 0, 0), width=2)
-                d.text((4, 4), ("전 " if i == 0 else "후 ") + cells[cell][:16], fill=(255, 255, 0))
+                d.text((4, 4), ("전 " if i == 0 else "후 ") + cells.get(cell, "?")[:16], fill=(255, 255, 0))
                 pair.paste(c, (i * 48 * S, 0))
             tiles.append(pair)
         cols = 2
