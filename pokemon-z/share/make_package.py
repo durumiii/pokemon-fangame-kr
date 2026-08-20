@@ -119,7 +119,8 @@ def _embed_card(final: Path, name: str, variant: str):
     """
     # modkit-owners.json은 주입기가 스테이징에 남긴 제 장부다 — 배포물에 실리면
     # 받는 쪽 게임의 장부를 덮고, 그 자리가 어긋나 제거가 「반쪽」으로 막힌다(실측).
-    skip = {"mod.json", "manifest.json", "읽어주세요.txt", "modkit-owners.json"}
+    skip = {"mod.json", "manifest.json", "읽어주세요.txt", "조작법.txt",
+            "modkit-owners.json"}
     assets = []
     for f in sorted(final.rglob("*")):
         if not f.is_file():
@@ -183,7 +184,8 @@ def _embed_manifest(final: Path, name: str):
     sys.path.insert(0, str(modkit_home))
     from modkit import manifest as modkit_manifest
 
-    exclude_patterns = modkit_manifest.DEFAULT_EXCLUDE + ("번역표/*", "읽어주세요.txt")
+    exclude_patterns = modkit_manifest.DEFAULT_EXCLUDE + ("번역표/*", "읽어주세요.txt",
+                                                        "조작법.txt")
     made = modkit_manifest.capture(
         final, game="Pokemon Z Fangame", version=name, scope="partial", exclude=exclude_patterns)
     modkit_manifest.save(made, final / "manifest.json")
@@ -377,6 +379,7 @@ def main():
             _keep_only(stage, {"Data/Scripts.rxdata"}
                        | {a["install_to"] for a in card["assets"]})
             shutil.copy2(HERE / "읽어주세요-패드추가.txt", stage / "읽어주세요.txt")
+            shutil.copy2(HERE / "조작법-패드.txt", stage / "조작법.txt")
         elif variant == "runa-debug":
             # 디버그는 켜진 채로 나가고(Main 머리의 `$DEBUG = true`), 「디버그 모드」가
             # 그 위에서 P키로 끄고 켠다 — 판정이 엔진 Input이라 모바일에서도 먹는다
@@ -387,6 +390,7 @@ def main():
             # 주입기가 DPPT Font의 글꼴 16벌까지 들여놓는다 — 여기서는 코어만 낸다.
             _keep_only(stage, {"Data/Scripts.rxdata"})
             shutil.copy2(HERE / "읽어주세요-디버그추가.txt", stage / "읽어주세요.txt")
+            shutil.copy2(HERE / "조작법-디버그.txt", stage / "조작법.txt")
         else:
             shutil.copy2(HERE / "읽어주세요-모드묶음.txt", stage / "읽어주세요.txt")
         _scrub_stage(stage)
