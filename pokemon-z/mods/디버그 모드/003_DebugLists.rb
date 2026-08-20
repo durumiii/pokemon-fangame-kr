@@ -68,6 +68,19 @@ module DebugList
     end
   end
 
+  # 신형 루비에서는 인코딩이 다른 두 문자열을 이으면 터진다(둘 다 한글일 때).
+  # 게임에서 온 문자열에 우리 문구를 붙일 때는 그쪽 인코딩에 맞춰 붙인다.
+  # 구판 루비에는 인코딩이 없으므로 그대로 지나간다.
+  def self.same_enc(s, like)
+    return s if !s.respond_to?(:force_encoding)
+    return s if !like.respond_to?(:encoding)
+    begin
+      return s.dup.force_encoding(like.encoding)
+    rescue Exception
+      return s
+    end
+  end
+
   def self.match?(text, needle)
     return true if !needle || needle == ""
     return false if !text
@@ -418,7 +431,10 @@ def pbListScreen(title, lister)
   list.viewport = viewport
   list.z = 2
   canfilter = lister.respond_to?(:dbgz_menu)
-  titletext = canfilter ? (title.to_s + "\n(F / X: 필터)") : title
+  titletext = title
+  if canfilter
+    titletext = title.to_s + DebugList.same_enc("\n(F / X: 필터)", title.to_s)
+  end
   title = Window_UnformattedTextPokemon.new(titletext)
   title.x = 256
   title.y = 0
