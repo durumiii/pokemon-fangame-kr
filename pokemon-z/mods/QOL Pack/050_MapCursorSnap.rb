@@ -1,7 +1,7 @@
 # 리전 맵 커서에 스냅을 붙인다 (Ruby 1.8.7 / 3.1+ 공통).
 #
 # 커서가 SNAP_DELAY프레임 동안 가만히 있었고, 선 칸에 보이는 장소 지점이 없으면
-# 주변 반경 SNAP_RADIUS칸(8방향) 중 가장 가까운 **표지 칸**으로 커서를 끌어당긴다.
+# 맨해튼 거리 SNAP_RADIUS칸 안(반경 1이면 상하좌우 넷)의 **표지 칸**으로 커서를 끌어당긴다.
 # 끌림도 기존 이동과 같은 4프레임 슬라이드를 쓴다.
 #
 # 끌어당길 자리는 장소 데이터가 아니라 그림에 표지가 그려진 칸이다(유지자 실기 판정
@@ -18,7 +18,7 @@
 # 원작 지도에서 빠진 지점(MISSING_POINTS)도 여기서 채운다 — 표지는 그려져 있는데
 # 장소 목록에 없어 이름도 스냅도 없던 자리다.
 class PokemonRegionMapScene
-  SNAP_RADIUS = 1   # 실기 감으로 조절할 자리 — 칸 단위 반경
+  SNAP_RADIUS = 1   # 실기 감으로 조절할 자리 — 칸 단위 반경(상하좌우 합, 맨해튼 거리)
   SNAP_DELAY  = 12  # 입력이 끊긴 뒤 이만큼 지나야 끌어당긴다 (기본 40fps 기준 0.3초)
 
   # 원작 지도에서 빠진 지점 — 그림에는 표지가 그려져 있는데 장소 목록에 항목이 없어
@@ -93,8 +93,11 @@ class PokemonRegionMapScene
   end
 
   # 반경 안의 표지 칸 중 가장 가까운 칸 [x,y]. 없으면 nil.
-  # 거리는 제곱거리로 재므로 상하좌우(1)가 대각(2)보다 먼저 걸리고, 완전 동점이면
-  # 표 순서의 첫 칸이 남는다. 미공개 지점은 pbSnapHasPoint?가 걸러 준다.
+  # 후보는 맨해튼 거리(|dx|+|dy|)로 거르므로 반경 1이면 상하좌우 넷뿐이고 대각은 빠진다
+  # (유지자 판정 2026-08-21 — 여덟 칸은 끌리는 범위가 넓었다). 고르는 셈은 제곱거리
+  # 그대로 두었다 — 후보 넷이 전부 거리 1이라 동점이고, 동점이면 표 순서의 첫 칸이
+  # 남는다. 반경을 2 이상으로 올리면 이 셈이 다시 일한다.
+  # 미공개 지점은 pbSnapHasPoint?가 걸러 준다.
   def pbSnapTarget(x,y)
     return nil if !@map || !@map[2]
     best=nil
@@ -103,7 +106,7 @@ class PokemonRegionMapScene
       dx=pt[0]-x
       dy=pt[1]-y
       next if dx==0 && dy==0
-      next if dx.abs>SNAP_RADIUS || dy.abs>SNAP_RADIUS
+      next if dx.abs+dy.abs>SNAP_RADIUS
       next if pt[0]<LEFT || pt[0]>RIGHT || pt[1]<TOP || pt[1]>BOTTOM
       next if !pbSnapHasPoint?(pt[0],pt[1])
       dist=dx*dx+dy*dy

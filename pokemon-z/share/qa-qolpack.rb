@@ -1,12 +1,20 @@
 # 「QOL Pack」 자체 점검 — 구판 루비(1.8.7) 실물에서 모드 조각의 셈을 잰다.
 #
-# 무엇을 재나 — Z-42(pbSpeed 수술)와 Z-50 ①(볼 단축키)이 하는 일이 그대로인가.
+# 무엇을 재나 — Z-42(pbSpeed 수술) · Z-50 ①(볼 단축키) · Z-50 ②(포획 후 자동 보관) ·
+# 리전 맵 커서 스냅이 하는 일이 그대로인가.
 #   ⓐ 등장 턴에 pbSpeed를 여러 번 불러도 치료·문구가 0번 돈다
 #   ⓑ pbAbilitiesOnSwitchIn 한 번에 치료·문구가 정확히 1번 돈다
 #   ⓒ 쇠약·출혈 걸린 아군이 있어도 예외가 안 난다(원본은 여기서 NameError)
 #   ⓓ 위장이 SLOWSTART·ACOMETIDA 배율을 안 바꾼다
 #   ⓔ 마지막에 쓴 볼이 있고 갖고 있으면 그것이, 없으면 옛 사슬이 골라진다
 #   ⓕ $lastUsed(도구 빠른 칸)가 볼 사용에 안 물든다
+#   ⓖ 스냅이 대각 칸을 안 고르고 상하좌우만 고른다
+#   ⓗ 자동 보관이면 파티가 만석이어도 안 묻고 박스로 내려간다
+#   ⓘ 물어보기면 원본과 같이 묻는다
+#   ⓙ 파티에 자리가 있으면 어느 값이든 안 묻는다
+#   ⓚ 옛 세이브 꼴(값이 없는 $PokemonSystem)에서 기본값이 자동 보관으로 읽힌다
+#   ⓛ 옵션 항목이 이름·값 차례대로 서고, 골라 두면 설명이 뜬다
+#   ⓜ 별명 물음은 커서가 「아니요」에 서고, 다른 확인창은 그대로다
 #
 # 화면은 못 잰다 — 커맨드 창에 아이콘이 실제로 그려지는 모양은 사람 몫이다.
 #
@@ -140,9 +148,112 @@ class CommandMenuDisplay
   def update; end
 end
 
+# ── 리전 맵 껍데기 — 좌표 상수는 원작 그대로다(절 PScreen_RegionMap 71-76줄) ──
+class PokemonRegionMapScene
+  LEFT   = 0
+  TOP    = 0
+  RIGHT  = 29
+  BOTTOM = 19
+  SQUAREWIDTH  = 16
+  SQUAREHEIGHT = 16
+end
+
+# ── 옵션 화면 껍데기 — 별칭이 걸릴 원작 메서드만 세운다 ────────────────────
+class EnumOption
+  attr_reader :name, :values
+  def initialize(name, options, getProc, setProc)
+    @name = name; @values = options; @getProc = getProc; @setProc = setProc
+  end
+  def get; return @getProc.call; end
+  def set(value); @setProc.call(value); end
+end
+
+class FakeTextbox
+  attr_accessor :text
+end
+
+class Window_PokemonOption
+  attr_accessor :index
+  def initialize(options); @options = options; @index = 0; end
+  def mustUpdateOptions; return false; end
+end
+
+class PokemonOptionScene
+  def pbAddOnOptions(options); return options; end   # 원작은 받은 것을 그대로 돌려준다
+  def pbUpdate; end
+end
+
+# ── 포획 껍데기 ───────────────────────────────────────────────────────────
+module PokeBattle_BattleCommon; end   # 모드가 이것을 다시 열어 pbStorePokemon을 넣는다
+
+def Kernel.pbConfirmMessage(text)
+  $confirmed.push(text)
+  return $answer_party
+end
+
+module PBSpecies
+  def self.getName(species); return "이브이"; end
+end
+
+class FakeCatch
+  attr_accessor :name, :species
+  def initialize(name); @name = name; @species = 1; end
+  def isEgg?; return false; end
+end
+
+class FakeTrainer
+  attr_accessor :party
+  def initialize(n)
+    @party = []
+    n.times {|i| @party.push(FakeCatch.new("파티#{i}")) }
+  end
+end
+
+class FakePeer
+  attr_reader :stored
+  def initialize; @stored = []; end
+  def pbCurrentBox; return 0; end
+  def pbStorePokemon(player, pkmn); @stored.push(pkmn); return 0; end
+  def pbGetStorageCreator; return nil; end
+  def pbBoxName(box); return "상자#{box + 1}"; end
+end
+
+# 전투 씬 껍데기 — 원작 pbDisplayConfirmMessage(절 PokeBattle_Scene 1484줄)를 그대로
+# 세워 두고, 명령 창에 무엇이 어떤 차례로 넘어갔는지 적어 둔다.
+class FakeBattleScene
+  attr_reader :shown
+  def initialize; @shown = []; @named = false; end
+  def pbShowCommands(msg, commands, defaultValue)
+    @shown.push([msg, commands, defaultValue])
+    return $answer_command   # 커서가 어디 서든 고르는 값은 시험이 정한다
+  end
+  def pbDisplayConfirmMessage(msg)
+    return pbShowCommands(msg, ["Si", "No"], 1) == 0
+  end
+  def pbNameEntry(title, pkmn); @named = true; return ""; end
+  def named?; return @named; end
+end
+
+class Catcher
+  include PokeBattle_BattleCommon
+  attr_reader :peer, :asked, :msgs
+  attr_reader :scene
+  def initialize
+    @peer = FakePeer.new; @scene = FakeBattleScene.new; @asked = []; @msgs = []
+  end
+  def pbPlayer; return $Trainer; end
+  def pbDisplayConfirm(msg)   # 원작 그대로(절 PokeBattle_Battle 2725줄)
+    @asked.push(msg)
+    return @scene.pbDisplayConfirmMessage(msg)
+  end
+  def pbDisplayPaused(text); @msgs.push(text); end
+  def pbChoosePokemon(a, b, c = nil); end
+end
+
 begin
   log("RUBY_VERSION = #{RUBY_VERSION.inspect}")
-  ["010_TurnOrder.rb", "070_BallShortcut.rb"].each do |f|
+  ["010_TurnOrder.rb", "050_MapCursorSnap.rb",
+   "070_BallShortcut.rb", "080_AutoBox.rb"].each do |f|
     eval(File.open("#{CHECK}/#{f}", "rb") {|fp| fp.read }, TOPLEVEL_BINDING, f)
   end
 
@@ -275,6 +386,132 @@ begin
   $PokemonBag = FakeBag.new({})
   disp.update
   chk("볼이 없으면 빈 아이콘", disp.iconBall.file, "Graphics/Icons/item000.png")
+
+  # ⓖ 스냅 — 맨해튼 거리라 대각은 후보에 안 든다.
+  # (8,2) 둘레의 표지 칸은 [7,2](왼쪽, 거리 1)와 [7,3](왼쪽 아래, 대각)뿐이다.
+  scene = PokemonRegionMapScene.new
+  $game_switches = {}
+  scene.instance_variable_set("@wallmap", false)
+  def scene.setlocs(list)   # [x,y] 목록을 순정 항목 꼴로 앉힌다
+    @map = [nil, nil, list.map {|xy| [xy[0], xy[1], "곳", "", nil, nil, nil, nil] }]
+  end
+  scene.setlocs([[7, 2], [7, 3]])
+  chk("ⓖ 상하좌우가 있으면 그쪽", scene.pbSnapTarget(8, 2), [7, 2])
+  scene.setlocs([[7, 3]])
+  chk("ⓖ 대각뿐이면 안 끌린다", scene.pbSnapTarget(8, 2), nil)
+  scene.setlocs([[18, 1], [19, 2]])
+  chk("ⓖ 동점이면 표 순서의 첫 칸", scene.pbSnapTarget(18, 2), [18, 1])
+  scene.setlocs([[7, 2]])
+  chk("ⓖ 두 칸 떨어진 곳은 안 끌린다", scene.pbSnapTarget(9, 2), nil)
+  chk("ⓖ 반경은 1 그대로", PokemonRegionMapScene::SNAP_RADIUS, 1)
+
+  # ⓚ 옛 세이브 꼴 — 인스턴스 변수가 아예 없는 $PokemonSystem
+  $PokemonSystem = PokemonSystem.new
+  chk("ⓚ 값이 없으면 자동 보관(0)", $PokemonSystem.qol_autobox, 0)
+  $PokemonSystem.qol_autobox = 1
+  chk("ⓚ 넣은 값은 그대로", $PokemonSystem.qol_autobox, 1)
+  $PokemonSystem.qol_autobox = 0
+  chk("ⓚ 0도 그대로", $PokemonSystem.qol_autobox, 0)
+
+  # ⓛ 옵션 항목 — 원작 훅에 하나가 얹히고, 이름·값 차례가 요구대로다
+  optscene = PokemonOptionScene.new
+  opts = optscene.pbAddOnOptions([])
+  chk("ⓛ 항목 하나가 얹힌다", opts.length, 1)
+  chk("ⓛ 항목 이름", opts[0].name, "파티가 꽉 찼을 때")
+  chk("ⓛ 값 차례", opts[0].values, ["자동 보관", "물어보기"])
+  chk("ⓛ 기본값은 자동 보관", opts[0].get, 0)
+  opts[0].set(1)
+  chk("ⓛ 고른 값이 $PokemonSystem에 실린다", $PokemonSystem.qol_autobox, 1)
+  opts[0].set(0)
+  # 설명 — 우리 항목에 서 있을 때만 뜬다
+  win = Window_PokemonOption.new(opts)
+  box = FakeTextbox.new
+  optscene.instance_variable_set("@sprites", {"option" => win, "textbox" => box})
+  win.index = 0
+  optscene.pbUpdate
+  chk("ⓛ 항목에 서면 설명이 뜬다", box.text,
+      "포켓몬을 잡았을 때 파티가 꽉 차 있으면 어떻게 할지 정한다.")
+  box.text = "딴 설명"
+  win.index = 1   # 「Salir」 줄 — 우리 항목이 아니다
+  optscene.pbUpdate
+  chk("ⓛ 딴 줄에서는 안 건드린다", box.text, "딴 설명")
+  win.index = 0
+  win.mustUpdateOptions   # 원작 pbOptions가 case 뒤에 읽는 자리
+  chk("ⓛ case 뒤 자리에서도 뜬다", box.text,
+      "포켓몬을 잡았을 때 파티가 꽉 차 있으면 어떻게 할지 정한다.")
+
+  # ⓜ 별명 물음 — 커서가 「아니요」에 선다
+  caught = FakeCatch.new("이브이")
+  $PokemonSystem.qol_autobox = 0
+  $Trainer = FakeTrainer.new(3)
+  $game_variables = {1 => -1}
+  $confirmed = []
+  $answer_command = 0   # 첫 칸을 고른다
+  catn = Catcher.new
+  catn.pbStorePokemon(caught)
+  chk("ⓜ 별명 물음의 첫 칸이 「아니요」", catn.scene.shown[0][1], ["No", "Si"])
+  chk("ⓜ B키로 물리면 「아니요」 자리(0)", catn.scene.shown[0][2], 0)
+  chk("ⓜ 첫 칸을 고르면 이름짓기로 안 간다", catn.scene.named?, false)
+  chk("ⓜ 물음은 그 하나뿐", catn.scene.shown.length, 1)
+
+  $answer_command = 1   # 둘째 칸 = 「예」
+  $Trainer = FakeTrainer.new(3)
+  catn2 = Catcher.new
+  catn2.pbStorePokemon(caught)
+  chk("ⓜ 둘째 칸을 고르면 이름짓기로 간다", catn2.scene.named?, true)
+
+  # 다른 확인창은 원작 차례 그대로 — 전투 쪽 나머지 여덟 자리가 쓰는 길이다
+  $answer_command = 0
+  cato = Catcher.new
+  chk("ⓜ 다른 확인창은 「예」가 먼저", cato.pbDisplayConfirm("¿Cambiar de Pokémon?"), true)
+  chk("ⓜ 다른 확인창의 명령 차례", cato.scene.shown[0][1], ["Si", "No"])
+  chk("ⓜ 다른 확인창의 B키 기본값", cato.scene.shown[0][2], 1)
+
+  # ⓗⓘⓙ 포획 — 파티 만석 × 옵션 값, 그리고 자리가 있을 때
+
+  $PokemonSystem.qol_autobox = 0
+  $Trainer = FakeTrainer.new(6)
+  $game_variables = {1 => -1}
+  $confirmed = []
+  cat = Catcher.new
+  cat.pbStorePokemon(caught)
+  chk("ⓗ 자동 보관 — 파티에 넣을지 안 묻는다", $confirmed.length, 0)
+  chk("ⓗ 자동 보관 — peer로 넘어갔다(박스 배정은 peer 몫)", cat.peer.stored, [caught])
+  chk("ⓗ 자동 보관 — 파티는 그대로 여섯", $Trainer.party.length, 6)
+  chk("ⓗ 별명은 그래도 묻는다", cat.scene.shown.length, 1)
+
+  $PokemonSystem.qol_autobox = 1
+  $Trainer = FakeTrainer.new(6)
+  $confirmed = []
+  $answer_party = false
+  cat2 = Catcher.new
+  cat2.pbStorePokemon(caught)
+  chk("ⓘ 물어보기 — 파티에 넣을지 묻는다",
+      $confirmed, ["¿Quieres añadir a 이브이 a tu equipo?"])
+  chk("ⓘ 거절하면 peer로", cat2.peer.stored, [caught])
+  chk("ⓘ 별명도 묻는다", cat2.scene.shown.length, 1)
+
+  $Trainer = FakeTrainer.new(6)
+  $confirmed = []
+  $answer_party = true
+  $game_variables = {1 => 0}
+  cat3 = Catcher.new
+  def cat3.pbGet(n); return n == 1 ? 0 : @swapped; end
+  def cat3.pbSet(n, v); @swapped = v; end
+  cat3.pbStorePokemon(caught)
+  chk("ⓘ 받아들이면 파티에 들어간다", $Trainer.party[0], caught)
+  chk("ⓘ 밀려난 쪽이 peer로", cat3.peer.stored.length, 1)
+  chk("ⓘ 밀려난 쪽은 잡은 놈이 아니다", cat3.peer.stored[0] == caught, false)
+
+  $confirmed = []
+  [0, 1].each do |val|
+    $PokemonSystem.qol_autobox = val
+    $Trainer = FakeTrainer.new(3)
+    cat4 = Catcher.new
+    cat4.pbStorePokemon(caught)
+    chk("ⓙ 자리가 있으면 안 묻는다(값 #{val})", $confirmed.length, 0)
+    chk("ⓙ 자리가 있으면 그대로 peer로(원본과 같다, 값 #{val})", cat4.peer.stored, [caught])
+  end
 
   log($bad == 0 ? "판정: 통과" : "판정: 실패 #{$bad}건")
 rescue Exception => e
