@@ -185,9 +185,9 @@
 {"es": "Infórmame", "ko": "알려주세요", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "PS", "ko": "HP", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "Ataque", "ko": "공격", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
-{"es": "Defensa", "ko": "수비", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
+{"es": "Defensa", "ko": "방어", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "Ataque Especial", "ko": "특수공격", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
-{"es": "Defensa Especial", "ko": "특별 방어", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
+{"es": "Defensa Especial", "ko": "특수방어", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "Velocidad", "ko": "스피드", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "¡El Pokémon Alfa ha huido! Pero ha soltado un ingrediente tras de sí.", "ko": "우두머리 포켓몬이 도망쳤다! 하지만 재료를 하나 떨어뜨리고 갔다.", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "<b>Crisanto</b> te espera en el centro de <b>Pueblo Collage</b> para combatir.", "ko": "<b>크리산토</b>가 배틀을 하기 위해 <b>콜라주마을</b> 중심에서 너를 기다리고 있다.", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
@@ -197,7 +197,6 @@
 {"es": "¡Usas la <b>Pokéflauta</b>!", "ko": "<b>포켓몬피리</b>를 사용했다!", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "¡El Snorlax se está despertando!", "ko": "잠만보가 깨어나고 있다!", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "¡El Team Azoth no puede ser humillado de esta manera!", "ko": "아조스단은 이런 모욕을 그냥 넘어가지 않는다!", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
-{"es": "Pues no", "ko": "글쎄, 아니야", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "<b>???:</b> ...", "ko": "<b>???:</b> ......", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "Unas horas más tarde...", "ko": "몇 시간 뒤...", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "Intercambiar Pokémon puede parecer cruel a veces, pero los Pokémon parecen estar diseñados para cogerle cariño rápido a su nuevo entrenador.", "ko": "포켓몬을 교환하는 게 가끔 잔인해 보여도, 이 녀석들은 새 트레이너한테 금방 정을 붙이게 되어 있단 말이지.", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
@@ -368,9 +367,9 @@
 {"es": "<b>Canola:</b> ¿Eres tú, \\PN? ¡Han pasado años!", "ko": "<b>카놀라:</b> 너인가, \\PN? 정말 오랜만이구나!", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "¿Te has vuelto más fuerte desde que te ganaste mi primera medalla de Regente?", "ko": "내 첫 섭정 배지를 가져간 뒤로 더 강해졌느냐?", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "Confío en que sí, porque si nos cruzamos en la sala de combate de este hotel, iré con mi verdadero equipo Pokémon.", "ko": "그러하길 바란다. 이 호텔 배틀룸에서 다시 만난다면 내 진짜 포켓몬들로 상대할 테니 말이다.", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
-{"es": "<b>Notas del Team Azoth:</b> En uno de sus últimos discursos hacia los reclutas, <i>madame</i> <b>Alca</b> hizo varios apuntes que conviene tener en consideración.", "ko": "<b>아조스단의 메모:</b> 최근 신병들을 대상으로 한 연설 중 하나에서, <i>마담</i> <b>알카</b>는 몇 가지 유의할 만한 점을 언급했습니다.", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
-{"es": "\"Por mucho que eliminemos el mal y el sufrimiento del orden natural de las cosas, el Mundo Pokémon está diseñado para albergar a un determinado número de individuos. Y lo hemos sobrepasado\".", "ko": "“우리가 자연의 질서에서 아무리 악과 고통을 제거한다 한들, 포켓몬 세계는 일정 수의 개체만을 수용하도록 설계되어 있습니다. 그리고 우리는 그 한계를 넘어섰습니다.”", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
-{"es": "\"Por tanto, en nuestro empeño por traer el paraíso también será necesario acometer una valiente empresa: segar gran parte de las vidas humanas\".", "ko": "“따라서 낙원을 실현하려는 노력 속에서, 인간의 생명 중 상당 부분을 앗아가는 용기 있는 과업 또한 완수해야만 할 것입니다.”", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
+{"es": "<b>Notas del Team Azoth:</b> En uno de sus últimos discursos hacia los reclutas, <i>madame</i> <b>Alca</b> hizo varios apuntes que conviene tener en consideración.", "ko": "<b>아조스단의 메모:</b> 최근 신병들을 대상으로 한 연설에서, <i>마담</i> <b>알카</b>는 몇 가지 유의할 만한 점을 언급했다.", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
+{"es": "\"Por mucho que eliminemos el mal y el sufrimiento del orden natural de las cosas, el Mundo Pokémon está diseñado para albergar a un determinado número de individuos. Y lo hemos sobrepasado\".", "ko": "“우리가 자연의 질서에서 아무리 악과 고통을 제거한다 한들, 포켓몬 세계는 일정 수의 개체만을 수용하도록 설계되었다. 그리고 우리는 그 한계를 넘어섰다.”", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
+{"es": "\"Por tanto, en nuestro empeño por traer el paraíso también será necesario acometer una valiente empresa: segar gran parte de las vidas humanas\".", "ko": "“따라서 낙원을 실현하려는 노력 속에서, 인간의 생명 중 상당 부분을 앗아가는 용기 있는 과업 또한 완수해야만 한다.”", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "¡El hotel te recibirá con los brazos abiertos siempre que busques otro desafío!", "ko": "새로운 도전을 원하실 때면 언제든 저희 호텔은 두 팔 벌려 환영하겠습니다!", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "<b>Pueblo Cromlech</b>, silencio y paz entre las rocas.", "ko": "<b>옥유마을</b>, 바위 사이의 고요와 평화.", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
 {"es": "\\c[4]<b>Angeline:</b>\\c[0] ...", "ko": "\\c[4]<b>안젤린:</b>\\c[0] ...", "맵수": 2, "src": "2026-08-12 실측 수렴(Z-28 통일 포함)"}
@@ -424,7 +423,7 @@
 {"es": "\\c[4]<b>Angeline:</b>\\c[0] Al querer acabar con toda la violencia y destrucción, se ha convertido él mismo en la destrucción encarnada.", "ko": "\\c[4]<b>안젤린:</b>\\c[0] 모든 폭력과 파괴를 끝내고자 했던 그 자신이, 정작 파괴의 화신이 되고 말았지.", "맵수": 2, "src": "sync"}
 {"es": "Si no se le detiene, usará el <b>Arma Definitiva</b> para reconvertir el mundo en una charca estancada. Sin dolor, ni muerte, ni vida.", "ko": "그이를 멈추지 않는다면 <b>최종병기</b>를 써서 세상을 고여 있는 웅덩이로 만들어 버릴 거란다. 고통도, 죽음도, 삶도 없는 곳으로 말이야.", "맵수": 2, "src": "sync"}
 {"es": "Un engaño. Un falso paraíso marchitado en el que ni humanos ni Pokémon podrán prosperar.", "ko": "기만이자, 인간도 포켓몬도 번성할 수 없이 시들어 버린 가짜 낙원이지.", "맵수": 2, "src": "sync"}
-{"es": "\\c[4]<b>Angeline:</b>\\c[0] Una vez fue un hombre tremendamente generoso y entregado a los demás.", "ko": "\\c[4]<b>안젤린:</b>\\c[0] 한때는 누구보다 관대하고 타인을 위해 헌신하는 사람이었단다.", "맵수": 2, "src": "sync"}
-{"es": "Y era ciertamente razonable y sabio.", "ko": "지극히 이성적이고 지혜로운 이였지.", "맵수": 2, "src": "sync"}
-{"es": "Ese hombre sigue ahí dentro. Nuestro lado amable no desaparece así como así.", "ko": "그 사람의 모습은 여전히 내면에 남아 있어. 우리의 다정한 면모는 그리 쉽게 사라지지 않는단다.", "맵수": 2, "src": "sync"}
-{"es": "Muy bien, ¡vuelve cuando lo tengas todo listo!", "ko": "좋아요, 모든 준비가 되면 다시 오세요!", "맵수": 2, "src": "sync"}
+{"es": "\\c[4]<b>Angeline:</b>\\c[0] Una vez fue un hombre tremendamente generoso y entregado a los demás.", "ko": "\\c[4]<b>안젤린:</b>\\c[0] 한때는 누구보다 관대하고 타인을 위해 헌신하는 사람이었지.", "맵수": 1, "src": "sync"}
+{"es": "Y era ciertamente razonable y sabio.", "ko": "지극히 이성적이고 지혜로운...", "맵수": 1, "src": "sync"}
+{"es": "Ese hombre sigue ahí dentro. Nuestro lado amable no desaparece así como así.", "ko": "그때의 모습은 여전히 내면에 남아 있어. 사람의 다정한 면모는 그리 쉽게 사라지지 않는단다.", "맵수": 1, "src": "sync"}
+{"es": "Muy bien, ¡vuelve cuando lo tengas todo listo!", "ko": "좋아, 모든 준비가 되면 다시 오거라!", "맵수": 1, "src": "sync"}

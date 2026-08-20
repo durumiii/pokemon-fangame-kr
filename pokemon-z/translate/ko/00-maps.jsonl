@@ -1185,7 +1185,7 @@
 {"k": "Infórmame", "v": "알려주세요"}
 {"k": "PS", "v": "HP"}
 {"k": "Ataque", "v": "공격"}
-{"k": "Defensa", "v": "수비"}
+{"k": "Defensa", "v": "방어"}
 {"k": "Nada", "v": "아무것도 없음"}
 {"k": "Comerciar", "v": "거래하기"}
 {"k": "Hablar", "v": "말하기"}
@@ -5429,7 +5429,7 @@
 {"k": "Defensa", "v": "방어"}
 {"k": "Nada", "v": "아무것도 없음"}
 {"k": "Ataque Especial", "v": "특수공격"}
-{"k": "Defensa Especial", "v": "특별 방어"}
+{"k": "Defensa Especial", "v": "특수방어"}
 {"k": "Velocidad", "v": "스피드"}
 {"map": 156, "n": 15}
 {"k": "¡Es un arbusto de bayas!", "v": "나무열매 관목이다!"}
@@ -11622,7 +11622,7 @@
 {"k": "No", "v": "아니요"}
 {"k": "Acepto", "v": "그렇게 하죠"}
 {"k": "No me interesa", "v": "관심 없어요"}
-{"k": "Pues no", "v": "아니오"}
+{"k": "Pues no", "v": "아니요"}
 {"k": "Stufful - 50 fichas", "v": "포곰곰 - 코인 50개"}
 {"k": "Petilil - 200 fichas", "v": "치릴리 - 코인 200개"}
 {"k": "Meltan - 400 fichas", "v": "멜탄 - 코인 400개"}
@@ -13772,9 +13772,9 @@
 {"k": "Recordar Movs", "v": "기술 떠올리기"}
 {"k": "Nada", "v": "아무것도 없음"}
 {"map": 483, "n": 3}
-{"k": "<b>Notas del Team Azoth:</b> En uno de sus últimos discursos hacia los reclutas, <i>madame</i> <b>Alca</b> hizo varios apuntes que conviene tener en consideración.", "v": "<b>아조스단의 메모:</b> 최근 신병들을 대상으로 한 연설 중 하나에서, <i>마담</i> <b>알카</b>는 몇 가지 유의할 만한 점을 언급했습니다."}
-{"k": "\"Por mucho que eliminemos el mal y el sufrimiento del orden natural de las cosas, el Mundo Pokémon está diseñado para albergar a un determinado número de individuos. Y lo hemos sobrepasado\".", "v": "“우리가 자연의 질서에서 아무리 악과 고통을 제거한다 한들, 포켓몬 세계는 일정 수의 개체만을 수용하도록 설계되어 있습니다. 그리고 우리는 그 한계를 넘어섰습니다.”"}
-{"k": "\"Por tanto, en nuestro empeño por traer el paraíso también será necesario acometer una valiente empresa: segar gran parte de las vidas humanas\".", "v": "“따라서 낙원을 실현하려는 노력 속에서, 인간의 생명 중 상당 부분을 앗아가는 용기 있는 과업 또한 완수해야만 할 것입니다.”"}
+{"k": "<b>Notas del Team Azoth:</b> En uno de sus últimos discursos hacia los reclutas, <i>madame</i> <b>Alca</b> hizo varios apuntes que conviene tener en consideración.", "v": "<b>아조스단의 메모:</b> 최근 신병들을 대상으로 한 연설에서, <i>마담</i> <b>알카</b>는 몇 가지 유의할 만한 점을 언급했다."}
+{"k": "\"Por mucho que eliminemos el mal y el sufrimiento del orden natural de las cosas, el Mundo Pokémon está diseñado para albergar a un determinado número de individuos. Y lo hemos sobrepasado\".", "v": "“우리가 자연의 질서에서 아무리 악과 고통을 제거한다 한들, 포켓몬 세계는 일정 수의 개체만을 수용하도록 설계되었다. 그리고 우리는 그 한계를 넘어섰다.”"}
+{"k": "\"Por tanto, en nuestro empeño por traer el paraíso también será necesario acometer una valiente empresa: segar gran parte de las vidas humanas\".", "v": "“따라서 낙원을 실현하려는 노력 속에서, 인간의 생명 중 상당 부분을 앗아가는 용기 있는 과업 또한 완수해야만 한다.”"}
 {"map": 484, "n": 6}
 {"k": "¿Quieres usar la Montura Gogoat?", "v": "고고트라이드를 사용할까?"}
 {"k": "¡Es un arbusto de bayas!", "v": "나무열매 관목이다!"}

@@ -2747,7 +2747,7 @@
 {"id": "m25.e41.p0.c2.02", "val": {"ref": "m25.s79"}, "state": "reviewed", "by": "human/검수 완료 소급 등재(2026-08-13 유실 감사)"}
 {"id": "m25.e38.p0.c5.0", "val": {"ref": "unified.02543e7a"}}
 {"id": "m25.e38.p0.c5.01", "val": {"ref": "unified.11170ecb"}}
-{"id": "m25.e38.p0.c5.02", "val": {"ref": "unified.4d04fe27"}}
+{"id": "m25.e38.p0.c5.02", "val": "방어"}
 {"id": "m25.s83", "val": {"ref": "unified.16e07b22"}}
 {"id": "m25.e38.p0.c5.03", "val": {"ref": "m25.s83"}}
 {"id": "m25.e41.p0.c5.03", "val": {"ref": "m25.s83"}, "state": "reviewed", "by": "human/검수 완료 소급 등재(2026-08-13 유실 감사)"}
@@ -9824,7 +9824,7 @@
 {"id": "m155.e4.p0.c5.03", "val": {"ref": "m155.s17"}}
 {"id": "m155.e5.p0.c5.03", "val": {"ref": "m155.s17"}}
 {"id": "m155.e4.p0.c5.0", "val": {"ref": "unified.8b5731c6"}}
-{"id": "m155.e4.p0.c5.01", "val": {"ref": "unified.fbd8ef7d"}}
+{"id": "m155.e4.p0.c5.01", "val": "특수방어"}
 {"id": "m155.e4.p0.c5.02", "val": {"ref": "unified.c9a5638a"}}
 {"id": "m156.s0", "val": {"ref": "unified.5db1e8c6"}}
 {"id": "m156.e7.p0.c0", "val": {"ref": "m156.s0"}}
@@ -19076,7 +19076,7 @@
 {"id": "m360.e53.p0.c39.01", "val": {"ref": "m360.s70"}}
 {"id": "m360.e33.p0.c3.0", "val": {"ref": "unified.23894851"}, "state": "reviewed", "by": "human/56833ad"}
 {"id": "m360.e33.p0.c3.01", "val": {"ref": "unified.bdd8cb02"}}
-{"id": "m360.e29.p0.c1.0", "val": "아니오"}
+{"id": "m360.e29.p0.c1.0", "val": "아니요"}
 {"id": "m360.e47.p0.c2.0", "val": "포곰곰 - 코인 50개", "state": "reviewed", "by": "human/0cc88a7"}
 {"id": "m360.e47.p0.c2.01", "val": "치릴리 - 코인 200개", "state": "reviewed", "by": "human/0cc88a7"}
 {"id": "m360.e47.p0.c2.02", "val": "멜탄 - 코인 400개", "state": "reviewed", "by": "human/0cc88a7"}
@@ -22222,9 +22222,9 @@
 {"id": "m482.s18", "val": {"ref": "unified.16e07b22"}}
 {"id": "m482.e3.p0.c2.03", "val": {"ref": "m482.s18"}}
 {"id": "m482.e37.p0.c2.03", "val": {"ref": "m482.s18"}}
-{"id": "m483.e7.p0.c0", "val": {"ref": "unified.9f02f7e6"}, "state": "reviewed", "by": "human/55467e6"}
-{"id": "m483.e7.p0.c2", "val": {"ref": "unified.5b006623"}, "state": "reviewed", "by": "human/55467e6"}
-{"id": "m483.e7.p0.c4", "val": {"ref": "unified.529d1c67"}, "state": "reviewed", "by": "human/55467e6"}
+{"id": "m483.e7.p0.c0", "val": "<b>아조스단의 메모:</b> 최근 신병들을 대상으로 한 연설에서, <i>마담</i> <b>알카</b>는 몇 가지 유의할 만한 점을 언급했다.", "state": "reviewed", "by": "human/55467e6"}
+{"id": "m483.e7.p0.c2", "val": "“우리가 자연의 질서에서 아무리 악과 고통을 제거한다 한들, 포켓몬 세계는 일정 수의 개체만을 수용하도록 설계되었다. 그리고 우리는 그 한계를 넘어섰다.”", "state": "reviewed", "by": "human/55467e6"}
+{"id": "m483.e7.p0.c4", "val": "“따라서 낙원을 실현하려는 노력 속에서, 인간의 생명 중 상당 부분을 앗아가는 용기 있는 과업 또한 완수해야만 한다.”", "state": "reviewed", "by": "human/55467e6"}
 {"id": "m484.s0", "val": {"ref": "unified.7898a761"}, "state": "reviewed", "by": "human/55467e6"}
 {"id": "m484.e10.p0.c1", "val": {"ref": "m484.s0"}}
 {"id": "m484.e11.p0.c1", "val": {"ref": "m484.s0"}}
