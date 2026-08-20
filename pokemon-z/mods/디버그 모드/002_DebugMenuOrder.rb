@@ -33,7 +33,8 @@ class CommandList
     ["필드와 데이터", ["roamerstatus", "roam", "setencounters", "setmetadata",
                       "terraintags", "resettrainers", "readyrematches",
                       "daycare", "quickhatch"]],
-    ["개발 도구",     ["extracttext", "compiletext", "compiledata", "animeditor",
+    ["개발 도구",     ["dbgz_side",
+                      "extracttext", "compiletext", "compiledata", "animeditor",
                       "mapconnections", "trainertypes", "debugconsole",
                       "togglelogging", "relicstone", "purifychamber", "mysterygift"]]
   ]
@@ -55,6 +56,7 @@ class CommandList
     return if !defined?(DebugPerks)
     add("dbgz_heal", "전투 후 자동 회복: " + DebugPerks.onoff(DebugPerks.heal))
     add("dbgz_hm", "비전기술·라이드 자동 통과: " + DebugPerks.onoff(DebugPerks.hm))
+    add("dbgz_side", "원작 디버그 곁가지: " + DebugPerks.onoff(DebugPerks.side))
   end
 
   # 첫 화면 목록. 표에 이름이 없는 항목(다른 모드가 더한 것)은 잃지 않고 뒤에 붙인다.
@@ -95,9 +97,16 @@ class CommandList
   # 우리 항목이면 그 자리에서 값을 뒤집고 nil을 돌려준다.
   def dbgz_toggle(key)
     return key if !key
-    return key if key != "dbgz_heal" && key != "dbgz_hm"
+    return key if key != "dbgz_heal" && key != "dbgz_hm" && key != "dbgz_side"
     return nil if !defined?(DebugPerks)
-    if key == "dbgz_heal"
+    if key == "dbgz_side"
+      DebugPerks.side = !DebugPerks.side
+      if DebugPerks.side
+        Kernel.pbMessage("리전 맵 편집기·중요 도구 버리기·알 기술·트레이너 추가 확인이 열려요.")
+      else
+        Kernel.pbMessage("곁가지를 닫았어요 — 그 넷이 평소 규칙대로 돌아갑니다.")
+      end
+    elsif key == "dbgz_heal"
       DebugPerks.heal = !DebugPerks.heal
       Kernel.pbMessage("전투 후 자동 회복 " + DebugPerks.onoff(DebugPerks.heal) + ".")
     else
