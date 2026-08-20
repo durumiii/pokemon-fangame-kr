@@ -68,7 +68,8 @@ RUNA_INJECT = ["UI KR", "Utility Pack", "DPPT Font"]
 # modkit이 훅 메서드를 다시 대조해 스스로 넘어가고, 없는 모드는 여기서 `force`로 넘긴다.
 # 통합 둘은 재료의 기준선을 물려받아 실제로는 재대조로 통과한다 — 재료 일부(Type Matchup·
 # Battle Order 등)가 기준선을 안 갖고 있어 대조 범위가 반쪽이라 force를 함께 걸어 둔다.
-FORCE_INJECT = {"UI KR", "Utility Pack", "DPPT Font"}
+# 글꼴 모드는 2026-08-20부터 제 기준선을 싣는다(runa/make-font-mods.py) — force를 뗐다.
+FORCE_INJECT = {"UI KR", "Utility Pack"}
 # Z-GUI 그림은 v6부터 `UI KR` 통합본의 에셋으로 딸려 온다 — 주입이 번역 자산 위에
 # 덮으므로(modassets.install) 따로 복사하던 단계가 없어졌다.
 # 원본 배포판의 실행 설정을 한 판만 함께 싣는다. v5.1·v5.2가 넣었던 `fontSub`(글꼴 이름
