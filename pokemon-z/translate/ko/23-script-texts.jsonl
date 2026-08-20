@@ -3561,20 +3561,20 @@
 {"k": "Llenar Cajas de Almacenamiento", "v": "보관 박스 채우기"}
 {"k": "Vaciar Cajas de Almacenamiento", "v": "보관 박스 비우기"}
 {"k": "Usar PC", "v": "PC 사용"}
-{"k": "Setear Personaje del Jugador", "v": "플레이어 캐릭터 설정"}
+{"k": "Setear Personaje del Jugador", "v": "플레이어 외모 변경"}
 {"k": "Renombrar Jugador", "v": "플레이어 이름 변경"}
 {"k": "Cambiar ID del Jugador", "v": "플레이어 ID 변경"}
 {"k": "Cambiar Ropa del Jugador", "v": "플레이어 옷 변경"}
 {"k": "Setear Dinero", "v": "소지금 설정"}
 {"k": "Setear Monedas", "v": "동전 설정"}
 {"k": "Setear Medallas", "v": "배지 설정"}
-{"k": "Obtener Equipo de Prueba", "v": "테스트 팀 받기"}
-{"k": "Habilitar Deportivas", "v": "러닝슈즈 활성화"}
-{"k": "Habilitar Pokégear", "v": "포켓기어 활성화"}
-{"k": "Habilitar Pokédex", "v": "도감 활성화"}
+{"k": "Obtener Equipo de Prueba", "v": "테스트 파티 받기"}
+{"k": "Habilitar Deportivas", "v": "러닝슈즈 켜기/끄기"}
+{"k": "Habilitar Pokégear", "v": "포켓기어 켜기/끄기"}
+{"k": "Habilitar Pokédex", "v": "도감 켜기/끄기"}
 {"k": "Acceso a los Dex", "v": "도감 접근"}
-{"k": "Activar Revanchas del Celular", "v": "휴대전화 재대결 활성화"}
-{"k": "Gestionar Regalos Misteriosos", "v": "이상한 기프트 관리"}
+{"k": "Activar Revanchas del Celular", "v": "휴대전화 재대결 준비"}
+{"k": "Gestionar Regalos Misteriosos", "v": "이상한 소포 관리"}
 {"k": "Opciones de la Guardería", "v": "키우미집 설정"}
 {"k": "Eclosión rápida", "v": "빠른 부화"}
 {"k": "Estado de los Pokémon errantes", "v": "배회 포켓몬 상태"}
@@ -3583,7 +3583,7 @@
 {"k": "Setear Metadatos", "v": "메타데이터 설정"}
 {"k": "Setear Etiquetas de Terrenos", "v": "지형 태그 설정"}
 {"k": "Editar Tipos de Entrenadores", "v": "트레이너 타입 편집"}
-{"k": "Restablecer Entrenadores", "v": "트레이너 리셋"}
+{"k": "Restablecer Entrenadores", "v": "이 맵 트레이너 초기화"}
 {"k": "Probar Batalla con Salvaje", "v": "야생 배틀 테스트"}
 {"k": "Probar Batalla Doble con Salvajes", "v": "야생 더블배틀 테스트"}
 {"k": "Probar Batalla con Entrenador", "v": "트레이너 배틀 테스트"}
@@ -3594,7 +3594,7 @@
 {"k": "Conexiones de Mapas", "v": "맵 연결"}
 {"k": "Editor de Animaciones", "v": "애니메이션 에디터"}
 {"k": "Consola de Depuración", "v": "디버그 콘솔"}
-{"k": "Activar Registro de Batalla", "v": "배틀 기록 활성화"}
+{"k": "Activar Registro de Batalla", "v": "배틀 기록 켜기/끄기"}
 {"k": "Se refrescará el mapa.", "v": "맵을 새로 고칩니다."}
 {"k": "El equipo Pokémon recuperó la salud.", "v": "포켓몬 파티가 체력을 회복했다."}
 {"k": "AGREGAR OBJETO", "v": "도구 추가"}

@@ -27,6 +27,11 @@ module DebugToggleKey
   # 디버그가 켜져 있을 때 필드에서 박스 PC를 바로 여는 키(B). 기본 조작에 안 걸린
   # 글자다 — 게임이 키보드로 받는 것은 Space·Return·C·Esc·X·A·Z·S·D·Q·W뿐이다.
   PC_KEY = 0x42
+  # 패드로 박스 PC를 여는 법 — LB를 이 프레임 수만큼 붙들고 있으면 열린다(약 1초).
+  # 필드에서 원작이 안 쓰는 패드 버튼은 LB·RB 둘뿐이고 그 둘을 이미 토글과 메뉴가
+  # 쓴다. LB를 그냥 누르고 있는 것은 조합의 대기 상태일 뿐 아무 일도 안 하므로,
+  # 그 빈자리를 길게 누르기로 받는다. RB를 더하러 가는 손이 1초를 넘길 일은 없다.
+  PAD_PC_HOLD = 40
 
   def self.keyboard?
     return false if !Input.respond_to?(:triggerex?)
@@ -67,13 +72,30 @@ module DebugToggleKey
     return Input.triggerex?(PC_KEY)
   end
 
+  # LB 길게 누르기. 한 번 열면 손을 뗄 때까지 다시 안 연다.
+  def self.pad_pc?
+    if !$DEBUG || !Input.press?(PAD_COMBO[0])
+      @hold = 0
+      @held_done = false
+      return false
+    end
+    @hold = (@hold ? @hold : 0) + 1
+    return false if @held_done
+    return false if @hold < PAD_PC_HOLD
+    @held_done = true
+    return true
+  end
+
   def self.update
     return if !field?
-    if pc?
+    open_pc = pad_pc?   # 길게 누르기는 매 프레임 세어야 하므로 먼저 부른다
+    if pc? || open_pc
       pbFadeOutIn(99999) { pbPokeCenterPC }
       return
     end
     if keyboard? || pad?
+      # 조합이 섰으면 LB는 그 몫이다 — 손을 떼기 전까지 PC가 딸려 열리지 않게 막는다
+      @held_done = true
       $DEBUG = !$DEBUG
       Kernel.pbMessage($DEBUG ? "디버그 모드 ON" : "디버그 모드 OFF")
       return
