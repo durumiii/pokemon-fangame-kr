@@ -246,6 +246,9 @@ class Catcher
     @asked.push(msg)
     return @scene.pbDisplayConfirmMessage(msg)
   end
+  def pbShowCommands(msg, commands, cancancel = true)   # 원작 그대로(같은 절 2729줄)
+    return @scene.pbShowCommands(msg, commands, cancancel)
+  end
   def pbDisplayPaused(text); @msgs.push(text); end
   def pbChoosePokemon(a, b, c = nil); end
 end
@@ -466,6 +469,16 @@ begin
   chk("ⓜ 다른 확인창은 「예」가 먼저", cato.pbDisplayConfirm("¿Cambiar de Pokémon?"), true)
   chk("ⓜ 다른 확인창의 명령 차례", cato.scene.shown[0][1], ["Si", "No"])
   chk("ⓜ 다른 확인창의 B키 기본값", cato.scene.shown[0][2], 1)
+  # 셋째 인자로 불리언을 넘기는 호출(원작 PokeBattle_Battle#pbShowCommands)도 그대로다
+  catb = Catcher.new
+  boolerr = nil
+  begin
+    catb.pbShowCommands("¿Qué hacer?", ["Luchar", "Huir"], true)
+  rescue Exception => e
+    boolerr = "#{e.class}: #{e.message}"
+  end
+  chk("ⓜ 불리언을 넘기는 호출은 안 깨진다", boolerr, nil)
+  chk("ⓜ 불리언이 그대로 넘어간다", catb.scene.shown[0][2], true)
 
   # ⓗⓘⓙ 포획 — 파티 만석 × 옵션 값, 그리고 자리가 있을 때
 

@@ -63,6 +63,7 @@
       "NewBattleBag#intoPocket",
       "CommandMenuDisplay#update",
       "PokeBattle_BattleCommon#pbStorePokemon",
+      "PokeBattle_BattleCommon#qol_pbConfirmNicknameDefaultNo",
       "PokemonSystem#qol_autobox",
       "PokemonOptionScene#pbAddOnOptions",
       "PokemonOptionScene#pbUpdate",

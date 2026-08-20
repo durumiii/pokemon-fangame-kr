@@ -245,7 +245,7 @@ Type Matchup · Z-GUI · 디버그 모드)와 poke-essentials `mod/z/`의 편의
 
 **셈은 구판 루비 실물로 잰다** — `share/qa-qolpack.rb`가 원작 판정을 껍데기로 세우고
 `010_TurnOrder.rb`·`050_MapCursorSnap.rb`·`070_BallShortcut.rb`·`080_AutoBox.rb`를
-`eval`한 뒤 값을 견준다(75표본). 돌리는 법은
+`eval`한 뒤 값을 견준다(77표본). 돌리는 법은
 그 파일 머리에 있다. 모드를 고쳤으면 다시 돌린다.
 
 남는 것은 화면에 그려지는 모양과 눌러 보는 흐름이다. 배틀 갈래는 디버그를 켜면(「디버그 모드」 모드의 P키) 처리마다 로그가 남으므로 순서를 눈으로
