@@ -1793,7 +1793,7 @@
 {"k": "Además, ¡la profe estará orgullosa de nosotros si lo hacemos!", "v": "게다가 이렇게 하면 박사님도 우리를 자랑스러워하실 거야!"}
 {"k": "\\c[3]<b>Crisanto:</b>\\c[0] ¡O-otra vez casi le pasa una desgracia a esta chica sin que se haya dado cuenta!", "v": "\\c[3]<b>크리산토:</b>\\c[0] 또, 또 자기도 모르는 사이에 큰일 날 뻔했잖아!"}
 {"k": "¿Es que tiene un imán para estas cosas o qué? ¡Debería andarse con más ojo!", "v": "이런 일에 자석이라도 달린 건가? 좀 더 조심해야지!"}
-{"k": "No tenemos señor regente en <b>Pueblo Profano</b>. Tendrás que dirigirte a <b>Ciudad Novarte</b> si quieres desafiar a uno.", "v": "흠... 그렇군... <b>프로파노마을</b>에는 섭정이 없어... 승부를 겨루고 싶다면 <b>백단시티</b>로 가야 할 것이야."}
+{"k": "No tenemos señor regente en <b>Pueblo Profano</b>. Tendrás que dirigirte a <b>Ciudad Novarte</b> si quieres desafiar a uno.", "v": "<b>프로파노마을</b>에는 섭정이 없어... 승부를 겨루고 싶다면 <b>백단시티</b>로 가야 할 것이야."}
 {"k": "Yo viví el reinado del padre del <b>Rey Áster</b>.", "v": "나는 <b>아스테르</b> 왕의 부왕 시절을 직접 겪은 사람이라네."}
 {"k": "Era un rey de fuerte carácter, pero derrochador y frívolo. Dejó una región prácticamente arruinada.", "v": "성품은 강인했으나 사치스럽고 경박했지... 결국 지방을 거의 폐허로 만들어 놓았다네."}
 {"k": "Creo que su hijo <b>Áster</b> está pagando el precio de su desastroso legado.", "v": "그 아들인 <b>아스테르</b> 왕이 참담한 유산의 대가를 치르고 있는 셈이지."}
@@ -2025,8 +2025,8 @@
 {"k": "Si me das tu mano te llevaré.", "v": "손을 잡아 준다면 널 데려가 주마."}
 {"k": "Es mejor que no salgamos fuera cuando anochece.", "v": "날이 어두워지면 밖에 나가지 않는 게 좋단다."}
 {"k": "Al menos, hasta que los cazadores se encarguen de las brujas del pantano.", "v": "적어도 사냥꾼들이 늪의 마녀들을 처리하기 전까진 말이지."}
-{"k": "Llegaron unos extraños viajeros buscando refugio, hace poco.", "v": "흠... 그렇군... 얼마 전, 피신처를 찾아 낯선 여행자들이 찾아왔지."}
-{"k": "Digo que eran extraños porque vestían con unas máscaras un tanto siniestras.", "v": "다소 섬뜩한 마스크를 쓰고 있어서 낯설다고 한 것이다."}
+{"k": "Llegaron unos extraños viajeros buscando refugio, hace poco.", "v": "얼마 전, 피신처를 찾아 수상한 여행자들이 찾아왔지."}
+{"k": "Digo que eran extraños porque vestían con unas máscaras un tanto siniestras.", "v": "그런데 하나같이 꽤 섬뜩한 가면을 쓰고 있더라고."}
 {"k": "Sí", "v": "예"}
 {"k": "No", "v": "아니요"}
 {"map": 51, "n": 10}
@@ -6330,7 +6330,7 @@
 {"k": "Qué lástima. Tal vez tú necesites esto más que yo.", "v": "저런. 어쩌면 나보다 너한테 이게 더 필요할지도 모르겠네."}
 {"k": "Has estado en muchos parajes variados, ¿no?", "v": "너 정말 다양한 곳을 다녀왔구나, 그렇지?"}
 {"k": "¡Pues seguro que no has visto nada como el gran desierto, al oeste de la ciudad!", "v": "하지만 도시 서쪽에 있는 거대한 사막 같은 건 분명 본 적 없을걸!"}
-{"k": "¿Tienes un Kadabra? ¿Te gustaría cambiarlo por mi Kirlia?", "v": "흠... 그렇군... 윤겔라를 가지고 있나? 내 킬리아와 교환하지 않겠나?"}
+{"k": "¿Tienes un Kadabra? ¿Te gustaría cambiarlo por mi Kirlia?", "v": "윤겔라를 가지고 있나? 내 킬리아와 교환하지 않겠나?"}
 {"k": "¡Qué guay! ¡Pues a intercambiar se ha dicho!", "v": "신난다! 그럼 당장 교환하자!"}
 {"k": "Kirlia puede evolucionar a dos formas distintas dependiendo de su género y del método que decidas usar para evolucionarlo. ¡Buena suerte!", "v": "킬리아는 성별과 진화시키는 방식에 따라 두 가지 다른 모습으로 진화할 수 있지. 행운을 빈다!"}
 {"k": "Si tienes un Kadabra, ponlo en el primer lugar de tu equipo para que pueda verlo bien.", "v": "윤겔라가 있다면 내가 잘 볼 수 있게 선두에 두거라."}
@@ -6349,7 +6349,7 @@
 {"k": "Un curioso Pokémon de tipo Bicho te sorprenderá, para bien o para mal.", "v": "특이한 벌레타입 포켓몬이 너를 놀라게 할 것이다... 좋게든 나쁘게든 말이다."}
 {"k": "Te veo en una tierra oscura y llena de misterio. Llevarás una gran angustia contigo, como si el destino del mundo pesara sobre tus hombros.", "v": "어둡고 신비로 가득 찬 땅에 서 있는 네 모습이 보이는구나... 세상의 운명이 네 어깨를 짓누르는 것처럼 커다란 번민을 안고 가겠지."}
 {"k": "Un combate doble inesperado te pondrá en un buen apuro, no bajes la guardia.", "v": "예상치 못한 더블배틀로 곤경에 처할 테니 방심하지 마라."}
-{"k": "De los Pokémon que llevas en tu equipo ahora mismo, solo tres de ellos seguirán contigo hasta el final.", "v": "흠... 그렇군... 지금 네가 데리고 있는 포켓몬 중 단 세 마리만이... 끝까지 너와 함께할 것이다."}
+{"k": "De los Pokémon que llevas en tu equipo ahora mismo, solo tres de ellos seguirán contigo hasta el final.", "v": "지금 네가 데리고 있는 포켓몬 중 단 세 마리만이... 끝까지 너와 함께할 것이다."}
 {"k": "Llegado el momento, deberás sacrificar a uno de tus Pokémon más valiosos por un bien mayor.", "v": "때가 되면, 대의를 위해 가장 소중한 포켓몬 중 하나를 희생해야 할 것이다..."}
 {"k": "Un movimiento hará retroceder a tu Pokémon tres veces seguidas, eso marcará una tragedia...", "v": "어떤 기술에 네 포켓몬이 세 번 연속 풀죽을 것이고... 그것이 비극을 불러올 것이다..."}
 {"k": "No tienes suficiente dinero.", "v": "돈이 부족하구나."}
@@ -6366,7 +6366,7 @@
 {"map": 187, "n": 32}
 {"k": "¿Usar <b>Polvo Explosivo</b>?", "v": "<b>폭발가루</b>를 사용할까?"}
 {"k": "...", "v": "......"}
-{"k": "¿Qué tal va el mundo de arriba? Hace tiempo que no sé de él...", "v": "흠... 그렇군... 바깥 세상은 요새 어찌 돌아가는지... 한동안 소식을 못 들었거든..."}
+{"k": "¿Qué tal va el mundo de arriba? Hace tiempo que no sé de él...", "v": "바깥 세상은 요새 어찌 돌아가는지... 한동안 소식을 못 들었거든..."}
 {"k": "Yo prefiero quedarme aquí, a salvo con mis amigos y mis Pokémon.", "v": "흠... 난 친구들과 내 포켓몬 곁에서 안전하게 여기 머무는 게 더 좋아..."}
 {"k": "Te doy la bienvenida al hogar de los desamparados.", "v": "갈 곳 없는 이들의 안식처에 온 걸 환영하네."}
 {"k": "Ningún mal puede alcanzarte en este refugio. Pero, por favor, no reveles a nadie el camino a través de las criptas.", "v": "이 피난처에서는 어떤 악의도 네게 미치지 못하지. 하지만 지하묘지로 통하는 길은 아무에게도 말하지 말아 다오."}
@@ -10184,7 +10184,7 @@
 {"k": "Los Pokémon prehistóricos son increíbles, ¿verdad?", "v": "고대 포켓몬은 정말 대단하지 않니?"}
 {"k": "Si tienes un Kabuto, ponlo en el primer lugar de tu equipo para que pueda verlo bien.", "v": "투구가 있다면 잘 볼 수 있게 선두에 세워서 보여 줘."}
 {"k": "Tengo un amigo arqueólogo obsesionado con los Pokémon dinosaurio, es algo muy típico de él.", "v": "내 친구 중에 공룡 포켓몬에 집착하는 고고학자가 있는데, 딱 그 녀석다운 행동이지."}
-{"k": "Tengo un pariente en <b>Pueblo Profano</b> que otorga una Megapiedra a aquellos que son lo suficientemente fuertes.", "v": "흠... 그렇군... <b>프로파노마을</b>에 사는 내 친척이 충분히 강한 사람에게 메가스톤을 주고 있지."}
+{"k": "Tengo un pariente en <b>Pueblo Profano</b> que otorga una Megapiedra a aquellos que son lo suficientemente fuertes.", "v": "<b>프로파노마을</b>에 사는 내 친척이 충분히 강한 사람에게 메가스톤을 주고 있지."}
 {"k": "Por lo visto se trata de una Megapiedra bastante valiosa, ¿aunque cuál no lo es?", "v": "듣기로는 꽤 귀한 메가스톤이라더군... 뭐, 귀하지 않은 메가스톤이 있겠냐만."}
 {"k": "Sí", "v": "예"}
 {"k": "No", "v": "아니요"}
@@ -11581,7 +11581,7 @@
 {"k": "Pues ya sabrás de sobra que es mejor mantenerse lo más lejos posible de ella.", "v": "그럼 그 여자한테선 될 수 있는 한 멀리 떨어져 있는 게 좋다는 건 이미 잘 알고 있겠네."}
 {"k": "¿Tienes tu tícket para el <b>Circo Sanguino</b>? ¡Menuda suerte la tuya!", "v": "<b>상기노 서커스</b> 티켓을 갖고 있잖아? 이거 완전 운이 좋은걸!"}
 {"k": "Este año, la magnífica <b>Siempreviva</b> ofrecerá un espectáculo único como jamás se ha visto. Una maravilla digna de verse.", "v": "올해는 훌륭하신 <b>시엠프레비바</b>님께서 이제껏 본 적 없는 특별한 쇼를 선보이실 거거든. 안 보고는 못 배길 걸!"}
-{"k": "¡Aquí puedes cambiar tus fichas por Pokemon fabulosos!", "v": "흠... 그렇군... 여기서 코인을 멋진 포켓몬으로 바꿀 수 있을 것이다..."}
+{"k": "¡Aquí puedes cambiar tus fichas por Pokemon fabulosos!", "v": "여기서 코인을 멋진 포켓몬으로 바꿀 수 있을 것이다..."}
 {"k": "¿Qué poképremio andas buscando?", "v": "흠... 어떤 포켓몬 상품을 바라고 있는 거냐...?"}
 {"k": "¿Quieres a Stufful entonces?", "v": "흠... 포곰곰을 바라는 것인가...?"}
 {"k": "¡Oh, vaya! No tienes espacio en tu equipo.", "v": "흠... 지닌 포켓몬에 자리가 없구나..."}
