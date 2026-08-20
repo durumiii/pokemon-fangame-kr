@@ -10,7 +10,9 @@
 #   · 선제의발톱·구애열매 판정은 라운드에 한 번만 굴리고 재계산은 그 결과를 재사용
 #   · 선제의발톱 메시지를 순서 계산 시점이 아니라 그 포켓몬이 움직이기 직전에 표시
 #     (원본에도 `# TODO: Quick Claw message`로 남아 있던 자리다)
-#   · 재계산 중에는 `pbSpeed`의 등장 턴 전용 부수효과가 다시 돌지 않게 막음
+#   · `pbSpeed`는 등장 턴 전용 부수효과를 아예 돌리지 않게 막고, 그 부수효과는
+#     등장 특성이 실제로 발동하는 `pbAbilitiesOnSwitchIn`으로 옮겼다(Z-42)
+#   · 볼 단축키가 마지막에 쓴 볼을 먼저 낸다(Z-50 ①, 기억하는 자리는 070_BallShortcut.rb)
 #
 # 우선도 브래킷은 손대지 않는다 — 본가도 브래킷은 그대로 두고 같은 브래킷 안의
 # 스피드 순서만 다시 매긴다.
@@ -18,21 +20,13 @@
 # 무엇을 왜 이렇게 했는지는 이 폴더의 AGENTS.md가 정본이다.
 
 class PokeBattle_Battle
-  # 재계산 중임을 알린다. Battler#pbSpeed가 이 값을 보고 등장 턴 전용 부수효과를 건넌다.
-  attr_accessor :bo_quiet_speed
-
   # 남은 포켓몬의 행동 순서를 다시 정렬한다.
   def bo_resortPriority
     return if !@priority || @priority.length==0
     return if !@bo_quickclaw   # 이 라운드의 첫 계산이 아직 안 돌았다
-    @bo_quiet_speed=true
-    begin
-      @usepriority=false
-      pbPriority(true,false,true)
-      @usepriority=true
-    ensure
-      @bo_quiet_speed=false
-    end
+    @usepriority=false
+    pbPriority(true,false,true)
+    @usepriority=true
   end
 
   # 선제의발톱·구애열매 메시지를 그 포켓몬이 실제로 움직이기 직전에 보여 준다.
@@ -252,7 +246,14 @@ class PokeBattle_Battle
     # Call at Pokémon
 for i in priority
       if @choices[i.index][0]==4 && !i.effects[PBEffects::SkipTurn]
-        if $PokemonBag.pbHasItem?(:ULTRABALLCASERA)
+        # Z-50 ① — 마지막으로 전투 가방에서 고른 볼을 먼저 낸다.
+        # 그 볼을 기억하는 자리는 070_BallShortcut.rb다.
+        # pokeBall을 반복마다 비운다 — 원본은 앞 포켓몬의 값이 남았다.
+        pokeBall=nil
+        if $lastUsedBall && $lastUsedBall>0 && $PokemonBag.pbHasItem?($lastUsedBall)
+          pokeBall=$lastUsedBall
+          $PokemonBag.pbDeleteItem($lastUsedBall,1)
+        elsif $PokemonBag.pbHasItem?(:ULTRABALLCASERA)
           pokeBall=getConst(PBItems,:ULTRABALLCASERA)
           $PokemonBag.pbDeleteItem(:ULTRABALLCASERA,1)
         elsif $PokemonBag.pbHasItem?(:SUPERBALLCASERA)
@@ -411,23 +412,102 @@ for i in priority
 end
 
 class PokeBattle_Battler
-  # `pbSpeed`에는 값을 읽는 일 말고 등장 턴에만 도는 부수효과가 섞여 있다(커스텀 특성
-  # `TINTINEO`가 아군 상태이상을 치료하고 메시지를 띄운다). 순서를 여러 번 다시
-  # 계산하면 그것도 여러 번 돈다. 재계산 동안만 등장 턴 판정(`turncount==0`)을 피해
-  # 값만 읽는다. 라운드 첫 계산은 원본 그대로 두므로 게임 동작은 안 바뀐다.
-  # ponytail: turncount를 잠깐 갈아 끼우는 우회다. 부수효과를 pbSpeed 밖으로 빼내는
-  # 것이 옳은 수술이지만 그건 이 모드 범위 밖이다(Z-42).
-  alias bo_pbSpeed pbSpeed
+  # Z-42 — `pbSpeed`는 값을 읽는 함수인데 원본은 그 안에서 등장 턴(`turncount==0`)에만
+  # 도는 특성 둘을 처리한다. `TINTINEO`는 아군·파티 전원의 상태이상을 치료하며 멈추는
+  # 문구를 띄우고, `ACOMETIDA`는 문구를 띄운다. 한 번 돌았다는 표시가 없어 `pbSpeed`가
+  # 불릴 때마다 다시 돌고, 부르는 자리는 배틀 시작·교체 뒤 재정렬·AI의 스피드 조회로
+  # 여럿이다. 그래서 둘로 나눈다.
+  #
+  #   ① `pbSpeed`는 등장 턴이면 `turncount`를 2로 위장해 그 두 분기를 지나간다.
+  #      같은 메서드의 다른 `turncount` 참조는 `SLOWSTART`의 `<=5`(0도 2도 참)과
+  #      `ACOMETIDA`의 `==1`(0도 2도 거짓)뿐이라 위장이 배율을 바꾸지 않는다.
+  #   ② 치료와 문구는 등장 특성이 실제로 발동하는 `pbAbilitiesOnSwitchIn`으로 옮겼다.
+  #
+  # 옮기면서 원본의 결함 하나를 바로잡았다 — 첫 치료 루프의 쇠약·출혈 가지가
+  # `party[i].name`을 쓰는데 그 루프의 `i`는 Battler 객체이고 지역변수 `party`는 그
+  # 아래에서야 대입된다(루비 1.8.7에서 NameError). 다른 가지처럼 `i.pbThis`를 쓴다.
+  # 문구는 번역표 조회 열쇠라 원본 리터럴 그대로 둔다.
+
+  alias qol_z42_pbSpeed pbSpeed
   def pbSpeed
-    # 사파리존은 PokeBattle_Battle을 안 물려받는 딴 클래스다 — 물어보고 쓴다.
-    return bo_pbSpeed if !@battle.respond_to?(:bo_quiet_speed)
-    return bo_pbSpeed if !@battle.bo_quiet_speed
-    saved=@turncount
-    @turncount=2 if saved==0
+    # @battle을 안 물으므로 사파리존(딴 배틀 클래스)에서도 그대로 선다.
+    return qol_z42_pbSpeed if @turncount!=0
+    @turncount=2
     begin
-      return bo_pbSpeed
+      return qol_z42_pbSpeed
     ensure
-      @turncount=saved
+      @turncount=0
+    end
+  end
+
+  # 등장마다 한 번만 돌게 하는 표시를 교체 초기화 때 내린다.
+  alias qol_z42_pbInitEffects pbInitEffects
+  def pbInitEffects(batonpass)
+    @qol_z42_entryDone=false
+    qol_z42_pbInitEffects(batonpass)
+  end
+
+  alias qol_z42_pbAbilitiesOnSwitchIn pbAbilitiesOnSwitchIn
+  def pbAbilitiesOnSwitchIn(onactive)
+    qol_z42_pbAbilitiesOnSwitchIn(onactive)
+    qol_z42_entryAbilities if onactive
+  end
+
+  def qol_z42_entryAbilities
+    return if self.isFainted?
+    return if @turncount!=0      # 원본의 발동 조건 그대로
+    return if @qol_z42_entryDone # 같은 등장에서 두 번 불려도(메가진화 등) 한 번만
+    @qol_z42_entryDone=true
+    if self.hasWorkingAbility(:TINTINEO)
+      @battle.pbDisplayPaused(_INTL("¡{1} tintinea como una campana!",pbThis))
+      activepkmn=[]
+      for i in @battle.battlers
+        next if self.pbIsOpposing?(i.index) || i.isFainted?
+        activepkmn.push(i.pokemonIndex)
+        case i.status
+        when PBStatuses::PARALYSIS
+          @battle.pbDisplay(_INTL("¡{1} se curó de la parálisis!",i.pbThis))
+        when PBStatuses::SLEEP
+          @battle.pbDisplay(_INTL("¡{1} se despertó!",i.pbThis))
+        when PBStatuses::POISON
+          @battle.pbDisplay(_INTL("¡{1} se curó del envenenamiento!",i.pbThis))
+        when PBStatuses::BURN
+          @battle.pbDisplay(_INTL("¡{1} se curó de la quemadura!",i.pbThis))
+        when PBStatuses::FROZEN
+          @battle.pbDisplay(_INTL("¡{1} se descongeló!",i.pbThis))
+        when PBStatuses::CADUCO
+          @battle.pbDisplay(_INTL("¡{1} se curó del estado Caduco!",i.pbThis))
+        when PBStatuses::HEMORRAGIA
+          @battle.pbDisplay(_INTL("¡{1} se curó de la Hemorragia!",i.pbThis))
+        end
+        i.pbCureStatus(false)
+      end
+      party=@battle.pbParty(self.index) # NOTE: Considers both parties in multi battles
+      for i in 0...party.length
+        next if activepkmn.include?(i)
+        next if !party[i] || party[i].isEgg? || party[i].hp<=0
+        case party[i].status
+        when PBStatuses::PARALYSIS
+          @battle.pbDisplay(_INTL("¡{1} se curó de la parálisis!",party[i].name))
+        when PBStatuses::SLEEP
+          @battle.pbDisplay(_INTL("¡{1} se despertó!",party[i].name))
+        when PBStatuses::POISON
+          @battle.pbDisplay(_INTL("¡{1} se curó del envenenamiento!",party[i].name))
+        when PBStatuses::BURN
+          @battle.pbDisplay(_INTL("¡{1} se curó de la quemadura!",party[i].name))
+        when PBStatuses::FROZEN
+          @battle.pbDisplay(_INTL("¡{1} se descongeló!",party[i].name))
+        when PBStatuses::CADUCO
+          @battle.pbDisplay(_INTL("¡{1} se curó del estado Caduco!",party[i].name))
+        when PBStatuses::HEMORRAGIA
+          @battle.pbDisplay(_INTL("¡{1} se curó de la Hemorragia!",party[i].name))
+        end
+        party[i].status=0
+        party[i].statusCount=0
+      end
+    end
+    if self.hasWorkingAbility(:ACOMETIDA)
+      @battle.pbDisplayPaused(_INTL("¡{1} entra a combatir con furia desmedida!",pbThis))
     end
   end
 end
