@@ -31,9 +31,17 @@ class PokemonRegionMapScene
   MISSING_POINTS = [
     [6,9,"Catacumbas Occidentales","서부 카타콤"]
   ]
+  # 이름이 잘못 붙은 지점 — 표지는 딴 곳인데 목록이 길 이름을 달고 있다. 25번도로
+  # 오른쪽 끝 칸의 표지는 길이 아니라 비춤의 동굴 입구다(맵 465·420, 25번도로 쪽에서
+  # 들어간다 — 2026-08-21 유지자 실기 확인). 꼴은 [x, y, 지금 이름, 원어, 한국어]이고,
+  # 지금 이름이 그대로일 때만 갈아 끼운다 — 원작이 고쳐지면 저절로 손을 뗀다.
+  RENAMED_POINTS = [
+    [8,5,"Ruta 25","Cueva de los Reflejos","비춤의 동굴"]
+  ]
   KO_PROBE = "Catacumbas Meridionales"   # 번역 여부를 가늠할 이웃 장소(남부 카타콤)
 
-  # 빠진 지점을 장소 목록에 채운다. 이미 있으면(원작이 고쳐지면) 손대지 않는다.
+  # 빠진 지점을 채우고, 이름이 잘못 붙은 지점을 갈아 끼운다.
+  # 채우는 쪽은 이미 있으면(원작이 고쳐지면) 손대지 않는다.
   # 항목 꼴은 순정과 같다 — [x, y, 이름, 설명, 회복맵, 회복x, 회복y, 표시스위치].
   # 회복 칸이 비어 있으므로 비행 목적지로는 서지 않는다(순정 pbGetHealingSpot).
   def pbSnapFillMissing
@@ -46,6 +54,12 @@ class PokemonRegionMapScene
       end
       next if here
       @map[2].push([pt[0],pt[1],(translated ? pt[3] : pt[2]),"",nil,nil,nil,nil])
+    end
+    for pt in RENAMED_POINTS
+      for loc in @map[2]
+        next if loc[0]!=pt[0] || loc[1]!=pt[1] || loc[2]!=pt[2]
+        loc[2]=(translated ? pt[4] : pt[3])
+      end
     end
   end
 
