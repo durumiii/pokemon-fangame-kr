@@ -35,7 +35,10 @@ Pokemon Z는 Essentials v16 · 루비 1.8.7 · mkxp-z 구판. 플러그인 묶�
 `tools/regionmap_points.py`가 그림 정본과 `townmap.dat`에서 뽑아 소스의 표시 두 줄
 사이에 박고, 원작 지도에서 빠진 지점·틀린 이름은 같은 소스의 `MISSING_POINTS`·
 `RENAMED_POINTS`가 화면 열 때 고친다) · `디버그 모드`(P키로 `$DEBUG` 토글, 디버그 중
-전투 후 전원 회복 — 디버그 추가판에 실린다) ·
+전투 후 전원 회복, 필드에서 B로 박스 PC. 디버그 메뉴는 자주 쓰는 열넷만 첫 화면에
+서고 나머지는 묶음 넷으로 접힌다 — 차례와 묶음은 `002_DebugMenuOrder.rb`의 `TOP`·
+`GROUPS`. 맵·도구 목록은 번역 층에서 이름을 읽고, 세 목록 화면에서 F로 거른다 —
+디버그 추가판에 실린다) ·
 `Native Tilemap`(맵 렌더러를 엔진 내장으로 — Joiplay 렌더 깨짐 우회. V6부터 합본에
 싣는다 — 유지자 판정 2026-08-20, quality 「Native Tilemap은 합본에 싣는다」 절.
 다리가 놓인 맵 여섯은 예외로 루비 렌더러를 그대로 쓴다 — 다리를 캐릭터 아래로 내리는

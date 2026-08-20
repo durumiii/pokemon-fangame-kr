@@ -24,6 +24,9 @@ module DebugToggleKey
   DEBUG_KEY = 0x50
   # 패드 조합 — 하나가 눌린 채 다른 하나를 누르는 순간에 켜진다.
   PAD_COMBO = [Input::Y, Input::Z]
+  # 디버그가 켜져 있을 때 필드에서 박스 PC를 바로 여는 키(B). 기본 조작에 안 걸린
+  # 글자다 — 게임이 키보드로 받는 것은 Space·Return·C·Esc·X·A·Z·S·D·Q·W뿐이다.
+  PC_KEY = 0x42
 
   def self.keyboard?
     return false if !Input.respond_to?(:triggerex?)
@@ -58,8 +61,18 @@ module DebugToggleKey
     return true
   end
 
+  def self.pc?
+    return false if !$DEBUG
+    return false if !Input.respond_to?(:triggerex?)
+    return Input.triggerex?(PC_KEY)
+  end
+
   def self.update
     return if !field?
+    if pc?
+      pbFadeOutIn(99999) { pbPokeCenterPC }
+      return
+    end
     if keyboard? || pad?
       $DEBUG = !$DEBUG
       Kernel.pbMessage($DEBUG ? "디버그 모드 ON" : "디버그 모드 OFF")
