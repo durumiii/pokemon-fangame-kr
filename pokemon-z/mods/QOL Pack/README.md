@@ -1,6 +1,6 @@
 # QOL Pack — 무엇을 어디서 떠 와 어디를 바꿨나
 
-편의 손질 여섯을 한 모드로 묶은 것이다. 소스 여덟 파일이 갈래별로 갈린다.
+편의 손질 여덟을 한 모드로 묶은 것이다. 소스 아홉 파일이 갈래별로 갈린다.
 
 | 갈래 | 파일 | 잡는 자리 |
 |---|---|---|
@@ -9,7 +9,8 @@
 | 리전 맵 커서 스냅 | `050_MapCursorSnap.rb` | `PokemonRegionMapScene` |
 | 내장 타일맵 렌더러 | `060_NativeTilemap.rb` | `PokemonSystem` |
 | 볼 단축키 | `070_BallShortcut.rb` + `010_TurnOrder.rb` | `NewBattleBag` · `CommandMenuDisplay` |
-| 포획 후 자동 보관 | `080_AutoBox.rb` | `PokeBattle_BattleCommon` · `PokemonOptionScene` · `Window_PokemonOption` |
+| 포획 후 자동 보관 · 별명 물음 | `080_AutoBox.rb` | `PokeBattle_BattleCommon` · `PokemonOptionScene` · `Window_PokemonOption` · `PokeBattle_RealBattlePeer` · 최상위 `pbNickname` |
+| 제작 권유 소지 검사 | `090_CraftPrompt.rb` | `Interpreter` |
 
 배틀 갈래는 **게임 원본 메서드 넷을 통째로 다시 정의한다.** 그래서 「원본 어디를 떠 왔고
 어디를 바꿨나」가 이 모드를 다시 여는 사람에게 가장 중요한 정보다. 아래는 그것을 적는다 —
@@ -188,27 +189,29 @@
 1 = 물어보기). 옛 세이브에는 그 인스턴스 변수가 없어 nil이 오므로, 게터가 기본값 0을
 돌려준다 — 원작의 다른 게터들(`sprtanime`·`border` 등)과 같은 꼴이다.
 
-### 별명 물음의 커서를 「아니요」로 (유지자 판정 2026-08-21)
+### 별명 물음을 옵션에서 끈다 (유지자 판정 2026-08-21, Z-76 ①)
 
-확인을 연타하다 이름짓기로 들어가 버린다는 제보에서 나온 손질이다. 뿌리는 원작
-`PokeBattle_Scene#pbShowCommands`(절 `PokeBattle_Scene` 1487줄)가 셋째 인자로 받은 커서
-자리를 본문에서 `cw.index=0`으로 덮어 버리는 것인데, **그 공유 메서드는 안 건드렸다** —
-전투 쪽 확인창 아홉 자리(별명 · 포켓몬 교체 둘 · 승패 처리 셋 · 기술 배우기 교체 셋)가
-전부 그 사슬을 지나므로 거기를 고치면 아홉이 함께 바뀐다. 그 자리는 유지자 판정거리다.
+확인을 연타하다 이름짓기로 들어가 버린다는 제보에서 나온 손질이다. **8·9세대 본가와 같이
+물음 자체를 설정에서 끄는 길로 갔다.** 커서를 「아니요」로 뒤집는 길도 만들어 봤지만 접었다 —
+본가는 1~4세대까지도 커서 기본이 「예」였고, 뒤집으려면 선택지 차례가 「아니요 · 예」로
+보이는 대가를 치러야 했다. 그래서 원작 확인창(`pbDisplayConfirm`)을 그대로 되돌렸고,
+전투 쪽 확인창 아홉 자리는 손대지 않은 원작 그대로다.
 
-대신 원작 엔진이 「기본을 아니요로」 할 때 쓰는 꼴을 그대로 썼다 —
-`Kernel.pbConfirmMessageSerious`(절 `Messages` 1029줄)가 명령 차례를 `[No, Si]`로 뒤집고
-뒤엣것을 고른 것만 참으로 읽는다. 커서는 늘 첫 칸에 서므로 그것이 「아니요」가 된다.
-그래서 **이 물음에서만 명령이 「아니요 · 예」 차례로 보인다.** B키로 물리는 값도
-「아니요」 자리로 함께 옮겼다.
+옵션 「별명 물음」이 「끄기」면 물음 블록을 통째로 건너뛴다. 원작에서 「아니요」를 골랐을 때와
+같은 길이라, 잡은 포켓몬은 원래 이름 그대로 간다.
 
-필드에서 알을 부화시키거나 선물을 받을 때의 별명 물음은 **다른 함수**다(절
-`PSystem_Utilities NUEVO`의 `pbNickname`, 문구도 `mote`로 다르다). 거기는 손대지 않았다.
+**필드 경로에도 같은 값이 걸린다.** 알을 깨거나 선물을 받을 때의 별명 물음은 다른 함수다
+(절 `PSystem_Utilities NUEVO` 1699줄 `pbNickname`, 문구도 `apodo`가 아니라 `mote`다).
+「별명 물음」이라는 이름의 설정이 전투에만 먹으면 알을 깼을 때 그대로 물어 이상하므로 그
+함수도 최상위 별칭으로 감쌌다. 부르는 자리는 스크립트 285절을 통틀어 `pbNicknameAndStore`
+(같은 절 1758줄) 하나뿐이고 맵·공통 이벤트의 스크립트 명령에도 없다 — 별명 말고 다른
+용도로 걸리는 자리가 없다는 뜻이다.
 
 ### 옵션 항목을 세우는 자리
 
 원작이 그 용도로 비워 둔 훅 `PokemonOptionScene#pbAddOnOptions`(받은 것을 그대로 돌려주기만
-한다)를 별칭으로 감싸 `EnumOption` 하나를 얹는다. 큰 목록은 베끼지 않았다.
+한다)를 별칭으로 감싸 `EnumOption` 둘을 얹는다 — 「파티가 꽉 찼을 때」와 「별명 물음」이다.
+큰 목록은 베끼지 않았다.
 
 설명 문구가 걸리는 자리가 하나 있다. 원작 `pbOptions`의 `case idx`가 **항목 번호로**
 설명을 내는데 `else`가 없고, 끝에 붙인 우리 항목의 번호(난이도 스위치가 꺼진 보통 판에서는
@@ -216,17 +219,60 @@
 `pbUpdate`에서 써 봐야 곧바로 덮인다. 그래서 `case`보다 뒤에 도는 자리를 썼다 —
 그 루프에서 `case` 다음으로 불리는 것이 `@sprites["option"].mustUpdateOptions`이고,
 이 값을 읽는 자리는 게임 전체에 그 한 곳뿐이다(절 `PScreen_Options` 763줄). 읽힐 때
-설명을 써 넣는다. `pbUpdate` 쪽 별칭은 옵션 창에 텍스트 상자를 쥐여 주는 몫이고,
+설명을 써 넣는다. 어느 항목의 설명인지는 이름 → 설명 표(`QOL_DESCS`)로 가른다. `pbUpdate` 쪽 별칭은 옵션 창에 텍스트 상자를 쥐여 주는 몫이고,
 페이드인처럼 `pbOptions` 루프 밖에서 도는 프레임의 설명도 거기서 선다.
 
 **항목 번호는 어디에도 박지 않았다** — 우리 항목은 이름으로 찾으므로 다른 모드가 항목을
 더해도 어긋나지 않는다.
 
+## 볼 단축키의 박스 만석 가드 (Z-76 ②)
+
+파티가 여섯이고 박스도 전부 차면 볼 단축키가 게임을 죽였다. 절 `PokeBattle_BattlePeer`
+37줄이 저장 실패를 알리려고 `pbDisplayPaused`를 부르는데 `PokeBattle_RealBattlePeer`에
+그 메서드가 없어 `NoMethodError`다(구판 루비 실물 확인).
+
+**전투 가방에서 볼을 고르는 길은 원작이 이미 막는다** — 절 `PItem_ItemEffects` 2516줄이
+`battle.pbPlayer.party.length>=6 && $PokemonStorage.full?`이면 「¡No hay espacio en la PC!」를
+띄우고 무른다. 볼 단축키 갈래만 가방을 안 거치고 `pbThrowPokeBall`을 곧바로 불러 그 가드를
+지나지 않았다.
+
+| 자리 | 파일 | 하는 일 |
+|---|---|---|
+| `PokeBattle_Battle#pbAttackPhase`의 볼 사슬 머리 | `010_TurnOrder.rb` | 볼을 가방에서 빼기 **전에** 같은 검사. 만석이면 안내만 띄우고 그 포켓몬의 행동을 넘긴다 |
+| `PokeBattle_RealBattlePeer#pbDisplayPaused` | `080_AutoBox.rb` | 없던 메서드를 채워 `Kernel.pbMessage`로 잇는다 |
+
+문구는 가방 경로와 **같은 리터럴**이다 — 번역표가 그 원문을 열쇠로 등재하고 있다
+(`23-script-texts.jsonl:5014`, 한국어 「PC에 공간이 없다!」).
+
+마지막 그물은 **원작 메서드를 다시 정의하지 않았다.** 고칠 것이 호출 대상 하나뿐이라 없는
+메서드만 채우는 쪽이 훨씬 작고, 원작 `pbStorePokemon` 몸통이 판올림으로 달라져도 그대로
+산다. 다른 경로가 그 자리에 닿아도 이제는 크래시 대신 안내가 뜬다.
+
+## 제작 권유가 이미 가진 도구를 또 권하지 않는다 (Z-76 ③)
+
+현장에서 연금술 제작을 권하는 공통 이벤트 셋이 가방에 그 도구가 있는지를 아예 안 봤다.
+「예」를 고르면 재료가 실제로 줄면서 도구가 하나 더 생긴다.
+
+| 공통 이벤트 | 이름 | 주는 도구 |
+|---|---|---|
+| 58 | `TenerGolpeRoca` | 폭발가루 `POLVOEXPLOSIVO`(756) |
+| 59 | `TenerCorte` | 약한손도끼 `HACHAENDEBLE`(757) |
+| 61 | `TenerMercurica` | 수은열쇠 `LLAVEMERCURICA`(758) |
+
+셋이 전부고(공통 이벤트 100개 전수 + 맵 486개의 이벤트 페이지 18,740장 전수), 호출 117자리
+전부가 소지 검사 없이 최상위에서 곧바로 부른다. 그래서 이벤트 데이터가 아니라 **부르는
+명령의 처리부**(`Interpreter#command_117`, 절 `Interpreter` 899줄)를 감쌌다 — 표 세 줄로
+117자리가 다 덮인다. 이벤트 파일을 다시 쓰는 길은 다른 공통 이벤트의 이동 명령이 깨질
+위험이 있다.
+
+**손대지 않은 것**(유지자 판정 2026-08-21) — 감옥 볼 제작(맵 228) · 메뉴의 「Crear」
+(절 `Crafteo`) · 두 경로의 잠금 문턱이 어긋나는 것(의도로 본다).
+
 ## 다른 모드와의 관계
 
-이 모드가 잡는 메서드 열여덟은 카드(`mod.json`)의 `touches`가 정본이다. 같은 메서드를
+이 모드가 잡는 메서드 스물둘은 카드(`mod.json`)의 `touches`가 정본이다. 같은 메서드를
 다시 정의하는 모드와는 함께 못 선다. 지금 이 저장소의 나머지 모드(UI Text KR ·
-Type Matchup · Z-GUI · 디버그 모드)와 poke-essentials `mod/z/`의 편의 모드들은 이 아홉을
+Type Matchup · Z-GUI · 디버그 모드)와 poke-essentials `mod/z/`의 편의 모드들은 그중 어느 것도
 건드리지 않는다.
 
 옛 이름 넷(`Battle Order` · `Bridge Fix` · `Map Cursor Snap` · `Native Tilemap`)은 카드의
@@ -244,8 +290,8 @@ Type Matchup · Z-GUI · 디버그 모드)와 poke-essentials `mod/z/`의 편의
 ## 확인하는 법
 
 **셈은 구판 루비 실물로 잰다** — `share/qa-qolpack.rb`가 원작 판정을 껍데기로 세우고
-`010_TurnOrder.rb`·`050_MapCursorSnap.rb`·`070_BallShortcut.rb`·`080_AutoBox.rb`를
-`eval`한 뒤 값을 견준다(77표본). 돌리는 법은
+`010_TurnOrder.rb`·`050_MapCursorSnap.rb`·`070_BallShortcut.rb`·`080_AutoBox.rb`·
+`090_CraftPrompt.rb`를 `eval`한 뒤 값을 견준다(102표본). 돌리는 법은
 그 파일 머리에 있다. 모드를 고쳤으면 다시 돌린다.
 
 남는 것은 화면에 그려지는 모양과 눌러 보는 흐름이다. 배틀 갈래는 디버그를 켜면(「디버그 모드」 모드의 P키) 처리마다 로그가 남으므로 순서를 눈으로

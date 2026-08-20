@@ -13,8 +13,11 @@
 #   ⓘ 물어보기면 원본과 같이 묻는다
 #   ⓙ 파티에 자리가 있으면 어느 값이든 안 묻는다
 #   ⓚ 옛 세이브 꼴(값이 없는 $PokemonSystem)에서 기본값이 자동 보관으로 읽힌다
-#   ⓛ 옵션 항목이 이름·값 차례대로 서고, 골라 두면 설명이 뜬다
-#   ⓜ 별명 물음은 커서가 「아니요」에 서고, 다른 확인창은 그대로다
+#   ⓛ 옵션 항목 둘이 이름·값 차례대로 서고, 골라 두면 각자 설명이 뜬다
+#   ⓜ 「별명 물음」이 끄기면 전투 포획도 필드 부화도 안 묻고, 켜기면 묻는다
+#   ⓝ 파티·박스가 다 차면 볼 단축키가 볼을 안 쓰고 안내만 낸다
+#   ⓞ 박스가 꽉 차 저장에 실패해도 peer가 예외 없이 안내를 낸다
+#   ⓟ 이미 가진 도구를 주는 공통 이벤트는 안 불리고, 나머지는 그대로 불린다
 #
 # 화면은 못 잰다 — 커맨드 창에 아이콘이 실제로 그려지는 모양은 사람 몫이다.
 #
@@ -49,6 +52,9 @@ module PBItems
   SUPERBALLCASERA = 823
   ULTRABALLCASERA = 824
   POTION          = 19
+  POLVOEXPLOSIVO  = 756
+  HACHAENDEBLE    = 757
+  LLAVEMERCURICA  = 758
 end
 BALLS = [265, 266, 267, 822, 823, 824]
 def hasConst?(mod, sym); return mod.const_defined?(sym.to_s); end
@@ -253,21 +259,55 @@ class Catcher
   def pbChoosePokemon(a, b, c = nil); end
 end
 
+# ── 저장·필드 별명·공통 이벤트 껍데기 ─────────────────────────────────────
+class FakeStorage
+  attr_accessor :isfull
+  def initialize(full); @isfull = full; end
+  def full?; return @isfull; end
+end
+
+def Kernel.pbMessage(text)
+  $kernel_msgs.push(text)
+  return true
+end
+
+# 원작 최상위 pbNickname(절 PSystem_Utilities NUEVO 1699줄)의 요지 — 물어서 이름을 바꾼다.
+def pbNickname(pokemon)
+  $confirmed.push(_INTL("¿Quieres ponerle un mote a {1}?", "이브이"))
+  pokemon.name = "새이름" if $answer_party
+end
+
+# 원작 Interpreter#command_117(절 Interpreter 899줄)의 요지 — 자식 인터프리터를 세운다.
+class Interpreter
+  attr_accessor :parameters, :called
+  def initialize; @called = []; end
+  def command_117
+    @called.push(@parameters[0])
+    return true
+  end
+end
+
+# 볼 단축키 갈래의 껍데기 — pickBall 안에서 불린다
+def pbPlayer; return $Trainer; end
+def pbDisplay(msg); $battle_msgs.push(msg); end
+
 begin
   log("RUBY_VERSION = #{RUBY_VERSION.inspect}")
   ["010_TurnOrder.rb", "050_MapCursorSnap.rb",
-   "070_BallShortcut.rb", "080_AutoBox.rb"].each do |f|
+   "070_BallShortcut.rb", "080_AutoBox.rb", "090_CraftPrompt.rb"].each do |f|
     eval(File.open("#{CHECK}/#{f}", "rb") {|fp| fp.read }, TOPLEVEL_BINDING, f)
   end
 
   # 볼 고르는 사슬은 pbAttackPhase 안에 있어 통째로는 못 돌린다 — 그 대목만
   # 소스에서 오려 메서드로 세운다(자구가 바뀌면 여기서 멈춘다).
   src = File.open("#{CHECK}/010_TurnOrder.rb", "rb") {|fp| fp.read }
-  a = src.index("        pokeBall=nil")
+  a = src.index("        if pbPlayer.party.length>=6")
   b = src.index("        end  \n          if pokeBall")
   raise "볼 사슬을 못 찾았다" if !a || !b || b <= a
-  eval("def pickBall\n" + src[a...b] + "        end\n  return pokeBall\nend",
-       TOPLEVEL_BINDING, "chain")
+  # 오린 대목에 `next`(만석이면 그 포켓몬의 행동을 넘긴다)가 들어 있으므로 한 바퀴짜리
+  # for로 감싼다 — for는 스코프를 새로 만들지 않아 pokeBall이 밖에서도 보인다.
+  eval("def pickBall\n  pokeBall=nil\n  for _qa in [0]\n" + src[a...b] +
+       "        end\n  end\n  return pokeBall\nend", TOPLEVEL_BINDING, "chain")
 
   $fired = {:tintineo => 0, :acometida => 0, :orig_switchin => 0}
 
@@ -345,7 +385,11 @@ begin
   chk("ⓒ 파티 출혈 문구",
       battle3.msgs.grep(/se curó de la Hemorragia/), ["¡이브이 se curó de la Hemorragia!"])
 
-  # ⓔ 볼 고르기
+  # ⓔ 볼 고르기 — 만석 가드를 지나야 사슬에 닿으므로 파티는 셋, 박스는 여유로 둔다
+  $Trainer = FakeTrainer.new(3)
+  $PokemonStorage = FakeStorage.new(false)
+  $battle_msgs = []
+  $kernel_msgs = []
   $lastUsedBall = nil
   $PokemonBag = FakeBag.new({265 => 3, 266 => 2, 267 => 5, 822 => 1})
   chk("ⓔ 기억이 없으면 옛 사슬(집볼 계열이 먼저)", pickBall, 822)
@@ -419,13 +463,19 @@ begin
   # ⓛ 옵션 항목 — 원작 훅에 하나가 얹히고, 이름·값 차례가 요구대로다
   optscene = PokemonOptionScene.new
   opts = optscene.pbAddOnOptions([])
-  chk("ⓛ 항목 하나가 얹힌다", opts.length, 1)
-  chk("ⓛ 항목 이름", opts[0].name, "파티가 꽉 찼을 때")
-  chk("ⓛ 값 차례", opts[0].values, ["자동 보관", "물어보기"])
-  chk("ⓛ 기본값은 자동 보관", opts[0].get, 0)
+  chk("ⓛ 항목 둘이 얹힌다", opts.length, 2)
+  chk("ⓛ 첫 항목 이름", opts[0].name, "파티가 꽉 찼을 때")
+  chk("ⓛ 첫 항목 값 차례", opts[0].values, ["자동 보관", "물어보기"])
+  chk("ⓛ 첫 항목 기본값은 자동 보관", opts[0].get, 0)
   opts[0].set(1)
   chk("ⓛ 고른 값이 $PokemonSystem에 실린다", $PokemonSystem.qol_autobox, 1)
   opts[0].set(0)
+  chk("ⓛ 둘째 항목 이름", opts[1].name, "별명 물음")
+  chk("ⓛ 둘째 항목 값 차례", opts[1].values, ["켜기", "끄기"])
+  chk("ⓛ 둘째 항목 기본값은 켜기", opts[1].get, 0)
+  opts[1].set(1)
+  chk("ⓛ 둘째 항목 값도 $PokemonSystem에", $PokemonSystem.qol_nickname, 1)
+  opts[1].set(0)
   # 설명 — 우리 항목에 서 있을 때만 뜬다
   win = Window_PokemonOption.new(opts)
   box = FakeTextbox.new
@@ -434,8 +484,12 @@ begin
   optscene.pbUpdate
   chk("ⓛ 항목에 서면 설명이 뜬다", box.text,
       "포켓몬을 잡았을 때 파티가 꽉 차 있으면 어떻게 할지 정한다.")
+  win.index = 1
+  optscene.pbUpdate
+  chk("ⓛ 둘째 항목에 서면 그 설명이 뜬다", box.text,
+      "포켓몬을 잡거나 알을 깼을 때 별명을 붙일지 물어본다.")
   box.text = "딴 설명"
-  win.index = 1   # 「Salir」 줄 — 우리 항목이 아니다
+  win.index = 2   # 「Salir」 줄 — 우리 항목이 아니다
   optscene.pbUpdate
   chk("ⓛ 딴 줄에서는 안 건드린다", box.text, "딴 설명")
   win.index = 0
@@ -443,25 +497,51 @@ begin
   chk("ⓛ case 뒤 자리에서도 뜬다", box.text,
       "포켓몬을 잡았을 때 파티가 꽉 차 있으면 어떻게 할지 정한다.")
 
-  # ⓜ 별명 물음 — 커서가 「아니요」에 선다
+  # ⓜ 별명 물음 — 옵션 「별명 물음」이 전투 포획과 필드 부화 양쪽에 걸린다
   caught = FakeCatch.new("이브이")
   $PokemonSystem.qol_autobox = 0
   $Trainer = FakeTrainer.new(3)
   $game_variables = {1 => -1}
   $confirmed = []
-  $answer_command = 0   # 첫 칸을 고른다
+  $answer_command = 1   # 둘째 칸 = 「No」 (원작 차례는 [Si, No])
+
+  chk("ⓜ 값이 없으면 켜기(0)", $PokemonSystem.qol_nickname, 0)
+
+  # 켜기 — 원작 그대로 묻고, 명령 차례도 원작 그대로 「예 · 아니요」다
   catn = Catcher.new
   catn.pbStorePokemon(caught)
-  chk("ⓜ 별명 물음의 첫 칸이 「아니요」", catn.scene.shown[0][1], ["No", "Si"])
-  chk("ⓜ B키로 물리면 「아니요」 자리(0)", catn.scene.shown[0][2], 0)
-  chk("ⓜ 첫 칸을 고르면 이름짓기로 안 간다", catn.scene.named?, false)
-  chk("ⓜ 물음은 그 하나뿐", catn.scene.shown.length, 1)
+  chk("ⓜ 켜기 — 전투 포획에서 묻는다", catn.scene.shown.length, 1)
+  chk("ⓜ 켜기 — 명령 차례는 원작 그대로", catn.scene.shown[0][1], ["Si", "No"])
+  chk("ⓜ 켜기 — B키 기본값도 원작 그대로", catn.scene.shown[0][2], 1)
+  chk("ⓜ 「아니요」를 고르면 이름짓기로 안 간다", catn.scene.named?, false)
 
-  $answer_command = 1   # 둘째 칸 = 「예」
+  $answer_command = 0   # 첫 칸 = 「Si」
   $Trainer = FakeTrainer.new(3)
   catn2 = Catcher.new
   catn2.pbStorePokemon(caught)
-  chk("ⓜ 둘째 칸을 고르면 이름짓기로 간다", catn2.scene.named?, true)
+  chk("ⓜ 켜기 — 「예」를 고르면 이름짓기로 간다", catn2.scene.named?, true)
+
+  # 끄기 — 묻지도 않는다
+  $PokemonSystem.qol_nickname = 1
+  $Trainer = FakeTrainer.new(3)
+  $answer_command = 0
+  catn3 = Catcher.new
+  catn3.pbStorePokemon(caught)
+  chk("ⓜ 끄기 — 전투 포획에서 안 묻는다", catn3.scene.shown.length, 0)
+  chk("ⓜ 끄기 — 이름짓기로 안 간다", catn3.scene.named?, false)
+  chk("ⓜ 끄기 — 그래도 peer로 넘어간다", catn3.peer.stored, [caught])
+
+  # 필드 경로(알 부화·선물)의 pbNickname도 같은 값에 걸린다
+  $confirmed = []
+  $answer_party = true
+  egg = FakeCatch.new("이브이")
+  pbNickname(egg)
+  chk("ⓜ 끄기 — 필드 별명 물음도 안 묻는다", $confirmed.length, 0)
+  chk("ⓜ 끄기 — 원래 이름 그대로", egg.name, "이브이")
+  $PokemonSystem.qol_nickname = 0
+  pbNickname(egg)
+  chk("ⓜ 켜기 — 필드 별명 물음은 묻는다", $confirmed.length, 1)
+  chk("ⓜ 켜기 — 이름이 바뀐다", egg.name, "새이름")
 
   # 다른 확인창은 원작 차례 그대로 — 전투 쪽 나머지 여덟 자리가 쓰는 길이다
   $answer_command = 0
@@ -525,6 +605,61 @@ begin
     chk("ⓙ 자리가 있으면 안 묻는다(값 #{val})", $confirmed.length, 0)
     chk("ⓙ 자리가 있으면 그대로 peer로(원본과 같다, 값 #{val})", cat4.peer.stored, [caught])
   end
+
+  # ⓝ 볼 단축키의 박스 만석 가드
+  $battle_msgs = []
+  $PokemonBag = FakeBag.new({267 => 5})
+  $lastUsedBall = 267
+  $Trainer = FakeTrainer.new(6)
+  $PokemonStorage = FakeStorage.new(true)
+  chk("ⓝ 만석이면 볼을 안 낸다", pickBall, nil)
+  chk("ⓝ 만석이면 볼이 안 줄어든다", $PokemonBag.pbQuantity(267), 5)
+  chk("ⓝ 만석 안내가 뜬다", $battle_msgs, ["¡No hay espacio en la PC!"])
+  $battle_msgs = []
+  $PokemonStorage = FakeStorage.new(false)
+  chk("ⓝ 박스에 자리가 있으면 던진다", pickBall, 267)
+  chk("ⓝ 그때는 안내가 없다", $battle_msgs.length, 0)
+  $PokemonStorage = FakeStorage.new(true)
+  $Trainer = FakeTrainer.new(5)
+  $battle_msgs = []
+  chk("ⓝ 파티에 자리가 있으면 박스가 차도 던진다", pickBall, 267)
+  chk("ⓝ 그때도 안내가 없다", $battle_msgs.length, 0)
+
+  # ⓞ 마지막 그물 — 원작 peer가 부르는 pbDisplayPaused가 살아 있다
+  $kernel_msgs = []
+  peer = PokeBattle_RealBattlePeer.new
+  neterr = nil
+  begin
+    peer.pbDisplayPaused("No se puede seguir capturando...")
+  rescue Exception => e
+    neterr = "#{e.class}: #{e.message}"
+  end
+  chk("ⓞ 예외 없음", neterr, nil)
+  chk("ⓞ 안내가 Kernel.pbMessage로 나간다", $kernel_msgs,
+      ["No se puede seguir capturando..."])
+
+  # ⓟ 제작 권유 — 이미 가진 도구면 공통 이벤트를 안 부른다
+  $PokemonBag = FakeBag.new({756 => 1})
+  intp = Interpreter.new
+  [58, 59, 61, 60, 12].each do |n|
+    intp.parameters = [n]
+    intp.command_117
+  end
+  chk("ⓟ 가진 것(58)만 빠지고 나머지는 불린다", intp.called, [59, 61, 60, 12])
+  $PokemonBag = FakeBag.new({756 => 1, 757 => 2, 758 => 1})
+  intp2 = Interpreter.new
+  [58, 59, 61, 60].each do |n|
+    intp2.parameters = [n]
+    intp2.command_117
+  end
+  chk("ⓟ 셋 다 가졌으면 셋 다 빠진다", intp2.called, [60])
+  $PokemonBag = FakeBag.new({})
+  intp3 = Interpreter.new
+  [58, 59, 61].each do |n|
+    intp3.parameters = [n]
+    intp3.command_117
+  end
+  chk("ⓟ 하나도 없으면 셋 다 불린다", intp3.called, [58, 59, 61])
 
   log($bad == 0 ? "판정: 통과" : "판정: 실패 #{$bad}건")
 rescue Exception => e

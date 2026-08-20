@@ -246,6 +246,15 @@ class PokeBattle_Battle
     # Call at Pokémon
 for i in priority
       if @choices[i.index][0]==4 && !i.effects[PBEffects::SkipTurn]
+        # Z-76 — 박스 만석 가드. 전투 가방에서 볼을 고르는 길은 원작이 이미 막지만
+        # (절 PItem_ItemEffects 2516줄), 볼 단축키는 가방을 안 거치고 곧바로 여기로 온다.
+        # 가드가 없으면 절 PokeBattle_BattlePeer 37줄의 죽은 호출에 닿아 NoMethodError다.
+        # 볼을 가방에서 빼기 **전에** 검사해서, 만석이면 안내만 띄우고 그 포켓몬의 행동을 넘긴다.
+        # 문구는 가방 경로와 같은 리터럴이다 — 번역표가 그 원문을 열쇠로 등재하고 있다.
+        if pbPlayer.party.length>=6 && $PokemonStorage && $PokemonStorage.full?
+          pbDisplay(_INTL("¡No hay espacio en la PC!"))
+          next
+        end
         # Z-50 ① — 마지막으로 전투 가방에서 고른 볼을 먼저 낸다.
         # 그 볼을 기억하는 자리는 070_BallShortcut.rb다.
         # pokeBall을 반복마다 비운다 — 원본은 앞 포켓몬의 값이 남았다.

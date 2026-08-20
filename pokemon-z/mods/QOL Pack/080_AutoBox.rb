@@ -5,9 +5,11 @@
 # 옵션이 「자동 보관」이면 그 물음 블록만 건너뛴다 — 그 아래 `@peer.pbStorePokemon`이
 # 알아서 박스로 보내므로 다른 자리는 손댈 것이 없다(절 PokeBattle_BattlePeer 28-43줄).
 #
-# 별명 물음(원본 15줄)은 이 블록보다 **앞**이라 어느 갈래로 가든 그대로 뜨는데,
-# 커서만 「아니요」에 놓이게 바꿨다(유지자 판정 2026-08-21 — 확인을 연타하다 이름짓기로
-# 들어가 버린다). 방법은 아래 qol_pbConfirmNicknameDefaultNo 주석에.
+# 별명 물음(원본 15줄)은 이 블록보다 **앞**이라 어느 갈래로 가든 그대로 뜬다. 옵션
+# 「별명 물음」이 「끄기」면 그 물음을 통째로 건너뛰고 원래 이름 그대로 간다(유지자 판정
+# 2026-08-21 — 8·9세대 방식. 확인을 연타하다 이름짓기로 들어가 버린다는 제보에서 나왔고,
+# 커서를 뒤집는 길은 선택지 차례가 「아니요·예」로 보이는 대가가 있어 접었다).
+# 필드 경로(알 부화·선물)의 별명 물음은 다른 함수라 이 파일 꼬리에서 따로 잡는다.
 #
 # 문구 리터럴은 원본 스페인어 그대로다 — 번역표가 그 원문을 열쇠로 등재하고 있어
 # 자구가 바뀌면 조회가 깨진다.
@@ -26,31 +28,24 @@ class PokemonSystem
   def qol_autobox
     return (!@qol_autobox) ? 0 : @qol_autobox
   end
+
+  attr_accessor :qol_nickname
+
+  # 0 = 켜기(기본) · 1 = 끄기
+  def qol_nickname
+    return (!@qol_nickname) ? 0 : @qol_nickname
+  end
+end
+
+# 별명을 물을 차례인가. 옛 세이브($PokemonSystem이 아직 없는 자리 포함)에서는 켜기다.
+def qol_pbAskNickname?
+  return !($PokemonSystem && $PokemonSystem.qol_nickname==1)
 end
 
 module PokeBattle_BattleCommon
-  # 별명 물음만 커서를 「아니요」에 둔다.
-  #
-  # 공유 사슬(pbDisplayConfirm → @scene.pbDisplayConfirmMessage → pbShowCommands)은
-  # 안 건드린다 — 그 사슬을 고치면 전투 쪽 확인창 아홉 자리가 다 함께 바뀐다
-  # (별명 · 포켓몬 교체 둘 · 승패 처리 셋 · 기술 배우기 교체 셋). 원작
-  # PokeBattle_Scene#pbShowCommands가 셋째 인자를 받아 놓고 본문에서 cw.index=0을
-  # 무조건 넣어 커서 자리를 버리는 것이 뿌리인데, 그 자리는 유지자 판정거리다.
-  #
-  # 대신 **원작 엔진이 「기본을 아니요로」 할 때 쓰는 꼴을 그대로 쓴다** —
-  # Kernel.pbConfirmMessageSerious(절 Messages 1029줄)가 명령 차례를 [No, Si]로 뒤집고
-  # 뒤엣것(Si)을 고른 것만 참으로 읽는다. 커서는 늘 첫 칸에 서므로 그것이 「아니요」가 된다.
-  # 그래서 이 물음의 명령 차례도 「아니요 · 예」로 보인다.
-  # 셋째 인자는 B키로 물릴 때의 반환값이라 「아니요」 자리인 0을 넘긴다(원작은 1을 넘겼고
-  # 그때 1이 「아니요」였다) — 물리면 이름을 안 짓는 것도 그대로다.
-  def qol_pbConfirmNicknameDefaultNo(msg)
-    return pbDisplayConfirm(msg) if @debug || !@scene.respond_to?("pbShowCommands")
-    return @scene.pbShowCommands(msg,[_INTL("No"),_INTL("Si")],0)==1
-  end
-
   def pbStorePokemon(pokemon)
-    if !(pokemon.isShadow? rescue false)
-      if qol_pbConfirmNicknameDefaultNo(_INTL("¿Quieres ponerle un apodo a {1}?",pokemon.name))
+    if !(pokemon.isShadow? rescue false) && qol_pbAskNickname?
+      if pbDisplayConfirm(_INTL("¿Quieres ponerle un apodo a {1}?",pokemon.name))
         species=PBSpecies.getName(pokemon.species)
         nickname=@scene.pbNameEntry(_INTL("Apodo de {1}",species),pokemon)
         pokemon.name=nickname if nickname!=""
@@ -112,6 +107,14 @@ end
 class PokemonOptionScene
   QOL_AUTOBOX_NAME = "파티가 꽉 찼을 때"
   QOL_AUTOBOX_DESC = "포켓몬을 잡았을 때 파티가 꽉 차 있으면 어떻게 할지 정한다."
+  QOL_NICKNAME_NAME = "별명 물음"
+  QOL_NICKNAME_DESC = "포켓몬을 잡거나 알을 깼을 때 별명을 붙일지 물어본다."
+
+  # 이름 → 설명. 우리 항목인지도 이 표로 가린다(항목 번호를 어디에도 안 박는다).
+  QOL_DESCS = {
+    QOL_AUTOBOX_NAME  => QOL_AUTOBOX_DESC,
+    QOL_NICKNAME_NAME => QOL_NICKNAME_DESC
+  }
 
   alias qol_autobox_pbAddOnOptions pbAddOnOptions
   def pbAddOnOptions(options)
@@ -119,6 +122,10 @@ class PokemonOptionScene
     options.push(EnumOption.new(QOL_AUTOBOX_NAME,["자동 보관","물어보기"],
        proc { $PokemonSystem.qol_autobox },
        proc {|value| $PokemonSystem.qol_autobox=value }
+    ))
+    options.push(EnumOption.new(QOL_NICKNAME_NAME,["켜기","끄기"],
+       proc { $PokemonSystem.qol_nickname },
+       proc {|value| $PokemonSystem.qol_nickname=value }
     ))
     return options
   end
@@ -144,8 +151,9 @@ class Window_PokemonOption
   def qol_autobox_showDesc
     return if !@qol_autobox_textbox
     return if self.index<0 || self.index>=@options.length
-    return if @options[self.index].name!=PokemonOptionScene::QOL_AUTOBOX_NAME
-    @qol_autobox_textbox.text=PokemonOptionScene::QOL_AUTOBOX_DESC
+    desc=PokemonOptionScene::QOL_DESCS[@options[self.index].name]
+    return if !desc
+    @qol_autobox_textbox.text=desc
   end
 
   # pbOptions 루프에서 `case idx` 바로 다음에 불린다 — 우리 설명을 그 뒤에 써 넣는 자리다.
@@ -153,5 +161,36 @@ class Window_PokemonOption
   def mustUpdateOptions
     qol_autobox_showDesc
     return qol_autobox_mustUpdateOptions
+  end
+end
+
+# ── 필드 경로의 별명 물음 ────────────────────────────────────────────────────
+# 전투에서 잡은 포켓몬 말고, 알을 깨거나 선물을 받을 때는 다른 함수가 묻는다
+# (절 `PSystem_Utilities NUEVO` 1699줄 `pbNickname` — 문구도 apodo가 아니라 mote다).
+# 「별명 물음」이라는 이름의 설정이 전투에만 먹으면 알을 깼을 때 그대로 물어 이상하므로
+# 같은 값으로 여기도 잡는다. 끄기면 묻지 않고 원래 이름을 그대로 둔다.
+#
+# 전수 확인 — pbNickname을 부르는 자리는 스크립트 285절 통틀어 pbNicknameAndStore
+# (같은 절 1758줄) 하나뿐이고, 맵·공통 이벤트의 스크립트 명령에도 없다. 별명 물음 말고
+# 다른 용도로 불리는 자리는 없다.
+#
+# 원본이 최상위 def라 Object의 비공개 메서드다 — 여기서도 최상위에서 별칭을 걸어
+# 그 성질을 그대로 둔다.
+alias qol_nickname_pbNickname pbNickname
+def pbNickname(pokemon)
+  return if !qol_pbAskNickname?
+  return qol_nickname_pbNickname(pokemon)
+end
+
+# ── 마지막 그물 — 박스가 꽉 차 저장에 실패했을 때 ────────────────────────────
+# 원작 `PokeBattle_RealBattlePeer#pbStorePokemon`(절 PokeBattle_BattlePeer 37줄)이
+# 실패를 알리려고 `pbDisplayPaused`를 부르는데 **그 클래스에 그 메서드가 없다** —
+# 닿으면 NoMethodError로 죽는다(구판 루비 실물 확인).
+#
+# 메서드를 통째로 다시 정의하는 대신 **없는 메서드 하나만 채운다** — 고칠 것이 호출
+# 대상뿐이라 이쪽이 훨씬 작고, 원작 몸통이 판올림으로 달라져도 그대로 산다.
+class PokeBattle_RealBattlePeer
+  def pbDisplayPaused(msg)
+    Kernel.pbMessage(msg)
   end
 end
