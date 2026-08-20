@@ -444,6 +444,45 @@ EDITS += [
 ]
 
 
+# 맹독을 독과 갈라 보인다(Z-64, 유지자 판정 2026-08-21). 엔진에 맹독 상태값이 없어
+# (PBStatuses는 SLEEP~HEMORRAGIA 일곱뿐) 그림을 고르는 자리가 상태값만 보고 독 칸을 준다.
+# 판별은 `status==POISON && statusCount>0` — pbPoison(attacker,msg,toxic)이 맹독이면
+# statusCount에 1, 보통 독이면 0을 넣고(082_PokeBattle_BattlerEffects:201-202),
+# statusCount= 세터가 영속 Pokemon 객체에 곧바로 미러한다(081_PokeBattle_Battler:157-160).
+# 그래서 전투 안팎이 같은 식으로 갈린다. 상태값을 POISON으로 넣는 자리는 pbPoison 하나뿐이라
+# (전수 grep) 잠듦 카운터가 남아 오판하는 길은 없다 — 디버그 메뉴도 대입 직후 0을 넣는다.
+# 새 칸은 tools/status_icon.py가 띠 끝에 덧붙인다: battleStatuses 7 · statuses 9.
+# ⚠ 그리는 자리 여덟 중 PokeBattle_Scene:678의 PokemonDataBox#refresh는 뒤 절
+# 「Tipos Pokemon」이 같은 클래스·같은 메서드를 다시 정의해 덮는 죽은 코드다 — 안 건드린다.
+# 루비 1.8 문법. 앵커에 뒤따르는 줄을 물려 옛 소스가 새 소스의 부분 문자열이 되지 않게 했다.
+EDITS += [
+    # 전투 HUD — 실제로 도는 자리(PokemonDataBox#refresh 재정의).
+    ("Tipos Pokemon",
+     '    if @battler.status>0\r\n'
+     '      self.bitmap.blt(@spritebaseX+24,36,@statuses.bitmap,\r\n'
+     '         Rect.new(0,(@battler.status-1)*16,44,16))\r\n',
+     '    if @battler.status>0\r\n'
+     '      krSt=(@battler.status==PBStatuses::POISON && @battler.statusCount>0) ? 7 : @battler.status-1\r\n'
+     '      self.bitmap.blt(@spritebaseX+24,36,@statuses.bitmap,\r\n'
+     '         Rect.new(0,krSt*16,44,16))\r\n'),
+
+    # 파티 화면 — 여기서 7은 기절이라 그 판정이 먼저 선다.
+    ("PScreen_Party",
+     '            status=(@pokemon.hp==0) ? 7 : @pokemon.status-1\r\n',
+     '            status=(@pokemon.hp==0) ? 7 : '
+     '((@pokemon.status==PBStatuses::POISON && @pokemon.statusCount>0) ? 9 : @pokemon.status-1)\r\n'),
+
+    # 요약 화면 여섯 자리(같은 본문이 여섯 번 복제돼 있어 EDIT 하나가 여섯 곳을 친다).
+    # 덮어쓰기 차례는 포켓러스 8 → 상태 → 맹독 9 → 기절 7 그대로 둔다.
+    ("PScreen_Summary",
+     '      status=@pokemon.status-1 if @pokemon.status>0\r\n'
+     '      status=7 if pokemon.hp==0\r\n',
+     '      status=@pokemon.status-1 if @pokemon.status>0\r\n'
+     '      status=9 if @pokemon.status==PBStatuses::POISON && @pokemon.statusCount>0\r\n'
+     '      status=7 if pokemon.hp==0\r\n'),
+]
+
+
 def patch_file(path: Path) -> None:
     secs = load(open(path, "rb"))
     done = skipped = 0
