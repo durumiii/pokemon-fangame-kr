@@ -41,7 +41,9 @@ Pokemon Z는 Essentials v16 · 루비 1.8.7 · mkxp-z 구판. 플러그인 묶�
 종료 연출 순서. **원본 메서드 넷을 통째로 다시 정의하므로** 같은 메서드를 잡는 모드와
 함께 못 선다. 무엇을 어디서 떠 왔는지는 그 폴더의 `README.md`가 정본) ·
 `Z-GUI`(전투·도감 GUI 그림 제3자 개선판 + **번역 그림 자산 72장** — 자산 정본은
-`translate/data/asset-texts.jsonl`+`translate/assets/` 생성기, 반입은 `install_assets.py`) ·
+`translate/data/asset-texts.jsonl`+`translate/assets/` 생성기, 반입은 `install_assets.py`.
+**글자가 아니라 자리를 고친 그림은 원장에 행이 없다** — 리전 맵(`gen_regionmap.py`)이 그것이고
+반입기의 `EXTRA` 목록이 그 자리다) ·
 `Bridge Fix`(다리 밑 파도타기 수술 — 통행·지형 재정의 둘 + 19번도로 맵 물길 + 세이브
 박제 우회 훅).
 셋은 커뮤니티 배포판에서 떼어 오거나 착안한 것이라 출처가 이 저장소의 조사에 걸려 있다

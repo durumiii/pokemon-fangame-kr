@@ -25,6 +25,10 @@ CORE = Path("/mnt/d/GameVault/mods/Pokemon Z Fangame/Z-GUI")
 REPO_MOD = ROOT / "mods/Z-GUI/mod.json"
 DEFAULT_CARDS = Path(__file__).resolve().parents[2] / "mods/Z-GUI/Graphics/Pictures"  # 정본
 
+# 원장에 없는 그림 자산 — 글자가 아니라 자리를 고친 것이라 문안 행이 없다.
+# 산출은 각자 제 생성기가 낸다(mapRegion0.png ← gen_regionmap.py).
+EXTRA = ["mapRegion0.png"]
+
 
 def vanilla_crc(name):
     """바닐라 원본의 CRC32 — `.orig`가 있으면 그것이 바닐라, 없으면 설치본 본 파일."""
@@ -44,6 +48,7 @@ def main():
     mod = json.loads(REPO_MOD.read_text(encoding="utf-8"))
     have = {x["install_to"] for x in mod["assets"]}
     rows = [json.loads(l) for l in LEDGER.open(encoding="utf-8")]
+    rows += [{"file": n} for n in EXTRA]
 
     copy, new, missing, crc_fail = [], [], [], []
     for r in rows:

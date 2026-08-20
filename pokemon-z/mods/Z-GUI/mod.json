@@ -3,7 +3,7 @@
   "game": "Pokemon Z Fangame",
   "version": "260804",
   "summary": "전투 화면과 도감의 GUI 그림을 더 나은 것으로 교체합니다",
-  "description": "전투 화면과 도감의 GUI 그림을 갈아 끼우는 개선판이에요. 배틀 커맨드·기술 버튼, 메시지 창, 상태 아이콘, 타입 아이콘이 바뀌어요.\n\n글자가 구워진 그림 세 장(배틀 커맨드 버튼·타입 아이콘·도감 타입 아이콘)은 이 모드가 도맡아요.\n\n출처: 260804_Pokemon_Z_GUI.zip (제3자 배포, 원문 안내문 없음). 원본 지문은 V2.18 설치본의 .orig 백업에서 떴어요.",
+  "description": "전투 화면과 도감의 GUI 그림을 갈아 끼우는 개선판이에요. 배틀 커맨드·기술 버튼, 메시지 창, 상태 아이콘, 타입 아이콘이 바뀌어요.\n\n글자가 구워진 그림 세 장(배틀 커맨드 버튼·타입 아이콘·도감 타입 아이콘)은 이 모드가 도맡아요.\n\n리전 맵 그림(mapRegion0.png)은 장소 표지 열둘을 커서 격자 칸 중앙으로 옮겨 넣은 판이에요 — 원판은 표지가 2~8픽셀 밀려 있어 커서를 제 칸에 놔도 표지 위에 안 얹혔습니다.\n\n출처: 260804_Pokemon_Z_GUI.zip (제3자 배포, 원문 안내문 없음). 원본 지문은 V2.18 설치본의 .orig 백업에서 떴어요.",
   "engine": "essentials-v16",
   "install": "assets",
   "created_at": "2026-08-04",
@@ -168,6 +168,11 @@
       "file": "Graphics/Pictures/introTexto1.png",
       "install_to": "Graphics/Pictures/introTexto1.png",
       "replaces_crc": 417499347
+    },
+    {
+      "file": "Graphics/Pictures/mapRegion0.png",
+      "install_to": "Graphics/Pictures/mapRegion0.png",
+      "replaces_crc": 1896552152
     },
     {
       "file": "Graphics/Pictures/namingControls.png",
