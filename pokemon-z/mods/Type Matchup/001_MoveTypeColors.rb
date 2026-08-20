@@ -19,19 +19,32 @@ class FightMenuButtons < BitmapSprite
     end
   end
 
+  # 타입은 「플레이어에게 보이는 모습」 기준 — 일루전(조로아크)이 서 있으면
+  # 위장 종의 타입으로 계산한다. battler.type1/2를 그대로 읽으면 진짜 타입이 새서
+  # 위장이 색으로 들통난다. 소크·변신 같은 타입 변화는 화면에 보이는 것이라 그대로 둔다.
   def pbTypeMultiplier(moveType,opponent)
     return 1.0 if !opponent || !opponent.pokemon
-    mult=pbSingleTypeMod(moveType,opponent.type1)
-    if opponent.type2 && opponent.type2!=opponent.type1
-      mult*=pbSingleTypeMod(moveType,opponent.type2)
+    seen=(opponent.effects[PBEffects::Illusion] rescue nil)
+    t1=seen ? seen.type1 : opponent.type1
+    t2=seen ? seen.type2 : opponent.type2
+    mult=pbSingleTypeMod(moveType,t1)
+    if t2 && t2!=t1
+      mult*=pbSingleTypeMod(moveType,t2)
     end
     return mult
   end
 
-  # 상대가 여러 명이면 "가장 낮은 배율"(더 조심해야 하는 쪽) 기준으로 색 결정
-  def pbWorstMultiplier(moveType,opponents)
+  # 상대가 여럿(더블)이면 전원 배율이 일치할 때만 그 색을 쓰고, 갈리면 색을 내지
+  # 않는다(1배 취급) — 어느 한쪽 기준의 색이 다른 쪽에 대한 오정보가 되는 것을 막는다.
+  def pbAgreedMultiplier(moveType,opponents)
     return 1.0 if !opponents || opponents.length==0
-    return opponents.map{|op| pbTypeMultiplier(moveType,op)}.min
+    first=nil
+    for op in opponents
+      m=pbTypeMultiplier(moveType,op)
+      first=m if first.nil?
+      return 1.0 if m!=first
+    end
+    return first
   end
 
   def pbEffectivenessColor(mult)
@@ -47,8 +60,10 @@ class FightMenuButtons < BitmapSprite
     end
   end
 
-  def pbMoveNameColor(moveType,opponents)
-    mult=pbWorstMultiplier(moveType,opponents)
+  # 본가처럼 공격기에만 색을 낸다 — 변화기는 상성 배율이 뜻이 없어 기본색 그대로.
+  def pbMoveNameColor(move,opponents)
+    return PokeBattle_SceneConstants::MENUBASECOLOR if move.pbIsStatus?
+    mult=pbAgreedMultiplier(move.type,opponents)
     color=pbEffectivenessColor(mult)
     return color || PokeBattle_SceneConstants::MENUBASECOLOR
   end
@@ -64,7 +79,7 @@ class FightMenuButtons < BitmapSprite
       y=((i/2)==0) ? 6 : 48
       y+=UPPERGAP
       self.bitmap.blt(x,y,@buttonbitmap.bitmap,Rect.new(0,moves[i].type*46,192,46))
-      namecolor=pbMoveNameColor(moves[i].type,opponents)
+      namecolor=pbMoveNameColor(moves[i],opponents)
       textpos.push([_INTL("{1}",moves[i].name),x+96,y+8,2,
          namecolor,PokeBattle_SceneConstants::MENUSHADOWCOLOR])
     end
@@ -83,7 +98,7 @@ class FightMenuButtons < BitmapSprite
       y+=UPPERGAP
       self.bitmap.blt(x,y,@buttonbitmap.bitmap,Rect.new(192,moves[i].type*46,192,46))
       self.bitmap.blt(416,20+UPPERGAP,@typebitmap.bitmap,Rect.new(0,moves[i].type*28,64,28))
-      namecolor=pbMoveNameColor(moves[i].type,opponents)
+      namecolor=pbMoveNameColor(moves[i],opponents)
       textpos.push([_INTL("{1}",moves[i].name),x+96,y+8,2,
          namecolor,PokeBattle_SceneConstants::MENUSHADOWCOLOR])
       if moves[i].totalpp>0

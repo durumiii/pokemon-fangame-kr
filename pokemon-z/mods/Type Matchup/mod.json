@@ -1,7 +1,7 @@
 {
   "name": "Type Matchup",
   "game": "Pokemon Z Fangame",
-  "description": "배틀의 기술 선택창에서 기술 이름을 상대와의 타입 상성으로 색칠하는 모드예요. 효과가 없으면 검정, 0.25배는 빨강, 0.5배는 주황, 2배는 초록, 4배는 하늘색으로 칠하고 1배는 기본색 그대로 둡니다. 더블배틀에서는 상대 여럿 중 가장 낮은 배율을 기준으로 삼아요.\n\n디시 레쿠쟈 갤러리 228378번 「상성턱받이 패치」에서 해당 부분만 떼어 우리 모드 형식으로 옮긴 것입니다. 배틀 화면의 기술 버튼 두 클래스를 통째로 다시 정의하므로, 배틀 UI를 건드리는 다른 모드와 함께 쓸 때는 로드 순서를 확인하세요.\n\n설치는 파일 복사가 아니라 주입입니다 — pokemon-fangame-kr의 pokemon-z/inject.py가 한글패치판 Scripts.rxdata에 섹션으로 덧붙여요.",
+  "description": "배틀의 기술 선택창에서 기술 이름을 상대와의 타입 상성으로 색칠하는 모드예요. 효과가 없으면 검정, 0.25배는 빨강, 0.5배는 주황, 2배는 초록, 4배는 하늘색으로 칠하고 1배는 기본색 그대로 둡니다.\n\n본가처럼 공격기에만 색을 내요 — 변화기는 기본색 그대로입니다. 계산은 딱 타입만 봐요: 특성·도구는 반영하지 않고, 일루전으로 위장한 조로아크는 위장한 모습의 타입으로 계산해서 색으로 정체가 새지 않아요. 더블배틀에서는 상대 모두에게 배율이 같을 때만 칠하고, 갈리면 기본색으로 둡니다.\n\n디시 레쿠쟈 갤러리 228378번 「상성턱받이 패치」에서 해당 부분만 떼어 우리 모드 형식으로 옮긴 뒤 위 규칙으로 손본 것입니다. 배틀 화면의 기술 버튼 두 클래스를 통째로 다시 정의하므로, 배틀 UI를 건드리는 다른 모드와 함께 쓸 때는 로드 순서를 확인하세요.\n\n설치는 파일 복사가 아니라 주입입니다 — pokemon-fangame-kr의 pokemon-z/inject.py가 한글패치판 Scripts.rxdata에 섹션으로 덧붙여요.",
   "engine": "essentials-v16",
   "install": "inject",
   "created_at": "2026-08-09",
@@ -11,6 +11,9 @@
       "script_name": "001_MoveTypeColors.rb"
     }
   ],
+  "touches": {
+    "methods": ["FightMenuButtons#update", "FightMenuButtons#refresh", "FightMenuDisplay#refresh", "FightMenuDisplay#update"]
+  },
   "expects": {
     "PokeBattle_Scene": "33915f189939f788a0fec2feab51bfe7"
   },
