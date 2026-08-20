@@ -1793,7 +1793,7 @@
 {"id": "m17.e32.p0.c0", "val": {"ref": "m17.s4"}, "state": "reviewed", "by": "human/검수 완료 소급 등재(2026-08-13 유실 감사)"}
 {"id": "m17.e33.p0.c1", "val": {"ref": "m17.s4"}, "state": "reviewed", "by": "human/검수 완료 소급 등재(2026-08-13 유실 감사)"}
 {"id": "m17.e22.p0.c0", "val": "저 ‘Z’가 보이나? <b>제피르</b> 왕가를 나타내는 표식이다.", "state": "reviewed", "by": "human/검수 완료 소급 등재(2026-08-13 유실 감사)"}
-{"id": "m17.e22.p0.c1", "val": "<b>아스테르 제피르 2세</b>가 바로 우리 국왕 전하의 성함이다.", "state": "reviewed", "by": "human/검수 완료 소급 등재(2026-08-13 유실 감사)"}
+{"id": "m17.e22.p0.c1", "val": "<b>아스테르 제피르 2세</b>가 바로 우리 국왕 전하의 존함이지.", "state": "reviewed", "by": "human/검수 완료 소급 등재(2026-08-13 유실 감사)"}
 {"id": "m17.s7", "val": {"ref": "unified.306e9464"}, "state": "reviewed", "by": "human/56833ad"}
 {"id": "m17.e28.p0.c0", "val": {"ref": "m17.s7"}}
 {"id": "m17.e29.p0.c0", "val": {"ref": "m17.s7"}}
@@ -2427,7 +2427,7 @@
 {"id": "m24.e13.p0.c185", "val": "이제 어쩌면 좋지?", "state": "reviewed", "by": "human/pilot-2026-08-06"}
 {"id": "m24.e13.p0.c199", "val": "\\c[5]<b>멜리아:</b>\\c[0] 그... 그 이상한 성직자잖아!", "state": "reviewed", "by": "human/pilot-2026-08-06"}
 {"id": "m24.e13.p0.c250", "val": "<b>???:</b> 두려워하지 마라. 해칠 생각은 없다.", "state": "reviewed", "by": "human/pilot-2026-08-06", "sample": false}
-{"id": "m24.e13.p0.c251", "val": "내 이름은 <b>미라</b>다."}
+{"id": "m24.e13.p0.c251", "val": "내 이름은 <b>미라</b>."}
 {"id": "m24.e13.p0.c253", "val": "\\c[6]<b>미라:</b>\\c[0] 나는 <b>아조스단</b>이라 자칭하는 불한당 무리에 맞서 성전을 치르는 중이다.", "state": "reviewed", "by": "human/pilot-2026-08-06"}
 {"id": "m24.e13.p0.c254", "val": "그자들을 사냥하고 있지. 너희도 이미 마주친 적이 있겠지?", "state": "reviewed", "by": "human/pilot-2026-08-06"}
 {"id": "m24.e13.p0.c259", "val": "\\c[5]<b>멜리아:</b>\\c[0] 응, 쫓아내긴 했는데... 그 사람들은 정확히 누구야?", "state": "reviewed", "by": "human/pilot-2026-08-06"}
