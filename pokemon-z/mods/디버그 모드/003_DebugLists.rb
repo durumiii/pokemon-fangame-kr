@@ -68,19 +68,6 @@ module DebugList
     end
   end
 
-  # 신형 루비에서는 인코딩이 다른 두 문자열을 이으면 터진다(둘 다 한글일 때).
-  # 게임에서 온 문자열에 우리 문구를 붙일 때는 그쪽 인코딩에 맞춰 붙인다.
-  # 구판 루비에는 인코딩이 없으므로 그대로 지나간다.
-  def self.same_enc(s, like)
-    return s if !s.respond_to?(:force_encoding)
-    return s if !like.respond_to?(:encoding)
-    begin
-      return s.dup.force_encoding(like.encoding)
-    rescue Exception
-      return s
-    end
-  end
-
   def self.match?(text, needle)
     return true if !needle || needle == ""
     return false if !text
@@ -431,17 +418,19 @@ def pbListScreen(title, lister)
   list.viewport = viewport
   list.z = 2
   canfilter = lister.respond_to?(:dbgz_menu)
-  titletext = title
-  if canfilter
-    titletext = title.to_s + DebugList.same_enc("\n(F / X: 필터)", title.to_s)
-  end
-  title = Window_UnformattedTextPokemon.new(titletext)
+  # 단축키 표기는 **키보드 기준으로만** 적는다. 패드 표기는 Controller UX가 UiTextKR의
+  # 치환표에 쌍을 얹어 덮으므로, 우리는 그 훅이 걸린 `text=`로 넣기만 하면 된다
+  # (`new(문자열)`은 @text에 바로 넣어 훅을 안 지난다 — 실측). 저쪽 모드가 없으면
+  # 키보드 표기가 그대로 남는다.
+  titletext = canfilter ? (title.to_s + "\n(F: 필터)") : title.to_s
+  title = Window_UnformattedTextPokemon.new("")
   title.x = 256
   title.y = 0
   title.width = Graphics.width - 256
   title.height = canfilter ? 96 : 64
   title.viewport = viewport
   title.z = 2
+  title.text = titletext
   lister.setViewport(viewport)
   selected = -1
   commands = lister.commands
