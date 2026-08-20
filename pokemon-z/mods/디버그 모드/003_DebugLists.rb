@@ -422,7 +422,7 @@ def pbListScreen(title, lister)
   # 치환표에 쌍을 얹어 덮으므로, 우리는 그 훅이 걸린 `text=`로 넣기만 하면 된다
   # (`new(문자열)`은 @text에 바로 넣어 훅을 안 지난다 — 실측). 저쪽 모드가 없으면
   # 키보드 표기가 그대로 남는다.
-  titletext = canfilter ? (title.to_s + "\n(F: 필터)") : title.to_s
+  titletext = canfilter ? (title.to_s + "\n필터: F") : title.to_s
   title = Window_UnformattedTextPokemon.new("")
   title.x = 256
   title.y = 0

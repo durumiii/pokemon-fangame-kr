@@ -14,8 +14,9 @@ class CommandList
   # `dbgz_`로 시작하는 둘은 원작에 없는 우리 항목이다(004_DebugPerks.rb의 깃발).
   TOP = [
     "warp", "healparty", "usepc",
+    "additem", "addpokemon", "setmoney",
     "dbgz_heal", "dbgz_hm",
-    "additem", "addpokemon", "setmoney", "refreshmap",
+    "refreshmap",
     "testwildbattle", "testtrainerbattle",
     "testdoublewildbattle", "testdoubletrainerbattle",
     "switches", "variables", "setbadges"

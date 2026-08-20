@@ -1,20 +1,31 @@
-# 디버그를 켜면 딸려 오던 편의 둘을 떼어 내 각각 토글로 만든다. 둘 다 기본은 꺼짐.
+# 디버그를 켜면 딸려 오던 편의 둘을 떼어 내 각각 토글로 만든다. 둘 다 기본은 켜짐이라
+# 손대기 전까지는 옛 디버그 배포판과 같게 굴고, 필요할 때 메뉴에서 끈다.
 #
 # ① 비전기술·라이드 자동 통과.
 #    원작 `PField_HiddenMoves`가 `$DEBUG` 하나만 보고 배지도 기술 보유도 안 따지고
 #    통과시킨다 — 거합베기·박치기·바위깨기·괴력·파도타기·폭포오르기·잠수, 그리고
 #    파도타기라이드 아이템을 보는 자리까지 스물두 줄이 그 꼴이다(실측). 그래서 디버그를
 #    켜는 순간 온 지도가 열려 정상 진행 확인이 안 됐다.
-#    끄는 법은 그 판정만 속이는 것이다 — 진입점에서 `$DEBUG`를 잠깐 내렸다가 되돌린다.
+#    이 항목을 끄면 그 판정만 속인다 — 진입점에서 `$DEBUG`를 잠깐 내렸다가 되돌린다.
 #    원본 코드를 베껴 오지 않으므로 원작 판정이 바뀌어도 따라간다.
 #
 # ② 전투 후 자동 회복. `001_HealAfterBattle.rb`가 이 깃발을 본다.
 #
-# 값은 게임을 껐다 켜면 꺼진 상태로 돌아간다 — 세이브에 아무것도 안 남긴다.
+# 값은 게임을 껐다 켜면 기본값(켜짐)으로 돌아간다 — 세이브에 아무것도 안 남긴다.
 
 module DebugPerks
-  def self.hm;    return @hm ? true : false; end
-  def self.heal;  return @heal ? true : false; end
+  # 둘 다 기본은 켜짐이다 — 손대기 전까지는 옛 디버그 배포판과 같게 군다.
+  # 한 번 끄면 그 값이 남고, 게임을 껐다 켜면 다시 켜진 상태로 돌아온다.
+  def self.hm
+    @hm = true if @hm.nil?
+    return @hm
+  end
+
+  def self.heal
+    @heal = true if @heal.nil?
+    return @heal
+  end
+
   def self.hm=(v);   @hm = v ? true : false; end
   def self.heal=(v); @heal = v ? true : false; end
 
