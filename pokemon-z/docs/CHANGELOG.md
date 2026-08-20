@@ -18,6 +18,13 @@
 
 (2026-08-20 v6 배포로 비움)
 
+## 모드 릴리스 mods-z-v2.2 (2026-08-20)
+
+모드 채널(durumiii/essentials-modkit)을 통합 체제로 갱신 — 자산 여덟(코어 · 글꼴 셋 ·
+UI KR · Utility Pack · Controller UX · 디버그 모드). 옛 개별 유틸 카드(UI Text KR ·
+Z-GUI · Battle Speed · Better Movements)는 채널에서 은퇴하고 보관소에만 남는다.
+내용물은 v6와 같은 재료다.
+
 ## v6 (2026-08-20)
 
 합본 zip 글꼴별 3종 + 디버그·패드 추가판 2종. 릴리스 노트 본문은
