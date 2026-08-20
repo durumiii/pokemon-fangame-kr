@@ -68,7 +68,19 @@ def build(name: str, store: Path, dry: bool = False) -> Path:
     folder = store / name
     stage = folder.with_name(folder.name + ".new")
 
-    scripts, assets, touch_methods, touch_files = [], [], [], []
+    def claim(bag: dict, items, member: str, what: str) -> None:
+        """건드리는 자리를 재료 이름과 함께 적는다 — 겹치면 멈춘다.
+
+        조용히 접으면 재료 카드가 낡아 같은 자리를 둘이 잡게 됐을 때 조립이 침묵한다.
+        나중 정의가 이기는 주입 방식이라 그 침묵이 곧 한쪽 기능의 실종이다.
+        """
+        for one in items or []:
+            if one in bag:
+                raise SystemExit(f"{name}: {what} `{one}`를 {bag[one]}와 {member}가 함께 "
+                                 "건드려요 — 재료 카드를 대조해 한쪽을 정리해요")
+            bag[one] = member
+
+    scripts, assets, touch_methods, touch_files = [], [], {}, {}
     expects, order_after, order_before = {}, [], []
     requires, provides, conflicts = [], [], {}
     baseline, blurbs = {}, []
@@ -103,15 +115,16 @@ def build(name: str, store: Path, dry: bool = False) -> Path:
             expects[place] = digest
 
         touches = card.get("touches") or {}
-        touch_methods += touches.get("methods") or []
-        touch_files += touches.get("files") or []
+        claim(touch_methods, touches.get("methods"), member, "메서드")
+        claim(touch_files, touches.get("files"), member, "파일")
         told = card.get("order") or {}
         order_after += told.get("after") or []
         order_before += told.get("before") or []
         requires += card.get("requires") or []
         provides += card.get("provides") or []
         for enemy, why in (card.get("conflicts") or {}).items():
-            conflicts.setdefault(enemy, why)
+            said = conflicts.get(enemy)
+            conflicts[enemy] = why if said in (None, why) else f"{said}; {why}"
 
         room = src / "baseline"
         for rb in sorted(room.glob("*.rb")) if room.is_dir() else []:
@@ -149,8 +162,8 @@ def build(name: str, store: Path, dry: bool = False) -> Path:
         "scripts": scripts,
         "assets": assets,
         "touches": {
-            "methods": sorted(dict.fromkeys(touch_methods)),
-            "files": sorted(dict.fromkeys(touch_files)),
+            "methods": sorted(touch_methods),
+            "files": sorted(touch_files),
         },
         "expects": dict(sorted(expects.items())),
         "baseline_taken": bool(baseline),
