@@ -1787,7 +1787,7 @@
 {"k": "Your party's full!", "v": "파티가 가득 찼다!"}
 {"k": "Position {1},{2} is empty...", "v": "위치 {1},{2}\\j[은,는] 비어 있다..."}
 {"k": "Position {1},{2} is not empty...", "v": "위치 {1},{2}\\j[은,는] 비어 있지 않습니다..."}
-{"k": "Take this {1}?", "v": "{1}\\j[을,를] 가져갈까?"}
+{"k": "Take this {1}?", "v": "{1}\\j[을,를] 가져가시겠습니까?"}
 {"k": "Can't store the {1}.", "v": "{1}\\j[은,는] 저장할 수 없다."}
 {"k": "Took the {1}.", "v": "{1}\\j[을,를] 받았다."}
 {"k": "{1} is now being held.", "v": "이제 {1}\\j[을,를] 지니고 있다!"}
@@ -2978,7 +2978,7 @@
 {"k": "Hacer huevo", "v": "알로 만들기"}
 {"k": "Hacer Pokémon", "v": "포켓몬 만들기"}
 {"k": "Setear pasos en 1", "v": "걸음 수를 1로 설정"}
-{"k": "{1} no puede ser un huevo. ¿Hacerlo huevo de todas formas?", "v": "{1}\\j[은,는] 알이 될 수 없습니다. 그래도 알로 만들까요?"}
+{"k": "{1} no puede ser un huevo. ¿Hacerlo huevo de todas formas?", "v": "{1}\\j[은,는] 알이 될 수 없습니다. 그래도 알로 만드시겠습니까?"}
 {"k": "No es un Pokémon Oscuro.", "v": "그림자 포켓몬이 아니다."}
 {"k": "Medidor del corazón en {1}.", "v": "하트게이지를 {1}\\j[으로,로]."}
 {"k": "Hacer Oscuro", "v": "다크 포켓몬으로"}
@@ -2987,9 +2987,9 @@
 {"k": "{1} ya es un Pokémon Oscuro.", "v": "{1}\\j[은,는] 이미 그림자 포켓몬이다."}
 {"k": "El medidor del corazón de {1} bajo de {2} a {3} (ahora etapa {4}).", "v": "{1}의 하트게이지가 {2}에서 {3}\\j[으로,로] 내려갔다 (현재 단계 {4})."}
 {"k": "{1} no es un Pokémon Oscuro.", "v": "{1}\\j[은,는] 그림자 포켓몬이 아니다."}
-{"k": "¿Estás seguro de que quieres copiar este Pokémon?", "v": "정말 이 포켓몬을 복사할까?"}
+{"k": "¿Estás seguro de que quieres copiar este Pokémon?", "v": "정말 이 포켓몬을 복사하시겠습니까?"}
 {"k": "El Pokémon fue duplicado.", "v": "포켓몬을 복제했다."}
-{"k": "¿Estás seguro de que quieres borrar este Pokémon?", "v": "정말 이 포켓몬을 삭제할까?"}
+{"k": "¿Estás seguro de que quieres borrar este Pokémon?", "v": "정말 이 포켓몬을 삭제하시겠습니까?"}
 {"k": "El Pokémon fue borrado.", "v": "포켓몬을 삭제했다."}
 {"k": "Cambiar", "v": "포켓몬을 교체한다"}
 {"k": "Carta", "v": "편지"}
@@ -3218,7 +3218,7 @@
 {"k": "¡Tu equipo está completo!", "v": "지닌 포켓몬이 가득 찼다!"}
 {"k": "Posición {1},{2} está vacía...", "v": "위치 {1},{2}\\j[은,는] 비어 있다..."}
 {"k": "Posición {1},{2} no está vacía...", "v": "위치 {1},{2}\\j[은,는] 비어 있지 않습니다..."}
-{"k": "¿Tomar {1}?", "v": "{1}\\j[을,를] 가져갈까?"}
+{"k": "¿Tomar {1}?", "v": "{1}\\j[을,를] 가져가시겠습니까?"}
 {"k": "No se puede guardar {1}.", "v": "{1}\\j[은,는] 저장할 수 없다."}
 {"k": "Tomaste {1}.", "v": "{1}\\j[을,를] 받았다."}
 {"k": "¡Ahora lleva {1}!", "v": "이제 {1}\\j[을,를] 지니고 있다!"}
@@ -3311,14 +3311,14 @@
 {"k": "Setear género del EO.", "v": "OT 성별 설정."}
 {"k": "Setear ID nuevo (máx. 65535).", "v": "새 ID 설정 (최대 65535)."}
 {"k": "Pasos del huevo: {1}.", "v": "알 걸음 수: {1}."}
-{"k": "{1} no puede ser un huevo. ¿Hacer de todos modos?", "v": "{1}\\j[은,는] 알이 될 수 없습니다. 그래도 진행할까요?"}
+{"k": "{1} no puede ser un huevo. ¿Hacer de todos modos?", "v": "{1}\\j[은,는] 알이 될 수 없습니다. 그래도 진행하시겠습니까?"}
 {"k": "Medidor del Corazón en {1}.", "v": "하트게이지를 {1}\\j[으로,로]."}
 {"k": "Bajar Medidor Corazón", "v": "하트게이지 낮추기"}
 {"k": "El medidor del corazón de {1} bajó de {2} hasta {3} (ahora en etapa {4}).", "v": "{1}의 하트게이지가 {2}에서 {3}\\j[으로,로] 내려갔다 (현재 단계 {4})."}
 {"k": "El Pokémon duplicado fue movido a tu equipo.", "v": "복제한 포켓몬을 지닌 포켓몬으로 옮겼다."}
 {"k": "Todas las cajas están llenas.", "v": "박스가 가득 찼다!"}
 {"k": "El Pokémon duplicado fue movido a la caja \"{1}.\"", "v": "복제한 포켓몬을 박스 “{1}”\\j[으로,로] 옮겼다."}
-{"k": "¿Estás seguro de borrar este Pokémon?", "v": "정말 이 포켓몬을 삭제할까?"}
+{"k": "¿Estás seguro de borrar este Pokémon?", "v": "정말 이 포켓몬을 삭제하시겠습니까?"}
 {"k": "Sin habilidad", "v": "특성 없음"}
 {"k": "Sin objeto", "v": "도구 없음"}
 {"k": "Nv.", "v": "Lv."}
