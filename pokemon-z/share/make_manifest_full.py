@@ -19,14 +19,16 @@ from pathlib import Path
 
 HERE = Path(__file__).parent
 BASE_ZIP = Path("/mnt/c/Users/durumii/Downloads/POKEMON Z V2.18.zip")
-PATCH_ZIP = Path("/mnt/c/Users/durumii/Downloads/pokemon-z-kr-patch-v5.1.zip")
+PATCH_ZIP = HERE / "dist" / "pokemon-z-kr-patch-v6_1-galmuri.zip"
 BASE_TOP = "Pokemon Z V2.18/"
-PATCH_TOP = "포켓몬Z 한글패치 v5.1/"
-WORK = Path("/mnt/d/GameVault/_modkit-baseline/Pokemon Z V2.18")
+PATCH_TOP = ""  # 우리 배포 zip은 게임 폴더 기준으로 평평하다
+# 조립 폴더는 WSL 쪽에 둔다 — 파일 만 구천 개를 푸는 일이라 파일시스템 경계를 넘기면
+# 세션이 파일 옮기기에 녹는다. 원본 zip 둘은 한 번씩 읽고 마는 것이라 괜찮다.
+WORK = Path.home() / ".cache" / "z-manifest-work"
 OUT = HERE / "manifest-full.json"
 
 GAME = "Pokemon Z Fangame"
-VERSION = "포켓몬Z 한글패치 v5.1"
+VERSION = "포켓몬Z 한글패치 v6"
 
 # Essentials 엔진이 스스로 만들거나 다시 만드는 것 — Z 밖에서도 통할 후보라
 # 언젠가 modkit 코어(DEFAULT_EXCLUDE 또는 ESSENTIALS_RUNTIME)로 올라갈 몫이다.
@@ -51,8 +53,14 @@ ESSENTIALS_RUNTIME = (
 #                             (Z 배포본 동봉). 다른 게임에도 흔하면 위로 옮길 것.
 #   Partidas Guardadas*     — 배포본이 동봉하는 세이브 폴더 바로가기(.lnk)
 #   amadeus.dat             — 출처 미확정. 스크립트 전문 검색에 한 줄도 없다.
+#   mod.json·조작법.txt     — v6부터 우리가 게임 루트에 싣는 것. 읽어주세요와 같은 격이다.
+#   Fonts/*                 — 글꼴 파일 열여섯은 **갈래마다 내용이 다르다**(갈무리·DPPt·
+#                             BW 각 판의 한글이 같은 이름에 들어간다. 2026-08-21 실측:
+#                             세 갈래에서 CRC가 같은 것은 라이선스 문서 둘뿐). 지문표는
+#                             셋이 함께 쓰므로 여기서 뺀다 — 글꼴의 무결은 글꼴 모드
+#                             카드의 replaces_crc가 따로 지킨다.
 Z_ONLY = (
-    "번역표/*", "읽어주세요.txt",
+    "번역표/*", "읽어주세요.txt", "조작법.txt", "mod.json", "Fonts/*",
     "Data/progreso*.dat", "showdown.txt", "Partidas Guardadas*", "amadeus.dat",
 )
 

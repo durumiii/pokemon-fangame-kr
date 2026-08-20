@@ -1,7 +1,7 @@
 {
  "modkit_manifest": 1,
  "game": "Pokemon Z Fangame",
- "version": "포켓몬Z 한글패치 v5.1",
+ "version": "포켓몬Z 한글패치 v6",
  "scope": "full",
  "exclude": [
   "Game*.rxdata",
@@ -18,6 +18,7 @@
   "_quarantine/*",
   "modkit-log.jsonl",
   "manifest.json",
+  "modkit-owners.json",
   "Data/Constants.rxdata",
   "Data/MapChecker.dat",
   "*LastSave.dat",
@@ -25,6 +26,9 @@
   "Game_*.rxdata",
   "번역표/*",
   "읽어주세요.txt",
+  "조작법.txt",
+  "mod.json",
+  "Fonts/*",
   "Data/progreso*.dat",
   "showdown.txt",
   "Partidas Guardadas*",
@@ -12005,7 +12009,7 @@
   ],
   "Data/Map299.rxdata": [
    48853,
-   454427164
+   2415055712
   ],
   "Data/Map300.rxdata": [
    18222,
@@ -12848,8 +12852,8 @@
    2602870584
   ],
   "Data/Scripts.rxdata": [
-   1023964,
-   1304234109
+   1068875,
+   2913212957
   ],
   "Data/Skills.rxdata": [
    14798,
@@ -12924,8 +12928,8 @@
    959918556
   ],
   "Data/korean.dat": [
-   4497525,
-   1228501993
+   4793125,
+   4155120367
   ],
   "Data/messages.dat": [
    3237943,
@@ -12994,62 +12998,6 @@
   "Data/types.dat": [
    754,
    1547726280
-  ],
-  "Fonts/Galmuri11.ttf": [
-   3519480,
-   666075079
-  ],
-  "Fonts/Galmuri14.ttf": [
-   3813024,
-   2143840300
-  ],
-  "Fonts/Galmuri9.ttf": [
-   2999404,
-   62158299
-  ],
-  "Fonts/pkmndp.ttf": [
-   55900,
-   3514808436
-  ],
-  "Fonts/pkmndpb.ttf": [
-   49496,
-   1046620591
-  ],
-  "Fonts/pkmnem.ttf": [
-   20008,
-   2916500896
-  ],
-  "Fonts/pkmnemn.ttf": [
-   19008,
-   1707126671
-  ],
-  "Fonts/pkmnems.ttf": [
-   18164,
-   1904909073
-  ],
-  "Fonts/pkmnfl.ttf": [
-   19804,
-   3491183794
-  ],
-  "Fonts/pkmnrs.ttf": [
-   20116,
-   2345952428
-  ],
-  "Fonts/pkmnrsi.ttf": [
-   20172,
-   2167264077
-  ],
-  "Fonts/pokemon-dppt-LICENSE.txt": [
-   247,
-   1039570680
-  ],
-  "Fonts/pokemon-dppt-README.txt": [
-   691,
-   2605693850
-  ],
-  "Fonts/pokemon-dppt.otf": [
-   422184,
-   1853890065
   ],
   "Game.exe": [
    11722254,
@@ -71524,12 +71472,12 @@
    3812026500
   ],
   "Graphics/Pictures/MenuClas.png": [
-   5851,
-   3778468372
+   4853,
+   837171037
   ],
   "Graphics/Pictures/MenuClasSel.png": [
-   4555,
-   3368880471
+   4597,
+   2295674729
   ],
   "Graphics/Pictures/MenuComp.png": [
    5331,
@@ -71944,20 +71892,20 @@
    1483524520
   ],
   "Graphics/Pictures/alquimia1.png": [
-   8693,
-   1083380914
+   33901,
+   163513072
   ],
   "Graphics/Pictures/alquimia2.png": [
-   8808,
-   1709385634
+   33846,
+   3829325364
   ],
   "Graphics/Pictures/alquimia3.png": [
-   8970,
-   4118358617
+   35778,
+   3328876920
   ],
   "Graphics/Pictures/alquimia4.png": [
-   6057,
-   2556579517
+   22699,
+   4083180785
   ],
   "Graphics/Pictures/animFrameIcon.png": [
    2083,
@@ -72080,8 +72028,8 @@
    2023926998
   ],
   "Graphics/Pictures/bagReg.PNG": [
-   1229,
-   611158277
+   761,
+   1700385578
   ],
   "Graphics/Pictures/bagReg0.PNG": [
    358,
@@ -72460,16 +72408,16 @@
    4292105230
   ],
   "Graphics/Pictures/battleCommandButtons.png": [
-   48489,
-   3774248781
+   32342,
+   1779874267
   ],
   "Graphics/Pictures/battleFight.png": [
-   1905,
-   3129474049
+   5641,
+   2200807562
   ],
   "Graphics/Pictures/battleFightButtons.png": [
-   16401,
-   3737237252
+   42812,
+   309129717
   ],
   "Graphics/Pictures/battleFoeBoxD.png": [
    1245,
@@ -72492,8 +72440,8 @@
    3858211754
   ],
   "Graphics/Pictures/battleMessage.png": [
-   469,
-   1544673575
+   5991,
+   1042448996
   ],
   "Graphics/Pictures/battlePlayerBoxD.png": [
    897,
@@ -72524,8 +72472,8 @@
    975702809
   ],
   "Graphics/Pictures/battleStatuses.png": [
-   899,
-   2276520956
+   1815,
+   3626461084
   ],
   "Graphics/Pictures/belladonaPres.png": [
    230551,
@@ -72672,28 +72620,28 @@
    1210708006
   ],
   "Graphics/Pictures/cartaBayas.PNG": [
-   43056,
-   3765267814
+   25416,
+   3063805751
   ],
   "Graphics/Pictures/cartelActo1.png": [
-   126322,
-   3685632973
+   8832,
+   1764244176
   ],
   "Graphics/Pictures/cartelActo2.png": [
-   132024,
-   3931101151
+   7141,
+   197800919
   ],
   "Graphics/Pictures/cartelActo3.png": [
-   129605,
-   3804871190
+   9754,
+   285697477
   ],
   "Graphics/Pictures/cartelFinal1.png": [
-   3857,
-   2608488343
+   4734,
+   4138444182
   ],
   "Graphics/Pictures/cartelFinal2.png": [
-   4471,
-   1473143856
+   6539,
+   17070426
   ],
   "Graphics/Pictures/casinoNegro.png": [
    2324,
@@ -72812,16 +72760,16 @@
    2487155471
   ],
   "Graphics/Pictures/diploma.png": [
-   8953,
-   1431840952
+   27108,
+   3759275626
   ],
   "Graphics/Pictures/diplomaNuz1.png": [
-   5729,
-   3126702796
+   31837,
+   3513120039
   ],
   "Graphics/Pictures/diplomaNuz2.png": [
-   5812,
-   1701054029
+   32651,
+   3644072898
   ],
   "Graphics/Pictures/downarrow.PNG": [
    211,
@@ -73388,8 +73336,8 @@
    865377640
   ],
   "Graphics/Pictures/helpbg.png": [
-   90945,
-   285610947
+   126546,
+   2472267966
   ],
   "Graphics/Pictures/hibisVision.png": [
    8749,
@@ -73560,8 +73508,8 @@
    253111251
   ],
   "Graphics/Pictures/icon_register.PNG": [
-   288,
-   3663483547
+   1100,
+   2392714187
   ],
   "Graphics/Pictures/iniAgua.png": [
    3122,
@@ -73736,44 +73684,44 @@
    1561630858
   ],
   "Graphics/Pictures/introText1.png": [
-   13603,
-   44823922
+   20229,
+   465334845
   ],
   "Graphics/Pictures/introText2.png": [
-   13420,
-   4123052901
+   16173,
+   2074240055
   ],
   "Graphics/Pictures/introText3.png": [
-   10081,
-   3950424786
+   16313,
+   1663373415
   ],
   "Graphics/Pictures/introText4.png": [
-   9552,
-   3371981525
+   12559,
+   3764476854
   ],
   "Graphics/Pictures/introText5.png": [
-   11676,
-   1089568447
+   14469,
+   2104629488
   ],
   "Graphics/Pictures/introText6.png": [
-   8768,
-   2958112782
+   13523,
+   825431695
   ],
   "Graphics/Pictures/introText7.png": [
-   11857,
-   3297621303
+   16501,
+   1750986482
   ],
   "Graphics/Pictures/introText8.png": [
-   7618,
-   2407869231
+   9806,
+   145666793
   ],
   "Graphics/Pictures/introTexto0.png": [
-   2297,
-   2656919753
+   5248,
+   3570559153
   ],
   "Graphics/Pictures/introTexto1.png": [
-   19054,
-   902429615
+   5885,
+   884841388
   ],
   "Graphics/Pictures/item.png": [
    149,
@@ -73912,8 +73860,8 @@
    311965577
   ],
   "Graphics/Pictures/mapRegion0.png": [
-   50930,
-   1896552152
+   53308,
+   59232131
   ],
   "Graphics/Pictures/mapRegion1.png": [
    17404,
@@ -73996,8 +73944,8 @@
    2409159384
   ],
   "Graphics/Pictures/namingControls.png": [
-   2057,
-   4249061654
+   5984,
+   1170246409
   ],
   "Graphics/Pictures/namingMode.png": [
    369,
@@ -74200,8 +74148,8 @@
    1431368778
   ],
   "Graphics/Pictures/pokedexTypes.png": [
-   4122,
-   1627792377
+   12398,
+   2516896662
   ],
   "Graphics/Pictures/pokedexbg.png": [
    275596,
@@ -74288,8 +74236,8 @@
    4089162301
   ],
   "Graphics/Pictures/prisionRot.png": [
-   10850,
-   2138687716
+   10183,
+   3953311322
   ],
   "Graphics/Pictures/protaAlcaFinal1.png": [
    943034,
@@ -74364,156 +74312,156 @@
    1011262305
   ],
   "Graphics/Pictures/rot10Cendera1.png": [
-   18915,
-   1900051519
+   7292,
+   184523408
   ],
   "Graphics/Pictures/rot10Cendera2.png": [
-   15191,
-   1427091997
+   13277,
+   2009336450
   ],
   "Graphics/Pictures/rot11Siempreviva1.png": [
-   10199,
-   2286945028
+   12205,
+   1140340586
   ],
   "Graphics/Pictures/rot11Siempreviva2.png": [
-   15545,
-   1528117472
+   11363,
+   1837428963
   ],
   "Graphics/Pictures/rot12Arrayan1.png": [
-   9275,
-   804176714
+   7367,
+   1882304509
   ],
   "Graphics/Pictures/rot12Arrayan2.png": [
-   14849,
-   2778201970
+   10793,
+   1153795754
   ],
   "Graphics/Pictures/rot13Mirra1.png": [
-   6794,
-   3807825133
+   4774,
+   2461994481
   ],
   "Graphics/Pictures/rot13Mirra2.png": [
-   19703,
-   397125882
+   13163,
+   2674582869
   ],
   "Graphics/Pictures/rot1Canola.png": [
-   9259,
-   976517035
+   7304,
+   3573523640
   ],
   "Graphics/Pictures/rot1Canola2.png": [
-   6508,
-   468183917
+   9621,
+   2737838046
   ],
   "Graphics/Pictures/rot1F3.png": [
-   11902,
-   1064024065
+   3315,
+   1024961102
   ],
   "Graphics/Pictures/rot1Lider7.png": [
-   9821,
-   1226758473
+   6994,
+   2013959857
   ],
   "Graphics/Pictures/rot1Loto.png": [
-   9530,
-   148776387
+   4703,
+   461019247
   ],
   "Graphics/Pictures/rot2F3.png": [
-   6671,
-   855884692
+   13447,
+   3587794964
   ],
   "Graphics/Pictures/rot2Hisopo.png": [
-   14847,
-   1395207091
+   6664,
+   24221488
   ],
   "Graphics/Pictures/rot2Hisopo2.png": [
-   6703,
-   3539234164
+   14090,
+   1976165846
   ],
   "Graphics/Pictures/rot2Lider7.png": [
-   17260,
-   3042163060
+   16988,
+   3386378387
   ],
   "Graphics/Pictures/rot2Loto.png": [
-   8360,
-   1485627324
+   15763,
+   3617717935
   ],
   "Graphics/Pictures/rot4Zafra.png": [
-   10832,
-   3909968729
+   7060,
+   263957639
   ],
   "Graphics/Pictures/rot4Zafra2.png": [
-   5370,
-   3120129701
+   11885,
+   1349326124
   ],
   "Graphics/Pictures/rot6Belladona.png": [
-   16396,
-   2938561098
+   8518,
+   957591095
   ],
   "Graphics/Pictures/rot6Belladona2.png": [
-   5634,
-   1304430558
+   10766,
+   4016355418
   ],
   "Graphics/Pictures/rot8Anturia.png": [
-   13398,
-   2167292281
+   9201,
+   2588523301
   ],
   "Graphics/Pictures/rot8Anturia2.png": [
-   12940,
-   62101668
+   11764,
+   1159133254
   ],
   "Graphics/Pictures/rot9Rupico.png": [
-   13705,
-   1498143872
+   7079,
+   2429092702
   ],
   "Graphics/Pictures/rot9Rupico2.png": [
-   21332,
-   3713855245
+   14170,
+   172624091
   ],
   "Graphics/Pictures/rotAZ.png": [
-   9959,
-   4113387898
+   17380,
+   3289768113
   ],
   "Graphics/Pictures/rotAZ2.png": [
-   5597,
-   2132629460
+   12924,
+   964774616
   ],
   "Graphics/Pictures/rotAlcaFinal2.png": [
-   17288,
-   4027809870
+   9776,
+   3811409982
   ],
   "Graphics/Pictures/rotAlcafinal.png": [
-   6690,
-   4125455814
+   5668,
+   1874665874
   ],
   "Graphics/Pictures/rotMazmorra1.png": [
-   10341,
-   4014673396
+   8098,
+   253142929
   ],
   "Graphics/Pictures/rotMazmorra2.png": [
-   13595,
-   1309354876
+   11642,
+   2932043137
   ],
   "Graphics/Pictures/rotMazmorra3.png": [
-   13923,
-   653760801
+   10706,
+   1962619119
   ],
   "Graphics/Pictures/rotMazmorra4.png": [
-   20453,
-   3428294607
+   14040,
+   4281590326
   ],
   "Graphics/Pictures/rotMazmorra5.png": [
-   17183,
-   3800104060
+   9658,
+   1950824119
   ],
   "Graphics/Pictures/rotMazmorra6.png": [
-   19187,
-   4201385288
+   10596,
+   3499065043
   ],
   "Graphics/Pictures/rotMazmorra7.png": [
-   12245,
-   1061589887
+   9516,
+   2019714159
   ],
   "Graphics/Pictures/rotMazmorra8.png": [
-   13031,
-   179506380
+   8193,
+   2388264890
   ],
   "Graphics/Pictures/selarr.png": [
    268,
@@ -74536,16 +74484,16 @@
    1767647332
   ],
   "Graphics/Pictures/sitioArma1.png": [
-   12932,
-   2084685086
+   11717,
+   2810677609
   ],
   "Graphics/Pictures/sitioArma2.png": [
-   13623,
-   1568891084
+   14416,
+   3235111273
   ],
   "Graphics/Pictures/sitioArma3.png": [
-   11325,
-   2273723337
+   11756,
+   2573532503
   ],
   "Graphics/Pictures/starempty.png": [
    221,
@@ -74564,8 +74512,8 @@
    3338380876
   ],
   "Graphics/Pictures/statuses.PNG": [
-   1233,
-   2807289637
+   2835,
+   2798235110
   ],
   "Graphics/Pictures/summary1.png": [
    11404,
@@ -74820,20 +74768,20 @@
    2508621108
   ],
   "Graphics/Pictures/tutorialBat.png": [
-   15231,
-   2561592121
+   41849,
+   3857085941
   ],
   "Graphics/Pictures/tutorialLegendarios.png": [
-   17321,
-   51555141
+   42701,
+   2804735050
   ],
   "Graphics/Pictures/tutorialRandom.png": [
-   12170,
-   3368126580
+   34029,
+   3662637928
   ],
   "Graphics/Pictures/types.png": [
-   4531,
-   4128879152
+   13408,
+   2170169929
   ],
   "Graphics/Pictures/types_ico.png": [
    3235,
@@ -76396,8 +76344,8 @@
    257357080
   ],
   "mkxp.json": [
-   10097,
-   637058819
+   9619,
+   2636892110
   ],
   "preload.rb": [
    272,
