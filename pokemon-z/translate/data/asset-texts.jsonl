@@ -22,7 +22,7 @@
 {"file": "introText7.png", "kind": "body", "es": "PERO MUCHOS DETALLES\nDE LA NATURALEZA DE\nESTOS EVENTOS SE HAN\nPERDIDO CON EL TIEMPO", "src": "gemini-3.7-flash/vertex-flex", "es_from": "orig", "in_core": true, "ko": "그러나 이 일들의\n자세한 내막은\n세월과 함께\n사라져 갔다", "ko_state": "draft"}
 {"file": "introText8.png", "kind": "body", "es": "ESTA ES TODA LA\nHISTORIA DE LO QUE\nOCURRIÓ", "src": "gemini-3.7-flash/vertex-flex", "es_from": "orig", "in_core": true, "ko": "이것이\n그때 일어난 일의\n모든 «이야기»다", "ko_state": "draft"}
 {"file": "introTexto0.png", "kind": "body", "es": "KALOS", "src": "gemini-3.7-flash/vertex-flex", "es_from": "install", "in_core": false, "ko": "칼로스", "ko_state": "draft"}
-{"file": "introTexto1.png", "kind": "body", "es": "KALOS\nHACE 300 AÑOS...", "src": "gemini-3.7-flash/vertex-flex", "es_from": "orig", "in_core": true, "ko": "칼로스\n300년 전...", "ko_state": "draft"}
+{"file": "introTexto1.png", "kind": "body", "es": "KALOS\nHACE 300 AÑOS...", "src": "gemini-3.7-flash/vertex-flex", "es_from": "orig", "in_core": true, "ko": "300년 전...", "ko_state": "draft", "note": "첫 줄(KALOS)은 밑에 깔린 introTexto0이 보여 주므로 이 그림에는 안 그린다"}
 {"file": "namingControls.png", "kind": "body", "es": "▼ TECLA F5 ▼ TECLA X TECLA Z\nMAYÚS minús otros BORRAR FIN", "src": "gemini-3.7-flash/vertex-flex", "es_from": "install", "in_core": false, "ko": "F5 키\nX 키\nZ 키\n대문자\n소문자\n기타\n지우기\n완료", "ko_state": "draft"}
 {"file": "prisionRot.png", "kind": "body", "es": "PRISIÓN DEL OLVIDO", "src": "gemini-3.7-flash/vertex-flex", "es_from": "orig", "in_core": true, "ko": "망각의 감옥", "ko_state": "draft"}
 {"file": "rot10Cendera1.png", "kind": "title-name", "es": "CENDERA", "src": "claude", "es_from": "install", "in_core": false, "ko": "센데라", "ko_state": "draft"}

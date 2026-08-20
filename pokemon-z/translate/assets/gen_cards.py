@@ -111,10 +111,13 @@ def card_class(name, kind):
     if name.startswith("introText"): return "인트로"
     return "칭호 카드" if kind == "title-epithet" else "이름 카드"
 
-def line_height(name):
-    """원본 글줄 한 줄의 픽셀 높이 — 줄마다 재서 중앙값을 쓴다(강세부호 낀 줄 보정)."""
-    im = Image.open(src_path(name)).convert("RGBA")
-    bb, plate, _ = ink_of(im)
+# 원본 글줄 중 어느 줄 자리에 앉힐지 — 줄 수가 원본과 다른 파일만 적는다.
+# introTexto1은 첫 줄(KALOS/칼로스)을 밑에 깔린 introTexto0이 계속 보여 주므로 둘째 줄만
+# 그린다. 블록 중앙 정렬로 두면 그 줄이 원본보다 위로 올라와 겹침 연출이 어긋난다.
+BAND_ANCHOR = {"introTexto1.png": 1}
+
+def ink_bands(im, bb, plate):
+    """원본 글줄의 세로 구간 목록 [(y0, y1), ...] — 글자 픽셀이 있는 띠를 위에서부터."""
     m = (ImageChops.difference(im.convert("RGB"),
          Image.new("RGB", im.size, plate.getpixel((0,0))[:3])).convert("L").point(lambda v: 255 if v>20 else 0)
          if plate else im.getchannel("A").point(lambda v: 255 if v>200 else 0))
@@ -123,9 +126,16 @@ def line_height(name):
     for y in range(bb[1], bb[3]):
         on = any(ml[x,y] for x in range(bb[0], bb[2]))
         if on and s is None: s = y
-        if not on and s is not None: bands.append(y-s); s = None
-    if s is not None: bands.append(bb[3]-s)
-    return statistics.median(bands or [bb[3]-bb[1]])
+        if not on and s is not None: bands.append((s, y)); s = None
+    if s is not None: bands.append((s, bb[3]))
+    return bands
+
+def line_height(name):
+    """원본 글줄 한 줄의 픽셀 높이 — 줄마다 재서 중앙값을 쓴다(강세부호 낀 줄 보정)."""
+    im = Image.open(src_path(name)).convert("RGBA")
+    bb, plate, _ = ink_of(im)
+    bands = ink_bands(im, bb, plate)
+    return statistics.median([b-a for a, b in bands] or [bb[3]-bb[1]])
 
 def class_sizes():
     if not hasattr(class_sizes, "_v"):
@@ -159,6 +169,10 @@ def render(name, ko, kind=""):
           f" · 글자자리 {bb} · 바탕판 {'있음' if plate else '없음'}")
     lines = ko.split("\n")
     cx=(bb[0]+bb[2])//2; cy=(bb[1]+bb[3])//2
+    if name in BAND_ANCHOR:
+        y0, y1 = ink_bands(im, bb, plate)[BAND_ANCHOR[name]]
+        cy = (y0+y1)//2
+        print(f"  {name}: 원본 {BAND_ANCHOR[name]+1}번째 글줄({y0}~{y1}) 자리에 앉힌다")
     out = plate.copy() if plate else Image.new("RGBA",(W,H),(0,0,0,0))
     d = ImageDraw.Draw(out)
     cls = card_class(name, kind)
