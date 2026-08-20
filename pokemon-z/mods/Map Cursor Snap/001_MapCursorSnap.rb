@@ -14,9 +14,40 @@
 # PokemonRegionMapScene을 재오픈해 pbMapScene만 다시 정의한다(순정 278-354줄 복사 +
 # 스냅 삽입부). 열람(mode 0)·비행(mode 1)이 같은 루프를 쓰므로 양쪽에 함께 걸린다.
 # 리전 맵을 만지는 다른 모드가 생기면 로드 순서를 확인할 것.
+#
+# 원작 지도에서 빠진 지점(MISSING_POINTS)도 여기서 채운다 — 표지는 그려져 있는데
+# 장소 목록에 없어 이름도 스냅도 없던 자리다.
 class PokemonRegionMapScene
   SNAP_RADIUS = 1   # 실기 감으로 조절할 자리 — 칸 단위 반경
   SNAP_DELAY  = 12  # 입력이 끊긴 뒤 이만큼 지나야 끌어당긴다 (기본 40fps 기준 0.3초)
+
+  # 원작 지도에서 빠진 지점 — 그림에는 표지가 그려져 있는데 장소 목록에 항목이 없어
+  # 커서를 올려도 이름이 안 뜨고 스냅도 안 걸리던 자리다. 화면이 열릴 때 채운다.
+  # 서부 카타콤: 삼채시티 오른쪽 위, 포켓몬 요새를 지나 들어간다(맵 401·403). 네 방위
+  # 카타콤 중 이것만 목록에 없다(2026-08-21 유지자 실기 확인 + 데이터 대조).
+  # 꼴은 [x, y, 원어 이름, 한국어 이름]이다. 게임의 장소 이름이 번역돼 있으면 한국어를,
+  # 아니면 원어를 넣는다 — 이 지점은 원작 목록에 없어 번역표에도 열쇠가 없으므로,
+  # 모드가 두 이름을 다 들고 있어야 한글패치 위에서도 순정 위에서도 제 이름이 뜬다.
+  MISSING_POINTS = [
+    [6,9,"Catacumbas Occidentales","서부 카타콤"]
+  ]
+  KO_PROBE = "Catacumbas Meridionales"   # 번역 여부를 가늠할 이웃 장소(남부 카타콤)
+
+  # 빠진 지점을 장소 목록에 채운다. 이미 있으면(원작이 고쳐지면) 손대지 않는다.
+  # 항목 꼴은 순정과 같다 — [x, y, 이름, 설명, 회복맵, 회복x, 회복y, 표시스위치].
+  # 회복 칸이 비어 있으므로 비행 목적지로는 서지 않는다(순정 pbGetHealingSpot).
+  def pbSnapFillMissing
+    return if !@map || !@map[2]
+    translated=(pbGetMessageFromHash(MessageTypes::PlaceNames,KO_PROBE)!=KO_PROBE)
+    for pt in MISSING_POINTS
+      here=false
+      for loc in @map[2]
+        here=true if loc[0]==pt[0] && loc[1]==pt[1]
+      end
+      next if here
+      @map[2].push([pt[0],pt[1],(translated ? pt[3] : pt[2]),"",nil,nil,nil,nil])
+    end
+  end
 
   # 표지가 그려진 칸. 손으로 고치지 마라 — 두 표시 사이는 생성기가 통째로 다시 쓴다
   # (`uv run tools/regionmap_points.py --write`, 그림 정본과 townmap.dat에서 뽑는다).
@@ -54,7 +85,7 @@ class PokemonRegionMapScene
     return nil if !@map || !@map[2]
     best=nil
     bestdist=0
-    for pt in SNAP_POINTS
+    for pt in SNAP_POINTS+MISSING_POINTS
       dx=pt[0]-x
       dy=pt[1]-y
       next if dx==0 && dy==0
@@ -71,6 +102,7 @@ class PokemonRegionMapScene
   end
 
   def pbMapScene(mode=0)
+    pbSnapFillMissing
     xOffset=0
     yOffset=0
     newX=0
