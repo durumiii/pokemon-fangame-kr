@@ -24,11 +24,16 @@ usage: uv run make_package.py [--variant runa|debug|clean|mods] [--font dppt|gal
   mods  — 스크립트 모드 묶음: 완성 Scripts.rxdata(수술+UI Text) 단품.
           clean 위에 덮어쓰면 통 패치(디버그 제외)와 같아진다.
 
-  runa  — 합본(v5.2.1~): 한글패치 코어 + UI Text KR + Z-GUI + DPPT Font +
-          Type Matchup(v5.3~)을
-          한 벌로 묶는다. 번역표에 UTF-8 인코딩 딱지가 붙어 있어 최신 루비
-          실행기에서도 돈다. `--font`로 한글 글꼴을 골라 세 벌을 낸다 —
+  runa  — 합본(v6~): 한글패치 코어 + 통합 모드 둘(`UI KR`·`Utility Pack`) +
+          DPPT Font를 한 벌로 묶는다. 번역표에 UTF-8 인코딩 딱지가 붙어 있어
+          최신 루비 실행기에서도 돈다. `--font`로 한글 글꼴을 골라 세 벌을 낸다 —
           담기는 글꼴은 라틴·부호가 모두 DPPt이고 한글 음절만 다르다.
+
+  runa-debug — 합본 위에 덮는 디버그 코어 단품(Scripts.rxdata 하나).
+  controller — 합본 위에 덮는 패드 조작 추가분(코어 + Controller UX 그림 24장).
+
+통합 모드 둘은 `runa/make-union-mods.py`가 보관소에 짓는다 — 재료 모드를 고쳤으면
+그것부터 다시 돌린다.
 """
 import json
 import os
@@ -49,19 +54,26 @@ VARIANT_SUMMARY = {
     "mods": "포켓몬 Z 한글패치 — 스크립트 모드 묶음(완성 Scripts 단품)",
     "runa": "포켓몬 Z 한글패치 — 번역·화면 한글화·GUI·글꼴 합본",
     "runa-debug": "포켓몬 Z 한글패치 — 합본 위에 덮는 디버그 코어 단품",
+    "controller": "포켓몬 Z 한글패치 — 합본 위에 덮는 패드 조작 추가분",
 }
 DIST = HERE / "dist"
 
 # ─ 합본(runa) 전용 ───────────────────────────────────────────────────────────
 RUNA_MOD = STORE / "Pokemon Z Fangame" / "한글패치 코어"
-RUNA_INJECT = ["UI Text KR", "DPPT Font", "Type Matchup", "Bridge Fix"]
-# 카드의 `expects`가 순정 기준으로 뜬 모드 — 스테이징은 패치판이라 늘 어긋난다.
-# 기준선 재대조가 없어 `force`로 넘긴다(packaging 가이드 「mod.json의 expects」 절).
-# UI Text KR도 같은 처지가 됐다 — 호환 수술이 `SpriteWindow` 절의 다른 클래스
-# (`LargePlane`)를 건드려 절 전체 md5가 어긋난다. 이 모드가 훅 거는 자리는 그 클래스가
-# 아니다(2026-08-09 확인).
-FORCE_INJECT = {"Type Matchup", "UI Text KR", "DPPT Font"}
-RUNA_ASSET_MODS = ["Z-GUI"]                       # 파일만 얹는 모드 — 번역 자산 뒤에 덮는다
+# v6부터 코드 모드는 통합 둘로 싣는다 — `UI KR`(UI Text KR+Z-GUI) ·
+# `Utility Pack`(편의 일곱). 둘 다 runa/make-union-mods.py가 짓는 산출물이다.
+RUNA_INJECT = ["UI KR", "Utility Pack", "DPPT Font"]
+# 카드의 `expects`가 순정 기준으로 뜬 모드 — 스테이징은 패치판이라 늘 어긋난다
+# (packaging 가이드 「mod.json의 expects」 절). 기준선(`baseline/`)이 있는 모드는
+# modkit이 훅 메서드를 다시 대조해 스스로 넘어가고, 없는 모드는 여기서 `force`로 넘긴다.
+# `Utility Pack`(재료 열여덟 자리)과 글꼴 모드는 제 기준선으로 재대조를 통과한다 — force 없이 선다.
+# `UI KR`만 남았다: 이 모드는 훅을 **감싸기**(alias 뒤 원본 호출)로 거는데 한글패치 코어가
+# 감싸는 대상(`setText`·`text=`) 자체를 고쳐 놔서, 순정 기준선과 대조하면 「낡은 코드가
+# 되살아난다」로 읽힌다. 감싸는 꼴이라 실제로는 패치판 본문이 그대로 불린다(2026-08-20 실측:
+# 001_UiText.rb:89-100·117-130이 전부 alias 뒤 원본 호출).
+FORCE_INJECT = {"UI KR"}
+# Z-GUI 그림은 v6부터 `UI KR` 통합본의 에셋으로 딸려 온다 — 주입이 번역 자산 위에
+# 덮으므로(modassets.install) 따로 복사하던 단계가 없어졌다.
 # 원본 배포판의 실행 설정을 한 판만 함께 싣는다. v5.1·v5.2가 넣었던 `fontSub`(글꼴 이름
 # 14종을 Galmuri11로 꺾는 표)를 걷어 내려는 것 — v5.2.1부터는 글꼴 파일이 그 이름을 직접
 # 들기 때문에 표가 남아 있으면 새 글꼴이 옛 Galmuri11로 되돌아간다. 원본과 우리 옛 판의
@@ -133,7 +145,10 @@ def _embed_card(final: Path, name: str, variant: str):
         # 옛 이름(`한글패치 통합-Runa`)도 남긴다 — 그 이름으로 받아 둔 사람의 서랍에서도
         # 이중 설치를 막아야 한다. 이름이 바뀌어도 물건은 같다.
         card["conflicts"] = {one: swallowed for one in
-                             ("DPPT Font", "UI Text KR", "Z-GUI", "Type Matchup",
+                             ("DPPT Font", "UI KR", "Utility Pack",
+                              "UI Text KR", "Z-GUI", "Type Matchup", "Battle Order",
+                              "Battle Scene Speed", "Better Movements", "Bridge Fix",
+                              "Map Cursor Snap", "Native Tilemap",
                               "한글패치 코어", "한글패치 통합", "한글패치 통합-Runa")}
     (final / "mod.json").write_text(
         json.dumps(card, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -213,6 +228,20 @@ def _scrub_stage(stage: Path):
               + ", ".join(sorted(p.name for p in junk)[:4]))
 
 
+def _keep_only(stage: Path, keep: set):
+    """덮어쓰기 추가판에 남길 파일만 남기고 나머지를 걷는다.
+
+    주입기는 모드가 딸고 오는 것을 전부 들여놓는다 — 글꼴 16벌, Z-GUI 그림, 맵 파일.
+    추가판은 합본 위에 덮는 것이라 합본이 이미 가진 것을 또 실을 이유가 없다.
+    """
+    for junk in sorted(stage.rglob("*"), reverse=True):
+        if junk.is_file():
+            if junk.relative_to(stage).as_posix() not in keep:
+                junk.unlink()
+        elif not any(junk.iterdir()):
+            junk.rmdir()
+
+
 def _settle_injections(scripts_path: Path):
     """주입으로 들어온 섹션의 `MOD:` 표를 뗀다 — 합본의 제 살이 되게.
 
@@ -243,20 +272,12 @@ def _settle_injections(scripts_path: Path):
 
 
 def _bundle_extras(stage: Path, font: str):
-    """합본에만 붙는 것 — GUI 그림, 고른 글꼴 16벌, 글꼴 라이선스 원문.
+    """합본에만 붙는 것 — 고른 글꼴 16벌, 글꼴 라이선스 원문, 원본 실행 설정.
 
     글꼴은 주입기가 DPPT Font의 기본판을 이미 깔아 뒀더라도 여기서 다시 찍어 덮는다.
     고른 마스터에서 매번 새로 찍으므로 갈래가 섞일 여지가 없다.
     """
     import subprocess
-
-    for mod in RUNA_ASSET_MODS:          # 번역 자산 위에 덮는다 — 순서가 곧 층이다
-        card = json.loads((STORE / "Pokemon Z Fangame" / mod / "mod.json").read_text("utf-8"))
-        for a in card["assets"]:
-            dst = stage / a["install_to"]
-            dst.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(STORE / "Pokemon Z Fangame" / mod / a["file"], dst)
-        print(f"{mod} 그림 {len(card['assets'])}장 덮음")
 
     runa = HERE.parent / "runa"
     master = runa / "fonts" / FONT_VARIANTS[font][1]
@@ -309,16 +330,18 @@ def main():
     # 릴리스 화면은 자산을 **파일 이름순**으로 늘어놓는다(라벨 순서가 아니다). 받는 쪽이
     # 위에서부터 읽으면 되도록 이름에 차례를 넣는다 — 권하는 것이 맨 위다.
     asset_names = {
-        "runa": f"pokemon-z-kr-patch-v5.3_{FONT_ORDER[font]}-{font}",
-        "runa-debug": "pokemon-z-kr-patch-v5.3_4-debug-add",
+        "runa": f"pokemon-z-kr-patch-v6_{FONT_ORDER[font]}-{font}",
+        "runa-debug": "pokemon-z-kr-patch-v6_4-debug-add",
+        "controller": "pokemon-z-kr-patch-v6_5-controller-add",
     }
     default_names = {
         "full": "포켓몬Z 한글패치 v5.2",   # 기본판 — 디버그 없는 통합
         "debug": "포켓몬Z 한글패치 v5.2 (통합+디버그)",
         "clean": "포켓몬Z 한글패치 v5.2 (순수 번역)",
         "mods": "포켓몬Z 한글패치 v5.2 (스크립트 모드 묶음)",
-        "runa": f"포켓몬Z 한글패치 v5.3 ({label})",
-        "runa-debug": "포켓몬Z 한글패치 v5.3 (디버그 추가)",
+        "runa": f"포켓몬Z 한글패치 v6 ({label})",
+        "runa-debug": "포켓몬Z 한글패치 v6 (디버그 추가)",
+        "controller": "포켓몬Z 한글패치 v6 (패드 조작 추가)",
     }
     name = default_names[variant]
     if "--name" in sys.argv:
@@ -330,18 +353,30 @@ def main():
             shutil.rmtree(p)
     DIST.mkdir(exist_ok=True)
 
-    if variant in ("mods", "runa-debug"):
-        # 완성 Scripts 단품 — 합본 위에 이 파일만 덮으면 된다.
-        # 디버그 추가판은 글꼴과 무관하다(글꼴은 Fonts의 ttf일 뿐 코어에 안 들어간다) —
+    if variant in ("mods", "runa-debug", "controller"):
+        # 완성 Scripts 단품 — 합본 위에 이 파일만 덮으면 된다(패드판은 그림도 함께).
+        # 추가판은 글꼴과 무관하다(글꼴은 Fonts의 ttf일 뿐 코어에 안 들어간다) —
         # 그래서 세 갈래 어디에 얹어도 같은 파일 하나로 통한다.
-        core = RUNA_MOD if variant == "runa-debug" else BASE_MOD
+        addon = {"runa-debug": "디버그 모드", "controller": "Controller UX"}.get(variant)
+        core = BASE_MOD if variant == "mods" else RUNA_MOD
         (stage / "Data").mkdir(parents=True)
         shutil.copy2(core / "Data" / "Scripts.rxdata", stage / "Data" / "Scripts.rxdata")
-        for mod in (RUNA_INJECT + ["디버그 모드"] if variant == "runa-debug" else INJECT_MODS):
+        for mod in (RUNA_INJECT + [addon] if addon else INJECT_MODS):
             r = modstore.apply(STORE / "Pokemon Z Fangame", mod, stage,
                                force=mod in FORCE_INJECT)
             print(f"주입: {mod} → {r['did']}")
-        if variant == "runa-debug":
+            for note in r.get("warnings") or []:
+                print(f"  · {note}")
+        if variant == "controller":
+            # 패드 추가판은 합본이 이미 실은 것 위에 Controller UX만 더한 코어다.
+            # 그림은 이 모드의 것만 남긴다 — 나머지(Z-GUI·번역 자산)는 합본에 이미 있다.
+            _settle_injections(stage / "Data" / "Scripts.rxdata")
+            card = json.loads((STORE / "Pokemon Z Fangame" / addon / "mod.json")
+                              .read_text(encoding="utf-8"))
+            _keep_only(stage, {"Data/Scripts.rxdata"}
+                       | {a["install_to"] for a in card["assets"]})
+            shutil.copy2(HERE / "읽어주세요-패드추가.txt", stage / "읽어주세요.txt")
+        elif variant == "runa-debug":
             # 디버그는 켜진 채로 나가고(Main 머리의 `$DEBUG = true`), 「디버그 모드」가
             # 그 위에서 P키로 끄고 켠다 — 판정이 엔진 Input이라 모바일에서도 먹는다
             # (유지자 판정 2026-08-09, 키·판정 방식은 Z-48에서 갈았다). 회복은 그 모드의
@@ -349,9 +384,7 @@ def main():
             _run_patch_debug(stage / "Data" / "Scripts.rxdata", only="Main")
             _settle_injections(stage / "Data" / "Scripts.rxdata")
             # 주입기가 DPPT Font의 글꼴 16벌까지 들여놓는다 — 여기서는 코어만 낸다.
-            for junk in sorted(stage.rglob("*"), reverse=True):
-                if junk.name != "Scripts.rxdata" and junk != stage / "Data":
-                    junk.unlink() if junk.is_file() else junk.rmdir()
+            _keep_only(stage, {"Data/Scripts.rxdata"})
             shutil.copy2(HERE / "읽어주세요-디버그추가.txt", stage / "읽어주세요.txt")
         else:
             shutil.copy2(HERE / "읽어주세요-모드묶음.txt", stage / "읽어주세요.txt")
@@ -395,6 +428,8 @@ def main():
         r = modstore.apply(STORE / "Pokemon Z Fangame", mod, stage,
                            force=mod in FORCE_INJECT)
         print(f"주입: {mod} → {r['did']}")
+        for note in r.get("warnings") or []:
+            print(f"  · {note}")
     if variant == "debug":
         _run_patch_debug(stage / "Data" / "Scripts.rxdata")
     if variant == "runa":

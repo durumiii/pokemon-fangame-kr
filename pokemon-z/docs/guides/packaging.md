@@ -33,8 +33,8 @@ Pokemon Z는 Essentials v16 · 루비 1.8.7 · mkxp-z 구판. 플러그인 묶�
 빈 칸에 멈추면 옆 칸의 보이는 장소로 끌려간다 — 반경은 소스 머리 `SNAP_RADIUS`, 미공개
 지점은 순정 표시 조건 그대로 제외) · `디버그 모드`(P키로 `$DEBUG` 토글, 디버그 중
 전투 후 전원 회복 — 디버그 추가판에 실린다) ·
-`Native Tilemap`(맵 렌더러를 엔진 내장으로 — Joiplay 렌더 깨짐 우회. **합본에는 싣지
-않는 선택 모드다** — 유지자 판정, quality 「Native Tilemap은 선택 모드로 둔다」 절.
+`Native Tilemap`(맵 렌더러를 엔진 내장으로 — Joiplay 렌더 깨짐 우회. V6부터 합본에
+싣는다 — 유지자 판정 2026-08-20, quality 「Native Tilemap은 합본에 싣는다」 절.
 다리가 놓인 맵 여섯은 예외로 루비 렌더러를 그대로 쓴다 — 다리를 캐릭터 아래로 내리는
 보정이 그쪽에만 있다) ·
 `Battle Order`(배틀 처리 순서를 본가 8·9세대 기준으로 — 행동마다 순서 재계산, 라운드
@@ -91,18 +91,28 @@ UI Text KR이 키보드 기준으로 적고 저쪽 `004_PadLabels`가 덮는다.
 
 ## 한글패치 모드 자체는 손으로 만들지 않는다
 
-배포용 모드는 보관소에 놓인 폴더가 아니라 **재료에서 짓는 산출물**이다. 조립기 넷:
+배포용 모드는 보관소에 놓인 폴더가 아니라 **재료에서 짓는 산출물**이다. 조립기 다섯:
 
     uv run runa/make-patch-mod.py      # 한글패치 코어 (번역표·코어·자산)
     uv run runa/make-galmuri-master.py # 갈무리 마스터 — 통짜 원본을 우리 글자 수만큼 줄인다
     uv run runa/make-hangul-variant.py # BW 마스터 — DPPt의 한글만 갈아 끼운다
     uv run runa/make-font-mods.py      # 글꼴 모드 셋(DPPT·Galmuri·BW Font)
+    uv run runa/make-union-mods.py     # 동봉용 통합 모드 둘(UI KR·Utility Pack) — 아래 절
+
+**동봉 모드는 통합 둘이다(V6부터, 유지자 판정 2026-08-20).** `UI KR` = UI Text KR +
+Z-GUI(그림 자산 포함) · `Utility Pack` = Battle Order·Battle Scene Speed·Better
+Movements·Bridge Fix·Map Cursor Snap·Type Matchup·Native Tilemap 일곱.
+`make-union-mods.py`가 재료 모드들을 보관소에서 떠 통합 카드(expects·touches·
+conflicts 합집합, 재료 간 겹침은 예외로 멈춤)와 번호 접두 섹션으로 짓는다 — 재료
+모드가 바뀌면 이걸 다시 돌려야 통합본에 실린다. 디버그 모드·Controller UX는 별도
+덮어쓰기 zip(각각 `runa-debug`·`controller` 변형)으로 나간다.
 
 재료는 번역표(`translate/ko/`)와 「한글패치 코어」 모드다. 같은 재료로 몇 번을 돌려도
 바이트까지 같다 — 글꼴에 저장 시각이 새로 매겨지지 않게 `recalcTimestamp=False`를
 쓴다(안 그러면 설치 판정이 「원본이 달라졌다」로 읽는다).
 
-배포 zip은 `share/make_package.py --variant runa --font <갈래> --zip`이 만든다.
+배포 zip은 `share/make_package.py --variant runa --font <갈래> --zip`이 만든다(글꼴별
+3종 + `--variant runa-debug` + `--variant controller`, 판 번호는 이 스크립트에 박혀 있다).
 
 - **게임에는 modkit으로 얹는다.** 손으로 복사하면 덮은 자리에 원본 백업(`.orig`)이 안
   남아, 호환 검사가 우리가 넣은 폰트를 게임의 원본으로 읽고 「판이 달라졌어요」라고

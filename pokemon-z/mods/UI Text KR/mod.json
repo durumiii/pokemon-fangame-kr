@@ -11,6 +11,15 @@
       "script_name": "001_UiText.rb"
     }
   ],
+  "touches": {
+    "methods": [
+      "Window_AdvancedTextPokemon#setText",
+      "Window_UnformattedTextPokemon#text=",
+      "pbDrawTextPositions",
+      "pbGetBasicMapNameFromId"
+    ],
+    "files": []
+  },
   "expects": {
     "SpriteWindow": "dd49c0623e5fc170534c44aa6c198e23",
     "DrawText": "b6e3111c62e7c43b528fa60894e9acb6"
