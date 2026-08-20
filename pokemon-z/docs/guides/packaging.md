@@ -218,6 +218,11 @@ UTF-8이다**(2026-08-21 mkxp-z 3.1.3에서 절을 하나 심어 실측: `__ENCO
 이 방식으로 `RUBY_VERSION`·`unpack("C")[0]` 반환·`Input.triggerex?` 실재·`Array#nitems`
 내장 여부를 쟀다([조사](../log/research/2026-08-13-getbyte-klein-alias.md)).
 
+**모드 로직도 이걸로 잰다.** 원작 판정을 껍데기로 세우고 모드 파일을 `eval`한 뒤 값을
+견주면, 화면 없이도 셈이 맞는지가 나온다 — 본보기가 `share/qa-debugmod.rb`(「디버그
+모드」 38표본: 초성 뽑기 · 메뉴 열쇠 보존 · 토글 양방향과 `$DEBUG` 원복). 모드를 고쳤으면
+다시 돌린다. 남는 것은 화면에 그려지는 모양과 눌러 보는 흐름뿐이다.
+
 ## 글꼴 모드 셋
 
 `DPPT Font` · `Galmuri Font` · `BW Font`. 셋은 같은 능력 `hangul-font`를 주고 서로를
