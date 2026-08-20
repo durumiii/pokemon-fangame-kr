@@ -66,10 +66,12 @@ RUNA_INJECT = ["UI KR", "Utility Pack", "DPPT Font"]
 # 카드의 `expects`가 순정 기준으로 뜬 모드 — 스테이징은 패치판이라 늘 어긋난다
 # (packaging 가이드 「mod.json의 expects」 절). 기준선(`baseline/`)이 있는 모드는
 # modkit이 훅 메서드를 다시 대조해 스스로 넘어가고, 없는 모드는 여기서 `force`로 넘긴다.
-# 통합 둘은 재료의 기준선을 물려받아 실제로는 재대조로 통과한다 — 재료 일부(Type Matchup·
-# Battle Order 등)가 기준선을 안 갖고 있어 대조 범위가 반쪽이라 force를 함께 걸어 둔다.
-# 글꼴 모드는 2026-08-20부터 제 기준선을 싣는다(runa/make-font-mods.py) — force를 뗐다.
-FORCE_INJECT = {"UI KR", "Utility Pack"}
+# `Utility Pack`(재료 열여덟 자리)과 글꼴 모드는 제 기준선으로 재대조를 통과한다 — force 없이 선다.
+# `UI KR`만 남았다: 이 모드는 훅을 **감싸기**(alias 뒤 원본 호출)로 거는데 한글패치 코어가
+# 감싸는 대상(`setText`·`text=`) 자체를 고쳐 놔서, 순정 기준선과 대조하면 「낡은 코드가
+# 되살아난다」로 읽힌다. 감싸는 꼴이라 실제로는 패치판 본문이 그대로 불린다(2026-08-20 실측:
+# 001_UiText.rb:89-100·117-130이 전부 alias 뒤 원본 호출).
+FORCE_INJECT = {"UI KR"}
 # Z-GUI 그림은 v6부터 `UI KR` 통합본의 에셋으로 딸려 온다 — 주입이 번역 자산 위에
 # 덮으므로(modassets.install) 따로 복사하던 단계가 없어졌다.
 # 원본 배포판의 실행 설정을 한 판만 함께 싣는다. v5.1·v5.2가 넣었던 `fontSub`(글꼴 이름
