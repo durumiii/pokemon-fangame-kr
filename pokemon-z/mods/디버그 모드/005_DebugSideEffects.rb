@@ -1,4 +1,5 @@
-# 디버그를 켜면 딸려 오던 나머지 곁가지 넷을 한 토글 뒤로 넣는다. 기본은 꺼짐.
+# 디버그를 켜면 딸려 오던 나머지 넷을 한 토글 뒤로 넣는다. 메뉴에서는 「개발자 모드」로
+# 서고(「개발 도구」 묶음 첫 항목), 기본은 꺼짐이다.
 #
 # 원작이 `$DEBUG` 하나로 열어 두는 자리가 비전기술 말고도 남아 있었다(전수 조사
 # 2026-08-21 — 게임 스크립트의 `$DEBUG` 98곳 중 키 조건부 26곳과 비전기술 22곳을
@@ -17,8 +18,8 @@
 # 리전 맵만 예외로 인자를 직접 넘긴다 — 그쪽은 `$DEBUG`를 판정이 아니라 값으로 쓴다.
 
 module DebugPerks
-  def self.side;    return @side ? true : false; end
-  def self.side=(v); @side = v ? true : false; end
+  def self.devmode;    return @devmode ? true : false; end
+  def self.devmode=(v); @devmode = v ? true : false; end
 end
 
 
@@ -27,7 +28,7 @@ end
 if defined?(PokemonRegionMap)
   class PokemonRegionMap
     def pbStartScreen
-      @scene.pbStartScene(DebugPerks.side)
+      @scene.pbStartScene(DebugPerks.devmode)
       @scene.pbMapScene
       @scene.pbEndScene
     end
@@ -40,7 +41,7 @@ if defined?(PokemonBagScreen)
   class PokemonBagScreen
     alias dbgz_side_pbStartScreen pbStartScreen
     def pbStartScreen
-      return dbgz_side_pbStartScreen if DebugPerks.side
+      return dbgz_side_pbStartScreen if DebugPerks.devmode
       return DebugPerks.as_player { dbgz_side_pbStartScreen }
     end
   end
@@ -52,7 +53,7 @@ end
 if defined?(pbLearnMove)
 alias dbgz_side_pbLearnMove pbLearnMove
 def pbLearnMove(pokemon, move, ignoreifknown = false, bymachine = false, &block)
-  if DebugPerks.side
+  if DebugPerks.devmode
     return dbgz_side_pbLearnMove(pokemon, move, ignoreifknown, bymachine, &block)
   end
   return DebugPerks.as_player {
@@ -66,7 +67,7 @@ end
 if defined?(pbTrainerCheck)
 alias dbgz_side_pbTrainerCheck pbTrainerCheck
 def pbTrainerCheck(trainerid, trainername, maxbattles, startBattleId = 0)
-  if DebugPerks.side
+  if DebugPerks.devmode
     return dbgz_side_pbTrainerCheck(trainerid, trainername, maxbattles, startBattleId)
   end
   return DebugPerks.as_player {
