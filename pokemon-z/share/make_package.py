@@ -61,12 +61,13 @@ DIST = HERE / "dist"
 # ─ 합본(runa) 전용 ───────────────────────────────────────────────────────────
 RUNA_MOD = STORE / "Pokemon Z Fangame" / "한글패치 코어"
 # v6부터 코드 모드는 통합 둘로 싣는다 — `UI KR`(UI Text KR+Z-GUI) ·
-# `Utility Pack`(편의 일곱). 둘 다 runa/make-union-mods.py가 짓는 산출물이다.
+# `Utility Pack`(QOL Pack·Battle Scene Speed·Better Movements·Type Matchup).
+# 둘 다 runa/make-union-mods.py가 짓는 산출물이다.
 RUNA_INJECT = ["UI KR", "Utility Pack", "DPPT Font"]
 # 카드의 `expects`가 순정 기준으로 뜬 모드 — 스테이징은 패치판이라 늘 어긋난다
 # (packaging 가이드 「mod.json의 expects」 절). 기준선(`baseline/`)이 있는 모드는
 # modkit이 훅 메서드를 다시 대조해 스스로 넘어가고, 없는 모드는 여기서 `force`로 넘긴다.
-# `Utility Pack`(재료 열여덟 자리)과 글꼴 모드는 제 기준선으로 재대조를 통과한다 — force 없이 선다.
+# `Utility Pack`(재료 스물여섯 자리)과 글꼴 모드는 제 기준선으로 재대조를 통과한다 — force 없이 선다.
 # `UI KR`만 남았다: 이 모드는 훅을 **감싸기**(alias 뒤 원본 호출)로 거는데 한글패치 코어가
 # 감싸는 대상(`setText`·`text=`) 자체를 고쳐 놔서, 순정 기준선과 대조하면 「낡은 코드가
 # 되살아난다」로 읽힌다. 감싸는 꼴이라 실제로는 패치판 본문이 그대로 불린다(2026-08-20 실측:
@@ -148,7 +149,7 @@ def _embed_card(final: Path, name: str, variant: str):
                              ("DPPT Font", "UI KR", "Utility Pack",
                               "UI Text KR", "Z-GUI", "Type Matchup", "QOL Pack",
                               "Battle Order", "Battle Scene Speed", "Better Movements",
-                              "Bridge Fix", "Map Cursor Snap", "Native Tilemap",
+                              "Bridge Fix", "Map Cursor Snap",
                               "한글패치 코어", "한글패치 통합", "한글패치 통합-Runa")}
     (final / "mod.json").write_text(
         json.dumps(card, ensure_ascii=False, indent=1), encoding="utf-8")

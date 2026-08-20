@@ -1,20 +1,19 @@
 # QOL Pack — 무엇을 어디서 떠 와 어디를 바꿨나
 
-편의 손질 여덟을 한 모드로 묶은 것이다. 소스 아홉 파일이 갈래별로 갈린다.
+편의 손질 일곱을 한 모드로 묶은 것이다. 소스 여덟 파일이 갈래별로 갈린다.
 
 | 갈래 | 파일 | 잡는 자리 |
 |---|---|---|
 | 배틀 처리 순서 | `010_TurnOrder.rb` · `020_EndOfRound.rb` · `030_Leftovers.rb` | `PokeBattle_Battle` · `PokeBattle_Battler` |
 | 다리 밑 파도타기 | `040_BridgeSurf.rb` + `Data/Map299.rxdata` | `Game_Map` |
 | 리전 맵 커서 스냅 | `050_MapCursorSnap.rb` | `PokemonRegionMapScene` |
-| 내장 타일맵 렌더러 | `060_NativeTilemap.rb` | `PokemonSystem` |
 | 볼 단축키 | `070_BallShortcut.rb` + `010_TurnOrder.rb` | `NewBattleBag` · `CommandMenuDisplay` |
 | 포획 후 자동 보관 · 별명 물음 | `080_AutoBox.rb` | `PokeBattle_BattleCommon` · `PokemonOptionScene` · `Window_PokemonOption` · `PokeBattle_RealBattlePeer` · 최상위 `pbNickname` |
 | 제작 권유 소지 검사 | `090_CraftPrompt.rb` | `Interpreter` |
 
 배틀 갈래는 **게임 원본 메서드 넷을 통째로 다시 정의한다.** 그래서 「원본 어디를 떠 왔고
 어디를 바꿨나」가 이 모드를 다시 여는 사람에게 가장 중요한 정보다. 아래는 그것을 적는다 —
-나머지 네 갈래는 재정의 범위가 좁아 소스 머리 주석이 정본이다.
+나머지 세 갈래는 재정의 범위가 좁아 소스 머리 주석이 정본이다.
 왜 이렇게 정했는지의 근거는 [조사 기록](../../docs/log/research/2026-08-10-battle-order-audit.md),
 판정은 [품질 대장](../../docs/ledger/quality.md)의 「배틀 처리 순서는 최신 세대를 따른다」 절.
 
@@ -270,12 +269,12 @@
 
 ## 다른 모드와의 관계
 
-이 모드가 잡는 메서드 스물둘은 카드(`mod.json`)의 `touches`가 정본이다. 같은 메서드를
+이 모드가 잡는 메서드 스물하나는 카드(`mod.json`)의 `touches`가 정본이다. 같은 메서드를
 다시 정의하는 모드와는 함께 못 선다. 지금 이 저장소의 나머지 모드(UI Text KR ·
 Type Matchup · Z-GUI · 디버그 모드)와 poke-essentials `mod/z/`의 편의 모드들은 그중 어느 것도
 건드리지 않는다.
 
-옛 이름 넷(`Battle Order` · `Bridge Fix` · `Map Cursor Snap` · `Native Tilemap`)은 카드의
+옛 이름 셋(`Battle Order` · `Bridge Fix` · `Map Cursor Snap`)은 카드의
 `conflicts`에 남아 있다 — 그 이름으로 받아 둔 서랍에서 이중 설치를 막는 자리다.
 
 주입 섹션은 모드명 정렬 순으로 실리고 나중 정의가 이긴다. 모드 **안에서**의 차례는 파일

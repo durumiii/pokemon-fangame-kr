@@ -38,8 +38,8 @@ Pokemon Z는 Essentials v16 · 루비 1.8.7 · mkxp-z 구판. 플러그인 묶�
 `translate/data/asset-texts.jsonl`+`translate/assets/` 생성기, 반입은 `install_assets.py`.
 **글자가 아니라 자리를 고친 그림은 원장에 행이 없다** — 리전 맵(`gen_regionmap.py`)이 그것이고
 반입기의 `EXTRA` 목록이 그 자리다) ·
-`QOL Pack`(편의 손질 넷을 한 모드로. 옛 이름 `Battle Order`·`Bridge Fix`·
-`Map Cursor Snap`·`Native Tilemap`은 카드의 `conflicts`에만 남는다. 모드 안에서 섹션이
+`QOL Pack`(편의 손질 일곱을 한 모드로. 옛 이름 `Battle Order`·`Bridge Fix`·
+`Map Cursor Snap`은 카드의 `conflicts`에만 남는다. 모드 안에서 섹션이
 실리는 차례는 파일 이름이 아니라 카드 `scripts` 배열이 정한다).
   · **배틀 처리 순서**를 본가 8·9세대 기준으로 — 행동마다 순서 재계산, 라운드 종료 연출
     순서. **원본 메서드 넷을 통째로 다시 정의하므로** 같은 메서드를 잡는 모드와 함께 못
@@ -51,10 +51,14 @@ Pokemon Z는 Essentials v16 · 루비 1.8.7 · mkxp-z 구판. 플러그인 묶�
     표지 칸 표는 `tools/regionmap_points.py`가 그림 정본과 `townmap.dat`에서 뽑아 소스의
     표시 두 줄 사이에 박고, 원작 지도에서 빠진 지점·틀린 이름은 같은 소스의
     `MISSING_POINTS`·`RENAMED_POINTS`가 화면 열 때 고친다.
-  · **내장 타일맵 렌더러** — Joiplay 렌더 깨짐 우회. 다리가 놓인 맵 여섯은 예외로 루비
-    렌더러를 그대로 쓴다(다리를 캐릭터 아래로 내리는 보정이 그쪽에만 있다).
+  · **볼 단축키** — 전투 가방에서 마지막으로 고른 볼을 먼저 낸다. 커맨드 창 아이콘도
+    따라간다. 파티·박스가 다 찼을 때는 볼을 쓰지 않고 안내만 낸다.
+  · **포획 후 자동 보관 · 별명 물음** — 파티 만석이면 묻지 않고 박스로, 별명 묻기를
+    옵션에서 끈다. 값 둘 다 `PokemonSystem`의 새 속성으로 세이브에 실린다.
+  · **제작 권유 소지 검사** — 이미 가진 도구를 또 권하지 않는다(폭발가루·약한손도끼·
+    수은열쇠 셋).
 
-Type Matchup과 QOL Pack의 배틀·타일맵 갈래는 커뮤니티 배포판에서 떼어 오거나 착안한 것이라 출처가 이 저장소의 조사에 걸려 있다
+Type Matchup과 QOL Pack의 배틀 갈래는 커뮤니티 배포판에서 떼어 오거나 착안한 것이라 출처가 이 저장소의 조사에 걸려 있다
 ([커뮤니티 수정판 조사](../log/research/2026-08-09-community-mods-triage.md) ①·②).
 새 주입형 모드의 소스는 이 저장소 `mods/`에 둔다(유지자 판정 2026-08-09).
 편의·성능 모드 여섯은 poke-essentials `mod/z/` 몫이다. ⚠ **양쪽 저장소의 `inject.py`는
