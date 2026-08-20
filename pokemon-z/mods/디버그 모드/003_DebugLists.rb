@@ -6,7 +6,7 @@
 #    게임에서도 그대로 선다 — 코어 수술에 기대지 않는다.
 #
 # ② 필터 — 목록이 수백 줄이라 F키(패드는 X)로 좁힌다. **타이핑에 기대지 않는다** —
-#    첫소리(ㄱ·ㄴ·ㄷ…)는 목록에서 뽑아 고르게 하고, 도구는 주머니, 포켓몬은 타입으로
+#    초성(ㄱ·ㄴ·ㄷ…)은 목록에서 뽑아 고르게 하고, 도구는 주머니, 포켓몬은 타입으로
 #    좁힌다. 실행기가 한글 입력을 받아 주면 이름 일부로도 좁힐 수 있게 그 갈래를 함께
 #    두되, 없어도 나머지가 다 돈다.
 #    ⚠ 걸러 낸 것이 0줄이면 목록 창에 빈 배열을 넣지 않는다 — 넣으면 커서가 없는 줄을
@@ -32,7 +32,7 @@ module DebugList
     end
   end
 
-  # 이름의 첫소리. 한글이면 ㄱ~ㅎ, 로마자·숫자면 그 글자, 그 밖은 「기타」.
+  # 이름의 초성. 한글이면 ㄱ~ㅎ, 로마자·숫자면 그 글자, 그 밖은 「기타」.
   # 바이트를 첨자로 읽지 않고 unpack으로 푼다 — 구판·신형 루비에서 뜻이 갈리는 자리다.
   def self.head(name)
     return "기타" if !name || name == ""
@@ -48,7 +48,7 @@ module DebugList
     return CHOSEONG[(cp - 0xAC00) / 588]
   end
 
-  # 이름 차례대로 훑어 첫소리를 겹치지 않게 모은다(목록이 이미 이름순이라 차례가 맞다).
+  # 이름 차례대로 훑어 초성을 겹치지 않게 모은다(목록이 이미 이름순이라 차례가 맞다).
   def self.heads(names)
     ret = []
     for n in names
@@ -131,8 +131,8 @@ module DebugList
     return table
   end
 
-  # 첫소리 고르기 — 지금 목록에 실제로 있는 첫소리만 보여 준다.
-  # 되돌리는 값: 고른 첫소리, 또는 취소면 nil.
+  # 초성 고르기 — 지금 목록에 실제로 있는 초성만 보여 준다.
+  # 되돌리는 값: 고른 초성, 또는 취소면 nil.
   def self.pick_head(names)
     hs = heads(names)
     return nil if hs.length == 0
@@ -171,7 +171,7 @@ class MapLister
     return @commands
   end
 
-  # 첫소리를 모을 때는 첫소리 필터를 뺀 목록을 본다.
+  # 초성을 모을 때는 초성 필터를 뺀 목록을 본다.
   def dbgz_pool
     keep = @dbgz_head
     @dbgz_head = nil
@@ -182,7 +182,7 @@ class MapLister
   end
 
   def dbgz_menu
-    sel = Kernel.pbShowCommands(nil, ["첫소리로 필터", "이름으로 필터", "필터 해제"], -1)
+    sel = Kernel.pbShowCommands(nil, ["초성으로 필터", "이름으로 필터", "필터 해제"], -1)
     return false if !sel || sel < 0
     if sel == 2
       return false if !@dbgz_name && !@dbgz_head
@@ -254,7 +254,7 @@ class ItemLister
 
   def dbgz_menu
     sel = Kernel.pbShowCommands(nil,
-       ["첫소리로 필터", "주머니로 필터", "이름으로 필터", "필터 해제"], -1)
+       ["초성으로 필터", "주머니로 필터", "이름으로 필터", "필터 해제"], -1)
     return false if !sel || sel < 0
     if sel == 3
       return false if !@dbgz_name && !@dbgz_pocket && !@dbgz_head
@@ -278,7 +278,7 @@ class ItemLister
       p = Kernel.pbShowCommands(nil, labels, -1)
       return false if !p || p < 0
       @dbgz_pocket = picks[p]
-      @dbgz_head = nil   # 주머니를 새로 고르면 첫소리는 그 주머니 것으로 다시 고른다
+      @dbgz_head = nil   # 주머니를 새로 고르면 초성은 그 주머니 것으로 다시 고른다
       return true
     end
     txt = DebugList.ask_name(@dbgz_name)
@@ -371,7 +371,7 @@ class SpeciesLister
 
   def dbgz_menu
     sel = Kernel.pbShowCommands(nil,
-       ["첫소리로 필터", "타입으로 필터", "이름으로 필터", "필터 해제"], -1)
+       ["초성으로 필터", "타입으로 필터", "이름으로 필터", "필터 해제"], -1)
     return false if !sel || sel < 0
     if sel == 3
       return false if !@dbgz_name && !@dbgz_type && !@dbgz_head
@@ -394,7 +394,7 @@ class SpeciesLister
       t = Kernel.pbShowCommands(nil, labels, -1)
       return false if !t || t < 0
       @dbgz_type = ids[t]
-      @dbgz_head = nil   # 타입을 새로 고르면 첫소리는 그 타입 것으로 다시 고른다
+      @dbgz_head = nil   # 타입을 새로 고르면 초성은 그 타입 것으로 다시 고른다
       return true
     end
     txt = DebugList.ask_name(@dbgz_name)
