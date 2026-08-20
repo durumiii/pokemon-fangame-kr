@@ -146,9 +146,9 @@ def _embed_card(final: Path, name: str, variant: str):
         # 이중 설치를 막아야 한다. 이름이 바뀌어도 물건은 같다.
         card["conflicts"] = {one: swallowed for one in
                              ("DPPT Font", "UI KR", "Utility Pack",
-                              "UI Text KR", "Z-GUI", "Type Matchup", "Battle Order",
-                              "Battle Scene Speed", "Better Movements", "Bridge Fix",
-                              "Map Cursor Snap", "Native Tilemap",
+                              "UI Text KR", "Z-GUI", "Type Matchup", "QOL Pack",
+                              "Battle Order", "Battle Scene Speed", "Better Movements",
+                              "Bridge Fix", "Map Cursor Snap", "Native Tilemap",
                               "한글패치 코어", "한글패치 통합", "한글패치 통합-Runa")}
     (final / "mod.json").write_text(
         json.dumps(card, ensure_ascii=False, indent=1), encoding="utf-8")

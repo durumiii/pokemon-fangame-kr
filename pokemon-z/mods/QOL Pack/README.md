@@ -1,7 +1,17 @@
-# Battle Order — 무엇을 어디서 떠 와 어디를 바꿨나
+# QOL Pack — 무엇을 어디서 떠 와 어디를 바꿨나
 
-이 모드는 **게임 원본 메서드 넷을 통째로 다시 정의한다.** 그래서 「원본 어디를 떠 왔고
-어디를 바꿨나」가 이 모드를 다시 여는 사람에게 가장 중요한 정보다. 그것만 적는다.
+편의 손질 넷을 한 모드로 묶은 것이다. 소스 여섯 파일이 갈래별로 갈린다.
+
+| 갈래 | 파일 | 잡는 자리 |
+|---|---|---|
+| 배틀 처리 순서 | `010_TurnOrder.rb` · `020_EndOfRound.rb` · `030_Leftovers.rb` | `PokeBattle_Battle` · `PokeBattle_Battler` |
+| 다리 밑 파도타기 | `040_BridgeSurf.rb` + `Data/Map299.rxdata` | `Game_Map` |
+| 리전 맵 커서 스냅 | `050_MapCursorSnap.rb` | `PokemonRegionMapScene` |
+| 내장 타일맵 렌더러 | `060_NativeTilemap.rb` | `PokemonSystem` |
+
+배틀 갈래는 **게임 원본 메서드 넷을 통째로 다시 정의한다.** 그래서 「원본 어디를 떠 왔고
+어디를 바꿨나」가 이 모드를 다시 여는 사람에게 가장 중요한 정보다. 아래는 그것을 적는다 —
+나머지 세 갈래는 재정의 범위가 좁아 소스 머리 주석이 정본이다.
 왜 이렇게 정했는지의 근거는 [조사 기록](../../docs/log/research/2026-08-10-battle-order-audit.md),
 판정은 [품질 대장](../../docs/ledger/quality.md)의 「배틀 처리 순서는 최신 세대를 따른다」 절.
 
@@ -15,10 +25,10 @@
 
 | 파일 | 원본 섹션 | 메서드 | 줄 | 길이 |
 |---|---|---|---|---|
-| `001_TurnOrder.rb` | PokeBattle_Battle | `pbPriority` | 1154–1303 | 150줄 |
-| `001_TurnOrder.rb` | PokeBattle_Battle | `pbAttackPhase` | 3141–3324 | 184줄 |
-| `002_EndOfRound.rb` | PokeBattle_Battle | `pbEndOfRoundPhase` | 3329–4403 | 1,075줄 |
-| `003_Leftovers.rb` | PokeBattle_Battler | `pbBerryCureCheck` | 2249–2385 | 137줄 |
+| `010_TurnOrder.rb` | PokeBattle_Battle | `pbPriority` | 1154–1303 | 150줄 |
+| `010_TurnOrder.rb` | PokeBattle_Battle | `pbAttackPhase` | 3141–3324 | 184줄 |
+| `020_EndOfRound.rb` | PokeBattle_Battle | `pbEndOfRoundPhase` | 3329–4403 | 1,075줄 |
+| `030_Leftovers.rb` | PokeBattle_Battler | `pbBerryCureCheck` | 2249–2385 | 137줄 |
 
 **손으로 옮겨 적지 않았다.** 게임 코드에서 그대로 떠서 지정한 자리만 치환하는 스크립트로
 만들었고, 그 스크립트는 치환마다 「정확히 한 번 일치했는가」를 검사한다. 원본이 달라지면
@@ -26,7 +36,7 @@
 
 ## 바꾼 자리 — 전부
 
-### 001_TurnOrder.rb
+### 010_TurnOrder.rb
 
 `pbPriority`는 구조를 갈랐다. 앞부분(스피드 읽기 · 선제의발톱 판정)은 그대로 두고,
 뒷부분(우선도 브래킷 가르기 · 브래킷 안 정렬)을 `bo_sortPriority`로 떼어 냈다. 정렬
@@ -56,7 +66,7 @@
 - `PokeBattle_Battler#pbSpeed` alias — 재계산 동안만 `turncount==0` 판정을 피한다.
   아래 「지뢰」 참고.
 
-### 002_EndOfRound.rb
+### 020_EndOfRound.rb
 
 원칙 하나다. **연출과 메시지를 체력 변화보다 먼저.** 열한 자리에서 줄 앞뒤만 바꿨다.
 
@@ -77,7 +87,7 @@
 화상과 얼음의 `pbContinueStatus`는 원본에서 매직가드 분기 **밖**에 있었다. 옮긴 뒤에도
 밖이다 — 매직가드로 데미지를 안 받아도 메시지는 나오던 동작을 그대로 지켰다.
 
-### 003_Leftovers.rb
+### 030_Leftovers.rb
 
 세 자리에서 메시지를 체력 변화 앞으로 옮겼다: 먹밥(2365–2366) · 검은먹밥 회복(2374–2375) ·
 검은먹밥 피해(2380–2381). 셋 다 메시지가 조건 없이 나오는 자리라 순서만 바뀐다.
@@ -118,24 +128,27 @@
 
 ## 다른 모드와의 관계
 
-이 모드는 `PokeBattle_Battle#pbPriority` · `#pbAttackPhase` · `#pbEndOfRoundPhase`와
-`PokeBattle_Battler#pbBerryCureCheck` · `#pbSpeed`를 잡는다. 같은 메서드를 다시 정의하는
-모드와는 함께 못 선다. 지금 이 저장소의 모드 넷(UI Text KR · Type Matchup · 디버그 모드 ·
-Native Tilemap)과 poke-essentials `mod/z/`의 편의 모드들은 이 다섯을 건드리지 않는다.
+이 모드가 잡는 메서드 아홉은 카드(`mod.json`)의 `touches`가 정본이다. 같은 메서드를
+다시 정의하는 모드와는 함께 못 선다. 지금 이 저장소의 나머지 모드(UI Text KR ·
+Type Matchup · Z-GUI · 디버그 모드)와 poke-essentials `mod/z/`의 편의 모드들은 이 아홉을
+건드리지 않는다.
 
-주입 섹션은 모드명 정렬 순으로 실리고 나중 정의가 이긴다. 이 모드는 이름이 `Battle Order`라
-`MOD:Battle Order/...` 로 실린다 — `Battle Scene Speed`(연출 배속)보다 앞이지만 둘은
-겹치는 메서드가 없다.
+옛 이름 넷(`Battle Order` · `Bridge Fix` · `Map Cursor Snap` · `Native Tilemap`)은 카드의
+`conflicts`에 남아 있다 — 그 이름으로 받아 둔 서랍에서 이중 설치를 막는 자리다.
+
+주입 섹션은 모드명 정렬 순으로 실리고 나중 정의가 이긴다. 모드 **안에서**의 차례는 파일
+이름이 아니라 카드 `scripts` 배열의 차례가 정한다 — 파일 이름의 번호는 그 차례를 눈으로
+읽으라고 붙인 것이니, 파일을 더하거나 옮기면 카드도 함께 고친다.
 
 ## 다시 뜨는 법
 
-게임 판이 올라가 원본 메서드가 달라지면 이 모드는 **옛 코드를 덮어씌우는 모드**가 된다.
+게임 판이 올라가 원본 메서드가 달라지면 배틀 갈래는 **옛 코드를 덮어씌우는 모드**가 된다.
 그때는 새 판에서 다시 떠야 한다. 절차는 조사 기록의 「모드를 다시 뜨는 법」 절에 있다.
 
 ## 확인하는 법
 
-디버그를 켜면(「디버그 모드」 모드의 P키) 처리마다 로그가 남으므로 순서를 눈으로 확인할 수
-있다. 볼 것 셋.
+배틀 갈래는 디버그를 켜면(「디버그 모드」 모드의 P키) 처리마다 로그가 남으므로 순서를 눈으로
+확인할 수 있다. 볼 것 셋.
 
 1. `[Priority]` 줄이 한 라운드에 **여러 번** 찍히고, 마비나 트릭룸 뒤에 순서가 바뀌는가.
 2. 선제의발톱 메시지가 그 포켓몬 차례에 나오는가(라운드 머리가 아니라).

@@ -19,6 +19,13 @@
 ⚠ 아래 넷 중 앞의 셋은 v6 배포를 마감하기 네 시간쯤 전에 병합됐다(2026-08-20 23:37).
 **v6 zip에 이미 실렸는지는 확인하지 않았다** — 다음 배포를 준비할 때 가른다.
 
+- **소스 모드 넷을 `QOL Pack` 하나로(2026-08-21).** `Battle Order`·`Bridge Fix`·
+  `Map Cursor Snap`·`Native Tilemap`을 한 모드로 합쳤다 — 손대는 자리가 겹치지 않아
+  이어붙임만으로 선다. 소스는 `mods/QOL Pack/`에 `010_`~`060_` 번호로 서고, 옛 이름
+  넷은 카드의 `conflicts`에 남아 낱개로 받아 둔 서랍의 이중 설치를 막는다. `Utility
+  Pack` 통합 재료가 일곱에서 넷으로 줄었고(QOL Pack·Battle Scene Speed·Better
+  Movements·Type Matchup), 합본 카드의 `conflicts`에는 `QOL Pack`이 더해졌다.
+  `Type Matchup`은 낱개 모드로 남는다.
 - **디버그 모드 v1.1 — 메뉴 정리·목록 한국어화·거르기(2026-08-21).** 디버그 메뉴 48항목을
   자주 쓰는 열넷만 첫 화면에 세우고 나머지를 묶음 넷(플레이어 설정·박스와 가방·필드와
   데이터·개발 도구)으로 접었다 — 원작 `pbDebugMenu`는 안 건드리고 그 메뉴만 쓰는

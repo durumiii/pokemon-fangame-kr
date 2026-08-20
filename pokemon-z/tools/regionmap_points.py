@@ -2,7 +2,7 @@
 # requires-python = ">=3.12"
 # dependencies = ["pillow", "rubymarshal"]
 # ///
-"""리전 맵에서 「표지가 그려진 칸」을 뽑아 Map Cursor Snap 모드에 박는다.
+"""리전 맵에서 「표지가 그려진 칸」을 뽑아 QOL Pack의 커서 스냅 소스에 박는다.
 
 커서 스냅이 끌어당길 자리는 장소 데이터(`townmap.dat`)가 아니라 **그림에 표지가 그려진
 칸**이다. 데이터 칸 175개 중 118개는 길과 여러 칸에 걸친 넓은 지역이라 표지가 없는데,
@@ -27,7 +27,7 @@ ROOT = Path(__file__).resolve().parents[1]
 GAME = Path("/mnt/d/Game/Pokemon Z/V2.18")
 ART = ROOT / "mods/Z-GUI/Graphics/Pictures/mapRegion0.png"   # 자리를 맞춘 정본
 TOWNMAP = GAME / "Data/townmap.dat"
-MOD = ROOT / "mods/Map Cursor Snap/001_MapCursorSnap.rb"
+MOD = ROOT / "mods/QOL Pack/050_MapCursorSnap.rb"
 
 SQUARE = 16
 ICON_RGB = {(0, 132, 66), (148, 198, 33), (74, 165, 49), (33, 132, 165)}

@@ -26,33 +26,35 @@ Pokemon Z는 Essentials v16 · 루비 1.8.7 · mkxp-z 구판. 플러그인 묶�
 돌려도 게임에는 잘 얹히지만, 라이브러리는 보관소만 본다. 저장소에서 짓고 보관소
 (`/mnt/d/GameVault/mods/Pokemon Z Fangame/<모드>/`)로 복사한 다음 그 보관소를 `--store`로 얹는다.
 
-**repo에 남는 모드는 여덟이다.** `UI Text KR`(스크립트에 박힌 화면 문자열은 korean.dat로
+**repo에 남는 모드는 다섯이다.** `UI Text KR`(스크립트에 박힌 화면 문자열은 korean.dat로
 못 고쳐서 그리기 진입점에서 갈아 끼운다 — 텍스트 층 ③) · `Type Matchup`(기술 선택창
 상성 색칠 — 본가식: 공격기만, 딱 타입만(특성·도구 무반영, 일루전은 위장 종 타입), 더블은
-상대 전원 배율 일치 시만. 합본 세 갈래에 기본 동봉) · `Map Cursor Snap`(리전 맵 커서가
-빈 칸에 멈추면 옆 칸의 **표지**로 끌려간다 — 반경·대기는 소스 머리 `SNAP_RADIUS`·
-`SNAP_DELAY`, 미공개 지점은 순정 표시 조건 그대로 제외. 끌어당길 표지 칸 표는
-`tools/regionmap_points.py`가 그림 정본과 `townmap.dat`에서 뽑아 소스의 표시 두 줄
-사이에 박고, 원작 지도에서 빠진 지점·틀린 이름은 같은 소스의 `MISSING_POINTS`·
-`RENAMED_POINTS`가 화면 열 때 고친다) · `디버그 모드`(P키로 `$DEBUG` 토글, 디버그 중
-전투 후 전원 회복, 필드에서 B로 박스 PC. 디버그 메뉴는 자주 쓰는 열넷만 첫 화면에
-서고 나머지는 묶음 넷으로 접힌다 — 차례와 묶음은 `002_DebugMenuOrder.rb`의 `TOP`·
+상대 전원 배율 일치 시만. 합본 세 갈래에 기본 동봉) · `디버그 모드`(P키로 `$DEBUG` 토글,
+디버그 중 전투 후 전원 회복, 필드에서 B로 박스 PC. 디버그 메뉴는 자주 쓰는 열넷만 첫
+화면에 서고 나머지는 묶음 넷으로 접힌다 — 차례와 묶음은 `002_DebugMenuOrder.rb`의 `TOP`·
 `GROUPS`. 맵·도구 목록은 번역 층에서 이름을 읽고, 세 목록 화면에서 F로 거른다 —
 디버그 추가판에 실린다) ·
-`Native Tilemap`(맵 렌더러를 엔진 내장으로 — Joiplay 렌더 깨짐 우회. V6부터 합본에
-싣는다 — 유지자 판정 2026-08-20, quality 「Native Tilemap은 합본에 싣는다」 절.
-다리가 놓인 맵 여섯은 예외로 루비 렌더러를 그대로 쓴다 — 다리를 캐릭터 아래로 내리는
-보정이 그쪽에만 있다) ·
-`Battle Order`(배틀 처리 순서를 본가 8·9세대 기준으로 — 행동마다 순서 재계산, 라운드
-종료 연출 순서. **원본 메서드 넷을 통째로 다시 정의하므로** 같은 메서드를 잡는 모드와
-함께 못 선다. 무엇을 어디서 떠 왔는지는 그 폴더의 `README.md`가 정본) ·
 `Z-GUI`(전투·도감 GUI 그림 제3자 개선판 + **번역 그림 자산 72장** — 자산 정본은
 `translate/data/asset-texts.jsonl`+`translate/assets/` 생성기, 반입은 `install_assets.py`.
 **글자가 아니라 자리를 고친 그림은 원장에 행이 없다** — 리전 맵(`gen_regionmap.py`)이 그것이고
 반입기의 `EXTRA` 목록이 그 자리다) ·
-`Bridge Fix`(다리 밑 파도타기 수술 — 통행·지형 재정의 둘 + 19번도로 맵 물길 + 세이브
-박제 우회 훅).
-셋은 커뮤니티 배포판에서 떼어 오거나 착안한 것이라 출처가 이 저장소의 조사에 걸려 있다
+`QOL Pack`(편의 손질 넷을 한 모드로. 옛 이름 `Battle Order`·`Bridge Fix`·
+`Map Cursor Snap`·`Native Tilemap`은 카드의 `conflicts`에만 남는다. 모드 안에서 섹션이
+실리는 차례는 파일 이름이 아니라 카드 `scripts` 배열이 정한다).
+  · **배틀 처리 순서**를 본가 8·9세대 기준으로 — 행동마다 순서 재계산, 라운드 종료 연출
+    순서. **원본 메서드 넷을 통째로 다시 정의하므로** 같은 메서드를 잡는 모드와 함께 못
+    선다. 무엇을 어디서 떠 왔는지는 그 폴더의 `README.md`가 정본.
+  · **다리 밑 파도타기** 수술 — 통행·지형 재정의 둘 + 19번도로 맵 물길 + 세이브 박제
+    우회 훅.
+  · **리전 맵 커서 스냅** — 빈 칸에 멈추면 옆 칸의 **표지**로 끌려간다. 반경·대기는 소스
+    머리 `SNAP_RADIUS`·`SNAP_DELAY`, 미공개 지점은 순정 표시 조건 그대로 제외. 끌어당길
+    표지 칸 표는 `tools/regionmap_points.py`가 그림 정본과 `townmap.dat`에서 뽑아 소스의
+    표시 두 줄 사이에 박고, 원작 지도에서 빠진 지점·틀린 이름은 같은 소스의
+    `MISSING_POINTS`·`RENAMED_POINTS`가 화면 열 때 고친다.
+  · **내장 타일맵 렌더러** — Joiplay 렌더 깨짐 우회. 다리가 놓인 맵 여섯은 예외로 루비
+    렌더러를 그대로 쓴다(다리를 캐릭터 아래로 내리는 보정이 그쪽에만 있다).
+
+Type Matchup과 QOL Pack의 배틀·타일맵 갈래는 커뮤니티 배포판에서 떼어 오거나 착안한 것이라 출처가 이 저장소의 조사에 걸려 있다
 ([커뮤니티 수정판 조사](../log/research/2026-08-09-community-mods-triage.md) ①·②).
 새 주입형 모드의 소스는 이 저장소 `mods/`에 둔다(유지자 판정 2026-08-09).
 편의·성능 모드 여섯은 poke-essentials `mod/z/` 몫이다. ⚠ **양쪽 저장소의 `inject.py`는
@@ -117,8 +119,8 @@ Pokemon Z는 Essentials v16 · 루비 1.8.7 · mkxp-z 구판. 플러그인 묶�
     uv run runa/make-union-mods.py     # 동봉용 통합 모드 둘(UI KR·Utility Pack) — 아래 절
 
 **동봉 모드는 통합 둘이다(V6부터, 유지자 판정 2026-08-20).** `UI KR` = UI Text KR +
-Z-GUI(그림 자산 포함) · `Utility Pack` = Battle Order·Battle Scene Speed·Better
-Movements·Bridge Fix·Map Cursor Snap·Type Matchup·Native Tilemap 일곱.
+Z-GUI(그림 자산 포함) · `Utility Pack` = QOL Pack·Battle Scene Speed·Better
+Movements·Type Matchup 넷.
 `make-union-mods.py`가 재료 모드들을 보관소에서 떠 통합 카드(expects·touches·
 conflicts 합집합, 재료 간 겹침은 예외로 멈춤)와 번호 접두 섹션으로 짓는다 — 재료
 모드가 바뀌면 이걸 다시 돌려야 통합본에 실린다. 디버그 모드·Controller UX는 별도
@@ -190,7 +192,7 @@ conflicts 합집합, 재료 간 겹침은 예외로 멈춤)와 번호 접두 섹
 - **세이브가 맵을 박제한다** — 저장 시 `$MapFactory`가 맵을 타일째 Marshal로 싣고,
   불러오기는 게임 판이 같으면 디스크 맵을 다시 읽지 않는다. 맵 파일을 고쳐도 기존
   세이브에는 안 닿으므로, 기존 세이브에 닿아야 하는 수술은 `Events.onMapChange` 훅으로
-  타일 데이터를 갈아 끼운다(선례: Bridge Fix의 Map299 훅).
+  타일 데이터를 갈아 끼운다(선례: QOL Pack의 Map299 훅).
 
 ### 구판 루비에서 한 줄 재는 법 — 게임이 곧 시험대다
 

@@ -14,7 +14,7 @@ poke-essentials 몫이며(보관소에 이미 서 있다), 유지자 실기 손�
 보관소다. 합본 조립기(`share/make_package.py`)가 주입해 오는 자리와 같은 자리이기도 하다.
 
 짓는 법은 이어붙이기다 — 재료 모드의 `.rb`를 파일째 옮기고 이름 앞에 번호를 붙여
-로드 순서를 못 박는다(`MOD:Utility Pack/010_Battle Order_001_TurnOrder.rb`). 재정의가
+로드 순서를 못 박는다(`MOD:Utility Pack/010_QOL Pack_010_TurnOrder.rb`). 재정의가
 겹치는 자리가 없어서(2026-08-20 전수 대조) 이어붙임만으로 선다. 카드의 `expects`·
 `touches`·`order`·`requires`·`provides`·`conflicts`와 기준선(`baseline/`)은 합집합으로
 옮긴다 — 기준선이 따라와야 패치판 위에서 `expects`가 어긋나도 modkit이 훅 메서드를
@@ -40,12 +40,11 @@ UNIONS = {
         ["UI Text KR", "Z-GUI"],
     ),
     "Utility Pack": (
-        "배틀·이동·지도의 편의 개선 일곱 가지를 한 벌로 묶습니다",
-        "한글패치 합본이 싣는 편의 모드 일곱을 한 벌로 묶은 것이에요. 서로 건드리는 "
+        "배틀·이동·지도의 편의 개선을 한 벌로 묶습니다",
+        "한글패치 합본이 싣는 편의 모드 넷을 한 벌로 묶은 것이에요. 서로 건드리는 "
         "자리가 겹치지 않아 함께 서고, 낱개로 받아 두었다면 그쪽을 지우고 이것만 얹으면 "
         "돼요.",
-        ["Battle Order", "Battle Scene Speed", "Better Movements", "Bridge Fix",
-         "Map Cursor Snap", "Type Matchup", "Native Tilemap"],
+        ["QOL Pack", "Battle Scene Speed", "Better Movements", "Type Matchup"],
     ),
 }
 SWALLOWED = "통합본이 이미 품고 있어요 — 따로 얹으면 같은 코드가 두 겹으로 걸려요."
