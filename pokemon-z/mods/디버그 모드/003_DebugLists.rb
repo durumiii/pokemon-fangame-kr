@@ -140,10 +140,34 @@ module DebugList
     return nil if !sel || sel < 0
     return hs[sel]
   end
+
+  # 초성을 모을 때는 초성 필터를 뺀 목록을 본다.
+  #
+  # ⚠ `commands`는 화면 뒤의 배열(@maps·@ids·@commands)을 그 자리에서 갈아 끼운다.
+  # 그래서 다 모은 뒤 **원래 필터로 한 번 더 돌려 되돌려 놓는다.** 안 되돌리면 이어지는
+  # 초성 고르기를 취소했을 때 `dbgz_menu`가 false를 주고 `pbListScreen`이 목록을 다시
+  # 안 그리는데, 화면에는 걸러진 목록이 떠 있고 속은 전체라 커서 자리가 어긋난다 —
+  # 맵 목록에서는 엉뚱한 맵으로 워프한다(2026-08-22 제보).
+  # 커서(@index)는 두 번째 `commands`가 필터 때문에 0으로 되돌리므로 따로 되살린다.
+  module Pool
+    def dbgz_pool
+      keep = @dbgz_head
+      keepindex = @index
+      @dbgz_head = nil
+      commands
+      names = @dbgz_names.clone
+      @dbgz_head = keep
+      commands
+      @index = keepindex
+      return names
+    end
+  end
 end
 
 
 class MapLister
+  include DebugList::Pool
+
   def dbgz_clear
     @dbgz_head = nil
     @dbgz_name = nil
@@ -171,16 +195,6 @@ class MapLister
     return @commands
   end
 
-  # 초성을 모을 때는 초성 필터를 뺀 목록을 본다.
-  def dbgz_pool
-    keep = @dbgz_head
-    @dbgz_head = nil
-    commands
-    names = @dbgz_names.clone
-    @dbgz_head = keep
-    return names
-  end
-
   def dbgz_menu
     sel = Kernel.pbShowCommands(nil, ["초성으로 필터", "이름으로 필터", "필터 해제"], -1)
     return false if !sel || sel < 0
@@ -204,6 +218,8 @@ end
 
 
 class ItemLister
+  include DebugList::Pool
+
   def dbgz_clear
     @dbgz_head = nil
     @dbgz_name = nil
@@ -241,15 +257,6 @@ class ItemLister
     @index = @commands.length - 1 if @index >= @commands.length
     @index = 0 if @index < 0
     return @commands
-  end
-
-  def dbgz_pool
-    keep = @dbgz_head
-    @dbgz_head = nil
-    commands
-    names = @dbgz_names.clone
-    @dbgz_head = keep
-    return names
   end
 
   def dbgz_menu
@@ -291,6 +298,8 @@ end
 
 # 포켓몬 고르기 목록. 원작의 `pbChooseSpeciesOrdered`가 쓰던 자리를 대신한다.
 class SpeciesLister
+  include DebugList::Pool
+
   def initialize(default = 0)
     @sprite = SpriteWrapper.new
     @sprite.bitmap = nil
@@ -358,15 +367,6 @@ class SpeciesLister
   def dispose
     @sprite.bitmap.dispose if @sprite.bitmap
     @sprite.dispose
-  end
-
-  def dbgz_pool
-    keep = @dbgz_head
-    @dbgz_head = nil
-    commands
-    names = @dbgz_names.clone
-    @dbgz_head = keep
-    return names
   end
 
   def dbgz_menu

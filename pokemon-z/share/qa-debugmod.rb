@@ -1,9 +1,11 @@
 # 「디버그 모드」 자체 점검 — 구판 루비(1.8.7) 실물에서 모드 조각의 셈을 잰다.
 #
-# 무엇을 재나 — 모드가 원작에 손대지 않고 하는 세 가지가 그대로인가.
+# 무엇을 재나 — 모드가 원작에 손대지 않고 하는 것들의 셈이 그대로인가.
 #   ① 초성 뽑기가 한글·로마자·숫자·그 밖을 제대로 가르는가 (목록 필터의 뼈대)
 #   ② 메뉴를 갈아 끼워도 원작 열쇠 48개가 하나도 안 사라지는가
 #   ③ 편의 토글이 꺼지면 원작 판정이 평소대로 돌아가고 $DEBUG가 원복되는가
+#   ④ 초성 고르기를 취소해도 화면 뒤의 목록이 걸러진 채로 남는가 (커서 어긋남)
+#   ⑤ 축소 지도 helper를 하나만 쥐고 타일셋이 갈릴 때 옛 것을 놓는가 (메모리 누수)
 #
 # 화면은 못 잰다 — 창이 뜨는 모양·눌러 보는 흐름은 사람 몫이다.
 #
@@ -27,7 +29,11 @@ end
 # 게임 절이 안 실린 자리라 모드가 부르는 것들을 껍데기로 세운다.
 $msgs = []
 def Kernel.pbMessage(t); $msgs.push(t); end
-def Kernel.pbShowCommands(a, b, c, d = 0); return -1; end
+# 고를 답을 $answers 에 미리 넣어 둔다. 비면 취소(-1).
+$answers = []
+def Kernel.pbShowCommands(a, b, c, d = 0)
+  return $answers.length > 0 ? $answers.shift : -1
+end
 # 원작 판정 흉내 — 넷 다 $DEBUG 하나만 본다(실물이 그 꼴이다).
 def Kernel.pbSurf; return $DEBUG ? "통과" : "막힘"; end
 def Kernel.pbHeadbutt(event); return $DEBUG ? "통과:#{event}" : "막힘"; end
@@ -49,6 +55,29 @@ def pbLearnMove(pokemon, move, ignoreifknown = false, bymachine = false, &block)
 end
 def pbTrainerCheck(a, b, c, d = 0); return $DEBUG ? "추가할까 물음" : "조용"; end
 
+# 맵 목록 껍데기 — 원작 MapLister 에서 목록 필터가 보는 것만 세운다.
+module MessageTypes; MapNames = 1; end
+$mapnames = {}
+def pbGetMessage(type, id); return $mapnames[id]; end
+class MapLister
+  def initialize(maps); @maps = maps; @addGlobalOffset = 0; @index = 0; end
+  def startIndex; return @index; end
+  def value(index)
+    return -1 if index < 0
+    return @maps[index - @addGlobalOffset][0]
+  end
+end
+
+# 축소 지도 helper 껍데기 — 몇 장 열리고 몇 장 놓이는지만 센다.
+$opened = 0
+$disposed = 0
+class TileDrawingHelper
+  def self.fromTileset(tileset); $opened += 1; return self.new(tileset); end
+  def initialize(tileset); @tileset = tileset; end
+  attr_reader :tileset
+  def dispose; $disposed += 1; end
+end
+
 # 원작 pbDebugMenu가 세우는 열쇠 48개 — 순서까지 실물 그대로.
 KEYS = ["switches", "variables", "refreshmap", "warp", "healparty", "additem",
   "fillbag", "clearbag", "addpokemon", "fillboxes", "clearboxes", "usepc",
@@ -64,8 +93,8 @@ KEYS = ["switches", "variables", "refreshmap", "warp", "healparty", "additem",
 begin
   log("RUBY_VERSION = #{RUBY_VERSION.inspect}")
   ["003_DebugLists.rb", "004_DebugPerks.rb", "005_DebugSideEffects.rb",
-   "002_DebugMenuOrder.rb"].each do |f|
-    eval(File.open("#{CHECK}/#{f}", "rb") {|fp| fp.read }, TOPLEVEL_BINDING, f)
+   "002_DebugMenuOrder.rb", "006_DebugMinimap.rb"].each do |f|
+    load "#{CHECK}/#{f}"
   end
 
   # ① 초성
@@ -132,6 +161,43 @@ begin
   c2.add("newthing", "새 항목")
   j = c2.list.index("새 항목")
   chk("모르는 열쇠를 되찾는다", j.nil? ? nil : c2.getCommand(j), "newthing")
+
+  # ④ 필터 취소 뒤 화면과 속이 어긋나지 않는가
+  $mapnames = {1 => "관동", 2 => "나비마을", 3 => "낙엽시티", 4 => "단풍시티"}
+  ml = MapLister.new([[1, "Kanto", 0], [2, "Napo", 0], [3, "Nak", 0], [4, "Dan", 0]])
+  chk("거르기 전에는 네 줄", ml.commands.length, 4)
+  chk("초성 모으기는 초성 필터를 뺀 전체를 본다",
+      DebugList.heads(ml.dbgz_pool), ["ㄱ", "ㄴ", "ㄷ"])
+  ml.instance_variable_set("@dbgz_head", "ㄴ")
+  chk("ㄴ으로 두 줄", ml.commands.length, 2)
+  ml.instance_variable_set("@index", 1)
+  $answers = [0, -1]   # 「초성으로 필터」를 골랐다가 초성 고르기에서 취소
+  chk("취소면 목록을 다시 안 그린다(false)", ml.dbgz_menu, false)
+  chk("취소 뒤에도 커서 자리가 그대로", ml.startIndex, 1)
+  chk("취소 뒤 커서가 가리키는 맵", ml.value(1), 3)     # 낙엽시티. 어긋나면 2가 나온다
+  chk("취소 뒤에도 목록은 걸러진 두 줄", ml.commands.length, 2)
+  $answers = [0, 2]    # 이번엔 ㄷ — 모은 초성은 ["ㄱ", "ㄴ", "ㄷ"]이니 셋째
+  chk("초성을 고르면 다시 그리라고 한다(true)", ml.dbgz_menu, true)
+  chk("고른 초성으로 다시 좁힌다", ml.commands.length, 1)
+  chk("좁힌 목록의 첫 줄", ml.value(0), 4)
+
+  # ⑤ 축소 지도 helper — 하나만 쥐고 갈릴 때 옛 것을 놓는다
+  h1 = DebugMinimap.helper(3, "타일셋3")
+  chk("첫 요청에 한 장 연다", $opened, 1)
+  h2 = DebugMinimap.helper(3, "타일셋3")
+  chk("같은 타일셋이면 다시 안 연다", $opened, 1)
+  chk("같은 helper를 돌려준다", h2.equal?(h1), true)
+  chk("아직 아무것도 안 놓았다", $disposed, 0)
+  h3 = DebugMinimap.helper(7, "타일셋7")
+  chk("타일셋이 갈리면 새로 연다", $opened, 2)
+  chk("갈릴 때 옛 것을 놓는다", $disposed, 1)
+  chk("새 helper가 새 타일셋을 쥔다", h3.tileset, "타일셋7")
+  DebugMinimap.release
+  chk("목록을 닫으면 마지막 하나도 놓는다", $disposed, 2)
+  DebugMinimap.release
+  chk("두 번 놓아도 셈이 안 어긋난다", $disposed, 2)
+  chk("놓은 뒤 요청하면 새로 연다", (DebugMinimap.helper(7, "타일셋7"); $opened), 3)
+  DebugMinimap.release
 
   log($bad == 0 ? "판정: 통과" : "판정: 실패 #{$bad}건")
 rescue Exception => e
